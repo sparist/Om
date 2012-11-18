@@ -254,6 +254,11 @@ escaped with a backquote:
 
 		{double` quote}{operator}
 
+## Downloading
+
+The Git repository for Om can be found on the [Om
+GitHub page](https://github.com/sparist/Om).
+
 ## Building
 
 Although it should be possible to build the sources on any mainstream platform,
