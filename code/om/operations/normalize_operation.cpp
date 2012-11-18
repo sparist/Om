@@ -1,0 +1,94 @@
+/*!
+\file
+	\brief
+		Om cpp file.
+	\version
+		0.1
+	\date
+		2012
+	\copyright
+		Copyright (c) Jason Erb.
+		All rights reserved.  This program and the accompanying materials are
+		made available under the terms of the
+		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
+		Public License, Version 1.0</a>, which accompanies this distribution.
+	\authors
+		Jason Erb - Initial API, implementation, and documentation.
+*/
+#if defined( Om_Operations_NormalizeOperation_ )
+
+// MARK: Om::Operations::NormalizeOperation
+
+	#define Type_ Om::Operations::NormalizeOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName()
+{
+	return( Om_Operations_NormalizeOperation_GetName_() );
+}
+
+template< typename TheNormalizeOperation >
+inline void Type_::GiveElements( TheNormalizeOperation &, Queue & theQueue )
+{
+	theQueue.TakeElement( GetOperator() );
+}
+
+// MARK: public (non-static)
+
+template< typename TheOperand >
+inline bool Type_::TakeOperand(
+	Evaluator & theEvaluator,
+	TheOperand & theOperand
+)
+{
+	return(
+		this->TakeQuotedQueue( theEvaluator, theOperand.GetChildProgram() )
+	);
+}
+
+template< typename TheQueue >
+inline bool Type_::TakeQuotedQueue(
+	Evaluator & theEvaluator,
+	TheQueue & theQueue
+)
+{
+	Operator theOperator;
+	theOperator.TakeElements( theQueue );
+	theOperator.Normalize();
+	theEvaluator.TakeQuotedQueue( theOperator );
+
+	return( true );
+}
+
+	#undef Type_
+
+#else
+	#include "om/operations/normalize_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/environment.hpp"
+		#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		// MARK: -
+		SUITE( NormalizeOperation )
+		{
+			TEST( Simple )
+			{
+				CHECK_EQUAL(
+					"{" "\xE1\x84\x80" "\xE1\x85\xA1" "\xE1\x86\xA8" "}",
+					Environment().Evaluate( "normalize {" "\xEA\xB0\x81" "}" )
+				);
+			}
+		}
+	}
+}
+
+	#endif
+
+#endif
