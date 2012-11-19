@@ -37,13 +37,13 @@ The following sections define the syntax of Om in its entirety.
 
 An Om program is comprised of only three syntactic elements, as follows:
 
-![](http://sparist.com/projects/om/images/program.png)
+![](http://om-language.org/images/program.png)
 
 ### Operator
 
 An operator has the following syntax:
 
-![](http://sparist.com/projects/om/images/operator.png)
+![](http://om-language.org/images/operator.png)
 
 Any code point may be included in an operator by encoding it with a preceding
 backquote (\`), which is disregarded if the code point is not a backquote,
@@ -53,13 +53,13 @@ operand bracket, or separator code point.
 
 A separator has the following syntax:
 
-![](http://sparist.com/projects/om/images/separator.png)
+![](http://om-language.org/images/separator.png)
 
 ### Operand
 
 An operand has the following syntax:
 
-![](http://sparist.com/projects/om/images/operand.png)
+![](http://om-language.org/images/operand.png)
 
 ## How It Works
 
