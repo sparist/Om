@@ -1,3 +1,3 @@
-The Om Language {#index}
-===============
+Main Page {#index}
+=========
 
