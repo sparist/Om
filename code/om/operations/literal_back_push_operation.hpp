@@ -18,7 +18,7 @@
 \defgroup literal_back_push_operation literal<-
 	\ingroup operation
 	\brief
-		Push the contents of an \ref operand onto the back of a \ref literal
+		Pushes the contents of an \ref operand onto the back of a \ref literal
 		(quoted).
 	\par Input
 		<tt>{A} {B}</tt>

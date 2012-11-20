@@ -18,7 +18,7 @@
 \defgroup expression_back_push_operation expression<-
 	\ingroup operation
 	\brief
-		Push the contents of an \ref operand onto the back of an
+		Pushes the contents of an \ref operand onto the back of an
 		\ref expression (quoted).
 	\par Input
 		<tt>{A} {B}</tt>

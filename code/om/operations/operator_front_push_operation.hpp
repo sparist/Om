@@ -18,8 +18,8 @@
 \defgroup operator_front_push_operation ->operator
 	\ingroup operation
 	\brief
-		Push the contents of an \ref operand onto the front of an \ref operator
-		(quoted).
+		Pushes the contents of an \ref operand onto the front of an
+		\ref operator (quoted).
 	\par Input
 		<tt>{A} {B}</tt>
 	\par Output

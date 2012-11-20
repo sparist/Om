@@ -528,13 +528,13 @@ namespace Om
 				Environment().Evaluate( "= expression{a{b}{c}} {A{B}{C}}" )
 			);
 
-			// Empty match
+			// Negative match
 			CHECK_EQUAL(
 				"{}",
 				Environment().Evaluate( "= expression{} {a{b}{c}}" )
 			);
 
-			// Empty match
+			// Positive empty match
 			CHECK_EQUAL(
 				"{{}}",
 				Environment().Evaluate( "= expression{} {}" )

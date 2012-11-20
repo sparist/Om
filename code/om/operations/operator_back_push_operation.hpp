@@ -18,7 +18,7 @@
 \defgroup operator_back_push_operation operator<-
 	\ingroup operation
 	\brief
-		Push the contents of an \ref operand onto the back of an \ref operator
+		Pushes the contents of an \ref operand onto the back of an \ref operator
 		(quoted).
 	\par Input
 		<tt>{A} {B}</tt>

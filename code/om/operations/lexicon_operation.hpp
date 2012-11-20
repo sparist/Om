@@ -22,11 +22,12 @@
 	\par Implementation
 		Om#Operations#LexiconOperation
 
-	A program is interpreted as a lexicon as follows:
+	A \ref program is interpreted as a \ref lexicon as follows:
 	-	Each \ref operator is a key, indexing to the \ref operand to its right.
 	-	In the case of duplicate \ref operator "Operators", the prior is
 		removed.
-	-	An \ref operator without an \ref operand indicates no mapping.
+	-	An \ref operator without an \ref operand indicates that the system
+		mapping for the \ref operator is to be explicitly included.
 	-	An \ref operand without an \ref operator indicates the "default"
 		mapping, which is used for any \ref operator not found in the
 		\ref lexicon.

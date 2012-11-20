@@ -18,7 +18,7 @@
 \defgroup lexicon_front_push_operation ->lexicon
 	\ingroup operation
 	\brief
-		Push the contents of an \ref operand onto the front of a \ref lexicon
+		Pushes the contents of an \ref operand onto the front of a \ref lexicon
 		(quoted).
 	\par Input
 		<tt>{A} {B}</tt>
