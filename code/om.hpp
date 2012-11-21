@@ -281,6 +281,19 @@ escaped with a backquote:
 
 		{double` quote}{operator}
 
+Recursion is very efficient in Om, due to (a) the "eager" evaluation model
+enabled by prefix concatenative syntax (i.e. data is consumed immediately rather
+than being left on a stack), and (b) the non-recursive implementation of
+evaluation expansions in the evaluator, minimizing memory overhead of recursive
+calls.  The following example uses recursion to give the minutes in a
+colon-delimited 24-hour time string:
+
+-	<tt>evaluate
+	{ minutes { dequote choose {minutes} {} = {:} <-characters } }
+	{ minutes {12:34} }</tt>
+
+		{34}
+
 \section downloading Downloading
 
 The Git repository for Om can be found on the [Om
