@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup front_pull_term_operation <-terms
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Pops the first term (\ref operator or \ref operand), quoted.
 	\par Input

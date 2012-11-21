@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup drop_operation drop
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Deletes an \ref operand.
 	\par Input

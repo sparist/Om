@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup operator_front_push_operation ->operator
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Pushes the contents of an \ref operand onto the front of an
 		\ref operator (quoted).

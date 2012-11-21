@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup back_pull_pair_operation pairs->
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Pops the last pair (a non-empty list of zero or one
 		\ref operator "Operator(s)", followed by zero or one

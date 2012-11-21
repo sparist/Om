@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup do_operation do
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Converts an \ref operand to a quoted \ref operator, then
 		\ref dequote_operation "dequotes".

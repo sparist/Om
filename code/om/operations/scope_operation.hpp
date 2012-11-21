@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup scope_operation scope
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Applies a \ref lexicon to an \ref expression resulting in recursive
 		\ref operator replacement, using definitions from the enclosing scope.
@@ -44,7 +44,8 @@
 		-	The \ref operator is considered "undefined" and no further checking
 			is done.
 	-	The \ref operator is found, and has an \ref operand mapping:
-		-	The \ref operator is replaced with the \ref operand \ref program.
+		-	The \ref operator is replaced with the \ref operand
+			\ref programs "Program".
 */
 #if !defined( Om_Operations_ScopeOperation_ )
 	#define Om_Operations_ScopeOperation_ Om::Operations::ScopeOperation

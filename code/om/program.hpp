@@ -15,12 +15,12 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup program Program
+\defgroup programs Programs
 	\brief
-		A list of 0 or more \ref element "Elements" that represents a data
-		value.
+		Data types that each share a common list interface containing 0 or more
+		elements.
 	\par Implementation
-		Om#Program
+		\ref programs are concrete implementations of Om#Program.
 */
 #if !defined( Om_Program_ )
 	#define Om_Program_ Om::Program
@@ -41,7 +41,7 @@ namespace Om
 	// MARK: - Om::Program
 	/*!
 	\brief
-		The \ref program implementation.
+		The \ref programs "Program" implementation.
 
 	A Program is a Giveable, Shareable Queue whose entire state is represented
 	by an Element collection.

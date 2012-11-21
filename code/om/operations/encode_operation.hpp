@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup encode_operation encode
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Encodes all special characters (non-recursively).
 	\par Input

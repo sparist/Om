@@ -15,12 +15,12 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup operation Operation
+\defgroup operations Operations
 	\brief
-		A function that takes a \ref program as input, and produces a
-		\ref program as output.
+		Functions that each take a \ref programs "Program" as input and produce
+		a \ref programs "Program" as output.
 	\par Implementation
-		Om#Operations
+		\ref operations are concrete types in the Om#Operations namespace.
 */
 #if !defined( Om_Operations_ )
 	#define Om_Operations_ Om::Operations
@@ -29,16 +29,16 @@ namespace Om
 {
 	/*!
 	\brief
-		A namespace for all \ref operation implementations.
+		A namespace for all \ref operations.
 
-	Each \ref operation implementation requires the following:
+	Each \ref operations "Operation" implementation requires the following:
 	-	A static <tt>GetName()</tt> function that returns a null-terminated,
 		NFD-normalized UTF-8 string to be used as a corresponding Operator name.
 	-	A static <tt>Give( Evaluator & )</tt> function that gives the associated
 		\ref Evaluand "Evaluand(s)" to the Evaluator.
 
-	Including the header for an \ref operation will cause the \ref operation to
-	be added to the System automatically.
+	Including the header for an \ref operations "Operation" will cause the
+	\ref operations "Operation" to be added to the System automatically.
 	*/
 	namespace Operations
 	{

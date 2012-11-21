@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup front_pull_character_operation <-characters
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Pops the first character, quoted.
 	\par Implementation

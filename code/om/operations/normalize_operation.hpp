@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup normalize_operation normalize
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Performs a Unicode compatibility normalization
 		(<a href="http://unicode.org/reports/tr15/">NFKD</a>) on the contents

@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup literal_front_push_operation ->literal
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Pushes the contents of an \ref operand onto the front of a \ref literal
 		(quoted).

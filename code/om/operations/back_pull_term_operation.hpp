@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup back_pull_term_operation terms->
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Pops the last term (\ref operator or \ref operand), quoted.
 	\par Input

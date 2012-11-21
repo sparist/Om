@@ -16,9 +16,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup front_pull_element_operation <-elements
-	\ingroup operation
+	\ingroup operations
 	\brief
-		Pops the first \ref element, quoted.
+		Pops the first element, quoted.
 	\par Input
 		<tt>{A B}</tt>
 	\par Output

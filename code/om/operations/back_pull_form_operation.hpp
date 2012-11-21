@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup back_pull_form_operation forms->
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Pops the last form (a non-empty list of zero or one
 		\ref operator "Operator(s)", followed by zero or more

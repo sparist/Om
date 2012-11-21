@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup copy_operation copy
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Copies an \ref operand.
 	\par Input

@@ -16,10 +16,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup operand Operand
-	\ingroup element
+	\ingroup programs
 	\brief
-		A term that wraps a \ref program so that it can be used as an
-		\ref element.
+		A \ref programs Program element that wraps a \ref programs "Program".
 	\par Implementation
 		Om#Operand
 */

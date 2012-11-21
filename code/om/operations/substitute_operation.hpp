@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup substitute_operation substitute
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Applies a \ref lexicon to an \ref expression resulting in recursive
 		\ref operator replacement, without using definitions from the enclosing
@@ -43,7 +43,8 @@
 		-	The \ref operator is considered "undefined" and no further checking
 			is done.
 	-	The \ref operator is found, and has an \ref operand mapping:
-		-	The \ref operator is replaced with the \ref operand \ref program.
+		-	The \ref operator is replaced with the \ref operand
+			\ref programs "Program".
 */
 #if !defined( Om_Operations_SubstituteOperation_ )
 	#define Om_Operations_SubstituteOperation_ \

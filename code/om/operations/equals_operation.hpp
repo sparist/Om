@@ -16,9 +16,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup equals_operation =
-	\ingroup operation
+	\ingroup operations
 	\brief
-		Compares two \ref program "Programs" for equality.
+		Compares two \ref programs for equality.
 	\par Examples
 		-	<tt>= {A} {A}</tt>
 			<blockquote><tt>{{A}}</tt></blockquote>

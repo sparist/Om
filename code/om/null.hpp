@@ -16,9 +16,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup null Null
-	\ingroup program
+	\ingroup programs
 	\brief
-		The null \ref program.
+		The null \ref programs "Program".
 	\par Implementation
 		Om#Null
 */

@@ -14,13 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup atom Atom
-	\ingroup element
-	\brief
-		An atom is a leaf \ref element defined by a string.
-	\par Implementation
-		Om#Atom
 */
 #if !defined( Om_Atom_ )
 	#define Om_Atom_ Om::Atom
@@ -32,7 +25,7 @@ namespace Om
 	// MARK: - Om::Atom
 	/*!
 	\brief
-		The \ref atom implementation.
+		A leaf Element defined by a string.
 	*/
 	struct Atom
 	:

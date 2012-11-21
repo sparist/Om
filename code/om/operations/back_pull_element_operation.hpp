@@ -16,9 +16,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup back_pull_element_operation elements->
-	\ingroup operation
+	\ingroup operations
 	\brief
-		Pops the last \ref element, quoted.
+		Pops the last element, quoted.
 	\par Input
 		<tt>{A B}</tt>
 	\par Output

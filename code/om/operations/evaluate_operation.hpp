@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup evaluate_operation evaluate
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Evaluates the \ref operand, using the current environment, and
 		\ref dequote_operation "dequotes".

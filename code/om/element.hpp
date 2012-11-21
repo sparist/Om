@@ -14,13 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup element Element
-	\ingroup program
-	\brief
-		An "elemental" \ref program comprised of a single item.
-	\par Implementation
-		Om#Element
 */
 #if !defined( Om_Element_ )
 	#define Om_Element_ Om::Element
@@ -32,7 +25,7 @@ namespace Om
 	// MARK: - Om::Element
 	/*!
 	\brief
-		The \ref element implementation.
+		An "elemental" Program comprised of a single item.
 	*/
 	struct Element
 	:

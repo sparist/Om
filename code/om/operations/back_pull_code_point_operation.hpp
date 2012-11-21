@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup back_pull_code_point_operation codepoints->
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Pops the last code point, quoted.
 	\par Implementation

@@ -16,9 +16,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup lexicon Lexicon
-	\ingroup program
+	\ingroup programs
 	\brief
-		A \ref program optimized for fast mapping of \ref operator to
+		A \ref programs "Program" optimized for fast mapping of \ref operator to
 		\ref operand.
 	\par Implementation
 		Om#Lexicon

@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup choose_operation choose
-	\ingroup operation
+	\ingroup operations
 	\brief
 		If the conditional \ref operand is empty, it is replaced with the
 		empty-case \ref operand; otherwise, it is replaced with the

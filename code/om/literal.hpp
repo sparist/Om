@@ -16,9 +16,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup literal Literal
-	\ingroup program
+	\ingroup programs
 	\brief
-		A literal \ref program.
+		A literal \ref programs "Program".
 	\par Implementation
 		Om#Literal
 */

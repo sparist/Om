@@ -16,9 +16,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup expression Expression
-	\ingroup program
+	\ingroup programs
 	\brief
-		A \ref program optimized for evaluation.
+		A \ref programs "Program" optimized for evaluation.
 	\par Implementation
 		Om#Expression
 */

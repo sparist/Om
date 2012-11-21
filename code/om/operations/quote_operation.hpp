@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup quote_operation quote
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Encloses an \ref operand in braces.
 	\par Input

@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup find_operation find
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Finds the \ref operand mapped to an \ref operator, if any, in a
 		\ref lexicon.

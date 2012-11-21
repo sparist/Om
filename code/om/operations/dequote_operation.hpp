@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup dequote_operation dequote
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Strips the outer braces from an \ref operand.
 	\par Input

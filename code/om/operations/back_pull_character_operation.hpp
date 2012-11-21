@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup back_pull_character_operation characters->
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Pops the last character, quoted.
 	\par Implementation

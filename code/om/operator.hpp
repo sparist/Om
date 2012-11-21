@@ -16,9 +16,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup operator Operator
-	\ingroup atom
+	\ingroup programs
 	\brief
-		An \ref atom "Atomic" term defined by any UTF-8 string.
+		An atomic \ref programs "Program" element defined by any UTF-8 string.
 	\par Implementation
 		Om#Operator
 */

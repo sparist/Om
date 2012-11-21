@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup rearrange_operation rearrange
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Rearranges \ref operand "Operands".
 	\par Input

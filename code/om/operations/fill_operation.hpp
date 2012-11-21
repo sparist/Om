@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup fill_operation fill
-	\ingroup operation
+	\ingroup operations
 	\brief
 		"Fills" an \ref expression such that none of its
 		\ref operator "Operators" is not followed by an \ref operand.

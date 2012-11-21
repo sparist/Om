@@ -16,9 +16,10 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup separator Separator
-	\ingroup atom
+	\ingroup programs
 	\brief
-		An \ref atom that serves to separate other \ref element "Elements".	
+		An atomic \ref programs "Programs" element that serves to separate other
+		elements.
 	\par Implementation
 		Om#Separator
 */

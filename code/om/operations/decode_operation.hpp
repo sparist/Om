@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup decode_operation decode
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Decodes encoded characters (non-recursively).
 	\par Input

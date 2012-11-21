@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup skip_operation skip
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Skips over an \ref operand and \ref dequote_operation "dequotes".
 	\par Input

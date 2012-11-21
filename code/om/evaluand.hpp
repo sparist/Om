@@ -35,8 +35,8 @@ namespace Om
 	// MARK: - Om::Evaluand
 	/*!
 	\brief
-		A native \ref operation that is partially applied to zero or more
-		\ref Operand "Operands".
+		A native \ref operations "Operation" that is partially applied to zero
+		or more \ref Operand "Operands".
 
 	The Evaluator takes and stores \ref Evaluand "Evaluands".  The internal
 	Evaluand vector inside the Evaluator represents the entire state of the

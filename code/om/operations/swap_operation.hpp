@@ -16,7 +16,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 
 \defgroup swap_operation swap
-	\ingroup operation
+	\ingroup operations
 	\brief
 		Swaps two \ref operand "Operands".
 	\par Input
