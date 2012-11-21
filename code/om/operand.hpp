@@ -18,7 +18,7 @@
 \defgroup operand Operand
 	\ingroup programs
 	\brief
-		A \ref programs Program element that wraps a \ref programs "Program".
+		A \ref programs "Program" element that wraps a \ref programs "Program".
 	\par Implementation
 		Om#Operand
 */

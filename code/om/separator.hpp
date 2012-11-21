@@ -18,7 +18,7 @@
 \defgroup separator Separator
 	\ingroup programs
 	\brief
-		An atomic \ref programs "Programs" element that serves to separate other
+		An atomic \ref programs "Program" element that serves to separate other
 		elements.
 	\par Implementation
 		Om#Separator
