@@ -300,30 +300,24 @@ namespace Om
 			CHECK_EQUAL( "{{}}", Environment().Evaluate( "= {} {}" ) );
 		}
 
-		#if 0 // Uncomment and breakpoint to test correct recursive behaviour.
-
 		TEST( Recursion )
 		{
-			for( size_t theDepth = 7300; ; ++theDepth ){
+			size_t const theDepth = 50000;
 
-				std::string theString;
-				for( size_t theLevel = theDepth; theLevel; --theLevel ){
-					theString = "{" + theString + "}";
-				}
-
-				Sources::CodePointSource<
-					std::string::const_iterator
-				> theCodePointSource( theString.begin(), theString.end() );
-				Parser theParser( theCodePointSource );
-				Literal theLiteral;
-				theLiteral.ReadElements( theParser );
-
-				Literal theCopy( theLiteral );
+			std::string theString;
+			for( size_t theLevel = theDepth; theLevel; --theLevel ){
+				theString = "{" + theString + "}";
 			}
+
+			Sources::CodePointSource<
+				std::string::const_iterator
+			> theCodePointSource( theString.begin(), theString.end() );
+			Parser theParser( theCodePointSource );
+			Literal theLiteral;
+			theLiteral.ReadElements( theParser );
+
+			Literal theCopy( theLiteral );
 		}
-
-		#endif
-
 	}
 }
 
