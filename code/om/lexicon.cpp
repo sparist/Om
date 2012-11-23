@@ -42,7 +42,7 @@ thisLastNode()
 
 inline Type_::Lexicon( Lexicon const & theLexicon )
 :
-DefaultProgram( theLexicon ),
+DefaultProgram< Lexicon >( theLexicon ),
 thisMap(),
 thisFirstNode(),
 thisLastNode()

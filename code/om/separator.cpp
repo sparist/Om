@@ -41,8 +41,6 @@ inline Type_::Separator()
 }
 
 inline Type_::Separator( Source< CodePoint const > & theCodePointSource )
-:
-DefaultAtom()
 {
 	for( ; theCodePointSource; theCodePointSource.Pop() ){
 		switch( *theCodePointSource ){
@@ -58,7 +56,7 @@ DefaultAtom()
 
 inline Type_::Separator( Symbols::SeparatorSymbol const theSeparatorSymbol )
 :
-DefaultAtom( static_cast< char >( theSeparatorSymbol ) )
+DefaultAtom< Separator >( static_cast< char >( theSeparatorSymbol ) )
 {
 	assert(
 		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol ||

@@ -43,8 +43,6 @@ inline Type_::Operator()
 }
 
 inline Type_::Operator( std::string const & theString )
-:
-DefaultAtom()
 {
 	boost::locale::normalize( theString, boost::locale::norm_nfd ).swap(
 		this->thisString
@@ -52,8 +50,6 @@ DefaultAtom()
 }
 
 inline Type_::Operator( char const theCodeUnitIterator[] )
-:
-DefaultAtom()
 {
 	boost::locale::normalize(
 		theCodeUnitIterator,
@@ -62,8 +58,6 @@ DefaultAtom()
 }
 
 inline Type_::Operator( Source< CodePoint const > & theCodePointSource )
-:
-DefaultAtom()
 {
 	std::string theString;
 	std::back_insert_iterator< std::string > theInserter( theString );
@@ -91,19 +85,19 @@ DefaultAtom()
 
 inline Type_::Operator( Symbols::OperandSymbol const theOperandSymbol )
 :
-DefaultAtom( static_cast< char >( theOperandSymbol ) )
+DefaultAtom< Operator >( static_cast< char >( theOperandSymbol ) )
 {
 }
 
 inline Type_::Operator( Symbols::OperatorSymbol const theOperatorSymbol )
 :
-DefaultAtom( static_cast< char >( theOperatorSymbol ) )
+DefaultAtom< Operator >( static_cast< char >( theOperatorSymbol ) )
 {
 }
 
 inline Type_::Operator( Symbols::SeparatorSymbol const theSeparatorSymbol )
 :
-DefaultAtom( static_cast< char >( theSeparatorSymbol ) )
+DefaultAtom< Operator >( static_cast< char >( theSeparatorSymbol ) )
 {
 }
 
