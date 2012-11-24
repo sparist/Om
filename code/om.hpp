@@ -21,11 +21,11 @@
 
 \section introduction Introduction
 
-The Om language represents an attempt to answer the question: *What is the
+The %Om language represents an attempt to answer the question: *What is the
 simplest abstract syntax that can articulate any algorithm for efficient and
 precise evaluation?*
 
-Om is:
+%Om is:
 
 -	**A concatenative programming language** with a fundamentally simple prefix
 	syntax and type system.
@@ -36,27 +36,26 @@ Om is:
 	incorporated into any C++ or Objective-C++ program.
 -	**Extensible**: new native operations can be implemented as C++ classes.
 -	**Unicode-correct**: any <a href="http://www.utf8everywhere.org">UTF-8</a>
-	text (without byte-order marker) defines a valid Om program, and all text is
-	treated as UTF-8.
+	text (without byte-order marker) defines a valid %Om program.
 
-Om is *not*:
+%Om is *not*:
 
--	**Complete**.  Although the intent is to develop Om into a full-featured
+-	**Complete**.  Although the intent is to develop %Om into a full-featured
 	language, the software is currently at a very early "proof of concept"
 	stage, requiring the addition of many operations (such as basic numerical
 	operations) and optimizations before it can be considered useful for any
 	purpose.  It has been made available in order to demonstrate the underlying
 	concepts and welcome others to get involved in early development.
--	**Stationary**.  Om may undergo dramatic changes in every respect before
+-	**Stationary**.  %Om may undergo dramatic changes in every respect before
 	version 1.0.
 
 \section syntax Syntax
 
-The following sections define the syntax of Om in its entirety.
+The following sections define the syntax of %Om in its entirety.
 
 \subsection syntax__program Program
 
-An Om program is comprised of only three syntactic elements, as follows:
+An %Om program is comprised of only three syntactic elements, as follows:
 
 ![](program.png)
 
@@ -86,13 +85,19 @@ An operand has the following syntax:
 
 \subsection how_it_works__operations Operations
 
-Om is a <a href="http://concatenative.org">concatenative</a> language; an Om
-program defines an *operation*, which is a composition of operations defined by
-each sub-program.
+An operation is a function, defined by a program, that takes a program as input
+and generates a program as output.  %Om is a <a
+href="http://concatenative.org">concatenative</a> language: the operation
+defined by an %Om program is a composition of operations defined by each
+sub-program.
 
-An operation is a function that takes a program as input, and generates a
-program as output.  Each operation represents a transformation on the program
-itself.
+The application of an operation to the remaining program (to the right) results
+in a transformation on the applied program itself.  Because programs are
+homomorphic with the operations they represent, the application of an operation
+to a program can be treated equivalently to the composition of an operation with
+the operation that the applied program represents.  As such, the concept of
+application can be omitted, resulting in <a
+href="http://en.wikipedia.org/wiki/Combinatory_logic">combinatory logic</a>.
 
 Program elements each correspond to the following operations:
 
@@ -126,7 +131,7 @@ The evaluator consists of:
 
 The evaluator reads, parses and evaluates the input stream in a single pass,
 sending results to the output stream as soon as they can be evaluated.  This is
-possible because Om uses a prefix notation, rather than the postfix notation
+possible because %Om uses a prefix notation, rather than the postfix notation
 employed by other concatenative languages.  Other benefits of prefix notation
 include:
 
@@ -139,26 +144,27 @@ include:
 
 \subsection how_it_works__data_types Data Types
 
-Om uses a novel **panmorphic** type system, in which all data values are
-represented entirely within the language through a common interface (the
-operand), and each operand exposes no data type: any operation will accept any
-operand as a valid input and will interpret it in whatever way the operation
-deems appropriate.
+%Om uses a novel **panmorphic** type system in which all data values are
+represented within the language solely through a common program interface
+(comprised of only separators, operators, and/or operands), and each operand 
+exposes no data type: any operation will accept any operand as a valid input and
+interpret it however the operation deems appropriate.
 
 Data types are relegated to an implementation layer and represent optimizations
 for a set of operations.  Each operand in memory contains a single program
-implementation.  By default, this is the "literal" program, which preserves all
-data in the operand, verbatim.  An operation may convert this to another program
-implementation (eg. a "find" operation would convert the program of one of its
-operands to the "lexicon" type, which provides fast mapping from operator to
-operand).  These conversions can be done transparently because all operands
-share the same interface (comprised of separators, operators, and/or operands).
+implementation; by default, this is the \ref literal program, which preserves
+all data in the operand, verbatim.  However, an operation may prefer an operand
+to have a different program implementation for better performance.  For example,
+the \ref find_operation operation prefers one of its operands to have a
+\ref lexicon program type for fast mapping from operator to operand.  In these
+cases, the operation can simply convert an undesired program implementation to
+the desired type through the common program interface.  As such, any type
+conversion can be performed equivalently on any operand.
 
-Operations in a program can be ordered by the programmer to minimize these
-conversions and increase performance (since the conversion will not occur if the
-operand already has the desired program implementation), but it is not necessary
-for obtaining a correct computation.  As such, data types become an
-implementation detail.
+Operations in a program can be ordered by the programmer to increase performance
+by minimizing conversions between program implementations, but it is not
+necessary for obtaining a correct computation.  As such, data types become an
+optimization-phase implementation detail.
 
 All of the native data types included in the current release are documented in
 the \ref programs module.
@@ -183,8 +189,8 @@ Operands can be dropped and copied:
 
 		{A}{A}{A}
 
-The `choose` operation selects one of two operands, depending on whether a
-third is empty:
+The \ref choose_operation operation selects one of two operands, depending on
+whether a third is empty:
 
 -	`choose {It was empty.}{It was non-empty.}{I am not empty.}`
 
@@ -204,8 +210,8 @@ An operation without sufficient operands becomes the identity operation:
 
 		choose {It was empty.}{It was non-empty.}
 
-The `quote` and `dequote` operations add and remove a layer of operand braces,
-respectively:
+The \ref quote_operation and \ref dequote_operation operations add and remove a
+layer of operand braces, respectively:
 
 -	`quote {B}`
 
@@ -253,7 +259,7 @@ Unicode is fully supported:
 
 Strings are automatically
 <a href="http://unicode.org/reports/tr15">normalized</a> to NFD, but can be
-explicitly normalized to NFKD using the `normalize` operator:
+explicitly normalized to NFKD using the \ref normalize_operation operation:
 
 -	`normalize {ﬁ}`
 
@@ -263,9 +269,9 @@ explicitly normalized to NFKD using the `normalize` operator:
 
 		{25}
 
-A new operation can be defined within a scope with the `evaluate` operator,
-where the first operand is treated as a "lexicon" with operator-to-operand 
-mappings:
+A new operation can be defined within a scope with the \ref evaluate_operation
+operation, where the first operand is treated as a \ref lexicon with
+operator-to-operand mappings:
 
 -	`evaluate { double-quote {quote quote} } { double-quote {A} }`
 
@@ -282,7 +288,7 @@ escaped with a backquote:
 
 		{double` quote}{operator}
 
-Recursion is very efficient in Om, due to (a) the "eager" evaluation model
+Recursion is very efficient in %Om, due to (a) the "eager" evaluation model
 enabled by prefix concatenative syntax (i.e. data is consumed immediately rather
 than being left on a stack), and (b) the non-recursive implementation of
 evaluation expansions in the evaluator, minimizing memory overhead of recursive
@@ -296,24 +302,25 @@ colon-delimited 24-hour time string:
 
 \section downloading Downloading
 
-Archive files of all versions of the Om source code can be downloaded from the
-<a href="https://github.com/sparist/Om/tags">Om GitHub Tags page</a>.
+Archive files of all versions of the %Om code can be downloaded from the <a
+href="https://github.com/sparist/Om/tags">Om GitHub Tags page</a>.
 
-Sources can also be obtained by Git checkout, as indicated on the <a
+Code can also be obtained by Git checkout, as indicated on the <a
 href="https://github.com/sparist/Om">Om GitHub main page</a>.
 
 \section building Building
 
-Although it should be possible to build the sources on any mainstream platform,
-the code has only been built and tested on:
+Although it should be possible to build the code on any mainstream platform, it
+has only been built and tested on:
 
 -	Xcode 4.5.2 on Mac OS X 10.8.2 (Mountain Lion)
 -	Visual Studio 2010 Express on Windows Vista
 
 The project is generated by CMake, and contains the following targets:
 
--	**Om**: builds the interpreter project into `products/`<em>platform</em>.
--	**Om Documentation**: builds the documentation into `products/doxygen`.
+-	<b>%Om</b>: builds the interpreter project into
+	`products/`<em>platform</em>.
+-	<b>%Om Documentation</b>: builds the documentation into `products/doxygen`.
 	Open `html/index.html` to view the HTML documentation in a browser.
 
 \subsection building__xcode Xcode
@@ -337,16 +344,16 @@ To generate the `Om.xcodeproj` file (in `products/xcode`):
 	- 	The ICU root directory path.  To create this directory, download and
 		unpack the <a
 		href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.tgz">ICU4C
-		49.1.2 source archive</a>.
+		49.1.2 code archive</a>.
 	-	The Boost root directory path.  To create this directory, download and
 		unpack the <a
 		href="http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.tar.gz/download">Boost
-		1.51.0 source archive</a>.
+		1.51.0 code archive</a>.
 	-	**Optional:** The UnitTest++ root directory path.  If omitted, unit
 		tests will be excluded from the build.  To create this directory,
 		download and unpack the <a
 		href="http://sourceforge.net/projects/unittest-cpp/files/latest/download?source=files">UnitTest++
-		1.4 sources archive</a>.
+		1.4 code archive</a>.
 
 To update the Xcode project to reflect changes to the code directory tree:
 
@@ -377,14 +384,14 @@ To generate the `Om.sln` file (in `products/vs`):
 	- 	The ICU root directory path.  To create this directory, download and
 		unpack the <a
 		href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C
-		49.1.2 source archive</a>.
+		49.1.2 code archive</a>.
 	-	The Boost root directory path.  To create this directory, download and
 		unpack the <a
 		href="http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.zip/download">Boost
-		1.51.0 source archive</a>.
+		1.51.0 code archive</a>.
 	-	**Optional:** The UnitTest++ root directory path.  If omitted, unit
 		tests will be excluded from the build.  To create this directory, get
-		the UnitTest++ 1.4 sources via Subversion checkout (described on the <a
+		the UnitTest++ 1.4 code via Subversion checkout (described on the <a
 		href="https://sourceforge.net/projects/unittest-cpp/develop">developer
 		page</a>) and apply the patch attached to the <a
 		href="https://sourceforge.net/tracker/?func=detail&aid=3583690&group_id=158151&atid=806686">Visual
@@ -403,12 +410,12 @@ To remove the directory generated by `make.bat`:
 
 \section using Using
 
-The Om interpreter takes input from the standard input stream, ending at the
+The %Om interpreter takes input from the standard input stream, ending at the
 first unbalanced end brace, and sends output to the standard output stream.
 
-Om can be incorporated into any C++ or Objective-C++ project as follows:
+%Om can be incorporated into any C++ or Objective-C++ project as follows:
 
--	Add the Om `code` directory to the include path and include the
+-	Add the %Om `code` directory to the include path and include the
 	desired files.  Inclusion of any operation files will automatically
 	add the corresponding operation to the global system.
 -	Link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a>
@@ -421,15 +428,15 @@ Om can be incorporated into any C++ or Objective-C++ project as follows:
 
 \section developing Developing
 
-The Om library is written in modern, portable C++.
+The %Om library is written in modern, portable C++.
 
-All Om development must adhere to the C++ coding standards given in the
+All %Om development must adhere to the C++ coding standards given in the
 <a href="http://sparist.com/development_standards.html">Development
 Standards</a> page.
 
 \subsection developing__adding_operations Adding Operations
 
-Additional native functionality can be added to Om by implementing new
+Additional native functionality can be added to %Om by implementing new
 operations in C++.
 
 There are two ways to implement an operation: as a composite operation, or an
@@ -469,27 +476,27 @@ follows (where `WhateverOperation` is a stand-in for the name of the operation
 
 \subsection developing__adding_programs Adding Programs
 
-New data types can be added to Om by extending `Om::Program` and defining the
+New data types can be added to %Om by extending `Om::Program` and defining the
 functions necessary to instantiate the class.  Use existing programs as a guide.
 
 Program types should be defined in the `Om` namespace.
 
 \subsection developing__analyzing_code Analyzing Code
 
-There are some basic free static analysis tools that can be applied to the Om
+There are some basic free static analysis tools that can be applied to the %Om
 code.
 
 -	<a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python
 	script that measures cyclomatic complexity and counts the number of lines of
 	code in C++ source files, not including comments or tests.  If Python is
-	installed and in the path, HFCCA can be applied to Om by entering the
-	following at the terminal from inside the Om directory:
+	installed and in the path, HFCCA can be applied to %Om by entering the
+	following at the terminal from inside the %Om directory:
 
 		python hfcca.py -p -v code
 
 -	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl
 	script that determines total line counts.  If Perl is installed, CLOC can be
-	applied to Om by entering the following at the terminal from inside the Om
+	applied to %Om by entering the following at the terminal from inside the %Om
 	directory:
 
 		cloc.pl code
