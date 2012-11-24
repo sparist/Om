@@ -122,12 +122,12 @@ Evaluation occurs from right to left and is performed recursively.
 
 The evaluator consists of:
 
--	An environment, for resolving operators to operations.  Any operators that
-	are not present map to an "identity" operation that leaves the program,
+-	<b>An environment</b> for resolving operators to operations.  Any operators
+	that are not present map to an "identity" operation that leaves the program,
 	including the operator, unchanged.
--	An operation queue, for storing operations that are awaiting nested
-	operations to be evaluated (in the event that the latter produces
-	operands that can be consumed by the former).
+-	<b>An operation queue</b> for storing operations that are awaiting nested
+	operations to be evaluated (in the event that the latter produces operands
+	that can be consumed by the former).
 
 The evaluator reads, parses and evaluates the input stream in a single pass,
 sending results to the output stream as soon as they can be evaluated.  This is
