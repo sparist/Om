@@ -154,17 +154,17 @@ Data types are relegated to an implementation layer and represent optimizations
 for a set of operations.  Each operand in memory contains a single program
 implementation; by default, this is the \ref literal program, which preserves
 all data in the operand, verbatim.  However, an operation may prefer an operand
-to have a different program implementation for better performance.  For example,
-the \ref find_operation operation prefers one of its operands to have a
-\ref lexicon program type for fast mapping from operator to operand.  In these
-cases, the operation can simply convert an undesired program implementation to
-the desired type through the common program interface.  As such, any type
-conversion can be performed equivalently on any operand.
+to have a different program implementation that is optimized for specific
+functionality used by the operation.  The \ref find_operation operation, for
+example, prefers one of its operands to have a \ref lexicon program type for
+fast mapping from operator to operand.  In such cases, an operation can simply
+convert an undesired program implementation to the desired type through the
+common program interface without impacting the semantics of the program.
 
 Operations in a program can be ordered by the programmer to increase performance
 by minimizing conversions between program implementations, but it is not
-necessary for obtaining a correct computation.  As such, data types become an
-optimization-phase implementation detail.
+necessary for obtaining a correct computation.  Data types in %Om therefore
+become an optimization-phase implementation detail.
 
 All of the native data types included in the current release are documented in
 the \ref programs module.
