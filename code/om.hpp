@@ -296,8 +296,11 @@ colon-delimited 24-hour time string:
 
 \section downloading Downloading
 
-The Git repository for Om can be found on the
-<a href="https://github.com/sparist/Om">Om GitHub page</a>.
+Archive files of all versions of the Om source code can be downloaded from the
+<a href="https://github.com/sparist/Om/tags">Om GitHub Tags page</a>.
+
+Sources can also be obtained by Git checkout, as indicated on the <a
+href="https://github.com/sparist/Om">Om GitHub main page</a>.
 
 \section building Building
 
@@ -495,49 +498,10 @@ code.
 
 		cloc.pl code
 
-\section roadmap Roadmap
+\section issue_tracking Issue Tracking
 
-This section provides the tentative roadmap for new development over the next
-few releases.  This is subject to change.
-
-\subsection roadmap__0_1 0.1
-
--	Initial proof-of-concept implementation.  Note that the software and
-	language are likely to undergo significant changes in subsequent releases,
-	some of which may not be backward-compatible with this release.
-
-\subsection roadmap__0_2 0.2
-
--	Restructure operation implementations as necessary so that they can present
-	metadata (eg. IDE hints) such as:
-	-	What does the operation do?
-	-	What program type will the next operand be converted to?
-	-	How will the operation use the next program?
--	Fill out basic functionality, such as:
-	-	A Number program type, and related operations, with the following
-		qualities:
-		-	Machine-independent representation.
-		-	Based on the <a
-			href="http://en.wikipedia.org/wiki/Riemann_sphere">Extended Complex
-			Plane</a>.
-		-	Retains the entire computation that generates it, and optimizes
-			operations on the computation itself (such as operations cancelling
-			out), until it needs to be written or converted, at which point the
-			computation is executed to the specified number of significant
-			figures.
-		-	Implemented using <a href="http://gmplib.org">GMP</a>.
-	-	Basic comparison operations for which false is the empty string and true
-		is the original value.  For example, `< {3} {2}` (2 less than 3) would
-		become `{2}`, and `< {3} {4}` would become `{}`.
-	-	More Unicode-compliant string operations.
-
-\subsection roadmap__0_3 0.3
-
--	Test.
--	Write some sample programs, and implement operations as necessary.
--	Benchmark and optimize; may include implementing concurrent evaluation
-	(using [Intel Threading Building
-	Blocks](http://threadingbuildingblocks.org)).
+Issues are reported and tracked with the <a
+href="https://github.com/sparist/Om/issues">Om GitHub issue tracker</a>.
 
 \section license License
 
