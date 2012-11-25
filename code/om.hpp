@@ -257,8 +257,8 @@ Unicode is fully supported:
 
 		{한글}{韓}
 
-Strings are automatically
-<a href="http://unicode.org/reports/tr15">normalized</a> to NFD, but can be
+Strings are automatically <a
+href="http://unicode.org/reports/tr15">normalized</a> to NFD, but can be
 explicitly normalized to NFKD using the \ref normalize_operation operation:
 
 -	`normalize {ﬁ}`
@@ -415,9 +415,9 @@ first unbalanced end brace, and sends output to the standard output stream.
 
 %Om can be incorporated into any C++ or Objective-C++ project as follows:
 
--	Add the %Om `code` directory to the include path and include the
-	desired files.  Inclusion of any operation files will automatically
-	add the corresponding operation to the global system.
+-	Add the %Om `code` directory to the include path and include the desired
+	files.  Inclusion of any operation files will automatically add the
+	corresponding operation to the global system.
 -	Link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a>
 	and/or <a href="http://boost.org">Boost (1.51.0)</a> library dependencies.
 -	Call the `Om::System::Initialize` function prior to use (eg. in the `main`
@@ -430,9 +430,9 @@ first unbalanced end brace, and sends output to the standard output stream.
 
 The %Om library is written in modern, portable C++.
 
-All %Om development must adhere to the C++ coding standards given in the
-<a href="http://sparist.com/development_standards.html">Development
-Standards</a> page.
+All %Om development must adhere to the C++ coding standards given in the <a
+href="http://sparist.com/development_standards.html">Development Standards</a>
+page.
 
 \subsection developing__adding_operations Adding Operations
 
