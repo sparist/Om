@@ -270,8 +270,9 @@ explicitly normalized to NFKD using the \ref normalize_operation operation:
 		{25}
 
 A new operation can be defined within a scope with the \ref evaluate_operation
-operation, where the first operand is treated as a \ref lexicon with
-operator-to-operand mappings:
+operation, where the first operand is treated as containing a \ref lexicon with
+operator-to-operand mappings, and the second operand contains the program to
+evaluate:
 
 -	`evaluate { double-quote {quote quote} } { double-quote {A} }`
 
