@@ -151,7 +151,7 @@ namespace Om
 		flushed.
 		*/
 		template< typename TheOperator >
-		void Evaluate( Evaluation &, TheOperator & );
+		void EvaluateOperator( Evaluation &, TheOperator & );
 
 		//! The output Queue.
 		Queue & thisOutput;

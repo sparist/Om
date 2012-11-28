@@ -169,12 +169,12 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 {
 	assert( !theOperator.IsEmpty() );
 	Evaluation theEvaluation( *this );
-	this->Evaluate( theEvaluation, theOperator );
+	this->EvaluateOperator( theEvaluation, theOperator );
 	for( ; ; ){
 		Operator theChildOperator;
 		theEvaluation.GiveOperator( theChildOperator );
 		if( theChildOperator.IsEmpty() ){ break; }
-		this->Evaluate( theEvaluation, theChildOperator );
+		this->EvaluateOperator( theEvaluation, theChildOperator );
 	}
 }
 
@@ -231,7 +231,7 @@ inline std::auto_ptr< Om::Program > Type_::GiveProgram(
 // MARK: private (non-static)
 
 template< typename TheOperator >
-inline void Type_::Evaluate(
+inline void Type_::EvaluateOperator(
 	Evaluation & theEvaluation,
 	TheOperator & theOperator
 )
