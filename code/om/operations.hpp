@@ -32,10 +32,13 @@ namespace Om
 		A namespace for all \ref operations.
 
 	Each \ref operations "Operation" implementation requires the following:
-	-	A static <tt>GetName()</tt> function that returns a null-terminated,
-		NFD-normalized UTF-8 string to be used as a corresponding Operator name.
-	-	A static <tt>Give( Evaluator & )</tt> function that gives the associated
-		\ref Evaluand "Evaluand(s)" to the Evaluator.
+	-	A <tt>static char const * GetName()</tt> function that returns a
+		null-terminated, NFD-normalized UTF-8 string to be used as a
+		corresponding Operator name.
+	-	A <tt>static void Give( </tt><em>EvaluandTaker</em><tt> )</tt> function,
+		where <em>EvaluandTaker</em> is any type that can take an Evaluand, and
+		gives to it the \ref Evaluand "Evaluand(s)" that implement the
+		\ref operations "Operation".
 
 	Including the header for an \ref operations "Operation" will cause the
 	\ref operations "Operation" to be added to the System automatically.

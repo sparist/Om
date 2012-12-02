@@ -23,8 +23,6 @@
 namespace Om
 {
 	//! \cond
-	struct Evaluation;
-
 	struct Operator;
 	//! \endcond
 
@@ -42,7 +40,8 @@ namespace Om
 
 		static Operator const & GetOperator();
 
-		static void Give( Evaluation & );
+		template< typename TheEvaluator >
+		static void Give( TheEvaluator & );
 
 	public: // MARK: public (non-static)
 

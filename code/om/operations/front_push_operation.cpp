@@ -65,8 +65,7 @@ inline bool Type_::TakeQuotedQueue(
 	if( this->thisProgram.IsEmpty() ){
 		this->thisProgram.TakeElements( theQueue );
 		if( this->thisProgram.IsEmpty() ){
-			Evaluation theEvaluation( theEvaluator );
-			ProgramOperation< ThisProgram >::Give( theEvaluation );
+			ProgramOperation< ThisProgram >::Give( theEvaluator );
 			return( true );
 		}
 		return( false );
