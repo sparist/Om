@@ -25,7 +25,7 @@ namespace Om
 	//! \cond
 	struct Evaluand;
 
-	struct Evaluation;
+	struct Expansion;
 
 	struct Translator;
 	//! \endcond
@@ -145,13 +145,13 @@ namespace Om
 		Evaluator const & operator =( Evaluator const & );
 
 		/*!
-		If there is a translation for this Operator, the Evaluation is updated
-		and each leading Operand in the resulting Evaluation is sent. Otherwise
-		(if there is no translation for this Operator), the Evaluation is
+		If there is a translation for this Operator, the Expansion is updated
+		and each leading Operand in the resulting Expansion is sent. Otherwise
+		(if there is no translation for this Operator), the Expansion is
 		flushed.
 		*/
 		template< typename TheOperator >
-		void EvaluateOperator( Evaluation &, TheOperator & );
+		void EvaluateOperator( Expansion &, TheOperator & );
 
 		//! The output Queue.
 		Queue & thisOutput;

@@ -61,7 +61,7 @@ inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] )
 }
 
 inline bool Type_::Translate(
-	Evaluation & theEvaluation,
+	Expansion & theExpansion,
 	Operator const & theOperator
 ) const
 {
@@ -70,7 +70,7 @@ inline bool Type_::Translate(
 	);
 	if( this->thisMap.end() == theIterator ){ return( false ); }
 	assert( theIterator->second );
-	( *theIterator->second )( theEvaluation );
+	( *theIterator->second )( theExpansion );
 	return( true );
 }
 

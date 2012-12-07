@@ -69,7 +69,7 @@ namespace Om
 			Returns the same values as Translator#Translate() except 1
 			(Operator found, with no definition mapped), which is impossible.
 		*/
-		virtual int Translate( Evaluation &, Operator const & ) const;
+		virtual int Translate( Expansion &, Operator const & ) const;
 	};
 }
 

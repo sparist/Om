@@ -15,8 +15,8 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
-#if !defined( Om_Evaluation_ )
-	#define Om_Evaluation_ Om::Evaluation
+#if !defined( Om_Expansion_ )
+	#define Om_Expansion_ Om::Expansion
 
 	#include "om/expression.hpp"
 
@@ -26,7 +26,7 @@ namespace Om
 	struct Evaluator;
 	//! \endcond
 
-	// MARK: - Om::Evaluation
+	// MARK: - Om::Expansion
 	/*!
 	\brief
 		The current state of an in-progress Operator resolution.
@@ -39,14 +39,14 @@ namespace Om
 	LIFO-ordered application of each Element to the Evaluator.  This is designed
 	to be used from an Operator resolution algorithm.
 	*/
-	struct Evaluation
+	struct Expansion
 	{
 	public: // MARK: public (non-static)
 
-		virtual ~Evaluation();
+		virtual ~Expansion();
 
-		//! Constructs an Evaluation on the given Evaluator.
-		explicit Evaluation( Evaluator & );
+		//! Constructs an Expansion on the given Evaluator.
+		explicit Expansion( Evaluator & );
 
 		//! Gives each Operand, if any, from the top of the Expression.
 		void GiveOperands( Queue & );
@@ -76,9 +76,9 @@ namespace Om
 
 	private: // MARK: private (non-static)
 
-		Evaluation( Evaluation const & );
+		Expansion( Expansion const & );
 
-		Evaluation const & operator =( Evaluation const & );
+		Expansion const & operator =( Expansion const & );
 
 		//! The Expression.
 		Expression thisExpression;
@@ -88,5 +88,5 @@ namespace Om
 	};
 }
 
-	#include "om/evaluation.cpp"
+	#include "om/expansion.cpp"
 #endif

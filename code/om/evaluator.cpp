@@ -18,7 +18,7 @@
 #if defined( Om_Evaluator_ )
 
 	#include "om/evaluand.hpp"
-	#include "om/evaluation.hpp"
+	#include "om/expansion.hpp"
 	#include "om/operator.hpp"
 	#include "om/translator.hpp"
 
@@ -168,13 +168,13 @@ template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator )
 {
 	assert( !theOperator.IsEmpty() );
-	Evaluation theEvaluation( *this );
-	this->EvaluateOperator( theEvaluation, theOperator );
+	Expansion theExpansion( *this );
+	this->EvaluateOperator( theExpansion, theOperator );
 	for( ; ; ){
 		Operator theChildOperator;
-		theEvaluation.GiveOperator( theChildOperator );
+		theExpansion.GiveOperator( theChildOperator );
 		if( theChildOperator.IsEmpty() ){ break; }
-		this->EvaluateOperator( theEvaluation, theChildOperator );
+		this->EvaluateOperator( theExpansion, theChildOperator );
 	}
 }
 
@@ -232,20 +232,20 @@ inline std::auto_ptr< Om::Program > Type_::GiveProgram(
 
 template< typename TheOperator >
 inline void Type_::EvaluateOperator(
-	Evaluation & theEvaluation,
+	Expansion & theExpansion,
 	TheOperator & theOperator
 )
 {
 	assert( !theOperator.IsEmpty() );
-	switch( this->thisTranslator.Translate( theEvaluation, theOperator ) ){
+	switch( this->thisTranslator.Translate( theExpansion, theOperator ) ){
 	case 1:
 		break;
 	case 0:
-		if( this->thisTranslator.Translate( theEvaluation, Operator() ) < 2 ){
+		if( this->thisTranslator.Translate( theExpansion, Operator() ) < 2 ){
 			break;
 		}
 	default:
-		theEvaluation.GiveOperands( *this );
+		theExpansion.GiveOperands( *this );
 		return;
 	}
 
@@ -259,7 +259,7 @@ inline void Type_::EvaluateOperator(
 		this->thisOutput.TakeElement( Separator::GetLineSeparator() );
 	}
 	this->thisOutput.TakeElement( theOperator );
-	theEvaluation.GiveOperands( this->thisOutput );
+	theExpansion.GiveOperands( this->thisOutput );
 	this->thisGaveElementToOutput = true;
 }
 

@@ -67,14 +67,14 @@ inline std::string Type_::Evaluate( char const theCodeUnitIterator[] )
 }
 
 inline int Type_::Translate(
-	Evaluation & theEvaluation,
+	Expansion & theExpansion,
 	Operator const & theOperator
 ) const
 {
 	return(
 		(
-			2 == this->Translator::Translate( theEvaluation, theOperator ) ||
-			System::Get().Translate( theEvaluation, theOperator )
+			2 == this->Translator::Translate( theExpansion, theOperator ) ||
+			System::Get().Translate( theExpansion, theOperator )
 		) ? 2 : 0
 	);
 }

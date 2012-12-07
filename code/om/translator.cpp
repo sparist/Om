@@ -17,7 +17,7 @@
 */
 #if defined( Om_Translator_ )
 
-	#include "om/evaluation.hpp"
+	#include "om/expansion.hpp"
 	#include "om/lexicon.hpp"
 
 // MARK: Om::Translator
@@ -39,7 +39,7 @@ inline Type_ & Type_::operator =( Translator theTranslator )
 }
 
 inline int Type_::Translate(
-	Evaluation & theEvaluation,
+	Expansion & theExpansion,
 	Operator const & theOperator
 ) const
 {
@@ -49,7 +49,7 @@ inline int Type_::Translate(
 	for( Program const * theProgram; theEnd != theIterator; ++theIterator ){
 		if( ( *theIterator )->Find( theOperator, theProgram ) ){
 			if( theProgram ){
-				theEvaluation.TakeQueue( *theProgram );
+				theExpansion.TakeQueue( *theProgram );
 				return( 2 );
 			}
 			return( 1 );
