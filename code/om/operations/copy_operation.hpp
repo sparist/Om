@@ -29,7 +29,7 @@
 #if !defined( Om_Operations_CopyOperation_ )
 	#define Om_Operations_CopyOperation_ Om::Operations::CopyOperation
 
-	#include "om/default_evaluand.hpp"
+	#include "om/default_evaluation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_CopyOperation_GetName_() "copy"
@@ -45,7 +45,7 @@ namespace Om
 		*/
 		struct CopyOperation
 		:
-		DefaultEvaluand< CopyOperation >
+		DefaultEvaluation< CopyOperation >
 		{
 		public: // MARK: public (static)
 

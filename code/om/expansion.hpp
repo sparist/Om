@@ -54,9 +54,9 @@ namespace Om
 		//! Gives the Operator, if any, from the top of the Expression.
 		void GiveOperator( Queue & );
 
-		//! Takes the Evaluand, and gives it to the Evaluator.
-		template< typename TheEvaluand >
-		void TakeEvaluand( std::auto_ptr< TheEvaluand > );
+		//! Takes the Evaluation, and gives it to the Evaluator.
+		template< typename TheEvaluation >
+		void TakeEvaluation( std::auto_ptr< TheEvaluation > );
 
 		//! Pushes the Operand onto the front of the Expression.
 		template< typename TheOperand >

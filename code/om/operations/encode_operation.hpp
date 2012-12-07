@@ -29,8 +29,8 @@
 #if !defined( Om_Operations_EncodeOperation_ )
 	#define Om_Operations_EncodeOperation_ Om::Operations::EncodeOperation
 
+	#include "om/default_evaluation.hpp"
 	#include "om/definition.hpp"
-	#include "om/default_evaluand.hpp"
 
 	#define Om_Operations_EncodeOperation_GetName_() "encode"
 
@@ -45,7 +45,7 @@ namespace Om
 		*/
 		struct EncodeOperation
 		:
-		DefaultEvaluand< EncodeOperation >
+		DefaultEvaluation< EncodeOperation >
 		{
 		public: // MARK: public (static)
 

@@ -36,7 +36,7 @@ template< typename TheProgramOperation >
 inline void Type_::GiveElements( TheProgramOperation &, Queue & theQueue )
 {
 	theQueue.TakeElement(
-		DefaultEvaluand< ProgramOperation< ThisProgram > >::GetOperator()
+		DefaultEvaluation< ProgramOperation< ThisProgram > >::GetOperator()
 	);
 }
 

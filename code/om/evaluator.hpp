@@ -23,7 +23,7 @@
 namespace Om
 {
 	//! \cond
-	struct Evaluand;
+	struct Evaluation;
 
 	struct Expansion;
 
@@ -38,11 +38,11 @@ namespace Om
 	The Evaluator interprets each Element as follows:
 	-	When an Operator is taken, the Translator is queried for the
 		corresponding Operation.  If found, it gives its
-		\ref Evaluand "Evaluand(s)" to the Evaluand vector; otherwise, the
-		Evaluand vector is flushed and the Operator is given to the output
+		\ref Evaluation "Evaluation(s)" to the Evaluation vector; otherwise, the
+		Evaluation vector is flushed and the Operator is given to the output
 		Queue.
-	-	When a Operand is taken, it is given to the most current Evaluand in
-		the Evaluand vector.  If none, it is given to the output Queue.
+	-	When a Operand is taken, it is given to the most current Evaluation in
+		the Evaluation vector.  If none, it is given to the output Queue.
 	-	When a Separator is taken, it is disregarded.
 
 	The program output by the Evaluator is an Expression.  Note that if each
@@ -104,8 +104,8 @@ namespace Om
 
 		virtual void ReadQuotedElements( Parser & );
 
-		template< typename TheEvaluand >
-		void TakeEvaluand( std::auto_ptr< TheEvaluand > );
+		template< typename TheEvaluation >
+		void TakeEvaluation( std::auto_ptr< TheEvaluation > );
 
 		template< typename TheOperand >
 		void TakeOperand( TheOperand & );
@@ -129,8 +129,8 @@ namespace Om
 
 	private: // MARK: private (static)
 
-		//! An Evaluand vector.
-		typedef boost::ptr_vector< Evaluand > EvaluandVector;
+		//! An Evaluation vector.
+		typedef boost::ptr_vector< Evaluation > EvaluationVector;
 
 		template< typename TheIterator >
 		static void GiveElements( TheIterator, TheIterator const, Queue & );
@@ -159,8 +159,8 @@ namespace Om
 		//! The Translator used for resolving Operator to Operation.
 		Translator const & thisTranslator;
 
-		//! A vector of Evaluand with the most current Evaluand at the back.
-		EvaluandVector thisEvaluandVector;
+		//! A vector of Evaluation with the most current Evaluation at the back.
+		EvaluationVector thisEvaluationVector;
 
 		//! True if an Element has been given to the output Queue.
 		bool thisGaveElementToOutput;

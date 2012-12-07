@@ -29,7 +29,7 @@
 #if !defined( Om_Operations_QuoteOperation_ )
 	#define Om_Operations_QuoteOperation_ Om::Operations::QuoteOperation
 
-	#include "om/default_evaluand.hpp"
+	#include "om/default_evaluation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_QuoteOperation_GetName_() "quote"
@@ -45,7 +45,7 @@ namespace Om
 		*/
 		struct QuoteOperation
 		:
-		DefaultEvaluand< QuoteOperation >
+		DefaultEvaluation< QuoteOperation >
 		{
 		public: // MARK: public (static)
 

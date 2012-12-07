@@ -31,11 +31,11 @@ inline char const * Type_::GetName()
 	return( Om_Operations_LiteralFrontPushOperation_GetName_() );
 }
 
-template< typename TheEvaluandTaker>
-inline void Type_::Give( TheEvaluandTaker & theEvaluandTaker )
+template< typename TheEvaluationTaker>
+inline void Type_::Give( TheEvaluationTaker & theEvaluationTaker )
 {
-	theEvaluandTaker.TakeEvaluand(
-		std::auto_ptr< Evaluand >(
+	theEvaluationTaker.TakeEvaluation(
+		std::auto_ptr< Evaluation >(
 			new FrontPushOperation< Literal, LiteralFrontPushOperation >
 		)
 	);

@@ -15,10 +15,10 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
-#if !defined( Om_DefaultEvaluand_ )
-	#define Om_DefaultEvaluand_ Om::DefaultEvaluand
+#if !defined( Om_DefaultEvaluation_ )
+	#define Om_DefaultEvaluation_ Om::DefaultEvaluation
 
-	#include "om/evaluand.hpp"
+	#include "om/evaluation.hpp"
 
 namespace Om
 {
@@ -26,26 +26,26 @@ namespace Om
 	struct Operator;
 	//! \endcond
 
-	// MARK: - Om::Operations::DefaultEvaluand
+	// MARK: - Om::Operations::DefaultEvaluation
 	/*!
 	\brief
-		A partial implementation of Evaluand.
+		A partial implementation of Evaluation.
 	*/
 	template< typename ThisImplementation >
-	struct DefaultEvaluand
+	struct DefaultEvaluation
 	:
-	Evaluand
+	Evaluation
 	{
 	public: // MARK: public (static)
 
 		static Operator const & GetOperator();
 
-		template< typename TheEvaluandTaker >
-		static void Give( TheEvaluandTaker & );
+		template< typename TheEvaluationTaker >
+		static void Give( TheEvaluationTaker & );
 
 	public: // MARK: public (non-static)
 
-		virtual ~DefaultEvaluand() = 0;
+		virtual ~DefaultEvaluation() = 0;
 
 		virtual void GiveElements( Queue & );
 
@@ -57,8 +57,8 @@ namespace Om
 		\brief
 			Takes the Operand and gives the result to the Evaluator.
 		\return
-			True if this call completes the Evaluand, in which case any
-			further calls on the Evaluand are undefined.
+			True if this call completes the Evaluation, in which case any
+			further calls on the Evaluation are undefined.
 		*/
 		virtual bool TakeElement( Evaluator &, Operand & );
 
@@ -71,5 +71,5 @@ namespace Om
 	};
 }
 
-	#include "om/default_evaluand.cpp"
+	#include "om/default_evaluation.cpp"
 #endif

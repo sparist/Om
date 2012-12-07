@@ -34,7 +34,7 @@
 #if !defined( Om_Operations_EqualsOperation_ )
 	#define Om_Operations_EqualsOperation_ Om::Operations::EqualsOperation
 
-	#include "om/default_evaluand.hpp"
+	#include "om/default_evaluation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_EqualsOperation_GetName_() "="
@@ -50,7 +50,7 @@ namespace Om
 		*/
 		struct EqualsOperation
 		:
-		DefaultEvaluand< EqualsOperation >
+		DefaultEvaluation< EqualsOperation >
 		{
 		public: // MARK: public (static)
 

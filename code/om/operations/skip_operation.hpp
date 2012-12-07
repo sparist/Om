@@ -29,7 +29,7 @@
 #if !defined( Om_Operations_SkipOperation_ )
 	#define Om_Operations_SkipOperation_ Om::Operations::SkipOperation
 
-	#include "om/default_evaluand.hpp"
+	#include "om/default_evaluation.hpp"
 	#include "om/definition.hpp"
 	#include "om/expression.hpp"
 
@@ -46,7 +46,7 @@ namespace Om
 		*/
 		struct SkipOperation
 		:
-		DefaultEvaluand< SkipOperation >
+		DefaultEvaluation< SkipOperation >
 		{
 		public: // MARK: public (static)
 
@@ -68,7 +68,7 @@ namespace Om
 		private: // MARK: private (non-static)
 
 			/*!
-			If an empty Expression is taken as the first Operand, the Evaluand
+			If an empty Expression is taken as the first Operand, the Evaluation
 			is complete.  Therefore, the empty Expression can be used to
 			indicate that the first Operand has not yet been received.
 			*/

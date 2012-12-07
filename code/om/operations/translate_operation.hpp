@@ -19,7 +19,7 @@
 	#define Om_Operations_TranslateOperation_ \
 	Om::Operations::TranslateOperation
 
-	#include "om/default_evaluand.hpp"
+	#include "om/default_evaluation.hpp"
 	#include "om/lexicon.hpp"
 
 namespace Om
@@ -29,12 +29,12 @@ namespace Om
 		// MARK: - Om::Operations::TranslateOperation
 		/*!
 		\brief
-			An Evaluand that applies each Translator to a Program.
+			An Evaluation that applies each Translator to a Program.
 		*/
 		template< typename ThisImplementation >
 		struct TranslateOperation
 		:
-		DefaultEvaluand< ThisImplementation >
+		DefaultEvaluation< ThisImplementation >
 		{
 		public: // MARK: public (static)
 

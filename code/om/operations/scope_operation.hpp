@@ -50,8 +50,8 @@
 #if !defined( Om_Operations_ScopeOperation_ )
 	#define Om_Operations_ScopeOperation_ Om::Operations::ScopeOperation
 
+	#include "om/default_evaluation.hpp"
 	#include "om/definition.hpp"
-	#include "om/default_evaluand.hpp"
 	#include "om/operations/translate_operation.hpp"
 
 	#define Om_Operations_ScopeOperation_GetName_() "scope"

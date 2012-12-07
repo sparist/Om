@@ -62,10 +62,12 @@ inline void Type_::GiveOperator( Queue & theQueue )
 	}
 }
 
-template< typename TheEvaluand >
-inline void Type_::TakeEvaluand( std::auto_ptr< TheEvaluand > theEvaluand )
+template< typename TheEvaluation >
+inline void Type_::TakeEvaluation(
+	std::auto_ptr< TheEvaluation > theEvaluation
+)
 {
-	this->thisEvaluator.TakeEvaluand( theEvaluand );
+	this->thisEvaluator.TakeEvaluation( theEvaluation );
 }
 
 template< typename TheOperand >

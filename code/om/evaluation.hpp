@@ -15,8 +15,8 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
-#if !defined( Om_Evaluand_ )
-	#define Om_Evaluand_ Om::Evaluand
+#if !defined( Om_Evaluation_ )
+	#define Om_Evaluation_ Om::Evaluation
 
 	#include "om/code_point.hpp"
 
@@ -32,27 +32,27 @@ namespace Om
 	struct Queue;
 	//! \endcond
 
-	// MARK: - Om::Evaluand
+	// MARK: - Om::Evaluation
 	/*!
 	\brief
 		A native \ref operations "Operation" that is partially applied to zero
 		or more \ref Operand "Operands".
 
-	The Evaluator takes and stores \ref Evaluand "Evaluands".  The internal
-	Evaluand vector inside the Evaluator represents the entire state of the
+	The Evaluator takes and stores \ref Evaluation "Evaluations".  The internal
+	Evaluation vector inside the Evaluator represents the entire state of the
 	currently-evaluating Program.
 	*/
-	struct Evaluand
+	struct Evaluation
 	{
 	public: // MARK: public (non-static)
 
-		virtual ~Evaluand() = 0;
+		virtual ~Evaluation() = 0;
 
 		/*!
 		\brief
 			Gives the contents.
 		\post
-			Any calls on the Evaluand are undefined.
+			Any calls on the Evaluation are undefined.
 		*/
 		virtual void GiveElements( Queue & ) = 0;
 
@@ -65,10 +65,10 @@ namespace Om
 		\brief
 			Takes a Operand.
 		\return
-			True if this call completes the Evaluand, in which case any further
-			calls on the Evaluand are undefined.
+			True if this call completes the Evaluation, in which case any
+			further calls on the Evaluation are undefined.
 		\post
-			If true was returned, any further calls on the Evaluand are
+			If true was returned, any further calls on the Evaluation are
 			undefined.
 		*/
 		virtual bool TakeElement( Evaluator &, Operand & ) = 0;
@@ -81,10 +81,10 @@ namespace Om
 			Constructs and takes an Operand, which takes each Element from the
 			argument.
 		\return
-			True if this call completes the Evaluand, in which case any further
-			calls on the Evaluand are undefined.
+			True if this call completes the Evaluation, in which case any
+			further calls on the Evaluation are undefined.
 		\post
-			If true was returned, any further calls on the Evaluand are
+			If true was returned, any further calls on the Evaluation are
 			undefined.
 		*/
 		virtual bool TakeQuotedElements( Evaluator &, Queue & ) = 0;
@@ -94,15 +94,15 @@ namespace Om
 
 	protected: // MARK: protected (non-static)
 
-		Evaluand();
+		Evaluation();
 
 	private: // MARK: private (non-static)
 
-		Evaluand( Evaluand const & );
+		Evaluation( Evaluation const & );
 
-		Evaluand const & operator =( Evaluand const & );
+		Evaluation const & operator =( Evaluation const & );
 	};
 }
 
-	#include "om/evaluand.cpp"
+	#include "om/evaluation.cpp"
 #endif

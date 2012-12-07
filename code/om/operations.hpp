@@ -35,9 +35,10 @@ namespace Om
 	-	A <tt>static char const * GetName()</tt> function that returns a
 		null-terminated, NFD-normalized UTF-8 string to be used as a
 		corresponding Operator name.
-	-	A <tt>static void Give( </tt><em>EvaluandTaker</em><tt> )</tt> function,
-		where <em>EvaluandTaker</em> is any type that can take an Evaluand, and
-		gives to it the \ref Evaluand "Evaluand(s)" that implement the
+	-	A <tt>static void Give( </tt><em>EvaluationTaker</em><tt> )</tt>
+		function, where <em>EvaluationTaker</em> is any type that can take an
+		Evaluation <tt>auto_ptr</tt>, and gives to it the
+		\ref Evaluation "Evaluation(s)" that implement the
 		\ref operations "Operation".
 
 	Including the header for an \ref operations "Operation" will cause the

@@ -55,8 +55,8 @@ namespace Om
 
 			static char const * GetName();
 
-			template< typename TheEvaluandTaker >
-			static void Give( TheEvaluandTaker & );
+			template< typename TheEvaluationTaker >
+			static void Give( TheEvaluationTaker & );
 		};
 
 		namespace

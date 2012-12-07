@@ -41,7 +41,7 @@
 #if !defined( Om_Operations_FillOperation_ )
 	#define Om_Operations_FillOperation_ Om::Operations::FillOperation
 
-	#include "om/default_evaluand.hpp"
+	#include "om/default_evaluation.hpp"
 	#include "om/definition.hpp"
 	#include "om/expression.hpp"
 
@@ -58,7 +58,7 @@ namespace Om
 		*/
 		struct FillOperation
 		:
-		DefaultEvaluand< FillOperation >
+		DefaultEvaluation< FillOperation >
 		{
 		public: // MARK: public (static)
 

@@ -29,7 +29,7 @@
 #if !defined( Om_Operations_ChooseOperation_ )
 	#define Om_Operations_ChooseOperation_ Om::Operations::ChooseOperation
 
-	#include "om/default_evaluand.hpp"
+	#include "om/default_evaluation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_ChooseOperation_GetName_() "choose"
@@ -45,7 +45,7 @@ namespace Om
 		*/
 		struct ChooseOperation
 		:
-		DefaultEvaluand< ChooseOperation >
+		DefaultEvaluation< ChooseOperation >
 		{
 		public: // MARK: public (static)
 

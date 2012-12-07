@@ -18,7 +18,7 @@
 #if !defined( Om_Operations_PullOperation_ )
 	#define Om_Operations_PullOperation_ Om::Operations::PullOperation
 
-	#include "om/default_evaluand.hpp"
+	#include "om/default_evaluation.hpp"
 
 namespace Om
 {
@@ -27,12 +27,12 @@ namespace Om
 		// MARK: - Om::Operations::PullOperation
 		/*!
 		\brief
-			An Evaluand that pulls part of a Program.
+			An Evaluation that pulls part of a Program.
 		*/
 		template< typename ThisProgram, typename ThisImplementation >
 		struct PullOperation
 		:
-		DefaultEvaluand< PullOperation< ThisProgram, ThisImplementation > >
+		DefaultEvaluation< PullOperation< ThisProgram, ThisImplementation > >
 		{
 		public: // MARK: public (static)
 
