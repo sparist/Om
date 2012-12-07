@@ -45,7 +45,7 @@ inline bool Type_::TakeOperand(
 )
 {
 	return(
-		this->TakeQuotedQueue( theEvaluator, theOperand.GetChildProgram() )
+		this->TakeQuotedQueue( theEvaluator, *theOperand )
 	);
 }
 

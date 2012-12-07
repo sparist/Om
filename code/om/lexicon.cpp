@@ -97,7 +97,7 @@ inline bool Type_::Find(
 	Iterator theIterator( this->thisMap.find( theOperator.GetString() ) );
 	if( this->thisMap.end() == theIterator ){ return( false ); }
 	if( Operand const * const theOperand = theIterator->second->GetOperand() ){
-		theProgram = &theOperand->GetChildProgram();
+		theProgram = &**theOperand;
 	}
 	return( true );
 }

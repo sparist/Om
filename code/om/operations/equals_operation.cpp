@@ -77,7 +77,7 @@ inline bool Type_::TakeQuotedQueue(
 {
 	if( this->thisOperand ){
 		Expression theExpression;
-		if( theQueue == this->thisOperand->GetChildProgram() ){
+		if( theQueue == **this->thisOperand ){
 			theExpression.TakeOperand( *this->thisOperand );
 		}
 		theEvaluator.TakeQuotedQueue( theExpression );

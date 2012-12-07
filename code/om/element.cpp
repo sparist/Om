@@ -41,16 +41,26 @@ inline bool Type_::operator ==( Element const & ) const
 	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
-inline Om::Program & Type_::GetChildProgram()
+inline Om::Program & Type_::operator *()
 {
 	assert( 0 );
 	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
-inline Om::Program const & Type_::GetChildProgram() const
+inline Om::Program const & Type_::operator *() const
 {
 	assert( 0 );
 	throw( std::logic_error( "Pure virtual function called." ) );
+}
+
+inline Om::Program * Type_::operator ->()
+{
+	return( &**this );
+}
+
+inline Om::Program const * Type_::operator ->() const
+{
+	return( &**this );
 }
 
 inline std::auto_ptr< Om::Source< Om::Element > > Type_::GetElementRange()

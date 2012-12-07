@@ -64,12 +64,12 @@ namespace Om
 			A reference to the Program owned by this Operand.  Do not retain
 			this reference.
 		*/
-		Program & GetChildProgram();
+		virtual Program & operator *();
 
 		/*!
 		\overload
 		*/
-		Program const & GetChildProgram() const;
+		virtual Program const & operator *() const;
 
 		/*!
 		\return

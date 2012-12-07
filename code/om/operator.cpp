@@ -280,7 +280,7 @@ inline void Type_::ReadQuotedElements( Parser & theParser )
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
-	this->TakeQuotedQueue( theOperand.GetChildProgram() );
+	this->TakeQuotedQueue( *theOperand );
 }
 
 template< typename TheOperator >

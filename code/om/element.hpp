@@ -37,9 +37,13 @@ namespace Om
 
 		virtual bool operator ==( Element const & ) const = 0;
 
-		virtual Program & GetChildProgram() = 0;
+		virtual Program & operator *() = 0;
 
-		virtual Program const & GetChildProgram() const = 0;
+		virtual Program const & operator *() const = 0;
+
+		Program * operator ->();
+
+		Program const * operator ->() const;
 
 		using Program::GetElementRange;
 

@@ -42,7 +42,7 @@ inline Type_::~Literal()
 				this->thisElementDeque.pop_front().release()
 			);
 			assert( theElement.get() );
-			theElement->GetChildProgram().GiveElements( *this );
+			( *theElement )->GiveElements( *this );
 		}
 	} catch( ... ){}
 }

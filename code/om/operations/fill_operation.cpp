@@ -55,9 +55,7 @@ inline bool Type_::TakeOperand(
 	TheOperand & theOperand
 )
 {
-	return(
-		this->TakeQuotedQueue( theEvaluator, theOperand.GetChildProgram() )
-	);
+	return( this->TakeQuotedQueue( theEvaluator, *theOperand ) );
 }
 
 template< typename TheQueue >

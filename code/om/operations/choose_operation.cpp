@@ -83,7 +83,7 @@ inline bool Type_::TakeOperand(
 		{
 			TheOperand const & theConstOperand = theOperand;
 			theEvaluator.TakeOperand(
-				theConstOperand.GetChildProgram().IsEmpty() ?
+				theConstOperand->IsEmpty() ?
 				this->thisEmptyCase :
 				this->thisNonEmptyCase
 			);

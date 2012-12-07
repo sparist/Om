@@ -25,12 +25,12 @@
 
 // MARK: public (non-static)
 
-inline Om::Program & Type_::GetChildProgram()
+inline Om::Program & Type_::operator *()
 {
 	return( Null::Get() );
 }
 
-inline Om::Program const & Type_::GetChildProgram() const
+inline Om::Program const & Type_::operator *() const
 {
 	return( Null::Get() );
 }

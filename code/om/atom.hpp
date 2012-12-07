@@ -33,9 +33,9 @@ namespace Om
 	{
 	public: // MARK: public (non-static)
 
-		virtual Program & GetChildProgram();
+		virtual Program & operator *();
 
-		virtual Program const & GetChildProgram() const;
+		virtual Program const & operator *() const;
 
 	private: // MARK: private (non-static)
 

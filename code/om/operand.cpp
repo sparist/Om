@@ -53,15 +53,15 @@ inline Type_ & Type_::operator =( Operand theOperand )
 
 inline bool Type_::operator ==( Operand const & theOperand ) const
 {
-	return( this->GetChildProgram() == theOperand.GetChildProgram() );
+	return( **this == *theOperand );
 }
 
-inline Om::Program & Type_::GetChildProgram()
+inline Om::Program & Type_::operator *()
 {
 	return( this->thisProgram ? *this->thisProgram : Null::Get() );
 }
 
-inline Om::Program const & Type_::GetChildProgram() const
+inline Om::Program const & Type_::operator *() const
 {
 	return( this->thisProgram ? *this->thisProgram : Null::Get() );
 }
