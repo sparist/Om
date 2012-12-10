@@ -40,8 +40,7 @@ namespace Om
 
 		static Operator const & GetOperator();
 
-		template< typename TheEvaluationTaker >
-		static void Give( TheEvaluationTaker & );
+		static void Give( Expansion & );
 
 	public: // MARK: public (non-static)
 

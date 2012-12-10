@@ -31,11 +31,10 @@ inline char const * Type_::GetName()
 	return( Om_Operations_OperatorBackPushOperation_GetName_() );
 }
 
-template< typename TheEvaluationTaker>
-inline void Type_::Give( TheEvaluationTaker & theEvaluationTaker )
+inline void Type_::Give( Expansion & theExpansion )
 {
-	OperatorFrontPushOperation::Give( theEvaluationTaker );
-	SwapOperation::Give( theEvaluationTaker );
+	OperatorFrontPushOperation::Give( theExpansion );
+	SwapOperation::Give( theExpansion );
 }
 
 	#undef Type_

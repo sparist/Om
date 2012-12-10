@@ -31,10 +31,9 @@ inline char const * Type_::GetName()
 	return( Om_Operations_BackPullFormOperation_GetName_() );
 }
 
-template< typename TheEvaluationTaker>
-inline void Type_::Give( TheEvaluationTaker & theEvaluationTaker )
+inline void Type_::Give( Expansion & theExpansion )
 {
-	theEvaluationTaker.TakeEvaluation(
+	theExpansion.TakeEvaluation(
 		std::auto_ptr< Evaluation >(
 			new PullOperation< Expression, BackPullFormOperation >
 		)

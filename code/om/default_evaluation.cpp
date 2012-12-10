@@ -35,10 +35,9 @@ inline Om::Operator const & Type_::GetOperator()
 }
 
 Template_
-template< typename TheEvaluationTaker>
-inline void Type_::Give( TheEvaluationTaker & theEvaluationTaker )
+inline void Type_::Give( Expansion & theExpansion )
 {
-	theEvaluationTaker.TakeEvaluation(
+	theExpansion.TakeEvaluation(
 		std::auto_ptr< ThisImplementation >( new ThisImplementation )
 	);
 }

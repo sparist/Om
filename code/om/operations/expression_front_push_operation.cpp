@@ -31,10 +31,9 @@ inline char const * Type_::GetName()
 	return( Om_Operations_ExpressionFrontPushOperation_GetName_() );
 }
 
-template< typename TheEvaluationTaker>
-inline void Type_::Give( TheEvaluationTaker & theEvaluationTaker )
+inline void Type_::Give( Expansion & theExpansion )
 {
-	theEvaluationTaker.TakeEvaluation(
+	theExpansion.TakeEvaluation(
 		std::auto_ptr< Evaluation >(
 			new FrontPushOperation< Expression, ExpressionFrontPushOperation >
 		)

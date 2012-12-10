@@ -51,8 +51,7 @@ namespace Om
 
 			static char const * GetName();
 
-			template< typename TheEvaluationTaker >
-			static void Give( TheEvaluationTaker & );
+			static void Give( Expansion & );
 
 			//! The callback for PullOperation.
 			template< typename TheQueue >
