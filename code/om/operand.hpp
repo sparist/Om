@@ -73,6 +73,18 @@ namespace Om
 
 		/*!
 		\return
+			A reference to the Program owned by this Operand.  Do not retain
+			this reference.
+		*/
+		Program & GetProgram();
+
+		/*!
+		\overload
+		*/
+		Program const & GetProgram() const;
+
+		/*!
+		\return
 			False.  The Operand is a Program whose single Element is an Operand.
 			Therefore, the Program is never empty (although the distinct Program
 			contained by the Operand may be).
