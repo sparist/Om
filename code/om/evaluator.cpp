@@ -127,6 +127,16 @@ inline void Type_::ReadElements( Parser & theParser )
 
 inline void Type_::ReadQuotedElements( Parser & theParser )
 {
+	Expansion theExpansion( *this );
+	this->ReadQuotedElements( theExpansion, theParser );
+	this->Evaluate( theExpansion );
+}
+
+inline void Type_::ReadQuotedElements(
+	Expansion & theExpansion,
+	Parser & theParser
+)
+{
 	if( this->thisEvaluationVector.empty() ){
 		this->thisOutput.ReadQuotedElements( theParser );
 		this->thisGaveElementToOutput = true;
@@ -135,20 +145,33 @@ inline void Type_::ReadQuotedElements( Parser & theParser )
 			this->thisEvaluationVector.pop_back().release()
 		);
 		assert( theEvaluation.get() );
-		if( !theEvaluation->ReadQuotedElements( *this, theParser ) ){
+		if( !theEvaluation->ReadQuotedElements( theExpansion, theParser ) ){
 			this->thisEvaluationVector.push_back( theEvaluation );
 		}
 	}
 }
 
 template< typename TheEvaluation >
-inline void Type_::TakeEvaluation( std::auto_ptr< TheEvaluation > theEvaluation )
+inline void Type_::TakeEvaluation(
+	std::auto_ptr< TheEvaluation > theEvaluation
+)
 {
 	this->thisEvaluationVector.push_back( theEvaluation );
 }
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
+{
+	Expansion theExpansion( *this );
+	this->TakeOperand( theExpansion, theOperand );
+	this->Evaluate( theExpansion );
+}
+
+template< typename TheOperand >
+inline void Type_::TakeOperand(
+	Expansion & theExpansion,
+	TheOperand & theOperand
+)
 {
 	if( this->thisEvaluationVector.empty() ){
 		this->thisOutput.TakeElement( theOperand );
@@ -158,7 +181,7 @@ inline void Type_::TakeOperand( TheOperand & theOperand )
 			this->thisEvaluationVector.pop_back().release()
 		);
 		assert( theEvaluation.get() );
-		if( !theEvaluation->TakeElement( *this, theOperand ) ){
+		if( !theEvaluation->TakeElement( theExpansion, theOperand ) ){
 			this->thisEvaluationVector.push_back( theEvaluation );
 		}
 	}
@@ -167,19 +190,66 @@ inline void Type_::TakeOperand( TheOperand & theOperand )
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator )
 {
-	assert( !theOperator.IsEmpty() );
 	Expansion theExpansion( *this );
-	this->EvaluateOperator( theExpansion, theOperator );
-	for( ; ; ){
-		Operator theChildOperator;
-		theExpansion.GiveOperator( theChildOperator );
-		if( theChildOperator.IsEmpty() ){ break; }
-		this->EvaluateOperator( theExpansion, theChildOperator );
+	this->TakeOperator( theExpansion, theOperator );
+	this->Evaluate( theExpansion );
+}
+
+template< typename TheOperator >
+inline void Type_::TakeOperator(
+	Expansion & theExpansion,
+	TheOperator & theOperator
+)
+{
+	assert( !theOperator.IsEmpty() );
+	switch( this->thisTranslator.Translate( theExpansion, theOperator ) ){
+	case 0:
+		switch( this->thisTranslator.Translate( theExpansion, Operator() ) ){
+		case 0:
+		case 1:
+			break;
+		default:
+			return;
+		}
+	case 1:
+		break;
+	default:
+		return;
+	}
+
+	// Flush everything up to, and including, the operator.
+	{
+		// At the very least, the operator will be flushed.
+		if( this->thisGaveElementToOutput ){
+			this->thisOutput.TakeElement( Separator::GetLineSeparator() );
+		}
+
+		// Flush the evaluation.
+		// Starts with Operator; leading Operands would have been sent.
+		if( !this->IsEmpty() ){
+			this->GiveElements( this->thisOutput );
+			this->thisOutput.TakeElement( Separator::GetLineSeparator() );
+		}
+
+		// Flush the operator.
+		this->thisOutput.TakeElement( theOperator );
+		this->thisGaveElementToOutput = true;
 	}
 }
 
 template< typename TheQueue >
 inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
+{
+	Expansion theExpansion( *this );
+	this->TakeQuotedQueue( theExpansion, theQueue );
+	this->Evaluate( theExpansion );
+}
+
+template< typename TheQueue >
+inline void Type_::TakeQuotedQueue(
+	Expansion & theExpansion,
+	TheQueue & theQueue
+)
 {
 	if( this->thisEvaluationVector.empty() ){
 		this->thisOutput.TakeQuotedElements( theQueue );
@@ -189,7 +259,7 @@ inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 			this->thisEvaluationVector.pop_back().release()
 		);
 		assert( theEvaluation.get() );
-		if( !theEvaluation->TakeQuotedElements( *this, theQueue ) ){
+		if( !theEvaluation->TakeQuotedElements( theExpansion, theQueue ) ){
 			this->thisEvaluationVector.push_back( theEvaluation );
 		}
 	}
@@ -230,37 +300,9 @@ inline std::auto_ptr< Om::Program > Type_::GiveProgram(
 
 // MARK: private (non-static)
 
-template< typename TheOperator >
-inline void Type_::EvaluateOperator(
-	Expansion & theExpansion,
-	TheOperator & theOperator
-)
+inline void Type_::Evaluate( Expansion & theExpansion )
 {
-	assert( !theOperator.IsEmpty() );
-	switch( this->thisTranslator.Translate( theExpansion, theOperator ) ){
-	case 1:
-		break;
-	case 0:
-		if( this->thisTranslator.Translate( theExpansion, Operator() ) < 2 ){
-			break;
-		}
-	default:
-		theExpansion.GiveOperands( *this );
-		return;
-	}
-
-	// Flush the evaluation.
-	if( this->thisGaveElementToOutput ){
-		this->thisOutput.TakeElement( Separator::GetLineSeparator() );
-	}
-	if( !this->IsEmpty() ){
-		// Starts with Operator; leading Operands would have been sent.
-		this->GiveElements( this->thisOutput );
-		this->thisOutput.TakeElement( Separator::GetLineSeparator() );
-	}
-	this->thisOutput.TakeElement( theOperator );
-	theExpansion.GiveOperands( this->thisOutput );
-	this->thisGaveElementToOutput = true;
+	while( theExpansion.GiveTerm( *this ) ){}
 }
 
 	#undef Type_

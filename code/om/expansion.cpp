@@ -29,7 +29,7 @@ inline Type_::~Expansion()
 {
 	assert(
 		this->thisExpression.IsEmpty() &&
-		"The Expansion was not fully consumed by the Evaluator."
+		"The Expansion was not fully consumed."
 	);
 }
 
@@ -40,26 +40,31 @@ thisEvaluator( theEvaluator )
 {
 }
 
-inline void Type_::GiveOperands( Queue & theQueue )
+inline Om::Translator const & Type_::GetTranslator() const
 {
-	if( !this->thisExpression.IsEmpty() ){
-		Expression::FormRange< Form > theFormRange( this->thisExpression );
-		assert( theFormRange );
-		if( theFormRange->GetOperator().IsEmpty() ){
-			this->thisExpression.FrontGiveForm( theQueue );
-		}
-	}
+	return( this->thisEvaluator.GetTranslator() );
 }
 
-inline void Type_::GiveOperator( Queue & theQueue )
+inline bool Type_::GiveTerm( Evaluator & theEvaluator )
 {
-	if( !this->thisExpression.IsEmpty() ){
-		Expression::FormRange< Form > theFormRange( this->thisExpression );
-		assert( theFormRange );
-		if( !theFormRange->GetOperator().IsEmpty() ){
-			this->thisExpression.FrontGiveTerm( theQueue );
+	if( this->thisExpression.IsEmpty() ){ return( false ); }
+	Expression::FormRange< Form > theFormRange( this->thisExpression );
+	assert( theFormRange );
+	if( theFormRange->GetOperator().IsEmpty() ){
+		Operand theOperand;
+		{
+			Form::OperandRange< Operand > theOperandRange( *theFormRange );
+			assert( theOperandRange );
+			theOperand.Swap( *theOperandRange );
 		}
+		this->thisExpression.FrontPopTerm();
+		theEvaluator.TakeOperand( *this, theOperand );
+	} else{
+		Operator theOperator;
+		this->thisExpression.FrontGiveTerm( theOperator );
+		theEvaluator.TakeOperator( *this, theOperator );
 	}
+	return( true );
 }
 
 template< typename TheEvaluation >

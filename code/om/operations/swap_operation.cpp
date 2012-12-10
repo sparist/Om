@@ -52,13 +52,13 @@ thisOperand()
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheOperand & theOperand
 )
 {
 	if( this->thisOperand ){
-		theEvaluator.TakeOperand( theOperand );
-		theEvaluator.TakeOperand( *this->thisOperand );
+		theExpansion.TakeOperand( *this->thisOperand );
+		theExpansion.TakeOperand( theOperand );
 		return( true );
 	}
 	this->thisOperand = boost::in_place();
@@ -69,13 +69,13 @@ inline bool Type_::TakeOperand(
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheQueue & theQueue
 )
 {
 	if( this->thisOperand ){
-		theEvaluator.TakeQuotedQueue( theQueue );
-		theEvaluator.TakeOperand( *this->thisOperand );
+		theExpansion.TakeOperand( *this->thisOperand );
+		theExpansion.TakeQuotedQueue( theQueue );
 		return( true );
 	}
 	this->thisOperand = boost::in_place();

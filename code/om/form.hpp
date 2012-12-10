@@ -50,6 +50,12 @@ namespace Om
 		*/
 		bool BackGiveTerm( Queue & );
 
+		/*!
+		\return
+			True if the call results in an empty Form.
+		*/
+		bool BackPopTerm();
+
 		template< typename TheOperand >
 		void BackTakeOperand( TheOperand & );
 
@@ -61,6 +67,12 @@ namespace Om
 			True if the call results in an empty Form.
 		*/
 		bool FrontGiveTerm( Queue & );
+
+		/*!
+		\return
+			True if the call results in an empty Form.
+		*/
+		bool FrontPopTerm();
 
 		template< typename TheOperand >
 		void FrontTakeOperand( TheOperand & );

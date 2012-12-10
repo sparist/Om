@@ -72,29 +72,29 @@ inline void Type_::GiveElements( Queue & theQueue ) const
 
 Template_
 inline bool Type_::ReadQuotedElements(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	Parser & theParser
 )
 {
 	Literal theLiteral;
 	theLiteral.ReadElements( theParser );
-	return( this->TakeQuotedElements( theEvaluator, theLiteral ) );
+	return( this->TakeQuotedElements( theExpansion, theLiteral ) );
 }
 
 Template_
-inline bool Type_::TakeElement( Evaluator & theEvaluator, Operand & theOperand )
+inline bool Type_::TakeElement( Expansion & theExpansion, Operand & theOperand )
 {
 	assert( dynamic_cast< ThisImplementation * >( this ) );
 	return(
 		static_cast<
 			ThisImplementation &
-		>( *this ).TakeOperand( theEvaluator, theOperand )
+		>( *this ).TakeOperand( theExpansion, theOperand )
 	);
 }
 
 Template_
 inline bool Type_::TakeElement(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	Operand const & theOperand
 )
 {
@@ -102,13 +102,13 @@ inline bool Type_::TakeElement(
 	return(
 		static_cast<
 			ThisImplementation &
-		>( *this ).TakeOperand( theEvaluator, theOperand )
+		>( *this ).TakeOperand( theExpansion, theOperand )
 	);
 }
 
 Template_
 inline bool Type_::TakeQuotedElements(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	Queue & theQueue
 )
 {
@@ -116,13 +116,13 @@ inline bool Type_::TakeQuotedElements(
 	return(
 		static_cast<
 			ThisImplementation &
-		>( *this ).TakeQuotedQueue( theEvaluator, theQueue )
+		>( *this ).TakeQuotedQueue( theExpansion, theQueue )
 	);
 }
 
 Template_
 inline bool Type_::TakeQuotedElements(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	Queue const & theQueue
 )
 {
@@ -130,7 +130,7 @@ inline bool Type_::TakeQuotedElements(
 	return(
 		static_cast<
 			ThisImplementation &
-		>( *this ).TakeQuotedQueue( theEvaluator, theQueue )
+		>( *this ).TakeQuotedQueue( theExpansion, theQueue )
 	);
 }
 

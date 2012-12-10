@@ -63,6 +63,16 @@ inline void Type_::BackGiveTerm( Queue & theQueue )
 	}
 }
 
+inline void Type_::BackPopTerm()
+{
+	assert( !this->thisFormDeque.empty() );
+	Form & theForm = this->thisFormDeque.back();
+	if( theForm.BackPopTerm() ){
+		assert( theForm.IsEmpty() );
+		this->thisFormDeque.pop_back();
+	}
+}
+
 template< typename TheOperand >
 inline void Type_::BackTakeOperand( TheOperand & theOperand )
 {
@@ -104,6 +114,16 @@ inline void Type_::FrontGiveTerm( Queue & theQueue )
 			assert( theForm.IsEmpty() );
 			this->thisFormDeque.pop_front();
 		}
+	}
+}
+
+inline void Type_::FrontPopTerm()
+{
+	assert( !this->thisFormDeque.empty() );
+	Form & theForm = this->thisFormDeque.front();
+	if( theForm.FrontPopTerm() ){
+		assert( theForm.IsEmpty() );
+		this->thisFormDeque.pop_front();
 	}
 }
 

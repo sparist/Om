@@ -40,16 +40,16 @@ inline void Type_::GiveElements( TheDecodeOperation &, Queue & theQueue )
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theEvaluator, *theOperand ) );
+	return( this->TakeQuotedQueue( theExpansion, *theOperand ) );
 }
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheQueue & theQueue
 )
 {
@@ -59,7 +59,7 @@ inline bool Type_::TakeQuotedQueue(
 		theOperator.TakeElements( theQueue );
 		theOperator.Decode( theLiteral );
 	}
-	theEvaluator.TakeQuotedQueue( theLiteral );
+	theExpansion.TakeQuotedQueue( theLiteral );
 	return( true );
 }
 

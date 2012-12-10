@@ -448,9 +448,8 @@ To implement a composite operation:
 -	Define the operation `struct` in the `Om::Operations` namespace.
 -	Define the static `GetName()` method, which returns a `static char const *`
 	containing the name.
--	Define the static `Give( Evaluator & )` method, with no return value, to
-	give existing operations and/or elements to the evaluator in the desired
-	order.
+-	Define the static `Give( Expansion & )` method, with no return value, to
+	give existing operations and/or elements to the expansion.
 
 To define an atomic operation:
 

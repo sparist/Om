@@ -51,23 +51,23 @@ namespace Om
 
 		virtual void GiveElements( Queue & ) const;
 
-		virtual bool ReadQuotedElements( Evaluator &, Parser & );
+		virtual bool ReadQuotedElements( Expansion &, Parser & );
 
 		/*!
 		\brief
-			Takes the Operand and gives the result to the Evaluator.
+			Takes the Operand and gives the result to the Expansion.
 		\return
 			True if this call completes the Evaluation, in which case any
 			further calls on the Evaluation are undefined.
 		*/
-		virtual bool TakeElement( Evaluator &, Operand & );
+		virtual bool TakeElement( Expansion &, Operand & );
 
 		//! \overload
-		virtual bool TakeElement( Evaluator &, Operand const & );
+		virtual bool TakeElement( Expansion &, Operand const & );
 
-		virtual bool TakeQuotedElements( Evaluator &, Queue & );
+		virtual bool TakeQuotedElements( Expansion &, Queue & );
 
-		virtual bool TakeQuotedElements( Evaluator &, Queue const & );
+		virtual bool TakeQuotedElements( Expansion &, Queue const & );
 	};
 }
 

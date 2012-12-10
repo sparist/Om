@@ -66,6 +66,8 @@ namespace Om
 
 		void BackGiveTerm( Queue & );
 
+		void BackPopTerm();
+
 		template< typename TheOperand >
 		void BackTakeOperand( TheOperand & );
 
@@ -80,6 +82,8 @@ namespace Om
 		void FrontGiveForm( Queue & );
 
 		void FrontGiveTerm( Queue & );
+
+		void FrontPopTerm();
 
 		template< typename TheOperand >
 		void FrontTakeOperand( TheOperand & );

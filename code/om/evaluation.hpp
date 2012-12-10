@@ -23,7 +23,7 @@
 namespace Om
 {
 	//! \cond
-	struct Evaluator;
+	struct Expansion;
 
 	struct Operand;
 
@@ -37,10 +37,6 @@ namespace Om
 	\brief
 		A native \ref operations "Operation" that is partially applied to zero
 		or more \ref Operand "Operands".
-
-	The Evaluator takes and stores \ref Evaluation "Evaluations".  The internal
-	Evaluation vector inside the Evaluator represents the entire state of the
-	currently-evaluating Program.
 	*/
 	struct Evaluation
 	{
@@ -59,7 +55,7 @@ namespace Om
 		//! \overload
 		virtual void GiveElements( Queue & ) const = 0;
 
-		virtual bool ReadQuotedElements( Evaluator &, Parser & ) = 0;
+		virtual bool ReadQuotedElements( Expansion &, Parser & ) = 0;
 
 		/*!
 		\brief
@@ -71,10 +67,10 @@ namespace Om
 			If true was returned, any further calls on the Evaluation are
 			undefined.
 		*/
-		virtual bool TakeElement( Evaluator &, Operand & ) = 0;
+		virtual bool TakeElement( Expansion &, Operand & ) = 0;
 
 		//! \overload
-		virtual bool TakeElement( Evaluator &, Operand const & ) = 0;
+		virtual bool TakeElement( Expansion &, Operand const & ) = 0;
 
 		/*!
 		\brief
@@ -87,10 +83,10 @@ namespace Om
 			If true was returned, any further calls on the Evaluation are
 			undefined.
 		*/
-		virtual bool TakeQuotedElements( Evaluator &, Queue & ) = 0;
+		virtual bool TakeQuotedElements( Expansion &, Queue & ) = 0;
 
 		//! \overload
-		virtual bool TakeQuotedElements( Evaluator &, Queue const & ) = 0;
+		virtual bool TakeQuotedElements( Expansion &, Queue const & ) = 0;
 
 	protected: // MARK: protected (non-static)
 

@@ -39,31 +39,31 @@ inline void Type_::GiveElements( Queue & ) const
 	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
-inline bool Type_::ReadQuotedElements( Evaluator &, Parser & )
+inline bool Type_::ReadQuotedElements( Expansion &, Parser & )
 {
 	assert( 0 );
 	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
-inline bool Type_::TakeElement( Evaluator &, Operand & )
+inline bool Type_::TakeElement( Expansion &, Operand & )
 {
 	assert( 0 );
 	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
-inline bool Type_::TakeElement( Evaluator &, Operand const & )
+inline bool Type_::TakeElement( Expansion &, Operand const & )
 {
 	assert( 0 );
 	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
-inline bool Type_::TakeQuotedElements( Evaluator &, Queue & )
+inline bool Type_::TakeQuotedElements( Expansion &, Queue & )
 {
 	assert( 0 );
 	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
-inline bool Type_::TakeQuotedElements( Evaluator &, Queue const & )
+inline bool Type_::TakeQuotedElements( Expansion &, Queue const & )
 {
 	assert( 0 );
 	throw( std::logic_error( "Pure virtual function called." ) );

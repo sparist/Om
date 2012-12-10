@@ -24,6 +24,8 @@ namespace Om
 {
 	//! \cond
 	struct Evaluator;
+
+	struct Translator;
 	//! \endcond
 
 	// MARK: - Om::Expansion
@@ -48,11 +50,9 @@ namespace Om
 		//! Constructs an Expansion on the given Evaluator.
 		explicit Expansion( Evaluator & );
 
-		//! Gives each Operand, if any, from the top of the Expression.
-		void GiveOperands( Queue & );
+		Translator const & GetTranslator() const;
 
-		//! Gives the Operator, if any, from the top of the Expression.
-		void GiveOperator( Queue & );
+		bool GiveTerm( Evaluator & );
 
 		//! Takes the Evaluation, and gives it to the Evaluator.
 		template< typename TheEvaluation >

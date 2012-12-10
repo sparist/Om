@@ -34,12 +34,12 @@ inline char const * Type_::GetName()
 
 template< typename TheQueue >
 inline void Type_::Translate(
-	Evaluator const & theEvaluator,
+	Translator const & theTranslator,
 	TheQueue & theQueue,
 	Expression & theExpression
 ) const
 {
-	Environment theEnvironment( theEvaluator.GetTranslator() );
+	Environment theEnvironment( theTranslator );
 	theEnvironment.Push( *this->thisLexicon );
 	Evaluator theScope( theExpression, theEnvironment );
 	theQueue.GiveElements( theScope );

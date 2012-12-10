@@ -40,22 +40,22 @@ inline void Type_::GiveElements( TheQuoteOperation &, Queue & theQueue )
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheOperand & theOperand
 )
 {
-	theEvaluator.TakeQuotedQueue( theOperand );
+	theExpansion.TakeQuotedQueue( theOperand );
 	return( true );
 }
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheQueue & theQueue
 )
 {
 	Operand theOperand( theQueue.GiveProgram() );
-	theEvaluator.TakeQuotedQueue( theOperand );
+	theExpansion.TakeQuotedQueue( theOperand );
 	return( true );
 }
 

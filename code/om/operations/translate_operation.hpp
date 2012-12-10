@@ -46,10 +46,10 @@ namespace Om
 			virtual ~TranslateOperation() = 0;
 
 			template< typename TheOperand >
-			bool TakeOperand( Evaluator &, TheOperand & );
+			bool TakeOperand( Expansion &, TheOperand & );
 
 			template< typename TheQueue >
-			bool TakeQuotedQueue( Evaluator &, TheQueue & );
+			bool TakeQuotedQueue( Expansion &, TheQueue & );
 
 		protected: // MARK: protected (non-static)
 

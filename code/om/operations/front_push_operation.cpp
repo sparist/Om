@@ -58,31 +58,31 @@ thisProgram()
 Template_
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheQueue & theQueue
 )
 {
 	if( this->thisProgram.IsEmpty() ){
 		this->thisProgram.TakeElements( theQueue );
 		if( this->thisProgram.IsEmpty() ){
-			ProgramOperation< ThisProgram >::Give( theEvaluator );
+			ProgramOperation< ThisProgram >::Give( theExpansion );
 			return( true );
 		}
 		return( false );
 	}
 	this->thisProgram.TakeElements( theQueue );
-	theEvaluator.TakeQuotedQueue( this->thisProgram );
+	theExpansion.TakeQuotedQueue( this->thisProgram );
 	return( true );
 }
 
 Template_
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theEvaluator, *theOperand ) );
+	return( this->TakeQuotedQueue( theExpansion, *theOperand ) );
 }
 
 // MARK: private (static)

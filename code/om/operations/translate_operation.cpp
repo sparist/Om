@@ -51,33 +51,38 @@ inline Type_::~TranslateOperation()
 Template_
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theEvaluator, *theOperand ) );
+	return( this->TakeQuotedQueue( theExpansion, *theOperand ) );
 }
 
 Template_
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheQueue & theQueue
 )
 {
 	if( this->thisLexicon ){
-		/*
-		Perform the evaluation.
-		This must be done before giving the Lexicon to the Evaluator.
-		*/
-		Expression theExpression;
-		assert( dynamic_cast< ThisImplementation * >( this ) );
-		static_cast< ThisImplementation & >(
-			*this
-		).Translate( theEvaluator, theQueue, theExpression );
-
-		theEvaluator.TakeQuotedQueue( *this->thisLexicon );
-		theEvaluator.TakeQuotedQueue( theExpression );
+		{
+			/*
+			Perform the translation.  Note that this uses this->thisLexicon and
+			must be done before the lexicon is given to the expansion.
+			*/
+			Expression theExpression;
+			assert( dynamic_cast< ThisImplementation * >( this ) );
+			static_cast< ThisImplementation & >(
+				*this
+			).Translate(
+				theExpansion.GetTranslator(),
+				theQueue,
+				theExpression
+			);
+			theExpansion.TakeQuotedQueue( theExpression );
+		}
+		theExpansion.TakeQuotedQueue( *this->thisLexicon );
 		return( true );
 	}
 	this->thisLexicon = boost::in_place();

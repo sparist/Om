@@ -51,16 +51,16 @@ thisFormRange()
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theEvaluator, *theOperand ) );
+	return( this->TakeQuotedQueue( theExpansion, *theOperand ) );
 }
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheQueue & theQueue
 )
 {
@@ -94,7 +94,7 @@ inline bool Type_::TakeQuotedQueue(
 			return( false );
 		}
 	}
-	theEvaluator.TakeQuotedQueue( this->thisExpression );
+	theExpansion.TakeQuotedQueue( this->thisExpression );
 	return( true );
 }
 

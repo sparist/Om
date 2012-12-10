@@ -40,39 +40,29 @@ inline void Type_::GiveElements( TheCopyOperation &, Queue & theQueue )
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheOperand & theOperand
 )
 {
-	/*
-	By giving a const reference first, a copy may be avoided (depending on the
-	Evaluator and its output).
-	*/
 	{
 		Operand const & theConstOperand( theOperand );
-		theEvaluator.TakeOperand( theConstOperand );
+		theExpansion.TakeOperand( theConstOperand );
 	}
-
-	theEvaluator.TakeOperand( theOperand );
+	theExpansion.TakeOperand( theOperand );
 	return( true );
 }
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheQueue & theQueue
 )
 {
-	/*
-	By giving a const reference first, a copy may be avoided (depending on the
-	Evaluator and its output).
-	*/
 	{
 		TheQueue const & theConstQueue( theQueue );
-		theEvaluator.TakeQuotedQueue( theConstQueue );
+		theExpansion.TakeQuotedQueue( theConstQueue );
 	}
-
-	theEvaluator.TakeQuotedQueue( theQueue );
+	theExpansion.TakeQuotedQueue( theQueue );
 	return( true );
 }
 

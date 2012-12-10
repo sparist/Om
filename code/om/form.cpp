@@ -43,6 +43,17 @@ inline bool Type_::BackGiveTerm( Queue & theQueue )
 	return( this->IsEmpty() );
 }
 
+inline bool Type_::BackPopTerm()
+{
+	if( this->thisOperandDeque.empty() ){
+		assert( !this->thisOperator.IsEmpty() );
+		Operator().Swap( this->thisOperator );
+		return( true );
+	}
+	this->thisOperandDeque.pop_back();
+	return( this->IsEmpty() );
+}
+
 template< typename TheOperand >
 inline void Type_::BackTakeOperand( TheOperand & theOperand )
 {
@@ -65,6 +76,18 @@ inline bool Type_::FrontGiveTerm( Queue & theQueue )
 		this->thisOperandDeque.pop_front();
 	} else{
 		this->thisOperator.GiveElements( theQueue );
+		assert( this->thisOperator.IsEmpty() );
+	}
+	return( this->thisOperandDeque.empty() );
+}
+
+inline bool Type_::FrontPopTerm()
+{
+	if( this->thisOperator.IsEmpty() ){
+		assert( !this->thisOperandDeque.empty() );
+		this->thisOperandDeque.pop_front();
+	} else{
+		Operator().Swap( this->thisOperator );
 		assert( this->thisOperator.IsEmpty() );
 	}
 	return( this->thisOperandDeque.empty() );

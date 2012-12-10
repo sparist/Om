@@ -32,7 +32,7 @@ inline char const * Type_::GetName()
 
 template< typename TheQueue >
 inline void Type_::Translate(
-	Evaluator const &,
+	Translator const &,
 	TheQueue & theQueue,
 	Expression & theExpression
 ) const

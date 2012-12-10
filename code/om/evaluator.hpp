@@ -104,11 +104,16 @@ namespace Om
 
 		virtual void ReadQuotedElements( Parser & );
 
+		void ReadQuotedElements( Expansion &, Parser & );
+
 		template< typename TheEvaluation >
 		void TakeEvaluation( std::auto_ptr< TheEvaluation > );
 
 		template< typename TheOperand >
 		void TakeOperand( TheOperand & );
+
+		template< typename TheOperand >
+		void TakeOperand( Expansion &, TheOperand & );
 
 		/*!
 		Evaluates the Operator in the following order:
@@ -121,8 +126,14 @@ namespace Om
 		template< typename TheOperator >
 		void TakeOperator( TheOperator & );
 
+		template< typename TheOperator >
+		void TakeOperator( Expansion &, TheOperator & );
+
 		template< typename TheQueue >
 		void TakeQuotedQueue( TheQueue & );
+
+		template< typename TheQueue >
+		void TakeQuotedQueue( Expansion &, TheQueue & );
 
 		template< typename TheSeparator >
 		void TakeSeparator( TheSeparator & );
@@ -144,14 +155,7 @@ namespace Om
 
 		Evaluator const & operator =( Evaluator const & );
 
-		/*!
-		If there is a translation for this Operator, the Expansion is updated
-		and each leading Operand in the resulting Expansion is sent. Otherwise
-		(if there is no translation for this Operator), the Expansion is
-		flushed.
-		*/
-		template< typename TheOperator >
-		void EvaluateOperator( Expansion &, TheOperator & );
+		void Evaluate( Expansion & );
 
 		//! The output Queue.
 		Queue & thisOutput;

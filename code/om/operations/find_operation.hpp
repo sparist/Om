@@ -68,14 +68,14 @@ namespace Om
 			FindOperation();
 
 			template< typename TheOperand >
-			bool TakeOperand( Evaluator &, TheOperand & );
+			bool TakeOperand( Expansion &, TheOperand & );
 
 			template< typename TheQueue >
-			bool TakeQuotedQueue( Evaluator &, TheQueue & );
+			bool TakeQuotedQueue( Expansion &, TheQueue & );
 
 		private: // MARK: private (non-static)
 
-			void TakeLexicon( Evaluator &, Lexicon & );
+			void TakeLexicon( Expansion &, Lexicon & );
 
 			//! The Operator to find.
 			boost::optional< Operator > thisOperator;

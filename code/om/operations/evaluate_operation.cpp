@@ -52,24 +52,28 @@ thisLexicon()
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theEvaluator, *theOperand ) );
+	return( this->TakeQuotedQueue( theExpansion, *theOperand ) );
 }
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Evaluator & theEvaluator,
+	Expansion & theExpansion,
 	TheQueue & theQueue
 )
 {
 	if( this->thisLexicon ){
-		Environment theEnvironment( theEvaluator.GetTranslator() );
-		theEnvironment.Push( *this->thisLexicon );
-		Evaluator theScope( theEvaluator, theEnvironment );
-		theQueue.GiveElements( theScope );
+		Expression theExpression;
+		{
+			Environment theEnvironment( theExpansion.GetTranslator() );
+			theEnvironment.Push( *this->thisLexicon );
+			Evaluator theScope( theExpression, theEnvironment );
+			theQueue.GiveElements( theScope );
+		}
+		theExpansion.TakeQueue( theExpression );
 		return( true );
 	}
 	this->thisLexicon = boost::in_place();

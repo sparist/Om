@@ -60,10 +60,10 @@ namespace Om
 			SkipOperation();
 
 			template< typename TheOperand >
-			bool TakeOperand( Evaluator &, TheOperand & );
+			bool TakeOperand( Expansion &, TheOperand & );
 
 			template< typename TheQueue >
-			bool TakeQuotedQueue( Evaluator &, TheQueue & );
+			bool TakeQuotedQueue( Expansion &, TheQueue & );
 
 		private: // MARK: private (non-static)
 

@@ -76,7 +76,11 @@ namespace Om
 		public: // MARK: public (non-static)
 
 			template< typename TheQueue >
-			void Translate( Evaluator const &, TheQueue &, Expression & ) const;
+			void Translate(
+				Translator const &,
+				TheQueue &,
+				Expression &
+			) const;
 		};
 
 		namespace
