@@ -34,7 +34,7 @@
 #if !defined( Om_Operations_InjectOperation_ )
 	#define Om_Operations_InjectOperation_ Om::Operations::InjectOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 	#include "om/expression.hpp"
 
@@ -51,7 +51,7 @@ namespace Om
 		*/
 		struct InjectOperation
 		:
-		DefaultEvaluation< InjectOperation >
+		DefaultOperation< InjectOperation >
 		{
 		public: // MARK: public (static)
 

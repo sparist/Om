@@ -443,7 +443,8 @@ operations in C++.
 There are two ways to implement an operation: as a composite operation, or an
 atomic operation.
 
-To implement a composite operation:
+To implement a composite operation, or an atomic operation that consumes no
+operands:
 
 -	Define the operation `struct` in the `Om::Operations` namespace.
 -	Define the static `GetName()` method, which returns a `static char const *`
@@ -451,17 +452,17 @@ To implement a composite operation:
 -	Define the static `Give( Expansion & )` method, with no return value, to
 	give existing operations and/or elements to the expansion.
 
-To define an atomic operation:
+To define an atomic operation that consumes one or more operands:
 
 -	Define the operation `struct`, derived from
-	`Om::DefaultEvaluation<` *operation* `>` (where *operation* is the name of
+	`Om::DefaultOperation<` *operation* `>` (where *operation* is the name of
 	the operation `struct`), in the `Om::Operations` namespace.
 -	Define the static `GetName()` method, which returns a `static char const *`
 	containing the name.
 -	Add the implementation, using existing operations as a guide:
 	-	Implement the functions necessary to compile.
 	-	Optionally override virtual function implementations in
-		`DefaultEvaluation`, such as `ReadQuotedElements`, that may be more
+		`DefaultOperation`, such as `ReadQuotedElements`, that may be more
 		optimally implemented in the operation.
 
 For any operation implementation, code must be added to the operation header

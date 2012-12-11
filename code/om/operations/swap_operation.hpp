@@ -29,7 +29,7 @@
 #if !defined( Om_Operations_SwapOperation_ )
 	#define Om_Operations_SwapOperation_ Om::Operations::SwapOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_SwapOperation_GetName_() "swap"
@@ -45,7 +45,7 @@ namespace Om
 		*/
 		struct SwapOperation
 		:
-		DefaultEvaluation< SwapOperation >
+		DefaultOperation< SwapOperation >
 		{
 		public: // MARK: public (static)
 

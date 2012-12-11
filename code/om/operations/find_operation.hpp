@@ -34,7 +34,7 @@
 #if !defined( Om_Operations_FindOperation_ )
 	#define Om_Operations_FindOperation_ Om::Operations::FindOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_FindOperation_GetName_() "find"
@@ -54,7 +54,7 @@ namespace Om
 		*/
 		struct FindOperation
 		:
-		DefaultEvaluation< FindOperation >
+		DefaultOperation< FindOperation >
 		{
 		public: // MARK: public (static)
 

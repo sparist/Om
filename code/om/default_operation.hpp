@@ -15,10 +15,10 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
-#if !defined( Om_DefaultEvaluation_ )
-	#define Om_DefaultEvaluation_ Om::DefaultEvaluation
+#if !defined( Om_DefaultOperation_ )
+	#define Om_DefaultOperation_ Om::DefaultOperation
 
-	#include "om/evaluation.hpp"
+	#include "om/operation.hpp"
 
 namespace Om
 {
@@ -26,15 +26,15 @@ namespace Om
 	struct Operator;
 	//! \endcond
 
-	// MARK: - Om::Operations::DefaultEvaluation
+	// MARK: - Om::Operations::DefaultOperation
 	/*!
 	\brief
-		A partial implementation of Evaluation.
+		A partial implementation of Operation.
 	*/
 	template< typename ThisImplementation >
-	struct DefaultEvaluation
+	struct DefaultOperation
 	:
-	Evaluation
+	Operation
 	{
 	public: // MARK: public (static)
 
@@ -44,7 +44,7 @@ namespace Om
 
 	public: // MARK: public (non-static)
 
-		virtual ~DefaultEvaluation() = 0;
+		virtual ~DefaultOperation() = 0;
 
 		virtual void GiveElements( Queue & );
 
@@ -56,8 +56,8 @@ namespace Om
 		\brief
 			Takes the Operand and gives the result to the Expansion.
 		\return
-			True if this call completes the Evaluation, in which case any
-			further calls on the Evaluation are undefined.
+			True if this call completes the Operation, in which case any
+			further calls on the Operation are undefined.
 		*/
 		virtual bool TakeElement( Expansion &, Operand & );
 
@@ -70,5 +70,5 @@ namespace Om
 	};
 }
 
-	#include "om/default_evaluation.cpp"
+	#include "om/default_operation.cpp"
 #endif

@@ -23,9 +23,9 @@
 namespace Om
 {
 	//! \cond
-	struct Evaluation;
-
 	struct Expansion;
+
+	struct Operation;
 
 	struct Translator;
 	//! \endcond
@@ -37,12 +37,11 @@ namespace Om
 
 	The Evaluator interprets each Element as follows:
 	-	When an Operator is taken, the Translator is queried for the
-		corresponding Operation.  If found, it gives its
-		\ref Evaluation "Evaluation(s)" to the Evaluation vector; otherwise, the
-		Evaluation vector is flushed and the Operator is given to the output
-		Queue.
-	-	When a Operand is taken, it is given to the most current Evaluation in
-		the Evaluation vector.  If none, it is given to the output Queue.
+		corresponding Operation.  If found, its implementation is given to the
+		Evaluator for further evaluation; otherwise, the Operation vector is
+		flushed and the Operator is given to the output Queue.
+	-	When a Operand is taken, it is given to the most current Operation in
+		the Operation vector.  If none, it is given to the output Queue.
 	-	When a Separator is taken, it is disregarded.
 
 	The program output by the Evaluator is an Expression.  Note that if each
@@ -70,8 +69,8 @@ namespace Om
 		\param theOutput
 			The output Queue.
 		\param theTranslator
-			The Translator; must remain in scope for the life of the Evaluator,
-			and is expected to not change.
+			The Translator, which must remain in scope for the life of the
+			Evaluator and is expected to not change.
 		*/
 		explicit Evaluator(
 			Queue & theOutput,
@@ -106,14 +105,14 @@ namespace Om
 
 		void ReadQuotedElements( Expansion &, Parser & );
 
-		template< typename TheEvaluation >
-		void TakeEvaluation( std::auto_ptr< TheEvaluation > );
-
 		template< typename TheOperand >
 		void TakeOperand( TheOperand & );
 
 		template< typename TheOperand >
 		void TakeOperand( Expansion &, TheOperand & );
+
+		template< typename TheOperation >
+		void TakeOperation( std::auto_ptr< TheOperation > );
 
 		/*!
 		Evaluates the Operator in the following order:
@@ -140,8 +139,8 @@ namespace Om
 
 	private: // MARK: private (static)
 
-		//! An Evaluation vector.
-		typedef boost::ptr_vector< Evaluation > EvaluationVector;
+		//! An Operation vector.
+		typedef boost::ptr_vector< Operation > OperationVector;
 
 		template< typename TheIterator >
 		static void GiveElements( TheIterator, TheIterator const, Queue & );
@@ -163,8 +162,8 @@ namespace Om
 		//! The Translator used for resolving Operator to Operation.
 		Translator const & thisTranslator;
 
-		//! A vector of Evaluation with the most current Evaluation at the back.
-		EvaluationVector thisEvaluationVector;
+		//! A vector of Operation with the most current at the back.
+		OperationVector thisOperationVector;
 
 		//! True if an Element has been given to the output Queue.
 		bool thisGaveElementToOutput;

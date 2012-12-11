@@ -28,7 +28,7 @@
 	#define Om_Operations_NormalizeOperation_ \
 	Om::Operations::NormalizeOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_NormalizeOperation_GetName_() "normalize"
@@ -44,7 +44,7 @@ namespace Om
 		*/
 		struct NormalizeOperation
 		:
-		DefaultEvaluation< NormalizeOperation >
+		DefaultOperation< NormalizeOperation >
 		{
 		public: // MARK: public (static)
 

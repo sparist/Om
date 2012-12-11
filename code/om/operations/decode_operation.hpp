@@ -32,7 +32,7 @@
 #if !defined( Om_Operations_DecodeOperation_ )
 	#define Om_Operations_DecodeOperation_ Om::Operations::DecodeOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_DecodeOperation_GetName_() "decode"
@@ -48,7 +48,7 @@ namespace Om
 		*/
 		struct DecodeOperation
 		:
-		DefaultEvaluation< DecodeOperation >
+		DefaultOperation< DecodeOperation >
 		{
 		public: // MARK: public (static)
 

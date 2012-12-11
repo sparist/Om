@@ -32,8 +32,8 @@ inline char const * Type_::GetName()
 
 inline void Type_::Give( Expansion & theExpansion )
 {
-	theExpansion.TakeEvaluation(
-		std::auto_ptr< Evaluation >(
+	theExpansion.TakeOperation(
+		std::auto_ptr< Operation >(
 			new PullOperation< Operator, BackPullCodePointOperation >
 		)
 	);

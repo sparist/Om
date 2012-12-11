@@ -15,15 +15,15 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
-#if defined( Om_Evaluation_ )
+#if defined( Om_Operation_ )
 
-// MARK: Om::Evaluation
+// MARK: Om::Operation
 
-	#define Type_ Om::Evaluation
+	#define Type_ Om::Operation
 
 // MARK: public (non-static)
 
-inline Type_::~Evaluation()
+inline Type_::~Operation()
 {
 }
 
@@ -71,12 +71,12 @@ inline bool Type_::TakeQuotedElements( Expansion &, Queue const & )
 
 // MARK: protected (non-static)
 
-inline Type_::Evaluation()
+inline Type_::Operation()
 {
 }
 
 	#undef Type_
 
 #else
-	#include "om/evaluation.hpp"
+	#include "om/operation.hpp"
 #endif

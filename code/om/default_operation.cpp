@@ -15,15 +15,15 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
-#if defined( Om_DefaultEvaluation_ )
+#if defined( Om_DefaultOperation_ )
 
 	#include "om/evaluator.hpp"
 
-// MARK: Om::DefaultEvaluation
+// MARK: Om::DefaultOperation
 
 	#define Template_ template< typename ThisImplementation >
 
-	#define Type_ Om::DefaultEvaluation< ThisImplementation >
+	#define Type_ Om::DefaultOperation< ThisImplementation >
 
 // MARK: public (static)
 
@@ -37,7 +37,7 @@ inline Om::Operator const & Type_::GetOperator()
 Template_
 inline void Type_::Give( Expansion & theExpansion )
 {
-	theExpansion.TakeEvaluation(
+	theExpansion.TakeOperation(
 		std::auto_ptr< ThisImplementation >( new ThisImplementation )
 	);
 }
@@ -45,7 +45,7 @@ inline void Type_::Give( Expansion & theExpansion )
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultEvaluation()
+inline Type_::~DefaultOperation()
 {
 }
 
@@ -137,5 +137,5 @@ inline bool Type_::TakeQuotedElements(
 	#undef Template_
 
 #else
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 #endif

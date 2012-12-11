@@ -67,18 +67,16 @@ inline bool Type_::GiveTerm( Evaluator & theEvaluator )
 	return( true );
 }
 
-template< typename TheEvaluation >
-inline void Type_::TakeEvaluation(
-	std::auto_ptr< TheEvaluation > theEvaluation
-)
-{
-	this->thisEvaluator.TakeEvaluation( theEvaluation );
-}
-
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
 	this->thisExpression.FrontTakeOperand( theOperand );
+}
+
+template< typename TheOperation >
+inline void Type_::TakeOperation( std::auto_ptr< TheOperation > theOperation )
+{
+	this->thisEvaluator.TakeOperation( theOperation );
 }
 
 template< typename TheOperator >

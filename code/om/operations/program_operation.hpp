@@ -18,7 +18,7 @@
 #if !defined( Om_Operations_ProgramOperation_ )
 	#define Om_Operations_ProgramOperation_ Om::Operations::ProgramOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 
 namespace Om
 {
@@ -27,12 +27,12 @@ namespace Om
 		// MARK: - Om::Operations::ProgramOperation
 		/*!
 		\brief
-			An Evaluation that normalizes a Program to a specific type.
+			An Operation that normalizes a Program to a specific type.
 		*/
 		template< typename ThisProgram >
 		struct ProgramOperation
 		:
-		DefaultEvaluation< ProgramOperation< ThisProgram > >
+		DefaultOperation< ProgramOperation< ThisProgram > >
 		{
 		public: // MARK: public (static)
 

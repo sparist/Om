@@ -31,15 +31,14 @@ namespace Om
 	// MARK: - Om::Expansion
 	/*!
 	\brief
-		The current state of an in-progress Operator resolution.
+		The current evaluation.
 
-	Contains an Expression and a reference to an Evaluator, and prevents a more
-	recursive evaluation algorithm that would overflow the stack in the event of
-	a recursive Om program.
+	An Expansion contains an Expression and a reference to an Evaluator, and
+	prevents a more recursive evaluation algorithm that would overflow the stack
+	in the event of a recursive Om program.
 
 	Each Element that it takes is pushed onto a stack, resulting in a
-	LIFO-ordered application of each Element to the Evaluator.  This is designed
-	to be used from an Operator resolution algorithm.
+	LIFO-ordered application of each Element to the Evaluator.
 	*/
 	struct Expansion
 	{
@@ -54,13 +53,13 @@ namespace Om
 
 		bool GiveTerm( Evaluator & );
 
-		//! Takes the Evaluation, and gives it to the Evaluator.
-		template< typename TheEvaluation >
-		void TakeEvaluation( std::auto_ptr< TheEvaluation > );
-
 		//! Pushes the Operand onto the front of the Expression.
 		template< typename TheOperand >
 		void TakeOperand( TheOperand & );
+
+		//! Takes the Operation, and gives it to the Evaluator.
+		template< typename TheOperation >
+		void TakeOperation( std::auto_ptr< TheOperation > );
 
 		//! Pushes the Operator onto the front of the Expression.
 		template< typename TheOperator >

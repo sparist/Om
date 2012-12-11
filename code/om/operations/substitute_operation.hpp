@@ -50,7 +50,7 @@
 	#define Om_Operations_SubstituteOperation_ \
 	Om::Operations::SubstituteOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 	#include "om/operations/translate_operation.hpp"
 

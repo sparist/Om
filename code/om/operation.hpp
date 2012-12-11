@@ -15,8 +15,8 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
-#if !defined( Om_Evaluation_ )
-	#define Om_Evaluation_ Om::Evaluation
+#if !defined( Om_Operation_ )
+	#define Om_Operation_ Om::Operation
 
 	#include "om/code_point.hpp"
 
@@ -32,23 +32,24 @@ namespace Om
 	struct Queue;
 	//! \endcond
 
-	// MARK: - Om::Evaluation
+	// MARK: - Om::Operation
 	/*!
 	\brief
-		A native \ref operations "Operation" that is partially applied to zero
-		or more \ref Operand "Operands".
+		An \ref operations "Operation" that has yet to consume one or more
+		\ref Operand "Operands", and therefore must live in memory while
+		"incomplete".
 	*/
-	struct Evaluation
+	struct Operation
 	{
 	public: // MARK: public (non-static)
 
-		virtual ~Evaluation() = 0;
+		virtual ~Operation() = 0;
 
 		/*!
 		\brief
 			Gives the contents.
 		\post
-			Any calls on the Evaluation are undefined.
+			Any calls on the Operation are undefined.
 		*/
 		virtual void GiveElements( Queue & ) = 0;
 
@@ -59,12 +60,12 @@ namespace Om
 
 		/*!
 		\brief
-			Takes a Operand.
+			Takes an Operand.
 		\return
-			True if this call completes the Evaluation, in which case any
-			further calls on the Evaluation are undefined.
+			True if this call completes the Operation, in which case any further
+			calls on the Operation are undefined.
 		\post
-			If true was returned, any further calls on the Evaluation are
+			If true was returned, any further calls on the Operation are
 			undefined.
 		*/
 		virtual bool TakeElement( Expansion &, Operand & ) = 0;
@@ -77,10 +78,10 @@ namespace Om
 			Constructs and takes an Operand, which takes each Element from the
 			argument.
 		\return
-			True if this call completes the Evaluation, in which case any
-			further calls on the Evaluation are undefined.
+			True if this call completes the Operation, in which case any further
+			calls on the Operation are undefined.
 		\post
-			If true was returned, any further calls on the Evaluation are
+			If true was returned, any further calls on the Operation are
 			undefined.
 		*/
 		virtual bool TakeQuotedElements( Expansion &, Queue & ) = 0;
@@ -90,15 +91,15 @@ namespace Om
 
 	protected: // MARK: protected (non-static)
 
-		Evaluation();
+		Operation();
 
 	private: // MARK: private (non-static)
 
-		Evaluation( Evaluation const & );
+		Operation( Operation const & );
 
-		Evaluation const & operator =( Evaluation const & );
+		Operation const & operator =( Operation const & );
 	};
 }
 
-	#include "om/evaluation.cpp"
+	#include "om/operation.cpp"
 #endif

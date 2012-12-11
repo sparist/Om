@@ -29,7 +29,7 @@
 #if !defined( Om_Operations_DequoteOperation_ )
 	#define Om_Operations_DequoteOperation_ Om::Operations::DequoteOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_DequoteOperation_GetName_() "dequote"
@@ -45,7 +45,7 @@ namespace Om
 		*/
 		struct DequoteOperation
 		:
-		DefaultEvaluation< DequoteOperation >
+		DefaultOperation< DequoteOperation >
 		{
 		public: // MARK: public (static)
 

@@ -19,7 +19,7 @@
 	#define Om_Operations_FrontPushOperation_ \
 	Om::Operations::FrontPushOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 
 namespace Om
 {
@@ -28,12 +28,12 @@ namespace Om
 		// MARK: - Om::Operations::FrontPushOperation
 		/*!
 		\brief
-			An Evaluation that joins an Operand to the front of a Program.
+			An Operation that joins an Operand to the front of a Program.
 		*/
 		template< typename ThisProgram, typename ThisImplementation >
 		struct FrontPushOperation
 		:
-		DefaultEvaluation<
+		DefaultOperation<
 			FrontPushOperation< ThisProgram, ThisImplementation >
 		>
 		{

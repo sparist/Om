@@ -30,7 +30,7 @@
 #if !defined( Om_Operations_EvaluateOperation_ )
 	#define Om_Operations_EvaluateOperation_ Om::Operations::EvaluateOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 	#include "om/operations/translate_operation.hpp"
 
@@ -47,7 +47,7 @@ namespace Om
 		*/
 		struct EvaluateOperation
 		:
-		DefaultEvaluation< EvaluateOperation >
+		DefaultOperation< EvaluateOperation >
 		{
 		public: // MARK: public (static)
 

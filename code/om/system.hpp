@@ -65,8 +65,8 @@ namespace Om
 
 		/*!
 		\brief
-			If there is an Operation mapped to the Operator, it gives its
-			\ref Evaluation "Evaluation(s)" to the Expansion.
+			If there is an Operation mapped to the Operator, its implementation
+			is given to the Expansion.
 		\return
 			False if there is no Operation mapped to the Operator.
 		*/

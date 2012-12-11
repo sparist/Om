@@ -29,7 +29,7 @@
 #if !defined( Om_Operations_DropOperation_ )
 	#define Om_Operations_DropOperation_ Om::Operations::DropOperation
 
-	#include "om/default_evaluation.hpp"
+	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 
 	#define Om_Operations_DropOperation_GetName_() "drop"
@@ -45,7 +45,7 @@ namespace Om
 		*/
 		struct DropOperation
 		:
-		DefaultEvaluation< DropOperation >
+		DefaultOperation< DropOperation >
 		{
 		public: // MARK: public (static)
 

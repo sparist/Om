@@ -17,8 +17,8 @@
 */
 #if defined( Om_Evaluator_ )
 
-	#include "om/evaluation.hpp"
 	#include "om/expansion.hpp"
+	#include "om/operation.hpp"
 	#include "om/operator.hpp"
 	#include "om/translator.hpp"
 
@@ -44,7 +44,7 @@ inline Type_::Evaluator( Queue & theOutput, Translator const & theTranslator )
 :
 thisOutput( theOutput ),
 thisTranslator( theTranslator ),
-thisEvaluationVector(),
+thisOperationVector(),
 thisGaveElementToOutput()
 {
 }
@@ -58,7 +58,7 @@ inline bool Type_::operator ==( Program const & theProgram ) const
 
 inline void Type_::Clear()
 {
-	this->thisEvaluationVector.clear();
+	this->thisOperationVector.clear();
 }
 
 inline Om::Translator const & Type_::GetTranslator() const
@@ -69,8 +69,8 @@ inline Om::Translator const & Type_::GetTranslator() const
 inline void Type_::GiveElements( Queue & theQueue )
 {
 	this->GiveElements(
-		this->thisEvaluationVector.begin(),
-		this->thisEvaluationVector.end(),
+		this->thisOperationVector.begin(),
+		this->thisOperationVector.end(),
 		theQueue
 	);
 	this->Clear();
@@ -79,8 +79,8 @@ inline void Type_::GiveElements( Queue & theQueue )
 inline void Type_::GiveElements( Queue & theQueue ) const
 {
 	this->GiveElements(
-		this->thisEvaluationVector.begin(),
-		this->thisEvaluationVector.end(),
+		this->thisOperationVector.begin(),
+		this->thisOperationVector.end(),
 		theQueue
 	);
 }
@@ -97,7 +97,7 @@ inline std::auto_ptr< Om::Program > Type_::GiveProgram() const
 
 inline bool Type_::IsEmpty() const
 {
-	return( this->thisEvaluationVector.empty() );
+	return( this->thisOperationVector.empty() );
 }
 
 inline void Type_::ReadElements( Parser & theParser )
@@ -137,26 +137,18 @@ inline void Type_::ReadQuotedElements(
 	Parser & theParser
 )
 {
-	if( this->thisEvaluationVector.empty() ){
+	if( this->thisOperationVector.empty() ){
 		this->thisOutput.ReadQuotedElements( theParser );
 		this->thisGaveElementToOutput = true;
 	} else{
-		std::auto_ptr< Evaluation > theEvaluation(
-			this->thisEvaluationVector.pop_back().release()
+		std::auto_ptr< Operation > theOperation(
+			this->thisOperationVector.pop_back().release()
 		);
-		assert( theEvaluation.get() );
-		if( !theEvaluation->ReadQuotedElements( theExpansion, theParser ) ){
-			this->thisEvaluationVector.push_back( theEvaluation );
+		assert( theOperation.get() );
+		if( !theOperation->ReadQuotedElements( theExpansion, theParser ) ){
+			this->thisOperationVector.push_back( theOperation );
 		}
 	}
-}
-
-template< typename TheEvaluation >
-inline void Type_::TakeEvaluation(
-	std::auto_ptr< TheEvaluation > theEvaluation
-)
-{
-	this->thisEvaluationVector.push_back( theEvaluation );
 }
 
 template< typename TheOperand >
@@ -173,18 +165,24 @@ inline void Type_::TakeOperand(
 	TheOperand & theOperand
 )
 {
-	if( this->thisEvaluationVector.empty() ){
+	if( this->thisOperationVector.empty() ){
 		this->thisOutput.TakeElement( theOperand );
 		this->thisGaveElementToOutput = true;
 	} else{
-		std::auto_ptr< Evaluation > theEvaluation(
-			this->thisEvaluationVector.pop_back().release()
+		std::auto_ptr< Operation > theOperation(
+			this->thisOperationVector.pop_back().release()
 		);
-		assert( theEvaluation.get() );
-		if( !theEvaluation->TakeElement( theExpansion, theOperand ) ){
-			this->thisEvaluationVector.push_back( theEvaluation );
+		assert( theOperation.get() );
+		if( !theOperation->TakeElement( theExpansion, theOperand ) ){
+			this->thisOperationVector.push_back( theOperation );
 		}
 	}
+}
+
+template< typename TheOperation >
+inline void Type_::TakeOperation( std::auto_ptr< TheOperation > theOperation )
+{
+	this->thisOperationVector.push_back( theOperation );
 }
 
 template< typename TheOperator >
@@ -251,16 +249,16 @@ inline void Type_::TakeQuotedQueue(
 	TheQueue & theQueue
 )
 {
-	if( this->thisEvaluationVector.empty() ){
+	if( this->thisOperationVector.empty() ){
 		this->thisOutput.TakeQuotedElements( theQueue );
 		this->thisGaveElementToOutput = true;
 	} else{
-		std::auto_ptr< Evaluation > theEvaluation(
-			this->thisEvaluationVector.pop_back().release()
+		std::auto_ptr< Operation > theOperation(
+			this->thisOperationVector.pop_back().release()
 		);
-		assert( theEvaluation.get() );
-		if( !theEvaluation->TakeQuotedElements( theExpansion, theQueue ) ){
-			this->thisEvaluationVector.push_back( theEvaluation );
+		assert( theOperation.get() );
+		if( !theOperation->TakeQuotedElements( theExpansion, theQueue ) ){
+			this->thisOperationVector.push_back( theOperation );
 		}
 	}
 }
