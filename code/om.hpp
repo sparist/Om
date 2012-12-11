@@ -291,9 +291,9 @@ escaped with a backquote:
 
 Recursion is very efficient in %Om, due to (a) the "eager" evaluation model
 enabled by prefix concatenative syntax (i.e. data is consumed immediately rather
-than being left on a stack), and (b) the non-recursive implementation of
-evaluation expansions in the evaluator, minimizing memory overhead of recursive
-calls.  The following example uses recursion to give the minutes in a
+than being left on a stack), and (b) the non-recursive evaluation implementation
+in the evaluator that minimizes memory overhead of recursive calls and prevents
+stack overflow.  The following example uses recursion to give the minutes in a
 colon-delimited 24-hour time string:
 
 -	`evaluate { minutes { dequote choose {minutes} {} = {:} <-characters } }
@@ -449,8 +449,8 @@ operands:
 -	Define the operation `struct` in the `Om::Operations` namespace.
 -	Define the static `GetName()` method, which returns a `static char const *`
 	containing the name.
--	Define the static `Give( Expansion & )` method, with no return value, to
-	give existing operations and/or elements to the expansion.
+-	Define the static `Give( Evaluation & )` method, with no return value, to
+	give existing operations and/or elements to the evaluation.
 
 To define an atomic operation that consumes one or more operands:
 

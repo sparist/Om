@@ -38,20 +38,20 @@ inline void Type_::GiveElements( TheDequoteOperation &, Queue & theQueue )
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theExpansion, theOperand.GetProgram() ) );
+	return( this->TakeQuotedQueue( theEvaluation, theOperand.GetProgram() ) );
 }
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
-	theExpansion.TakeQueue( theQueue );
+	theEvaluation.TakeQueue( theQueue );
 	return( true );
 }
 

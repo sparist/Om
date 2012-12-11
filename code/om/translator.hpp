@@ -24,7 +24,7 @@
 namespace Om
 {
 	//! \cond
-	struct Expansion;
+	struct Evaluation;
 
 	struct Lexicon;
 
@@ -54,13 +54,13 @@ namespace Om
 		/*!
 		\brief
 			Translates the Operator to an object that is then given to the
-			Expansion.
+			Evaluation.
 		\return
 			-	0 if the Operator was not found.
 			-	1 if the Operator was found, with no definition mapped.
 			-	2 if the Operator was found, with a definition mapped.
 		*/
-		virtual int Translate( Expansion &, Operator const & ) const;
+		virtual int Translate( Evaluation &, Operator const & ) const;
 
 		//! Pushes a Lexicon reference.
 		virtual void Push( Lexicon const & );

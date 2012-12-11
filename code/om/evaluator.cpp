@@ -17,7 +17,7 @@
 */
 #if defined( Om_Evaluator_ )
 
-	#include "om/expansion.hpp"
+	#include "om/evaluation.hpp"
 	#include "om/operation.hpp"
 	#include "om/operator.hpp"
 	#include "om/translator.hpp"
@@ -127,13 +127,13 @@ inline void Type_::ReadElements( Parser & theParser )
 
 inline void Type_::ReadQuotedElements( Parser & theParser )
 {
-	Expansion theExpansion( *this );
-	this->ReadQuotedElements( theExpansion, theParser );
-	this->Evaluate( theExpansion );
+	Evaluation theEvaluation( *this );
+	this->ReadQuotedElements( theEvaluation, theParser );
+	this->Evaluate( theEvaluation );
 }
 
 inline void Type_::ReadQuotedElements(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	Parser & theParser
 )
 {
@@ -145,7 +145,7 @@ inline void Type_::ReadQuotedElements(
 			this->thisOperationVector.pop_back().release()
 		);
 		assert( theOperation.get() );
-		if( !theOperation->ReadQuotedElements( theExpansion, theParser ) ){
+		if( !theOperation->ReadQuotedElements( theEvaluation, theParser ) ){
 			this->thisOperationVector.push_back( theOperation );
 		}
 	}
@@ -154,14 +154,14 @@ inline void Type_::ReadQuotedElements(
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
-	Expansion theExpansion( *this );
-	this->TakeOperand( theExpansion, theOperand );
-	this->Evaluate( theExpansion );
+	Evaluation theEvaluation( *this );
+	this->TakeOperand( theEvaluation, theOperand );
+	this->Evaluate( theEvaluation );
 }
 
 template< typename TheOperand >
 inline void Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
@@ -173,7 +173,7 @@ inline void Type_::TakeOperand(
 			this->thisOperationVector.pop_back().release()
 		);
 		assert( theOperation.get() );
-		if( !theOperation->TakeElement( theExpansion, theOperand ) ){
+		if( !theOperation->TakeElement( theEvaluation, theOperand ) ){
 			this->thisOperationVector.push_back( theOperation );
 		}
 	}
@@ -188,21 +188,21 @@ inline void Type_::TakeOperation( std::auto_ptr< TheOperation > theOperation )
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator )
 {
-	Expansion theExpansion( *this );
-	this->TakeOperator( theExpansion, theOperator );
-	this->Evaluate( theExpansion );
+	Evaluation theEvaluation( *this );
+	this->TakeOperator( theEvaluation, theOperator );
+	this->Evaluate( theEvaluation );
 }
 
 template< typename TheOperator >
 inline void Type_::TakeOperator(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperator & theOperator
 )
 {
 	assert( !theOperator.IsEmpty() );
-	switch( this->thisTranslator.Translate( theExpansion, theOperator ) ){
+	switch( this->thisTranslator.Translate( theEvaluation, theOperator ) ){
 	case 0:
-		switch( this->thisTranslator.Translate( theExpansion, Operator() ) ){
+		switch( this->thisTranslator.Translate( theEvaluation, Operator() ) ){
 		case 0:
 		case 1:
 			break;
@@ -238,14 +238,14 @@ inline void Type_::TakeOperator(
 template< typename TheQueue >
 inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 {
-	Expansion theExpansion( *this );
-	this->TakeQuotedQueue( theExpansion, theQueue );
-	this->Evaluate( theExpansion );
+	Evaluation theEvaluation( *this );
+	this->TakeQuotedQueue( theEvaluation, theQueue );
+	this->Evaluate( theEvaluation );
 }
 
 template< typename TheQueue >
 inline void Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
@@ -257,7 +257,7 @@ inline void Type_::TakeQuotedQueue(
 			this->thisOperationVector.pop_back().release()
 		);
 		assert( theOperation.get() );
-		if( !theOperation->TakeQuotedElements( theExpansion, theQueue ) ){
+		if( !theOperation->TakeQuotedElements( theEvaluation, theQueue ) ){
 			this->thisOperationVector.push_back( theOperation );
 		}
 	}
@@ -298,9 +298,9 @@ inline std::auto_ptr< Om::Program > Type_::GiveProgram(
 
 // MARK: private (non-static)
 
-inline void Type_::Evaluate( Expansion & theExpansion )
+inline void Type_::Evaluate( Evaluation & theEvaluation )
 {
-	while( theExpansion.GiveTerm( *this ) ){}
+	while( theEvaluation.GiveTerm( *this ) ){}
 }
 
 	#undef Type_

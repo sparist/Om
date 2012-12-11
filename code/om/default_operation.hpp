@@ -40,7 +40,7 @@ namespace Om
 
 		static Operator const & GetOperator();
 
-		static void Give( Expansion & );
+		static void Give( Evaluation & );
 
 	public: // MARK: public (non-static)
 
@@ -50,23 +50,23 @@ namespace Om
 
 		virtual void GiveElements( Queue & ) const;
 
-		virtual bool ReadQuotedElements( Expansion &, Parser & );
+		virtual bool ReadQuotedElements( Evaluation &, Parser & );
 
 		/*!
 		\brief
-			Takes the Operand and gives the result to the Expansion.
+			Takes the Operand and gives the result to the Evaluation.
 		\return
 			True if this call completes the Operation, in which case any
 			further calls on the Operation are undefined.
 		*/
-		virtual bool TakeElement( Expansion &, Operand & );
+		virtual bool TakeElement( Evaluation &, Operand & );
 
 		//! \overload
-		virtual bool TakeElement( Expansion &, Operand const & );
+		virtual bool TakeElement( Evaluation &, Operand const & );
 
-		virtual bool TakeQuotedElements( Expansion &, Queue & );
+		virtual bool TakeQuotedElements( Evaluation &, Queue & );
 
-		virtual bool TakeQuotedElements( Expansion &, Queue const & );
+		virtual bool TakeQuotedElements( Evaluation &, Queue const & );
 	};
 }
 

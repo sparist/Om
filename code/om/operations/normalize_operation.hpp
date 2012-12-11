@@ -56,10 +56,10 @@ namespace Om
 		public: // MARK: public (non-static)
 
 			template< typename TheOperand >
-			bool TakeOperand( Expansion &, TheOperand & );
+			bool TakeOperand( Evaluation &, TheOperand & );
 
 			template< typename TheQueue >
-			bool TakeQuotedQueue( Expansion &, TheQueue & );
+			bool TakeQuotedQueue( Evaluation &, TheQueue & );
 		};
 
 		namespace

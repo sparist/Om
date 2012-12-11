@@ -35,9 +35,9 @@ inline Om::Operator const & Type_::GetOperator()
 }
 
 Template_
-inline void Type_::Give( Expansion & theExpansion )
+inline void Type_::Give( Evaluation & theEvaluation )
 {
-	theExpansion.TakeOperation(
+	theEvaluation.TakeOperation(
 		std::auto_ptr< ThisImplementation >( new ThisImplementation )
 	);
 }
@@ -71,29 +71,32 @@ inline void Type_::GiveElements( Queue & theQueue ) const
 
 Template_
 inline bool Type_::ReadQuotedElements(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	Parser & theParser
 )
 {
 	Literal theLiteral;
 	theLiteral.ReadElements( theParser );
-	return( this->TakeQuotedElements( theExpansion, theLiteral ) );
+	return( this->TakeQuotedElements( theEvaluation, theLiteral ) );
 }
 
 Template_
-inline bool Type_::TakeElement( Expansion & theExpansion, Operand & theOperand )
+inline bool Type_::TakeElement(
+	Evaluation & theEvaluation,
+	Operand & theOperand
+)
 {
 	assert( dynamic_cast< ThisImplementation * >( this ) );
 	return(
 		static_cast<
 			ThisImplementation &
-		>( *this ).TakeOperand( theExpansion, theOperand )
+		>( *this ).TakeOperand( theEvaluation, theOperand )
 	);
 }
 
 Template_
 inline bool Type_::TakeElement(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	Operand const & theOperand
 )
 {
@@ -101,13 +104,13 @@ inline bool Type_::TakeElement(
 	return(
 		static_cast<
 			ThisImplementation &
-		>( *this ).TakeOperand( theExpansion, theOperand )
+		>( *this ).TakeOperand( theEvaluation, theOperand )
 	);
 }
 
 Template_
 inline bool Type_::TakeQuotedElements(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	Queue & theQueue
 )
 {
@@ -115,13 +118,13 @@ inline bool Type_::TakeQuotedElements(
 	return(
 		static_cast<
 			ThisImplementation &
-		>( *this ).TakeQuotedQueue( theExpansion, theQueue )
+		>( *this ).TakeQuotedQueue( theEvaluation, theQueue )
 	);
 }
 
 Template_
 inline bool Type_::TakeQuotedElements(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	Queue const & theQueue
 )
 {
@@ -129,7 +132,7 @@ inline bool Type_::TakeQuotedElements(
 	return(
 		static_cast<
 			ThisImplementation &
-		>( *this ).TakeQuotedQueue( theExpansion, theQueue )
+		>( *this ).TakeQuotedQueue( theEvaluation, theQueue )
 	);
 }
 

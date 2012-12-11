@@ -35,9 +35,9 @@ namespace Om
 	-	A <tt>static char const * GetName()</tt> function that returns a
 		null-terminated, NFD-normalized UTF-8 string to be used as a
 		corresponding Operator name.
-	-	A <tt>static void Give( </tt><em>Expansion</em><tt> )</tt> function,
+	-	A <tt>static void Give( </tt><em>Evaluation</em><tt> )</tt> function,
 		which gives the implementation of the \ref operations Operation to the
-		Expansion.
+		Evaluation.
 
 	Including the header for an \ref operations "Operation" will cause the
 	\ref operations "Operation" to be added to the System automatically.

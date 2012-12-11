@@ -15,25 +15,25 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
-#if defined( Om_Expansion_ )
+#if defined( Om_Evaluation_ )
 
 	#include "om/evaluator.hpp"
 
-// MARK: Om::Expansion
+// MARK: Om::Evaluation
 
-	#define Type_ Om::Expansion
+	#define Type_ Om::Evaluation
 
 // MARK: public (non-static)
 
-inline Type_::~Expansion()
+inline Type_::~Evaluation()
 {
 	assert(
 		this->thisExpression.IsEmpty() &&
-		"The Expansion was not fully consumed."
+		"The Evaluation was not fully consumed."
 	);
 }
 
-inline Type_::Expansion( Evaluator & theEvaluator )
+inline Type_::Evaluation( Evaluator & theEvaluator )
 :
 thisExpression(),
 thisEvaluator( theEvaluator )
@@ -103,5 +103,5 @@ inline void Type_::TakeQueue( TheQueue & theQueue )
 	#undef Type_
 
 #else
-	#include "om/expansion.hpp"
+	#include "om/evaluation.hpp"
 #endif

@@ -51,17 +51,17 @@ inline Type_::~TranslateOperation()
 Template_
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theExpansion, theOperand.GetProgram() ) );
+	return( this->TakeQuotedQueue( theEvaluation, theOperand.GetProgram() ) );
 }
 
 Template_
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
@@ -69,20 +69,20 @@ inline bool Type_::TakeQuotedQueue(
 		{
 			/*
 			Perform the translation.  Note that this uses this->thisLexicon and
-			must be done before the lexicon is given to the expansion.
+			must be done before the lexicon is given to the Evaluation.
 			*/
 			Expression theExpression;
 			assert( dynamic_cast< ThisImplementation * >( this ) );
 			static_cast< ThisImplementation & >(
 				*this
 			).Translate(
-				theExpansion.GetTranslator(),
+				theEvaluation.GetTranslator(),
 				theQueue,
 				theExpression
 			);
-			theExpansion.TakeQuotedQueue( theExpression );
+			theEvaluation.TakeQuotedQueue( theExpression );
 		}
-		theExpansion.TakeQuotedQueue( *this->thisLexicon );
+		theEvaluation.TakeQuotedQueue( *this->thisLexicon );
 		return( true );
 	}
 	this->thisLexicon = boost::in_place();

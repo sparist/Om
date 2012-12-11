@@ -44,35 +44,35 @@ inline void Type_::GiveElements( TheProgramOperation &, Queue & theQueue )
 
 Template_
 inline bool Type_::ReadQuotedElements(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	Parser & theParser
 )
 {
 	ThisProgram theProgram;
 	theProgram.ReadElements( theParser );
-	return( this->TakeQuotedQueue( theExpansion, theProgram ) );
+	return( this->TakeQuotedQueue( theEvaluation, theProgram ) );
 }
 
 Template_
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theExpansion, theOperand.GetProgram() ) );
+	return( this->TakeQuotedQueue( theEvaluation, theOperand.GetProgram() ) );
 }
 
 Template_
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
 	ThisProgram theProgram;
 	theProgram.TakeElements( theQueue );
-	theExpansion.TakeQuotedQueue( theProgram );
+	theEvaluation.TakeQuotedQueue( theProgram );
 	return( true );
 }
 

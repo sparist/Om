@@ -55,7 +55,7 @@ namespace Om
 
 			static char const * GetName();
 
-			static void Give( Expansion & );
+			static void Give( Evaluation & );
 		};
 
 		namespace

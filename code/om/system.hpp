@@ -23,7 +23,7 @@
 namespace Om
 {
 	//! \cond
-	struct Expansion;
+	struct Evaluation;
 
 	struct Operator;
 	//! \endcond
@@ -66,20 +66,20 @@ namespace Om
 		/*!
 		\brief
 			If there is an Operation mapped to the Operator, its implementation
-			is given to the Expansion.
+			is given to the Evaluation.
 		\return
 			False if there is no Operation mapped to the Operator.
 		*/
-		bool Translate( Expansion &, Operator const & ) const;
+		bool Translate( Evaluation &, Operator const & ) const;
 
 	private: // MARK: private (static)
 
 		/*!
 		\brief
 			Maps the name to a function that gives the Operation with this name
-			to the Expansion.
+			to the Evaluation.
 		*/
-		typedef std::map< std::string, void ( * )( Expansion & ) > Map;
+		typedef std::map< std::string, void ( * )( Evaluation & ) > Map;
 
 	private: // MARK: private (non-static)
 

@@ -31,10 +31,10 @@ inline char const * Type_::GetName()
 	return( Om_Operations_LexiconBackPushOperation_GetName_() );
 }
 
-inline void Type_::Give( Expansion & theExpansion )
+inline void Type_::Give( Evaluation & theEvaluation )
 {
-	LexiconFrontPushOperation::Give( theExpansion );
-	SwapOperation::Give( theExpansion );
+	LexiconFrontPushOperation::Give( theEvaluation );
+	SwapOperation::Give( theEvaluation );
 }
 
 	#undef Type_

@@ -23,7 +23,7 @@
 namespace Om
 {
 	//! \cond
-	struct Expansion;
+	struct Evaluation;
 
 	struct Operation;
 
@@ -103,13 +103,13 @@ namespace Om
 
 		virtual void ReadQuotedElements( Parser & );
 
-		void ReadQuotedElements( Expansion &, Parser & );
+		void ReadQuotedElements( Evaluation &, Parser & );
 
 		template< typename TheOperand >
 		void TakeOperand( TheOperand & );
 
 		template< typename TheOperand >
-		void TakeOperand( Expansion &, TheOperand & );
+		void TakeOperand( Evaluation &, TheOperand & );
 
 		template< typename TheOperation >
 		void TakeOperation( std::auto_ptr< TheOperation > );
@@ -126,13 +126,13 @@ namespace Om
 		void TakeOperator( TheOperator & );
 
 		template< typename TheOperator >
-		void TakeOperator( Expansion &, TheOperator & );
+		void TakeOperator( Evaluation &, TheOperator & );
 
 		template< typename TheQueue >
 		void TakeQuotedQueue( TheQueue & );
 
 		template< typename TheQueue >
-		void TakeQuotedQueue( Expansion &, TheQueue & );
+		void TakeQuotedQueue( Evaluation &, TheQueue & );
 
 		template< typename TheSeparator >
 		void TakeSeparator( TheSeparator & );
@@ -154,7 +154,7 @@ namespace Om
 
 		Evaluator const & operator =( Evaluator const & );
 
-		void Evaluate( Expansion & );
+		void Evaluate( Evaluation & );
 
 		//! The output Queue.
 		Queue & thisOutput;

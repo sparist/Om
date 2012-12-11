@@ -64,10 +64,10 @@ namespace Om
 			EqualsOperation();
 
 			template< typename TheOperand >
-			bool TakeOperand( Expansion &, TheOperand & );
+			bool TakeOperand( Evaluation &, TheOperand & );
 
 			template< typename TheQueue >
-			bool TakeQuotedQueue( Expansion &, TheQueue & );
+			bool TakeQuotedQueue( Evaluation &, TheQueue & );
 
 		private: // MARK: private (non-static)
 

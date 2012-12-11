@@ -57,17 +57,17 @@ thisOperandCount()
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
 	Operand theOperand( theQueue.GiveProgram() );
-	return( this->TakeOperand( theExpansion, theOperand ) );
+	return( this->TakeOperand( theEvaluation, theOperand ) );
 }
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
@@ -82,7 +82,7 @@ inline bool Type_::TakeOperand(
 	default:
 		{
 			TheOperand const & theConstOperand = theOperand;
-			theExpansion.TakeOperand(
+			theEvaluation.TakeOperand(
 				theConstOperand.GetProgram().IsEmpty() ?
 				this->thisEmptyCase :
 				this->thisNonEmptyCase

@@ -15,8 +15,8 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
-#if !defined( Om_Expansion_ )
-	#define Om_Expansion_ Om::Expansion
+#if !defined( Om_Evaluation_ )
+	#define Om_Evaluation_ Om::Evaluation
 
 	#include "om/expression.hpp"
 
@@ -28,26 +28,26 @@ namespace Om
 	struct Translator;
 	//! \endcond
 
-	// MARK: - Om::Expansion
+	// MARK: - Om::Evaluation
 	/*!
 	\brief
 		The current evaluation.
 
-	An Expansion contains an Expression and a reference to an Evaluator, and
+	An Evaluation contains an Expression and a reference to an Evaluator, and
 	prevents a more recursive evaluation algorithm that would overflow the stack
 	in the event of a recursive Om program.
 
 	Each Element that it takes is pushed onto a stack, resulting in a
 	LIFO-ordered application of each Element to the Evaluator.
 	*/
-	struct Expansion
+	struct Evaluation
 	{
 	public: // MARK: public (non-static)
 
-		virtual ~Expansion();
+		virtual ~Evaluation();
 
-		//! Constructs an Expansion on the given Evaluator.
-		explicit Expansion( Evaluator & );
+		//! Constructs an Evaluation on the given Evaluator.
+		explicit Evaluation( Evaluator & );
 
 		Translator const & GetTranslator() const;
 
@@ -75,9 +75,9 @@ namespace Om
 
 	private: // MARK: private (non-static)
 
-		Expansion( Expansion const & );
+		Evaluation( Evaluation const & );
 
-		Expansion const & operator =( Expansion const & );
+		Evaluation const & operator =( Evaluation const & );
 
 		//! The Expression.
 		Expression thisExpression;
@@ -87,5 +87,5 @@ namespace Om
 	};
 }
 
-	#include "om/expansion.cpp"
+	#include "om/evaluation.cpp"
 #endif

@@ -42,29 +42,29 @@ inline void Type_::GiveElements( ThePullOperation &, Queue & theQueue )
 
 Template_
 inline bool Type_::ReadQuotedElements(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	Parser & theParser
 )
 {
 	ThisProgram theProgram;
 	theProgram.ReadElements( theParser );
-	return( this->TakeQuotedElements( theExpansion, theProgram ) );
+	return( this->TakeQuotedElements( theEvaluation, theProgram ) );
 }
 
 Template_
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theExpansion, theOperand.GetProgram() ) );
+	return( this->TakeQuotedQueue( theEvaluation, theOperand.GetProgram() ) );
 }
 
 Template_
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
@@ -74,8 +74,8 @@ inline bool Type_::TakeQuotedQueue(
 	ThisProgram thePulledProgram;
 	ThisImplementation::Pull( theProgramToPullFrom, thePulledProgram );
 
-	theExpansion.TakeQuotedQueue( theProgramToPullFrom );
-	theExpansion.TakeQuotedQueue( thePulledProgram );
+	theEvaluation.TakeQuotedQueue( theProgramToPullFrom );
+	theEvaluation.TakeQuotedQueue( thePulledProgram );
 	return( true );
 }
 

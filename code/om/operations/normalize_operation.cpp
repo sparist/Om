@@ -38,23 +38,23 @@ inline void Type_::GiveElements( TheNormalizeOperation &, Queue & theQueue )
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theExpansion, theOperand.GetProgram() ) );
+	return( this->TakeQuotedQueue( theEvaluation, theOperand.GetProgram() ) );
 }
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
 	Operator theOperator;
 	theOperator.TakeElements( theQueue );
 	theOperator.Normalize();
-	theExpansion.TakeQuotedQueue( theOperator );
+	theEvaluation.TakeQuotedQueue( theOperator );
 	return( true );
 }
 

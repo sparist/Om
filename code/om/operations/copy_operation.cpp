@@ -40,29 +40,29 @@ inline void Type_::GiveElements( TheCopyOperation &, Queue & theQueue )
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
 	{
 		Operand const & theConstOperand( theOperand );
-		theExpansion.TakeOperand( theConstOperand );
+		theEvaluation.TakeOperand( theConstOperand );
 	}
-	theExpansion.TakeOperand( theOperand );
+	theEvaluation.TakeOperand( theOperand );
 	return( true );
 }
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
 	{
 		TheQueue const & theConstQueue( theQueue );
-		theExpansion.TakeQuotedQueue( theConstQueue );
+		theEvaluation.TakeQuotedQueue( theConstQueue );
 	}
-	theExpansion.TakeQuotedQueue( theQueue );
+	theEvaluation.TakeQuotedQueue( theQueue );
 	return( true );
 }
 

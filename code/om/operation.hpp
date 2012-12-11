@@ -23,7 +23,7 @@
 namespace Om
 {
 	//! \cond
-	struct Expansion;
+	struct Evaluation;
 
 	struct Operand;
 
@@ -56,7 +56,7 @@ namespace Om
 		//! \overload
 		virtual void GiveElements( Queue & ) const = 0;
 
-		virtual bool ReadQuotedElements( Expansion &, Parser & ) = 0;
+		virtual bool ReadQuotedElements( Evaluation &, Parser & ) = 0;
 
 		/*!
 		\brief
@@ -68,10 +68,10 @@ namespace Om
 			If true was returned, any further calls on the Operation are
 			undefined.
 		*/
-		virtual bool TakeElement( Expansion &, Operand & ) = 0;
+		virtual bool TakeElement( Evaluation &, Operand & ) = 0;
 
 		//! \overload
-		virtual bool TakeElement( Expansion &, Operand const & ) = 0;
+		virtual bool TakeElement( Evaluation &, Operand const & ) = 0;
 
 		/*!
 		\brief
@@ -84,10 +84,10 @@ namespace Om
 			If true was returned, any further calls on the Operation are
 			undefined.
 		*/
-		virtual bool TakeQuotedElements( Expansion &, Queue & ) = 0;
+		virtual bool TakeQuotedElements( Evaluation &, Queue & ) = 0;
 
 		//! \overload
-		virtual bool TakeQuotedElements( Expansion &, Queue const & ) = 0;
+		virtual bool TakeQuotedElements( Evaluation &, Queue const & ) = 0;
 
 	protected: // MARK: protected (non-static)
 

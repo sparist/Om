@@ -36,12 +36,12 @@ inline char const * Type_::GetName()
 	return( Om_Operations_RearrangeOperation_GetName_() );
 }
 
-inline void Type_::Give( Expansion & theExpansion )
+inline void Type_::Give( Evaluation & theEvaluation )
 {
 	// evaluate swap skip {dequote inject {quote} ->expression {fill} quote}
-	EvaluateOperation::Give( theExpansion );
-	SwapOperation::Give( theExpansion );
-	SkipOperation::Give( theExpansion );
+	EvaluateOperation::Give( theEvaluation );
+	SwapOperation::Give( theEvaluation );
+	SkipOperation::Give( theEvaluation );
 	Expression theExpression;
 	theExpression.TakeOperator( DequoteOperation::GetOperator() );
 	theExpression.TakeOperator( InjectOperation::GetOperator() );
@@ -52,7 +52,7 @@ inline void Type_::Give( Expansion & theExpansion )
 	}
 	theExpression.TakeQuotedQueue( FillOperation::GetOperator() );
 	theExpression.TakeOperator( QuoteOperation::GetOperator() );
-	theExpansion.TakeQuotedQueue( theExpression );
+	theEvaluation.TakeQuotedQueue( theExpression );
 }
 
 	#undef Type_

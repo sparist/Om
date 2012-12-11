@@ -30,9 +30,9 @@ inline char const * Type_::GetName()
 	return( Om_Operations_OperatorFrontPushOperation_GetName_() );
 }
 
-inline void Type_::Give( Expansion & theExpansion )
+inline void Type_::Give( Evaluation & theEvaluation )
 {
-	theExpansion.TakeOperation(
+	theEvaluation.TakeOperation(
 		std::auto_ptr< Operation >(
 			new FrontPushOperation< Operator, OperatorFrontPushOperation >
 		)

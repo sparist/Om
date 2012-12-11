@@ -58,7 +58,7 @@ thisScope()
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
@@ -73,13 +73,13 @@ inline bool Type_::TakeQuotedQueue(
 			this->thisScope->TakeQuotedQueue( theQueue );
 		}
 		if( this->thisScope->IsEmpty() ){
-			theExpansion.TakeQuotedQueue( this->thisOutput );
+			theEvaluation.TakeQuotedQueue( this->thisOutput );
 			return( true );
 		}
 	} else{
 		this->thisScope = boost::in_place(
 			boost::ref( this->thisOutput ),
-			boost::ref( theExpansion.GetTranslator() )
+			boost::ref( theEvaluation.GetTranslator() )
 		);
 		this->thisInjector.TakeElements( theQueue );
 	}
@@ -88,11 +88,11 @@ inline bool Type_::TakeQuotedQueue(
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theExpansion, theOperand.GetProgram() ) );
+	return( this->TakeQuotedQueue( theEvaluation, theOperand.GetProgram() ) );
 }
 
 	#undef Type_

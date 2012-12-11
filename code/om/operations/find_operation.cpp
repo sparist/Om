@@ -52,23 +52,23 @@ thisOperator()
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theExpansion, theOperand.GetProgram() ) );
+	return( this->TakeQuotedQueue( theEvaluation, theOperand.GetProgram() ) );
 }
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
-	Expansion & theExpansion,
+	Evaluation & theEvaluation,
 	TheQueue & theQueue
 )
 {
 	if( this->thisOperator ){
 		Lexicon theLexicon;
 		theLexicon.TakeElements( theQueue );
-		this->TakeLexicon( theExpansion, theLexicon );
+		this->TakeLexicon( theEvaluation, theLexicon );
 		return( true );
 	}
 	this->thisOperator = boost::in_place();
@@ -79,14 +79,17 @@ inline bool Type_::TakeQuotedQueue(
 
 // MARK: private (non-static)
 
-inline void Type_::TakeLexicon( Expansion & theExpansion, Lexicon & theLexicon )
+inline void Type_::TakeLexicon(
+	Evaluation & theEvaluation,
+	Lexicon & theLexicon
+)
 {
 	assert( this->thisOperator );
 	Program const * theProgram;
 	theLexicon.Find( *this->thisOperator, theProgram );
-	theExpansion.TakeQuotedQueue( theLexicon );
-	theExpansion.TakeQuotedQueue( *this->thisOperator );
-	theExpansion.TakeQuotedQueue( theProgram ? *theProgram : Null::Get() );
+	theEvaluation.TakeQuotedQueue( theLexicon );
+	theEvaluation.TakeQuotedQueue( *this->thisOperator );
+	theEvaluation.TakeQuotedQueue( theProgram ? *theProgram : Null::Get() );
 }
 
 	#undef Type_

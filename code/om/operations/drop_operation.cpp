@@ -36,20 +36,20 @@ inline void Type_::GiveElements( TheDropOperation &, Queue & theQueue )
 
 // MARK: public (non-static)
 
-inline bool Type_::ReadQuotedElements( Expansion &, Parser & theParser )
+inline bool Type_::ReadQuotedElements( Evaluation &, Parser & theParser )
 {
 	while( theParser ){ theParser.Pop(); }
 	return( true );
 }
 
 template< typename TheOperand >
-inline bool Type_::TakeOperand( Expansion &, TheOperand & )
+inline bool Type_::TakeOperand( Evaluation &, TheOperand & )
 {
 	return( true );
 }
 
 template< typename TheQueue >
-inline bool Type_::TakeQuotedQueue( Expansion &, TheQueue & )
+inline bool Type_::TakeQuotedQueue( Evaluation &, TheQueue & )
 {
 	return( true );
 }

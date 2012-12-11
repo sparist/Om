@@ -43,13 +43,13 @@ namespace Om
 
 		public: // MARK: public (non-static)
 
-			virtual bool ReadQuotedElements( Expansion &, Parser & );
+			virtual bool ReadQuotedElements( Evaluation &, Parser & );
 
 			template< typename TheOperand >
-			bool TakeOperand( Expansion &, TheOperand & );
+			bool TakeOperand( Evaluation &, TheOperand & );
 
 			template< typename TheQueue >
-			bool TakeQuotedQueue( Expansion &, TheQueue & );
+			bool TakeQuotedQueue( Evaluation &, TheQueue & );
 		};
 	}
 }
