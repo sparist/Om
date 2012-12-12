@@ -1,0 +1,90 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$struct_om_1_1_sink.html" title="Any object that items can be pushed to." alt="" coords="21,188,163,215"/>
+<area shape="rect" id="node3" href="$struct_om_1_1_sinks_1_1_default_sink.html" title="Om::Sinks::DefaultSink\l\&lt; ThisItem, ContainerBackSink\l\&lt; ThisItem, ThisContainer \&gt; \&gt;" alt="" coords="253,247,446,303"/>
+<area shape="rect" id="node7" href="$struct_om_1_1_sinks_1_1_default_sink.html" title="Om::Sinks::DefaultSink\l\&lt; ThisItem, ContainerFrontSink\l\&lt; ThisItem, ThisContainer \&gt; \&gt;" alt="" coords="254,327,445,383"/>
+<area shape="rect" id="node11" href="$struct_om_1_1_sinks_1_1_default_sink.html" title="Om::Sinks::DefaultSink\l\&lt; ThisItem, IteratorSink\l\&lt; ThisItem, std::ostreambuf\l_iterator\&lt; ThisItem \&gt; \&gt; \&gt;" alt="" coords="263,5,435,75"/>
+<area shape="rect" id="node17" href="$struct_om_1_1_sinks_1_1_default_sink.html" title="Om::Sinks::DefaultSink\l\&lt; ThisItem, IteratorSink\l\&lt; ThisItem, ThisIterator \&gt; \&gt;" alt="" coords="265,100,433,156"/>
+<area shape="rect" id="node21" href="$struct_om_1_1_sinks_1_1_default_sink.html" title="A partial Sink implementation." alt="" coords="247,181,451,222"/>
+<area shape="rect" id="node5" href="$struct_om_1_1_sinks_1_1_container_back_sink.html" title="A Sink adapter for a container; pushes items into the back." alt="" coords="530,254,729,295"/>
+<area shape="rect" id="node9" href="$struct_om_1_1_sinks_1_1_container_front_sink.html" title="A Sink adapter for a container; pushes items into the front." alt="" coords="530,334,729,375"/>
+<area shape="rect" id="node13" href="$struct_om_1_1_sinks_1_1_iterator_sink.html" title="Om::Sinks::IteratorSink\l\&lt; ThisItem const, std\l::ostreambuf_iterator\&lt;\l ThisItem \&gt; \&gt;" alt="" coords="556,5,703,75"/>
+<area shape="rect" id="node15" href="$struct_om_1_1_sinks_1_1_stream_sink.html" title="A Sink adapter for an output stream." alt="" coords="838,19,989,61"/>
+<area shape="rect" id="node19" href="$struct_om_1_1_sinks_1_1_iterator_sink.html" title="A Sink adapter for an output iterator." alt="" coords="551,107,708,149"/>
+<area shape="rect" id="node22" href="$struct_om_1_1_source.html" title="Any object that items can be pulled from." alt="" coords="14,699,170,725"/>
+<area shape="rect" id="node24" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; ThisItem const, StreamSource\l\&lt; ThisItem \&gt; \&gt;" alt="" coords="250,873,449,929"/>
+<area shape="rect" id="node28" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; ThisItem, ContainerBackSource\l\&lt; ThisItem, ThisContainer \&gt; \&gt;" alt="" coords="245,953,453,1009"/>
+<area shape="rect" id="node32" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; ThisItem, ContainerFrontSource\l\&lt; ThisItem, ThisContainer \&gt; \&gt;" alt="" coords="246,407,453,463"/>
+<area shape="rect" id="node36" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; ThisItem, EmptySource\l\&lt; ThisItem \&gt; \&gt;" alt="" coords="259,487,439,543"/>
+<area shape="rect" id="node40" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; ThisItem, IteratorPairSource\l\&lt; ThisItem, ThisIterator \&gt; \&gt;" alt="" coords="257,567,441,623"/>
+<area shape="rect" id="node48" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; ThisItem, IteratorSource\l\&lt; ThisItem, ThisIterator \&gt; \&gt;" alt="" coords="259,647,439,703"/>
+<area shape="rect" id="node52" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; ThisItem, SingletonSource\l\&lt; ThisItem \&gt; \&gt;" alt="" coords="259,793,439,849"/>
+<area shape="rect" id="node56" href="$struct_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source." alt="" coords="247,727,451,769"/>
+<area shape="rect" id="node26" href="$struct_om_1_1_sources_1_1_stream_source.html" title="A Source adapter for an input stream." alt="" coords="539,881,719,922"/>
+<area shape="rect" id="node30" href="$struct_om_1_1_sources_1_1_container_back_source.html" title="A Source adapter for a container; pulls items from the back." alt="" coords="523,961,736,1002"/>
+<area shape="rect" id="node34" href="$struct_om_1_1_sources_1_1_container_front_source.html" title="A Source adapter for a container; pulls items from the front." alt="" coords="523,414,736,455"/>
+<area shape="rect" id="node38" href="$struct_om_1_1_sources_1_1_empty_source.html" title="An empty Source." alt="" coords="541,494,718,535"/>
+<area shape="rect" id="node42" href="$struct_om_1_1_sources_1_1_iterator_pair_source.html" title="A Source adapter for a start and end input iterator pair." alt="" coords="531,574,727,615"/>
+<area shape="rect" id="node44" href="$struct_om_1_1_sources_1_1_collection_back_source.html" title="A range over a collection, starting from the back." alt="" coords="815,607,1011,649"/>
+<area shape="rect" id="node46" href="$struct_om_1_1_sources_1_1_collection_front_source.html" title="A range over a collection, starting from the front." alt="" coords="815,542,1011,583"/>
+<area shape="rect" id="node50" href="$struct_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal&#45;terminated input iterator." alt="" coords="541,654,718,695"/>
+<area shape="rect" id="node54" href="$struct_om_1_1_sources_1_1_singleton_source.html" title="A single item Source." alt="" coords="534,801,725,842"/>
+<area shape="rect" id="node57" href="$struct_om_1_1_sink.html" title="Om::Sink\&lt; CodePoint\l const &#160;\&gt;" alt="" coords="21,1041,163,1082"/>
+<area shape="rect" id="node59" href="$struct_om_1_1_sinks_1_1_default_sink.html" title="Om::Sinks::DefaultSink\l\&lt; CodePoint const, CodePoint\lSink\&lt; ThisCodeUnitIterator \&gt; \&gt;" alt="" coords="253,1033,445,1089"/>
+<area shape="rect" id="node61" href="$struct_om_1_1_sinks_1_1_code_point_sink.html" title="A CodePoint Sink that pushes each code unit to the iterator." alt="" coords="545,1041,714,1082"/>
+<area shape="rect" id="node62" href="$struct_om_1_1_sink.html" title="Om::Sink\&lt; Lexicon const &#160;\&gt;" alt="" coords="6,1172,178,1199"/>
+<area shape="rect" id="node64" href="$struct_om_1_1_sinks_1_1_default_sink.html" title="Om::Sinks::DefaultSink\l\&lt; Lexicon const, Translator \&gt;" alt="" coords="258,1165,441,1206"/>
+<area shape="rect" id="node66" href="$struct_om_1_1_translator.html" title="An Operator lookup for use by an Evaluator." alt="" coords="577,1143,681,1169"/>
+<area shape="rect" id="node68" href="$struct_om_1_1_environment.html" title="A Translator that falls through to a System lookup." alt="" coords="854,1143,973,1169"/>
+<area shape="rect" id="node69" href="$struct_om_1_1_source.html" title="Om::Source\&lt; char const &#160;\&gt;" alt="" coords="8,1245,176,1272"/>
+<area shape="rect" id="node71" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; char const , IteratorSource\l\&lt; char const , char const * \&gt; \&gt;" alt="" coords="253,1231,445,1287"/>
+<area shape="rect" id="node73" href="$struct_om_1_1_sources_1_1_iterator_source.html" title="Om::Sources::IteratorSource\l\&lt; char const, char const * \&gt;" alt="" coords="541,1238,718,1279"/>
+<area shape="rect" id="node74" href="$struct_om_1_1_source.html" title="Om::Source\&lt; CodePoint\l const &#160;\&gt;" alt="" coords="13,1414,171,1455"/>
+<area shape="rect" id="node76" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; CodePoint const, CodePointSource\l\&lt; IteratorSource\&lt; char const,\l char const * \&gt; \&gt; \&gt;" alt="" coords="234,1311,465,1382"/>
+<area shape="rect" id="node82" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; CodePoint const, CodePointSource\l\&lt; ThisCodeUnitIterator \&gt; \&gt;" alt="" coords="234,1407,465,1463"/>
+<area shape="rect" id="node86" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; CodePoint const, Parser \&gt;" alt="" coords="259,1487,440,1529"/>
+<area shape="rect" id="node78" href="$struct_om_1_1_sources_1_1_code_point_source.html" title="Om::Sources::CodePointSource\l\&lt; IteratorSource\&lt; char const,\l char const * \&gt; \&gt;" alt="" coords="530,1311,729,1367"/>
+<area shape="rect" id="node80" href="$struct_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html" title="A specialization for null&#45;terminated code unit array." alt="" coords="814,1318,1013,1359"/>
+<area shape="rect" id="node84" href="$struct_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator." alt="" coords="530,1391,729,1433"/>
+<area shape="rect" id="node88" href="$struct_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source." alt="" coords="586,1457,673,1484"/>
+<area shape="rect" id="node89" href="$struct_om_1_1_source.html" title="Om::Source\&lt; Element \&gt;" alt="" coords="15,1568,169,1595"/>
+<area shape="rect" id="node91" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; Element, IteratorPairSource\l\&lt; Element, ElementDeque::iterator \&gt; \&gt;" alt="" coords="233,1553,465,1609"/>
+<area shape="rect" id="node93" href="$struct_om_1_1_sources_1_1_iterator_pair_source.html" title="Om::Sources::IteratorPair\lSource\&lt; Element, ElementDeque\l::iterator \&gt;" alt="" coords="526,1508,733,1564"/>
+<area shape="rect" id="node95" href="$struct_om_1_1_sources_1_1_collection_front_source.html" title="Om::Sources::CollectionFront\lSource\&lt; Element, ElementDeque\l::iterator \&gt;" alt="" coords="810,1508,1017,1564"/>
+<area shape="rect" id="node97" href="$struct_om_1_1_literal_1_1_element_range_3_01_literal_01_4.html" title="A mutable Element range." alt="" coords="1096,1515,1267,1557"/>
+<area shape="rect" id="node98" href="$struct_om_1_1_source.html" title="Om::Source\&lt; Element\l const &#160;\&gt;" alt="" coords="20,1674,164,1715"/>
+<area shape="rect" id="node100" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; Element const , IteratorPairSource\l\&lt; Element const , ElementDeque\l::const_iterator \&gt; \&gt;" alt="" coords="239,1699,460,1770"/>
+<area shape="rect" id="node108" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; Element const, ElementRange \&gt;" alt="" coords="242,1634,457,1675"/>
+<area shape="rect" id="node102" href="$struct_om_1_1_sources_1_1_iterator_pair_source.html" title="Om::Sources::IteratorPair\lSource\&lt; Element const ,\l ElementDeque::const_iterator \&gt;" alt="" coords="530,1740,729,1796"/>
+<area shape="rect" id="node104" href="$struct_om_1_1_sources_1_1_collection_front_source.html" title="Om::Sources::CollectionFront\lSource\&lt; Element const, ElementDeque\l::const_iterator \&gt;" alt="" coords="793,1740,1034,1796"/>
+<area shape="rect" id="node106" href="$struct_om_1_1_literal_1_1_element_range_3_01_literal_01const_01_01_4.html" title="An immutable Element range." alt="" coords="1096,1747,1267,1789"/>
+<area shape="rect" id="node110" href="$struct_om_1_1_expression_1_1_element_range.html" title="An Expression Element range." alt="" coords="528,1689,731,1716"/>
+<area shape="rect" id="node112" href="$struct_om_1_1_form_1_1_element_range.html" title="A Form Element range." alt="" coords="546,1588,713,1615"/>
+<area shape="rect" id="node114" href="$struct_om_1_1_lexicon_1_1_element_range.html" title="A Lexicon Element range." alt="" coords="538,1639,721,1665"/>
+<area shape="rect" id="node115" href="$struct_om_1_1_source.html" title="Om::Source\&lt; Form \&gt;" alt="" coords="23,1809,161,1836"/>
+<area shape="rect" id="node117" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; Form, IteratorPairSource\l\&lt; Form, FormDeque::iterator \&gt; \&gt;" alt="" coords="251,1795,447,1851"/>
+<area shape="rect" id="node119" href="$struct_om_1_1_sources_1_1_iterator_pair_source.html" title="Om::Sources::IteratorPair\lSource\&lt; Form, FormDeque\l::iterator \&gt;" alt="" coords="544,1820,715,1876"/>
+<area shape="rect" id="node121" href="$struct_om_1_1_sources_1_1_collection_front_source.html" title="Om::Sources::CollectionFront\lSource\&lt; Form, FormDeque\l::iterator \&gt;" alt="" coords="823,1820,1004,1876"/>
+<area shape="rect" id="node123" href="$struct_om_1_1_expression_1_1_form_range_3_01_form_01_4.html" title="Specialization on a mutable Form." alt="" coords="1089,1827,1274,1869"/>
+<area shape="rect" id="node124" href="$struct_om_1_1_source.html" title="Om::Source\&lt; Form const &#160;\&gt;" alt="" coords="7,1897,177,1924"/>
+<area shape="rect" id="node126" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; Form const , IteratorPairSource\l\&lt; Form const , FormDeque::const\l_iterator \&gt; \&gt;" alt="" coords="246,1875,453,1946"/>
+<area shape="rect" id="node128" href="$struct_om_1_1_sources_1_1_iterator_pair_source.html" title="Om::Sources::IteratorPair\lSource\&lt; Form const , FormDeque\l::const_iterator \&gt;" alt="" coords="525,1900,734,1956"/>
+<area shape="rect" id="node130" href="$struct_om_1_1_sources_1_1_collection_front_source.html" title="Om::Sources::CollectionFront\lSource\&lt; Form const, FormDeque\l::const_iterator \&gt;" alt="" coords="811,1900,1016,1956"/>
+<area shape="rect" id="node132" href="$struct_om_1_1_expression_1_1_form_range_3_01_form_01const_01_01_4.html" title="Specialization on an immutable Form." alt="" coords="1089,1907,1274,1949"/>
+<area shape="rect" id="node133" href="$struct_om_1_1_source.html" title="Om::Source\&lt; Operand \&gt;" alt="" coords="11,1985,173,2012"/>
+<area shape="rect" id="node135" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; Operand, IteratorPairSource\l\&lt; Operand, OperandDeque::iterator \&gt; \&gt;" alt="" coords="227,1971,471,2027"/>
+<area shape="rect" id="node137" href="$struct_om_1_1_sources_1_1_iterator_pair_source.html" title="Om::Sources::IteratorPair\lSource\&lt; Operand, OperandDeque\l::iterator \&gt;" alt="" coords="520,1980,739,2036"/>
+<area shape="rect" id="node139" href="$struct_om_1_1_sources_1_1_collection_front_source.html" title="Om::Sources::CollectionFront\lSource\&lt; Operand, OperandDeque\l::iterator \&gt;" alt="" coords="804,1980,1023,2036"/>
+<area shape="rect" id="node141" href="$struct_om_1_1_form_1_1_operand_range_3_01_operand_01_4.html" title="Specialization on a mutable Operand." alt="" coords="1095,1987,1267,2029"/>
+<area shape="rect" id="node142" href="$struct_om_1_1_source.html" title="Om::Source\&lt; Operand\l const &#160;\&gt;" alt="" coords="17,2066,167,2107"/>
+<area shape="rect" id="node144" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; Operand const , IteratorPairSource\l\&lt; Operand const , OperandDeque\l::const_iterator \&gt; \&gt;" alt="" coords="236,2051,463,2122"/>
+<area shape="rect" id="node146" href="$struct_om_1_1_sources_1_1_iterator_pair_source.html" title="Om::Sources::IteratorPair\lSource\&lt; Operand const ,\l OperandDeque::const_iterator \&gt;" alt="" coords="527,2060,732,2116"/>
+<area shape="rect" id="node148" href="$struct_om_1_1_sources_1_1_collection_front_source.html" title="Om::Sources::CollectionFront\lSource\&lt; Operand const, OperandDeque\l::const_iterator \&gt;" alt="" coords="787,2060,1040,2116"/>
+<area shape="rect" id="node150" href="$struct_om_1_1_form_1_1_operand_range_3_01_operand_01const_01_01_4.html" title="Specialization on an immutable Operand." alt="" coords="1095,2067,1267,2109"/>
+<area shape="rect" id="node151" href="$struct_om_1_1_source.html" title="Om::Source\&lt; std::string \&gt;" alt="" coords="11,2201,173,2228"/>
+<area shape="rect" id="node153" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; std::string, CodePointStringBack\lSource\&lt; ThisStringIterator \&gt; \&gt;" alt="" coords="244,2227,455,2283"/>
+<area shape="rect" id="node157" href="$struct_om_1_1_sources_1_1_default_source.html" title="Om::Sources::DefaultSource\l\&lt; std::string, CodePointStringFront\lSource\&lt; ThisStringIterator \&gt; \&gt;" alt="" coords="245,2147,454,2203"/>
+<area shape="rect" id="node155" href="$struct_om_1_1_sources_1_1_code_point_string_back_source.html" title="A Source of CodePoint strings from the back of a string." alt="" coords="528,2234,731,2275"/>
+<area shape="rect" id="node159" href="$struct_om_1_1_sources_1_1_code_point_string_front_source.html" title="A Source of CodePoint strings from the front of a string." alt="" coords="529,2154,730,2195"/>
+<area shape="rect" id="node160" href="$classstd_1_1iterator.html" title="iterator" alt="" coords="63,1113,121,1140"/>
+<area shape="rect" id="node189" href="$struct_om_1_1_taker.html" title="Om::Taker\&lt; Translator \&gt;" alt="" coords="271,1113,428,1140"/>
+</map>
