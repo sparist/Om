@@ -111,27 +111,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="textblock"><h1><a class="anchor" id="introduction"></a>
 Introduction</h1>
-<p>The Om language represents an attempt to answer the question: <em>What is the simplest abstract syntax that can articulate any algorithm for efficient and precise evaluation?</em></p>
-<p>Om is:</p>
+<p>The <a href="http://om-language.org">Om</a> language represents an attempt to answer the question: <em>What is the simplest abstract syntax that can articulate any algorithm for efficient and precise evaluation?</em></p>
+<p><a href="http://om-language.org">Om</a> is:</p>
 <ul>
 <li><b>A concatenative programming language</b> with a fundamentally simple prefix syntax and type system.</li>
 <li><b>An abstract algorithmic notation language</b> that does not expose any computer implementation details (such as byte or machine word length).</li>
 <li><b>A data transfer format</b> that is trivial to parse.</li>
 <li><b>Embeddable</b>: implemented as a header-only C++ library that can be incorporated into any C++ or Objective-C++ program.</li>
 <li><b>Extensible</b>: new native operations can be implemented as C++ classes.</li>
-<li><b>Unicode-correct</b>: any <a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order marker) defines a valid Om program.</li>
+<li><b>Unicode-correct</b>: any <a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order marker) defines a valid <a href="http://om-language.org">Om</a> program.</li>
 </ul>
-<p>Om is <em>not</em>:</p>
+<p><a href="http://om-language.org">Om</a> is <em>not</em>:</p>
 <ul>
-<li><b>Complete</b>. Although the intent is to develop Om into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic numerical operations) and optimizations before it can be considered useful for any purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.</li>
-<li><b>Stationary</b>. Om may undergo dramatic changes in every respect before version 1.0.</li>
+<li><b>Complete</b>. Although the intent is to develop <a href="http://om-language.org">Om</a> into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic numerical operations) and optimizations before it can be considered useful for any purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.</li>
+<li><b>Stationary</b>. <a href="http://om-language.org">Om</a> may undergo dramatic changes in every respect before version 1.0.</li>
 </ul>
 <h1><a class="anchor" id="syntax"></a>
 Syntax</h1>
-<p>The following sections define the syntax of Om in its entirety.</p>
+<p>The following sections define the syntax of <a href="http://om-language.org">Om</a> in its entirety.</p>
 <h2><a class="anchor" id="syntax__program"></a>
 Program</h2>
-<p>An Om program is comprised of only three syntactic elements, as follows:</p>
+<p>An <a href="http://om-language.org">Om</a> program is comprised of only three syntactic elements, as follows:</p>
 <div class="image">
 <img src="program.png" alt="program.png"/>
 </div>
@@ -158,7 +158,7 @@ Operand</h2>
 How It Works</h1>
 <h2><a class="anchor" id="how_it_works__operations"></a>
 Operations</h2>
-<p>An operation is a function, defined by a program, that takes a program as input and generates a program as output. Om is a <a href="http://concatenative.org">concatenative</a> language: the operation defined by an Om program is a composition of operations defined by each sub-program.</p>
+<p>An operation is a function, defined by a program, that takes a program as input and generates a program as output. <a href="http://om-language.org">Om</a> is a <a href="http://concatenative.org">concatenative</a> language: the operation defined by an <a href="http://om-language.org">Om</a> program is a composition of operations defined by each sub-program.</p>
 <p>The application of an operation to the remaining program (to the right) results in a transformation on the applied program itself. Because programs are homomorphic with the operations they represent, the application of an operation to a program can be treated equivalently to the composition of an operation with the operation that the applied program represents. As such, the concept of application can be omitted, resulting in <a href="http://en.wikipedia.org/wiki/Combinatory_logic">combinatory logic</a>.</p>
 <p>Program elements each correspond to the following operations:</p>
 <ul>
@@ -187,7 +187,7 @@ Evaluation</h2>
 <li><b>An environment</b> for resolving operators to operations. Any operators that are not present map to an "identity" operation that leaves the program, including the operator, unchanged.</li>
 <li><b>An operation queue</b> for storing operations that are awaiting nested operations to be evaluated (in the event that the latter produces operands that can be consumed by the former).</li>
 </ul>
-<p>The evaluator reads, parses and evaluates the input stream in a single pass, sending results to the output stream as soon as they can be evaluated. This is possible because Om uses a prefix notation, rather than the postfix notation employed by other concatenative languages. Other benefits of prefix notation include:</p>
+<p>The evaluator reads, parses and evaluates the input stream in a single pass, sending results to the output stream as soon as they can be evaluated. This is possible because <a href="http://om-language.org">Om</a> uses prefix notation, rather than the postfix notation typical of concatenative languages. Prefix notation has the following benefits over postfix notation:</p>
 <ul>
 <li>Stack underflows are impossible.</li>
 <li>Operations can be optimized to only read into memory the data that is required; stack-based postfix languages have no knowledge of the operation to apply until the data is already in memory, on the stack.</li>
@@ -195,9 +195,9 @@ Evaluation</h2>
 </ul>
 <h2><a class="anchor" id="how_it_works__data_types"></a>
 Data Types</h2>
-<p>Om uses a novel <b>panmorphic</b> type system in which all data values are represented within the language solely through a common program interface (comprised of only separators, operators, and/or operands), and each operand exposes no data type: any operation will accept any operand as a valid input and interpret it however the operation deems appropriate.</p>
+<p><a href="http://om-language.org">Om</a> uses a novel <b>panmorphic</b> type system in which all data values are represented within the language solely through a common program interface (comprised of only separators, operators, and/or operands), and each operand exposes no data type: any operation will accept any operand as a valid input and interpret it however the operation deems appropriate.</p>
 <p>Data types are relegated to an implementation layer and represent optimizations for a set of operations. Each operand in memory contains a single program implementation; by default, this is the <a class="el" href="group__literal.html">Literal</a> program, which preserves all data in the operand, verbatim. However, an operation may prefer an operand to have a different program implementation that is optimized for specific functionality used by the operation. The <a class="el" href="group__find__operation.html">find</a> operation, for example, prefers one of its operands to have a <a class="el" href="group__lexicon.html">Lexicon</a> program type for fast mapping from operator to operand. In such cases, an operation can simply convert an undesired program implementation to the desired type through the common program interface without impacting the semantics of the program.</p>
-<p>Operations in a program can be ordered by the programmer to increase performance by minimizing conversions between program implementations, but it is not necessary for obtaining a correct computation. Data types in Om therefore become an optimization-phase implementation detail.</p>
+<p>Operations in a program can be ordered by the programmer to increase performance by minimizing conversions between program implementations, but it is not necessary for obtaining a correct computation. Data types in <a href="http://om-language.org">Om</a> therefore become an optimization-phase implementation detail.</p>
 <p>All of the native data types included in the current release are documented in the <a class="el" href="group__programs.html">Programs</a> module.</p>
 <h1><a class="anchor" id="examples"></a>
 Examples</h1>
@@ -281,10 +281,6 @@ Examples</h1>
 </ul>
 <p>Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to NFD, but can be explicitly normalized to NFKD using the <a class="el" href="group__normalize__operation.html">normalize</a> operation:</p>
 <ul>
-<li><code>normalize {ﬁ}</code> <pre class="fragment">{fi}
-</pre></li>
-</ul>
-<ul>
 <li><code>normalize {2⁵}</code> <pre class="fragment">{25}
 </pre></li>
 </ul>
@@ -302,15 +298,15 @@ Examples</h1>
 <li><code>&lt;-terms { double` quote operator }</code> <pre class="fragment">{double` quote}{operator}
 </pre></li>
 </ul>
-<p>Recursion is very efficient in Om, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:</p>
+<p>Recursion is very efficient in <a href="http://om-language.org">Om</a>, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:</p>
 <ul>
 <li><code>evaluate { minutes { dequote choose {minutes} {} = {:} &lt;-characters } } { minutes {12:34} }</code> <pre class="fragment">{34}
 </pre></li>
 </ul>
 <h1><a class="anchor" id="downloading"></a>
 Downloading</h1>
-<p>Archive files of all versions of the Om code can be downloaded from the <a href="https://github.com/sparist/Om/tags">Om GitHub Tags page</a>.</p>
-<p>Code can also be obtained by Git checkout, as indicated on the <a href="https://github.com/sparist/Om">Om GitHub main page</a>.</p>
+<p>Archive files of all versions of the <a href="http://om-language.org">Om</a> code can be downloaded from the <a href="https://github.com/sparist/Om/tags">GitHub Tags page</a>.</p>
+<p>Code can also be obtained by Git checkout, as indicated on the <a href="https://github.com/sparist/Om">GitHub main page</a>.</p>
 <h1><a class="anchor" id="building"></a>
 Building</h1>
 <p>Although it should be possible to build the code on any mainstream platform, it has only been built and tested on:</p>
@@ -320,8 +316,8 @@ Building</h1>
 </ul>
 <p>The project is generated by CMake, and contains the following targets:</p>
 <ul>
-<li><b>Om</b>: builds the interpreter project into <code>products/</code><em>platform</em>.</li>
-<li><b>Om Documentation</b>: builds the documentation into <code>products/doxygen</code>. Open <code>html/index.html</code> to view the HTML documentation in a browser.</li>
+<li><b><a href="http://om-language.org">Om</a></b>: builds the interpreter project into <code>products/</code><em>platform</em>.</li>
+<li><b><a href="http://om-language.org">Om</a> Documentation</b>: builds the documentation into <code>products/doxygen</code>. Open <code>html/index.html</code> to view the HTML documentation in a browser.</li>
 </ul>
 <h2><a class="anchor" id="building__xcode"></a>
 Xcode</h2>
@@ -380,21 +376,21 @@ Visual Studio</h2>
 </ul>
 <h1><a class="anchor" id="using"></a>
 Using</h1>
-<p>The Om interpreter takes input from the standard input stream, ending at the first unbalanced end brace, and sends output to the standard output stream.</p>
-<p>Om can be incorporated into any C++ or Objective-C++ project as follows:</p>
+<p>The <a href="http://om-language.org">Om</a> interpreter takes input from the standard input stream, ending at the first unbalanced end brace, and sends output to the standard output stream.</p>
+<p><a href="http://om-language.org">Om</a> can be incorporated into any C++ or Objective-C++ project as follows:</p>
 <ul>
-<li>Add the Om <code>code</code> directory to the include path and include the desired files. Inclusion of any operation files will automatically add the corresponding operation to the global system.</li>
+<li>Add the <a href="http://om-language.org">Om</a> <code>code</code> directory to the include path and include the desired files. Inclusion of any operation files will automatically add the corresponding operation to the global system.</li>
 <li>Link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a> and/or <a href="http://boost.org">Boost (1.51.0)</a> library dependencies.</li>
 <li>Call the <code><a class="el" href="struct_om_1_1_system.html#a03f046dac47073768dbdc97d8e211bda" title="Initializes the System.">Om::System::Initialize</a></code> function prior to use (eg. in the <code>main</code> function), passing in the desired UTF-8 locale (eg. "en_US.UTF-8").</li>
 <li>Construct an <code><a class="el" href="struct_om_1_1_environment.html" title="A Translator that falls through to a System lookup.">Om::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code>Evaluate</code> functions to evaluate a program.</li>
 </ul>
 <h1><a class="anchor" id="developing"></a>
 Developing</h1>
-<p>The Om library is written in modern, portable C++.</p>
-<p>All Om development must adhere to the C++ coding standards given in the <a href="http://sparist.com/development_standards.html">Development Standards</a> page.</p>
+<p>The <a href="http://om-language.org">Om</a> library is written in modern, portable C++.</p>
+<p>All <a href="http://om-language.org">Om</a> development must adhere to the C++ coding standards given in the <a href="http://sparist.com/development_standards.html">Development Standards</a> page.</p>
 <h2><a class="anchor" id="developing__adding_operations"></a>
 Adding Operations</h2>
-<p>Additional native functionality can be added to Om by implementing new operations in C++.</p>
+<p>Additional native functionality can be added to <a href="http://om-language.org">Om</a> by implementing new operations in C++.</p>
 <p>There are two ways to implement an operation: as a composite operation, or an atomic operation.</p>
 <p>To implement a composite operation, or an atomic operation that consumes no operands:</p>
 <ul>
@@ -419,17 +415,17 @@ Adding Operations</h2>
 }
 </pre><h2><a class="anchor" id="developing__adding_programs"></a>
 Adding Programs</h2>
-<p>New data types can be added to Om by extending <code><a class="el" href="struct_om_1_1_program.html" title="The Program implementation.">Om::Program</a></code> and defining the functions necessary to instantiate the class. Use existing programs as a guide.</p>
+<p>New data types can be added to <a href="http://om-language.org">Om</a> by extending <code><a class="el" href="struct_om_1_1_program.html" title="The Program implementation.">Om::Program</a></code> and defining the functions necessary to instantiate the class. Use existing programs as a guide.</p>
 <p>Program types should be defined in the <code><a class="el" href="namespace_om.html" title="The Om language implementation.">Om</a></code> namespace.</p>
 <h2><a class="anchor" id="developing__analyzing_code"></a>
 Analyzing Code</h2>
-<p>There are some basic free static analysis tools that can be applied to the Om code.</p>
+<p>There are some basic free static analysis tools that can be applied to the <a href="http://om-language.org">Om</a> code.</p>
 <ul>
-<li><a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to Om by entering the following at the terminal from inside the Om directory: <pre class="fragment">python hfcca.py -p -v code
+<li><a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to <a href="http://om-language.org">Om</a> by entering the following at the terminal from inside the <a href="http://om-language.org">Om</a> directory: <pre class="fragment">python hfcca.py -p -v code
 </pre></li>
 </ul>
 <ul>
-<li><a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to Om by entering the following at the terminal from inside the Om directory: <pre class="fragment">cloc.pl code
+<li><a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to <a href="http://om-language.org">Om</a> by entering the following at the terminal from inside the <a href="http://om-language.org">Om</a> directory: <pre class="fragment">cloc.pl code
 </pre></li>
 </ul>
 <h1><a class="anchor" id="issue_tracking"></a>
@@ -442,7 +438,7 @@ License</h1>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 12 2012 08:36:08 for Om by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 13 2012 03:03:51 for Om by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>
