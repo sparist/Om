@@ -439,10 +439,12 @@ Objective-C++ project as follows:
 The <a href="http://om-language.org">Om</a> library is written in modern,
 portable C++.
 
+\subsection developing__coding_standard Coding Standard
+
 All <a href="http://om-language.org">Om</a> development must adhere to the <a
 href="http://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=637">CERT
-C++ Secure Coding Standard</a> and be stylistically consistent with existing
-code.
+C++ Secure Coding Standard</a> and must be stylistically consistent with
+existing code.
 
 \subsection developing__adding_operations Adding Operations
 
