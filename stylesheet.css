@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 	-o-transition: text-shadow 0.5s linear;
 	transition: text-shadow 0.5s linear;
 	margin-right: 15px;
+	margin-top: 25px;
 }
 
 h1.glow, h2.glow, h3.glow, h4.glow, h5.glow, h6.glow {
@@ -846,7 +847,6 @@ table.fieldtable {
 .navpath li.navelem a {
 	height: 32px;
 	display: block;
-	text-decoration: none;
 	outline: none;
 	color: #131D26;
 	font-family: 'Lucida Grande', Geneva, Helvetica, Arial, sans-serif;
