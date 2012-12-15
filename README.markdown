@@ -1,1 +1,1 @@
-See the [Om language website](http://om-language.org) for documentation.
+See the [Om Github Page](http://sparist.github.com/Om) for documentation.
