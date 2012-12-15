@@ -269,7 +269,7 @@ if( MSVC )
 	add_custom_target( "Om Documentation"
 		COMMAND if not exist products mkdir products
 		COMMAND if not exist products\\doxygen mkdir products\\doxygen
-		COMMAND ( type Doxyfile && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -
+		COMMAND ( type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -
 		COMMENT "Generating Documentation..."
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 	)
@@ -376,7 +376,7 @@ else()
 
 	add_custom_target( "Om Documentation"
 		COMMAND mkdir -p products/doxygen
-		COMMAND doxygen
+		COMMAND doxygen doxygen/Doxyfile
 		COMMENT "Generating Documentation..."
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 		VERBATIM
