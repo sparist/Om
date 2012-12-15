@@ -33,9 +33,9 @@ namespace Om
 			Const methods are not thread-safe due to a non-mutexed mutable
 			member.
 		\note
-			Dereferencing exposes a reference to the member string cache of the
-			current segment.  Modifying the string will not modify the source
-			data.
+			Dereferencing exposes a non-const reference to the member string
+			cache of the current segment, allowing swap as an optimization.
+			Modifying the string will not modify the source data.
 		*/
 		template< typename ThisStringIterator >
 		struct CodePointStringFrontSource
