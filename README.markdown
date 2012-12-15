@@ -1,1 +1,1 @@
-See the [Om Github Page](http://sparist.github.com/Om) for documentation.
+See [http://sparist.github.com/Om] for documentation.
