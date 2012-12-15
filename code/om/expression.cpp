@@ -195,6 +195,7 @@ inline void Type_::ReadElements( Parser & theParser )
 			}
 			if( !theParser ){ return; }
 			assert( Symbols::theEndOperandSymbol == *theParser );
+			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			theParser.Pop();
 			continue;

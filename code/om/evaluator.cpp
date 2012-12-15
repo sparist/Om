@@ -116,6 +116,7 @@ inline void Type_::ReadElements( Parser & theParser )
 			}
 			if( !theParser ){ return; }
 			assert( Symbols::theEndOperandSymbol == *theParser );
+			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			theParser.Pop();
 			continue;
@@ -204,11 +205,13 @@ inline void Type_::TakeOperator(
 	case 0:
 		switch( this->thisTranslator.Translate( theEvaluation, Operator() ) ){
 		case 0:
+			// Fall through.
 		case 1:
 			break;
 		default:
 			return;
 		}
+		// Fall through.
 	case 1:
 		break;
 	default:

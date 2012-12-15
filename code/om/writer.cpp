@@ -99,11 +99,15 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 	for( ; theCodePointSource; theCodePointSource.Pop() ){
 		switch( CodePoint const theCodePoint = *theCodePointSource ){
 		Om_Symbols_SeparatorSymbol_GetCases_():
+			// Fall through.
 		Om_Symbols_OperandSymbol_GetCases_():
+			// Fall through.
 		case Symbols::theEncodeOperatorSymbol:
 			this->thisCodePointSink.Push( Symbols::theEncodeOperatorSymbol );
+			// Fall through.
 		default:
 			this->thisCodePointSink.Push( theCodePoint );
+			// Fall through.
 		}
 	}
 }

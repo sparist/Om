@@ -50,6 +50,7 @@ inline Type_::Separator( Source< CodePoint const > & theCodePointSource )
 			this->thisString.push_back(
 				static_cast< char >( *theCodePointSource )
 			);
+			// Fall through.
 		}
 	}
 }
@@ -90,6 +91,7 @@ inline void Type_::ReadElements( Parser & theParser )
 			continue;
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			this->thisString.push_back( static_cast< char >( *theParser ) );
+			// Fall out.
 		}
 	}
 }

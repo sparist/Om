@@ -164,6 +164,7 @@ inline void Type_::ReadElements( Parser & theParser )
 			}
 			if( !theParser ){ return; }
 			assert( Symbols::theEndOperandSymbol == *theParser );
+			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			theParser.Pop();
 			continue;
@@ -342,12 +343,14 @@ inline void Type_::Pop()
 			this->thisOffset = 1;
 			break;
 		}
+		// Fall through.
 	case 1:
 		this->thisNode = this->thisNode->GetNext();
 		this->thisOffset = 2;
 		break;
 	default:
 		this->thisOffset = this->thisNode->GetOperator().IsEmpty();
+		// Fall through.
 	}
 }
 

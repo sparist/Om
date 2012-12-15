@@ -87,6 +87,7 @@ inline void Type_::Pop()
 		break;
 	default:
 		this->thisIsEncoded = false;
+		// Fall through.
 	}
 	this->thisCodePointSource.Pop();
 }

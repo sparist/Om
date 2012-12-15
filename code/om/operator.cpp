@@ -64,6 +64,7 @@ inline Type_::Operator( Source< CodePoint const > & theCodePointSource )
 	for( ; theCodePointSource; theCodePointSource.Pop() ){
 		switch( *theCodePointSource ){
 		Om_Symbols_OperandSymbol_GetCases_():
+			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			break;
 		case Symbols::theEncodeOperatorSymbol:
@@ -72,6 +73,7 @@ inline Type_::Operator( Source< CodePoint const > & theCodePointSource )
 				theString.push_back( Symbols::theEndOperandSymbol );
 				break;
 			}
+			// Fall through.
 		default:
 			Utf8::encode( *theCodePointSource, theInserter );
 			continue;
@@ -259,7 +261,9 @@ inline void Type_::ReadElements( Parser & theParser )
 	while( theParser ){
 		switch( *theParser ){
 		case Symbols::theEndOperandSymbol:
+			// Fall through.
 		case Symbols::theStartOperandSymbol:
+			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			this->thisString.push_back( static_cast< char >( *theParser ) );
 			theParser.Pop();

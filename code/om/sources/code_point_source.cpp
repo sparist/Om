@@ -80,8 +80,10 @@ inline void Type_::Pop()
 		default:
 			break;
 		case boost::locale::utf::incomplete:
+			// Fall through.
 		case boost::locale::utf::illegal:
 			this->thisCodePoint = 0xFFFD /* Replacement character */;
+			// Fall through.
 		}
 	}
 }
