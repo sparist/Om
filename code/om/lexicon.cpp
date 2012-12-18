@@ -89,16 +89,14 @@ inline void Type_::Clear()
 
 inline bool Type_::Find(
 	Operator const & theOperator,
-	Program const * & theProgram
+	Operand const * & theOperand
 ) const
 {
-	theProgram = 0;
+	theOperand = 0;
 	typedef Map::const_iterator Iterator;
 	Iterator theIterator( this->thisMap.find( theOperator.GetString() ) );
 	if( this->thisMap.end() == theIterator ){ return( false ); }
-	if( Operand const * const theOperand = theIterator->second->GetOperand() ){
-		theProgram = &theOperand->GetProgram();
-	}
+	theOperand = theIterator->second->GetOperand();
 	return( true );
 }
 

@@ -73,14 +73,13 @@ namespace Om
 
 		/*!
 		\brief
-			Finds the Operand mapped to the Operator, and assigns its Program to
-			the pointer argument.  If the Operator is present without an Operand
-			mapping, the Program pointer argument is set to null.
+			Finds the Operand mapped to the Operator, and assigns it to the
+			pointer argument.  If the Operator is present without an Operand
+			mapping, the Operand pointer argument is set to null.
 		\return
-			Whether the Operator was found.  If false, the Program argument is
-			unchanged.
+			Whether the Operator was found.
 		*/
-		bool Find( Operator const &, Program const * & ) const;
+		bool Find( Operator const &, Operand const * & ) const;
 
 		void FrontGivePair( Queue & );
 

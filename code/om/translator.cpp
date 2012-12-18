@@ -46,10 +46,10 @@ inline int Type_::Translate(
 	typedef LexiconVector::const_reverse_iterator Iterator;
 	Iterator const theEnd = this->thisLexiconVector.rend();
 	Iterator theIterator = this->thisLexiconVector.rbegin();
-	for( Program const * theProgram; theEnd != theIterator; ++theIterator ){
-		if( ( *theIterator )->Find( theOperator, theProgram ) ){
-			if( theProgram ){
-				theEvaluation.TakeQueue( *theProgram );
+	for( Operand const * theOperand; theEnd != theIterator; ++theIterator ){
+		if( ( *theIterator )->Find( theOperator, theOperand ) ){
+			if( theOperand ){
+				theEvaluation.TakeQueue( theOperand->GetProgram() );
 				return( 2 );
 			}
 			return( 1 );

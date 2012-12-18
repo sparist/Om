@@ -85,11 +85,11 @@ inline void Type_::TakeLexicon(
 )
 {
 	assert( this->thisOperator );
-	Program const * theProgram;
-	theLexicon.Find( *this->thisOperator, theProgram );
+	Operand const * theOperand;
+	theLexicon.Find( *this->thisOperator, theOperand );
 	theEvaluation.TakeQuotedQueue( theLexicon );
 	theEvaluation.TakeQuotedQueue( *this->thisOperator );
-	theEvaluation.TakeQuotedQueue( theProgram ? *theProgram : Null::Get() );
+	theEvaluation.TakeOperand( theOperand ? *theOperand : Operand() );
 }
 
 	#undef Type_
