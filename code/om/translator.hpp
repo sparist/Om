@@ -37,8 +37,7 @@ namespace Om
 		An Operator lookup for use by an Evaluator.
 
 	Looks up in each Lexicon in turn, starting from the top, until the
-	definition is found.  If none is found, each Lexicon in turn is checked for
-	a default definition.
+	definition is found.
 	*/
 	struct Translator
 	:
@@ -51,21 +50,19 @@ namespace Om
 		
 		Translator & operator =( Translator );
 
+		//! Pushes a Lexicon reference.
+		virtual void Push( Lexicon const & );
+
+		void Swap( Translator & );
+
 		/*!
 		\brief
 			Translates the Operator to an object that is then given to the
 			Evaluation.
 		\return
-			-	0 if the Operator was not found.
-			-	1 if the Operator was found, with no definition mapped.
-			-	2 if the Operator was found, with a definition mapped.
+			True if the Operator was found.
 		*/
-		virtual int Translate( Evaluation &, Operator const & ) const;
-
-		//! Pushes a Lexicon reference.
-		virtual void Push( Lexicon const & );
-
-		void Swap( Translator & );
+		virtual bool Translate( Evaluation &, Operator const & ) const;
 
 	private: // MARK: private (static)
 

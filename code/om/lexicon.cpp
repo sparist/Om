@@ -17,7 +17,9 @@
 */
 #if defined( Om_Lexicon_ )
 
+	#include "om/evaluation.hpp"
 	#include "om/literal.hpp"
+	#include "om/system.hpp"
 
 // MARK: Om::Lexicon
 
@@ -208,6 +210,22 @@ inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 template< typename TheSeparator >
 inline void Type_::TakeSeparator( TheSeparator & )
 {
+}
+
+inline bool Type_::Translate(
+	Evaluation & theEvaluation,
+	Operator const & theOperator
+) const
+{
+	Operand const * theOperand;
+	if( this->Find( theOperator, theOperand ) ){
+		if( theOperand ){
+			theEvaluation.TakeQueue( theOperand->GetProgram() );
+			return( true );
+		}
+		return( System::Get().Translate( theEvaluation, theOperator ) );
+	}
+	return( false );
 }
 
 // MARK: private (static)

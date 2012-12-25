@@ -38,26 +38,6 @@ inline Type_ & Type_::operator =( Translator theTranslator )
 	return( *this );
 }
 
-inline int Type_::Translate(
-	Evaluation & theEvaluation,
-	Operator const & theOperator
-) const
-{
-	typedef LexiconVector::const_reverse_iterator Iterator;
-	Iterator const theEnd = this->thisLexiconVector.rend();
-	Iterator theIterator = this->thisLexiconVector.rbegin();
-	for( Operand const * theOperand; theEnd != theIterator; ++theIterator ){
-		if( ( *theIterator )->Find( theOperator, theOperand ) ){
-			if( theOperand ){
-				theEvaluation.TakeQueue( theOperand->GetProgram() );
-				return( 2 );
-			}
-			return( 1 );
-		}
-	}
-	return( 0 );
-}
-
 inline void Type_::Push( Lexicon const & theLexicon )
 {
 	this->thisLexiconVector.push_back( &theLexicon );
@@ -66,6 +46,22 @@ inline void Type_::Push( Lexicon const & theLexicon )
 inline void Type_::Swap( Translator & theTranslator )
 {
 	this->thisLexiconVector.swap( theTranslator.thisLexiconVector );
+}
+
+inline bool Type_::Translate(
+	Evaluation & theEvaluation,
+	Operator const & theOperator
+) const
+{
+	typedef LexiconVector::const_reverse_iterator Iterator;
+	Iterator const theEnd = this->thisLexiconVector.rend();
+	Iterator theIterator = this->thisLexiconVector.rbegin();
+	for( ; theEnd != theIterator; ++theIterator ){
+		if( ( *theIterator )->Translate( theEvaluation, theOperator ) ){
+			return( true );
+		}
+	}
+	return( false );
 }
 
 	#undef Type_

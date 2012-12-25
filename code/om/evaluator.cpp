@@ -201,25 +201,11 @@ inline void Type_::TakeOperator(
 )
 {
 	assert( !theOperator.IsEmpty() );
-	switch( this->thisTranslator.Translate( theEvaluation, theOperator ) ){
-	case 0:
-		switch( this->thisTranslator.Translate( theEvaluation, Operator() ) ){
-		case 0:
-			// Fall through.
-		case 1:
-			break;
-		default:
-			return;
-		}
-		// Fall through.
-	case 1:
-		break;
-	default:
-		return;
-	}
-
-	// Flush everything up to, and including, the operator.
-	{
+	if(
+		!this->thisTranslator.Translate( theEvaluation, theOperator ) &&
+		!this->thisTranslator.Translate( theEvaluation, Operator() )
+	){
+		// Flush everything up to, and including, the operator.
 		// At the very least, the operator will be flushed.
 		if( this->thisGaveElementToOutput ){
 			this->thisOutput.TakeElement( Separator::GetLineSeparator() );

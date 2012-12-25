@@ -33,6 +33,10 @@
 
 namespace Om
 {
+	//! \cond
+	struct Evaluation;
+	//! \endcond
+
 	// MARK: - Om::Lexicon
 	/*!
 	\brief
@@ -110,6 +114,8 @@ namespace Om
 
 		template< typename TheSeparator >
 		void TakeSeparator( TheSeparator & );
+
+		bool Translate( Evaluation &, Operator const & ) const;
 
 	private: // MARK: private (static)
 
