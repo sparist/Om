@@ -17,8 +17,8 @@
 */
 #if defined( Om_Operations_RearrangeOperation_ )
 
+	#include "om/operations/define_operation.hpp"
 	#include "om/operations/dequote_operation.hpp"
-	#include "om/operations/evaluate_operation.hpp"
 	#include "om/operations/expression_back_push_operation.hpp"
 	#include "om/operations/fill_operation.hpp"
 	#include "om/operations/inject_operation.hpp"
@@ -38,8 +38,8 @@ inline char const * Type_::GetName()
 
 inline void Type_::Give( Evaluation & theEvaluation )
 {
-	// evaluate swap skip {dequote inject {quote} ->expression {fill} quote}
-	EvaluateOperation::Give( theEvaluation );
+	// define swap skip {dequote inject {quote} ->expression {fill} quote}
+	DefineOperation::Give( theEvaluation );
 	SwapOperation::Give( theEvaluation );
 	SkipOperation::Give( theEvaluation );
 	Expression theExpression;

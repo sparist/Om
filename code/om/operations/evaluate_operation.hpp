@@ -18,12 +18,11 @@
 \defgroup evaluate_operation evaluate
 	\ingroup operations
 	\brief
-		Evaluates the \ref operand, using the current environment, and
-		\ref dequote_operation "dequotes".
+		Evaluates an \ref expression within the current environment.
 	\par Input
-		<tt>{lexicon} {expression}</tt>
+		An \ref expression to evaluate.
 	\par Output
-		<tt>evaluation</tt>
+		The evaluated \ref expression.
 	\par Implementation
 		Om#Operations#EvaluateOperation
 */
@@ -32,7 +31,6 @@
 
 	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
-	#include "om/operations/translate_operation.hpp"
 
 	#define Om_Operations_EvaluateOperation_GetName_() "evaluate"
 
@@ -43,7 +41,7 @@ namespace Om
 		// MARK: - Om::Operations::EvaluateOperation
 		/*!
 		\brief
-			The \ref evaluate_operation Operation implementation.
+			The \ref define_operation Operation implementation.
 		*/
 		struct EvaluateOperation
 		:
@@ -65,10 +63,6 @@ namespace Om
 
 			template< typename TheQueue >
 			bool TakeQuotedQueue( Evaluation &, TheQueue & );
-
-		private: // MARK: private (non-static)
-
-			boost::optional< Lexicon > thisLexicon;
 		};
 
 		namespace

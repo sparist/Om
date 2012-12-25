@@ -31,22 +31,14 @@ inline char const * Type_::GetName()
 }
 
 template< typename TheEvaluateOperation >
-inline void Type_::GiveElements(
-	TheEvaluateOperation & theEvaluateOperation,
-	Queue & theQueue
-)
+inline void Type_::GiveElements( TheEvaluateOperation &, Queue & theQueue )
 {
 	theQueue.TakeElement( GetOperator() );
-	if( theEvaluateOperation.thisLexicon ){
-		theQueue.TakeQuotedElements( *theEvaluateOperation.thisLexicon );
-	}
 }
 
 // MARK: public (non-static)
 
 inline Type_::EvaluateOperation()
-:
-thisLexicon()
 {
 }
 
@@ -65,21 +57,13 @@ inline bool Type_::TakeQuotedQueue(
 	TheQueue & theQueue
 )
 {
-	if( this->thisLexicon ){
-		Expression theExpression;
-		{
-			Environment theEnvironment( theEvaluation.GetTranslator() );
-			theEnvironment.Push( *this->thisLexicon );
-			Evaluator theScope( theExpression, theEnvironment );
-			theQueue.GiveElements( theScope );
-		}
-		theEvaluation.TakeQueue( theExpression );
-		return( true );
+	Expression theExpression;
+	{
+		Evaluator theScope( theExpression, theEvaluation.GetTranslator() );
+		theQueue.GiveElements( theScope );
 	}
-	this->thisLexicon = boost::in_place();
-	assert( this->thisLexicon );
-	this->thisLexicon->TakeElements( theQueue );
-	return( false );
+	theEvaluation.TakeQuotedQueue( theExpression );
+	return( true );
 }
 
 	#undef Type_
@@ -98,150 +82,11 @@ namespace Om
 		// MARK: -
 		SUITE( EvaluateOperation )
 		{
-			TEST( BasicSubstitution )
+			TEST( Basic )
 			{
 				CHECK_EQUAL(
-					"B",
-					Environment().Evaluate( "evaluate {A {B}} {A}" )
-				);
-			}
-
-			TEST( IdentityDefinition )
-			{
-				CHECK_EQUAL(
-					"",
-					Environment().Evaluate( "evaluate {A {}} {A}" )
-				);
-			}
-
-			TEST( EmptyDefinition )
-			{
-				CHECK_EQUAL(
-					"A",
-					Environment().Evaluate( "evaluate {A} {A}" )
-				);
-			}
-
-			TEST( EmptyLexicon )
-			{
-				CHECK_EQUAL( "", Environment().Evaluate( "evaluate {} {}" ) );
-			}
-
-			TEST( EmptyKeyFallThrough )
-			{
-				CHECK_EQUAL(
-					"{A}",
-					Environment().Evaluate( "evaluate {{{A}}} {B}" )
-				);
-			}
-
-			// Confirms that the last definition wins.
-			TEST( MultipleDefinition )
-			{
-				CHECK_EQUAL(
-					"{C}",
-					Environment().Evaluate( "evaluate { A {{B}} A {{C}} } {A}" )
-				);
-			}
-
-			// Confirms that the last definition wins.
-			TEST( MultipleEmptyKey )
-			{
-				CHECK_EQUAL(
-					"{C}",
-					Environment().Evaluate( "evaluate { {{B}} {{C}} } {A}" )
-				);
-			}
-
-			// Confirms that underlying non-constant definitions are used.
-			TEST( ChainedLookup )
-			{
-				CHECK_EQUAL(
-					(
-						"B\n"
-						"B"
-					),
-					Environment().Evaluate( "evaluate {A {B}} {dequote {A} A}" )
-				);
-
-				CHECK_EQUAL(
-					"{1}",
-					Environment().Evaluate(
-						"evaluate{\n"
-							"a` b\n"
-							"{{1}}\n"
-						"}{do{a b}}\n"
-					)
-				);
-				CHECK_EQUAL(
-					"1",
-					Environment().Evaluate(
-						"evaluate fill {a` b} {1} {do{a b}}"
-					)
-				);
-				CHECK_EQUAL(
-					"{1}",
-					Environment().Evaluate( "evaluate {a` b{{1}}} {do{a b}}" )
-				);
-				CHECK_EQUAL(
-					"{2}{1}",
-					Environment().Evaluate(
-						"evaluate"
-						"{"
-							"the` flaven{{1}}"
-							"the` glaven{{2}}"
-						"}"
-						"{do{the` glaven} do{the` flaven}}"
-					)
-				);
-			}
-
-			// Confirms evaluation order in nested scopes.
-			TEST( NestedEvaluationOrder )
-			{
-				CHECK_EQUAL(
-					"{a-default}",
-					Environment().Evaluate(
-						"evaluate { b {B} {{b-default}} }{"
-							"evaluate { a {A} {{a-default}} } { b }"
-						"}"
-					)
-				);
-				CHECK_EQUAL(
-					"{b-default}",
-					Environment().Evaluate(
-						"evaluate { b {B} {{b-default}} }{"
-							"evaluate { a {A} } { b }"
-						"}"
-					)
-				);
-			}
-
-			TEST( SimpleNested )
-			{
-				CHECK_EQUAL(
-					"c",
-					Environment().Evaluate(
-						"evaluate{a{evaluate{b{c}}{b}}}{a}"
-					)
-				);
-			}
-
-			TEST( DeletedOperator )
-			{
-				CHECK_EQUAL(
-					"A",
-	 				Environment().Evaluate(
-						"evaluate {evaluate} {evaluate {a{A}} {a}}"
-					)
-				);
- 			}
-
-			TEST( Evaluation )
-			{
-				CHECK_EQUAL(
-					"{1}{3}{2}",
-					Environment().Evaluate( "evaluate {a{{1}c{2}} c{{3}}} {a}" )
+					"{{A}{A}}",
+					Environment().Evaluate( "evaluate {copy {A}}" )
 				);
 			}
 		}

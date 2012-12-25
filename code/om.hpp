@@ -271,19 +271,19 @@ explicitly normalized to NFKD using the \ref normalize_operation operation:
 
 		{25}
 
-A new operation can be defined within a scope with the \ref evaluate_operation
-operation, where the first operand is treated as containing a \ref lexicon with
+A new operation can be defined with the \ref define_operation operation, where
+the first operand is treated as containing a \ref lexicon with
 operator-to-operand mappings, and the second operand contains the program to
-evaluate:
+evaluate using the defined operation:
 
--	`evaluate { double-quote {quote quote} } { double-quote {A} }`
+-	`define { double-quote {quote quote} } { double-quote {A} }`
 
 		{{{A}}}
 
 Any string can be used as an operator, with separators and operand braces
 escaped with a backquote:
 
--	``evaluate { double` quote {quote quote} } { double` quote {A} }``
+-	``define { double` quote {quote quote} } { double` quote {A} }``
 
 		{{{A}}}
 
@@ -298,7 +298,7 @@ non-recursive evaluation implementation in the evaluator that minimizes memory
 overhead of recursive calls and prevents stack overflow.  The following example
 uses recursion to give the minutes in a colon-delimited 24-hour time string:
 
--	`evaluate { minutes { dequote choose {minutes} {} = {:} <-characters } }
+-	`define { minutes { dequote choose {minutes} {} = {:} <-characters } }
 	{ minutes {12:34} }`
 
 		{34}
