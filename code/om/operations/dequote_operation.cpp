@@ -87,12 +87,10 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					(
-						"{a{A}}{"
-							"A{b}\n"
-							"c"
-						"}"
+						"A{b}\n"
+						"c"
 					),
-					Environment().Evaluate( "scope {a {A}} {dequote {a{b}c}}" )
+					Environment().Evaluate( "define {a {A}} {dequote {a{b}c}}" )
 				);
 			}
 		}

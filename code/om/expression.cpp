@@ -466,37 +466,34 @@ namespace Om
 		{
 			CHECK_EQUAL(
 				(
-					"{}{"
+					"{"
 						"{a}{b}\n"
 						"c{d}"
 					"}"
 				),
-				Environment().Evaluate( "scope {} {{a}{b}c{d}}" )
+				Environment().Evaluate( "evaluate {{a}{b}c{d}}" )
 			);
 
 			CHECK_EQUAL(
-				"{}{c{d}{a}{b}}",
-				Environment().Evaluate( "scope {} {c{d}{a}{b}}" )
+				"{c{d}{a}{b}}",
+				Environment().Evaluate( "evaluate {c{d}{a}{b}}" )
 			);
 
 			CHECK_EQUAL(
 				(
-					"{}{"
+					"{"
 						"a{b}{c}\n"
 						"d{e}{f}"
 					"}"
 				),
-				Environment().Evaluate( "scope {} {a{b}{c}d{e}{f}}" )
+				Environment().Evaluate( "evaluate {a{b}{c}d{e}{f}}" )
 			);
 
-			CHECK_EQUAL( "{}{c}", Environment().Evaluate( "scope {} {c}" ) );
+			CHECK_EQUAL( "{c}", Environment().Evaluate( "evaluate {c}" ) );
 
-			CHECK_EQUAL(
-				"{}{{d}}",
-				Environment().Evaluate( "scope {} {{d}}" )
-			);
+			CHECK_EQUAL( "{{d}}", Environment().Evaluate( "evaluate {{d}}" ) );
 
-			CHECK_EQUAL( "{}{}", Environment().Evaluate( "scope {} {}" ) );
+			CHECK_EQUAL( "{}", Environment().Evaluate( "evaluate {}" ) );
 		}
 
 		TEST( Equality )

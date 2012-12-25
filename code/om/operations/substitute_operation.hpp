@@ -32,8 +32,6 @@
 			<blockquote><tt>{A{1}}{do{A}}</tt></blockquote>
 	\par Implementation
 		Om#Operations#SubstituteOperation
-	\see
-		scope_operation
 
 	Looking up an \ref operator in the \ref lexicon has the following possible
 	outcomes:
