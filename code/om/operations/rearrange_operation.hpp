@@ -44,7 +44,6 @@
 	Om::Operations::RearrangeOperation
 
 	#include "om/definition.hpp"
-	#include "om/expression.hpp"
 
 	#define Om_Operations_RearrangeOperation_GetName_() "rearrange"
 
