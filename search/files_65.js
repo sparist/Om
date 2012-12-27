@@ -8,6 +8,8 @@ var searchData=
   ['encode_5foperation_2ehpp',['encode_operation.hpp',['../encode__operation_8hpp.html',1,'']]],
   ['environment_2ecpp',['environment.cpp',['../environment_8cpp.html',1,'']]],
   ['environment_2ehpp',['environment.hpp',['../environment_8hpp.html',1,'']]],
+  ['environment_5foperation_2ecpp',['environment_operation.cpp',['../environment__operation_8cpp.html',1,'']]],
+  ['environment_5foperation_2ehpp',['environment_operation.hpp',['../environment__operation_8hpp.html',1,'']]],
   ['equals_5foperation_2ecpp',['equals_operation.cpp',['../equals__operation_8cpp.html',1,'']]],
   ['equals_5foperation_2ehpp',['equals_operation.hpp',['../equals__operation_8hpp.html',1,'']]],
   ['evaluate_5foperation_2ecpp',['evaluate_operation.cpp',['../evaluate__operation_8cpp.html',1,'']]],

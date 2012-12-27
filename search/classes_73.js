@@ -6,7 +6,6 @@ var searchData=
   ['singletonsource',['SingletonSource',['../struct_om_1_1_sources_1_1_singleton_source.html',1,'Om::Sources']]],
   ['sink',['Sink',['../struct_om_1_1_sink.html',1,'Om']]],
   ['sink_3c_20codepoint_20const_20_20_3e',['Sink&lt; CodePoint const  &gt;',['../struct_om_1_1_sink.html',1,'Om']]],
-  ['sink_3c_20lexicon_20const_20_20_3e',['Sink&lt; Lexicon const  &gt;',['../struct_om_1_1_sink.html',1,'Om']]],
   ['skipoperation',['SkipOperation',['../struct_om_1_1_operations_1_1_skip_operation.html',1,'Om::Operations']]],
   ['source',['Source',['../struct_om_1_1_source.html',1,'Om']]],
   ['source_3c_20char_20const_20_20_3e',['Source&lt; char const  &gt;',['../struct_om_1_1_source.html',1,'Om']]],

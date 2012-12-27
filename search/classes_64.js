@@ -81,7 +81,6 @@ var searchData=
   ['defaultqueue_3c_20writer_20_3e',['DefaultQueue&lt; Writer &gt;',['../struct_om_1_1_default_queue.html',1,'Om']]],
   ['defaultsink',['DefaultSink',['../struct_om_1_1_sinks_1_1_default_sink.html',1,'Om::Sinks']]],
   ['defaultsink_3c_20codepoint_20const_2c_20codepointsink_3c_20thiscodeunititerator_20_3e_20_3e',['DefaultSink&lt; CodePoint const, CodePointSink&lt; ThisCodeUnitIterator &gt; &gt;',['../struct_om_1_1_sinks_1_1_default_sink.html',1,'Om::Sinks']]],
-  ['defaultsink_3c_20lexicon_20const_2c_20translator_20_3e',['DefaultSink&lt; Lexicon const, Translator &gt;',['../struct_om_1_1_sinks_1_1_default_sink.html',1,'Om::Sinks']]],
   ['defaultsink_3c_20thisitem_2c_20containerbacksink_3c_20thisitem_2c_20thiscontainer_20_3e_20_3e',['DefaultSink&lt; ThisItem, ContainerBackSink&lt; ThisItem, ThisContainer &gt; &gt;',['../struct_om_1_1_sinks_1_1_default_sink.html',1,'Om::Sinks']]],
   ['defaultsink_3c_20thisitem_2c_20containerfrontsink_3c_20thisitem_2c_20thiscontainer_20_3e_20_3e',['DefaultSink&lt; ThisItem, ContainerFrontSink&lt; ThisItem, ThisContainer &gt; &gt;',['../struct_om_1_1_sinks_1_1_default_sink.html',1,'Om::Sinks']]],
   ['defaultsink_3c_20thisitem_2c_20iteratorsink_3c_20thisitem_2c_20std_3a_3aostreambuf_5fiterator_3c_20thisitem_20_3e_20_3e_20_3e',['DefaultSink&lt; ThisItem, IteratorSink&lt; ThisItem, std::ostreambuf_iterator&lt; ThisItem &gt; &gt; &gt;',['../struct_om_1_1_sinks_1_1_default_sink.html',1,'Om::Sinks']]],

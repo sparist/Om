@@ -9,6 +9,7 @@ var searchData=
   ['emptysource',['EmptySource',['../struct_om_1_1_sources_1_1_empty_source.html',1,'Om::Sources']]],
   ['encodeoperation',['EncodeOperation',['../struct_om_1_1_operations_1_1_encode_operation.html',1,'Om::Operations']]],
   ['environment',['Environment',['../struct_om_1_1_environment.html',1,'Om']]],
+  ['environmentoperation',['EnvironmentOperation',['../struct_om_1_1_operations_1_1_environment_operation.html',1,'Om::Operations']]],
   ['equalsoperation',['EqualsOperation',['../struct_om_1_1_operations_1_1_equals_operation.html',1,'Om::Operations']]],
   ['evaluateoperation',['EvaluateOperation',['../struct_om_1_1_operations_1_1_evaluate_operation.html',1,'Om::Operations']]],
   ['evaluation',['Evaluation',['../struct_om_1_1_evaluation.html',1,'Om']]],

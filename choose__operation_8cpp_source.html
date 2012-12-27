@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">    #if defined( Om_Macros_Test_ )</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="environment_8hpp.html" title="Om hpp file.">om/environment.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="system_8hpp.html" title="Om hpp file.">om/system.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">        #include &quot;UnitTest++.h&quot;</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">namespace </span>Om</div>
@@ -192,12 +192,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                CHECK_EQUAL(</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    <span class="stringliteral">&quot;{empty}&quot;</span>,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    Environment().Evaluate( <span class="stringliteral">&quot;choose{empty}{non-empty}{}&quot;</span> )</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    <a class="code" href="struct_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate( <span class="stringliteral">&quot;choose{empty}{non-empty}{}&quot;</span> )</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                );</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                CHECK_EQUAL(</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    <span class="stringliteral">&quot;{non-empty}&quot;</span>,</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    Environment().Evaluate(</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <a class="code" href="struct_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                        <span class="stringliteral">&quot;choose{empty}{non-empty}{some operators}&quot;</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    )</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                );</div>

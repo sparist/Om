@@ -1,6 +1,5 @@
 <map id="Om::Translator" name="Om::Translator">
-<area shape="rect" id="node11" href="$struct_om_1_1_environment.html" title="A Translator that falls through to a System lookup." alt="" coords="611,68,730,95"/>
-<area shape="rect" id="node2" href="$struct_om_1_1_sinks_1_1_default_sink.html" title="Om::Sinks::DefaultSink\l\&lt; Lexicon const, Translator \&gt;" alt="" coords="227,31,410,73"/>
-<area shape="rect" id="node4" href="$struct_om_1_1_sink.html" title="Om::Sink\&lt; Lexicon const &#160;\&gt;" alt="" coords="6,5,178,32"/>
-<area shape="rect" id="node8" href="$struct_om_1_1_taker.html" title="Om::Taker\&lt; Translator \&gt;" alt="" coords="240,97,397,124"/>
+<area shape="rect" id="node3" href="$struct_om_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order..." alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node5" href="$struct_om_1_1_lexicon.html" title="The Lexicon Program implementation." alt="" coords="147,80,239,107"/>
+<area shape="rect" id="node7" href="$struct_om_1_1_system.html" title="Translates an Operator to an Operation." alt="" coords="263,80,355,107"/>
 </map>

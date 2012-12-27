@@ -30,7 +30,6 @@ var searchData=
   ['thisiterator',['thisIterator',['../struct_om_1_1_sinks_1_1_iterator_sink.html#a53607003faef843f29f4f369712d6daf',1,'Om::Sinks::IteratorSink::thisIterator()'],['../struct_om_1_1_sources_1_1_iterator_source.html#a00aaaf2280fd4e2e48e6ac06d720ae9a',1,'Om::Sources::IteratorSource::thisIterator()']]],
   ['thislastnode',['thisLastNode',['../struct_om_1_1_lexicon.html#ace7108814cef5286a525698838421ba0',1,'Om::Lexicon']]],
   ['thislexicon',['thisLexicon',['../struct_om_1_1_operations_1_1_define_operation.html#a6aee4407b47f5a0c817c2bcdebcb46fe',1,'Om::Operations::DefineOperation::thisLexicon()'],['../struct_om_1_1_operations_1_1_translate_operation.html#a5df987609f7377aaa5cd406a1d90dc0a',1,'Om::Operations::TranslateOperation::thisLexicon()']]],
-  ['thislexiconvector',['thisLexiconVector',['../struct_om_1_1_translator.html#abd31bc0ed7ed58d9ed41dfc26d3c0aec',1,'Om::Translator']]],
   ['thismap',['thisMap',['../struct_om_1_1_lexicon.html#a58d7ff7894887bd497b1dc61368467a8',1,'Om::Lexicon::thisMap()'],['../struct_om_1_1_system.html#a3b83ccac1defc39af3a1bf32e8949cd2',1,'Om::System::thisMap()']]],
   ['thisnextnode',['thisNextNode',['../struct_om_1_1_lexicon_1_1_node.html#aff1e0420993daa7cae56dbcbcb2e0d4a',1,'Om::Lexicon::Node']]],
   ['thisnode',['thisNode',['../struct_om_1_1_lexicon_1_1_element_range.html#a638467fce77b9a627913c57edf164738',1,'Om::Lexicon::ElementRange']]],
@@ -53,6 +52,7 @@ var searchData=
   ['thisstringend',['thisStringEnd',['../struct_om_1_1_sources_1_1_code_point_string_front_source.html#aa3e55f634604e4a76332b3a837bd5fb0',1,'Om::Sources::CodePointStringFrontSource']]],
   ['thisstringiterator',['thisStringIterator',['../struct_om_1_1_sources_1_1_code_point_string_back_source.html#a52dd29a8650d250a444d344b444b4c74',1,'Om::Sources::CodePointStringBackSource::thisStringIterator()'],['../struct_om_1_1_sources_1_1_code_point_string_front_source.html#ad8d5ba45ac465bce399334fd1103d5a2',1,'Om::Sources::CodePointStringFrontSource::thisStringIterator()']]],
   ['thistranslator',['thisTranslator',['../struct_om_1_1_evaluator.html#a1676bee6fcacef10532a11be4f2476ff',1,'Om::Evaluator']]],
+  ['thistranslatorvector',['thisTranslatorVector',['../struct_om_1_1_environment.html#aa53d320ce809e0cde56176117f663c23',1,'Om::Environment']]],
   ['thisvalue',['thisValue',['../struct_om_1_1_owner.html#a75900d77c5d8017f91f4e14dc700ca61',1,'Om::Owner']]],
   ['thiswasexposed',['thisWasExposed',['../struct_om_1_1_owner.html#ab323a4e7edeb9184793f3c2136ec9e28',1,'Om::Owner']]]
 ];

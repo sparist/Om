@@ -68,6 +68,8 @@ var searchData=
   ['om_5foperations_5fdropoperation_5fgetname_5f',['Om_Operations_DropOperation_GetName_',['../drop__operation_8hpp.html#a3ca6314ce59116e618543e4c8cd1ba1e',1,'drop_operation.hpp']]],
   ['om_5foperations_5fencodeoperation_5f',['Om_Operations_EncodeOperation_',['../encode__operation_8hpp.html#aff41eaec9dd09f26b587edbd91ac7dbe',1,'encode_operation.hpp']]],
   ['om_5foperations_5fencodeoperation_5fgetname_5f',['Om_Operations_EncodeOperation_GetName_',['../encode__operation_8hpp.html#a2196ecb82643ed2580002eadff9fa876',1,'encode_operation.hpp']]],
+  ['om_5foperations_5fenvironmentoperation_5f',['Om_Operations_EnvironmentOperation_',['../environment__operation_8hpp.html#a044691498a442b5238d21b932b4f9dd9',1,'environment_operation.hpp']]],
+  ['om_5foperations_5fenvironmentoperation_5fgetname_5f',['Om_Operations_EnvironmentOperation_GetName_',['../environment__operation_8hpp.html#ae56333996933efb5d64d9f32aa4ce027',1,'environment_operation.hpp']]],
   ['om_5foperations_5fequalsoperation_5f',['Om_Operations_EqualsOperation_',['../equals__operation_8hpp.html#a10e3389eacd0f0cdf0a9a553fe955ed3',1,'equals_operation.hpp']]],
   ['om_5foperations_5fequalsoperation_5fgetname_5f',['Om_Operations_EqualsOperation_GetName_',['../equals__operation_8hpp.html#a535f71f1def74420da4d319ac572a399',1,'equals_operation.hpp']]],
   ['om_5foperations_5fevaluateoperation_5f',['Om_Operations_EvaluateOperation_',['../evaluate__operation_8hpp.html#a11aaece936ccf84ff692bdf5c248cf89',1,'evaluate_operation.hpp']]],

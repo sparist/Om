@@ -424,7 +424,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor">    #if defined( Om_Macros_Test_ )</span></div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="environment_8hpp.html" title="Om hpp file.">om/environment.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="system_8hpp.html" title="Om hpp file.">om/system.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">        #include &quot;UnitTest++.h&quot;</span></div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="keyword">namespace </span>Om</div>
@@ -436,7 +436,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        {</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            CHECK_EQUAL(</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <span class="stringliteral">&quot;{a` `{b`}}&quot;</span>,</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                Environment().Evaluate( <span class="stringliteral">&quot;operator{a {b}}&quot;</span> )</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                <a class="code" href="struct_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate( <span class="stringliteral">&quot;operator{a {b}}&quot;</span> )</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            );</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        }</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
@@ -445,7 +445,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="comment">// Positive match</span></div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            CHECK_EQUAL(</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                <span class="stringliteral">&quot;{{test` `{ing`}}}&quot;</span>,</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                Environment().Evaluate(</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                <a class="code" href="struct_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                    <span class="stringliteral">&quot;= operator{test {ing}} {test` `{ing`}}&quot;</span></div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                )</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            );</div>
@@ -453,7 +453,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <span class="comment">// Positive match</span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            CHECK_EQUAL(</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                <span class="stringliteral">&quot;{{a`{b`}`{c`}`\nd`{e`}}}&quot;</span>,</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                Environment().Evaluate(</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                <a class="code" href="struct_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                    <span class="stringliteral">&quot;= operator{a{b}{c}\nd{e}} {a`{b`}`{c`}`\nd`{e`}}&quot;</span></div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                )</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            );</div>
@@ -461,19 +461,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="comment">// Negative match</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            CHECK_EQUAL(</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                <span class="stringliteral">&quot;{}&quot;</span>,</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                Environment().Evaluate( <span class="stringliteral">&quot;= operator{a{b}{c}} {a`{b`}`{d`}}&quot;</span> )</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                <a class="code" href="struct_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate( <span class="stringliteral">&quot;= operator{a{b}{c}} {a`{b`}`{d`}}&quot;</span> )</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            );</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="comment">// Empty match</span></div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            CHECK_EQUAL(</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                <span class="stringliteral">&quot;{}&quot;</span>,</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                Environment().Evaluate( <span class="stringliteral">&quot;= operator{} {a{b}{c}}&quot;</span> )</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                <a class="code" href="struct_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate( <span class="stringliteral">&quot;= operator{} {a{b}{c}}&quot;</span> )</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            );</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="comment">// Empty match</span></div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            CHECK_EQUAL(</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                <span class="stringliteral">&quot;{{}}&quot;</span>,</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                Environment().Evaluate( <span class="stringliteral">&quot;= operator{} {}&quot;</span> )</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                <a class="code" href="struct_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate( <span class="stringliteral">&quot;= operator{} {}&quot;</span> )</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            );</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        }</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;</div>
