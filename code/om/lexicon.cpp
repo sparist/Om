@@ -89,12 +89,12 @@ inline void Type_::Clear()
 	this->thisFirstNode = this->thisLastNode = 0;
 }
 
-inline Om::Pair const * Type_::Find( Operator const & theOperator ) const
+inline Om::Pair const & Type_::Find( Operator const & theOperator ) const
 {
 	typedef Map::const_iterator Iterator;
 	Iterator theIterator( this->thisMap.find( theOperator.GetString() ) );
-	if( this->thisMap.end() == theIterator ){ return( 0 ); }
-	return( &*theIterator->second );
+	if( this->thisMap.end() == theIterator ){ return( Pair::GetEmpty() ); }
+	return( *theIterator->second );
 }
 
 inline void Type_::FrontGivePair( Queue & theQueue )
@@ -212,14 +212,14 @@ inline bool Type_::Translate(
 	Operator const & theOperator
 ) const
 {
-	if( Pair const * const thePair = this->Find( theOperator ) ){
-		if( Operand const * const theOperand = thePair->GetOperand() ){
-			theEvaluation.TakeQueue( theOperand->GetProgram() );
-			return( true );
-		}
-		return( System::Get().Translate( theEvaluation, theOperator ) );
+	Pair const & thePair = this->Find( theOperator );
+	if( thePair.IsEmpty() ){ return( false ); }
+	if( Operand const * const theOperand = thePair.GetOperand() ){
+		theEvaluation.TakeQueue( theOperand->GetProgram() );
+		return( true );
 	}
-	return( false );
+	assert( thePair.GetOperator() == theOperator );
+	return( System::Get().Translate( theEvaluation, theOperator ) );
 }
 
 // MARK: private (static)

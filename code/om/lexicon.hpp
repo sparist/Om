@@ -77,9 +77,9 @@ namespace Om
 
 		/*!
 		\return
-			A pointer to the Pair containing to the Operator, or null if none.
+			The Pair containing to the Operator, or empty if none.
 		*/
-		Pair const * Find( Operator const & ) const;
+		Pair const & Find( Operator const & ) const;
 
 		void FrontGivePair( Queue & );
 

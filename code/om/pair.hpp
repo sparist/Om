@@ -25,6 +25,10 @@ namespace Om
 	// MARK: - Om::Pair
 	struct Pair
 	{
+	public: // MARK: public (static)
+
+		static Pair const & GetEmpty();
+
 	public: // MARK: public (non-static)
 
 		virtual ~Pair();

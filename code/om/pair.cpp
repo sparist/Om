@@ -21,6 +21,14 @@
 
 	#define Type_ Om::Pair
 
+// MARK: public (static)
+
+inline Om::Pair const & Type_::GetEmpty()
+{
+	static Pair thePair;
+	return( thePair );
+}
+
 // MARK: public (non-static)
 
 inline Type_::~Pair()

@@ -85,17 +85,12 @@ inline void Type_::TakeLexicon(
 )
 {
 	assert( this->thisOperator );
-	if( Pair const * const thePair = theLexicon.Find( *this->thisOperator ) ){
-		theEvaluation.TakeQuotedQueue( theLexicon );
-		theEvaluation.TakeQuotedQueue( thePair->GetOperator() );
-		if( Operand const * const theOperand = thePair->GetOperand() ){
-			theEvaluation.TakeQuotedQueue( *theOperand );
-		} else{
-			theEvaluation.TakeOperand< Operand const >( Operand() );
-		}
+	Pair const & thePair = theLexicon.Find( *this->thisOperator );
+	theEvaluation.TakeQuotedQueue( theLexicon );
+	theEvaluation.TakeQuotedQueue( thePair.GetOperator() );
+	if( Operand const * const theOperand = thePair.GetOperand() ){
+		theEvaluation.TakeQuotedQueue( *theOperand );
 	} else{
-		theEvaluation.TakeQuotedQueue( theLexicon );
-		theEvaluation.TakeQuotedQueue< Operator const >( Operator() );
 		theEvaluation.TakeOperand< Operand const >( Operand() );
 	}
 }
