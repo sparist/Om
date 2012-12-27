@@ -55,9 +55,9 @@ inline bool Type_::Translate(
 {
 	typedef LexiconVector::const_reverse_iterator Iterator;
 	Iterator const theEnd = this->thisLexiconVector.rend();
-	Iterator theIterator = this->thisLexiconVector.rbegin();
-	for( ; theEnd != theIterator; ++theIterator ){
-		if( ( *theIterator )->Translate( theEvaluation, theOperator ) ){
+	Iterator theCurrent = this->thisLexiconVector.rbegin();
+	for( ; theEnd != theCurrent; ++theCurrent ){
+		if( ( *theCurrent )->Translate( theEvaluation, theOperator ) ){
 			return( true );
 		}
 	}

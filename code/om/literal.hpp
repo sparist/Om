@@ -101,15 +101,15 @@ namespace Om
 		/*!
 		\param theQueue
 			The taker.
-		\param theStart
-			The Element start.
+		\param theCurrent
+			The current Element iterator.
 		\param theEnd
-			The Element end.
+			The end Element iterator.
 		*/
 		template< typename TheElementIterator >
 		static void GiveElements(
 			Queue & theQueue,
-			TheElementIterator theStart,
+			TheElementIterator theCurrent,
 			TheElementIterator const theEnd
 		);
 

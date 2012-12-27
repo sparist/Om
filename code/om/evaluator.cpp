@@ -261,15 +261,15 @@ inline void Type_::TakeSeparator( TheSeparator & )
 
 template< typename TheIterator >
 inline void Type_::GiveElements(
-	TheIterator theIterator,
+	TheIterator theCurrent,
 	TheIterator const theEnd,
 	Queue & theQueue
 )
 {
-	if( theEnd != theIterator ){
+	if( theEnd != theCurrent ){
 		for( ; ; theQueue.TakeElement( Separator::GetLineSeparator() ) ){
-			theIterator->GiveElements( theQueue );
-			if( theEnd == ++theIterator ){ break; }
+			theCurrent->GiveElements( theQueue );
+			if( theEnd == ++theCurrent ){ return; }
 		}
 	}
 }

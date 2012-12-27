@@ -234,11 +234,10 @@ template< typename TheNode >
 inline void Type_::GiveElements( TheNode * theFirstNode, Queue & theQueue )
 {
 	if( theFirstNode ){
-		for( ; ; ){
+		for( ; ; theQueue.TakeElement( Separator::GetLineSeparator() ) ){
 			assert( theFirstNode && !theFirstNode->IsEmpty() );
 			theFirstNode->GiveElements( theQueue );
-			if( !( theFirstNode = theFirstNode->GetNext() ) ){ break; }
-			theQueue.TakeElement( Separator::GetLineSeparator() );
+			if( !( theFirstNode = theFirstNode->GetNext() ) ){ return; }
 		}
 	}
 }
@@ -357,13 +356,13 @@ inline void Type_::Pop()
 	case 0:
 		if( this->thisNode->GetOperand() ){
 			this->thisOffset = 1;
-			break;
+			return;
 		}
 		// Fall through.
 	case 1:
 		this->thisNode = this->thisNode->GetNext();
 		this->thisOffset = 2;
-		break;
+		return;
 	default:
 		this->thisOffset = this->thisNode->GetOperator().IsEmpty();
 		// Fall through.

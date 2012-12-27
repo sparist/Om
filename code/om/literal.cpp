@@ -204,12 +204,12 @@ inline void Type_::TakeSeparator( TheSeparator & theSeparator )
 template< typename TheElementIterator >
 inline void Type_::GiveElements(
 	Queue & theQueue,
-	TheElementIterator theStart,
+	TheElementIterator theCurrent,
 	TheElementIterator const theEnd
 )
 {
-	for( ; theEnd != theStart; ++theStart ){
-		theStart->GiveElements( theQueue );
+	for( ; theEnd != theCurrent; ++theCurrent ){
+		theCurrent->GiveElements( theQueue );
 	}
 }
 

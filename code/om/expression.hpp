@@ -137,15 +137,15 @@ namespace Om
 		/*!
 		\param theQueue
 			The taker.
-		\param theStart
-			The Form start.
+		\param theCurrent
+			The current Form iterator.
 		\param theEnd
-			The Form end.
+			The end Form iterator.
 		*/
 		template< typename TheFormIterator >
 		static void GiveElements(
 			Queue & theQueue,
-			TheFormIterator theStart,
+			TheFormIterator theCurrent,
 			TheFormIterator const theEnd
 		);
 

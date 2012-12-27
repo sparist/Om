@@ -154,9 +154,9 @@ inline void Type_::GiveElements(
 		theQueue.TakeElement( theForm.thisOperator );
 	}
 	TheOperandIterator const theEnd = theForm.thisOperandDeque.end();
-	TheOperandIterator theIterator = theForm.thisOperandDeque.begin();
-	for( ; theEnd != theIterator; ++theIterator ){
-		theQueue.TakeElement( *theIterator );
+	TheOperandIterator theCurrent = theForm.thisOperandDeque.begin();
+	for( ; theEnd != theCurrent; ++theCurrent ){
+		theQueue.TakeElement( *theCurrent );
 	}
 }
 

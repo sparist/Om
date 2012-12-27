@@ -225,20 +225,20 @@ inline void Type_::TakeElements( Expression & theExpression )
 		} else{
 			FormDeque & theFormDeque = theExpression.thisFormDeque;
 			assert( !theFormDeque.empty() );
-			FormDeque::iterator theIterator = theFormDeque.begin();
-			if( theIterator->GetOperator().IsEmpty() ){
+			FormDeque::iterator theCurrent = theFormDeque.begin();
+			if( theCurrent->GetOperator().IsEmpty() ){
 				theFormDeque.front().GiveElements( *this );
 				theFormDeque.pop_front();
 				if( theFormDeque.empty() ){ return; }
-				theIterator = theFormDeque.begin();
+				theCurrent = theFormDeque.begin();
 			}
 			FormDeque::iterator const theEnd = theFormDeque.end();
-			assert( theEnd != theIterator );
+			assert( theEnd != theCurrent );
 			do{
-				assert( !theIterator->GetOperator().IsEmpty() );
+				assert( !theCurrent->GetOperator().IsEmpty() );
 				this->thisFormDeque.push_back( Form() );
-				this->thisFormDeque.back().Swap( *theIterator );
-			} while( theEnd != ++theIterator );
+				this->thisFormDeque.back().Swap( *theCurrent );
+			} while( theEnd != ++theCurrent );
 			Expression().Swap( theExpression );
 		}
 	}
@@ -253,15 +253,15 @@ inline void Type_::TakeElements( Expression const & theExpression )
 			FormDeque const & theFormDeque = theExpression.thisFormDeque;
 			assert( !theFormDeque.empty() );
 			FormDeque::const_iterator const theEnd = theFormDeque.end();
-			FormDeque::const_iterator theIterator = theFormDeque.begin();
-			assert( theEnd != theIterator );
-			if( theIterator->GetOperator().IsEmpty() ){
+			FormDeque::const_iterator theCurrent = theFormDeque.begin();
+			assert( theEnd != theCurrent );
+			if( theCurrent->GetOperator().IsEmpty() ){
 				theFormDeque.front().GiveElements( *this );
-				++theIterator;
+				++theCurrent;
 			}
 			this->thisFormDeque.insert(
 				this->thisFormDeque.end(),
-				theIterator,
+				theCurrent,
 				theEnd
 			);
 		}
@@ -310,16 +310,15 @@ inline void Type_::TakeSeparator( TheSeparator & )
 template< typename TheFormIterator >
 inline void Type_::GiveElements(
 	Queue & theQueue,
-	TheFormIterator theStart,
+	TheFormIterator theCurrent,
 	TheFormIterator const theEnd
 )
 {
-	if( theEnd != theStart){
-		for( ; ; ){
-			assert( !theStart->IsEmpty() );
-			theStart->GiveElements( theQueue );
-			if( theEnd == ++theStart ){ break; }
-			theQueue.TakeElement( Separator::GetLineSeparator() );
+	if( theEnd != theCurrent ){
+		for( ; ; theQueue.TakeElement( Separator::GetLineSeparator() ) ){
+			assert( !theCurrent->IsEmpty() );
+			theCurrent->GiveElements( theQueue );
+			if( theEnd == ++theCurrent ){ return; }
 		}
 	}
 }

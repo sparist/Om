@@ -37,13 +37,13 @@ namespace Om
 		public: // MARK: public (non-static)
 
 			/*!
-			\param theStart
-				The start input iterator.
+			\param theCurrent
+				The current input iterator.
 			\param theEnd
 				The end input iterator.
 			*/
 			IteratorPairSource(
-				ThisIterator theStart,
+				ThisIterator theCurrent,
 				ThisIterator const theEnd
 			);
 
@@ -63,8 +63,8 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The start input iterator.
-			ThisIterator thisIterator;
+			//! The current input iterator.
+			ThisIterator thisCurrent;
 
 			//! The end input iterator.
 			ThisIterator thisEnd;

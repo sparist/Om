@@ -27,11 +27,11 @@
 
 Template_
 inline Type_::IteratorPairSource(
-	ThisIterator theStart,
+	ThisIterator theCurrent,
 	ThisIterator const theEnd
 )
 :
-thisIterator( theStart ),
+thisCurrent( theCurrent ),
 thisEnd( theEnd )
 {
 }
@@ -46,42 +46,39 @@ inline Type_ & Type_::operator =( IteratorPairSource theIteratorPairSource )
 Template_
 inline bool Type_::operator ==( IteratorPairSource const & theSource ) const
 {
-	return( this->thisIterator == theSource.thisIterator );
+	return( this->thisCurrent == theSource.thisCurrent );
 }
 
 Template_
 inline bool Type_::operator !() const
 {
-	return( this->thisEnd == this->thisIterator );
+	return( this->thisEnd == this->thisCurrent );
 }
 
 Template_
 inline ThisItem & Type_::operator *() const
 {
-	assert( this->thisEnd != this->thisIterator );
-	return( *this->thisIterator );
+	assert( this->thisEnd != this->thisCurrent );
+	return( *this->thisCurrent );
 }
 
 Template_
 inline void Type_::End()
 {
-	this->thisIterator = this->thisEnd;
+	this->thisCurrent = this->thisEnd;
 }
 
 Template_
 inline void Type_::Pop()
 {
-	assert( this->thisEnd != this->thisIterator );
-	++this->thisIterator;
+	assert( this->thisEnd != this->thisCurrent );
+	++this->thisCurrent;
 }
 
 Template_
 inline void Type_::Swap( IteratorPairSource & theIteratorPairSource )
 {
-	boost::swap(
-		this->thisIterator,
-		theIteratorPairSource.thisIterator
-	);
+	boost::swap( this->thisCurrent, theIteratorPairSource.thisCurrent );
 	boost::swap( this->thisEnd, theIteratorPairSource.thisEnd );
 }
 

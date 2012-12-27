@@ -78,7 +78,7 @@ inline void Type_::Pop()
 		);
 		switch( this->thisCodePoint ){
 		default:
-			break;
+			return;
 		case boost::locale::utf::incomplete:
 			// Fall through.
 		case boost::locale::utf::illegal:
