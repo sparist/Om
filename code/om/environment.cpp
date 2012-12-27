@@ -52,11 +52,28 @@ inline bool Type_::IsEmpty() const
 
 inline void Type_::Push( Translator const & theTranslator )
 {
-	if(
-		this->IsEmpty() ||
-		this->thisTranslatorVector.back() != &theTranslator
-	){
-		this->thisTranslatorVector.push_back( &theTranslator );
+	Translator const * theTranslatorPointer = &theTranslator;
+	for( std::stack< Translator const * > theStack; ; theStack.pop() ){
+		if(
+			Environment const * const theEnvironment = dynamic_cast<
+				Environment const *
+			>( theTranslatorPointer )
+		){
+			typedef TranslatorVector::const_reverse_iterator Iterator;
+			Iterator const theEnd = theEnvironment->thisTranslatorVector.rend();
+			Iterator theCurrent = theEnvironment->thisTranslatorVector.rbegin();
+			for( ; theEnd != theCurrent; ++theCurrent ){
+				assert( *theCurrent && !( *theCurrent )->IsEmpty() );
+				theStack.push( *theCurrent );
+			}
+		} else if(
+			this->IsEmpty() ||
+			this->thisTranslatorVector.back() != theTranslatorPointer
+		){
+			this->thisTranslatorVector.push_back( theTranslatorPointer );
+		}
+		if( theStack.empty() ){ return; }
+		theTranslatorPointer = theStack.top();
 	}
 }
 
