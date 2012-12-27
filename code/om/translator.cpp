@@ -38,6 +38,17 @@ inline Type_ & Type_::operator =( Translator theTranslator )
 	return( *this );
 }
 
+inline void Type_::GiveElements( Queue & theQueue ) const
+{
+	typedef LexiconVector::const_iterator Iterator;
+	Iterator const theEnd = this->thisLexiconVector.end();
+	Iterator theCurrent = this->thisLexiconVector.begin();
+	for( ; theEnd != theCurrent; ++theCurrent ){
+		assert( *theCurrent );
+		( *theCurrent )->GiveElements( theQueue );
+	}
+}
+
 inline void Type_::Push( Lexicon const & theLexicon )
 {
 	this->thisLexiconVector.push_back( &theLexicon );

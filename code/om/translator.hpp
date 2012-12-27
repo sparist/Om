@@ -29,6 +29,8 @@ namespace Om
 	struct Lexicon;
 
 	struct Operator;
+
+	struct Queue;
 	//! \endcond
 
 	// MARK: - Om::Translator
@@ -49,6 +51,8 @@ namespace Om
 		Translator();
 		
 		Translator & operator =( Translator );
+
+		virtual void GiveElements( Queue & ) const;
 
 		//! Pushes a Lexicon reference.
 		virtual void Push( Lexicon const & );

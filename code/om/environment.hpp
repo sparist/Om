@@ -64,6 +64,8 @@ namespace Om
 		*/
 		std::string Evaluate( char const theCodeUnitIterator[] );
 
+		virtual void GiveElements( Queue & ) const;
+
 		virtual bool Translate( Evaluation &, Operator const & ) const;
 	};
 }

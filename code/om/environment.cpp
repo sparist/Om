@@ -66,6 +66,12 @@ inline std::string Type_::Evaluate( char const theCodeUnitIterator[] )
 	return( theString );
 }
 
+inline void Type_::GiveElements( Queue & theQueue ) const
+{
+	System::Get().GiveElements( theQueue );
+	Translator::GiveElements( theQueue );
+}
+
 inline bool Type_::Translate(
 	Evaluation & theEvaluation,
 	Operator const & theOperator
