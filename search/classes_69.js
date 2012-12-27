@@ -1,7 +1,6 @@
 var searchData=
 [
   ['injectoperation',['InjectOperation',['../struct_om_1_1_operations_1_1_inject_operation.html',1,'Om::Operations']]],
-  ['iterator',['iterator',['../classstd_1_1iterator.html',1,'']]],
   ['iteratorpairsource',['IteratorPairSource',['../struct_om_1_1_sources_1_1_iterator_pair_source.html',1,'Om::Sources']]],
   ['iteratorpairsource_3c_20element_20const_20_2c_20elementdeque_3a_3aconst_5fiterator_20_3e',['IteratorPairSource&lt; Element const , ElementDeque::const_iterator &gt;',['../struct_om_1_1_sources_1_1_iterator_pair_source.html',1,'Om::Sources']]],
   ['iteratorpairsource_3c_20element_2c_20elementdeque_3a_3aiterator_20_3e',['IteratorPairSource&lt; Element, ElementDeque::iterator &gt;',['../struct_om_1_1_sources_1_1_iterator_pair_source.html',1,'Om::Sources']]],

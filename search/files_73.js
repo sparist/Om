@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['scope_5foperation_2ecpp',['scope_operation.cpp',['../scope__operation_8cpp.html',1,'']]],
-  ['scope_5foperation_2ehpp',['scope_operation.hpp',['../scope__operation_8hpp.html',1,'']]],
   ['separator_2ecpp',['separator.cpp',['../separator_8cpp.html',1,'']]],
   ['separator_2ehpp',['separator.hpp',['../separator_8hpp.html',1,'']]],
   ['separator_5fsymbol_2ecpp',['separator_symbol.cpp',['../separator__symbol_8cpp.html',1,'']]],
@@ -31,5 +29,7 @@ var searchData=
   ['symbols_2ecpp',['symbols.cpp',['../symbols_8cpp.html',1,'']]],
   ['symbols_2ehpp',['symbols.hpp',['../symbols_8hpp.html',1,'']]],
   ['system_2ecpp',['system.cpp',['../system_8cpp.html',1,'']]],
-  ['system_2ehpp',['system.hpp',['../system_8hpp.html',1,'']]]
+  ['system_2ehpp',['system.hpp',['../system_8hpp.html',1,'']]],
+  ['system_5foperation_2ecpp',['system_operation.cpp',['../system__operation_8cpp.html',1,'']]],
+  ['system_5foperation_2ehpp',['system_operation.hpp',['../system__operation_8hpp.html',1,'']]]
 ];

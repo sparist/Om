@@ -8,5 +8,5 @@ var searchData=
   ['operatorbackpushoperation',['OperatorBackPushOperation',['../struct_om_1_1_operations_1_1_operator_back_push_operation.html',1,'Om::Operations']]],
   ['operatorfrontpushoperation',['OperatorFrontPushOperation',['../struct_om_1_1_operations_1_1_operator_front_push_operation.html',1,'Om::Operations']]],
   ['owner',['Owner',['../struct_om_1_1_owner.html',1,'Om']]],
-  ['owner_3c_20program_20_3e',['Owner&lt; Program &gt;',['../struct_om_1_1_owner.html',1,'Om']]]
+  ['owner_3c_20om_3a_3aprogram_20_3e',['Owner&lt; Om::Program &gt;',['../struct_om_1_1_owner.html',1,'Om']]]
 ];

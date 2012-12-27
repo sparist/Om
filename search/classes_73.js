@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scopeoperation',['ScopeOperation',['../struct_om_1_1_operations_1_1_scope_operation.html',1,'Om::Operations']]],
   ['separator',['Separator',['../struct_om_1_1_separator.html',1,'Om']]],
   ['shareable',['Shareable',['../struct_om_1_1_shareable.html',1,'Om']]],
   ['shareable_3c_3e',['Shareable&lt;&gt;',['../struct_om_1_1_shareable.html',1,'Om']]],
@@ -23,5 +22,6 @@ var searchData=
   ['streamsource',['StreamSource',['../struct_om_1_1_sources_1_1_stream_source.html',1,'Om::Sources']]],
   ['substituteoperation',['SubstituteOperation',['../struct_om_1_1_operations_1_1_substitute_operation.html',1,'Om::Operations']]],
   ['swapoperation',['SwapOperation',['../struct_om_1_1_operations_1_1_swap_operation.html',1,'Om::Operations']]],
-  ['system',['System',['../struct_om_1_1_system.html',1,'Om']]]
+  ['system',['System',['../struct_om_1_1_system.html',1,'Om']]],
+  ['systemoperation',['SystemOperation',['../struct_om_1_1_operations_1_1_system_operation.html',1,'Om::Operations']]]
 ];

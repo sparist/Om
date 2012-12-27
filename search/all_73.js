@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['scope',['scope',['../group__scope__operation.html',1,'']]],
-  ['scope_5foperation_2ecpp',['scope_operation.cpp',['../scope__operation_8cpp.html',1,'']]],
-  ['scope_5foperation_2ehpp',['scope_operation.hpp',['../scope__operation_8hpp.html',1,'']]],
-  ['scopeoperation',['ScopeOperation',['../struct_om_1_1_operations_1_1_scope_operation.html',1,'Om::Operations']]],
   ['separator',['Separator',['../struct_om_1_1_separator.html',1,'Om']]],
   ['separator',['Separator',['../struct_om_1_1_separator.html#a3a331a84d608333248ce8adf83c65545',1,'Om::Separator::Separator()'],['../struct_om_1_1_separator.html#a95c74de92a80546bc59f2207bc82dcc1',1,'Om::Separator::Separator(Source&lt; CodePoint const  &gt; &amp;)'],['../struct_om_1_1_separator.html#a176d772caeb39d6211337ee19fc153ef',1,'Om::Separator::Separator(Symbols::SeparatorSymbol const theSeparatorSymbol)'],['../group__separator.html',1,'(Global Namespace)']]],
   ['separator_2ecpp',['separator.cpp',['../separator_8cpp.html',1,'']]],
@@ -69,8 +65,12 @@ var searchData=
   ['swapoperation',['SwapOperation',['../struct_om_1_1_operations_1_1_swap_operation.html',1,'Om::Operations']]],
   ['symbols_2ecpp',['symbols.cpp',['../symbols_8cpp.html',1,'']]],
   ['symbols_2ehpp',['symbols.hpp',['../symbols_8hpp.html',1,'']]],
-  ['system',['System',['../struct_om_1_1_system.html',1,'Om']]],
   ['system',['System',['../struct_om_1_1_system.html#ad4a30a1f43df54e98137c7761b29f343',1,'Om::System::System()'],['../struct_om_1_1_system.html#af13f2728ce6ccfdca51ed94bf24069bd',1,'Om::System::System(System const &amp;)']]],
+  ['system',['System',['../struct_om_1_1_system.html',1,'Om']]],
   ['system_2ecpp',['system.cpp',['../system_8cpp.html',1,'']]],
-  ['system_2ehpp',['system.hpp',['../system_8hpp.html',1,'']]]
+  ['system_2ehpp',['system.hpp',['../system_8hpp.html',1,'']]],
+  ['system',['system',['../group__system__operation.html',1,'']]],
+  ['system_5foperation_2ecpp',['system_operation.cpp',['../system__operation_8cpp.html',1,'']]],
+  ['system_5foperation_2ehpp',['system_operation.hpp',['../system__operation_8hpp.html',1,'']]],
+  ['systemoperation',['SystemOperation',['../struct_om_1_1_operations_1_1_system_operation.html',1,'Om::Operations']]]
 ];

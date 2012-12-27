@@ -22,6 +22,8 @@ var searchData=
   ['default_5fsink_2ehpp',['default_sink.hpp',['../default__sink_8hpp.html',1,'']]],
   ['default_5fsource_2ecpp',['default_source.cpp',['../default__source_8cpp.html',1,'']]],
   ['default_5fsource_2ehpp',['default_source.hpp',['../default__source_8hpp.html',1,'']]],
+  ['define_5foperation_2ecpp',['define_operation.cpp',['../define__operation_8cpp.html',1,'']]],
+  ['define_5foperation_2ehpp',['define_operation.hpp',['../define__operation_8hpp.html',1,'']]],
   ['definition_2ecpp',['definition.cpp',['../definition_8cpp.html',1,'']]],
   ['definition_2ehpp',['definition.hpp',['../definition_8hpp.html',1,'']]],
   ['dequote_5foperation_2ecpp',['dequote_operation.cpp',['../dequote__operation_8cpp.html',1,'']]],
