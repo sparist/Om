@@ -17,6 +17,7 @@
 */
 #if defined( Om_System_ )
 
+	#include "om/lexicon.hpp"
 	#include "om/operator.hpp"
 
 // MARK: Om::System
@@ -33,6 +34,29 @@ inline Type_ & Type_::Get()
 
 // MARK: public (non-static)
 
+inline Om::Lexicon const & Type_::GetLexicon() const
+{
+	static Lexicon theLexicon;
+	if( theLexicon.IsEmpty() ){
+		this->GiveElements( theLexicon );
+	}
+	return( theLexicon );
+}
+
+inline void Type_::GiveElements( Queue & theQueue ) const
+{
+	if( !this->IsEmpty() ){
+		Map::const_iterator const theEnd = this->thisMap.end();
+		Map::const_iterator theCurrent = this->thisMap.begin();
+		assert( theEnd != theCurrent );
+		for( ; ; theQueue.TakeElement( Separator::GetLineSeparator() ) ){
+			Operator theOperator( theCurrent->first );
+			theQueue.TakeElement( theOperator );
+			if( theEnd == ++theCurrent ){ return; }
+		}
+	}
+}
+
 inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] )
 {
 	// Set the global locale.
@@ -47,17 +71,22 @@ inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] )
 	// Assert that the name keys are NFD-normalized.
 	{
 		Map::const_iterator const theEnd = this->thisMap.end();
-		Map::const_iterator theIterator = this->thisMap.begin();
-		for( ; theEnd != theIterator; ++theIterator ){
+		Map::const_iterator theCurrent = this->thisMap.begin();
+		for( ; theEnd != theCurrent; ++theCurrent ){
 			assert(
 				boost::locale::normalize(
-					theIterator->first,
+					theCurrent->first,
 					boost::locale::norm_nfd
-				) == theIterator->first
+				) == theCurrent->first
 			);
 		}
 	}
 	#endif
+}
+
+inline bool Type_::IsEmpty() const
+{
+	return( this->thisMap.empty() );
 }
 
 inline bool Type_::Translate(

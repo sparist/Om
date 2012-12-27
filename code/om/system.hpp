@@ -25,7 +25,11 @@ namespace Om
 	//! \cond
 	struct Evaluation;
 
+	struct Lexicon;
+
 	struct Operator;
+
+	struct Queue;
 	//! \endcond
 
 	// MARK: - Om::System
@@ -51,6 +55,14 @@ namespace Om
 	public: // MARK: public (non-static)
 
 		/*!
+		\return
+			The Lexicon representation of the System.
+		*/
+		Lexicon const & GetLexicon() const;
+
+		void GiveElements( Queue & ) const;
+
+		/*!
 		\brief
 			Initializes the System.
 		\param theLocaleCodeUnitIterator
@@ -62,6 +74,8 @@ namespace Om
 		This must be called in main, prior to any Program evaluation.
 		*/
 		void Initialize( char const theLocaleCodeUnitIterator[] );
+
+		bool IsEmpty() const;
 
 		/*!
 		\brief
