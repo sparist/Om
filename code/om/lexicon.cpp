@@ -89,17 +89,12 @@ inline void Type_::Clear()
 	this->thisFirstNode = this->thisLastNode = 0;
 }
 
-inline bool Type_::Find(
-	Operator const & theOperator,
-	Operand const * & theOperand
-) const
+inline Om::Pair const * Type_::Find( Operator const & theOperator ) const
 {
-	theOperand = 0;
 	typedef Map::const_iterator Iterator;
 	Iterator theIterator( this->thisMap.find( theOperator.GetString() ) );
-	if( this->thisMap.end() == theIterator ){ return( false ); }
-	theOperand = theIterator->second->GetOperand();
-	return( true );
+	if( this->thisMap.end() == theIterator ){ return( 0 ); }
+	return( &*theIterator->second );
 }
 
 inline void Type_::FrontGivePair( Queue & theQueue )
@@ -217,9 +212,8 @@ inline bool Type_::Translate(
 	Operator const & theOperator
 ) const
 {
-	Operand const * theOperand;
-	if( this->Find( theOperator, theOperand ) ){
-		if( theOperand ){
+	if( Pair const * const thePair = this->Find( theOperator ) ){
+		if( Operand const * const theOperand = thePair->GetOperand() ){
 			theEvaluation.TakeQueue( theOperand->GetProgram() );
 			return( true );
 		}

@@ -85,11 +85,14 @@ inline void Type_::TakeLexicon(
 )
 {
 	assert( this->thisOperator );
-	Operand const * theOperand;
-	if( theLexicon.Find( *this->thisOperator, theOperand ) ){
+	if( Pair const * const thePair = theLexicon.Find( *this->thisOperator ) ){
 		theEvaluation.TakeQuotedQueue( theLexicon );
-		theEvaluation.TakeQuotedQueue( *this->thisOperator );
-		theEvaluation.TakeOperand( theOperand ? *theOperand : Operand() );
+		theEvaluation.TakeQuotedQueue( thePair->GetOperator() );
+		if( Operand const * const theOperand = thePair->GetOperand() ){
+			theEvaluation.TakeQuotedQueue( *theOperand );
+		} else{
+			theEvaluation.TakeOperand< Operand const >( Operand() );
+		}
 	} else{
 		theEvaluation.TakeQuotedQueue( theLexicon );
 		theEvaluation.TakeQuotedQueue< Operator const >( Operator() );
@@ -118,7 +121,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					(
-						"{A}{a}{"
+						"{{A}}{a}{"
 							"b{B}\n"
 							"a{A}"
 						"}"
@@ -128,7 +131,7 @@ namespace Om
 
 				CHECK_EQUAL(
 					(
-						"{A}{a}{"
+						"{{A}}{a}{"
 							"b{B}\n"
 							"a{A}"
 						"}"
@@ -164,13 +167,35 @@ namespace Om
 
 				CHECK_EQUAL(
 					(
-						"{C}{}{"
+						"{{C}}{}{"
 							"b{B}\n"
 							"a{A}\n"
 							"{C}"
 						"}"
 					),
 					Environment().Evaluate( "find {}{b{B} a{A} {C}}" )
+				);
+
+				CHECK_EQUAL(
+					(
+						"{}{c}{"
+							"b{B}\n"
+							"a{A}\n"
+							"c"
+						"}"
+					),
+					Environment().Evaluate( "find {c}{b{B} a{A} c}" )
+				);
+
+				CHECK_EQUAL(
+					(
+						"{{}}{c}{"
+							"b{B}\n"
+							"a{A}\n"
+							"c{}"
+						"}"
+					),
+					Environment().Evaluate( "find {c}{b{B} a{A} c{}}" )
 				);
 			}
 		}

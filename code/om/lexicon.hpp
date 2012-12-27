@@ -76,14 +76,10 @@ namespace Om
 		virtual void Clear();
 
 		/*!
-		\brief
-			Finds the Operand mapped to the Operator, and assigns it to the
-			pointer argument.  If the Operator is present without an Operand
-			mapping, the Operand pointer argument is set to null.
 		\return
-			Whether the Operator was found.
+			A pointer to the Pair containing to the Operator, or null if none.
 		*/
-		bool Find( Operator const &, Operand const * & ) const;
+		Pair const * Find( Operator const & ) const;
 
 		void FrontGivePair( Queue & );
 
