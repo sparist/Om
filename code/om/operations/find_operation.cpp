@@ -86,10 +86,15 @@ inline void Type_::TakeLexicon(
 {
 	assert( this->thisOperator );
 	Operand const * theOperand;
-	theLexicon.Find( *this->thisOperator, theOperand );
-	theEvaluation.TakeQuotedQueue( theLexicon );
-	theEvaluation.TakeQuotedQueue( *this->thisOperator );
-	theEvaluation.TakeOperand( theOperand ? *theOperand : Operand() );
+	if( theLexicon.Find( *this->thisOperator, theOperand ) ){
+		theEvaluation.TakeQuotedQueue( theLexicon );
+		theEvaluation.TakeQuotedQueue( *this->thisOperator );
+		theEvaluation.TakeOperand( theOperand ? *theOperand : Operand() );
+	} else{
+		theEvaluation.TakeQuotedQueue( theLexicon );
+		theEvaluation.TakeQuotedQueue< Operator const >( Operator() );
+		theEvaluation.TakeOperand< Operand const >( Operand() );
+	}
 }
 
 	#undef Type_
@@ -132,13 +137,13 @@ namespace Om
 				);
 
 				CHECK_EQUAL(
-					"{}{a}{}",
+					"{}{}{}",
 					Environment().Evaluate( "find {a}lexicon{}" )
 				);
 
 				CHECK_EQUAL(
 					(
-						"{}{c}{"
+						"{}{}{"
 							"b{B}\n"
 							"a{A}"
 						"}"
@@ -148,7 +153,7 @@ namespace Om
 
 				CHECK_EQUAL(
 					(
-						"{}{c}{"
+						"{}{}{"
 							"b{B}\n"
 							"a{A}\n"
 							"{C}"

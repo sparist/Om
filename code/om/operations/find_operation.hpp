@@ -18,16 +18,19 @@
 \defgroup find_operation find
 	\ingroup operations
 	\brief
-		Finds the \ref operand mapped to an \ref operator, if any, in a
+		Finds the \ref operator, and its \ref operand mapping (if any), in a
 		\ref lexicon.
 	\par Input
 		<tt>{operator} {lexicon}</tt>
 	\par Output
-		-	If an \ref operand is mapped to the \ref operator (or there is a
-			default \ref operand):
-			<blockquote><tt>{{operand}} {operator} {lexicon}</tt></blockquote>
+		-	If the \ref operator is found:
+			-	If an \ref operand is mapped to the \ref operator "operator":
+					<blockquote><tt>{{operand}} {operator}
+						{lexicon}</tt></blockquote>
+			-	Else:
+					<blockquote><tt>{} {operator} {lexicon}</tt></blockquote>
 		-	Else:
-			<blockquote><tt>{} {operator} {lexicon}</tt></blockquote>
+				<blockquote><tt>{} {} {lexicon}</tt></blockquote>
 	\par Implementation
 		Om#Operations#FindOperation
 */
