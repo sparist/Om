@@ -102,7 +102,6 @@ inline void Type_::TakeLexicon(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -121,7 +120,7 @@ namespace Om
 							"a{A}"
 						"}"
 					),
-					Environment().Evaluate( "find {a}{b{B} a{A}}" )
+					System::Get().Evaluate( "find {a}{b{B} a{A}}" )
 				);
 
 				CHECK_EQUAL(
@@ -131,12 +130,12 @@ namespace Om
 							"a{A}"
 						"}"
 					),
-					Environment().Evaluate( "find {a}lexicon{b{B} a{A}}" )
+					System::Get().Evaluate( "find {a}lexicon{b{B} a{A}}" )
 				);
 
 				CHECK_EQUAL(
 					"{}{}{}",
-					Environment().Evaluate( "find {a}lexicon{}" )
+					System::Get().Evaluate( "find {a}lexicon{}" )
 				);
 
 				CHECK_EQUAL(
@@ -146,7 +145,7 @@ namespace Om
 							"a{A}"
 						"}"
 					),
-					Environment().Evaluate( "find {c}{b{B} a{A}}" )
+					System::Get().Evaluate( "find {c}{b{B} a{A}}" )
 				);
 
 				CHECK_EQUAL(
@@ -157,7 +156,7 @@ namespace Om
 							"{C}"
 						"}"
 					),
-					Environment().Evaluate( "find {c}{b{B} a{A} {C}}" )
+					System::Get().Evaluate( "find {c}{b{B} a{A} {C}}" )
 				);
 
 				CHECK_EQUAL(
@@ -168,7 +167,7 @@ namespace Om
 							"{C}"
 						"}"
 					),
-					Environment().Evaluate( "find {}{b{B} a{A} {C}}" )
+					System::Get().Evaluate( "find {}{b{B} a{A} {C}}" )
 				);
 
 				CHECK_EQUAL(
@@ -179,7 +178,7 @@ namespace Om
 							"c"
 						"}"
 					),
-					Environment().Evaluate( "find {c}{b{B} a{A} c}" )
+					System::Get().Evaluate( "find {c}{b{B} a{A} c}" )
 				);
 
 				CHECK_EQUAL(
@@ -190,7 +189,7 @@ namespace Om
 							"c{}"
 						"}"
 					),
-					Environment().Evaluate( "find {c}{b{B} a{A} c{}}" )
+					System::Get().Evaluate( "find {c}{b{B} a{A} c{}}" )
 				);
 			}
 		}

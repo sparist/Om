@@ -102,7 +102,6 @@ inline bool Type_::TakeOperand(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -124,7 +123,7 @@ namespace Om
 							"}"
 						"}{D}{E}"
 					),
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"inject {quote} {fill {a b{{B}} c}} {A} {C} {D} {E}"
 					)
 				);
@@ -140,7 +139,7 @@ namespace Om
 							"}{C}"
 						"}{D}{E}"
 					),
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"inject {copy} {fill {a b{B} c d}} {A} {C} {D} {E}"
 					)
 				);
@@ -156,7 +155,7 @@ namespace Om
 							"}"
 						"}"
 					),
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"inject {drop} {fill {a b{B} c d}} {A} {C} {D} {E}"
 					)
 				);
@@ -174,7 +173,7 @@ namespace Om
 							"}"
 						"}{D}{E}"
 					),
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"inject {} {fill {a b{B} c}} {A} {C} {D} {E}"
 					)
 				);
@@ -184,7 +183,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{}{A}{C}{D}{E}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"inject {quote} {} {A} {C} {D} {E}"
 					)
 				);
@@ -194,7 +193,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"inject",
-					Environment().Evaluate( "inject }" )
+					System::Get().Evaluate( "inject }" )
 				);
 			}
 
@@ -202,7 +201,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"inject{quote}",
-					Environment().Evaluate( "inject {quote} }" )
+					System::Get().Evaluate( "inject {quote} }" )
 				);
 			}
 
@@ -210,7 +209,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"inject{quote}{copy}",
-					Environment().Evaluate( "inject {quote} {copy} }" )
+					System::Get().Evaluate( "inject {quote} {copy} }" )
 				);
 			}
 
@@ -226,7 +225,7 @@ namespace Om
 							"}"
 						"}"
 					),
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"inject {quote} {fill {a b c} {A} {B} }"
 					)
 				);

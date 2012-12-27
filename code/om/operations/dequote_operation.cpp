@@ -62,7 +62,7 @@ inline bool Type_::TakeQuotedQueue(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
+		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -79,7 +79,7 @@ namespace Om
 						"1{2}\n"
 						"3"
 					),
-					Environment().Evaluate( "dequote {1{2}3}" )
+					System::Get().Evaluate( "dequote {1{2}3}" )
 				);
 			}
 
@@ -90,7 +90,7 @@ namespace Om
 						"A{b}\n"
 						"c"
 					),
-					Environment().Evaluate( "define {a {A}} {dequote {a{b}c}}" )
+					System::Get().Evaluate( "define {a {A}} {dequote {a{b}c}}" )
 				);
 			}
 		}

@@ -17,8 +17,6 @@
 */
 #if defined( Om_Environment_ )
 
-	#include "om/system.hpp"
-
 // MARK: Om::Environment
 
 	#define Type_ Om::Environment
@@ -26,50 +24,40 @@
 // MARK: public (non-static)
 
 inline Type_::Environment()
-{
-}
-
-inline Type_::Environment( Translator const & theTranslator )
 :
-Translator( theTranslator )
+thisTranslatorVector()
 {
-}
-
-inline Type_ & Type_::operator =( Translator const & theTranslator )
-{
-	this->Translator::operator =( theTranslator );
-	return( *this );
-}
-
-template< typename TheCodePointSource, typename TheCodePointSink >
-inline void Type_::Evaluate(
-	TheCodePointSource & theCodePointSource,
-	TheCodePointSink & theCodePointSink
-)
-{
-	Writer theWriter( theCodePointSink );
-	Parser theParser( theCodePointSource );
-	Evaluator( theWriter, *this ).ReadElements( theParser );
-}
-
-inline std::string Type_::Evaluate( char const theCodeUnitIterator[] )
-{
-	assert( theCodeUnitIterator );
-	std::string theString;
-	{
-		Sources::CodePointSource<> theCodePointSource( theCodeUnitIterator );
-		Sinks::CodePointSink<
-			std::back_insert_iterator< std::string >
-		> theCodePointSink( std::back_inserter( theString ) );
-		this->Evaluate( theCodePointSource, theCodePointSink );
-	}
-	return( theString );
 }
 
 inline void Type_::GiveElements( Queue & theQueue ) const
 {
-	System::Get().GiveElements( theQueue );
-	Translator::GiveElements( theQueue );
+	if( !this->IsEmpty() ){
+		typedef TranslatorVector::const_iterator Iterator;
+		Iterator const theEnd = this->thisTranslatorVector.end();
+		Iterator theCurrent = this->thisTranslatorVector.begin();
+		for( ; ; theQueue.TakeElement( Separator::GetLineSeparator() ) ){
+			assert( *theCurrent );
+			Translator const & theTranslator = **theCurrent;
+			assert( !theTranslator.IsEmpty() );
+			theTranslator.GiveElements( theQueue );
+			if( theEnd == ++theCurrent ){ return; }
+		}
+	}
+}
+
+inline bool Type_::IsEmpty() const
+{
+	return( this->thisTranslatorVector.empty() );
+}
+
+inline void Type_::Push( Translator const & theTranslator )
+{
+	if(
+		this->IsEmpty() ||
+		this->thisTranslatorVector.back() != &theTranslator
+	){
+		this->thisTranslatorVector.push_back( &theTranslator );
+	}
 }
 
 inline bool Type_::Translate(
@@ -77,10 +65,15 @@ inline bool Type_::Translate(
 	Operator const & theOperator
 ) const
 {
-	return(
-		this->Translator::Translate( theEvaluation, theOperator ) ||
-		System::Get().Translate( theEvaluation, theOperator )
-	);
+	typedef TranslatorVector::const_reverse_iterator Iterator;
+	Iterator const theEnd = this->thisTranslatorVector.rend();
+	Iterator theCurrent = this->thisTranslatorVector.rbegin();
+	for( ; theEnd != theCurrent; ++theCurrent ){
+		if( ( *theCurrent )->Translate( theEvaluation, theOperator ) ){
+			return( true );
+		}
+	}
+	return( false );
 }
 
 	#undef Type_

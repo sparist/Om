@@ -19,7 +19,6 @@
 
 #if defined( Om_Macros_Test_ )
 
-	#include "om/environment.hpp"
 	#include "UnitTest++.h"
 
 namespace Om
@@ -37,7 +36,7 @@ namespace Om
 							"6{7 {8}}"
 						"}"
 					),
-					Environment().Evaluate( "expression {1{2}{5}6{7 {8}}   }" )
+					System::Get().Evaluate( "expression {1{2}{5}6{7 {8}}   }" )
 				);
 			}
 		}

@@ -61,7 +61,7 @@ inline bool Type_::TakeQuotedQueue( Evaluation &, TheQueue & )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
+		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -75,7 +75,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{4{5}6}",
-					Environment().Evaluate( "drop {1{2}3}{4{5}6}" )
+					System::Get().Evaluate( "drop {1{2}3}{4{5}6}" )
 				);
 			}
 		}

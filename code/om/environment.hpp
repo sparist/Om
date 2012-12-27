@@ -22,14 +22,11 @@
 
 namespace Om
 {
-
 	// MARK: - Om::Environment
 	/*!
 	\brief
-		A Translator that falls through to a System lookup.
-	
-	Applies a System lookup if Translator lookup fails (or System lookup is
-	explicit by an Operator without an Operand definition).
+		An unowned Translator collection for which lookups are done for each 
+		Translator, in reverse order, until a match is found.
 	*/
 	struct Environment
 	:
@@ -39,34 +36,35 @@ namespace Om
 
 		Environment();
 
-		Environment( Translator const & );
-
-		Environment & operator =( Translator const & );
-
-		/*!
-		\brief
-			Evaluates input from the #CodePoint Source and pushes it to the
-			#CodePoint Sink.
-		*/
-		template< typename TheCodePointSource, typename TheCodePointSink >
-		void Evaluate( TheCodePointSource &, TheCodePointSink & );
-
-		/*!
-		\brief
-			A convenience overload that evaluates input from the string and
-			returns the output string.
-		\param theCodeUnitIterator
-			A non-null pointer to a null-terminated code unit array.
-		\return
-			A string containing the output.
-
-		This form is implemented in terms of the other form.
-		*/
-		std::string Evaluate( char const theCodeUnitIterator[] );
-
 		virtual void GiveElements( Queue & ) const;
 
+		virtual bool IsEmpty() const;
+
+		/*!
+		\brief
+			Pushes an unowned Translator reference.
+
+		If the given Translator is already the last reference in the
+		Environment, there is no change.
+		*/
+		void Push( Translator const & );
+
 		virtual bool Translate( Evaluation &, Operator const & ) const;
+
+	private: // MARK: private (static)
+
+		/*!
+		\brief
+			A vector of non-owner Translator pointers.
+
+		When looking up an Operator, the back Translator is used first.  This
+		requires the reverse iteration functionality provided by std#vector.
+		*/
+		typedef std::vector< Translator const * > TranslatorVector;
+
+	private: // MARK: private (non-static)
+
+		TranslatorVector thisTranslatorVector;
 	};
 }
 

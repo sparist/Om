@@ -53,7 +53,6 @@ inline void Type_::Pull( Expression & theExpression, TheQueue & theQueue )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -72,22 +71,22 @@ namespace Om
 							"3"
 						"}"
 					),
-					Environment().Evaluate( "<-terms {1{2}3}" )
+					System::Get().Evaluate( "<-terms {1{2}3}" )
 				);
 
 				CHECK_EQUAL(
 					"{1}{2}",
-					Environment().Evaluate( "<-terms {1 2}" )
+					System::Get().Evaluate( "<-terms {1 2}" )
 				);
 
-				CHECK_EQUAL( "{}{}", Environment().Evaluate( "<-terms {}" ) );
+				CHECK_EQUAL( "{}{}", System::Get().Evaluate( "<-terms {}" ) );
 
 				CHECK_EQUAL(
 					"{only}{}",
-					Environment().Evaluate( "<-terms {only}" )
+					System::Get().Evaluate( "<-terms {only}" )
 				);
 
-				CHECK_EQUAL( "<-terms", Environment().Evaluate( "<-terms" ) );
+				CHECK_EQUAL( "<-terms", System::Get().Evaluate( "<-terms" ) );
 			}
 		}
 	}

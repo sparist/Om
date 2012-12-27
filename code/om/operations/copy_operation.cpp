@@ -73,7 +73,7 @@ inline bool Type_::TakeQuotedQueue(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
+		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -87,7 +87,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{1{2}3}{1{2}3}",
-					Environment().Evaluate( "copy {1{2}3}" )
+					System::Get().Evaluate( "copy {1{2}3}" )
 				);
 			}
 		}

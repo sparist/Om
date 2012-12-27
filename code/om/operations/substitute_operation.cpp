@@ -37,9 +37,7 @@ inline void Type_::Translate(
 	Expression & theExpression
 ) const
 {
-	Translator theTranslator;
-	theTranslator.Push( *this->thisLexicon );
-	Evaluator theScope( theExpression, theTranslator );
+	Evaluator theScope( theExpression, *this->thisLexicon );
 	theQueue.GiveElements( theScope );
 }
 
@@ -50,7 +48,6 @@ inline void Type_::Translate(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -64,7 +61,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{A{B}}{B}",
-					Environment().Evaluate( "substitute {A {B}} {A}" )
+					System::Get().Evaluate( "substitute {A {B}} {A}" )
 				);
 			}
 
@@ -72,7 +69,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{A{}}{}",
-					Environment().Evaluate( "substitute {A {}} {A}" )
+					System::Get().Evaluate( "substitute {A {}} {A}" )
 				);
 			}
 
@@ -80,7 +77,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{A}{A}",
-					Environment().Evaluate( "substitute {A} {A}" )
+					System::Get().Evaluate( "substitute {A} {A}" )
 				);
 			}
 
@@ -88,7 +85,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{}{}",
-					Environment().Evaluate( "substitute {} {}" )
+					System::Get().Evaluate( "substitute {} {}" )
 				);
 			}
 
@@ -96,7 +93,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{{{A}}}{{A}}",
-					Environment().Evaluate( "substitute {{{A}}} {B}" )
+					System::Get().Evaluate( "substitute {{{A}}} {B}" )
 				);
 			}
 
@@ -105,7 +102,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{A{{C}}}{{C}}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"substitute { A {{B}} A {{C}} } {A}"
 					)
 				);
@@ -116,7 +113,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{{{C}}}{{C}}",
-					Environment().Evaluate( "substitute { {{B}} {{C}} } {A}" )
+					System::Get().Evaluate( "substitute { {{B}} {{C}} } {A}" )
 				);
 			}
 
@@ -130,14 +127,14 @@ namespace Om
 							"B"
 						"}"
 					),
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"substitute {A {B}} {unquote {A} A}"
 					)
 				);
 
 				CHECK_EQUAL(
 					"{blaven{42}}{do{blaven}}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"substitute{blaven{42}}{do{blaven}}"
 					)
 				);

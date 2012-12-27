@@ -53,7 +53,6 @@ inline void Type_::Pull( Lexicon & theLexicon, TheQueue & theQueue )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -67,43 +66,43 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{1{2}}{4{5}}",
-					Environment().Evaluate( "<-pairs {1{2}4{5}}" )
+					System::Get().Evaluate( "<-pairs {1{2}4{5}}" )
 				);
 
 				CHECK_EQUAL(
 					"{1}{2}",
-					Environment().Evaluate( "<-pairs {1 2}" )
+					System::Get().Evaluate( "<-pairs {1 2}" )
 				);
 
 				CHECK_EQUAL(
 					"{{2}}{}",
-					Environment().Evaluate( "<-pairs {{1}{2}}" )
+					System::Get().Evaluate( "<-pairs {{1}{2}}" )
 				);
 
 				CHECK_EQUAL(
 					"{}{}",
-					Environment().Evaluate( "<-pairs {}" )
+					System::Get().Evaluate( "<-pairs {}" )
 				);
 
 				CHECK_EQUAL(
 					"{only}{}",
-					Environment().Evaluate( "<-pairs {only}" )
+					System::Get().Evaluate( "<-pairs {only}" )
 				);
 
 				CHECK_EQUAL(
 					"{a{b}}{{c}}",
-					Environment().Evaluate( "<-pairs{a{b}{c}}" )
+					System::Get().Evaluate( "<-pairs{a{b}{c}}" )
 				);
 
 				CHECK_EQUAL(
 					"{{c}}{a{b}}",
-					Environment().Evaluate( "<-pairs{{c}a{b}}" )
+					System::Get().Evaluate( "<-pairs{{c}a{b}}" )
 				);
 			}
 
 			TEST( Flush )
 			{
-				CHECK_EQUAL( "<-pairs", Environment().Evaluate( "<-pairs" ) );
+				CHECK_EQUAL( "<-pairs", System::Get().Evaluate( "<-pairs" ) );
 			}
 		}
 	}

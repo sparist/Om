@@ -266,7 +266,7 @@ inline void boost::swap( Om::Literal & theFirst, Om::Literal & theSecond )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
+		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -279,7 +279,7 @@ namespace Om
 			// Positive match
 			CHECK_EQUAL(
 				"{{a{b}{c}\nd{e}}}",
-				Environment().Evaluate(
+				System::Get().Evaluate(
 					"= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}"
 				)
 			);
@@ -287,17 +287,17 @@ namespace Om
 			// Negative match
 			CHECK_EQUAL(
 				"{}",
-				Environment().Evaluate( "= {a{b}{c}} {a{b}{d}}" )
+				System::Get().Evaluate( "= {a{b}{c}} {a{b}{d}}" )
 			);
 
 			// Empty match
 			CHECK_EQUAL(
 				"{}",
-				Environment().Evaluate( "= {} {a{b}{c}}" )
+				System::Get().Evaluate( "= {} {a{b}{c}}" )
 			);
 
 			// Empty match
-			CHECK_EQUAL( "{{}}", Environment().Evaluate( "= {} {}" ) );
+			CHECK_EQUAL( "{{}}", System::Get().Evaluate( "= {} {}" ) );
 		}
 
 		TEST( Recursion )

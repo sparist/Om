@@ -47,7 +47,6 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -61,17 +60,17 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{a{B}}",
-					Environment().Evaluate( "->lexicon {a{A}} {a{B}}" )
+					System::Get().Evaluate( "->lexicon {a{A}} {a{B}}" )
 				);
 
 				CHECK_EQUAL(
 					"{a{B}}",
-					Environment().Evaluate( "->lexicon {a} {a{B}}" )
+					System::Get().Evaluate( "->lexicon {a} {a{B}}" )
 				);
 
 				CHECK_EQUAL(
 					"{a}",
-					Environment().Evaluate( "->lexicon {a{A}} {a}" )
+					System::Get().Evaluate( "->lexicon {a{A}} {a}" )
 				);
 
 				CHECK_EQUAL(
@@ -81,7 +80,7 @@ namespace Om
 							"b{C}"
 						"}"
 					),
-					Environment().Evaluate( "->lexicon {a{A}} {a{B} a b{C}}" )
+					System::Get().Evaluate( "->lexicon {a{A}} {a{B} a b{C}}" )
 				);
 			}
 		}

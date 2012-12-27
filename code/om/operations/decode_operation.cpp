@@ -70,7 +70,7 @@ inline bool Type_::TakeQuotedQueue(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
+		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -84,19 +84,19 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{`{`}` {{}} {quote{s}} }",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"decode {```{```}``` `{`{`}`}` {quote{s}} }"
 					)
 				);
 
 				CHECK_EQUAL(
 					"{{} {{}} {quote{s}} }",
-					Environment().Evaluate( "decode {`{`}` {{}} {quote{s}} }" )
+					System::Get().Evaluate( "decode {`{`}` {{}} {quote{s}} }" )
 				);
 
 				CHECK_EQUAL(
 					"{ the {end: `} really: } ! }",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"decode {` the` `{end:` ```}` really:` `}` !` }"
 					)
 				);
@@ -104,14 +104,14 @@ namespace Om
 				// Test that each remaining encoded Operand Symbol is decoded.
 				CHECK_EQUAL(
 					"{ the {end: } really: }",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"decode { the {end: `} really: } ! }"
 					)
 				);
 
 				CHECK_EQUAL(
 					"{ the {end: } really: }",
-					Environment().Evaluate( "decode { the {end: } really: }" )
+					System::Get().Evaluate( "decode { the {end: } really: }" )
 				);
 			}
 		}

@@ -79,7 +79,6 @@ inline bool Type_::TakeQuotedQueue(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -93,17 +92,17 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{A}{B}{B}",
-					Environment().Evaluate( "skip{copy}{A}{B}" )
+					System::Get().Evaluate( "skip{copy}{A}{B}" )
 				);
 
 				CHECK_EQUAL(
 					"{A}{}{}",
-					Environment().Evaluate( "skip{copy}{A}{}" )
+					System::Get().Evaluate( "skip{copy}{A}{}" )
 				);
 
 				CHECK_EQUAL(
 					"{A}{B}",
-					Environment().Evaluate( "skip{}{A}{B}" )
+					System::Get().Evaluate( "skip{}{A}{B}" )
 				);
 			}
 		}

@@ -469,7 +469,6 @@ inline void boost::swap( Om::Lexicon & theFirst, Om::Lexicon & theSecond )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -486,7 +485,7 @@ namespace Om
 						"b{B}"
 					"}"
 				),
-				Environment().Evaluate( "lexicon {a {A} b {B}}" )
+				System::Get().Evaluate( "lexicon {a {A} b {B}}" )
 			);
 
 			CHECK_EQUAL(
@@ -496,7 +495,7 @@ namespace Om
 						"a"
 					"}"
 				),
-				Environment().Evaluate( "->lexicon{b} lexicon{a}" )
+				System::Get().Evaluate( "->lexicon{b} lexicon{a}" )
 			);
 		}
 
@@ -504,7 +503,7 @@ namespace Om
 		{
 			CHECK_EQUAL(
 				"{{a}}{a}",
-				Environment().Evaluate( "quote copy lexicon{a}" )
+				System::Get().Evaluate( "quote copy lexicon{a}" )
 			);
 
 			CHECK_EQUAL(
@@ -514,7 +513,7 @@ namespace Om
 						"a"
 					"}{a}"
 				),
-				Environment().Evaluate( "->lexicon{b}copy{a}" )
+				System::Get().Evaluate( "->lexicon{b}copy{a}" )
 			);
 
 			CHECK_EQUAL(
@@ -524,7 +523,7 @@ namespace Om
 						"a"
 					"}{a}"
 				),
-				Environment().Evaluate( "->lexicon{b}copy lexicon{a}" )
+				System::Get().Evaluate( "->lexicon{b}copy lexicon{a}" )
 			);
 
 			CHECK_EQUAL(
@@ -534,7 +533,7 @@ namespace Om
 						"b"
 					"}{a}"
 				),
-				Environment().Evaluate( "lexicon<-{b}copy lexicon{a}" )
+				System::Get().Evaluate( "lexicon<-{b}copy lexicon{a}" )
 			);
 
 			CHECK_EQUAL(
@@ -548,7 +547,7 @@ namespace Om
 						"b{B}"
 					"}"
 				),
-				Environment().Evaluate(
+				System::Get().Evaluate(
 					"lexicon<- {{C}} lexicon<- {c} "
 					"copy lexicon {a {A} b {B}}"
 				)
@@ -567,7 +566,7 @@ namespace Om
 						"}"
 					"}"
 				),
-				Environment().Evaluate(
+				System::Get().Evaluate(
 					"= lexicon{a{b}c{d}} {"
 						"a{b}\n"
 						"c{d}"
@@ -578,31 +577,31 @@ namespace Om
 			// Positive match
 			CHECK_EQUAL(
 				"{{a{b}}}",
-				Environment().Evaluate( "= lexicon{a{b}} {a{b}}" )
+				System::Get().Evaluate( "= lexicon{a{b}} {a{b}}" )
 			);
 
 			// Positive match
 			CHECK_EQUAL(
 				"{{{b}}}",
-				Environment().Evaluate( "= lexicon{{b}} {{b}}" )
+				System::Get().Evaluate( "= lexicon{{b}} {{b}}" )
 			);
 
 			// Negative match
 			CHECK_EQUAL(
 				"{}",
-				Environment().Evaluate( "= lexicon{a{b}} {a{c}}" )
+				System::Get().Evaluate( "= lexicon{a{b}} {a{c}}" )
 			);
 
 			// Empty match
 			CHECK_EQUAL(
 				"{}",
-				Environment().Evaluate( "= lexicon{} {a{b}}" )
+				System::Get().Evaluate( "= lexicon{} {a{b}}" )
 			);
 
 			// Empty match
 			CHECK_EQUAL(
 				"{{}}",
-				Environment().Evaluate( "= lexicon{} {}" )
+				System::Get().Evaluate( "= lexicon{} {}" )
 			);
 		}
 

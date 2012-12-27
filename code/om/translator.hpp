@@ -18,17 +18,20 @@
 #if !defined( Om_Translator_ )
 	#define Om_Translator_ Om::Translator
 
-	#include "om/sinks/default_sink.hpp"
-	#include "om/taker.hpp"
+	#include "om/code_point.hpp"
 
 namespace Om
 {
 	//! \cond
 	struct Evaluation;
 
-	struct Lexicon;
-
 	struct Operator;
+
+	template< typename ThisItem >
+	struct Sink;
+
+	template< typename ThisItem >
+	struct Source;
 
 	struct Queue;
 	//! \endcond
@@ -37,27 +40,37 @@ namespace Om
 	/*!
 	\brief
 		An Operator lookup for use by an Evaluator.
-
-	Looks up in each Lexicon in turn, starting from the top, until the
-	definition is found.
 	*/
 	struct Translator
-	:
-	Sinks::DefaultSink< Lexicon const, Translator >,
-	Taker< Translator >
 	{
 	public: // MARK: public (non-static)
 
-		Translator();
-		
-		Translator & operator =( Translator );
+		/*!
+		\brief
+			Evaluates input from the #CodePoint Source and pushes it to the
+			#CodePoint Sink.
+		*/
+		void Evaluate(
+			Source< CodePoint const > &,
+			Sink< CodePoint const > &
+		) const;
 
-		virtual void GiveElements( Queue & ) const;
+		/*!
+		\brief
+			A convenience overload that evaluates input from the string and
+			returns the output string.
+		\param theCodeUnitIterator
+			A non-null pointer to a null-terminated code unit array.
+		\return
+			A string containing the output.
 
-		//! Pushes a Lexicon reference.
-		virtual void Push( Lexicon const & );
+		This form is implemented in terms of the other form.
+		*/
+		std::string Evaluate( char const theCodeUnitIterator[] ) const;
 
-		void Swap( Translator & );
+		virtual void GiveElements( Queue & ) const = 0;
+
+		virtual bool IsEmpty() const = 0;
 
 		/*!
 		\brief
@@ -66,30 +79,8 @@ namespace Om
 		\return
 			True if the Operator was found.
 		*/
-		virtual bool Translate( Evaluation &, Operator const & ) const;
-
-	private: // MARK: private (static)
-
-		/*!
-		\brief
-			A vector of non-owner Lexicon pointers.
-
-		When looking up an Operator, the back Lexicon is used first.  This
-		requires the reverse iteration functionality provided by std#vector.
-		*/
-		typedef std::vector< Lexicon const * > LexiconVector;
-
-	private: // MARK: private (non-static)
-
-		LexiconVector thisLexiconVector;
+		virtual bool Translate( Evaluation &, Operator const & ) const = 0;
 	};
-}
-
-// MARK: - boost
-namespace boost
-{
-	template<>
-	void swap( Om::Translator &, Om::Translator & );
 }
 
 	#include "om/translator.cpp"

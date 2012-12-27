@@ -105,7 +105,6 @@ inline bool Type_::TakeQuotedQueue(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -125,17 +124,17 @@ namespace Om
 							"c{C}"
 						"}{Unused}"
 					),
-					Environment().Evaluate( "fill{a b{B} c}{A}{C}{Unused}" )
+					System::Get().Evaluate( "fill{a b{B} c}{A}{C}{Unused}" )
 				);
 
 				CHECK_EQUAL(
 					"{}{A}{B}",
-					Environment().Evaluate( "fill{}{A}{B}" )
+					System::Get().Evaluate( "fill{}{A}{B}" )
 				);
 
 				CHECK_EQUAL(
 					"{{Used}}{A}{B}",
-					Environment().Evaluate( "fill{{Used}}{A}{B}" )
+					System::Get().Evaluate( "fill{{Used}}{A}{B}" )
 				);
 			}
 			
@@ -149,12 +148,12 @@ namespace Om
 							"c"
 						"}"
 					),
-					Environment().Evaluate( "fill{a b{B} c}{A}}{C}{Unused}" )
+					System::Get().Evaluate( "fill{a b{B} c}{A}}{C}{Unused}" )
 				);
 
 				CHECK_EQUAL(
 					"fill",
-					Environment().Evaluate( "fill}" )
+					System::Get().Evaluate( "fill}" )
 				);
 			}
 		}

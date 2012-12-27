@@ -68,7 +68,9 @@ inline bool Type_::TakeQuotedQueue(
 	if( this->thisLexicon ){
 		Expression theExpression;
 		{
-			Environment theEnvironment( theEvaluation.GetTranslator() );
+			Environment theEnvironment;
+			theEnvironment.Push( System::Get() );
+			theEnvironment.Push( theEvaluation.GetTranslator() );
 			theEnvironment.Push( *this->thisLexicon );
 			Evaluator theScope( theExpression, theEnvironment );
 			theQueue.GiveElements( theScope );
@@ -102,7 +104,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"B",
-					Environment().Evaluate( "define {A {B}} {A}" )
+					System::Get().Evaluate( "define {A {B}} {A}" )
 				);
 			}
 
@@ -110,7 +112,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"",
-					Environment().Evaluate( "define {A {}} {A}" )
+					System::Get().Evaluate( "define {A {}} {A}" )
 				);
 			}
 
@@ -118,20 +120,20 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"A",
-					Environment().Evaluate( "define {A} {A}" )
+					System::Get().Evaluate( "define {A} {A}" )
 				);
 			}
 
 			TEST( EmptyLexicon )
 			{
-				CHECK_EQUAL( "", Environment().Evaluate( "define {} {}" ) );
+				CHECK_EQUAL( "", System::Get().Evaluate( "define {} {}" ) );
 			}
 
 			TEST( EmptyKeyFallThrough )
 			{
 				CHECK_EQUAL(
 					"{A}",
-					Environment().Evaluate( "define {{{A}}} {B}" )
+					System::Get().Evaluate( "define {{{A}}} {B}" )
 				);
 			}
 
@@ -140,7 +142,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{C}",
-					Environment().Evaluate( "define { A {{B}} A {{C}} } {A}" )
+					System::Get().Evaluate( "define { A {{B}} A {{C}} } {A}" )
 				);
 			}
 
@@ -149,7 +151,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{C}",
-					Environment().Evaluate( "define { {{B}} {{C}} } {A}" )
+					System::Get().Evaluate( "define { {{B}} {{C}} } {A}" )
 				);
 			}
 
@@ -161,12 +163,12 @@ namespace Om
 						"B\n"
 						"B"
 					),
-					Environment().Evaluate( "define {A {B}} {dequote {A} A}" )
+					System::Get().Evaluate( "define {A {B}} {dequote {A} A}" )
 				);
 
 				CHECK_EQUAL(
 					"{1}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"define{\n"
 							"a` b\n"
 							"{{1}}\n"
@@ -175,17 +177,17 @@ namespace Om
 				);
 				CHECK_EQUAL(
 					"1",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"define fill {a` b} {1} {do{a b}}"
 					)
 				);
 				CHECK_EQUAL(
 					"{1}",
-					Environment().Evaluate( "define {a` b{{1}}} {do{a b}}" )
+					System::Get().Evaluate( "define {a` b{{1}}} {do{a b}}" )
 				);
 				CHECK_EQUAL(
 					"{2}{1}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"define"
 						"{"
 							"the` flaven{{1}}"
@@ -201,7 +203,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{a-default}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"define { b {B} {{b-default}} }{"
 							"define { a {A} {{a-default}} } { b }"
 						"}"
@@ -209,7 +211,7 @@ namespace Om
 				);
 				CHECK_EQUAL(
 					"{b-default}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"define { b {B} {{b-default}} }{"
 							"define { a {A} } { b }"
 						"}"
@@ -221,7 +223,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"c",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"define{a{define{b{c}}{b}}}{a}"
 					)
 				);
@@ -231,7 +233,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"A",
-	 				Environment().Evaluate(
+	 				System::Get().Evaluate(
 						"define {define} {define {a{A}} {a}}"
 					)
 				);
@@ -241,7 +243,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{1}{3}{2}",
-					Environment().Evaluate( "define {a{{1}c{2}} c{{3}}} {a}" )
+					System::Get().Evaluate( "define {a{{1}c{2}} c{{3}}} {a}" )
 				);
 			}
 		}

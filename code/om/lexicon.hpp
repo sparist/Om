@@ -28,6 +28,7 @@
 
 	#include "om/pair.hpp"
 	#include "om/sources/default_source.hpp"
+	#include "om/translator.hpp"
 
 	#define Om_Lexicon_GetName_() "lexicon"
 
@@ -53,7 +54,8 @@ namespace Om
 	*/
 	struct Lexicon
 	:
-	DefaultProgram< Lexicon >
+	DefaultProgram< Lexicon >,
+	Translator
 	{
 	public: // MARK: public (static)
 
@@ -111,7 +113,7 @@ namespace Om
 		template< typename TheSeparator >
 		void TakeSeparator( TheSeparator & );
 
-		bool Translate( Evaluation &, Operator const & ) const;
+		virtual bool Translate( Evaluation &, Operator const & ) const;
 
 	private: // MARK: private (static)
 

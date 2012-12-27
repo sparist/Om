@@ -17,9 +17,9 @@
 */
 #include "om.hpp"
 
-#include "om/environment.hpp"
 #include "om/sinks/stream_sink.hpp"
 #include "om/sources/stream_source.hpp"
+#include "om/system.hpp"
 #if defined( Om_Macros_Test_ )
 	#include "UnitTest++.h"
 #endif
@@ -57,7 +57,7 @@ int main( int const theArgumentCount, char const * const theArgumentArray[] )
 		CodeUnitSink
 	> theCodePointSink( theCodeUnitSink );
 
-	Om::Environment().Evaluate( theCodePointSource, theCodePointSink );
+	Om::System::Get().Evaluate( theCodePointSource, theCodePointSink );
 
 #if defined( Om_Macros_Test_ )
 	return( theResult );

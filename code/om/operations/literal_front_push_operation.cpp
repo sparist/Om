@@ -47,7 +47,6 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -61,32 +60,32 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{1{2}34{5}6}",
-					Environment().Evaluate( "->literal {1{2}3}{4{5}6}" )
+					System::Get().Evaluate( "->literal {1{2}3}{4{5}6}" )
 				);
 
 				CHECK_EQUAL(
 					"{1{2}{5}6}",
-					Environment().Evaluate( "->literal {1{2}}{{5}6}" )
+					System::Get().Evaluate( "->literal {1{2}}{{5}6}" )
 				);
 
 				CHECK_EQUAL(
 					"{{5}6}",
-					Environment().Evaluate( "->literal {}{{5}6}" )
+					System::Get().Evaluate( "->literal {}{{5}6}" )
 				);
 
 				CHECK_EQUAL(
 					"{{5}6}",
-					Environment().Evaluate( "->literal {{5}6}{}" )
+					System::Get().Evaluate( "->literal {{5}6}{}" )
 				);
 
 				CHECK_EQUAL(
 					"{{2}3}",
-					Environment().Evaluate( "->literal quote{2}{3}" )
+					System::Get().Evaluate( "->literal quote{2}{3}" )
 				);
 
 				CHECK_EQUAL(
 					"{2{3}}",
-					Environment().Evaluate( "->literal{2}quote{3}" )
+					System::Get().Evaluate( "->literal{2}quote{3}" )
 				);
 			}
 		}

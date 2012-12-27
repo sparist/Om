@@ -453,7 +453,7 @@ inline void boost::swap( Om::Expression & theFirst, Om::Expression & theSecond )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
+		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -470,12 +470,12 @@ namespace Om
 						"c{d}"
 					"}"
 				),
-				Environment().Evaluate( "evaluate {{a}{b}c{d}}" )
+				System::Get().Evaluate( "evaluate {{a}{b}c{d}}" )
 			);
 
 			CHECK_EQUAL(
 				"{c{d}{a}{b}}",
-				Environment().Evaluate( "evaluate {c{d}{a}{b}}" )
+				System::Get().Evaluate( "evaluate {c{d}{a}{b}}" )
 			);
 
 			CHECK_EQUAL(
@@ -485,14 +485,14 @@ namespace Om
 						"d{e}{f}"
 					"}"
 				),
-				Environment().Evaluate( "evaluate {a{b}{c}d{e}{f}}" )
+				System::Get().Evaluate( "evaluate {a{b}{c}d{e}{f}}" )
 			);
 
-			CHECK_EQUAL( "{c}", Environment().Evaluate( "evaluate {c}" ) );
+			CHECK_EQUAL( "{c}", System::Get().Evaluate( "evaluate {c}" ) );
 
-			CHECK_EQUAL( "{{d}}", Environment().Evaluate( "evaluate {{d}}" ) );
+			CHECK_EQUAL( "{{d}}", System::Get().Evaluate( "evaluate {{d}}" ) );
 
-			CHECK_EQUAL( "{}", Environment().Evaluate( "evaluate {}" ) );
+			CHECK_EQUAL( "{}", System::Get().Evaluate( "evaluate {}" ) );
 		}
 
 		TEST( Equality )
@@ -507,7 +507,7 @@ namespace Om
 						"}"
 					"}"
 				),
-				Environment().Evaluate(
+				System::Get().Evaluate(
 					"= expression{a{b}{c}d{e}} {"
 						"a{b}{c}\n"
 						"d{e}"
@@ -518,43 +518,43 @@ namespace Om
 			// Positive match
 			CHECK_EQUAL(
 				"{{a{b}{c}}}",
-				Environment().Evaluate( "= expression{a{b}{c}} {a{b}{c}}" )
+				System::Get().Evaluate( "= expression{a{b}{c}} {a{b}{c}}" )
 			);
 
 			// Positive match
 			CHECK_EQUAL(
 				"{{a{b}}}",
-				Environment().Evaluate( "= expression{a{b}} {a{b}}" )
+				System::Get().Evaluate( "= expression{a{b}} {a{b}}" )
 			);
 
 			// Positive match
 			CHECK_EQUAL(
 				"{{a}}",
-				Environment().Evaluate( "= expression{a} {a}" )
+				System::Get().Evaluate( "= expression{a} {a}" )
 			);
 
 			// Positive match
 			CHECK_EQUAL(
 				"{{{a}}}",
-				Environment().Evaluate( "= expression{{a}} {{a}}" )
+				System::Get().Evaluate( "= expression{{a}} {{a}}" )
 			);
 
 			// Negative match
 			CHECK_EQUAL(
 				"{}",
-				Environment().Evaluate( "= expression{a{b}{c}} {A{B}{C}}" )
+				System::Get().Evaluate( "= expression{a{b}{c}} {A{B}{C}}" )
 			);
 
 			// Negative match
 			CHECK_EQUAL(
 				"{}",
-				Environment().Evaluate( "= expression{} {a{b}{c}}" )
+				System::Get().Evaluate( "= expression{} {a{b}{c}}" )
 			);
 
 			// Positive empty match
 			CHECK_EQUAL(
 				"{{}}",
-				Environment().Evaluate( "= expression{} {}" )
+				System::Get().Evaluate( "= expression{} {}" )
 			);
 		}
 

@@ -91,7 +91,6 @@ inline bool Type_::TakeQuotedQueue(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -105,7 +104,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{4{5}6}{1{2}3}",
-					Environment().Evaluate( "swap {1{2}3}{4{5}6}" )
+					System::Get().Evaluate( "swap {1{2}3}{4{5}6}" )
 				);
 			}
 		}

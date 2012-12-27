@@ -65,7 +65,6 @@ inline bool Type_::TakeQuotedQueue(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -79,7 +78,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{" "\xE1\x84\x80" "\xE1\x85\xA1" "\xE1\x86\xA8" "}",
-					Environment().Evaluate( "normalize {" "\xEA\xB0\x81" "}" )
+					System::Get().Evaluate( "normalize {" "\xEA\xB0\x81" "}" )
 				);
 			}
 		}

@@ -345,7 +345,7 @@ inline void boost::swap( Om::Operator & theFirst, Om::Operator & theSecond )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
+		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -357,7 +357,7 @@ namespace Om
 		{
 			CHECK_EQUAL(
 				"{a` `{b`}}",
-				Environment().Evaluate( "operator{a {b}}" )
+				System::Get().Evaluate( "operator{a {b}}" )
 			);
 		}
 
@@ -366,7 +366,7 @@ namespace Om
 			// Positive match
 			CHECK_EQUAL(
 				"{{test` `{ing`}}}",
-				Environment().Evaluate(
+				System::Get().Evaluate(
 					"= operator{test {ing}} {test` `{ing`}}"
 				)
 			);
@@ -374,7 +374,7 @@ namespace Om
 			// Positive match
 			CHECK_EQUAL(
 				"{{a`{b`}`{c`}`\nd`{e`}}}",
-				Environment().Evaluate(
+				System::Get().Evaluate(
 					"= operator{a{b}{c}\nd{e}} {a`{b`}`{c`}`\nd`{e`}}"
 				)
 			);
@@ -382,19 +382,19 @@ namespace Om
 			// Negative match
 			CHECK_EQUAL(
 				"{}",
-				Environment().Evaluate( "= operator{a{b}{c}} {a`{b`}`{d`}}" )
+				System::Get().Evaluate( "= operator{a{b}{c}} {a`{b`}`{d`}}" )
 			);
 
 			// Empty match
 			CHECK_EQUAL(
 				"{}",
-				Environment().Evaluate( "= operator{} {a{b}{c}}" )
+				System::Get().Evaluate( "= operator{} {a{b}{c}}" )
 			);
 
 			// Empty match
 			CHECK_EQUAL(
 				"{{}}",
-				Environment().Evaluate( "= operator{} {}" )
+				System::Get().Evaluate( "= operator{} {}" )
 			);
 		}
 

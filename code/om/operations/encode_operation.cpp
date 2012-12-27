@@ -66,7 +66,7 @@ inline bool Type_::TakeQuotedQueue(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
+		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -80,7 +80,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{```{```}``` `{`{`}`}` }",
-					Environment().Evaluate( "encode {`{`}` {{}} }" )
+					System::Get().Evaluate( "encode {`{`}` {{}} }" )
 				);
 			}
 		}

@@ -62,7 +62,6 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -76,12 +75,12 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{2}{1}",
-					Environment().Evaluate( "rearrange{b a}{a b}{1}{2}" )
+					System::Get().Evaluate( "rearrange{b a}{a b}{1}{2}" )
 				);
 
 				CHECK_EQUAL(
 					"{2}{1}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"rearrange"
 						"{the` flaven the` glaven}"
 						"{the` glaven the` flaven}"
@@ -91,7 +90,7 @@ namespace Om
 
 				CHECK_EQUAL(
 					"{2}{1}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"rearrange"
 						"{do{the glaven} do{the flaven}}"
 						"{the` flaven the` glaven}"

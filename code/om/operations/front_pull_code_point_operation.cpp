@@ -52,7 +52,6 @@ inline void Type_::Pull( Operator & theOperator, TheQueue & theQueue )
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -66,32 +65,32 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{1}{`{2`}three}",
-					Environment().Evaluate( "<-codepoints {1{2}three}" )
+					System::Get().Evaluate( "<-codepoints {1{2}three}" )
 				);
 
 				CHECK_EQUAL(
 					"{` }{}",
-					Environment().Evaluate( "<-codepoints {` }" )
+					System::Get().Evaluate( "<-codepoints {` }" )
 				);
 
 				CHECK_EQUAL(
 					"{" "\xC3\x98" "}{" "\xCC\x81" "a}",
-					Environment().Evaluate( "<-codepoints {" "\xC7\xBE" "a}" )
+					System::Get().Evaluate( "<-codepoints {" "\xC7\xBE" "a}" )
 				);
 
 				CHECK_EQUAL(
 					"{` }{}",
-					Environment().Evaluate( "<-codepoints { }" )
+					System::Get().Evaluate( "<-codepoints { }" )
 				);
 
 				CHECK_EQUAL(
 					"{}{}",
-					Environment().Evaluate( "<-codepoints {}" )
+					System::Get().Evaluate( "<-codepoints {}" )
 				);
 
 				CHECK_EQUAL(
 					"<-codepoints",
-					Environment().Evaluate( "<-codepoints" )
+					System::Get().Evaluate( "<-codepoints" )
 				);
 			}
 			
@@ -103,7 +102,7 @@ namespace Om
 							"\xE1\x85\xA1" "\xE1\x84\x82"
 						"}"
 					),
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"<-codepoints"
 						"{" "\xE1\x84\x80" "\xE1\x85\xA1" "\xE1\x84\x82" "}"
 					)

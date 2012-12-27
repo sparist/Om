@@ -86,7 +86,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{{A}{A}}",
-					Environment().Evaluate( "evaluate {copy {A}}" )
+					System::Get().Evaluate( "evaluate {copy {A}}" )
 				);
 			}
 		}

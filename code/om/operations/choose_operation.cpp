@@ -99,7 +99,7 @@ inline bool Type_::TakeOperand(
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/environment.hpp"
+		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
 namespace Om
@@ -113,12 +113,12 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{empty}",
-					Environment().Evaluate( "choose{empty}{non-empty}{}" )
+					System::Get().Evaluate( "choose{empty}{non-empty}{}" )
 				);
 
 				CHECK_EQUAL(
 					"{non-empty}",
-					Environment().Evaluate(
+					System::Get().Evaluate(
 						"choose{empty}{non-empty}{some operators}"
 					)
 				);

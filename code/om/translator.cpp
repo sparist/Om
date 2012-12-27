@@ -17,8 +17,8 @@
 */
 #if defined( Om_Translator_ )
 
-	#include "om/evaluation.hpp"
-	#include "om/lexicon.hpp"
+	#include "om/writer.hpp"
+	#include "om/evaluator.hpp"
 
 // MARK: Om::Translator
 
@@ -26,65 +26,49 @@
 
 // MARK: public (non-static)
 
-inline Type_::Translator()
-:
-thisLexiconVector()
+inline void Type_::Evaluate(
+	Source< CodePoint const > & theCodePointSource,
+	Sink< CodePoint const > & theCodePointSink
+) const
 {
+	Writer theWriter( theCodePointSink );
+	Parser theParser( theCodePointSource );
+	Evaluator( theWriter, *this ).ReadElements( theParser );
 }
 
-inline Type_ & Type_::operator =( Translator theTranslator )
+inline std::string Type_::Evaluate( char const theCodeUnitIterator[] ) const
 {
-	this->Swap( theTranslator );
-	return( *this );
+	assert( theCodeUnitIterator );
+	std::string theString;
+	{
+		Sources::CodePointSource<> theCodePointSource( theCodeUnitIterator );
+		Sinks::CodePointSink<
+			std::back_insert_iterator< std::string >
+		> theCodePointSink( std::back_inserter( theString ) );
+		this->Evaluate( theCodePointSource, theCodePointSink );
+	}
+	return( theString );
 }
 
 inline void Type_::GiveElements( Queue & theQueue ) const
 {
-	typedef LexiconVector::const_iterator Iterator;
-	Iterator const theEnd = this->thisLexiconVector.end();
-	Iterator theCurrent = this->thisLexiconVector.begin();
-	for( ; theEnd != theCurrent; ++theCurrent ){
-		assert( *theCurrent );
-		( *theCurrent )->GiveElements( theQueue );
-	}
+	assert( 0 );
+	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
-inline void Type_::Push( Lexicon const & theLexicon )
+inline bool Type_::IsEmpty() const
 {
-	this->thisLexiconVector.push_back( &theLexicon );
+	assert( 0 );
+	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
-inline void Type_::Swap( Translator & theTranslator )
+inline bool Type_::Translate( Evaluation &, Operator const & ) const
 {
-	this->thisLexiconVector.swap( theTranslator.thisLexiconVector );
-}
-
-inline bool Type_::Translate(
-	Evaluation & theEvaluation,
-	Operator const & theOperator
-) const
-{
-	typedef LexiconVector::const_reverse_iterator Iterator;
-	Iterator const theEnd = this->thisLexiconVector.rend();
-	Iterator theCurrent = this->thisLexiconVector.rbegin();
-	for( ; theEnd != theCurrent; ++theCurrent ){
-		if( ( *theCurrent )->Translate( theEvaluation, theOperator ) ){
-			return( true );
-		}
-	}
-	return( false );
+	assert( 0 );
+	throw( std::logic_error( "Pure virtual function called." ) );
 }
 
 	#undef Type_
-
-// MARK: -
-// MARK: boost
-
-template<>
-inline void boost::swap( Om::Translator & theFirst, Om::Translator & theSecond )
-{
-	theFirst.Swap( theSecond );
-}
 
 #else
 	#include "om/translator.hpp"

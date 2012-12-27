@@ -19,6 +19,7 @@
 	#define Om_System_ Om::System
 
 	#include "external.hpp"
+	#include "om/translator.hpp"
 
 namespace Om
 {
@@ -40,6 +41,8 @@ namespace Om
 	There is a single System instance, returned by the static Get() method.
 	*/
 	struct System
+	:
+	Translator
 	{
 		template< typename ThisOperation >
 		friend struct Definition;
@@ -60,7 +63,7 @@ namespace Om
 		*/
 		Lexicon const & GetLexicon() const;
 
-		void GiveElements( Queue & ) const;
+		virtual void GiveElements( Queue & ) const;
 
 		/*!
 		\brief
@@ -75,7 +78,7 @@ namespace Om
 		*/
 		void Initialize( char const theLocaleCodeUnitIterator[] );
 
-		bool IsEmpty() const;
+		virtual bool IsEmpty() const;
 
 		/*!
 		\brief
@@ -84,7 +87,7 @@ namespace Om
 		\return
 			False if there is no Operation mapped to the Operator.
 		*/
-		bool Translate( Evaluation &, Operator const & ) const;
+		virtual bool Translate( Evaluation &, Operator const & ) const;
 
 	private: // MARK: private (static)
 
