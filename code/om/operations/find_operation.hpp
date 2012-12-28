@@ -25,12 +25,12 @@
 	\par Output
 		-	If the \ref operator is found:
 			-	If an \ref operand is mapped to the \ref operator "operator":
-					<blockquote><tt>{{operand}} {operator}
+					<blockquote><tt>{operator{operand}}
 						{lexicon}</tt></blockquote>
 			-	Else:
-					<blockquote><tt>{} {operator} {lexicon}</tt></blockquote>
+					<blockquote><tt>{operator{}} {lexicon}</tt></blockquote>
 		-	Else:
-				<blockquote><tt>{} {} {lexicon}</tt></blockquote>
+				<blockquote><tt>{} {lexicon}</tt></blockquote>
 	\par Implementation
 		Om#Operations#FindOperation
 */
@@ -77,8 +77,6 @@ namespace Om
 			bool TakeQuotedQueue( Evaluation &, TheQueue & );
 
 		private: // MARK: private (non-static)
-
-			void TakeLexicon( Evaluation &, Lexicon & );
 
 			//! The Operator to find.
 			boost::optional< Operator > thisOperator;

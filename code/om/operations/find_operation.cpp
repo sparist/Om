@@ -68,31 +68,18 @@ inline bool Type_::TakeQuotedQueue(
 	if( this->thisOperator ){
 		Lexicon theLexicon;
 		theLexicon.TakeElements( theQueue );
-		this->TakeLexicon( theEvaluation, theLexicon );
+
+		Expression theExpression;
+		theLexicon.Find( *this->thisOperator ).GiveElements( theExpression );
+
+		theEvaluation.TakeQuotedQueue( theLexicon );
+		theEvaluation.TakeQuotedQueue( theExpression );
 		return( true );
 	}
 	this->thisOperator = boost::in_place();
 	assert( this->thisOperator );
 	this->thisOperator->TakeElements( theQueue );
 	return( false );
-}
-
-// MARK: private (non-static)
-
-inline void Type_::TakeLexicon(
-	Evaluation & theEvaluation,
-	Lexicon & theLexicon
-)
-{
-	assert( this->thisOperator );
-	Pair const & thePair = theLexicon.Find( *this->thisOperator );
-	theEvaluation.TakeQuotedQueue( theLexicon );
-	theEvaluation.TakeQuotedQueue( thePair.GetOperator() );
-	if( Operand const * const theOperand = thePair.GetOperand() ){
-		theEvaluation.TakeQuotedQueue( *theOperand );
-	} else{
-		theEvaluation.TakeOperand< Operand const >( Operand() );
-	}
 }
 
 	#undef Type_
@@ -115,7 +102,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					(
-						"{{A}}{a}{"
+						"{a{A}}{"
 							"b{B}\n"
 							"a{A}"
 						"}"
@@ -125,7 +112,7 @@ namespace Om
 
 				CHECK_EQUAL(
 					(
-						"{{A}}{a}{"
+						"{a{A}}{"
 							"b{B}\n"
 							"a{A}"
 						"}"
@@ -134,13 +121,13 @@ namespace Om
 				);
 
 				CHECK_EQUAL(
-					"{}{}{}",
+					"{}{}",
 					System::Get().Evaluate( "find {a}lexicon{}" )
 				);
 
 				CHECK_EQUAL(
 					(
-						"{}{}{"
+						"{}{"
 							"b{B}\n"
 							"a{A}"
 						"}"
@@ -150,7 +137,7 @@ namespace Om
 
 				CHECK_EQUAL(
 					(
-						"{}{}{"
+						"{}{"
 							"b{B}\n"
 							"a{A}\n"
 							"{C}"
@@ -161,7 +148,7 @@ namespace Om
 
 				CHECK_EQUAL(
 					(
-						"{{C}}{}{"
+						"{{C}}{"
 							"b{B}\n"
 							"a{A}\n"
 							"{C}"
@@ -172,7 +159,7 @@ namespace Om
 
 				CHECK_EQUAL(
 					(
-						"{}{c}{"
+						"{c}{"
 							"b{B}\n"
 							"a{A}\n"
 							"c"
@@ -183,7 +170,7 @@ namespace Om
 
 				CHECK_EQUAL(
 					(
-						"{{}}{c}{"
+						"{c{}}{"
 							"b{B}\n"
 							"a{A}\n"
 							"c{}"

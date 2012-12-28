@@ -78,6 +78,7 @@ template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
 	this->thisOperand = boost::in_place();
+	assert( this->thisOperand );
 	this->thisOperand->Take( theOperand );
 }
 
@@ -100,12 +101,12 @@ inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 template< typename ThePair >
 inline void Type_::GiveElements( ThePair & thePair, Queue & theQueue )
 {
-	assert( !thePair.IsEmpty() );
 	if( !thePair.thisOperator.IsEmpty() ){
 		theQueue.TakeElement( thePair.thisOperator );
-		if( !thePair.thisOperand ){ return; }
 	}
-	theQueue.TakeElement( *thePair.thisOperand );
+	if( thePair.thisOperand ){
+		theQueue.TakeElement( *thePair.thisOperand );
+	}
 }
 
 	#undef Type_
