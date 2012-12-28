@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pairs_2d_3e',['pairs-&gt;',['../group__back__pull__pair__operation.html',1,'']]],
+  ['pair_2d_3e',['pair-&gt;',['../group__back__pull__pair__operation.html',1,'']]],
   ['pair',['Pair',['../struct_om_1_1_pair.html',1,'Om']]],
   ['pair',['Pair',['../struct_om_1_1_pair.html#a72527962f57aaea5643b9d84635544d9',1,'Om::Pair']]],
   ['pair_2ecpp',['pair.cpp',['../pair_8cpp.html',1,'']]],

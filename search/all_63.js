@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['characters_2d_3e',['characters-&gt;',['../group__back__pull__character__operation.html',1,'']]],
-  ['codepoints_2d_3e',['codepoints-&gt;',['../group__back__pull__code__point__operation.html',1,'']]],
+  ['character_2d_3e',['character-&gt;',['../group__back__pull__character__operation.html',1,'']]],
+  ['codepoint_2d_3e',['codepoint-&gt;',['../group__back__pull__code__point__operation.html',1,'']]],
   ['choose',['choose',['../group__choose__operation.html',1,'']]],
   ['choose_5foperation_2ecpp',['choose_operation.cpp',['../choose__operation_8cpp.html',1,'']]],
   ['choose_5foperation_2ehpp',['choose_operation.hpp',['../choose__operation_8hpp.html',1,'']]],

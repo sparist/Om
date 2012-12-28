@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['elements_2d_3e',['elements-&gt;',['../group__back__pull__element__operation.html',1,'']]],
+  ['element_2d_3e',['element-&gt;',['../group__back__pull__element__operation.html',1,'']]],
   ['element',['Element',['../struct_om_1_1_element.html',1,'Om']]],
   ['element_2ecpp',['element.cpp',['../element_8cpp.html',1,'']]],
   ['element_2ehpp',['element.hpp',['../element_8hpp.html',1,'']]],
