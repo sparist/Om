@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup front_pull_element_operation <-elements
+\defgroup front_pull_element_operation <-element
 	\ingroup operations
 	\brief
 		Pops the first element, quoted.
@@ -32,7 +32,7 @@
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_FrontPullElementOperation_GetName_() "<-elements"
+	#define Om_Operations_FrontPullElementOperation_GetName_() "<-element"
 
 namespace Om
 {

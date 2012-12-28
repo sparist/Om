@@ -67,40 +67,40 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{4{5}}{1{2}}",
-					System::Get().Evaluate( "pairs-> {1{2}4{5}}" )
+					System::Get().Evaluate( "pair-> {1{2}4{5}}" )
 				);
 
 				CHECK_EQUAL(
 					"{2}{1}",
-					System::Get().Evaluate( "pairs-> {1 2}" )
+					System::Get().Evaluate( "pair-> {1 2}" )
 				);
 
 				CHECK_EQUAL(
 					"{{2}}{}",
-					System::Get().Evaluate( "pairs-> {{1}{2}}" )
+					System::Get().Evaluate( "pair-> {{1}{2}}" )
 				);
 
-				CHECK_EQUAL( "{}{}", System::Get().Evaluate( "pairs-> {}" ) );
+				CHECK_EQUAL( "{}{}", System::Get().Evaluate( "pair-> {}" ) );
 
 				CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate( "pairs-> {only}" )
+					System::Get().Evaluate( "pair-> {only}" )
 				);
 
 				CHECK_EQUAL(
 					"{{c}}{a{b}}",
-					System::Get().Evaluate( "pairs->{a{b}{c}}" )
+					System::Get().Evaluate( "pair->{a{b}{c}}" )
 				);
 
 				CHECK_EQUAL(
 					"{a{b}}{{c}}",
-					System::Get().Evaluate( "pairs->{{c}a{b}}" )
+					System::Get().Evaluate( "pair->{{c}a{b}}" )
 				);
 			}
 
 			TEST( Flush )
 			{
-				CHECK_EQUAL( "pairs->", System::Get().Evaluate( "pairs->" ) );
+				CHECK_EQUAL( "pair->", System::Get().Evaluate( "pair->" ) );
 			}
 		}
 	}

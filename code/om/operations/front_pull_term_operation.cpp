@@ -71,22 +71,22 @@ namespace Om
 							"3"
 						"}"
 					),
-					System::Get().Evaluate( "<-terms {1{2}3}" )
+					System::Get().Evaluate( "<-term {1{2}3}" )
 				);
 
 				CHECK_EQUAL(
 					"{1}{2}",
-					System::Get().Evaluate( "<-terms {1 2}" )
+					System::Get().Evaluate( "<-term {1 2}" )
 				);
 
-				CHECK_EQUAL( "{}{}", System::Get().Evaluate( "<-terms {}" ) );
+				CHECK_EQUAL( "{}{}", System::Get().Evaluate( "<-term {}" ) );
 
 				CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate( "<-terms {only}" )
+					System::Get().Evaluate( "<-term {only}" )
 				);
 
-				CHECK_EQUAL( "<-terms", System::Get().Evaluate( "<-terms" ) );
+				CHECK_EQUAL( "<-term", System::Get().Evaluate( "<-term" ) );
 			}
 		}
 	}

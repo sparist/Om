@@ -67,27 +67,27 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{3}{1{2}}",
-					System::Get().Evaluate( "terms-> {1{2}3}" )
+					System::Get().Evaluate( "term-> {1{2}3}" )
 				);
 
 				CHECK_EQUAL(
 					"{2}{1}",
-					System::Get().Evaluate( "terms-> {1 2}" )
+					System::Get().Evaluate( "term-> {1 2}" )
 				);
 
-				CHECK_EQUAL( "{}{}", System::Get().Evaluate( "terms-> {}" ) );
+				CHECK_EQUAL( "{}{}", System::Get().Evaluate( "term-> {}" ) );
 
 				CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate( "terms-> {only}" )
+					System::Get().Evaluate( "term-> {only}" )
 				);
 
 				// Flush
-				CHECK_EQUAL( "terms->", System::Get().Evaluate( "terms->" ) );
+				CHECK_EQUAL( "term->", System::Get().Evaluate( "term->" ) );
 
 				CHECK_EQUAL(
 					"{{c}}{a{b}}",
-					System::Get().Evaluate( "terms->{a{b}{c}}" )
+					System::Get().Evaluate( "term->{a{b}{c}}" )
 				);
 			}
 		}

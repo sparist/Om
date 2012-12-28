@@ -68,32 +68,32 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{e}{1`{2`}thre}",
-					System::Get().Evaluate( "characters-> {1{2}three}" )
+					System::Get().Evaluate( "character-> {1{2}three}" )
 				);
 
 				CHECK_EQUAL(
 					"{` }{}",
-					System::Get().Evaluate( "characters-> {` }" )
+					System::Get().Evaluate( "character-> {` }" )
 				);
 
 				CHECK_EQUAL(
 					"{" "\xC3\x98" "\xCC\x81" "}{a}",
-					System::Get().Evaluate( "characters-> {a" "\xC7\xBE" "}" )
+					System::Get().Evaluate( "character-> {a" "\xC7\xBE" "}" )
 				);
 
 				CHECK_EQUAL(
 					"{` }{}",
-					System::Get().Evaluate( "characters-> { }" )
+					System::Get().Evaluate( "character-> { }" )
 				);
 
 				CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate( "characters-> {}" )
+					System::Get().Evaluate( "character-> {}" )
 				);
 
 				CHECK_EQUAL(
-					"characters->",
-					System::Get().Evaluate( "characters->" )
+					"character->",
+					System::Get().Evaluate( "character->" )
 				);
 			}
 
@@ -106,7 +106,7 @@ namespace Om
 						"}{" "\xE1\x86\xAB" "}"
 					),
 					System::Get().Evaluate(
-						"characters->"
+						"character->"
 						"{" "\xE1\x86\xAB" "\xE1\x84\x80" "\xE1\x85\xA1" "}"
 					)
 				);

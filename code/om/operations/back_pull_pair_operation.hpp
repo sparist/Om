@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup back_pull_pair_operation pairs->
+\defgroup back_pull_pair_operation pair->
 	\ingroup operations
 	\brief
 		Pops the last pair (a non-empty list of zero or one
@@ -30,7 +30,7 @@
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_BackPullPairOperation_GetName_() "pairs->"
+	#define Om_Operations_BackPullPairOperation_GetName_() "pair->"
 
 namespace Om
 {

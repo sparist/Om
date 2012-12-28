@@ -237,7 +237,7 @@ layer of operand braces, respectively:
 
 Operands can be popped from and pushed to:
 
--	`<-characters {ABC}`
+-	`<-character {ABC}`
 
 		{A}{BC}
 
@@ -245,21 +245,21 @@ Operands can be popped from and pushed to:
 
 		{ABC}
 
--	`<-terms {some terms}`
+-	`<-term {some terms}`
 
 		{some}{terms}
 
 Unicode is fully supported:
 
--	`<-characters {한글}`
+-	`<-character {한글}`
 
 		{한}{글}
 
--	`<-codepoints {한글}`
+-	`<-codepoint {한글}`
 
 		{ᄒ}{ᅡᆫ글}
 
--	`<-terms {한글 韓}`
+-	`<-term {한글 韓}`
 
 		{한글}{韓}
 
@@ -287,7 +287,7 @@ escaped with a backquote:
 
 		{{{A}}}
 
--	``<-terms { double` quote operator }``
+-	``<-term { double` quote operator }``
 
 		{double` quote}{operator}
 
@@ -298,7 +298,7 @@ non-recursive evaluation implementation in the evaluator that minimizes memory
 overhead of recursive calls and prevents stack overflow.  The following example
 uses recursion to give the minutes in a colon-delimited 24-hour time string:
 
--	`define { minutes { dequote choose {minutes} {} = {:} <-characters } }
+-	`define { minutes { dequote choose {minutes} {} = {:} <-character } }
 	{ minutes {12:34} }`
 
 		{34}

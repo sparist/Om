@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup front_pull_form_operation <-forms
+\defgroup front_pull_form_operation <-form
 	\ingroup operations
 	\brief
 		Pops the first form (a non-empty list of zero or one
@@ -30,7 +30,7 @@
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_FrontPullFormOperation_GetName_() "<-forms"
+	#define Om_Operations_FrontPullFormOperation_GetName_() "<-form"
 
 namespace Om
 {

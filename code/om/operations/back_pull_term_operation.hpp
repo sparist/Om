@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup back_pull_term_operation terms->
+\defgroup back_pull_term_operation term->
 	\ingroup operations
 	\brief
 		Pops the last term (\ref operator or \ref operand), quoted.
@@ -32,7 +32,7 @@
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_BackPullTermOperation_GetName_() "terms->"
+	#define Om_Operations_BackPullTermOperation_GetName_() "term->"
 
 namespace Om
 {

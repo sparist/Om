@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup back_pull_element_operation elements->
+\defgroup back_pull_element_operation element->
 	\ingroup operations
 	\brief
 		Pops the last element, quoted.
@@ -32,7 +32,7 @@
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_BackPullElementOperation_GetName_() "elements->"
+	#define Om_Operations_BackPullElementOperation_GetName_() "element->"
 
 namespace Om
 {
