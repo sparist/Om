@@ -67,33 +67,33 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{4{5}{6}}{1{2}{3}}",
-					System::Get().Evaluate( "form-> {1{2}{3}4{5}{6}}" )
+					System::Get().Evaluate( "forms-> {1{2}{3}4{5}{6}}" )
 				);
 
 				CHECK_EQUAL(
 					"{2}{1}",
-					System::Get().Evaluate( "form-> {1 2}" )
+					System::Get().Evaluate( "forms-> {1 2}" )
 				);
 
 				CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate( "form-> {}" )
+					System::Get().Evaluate( "forms-> {}" )
 				);
 
 				CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate( "form-> {only}" )
+					System::Get().Evaluate( "forms-> {only}" )
 				);
 
 				// Flush
 				CHECK_EQUAL(
-					"form->",
-					System::Get().Evaluate( "form->" )
+					"forms->",
+					System::Get().Evaluate( "forms->" )
 				);
 
 				CHECK_EQUAL(
 					"{a{b}{c}}{}",
-					System::Get().Evaluate( "form->{a{b}{c}}" )
+					System::Get().Evaluate( "forms->{a{b}{c}}" )
 				);
 			}
 		}

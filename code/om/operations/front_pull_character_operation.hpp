@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup front_pull_character_operation <-character
+\defgroup front_pull_character_operation <-characters
 	\ingroup operations
 	\brief
 		Pops the first character, quoted.
@@ -28,7 +28,7 @@
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_FrontPullCharacterOperation_GetName_() "<-character"
+	#define Om_Operations_FrontPullCharacterOperation_GetName_() "<-characters"
 
 namespace Om
 {

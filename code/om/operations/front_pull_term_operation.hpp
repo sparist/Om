@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup front_pull_term_operation <-term
+\defgroup front_pull_term_operation <-terms
 	\ingroup operations
 	\brief
 		Pops the first term (\ref operator or \ref operand), quoted.
@@ -24,15 +24,15 @@
 	\par Output
 		<tt>{A}{B}</tt>
 	\par Examples
-		-	<tt><-term {A B}</tt>
+		-	<tt><-terms {A B}</tt>
 			<blockquote><tt>{A}{B}</tt></blockquote>
-		-	<tt><-term {{A} B}</tt>
+		-	<tt><-terms {{A} B}</tt>
 			<blockquote><tt>{{A}}{B}</tt></blockquote>
-		-	<tt><-term {A B }</tt>
+		-	<tt><-terms {A B }</tt>
 			<blockquote><tt>{A}{B}</tt></blockquote>
-		-	<tt><-term {A {B} C}</tt>
+		-	<tt><-terms {A {B} C}</tt>
 			<blockquote><tt>{A}{{B}<br/>C}</tt></blockquote>
-		-	<tt><-term {}</tt>
+		-	<tt><-terms {}</tt>
 			<blockquote><tt>{}{}</tt></blockquote>
 	\par Implementation
 		Om#Operations#FrontPullTermOperation
@@ -43,7 +43,7 @@
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_FrontPullTermOperation_GetName_() "<-term"
+	#define Om_Operations_FrontPullTermOperation_GetName_() "<-terms"
 
 namespace Om
 {

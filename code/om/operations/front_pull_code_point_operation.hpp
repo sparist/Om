@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup front_pull_code_point_operation <-code` point
+\defgroup front_pull_code_point_operation <-code` points
 	\ingroup operations
 	\brief
 		Pops the first code point, quoted.
@@ -28,7 +28,7 @@
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_FrontPullCodePointOperation_GetName_() "<-code point"
+	#define Om_Operations_FrontPullCodePointOperation_GetName_() "<-code points"
 
 namespace Om
 {

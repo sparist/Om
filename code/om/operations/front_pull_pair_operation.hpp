@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup front_pull_pair_operation <-pair
+\defgroup front_pull_pair_operation <-pairs
 	\ingroup operations
 	\brief
 		Pops the first pair (a non-empty list of zero or one
@@ -30,7 +30,7 @@
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_FrontPullPairOperation_GetName_() "<-pair"
+	#define Om_Operations_FrontPullPairOperation_GetName_() "<-pairs"
 
 namespace Om
 {

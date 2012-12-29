@@ -237,7 +237,7 @@ layer of operand braces, respectively:
 
 Operands can be popped from and pushed to:
 
--	<tt><-character {ABC}</tt>
+-	<tt><-characters {ABC}</tt>
 
 		{A}{BC}
 
@@ -245,7 +245,7 @@ Operands can be popped from and pushed to:
 
 		{ABC}
 
--	<tt><-term {some terms}</tt>
+-	<tt><-terms {some terms}</tt>
 
 		{some}{terms}
 
@@ -265,21 +265,21 @@ escaped with a backquote:
 
 		{{{A}}}
 
--	<tt><-term { double` quote operator }</tt>
+-	<tt><-terms { double` quote operator }</tt>
 
 		{double` quote}{operator}
 
 Unicode is fully supported:
 
--	<tt><-character {한글}</tt>
+-	<tt><-characters {한글}</tt>
 
 		{한}{글}
 
--	<tt><-code` point {한글}</tt>
+-	<tt><-code` points {한글}</tt>
 
 		{ᄒ}{ᅡᆫ글}
 
--	<tt><-term {한글 韓}</tt>
+-	<tt><-terms {한글 韓}</tt>
 
 		{한글}{韓}
 
@@ -298,7 +298,7 @@ non-recursive evaluation implementation in the evaluator that minimizes memory
 overhead of recursive calls and prevents stack overflow.  The following example
 uses recursion to give the minutes in a colon-delimited 24-hour time string:
 
--	<tt>define { minutes { dequote choose {minutes} {} = {:} <-character } }
+-	<tt>define { minutes { dequote choose {minutes} {} = {:} <-characters } }
 	{ minutes {12:34} }</tt>
 
 		{34}
