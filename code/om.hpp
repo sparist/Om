@@ -179,87 +179,107 @@ the \ref programs module.
 
 Operands can be dropped and copied:
 
--	`drop {A}{B}{C}`
+-	<tt>drop {A}{B}{C}</tt>
 
 		{B}{C}
 
--	`copy {A}{B}{C}`
+-	<tt>copy {A}{B}{C}</tt>
 
 		{A}{A}{B}{C}
 
--	`drop copy {A}`
+-	<tt>drop copy {A}</tt>
 
 		{A}
 
--	`copy copy {A}`
+-	<tt>copy copy {A}</tt>
 
 		{A}{A}{A}
 
 The \ref choose_operation operation selects one of two operands, depending on
 whether a third is empty:
 
--	`choose {It was empty.}{It was non-empty.}{I am not empty.}`
+-	<tt>choose {It was empty.}{It was non-empty.}{I am not empty.}</tt>
 
 		{It was non-empty.}
 
--	`choose {It was empty.}{It was non-empty.}{}`
+-	<tt>choose {It was empty.}{It was non-empty.}{}</tt>
 
 		{It was empty.}
 
 An operation without sufficient operands becomes the identity operation:
 
--	`drop`
+-	<tt>drop</tt>
 
 		drop
 
--	`choose {It was empty.}{It was non-empty.}`
+-	<tt>choose {It was empty.}{It was non-empty.}</tt>
 
 		choose {It was empty.}{It was non-empty.}
 
 The \ref quote_operation and \ref dequote_operation operations add and remove a
 layer of operand braces, respectively:
 
--	`quote {B}`
+-	<tt>quote {B}</tt>
 
 		{{B}}
 
--	`dequote {{B}}`
+-	<tt>dequote {{B}}</tt>
 
 		{B}
 
--	`dequote {copy}`
+-	<tt>dequote {copy}</tt>
 
 		copy
 
--	`dequote {copy} {A}`
+-	<tt>dequote {copy} {A}</tt>
 
 		{A}{A}
 
 Operands can be popped from and pushed to:
 
--	`<-character {ABC}`
+-	<tt><-character {ABC}</tt>
 
 		{A}{BC}
 
--	`->literal {A}{BC}`
+-	<tt>->literal {A}{BC}</tt>
 
 		{ABC}
 
--	`<-term {some terms}`
+-	<tt><-term {some terms}</tt>
 
 		{some}{terms}
 
+A new operation can be defined with the \ref define_operation operation, where
+the first operand is treated as containing a \ref lexicon with
+operator-to-operand mappings, and the second operand contains the program to
+evaluate using the defined operation:
+
+-	<tt>define { double-quote {quote quote} } { double-quote {A} }</tt>
+
+		{{{A}}}
+
+Any string can be used as an operator, with separators and operand braces
+escaped with a backquote:
+
+-	<tt>define { double` quote {quote quote} } { double` quote {A} }</tt>
+
+		{{{A}}}
+
+-	<tt><-term { double` quote operator }</tt>
+
+		{double` quote}{operator}
+
 Unicode is fully supported:
 
--	`<-character {한글}`
+-	<tt><-character {한글}</tt>
 
 		{한}{글}
 
--	`<-codepoint {한글}`
+-	<tt><-code` point {한글}</tt>
 
 		{ᄒ}{ᅡᆫ글}
 
--	`<-term {한글 韓}`
+-	<tt><-term {한글 韓}</tt>
 
 		{한글}{韓}
 
@@ -267,29 +287,9 @@ Strings are automatically
 <a href="http://unicode.org/reports/tr15">normalized</a> to NFD, but can be
 explicitly normalized to NFKD using the \ref normalize_operation operation:
 
--	`normalize {2⁵}`
+-	<tt>normalize {2⁵}</tt>
 
 		{25}
-
-A new operation can be defined with the \ref define_operation operation, where
-the first operand is treated as containing a \ref lexicon with
-operator-to-operand mappings, and the second operand contains the program to
-evaluate using the defined operation:
-
--	`define { double-quote {quote quote} } { double-quote {A} }`
-
-		{{{A}}}
-
-Any string can be used as an operator, with separators and operand braces
-escaped with a backquote:
-
--	``define { double` quote {quote quote} } { double` quote {A} }``
-
-		{{{A}}}
-
--	``<-term { double` quote operator }``
-
-		{double` quote}{operator}
 
 Recursion is very efficient in <a href="http://om-language.org">Om</a>, due to
 (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e.
@@ -298,8 +298,8 @@ non-recursive evaluation implementation in the evaluator that minimizes memory
 overhead of recursive calls and prevents stack overflow.  The following example
 uses recursion to give the minutes in a colon-delimited 24-hour time string:
 
--	`define { minutes { dequote choose {minutes} {} = {:} <-character } }
-	{ minutes {12:34} }`
+-	<tt>define { minutes { dequote choose {minutes} {} = {:} <-character } }
+	{ minutes {12:34} }</tt>
 
 		{34}
 

@@ -66,32 +66,32 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{e}{1`{2`}thre}",
-					System::Get().Evaluate( "codepoint-> {1{2}three}" )
+					System::Get().Evaluate( "code` point-> {1{2}three}" )
 				);
 
 				CHECK_EQUAL(
 					"{` }{}",
-					System::Get().Evaluate( "codepoint-> {` }" )
+					System::Get().Evaluate( "code` point-> {` }" )
 				);
 
 				CHECK_EQUAL(
 					"{" "\xCC\x81" "}{a" "\xC3\x98" "}",
-					System::Get().Evaluate( "codepoint-> {a" "\xC7\xBE" "}" )
+					System::Get().Evaluate( "code` point-> {a" "\xC7\xBE" "}" )
 				);
 
 				CHECK_EQUAL(
 					"{` }{}",
-					System::Get().Evaluate( "codepoint-> { }" )
+					System::Get().Evaluate( "code` point-> { }" )
 				);
 
 				CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate( "codepoint-> {}" )
+					System::Get().Evaluate( "code` point-> {}" )
 				);
 
 				CHECK_EQUAL(
-					"codepoint->",
-					System::Get().Evaluate( "codepoint->" )
+					"code` point->",
+					System::Get().Evaluate( "code` point->" )
 				);
 			}
 
@@ -104,7 +104,7 @@ namespace Om
 						"}"
 					),
 					System::Get().Evaluate(
-						"codepoint->"
+						"code` point->"
 						"{" "\xE1\x86\xAB" "\xE1\x84\x80" "\xE1\x85\xA1" "}"
 					)
 				);
