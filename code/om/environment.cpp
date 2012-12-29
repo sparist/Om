@@ -54,6 +54,7 @@ inline void Type_::Push( Translator const & theTranslator )
 {
 	Translator const * theTranslatorPointer = &theTranslator;
 	for( std::stack< Translator const * > theStack; ; theStack.pop() ){
+		assert( theTranslatorPointer );
 		if(
 			Environment const * const theEnvironment = dynamic_cast<
 				Environment const *
