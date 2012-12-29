@@ -22,7 +22,18 @@
 	\par Input
 		<tt>{A B}</tt>
 	\par Output
-		<tt>{B} {A }</tt>
+		<tt>{B} {A}</tt>
+	\par Examples
+		-	<tt>term-> {A B}</tt>
+			<blockquote><tt>{B}{A}</tt></blockquote>
+		-	<tt>term-> {A {B}}</tt>
+			<blockquote><tt>{{B}}{A}</tt></blockquote>
+		-	<tt>term-> {A B }</tt>
+			<blockquote><tt>{B}{A}</tt></blockquote>
+		-	<tt>term-> {A {B} C}</tt>
+			<blockquote><tt>{C}{A{B}}</tt></blockquote>
+		-	<tt>term-> {}</tt>
+			<blockquote><tt>{}{}</tt></blockquote>
 	\par Implementation
 		Om#Operations#BackPullTermOperation
 */

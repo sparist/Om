@@ -22,7 +22,18 @@
 	\par Input
 		<tt>{A B}</tt>
 	\par Output
-		<tt>{A} { B}</tt>
+		<tt>{A}{B}</tt>
+	\par Examples
+		-	<tt><-term {A B}</tt>
+			<blockquote><tt>{A}{B}</tt></blockquote>
+		-	<tt><-term {{A} B}</tt>
+			<blockquote><tt>{{A}}{B}</tt></blockquote>
+		-	<tt><-term {A B }</tt>
+			<blockquote><tt>{A}{B}</tt></blockquote>
+		-	<tt><-term {A {B} C}</tt>
+			<blockquote><tt>{A}{{B}<br/>C}</tt></blockquote>
+		-	<tt><-term {}</tt>
+			<blockquote><tt>{}{}</tt></blockquote>
 	\par Implementation
 		Om#Operations#FrontPullTermOperation
 */
