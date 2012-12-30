@@ -8,8 +8,14 @@ var searchData=
   ['back_5fpull_5felement_5foperation_2ehpp',['back_pull_element_operation.hpp',['../back__pull__element__operation_8hpp.html',1,'']]],
   ['back_5fpull_5fform_5foperation_2ecpp',['back_pull_form_operation.cpp',['../back__pull__form__operation_8cpp.html',1,'']]],
   ['back_5fpull_5fform_5foperation_2ehpp',['back_pull_form_operation.hpp',['../back__pull__form__operation_8hpp.html',1,'']]],
+  ['back_5fpull_5foperand_5foperation_2ecpp',['back_pull_operand_operation.cpp',['../back__pull__operand__operation_8cpp.html',1,'']]],
+  ['back_5fpull_5foperand_5foperation_2ehpp',['back_pull_operand_operation.hpp',['../back__pull__operand__operation_8hpp.html',1,'']]],
+  ['back_5fpull_5foperator_5foperation_2ecpp',['back_pull_operator_operation.cpp',['../back__pull__operator__operation_8cpp.html',1,'']]],
+  ['back_5fpull_5foperator_5foperation_2ehpp',['back_pull_operator_operation.hpp',['../back__pull__operator__operation_8hpp.html',1,'']]],
   ['back_5fpull_5fpair_5foperation_2ecpp',['back_pull_pair_operation.cpp',['../back__pull__pair__operation_8cpp.html',1,'']]],
   ['back_5fpull_5fpair_5foperation_2ehpp',['back_pull_pair_operation.hpp',['../back__pull__pair__operation_8hpp.html',1,'']]],
+  ['back_5fpull_5fseparator_5foperation_2ecpp',['back_pull_separator_operation.cpp',['../back__pull__separator__operation_8cpp.html',1,'']]],
+  ['back_5fpull_5fseparator_5foperation_2ehpp',['back_pull_separator_operation.hpp',['../back__pull__separator__operation_8hpp.html',1,'']]],
   ['back_5fpull_5fterm_5foperation_2ecpp',['back_pull_term_operation.cpp',['../back__pull__term__operation_8cpp.html',1,'']]],
   ['back_5fpull_5fterm_5foperation_2ehpp',['back_pull_term_operation.hpp',['../back__pull__term__operation_8hpp.html',1,'']]]
 ];

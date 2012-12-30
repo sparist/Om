@@ -9,7 +9,10 @@ var searchData=
   ['frontpullcodepointoperation',['FrontPullCodePointOperation',['../struct_om_1_1_operations_1_1_front_pull_code_point_operation.html',1,'Om::Operations']]],
   ['frontpullelementoperation',['FrontPullElementOperation',['../struct_om_1_1_operations_1_1_front_pull_element_operation.html',1,'Om::Operations']]],
   ['frontpullformoperation',['FrontPullFormOperation',['../struct_om_1_1_operations_1_1_front_pull_form_operation.html',1,'Om::Operations']]],
+  ['frontpulloperandoperation',['FrontPullOperandOperation',['../struct_om_1_1_operations_1_1_front_pull_operand_operation.html',1,'Om::Operations']]],
+  ['frontpulloperatoroperation',['FrontPullOperatorOperation',['../struct_om_1_1_operations_1_1_front_pull_operator_operation.html',1,'Om::Operations']]],
   ['frontpullpairoperation',['FrontPullPairOperation',['../struct_om_1_1_operations_1_1_front_pull_pair_operation.html',1,'Om::Operations']]],
+  ['frontpullseparatoroperation',['FrontPullSeparatorOperation',['../struct_om_1_1_operations_1_1_front_pull_separator_operation.html',1,'Om::Operations']]],
   ['frontpulltermoperation',['FrontPullTermOperation',['../struct_om_1_1_operations_1_1_front_pull_term_operation.html',1,'Om::Operations']]],
   ['frontpushoperation',['FrontPushOperation',['../struct_om_1_1_operations_1_1_front_push_operation.html',1,'Om::Operations']]]
 ];

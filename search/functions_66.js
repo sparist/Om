@@ -5,6 +5,7 @@ var searchData=
   ['findoperation',['FindOperation',['../struct_om_1_1_operations_1_1_find_operation.html#a4a5edb56fb5ffc7a78c1f74ca67caab6',1,'Om::Operations::FindOperation']]],
   ['form',['Form',['../struct_om_1_1_form.html#a26f37f2bc8216789c8ab661d68ff564e',1,'Om::Form']]],
   ['formrange',['FormRange',['../struct_om_1_1_expression_1_1_form_range_3_01_form_01_4.html#a379e48d125e164a4eb1a02ebf21009cf',1,'Om::Expression::FormRange&lt; Form &gt;::FormRange()'],['../struct_om_1_1_expression_1_1_form_range_3_01_form_01const_01_01_4.html#af992971884a440510634dcea86b8429b',1,'Om::Expression::FormRange&lt; Form const  &gt;::FormRange()']]],
+  ['frontgive',['FrontGive',['../struct_om_1_1_literal.html#ad1a8487ce5fd471ec97a087fd72f6b82',1,'Om::Literal']]],
   ['frontgivecodepoint',['FrontGiveCodePoint',['../struct_om_1_1_operator.html#a49faf2af51988188645ecb3201a37669',1,'Om::Operator']]],
   ['frontgiveelement',['FrontGiveElement',['../struct_om_1_1_literal.html#a5690171ecc05681380a4778d775a5959',1,'Om::Literal']]],
   ['frontgiveform',['FrontGiveForm',['../struct_om_1_1_expression.html#ac4dae6bd02cf55980cc4d3376d4c8d7c',1,'Om::Expression']]],

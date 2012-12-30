@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['backgive',['BackGive',['../struct_om_1_1_literal.html#ac9fa183fcd92c6d090ccab88dece33b3',1,'Om::Literal']]],
   ['backgivecodepoint',['BackGiveCodePoint',['../struct_om_1_1_operator.html#a82c8dd0a2cbef1d4855d8b25a4a80cf9',1,'Om::Operator']]],
   ['backgiveelement',['BackGiveElement',['../struct_om_1_1_literal.html#a07f25b54f4b28b04fe745068cfdbdeac',1,'Om::Literal']]],
   ['backgiveform',['BackGiveForm',['../struct_om_1_1_expression.html#af759d2979668ce5d23075f66b39b48f8',1,'Om::Expression']]],

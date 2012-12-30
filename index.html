@@ -259,7 +259,7 @@ Examples</h1>
 </ul>
 <p>Operands can be popped from and pushed to:</p>
 <ul>
-<li><code>&lt;-character {ABC}</code> <pre class="fragment">{A}{BC}
+<li><code>&lt;-characters {ABC}</code> <pre class="fragment">{A}{BC}
 </pre></li>
 </ul>
 <ul>
@@ -267,25 +267,7 @@ Examples</h1>
 </pre></li>
 </ul>
 <ul>
-<li><code>&lt;-term {some terms}</code> <pre class="fragment">{some}{terms}
-</pre></li>
-</ul>
-<p>Unicode is fully supported:</p>
-<ul>
-<li><code>&lt;-character {한글}</code> <pre class="fragment">{한}{글}
-</pre></li>
-</ul>
-<ul>
-<li><code>&lt;-codepoint {한글}</code> <pre class="fragment">{ᄒ}{ᅡᆫ글}
-</pre></li>
-</ul>
-<ul>
-<li><code>&lt;-term {한글 韓}</code> <pre class="fragment">{한글}{韓}
-</pre></li>
-</ul>
-<p>Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to NFD, but can be explicitly normalized to NFKD using the <a class="el" href="group__normalize__operation.html">normalize</a> operation:</p>
-<ul>
-<li><code>normalize {2⁵}</code> <pre class="fragment">{25}
+<li><code>&lt;-terms {some terms}</code> <pre class="fragment">{some}{terms}
 </pre></li>
 </ul>
 <p>A new operation can be defined with the <a class="el" href="group__define__operation.html">define</a> operation, where the first operand is treated as containing a <a class="el" href="group__lexicon.html">Lexicon</a> with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operation:</p>
@@ -295,16 +277,34 @@ Examples</h1>
 </ul>
 <p>Any string can be used as an operator, with separators and operand braces escaped with a backquote:</p>
 <ul>
-<li><code>define { double` quote {quote quote} } { double` quote {A} }</code> <pre class="fragment">{{{A}}}
+<li><code>define { double<code>quote {quote quote} } { double</code> quote {A} }</code> <pre class="fragment">{{{A}}}
 </pre></li>
 </ul>
 <ul>
-<li><code>&lt;-term { double` quote operator }</code> <pre class="fragment">{double` quote}{operator}
+<li><code>&lt;-terms { double` quote operator }</code> <pre class="fragment">{double` quote}{operator}
+</pre></li>
+</ul>
+<p>Unicode is fully supported:</p>
+<ul>
+<li><code>&lt;-characters {한글}</code> <pre class="fragment">{한}{글}
+</pre></li>
+</ul>
+<ul>
+<li><code>&lt;-code` points {한글}</code> <pre class="fragment">{ᄒ}{ᅡᆫ글}
+</pre></li>
+</ul>
+<ul>
+<li><code>&lt;-terms {한글 韓}</code> <pre class="fragment">{한글}{韓}
+</pre></li>
+</ul>
+<p>Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to NFD, but can be explicitly normalized to NFKD using the <a class="el" href="group__normalize__operation.html">normalize</a> operation:</p>
+<ul>
+<li><code>normalize {2⁵}</code> <pre class="fragment">{25}
 </pre></li>
 </ul>
 <p>Recursion is very efficient in <a href="http://om-language.org">Om</a>, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:</p>
 <ul>
-<li><code>define { minutes { dequote choose {minutes} {} = {:} &lt;-character } } { minutes {12:34} }</code> <pre class="fragment">{34}
+<li><code>define { minutes { dequote choose {minutes} {} = {:} &lt;-characters } } { minutes {12:34} }</code> <pre class="fragment">{34}
 </pre></li>
 </ul>
 <h1><a class="anchor" id="downloading"></a>

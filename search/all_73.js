@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['separator_3c_2delements',['separator&lt;-elements',['../group__front__pull__separator__operation.html',1,'']]],
   ['separator',['Separator',['../struct_om_1_1_separator.html',1,'Om']]],
   ['separator',['Separator',['../struct_om_1_1_separator.html#a3a331a84d608333248ce8adf83c65545',1,'Om::Separator::Separator()'],['../struct_om_1_1_separator.html#a95c74de92a80546bc59f2207bc82dcc1',1,'Om::Separator::Separator(Source&lt; CodePoint const  &gt; &amp;)'],['../struct_om_1_1_separator.html#a176d772caeb39d6211337ee19fc153ef',1,'Om::Separator::Separator(Symbols::SeparatorSymbol const theSeparatorSymbol)'],['../group__separator.html',1,'(Global Namespace)']]],
   ['separator_2ecpp',['separator.cpp',['../separator_8cpp.html',1,'']]],

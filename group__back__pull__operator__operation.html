@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: code/om -&gt; sinks Relation</title>
+		<title>Om: elements-&gt;operator</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -63,6 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,13 +78,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_050edd66366d13764f98250ef6db77f6.html">code</a></li><li class="navelem"><a class="el" href="dir_2888b303b266feb59cccd6b33866e185.html">om</a></li>  </ul>
-</div>
-</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">elements-&gt;operator<div class="ingroups"><a class="el" href="group__operations.html">Operations</a></div></div>  </div>
+</div><!--header-->
 <div class="contents">
-<h3>om &rarr; sinks Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in code/om</th><th class="dirtab">Includes file in code/om/sinks</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="translator_8hpp.html">translator.hpp</a></td><td class="dirtab"><a class="el" href="default__sink_8hpp.html">default_sink.hpp</a></td></tr></table></div><!-- contents -->
+
+<p>Casts to <a class="el" href="group__literal.html">Literal</a> and pops the last <a class="el" href="group__operator.html">Operator</a> (if any), quoted.  
+<a href="#details">More...</a></p>
+<dl class="section user"><dt>Input</dt><dd><code>{A B}</code> </dd></dl>
+<dl class="section user"><dt>Output</dt><dd><code>{B} {A }</code> </dd></dl>
+<dl class="section user"><dt>Implementation</dt><dd><a class="el" href="struct_om_1_1_operations_1_1_back_pull_operator_operation.html" title="The elements-&gt;operator Operation implementation.">Om::Operations::BackPullOperatorOperation</a> </dd></dl>
+</div><!-- contents -->
 		<!-- start footer part -->
 		<hr class="footer"/><address class="footer"><small>
 				Generated for
