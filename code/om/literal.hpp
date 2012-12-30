@@ -58,9 +58,15 @@ namespace Om
 
 		Literal & operator =( Literal );
 
+		template< typename TheElement >
+		void BackGive( Queue & );
+
 		void BackGiveElement( Queue & );
 
 		virtual void Clear();
+
+		template< typename TheElement >
+		void FrontGive( Queue & );
 
 		void FrontGiveElement( Queue & );
 

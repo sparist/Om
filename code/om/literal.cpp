@@ -59,6 +59,17 @@ inline Type_ & Type_::operator =( Literal theLiteral )
 	return( *this );
 }
 
+template< typename TheElement >
+inline void Type_::BackGive( Queue & theQueue )
+{
+	if(
+		!this->thisElementDeque.empty() &&
+		dynamic_cast< TheElement const * >( &this->thisElementDeque.back() )
+	){
+		this->thisElementDeque.pop_back()->GiveElements( theQueue );
+	}
+}
+
 inline void Type_::BackGiveElement( Queue & theQueue )
 {
 	if( !this->thisElementDeque.empty() ){
@@ -69,6 +80,17 @@ inline void Type_::BackGiveElement( Queue & theQueue )
 inline void Type_::Clear()
 {
 	this->thisElementDeque.clear();
+}
+
+template< typename TheElement >
+inline void Type_::FrontGive( Queue & theQueue )
+{
+	if(
+		!this->thisElementDeque.empty() &&
+		dynamic_cast< TheElement const * >( &this->thisElementDeque.front() )
+	){
+		this->thisElementDeque.pop_front()->GiveElements( theQueue );
+	}
 }
 
 inline void Type_::FrontGiveElement( Queue & theQueue )
