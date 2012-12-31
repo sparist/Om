@@ -518,6 +518,13 @@ For more information about this license, please see the
 <a href="http://www.eclipse.org/legal/eplfaq.php">Eclipse Public License
 FAQ</a>.
 
+\section funding Funding
+
+If you are interested in funding development of the Om language, either for
+general or domain-specific functionality, please contact me at <a
+	href="mailto:information@sparist.com?subject=Om%20Funding"
+>information@sparist.com</a>.
+
 */
 #if !defined( Om_ )
 	#define Om_ Om
