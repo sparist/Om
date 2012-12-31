@@ -20,6 +20,20 @@
 	\brief
 		A \ref programs "Program" optimized for fast mapping of \ref operator to
 		\ref operand.
+	\par Format
+		A \ref lexicon contains a sequence of \ref operator/\ref operand
+		pairs, separated by the line \ref separator, with the following
+		interpretation:
+		-	An \ref operand following an \ref operator indicates a mapping from
+			the \ref operator to the \ref operand.
+		-	An \ref operator without an \ref operand indicates that the
+			\ref system_operation definition is to be used.
+		-	An \ref operand without an \ref operator defines the mapping for the
+			empty \ref operator.  When the \ref lexicon is used in an
+			\ref environment_operation, this is treated as the
+			"default mapping", applied when looking up an \ref operator that is
+			not explicitly included in the \ref environment_operation.
+		-	The last mapping wins; all others are discarded.
 	\par Implementation
 		Om#Lexicon
 */
@@ -42,15 +56,6 @@ namespace Om
 	/*!
 	\brief
 		The \ref lexicon Program implementation.
-
-	The resulting Operand contains a sequence of Operator/Operand pairs, each
-	surrounded by Symbols#theLineSeparatorSymbol, with the following
-	interpretation:
-	-	An Operand following an Operator indicates a mapping from the Operator
-		to the Operand.
-	-	An Operator without an Operand undefines any mapping for the Operator.
-	-	An Operand without an Operator defines the empty Operator mapping.
-	-	The last mapping wins; all others are discarded.
 	*/
 	struct Lexicon
 	:

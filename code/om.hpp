@@ -97,7 +97,7 @@ Program elements each correspond to the following operations:
 -	Operator:
 	-	**Input:** The program, with the operator at the front.
 	-	**Output:** The operation mapped to the operator by the evaluator,
-		which is given the program following the operator as input.
+		which is given the program as input.
 
 Because programs are homomorphic with the operations they represent, the
 application of operation A to a program B can be treated equivalently to the
@@ -115,9 +115,10 @@ is not a backquote, operand brace, or separator code point.
 
 The evaluator consists of:
 
--	<b>An environment</b> for resolving operators to operations.  Any operators
-	that are not present map to an "identity" operation that leaves the program,
-	including the operator, unchanged.
+-	<b>An environment</b> for resolving operators to operations.  If an operator
+	is not mapped to anything in the environment, the operator resolves to an
+	"identity" operation that leaves the program, including the operator,
+	unchanged.
 -	<b>An operation queue</b> for storing operations that are awaiting nested
 	operations to be evaluated (in the event that the latter produces operands
 	that can be consumed by the former).

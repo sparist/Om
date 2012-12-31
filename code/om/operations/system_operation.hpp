@@ -19,6 +19,10 @@
 	\ingroup operations
 	\brief
 		Produces the system \ref lexicon.
+	\par Details
+		The system \ref lexicon contains each \ref operator defined by the
+		system.  Each \ref operator is without an \ref operand mapping to
+		indicate that the "native" system operation is to be used.
 	\par Implementation
 		Om#Operations#SystemOperation
 */
