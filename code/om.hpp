@@ -48,10 +48,10 @@ The result is a fundamentally unique programming language.
 -	**Complete**.  Although the intent is to develop
 	<a href="http://om-language.org">Om</a> into a full-featured language, the
 	software is currently at a very early "proof of concept" stage, requiring
-	the addition of many operations (such as basic numerical and file
-	operations) and optimizations before it can be considered useful for any
-	real-world purpose.  It has been made available in order to demonstrate the
-	underlying concepts and welcome others to get involved in early development.
+	the addition of many operations (such as basic number and file operations)
+	and optimizations before it can be considered useful for any real-world
+	purpose.  It has been made available in order to demonstrate the underlying
+	concepts and welcome others to get involved in early development.
 -	**Stationary**.  <a href="http://om-language.org">Om</a> will likely undergo
 	significant changes on its way to version 1.0.
 
