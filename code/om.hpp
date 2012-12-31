@@ -21,14 +21,18 @@
 
 \section introduction Introduction
 
-The <a href="http://om-language.org">Om</a> language represents an attempt to
-answer the question: *What is the simplest abstract syntax that can articulate
+The development of the <a href="http://om-language.org">Om</a> language was
+guided by a single question:
+
+*Starting from scratch, what is the simplest abstract syntax that can articulate
 any algorithm for efficient and precise evaluation?*
+
+The result is a fundamentally unique programming language.
 
 <a href="http://om-language.org">Om</a> is:
 
--	**A concatenative programming language** with a fundamentally simple prefix
-	syntax and type system.
+-	**A concatenative programming language** with arguably the simplest syntax
+	and type system possible in a usable language.
 -	**An abstract algorithmic notation language** that does not expose any
 	computer implementation details (such as byte or machine word length).
 -	**A data transfer format** that is trivial to parse.
@@ -44,44 +48,29 @@ any algorithm for efficient and precise evaluation?*
 -	**Complete**.  Although the intent is to develop
 	<a href="http://om-language.org">Om</a> into a full-featured language, the
 	software is currently at a very early "proof of concept" stage, requiring
-	the addition of many operations (such as basic numerical operations) and
-	optimizations before it can be considered useful for any purpose.  It has
-	been made available in order to demonstrate the underlying concepts and
-	welcome others to get involved in early development.
+	the addition of many operations (such as basic numerical and file
+	operations) and optimizations before it can be considered useful for any
+	real-world purpose.  It has been made available in order to demonstrate the
+	underlying concepts and welcome others to get involved in early development.
 -	**Stationary**.  <a href="http://om-language.org">Om</a> may undergo
 	dramatic changes in every respect before version 1.0.
 
 \section syntax Syntax
 
-The following sections define the syntax of
-<a href="http://om-language.org">Om</a> in its entirety.
-
-\subsection syntax__program Program
-
-An <a href="http://om-language.org">Om</a> program is comprised of only three
-syntactic elements, as follows:
+An <a href="http://om-language.org">Om</a> **program** is comprised of only
+three syntactic elements, as follows:
 
 ![](program.png)
 
-\subsection syntax__operator Operator
-
-An operator has the following syntax:
+An **operator** has the following syntax:
 
 ![](operator.png)
 
-Any code point may be included in an operator by encoding it with a preceding
-backquote (<tt>`</tt>), which is disregarded if the code point is not a
-backquote, operand bracket, or separator code point.
-
-\subsection syntax__separator Separator
-
-A separator has the following syntax:
+A **separator** has the following syntax:
 
 ![](separator.png)
 
-\subsection syntax__operand Operand
-
-An operand has the following syntax:
+An **operand** has the following syntax:
 
 ![](operand.png)
 
@@ -89,33 +78,30 @@ An operand has the following syntax:
 
 \subsection how_it_works__operations Operations
 
-An operation is a function, defined by a program, that takes a program as input
-and generates a program as output.  <a href="http://om-language.org">Om</a> is a
+An operation is a function, defined by a program, that takes the program itself
+as input and generates a program as output.
+<a href="http://om-language.org">Om</a> is a
 <a href="http://concatenative.org">concatenative</a> language: the operation
 defined by an <a href="http://om-language.org">Om</a> program is a composition
 of operations defined by each sub-program.
 
-The application of an operation to the remaining program (to the right) results
-in a transformation on the applied program itself.  Because programs are
-homomorphic with the operations they represent, the application of an operation
-to a program can be treated equivalently to the composition of an operation with
-the operation that the applied program represents.  As such, the concept of
-application can be omitted, resulting in
-<a href="http://en.wikipedia.org/wiki/Combinatory_logic">combinatory logic</a>.
-
 Program elements each correspond to the following operations:
 
 -	Separator:
-	-	**Input:** The program, with the separator at the front
+	-	**Input:** The program, with the separator at the front.
 	-	**Output:** The program, with the front separator normalized
-		(top-level white space is insignificant)
+		(top-level white space is insignificant).
 -	Operand:
-	-	**Input:** The program, with the operand at the front
-	-	**Output:** The program unchanged
+	-	**Input:** The program, with the operand at the front.
+	-	**Output:** The program unchanged.
 -	Operator:
-	-	**Input:** The program, with the operator at the front
+	-	**Input:** The program, with the operator at the front.
 	-	**Output:** The operation mapped to the operator by the evaluator,
-		which is given the program following the operator as input
+		which is given the program following the operator as input.
+
+Because programs are homomorphic with the operations they represent, the
+application of operation A to a program B can be treated equivalently to the
+composition of operation A with the operation represented by program B.
 
 All of the native operations included in the current release are documented in
 the \ref operations module.
@@ -123,6 +109,9 @@ the \ref operations module.
 \subsection how_it_works__evaluation Evaluation
 
 Evaluation occurs from right to left and is performed recursively.
+
+Backquotes (<tt>`</tt>) in operators are disregarded if the code point following
+is not a backquote, operand brace, or separator code point.
 
 The evaluator consists of:
 
@@ -135,7 +124,7 @@ The evaluator consists of:
 
 The evaluator reads, parses and evaluates the input stream in a single pass,
 sending results to the output stream as soon as they can be evaluated.  This is
-possible because <a href="http://om-language.org">Om</a> uses prefix notation,
+possible because <a href="http://om-language.org">Om</a> uses prefix notation
 rather than the postfix notation typical of concatenative languages.  Prefix
 notation has the following benefits over postfix notation:
 
@@ -148,23 +137,23 @@ notation has the following benefits over postfix notation:
 
 \subsection how_it_works__data_types Data Types
 
-<a href="http://om-language.org">Om</a> uses a novel **panmorphic** type system
-in which all data values are represented within the language solely through a
+<a href="http://om-language.org">Om</a> uses a novel *panmorphic* type system in
+which all data values are represented within the language solely through a
 common program interface (comprised of only separators, operators, and/or
-operands), and each operand exposes no data type: any operation will accept any
-operand as a valid input and interpret it however the operation deems
-appropriate.
+operands).  Any operation will accept any operand as a valid input and interpret
+it however the operation deems appropriate.
 
-Data types are relegated to an implementation layer and represent optimizations
-for a set of operations.  Each operand in memory contains a single program
-implementation; by default, this is the \ref literal program, which preserves
-all data in the operand, verbatim.  However, an operation may prefer an operand
-to have a different program implementation that is optimized for specific
-functionality used by the operation.  The \ref find_operation operation, for
-example, prefers one of its operands to have a \ref lexicon program type for
-fast mapping from operator to operand.  In such cases, an operation can simply
-convert an undesired program implementation to the desired type through the
-common program interface without impacting the semantics of the program.
+There are no traditional data types in the language; data types are relegated to
+an implementation layer and represent optimizations for a set of operations.
+Each operand in memory contains a single program implementation; by default,
+this is the \ref literal program, which preserves all data in the operand,
+verbatim.  However, an operation may prefer an operand to have a different
+program implementation that is optimized for specific functionality used by the
+operation.  The \ref find_operation operation, for example, prefers one of its
+operands to have a \ref lexicon program type for fast mapping from operator to
+operand.  In such cases, an operation can simply convert an undesired program
+implementation to the desired type through the common program interface without
+impacting the semantics of the program.
 
 Operations in a program can be ordered by the programmer to increase performance
 by minimizing conversions between program implementations, but it is not
