@@ -106,6 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li class="level1"><a href="#issue_tracking">Issue Tracking</a></li>
 <li class="level1"><a href="#license">License</a></li>
+<li class="level1"><a href="#funding">Funding</a></li>
 </ul>
 </div>
 <div class="textblock"><h1><a class="anchor" id="introduction"></a>
@@ -164,7 +165,7 @@ Operations</h2>
 </li>
 <li>Operator:<ul>
 <li><b>Input:</b> The program, with the operator at the front.</li>
-<li><b>Output:</b> The operation mapped to the operator by the evaluator, which is given the program following the operator as input.</li>
+<li><b>Output:</b> The operation mapped to the operator by the evaluator, which is given the program as input.</li>
 </ul>
 </li>
 </ul>
@@ -176,7 +177,7 @@ Evaluation</h2>
 <p>Backquotes (<code>`</code>) in operators are disregarded if the code point following is not a backquote, operand brace, or separator code point.</p>
 <p>The evaluator consists of:</p>
 <ul>
-<li><b>An environment</b> for resolving operators to operations. Any operators that are not present map to an "identity" operation that leaves the program, including the operator, unchanged.</li>
+<li><b>An environment</b> for resolving operators to operations. If an operator is not mapped to anything in the environment, the operator resolves to an "identity" operation that leaves the program, including the operator, unchanged.</li>
 <li><b>An operation queue</b> for storing operations that are awaiting nested operations to be evaluated (in the event that the latter produces operands that can be consumed by the former).</li>
 </ul>
 <p>The evaluator reads, parses and evaluates the input stream in a single pass, sending results to the output stream as soon as they can be evaluated. This is possible because <a href="http://om-language.org">Om</a> uses prefix notation rather than the postfix notation typical of concatenative languages. Prefix notation has the following benefits over postfix notation:</p>
@@ -428,7 +429,10 @@ Issue Tracking</h1>
 <h1><a class="anchor" id="license"></a>
 License</h1>
 <p>This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.</p>
-<p>For more information about this license, please see the <a href="http://www.eclipse.org/legal/eplfaq.php">Eclipse Public License FAQ</a>. </p>
+<p>For more information about this license, please see the <a href="http://www.eclipse.org/legal/eplfaq.php">Eclipse Public License FAQ</a>.</p>
+<h1><a class="anchor" id="funding"></a>
+Funding</h1>
+<p>If you are interested in funding development of the <a class="el" href="namespace_om.html" title="The Om language implementation.">Om</a> language, either for general or domain-specific functionality, please contact me at <a href="#" onclick="location.href='mai'+'lto:'+'inf'+'or'+'mat'+'io'+'n@s'+'pa'+'ris'+'t.'+'com'+'?s'+'ubj'+'ec'+'t=O'+'m%'+'20F'+'un'+'din'+'g'; return false;">information@sparist.com</a>. </p>
 </div></div><!-- contents -->
 		<!-- start footer part -->
 		<hr class="footer"/><address class="footer"><small>

@@ -86,6 +86,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>A <a class="el" href="group__programs.html">Program</a> optimized for fast mapping of <a class="el" href="group__operator.html">Operator</a> to <a class="el" href="group__operand.html">Operand</a>.  
 <a href="#details">More...</a></p>
+<dl class="section user"><dt>Format</dt><dd>A <a class="el" href="group__lexicon.html">Lexicon</a> contains a sequence of <a class="el" href="group__operator.html">Operator</a>/<a class="el" href="group__operand.html">Operand</a> pairs, separated by the line <a class="el" href="group__separator.html">Separator</a>, with the following interpretation:<ul>
+<li>An <a class="el" href="group__operand.html">Operand</a> following an <a class="el" href="group__operator.html">Operator</a> indicates a mapping from the <a class="el" href="group__operator.html">Operator</a> to the <a class="el" href="group__operand.html">Operand</a>.</li>
+<li>An <a class="el" href="group__operator.html">Operator</a> without an <a class="el" href="group__operand.html">Operand</a> indicates that the <a class="el" href="group__system__operation.html">system</a> definition is to be used.</li>
+<li>An <a class="el" href="group__operand.html">Operand</a> without an <a class="el" href="group__operator.html">Operator</a> defines the mapping for the empty <a class="el" href="group__operator.html">Operator</a>. When the <a class="el" href="group__lexicon.html">Lexicon</a> is used in an <a class="el" href="group__environment__operation.html">environment</a>, this is treated as the "default mapping", applied when looking up an <a class="el" href="group__operator.html">Operator</a> that is not explicitly included in the <a class="el" href="group__environment__operation.html">environment</a>.</li>
+<li>The last mapping wins; all others are discarded. </li>
+</ul>
+</dd></dl>
 <dl class="section user"><dt>Implementation</dt><dd><a class="el" href="struct_om_1_1_lexicon.html" title="The Lexicon Program implementation.">Om::Lexicon</a> </dd></dl>
 </div><!-- contents -->
 		<!-- start footer part -->
