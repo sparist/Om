@@ -52,8 +52,8 @@ The result is a fundamentally unique programming language.
 	operations) and optimizations before it can be considered useful for any
 	real-world purpose.  It has been made available in order to demonstrate the
 	underlying concepts and welcome others to get involved in early development.
--	**Stationary**.  <a href="http://om-language.org">Om</a> may undergo
-	dramatic changes in every respect before version 1.0.
+-	**Stationary**.  <a href="http://om-language.org">Om</a> will likely undergo
+	significant changes on its way to version 1.0.
 
 \section syntax Syntax
 
