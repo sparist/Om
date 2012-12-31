@@ -85,12 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
 <ul><li class="level1"><a href="#introduction">Introduction</a></li>
-<li class="level1"><a href="#syntax">Syntax</a><ul><li class="level2"><a href="#syntax__program">Program</a></li>
-<li class="level2"><a href="#syntax__operator">Operator</a></li>
-<li class="level2"><a href="#syntax__separator">Separator</a></li>
-<li class="level2"><a href="#syntax__operand">Operand</a></li>
-</ul>
-</li>
+<li class="level1"><a href="#syntax">Syntax</a></li>
 <li class="level1"><a href="#how_it_works">How It Works</a><ul><li class="level2"><a href="#how_it_works__operations">Operations</a></li>
 <li class="level2"><a href="#how_it_works__evaluation">Evaluation</a></li>
 <li class="level2"><a href="#how_it_works__data_types">Data Types</a></li>
@@ -115,10 +110,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="textblock"><h1><a class="anchor" id="introduction"></a>
 Introduction</h1>
-<p>The <a href="http://om-language.org">Om</a> language represents an attempt to answer the question: <em>What is the simplest abstract syntax that can articulate any algorithm for efficient and precise evaluation?</em></p>
+<p>The development of the <a href="http://om-language.org">Om</a> language was guided by a single question:</p>
+<p><em>Starting from scratch, what is the simplest abstract syntax that can articulate any algorithm for efficient and precise evaluation?</em></p>
+<p>The result is a fundamentally unique programming language.</p>
 <p><a href="http://om-language.org">Om</a> is:</p>
 <ul>
-<li><b>A concatenative programming language</b> with a fundamentally simple prefix syntax and type system.</li>
+<li><b>A concatenative programming language</b> with arguably the simplest syntax and type system possible in a usable language.</li>
 <li><b>An abstract algorithmic notation language</b> that does not expose any computer implementation details (such as byte or machine word length).</li>
 <li><b>A data transfer format</b> that is trivial to parse.</li>
 <li><b>Embeddable</b>: implemented as a header-only C++ library that can be incorporated into any C++ or Objective-C++ program.</li>
@@ -127,34 +124,24 @@ Introduction</h1>
 </ul>
 <p><a href="http://om-language.org">Om</a> is <em>not</em>:</p>
 <ul>
-<li><b>Complete</b>. Although the intent is to develop <a href="http://om-language.org">Om</a> into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic numerical operations) and optimizations before it can be considered useful for any purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.</li>
+<li><b>Complete</b>. Although the intent is to develop <a href="http://om-language.org">Om</a> into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic numerical and file operations) and optimizations before it can be considered useful for any real-world purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.</li>
 <li><b>Stationary</b>. <a href="http://om-language.org">Om</a> may undergo dramatic changes in every respect before version 1.0.</li>
 </ul>
 <h1><a class="anchor" id="syntax"></a>
 Syntax</h1>
-<p>The following sections define the syntax of <a href="http://om-language.org">Om</a> in its entirety.</p>
-<h2><a class="anchor" id="syntax__program"></a>
-Program</h2>
-<p>An <a href="http://om-language.org">Om</a> program is comprised of only three syntactic elements, as follows:</p>
+<p>An <a href="http://om-language.org">Om</a> <b>program</b> is comprised of only three syntactic elements, as follows:</p>
 <div class="image">
 <img src="program.png" alt="program.png"/>
 </div>
-<h2><a class="anchor" id="syntax__operator"></a>
-Operator</h2>
-<p>An operator has the following syntax:</p>
+<p>An <b>operator</b> has the following syntax:</p>
 <div class="image">
 <img src="operator.png" alt="operator.png"/>
 </div>
-<p>Any code point may be included in an operator by encoding it with a preceding backquote (<code>`</code>), which is disregarded if the code point is not a backquote, operand bracket, or separator code point.</p>
-<h2><a class="anchor" id="syntax__separator"></a>
-Separator</h2>
-<p>A separator has the following syntax:</p>
+<p>A <b>separator</b> has the following syntax:</p>
 <div class="image">
 <img src="separator.png" alt="separator.png"/>
 </div>
-<h2><a class="anchor" id="syntax__operand"></a>
-Operand</h2>
-<p>An operand has the following syntax:</p>
+<p>An <b>operand</b> has the following syntax:</p>
 <div class="image">
 <img src="operand.png" alt="operand.png"/>
 </div>
@@ -162,36 +149,37 @@ Operand</h2>
 How It Works</h1>
 <h2><a class="anchor" id="how_it_works__operations"></a>
 Operations</h2>
-<p>An operation is a function, defined by a program, that takes a program as input and generates a program as output. <a href="http://om-language.org">Om</a> is a <a href="http://concatenative.org">concatenative</a> language: the operation defined by an <a href="http://om-language.org">Om</a> program is a composition of operations defined by each sub-program.</p>
-<p>The application of an operation to the remaining program (to the right) results in a transformation on the applied program itself. Because programs are homomorphic with the operations they represent, the application of an operation to a program can be treated equivalently to the composition of an operation with the operation that the applied program represents. As such, the concept of application can be omitted, resulting in <a href="http://en.wikipedia.org/wiki/Combinatory_logic">combinatory logic</a>.</p>
+<p>An operation is a function, defined by a program, that takes the program itself as input and generates a program as output. <a href="http://om-language.org">Om</a> is a <a href="http://concatenative.org">concatenative</a> language: the operation defined by an <a href="http://om-language.org">Om</a> program is a composition of operations defined by each sub-program.</p>
 <p>Program elements each correspond to the following operations:</p>
 <ul>
 <li>Separator:<ul>
-<li><b>Input:</b> The program, with the separator at the front</li>
-<li><b>Output:</b> The program, with the front separator normalized (top-level white space is insignificant)</li>
+<li><b>Input:</b> The program, with the separator at the front.</li>
+<li><b>Output:</b> The program, with the front separator normalized (top-level white space is insignificant).</li>
 </ul>
 </li>
 <li>Operand:<ul>
-<li><b>Input:</b> The program, with the operand at the front</li>
-<li><b>Output:</b> The program unchanged</li>
+<li><b>Input:</b> The program, with the operand at the front.</li>
+<li><b>Output:</b> The program unchanged.</li>
 </ul>
 </li>
 <li>Operator:<ul>
-<li><b>Input:</b> The program, with the operator at the front</li>
-<li><b>Output:</b> The operation mapped to the operator by the evaluator, which is given the program following the operator as input</li>
+<li><b>Input:</b> The program, with the operator at the front.</li>
+<li><b>Output:</b> The operation mapped to the operator by the evaluator, which is given the program following the operator as input.</li>
 </ul>
 </li>
 </ul>
+<p>Because programs are homomorphic with the operations they represent, the application of operation A to a program B can be treated equivalently to the composition of operation A with the operation represented by program B.</p>
 <p>All of the native operations included in the current release are documented in the <a class="el" href="group__operations.html">Operations</a> module.</p>
 <h2><a class="anchor" id="how_it_works__evaluation"></a>
 Evaluation</h2>
 <p>Evaluation occurs from right to left and is performed recursively.</p>
+<p>Backquotes (<code>`</code>) in operators are disregarded if the code point following is not a backquote, operand brace, or separator code point.</p>
 <p>The evaluator consists of:</p>
 <ul>
 <li><b>An environment</b> for resolving operators to operations. Any operators that are not present map to an "identity" operation that leaves the program, including the operator, unchanged.</li>
 <li><b>An operation queue</b> for storing operations that are awaiting nested operations to be evaluated (in the event that the latter produces operands that can be consumed by the former).</li>
 </ul>
-<p>The evaluator reads, parses and evaluates the input stream in a single pass, sending results to the output stream as soon as they can be evaluated. This is possible because <a href="http://om-language.org">Om</a> uses prefix notation, rather than the postfix notation typical of concatenative languages. Prefix notation has the following benefits over postfix notation:</p>
+<p>The evaluator reads, parses and evaluates the input stream in a single pass, sending results to the output stream as soon as they can be evaluated. This is possible because <a href="http://om-language.org">Om</a> uses prefix notation rather than the postfix notation typical of concatenative languages. Prefix notation has the following benefits over postfix notation:</p>
 <ul>
 <li>Stack underflows are impossible.</li>
 <li>Operations can be optimized to only read into memory the data that is required; stack-based postfix languages have no knowledge of the operation to apply until the data is already in memory, on the stack.</li>
@@ -199,8 +187,8 @@ Evaluation</h2>
 </ul>
 <h2><a class="anchor" id="how_it_works__data_types"></a>
 Data Types</h2>
-<p><a href="http://om-language.org">Om</a> uses a novel <b>panmorphic</b> type system in which all data values are represented within the language solely through a common program interface (comprised of only separators, operators, and/or operands), and each operand exposes no data type: any operation will accept any operand as a valid input and interpret it however the operation deems appropriate.</p>
-<p>Data types are relegated to an implementation layer and represent optimizations for a set of operations. Each operand in memory contains a single program implementation; by default, this is the <a class="el" href="group__literal.html">Literal</a> program, which preserves all data in the operand, verbatim. However, an operation may prefer an operand to have a different program implementation that is optimized for specific functionality used by the operation. The <a class="el" href="group__find__operation.html">find</a> operation, for example, prefers one of its operands to have a <a class="el" href="group__lexicon.html">Lexicon</a> program type for fast mapping from operator to operand. In such cases, an operation can simply convert an undesired program implementation to the desired type through the common program interface without impacting the semantics of the program.</p>
+<p><a href="http://om-language.org">Om</a> uses a novel <em>panmorphic</em> type system in which all data values are represented within the language solely through a common program interface (comprised of only separators, operators, and/or operands). Any operation will accept any operand as a valid input and interpret it however the operation deems appropriate.</p>
+<p>There are no traditional data types in the language; data types are relegated to an implementation layer and represent optimizations for a set of operations. Each operand in memory contains a single program implementation; by default, this is the <a class="el" href="group__literal.html">Literal</a> program, which preserves all data in the operand, verbatim. However, an operation may prefer an operand to have a different program implementation that is optimized for specific functionality used by the operation. The <a class="el" href="group__find__operation.html">find</a> operation, for example, prefers one of its operands to have a <a class="el" href="group__lexicon.html">Lexicon</a> program type for fast mapping from operator to operand. In such cases, an operation can simply convert an undesired program implementation to the desired type through the common program interface without impacting the semantics of the program.</p>
 <p>Operations in a program can be ordered by the programmer to increase performance by minimizing conversions between program implementations, but it is not necessary for obtaining a correct computation. Data types in <a href="http://om-language.org">Om</a> therefore become an optimization-phase implementation detail.</p>
 <p>All of the native data types included in the current release are documented in the <a class="el" href="group__programs.html">Programs</a> module.</p>
 <h1><a class="anchor" id="examples"></a>
