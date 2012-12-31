@@ -75,6 +75,14 @@ namespace Om
 		// MARK: -
 		SUITE( QuoteOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{quote}",
+					System::Get().Evaluate( "drop find {quote} system" )
+				);
+			}
+
 			TEST( Simple )
 			{
 				CHECK_EQUAL(

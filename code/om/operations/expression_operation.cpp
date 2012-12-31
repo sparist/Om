@@ -27,6 +27,14 @@ namespace Om
 	{
 		SUITE( ExpressionOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{expression}",
+					System::Get().Evaluate( "drop find {expression} system" )
+				);
+			}
+
 			TEST( Basic )
 			{
 				CHECK_EQUAL(

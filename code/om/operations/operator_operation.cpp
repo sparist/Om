@@ -16,3 +16,26 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 #include "om/operations/operator_operation.hpp"
+
+#if defined( Om_Macros_Test_ )
+
+	#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		SUITE( OperatorOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{operator}",
+					System::Get().Evaluate( "drop find {operator} system" )
+				);
+			}
+		}
+	}
+}
+
+#endif

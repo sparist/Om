@@ -57,6 +57,14 @@ namespace Om
 		// MARK: -
 		SUITE( SubstituteOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{substitute}",
+					System::Get().Evaluate( "drop find {substitute} system" )
+				);
+			}
+
 			TEST( BasicSubstitution )
 			{
 				CHECK_EQUAL(

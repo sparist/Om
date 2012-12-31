@@ -62,6 +62,14 @@ namespace Om
 		// MARK: -
 		SUITE( FrontPullFormOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{<-forms}",
+					System::Get().Evaluate( "drop find {<-forms} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

@@ -39,4 +39,43 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 #else
 	#include "om/operations/environment_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		// MARK: -
+		SUITE( EnvironmentOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{environment}",
+					System::Get().Evaluate( "drop find {environment} system" )
+				);
+			}
+
+			TEST( General )
+			{
+				CHECK_EQUAL(
+					"{pass}",
+					System::Get().Evaluate(
+						"choose"
+						" {fail}"
+						" {pass}"
+						" = define {a{A}} {environment} lexicon<- {a{A}} system"
+					)
+				);
+			}
+		}
+	}
+}
+
+	#endif
+
 #endif

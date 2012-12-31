@@ -41,4 +41,29 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 #else
 	#include "om/operations/expression_back_push_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		// MARK: -
+		SUITE( ExpressionBackPushOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{expression<-}",
+					System::Get().Evaluate( "drop find {expression<-} system" )
+				);
+			}
+		}
+	}
+}
+
+	#endif
+
 #endif

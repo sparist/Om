@@ -72,8 +72,8 @@ inline bool Type_::TakeQuotedQueue(
 		Expression theExpression;
 		theLexicon.Find( *this->thisOperator ).GiveElements( theExpression );
 
-		theEvaluation.TakeQuotedQueue( theLexicon );
 		theEvaluation.TakeQuotedQueue( theExpression );
+		theEvaluation.TakeQuotedQueue( theLexicon );
 		return( true );
 	}
 	this->thisOperator = boost::in_place();
@@ -98,24 +98,32 @@ namespace Om
 		// MARK: -
 		SUITE( FindOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{find}",
+					System::Get().Evaluate( "drop find {find} system" )
+				);
+			}
+
 			TEST( Simple )
 			{
 				CHECK_EQUAL(
 					(
-						"{a{A}}{"
+						"{"
 							"b{B}\n"
 							"a{A}"
-						"}"
+						"}{a{A}}"
 					),
 					System::Get().Evaluate( "find {a}{b{B} a{A}}" )
 				);
 
 				CHECK_EQUAL(
 					(
-						"{a{A}}{"
+						"{"
 							"b{B}\n"
 							"a{A}"
-						"}"
+						"}{a{A}}"
 					),
 					System::Get().Evaluate( "find {a}lexicon{b{B} a{A}}" )
 				);
@@ -127,54 +135,54 @@ namespace Om
 
 				CHECK_EQUAL(
 					(
-						"{}{"
+						"{"
 							"b{B}\n"
 							"a{A}"
-						"}"
+						"}{}"
 					),
 					System::Get().Evaluate( "find {c}{b{B} a{A}}" )
 				);
 
 				CHECK_EQUAL(
 					(
-						"{}{"
+						"{"
 							"b{B}\n"
 							"a{A}\n"
 							"{C}"
-						"}"
+						"}{}"
 					),
 					System::Get().Evaluate( "find {c}{b{B} a{A} {C}}" )
 				);
 
 				CHECK_EQUAL(
 					(
-						"{{C}}{"
+						"{"
 							"b{B}\n"
 							"a{A}\n"
 							"{C}"
-						"}"
+						"}{{C}}"
 					),
 					System::Get().Evaluate( "find {}{b{B} a{A} {C}}" )
 				);
 
 				CHECK_EQUAL(
 					(
-						"{c}{"
+						"{"
 							"b{B}\n"
 							"a{A}\n"
 							"c"
-						"}"
+						"}{c}"
 					),
 					System::Get().Evaluate( "find {c}{b{B} a{A} c}" )
 				);
 
 				CHECK_EQUAL(
 					(
-						"{c{}}{"
+						"{"
 							"b{B}\n"
 							"a{A}\n"
 							"c{}"
-						"}"
+						"}{c{}}"
 					),
 					System::Get().Evaluate( "find {c}{b{B} a{A} c{}}" )
 				);

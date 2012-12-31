@@ -71,6 +71,14 @@ namespace Om
 		// MARK: -
 		SUITE( DropOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{drop}",
+					System::Get().Evaluate( "drop find {drop} system" )
+				);
+			}
+
 			TEST( Simple )
 			{
 				CHECK_EQUAL(

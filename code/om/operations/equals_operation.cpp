@@ -92,4 +92,53 @@ inline bool Type_::TakeQuotedQueue(
 
 #else
 	#include "om/operations/equals_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		// MARK: -
+		SUITE( EqualsOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{=}",
+					System::Get().Evaluate( "drop find {=} system" )
+				);
+			}
+
+			TEST( General )
+			{
+				CHECK_EQUAL(
+					"{{A}}",
+					System::Get().Evaluate( "= {A} {A}" )
+				);
+
+				CHECK_EQUAL(
+					"{}",
+					System::Get().Evaluate( "= {A} {Not A}" )
+				);
+
+				CHECK_EQUAL(
+					"{{}}",
+					System::Get().Evaluate( "= {} {}" )
+				);
+
+				CHECK_EQUAL(
+					"{}",
+					System::Get().Evaluate( "= {} {Not empty}" )
+				);
+			}
+		}
+	}
+}
+
+	#endif
+
 #endif

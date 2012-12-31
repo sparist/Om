@@ -63,6 +63,16 @@ namespace Om
 		// MARK: -
 		SUITE( BackPullSeparatorOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{elements->separator}",
+					System::Get().Evaluate(
+						"drop find {elements->separator} system"
+					)
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

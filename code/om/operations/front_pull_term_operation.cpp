@@ -62,6 +62,14 @@ namespace Om
 		// MARK: -
 		SUITE( FrontPullTermOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{<-terms}",
+					System::Get().Evaluate( "drop find {<-terms} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

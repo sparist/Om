@@ -56,6 +56,14 @@ namespace Om
 		// MARK: -
 		SUITE( ExpressionFrontPushOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{->expression}",
+					System::Get().Evaluate( "drop find {->expression} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

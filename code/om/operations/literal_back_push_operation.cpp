@@ -41,4 +41,29 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 #else
 	#include "om/operations/literal_back_push_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		// MARK: -
+		SUITE( LiteralBackPushOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{literal<-}",
+					System::Get().Evaluate( "drop find {literal<-} system" )
+				);
+			}
+		}
+	}
+}
+
+	#endif
+
 #endif

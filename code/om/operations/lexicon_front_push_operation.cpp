@@ -56,6 +56,14 @@ namespace Om
 		// MARK: -
 		SUITE( LexiconFrontPushOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{->lexicon}",
+					System::Get().Evaluate( "drop find {->lexicon} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

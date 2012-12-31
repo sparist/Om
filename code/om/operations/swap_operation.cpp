@@ -100,6 +100,14 @@ namespace Om
 		// MARK: -
 		SUITE( SwapOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{swap}",
+					System::Get().Evaluate( "drop find {swap} system" )
+				);
+			}
+
 			TEST( Simple )
 			{
 				CHECK_EQUAL(

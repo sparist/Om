@@ -74,6 +74,14 @@ namespace Om
 		// MARK: -
 		SUITE( NormalizeOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{normalize}",
+					System::Get().Evaluate( "drop find {normalize} system" )
+				);
+			}
+
 			TEST( Simple )
 			{
 				CHECK_EQUAL(

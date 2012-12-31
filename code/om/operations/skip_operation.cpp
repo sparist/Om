@@ -88,6 +88,14 @@ namespace Om
 		// MARK: -
 		SUITE( SkipOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{skip}",
+					System::Get().Evaluate( "drop find {skip} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

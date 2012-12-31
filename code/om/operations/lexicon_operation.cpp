@@ -16,3 +16,26 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 #include "om/operations/lexicon_operation.hpp"
+
+#if defined( Om_Macros_Test_ )
+
+	#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		SUITE( LexiconOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{lexicon}",
+					System::Get().Evaluate( "drop find {lexicon} system" )
+				);
+			}
+		}
+	}
+}
+
+#endif

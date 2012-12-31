@@ -82,6 +82,14 @@ namespace Om
 		// MARK: -
 		SUITE( EvaluateOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{evaluate}",
+					System::Get().Evaluate( "drop find {evaluate} system" )
+				);
+			}
+
 			TEST( Basic )
 			{
 				CHECK_EQUAL(

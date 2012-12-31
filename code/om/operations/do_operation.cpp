@@ -41,4 +41,38 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 #else
 	#include "om/operations/do_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		// MARK: -
+		SUITE( DoOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{do}",
+					System::Get().Evaluate( "drop find {do} system" )
+				);
+			}
+
+			TEST( Simple )
+			{
+				CHECK_EQUAL(
+					"{a}{bc}",
+					System::Get().Evaluate( "do {<-code points} {abc}" )
+				);
+			}
+		}
+	}
+}
+
+	#endif
+
 #endif

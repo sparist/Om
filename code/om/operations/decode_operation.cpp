@@ -80,6 +80,14 @@ namespace Om
 		// MARK: -
 		SUITE( DecodeOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{decode}",
+					System::Get().Evaluate( "drop find {decode} system" )
+				);
+			}
+
 			TEST( Simple )
 			{
 				CHECK_EQUAL(

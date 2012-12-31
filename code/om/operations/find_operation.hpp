@@ -25,12 +25,11 @@
 	\par Output
 		-	If the \ref operator is found:
 			-	If an \ref operand is mapped to the \ref operator "operator":
-					<blockquote><tt>{operator{operand}}
-						{lexicon}</tt></blockquote>
+				<blockquote><tt>{lexicon}{operator{operand}}</tt></blockquote>
 			-	Else:
-					<blockquote><tt>{operator{}} {lexicon}</tt></blockquote>
+				<blockquote><tt>{lexicon}{operator{}}</tt></blockquote>
 		-	Else:
-				<blockquote><tt>{} {lexicon}</tt></blockquote>
+				<blockquote><tt>{lexicon}{}</tt></blockquote>
 	\par Implementation
 		Om#Operations#FindOperation
 */

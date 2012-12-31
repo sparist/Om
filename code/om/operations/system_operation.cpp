@@ -37,4 +37,30 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 #else
 	#include "om/operations/system_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		// MARK: -
+		SUITE( SystemOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{system}",
+					System::Get().Evaluate( "drop find {system} system" )
+				);
+			}
+		}
+	}
+}
+
+	#endif
+
 #endif

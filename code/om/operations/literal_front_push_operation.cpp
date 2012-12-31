@@ -56,6 +56,14 @@ namespace Om
 		// MARK: -
 		SUITE( LiteralFrontPushOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{->literal}",
+					System::Get().Evaluate( "drop find {->literal} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

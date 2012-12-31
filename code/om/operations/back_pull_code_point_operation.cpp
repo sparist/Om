@@ -62,6 +62,16 @@ namespace Om
 		// MARK: -
 		SUITE( BackPullCodePointOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{code` points->}",
+					System::Get().Evaluate(
+						"drop find {code` points->} system"
+					)
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

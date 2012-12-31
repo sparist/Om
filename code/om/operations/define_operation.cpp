@@ -100,6 +100,14 @@ namespace Om
 		// MARK: -
 		SUITE( DefineOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{define}",
+					System::Get().Evaluate( "drop find {define} system" )
+				);
+			}
+
 			TEST( BasicSubstitution )
 			{
 				CHECK_EQUAL(

@@ -43,4 +43,29 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 #else
 	#include "om/operations/operator_front_push_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		// MARK: -
+		SUITE( OperatorFrontPushOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{->operator}",
+					System::Get().Evaluate( "drop find {->operator} system" )
+				);
+			}
+		}
+	}
+}
+
+	#endif
+
 #endif

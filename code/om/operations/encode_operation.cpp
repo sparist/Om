@@ -76,6 +76,14 @@ namespace Om
 		// MARK: -
 		SUITE( EncodeOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{encode}",
+					System::Get().Evaluate( "drop find {encode} system" )
+				);
+			}
+
 			TEST( Simple )
 			{
 				CHECK_EQUAL(

@@ -72,6 +72,14 @@ namespace Om
 		// MARK: -
 		SUITE( DequoteOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{dequote}",
+					System::Get().Evaluate( "drop find {dequote} system" )
+				);
+			}
+
 			TEST( Simple )
 			{
 				CHECK_EQUAL(

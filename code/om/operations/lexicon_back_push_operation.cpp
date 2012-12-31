@@ -41,4 +41,29 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 #else
 	#include "om/operations/lexicon_back_push_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om
+{
+	namespace Operations
+	{
+		// MARK: -
+		SUITE( LexiconBackPushOperation )
+		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{lexicon<-}",
+					System::Get().Evaluate( "drop find {lexicon<-} system" )
+				);
+			}
+		}
+	}
+}
+
+	#endif
+
 #endif

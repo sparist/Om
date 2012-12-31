@@ -63,6 +63,16 @@ namespace Om
 		// MARK: -
 		SUITE( FrontPullOperatorOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{operator<-elements}",
+					System::Get().Evaluate(
+						"drop find {operator<-elements} system"
+					)
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

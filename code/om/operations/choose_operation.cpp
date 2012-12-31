@@ -109,6 +109,14 @@ namespace Om
 		// MARK: -
 		SUITE( ChooseOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{choose}",
+					System::Get().Evaluate( "drop find {choose} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

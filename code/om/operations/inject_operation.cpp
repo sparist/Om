@@ -111,6 +111,14 @@ namespace Om
 		// MARK: -
 		SUITE( InjectOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{inject}",
+					System::Get().Evaluate( "drop find {inject} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

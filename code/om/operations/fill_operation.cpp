@@ -114,6 +114,14 @@ namespace Om
 		// MARK: -
 		SUITE( FillOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{fill}",
+					System::Get().Evaluate( "drop find {fill} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

@@ -71,6 +71,14 @@ namespace Om
 		// MARK: -
 		SUITE( RearrangeOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{rearrange}",
+					System::Get().Evaluate( "drop find {rearrange} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

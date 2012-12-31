@@ -62,6 +62,14 @@ namespace Om
 		// MARK: -
 		SUITE( FrontPullPairOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{<-pairs}",
+					System::Get().Evaluate( "drop find {<-pairs} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

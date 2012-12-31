@@ -63,6 +63,16 @@ namespace Om
 		// MARK: -
 		SUITE( BackPullOperatorOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{elements->operator}",
+					System::Get().Evaluate(
+						"drop find {elements->operator} system"
+					)
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

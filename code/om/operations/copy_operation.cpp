@@ -83,6 +83,14 @@ namespace Om
 		// MARK: -
 		SUITE( CopyOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{copy}",
+					System::Get().Evaluate( "drop find {copy} system" )
+				);
+			}
+
 			TEST( Simple )
 			{
 				CHECK_EQUAL(

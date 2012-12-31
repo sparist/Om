@@ -63,6 +63,14 @@ namespace Om
 		// MARK: -
 		SUITE( FrontPullCharacterOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{<-characters}",
+					System::Get().Evaluate( "drop find {<-characters} system" )
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(

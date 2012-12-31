@@ -63,6 +63,16 @@ namespace Om
 		// MARK: -
 		SUITE( FrontPullSeparatorOperation )
 		{
+			TEST( Definition )
+			{
+				CHECK_EQUAL(
+					"{separator<-elements}",
+					System::Get().Evaluate(
+						"drop find {separator<-elements} system"
+					)
+				);
+			}
+
 			TEST( General )
 			{
 				CHECK_EQUAL(
