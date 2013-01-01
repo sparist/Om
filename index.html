@@ -324,9 +324,9 @@ Xcode</h2>
 <li>Ensure that Doxygen and Graphviz are installed, and in the path variable visible to applications. <a href="http://overwatering.org/blog/2012/08/setting-path-osx-mountain-lion">This article</a> explains how to do so.</li>
 <li>Clone the Git repository.</li>
 <li>Run <code>make.sh</code> and pass it the following arguments (in order):<ul>
-<li>The ICU root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.tgz">ICU4C 49.1.2 code archive</a>.</li>
-<li>The Boost root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.tar.gz/download">Boost 1.51.0 code archive</a>.</li>
-<li><b>Optional:</b> The UnitTest++ root directory path. If omitted, unit tests will be excluded from the build. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/unittest-cpp/files/latest/download?source=files">UnitTest++ 1.4 code archive</a>.</li>
+<li>The ICU root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/50.1.1/icu4c-50_1_1-src.tgz">ICU4C 50.1.1 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.</li>
+<li>The Boost root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.tar.gz/download">Boost 1.52.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.</li>
+<li><b>Optional:</b> The UnitTest++ root directory path. If omitted, unit tests will be excluded from the build. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/unittest-cpp/files/latest/download?source=files">UnitTest++ 1.4 code archive</a> from the <a href="http://sourceforge.net/projects/unittest-cpp/files">UnitTest++ download page</a>.</li>
 </ul>
 </li>
 </ul>
@@ -353,9 +353,9 @@ Visual Studio</h2>
 <li>Ensure that Doxygen and Graphviz are installed, and in the path variable.</li>
 <li>Clone the Git repository.</li>
 <li>Run <code>make.bat</code> and pass it the following arguments (in order):<ul>
-<li>The ICU root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C 49.1.2 code archive</a>.</li>
-<li>The Boost root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.zip/download">Boost 1.51.0 code archive</a>.</li>
-<li><b>Optional:</b> The UnitTest++ root directory path. If omitted, unit tests will be excluded from the build. To create this directory, get the UnitTest++ 1.4 code via Subversion checkout (described on the <a href="https://sourceforge.net/projects/unittest-cpp/develop">developer page</a>) and apply the patch attached to the <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3583690&amp;group_id=158151&amp;atid=806686">Visual Studio 2010 support ticket</a>. The UnitTest++ root directory is the <code>UnitTest++</code> subdirectory of the Subversion checkout directory.</li>
+<li>The ICU root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C 49.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>. (Note that there is presently a <a href="https://svn.boost.org/trac/boost/ticket/7839">Boost bug</a> that prevents building against ICU4C 50.1.1 on Windows.)</li>
+<li>The Boost root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.zip/download">Boost 1.52.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.</li>
+<li><b>Optional:</b> The UnitTest++ root directory path. If omitted, unit tests will be excluded from the build. To create this directory, get the UnitTest++ 1.4 code via Subversion checkout (described on the <a href="https://sourceforge.net/projects/unittest-cpp/develop">UnitTest++ developer page</a>) and apply the patch attached to the <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3583690&amp;group_id=158151&amp;atid=806686">Visual Studio 2010 support ticket</a>. The UnitTest++ root directory is the <code>UnitTest++</code> subdirectory of the Subversion checkout directory.</li>
 </ul>
 </li>
 </ul>
