@@ -19,6 +19,18 @@
 	\ingroup programs
 	\brief
 		A \ref programs "Program" optimized for evaluation.
+	\par Interpretation
+		An \ref expression is an interpretation of a \ref programs "Program" as
+		a list of non-empty forms, each containing the following:
+		-	An \ref operator (or none), representing the operation (or
+			identity).
+		-	An \ref operand list (which may be empty only if there is an
+			\ref operator).
+	\par Normalization
+		A \ref programs "Program" is normalized as an \ref expression as
+		follows:
+		-	Each \ref separator is removed, and replaced by a line
+			\ref separator between each non-empty form.
 	\par Implementation
 		Om#Expression
 */
@@ -35,11 +47,6 @@ namespace Om
 	/*!
 	\brief
 		The \ref expression Program implementation.
-
-	An Expression is comprised of a list of Forms, each surrounded by
-	Symbols#theLineSeparatorSymbol and containing:
-	-	An Operator (or none), representing the Operation (or identity).
-	-	An Operand list.
 	*/
 	struct Expression
 	:

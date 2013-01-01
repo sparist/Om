@@ -20,10 +20,9 @@
 	\brief
 		A \ref programs "Program" optimized for fast mapping of \ref operator to
 		\ref operand.
-	\par Format
-		A \ref lexicon contains a sequence of \ref operator/\ref operand
-		pairs, separated by the line \ref separator, with the following
-		interpretation:
+	\par Interpretation
+		A \ref lexicon is an interpretation of a \ref programs "Program" as a
+		sequence of \ref operator/\ref operand pairs with the following meaning:
 		-	An \ref operand following an \ref operator indicates a mapping from
 			the \ref operator to the \ref operand.
 		-	An \ref operator without an \ref operand indicates that the
@@ -33,7 +32,13 @@
 			\ref environment_operation, this is treated as the
 			"default mapping", applied when looking up an \ref operator that is
 			not explicitly included in the \ref environment_operation.
-		-	The last mapping wins; all others are discarded.
+		-	The last mapping wins; all others are disregarded.
+	\par Normalization
+		A \ref programs "Program" is normalized as a \ref lexicon as follows:
+		-	Each \ref separator is removed, and replaced by a line
+			\ref separator between each \ref operator/\ref operand pair.
+		-	In the case of duplicate mappings for an \ref operator, earlier
+			mappings are disregarded and removed from the normalized form.
 	\par Implementation
 		Om#Lexicon
 */

@@ -19,6 +19,11 @@
 	\ingroup programs
 	\brief
 		A literal \ref programs "Program".
+	\par Interpretation
+		A \ref literal is a verbatim interpretation of a \ref programs "Program"
+		as a sequence of elements, where none are disregarded.
+	\par Normalization
+		No normalization is required.
 	\par Implementation
 		Om#Literal
 */
