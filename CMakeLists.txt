@@ -168,7 +168,7 @@ source_group( "Header Files\\om\\sinks" FILES ${Code_Hpp_Om_Sinks} )
 source_group( "Header Files\\om\\sources" FILES ${Code_Hpp_Om_Sources} )
 source_group( "Header Files\\om\\symbols" FILES ${Code_Hpp_Om_Symbols} )
 
-include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code", "${UnitTest}/src" )
+include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" "${UnitTest}/src" )
 if( MSVC )
 	include_directories( "${Boost}" )
 else()
