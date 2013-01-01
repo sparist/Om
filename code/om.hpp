@@ -336,17 +336,21 @@ To generate the `Om.xcodeproj` file (in `products/xcode`):
 -	Run `make.sh` and pass it the following arguments (in order):
 	- 	The ICU root directory path.  To create this directory, download and
 		unpack the
-		<a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.tgz">ICU4C
-		49.1.2 code archive</a>.
+		<a href="http://download.icu-project.org/files/icu4c/50.1.1/icu4c-50_1_1-src.tgz">ICU4C
+		50.1.1 code archive</a> from the
+		<a href="http://site.icu-project.org/download">ICU download page</a>.
 	-	The Boost root directory path.  To create this directory, download and
 		unpack the
-		<a href="http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.tar.gz/download">Boost
-		1.51.0 code archive</a>.
+		<a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.tar.gz/download">Boost
+		1.52.0 code archive</a> from the
+		<a href="http://www.boost.org/users/download">Boost download page</a>.
 	-	**Optional:** The UnitTest++ root directory path.  If omitted, unit
 		tests will be excluded from the build.  To create this directory,
 		download and unpack the
 		<a href="http://sourceforge.net/projects/unittest-cpp/files/latest/download?source=files">UnitTest++
-		1.4 code archive</a>.
+		1.4 code archive</a> from the
+		<a href="http://sourceforge.net/projects/unittest-cpp/files">UnitTest++
+		download page</a>.
 
 To update the Xcode project to reflect changes to the code directory tree:
 
@@ -377,20 +381,24 @@ To generate the `Om.sln` file (in `products/vs`):
 	- 	The ICU root directory path.  To create this directory, download and
 		unpack the
 		<a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C
-		49.1.2 code archive</a>.
+		49.1.2 code archive</a> from the
+		<a href="http://site.icu-project.org/download">ICU download page</a>.
+		(Note that there is presently a
+		<a href="https://svn.boost.org/trac/boost/ticket/7839">Boost bug</a>
+		that prevents building against ICU4C 50.1.1 on Windows.)
 	-	The Boost root directory path.  To create this directory, download and
 		unpack the
-		<a href="http://sourceforge.net/projects/boost/files/boost/1.51.0/boost_1_51_0.zip/download">Boost
-		1.51.0 code archive</a>.
+		<a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.zip/download">Boost
+		1.52.0 code archive</a> from the
+		<a href="http://www.boost.org/users/download">Boost download page</a>.
 	-	**Optional:** The UnitTest++ root directory path.  If omitted, unit
 		tests will be excluded from the build.  To create this directory, get
 		the UnitTest++ 1.4 code via Subversion checkout (described on the
-		<a href="https://sourceforge.net/projects/unittest-cpp/develop">developer
-		page</a>) and apply the patch attached to the
+		<a href="https://sourceforge.net/projects/unittest-cpp/develop">UnitTest++
+		developer page</a>) and apply the patch attached to the
 		<a href="https://sourceforge.net/tracker/?func=detail&aid=3583690&group_id=158151&atid=806686">Visual
-		Studio 2010 support ticket</a>.
-		The UnitTest++ root directory is the `UnitTest++` subdirectory of the
-		Subversion checkout directory.
+		Studio 2010 support ticket</a>.  The UnitTest++ root directory is the
+		`UnitTest++` subdirectory of the Subversion checkout directory.
 
 To update the Visual Studio solution to reflect changes to the code directory
 tree:
