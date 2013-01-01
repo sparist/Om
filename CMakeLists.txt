@@ -194,29 +194,29 @@ if( MSVC )
 	endif()
 
 	find_library( BoostChronoDebugLibrary
-		libboost_chrono-vc100-mt-gd-1_51 "${Boost}/stage/lib" NO_DEFAULT_PATH
+		libboost_chrono-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
 	)
 	find_library( BoostLocaleDebugLibrary
-		libboost_locale-vc100-mt-gd-1_51 "${Boost}/stage/lib" NO_DEFAULT_PATH
+		libboost_locale-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
 	)
 	find_library( BoostSystemDebugLibrary
-		libboost_system-vc100-mt-gd-1_51 "${Boost}/stage/lib" NO_DEFAULT_PATH
+		libboost_system-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
 	)
 	find_library( BoostThreadDebugLibrary
-		libboost_thread-vc100-mt-gd-1_51 "${Boost}/stage/lib" NO_DEFAULT_PATH
+		libboost_thread-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
 	)
 
 	find_library( BoostChronoReleaseLibrary
-		libboost_chrono-vc100-mt-1_51 "${Boost}/stage/lib" NO_DEFAULT_PATH
+		libboost_chrono-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
 	)
 	find_library( BoostLocaleReleaseLibrary
-		libboost_locale-vc100-mt-1_51 "${Boost}/stage/lib" NO_DEFAULT_PATH
+		libboost_locale-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
 	)
 	find_library( BoostSystemReleaseLibrary
-		libboost_system-vc100-mt-1_51 "${Boost}/stage/lib" NO_DEFAULT_PATH
+		libboost_system-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
 	)
 	find_library( BoostThreadReleaseLibrary
-		libboost_thread-vc100-mt-1_51 "${Boost}/stage/lib" NO_DEFAULT_PATH
+		libboost_thread-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
 	)
 
 	target_link_libraries( Om
