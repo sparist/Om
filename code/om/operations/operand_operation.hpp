@@ -15,7 +15,7 @@
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 
-\defgroup opernd_operation operand
+\defgroup operand_operation operand
 	\ingroup operations
 	\brief
 		Normalizes the \ref operand as a quoted \ref operand.
