@@ -4,6 +4,8 @@ var searchData=
   ['om_2ehpp',['om.hpp',['../om_8hpp.html',1,'']]],
   ['operand_2ecpp',['operand.cpp',['../operand_8cpp.html',1,'']]],
   ['operand_2ehpp',['operand.hpp',['../operand_8hpp.html',1,'']]],
+  ['operand_5foperation_2ecpp',['operand_operation.cpp',['../operand__operation_8cpp.html',1,'']]],
+  ['operand_5foperation_2ehpp',['operand_operation.hpp',['../operand__operation_8hpp.html',1,'']]],
   ['operand_5fsymbol_2ecpp',['operand_symbol.cpp',['../operand__symbol_8cpp.html',1,'']]],
   ['operand_5fsymbol_2ehpp',['operand_symbol.hpp',['../operand__symbol_8hpp.html',1,'']]],
   ['operation_2ecpp',['operation.cpp',['../operation_8cpp.html',1,'']]],

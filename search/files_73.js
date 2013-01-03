@@ -2,6 +2,8 @@ var searchData=
 [
   ['separator_2ecpp',['separator.cpp',['../separator_8cpp.html',1,'']]],
   ['separator_2ehpp',['separator.hpp',['../separator_8hpp.html',1,'']]],
+  ['separator_5foperation_2ecpp',['separator_operation.cpp',['../separator__operation_8cpp.html',1,'']]],
+  ['separator_5foperation_2ehpp',['separator_operation.hpp',['../separator__operation_8hpp.html',1,'']]],
   ['separator_5fsymbol_2ecpp',['separator_symbol.cpp',['../separator__symbol_8cpp.html',1,'']]],
   ['separator_5fsymbol_2ehpp',['separator_symbol.hpp',['../separator__symbol_8hpp.html',1,'']]],
   ['shareable_2ecpp',['shareable.cpp',['../shareable_8cpp.html',1,'']]],

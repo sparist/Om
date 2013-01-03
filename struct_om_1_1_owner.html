@@ -153,6 +153,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a61fb75e77bfc5c64df8d7b4b45c5e213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13b415fe3ceceaf66e393f8d5955657d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_owner.html#a13b415fe3ceceaf66e393f8d5955657d">Clear</a> ()</td></tr>
 <tr class="separator:a13b415fe3ceceaf66e393f8d5955657d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1acb3a9bc8f263e2aceea7877134d72"><td class="memItemLeft" align="right" valign="top">ThisValue *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_owner.html#ab1acb3a9bc8f263e2aceea7877134d72">GetValue</a> ()</td></tr>
+<tr class="separator:ab1acb3a9bc8f263e2aceea7877134d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa002853584136d36ae2d88d7c9953174"><td class="memItemLeft" align="right" valign="top">ThisValue const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_owner.html#aa002853584136d36ae2d88d7c9953174">GetValue</a> () const </td></tr>
+<tr class="separator:aa002853584136d36ae2d88d7c9953174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6e6036ad6936f2299c5e2dd88f348a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_owner.html#a7e6e6036ad6936f2299c5e2dd88f348a">IsEmpty</a> () const </td></tr>
+<tr class="separator:a7e6e6036ad6936f2299c5e2dd88f348a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a294f849a5affd15d6ec59a5ade54590f"><td class="memTemplParams" colspan="2">template&lt;typename TheValue &gt; </td></tr>
 <tr class="memitem:a294f849a5affd15d6ec59a5ade54590f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_om_1_1_owner.html#a294f849a5affd15d6ec59a5ade54590f">SetValue</a> (std::auto_ptr&lt; TheValue &gt;)</td></tr>
 <tr class="separator:a294f849a5affd15d6ec59a5ade54590f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -414,6 +420,58 @@ template&lt;typename ThisValue&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ab1acb3a9bc8f263e2aceea7877134d72"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ThisValue&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ThisValue* <a class="el" href="struct_om_1_1_owner.html">Om::Owner</a>&lt; ThisValue &gt;::GetValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa002853584136d36ae2d88d7c9953174"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ThisValue&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ThisValue const* <a class="el" href="struct_om_1_1_owner.html">Om::Owner</a>&lt; ThisValue &gt;::GetValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7e6e6036ad6936f2299c5e2dd88f348a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ThisValue&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_om_1_1_owner.html">Om::Owner</a>&lt; ThisValue &gt;::IsEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>True if empty. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a294f849a5affd15d6ec59a5ade54590f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +558,7 @@ template&lt;typename ThisValue&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="owner_8hpp_source.html#l00113">113</a> of file <a class="el" href="owner_8hpp_source.html">owner.hpp</a>.</p>
+<p>Definition at line <a class="el" href="owner_8hpp_source.html#l00123">123</a> of file <a class="el" href="owner_8hpp_source.html">owner.hpp</a>.</p>
 
 </div>
 </div>
@@ -524,7 +582,7 @@ template&lt;typename ThisValue&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="owner_8hpp_source.html#l00116">116</a> of file <a class="el" href="owner_8hpp_source.html">owner.hpp</a>.</p>
+<p>Definition at line <a class="el" href="owner_8hpp_source.html#l00126">126</a> of file <a class="el" href="owner_8hpp_source.html">owner.hpp</a>.</p>
 
 </div>
 </div>

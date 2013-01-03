@@ -136,7 +136,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a56ab617102b28b1c9c96718b767c1273"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_om_1_1_translator.html">Translator</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_evaluator.html#a56ab617102b28b1c9c96718b767c1273">GetTranslator</a> () const </td></tr>
 <tr class="separator:a56ab617102b28b1c9c96718b767c1273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a6d997f7a853437299e75c5f5ca760c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_evaluator.html#a9a6d997f7a853437299e75c5f5ca760c">GiveElements</a> (<a class="el" href="struct_om_1_1_queue.html">Queue</a> &amp;)</td></tr>
-<tr class="memdesc:a9a6d997f7a853437299e75c5f5ca760c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives to the argument each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a> currently contained in the <a class="el" href="struct_om_1_1_evaluator.html" title="A Queue that evaluates Program instances.">Evaluator</a>.  <a href="#a9a6d997f7a853437299e75c5f5ca760c"></a><br/></td></tr>
+<tr class="memdesc:a9a6d997f7a853437299e75c5f5ca760c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives to the argument each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> currently contained in the <a class="el" href="struct_om_1_1_evaluator.html" title="A Queue that evaluates Program instances.">Evaluator</a>.  <a href="#a9a6d997f7a853437299e75c5f5ca760c"></a><br/></td></tr>
 <tr class="separator:a9a6d997f7a853437299e75c5f5ca760c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad38b2c0f1e9d0f9f52f53df313641ecc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_evaluator.html#ad38b2c0f1e9d0f9f52f53df313641ecc">GiveElements</a> (<a class="el" href="struct_om_1_1_queue.html">Queue</a> &amp;) const </td></tr>
 <tr class="separator:ad38b2c0f1e9d0f9f52f53df313641ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,11 +247,11 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a538cf7ed9583afb13ee76ecb97d4ad26"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of <a class="el" href="struct_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> with the most current at the back.  <a href="#a538cf7ed9583afb13ee76ecb97d4ad26"></a><br/></td></tr>
 <tr class="separator:a538cf7ed9583afb13ee76ecb97d4ad26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8605aa1a0a22f6ba020c19f29b2a438"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_evaluator.html#aa8605aa1a0a22f6ba020c19f29b2a438">thisGaveElementToOutput</a></td></tr>
-<tr class="memdesc:aa8605aa1a0a22f6ba020c19f29b2a438"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if an <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a> has been given to the output <a class="el" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a>.  <a href="#aa8605aa1a0a22f6ba020c19f29b2a438"></a><br/></td></tr>
+<tr class="memdesc:aa8605aa1a0a22f6ba020c19f29b2a438"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if an <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> has been given to the output <a class="el" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a>.  <a href="#aa8605aa1a0a22f6ba020c19f29b2a438"></a><br/></td></tr>
 <tr class="separator:aa8605aa1a0a22f6ba020c19f29b2a438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="struct_om_1_1_evaluator.html" title="A Queue that evaluates Program instances.">Evaluator</a> interprets each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a> as follows:</p>
+<div class="textblock"><p>The <a class="el" href="struct_om_1_1_evaluator.html" title="A Queue that evaluates Program instances.">Evaluator</a> interprets each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> as follows:</p>
 <ul>
 <li>When an <a class="el" href="struct_om_1_1_operator.html" title="The Operator implementation.">Operator</a> is taken, the <a class="el" href="struct_om_1_1_translator.html" title="An Operator lookup for use by an Evaluator.">Translator</a> is queried for the corresponding <a class="el" href="struct_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a>. If found, its implementation is given to the <a class="el" href="struct_om_1_1_evaluator.html" title="A Queue that evaluates Program instances.">Evaluator</a> for further evaluation; otherwise, the <a class="el" href="struct_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> vector is flushed and the <a class="el" href="struct_om_1_1_operator.html" title="The Operator implementation.">Operator</a> is given to the output <a class="el" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a>.</li>
 <li>When a <a class="el" href="struct_om_1_1_operand.html" title="The Operand implementation.">Operand</a> is taken, it is given to the most current <a class="el" href="struct_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> in the <a class="el" href="struct_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> vector. If none, it is given to the output <a class="el" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a>.</li>
@@ -304,7 +304,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>If an exception is thrown, it will be caught and ignored, and each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a> may not be flushed. This would only occur in an extreme situation such as insufficient memory. </p>
+<p>If an exception is thrown, it will be caught and ignored, and each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> may not be flushed. This would only occur in an extreme situation such as insufficient memory. </p>
 
 </div>
 </div>
@@ -421,6 +421,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implements <a class="el" href="struct_om_1_1_queue.html#afa21d5837fff890ad2b6c14b43fd32f4">Om::Queue</a>.</p>
 
 </div>
 </div>
@@ -563,7 +565,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>True if there is no <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if there is no <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a>. </dd></dl>
 
 <p>Implements <a class="el" href="struct_om_1_1_queue.html#adec424b550da06372b4b82e7eee16ef8">Om::Queue</a>.</p>
 

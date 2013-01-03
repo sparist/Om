@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>A leaf <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a> defined by a string.  
+<p>A leaf <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> defined by a string.  
 </p>
 
 <p><code>#include &quot;<a class="el" href="atom_8hpp_source.html">atom.hpp</a>&quot;</code></p>
@@ -170,8 +170,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acf4a8d8536a1c404eae3f8719965fba1 inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca37034961b5d433e9c1995082dfc577 inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#aca37034961b5d433e9c1995082dfc577">operator==</a> (<a class="el" href="struct_om_1_1_program.html">Program</a> const &amp;) const =0</td></tr>
 <tr class="separator:aca37034961b5d433e9c1995082dfc577 inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa21d5837fff890ad2b6c14b43fd32f4 inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#afa21d5837fff890ad2b6c14b43fd32f4">Clear</a> ()=0</td></tr>
+<tr class="separator:afa21d5837fff890ad2b6c14b43fd32f4 inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b246caf960d89b1671c4dcc49bd66c0 inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#a1b246caf960d89b1671c4dcc49bd66c0">GiveElements</a> (<a class="el" href="struct_om_1_1_queue.html">Queue</a> &amp;)=0</td></tr>
-<tr class="memdesc:a1b246caf960d89b1671c4dcc49bd66c0 inherit pub_methods_struct_om_1_1_queue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives each contained <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a> to the argument.  <a href="#a1b246caf960d89b1671c4dcc49bd66c0"></a><br/></td></tr>
+<tr class="memdesc:a1b246caf960d89b1671c4dcc49bd66c0 inherit pub_methods_struct_om_1_1_queue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives each contained <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> to the argument.  <a href="#a1b246caf960d89b1671c4dcc49bd66c0"></a><br/></td></tr>
 <tr class="separator:a1b246caf960d89b1671c4dcc49bd66c0 inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a834d852c3ca18b7057964e1bc49a07bd inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#a834d852c3ca18b7057964e1bc49a07bd">GiveElements</a> (<a class="el" href="struct_om_1_1_queue.html">Queue</a> &amp;) const =0</td></tr>
 <tr class="separator:a834d852c3ca18b7057964e1bc49a07bd inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,7 +187,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adc6240014551349c655f74bf9b404d68 inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#adc6240014551349c655f74bf9b404d68">ReadQuotedElements</a> (<a class="el" href="struct_om_1_1_parser.html">Parser</a> &amp;)=0</td></tr>
 <tr class="separator:adc6240014551349c655f74bf9b404d68 inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aed964ad346378c3065018e50705ecd inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#a4aed964ad346378c3065018e50705ecd">TakeElement</a> (<a class="el" href="struct_om_1_1_operand.html">Operand</a> &amp;)=0</td></tr>
-<tr class="memdesc:a4aed964ad346378c3065018e50705ecd inherit pub_methods_struct_om_1_1_queue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a non-empty <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a>, which gets copied or swapped.  <a href="#a4aed964ad346378c3065018e50705ecd"></a><br/></td></tr>
+<tr class="memdesc:a4aed964ad346378c3065018e50705ecd inherit pub_methods_struct_om_1_1_queue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a non-empty <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a>, which gets copied or swapped.  <a href="#a4aed964ad346378c3065018e50705ecd"></a><br/></td></tr>
 <tr class="separator:a4aed964ad346378c3065018e50705ecd inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3597f92ead6127593c81959cd32b7f46 inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#a3597f92ead6127593c81959cd32b7f46">TakeElement</a> (<a class="el" href="struct_om_1_1_operand.html">Operand</a> const &amp;)=0</td></tr>
 <tr class="separator:a3597f92ead6127593c81959cd32b7f46 inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,12 +200,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aae520c99b8a4a421114fd7d736a5b5db inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#aae520c99b8a4a421114fd7d736a5b5db">TakeElement</a> (<a class="el" href="struct_om_1_1_separator.html">Separator</a> const &amp;)=0</td></tr>
 <tr class="separator:aae520c99b8a4a421114fd7d736a5b5db inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a316e035f6405de4bbb969d767cd71f inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#a8a316e035f6405de4bbb969d767cd71f">TakeElements</a> (<a class="el" href="struct_om_1_1_queue.html">Queue</a> &amp;)=0</td></tr>
-<tr class="memdesc:a8a316e035f6405de4bbb969d767cd71f inherit pub_methods_struct_om_1_1_queue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a> of the argument.  <a href="#a8a316e035f6405de4bbb969d767cd71f"></a><br/></td></tr>
+<tr class="memdesc:a8a316e035f6405de4bbb969d767cd71f inherit pub_methods_struct_om_1_1_queue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> of the argument.  <a href="#a8a316e035f6405de4bbb969d767cd71f"></a><br/></td></tr>
 <tr class="separator:a8a316e035f6405de4bbb969d767cd71f inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb6051d027d91598694dd639ad05183f inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#adb6051d027d91598694dd639ad05183f">TakeElements</a> (<a class="el" href="struct_om_1_1_queue.html">Queue</a> const &amp;)=0</td></tr>
 <tr class="separator:adb6051d027d91598694dd639ad05183f inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcb0f16e8d361c6f184b0143b9487b81 inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#abcb0f16e8d361c6f184b0143b9487b81">TakeQuotedElements</a> (<a class="el" href="struct_om_1_1_queue.html">Queue</a> &amp;)=0</td></tr>
-<tr class="memdesc:abcb0f16e8d361c6f184b0143b9487b81 inherit pub_methods_struct_om_1_1_queue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs and takes an <a class="el" href="struct_om_1_1_operand.html" title="The Operand implementation.">Operand</a>, which takes each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item.">Element</a> from the argument <a class="el" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a>.  <a href="#abcb0f16e8d361c6f184b0143b9487b81"></a><br/></td></tr>
+<tr class="memdesc:abcb0f16e8d361c6f184b0143b9487b81 inherit pub_methods_struct_om_1_1_queue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs and takes an <a class="el" href="struct_om_1_1_operand.html" title="The Operand implementation.">Operand</a>, which takes each <a class="el" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> from the argument <a class="el" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a>.  <a href="#abcb0f16e8d361c6f184b0143b9487b81"></a><br/></td></tr>
 <tr class="separator:abcb0f16e8d361c6f184b0143b9487b81 inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8840ad35497a2615bb123b9ed93a39a5 inherit pub_methods_struct_om_1_1_queue"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_om_1_1_queue.html#a8840ad35497a2615bb123b9ed93a39a5">TakeQuotedElements</a> (<a class="el" href="struct_om_1_1_queue.html">Queue</a> const &amp;)=0</td></tr>
 <tr class="separator:a8840ad35497a2615bb123b9ed93a39a5 inherit pub_methods_struct_om_1_1_queue"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,6 +254,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The "wrapped" <a class="el" href="struct_om_1_1_program.html" title="The Program implementation.">Program</a> (<a class="el" href="struct_om_1_1_null.html" title="The Null Program implementation.">Null</a> if none). </dd></dl>
 
 <p>Implements <a class="el" href="struct_om_1_1_element.html#ae7cd2886a3881936a125ece4e449a317">Om::Element</a>.</p>
 
@@ -277,6 +280,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 <p>Implements <a class="el" href="struct_om_1_1_element.html#a941e38c3189f22d66a8623ffd94a648b">Om::Element</a>.</p>
 
