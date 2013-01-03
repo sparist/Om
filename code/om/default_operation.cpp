@@ -86,6 +86,7 @@ inline bool Type_::TakeElement(
 	Operand & theOperand
 )
 {
+	assert( !theOperand.IsEmpty() );
 	assert( dynamic_cast< ThisImplementation * >( this ) );
 	return(
 		static_cast<
@@ -100,6 +101,7 @@ inline bool Type_::TakeElement(
 	Operand const & theOperand
 )
 {
+	assert( !theOperand.IsEmpty() );
 	assert( dynamic_cast< ThisImplementation * >( this ) );
 	return(
 		static_cast<

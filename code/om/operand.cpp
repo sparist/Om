@@ -17,6 +17,7 @@
 */
 #if defined( Om_Operand_ )
 
+	#include "om/literal.hpp"
 	#include "om/null.hpp"
 
 // MARK: Om::Operand
@@ -53,42 +54,78 @@ inline Type_ & Type_::operator =( Operand theOperand )
 
 inline bool Type_::operator ==( Operand const & theOperand ) const
 {
-	return( this->GetProgram() == theOperand.GetProgram() );
+	return(
+		this->IsEmpty() ?
+		theOperand.IsEmpty() :
+		( *this->GetProgram() == *theOperand.GetProgram() )
+	);
 }
 
 inline Om::Program & Type_::operator *()
 {
-	return( this->GetProgram() );
+	return( this->thisProgram.IsEmpty() ? Null::Get(): *this->thisProgram );
 }
 
 inline Om::Program const & Type_::operator *() const
 {
-	return( this->GetProgram() );
+	return( this->thisProgram.IsEmpty() ? Null::Get(): *this->thisProgram );
 }
 
-inline Om::Program & Type_::GetProgram()
+inline void Type_::Clear()
 {
-	return( this->thisProgram ? *this->thisProgram : Null::Get() );
+	this->thisProgram.Clear();
 }
 
-inline Om::Program const & Type_::GetProgram() const
+inline Om::Program * Type_::GetProgram()
 {
-	return( this->thisProgram ? *this->thisProgram : Null::Get() );
+	return( this->thisProgram.GetValue() );
+}
+
+inline Om::Program const * Type_::GetProgram() const
+{
+	return( this->thisProgram.GetValue() );
 }
 
 inline bool Type_::IsEmpty() const
 {
-	return( false );
+	return( !this->thisProgram );
 }
 
 inline void Type_::ReadElements( Parser & theParser )
 {
+	if( this->IsEmpty() ){
+		for( ; ; theParser.Pop() ){
+			if( !theParser ){ return; }
+			assert( Symbols::theEndOperandSymbol != *theParser );
+			switch( *theParser ){
+			default:
+				continue;
+			case Symbols::theStartOperandSymbol:
+				theParser.Pop();
+				{
+					// Ensure against copy constructor call.
+					Source< CodePoint const > & theCodePointSource = theParser;
+
+					Parser theOperandParser( theCodePointSource );
+					this->ReadQuotedElements( theOperandParser );
+				}
+				assert(
+					!theParser ||
+					Symbols::theEndOperandSymbol == *theParser
+				);
+				// Fall through.
+			}
+			break;
+		}
+	}
 	for( ; theParser; theParser.Pop() ){}
 }
 
 inline void Type_::ReadQuotedElements( Parser & theParser )
 {
-	for( ; theParser; theParser.Pop() ){}
+	Literal theLiteral;
+	theLiteral.ReadElements( theParser );
+	this->TakeQuotedQueue( theLiteral );
 }
 
 template< typename TheProgram >
@@ -102,17 +139,26 @@ inline void Type_::Swap( Operand & theOperand )
 	this->thisProgram.Swap( theOperand.thisProgram );
 }
 
-inline void Type_::TakeElements( Queue & )
+inline void Type_::TakeElements( Queue & theQueue )
 {
+	if( this->IsEmpty() ){
+		DefaultElement< Operand >::TakeElements( theQueue );
+	}
 }
 
-inline void Type_::TakeElements( Queue const & )
+inline void Type_::TakeElements( Queue const & theQueue )
 {
+	if( this->IsEmpty() ){
+		DefaultElement< Operand >::TakeElements( theQueue );
+	}
 }
 
 template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & )
+inline void Type_::TakeOperand( TheOperand & theOperand )
 {
+	if( this->IsEmpty() ){
+		this->Take( theOperand );
+	}
 }
 
 template< typename TheOperator >
@@ -121,8 +167,11 @@ inline void Type_::TakeOperator( TheOperator & )
 }
 
 template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & )
+inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 {
+	if( this->IsEmpty() ){
+		this->SetProgram( theQueue.GiveProgram() );
+	}
 }
 
 template< typename TheSeparator >

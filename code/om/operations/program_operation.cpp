@@ -50,7 +50,8 @@ inline bool Type_::ReadQuotedElements(
 {
 	ThisProgram theProgram;
 	theProgram.ReadElements( theParser );
-	return( this->TakeQuotedQueue( theEvaluation, theProgram ) );
+	theEvaluation.TakeQuotedQueue( theProgram );
+	return( true );
 }
 
 Template_
@@ -60,7 +61,8 @@ inline bool Type_::TakeOperand(
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theEvaluation, theOperand.GetProgram() ) );
+	assert( !theOperand.IsEmpty() );
+	return( this->TakeQuotedQueue( theEvaluation, *theOperand.GetProgram() ) );
 }
 
 Template_

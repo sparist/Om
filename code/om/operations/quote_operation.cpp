@@ -44,6 +44,7 @@ inline bool Type_::TakeOperand(
 	TheOperand & theOperand
 )
 {
+	assert( !theOperand.IsEmpty() );
 	theEvaluation.TakeQuotedQueue( theOperand );
 	return( true );
 }

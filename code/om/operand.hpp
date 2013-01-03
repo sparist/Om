@@ -19,6 +19,14 @@
 	\ingroup programs
 	\brief
 		A \ref programs "Program" element that wraps a \ref programs "Program".
+	\par Interpretation
+		An \ref operand is an interpretation of a \ref programs "Program" as
+		either containing a single operand element (a \ref programs "Program"
+		enclosed by braces), or being empty.  All elements other than the first
+		operand element are disregarded.
+	\par Normalization
+		A \ref programs "Program" is normalized as an \ref operand by discarding
+		all elements other than the first operand element.
 	\par Implementation
 		Om#Operand
 */
@@ -71,23 +79,24 @@ namespace Om
 		*/
 		virtual Program const & operator *() const;
 
+		virtual void Clear();
+
 		/*!
 		\return
-			A reference to the Program owned by this Operand.  Do not retain
-			this reference.
+			A reference to the Program owned by this Operand, or null if none.
+			Do not retain this reference.
 		*/
-		Program & GetProgram();
+		Program * GetProgram();
 
 		/*!
 		\overload
 		*/
-		Program const & GetProgram() const;
+		Program const * GetProgram() const;
 
 		/*!
 		\return
-			False.  The Operand is a Program whose single Element is an Operand.
-			Therefore, the Program is never empty (although the distinct Program
-			contained by the Operand may be).
+			True if this instance represents an empty Program, which is the case
+			if there is no inner Program (i.e. via default construction).
 		*/
 		virtual bool IsEmpty() const;
 

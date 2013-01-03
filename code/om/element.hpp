@@ -25,7 +25,10 @@ namespace Om
 	// MARK: - Om::Element
 	/*!
 	\brief
-		An "elemental" Program comprised of a single item.
+		An "elemental" Program comprised of a single item (or empty).
+
+	Element instances are used to represent both the Program, and the single
+	item that the Program contains (when IsEmpty() returns false).
 	*/
 	struct Element
 	:
@@ -37,8 +40,15 @@ namespace Om
 
 		virtual bool operator ==( Element const & ) const = 0;
 
+		/*!
+		\return
+			The "wrapped" Program (Null if none).
+		*/
 		virtual Program & operator *() = 0;
 
+		/*!
+		\overload
+		*/
 		virtual Program const & operator *() const = 0;
 
 		Program * operator ->();

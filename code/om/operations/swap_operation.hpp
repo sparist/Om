@@ -67,7 +67,7 @@ namespace Om
 		private: // MARK: private (non-static)
 
 			//! The Operand to swap with.
-			boost::optional< Operand > thisOperand;
+			Operand thisOperand;
 		};
 
 		namespace

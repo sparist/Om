@@ -285,12 +285,14 @@ inline void Type_::TakeElements( Queue const & theQueue )
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
+	assert( !theOperand.IsEmpty() );
 	this->BackTakeOperand( theOperand );
 }
 
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator )
 {
+	assert( !theOperator.IsEmpty() );
 	this->BackTakeOperator( theOperator );
 }
 
@@ -536,7 +538,7 @@ namespace Om
 			// Positive match
 			CHECK_EQUAL(
 				"{{{a}}}",
-				System::Get().Evaluate( "= expression{{a}} {{a}}" )
+				System::Get().Evaluate( "= expression{{a}}{{a}}" )
 			);
 
 			// Negative match

@@ -101,7 +101,7 @@ inline bool Type_::operator !() const
 Template_
 inline Type_::operator Boolean() const
 {
-	return( !*this ? 0 : &Owner::UncomparableBoolean );
+	return( this->thisValue ? &Owner::UncomparableBoolean : 0 );
 }
 
 Template_
@@ -109,6 +109,24 @@ inline void Type_::Clear()
 {
 	this->thisValue.reset();
 	this->thisWasExposed = false;
+}
+
+Template_
+ThisValue * Type_::GetValue()
+{
+	return( this->thisValue ? &**this : 0 );
+}
+
+Template_
+ThisValue const * Type_::GetValue() const
+{
+	return( this->thisValue.get() );
+}
+
+Template_
+bool Type_::IsEmpty() const
+{
+	return( !this->thisValue );
 }
 
 Template_

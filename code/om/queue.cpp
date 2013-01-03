@@ -39,6 +39,12 @@ inline bool Type_::operator !=( TheProgram const & theProgram ) const
 	return( !( theProgram == *this ) );
 }
 
+inline void Type_::Clear()
+{
+	assert( 0 );
+	throw( std::logic_error( "Pure virtual function called." ) );
+}
+
 inline void Type_::GiveElements( Queue & )
 {
 	assert( 0 );

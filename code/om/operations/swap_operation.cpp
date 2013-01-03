@@ -37,8 +37,8 @@ inline void Type_::GiveElements(
 )
 {
 	theQueue.TakeElement( GetOperator() );
-	if( theSwapOperation.thisOperand ){
-		theQueue.TakeElement( *theSwapOperation.thisOperand );
+	if( !theSwapOperation.thisOperand.IsEmpty() ){
+		theQueue.TakeElement( theSwapOperation.thisOperand );
 	}
 }
 
@@ -56,15 +56,14 @@ inline bool Type_::TakeOperand(
 	TheOperand & theOperand
 )
 {
-	if( this->thisOperand ){
-		theEvaluation.TakeOperand( *this->thisOperand );
-		theEvaluation.TakeOperand( theOperand );
-		return( true );
+	assert( !theOperand.IsEmpty() );
+	if( this->thisOperand.IsEmpty() ){
+		this->thisOperand.Take( theOperand );
+		return( false );
 	}
-	this->thisOperand = boost::in_place();
-	assert( this->thisOperand );
-	this->thisOperand->Take( theOperand );
-	return( false );
+	theEvaluation.TakeOperand( this->thisOperand );
+	theEvaluation.TakeOperand( theOperand );
+	return( true );
 }
 
 template< typename TheQueue >
@@ -73,15 +72,13 @@ inline bool Type_::TakeQuotedQueue(
 	TheQueue & theQueue
 )
 {
-	if( this->thisOperand ){
-		theEvaluation.TakeOperand( *this->thisOperand );
-		theEvaluation.TakeQuotedQueue( theQueue );
-		return( true );
+	if( this->thisOperand.IsEmpty() ){
+		this->thisOperand.SetProgram( theQueue.GiveProgram() );
+		return( false );
 	}
-	this->thisOperand = boost::in_place();
-	assert( this->thisOperand );
-	this->thisOperand->SetProgram( theQueue.GiveProgram() );
-	return( false );
+	theEvaluation.TakeOperand( this->thisOperand );
+	theEvaluation.TakeQuotedQueue( theQueue );
+	return( true );
 }
 
 	#undef Type_

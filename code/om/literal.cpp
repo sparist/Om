@@ -200,12 +200,14 @@ inline void Type_::Swap( Literal & theLiteral )
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
+	assert( !theOperand.IsEmpty() );
 	this->thisElementDeque.push_back( Give( theOperand ) );
 }
 
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator )
 {
+	assert( !theOperator.IsEmpty() );
 	this->TakeAtom( theOperator );
 }
 
@@ -218,6 +220,7 @@ inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 template< typename TheSeparator >
 inline void Type_::TakeSeparator( TheSeparator & theSeparator )
 {
+	assert( !theSeparator.IsEmpty() );
 	this->TakeAtom( theSeparator );
 }
 

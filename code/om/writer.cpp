@@ -85,7 +85,8 @@ inline void Type_::ReadQuotedElements( Parser & theParser )
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
-	this->TakeQuotedQueue( theOperand.GetProgram() );
+	assert( !theOperand.IsEmpty() );
+	this->TakeQuotedQueue( *theOperand.GetProgram() );
 }
 
 template< typename TheOperator >

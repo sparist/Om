@@ -155,6 +155,7 @@ inline void Type_::ReadQuotedElements(
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
+	assert( !theOperand.IsEmpty() );
 	Evaluation theEvaluation( *this );
 	this->TakeOperand( theEvaluation, theOperand );
 	this->Evaluate( theEvaluation );
@@ -166,6 +167,7 @@ inline void Type_::TakeOperand(
 	TheOperand & theOperand
 )
 {
+	assert( !theOperand.IsEmpty() );
 	if( this->thisOperationVector.empty() ){
 		this->thisOutput.TakeElement( theOperand );
 		this->thisGaveElementToOutput = true;

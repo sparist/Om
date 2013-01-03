@@ -44,6 +44,7 @@ inline bool Type_::TakeOperand(
 	TheOperand & theOperand
 )
 {
+	assert( !theOperand.IsEmpty() );
 	{
 		Operand const & theConstOperand( theOperand );
 		theEvaluation.TakeOperand( theConstOperand );

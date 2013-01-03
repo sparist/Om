@@ -72,7 +72,7 @@ namespace Om
 		private: // MARK: private (non-static)
 
 			//! The Operand to compare with.
-			boost::optional< Operand > thisOperand;
+			Operand thisOperand;
 		};
 
 		namespace

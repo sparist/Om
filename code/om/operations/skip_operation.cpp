@@ -54,7 +54,8 @@ inline bool Type_::TakeOperand(
 	TheOperand & theOperand
 )
 {
-	return( this->TakeQuotedQueue( theEvaluation, theOperand.GetProgram() ) );
+	assert( !theOperand.IsEmpty() );
+	return( this->TakeQuotedQueue( theEvaluation, *theOperand.GetProgram() ) );
 }
 
 template< typename TheQueue >

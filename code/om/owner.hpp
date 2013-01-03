@@ -90,6 +90,16 @@ namespace Om
 		*/
 		void Clear();
 
+		ThisValue * GetValue();
+
+		ThisValue const * GetValue() const;
+
+		/*!
+		\return
+			True if empty.
+		*/
+		bool IsEmpty() const;
+
 		/*!
 		\post
 			Any references to the contained value, obtained via dereference,

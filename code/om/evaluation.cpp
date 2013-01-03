@@ -70,6 +70,7 @@ inline bool Type_::GiveTerm( Evaluator & theEvaluator )
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
+	assert( !theOperand.IsEmpty() );
 	this->thisExpression.FrontTakeOperand( theOperand );
 }
 
@@ -82,6 +83,7 @@ inline void Type_::TakeOperation( std::auto_ptr< TheOperation > theOperation )
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator )
 {
+	assert( !theOperator.IsEmpty() );
 	this->thisExpression.FrontTakeOperator( theOperator );
 }
 

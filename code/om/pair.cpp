@@ -44,12 +44,12 @@ thisOperand()
 
 inline void Type_::ClearOperand()
 {
-	this->thisOperand = boost::none;
+	this->thisOperand.Clear();
 }
 
-inline Om::Operand const * Type_::GetOperand() const
+inline Om::Operand const & Type_::GetOperand() const
 {
-	return( this->thisOperand.get_ptr() );
+	return( this->thisOperand );
 }
 
 inline Om::Operator const & Type_::GetOperator() const
@@ -61,7 +61,7 @@ inline void Type_::GiveElements( Queue & theQueue )
 {
 	this->GiveElements( *this, theQueue );
 	this->thisOperator.Clear();
-	this->ClearOperand();
+	this->thisOperand.Clear();
 }
 
 inline void Type_::GiveElements( Queue & theQueue ) const
@@ -71,15 +71,13 @@ inline void Type_::GiveElements( Queue & theQueue ) const
 
 inline bool Type_::IsEmpty() const
 {
-	return( this->thisOperator.IsEmpty() && !this->thisOperand );
+	return( this->thisOperator.IsEmpty() && this->thisOperand.IsEmpty() );
 }
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
-	this->thisOperand = boost::in_place();
-	assert( this->thisOperand );
-	this->thisOperand->Take( theOperand );
+	this->thisOperand.Take( theOperand );
 }
 
 template< typename TheOperator >
@@ -91,9 +89,7 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 template< typename TheQueue >
 inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 {
-	this->thisOperand = boost::in_place();
-	assert( this->thisOperand );
-	this->thisOperand->SetProgram( theQueue.GiveProgram() );
+	this->thisOperand.SetProgram( theQueue.GiveProgram() );
 }
 
 // MARK: private (non-static)
@@ -104,8 +100,8 @@ inline void Type_::GiveElements( ThePair & thePair, Queue & theQueue )
 	if( !thePair.thisOperator.IsEmpty() ){
 		theQueue.TakeElement( thePair.thisOperator );
 	}
-	if( thePair.thisOperand ){
-		theQueue.TakeElement( *thePair.thisOperand );
+	if( !thePair.thisOperand.IsEmpty() ){
+		theQueue.TakeElement( thePair.thisOperand );
 	}
 }
 

@@ -37,7 +37,7 @@ namespace Om
 
 		void ClearOperand();
 
-		Operand const * GetOperand() const;
+		Operand const & GetOperand() const;
 
 		Operator const & GetOperator() const;
 
@@ -66,7 +66,7 @@ namespace Om
 
 		Operator thisOperator;
 
-		boost::optional< Operand > thisOperand;
+		Operand thisOperand;
 	};
 }
 

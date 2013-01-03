@@ -186,6 +186,7 @@ inline void Type_::Swap( Lexicon & theLexicon )
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
+	assert( !theOperand.IsEmpty() );
 	this->GetOperandTaker().TakeOperand( theOperand );
 }
 
@@ -214,12 +215,13 @@ inline bool Type_::Translate(
 {
 	Pair const & thePair = this->Find( theOperator );
 	if( thePair.IsEmpty() ){ return( false ); }
-	if( Operand const * const theOperand = thePair.GetOperand() ){
-		theEvaluation.TakeQueue( theOperand->GetProgram() );
-		return( true );
+	Operand const & theOperand = thePair.GetOperand();
+	if( theOperand.IsEmpty() ){
+		assert( thePair.GetOperator() == theOperator );
+		return( System::Get().Translate( theEvaluation, theOperator ) );
 	}
-	assert( thePair.GetOperator() == theOperator );
-	return( System::Get().Translate( theEvaluation, theOperator ) );
+	theEvaluation.TakeQueue( *theOperand.GetProgram() );
+	return( true );
 }
 
 // MARK: private (static)
@@ -260,7 +262,7 @@ inline Type_::Node const * Type_::GetLastNode() const
 
 inline Type_::Node & Type_::GetOperandTaker()
 {
-	if( !this->thisLastNode || this->thisLastNode->GetOperand() ){
+	if( !this->thisLastNode || !this->thisLastNode->GetOperand().IsEmpty() ){
 		Operator const theOperator;
 		return( this->GetOperandTaker( theOperator ) );
 	}
@@ -282,7 +284,7 @@ inline Type_::Node & Type_::GetOperandTaker( TheOperator & theOperator )
 		}
 		theNode->TakeOperator( theOperator ); // May swap.
 		theNode->LinkToBack( this->thisFirstNode, this->thisLastNode );
-		assert( !theNode->GetOperand() );
+		assert( theNode->GetOperand().IsEmpty() );
 	} else{
 		theNode = &*theIterator->second;
 		theNode->RelinkToBack( this->thisFirstNode, this->thisLastNode );
@@ -335,8 +337,8 @@ inline Om::Element const & Type_::operator *() const
 		assert( !this->thisNode->GetOperator().IsEmpty() );
 		return( this->thisNode->GetOperator() );
 	case 1:
-		assert( this->thisNode->GetOperand() );
-		return( *this->thisNode->GetOperand() );
+		assert( !this->thisNode->GetOperand().IsEmpty() );
+		return( this->thisNode->GetOperand() );
 	default:
 		return( Separator::GetLineSeparator() );
 	}
@@ -348,7 +350,7 @@ inline void Type_::Pop()
 	assert( !this->thisNode->IsEmpty() );
 	switch( this->thisOffset ){
 	case 0:
-		if( this->thisNode->GetOperand() ){
+		if( !this->thisNode->GetOperand().IsEmpty() ){
 			this->thisOffset = 1;
 			return;
 		}

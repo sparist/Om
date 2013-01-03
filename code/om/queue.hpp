@@ -56,6 +56,8 @@ namespace Om
 		*/
 		virtual bool operator ==( Program const & ) const = 0;
 
+		virtual void Clear() = 0;
+
 		/*!
 		\brief
 			Gives each contained Element to the argument.

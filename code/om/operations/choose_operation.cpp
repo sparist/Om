@@ -71,6 +71,7 @@ inline bool Type_::TakeOperand(
 	TheOperand & theOperand
 )
 {
+	assert( !theOperand.IsEmpty() );
 	assert( this->thisOperandCount < 3 );
 	switch( this->thisOperandCount++ ){
 	case 0:
@@ -83,7 +84,7 @@ inline bool Type_::TakeOperand(
 		{
 			TheOperand const & theConstOperand = theOperand;
 			theEvaluation.TakeOperand(
-				theConstOperand.GetProgram().IsEmpty() ?
+				theConstOperand.GetProgram()->IsEmpty() ?
 				this->thisEmptyCase :
 				this->thisNonEmptyCase
 			);
