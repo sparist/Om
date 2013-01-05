@@ -273,8 +273,10 @@ uses recursion to give the minutes in a colon-delimited 24-hour time string:
 	</tt>
 	<blockquote><tt>{23}</tt></blockquote>
 
-Broken down into evaluation steps, where the code that is about to be replaced
-is <b>bold</b>, and the code that was just replaced is <em>italicized</em>:
+Each step of an evaluation can be represented as a program.  The following is
+the above program broken down into its evaluation steps, where the code that is
+about to be replaced is <b>bold</b>, and the code that was just replaced is
+<em>italicized</em>:
 
 -	<tt>define<br/>
 	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
