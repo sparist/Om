@@ -356,7 +356,7 @@ about to be replaced is <b>bold</b>, and the code that was just replaced is
 	</tt>
 -	<tt>define<br/>
 	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
-	{ <em>{23}</em> }<br/>
+	{ {23} }<br/>
 	</tt>
 -	<tt><b>define<br/>
 	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
