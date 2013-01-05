@@ -167,6 +167,11 @@ the \ref programs module.
 
 \section examples Examples
 
+The following program contains a single operand:
+
+-	<tt>{Hello, world!}</tt>
+	<blockquote><tt>{Hello, world!}</tt></blockquote>
+
 Operands can be dropped and copied via the \ref drop_operation and
 \ref copy_operation operations:
 
