@@ -123,7 +123,7 @@ Introduction</h1>
 <li><b>Extensible</b>: new native operations can be implemented as C++ classes.</li>
 <li><b>Unicode-correct</b>: any <a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order marker) defines a valid <a href="http://om-language.org">Om</a> program.</li>
 </ul>
-<p><a href="http://om-language.org">Om</a> is <em>not</em>:</p>
+<p><a href="http://om-language.org">Om</a> is <b>not</b>:</p>
 <ul>
 <li><b>Complete</b>. Although the intent is to develop <a href="http://om-language.org">Om</a> into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic number and file operations) and optimizations before it can be considered useful for any real-world purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.</li>
 <li><b>Stationary</b>. <a href="http://om-language.org">Om</a> will likely undergo significant changes on its way to version 1.0.</li>
@@ -194,107 +194,225 @@ Data Types</h2>
 <p>All of the native data types included in the current release are documented in the <a class="el" href="group__programs.html">Programs</a> module.</p>
 <h1><a class="anchor" id="examples"></a>
 Examples</h1>
-<p>Operands can be dropped and copied:</p>
+<p>Operands can be dropped and copied via the <a class="el" href="group__drop__operation.html">drop</a> and <a class="el" href="group__copy__operation.html">copy</a> operations:</p>
 <ul>
-<li><code>drop {A}{B}{C}</code> <pre class="fragment">{B}{C}
-</pre></li>
+<li><code>drop {A}{B}{C}</code> <blockquote class="doxtable">
+<p><code>{B}{C}</code></p>
+</blockquote>
+</li>
+<li><code>copy {A}{B}{C}</code> <blockquote class="doxtable">
+<p><code>{A}{A}{B}{C}</code></p>
+</blockquote>
+</li>
+<li><code>drop copy {A}</code> <blockquote class="doxtable">
+<p><code>{A}</code></p>
+</blockquote>
+</li>
+<li><code>copy copy {A}</code> <blockquote class="doxtable">
+<p><code>{A}{A}{A}</code></p>
+</blockquote>
+</li>
 </ul>
+<p>The <a class="el" href="group__drop__operation.html">drop</a> operation can therefore be used for comments:</p>
 <ul>
-<li><code>copy {A}{B}{C}</code> <pre class="fragment">{A}{A}{B}{C}
-</pre></li>
-</ul>
-<ul>
-<li><code>drop copy {A}</code> <pre class="fragment">{A}
-</pre></li>
-</ul>
-<ul>
-<li><code>copy copy {A}</code> <pre class="fragment">{A}{A}{A}
-</pre></li>
+<li><code>drop {This is a comment.} ...</code> <blockquote class="doxtable">
+<p><code>...</code></p>
+</blockquote>
+</li>
 </ul>
 <p>The <a class="el" href="group__choose__operation.html">choose</a> operation selects one of two operands, depending on whether a third is empty:</p>
 <ul>
-<li><code>choose {It was empty.}{It was non-empty.}{I am not empty.}</code> <pre class="fragment">{It was non-empty.}
-</pre></li>
-</ul>
-<ul>
-<li><code>choose {It was empty.}{It was non-empty.}{}</code> <pre class="fragment">{It was empty.}
-</pre></li>
+<li><code>choose {It was empty.}{It was non-empty.}{I am not empty.}</code> <blockquote class="doxtable">
+<p><code>{It was non-empty.}</code></p>
+</blockquote>
+</li>
+<li><code>choose {It was empty.}{It was non-empty.}{}</code> <blockquote class="doxtable">
+<p><code>{It was empty.}</code></p>
+</blockquote>
+</li>
 </ul>
 <p>An operation without sufficient operands becomes the identity operation:</p>
 <ul>
-<li><code>drop</code> <pre class="fragment">drop
-</pre></li>
-</ul>
-<ul>
-<li><code>choose {It was empty.}{It was non-empty.}</code> <pre class="fragment">choose {It was empty.}{It was non-empty.}
-</pre></li>
+<li><code>drop</code> <blockquote class="doxtable">
+<p><code>drop</code></p>
+</blockquote>
+</li>
+<li><code>choose {It was empty.}{It was non-empty.}</code> <blockquote class="doxtable">
+<p><code>choose {It was empty.}{It was non-empty.}</code></p>
+</blockquote>
+</li>
 </ul>
 <p>The <a class="el" href="group__quote__operation.html">quote</a> and <a class="el" href="group__dequote__operation.html">dequote</a> operations add and remove a layer of operand braces, respectively:</p>
 <ul>
-<li><code>quote {B}</code> <pre class="fragment">{{B}}
-</pre></li>
-</ul>
-<ul>
-<li><code>dequote {{B}}</code> <pre class="fragment">{B}
-</pre></li>
-</ul>
-<ul>
-<li><code>dequote {copy}</code> <pre class="fragment">copy
-</pre></li>
-</ul>
-<ul>
-<li><code>dequote {copy} {A}</code> <pre class="fragment">{A}{A}
-</pre></li>
+<li><code>quote {B}</code> <blockquote class="doxtable">
+<p><code>{{B}}</code></p>
+</blockquote>
+</li>
+<li><code>dequote {{B}}</code> <blockquote class="doxtable">
+<p><code>{B}</code></p>
+</blockquote>
+</li>
+<li><code>dequote {copy}</code> <blockquote class="doxtable">
+<p><code>copy</code></p>
+</blockquote>
+</li>
+<li><code>dequote {copy} {A}</code> <blockquote class="doxtable">
+<p><code>{A}{A}</code></p>
+</blockquote>
+</li>
 </ul>
 <p>Operands can be popped from and pushed to:</p>
 <ul>
-<li><code>&lt;-characters {ABC}</code> <pre class="fragment">{A}{BC}
-</pre></li>
-</ul>
-<ul>
-<li><code>-&gt;literal {A}{BC}</code> <pre class="fragment">{ABC}
-</pre></li>
-</ul>
-<ul>
-<li><code>&lt;-terms {some terms}</code> <pre class="fragment">{some}{terms}
-</pre></li>
+<li><code>&lt;-characters {ABC}</code> <blockquote class="doxtable">
+<p><code>{A}{BC}</code></p>
+</blockquote>
+</li>
+<li><code>-&gt;literal {A}{BC}</code> <blockquote class="doxtable">
+<p><code>{ABC}</code></p>
+</blockquote>
+</li>
+<li><code>&lt;-terms {some terms}</code> <blockquote class="doxtable">
+<p><code>{some}{terms}</code></p>
+</blockquote>
+</li>
 </ul>
 <p>A new operation can be defined with the <a class="el" href="group__define__operation.html">define</a> operation, where the first operand is treated as containing a <a class="el" href="group__lexicon.html">Lexicon</a> with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operation:</p>
 <ul>
-<li><code>define { double-quote {quote quote} } { double-quote {A} }</code> <pre class="fragment">{{{A}}}
-</pre></li>
+<li><code>define { double-quote {quote quote} } { double-quote {A} }</code> <blockquote class="doxtable">
+<p><code>{{{A}}}</code></p>
+</blockquote>
+</li>
 </ul>
 <p>Any string can be used as an operator, with separators and operand braces escaped with a backquote:</p>
 <ul>
-<li><code>define { double<code>quote {quote quote} } { double</code> quote {A} }</code> <pre class="fragment">{{{A}}}
-</pre></li>
-</ul>
-<ul>
-<li><code>&lt;-terms { double` quote operator }</code> <pre class="fragment">{double` quote}{operator}
-</pre></li>
+<li><code>define { double` quote {quote quote} } { double` quote {A} }</code> <blockquote class="doxtable">
+<p><code>{{{A}}}</code></p>
+</blockquote>
+</li>
+<li><code>&lt;-terms { double` quote operator }</code> <blockquote class="doxtable">
+<p><code>{double` quote}{operator}</code></p>
+</blockquote>
+</li>
 </ul>
 <p>Unicode is fully supported:</p>
 <ul>
-<li><code>&lt;-characters {한글}</code> <pre class="fragment">{한}{글}
-</pre></li>
+<li><code>&lt;-characters {한글}</code> <blockquote class="doxtable">
+<p><code>{한}{글}</code></p>
+</blockquote>
+</li>
+<li><code>&lt;-code` points {한글}</code> <blockquote class="doxtable">
+<p><code>{ᄒ}{ᅡᆫ글}</code></p>
+</blockquote>
+</li>
+<li><code>&lt;-terms {한글 韓}</code> <blockquote class="doxtable">
+<p><code>{한글}{韓}</code></p>
+</blockquote>
+</li>
 </ul>
+<p>Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the <a class="el" href="group__normalize__operation.html">normalize</a> operation:</p>
 <ul>
-<li><code>&lt;-code` points {한글}</code> <pre class="fragment">{ᄒ}{ᅡᆫ글}
-</pre></li>
-</ul>
-<ul>
-<li><code>&lt;-terms {한글 韓}</code> <pre class="fragment">{한글}{韓}
-</pre></li>
-</ul>
-<p>Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to NFD, but can be explicitly normalized to NFKD using the <a class="el" href="group__normalize__operation.html">normalize</a> operation:</p>
-<ul>
-<li><code>normalize {2⁵}</code> <pre class="fragment">{25}
-</pre></li>
+<li><code>normalize {2⁵}</code> <blockquote class="doxtable">
+<p><code>{25}</code></p>
+</blockquote>
+</li>
 </ul>
 <p>Recursion is very efficient in <a href="http://om-language.org">Om</a>, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:</p>
 <ul>
-<li><code>define { minutes { dequote choose {minutes} {} = {:} &lt;-characters } } { minutes {12:34} }</code> <pre class="fragment">{34}
-</pre></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { minutes {1:23} }<br/>
+ </code> <blockquote class="doxtable">
+<p><code>{23}</code></p>
+</blockquote>
+</li>
+</ul>
+<p>Broken down into evaluation steps, where the code that is about to be replaced is <b>bold</b>, and the code that was just replaced is <em>italicized</em>:</p>
+<ul>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { <b>minutes</b> {1:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { <em>dequote choose {minutes} {} = {:} &lt;-characters</em> {1:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote choose {minutes} {} = {:} <b>&lt;-characters {1:23}</b> }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote choose {minutes} {} = {:} <em>{1} {:23}</em> }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote choose {minutes} {} <b>= {:} {1}</b> {:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote choose {minutes} {} <em>{}</em> {:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote <b>choose {minutes} {} {}</b> {:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote <em>{minutes}</em> {:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { <b>dequote {minutes}</b> {:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { <em>minutes</em> {:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { <b>minutes</b> {:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { <em>dequote choose {minutes} {} = {:} &lt;-characters</em> {:23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote choose {minutes} {} = {:} <b>&lt;-characters {:23}</b> }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote choose {minutes} {} = {:} <em>{:} {23}</em> }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote choose {minutes} {} <b>= {:} {:}</b> {23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote choose {minutes} {} <em>{{:}}</em> {23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote <b>choose {minutes} {} {{:}}</b> {23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { dequote <em>{}</em> {23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { <b>dequote {}</b> {23} }<br/>
+ </code></li>
+<li><code>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { <em>{23}</em> }<br/>
+ </code></li>
+<li><code><b>define<br/>
+ { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+ { {23} }</b><br/>
+ </code></li>
+<li><code><em>{23}</em></code></li>
 </ul>
 <h1><a class="anchor" id="downloading"></a>
 Downloading</h1>
@@ -403,12 +521,12 @@ Adding Operations</h2>
 </ul>
 </li>
 </ul>
-<p>For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <code>WhateverOperation</code> is a stand-in for the name of the operation <code>struct</code>): </p>
-<pre class="fragment">namespace
-{
-    static Definition&lt; WhateverOperation &gt; const theWhateverDefinition;
-}
-</pre><h2><a class="anchor" id="developing__adding_programs"></a>
+<p>For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <code>WhateverOperation</code> is a stand-in for the name of the operation <code>struct</code>):</p>
+<p><code> namespace<br/>
+ {<br/>
+ &#160;&#160;&#160;&#160;static Definition&lt; WhateverOperation &gt; const theWhateverDefinition;<br/>
+ } </code></p>
+<h2><a class="anchor" id="developing__adding_programs"></a>
 Adding Programs</h2>
 <p>New data types can be added to <a href="http://om-language.org">Om</a> by extending <code><a class="el" href="struct_om_1_1_program.html" title="The Program implementation.">Om::Program</a></code> and defining the functions necessary to instantiate the class. Use existing programs as a guide.</p>
 <p>Program types should be defined in the <code><a class="el" href="namespace_om.html" title="The Om language implementation.">Om</a></code> namespace.</p>
@@ -416,12 +534,14 @@ Adding Programs</h2>
 Analyzing Code</h2>
 <p>There are some basic free static analysis tools that can be applied to the <a href="http://om-language.org">Om</a> code.</p>
 <ul>
-<li><a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to <a href="http://om-language.org">Om</a> by entering the following at the terminal from inside the <a href="http://om-language.org">Om</a> directory: <pre class="fragment">python hfcca.py -p -v code
-</pre></li>
-</ul>
-<ul>
-<li><a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to <a href="http://om-language.org">Om</a> by entering the following at the terminal from inside the <a href="http://om-language.org">Om</a> directory: <pre class="fragment">cloc.pl code
-</pre></li>
+<li><a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to <a href="http://om-language.org">Om</a> by entering the following at the terminal from inside the <a href="http://om-language.org">Om</a> directory: <blockquote class="doxtable">
+<p><code>python hfcca.py -p -v code</code></p>
+</blockquote>
+</li>
+<li><a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to <a href="http://om-language.org">Om</a> by entering the following at the terminal from inside the <a href="http://om-language.org">Om</a> directory: <blockquote class="doxtable">
+<p><code>cloc.pl code</code></p>
+</blockquote>
+</li>
 </ul>
 <h1><a class="anchor" id="issue_tracking"></a>
 Issue Tracking</h1>
