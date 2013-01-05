@@ -26,11 +26,9 @@
 		<tt>{expression}</tt>
 	\par Examples
 		-	<tt>fill {A B{2} C} {1} {3}</tt>
-			<blockquote>
-				<tt>{A{1}<br/>
-				B{2}<br/>
-				C{3}}</tt>
-			</blockquote>
+			<blockquote><tt>{A{1}<br/>
+			B{2}<br/>
+			C{3}}</tt></blockquote>
 	\par Implementation
 		Om#Operations#FillOperation
 
