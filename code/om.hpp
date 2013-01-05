@@ -5,7 +5,7 @@
 	\version
 		0.1.1
 	\date
-		2012
+		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
 		All rights reserved.  This program and the accompanying materials are
@@ -402,7 +402,7 @@ To generate the <tt>Om.xcodeproj</tt> file (in <tt>products/xcode</tt>):
 
 -	Ensure that Doxygen and Graphviz are installed, and in the path variable
 	visible to applications.
-	<a href="http://overwatering.org/blog/2012/08/setting-path-osx-mountain-lion">This
+	<a href="http://overwatering.org/blog/2012-2013/08/setting-path-osx-mountain-lion">This
 	article</a> explains how to do so.
 -	Clone the Git repository.
 -	Run <tt>make.sh</tt> and pass it the following arguments (in order):

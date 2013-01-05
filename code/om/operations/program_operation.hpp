@@ -5,7 +5,7 @@
 	\version
 		0.1.1
 	\date
-		2012
+		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
 		All rights reserved.  This program and the accompanying materials are
