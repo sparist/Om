@@ -24,55 +24,55 @@
 The development of the <a href="http://om-language.org">Om</a> language was
 guided by a single question:
 
-*Starting from scratch, what is the simplest abstract syntax that can articulate
-any algorithm for efficient and precise evaluation?*
+<em>Starting from scratch, what is the simplest abstract syntax that can
+articulate any algorithm for efficient and precise evaluation?</em>
 
 The result is a fundamentally unique programming language.
 
 <a href="http://om-language.org">Om</a> is:
 
--	**A concatenative programming language** with arguably the simplest syntax
-	and type system possible in a usable language.
--	**An abstract algorithmic notation language** that does not expose any
+-	<b>A concatenative programming language</b> with arguably the simplest
+	syntax and type system possible in a usable language.
+-	<b>An abstract algorithmic notation language</b> that does not expose any
 	computer implementation details (such as byte or machine word length).
--	**A data transfer format** that is trivial to parse.
--	**Embeddable**: implemented as a header-only C++ library that can be
+-	<b>A data transfer format</b> that is trivial to parse.
+-	<b>Embeddable</b>: implemented as a header-only C++ library that can be
 	incorporated into any C++ or Objective-C++ program.
--	**Extensible**: new native operations can be implemented as C++ classes.
--	**Unicode-correct**: any <a href="http://www.utf8everywhere.org">UTF-8</a>
-	text (without byte-order marker) defines a valid
-	<a href="http://om-language.org">Om</a> program.
+-	<b>Extensible</b>: new native operations can be implemented as C++ classes.
+-	<b>Unicode-correct</b>: any
+	<a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order
+	marker) defines a valid <a href="http://om-language.org">Om</a> program.
 
-<a href="http://om-language.org">Om</a> is *not*:
+<a href="http://om-language.org">Om</a> is <b>not</b>:
 
--	**Complete**.  Although the intent is to develop
+-	<b>Complete</b>.  Although the intent is to develop
 	<a href="http://om-language.org">Om</a> into a full-featured language, the
 	software is currently at a very early "proof of concept" stage, requiring
 	the addition of many operations (such as basic number and file operations)
 	and optimizations before it can be considered useful for any real-world
 	purpose.  It has been made available in order to demonstrate the underlying
 	concepts and welcome others to get involved in early development.
--	**Stationary**.  <a href="http://om-language.org">Om</a> will likely undergo
-	significant changes on its way to version 1.0.
+-	<b>Stationary</b>.  <a href="http://om-language.org">Om</a> will likely
+	undergo significant changes on its way to version 1.0.
 
 \section syntax Syntax
 
-An <a href="http://om-language.org">Om</a> **program** is comprised of only
+An <a href="http://om-language.org">Om</a> <b>program</b> is comprised of only
 three syntactic elements, as follows:
 
-![](program.png)
+\image html "program.png"
 
-An **operator** has the following syntax:
+An <b>operator</b> has the following syntax:
 
-![](operator.png)
+\image html "operator.png"
 
-A **separator** has the following syntax:
+A <b>separator</b> has the following syntax:
 
-![](separator.png)
+\image html "separator.png"
 
-An **operand** has the following syntax:
+An <b>operand</b> has the following syntax:
 
-![](operand.png)
+\image html "operand.png"
 
 \section how_it_works How It Works
 
@@ -88,15 +88,15 @@ of operations defined by each sub-program.
 Program elements each correspond to the following operations:
 
 -	Separator:
-	-	**Input:** The program, with the separator at the front.
-	-	**Output:** The program, with the front separator normalized
+	-	<b>Input:</b> The program, with the separator at the front.
+	-	<b>Output:</b> The program, with the front separator normalized
 		(top-level white space is insignificant).
 -	Operand:
-	-	**Input:** The program, with the operand at the front.
-	-	**Output:** The program unchanged.
+	-	<b>Input:</b> The program, with the operand at the front.
+	-	<b>Output:</b> The program unchanged.
 -	Operator:
-	-	**Input:** The program, with the operator at the front.
-	-	**Output:** The operation mapped to the operator by the evaluator,
+	-	<b>Input:</b> The program, with the operator at the front.
+	-	<b>Output:</b> The operation mapped to the operator by the evaluator,
 		which is given the program as input.
 
 Because programs are homomorphic with the operations they represent, the
@@ -138,11 +138,11 @@ notation has the following benefits over postfix notation:
 
 \subsection how_it_works__data_types Data Types
 
-<a href="http://om-language.org">Om</a> uses a novel *panmorphic* type system in
-which all data values are represented within the language solely through a
-common program interface (comprised of only separators, operators, and/or
-operands).  Any operation will accept any operand as a valid input and interpret
-it however the operation deems appropriate.
+<a href="http://om-language.org">Om</a> uses a novel <em>panmorphic</em> type
+system in which all data values are represented within the language solely
+through a common program interface (comprised of only separators, operators,
+and/or operands).  Any operation will accept any operand as a valid input and
+interpret it however the operation deems appropriate.
 
 There are no traditional data types in the language; data types are relegated to
 an implementation layer and represent optimizations for a set of operations.
@@ -167,77 +167,58 @@ the \ref programs module.
 
 \section examples Examples
 
-Operands can be dropped and copied:
+Operands can be dropped and copied via the \ref drop_operation and
+\ref copy_operation operations:
 
 -	<tt>drop {A}{B}{C}</tt>
-
-		{B}{C}
-
+	<blockquote><tt>{B}{C}</tt></blockquote>
 -	<tt>copy {A}{B}{C}</tt>
-
-		{A}{A}{B}{C}
-
+	<blockquote><tt>{A}{A}{B}{C}</tt></blockquote>
 -	<tt>drop copy {A}</tt>
-
-		{A}
-
+	<blockquote><tt>{A}</tt></blockquote>
 -	<tt>copy copy {A}</tt>
+	<blockquote><tt>{A}{A}{A}</tt></blockquote>
 
-		{A}{A}{A}
+The \ref drop_operation operation can therefore be used for comments:
+
+-	<tt>drop {This is a comment.} ...</tt>
+	<blockquote><tt>...</tt></blockquote>
 
 The \ref choose_operation operation selects one of two operands, depending on
 whether a third is empty:
 
 -	<tt>choose {It was empty.}{It was non-empty.}{I am not empty.}</tt>
-
-		{It was non-empty.}
-
+	<blockquote><tt>{It was non-empty.}</tt></blockquote>
 -	<tt>choose {It was empty.}{It was non-empty.}{}</tt>
-
-		{It was empty.}
+	<blockquote><tt>{It was empty.}</tt></blockquote>
 
 An operation without sufficient operands becomes the identity operation:
 
 -	<tt>drop</tt>
-
-		drop
-
+	<blockquote><tt>drop</tt></blockquote>
 -	<tt>choose {It was empty.}{It was non-empty.}</tt>
-
-		choose {It was empty.}{It was non-empty.}
+	<blockquote><tt>choose {It was empty.}{It was non-empty.}</tt></blockquote>
 
 The \ref quote_operation and \ref dequote_operation operations add and remove a
 layer of operand braces, respectively:
 
 -	<tt>quote {B}</tt>
-
-		{{B}}
-
+	<blockquote><tt>{{B}}</tt></blockquote>
 -	<tt>dequote {{B}}</tt>
-
-		{B}
-
+	<blockquote><tt>{B}</tt></blockquote>
 -	<tt>dequote {copy}</tt>
-
-		copy
-
+	<blockquote><tt>copy</tt></blockquote>
 -	<tt>dequote {copy} {A}</tt>
-
-		{A}{A}
+	<blockquote><tt>{A}{A}</tt></blockquote>
 
 Operands can be popped from and pushed to:
 
--	<tt><-characters {ABC}</tt>
-
-		{A}{BC}
-
--	<tt>->literal {A}{BC}</tt>
-
-		{ABC}
-
--	<tt><-terms {some terms}</tt>
-
-		{some}{terms}
+-	<tt>&lt;-characters {ABC}</tt>
+	<blockquote><tt>{A}{BC}</tt></blockquote>
+-	<tt>-&gt;literal {A}{BC}</tt>
+	<blockquote><tt>{ABC}</tt></blockquote>
+-	<tt>&lt;-terms {some terms}</tt>
+	<blockquote><tt>{some}{terms}</tt></blockquote>
 
 A new operation can be defined with the \ref define_operation operation, where
 the first operand is treated as containing a \ref lexicon with
@@ -245,41 +226,34 @@ operator-to-operand mappings, and the second operand contains the program to
 evaluate using the defined operation:
 
 -	<tt>define { double-quote {quote quote} } { double-quote {A} }</tt>
-
-		{{{A}}}
+	<blockquote><tt>{{{A}}}</tt></blockquote>
 
 Any string can be used as an operator, with separators and operand braces
 escaped with a backquote:
 
 -	<tt>define { double` quote {quote quote} } { double` quote {A} }</tt>
-
-		{{{A}}}
-
--	<tt><-terms { double` quote operator }</tt>
-
-		{double` quote}{operator}
+	<blockquote><tt>{{{A}}}</tt></blockquote>
+-	<tt>&lt;-terms { double` quote operator }</tt>
+	<blockquote><tt>{double` quote}{operator}</tt></blockquote>
 
 Unicode is fully supported:
 
--	<tt><-characters {한글}</tt>
-
-		{한}{글}
-
--	<tt><-code` points {한글}</tt>
-
-		{ᄒ}{ᅡᆫ글}
-
--	<tt><-terms {한글 韓}</tt>
-
-		{한글}{韓}
+-	<tt>&lt;-characters {한글}</tt>
+	<blockquote><tt>{한}{글}</tt></blockquote>
+-	<tt>&lt;-code` points {한글}</tt>
+	<blockquote><tt>{ᄒ}{ᅡᆫ글}</tt></blockquote>
+-	<tt>&lt;-terms {한글 韓}</tt>
+	<blockquote><tt>{한글}{韓}</tt></blockquote>
 
 Strings are automatically
-<a href="http://unicode.org/reports/tr15">normalized</a> to NFD, but can be
-explicitly normalized to NFKD using the \ref normalize_operation operation:
+<a href="http://unicode.org/reports/tr15">normalized</a> to
+<a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be
+explicitly normalized to
+<a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the
+\ref normalize_operation operation:
 
 -	<tt>normalize {2⁵}</tt>
-
-		{25}
+	<blockquote><tt>{25}</tt></blockquote>
 
 Recursion is very efficient in <a href="http://om-language.org">Om</a>, due to
 (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e.
@@ -288,10 +262,100 @@ non-recursive evaluation implementation in the evaluator that minimizes memory
 overhead of recursive calls and prevents stack overflow.  The following example
 uses recursion to give the minutes in a colon-delimited 24-hour time string:
 
--	<tt>define { minutes { dequote choose {minutes} {} = {:} <-characters } }
-	{ minutes {12:34} }</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes {1:23} }<br/>
+	</tt>
+	<blockquote><tt>{23}</tt></blockquote>
 
-		{34}
+Broken down into evaluation steps, where the code that is about to be replaced
+is <b>bold</b>, and the code that was just replaced is <em>italicized</em>:
+
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ <b>minutes</b> {1:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ <em>dequote choose {minutes} {} = {:} &lt;-characters</em> {1:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote choose {minutes} {} = {:} <b>&lt;-characters {1:23}</b> }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote choose {minutes} {} = {:} <em>{1} {:23}</em> }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote choose {minutes} {} <b>= {:} {1}</b> {:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote choose {minutes} {} <em>{}</em> {:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote <b>choose {minutes} {} {}</b> {:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote <em>{minutes}</em> {:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ <b>dequote {minutes}</b> {:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ <em>minutes</em> {:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ <b>minutes</b> {:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ <em>dequote choose {minutes} {} = {:} &lt;-characters</em> {:23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote choose {minutes} {} = {:} <b>&lt;-characters {:23}</b> }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote choose {minutes} {} = {:} <em>{:} {23}</em> }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote choose {minutes} {} <b>= {:} {:}</b> {23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote choose {minutes} {} <em>{{:}}</em> {23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote <b>choose {minutes} {} {{:}}</b> {23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ dequote <em>{}</em> {23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ <b>dequote {}</b> {23} }<br/>
+	</tt>
+-	<tt>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ <em>{23}</em> }<br/>
+	</tt>
+-	<tt><b>define<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ {23} }</b><br/>
+	</tt>
+-	<tt><em>{23}</em></tt>
 
 \section downloading Downloading
 
@@ -313,9 +377,10 @@ has only been built and tested on:
 The project is generated by CMake, and contains the following targets:
 
 -	<b>%Om</b>: builds the interpreter project into
-	`products/`<em>platform</em>.
--	<b>%Om Documentation</b>: builds the documentation into `products/doxygen`.
-	Open `html/index.html` to view the HTML documentation in a browser.
+	<tt>products/</tt><em>platform</em>.
+-	<b>%Om Documentation</b>: builds the documentation into
+	<tt>products/doxygen</tt>.
+	Open <tt>html/index.html</tt> to view the HTML documentation in a browser.
 
 \subsection building__xcode Xcode
 
@@ -326,14 +391,14 @@ Building in Xcode requires:
 	<a href="http://www.macports.org/ports.php?by=name&substr=graphviz">Graphviz
 	(via MacPorts)</a>
 
-To generate the `Om.xcodeproj` file (in `products/xcode`):
+To generate the <tt>Om.xcodeproj</tt> file (in <tt>products/xcode</tt>):
 
 -	Ensure that Doxygen and Graphviz are installed, and in the path variable
 	visible to applications.
 	<a href="http://overwatering.org/blog/2012/08/setting-path-osx-mountain-lion">This
 	article</a> explains how to do so.
 -	Clone the Git repository.
--	Run `make.sh` and pass it the following arguments (in order):
+-	Run <tt>make.sh</tt> and pass it the following arguments (in order):
 	- 	The ICU root directory path.  To create this directory, download and
 		unpack the
 		<a href="http://download.icu-project.org/files/icu4c/50.1.1/icu4c-50_1_1-src.tgz">ICU4C
@@ -344,7 +409,7 @@ To generate the `Om.xcodeproj` file (in `products/xcode`):
 		<a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.tar.gz/download">Boost
 		1.52.0 code archive</a> from the
 		<a href="http://www.boost.org/users/download">Boost download page</a>.
-	-	**Optional:** The UnitTest++ root directory path.  If omitted, unit
+	-	<b>Optional:</b> The UnitTest++ root directory path.  If omitted, unit
 		tests will be excluded from the build.  To create this directory,
 		download and unpack the
 		<a href="http://sourceforge.net/projects/unittest-cpp/files/latest/download?source=files">UnitTest++
@@ -354,11 +419,11 @@ To generate the `Om.xcodeproj` file (in `products/xcode`):
 
 To update the Xcode project to reflect changes to the code directory tree:
 
--	Run `remake.sh`.
+-	Run <tt>remake.sh</tt>.
 
-To remove the directory generated by `make.sh`:
+To remove the directory generated by <tt>make.sh</tt>:
 
--	Run `unmake.sh`.
+-	Run <tt>unmake.sh</tt>.
 
 \subsection building__visual_studio Visual Studio
 
@@ -373,11 +438,11 @@ Building in Visual Studio requires:
 -	<a href="http://subversion.tigris.org">Subversion</a> (if unit tests are to
 	be included)
 
-To generate the `Om.sln` file (in `products/vs`):
+To generate the <tt>Om.sln</tt> file (in <tt>products/vs</tt>):
 
 -	Ensure that Doxygen and Graphviz are installed, and in the path variable.
 -	Clone the Git repository.
--	Run `make.bat` and pass it the following arguments (in order):
+-	Run <tt>make.bat</tt> and pass it the following arguments (in order):
 	- 	The ICU root directory path.  To create this directory, download and
 		unpack the
 		<a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C
@@ -391,23 +456,23 @@ To generate the `Om.sln` file (in `products/vs`):
 		<a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.zip/download">Boost
 		1.52.0 code archive</a> from the
 		<a href="http://www.boost.org/users/download">Boost download page</a>.
-	-	**Optional:** The UnitTest++ root directory path.  If omitted, unit
+	-	<b>Optional:</b> The UnitTest++ root directory path.  If omitted, unit
 		tests will be excluded from the build.  To create this directory, get
 		the UnitTest++ 1.4 code via Subversion checkout (described on the
 		<a href="https://sourceforge.net/projects/unittest-cpp/develop">UnitTest++
 		developer page</a>) and apply the patch attached to the
 		<a href="https://sourceforge.net/tracker/?func=detail&aid=3583690&group_id=158151&atid=806686">Visual
 		Studio 2010 support ticket</a>.  The UnitTest++ root directory is the
-		`UnitTest++` subdirectory of the Subversion checkout directory.
+		<tt>UnitTest++</tt> subdirectory of the Subversion checkout directory.
 
 To update the Visual Studio solution to reflect changes to the code directory
 tree:
 
--	Run `remake.bat`.
+-	Run <tt>remake.bat</tt>.
 
-To remove the directory generated by `make.bat`:
+To remove the directory generated by <tt>make.bat</tt>:
 
--	Run `unmake.bat`.
+-	Run <tt>unmake.bat</tt>.
 
 \section using Using
 
@@ -418,17 +483,18 @@ output to the standard output stream.
 <a href="http://om-language.org">Om</a> can be incorporated into any C++ or
 Objective-C++ project as follows:
 
--	Add the <a href="http://om-language.org">Om</a> `code` directory to the
-	include path and include the desired files.  Inclusion of any operation
+-	Add the <a href="http://om-language.org">Om</a> <tt>code</tt> directory to
+	the include path and include the desired files.  Inclusion of any operation
 	files will automatically add the corresponding operation to the global
 	system.
 -	Link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a>
 	and/or <a href="http://boost.org">Boost (1.51.0)</a> library dependencies.
--	Call the `Om::System::Initialize` function prior to use (eg. in the `main`
-	function), passing in the desired UTF-8 locale (eg. "en_US.UTF-8").
--	Construct an `Om::Environment`, populate with any additional
-	operator-program mappings, and call one of its `Evaluate` functions to
-	evaluate a program.
+-	Call the <tt>Om::System::Initialize</tt> function prior to use (eg. in the
+	<tt>main</tt> function), passing in the desired UTF-8 locale (eg.
+	"en_US.UTF-8").
+-	Construct an <tt>Om::Environment</tt>, populate with any additional
+	operator-program mappings, and call one of its <tt>Evaluate</tt> functions
+	to evaluate a program.
 
 \section developing Developing
 
@@ -452,42 +518,47 @@ atomic operation.
 To implement a composite operation, or an atomic operation that consumes no
 operands:
 
--	Define the operation `struct` in the `Om::Operations` namespace.
--	Define the static `GetName()` method, which returns a `static char const *`
-	containing the name.
--	Define the static `Give( Evaluation & )` method, with no return value, to
-	give existing operations and/or elements to the evaluation.
+-	Define the operation <tt>struct</tt> in the <tt>Om::Operations</tt>
+	namespace.
+-	Define the static <tt>GetName()</tt> method, which returns a <tt>static char
+	const *</tt> containing the name.
+-	Define the static <tt>Give( Evaluation &amp; )</tt> method, with no return
+	value, to give existing operations and/or elements to the evaluation.
 
 To define an atomic operation that consumes one or more operands:
 
--	Define the operation `struct`, derived from
-	`Om::DefaultOperation<` *operation* `>` (where *operation* is the name of
-	the operation `struct`), in the `Om::Operations` namespace.
--	Define the static `GetName()` method, which returns a `static char const *`
-	containing the name.
+-	Define the operation <tt>struct</tt>, derived from
+	<tt>Om::DefaultOperation&lt;</tt> <em>operation</em> <tt>&gt;</tt> (where
+	<em>operation</em> is the name of the operation <tt>struct</tt>), in the
+	<tt>Om::Operations</tt> namespace.
+-	Define the static <tt>GetName()</tt> method, which returns a <tt>static char
+	const *</tt> containing the name.
 -	Add the implementation, using existing operations as a guide:
 	-	Implement the functions necessary to compile.
 	-	Optionally override virtual function implementations in
-		`DefaultOperation`, such as `ReadQuotedElements`, that may be more
-		optimally implemented in the operation.
+		<tt>DefaultOperation</tt>, such as <tt>ReadQuotedElements</tt>, that may
+		be more optimally implemented in the operation.
 
 For any operation implementation, code must be added to the operation header
 that inserts the operation into the system when the header is included, as
-follows (where `WhateverOperation` is a stand-in for the name of the operation
-`struct`):
+follows (where <tt>WhateverOperation</tt> is a stand-in for the name of the
+operation <tt>struct</tt>):
 
-	namespace
-	{
-		static Definition< WhateverOperation > const theWhateverDefinition;
+<code>
+	namespace<br/>
+	{<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;static Definition< WhateverOperation > const
+	theWhateverDefinition;<br/>
 	}
+</code>
 
 \subsection developing__adding_programs Adding Programs
 
 New data types can be added to <a href="http://om-language.org">Om</a> by
-extending `Om::Program` and defining the functions necessary to instantiate the
-class.  Use existing programs as a guide.
+extending <tt>Om::Program</tt> and defining the functions necessary to
+instantiate the class.  Use existing programs as a guide.
 
-Program types should be defined in the `Om` namespace.
+Program types should be defined in the <tt>Om</tt> namespace.
 
 \subsection developing__analyzing_code Analyzing Code
 
@@ -500,16 +571,13 @@ There are some basic free static analysis tools that can be applied to the
 	installed and in the path, HFCCA can be applied to
 	<a href="http://om-language.org">Om</a> by entering the following at the
 	terminal from inside the <a href="http://om-language.org">Om</a> directory:
-
-		python hfcca.py -p -v code
-
+	<blockquote><tt>python hfcca.py -p -v code</tt></blockquote>
 -	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl
 	script that determines total line counts.  If Perl is installed, CLOC can be
 	applied to <a href="http://om-language.org">Om</a> by entering the following
 	at the terminal from inside the <a href="http://om-language.org">Om</a>
 	directory:
-
-		cloc.pl code
+	<blockquote><tt>cloc.pl code</tt></blockquote>
 
 \section issue_tracking Issue Tracking
 
