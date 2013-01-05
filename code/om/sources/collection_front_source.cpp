@@ -3,7 +3,7 @@
 	\brief
 		Om cpp file.
 	\version
-		0.1.1
+		0.1.2
 	\date
 		2012-2013
 	\copyright

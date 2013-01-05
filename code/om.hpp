@@ -3,7 +3,7 @@
 	\brief
 		Om hpp file.
 	\version
-		0.1.1
+		0.1.2
 	\date
 		2012-2013
 	\copyright
@@ -408,8 +408,8 @@ To generate the <tt>Om.xcodeproj</tt> file (in <tt>products/xcode</tt>):
 -	Run <tt>make.sh</tt> and pass it the following arguments (in order):
 	- 	The ICU root directory path.  To create this directory, download and
 		unpack the
-		<a href="http://download.icu-project.org/files/icu4c/50.1.1/icu4c-50_1_1-src.tgz">ICU4C
-		50.1.1 code archive</a> from the
+		<a href="http://download.icu-project.org/files/icu4c/50.1.2/icu4c-50_1_1-src.tgz">ICU4C
+		50.1.2 code archive</a> from the
 		<a href="http://site.icu-project.org/download">ICU download page</a>.
 	-	The Boost root directory path.  To create this directory, download and
 		unpack the
@@ -457,7 +457,7 @@ To generate the <tt>Om.sln</tt> file (in <tt>products/vs</tt>):
 		<a href="http://site.icu-project.org/download">ICU download page</a>.
 		(Note that there is presently a
 		<a href="https://svn.boost.org/trac/boost/ticket/7839">Boost bug</a>
-		that prevents building against ICU4C 50.1.1 on Windows.)
+		that prevents building against ICU4C 50.1.2 on Windows.)
 	-	The Boost root directory path.  To create this directory, download and
 		unpack the
 		<a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.zip/download">Boost
