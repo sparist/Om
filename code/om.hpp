@@ -81,9 +81,11 @@ An <b>operand</b> has the following syntax:
 
 \image html "operand.png"
 
-\section functions Functions
+\section evaluation Evaluation
 
-\subsection functions__definition Definition
+Each program evaluates to a function.
+
+\subsection evaluation__functions Functions
 
 A function takes a program as input and returns a program as output.
 
@@ -94,7 +96,7 @@ are inserted between output terms in a "normalized" form (for consistent
 formatting and proper operator separation).  Therefore, only input and output
 terms are relevant in describing a function.
 
-\subsection functions__types Types
+\subsubsection evaluation__functions__types Types
 
 There are three fundamental types of functions:
 -	<b>Identity</b>: Pushes all input terms onto the output program.
@@ -108,15 +110,15 @@ There are three fundamental types of functions:
 	-	<b>Operator</b>: Pushes the operator, followed by all remaining input
 		terms, onto the output program.
 
-\subsection functions__programs Programs
+\subsection evaluation__program_types Programs
 
-Each program evaluates to a function.
+The following section describes how each program is evaluated into a function.
 
-\subsubsection functions__programs__empty Empty Program
+\subsubsection evaluation__program_types__empty Empty Program
 
 The empty program evaluates to the identity function.
 
-\subsubsection functions__programs__single Single-Element Program
+\subsubsection evaluation__program_types__single Single-Element Program
 
 Programs that contain only a single element evaluate to functions as follows:
 -	<b>Separator</b>: Evaluates to the identity function.
@@ -127,7 +129,7 @@ Programs that contain only a single element evaluate to functions as follows:
 	pushes the operator, followed by all input terms, onto the output
 	program.
 
-\subsubsection functions__programs__multiple Multiple-Element Program
+\subsubsection evaluation__program_types__multiple Multiple-Element Program
 
 Programs that contain multiple elements can be considered a concatenation of
 sub-programs that each contain one of the elements.  The concatenated program
@@ -148,7 +150,7 @@ Any programs may be concatenated together; however, note that concatenating
 programs "A" and "B" without an intervening separator would result in a program
 containing a single operator "AB", which is unrelated to operators "A" or "B".
 
-\subsection functions__operations Operations
+\subsection evaluation__operations Operations
 
 An operation is a function, mapped to an operator in the environment, that
 processes input operands in an implementation-defined manner.
@@ -156,7 +158,7 @@ processes input operands in an implementation-defined manner.
 All operations mapped to operators in the system (global) environment are
 documented in the \ref operations module.
 
-\section data_types Data Types
+\subsection evaluation__data_types Data Types
 
 <a href="http://om-language.org">Om</a> uses a novel <em>panmorphic</em> type
 system in which all data values are represented within the language solely
@@ -183,6 +185,21 @@ necessary for obtaining a correct computation.  Data types in
 implementation detail.
 
 All program implementations provided are documented in the \ref programs module.
+
+\subsection evaluation__evaluator Evaluator
+
+The evaluator reads, parses and evaluates the input stream in a single pass,
+sending results to the output stream as soon as they can be evaluated.  This is
+possible because Om uses prefix notation rather than the postfix notation
+typical of concatenative languages.  Prefix notation has the following
+advantages over postfix notation:
+
+-	Stack underflows are impossible.
+-	Operations can be optimized to only read into memory the data that is
+	required; stack-based postfix languages have no knowledge of the operation
+	to apply until the data is already in memory, on the stack.
+-	An IDE can provide hints to the user about the data that is expected by an
+	operation.
 
 \section examples Examples
 
