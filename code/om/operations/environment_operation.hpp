@@ -28,9 +28,7 @@
 		-	If no explicit mapping is found, each \ref lexicon is checked for
 			a "default mapping" (i.e. the mapping for the empty \ref operator),
 			starting with the last, until one is found.
-		-	If no default mapping is found, the \ref operator resolves to an
-			"identity" operation that leaves the entire program, including the
-			\ref operator, unchanged.
+		-	If no default mapping is found, the \ref operator is unresolved.
 	\par Implementation
 		Om#Operations#EnvironmentOperation
 */

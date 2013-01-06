@@ -22,8 +22,7 @@
 	\par Interpretation
 		An \ref expression is an interpretation of a \ref programs "Program" as
 		a list of non-empty forms, each containing the following:
-		-	An \ref operator (or none), representing the operation (or
-			identity).
+		-	An \ref operator (or none), representing the operation.
 		-	An \ref operand list (which may be empty only if there is an
 			\ref operator).
 	\par Normalization
