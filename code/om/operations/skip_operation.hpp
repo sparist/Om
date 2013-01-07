@@ -24,7 +24,7 @@
 	\par Output
 		<tt>{A} expression</tt>
 	\par Implementation
-		SkipOperation
+		Om#Operations#SkipOperation
 */
 #if !defined( Om_Operations_SkipOperation_ )
 	#define Om_Operations_SkipOperation_ Om::Operations::SkipOperation
