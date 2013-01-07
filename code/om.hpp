@@ -96,8 +96,6 @@ are inserted between output terms in a "normalized" form (for consistent
 formatting and proper operator separation).  Therefore, only input and output
 terms are relevant in describing a function.
 
-\subsubsection evaluation__functions__types Types
-
 There are three fundamental types of functions:
 -	<b>Identity</b>: Pushes all input terms onto the output program.
 -	<b>Constant</b>: Pushes a term defined by the function, followed by all
@@ -112,24 +110,24 @@ There are three fundamental types of functions:
 
 \subsection evaluation__program_types Programs
 
-The following section describes how each program is evaluated into a function.
+This section describes how each program is evaluated into a function.
 
 \subsubsection evaluation__program_types__empty Empty Program
 
 The empty program evaluates to the identity function.
 
-\subsubsection evaluation__program_types__single Single-Element Program
+\subsubsection evaluation__program_types__single Single-Element Programs
 
 Programs that contain only a single element evaluate to functions as follows:
 -	<b>Separator</b>: Evaluates to the identity function.
 -	<b>Operand</b>: Evaluates to a constant function that pushes the
 	operand, followed by all input terms, onto the output program.
--	<b>Operator</b>: Evaluates to an operation defined for the operator
+-	<b>Operator</b>: Evaluates to the operation defined for the operator
 	in the environment; if none, evaluates to a constant function that
 	pushes the operator, followed by all input terms, onto the output
 	program.
 
-\subsubsection evaluation__program_types__multiple Multiple-Element Program
+\subsubsection evaluation__program_types__multiple Multiple-Element Programs
 
 Programs that contain multiple elements can be considered a concatenation of
 sub-programs that each contain one of the elements.  The concatenated program
@@ -152,11 +150,8 @@ containing a single operator "AB", which is unrelated to operators "A" or "B".
 
 \subsection evaluation__operations Operations
 
-An operation is a function, mapped to an operator in the environment, that
-processes input operands in an implementation-defined manner.
-
-All operations mapped to operators in the system (global) environment are
-documented in the \ref operations module.
+All operation implementations provided are documented in the \ref operations
+module.
 
 \subsection evaluation__data_types Data Types
 

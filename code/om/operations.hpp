@@ -17,8 +17,7 @@
 
 \defgroup operations Operations
 	\brief
-		Functions that each take a \ref programs "Program" as input and produce
-		a \ref programs "Program" as output.
+		Functions that process \ref operand "Operands" as data for computation.
 	\par Implementation
 		\ref operations are concrete types in the Om#Operations namespace.
 */
