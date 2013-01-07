@@ -122,14 +122,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><h1><a class="anchor" id="introduction"></a>
 Introduction</h1>
 <p>The development of the <a href="http://om-language.org">Om</a> language was guided by a single question:</p>
-<p><em>Starting from scratch, what is the simplest abstract syntax that can articulate any algorithm for efficient and precise evaluation?</em></p>
-<p>The result is a fundamentally unique programming language.</p>
+<p><em>What is the simplest possible abstract syntax that can articulate any algorithm for precise, efficient evaluation?</em></p>
+<p>The result is a fundamentally simple and unique programming language.</p>
 <p><a href="http://om-language.org">Om</a> is:</p>
 <ul>
-<li><b>A concatenative programming language</b> with arguably the simplest syntax and type system possible in a usable language.</li>
+<li><b>A concatenative programming language</b> with:<ul>
+<li>An extremely minimal syntax, comprised of only three elements.</li>
+<li>Prefix, rather than postfix, notation. Instead of a data stack, functions manipulate the remainder of the program itself.</li>
+<li>A unique <em>panmorphic</em> type system in which there is only one data type&mdash;the program&mdash;exposed in the language, even though the implementation can optimize data representations for operations.</li>
+</ul>
+</li>
 <li><b>An abstract algorithmic notation language</b> that does not expose any computer implementation details (such as byte or machine word length).</li>
 <li><b>A data transfer format</b> that is trivial to parse.</li>
-<li><b>Embeddable</b>: implemented as a header-only C++ library that can be incorporated into any C++ or Objective-C++ program.</li>
+<li><b>Embeddable</b>: implemented as a header-only C++ library (with only <a href="http://boost.org">Boost</a> and <a href="http://icu-project.org">ICU</a> dependencies) that can be incorporated into any C++ or Objective-C++ program.</li>
 <li><b>Extensible</b>: new native operations can be implemented as C++ classes.</li>
 <li><b>Unicode-correct</b>: any <a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order marker) defines a valid <a href="http://om-language.org">Om</a> program.</li>
 </ul>
@@ -140,7 +145,7 @@ Introduction</h1>
 </ul>
 <h1><a class="anchor" id="syntax"></a>
 Syntax</h1>
-<p>An <a href="http://om-language.org">Om</a> <b>program</b> is comprised of a combination of only three elements.</p>
+<p>An <a href="http://om-language.org">Om</a> <b>program</b> is comprised of a combination of only three elements: operator, separator, and operand.</p>
 <div class="image">
 <img src="program.png" alt="program.png"/>
 </div>
