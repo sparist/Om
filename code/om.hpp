@@ -24,18 +24,25 @@
 The development of the <a href="http://om-language.org">Om</a> language was
 guided by a single question:
 
-<em>Starting from scratch, what is the simplest abstract syntax that can
-articulate any algorithm for efficient and precise evaluation?</em>
+<em>What is the simplest possible abstract syntax that can articulate any
+algorithm for precise, efficient evaluation?</em>
 
-The result is a fundamentally unique programming language.
+The result is a fundamentally simple and unique programming language.
 
 <a href="http://om-language.org">Om</a> is:
--	<b>A concatenative programming language</b> with arguably the simplest
-	syntax and type system possible in a usable language.
+-	<b>A concatenative programming language</b> with:
+	-	An extremely minimal syntax, comprised of only three elements.
+	-	Prefix, rather than postfix, notation.  Instead of a data stack,
+		functions manipulate the remainder of the program itself.
+	-	A unique <em>panmorphic</em> type system in which there is only one data
+		type&mdash;the program&mdash;exposed in the language, even though the
+		implementation can optimize data representations for operations.
 -	<b>An abstract algorithmic notation language</b> that does not expose any
 	computer implementation details (such as byte or machine word length).
 -	<b>A data transfer format</b> that is trivial to parse.
--	<b>Embeddable</b>: implemented as a header-only C++ library that can be
+-	<b>Embeddable</b>: implemented as a header-only C++ library (with only
+	<a href="http://boost.org">Boost</a> and
+	<a href="http://icu-project.org">ICU</a> dependencies) that can be
 	incorporated into any C++ or Objective-C++ program.
 -	<b>Extensible</b>: new native operations can be implemented as C++ classes.
 -	<b>Unicode-correct</b>: any
@@ -56,7 +63,7 @@ The result is a fundamentally unique programming language.
 \section syntax Syntax
 
 An <a href="http://om-language.org">Om</a> <b>program</b> is comprised of a
-combination of only three elements.
+combination of only three elements: operator, separator, and operand.
 
 \image html "program.png"
 
