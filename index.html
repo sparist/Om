@@ -90,12 +90,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li class="level2"><a href="#syntax__operand">Operand</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#evaluation">Evaluation</a><ul><li class="level2"><a href="#evaluation__functions">Functions</a><ul><li class="level3"><a href="#evaluation__functions__types">Types</a></li>
-</ul>
-</li>
+<li class="level1"><a href="#evaluation">Evaluation</a><ul><li class="level2"><a href="#evaluation__functions">Functions</a></li>
 <li class="level2"><a href="#evaluation__program_types">Programs</a><ul><li class="level3"><a href="#evaluation__program_types__empty">Empty Program</a></li>
-<li class="level3"><a href="#evaluation__program_types__single">Single-Element Program</a></li>
-<li class="level3"><a href="#evaluation__program_types__multiple">Multiple-Element Program</a></li>
+<li class="level3"><a href="#evaluation__program_types__single">Single-Element Programs</a></li>
+<li class="level3"><a href="#evaluation__program_types__multiple">Multiple-Element Programs</a></li>
 </ul>
 </li>
 <li class="level2"><a href="#evaluation__operations">Operations</a></li>
@@ -172,8 +170,6 @@ Evaluation</h1>
 Functions</h2>
 <p>A function takes a program as input and returns a program as output.</p>
 <p>A function pulls elements from the front of the input program and pushes elements to the back of the output program. Only <em>terms</em> (operators and operands) are significant to functions; separators are discarded from input, and are inserted between output terms in a "normalized" form (for consistent formatting and proper operator separation). Therefore, only input and output terms are relevant in describing a function.</p>
-<h3><a class="anchor" id="evaluation__functions__types"></a>
-Types</h3>
 <p>There are three fundamental types of functions:</p>
 <ul>
 <li><b>Identity</b>: Pushes all input terms onto the output program.</li>
@@ -186,20 +182,20 @@ Types</h3>
 </ul>
 <h2><a class="anchor" id="evaluation__program_types"></a>
 Programs</h2>
-<p>The following section describes how each program is evaluated into a function.</p>
+<p>This section describes how each program is evaluated into a function.</p>
 <h3><a class="anchor" id="evaluation__program_types__empty"></a>
 Empty Program</h3>
 <p>The empty program evaluates to the identity function.</p>
 <h3><a class="anchor" id="evaluation__program_types__single"></a>
-Single-Element Program</h3>
+Single-Element Programs</h3>
 <p>Programs that contain only a single element evaluate to functions as follows:</p>
 <ul>
 <li><b>Separator</b>: Evaluates to the identity function.</li>
 <li><b>Operand</b>: Evaluates to a constant function that pushes the operand, followed by all input terms, onto the output program.</li>
-<li><b>Operator</b>: Evaluates to an operation defined for the operator in the environment; if none, evaluates to a constant function that pushes the operator, followed by all input terms, onto the output program.</li>
+<li><b>Operator</b>: Evaluates to the operation defined for the operator in the environment; if none, evaluates to a constant function that pushes the operator, followed by all input terms, onto the output program.</li>
 </ul>
 <h3><a class="anchor" id="evaluation__program_types__multiple"></a>
-Multiple-Element Program</h3>
+Multiple-Element Programs</h3>
 <p>Programs that contain multiple elements can be considered a concatenation of sub-programs that each contain one of the elements. The concatenated program thus evaluates to the composition of the functions that each sub-program evaluates to.</p>
 <p>For example, program "A B" is the concatenation of programs "A", " ", and "B". The separator evaluates to the identity operation and can be disregarded. The programs "A" and "B" evaluate to functions which will be denoted as <code>A</code> and <code>B</code>, respectively. The input and output is handled by the composed function is as follows:</p>
 <ul>
@@ -209,8 +205,7 @@ Multiple-Element Program</h3>
 <p>Any programs may be concatenated together; however, note that concatenating programs "A" and "B" without an intervening separator would result in a program containing a single operator "AB", which is unrelated to operators "A" or "B".</p>
 <h2><a class="anchor" id="evaluation__operations"></a>
 Operations</h2>
-<p>An operation is a function, mapped to an operator in the environment, that processes input operands in an implementation-defined manner.</p>
-<p>All operations mapped to operators in the system (global) environment are documented in the <a class="el" href="group__operations.html">Operations</a> module.</p>
+<p>All operation implementations provided are documented in the <a class="el" href="group__operations.html">Operations</a> module.</p>
 <h2><a class="anchor" id="evaluation__data_types"></a>
 Data Types</h2>
 <p><a href="http://om-language.org">Om</a> uses a novel <em>panmorphic</em> type system in which all data values are represented within the language solely through a common program interface (comprised of only separators, operators, and/or operands). Any operation will accept any operand as a valid input and interpret it however the operation deems appropriate.</p>
