@@ -108,15 +108,11 @@ div.navtab {
 a {
 	color: #26384A;
 	font-weight: normal;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .contents a:visited {
 	color: #31475E;
-}
-
-a:hover {
-	text-decoration: underline;
 }
 
 a.qindex {
@@ -851,7 +847,7 @@ table.fieldtable {
 	color: #131D26;
 	font-family: 'Lucida Grande', Geneva, Helvetica, Arial, sans-serif;
 	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.9);
-	text-decoration: none;        
+	text-decoration: none;
 }
 
 .navpath li.navelem a:hover {
