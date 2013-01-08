@@ -21,7 +21,7 @@
 
 \section introduction Introduction
 
-The development of the <a href="http://om-language.org">Om</a> language was
+The development of the <a href="http://om-language.org">Om language</a> was
 guided by a single question:
 
 <em>What is the simplest possible abstract syntax that can articulate any
@@ -29,17 +29,17 @@ algorithm for precise, efficient evaluation?</em>
 
 The result is a fundamentally simple and unique programming language.
 
-<a href="http://om-language.org">Om</a> is:
--	<b>A concatenative, homoiconic programming language</b> with:
+%Om is:
+-	A <b>concatenative, homoiconic programming language</b> with:
 	-	An extremely minimal syntax, comprised of only three elements.
 	-	Prefix, rather than postfix, notation.  Instead of a data stack,
 		functions manipulate the remainder of the program itself.
 	-	A unique <em>panmorphic</em> type system in which there is only one data
 		type&mdash;the program&mdash;exposed in the language, even though the
 		implementation can optimize data representations for operations.
--	<b>An abstract algorithmic notation language</b> that does not expose any
-	computer implementation details (such as byte or machine word length).
--	<b>A data transfer format</b> that is trivial to parse.
+-	An <b>abstract algorithmic notation</b> that does not rely on any computer
+	implementation details (such as byte or machine word length).
+-	A <b>data transfer format</b> that is trivial to parse.
 -	<b>Embeddable</b>: implemented as a header-only C++ library (with only
 	<a href="http://boost.org">Boost</a> and
 	<a href="http://icu-project.org">ICU</a> dependencies) that can be
@@ -47,23 +47,23 @@ The result is a fundamentally simple and unique programming language.
 -	<b>Extensible</b>: new native operations can be implemented as C++ classes.
 -	<b>Unicode-correct</b>: any
 	<a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order
-	marker) defines a valid <a href="http://om-language.org">Om</a> program.
+	marker) defines a valid %Om program.
 
-<a href="http://om-language.org">Om</a> is <b>not</b>:
--	<b>Complete</b>.  Although the intent is to develop
-	<a href="http://om-language.org">Om</a> into a full-featured language, the
-	software is currently at a very early "proof of concept" stage, requiring
-	the addition of many operations (such as basic number and file operations)
-	and optimizations before it can be considered useful for any real-world
-	purpose.  It has been made available in order to demonstrate the underlying
-	concepts and welcome others to get involved in early development.
--	<b>Stationary</b>.  <a href="http://om-language.org">Om</a> will likely
-	undergo significant changes on its way to version 1.0.
+%Om is <b>not</b>:
+-	<b>Complete</b>.  Although the intent is to develop %Om into a full-featured
+	language, the software is currently at a very early "proof of concept"
+	stage, requiring the addition of many operations (such as basic number and
+	file operations) and optimizations before it can be considered useful for
+	any real-world purpose.  It has been made available in order to demonstrate
+	the underlying concepts and welcome others to get involved in early
+	development.
+-	<b>Stationary</b>.  %Om will likely undergo significant changes on its way
+	to version 1.0.
 
 \section syntax Syntax
 
-An <a href="http://om-language.org">Om</a> <b>program</b> is comprised of a
-combination of only three elements: operator, separator, and operand.
+An %Om <b>program</b> is a combination of three elements&mdash;operator,
+separator, and operand&mdash;as follows:
 
 \image html "program.png"
 
@@ -162,11 +162,11 @@ module.
 
 \subsection evaluation__data_types Data Types
 
-<a href="http://om-language.org">Om</a> uses a novel <em>panmorphic</em> type
-system in which all data values are represented within the language solely
-through a common program interface (comprised of only separators, operators,
-and/or operands).  Any operation will accept any operand as a valid input and
-interpret it however the operation deems appropriate.
+%Om uses a novel <em>panmorphic</em> type system in which all data values are
+represented within the language solely through a common program interface
+(comprised of only separators, operators, and/or operands).  Any operation will
+accept any operand as a valid input and interpret it however the operation deems
+appropriate.
 
 There are no traditional data types in the language; data types are relegated to
 an implementation layer and represent optimizations for a set of operations.
@@ -182,9 +182,8 @@ impacting the semantics of the program.
 
 Operations in a program can be ordered by the programmer to increase performance
 by minimizing conversions between program implementations, but it is not
-necessary for obtaining a correct computation.  Data types in
-<a href="http://om-language.org">Om</a> therefore become an optimization-phase
-implementation detail.
+necessary for obtaining a correct computation.  Data types in %Om therefore
+become an optimization-phase implementation detail.
 
 All program implementations provided are documented in the \ref programs module.
 
@@ -192,7 +191,7 @@ All program implementations provided are documented in the \ref programs module.
 
 The evaluator reads, parses and evaluates the input stream in a single pass,
 sending results to the output stream as soon as they can be evaluated.  This is
-possible because Om uses prefix notation rather than the postfix notation
+possible because %Om uses prefix notation rather than the postfix notation
 typical of concatenative languages.  Prefix notation has the following
 advantages over postfix notation:
 
@@ -288,12 +287,12 @@ explicitly normalized to
 -	<tt>normalize {2⁵}</tt>
 	<blockquote><tt>{25}</tt></blockquote>
 
-Recursion is very efficient in <a href="http://om-language.org">Om</a>, due to
-(a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e.
-data is consumed immediately rather than being left on a stack), and (b) the
-non-recursive evaluation implementation in the evaluator that minimizes memory
-overhead of recursive calls and prevents stack overflow.  The following example
-uses recursion to give the minutes in a colon-delimited 24-hour time string:
+Recursion is very efficient in %Om, due to (a) the "eager" evaluation model
+enabled by prefix concatenative syntax (i.e. data is consumed immediately rather
+than being left on a stack), and (b) the non-recursive evaluation implementation
+in the evaluator that minimizes memory overhead of recursive calls and prevents
+stack overflow.  The following example uses recursion to give the minutes in a
+colon-delimited 24-hour time string:
 -	<tt>define<br/>
 	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
 	{ minutes {1:23} }<br/>
@@ -393,8 +392,8 @@ about to be replaced is <b>bold</b>, and the latest replacement is
 \section downloading Downloading
 
 Code can be obtained from the <a href="https://github.com/sparist/Om">Om GitHub
-repository</a>.  Archive files of prior versions of the code can be downloaded
-from the <a href="https://github.com/sparist/Om/tags">GitHub Tags page</a>.
+repository</a>.  Archive files of released versions of the code can be
+downloaded from the <a href="https://github.com/sparist/Om/tags">Tags page</a>.
 
 \section building Building
 
@@ -496,16 +495,13 @@ To remove the directory generated by <tt>make.bat</tt>:
 
 \section using Using
 
-The <a href="http://om-language.org">Om</a> interpreter takes input from the
-standard input stream, ending at the first unbalanced end brace, and sends
-output to the standard output stream.
+The %Om interpreter takes input from the standard input stream, ending at the
+first unbalanced end brace, and sends output to the standard output stream.
 
-<a href="http://om-language.org">Om</a> can be incorporated into any C++ or
-Objective-C++ project as follows:
--	Add the <a href="http://om-language.org">Om</a> <tt>code</tt> directory to
-	the include path and include the desired files.  Inclusion of any operation
-	files will automatically add the corresponding operation to the global
-	system.
+%Om can be incorporated into any C++ or Objective-C++ project as follows:
+-	Add the %Om <tt>code</tt> directory to the include path and include the
+	desired files.  Inclusion of any operation files will automatically add the
+	corresponding operation to the global system.
 -	Link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a>
 	and/or <a href="http://boost.org">Boost (1.51.0)</a> library dependencies.
 -	Call the <tt>Om::System::Initialize</tt> function prior to use (eg. in the
@@ -517,19 +513,18 @@ Objective-C++ project as follows:
 
 \section developing Developing
 
-The <a href="http://om-language.org">Om</a> library is written in modern,
-portable C++.
+The %Om library is written in modern, portable C++.
 
 \subsection developing__coding_standard Coding Standard
 
-All <a href="http://om-language.org">Om</a> development must adhere to the
+All %Om development must adhere to the
 <a href="http://sparist.github.com/cpp_coding_standard.html">Sparist C++ Coding
 Standard</a>.
 
 \subsection developing__adding_operations Adding Operations
 
-Additional native functionality can be added to
-<a href="http://om-language.org">Om</a> by implementing new operations in C++.
+Additional native functionality can be added to %Om by implementing new
+operations in C++.
 
 There are two ways to implement an operation: as a composite operation, or an
 atomic operation.
@@ -571,28 +566,26 @@ operation <tt>struct</tt>):
 
 \subsection developing__adding_programs Adding Programs
 
-New data types can be added to <a href="http://om-language.org">Om</a> by
-extending <tt>Om::Program</tt> and defining the functions necessary to
-instantiate the class.  Use existing programs as a guide.
+New data types can be added to %Om by extending <tt>Om::Program</tt> and
+defining the functions necessary to instantiate the class.  Use existing
+programs as a guide.
 
 Program types should be defined in the <tt>Om</tt> namespace.
 
 \subsection developing__analyzing_code Analyzing Code
 
-There are some basic free static analysis tools that can be applied to the
-<a href="http://om-language.org">Om</a> code.
+There are some basic free static analysis tools that can be applied to the %Om
+code:
 -	<a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python
 	script that measures cyclomatic complexity and counts the number of lines of
 	code in C++ source files, not including comments or tests.  If Python is
-	installed and in the path, HFCCA can be applied to
-	<a href="http://om-language.org">Om</a> by entering the following at the
-	terminal from inside the <a href="http://om-language.org">Om</a> directory:
+	installed and in the path, HFCCA can be applied to %Om by entering the
+	following at the terminal from inside the %Om directory:
 	<blockquote><tt>python hfcca.py -p -v code</tt></blockquote>
 -	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl
 	script that determines total line counts.  If Perl is installed, CLOC can be
-	applied to <a href="http://om-language.org">Om</a> by entering the following
-	at the terminal from inside the <a href="http://om-language.org">Om</a>
-	directory:
+	applied to %Om by entering the following at the terminal from inside the
+	%Om directory:
 	<blockquote><tt>cloc.pl code</tt></blockquote>
 
 \section issue_tracking Issue Tracking
@@ -612,7 +605,7 @@ FAQ</a>.
 
 \section funding Funding
 
-If you are interested in funding development of the Om language, either for
+If you are interested in funding development of the %Om language, either for
 general or domain-specific functionality, please contact me at <a
 	href="mailto:information@sparist.com?subject=Om%20Funding"
 >information@sparist.com</a>.
