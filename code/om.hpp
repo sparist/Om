@@ -30,7 +30,7 @@ algorithm for precise, efficient evaluation?</em>
 The result is a fundamentally simple and unique programming language.
 
 <a href="http://om-language.org">Om</a> is:
--	<b>A concatenative programming language</b> with:
+-	<b>A concatenative, homoiconic programming language</b> with:
 	-	An extremely minimal syntax, comprised of only three elements.
 	-	Prefix, rather than postfix, notation.  Instead of a data stack,
 		functions manipulate the remainder of the program itself.
@@ -392,12 +392,9 @@ about to be replaced is <b>bold</b>, and the latest replacement is
 
 \section downloading Downloading
 
-Archive files of all versions of the <a href="http://om-language.org">Om</a>
-code can be downloaded from the
-<a href="https://github.com/sparist/Om/tags">GitHub Tags page</a>.
-
-Code can also be obtained by Git checkout, as indicated on the
-<a href="https://github.com/sparist/Om">GitHub main page</a>.
+Code can be obtained from the <a href="https://github.com/sparist/Om">Om GitHub
+repository</a>.  Archive files of prior versions of the code can be downloaded
+from the <a href="https://github.com/sparist/Om/tags">GitHub Tags page</a>.
 
 \section building Building
 
