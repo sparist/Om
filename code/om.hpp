@@ -391,9 +391,13 @@ about to be replaced is <b>bold</b>, and the latest replacement is
 
 \section downloading Downloading
 
-Code can be obtained from the <a href="https://github.com/sparist/Om">Om GitHub
-repository</a>.  Archive files of released versions of the code can be
-downloaded from the <a href="https://github.com/sparist/Om/tags">Tags page</a>.
+Code can be downloaded from the <a href="https://github.com/sparist/Om">Om
+GitHub repository</a>.
+
+-	<b>Current version</b>:
+	<a href="https://github.com/sparist/Om">main page</a>
+-	<b>Released versions</b>:
+	<a href="https://github.com/sparist/Om/tags">Tags page</a>
 
 \section building Building
 
@@ -574,8 +578,8 @@ Program types should be defined in the <tt>Om</tt> namespace.
 
 \subsection developing__analyzing_code Analyzing Code
 
-There are some basic free static analysis tools that can be applied to the %Om
-code:
+Some basic free static analysis tools can be applied to the %Om code.
+
 -	<a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python
 	script that measures cyclomatic complexity and counts the number of lines of
 	code in C++ source files, not including comments or tests.  If Python is
