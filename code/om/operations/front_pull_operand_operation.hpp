@@ -24,7 +24,7 @@
 	\par Output
 		<tt>{{A}} { B}</tt>
 	\par Implementation
-		Om#Operations#FrontPullOperandOperation
+		Om::Operations::FrontPullOperandOperation
 */
 #if !defined( Om_Operations_FrontPullOperandOperation_ )
 	#define Om_Operations_FrontPullOperandOperation_ \

@@ -20,7 +20,7 @@
 	\brief
 		Normalizes the \ref operand as a quoted \ref expression.
 	\par Implementation
-		Om#Operations#ExpressionOperation
+		Om::Operations::ExpressionOperation
 */
 #if !defined( Om_Operations_ExpressionOperation_ )
 	#define Om_Operations_ExpressionOperation_ \

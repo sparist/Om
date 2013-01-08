@@ -20,22 +20,22 @@
 
 	#include "om/macros.hpp"
 
-	//! Generates switch cases for each Om#Symbols#OperandSymbol.
+	//! Generates switch cases for each Om::Symbols::OperandSymbol.
 	#define Om_Symbols_OperandSymbol_GetCases_() \
 	case Symbols::theStartOperandSymbol: \
 	case Symbols::theEndOperandSymbol
 
-	//! Gets the bare hexadecimal code for Om#Symbols#theStartOperandSymbol.
+	//! Gets the bare hexadecimal code for Om::Symbols::theStartOperandSymbol.
 	#define Om_Symbols_OperandSymbol_GetStartHex_() 7B
 
-	//! Gets the bare hexadecimal code for Om#Symbols#theEndOperandSymbol.
+	//! Gets the bare hexadecimal code for Om::Symbols::theEndOperandSymbol.
 	#define Om_Symbols_OperandSymbol_GetEndHex_() 7D
 
-	//! A string literal representation of Om#Symbols#theStartOperandSymbol.
+	//! A string literal representation of Om::Symbols::theStartOperandSymbol.
 	#define Om_Symbols_OperandSymbol_GetStartString_() \
 	Om_Macros_GetString_( Om_Symbols_OperandSymbol_GetStartHex_() )
 
-	//! A string literal representation of Om#Symbols#theEndOperandSymbol.
+	//! A string literal representation of Om::Symbols::theEndOperandSymbol.
 	#define Om_Symbols_OperandSymbol_GetEndString_() \
 	Om_Macros_GetString_( Om_Symbols_OperandSymbol_GetEndHex_() )
 

@@ -28,7 +28,7 @@
 		The evaluation of the \ref expression under the temporarily extended
 		environment, \ref dequote_operation "dequoted".
 	\par Implementation
-		Om#Operations#DefineOperation
+		Om::Operations::DefineOperation
 */
 #if !defined( Om_Operations_DefineOperation_ )
 	#define Om_Operations_DefineOperation_ Om::Operations::DefineOperation

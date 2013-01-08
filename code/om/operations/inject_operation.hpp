@@ -29,7 +29,7 @@
 		-	<tt>inject{quote}{copy}{A}</tt>
 			<blockquote><tt>{{{A}}{{A}}}</tt></blockquote>
 	\par Implementation
-		Om#Operations#InjectOperation
+		Om::Operations::InjectOperation
 */
 #if !defined( Om_Operations_InjectOperation_ )
 	#define Om_Operations_InjectOperation_ Om::Operations::InjectOperation

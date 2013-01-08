@@ -48,7 +48,7 @@ namespace Om
 	\return
 		An owner pointer to a new copy.
 	\note
-		Required by boost#ptr_container classes.
+		Required by boost::ptr_container classes.
 	*/
 	Atom * new_clone( Atom const & );
 	/*!

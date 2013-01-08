@@ -26,7 +26,7 @@
 		A \ref programs "Program" is normalized as \ref null by discarding all
 		contents.
 	\par Implementation
-		Om#Null
+		Om::Null
 */
 #if !defined( Om_Null_ )
 	#define Om_Null_ Om::Null

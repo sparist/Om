@@ -20,7 +20,7 @@
 	\brief
 		Normalizes the \ref operand as a quoted \ref separator.
 	\par Implementation
-		Om#Operations#SeparatorOperation
+		Om::Operations::SeparatorOperation
 */
 #if !defined( Om_Operations_SeparatorOperation_ )
 	#define Om_Operations_SeparatorOperation_ Om::Operations::SeparatorOperation

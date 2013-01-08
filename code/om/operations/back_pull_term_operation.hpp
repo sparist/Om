@@ -35,7 +35,7 @@
 		-	<tt>terms-> {}</tt>
 			<blockquote><tt>{}{}</tt></blockquote>
 	\par Implementation
-		Om#Operations#BackPullTermOperation
+		Om::Operations::BackPullTermOperation
 */
 #if !defined( Om_Operations_BackPullTermOperation_ )
 	#define Om_Operations_BackPullTermOperation_ \

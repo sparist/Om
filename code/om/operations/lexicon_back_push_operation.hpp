@@ -26,7 +26,7 @@
 		<tt>{B<br/>
 		A}</tt>
 	\par Implementation
-		Om#Operations#LexiconBackPushOperation
+		Om::Operations::LexiconBackPushOperation
 */
 #if !defined( Om_Operations_LexiconBackPushOperation_ )
 	#define Om_Operations_LexiconBackPushOperation_ \

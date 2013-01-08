@@ -31,7 +31,7 @@
 		-	Each \ref separator is removed, and replaced by a line
 			\ref separator between each non-empty form.
 	\par Implementation
-		Om#Expression
+		Om::Expression
 */
 #if !defined( Om_Expression_ )
 	#define Om_Expression_ Om::Expression

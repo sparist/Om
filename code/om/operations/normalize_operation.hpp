@@ -22,7 +22,7 @@
 		(<a href="http://unicode.org/reports/tr15/">NFKD</a>) on the contents
 		of the operand.
 	\par Implementation
-		Om#Operations#NormalizeOperation
+		Om::Operations::NormalizeOperation
 */
 #if !defined( Om_Operations_NormalizeOperation_ )
 	#define Om_Operations_NormalizeOperation_ \

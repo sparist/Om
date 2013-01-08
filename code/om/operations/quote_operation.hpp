@@ -24,7 +24,7 @@
 	\par Output
 		<tt>{{A}}</tt>
 	\par Implementation
-		Om#Operations#QuoteOperation
+		Om::Operations::QuoteOperation
 */
 #if !defined( Om_Operations_QuoteOperation_ )
 	#define Om_Operations_QuoteOperation_ Om::Operations::QuoteOperation

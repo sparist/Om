@@ -24,7 +24,7 @@
 	\par Output
 		<tt>{literal}</tt>
 	\par Implementation
-		Om#Operations#DecodeOperation
+		Om::Operations::DecodeOperation
 
 	Decoding the output of \ref encode_operation results in an \ref operand
 	equivalent to the input of \ref encode_operation.

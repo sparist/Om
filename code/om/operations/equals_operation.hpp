@@ -29,7 +29,7 @@
 		-	<tt>= {} {}</tt>
 			<blockquote><tt>{{}}</tt></blockquote>
 	\par Implementation
-		Om#Operations#EqualsOperation
+		Om::Operations::EqualsOperation
 */
 #if !defined( Om_Operations_EqualsOperation_ )
 	#define Om_Operations_EqualsOperation_ Om::Operations::EqualsOperation

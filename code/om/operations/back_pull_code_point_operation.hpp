@@ -20,7 +20,7 @@
 	\brief
 		Pops the last code point, quoted.
 	\par Implementation
-		Om#Operations#BackPullCodePointOperation
+		Om::Operations::BackPullCodePointOperation
 */
 #if !defined( Om_Operations_BackPullCodePointOperation_ )
 	#define Om_Operations_BackPullCodePointOperation_ \

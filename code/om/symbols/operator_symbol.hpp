@@ -20,10 +20,10 @@
 
 	#include "om/macros.hpp"
 
-	//! Gets the bare hexadecimal code for Om#Symbols#theEncodeOperatorSymbol.
+	//! Gets the bare hexadecimal code for Om::Symbols::theEncodeOperatorSymbol.
 	#define Om_Symbols_OperatorSymbol_GetEncodeHex_() 60
 
-	//! A string literal representation of Om#Symbols#theEncodeOperatorSymbol.
+	//! A string literal representation of Om::Symbols::theEncodeOperatorSymbol.
 	#define Om_Symbols_OperatorSymbol_GetEncodeString_() \
 	Om_Macros_GetString_( Om_Symbols_OperatorSymbol_GetEncodeHex_() )
 

@@ -24,7 +24,7 @@
 	\par Output
 		<tt>{B}{A}</tt>
 	\par Implementation
-		Om#Operations#SwapOperation
+		Om::Operations::SwapOperation
 */
 #if !defined( Om_Operations_SwapOperation_ )
 	#define Om_Operations_SwapOperation_ Om::Operations::SwapOperation

@@ -20,7 +20,7 @@
 	\brief
 		Pops the first code point, quoted.
 	\par Implementation
-		Om#Operations#FrontPullCodePointOperation
+		Om::Operations::FrontPullCodePointOperation
 */
 #if !defined( Om_Operations_FrontPullCodePointOperation_ )
 	#define Om_Operations_FrontPullCodePointOperation_ \

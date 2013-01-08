@@ -24,7 +24,7 @@
 	\par Output
 		The evaluated \ref expression.
 	\par Implementation
-		Om#Operations#EvaluateOperation
+		Om::Operations::EvaluateOperation
 */
 #if !defined( Om_Operations_EvaluateOperation_ )
 	#define Om_Operations_EvaluateOperation_ Om::Operations::EvaluateOperation

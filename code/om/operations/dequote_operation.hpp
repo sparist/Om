@@ -24,7 +24,7 @@
 	\par Output
 		<tt>A</tt>
 	\par Implementation
-		Om#Operations#DequoteOperation
+		Om::Operations::DequoteOperation
 */
 #if !defined( Om_Operations_DequoteOperation_ )
 	#define Om_Operations_DequoteOperation_ Om::Operations::DequoteOperation

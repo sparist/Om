@@ -25,7 +25,7 @@
 	\par Output
 		<tt>{AB}</tt>
 	\par Implementation
-		Om#Operations#LiteralFrontPushOperation
+		Om::Operations::LiteralFrontPushOperation
 
 	Normalization to a \ref literal only happens if an append occurs (i.e. the
 	first \ref operand is non-empty); otherwise, it is left unchanged.  However,

@@ -22,7 +22,7 @@
 		\ref operator "Operator(s)", followed by zero or more
 		\ref operand "Operands"), quoted.
 	\par Implementation
-		Om#Operations#FrontPullFormOperation
+		Om::Operations::FrontPullFormOperation
 */
 #if !defined( Om_Operations_FrontPullFormOperation_ )
 	#define Om_Operations_FrontPullFormOperation_ \

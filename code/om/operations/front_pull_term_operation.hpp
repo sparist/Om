@@ -35,7 +35,7 @@
 		-	<tt><-terms {}</tt>
 			<blockquote><tt>{}{}</tt></blockquote>
 	\par Implementation
-		Om#Operations#FrontPullTermOperation
+		Om::Operations::FrontPullTermOperation
 */
 #if !defined( Om_Operations_FrontPullTermOperation_ )
 	#define Om_Operations_FrontPullTermOperation_ \

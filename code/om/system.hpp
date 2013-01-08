@@ -72,7 +72,7 @@ namespace Om
 			The null-terminated locale string (e.g. en_US.UTF-8).  The locale
 			must use UTF-8 encoding.
 
-		Initializes the global locale to en_US.UTF-8 (using boost#locale) and
+		Initializes the global locale to en_US.UTF-8 (using boost::locale) and
 		asserts that all name keys in the System are NFD-normalized.
 		This must be called in main, prior to any Program evaluation.
 		*/

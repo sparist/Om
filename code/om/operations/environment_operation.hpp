@@ -30,7 +30,7 @@
 			starting with the last, until one is found.
 		-	If no default mapping is found, the \ref operator is unresolved.
 	\par Implementation
-		Om#Operations#EnvironmentOperation
+		Om::Operations::EnvironmentOperation
 */
 #if !defined( Om_Operations_EnvironmentOperation_ )
 	#define Om_Operations_EnvironmentOperation_ \

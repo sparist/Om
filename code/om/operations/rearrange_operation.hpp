@@ -37,7 +37,7 @@
 		-	<tt>rearrange{C B A}{A B C}{1}{2}{3}</tt>
 			<blockquote><tt>{3}{2}{1}</tt></blockquote>
 	\par Implementation
-		Om#Operations#RearrangeOperation
+		Om::Operations::RearrangeOperation
 */
 #if !defined( Om_Operations_RearrangeOperation_ )
 	#define Om_Operations_RearrangeOperation_ \

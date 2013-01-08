@@ -20,7 +20,7 @@
 	\brief
 		Pops the first character, quoted.
 	\par Implementation
-		Om#Operations#FrontPullCharacterOperation
+		Om::Operations::FrontPullCharacterOperation
 */
 #if !defined( Om_Operations_FrontPullCharacterOperation_ )
 	#define Om_Operations_FrontPullCharacterOperation_ \

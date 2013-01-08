@@ -31,7 +31,7 @@
 		-	Else:
 				<blockquote><tt>{lexicon}{}</tt></blockquote>
 	\par Implementation
-		Om#Operations#FindOperation
+		Om::Operations::FindOperation
 */
 #if !defined( Om_Operations_FindOperation_ )
 	#define Om_Operations_FindOperation_ Om::Operations::FindOperation

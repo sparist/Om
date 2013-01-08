@@ -20,7 +20,7 @@
 	\brief
 		Pops the last character, quoted.
 	\par Implementation
-		Om#Operations#BackPullCharacterOperation
+		Om::Operations::BackPullCharacterOperation
 */
 #if !defined( Om_Operations_BackPullCharacterOperation_ )
 	#define Om_Operations_BackPullCharacterOperation_ \

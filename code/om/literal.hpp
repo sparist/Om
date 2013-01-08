@@ -25,7 +25,7 @@
 	\par Normalization
 		No normalization is required.
 	\par Implementation
-		Om#Literal
+		Om::Literal
 */
 #if !defined( Om_Literal_ )
 	#define Om_Literal_ Om::Literal

@@ -20,7 +20,7 @@
 	\brief
 		Normalizes the \ref operand as a quoted \ref lexicon.
 	\par Implementation
-		Om#Operations#LexiconOperation
+		Om::Operations::LexiconOperation
 
 	A \ref programs "Program" is interpreted as a \ref lexicon as follows:
 	-	Each \ref operator is a key, indexing to the \ref operand to its right.

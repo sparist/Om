@@ -24,7 +24,7 @@
 	\par Output
 		<tt>{A}{A}</tt>
 	\par Implementation
-		Om#Operations#CopyOperation
+		Om::Operations::CopyOperation
 */
 #if !defined( Om_Operations_CopyOperation_ )
 	#define Om_Operations_CopyOperation_ Om::Operations::CopyOperation

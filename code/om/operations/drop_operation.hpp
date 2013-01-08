@@ -24,7 +24,7 @@
 	\par Output
 		<tt>...</tt>
 	\par Implementation
-		Om#Operations#DropOperation
+		Om::Operations::DropOperation
 */
 #if !defined( Om_Operations_DropOperation_ )
 	#define Om_Operations_DropOperation_ Om::Operations::DropOperation

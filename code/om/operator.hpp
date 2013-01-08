@@ -27,7 +27,7 @@
 		A \ref programs "Program" is normalized as an \ref operator by encoding
 		and merging all contents.
 	\par Implementation
-		Om#Operator
+		Om::Operator
 */
 #if !defined( Om_Operator_ )
 	#define Om_Operator_ Om::Operator
@@ -80,7 +80,7 @@ namespace Om
 
 		Operator & operator =( Operator );
 
-		//! Gives the last #CodePoint as an Atom.
+		//! Gives the last ::CodePoint as an Atom.
 		void BackGiveCodePoint( Queue & );
 
 		//! Gives the last segment of the given type to the Queue.
@@ -103,7 +103,7 @@ namespace Om
 		template< typename TheQueue >
 		void Encode( TheQueue & );
 
-		//! Gives the first #CodePoint as an Atom.
+		//! Gives the first ::CodePoint as an Atom.
 		void FrontGiveCodePoint( Queue & );
 
 		//! Gives the first segment of the given type to the Queue.

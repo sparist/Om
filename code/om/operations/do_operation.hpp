@@ -25,7 +25,7 @@
 	\par Output
 		<tt>hello,` world!</tt>
 	\par Implementation
-		Om#Operations#DoOperation
+		Om::Operations::DoOperation
 */
 #if !defined( Om_Operations_DoOperation_ )
 	#define Om_Operations_DoOperation_ Om::Operations::DoOperation

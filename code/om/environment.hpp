@@ -58,7 +58,7 @@ namespace Om
 			A vector of non-owner Translator pointers.
 
 		When looking up an Operator, the back Translator is used first.  This
-		requires the reverse iteration functionality provided by std#vector.
+		requires the reverse iteration functionality provided by std::vector.
 		*/
 		typedef std::vector< Translator const * > TranslatorVector;
 

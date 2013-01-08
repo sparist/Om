@@ -40,7 +40,7 @@
 		-	In the case of duplicate mappings for an \ref operator, earlier
 			mappings are disregarded and removed from the normalized form.
 	\par Implementation
-		Om#Lexicon
+		Om::Lexicon
 */
 #if !defined( Om_Lexicon_ )
 	#define Om_Lexicon_ Om::Lexicon

@@ -25,7 +25,7 @@
 	\par Output
 		<tt>{ } {A B}</tt>
 	\par Implementation
-		Om#Operations#FrontPullSeparatorOperation
+		Om::Operations::FrontPullSeparatorOperation
 */
 #if !defined( Om_Operations_FrontPullSeparatorOperation_ )
 	#define Om_Operations_FrontPullSeparatorOperation_ \

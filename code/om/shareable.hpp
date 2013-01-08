@@ -25,9 +25,9 @@ namespace Om
 	// MARK: - Om::Shareable
 	/*!
 	\brief
-		A pointee for boost#intrusive_ptr.
+		A pointee for boost::intrusive_ptr.
 
-	This type can be used as a template argument for boost#intrusive_ptr.
+	This type can be used as a template argument for boost::intrusive_ptr.
 	Shared ownership is implemented via owner counting.
 	*/
 	template< typename ThisOwnerCount = size_t >
@@ -35,17 +35,17 @@ namespace Om
 	{
 		/*!
 		\cond internal_symbols
-		\exception std#overflow_error
+		\exception std::overflow_error
 			On overflow.
 		\note
-			Called by the boost#intrusive_ptr constructors.
+			Called by the boost::intrusive_ptr constructors.
 		*/
 		template< typename TheOwnerCount >
 		friend void intrusive_ptr_add_ref( Shareable< TheOwnerCount > * const );
 
 		/*!
 		\note
-			Called by the boost#intrusive_ptr destructor.
+			Called by the boost::intrusive_ptr destructor.
 		*/
 		template< typename TheOwnerCount >
 		friend void intrusive_ptr_release( Shareable< TheOwnerCount > * const );
@@ -78,7 +78,7 @@ namespace Om
 			The number of owners of this object.
 
 		Automatic instances have a owner count of 0.  If the owner count
-		is incremented from 0, it is owned by a boost#intrusive_ptr and is
+		is incremented from 0, it is owned by a boost::intrusive_ptr and is
 		deleted when decremented back to zero.
 		*/
 		ThisOwnerCount thisOwnerCount;

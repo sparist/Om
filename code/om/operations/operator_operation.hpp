@@ -20,7 +20,7 @@
 	\brief
 		Normalizes the \ref operand as a quoted \ref operator.
 	\par Implementation
-		Om#Operations#OperatorOperation
+		Om::Operations::OperatorOperation
 */
 #if !defined( Om_Operations_OperatorOperation_ )
 	#define Om_Operations_OperatorOperation_ Om::Operations::OperatorOperation

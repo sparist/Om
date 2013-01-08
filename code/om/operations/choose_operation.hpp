@@ -24,7 +24,7 @@
 	\par Input
 		<tt>{empty case} {non-empty case} {conditional}</tt>
 	\par Implementation
-		Om#Operations#ChooseOperation
+		Om::Operations::ChooseOperation
 */
 #if !defined( Om_Operations_ChooseOperation_ )
 	#define Om_Operations_ChooseOperation_ Om::Operations::ChooseOperation

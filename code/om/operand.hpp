@@ -28,7 +28,7 @@
 		A \ref programs "Program" is normalized as an \ref operand by discarding
 		all elements other than the first operand element.
 	\par Implementation
-		Om#Operand
+		Om::Operand
 */
 #if !defined( Om_Operand_ )
 	#define Om_Operand_ Om::Operand
@@ -45,8 +45,8 @@ namespace Om
 	\brief
 		The \ref operand implementation.
 
-	Encloses a Program in Symbols#theStartOperandSymbol and
-	Symbols#theEndOperandSymbol.  The Operand owns the embedded Program.
+	Encloses a Program in Symbols::theStartOperandSymbol and
+	Symbols::theEndOperandSymbol.  The Operand owns the embedded Program.
 	*/
 	struct Operand
 	:

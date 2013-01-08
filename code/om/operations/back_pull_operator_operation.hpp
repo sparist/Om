@@ -24,7 +24,7 @@
 	\par Output
 		<tt>{B} {A }</tt>
 	\par Implementation
-		Om#Operations#BackPullOperatorOperation
+		Om::Operations::BackPullOperatorOperation
 */
 #if !defined( Om_Operations_BackPullOperatorOperation_ )
 	#define Om_Operations_BackPullOperatorOperation_ \

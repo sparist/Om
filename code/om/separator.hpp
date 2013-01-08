@@ -28,7 +28,7 @@
 		A \ref programs "Program" is normalized as a \ref separator by
 		discarding all non-separator code points.
 	\par Implementation
-		Om#Separator
+		Om::Separator
 */
 #if !defined( Om_Separator_ )
 	#define Om_Separator_ Om::Separator
@@ -45,7 +45,7 @@ namespace Om
 	\brief
 		The \ref separator implementation.
 
-	An Atom defined by a string containing only Symbols#SeparatorSymbol
+	An Atom defined by a string containing only Symbols::SeparatorSymbol
 	characters.
 
 	As a Queue, the Separator filters out all top-level Element instances except
@@ -59,7 +59,7 @@ namespace Om
 
 		/*!
 		\return
-			A Separator comprised of a single Symbols#theLineSeparatorSymbol.
+			A Separator comprised of a single Symbols::theLineSeparatorSymbol.
 		*/
 		static Separator const & GetLineSeparator();
 
@@ -73,7 +73,7 @@ namespace Om
 
 		/*!
 		\param theSeparatorSymbol
-			The Symbols#SeparatorSymbol to copy directly into the Separator.
+			The Symbols::SeparatorSymbol to copy directly into the Separator.
 		*/
 		explicit Separator( Symbols::SeparatorSymbol const theSeparatorSymbol );
 

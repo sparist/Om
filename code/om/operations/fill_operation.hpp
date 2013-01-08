@@ -30,7 +30,7 @@
 			B{2}<br/>
 			C{3}}</tt></blockquote>
 	\par Implementation
-		Om#Operations#FillOperation
+		Om::Operations::FillOperation
 
 	For each \ref operator in an \ref expression that has no \ref operand
 	following it, pulls the next \ref operand following the \ref expression and

@@ -24,7 +24,7 @@
 	\par Output
 		<tt>{operator}</tt>
 	\par Implementation
-		Om#Operations#EncodeOperation
+		Om::Operations::EncodeOperation
 */
 #if !defined( Om_Operations_EncodeOperation_ )
 	#define Om_Operations_EncodeOperation_ Om::Operations::EncodeOperation

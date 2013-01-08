@@ -24,7 +24,7 @@
 		system.  Each \ref operator is without an \ref operand mapping to
 		indicate that the "native" system operation is to be used.
 	\par Implementation
-		Om#Operations#SystemOperation
+		Om::Operations::SystemOperation
 */
 #if !defined( Om_Operations_SystemOperation_ )
 	#define Om_Operations_SystemOperation_ Om::Operations::SystemOperation
