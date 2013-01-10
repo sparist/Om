@@ -60,6 +60,23 @@ The result is a fundamentally simple and unique programming language.
 -	<b>Stationary</b>.  %Om will likely undergo significant changes on its way
 	to version 1.0.
 
+\section background Background
+
+The following reading may help explain some of the concepts that contributed to
+%Om:
+-	<a href="http://evincarofautumn.blogspot.ca/2012/02/why-concatenative-programming-matters.html">Why
+	Concatenative Programming Matters</a>
+-	The Concatenative <a href="http://concatenative.org">wiki</a>,
+	<a href="http://tech.groups.yahoo.com/group/concatenative">mailing list</a>,
+	and
+	<a href="http://en.wikipedia.org/wiki/Concatenative_programming_language">Wikipedia
+	entry</a>
+-	A <a href="http://www.kevinalbrecht.com/code/joy-mirror">mirror</a> of
+	Manfred von Thun's original pages on the groundbreaking
+	Joy Programming Language
+	(<a href="http://en.wikipedia.org/wiki/Joy_(programming_language)">Wikipedia
+	entry</a>), the father of all concatenative languages
+
 \section syntax Syntax
 
 An %Om <b>program</b> is a combination of three elements&mdash;operator,
