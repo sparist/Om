@@ -214,7 +214,7 @@ Operations</h2>
 <h2><a class="anchor" id="evaluation__data_types"></a>
 Data Types</h2>
 <p>Om uses a novel <em>panmorphic</em> type system in which all data values are represented within the language solely through a common program interface (comprised of only separators, operators, and/or operands). Any operation will accept any operand as a valid input and interpret it however the operation deems appropriate.</p>
-<p>There are no traditional data types in the language; data types are relegated to an implementation layer and represent optimizations for a set of operations. Each operand in memory contains a single program implementation; by default, this is the <a class="el" href="group__literal.html">Literal</a> program, which preserves all data in the operand, verbatim. However, an operation may prefer an operand to have a different program implementation that is optimized for specific functionality used by the operation. The <a class="el" href="group__find__operation.html">find</a> operation, for example, prefers one of its operands to have a <a class="el" href="group__lexicon.html">Lexicon</a> program type for fast mapping from operator to operand. In such cases, an operation can simply convert an undesired program implementation to the desired type through the common program interface without impacting the semantics of the program.</p>
+<p>There are no traditional data types in the language; data types are relegated to an implementation layer and represent optimizations for a set of operations. Each operand in memory contains a single program implementation; by default, this is the <a class="el" href="group__literal.html">Literal</a> program, which preserves all data in the operand, verbatim (including separators). However, an operation may prefer an operand to have a different program implementation that is optimized for specific functionality used by the operation. The <a class="el" href="group__find__operation.html">find</a> operation, for example, prefers one of its operands to have a <a class="el" href="group__lexicon.html">Lexicon</a> program type for fast mapping from operator to operand. In such cases, an operation can simply convert an undesired program implementation to the desired type through the common program interface without impacting the semantics of the program.</p>
 <p>Operations in a program can be ordered by the programmer to increase performance by minimizing conversions between program implementations, but it is not necessary for obtaining a correct computation. Data types in Om therefore become an optimization-phase implementation detail.</p>
 <p>All program implementations provided are documented in the <a class="el" href="group__programs.html">Programs</a> module.</p>
 <h2><a class="anchor" id="evaluation__evaluator"></a>
@@ -234,7 +234,7 @@ Examples</h1>
 </blockquote>
 </li>
 </ul>
-<p>Operands can be dropped and copied via the <a class="el" href="group__drop__operation.html">drop</a> and <a class="el" href="group__copy__operation.html">copy</a> operators:</p>
+<p>Operands can be dropped and copied via the <a class="el" href="group__drop__operation.html">drop</a> and <a class="el" href="group__copy__operation.html">copy</a> operations:</p>
 <ul>
 <li><code>drop {A}{B}{C}</code> <blockquote class="doxtable">
 <p><code>{B}{C}</code></p>
@@ -253,14 +253,14 @@ Examples</h1>
 </blockquote>
 </li>
 </ul>
-<p>The <a class="el" href="group__drop__operation.html">drop</a> operator can therefore be used for comments:</p>
+<p>The <a class="el" href="group__drop__operation.html">drop</a> operation can therefore be used for comments:</p>
 <ul>
 <li><code>drop {This is a comment.} {This is not a comment.}</code> <blockquote class="doxtable">
 <p><code>{This is not a comment.}</code></p>
 </blockquote>
 </li>
 </ul>
-<p>The <a class="el" href="group__choose__operation.html">choose</a> operator selects one of two operands, depending on whether a third is empty:</p>
+<p>The <a class="el" href="group__choose__operation.html">choose</a> operation selects one of two operands, depending on whether a third is empty:</p>
 <ul>
 <li><code>choose {It was empty.}{It was non-empty.}{I am not empty.}</code> <blockquote class="doxtable">
 <p><code>{It was non-empty.}</code></p>
@@ -271,7 +271,7 @@ Examples</h1>
 </blockquote>
 </li>
 </ul>
-<p>An operator without sufficient operands evaluates to itself and whatever operands are provided:</p>
+<p>An operation without sufficient operands evaluates to itself and whatever operands are provided:</p>
 <ul>
 <li><code>drop</code> <blockquote class="doxtable">
 <p><code>drop</code></p>
@@ -282,7 +282,7 @@ Examples</h1>
 </blockquote>
 </li>
 </ul>
-<p>The <a class="el" href="group__quote__operation.html">quote</a> and <a class="el" href="group__dequote__operation.html">dequote</a> operators add and remove a layer of operand braces, respectively:</p>
+<p>The <a class="el" href="group__quote__operation.html">quote</a> and <a class="el" href="group__dequote__operation.html">dequote</a> operations add and remove a layer of operand braces, respectively:</p>
 <ul>
 <li><code>quote {B}</code> <blockquote class="doxtable">
 <p><code>{{B}}</code></p>
@@ -301,7 +301,7 @@ Examples</h1>
 </blockquote>
 </li>
 </ul>
-<p>Operands can be popped from and pushed to:</p>
+<p>Operands can be popped from and pushed into:</p>
 <ul>
 <li><code>&lt;-characters {ABC}</code> <blockquote class="doxtable">
 <p><code>{A}{BC}</code></p>
@@ -316,7 +316,7 @@ Examples</h1>
 </blockquote>
 </li>
 </ul>
-<p>A new operator definition can be provided with the <a class="el" href="group__define__operation.html">define</a> operator, where the first operand is treated as containing a <a class="el" href="group__lexicon.html">Lexicon</a> with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:</p>
+<p>A new operator definition can be provided with the <a class="el" href="group__define__operation.html">define</a> operation, where the first operand is treated as containing a <a class="el" href="group__lexicon.html">Lexicon</a> with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:</p>
 <ul>
 <li><code>define { double-quote {quote quote} } { double-quote {A} }</code> <blockquote class="doxtable">
 <p><code>{{{A}}}</code></p>
