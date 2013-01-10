@@ -18,7 +18,7 @@
 \defgroup equals_operation =
 	\ingroup operations
 	\brief
-		Compares two \ref programs for equality.
+		Compares two \ref operand "Operands" for equality.
 	\par Examples
 		-	<tt>= {A} {A}</tt>
 			<blockquote><tt>{{A}}</tt></blockquote>

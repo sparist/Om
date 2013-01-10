@@ -172,13 +172,13 @@ There are no traditional data types in the language; data types are relegated to
 an implementation layer and represent optimizations for a set of operations.
 Each operand in memory contains a single program implementation; by default,
 this is the \ref literal program, which preserves all data in the operand,
-verbatim.  However, an operation may prefer an operand to have a different
-program implementation that is optimized for specific functionality used by the
-operation.  The \ref find_operation operation, for example, prefers one of its
-operands to have a \ref lexicon program type for fast mapping from operator to
-operand.  In such cases, an operation can simply convert an undesired program
-implementation to the desired type through the common program interface without
-impacting the semantics of the program.
+verbatim (including separators).  However, an operation may prefer an operand to
+have a different program implementation that is optimized for specific
+functionality used by the operation.  The \ref find_operation operation, for
+example, prefers one of its operands to have a \ref lexicon program type for
+fast mapping from operator to operand.  In such cases, an operation can simply
+convert an undesired program implementation to the desired type through the
+common program interface without impacting the semantics of the program.
 
 Operations in a program can be ordered by the programmer to increase performance
 by minimizing conversions between program implementations, but it is not
@@ -209,7 +209,7 @@ The following program contains a single operand:
 	<blockquote><tt>{Hello, world!}</tt></blockquote>
 
 Operands can be dropped and copied via the \ref drop_operation and
-\ref copy_operation operators:
+\ref copy_operation operations:
 -	<tt>drop {A}{B}{C}</tt>
 	<blockquote><tt>{B}{C}</tt></blockquote>
 -	<tt>copy {A}{B}{C}</tt>
@@ -219,25 +219,25 @@ Operands can be dropped and copied via the \ref drop_operation and
 -	<tt>copy copy {A}</tt>
 	<blockquote><tt>{A}{A}{A}</tt></blockquote>
 
-The \ref drop_operation operator can therefore be used for comments:
+The \ref drop_operation operation can therefore be used for comments:
 -	<tt>drop {This is a comment.} {This is not a comment.}</tt>
 	<blockquote><tt>{This is not a comment.}</tt></blockquote>
 
-The \ref choose_operation operator selects one of two operands, depending on
+The \ref choose_operation operation selects one of two operands, depending on
 whether a third is empty:
 -	<tt>choose {It was empty.}{It was non-empty.}{I am not empty.}</tt>
 	<blockquote><tt>{It was non-empty.}</tt></blockquote>
 -	<tt>choose {It was empty.}{It was non-empty.}{}</tt>
 	<blockquote><tt>{It was empty.}</tt></blockquote>
 
-An operator without sufficient operands evaluates to itself and whatever
+An operation without sufficient operands evaluates to itself and whatever
 operands are provided:
 -	<tt>drop</tt>
 	<blockquote><tt>drop</tt></blockquote>
 -	<tt>choose {It was empty.}{It was non-empty.}</tt>
 	<blockquote><tt>choose{It was empty.}{It was non-empty.}</tt></blockquote>
 
-The \ref quote_operation and \ref dequote_operation operators add and remove a
+The \ref quote_operation and \ref dequote_operation operations add and remove a
 layer of operand braces, respectively:
 -	<tt>quote {B}</tt>
 	<blockquote><tt>{{B}}</tt></blockquote>
@@ -248,7 +248,7 @@ layer of operand braces, respectively:
 -	<tt>dequote {copy} {A}</tt>
 	<blockquote><tt>{A}{A}</tt></blockquote>
 
-Operands can be popped from and pushed to:
+Operands can be popped from and pushed into:
 -	<tt>&lt;-characters {ABC}</tt>
 	<blockquote><tt>{A}{BC}</tt></blockquote>
 -	<tt>-&gt;literal {A}{BC}</tt>
@@ -257,7 +257,7 @@ Operands can be popped from and pushed to:
 	<blockquote><tt>{some}{terms}</tt></blockquote>
 
 A new operator definition can be provided with the \ref define_operation
-operator, where the first operand is treated as containing a \ref lexicon with
+operation, where the first operand is treated as containing a \ref lexicon with
 operator-to-operand mappings, and the second operand contains the program to
 evaluate using the defined operator:
 -	<tt>define { double-quote {quote quote} } { double-quote {A} }</tt>

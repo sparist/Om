@@ -18,7 +18,7 @@
 \defgroup inject_operation inject
 	\ingroup operations
 	\brief
-		Injects a \ref programs "Program" before each \ref operand of another.
+		Inserts a \ref programs "Program" before each \ref operand of another.
 	\par Input
 		<tt>{injector}{program}</tt>
 	\par Output

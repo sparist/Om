@@ -20,7 +20,7 @@
 	\brief
 		Performs a Unicode compatibility normalization
 		(<a href="http://unicode.org/reports/tr15/">NFKD</a>) on the contents
-		of the operand.
+		of the \ref operand.
 	\par Implementation
 		Om::Operations::NormalizeOperation
 */
