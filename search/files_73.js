@@ -1,8 +1,10 @@
 var searchData=
 [
   ['separator_2ecpp',['separator.cpp',['../separator_8cpp.html',1,'']]],
+  ['separator_2edox',['separator.dox',['../separator_8dox.html',1,'']]],
   ['separator_2ehpp',['separator.hpp',['../separator_8hpp.html',1,'']]],
   ['separator_5foperation_2ecpp',['separator_operation.cpp',['../separator__operation_8cpp.html',1,'']]],
+  ['separator_5foperation_2edox',['separator_operation.dox',['../separator__operation_8dox.html',1,'']]],
   ['separator_5foperation_2ehpp',['separator_operation.hpp',['../separator__operation_8hpp.html',1,'']]],
   ['separator_5fsymbol_2ecpp',['separator_symbol.cpp',['../separator__symbol_8cpp.html',1,'']]],
   ['separator_5fsymbol_2ehpp',['separator_symbol.hpp',['../separator__symbol_8hpp.html',1,'']]],
@@ -15,6 +17,7 @@ var searchData=
   ['sinks_2ecpp',['sinks.cpp',['../sinks_8cpp.html',1,'']]],
   ['sinks_2ehpp',['sinks.hpp',['../sinks_8hpp.html',1,'']]],
   ['skip_5foperation_2ecpp',['skip_operation.cpp',['../skip__operation_8cpp.html',1,'']]],
+  ['skip_5foperation_2edox',['skip_operation.dox',['../skip__operation_8dox.html',1,'']]],
   ['skip_5foperation_2ehpp',['skip_operation.hpp',['../skip__operation_8hpp.html',1,'']]],
   ['source_2ecpp',['source.cpp',['../source_8cpp.html',1,'']]],
   ['source_2ehpp',['source.hpp',['../source_8hpp.html',1,'']]],
@@ -25,13 +28,16 @@ var searchData=
   ['stream_5fsource_2ecpp',['stream_source.cpp',['../stream__source_8cpp.html',1,'']]],
   ['stream_5fsource_2ehpp',['stream_source.hpp',['../stream__source_8hpp.html',1,'']]],
   ['substitute_5foperation_2ecpp',['substitute_operation.cpp',['../substitute__operation_8cpp.html',1,'']]],
+  ['substitute_5foperation_2edox',['substitute_operation.dox',['../substitute__operation_8dox.html',1,'']]],
   ['substitute_5foperation_2ehpp',['substitute_operation.hpp',['../substitute__operation_8hpp.html',1,'']]],
   ['swap_5foperation_2ecpp',['swap_operation.cpp',['../swap__operation_8cpp.html',1,'']]],
+  ['swap_5foperation_2edox',['swap_operation.dox',['../swap__operation_8dox.html',1,'']]],
   ['swap_5foperation_2ehpp',['swap_operation.hpp',['../swap__operation_8hpp.html',1,'']]],
   ['symbols_2ecpp',['symbols.cpp',['../symbols_8cpp.html',1,'']]],
   ['symbols_2ehpp',['symbols.hpp',['../symbols_8hpp.html',1,'']]],
   ['system_2ecpp',['system.cpp',['../system_8cpp.html',1,'']]],
   ['system_2ehpp',['system.hpp',['../system_8hpp.html',1,'']]],
   ['system_5foperation_2ecpp',['system_operation.cpp',['../system__operation_8cpp.html',1,'']]],
+  ['system_5foperation_2edox',['system_operation.dox',['../system__operation_8dox.html',1,'']]],
   ['system_5foperation_2ehpp',['system_operation.hpp',['../system__operation_8hpp.html',1,'']]]
 ];

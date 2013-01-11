@@ -1,6 +1,7 @@
 var searchData=
 [
   ['decode_5foperation_2ecpp',['decode_operation.cpp',['../decode__operation_8cpp.html',1,'']]],
+  ['decode_5foperation_2edox',['decode_operation.dox',['../decode__operation_8dox.html',1,'']]],
   ['decode_5foperation_2ehpp',['decode_operation.hpp',['../decode__operation_8hpp.html',1,'']]],
   ['default_5fatom_2ecpp',['default_atom.cpp',['../default__atom_8cpp.html',1,'']]],
   ['default_5fatom_2ehpp',['default_atom.hpp',['../default__atom_8hpp.html',1,'']]],
@@ -23,13 +24,17 @@ var searchData=
   ['default_5fsource_2ecpp',['default_source.cpp',['../default__source_8cpp.html',1,'']]],
   ['default_5fsource_2ehpp',['default_source.hpp',['../default__source_8hpp.html',1,'']]],
   ['define_5foperation_2ecpp',['define_operation.cpp',['../define__operation_8cpp.html',1,'']]],
+  ['define_5foperation_2edox',['define_operation.dox',['../define__operation_8dox.html',1,'']]],
   ['define_5foperation_2ehpp',['define_operation.hpp',['../define__operation_8hpp.html',1,'']]],
   ['definition_2ecpp',['definition.cpp',['../definition_8cpp.html',1,'']]],
   ['definition_2ehpp',['definition.hpp',['../definition_8hpp.html',1,'']]],
   ['dequote_5foperation_2ecpp',['dequote_operation.cpp',['../dequote__operation_8cpp.html',1,'']]],
+  ['dequote_5foperation_2edox',['dequote_operation.dox',['../dequote__operation_8dox.html',1,'']]],
   ['dequote_5foperation_2ehpp',['dequote_operation.hpp',['../dequote__operation_8hpp.html',1,'']]],
   ['do_5foperation_2ecpp',['do_operation.cpp',['../do__operation_8cpp.html',1,'']]],
+  ['do_5foperation_2edox',['do_operation.dox',['../do__operation_8dox.html',1,'']]],
   ['do_5foperation_2ehpp',['do_operation.hpp',['../do__operation_8hpp.html',1,'']]],
   ['drop_5foperation_2ecpp',['drop_operation.cpp',['../drop__operation_8cpp.html',1,'']]],
+  ['drop_5foperation_2edox',['drop_operation.dox',['../drop__operation_8dox.html',1,'']]],
   ['drop_5foperation_2ehpp',['drop_operation.hpp',['../drop__operation_8hpp.html',1,'']]]
 ];

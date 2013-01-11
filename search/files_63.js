@@ -1,6 +1,7 @@
 var searchData=
 [
   ['choose_5foperation_2ecpp',['choose_operation.cpp',['../choose__operation_8cpp.html',1,'']]],
+  ['choose_5foperation_2edox',['choose_operation.dox',['../choose__operation_8dox.html',1,'']]],
   ['choose_5foperation_2ehpp',['choose_operation.hpp',['../choose__operation_8hpp.html',1,'']]],
   ['code_5fpoint_2ecpp',['code_point.cpp',['../code__point_8cpp.html',1,'']]],
   ['code_5fpoint_2ehpp',['code_point.hpp',['../code__point_8hpp.html',1,'']]],
@@ -27,6 +28,7 @@ var searchData=
   ['copy_2ecpp',['copy.cpp',['../copy_8cpp.html',1,'']]],
   ['copy_2ehpp',['copy.hpp',['../copy_8hpp.html',1,'']]],
   ['copy_5foperation_2ecpp',['copy_operation.cpp',['../copy__operation_8cpp.html',1,'']]],
+  ['copy_5foperation_2edox',['copy_operation.dox',['../copy__operation_8dox.html',1,'']]],
   ['copy_5foperation_2ehpp',['copy_operation.hpp',['../copy__operation_8hpp.html',1,'']]],
   ['copyable_2ecpp',['copyable.cpp',['../copyable_8cpp.html',1,'']]],
   ['copyable_2ehpp',['copyable.hpp',['../copyable_8hpp.html',1,'']]]
