@@ -14,15 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup front_pull_form_operation <-forms
-	\ingroup operations
-	\brief
-		Pops the first form (a non-empty list of zero or one
-		\ref operator "Operator(s)", followed by zero or more
-		\ref operand "Operands"), quoted.
-	\par Implementation
-		Om::Operations::FrontPullFormOperation
 */
 #if !defined( Om_Operations_FrontPullFormOperation_ )
 	#define Om_Operations_FrontPullFormOperation_ \

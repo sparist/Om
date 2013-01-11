@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup front_pull_element_operation <-elements
-	\ingroup operations
-	\brief
-		Pops the first element, quoted.
-	\par Input
-		<tt>{A B}</tt>
-	\par Output
-		<tt>{A} { B}</tt>
-	\par Implementation
-		Om::Operations::FrontPullElementOperation
 */
 #if !defined( Om_Operations_FrontPullElementOperation_ )
 	#define Om_Operations_FrontPullElementOperation_ \

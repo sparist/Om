@@ -14,13 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup programs Programs
-	\brief
-		Data types that each share a common list interface containing 0 or more
-		elements.
-	\par Implementation
-		\ref programs are concrete implementations of Om::Program.
 */
 #if !defined( Om_Program_ )
 	#define Om_Program_ Om::Program

@@ -1,0 +1,23 @@
+/*!
+\defgroup front_pull_term_operation <-terms
+	\ingroup operations
+	\brief
+		Pops the first term (\ref operator or \ref operand), quoted.
+	\par Input
+		<tt>{A B}</tt>
+	\par Output
+		<tt>{A}{B}</tt>
+	\par Examples
+		-	<tt><-terms {A B}</tt>
+			<blockquote><tt>{A}{B}</tt></blockquote>
+		-	<tt><-terms {{A} B}</tt>
+			<blockquote><tt>{{A}}{B}</tt></blockquote>
+		-	<tt><-terms {A B }</tt>
+			<blockquote><tt>{A}{B}</tt></blockquote>
+		-	<tt><-terms {A {B} C}</tt>
+			<blockquote><tt>{A}{{B}<br/>C}</tt></blockquote>
+		-	<tt><-terms {}</tt>
+			<blockquote><tt>{}{}</tt></blockquote>
+	\par Implementation
+		Om::Operations::FrontPullTermOperation
+*/

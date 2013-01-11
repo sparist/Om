@@ -14,19 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup lexicon_front_push_operation ->lexicon
-	\ingroup operations
-	\brief
-		Pushes the contents of an \ref operand onto the front of a \ref lexicon
-		(quoted).
-	\par Input
-		<tt>{A} {B}</tt>
-	\par Output
-		<tt>{A<br/>
-		B}</tt>
-	\par Implementation
-		Om::Operations::LexiconFrontPushOperation
 */
 #if !defined( Om_Operations_LexiconFrontPushOperation_ )
 	#define Om_Operations_LexiconFrontPushOperation_ \

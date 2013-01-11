@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup choose_operation choose
-	\ingroup operations
-	\brief
-		If the conditional \ref operand is empty, it is replaced with the
-		empty-case \ref operand; otherwise, it is replaced with the
-		non-empty-case \ref operand.
-	\par Input
-		<tt>{empty case} {non-empty case} {conditional}</tt>
-	\par Implementation
-		Om::Operations::ChooseOperation
 */
 #if !defined( Om_Operations_ChooseOperation_ )
 	#define Om_Operations_ChooseOperation_ Om::Operations::ChooseOperation

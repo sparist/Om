@@ -14,22 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup inject_operation inject
-	\ingroup operations
-	\brief
-		Inserts a \ref programs "Program" before each \ref operand of another.
-	\par Input
-		<tt>{injector}{program}</tt>
-	\par Output
-		Dequotes <tt>{program}</tt>, injects the dequoted <tt>{injector}</tt>
-		between the \ref programs "Program" and each of its
-		\ref operand "Operands", then \ref quote_operation "quotes" the result.
-	\par Examples
-		-	<tt>inject{quote}{copy}{A}</tt>
-			<blockquote><tt>{{{A}}{{A}}}</tt></blockquote>
-	\par Implementation
-		Om::Operations::InjectOperation
 */
 #if !defined( Om_Operations_InjectOperation_ )
 	#define Om_Operations_InjectOperation_ Om::Operations::InjectOperation

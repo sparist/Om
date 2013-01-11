@@ -14,19 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup lexicon_back_push_operation lexicon<-
-	\ingroup operations
-	\brief
-		Pushes the contents of an \ref operand onto the back of a \ref lexicon
-		(quoted).
-	\par Input
-		<tt>{A} {B}</tt>
-	\par Output
-		<tt>{B<br/>
-		A}</tt>
-	\par Implementation
-		Om::Operations::LexiconBackPushOperation
 */
 #if !defined( Om_Operations_LexiconBackPushOperation_ )
 	#define Om_Operations_LexiconBackPushOperation_ \

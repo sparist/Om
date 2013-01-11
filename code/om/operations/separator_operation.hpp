@@ -14,13 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup separator_operation separator
-	\ingroup operations
-	\brief
-		Normalizes the \ref operand as a quoted \ref separator.
-	\par Implementation
-		Om::Operations::SeparatorOperation
 */
 #if !defined( Om_Operations_SeparatorOperation_ )
 	#define Om_Operations_SeparatorOperation_ Om::Operations::SeparatorOperation

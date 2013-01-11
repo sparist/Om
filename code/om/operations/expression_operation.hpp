@@ -14,13 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup expression_operation expression
-	\ingroup operations
-	\brief
-		Normalizes the \ref operand as a quoted \ref expression.
-	\par Implementation
-		Om::Operations::ExpressionOperation
 */
 #if !defined( Om_Operations_ExpressionOperation_ )
 	#define Om_Operations_ExpressionOperation_ \

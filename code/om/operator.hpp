@@ -14,20 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup operator Operator
-	\ingroup programs
-	\brief
-		An atomic \ref programs "Program" element defined by any UTF-8 string.
-	\par Interpretation
-		An \ref operator is an interpretation of a \ref programs "Program" as
-		a single atomic UTF-8 string element containing the encoded text of all
-		elements, merged verbatim.
-	\par Normalization
-		A \ref programs "Program" is normalized as an \ref operator by encoding
-		and merging all contents.
-	\par Implementation
-		Om::Operator
 */
 #if !defined( Om_Operator_ )
 	#define Om_Operator_ Om::Operator

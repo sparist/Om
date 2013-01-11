@@ -14,15 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup normalize_operation normalize
-	\ingroup operations
-	\brief
-		Performs a Unicode compatibility normalization
-		(<a href="http://unicode.org/reports/tr15/">NFKD</a>) on the contents
-		of the \ref operand.
-	\par Implementation
-		Om::Operations::NormalizeOperation
 */
 #if !defined( Om_Operations_NormalizeOperation_ )
 	#define Om_Operations_NormalizeOperation_ \

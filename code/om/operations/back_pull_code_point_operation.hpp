@@ -14,13 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup back_pull_code_point_operation code` points->
-	\ingroup operations
-	\brief
-		Pops the last code point, quoted.
-	\par Implementation
-		Om::Operations::BackPullCodePointOperation
 */
 #if !defined( Om_Operations_BackPullCodePointOperation_ )
 	#define Om_Operations_BackPullCodePointOperation_ \

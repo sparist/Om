@@ -14,18 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup literal_back_push_operation literal<-
-	\ingroup operations
-	\brief
-		Pushes the contents of an \ref operand onto the back of a \ref literal
-		(quoted).
-	\par Input
-		<tt>{A} {B}</tt>
-	\par Output
-		<tt>{BA}</tt>
-	\par Implementation
-		Om::Operations::LiteralBackPushOperation
 */
 #if !defined( Om_Operations_LiteralBackPushOperation_ )
 	#define Om_Operations_LiteralBackPushOperation_ \

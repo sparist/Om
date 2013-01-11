@@ -1,0 +1,13 @@
+/*!
+\defgroup literal_back_push_operation literal<-
+	\ingroup operations
+	\brief
+		Pushes the contents of an \ref operand onto the back of a \ref literal
+		(quoted).
+	\par Input
+		<tt>{A} {B}</tt>
+	\par Output
+		<tt>{BA}</tt>
+	\par Implementation
+		Om::Operations::LiteralBackPushOperation
+*/

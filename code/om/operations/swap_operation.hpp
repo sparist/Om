@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup swap_operation swap
-	\ingroup operations
-	\brief
-		Swaps two \ref operand "Operands".
-	\par Input
-		<tt>{A}{B}</tt>
-	\par Output
-		<tt>{B}{A}</tt>
-	\par Implementation
-		Om::Operations::SwapOperation
 */
 #if !defined( Om_Operations_SwapOperation_ )
 	#define Om_Operations_SwapOperation_ Om::Operations::SwapOperation

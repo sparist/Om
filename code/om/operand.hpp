@@ -14,21 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup operand Operand
-	\ingroup programs
-	\brief
-		A \ref programs "Program" element that wraps a \ref programs "Program".
-	\par Interpretation
-		An \ref operand is an interpretation of a \ref programs "Program" as
-		either containing a single operand element (a \ref programs "Program"
-		enclosed by braces), or being empty.  All elements other than the first
-		operand element are disregarded.
-	\par Normalization
-		A \ref programs "Program" is normalized as an \ref operand by discarding
-		all elements other than the first operand element.
-	\par Implementation
-		Om::Operand
 */
 #if !defined( Om_Operand_ )
 	#define Om_Operand_ Om::Operand

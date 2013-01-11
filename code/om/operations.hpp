@@ -14,12 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup operations Operations
-	\brief
-		Functions that process \ref operand "Operands" as data for computation.
-	\par Implementation
-		\ref operations are concrete types in the Om::Operations namespace.
 */
 #if !defined( Om_Operations_ )
 	#define Om_Operations_ Om::Operations

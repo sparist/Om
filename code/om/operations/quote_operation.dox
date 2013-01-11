@@ -1,0 +1,12 @@
+/*!
+\defgroup quote_operation quote
+	\ingroup operations
+	\brief
+		Encloses an \ref operand in braces.
+	\par Input
+		<tt>{A}</tt>
+	\par Output
+		<tt>{{A}}</tt>
+	\par Implementation
+		Om::Operations::QuoteOperation
+*/

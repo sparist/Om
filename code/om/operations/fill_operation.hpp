@@ -14,27 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup fill_operation fill
-	\ingroup operations
-	\brief
-		"Fills" an \ref expression such that none of its
-		\ref operator "Operators" is not followed by an \ref operand.
-	\par Input
-		<tt>{expression} ...</tt>
-	\par Output
-		<tt>{expression}</tt>
-	\par Examples
-		-	<tt>fill {A B{2} C} {1} {3}</tt>
-			<blockquote><tt>{A{1}<br/>
-			B{2}<br/>
-			C{3}}</tt></blockquote>
-	\par Implementation
-		Om::Operations::FillOperation
-
-	For each \ref operator in an \ref expression that has no \ref operand
-	following it, pulls the next \ref operand following the \ref expression and
-	inserts it after the \ref operator.
 */
 #if !defined( Om_Operations_FillOperation_ )
 	#define Om_Operations_FillOperation_ Om::Operations::FillOperation

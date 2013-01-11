@@ -14,18 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup literal Literal
-	\ingroup programs
-	\brief
-		A literal \ref programs "Program".
-	\par Interpretation
-		A \ref literal is a verbatim interpretation of a \ref programs "Program"
-		as a sequence of elements, where none are disregarded.
-	\par Normalization
-		No normalization is required.
-	\par Implementation
-		Om::Literal
 */
 #if !defined( Om_Literal_ )
 	#define Om_Literal_ Om::Literal

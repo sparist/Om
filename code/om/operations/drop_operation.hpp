@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup drop_operation drop
-	\ingroup operations
-	\brief
-		Deletes an \ref operand.
-	\par Input
-		<tt>{A} ...</tt>
-	\par Output
-		<tt>...</tt>
-	\par Implementation
-		Om::Operations::DropOperation
 */
 #if !defined( Om_Operations_DropOperation_ )
 	#define Om_Operations_DropOperation_ Om::Operations::DropOperation

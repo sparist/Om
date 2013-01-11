@@ -1,0 +1,12 @@
+/*!
+\defgroup back_pull_separator_operation elements->separator
+	\ingroup operations
+	\brief
+		Casts to \ref literal and pops the last \ref separator (if any), quoted.
+	\par Input
+		<tt>{A B }</tt>
+	\par Output
+		<tt>{ } {A B}</tt>
+	\par Implementation
+		Om::Operations::BackPullSeparatorOperation
+*/

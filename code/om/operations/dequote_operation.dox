@@ -1,0 +1,12 @@
+/*!
+\defgroup dequote_operation dequote
+	\ingroup operations
+	\brief
+		Strips the outer braces from an \ref operand.
+	\par Input
+		<tt>{A}</tt>
+	\par Output
+		<tt>A</tt>
+	\par Implementation
+		Om::Operations::DequoteOperation
+*/

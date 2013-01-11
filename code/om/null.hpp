@@ -14,19 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup null Null
-	\ingroup programs
-	\brief
-		The null \ref programs "Program".
-	\par Interpretation
-		A \ref null \ref programs "Program" is an interpretation that disregards
-		all contents.
-	\par Normalization
-		A \ref programs "Program" is normalized as \ref null by discarding all
-		contents.
-	\par Implementation
-		Om::Null
 */
 #if !defined( Om_Null_ )
 	#define Om_Null_ Om::Null

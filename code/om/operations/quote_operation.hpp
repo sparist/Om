@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup quote_operation quote
-	\ingroup operations
-	\brief
-		Encloses an \ref operand in braces.
-	\par Input
-		<tt>{A}</tt>
-	\par Output
-		<tt>{{A}}</tt>
-	\par Implementation
-		Om::Operations::QuoteOperation
 */
 #if !defined( Om_Operations_QuoteOperation_ )
 	#define Om_Operations_QuoteOperation_ Om::Operations::QuoteOperation

@@ -14,15 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup back_pull_form_operation forms->
-	\ingroup operations
-	\brief
-		Pops the last form (a non-empty list of zero or one
-		\ref operator "Operator(s)", followed by zero or more
-		\ref operand "Operands"), quoted.
-	\par Implementation
-		Om::Operations::BackPullFormOperation
 */
 #if !defined( Om_Operations_BackPullFormOperation_ )
 	#define Om_Operations_BackPullFormOperation_ \

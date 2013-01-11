@@ -1,0 +1,12 @@
+/*!
+\defgroup skip_operation skip
+	\ingroup operations
+	\brief
+		Skips over an \ref operand and \ref dequote_operation "dequotes".
+	\par Input
+		<tt>{expression} {A}</tt>
+	\par Output
+		<tt>{A} expression</tt>
+	\par Implementation
+		Om::Operations::SkipOperation
+*/

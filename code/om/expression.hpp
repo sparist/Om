@@ -14,24 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup expression Expression
-	\ingroup programs
-	\brief
-		A \ref programs "Program" optimized for evaluation.
-	\par Interpretation
-		An \ref expression is an interpretation of a \ref programs "Program" as
-		a list of non-empty forms, each containing the following:
-		-	An \ref operator (or none), representing the operation.
-		-	An \ref operand list (which may be empty only if there is an
-			\ref operator).
-	\par Normalization
-		A \ref programs "Program" is normalized as an \ref expression as
-		follows:
-		-	Each \ref separator is removed, and replaced by a line
-			\ref separator between each non-empty form.
-	\par Implementation
-		Om::Expression
 */
 #if !defined( Om_Expression_ )
 	#define Om_Expression_ Om::Expression

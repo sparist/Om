@@ -14,13 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup front_pull_code_point_operation <-code` points
-	\ingroup operations
-	\brief
-		Pops the first code point, quoted.
-	\par Implementation
-		Om::Operations::FrontPullCodePointOperation
 */
 #if !defined( Om_Operations_FrontPullCodePointOperation_ )
 	#define Om_Operations_FrontPullCodePointOperation_ \

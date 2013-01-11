@@ -87,6 +87,25 @@ file( GLOB Code_Hpp_Om_Symbols
 	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.hpp"
 )
 
+file( GLOB Code_Dox
+	"${CMAKE_CURRENT_SOURCE_DIR}/code/*.dox"
+)
+file( GLOB Code_Dox_Om
+	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/*.dox"
+)
+file( GLOB Code_Dox_Om_Operations
+	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/*.dox"
+)
+file( GLOB Code_Dox_Om_Sinks
+	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/*.dox"
+)
+file( GLOB Code_Dox_Om_Sources
+	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/*.dox"
+)
+file( GLOB Code_Dox_Om_Symbols
+	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.dox"
+)
+
 set( Code
 
 	"${CMAKE_CURRENT_SOURCE_DIR}/code/om.hpp"
@@ -152,7 +171,16 @@ else()
 	list( APPEND Code "${CMAKE_CURRENT_SOURCE_DIR}/${PrecompiledSource}" )
 endif()
 
-list( APPEND Code "${CMAKE_CURRENT_SOURCE_DIR}/${PrecompiledHeader}" )
+list( APPEND Code
+	"${CMAKE_CURRENT_SOURCE_DIR}/${PrecompiledHeader}"
+
+	"${CMAKE_CURRENT_SOURCE_DIR}/code/om.dox"
+	${Code_Dox_Om}
+	${Code_Dox_Om_Operations}
+	${Code_Dox_Om_Sinks}
+	${Code_Dox_Om_Sources}
+	${Code_Dox_Om_Symbols}
+)
 
 source_group( "Source Files" FILES ${Code_Cpp} )
 source_group( "Source Files\\om" FILES ${Code_Cpp_Om} )
@@ -167,6 +195,13 @@ source_group( "Header Files\\om\\operations" FILES ${Code_Hpp_Om_Operations} )
 source_group( "Header Files\\om\\sinks" FILES ${Code_Hpp_Om_Sinks} )
 source_group( "Header Files\\om\\sources" FILES ${Code_Hpp_Om_Sources} )
 source_group( "Header Files\\om\\symbols" FILES ${Code_Hpp_Om_Symbols} )
+
+source_group( "Doxygen Files" FILES ${Code_Dox} )
+source_group( "Doxygen Files\\om" FILES ${Code_Dox_Om} )
+source_group( "Doxygen Files\\om\\operations" FILES ${Code_Dox_Om_Operations} )
+source_group( "Doxygen Files\\om\\sinks" FILES ${Code_Dox_Om_Sinks} )
+source_group( "Doxygen Files\\om\\sources" FILES ${Code_Dox_Om_Sources} )
+source_group( "Doxygen Files\\om\\symbols" FILES ${Code_Dox_Om_Symbols} )
 
 include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" "${UnitTest}/src" )
 if( MSVC )

@@ -14,21 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup separator Separator
-	\ingroup programs
-	\brief
-		An atomic \ref programs "Program" element that serves to separate other
-		elements.
-	\par Interpretation
-		A \ref separator is an interpretation of a \ref programs "Program" as
-		one that contains only separator code points (line, tab, and space); all
-		others are disregarded.
-	\par Normalization
-		A \ref programs "Program" is normalized as a \ref separator by
-		discarding all non-separator code points.
-	\par Implementation
-		Om::Separator
 */
 #if !defined( Om_Separator_ )
 	#define Om_Separator_ Om::Separator

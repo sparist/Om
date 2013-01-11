@@ -14,28 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup front_pull_term_operation <-terms
-	\ingroup operations
-	\brief
-		Pops the first term (\ref operator or \ref operand), quoted.
-	\par Input
-		<tt>{A B}</tt>
-	\par Output
-		<tt>{A}{B}</tt>
-	\par Examples
-		-	<tt><-terms {A B}</tt>
-			<blockquote><tt>{A}{B}</tt></blockquote>
-		-	<tt><-terms {{A} B}</tt>
-			<blockquote><tt>{{A}}{B}</tt></blockquote>
-		-	<tt><-terms {A B }</tt>
-			<blockquote><tt>{A}{B}</tt></blockquote>
-		-	<tt><-terms {A {B} C}</tt>
-			<blockquote><tt>{A}{{B}<br/>C}</tt></blockquote>
-		-	<tt><-terms {}</tt>
-			<blockquote><tt>{}{}</tt></blockquote>
-	\par Implementation
-		Om::Operations::FrontPullTermOperation
 */
 #if !defined( Om_Operations_FrontPullTermOperation_ )
 	#define Om_Operations_FrontPullTermOperation_ \

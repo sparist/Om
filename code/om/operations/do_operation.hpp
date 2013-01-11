@@ -14,18 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup do_operation do
-	\ingroup operations
-	\brief
-		Converts an \ref operand to a quoted \ref operator, then
-		\ref dequote_operation "dequotes".
-	\par Input
-		<tt>{hello, world!}</tt>
-	\par Output
-		<tt>hello,` world!</tt>
-	\par Implementation
-		Om::Operations::DoOperation
 */
 #if !defined( Om_Operations_DoOperation_ )
 	#define Om_Operations_DoOperation_ Om::Operations::DoOperation

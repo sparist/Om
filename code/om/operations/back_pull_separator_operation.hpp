@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup back_pull_separator_operation elements->separator
-	\ingroup operations
-	\brief
-		Casts to \ref literal and pops the last \ref separator (if any), quoted.
-	\par Input
-		<tt>{A B }</tt>
-	\par Output
-		<tt>{ } {A B}</tt>
-	\par Implementation
-		Om::Operations::BackPullSeparatorOperation
 */
 #if !defined( Om_Operations_BackPullSeparatorOperation_ )
 	#define Om_Operations_BackPullSeparatorOperation_ \

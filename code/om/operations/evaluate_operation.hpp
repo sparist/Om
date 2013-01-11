@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup evaluate_operation evaluate
-	\ingroup operations
-	\brief
-		Evaluates an \ref expression within the current environment.
-	\par Input
-		An \ref expression to evaluate.
-	\par Output
-		The evaluated \ref expression.
-	\par Implementation
-		Om::Operations::EvaluateOperation
 */
 #if !defined( Om_Operations_EvaluateOperation_ )
 	#define Om_Operations_EvaluateOperation_ Om::Operations::EvaluateOperation

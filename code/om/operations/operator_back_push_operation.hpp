@@ -14,18 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup operator_back_push_operation operator<-
-	\ingroup operations
-	\brief
-		Pushes the contents of an \ref operand onto the back of an \ref operator
-		(quoted).
-	\par Input
-		<tt>{A} {B}</tt>
-	\par Output
-		<tt>{BA}</tt>
-	\par Implementation
-		Om::Operations::OperatorBackPushOperation
 */
 #if !defined( Om_Operations_OperatorBackPushOperation_ )
 	#define Om_Operations_OperatorBackPushOperation_ \

@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup copy_operation copy
-	\ingroup operations
-	\brief
-		Copies an \ref operand.
-	\par Input
-		<tt>{A}</tt>
-	\par Output
-		<tt>{A}{A}</tt>
-	\par Implementation
-		Om::Operations::CopyOperation
 */
 #if !defined( Om_Operations_CopyOperation_ )
 	#define Om_Operations_CopyOperation_ Om::Operations::CopyOperation

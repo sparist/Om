@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup front_pull_operand_operation operand<-elements
-	\ingroup operations
-	\brief
-		Casts to \ref literal and pops the first \ref operand (if any), quoted.
-	\par Input
-		<tt>{{A} B}</tt>
-	\par Output
-		<tt>{{A}} { B}</tt>
-	\par Implementation
-		Om::Operations::FrontPullOperandOperation
 */
 #if !defined( Om_Operations_FrontPullOperandOperation_ )
 	#define Om_Operations_FrontPullOperandOperation_ \

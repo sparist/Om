@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup dequote_operation dequote
-	\ingroup operations
-	\brief
-		Strips the outer braces from an \ref operand.
-	\par Input
-		<tt>{A}</tt>
-	\par Output
-		<tt>A</tt>
-	\par Implementation
-		Om::Operations::DequoteOperation
 */
 #if !defined( Om_Operations_DequoteOperation_ )
 	#define Om_Operations_DequoteOperation_ Om::Operations::DequoteOperation

@@ -14,23 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup lexicon_operation lexicon
-	\ingroup operations
-	\brief
-		Normalizes the \ref operand as a quoted \ref lexicon.
-	\par Implementation
-		Om::Operations::LexiconOperation
-
-	A \ref programs "Program" is interpreted as a \ref lexicon as follows:
-	-	Each \ref operator is a key, indexing to the \ref operand to its right.
-	-	In the case of duplicate \ref operator "Operators", the prior is
-		removed.
-	-	An \ref operator without an \ref operand indicates that the system
-		mapping for the \ref operator is to be explicitly included.
-	-	An \ref operand without an \ref operator indicates the "default"
-		mapping, which is used for any \ref operator not found in the
-		\ref lexicon.
 */
 #if !defined( Om_Operations_LexiconOperation_ )
 	#define Om_Operations_LexiconOperation_ Om::Operations::LexiconOperation

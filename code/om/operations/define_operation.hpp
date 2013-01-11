@@ -14,21 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup define_operation define
-	\ingroup operations
-	\brief
-		\ref evaluate_operation "Evaluates" and
-		\ref dequote_operation "dequotes" an \ref expression with an environment
-		that contains additionally defined \ref operator "operators".
-	\par Input
-		A \ref lexicon, containing the additional operator definition(s), and an
-		\ref expression to evaluate.
-	\par Output
-		The evaluation of the \ref expression under the temporarily extended
-		environment, \ref dequote_operation "dequoted".
-	\par Implementation
-		Om::Operations::DefineOperation
 */
 #if !defined( Om_Operations_DefineOperation_ )
 	#define Om_Operations_DefineOperation_ Om::Operations::DefineOperation

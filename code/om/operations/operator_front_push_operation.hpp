@@ -14,18 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup operator_front_push_operation ->operator
-	\ingroup operations
-	\brief
-		Pushes the contents of an \ref operand onto the front of an
-		\ref operator (quoted).
-	\par Input
-		<tt>{A} {B}</tt>
-	\par Output
-		<tt>{AB}</tt>
-	\par Implementation
-		Om::Operations::OperatorFrontPushOperation
 */
 #if !defined( Om_Operations_OperatorFrontPushOperation_ )
 	#define Om_Operations_OperatorFrontPushOperation_ \

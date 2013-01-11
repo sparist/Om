@@ -14,23 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup literal_front_push_operation ->literal
-	\ingroup operations
-	\brief
-		Pushes the contents of an \ref operand onto the front of a \ref literal
-		(quoted).
-	\par Input
-		<tt>{A} {B}</tt>
-	\par Output
-		<tt>{AB}</tt>
-	\par Implementation
-		Om::Operations::LiteralFrontPushOperation
-
-	Normalization to a \ref literal only happens if an append occurs (i.e. the
-	first \ref operand is non-empty); otherwise, it is left unchanged.  However,
-	since everything represents as a \ref literal, this doesn't make an
-	observable difference.
 */
 #if !defined( Om_Operations_LiteralFrontPushOperation_ )
 	#define Om_Operations_LiteralFrontPushOperation_ \

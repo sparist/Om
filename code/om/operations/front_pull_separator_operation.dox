@@ -1,0 +1,13 @@
+/*!
+\defgroup front_pull_separator_operation separator<-elements
+	\ingroup operations
+	\brief
+		Casts to \ref literal and pops the first \ref separator (if any),
+		quoted.
+	\par Input
+		<tt>{ A B}</tt>
+	\par Output
+		<tt>{ } {A B}</tt>
+	\par Implementation
+		Om::Operations::FrontPullSeparatorOperation
+*/

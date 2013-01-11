@@ -1,0 +1,13 @@
+/*!
+\defgroup operator_front_push_operation ->operator
+	\ingroup operations
+	\brief
+		Pushes the contents of an \ref operand onto the front of an
+		\ref operator (quoted).
+	\par Input
+		<tt>{A} {B}</tt>
+	\par Output
+		<tt>{AB}</tt>
+	\par Implementation
+		Om::Operations::OperatorFrontPushOperation
+*/

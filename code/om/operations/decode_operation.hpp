@@ -14,20 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup decode_operation decode
-	\ingroup operations
-	\brief
-		Decodes encoded characters (non-recursively).
-	\par Input
-		<tt>{operator}</tt>
-	\par Output
-		<tt>{literal}</tt>
-	\par Implementation
-		Om::Operations::DecodeOperation
-
-	Decoding the output of \ref encode_operation results in an \ref operand
-	equivalent to the input of \ref encode_operation.
 */
 #if !defined( Om_Operations_DecodeOperation_ )
 	#define Om_Operations_DecodeOperation_ Om::Operations::DecodeOperation

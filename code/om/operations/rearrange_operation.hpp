@@ -14,30 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup rearrange_operation rearrange
-	\ingroup operations
-	\brief
-		Rearranges \ref operand "Operands".
-	\par Input
-		<blockquote><tt>{new arrangement} {current arrangement} ...</tt>
-		</blockquote>
-		where remaining \ref operand "Operands" are pulled and mapped to
-		\ref operator "Operators" in:
-		<blockquote><tt>{current arrangement}</tt></blockquote>
-		to construct a scope that is used to evaluate, then
-		\ref dequote_operation "dequote":
-		<blockquote><tt>{new arrangement}</tt></blockquote>
-	\par Output
-		The \ref dequote_operation "dequoted" evaluation of:
-		<blockquote><tt>{new arrangement}</tt></blockquote>
-		using the scope constructed by \ref fill_operation "filling" into:
-		<blockquote><tt>{current arrangement}</tt></blockquote>
-	\par Examples
-		-	<tt>rearrange{C B A}{A B C}{1}{2}{3}</tt>
-			<blockquote><tt>{3}{2}{1}</tt></blockquote>
-	\par Implementation
-		Om::Operations::RearrangeOperation
 */
 #if !defined( Om_Operations_RearrangeOperation_ )
 	#define Om_Operations_RearrangeOperation_ \

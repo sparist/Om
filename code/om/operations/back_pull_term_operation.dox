@@ -1,0 +1,23 @@
+/*!
+\defgroup back_pull_term_operation terms->
+	\ingroup operations
+	\brief
+		Pops the last term (\ref operator or \ref operand), quoted.
+	\par Input
+		<tt>{A B}</tt>
+	\par Output
+		<tt>{B} {A}</tt>
+	\par Examples
+		-	<tt>terms-> {A B}</tt>
+			<blockquote><tt>{B}{A}</tt></blockquote>
+		-	<tt>terms-> {A {B}}</tt>
+			<blockquote><tt>{{B}}{A}</tt></blockquote>
+		-	<tt>terms-> {A B }</tt>
+			<blockquote><tt>{B}{A}</tt></blockquote>
+		-	<tt>terms-> {A {B} C}</tt>
+			<blockquote><tt>{C}{A{B}}</tt></blockquote>
+		-	<tt>terms-> {}</tt>
+			<blockquote><tt>{}{}</tt></blockquote>
+	\par Implementation
+		Om::Operations::BackPullTermOperation
+*/

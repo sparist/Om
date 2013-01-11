@@ -14,24 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup find_operation find
-	\ingroup operations
-	\brief
-		Finds the \ref operator, and its \ref operand mapping (if any), in a
-		\ref lexicon.
-	\par Input
-		<tt>{operator} {lexicon}</tt>
-	\par Output
-		-	If the \ref operator is found:
-			-	If an \ref operand is mapped to the \ref operator "operator":
-				<blockquote><tt>{lexicon}{operator{operand}}</tt></blockquote>
-			-	Else:
-				<blockquote><tt>{lexicon}{operator{}}</tt></blockquote>
-		-	Else:
-				<blockquote><tt>{lexicon}{}</tt></blockquote>
-	\par Implementation
-		Om::Operations::FindOperation
 */
 #if !defined( Om_Operations_FindOperation_ )
 	#define Om_Operations_FindOperation_ Om::Operations::FindOperation

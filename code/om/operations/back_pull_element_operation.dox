@@ -1,0 +1,12 @@
+/*!
+\defgroup back_pull_element_operation elements->
+	\ingroup operations
+	\brief
+		Pops the last element, quoted.
+	\par Input
+		<tt>{A B}</tt>
+	\par Output
+		<tt>{B} {A }</tt>
+	\par Implementation
+		Om::Operations::BackPullElementOperation
+*/

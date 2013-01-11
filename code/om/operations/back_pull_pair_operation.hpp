@@ -14,15 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup back_pull_pair_operation pairs->
-	\ingroup operations
-	\brief
-		Pops the last pair (a non-empty list of zero or one
-		\ref operator "Operator(s)", followed by zero or one
-		\ref operand "Operand(s)"), quoted.
-	\par Implementation
-		Om::Operations::BackPullPairOperation
 */
 #if !defined( Om_Operations_BackPullPairOperation_ )
 	#define Om_Operations_BackPullPairOperation_ \

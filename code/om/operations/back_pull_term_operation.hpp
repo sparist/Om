@@ -14,28 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup back_pull_term_operation terms->
-	\ingroup operations
-	\brief
-		Pops the last term (\ref operator or \ref operand), quoted.
-	\par Input
-		<tt>{A B}</tt>
-	\par Output
-		<tt>{B} {A}</tt>
-	\par Examples
-		-	<tt>terms-> {A B}</tt>
-			<blockquote><tt>{B}{A}</tt></blockquote>
-		-	<tt>terms-> {A {B}}</tt>
-			<blockquote><tt>{{B}}{A}</tt></blockquote>
-		-	<tt>terms-> {A B }</tt>
-			<blockquote><tt>{B}{A}</tt></blockquote>
-		-	<tt>terms-> {A {B} C}</tt>
-			<blockquote><tt>{C}{A{B}}</tt></blockquote>
-		-	<tt>terms-> {}</tt>
-			<blockquote><tt>{}{}</tt></blockquote>
-	\par Implementation
-		Om::Operations::BackPullTermOperation
 */
 #if !defined( Om_Operations_BackPullTermOperation_ )
 	#define Om_Operations_BackPullTermOperation_ \

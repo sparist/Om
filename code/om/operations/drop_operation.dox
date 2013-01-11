@@ -1,0 +1,12 @@
+/*!
+\defgroup drop_operation drop
+	\ingroup operations
+	\brief
+		Deletes an \ref operand.
+	\par Input
+		<tt>{A} ...</tt>
+	\par Output
+		<tt>...</tt>
+	\par Implementation
+		Om::Operations::DropOperation
+*/

@@ -14,13 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup back_pull_character_operation characters->
-	\ingroup operations
-	\brief
-		Pops the last character, quoted.
-	\par Implementation
-		Om::Operations::BackPullCharacterOperation
 */
 #if !defined( Om_Operations_BackPullCharacterOperation_ )
 	#define Om_Operations_BackPullCharacterOperation_ \

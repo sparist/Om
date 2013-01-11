@@ -1,0 +1,10 @@
+/*!
+\defgroup front_pull_form_operation <-forms
+	\ingroup operations
+	\brief
+		Pops the first form (a non-empty list of zero or one
+		\ref operator "Operator(s)", followed by zero or more
+		\ref operand "Operands"), quoted.
+	\par Implementation
+		Om::Operations::FrontPullFormOperation
+*/

@@ -1,0 +1,12 @@
+/*!
+\defgroup front_pull_operator_operation operator<-elements
+	\ingroup operations
+	\brief
+		Casts to \ref literal and pops the first \ref operator (if any), quoted.
+	\par Input
+		<tt>{A B}</tt>
+	\par Output
+		<tt>{A} { B}</tt>
+	\par Implementation
+		Om::Operations::FrontPullOperatorOperation
+*/

@@ -14,18 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup front_pull_separator_operation separator<-elements
-	\ingroup operations
-	\brief
-		Casts to \ref literal and pops the first \ref separator (if any),
-		quoted.
-	\par Input
-		<tt>{ A B}</tt>
-	\par Output
-		<tt>{ } {A B}</tt>
-	\par Implementation
-		Om::Operations::FrontPullSeparatorOperation
 */
 #if !defined( Om_Operations_FrontPullSeparatorOperation_ )
 	#define Om_Operations_FrontPullSeparatorOperation_ \

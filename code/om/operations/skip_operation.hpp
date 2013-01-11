@@ -14,17 +14,6 @@
 		Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
-
-\defgroup skip_operation skip
-	\ingroup operations
-	\brief
-		Skips over an \ref operand and \ref dequote_operation "dequotes".
-	\par Input
-		<tt>{expression} {A}</tt>
-	\par Output
-		<tt>{A} expression</tt>
-	\par Implementation
-		Om::Operations::SkipOperation
 */
 #if !defined( Om_Operations_SkipOperation_ )
 	#define Om_Operations_SkipOperation_ Om::Operations::SkipOperation
