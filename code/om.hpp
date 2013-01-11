@@ -534,7 +534,11 @@ first unbalanced end brace, and sends output to the standard output stream.
 
 \section developing Developing
 
-The %Om library is written in modern, portable C++.
+%Om is written in modern, portable C++ and can be forked from the
+<a href="http://github.com/sparist/Om">%Om GitHub repository</a>.
+
+<b>Note</b>: Because this is an early-stage project, there are not yet any
+compatibility guarantees between versions.
 
 \subsection developing__coding_standard Coding Standard
 
@@ -614,6 +618,9 @@ Some basic free static analysis tools can be applied to the %Om code.
 Issues are reported and tracked with the
 <a href="https://github.com/sparist/Om/issues">Om GitHub issue tracker</a>.
 
+Before reporting an issue, please search existing issues first to ensure that it
+is not a duplicate.
+
 \section license License
 
 This program and the accompanying materials are made available under the terms
@@ -624,12 +631,18 @@ For more information about this license, please see the
 <a href="http://www.eclipse.org/legal/eplfaq.php">Eclipse Public License
 FAQ</a>.
 
-\section funding Funding
+\section contributing Contributing
 
-If you are interested in funding development of the %Om language, either for
-general or domain-specific functionality, please contact me at <a
-	href="mailto:information@sparist.com?subject=Om%20Funding"
->information@sparist.com</a>.
+There are several ways to contribute to the %Om project:
+
+-	By funding development of the %Om language, either for general or
+	domain-specific functionality.  If interested, please contact me at <a
+		href="mailto:information@sparist.com?subject=Om%20Funding"
+	>information@sparist.com</a>.
+-	By developing new \ref operations and \ref programs.  See \ref developing
+	for details.
+-	By reporting bugs, patches, or enhancement requests.  See
+	\ref issue_tracking for details.
 
 */
 #if !defined( Om_ )
