@@ -145,8 +145,8 @@ evaluates to.
 For example, program "A B" is the concatenation of programs "A", " ", and "B".
 The separator evaluates to the identity operation and can be disregarded.  The
 programs "A" and "B" evaluate to functions which will be denoted as <tt>A</tt>
-and <tt>B</tt>, respectively.  The input and output is handled by the composed
-function is as follows:
+and <tt>B</tt>, respectively.  The input and output are handled by the composed
+function as follows:
 -	Function <tt>B</tt> receives the input, and sends its output to function
 	<tt>A</tt>.
 -	Function <tt>A</tt> receives the input, and its output becomes that of the
