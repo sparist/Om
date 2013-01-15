@@ -211,7 +211,7 @@ Single-Element Programs</h3>
 <h3><a class="anchor" id="evaluation__program_types__multiple"></a>
 Multiple-Element Programs</h3>
 <p>Programs that contain multiple elements can be considered a concatenation of sub-programs that each contain one of the elements. The concatenated program thus evaluates to the composition of the functions that each sub-program evaluates to.</p>
-<p>For example, program "A B" is the concatenation of programs "A", " ", and "B". The separator evaluates to the identity operation and can be disregarded. The programs "A" and "B" evaluate to functions which will be denoted as <code>A</code> and <code>B</code>, respectively. The input and output is handled by the composed function is as follows:</p>
+<p>For example, program "A B" is the concatenation of programs "A", " ", and "B". The separator evaluates to the identity operation and can be disregarded. The programs "A" and "B" evaluate to functions which will be denoted as <code>A</code> and <code>B</code>, respectively. The input and output are handled by the composed function as follows:</p>
 <ul>
 <li>Function <code>B</code> receives the input, and sends its output to function <code>A</code>.</li>
 <li>Function <code>A</code> receives the input, and its output becomes that of the composed function.</li>
