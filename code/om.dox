@@ -474,9 +474,9 @@ To generate the <tt>Om.sln</tt> file (in <tt>products/vs</tt>):
 		<a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C
 		49.1.2 code archive</a> from the
 		<a href="http://site.icu-project.org/download">ICU download page</a>.
-		(Note that there is presently a
-		<a href="https://svn.boost.org/trac/boost/ticket/7839">Boost bug</a>
-		that prevents building against ICU4C 50.1.2 on Windows.)
+		(Note that ICU4C 50.1.1 cannot be used due to a
+		<a href="https://svn.boost.org/trac/boost/ticket/7839">bug</a> that
+		prevents building on Windows.)
 	-	The Boost root directory path.  To create this directory, download and
 		unpack the
 		<a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.zip/download">Boost
