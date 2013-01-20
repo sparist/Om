@@ -2,7 +2,6 @@
 
 set argC=0
 for %%x in (%*) do Set /A argC+=1
-echo %argC%
 if %argC% lss 2 goto Usage
 if %argc% gtr 3 goto Usage
 
