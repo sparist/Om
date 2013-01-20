@@ -163,7 +163,10 @@ source_group( "Doxygen Files\\om\\sinks" FILES ${Dox_Code_Om_Sinks} )
 source_group( "Doxygen Files\\om\\sources" FILES ${Dox_Code_Om_Sources} )
 source_group( "Doxygen Files\\om\\symbols" FILES ${Dox_Code_Om_Symbols} )
 
-include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" "${UnitTest}/src" )
+include_directories(
+	"${CMAKE_CURRENT_SOURCE_DIR}/code"
+	"${UnitTest}/src"
+)
 if( MSVC )
 	include_directories( "${Boost}" )
 else()
@@ -329,7 +332,10 @@ else()
 	)
 
 	if( UnitTest )
-		find_library( UnitTestLibrary "UnitTest++" "${UnitTest}" NO_DEFAULT_PATH )
+		find_library( UnitTestLibrary
+			"UnitTest++" "${UnitTest}" NO_DEFAULT_PATH
+		)
+
 		target_link_libraries( Om
 			"${UnitTestLibrary}"
 		)
