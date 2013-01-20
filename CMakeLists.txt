@@ -344,6 +344,7 @@ else()
 	find_library( BoostThreadLibrary
 		boost_thread "${Boost}/lib" NO_DEFAULT_PATH
 	)
+
 	target_link_libraries( Om
 		"${BoostLocaleLibrary}"
 		"${BoostSystemLibrary}"
@@ -358,6 +359,7 @@ else()
 	find_library( IcuTestLibrary icutest "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuTuLibrary icutu "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuUcLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH )
+
 	target_link_libraries( Om
 		"${IcuDataLibrary}"
 		"${IcuI18nLibrary}"
