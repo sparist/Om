@@ -575,11 +575,11 @@ Adding Operations</h2>
 </li>
 </ul>
 <p>For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <code>WhateverOperation</code> is a stand-in for the name of the operation <code>struct</code>):</p>
-<p><code> namespace<br/>
- {<br/>
- &#160;&#160;&#160;&#160;static Definition&lt; WhateverOperation &gt; const theWhateverDefinition;<br/>
- } </code></p>
-<h2><a class="anchor" id="developing__adding_programs"></a>
+<div class="fragment"><div class="line"><span class="keyword">namespace</span></div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">static</span> Definition&lt; WhateverOperation &gt; <span class="keyword">const</span> theWhateverDefinition;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="developing__adding_programs"></a>
 Adding Programs</h2>
 <p>New data types can be added to Om by extending <code><a class="el" href="struct_om_1_1_program.html" title="The Program implementation.">Om::Program</a></code> and defining the functions necessary to instantiate the class. Use existing programs as a guide.</p>
 <p>Program types should be defined in the <code><a class="el" href="namespace_om.html" title="The Om language implementation.">Om</a></code> namespace.</p>

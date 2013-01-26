@@ -94,8 +94,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="translator_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#if !defined( Om_Translator_ )</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="translator_8hpp.html#ad9eee14e14315871aedba18be6ecba58">   19</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #define Om_Translator_ Om::Translator</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if !defined( Om_Translator_ )</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="translator_8hpp.html#ad9eee14e14315871aedba18be6ecba58">   18</a></span>&#160;<span class="preprocessor">    #define Om_Translator_ \</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    Om::Translator</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="code__point_8hpp.html" title="Om hpp file.">om/code_point.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
@@ -118,23 +120,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>(</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="struct_om_1_1_source.html">Source&lt; CodePoint const &gt;</a> &amp;,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="struct_om_1_1_sink.html">Sink&lt; CodePoint const &gt;</a> &amp;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::string <a class="code" href="struct_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="keywordtype">char</span> <span class="keyword">const</span> theCodeUnitIterator[] ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="struct_om_1_1_source.html">Source&lt; CodePoint const &gt;</a> &amp;,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="struct_om_1_1_sink.html">Sink&lt; CodePoint const &gt;</a> &amp;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        std::string <a class="code" href="struct_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="keywordtype">char</span> <span class="keyword">const</span> theCodeUnitIterator[] ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_translator.html#ac9ec1c697c1c5d6648c6f14fd3b337fe">GiveElements</a>( <a class="code" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; ) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_translator.html#ac9ec1c697c1c5d6648c6f14fd3b337fe">GiveElements</a>( <a class="code" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; ) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_translator.html#ad99b2be5d0be06fdb9667b31284e301a">IsEmpty</a>() <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_translator.html#ad99b2be5d0be06fdb9667b31284e301a">IsEmpty</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_translator.html#ab4bdc54b12c138a533825e5edb4a88e5" title="Translates the Operator to an object that is then given to the Evaluation.">Translate</a>( <a class="code" href="struct_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;, <a class="code" href="struct_om_1_1_operator.html" title="The Operator implementation.">Operator</a> <span class="keyword">const</span> &amp; ) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_translator.html#ab4bdc54b12c138a533825e5edb4a88e5" title="Translates the Operator to an object that is then given to the Evaluation.">Translate</a>(</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="struct_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="struct_om_1_1_operator.html" title="The Operator implementation.">Operator</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        ) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="translator_8cpp.html" title="Om cpp file.">om/translator.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 		<hr class="footer"/><address class="footer"><small>

@@ -94,13 +94,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="front__pull__character__operation_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#if !defined( Om_Operations_FrontPullCharacterOperation_ )</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="front__pull__character__operation_8hpp.html#acaa6628e541897a39c2cb9263082c83c">   19</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #define Om_Operations_FrontPullCharacterOperation_ \</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    Om::Operations::FrontPullCharacterOperation</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="definition_8hpp.html" title="Om hpp file.">om/definition.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="front__pull__character__operation_8hpp.html#a7f6045518e837b553dbc13a779d6da90">   24</a></span>&#160;<span class="preprocessor">    #define Om_Operations_FrontPullCharacterOperation_GetName_() &quot;&lt;-characters&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if !defined( Om_Operations_FrontPullCharacterOperation_ )</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="front__pull__character__operation_8hpp.html#acaa6628e541897a39c2cb9263082c83c">   18</a></span>&#160;<span class="preprocessor">    #define Om_Operations_FrontPullCharacterOperation_ \</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    Om::Operations::FrontPullCharacterOperation</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="definition_8hpp.html" title="Om hpp file.">om/definition.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="front__pull__character__operation_8hpp.html#a7f6045518e837b553dbc13a779d6da90">   23</a></span>&#160;<span class="preprocessor">    #define Om_Operations_FrontPullCharacterOperation_GetName_() \</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    &quot;&lt;-characters&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>Om</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
@@ -116,20 +118,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_operations_1_1_front_pull_character_operation.html#ae6bb5ac3c3a11922f883f43556bf0837">Give</a>( <a class="code" href="struct_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp; );</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_operations_1_1_front_pull_character_operation.html#a9a6dadbca15c8c264ddd49c15fc836b9" title="The callback for PullOperation.">Pull</a>( <a class="code" href="struct_om_1_1_operator.html" title="The Operator implementation.">Operator</a> &amp;, TheQueue &amp; );</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">namespace</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">static</span> <a class="code" href="struct_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition</a>&lt;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="struct_om_1_1_operations_1_1_front_pull_character_operation.html" title="The &lt;-characters Operation implementation.">FrontPullCharacterOperation</a></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            &gt; <span class="keyword">const</span> theFrontPullCharacterDefinition;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="front__pull__character__operation_8cpp.html" title="Om cpp file.">om/operations/front_pull_character_operation.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_operations_1_1_front_pull_character_operation.html#a9a6dadbca15c8c264ddd49c15fc836b9" title="The callback for PullOperation.">Pull</a>(</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="struct_om_1_1_operator.html" title="The Operator implementation.">Operator</a> &amp;,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                TheQueue &amp;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">namespace</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">static</span> <a class="code" href="struct_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt; FrontPullCharacterOperation &gt;</a> <span class="keyword">const</span> theFrontPullCharacterDefinition;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="front__pull__character__operation_8cpp.html" title="Om cpp file.">om/operations/front_pull_character_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 		<hr class="footer"/><address class="footer"><small>

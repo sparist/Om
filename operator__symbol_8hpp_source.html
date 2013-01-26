@@ -94,30 +94,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="operator__symbol_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#if !defined( Om_Symbols_OperatorSymbol_ )</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="operator__symbol_8hpp.html#a187091da363cf23d6d6223ea23fd5b96">   19</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #define Om_Symbols_OperatorSymbol_ Om::Symbols::OperatorSymbol</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if !defined( Om_Symbols_OperatorSymbol_ )</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="operator__symbol_8hpp.html#a187091da363cf23d6d6223ea23fd5b96">   18</a></span>&#160;<span class="preprocessor">    #define Om_Symbols_OperatorSymbol_ \</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    Om::Symbols::OperatorSymbol</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="macros_8hpp.html" title="Om hpp file.">om/macros.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="operator__symbol_8hpp.html#afc04c3500bb7afa524dfde98965fbc5c">   24</a></span>&#160;<span class="preprocessor">    #define Om_Symbols_OperatorSymbol_GetEncodeHex_() 60</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="operator__symbol_8hpp.html#a031e293fe7dc649693376ac862453046">   27</a></span>&#160;<span class="preprocessor">    #define Om_Symbols_OperatorSymbol_GetEncodeString_() \</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">    Om_Macros_GetString_( Om_Symbols_OperatorSymbol_GetEncodeHex_() )</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>Om</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">namespace </span>Symbols</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1">   35</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1" title="An Operator symbol.">OperatorSymbol</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1a2fbc76d8801185a911b764d8daf90a68">   41</a></span>&#160;            <a class="code" href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1a2fbc76d8801185a911b764d8daf90a68">theEncodeOperatorSymbol</a> = <a class="code" href="macros_8hpp.html#a07f0bedb4308e0bf979860a01dfa673b" title="Converts a bare hexadecimal to a numeric literal.">Om_Macros_GetNumber_</a>(</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="operator__symbol_8hpp.html#afc04c3500bb7afa524dfde98965fbc5c" title="Gets the bare hexadecimal code for Om::Symbols::theEncodeOperatorSymbol.">Om_Symbols_OperatorSymbol_GetEncodeHex_</a>()</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            )</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="operator__symbol_8hpp.html#afc04c3500bb7afa524dfde98965fbc5c">   24</a></span>&#160;<span class="preprocessor">    #define Om_Symbols_OperatorSymbol_GetEncodeHex_() \</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">    60</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="operator__symbol_8hpp.html#a031e293fe7dc649693376ac862453046">   28</a></span>&#160;<span class="preprocessor">    #define Om_Symbols_OperatorSymbol_GetEncodeString_() \</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    Om_Macros_GetString_( Om_Symbols_OperatorSymbol_GetEncodeHex_() )</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>Om</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">namespace </span>Symbols</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1">   36</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1" title="An Operator symbol.">OperatorSymbol</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1a2fbc76d8801185a911b764d8daf90a68">   41</a></span>&#160;            <a class="code" href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1a2fbc76d8801185a911b764d8daf90a68">theEncodeOperatorSymbol</a> = <a class="code" href="macros_8hpp.html#a07f0bedb4308e0bf979860a01dfa673b" title="Converts a bare hexadecimal to a numeric literal.">Om_Macros_GetNumber_</a>( <a class="code" href="operator__symbol_8hpp.html#afc04c3500bb7afa524dfde98965fbc5c" title="Gets the bare hexadecimal code for Om::Symbols::theEncodeOperatorSymbol.">Om_Symbols_OperatorSymbol_GetEncodeHex_</a>() )</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        };</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 		<hr class="footer"/><address class="footer"><small>
