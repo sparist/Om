@@ -75,9 +75,7 @@ inline bool Type_::TakeQuotedQueue(
 {
 	if( this->thisLexicon ){
 		{
-			/*
-			Perform the translation.  Note that this uses this->thisLexicon and must be done before the lexicon is given to the Evaluation.
-			*/
+			// Perform the translation.  Note that this uses this->thisLexicon and must be done before the lexicon is given to the Evaluation.
 			Expression theExpression;
 			assert(
 				dynamic_cast< ThisImplementation * >( this )

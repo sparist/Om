@@ -89,9 +89,7 @@ inline bool Type_::TakeQuotedQueue(
 	}
 	assert( this->thisFormRange );
 
-	/*
-	Find the next Form with no Operands and return false, or return true if none.
-	*/
+	// Find the next Form with no Operands and return false, or return true if none.
 	for( 
 		FormRange & theFormRange = *this->thisFormRange;
 		theFormRange;
