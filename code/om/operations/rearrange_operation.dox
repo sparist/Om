@@ -6,11 +6,9 @@
 	\par Input
 		<blockquote><tt>{new arrangement} {current arrangement} ...</tt>
 		</blockquote>
-		where remaining \ref operand "Operands" are pulled and mapped to
-		\ref operator "Operators" in:
+		where remaining \ref operand "Operands" are pulled and mapped to \ref operator "Operators" in:
 		<blockquote><tt>{current arrangement}</tt></blockquote>
-		to construct a scope that is used to evaluate, then
-		\ref dequote_operation "dequote":
+		to construct a scope that is used to evaluate, then \ref dequote_operation "dequote":
 		<blockquote><tt>{new arrangement}</tt></blockquote>
 	\par Output
 		The \ref dequote_operation "dequoted" evaluation of:

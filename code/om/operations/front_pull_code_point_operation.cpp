@@ -8,20 +8,19 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_FrontPullCodePointOperation_ )
 
 	#include "om/operations/pull_operation.hpp"
 
 // MARK: Om::Operations::FrontPullCodePointOperation
 
-	#define Type_ Om::Operations::FrontPullCodePointOperation
+	#define Type_ \
+	Om::Operations::FrontPullCodePointOperation
 
 // MARK: public (static)
 
@@ -34,13 +33,19 @@ inline void Type_::Give( Evaluation & theEvaluation )
 {
 	theEvaluation.TakeOperation(
 		std::auto_ptr< Operation >(
-			new PullOperation< Operator, FrontPullCodePointOperation >
+			new PullOperation<
+				Operator,
+				FrontPullCodePointOperation
+			>
 		)
 	);
 }
 
 template< typename TheQueue >
-inline void Type_::Pull( Operator & theOperator, TheQueue & theQueue )
+inline void Type_::Pull(
+	Operator & theOperator,
+	TheQueue & theQueue
+)
 {
 	theOperator.FrontGiveCodePoint( theQueue );
 }
@@ -48,6 +53,7 @@ inline void Type_::Pull( Operator & theOperator, TheQueue & theQueue )
 	#undef Type_
 
 #else
+
 	#include "om/operations/front_pull_code_point_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -65,9 +71,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{<-code` points}",
-					System::Get().Evaluate(
-						"drop find {<-code` points} system"
-					)
+					System::Get().Evaluate( "drop find {<-code` points} system" )
 				);
 			}
 
@@ -84,8 +88,18 @@ namespace Om
 				);
 
 				CHECK_EQUAL(
-					"{" "\xC3\x98" "}{" "\xCC\x81" "a}",
-					System::Get().Evaluate( "<-code` points {" "\xC7\xBE" "a}" )
+					(
+						"{"
+						"\xC3\x98"
+						"}{"
+						"\xCC\x81"
+						"a}"
+					),
+					System::Get().Evaluate(
+						"<-code` points {"
+						"\xC7\xBE"
+						"a}"
+					)
 				);
 
 				CHECK_EQUAL(
@@ -108,13 +122,20 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					(
-						"{" "\xE1\x84\x80" "}{"
-							"\xE1\x85\xA1" "\xE1\x84\x82"
+						"{"
+						"\xE1\x84\x80"
+						"}{"
+						"\xE1\x85\xA1"
+						"\xE1\x84\x82"
 						"}"
 					),
 					System::Get().Evaluate(
 						"<-code` points"
-						"{" "\xE1\x84\x80" "\xE1\x85\xA1" "\xE1\x84\x82" "}"
+						"{"
+						"\xE1\x84\x80"
+						"\xE1\x85\xA1"
+						"\xE1\x84\x82"
+						"}"
 					)
 				);
 			}

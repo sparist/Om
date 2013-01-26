@@ -8,18 +8,17 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Form_ )
 
 // MARK: Om::Form
 
-	#define Type_ Om::Form
+	#define Type_ \
+	Om::Form
 
 // MARK: public (non-static)
 
@@ -114,18 +113,27 @@ inline Om::Operator const & Type_::GetOperator() const
 
 inline void Type_::GiveElements( Queue & theQueue )
 {
-	this->GiveElements< OperandDeque::iterator >( *this, theQueue );
+	this->GiveElements< OperandDeque::iterator >(
+		*this,
+		theQueue
+	);
 	this->thisOperandDeque.clear();
 }
 
 inline void Type_::GiveElements( Queue & theQueue ) const
 {
-	this->GiveElements< OperandDeque::const_iterator >( *this, theQueue );
+	this->GiveElements< OperandDeque::const_iterator >(
+		*this,
+		theQueue
+	);
 }
 
 inline bool Type_::IsEmpty() const
 {
-	return( this->thisOperator.IsEmpty() && this->thisOperandDeque.empty() );
+	return(
+		this->thisOperator.IsEmpty() &&
+		this->thisOperandDeque.empty()
+	);
 }
 
 inline void Type_::Swap( Form & theForm )
@@ -143,7 +151,10 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 
 // MARK: private (static)
 
-template< typename TheOperandIterator, typename TheForm >
+template<
+	typename TheOperandIterator,
+	typename TheForm
+>
 inline void Type_::GiveElements(
 	TheForm & theForm,
 	Queue & theQueue
@@ -154,8 +165,11 @@ inline void Type_::GiveElements(
 		theQueue.TakeElement( theForm.thisOperator );
 	}
 	TheOperandIterator const theEnd = theForm.thisOperandDeque.end();
-	TheOperandIterator theCurrent = theForm.thisOperandDeque.begin();
-	for( ; theEnd != theCurrent; ++theCurrent ){
+	for(
+		TheOperandIterator theCurrent = theForm.thisOperandDeque.begin();
+		theEnd != theCurrent;
+		++theCurrent
+	){
 		theQueue.TakeElement( *theCurrent );
 	}
 }
@@ -165,7 +179,8 @@ inline void Type_::GiveElements(
 // MARK: -
 // MARK: Om::Form::ElementRange
 
-	#define Type_ Om::Form::ElementRange
+	#define Type_ \
+	Om::Form::ElementRange
 
 // MARK: public (non-static)
 
@@ -206,8 +221,10 @@ inline void Type_::Pop()
 {
 	assert( this->thisElement );
 	this->thisElement = (
-		this->thisOperandEnd == this->thisOperandIterator
-	) ? 0 : &*this->thisOperandIterator++;
+		( this->thisOperandEnd == this->thisOperandIterator ) ?
+		0 :
+		&*this->thisOperandIterator++
+	);
 }
 
 	#undef Type_
@@ -215,23 +232,26 @@ inline void Type_::Pop()
 // MARK: -
 // MARK: Om::Form::OperandRange
 
-	#define Type_ Om::Form::OperandRange
+	#define Type_ \
+	Om::Form::OperandRange
 
 // MARK: public (non-static)
 
 inline Type_< Om::Operand >::OperandRange( Form & theForm )
 :
-Sources::CollectionFrontSource< Operand, OperandDeque::iterator >(
-	theForm.thisOperandDeque
-)
+Sources::CollectionFrontSource<
+	Operand,
+	OperandDeque::iterator
+>( theForm.thisOperandDeque )
 {
 }
 
 inline Type_< Om::Operand const >::OperandRange( Form const & theForm )
 :
-Sources::CollectionFrontSource< Operand const, OperandDeque::const_iterator >(
-	theForm.thisOperandDeque
-)
+Sources::CollectionFrontSource<
+	Operand const,
+	OperandDeque::const_iterator
+>( theForm.thisOperandDeque )
 {
 }
 
@@ -241,11 +261,16 @@ Sources::CollectionFrontSource< Operand const, OperandDeque::const_iterator >(
 // MARK: boost
 
 template<>
-inline void boost::swap( Om::Form & theFirst, Om::Form & theSecond )
+inline void boost::swap(
+	Om::Form & theFirst,
+	Om::Form & theSecond
+)
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/form.hpp"
+
 #endif

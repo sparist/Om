@@ -8,20 +8,19 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_EncodeOperation_ )
 
 	#include "om/literal.hpp"
 
 // MARK: Om::Operations::EncodeOperation
 
-	#define Type_ Om::Operations::EncodeOperation
+	#define Type_ \
+	Om::Operations::EncodeOperation
 
 // MARK: public (static)
 
@@ -31,7 +30,10 @@ inline char const * Type_::GetName()
 }
 
 template< typename TheEncodeOperation >
-inline void Type_::GiveElements( TheEncodeOperation &, Queue & theQueue )
+inline void Type_::GiveElements(
+	TheEncodeOperation &,
+	Queue & theQueue
+)
 {
 	theQueue.TakeElement( GetOperator() );
 }
@@ -45,7 +47,12 @@ inline bool Type_::TakeOperand(
 )
 {
 	assert( !theOperand.IsEmpty() );
-	return( this->TakeQuotedQueue( theEvaluation, *theOperand.GetProgram() ) );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
 }
 
 template< typename TheQueue >
@@ -63,6 +70,7 @@ inline bool Type_::TakeQuotedQueue(
 	#undef Type_
 
 #else
+
 	#include "om/operations/encode_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )

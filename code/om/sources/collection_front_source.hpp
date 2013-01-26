@@ -8,14 +8,13 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Sources_CollectionFrontSource_ )
+
 	#define Om_Sources_CollectionFrontSource_ \
 	Om::Sources::CollectionFrontSource
 
@@ -30,10 +29,16 @@ namespace Om
 		\brief
 			A range over a collection, starting from the front.
 		*/
-		template< typename ThisItem, typename ThisIterator >
+		template<
+			typename ThisItem,
+			typename ThisIterator
+		>
 		struct CollectionFrontSource
 		:
-		IteratorPairSource< ThisItem, ThisIterator >
+		IteratorPairSource<
+			ThisItem,
+			ThisIterator
+		>
 		{
 		public: // MARK: public (non-static)
 
@@ -44,4 +49,5 @@ namespace Om
 }
 
 	#include "om/sources/collection_front_source.cpp"
+
 #endif

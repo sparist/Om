@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Writer_ )
 
 	#include "om/null.hpp"
@@ -26,11 +24,14 @@
 
 // MARK: Om::Writer
 
-	#define Type_ Om::Writer
+	#define Type_ \
+	Om::Writer
 
 // MARK: public (non-static)
 
-inline Type_::Writer( Sink< CodePoint const > & theCodePointSink )
+inline Type_::Writer(
+	Sink< CodePoint const > & theCodePointSink
+)
 :
 thisCodePointSink( theCodePointSink )
 {
@@ -55,12 +56,16 @@ inline void Type_::GiveElements( Queue & ) const
 
 inline std::auto_ptr< Om::Program > Type_::GiveProgram()
 {
-	return( std::auto_ptr< Program >( new Null ) );
+	return(
+		std::auto_ptr< Program >( new Null )
+	);
 }
 
 inline std::auto_ptr< Om::Program > Type_::GiveProgram() const
 {
-	return( std::auto_ptr< Program >( new Null ) );
+	return(
+		std::auto_ptr< Program >( new Null )
+	);
 }
 
 inline bool Type_::IsEmpty() const
@@ -70,7 +75,11 @@ inline bool Type_::IsEmpty() const
 
 inline void Type_::ReadElements( Parser & theParser )
 {
-	for( ; theParser; theParser.Pop() ){
+	for(
+		;
+		theParser;
+		theParser.Pop()
+	){
 		this->thisCodePointSink.Push( *theParser );
 	}
 }
@@ -94,10 +103,15 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 {
 	assert( !theOperator.IsEmpty() );
 	std::string const & theString = theOperator.GetString();
-	Sources::CodePointSource<
-		std::string::const_iterator
-	> theCodePointSource( theString.begin(), theString.end() );
-	for( ; theCodePointSource; theCodePointSource.Pop() ){
+	Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
+		theString.begin(),
+		theString.end()
+	);
+	for(
+		;
+		theCodePointSource;
+		theCodePointSource.Pop()
+	){
 		switch( CodePoint const theCodePoint = *theCodePointSource ){
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			// Fall through.
@@ -126,10 +140,15 @@ inline void Type_::TakeSeparator( TheSeparator & theSeparator )
 {
 	assert( !theSeparator.IsEmpty() );
 	std::string const & theString = theSeparator.GetString();
-	Sources::CodePointSource<
-		std::string::const_iterator
-	> theCodePointSource( theString.begin(), theString.end() );
-	for( ; theCodePointSource; theCodePointSource.Pop() ){
+	Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
+		theString.begin(),
+		theString.end()
+	);
+	for(
+		;
+		theCodePointSource;
+		theCodePointSource.Pop()
+	){
 		this->thisCodePointSink.Push( *theCodePointSource );
 	}
 }
@@ -137,6 +156,7 @@ inline void Type_::TakeSeparator( TheSeparator & theSeparator )
 	#undef Type_
 
 #else
+
 	#include "om/writer.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -155,14 +175,19 @@ namespace Om
 			{
 				Sinks::CodePointSink<
 					std::back_insert_iterator< std::string >
-				> theCodePointSink( std::back_inserter( theResult ) );
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
 				Writer theWriter( theCodePointSink );
 
 				Sources::CodePointSource<> theCodePointSource( theCode );
 				Parser theParser( theCodePointSource );
 				theWriter.ReadElements( theParser );
 			}
-			CHECK_EQUAL( "\n\t {\n\t {\n\t }\n\t }\n\t", theResult );
+			CHECK_EQUAL(
+				"\n\t {\n\t {\n\t }\n\t }\n\t",
+				theResult
+			);
 		}
 	}
 }

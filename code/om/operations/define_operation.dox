@@ -2,15 +2,11 @@
 \defgroup define_operation define
 	\ingroup operations
 	\brief
-		\ref evaluate_operation "Evaluates" and
-		\ref dequote_operation "dequotes" an \ref expression with an environment
-		that contains additionally defined \ref operator "operators".
+		\ref evaluate_operation "Evaluates" and \ref dequote_operation "dequotes" an \ref expression with an environment that contains additionally defined \ref operator "operators".
 	\par Input
-		A \ref lexicon, containing the additional operator definition(s), and an
-		\ref expression to evaluate.
+		A \ref lexicon, containing the additional operator definition(s), and an \ref expression to evaluate.
 	\par Output
-		The evaluation of the \ref expression under the temporarily extended
-		environment, \ref dequote_operation "dequoted".
+		The evaluation of the \ref expression under the temporarily extended environment, \ref dequote_operation "dequoted".
 	\par Implementation
 		Om::Operations::DefineOperation
 */

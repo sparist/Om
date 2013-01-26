@@ -8,20 +8,21 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Operand_ )
-	#define Om_Operand_ Om::Operand
+
+	#define Om_Operand_ \
+	Om::Operand
 
 	#include "om/default_element.hpp"
 	#include "om/owner.hpp"
 
-	#define Om_Operand_GetName_() "operand"
+	#define Om_Operand_GetName_() \
+	"operand"
 
 namespace Om
 {
@@ -30,8 +31,7 @@ namespace Om
 	\brief
 		The \ref operand implementation.
 
-	Encloses a Program in Symbols::theStartOperandSymbol and
-	Symbols::theEndOperandSymbol.  The Operand owns the embedded Program.
+	Encloses a Program in Symbols::theStartOperandSymbol and Symbols::theEndOperandSymbol.  The Operand owns the embedded Program.
 	*/
 	struct Operand
 	:
@@ -46,7 +46,9 @@ namespace Om
 		Operand();
 
 		template< typename TheProgram >
-		explicit Operand( std::auto_ptr< TheProgram > );
+		explicit Operand(
+			std::auto_ptr< TheProgram >
+		);
 
 		Operand & operator =( Operand );
 
@@ -54,8 +56,7 @@ namespace Om
 
 		/*!
 		\return
-			A reference to the Program owned by this Operand.  Do not retain
-			this reference.
+			A reference to the Program owned by this Operand.  Do not retain this reference.
 		*/
 		virtual Program & operator *();
 
@@ -68,8 +69,7 @@ namespace Om
 
 		/*!
 		\return
-			A reference to the Program owned by this Operand, or null if none.
-			Do not retain this reference.
+			A reference to the Program owned by this Operand, or null if none.  Do not retain this reference.
 		*/
 		Program * GetProgram();
 
@@ -80,8 +80,7 @@ namespace Om
 
 		/*!
 		\return
-			True if this instance represents an empty Program, which is the case
-			if there is no inner Program (i.e. via default construction).
+			True if this instance represents an empty Program, which is the case if there is no inner Program (i.e. via default construction).
 		*/
 		virtual bool IsEmpty() const;
 
@@ -91,7 +90,9 @@ namespace Om
 
 		//! Replaces the Program owned by this Operand with the argument.
 		template< typename TheProgram >
-		void SetProgram( std::auto_ptr< TheProgram > );
+		void SetProgram(
+			std::auto_ptr< TheProgram >
+		);
 
 		void Swap( Operand & );
 
@@ -121,8 +122,12 @@ namespace Om
 namespace boost
 {
 	template<>
-	void swap( Om::Operand &, Om::Operand & );
+	void swap(
+		Om::Operand &,
+		Om::Operand &
+	);
 }
 
 	#include "om/operand.cpp"
+
 #endif

@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_DefaultOperation_ )
-	#define Om_DefaultOperation_ Om::DefaultOperation
+
+	#define Om_DefaultOperation_ \
+	Om::DefaultOperation
 
 	#include "om/operation.hpp"
 
@@ -50,25 +50,40 @@ namespace Om
 
 		virtual void GiveElements( Queue & ) const;
 
-		virtual bool ReadQuotedElements( Evaluation &, Parser & );
+		virtual bool ReadQuotedElements(
+			Evaluation &,
+			Parser &
+		);
 
 		/*!
 		\brief
 			Takes the Operand and gives the result to the Evaluation.
 		\return
-			True if this call completes the Operation, in which case any
-			further calls on the Operation are undefined.
+			True if this call completes the Operation, in which case any further calls on the Operation are undefined.
 		*/
-		virtual bool TakeElement( Evaluation &, Operand & );
+		virtual bool TakeElement(
+			Evaluation &,
+			Operand &
+		);
 
 		//! \overload
-		virtual bool TakeElement( Evaluation &, Operand const & );
+		virtual bool TakeElement(
+			Evaluation &,
+			Operand const &
+		);
 
-		virtual bool TakeQuotedElements( Evaluation &, Queue & );
+		virtual bool TakeQuotedElements(
+			Evaluation &,
+			Queue &
+		);
 
-		virtual bool TakeQuotedElements( Evaluation &, Queue const & );
+		virtual bool TakeQuotedElements(
+			Evaluation &,
+			Queue const &
+		);
 	};
 }
 
 	#include "om/default_operation.cpp"
+
 #endif

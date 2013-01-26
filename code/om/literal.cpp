@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Literal_ )
 
 	#include "om/operator.hpp"
@@ -22,7 +20,8 @@
 
 // MARK: Om::Literal
 
-	#define Type_ Om::Literal
+	#define Type_ \
+	Om::Literal
 
 // MARK: public (static)
 
@@ -38,9 +37,7 @@ inline Type_::~Literal()
 	// Flatten the ElementDeque to avoid recursive destructor calls.
 	try{
 		while( !this->thisElementDeque.empty() ){
-			std::auto_ptr< Element > theElement(
-				this->thisElementDeque.pop_front().release()
-			);
+			std::auto_ptr< Element > theElement( this->thisElementDeque.pop_front().release() );
 			assert( theElement.get() );
 			( *theElement )->GiveElements( *this );
 		}
@@ -100,10 +97,14 @@ inline void Type_::FrontGiveElement( Queue & theQueue )
 	}
 }
 
-inline std::auto_ptr< Om::Source< Om::Element > > Type_::GetElementRange()
+inline std::auto_ptr<
+	Om::Source< Om::Element >
+> Type_::GetElementRange()
 {
 	return(
-		std::auto_ptr< Source< Element > >(
+		std::auto_ptr<
+			Source< Element >
+		>(
 			new ElementRange< Literal >( *this )
 		)
 	);
@@ -114,7 +115,9 @@ inline std::auto_ptr<
 > Type_::GetElementRange() const
 {
 	return(
-		std::auto_ptr< Source< Element const > >(
+		std::auto_ptr<
+			Source< Element const >
+		>(
 			new ElementRange< Literal const >( *this )
 		)
 	);
@@ -152,7 +155,10 @@ inline void Type_::ReadElements( Parser & theParser )
 	while( theParser ){
 		switch( *theParser ){
 		case Symbols::theEndOperandSymbol:
-			assert( !theStack.empty() && this != theStack.top() );
+			assert(
+				!theStack.empty() &&
+				this != theStack.top()
+			);
 			theStack.pop();
 			break;
 		case Symbols::theStartOperandSymbol:
@@ -167,14 +173,20 @@ inline void Type_::ReadElements( Parser & theParser )
 			}
 			break;
 		Om_Symbols_SeparatorSymbol_GetCases_():
-			assert( !theStack.empty() && theStack.top() );
+			assert(
+				!theStack.empty() &&
+				theStack.top()
+			);
 			{
 				Separator theSeparator( theParser );
 				theStack.top()->TakeSeparator( theSeparator );
 			}
 			continue;
 		default:
-			assert( !theStack.empty() && theStack.top() );
+			assert(
+				!theStack.empty() &&
+				theStack.top()
+			);
 			{
 				Operator theOperator( theParser );
 				theStack.top()->TakeOperator( theOperator );
@@ -201,7 +213,9 @@ template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand )
 {
 	assert( !theOperand.IsEmpty() );
-	this->thisElementDeque.push_back( Give( theOperand ) );
+	this->thisElementDeque.push_back(
+		Give( theOperand )
+	);
 }
 
 template< typename TheOperator >
@@ -214,7 +228,9 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 template< typename TheQueue >
 inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 {
-	this->thisElementDeque.push_back( new Operand( theQueue.GiveProgram() ) );
+	this->thisElementDeque.push_back(
+		new Operand( theQueue.GiveProgram() )
+	);
 }
 
 template< typename TheSeparator >
@@ -233,7 +249,11 @@ inline void Type_::GiveElements(
 	TheElementIterator const theEnd
 )
 {
-	for( ; theEnd != theCurrent; ++theCurrent ){
+	for(
+		;
+		theEnd != theCurrent;
+		++theCurrent
+	){
 		theCurrent->GiveElements( theQueue );
 	}
 }
@@ -247,7 +267,11 @@ inline void Type_::TakeAtom( TheAtom & theAtom )
 	if(
 		this->thisElementDeque.empty() ||
 		!this->thisElementDeque.back().Merge( theAtom )
-	){ this->thisElementDeque.push_back( Give( theAtom ) ); }
+	){
+		this->thisElementDeque.push_back(
+			Give( theAtom )
+		);
+	}
 }
 
 	#undef Type_
@@ -255,23 +279,26 @@ inline void Type_::TakeAtom( TheAtom & theAtom )
 // MARK: -
 // MARK: Om::Literal::ElementRange
 
-	#define Type_ Om::Literal::ElementRange
+	#define Type_ \
+	Om::Literal::ElementRange
 
 // MARK: public (non-static)
 
 inline Type_< Om::Literal >::ElementRange( Literal & theLiteral )
 :
-Sources::CollectionFrontSource< Element, ElementDeque::iterator >(
-	theLiteral.thisElementDeque
-)
+Sources::CollectionFrontSource<
+	Element,
+	ElementDeque::iterator
+>( theLiteral.thisElementDeque )
 {
 }
 
 inline Type_< Om::Literal const >::ElementRange( Literal const & theLiteral )
 :
-Sources::CollectionFrontSource< Element const, ElementDeque::const_iterator >(
-	theLiteral.thisElementDeque
-)
+Sources::CollectionFrontSource<
+	Element const,
+	ElementDeque::const_iterator
+>( theLiteral.thisElementDeque )
 {
 }
 
@@ -281,12 +308,16 @@ Sources::CollectionFrontSource< Element const, ElementDeque::const_iterator >(
 // MARK: boost
 
 template<>
-inline void boost::swap( Om::Literal & theFirst, Om::Literal & theSecond )
+inline void boost::swap(
+	Om::Literal & theFirst,
+	Om::Literal & theSecond
+)
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/literal.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -304,9 +335,7 @@ namespace Om
 			// Positive match
 			CHECK_EQUAL(
 				"{{a{b}{c}\nd{e}}}",
-				System::Get().Evaluate(
-					"= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}"
-				)
+				System::Get().Evaluate( "= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}" )
 			);
 
 			// Negative match
@@ -322,7 +351,10 @@ namespace Om
 			);
 
 			// Empty match
-			CHECK_EQUAL( "{{}}", System::Get().Evaluate( "= {} {}" ) );
+			CHECK_EQUAL(
+				"{{}}",
+				System::Get().Evaluate( "= {} {}" )
+			);
 		}
 
 		TEST( Recursion )
@@ -330,13 +362,18 @@ namespace Om
 			size_t const theDepth = 50000;
 
 			std::string theString;
-			for( size_t theLevel = theDepth; theLevel; --theLevel ){
+			for(
+				size_t theLevel = theDepth;
+				theLevel;
+				--theLevel
+			){
 				theString = "{" + theString + "}";
 			}
 
-			Sources::CodePointSource<
-				std::string::const_iterator
-			> theCodePointSource( theString.begin(), theString.end() );
+			Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
+				theString.begin(),
+				theString.end()
+			);
 			Parser theParser( theCodePointSource );
 			Literal theLiteral;
 			theLiteral.ReadElements( theParser );

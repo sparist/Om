@@ -8,19 +8,20 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Expression_ )
-	#define Om_Expression_ Om::Expression
+
+	#define Om_Expression_ \
+	Om::Expression
 
 	#include "om/form.hpp"
 
-	#define Om_Expression_GetName_() "expression"
+	#define Om_Expression_GetName_() \
+	"expression"
 
 namespace Om
 {
@@ -154,7 +155,10 @@ namespace Om
 	template<>
 	struct Expression::FormRange< Form >
 	:
-	Sources::CollectionFrontSource< Form, FormDeque::iterator >
+	Sources::CollectionFrontSource<
+		Form,
+		FormDeque::iterator
+	>
 	{
 	public: // MARK: public (non-static)
 
@@ -169,7 +173,10 @@ namespace Om
 	template<>
 	struct Expression::FormRange< Form const >
 	:
-	Sources::CollectionFrontSource< Form const, FormDeque::const_iterator >
+	Sources::CollectionFrontSource<
+		Form const,
+		FormDeque::const_iterator
+	>
 	{
 	public: // MARK: public (non-static)
 
@@ -183,7 +190,10 @@ namespace Om
 	*/
 	struct Expression::ElementRange
 	:
-	Sources::DefaultSource< Element const, ElementRange >
+	Sources::DefaultSource<
+		Element const,
+		ElementRange
+	>
 	{
 	public: // MARK: public (non-static)
 
@@ -216,8 +226,12 @@ namespace Om
 namespace boost
 {
 	template<>
-	void swap( Om::Expression &, Om::Expression & );
+	void swap(
+		Om::Expression &,
+		Om::Expression &
+	);
 }
 
 	#include "om/expression.cpp"
+
 #endif

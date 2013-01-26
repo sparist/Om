@@ -8,20 +8,26 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Sources_IteratorPairSource_ )
 
 // MARK: Om::Sources::IteratorPairSource
 
-	#define Template_ template< typename ThisItem, typename ThisIterator >
+	#define Template_ \
+	template< \
+		typename ThisItem, \
+		typename ThisIterator \
+	>
 
-	#define Type_ Om::Sources::IteratorPairSource< ThisItem, ThisIterator >
+	#define Type_ \
+	Om::Sources::IteratorPairSource< \
+		ThisItem, \
+		ThisIterator \
+	>
 
 // MARK: public (non-static)
 
@@ -78,8 +84,14 @@ inline void Type_::Pop()
 Template_
 inline void Type_::Swap( IteratorPairSource & theIteratorPairSource )
 {
-	boost::swap( this->thisCurrent, theIteratorPairSource.thisCurrent );
-	boost::swap( this->thisEnd, theIteratorPairSource.thisEnd );
+	boost::swap(
+		this->thisCurrent,
+		theIteratorPairSource.thisCurrent
+	);
+	boost::swap(
+		this->thisEnd,
+		theIteratorPairSource.thisEnd
+	);
 }
 
 	#undef Type_
@@ -88,15 +100,26 @@ inline void Type_::Swap( IteratorPairSource & theIteratorPairSource )
 // MARK: -
 // MARK: boost
 
-template< typename ThisItem, typename ThisIterator >
+template<
+	typename ThisItem,
+	typename ThisIterator
+>
 inline void boost::swap(
-	Om::Sources::IteratorPairSource< ThisItem, ThisIterator > & theFirst,
-	Om::Sources::IteratorPairSource< ThisItem, ThisIterator > & theSecond
+	Om::Sources::IteratorPairSource<
+		ThisItem,
+		ThisIterator
+	> & theFirst,
+	Om::Sources::IteratorPairSource<
+		ThisItem,
+		ThisIterator
+	> & theSecond
 )
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/sources/iterator_pair_source.hpp"
+
 #endif

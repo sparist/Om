@@ -8,20 +8,21 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Literal_ )
-	#define Om_Literal_ Om::Literal
+
+	#define Om_Literal_ \
+	Om::Literal
 
 	#include "om/default_program.hpp"
 	#include "om/sources/collection_front_source.hpp"
 
-	#define Om_Literal_GetName_() "literal"
+	#define Om_Literal_GetName_() \
+	"literal"
 
 namespace Om
 {
@@ -63,7 +64,9 @@ namespace Om
 
 		void FrontGiveElement( Queue & );
 
-		std::auto_ptr< Source< Element > > GetElementRange();
+		std::auto_ptr<
+			Source< Element >
+		> GetElementRange();
 
 		virtual std::auto_ptr<
 			Source< Element const >
@@ -128,7 +131,10 @@ namespace Om
 	template<>
 	struct Literal::ElementRange< Literal >
 	:
-	Sources::CollectionFrontSource< Element, ElementDeque::iterator >
+	Sources::CollectionFrontSource<
+		Element,
+		ElementDeque::iterator
+	>
 	{
 	public: // MARK: public (non-static)
 
@@ -158,8 +164,12 @@ namespace Om
 namespace boost
 {
 	template<>
-	void swap( Om::Literal &, Om::Literal & );
+	void swap(
+		Om::Literal &,
+		Om::Literal &
+	);
 }
 
 	#include "om/literal.cpp"
+
 #endif

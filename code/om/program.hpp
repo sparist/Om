@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Program_ )
-	#define Om_Program_ Om::Program
+
+	#define Om_Program_ \
+	Om::Program
 
 	#include "om/giveable.hpp"
 	#include "om/queue.hpp"
@@ -36,12 +36,9 @@ namespace Om
 	\brief
 		The \ref programs "Program" implementation.
 
-	A Program is a Giveable, Shareable Queue whose entire state is represented
-	by an Element collection.
+	A Program is a Giveable, Shareable Queue whose entire state is represented by an Element collection.
 
-	Each concrete derivation must have a GetName() function that returns a null-
-	terminated, NFD-normalized UTF-8 string to be used as a corresponding
-	Operator name.
+	Each concrete derivation must have a GetName() function that returns a null-terminated, NFD-normalized UTF-8 string to be used as a corresponding Operator name.
 	*/
 	struct Program
 	:
@@ -72,4 +69,5 @@ namespace Om
 }
 
 	#include "om/program.cpp"
+
 #endif

@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operator_ )
 
 	#include "om/operand.hpp"
@@ -27,7 +25,8 @@
 
 // MARK: Om::Operator
 
-	#define Type_ Om::Operator
+	#define Type_ \
+	Om::Operator
 
 // MARK: public (static)
 
@@ -44,9 +43,10 @@ inline Type_::Operator()
 
 inline Type_::Operator( std::string const & theString )
 {
-	boost::locale::normalize( theString, boost::locale::norm_nfd ).swap(
-		this->thisString
-	);
+	boost::locale::normalize(
+		theString,
+		boost::locale::norm_nfd
+	).swap( this->thisString );
 }
 
 inline Type_::Operator( char const theCodeUnitIterator[] )
@@ -57,11 +57,17 @@ inline Type_::Operator( char const theCodeUnitIterator[] )
 	).swap( this->thisString );
 }
 
-inline Type_::Operator( Source< CodePoint const > & theCodePointSource )
+inline Type_::Operator(
+	Source< CodePoint const > & theCodePointSource
+)
 {
 	std::string theString;
 	std::back_insert_iterator< std::string > theInserter( theString );
-	for( ; theCodePointSource; theCodePointSource.Pop() ){
+	for(
+		;
+		theCodePointSource;
+		theCodePointSource.Pop()
+	){
 		switch( *theCodePointSource ){
 		Om_Symbols_OperandSymbol_GetCases_():
 			// Fall through.
@@ -75,31 +81,41 @@ inline Type_::Operator( Source< CodePoint const > & theCodePointSource )
 			}
 			// Fall through.
 		default:
-			Utf8::encode( *theCodePointSource, theInserter );
+			Utf8::encode(
+				*theCodePointSource,
+				theInserter
+			);
 			continue;
 		}
 		break;
 	}
-	boost::locale::normalize( theString, boost::locale::norm_nfd ).swap(
-		this->thisString
-	);
+	boost::locale::normalize(
+		theString,
+		boost::locale::norm_nfd
+	).swap( this->thisString );
 }
 
 inline Type_::Operator( Symbols::OperandSymbol const theOperandSymbol )
 :
-DefaultAtom< Operator >( static_cast< char >( theOperandSymbol ) )
+DefaultAtom< Operator >(
+	static_cast< char >( theOperandSymbol )
+)
 {
 }
 
 inline Type_::Operator( Symbols::OperatorSymbol const theOperatorSymbol )
 :
-DefaultAtom< Operator >( static_cast< char >( theOperatorSymbol ) )
+DefaultAtom< Operator >(
+	static_cast< char >( theOperatorSymbol )
+)
 {
 }
 
 inline Type_::Operator( Symbols::SeparatorSymbol const theSeparatorSymbol )
 :
-DefaultAtom< Operator >( static_cast< char >( theSeparatorSymbol ) )
+DefaultAtom< Operator >(
+	static_cast< char >( theSeparatorSymbol )
+)
 {
 }
 
@@ -116,9 +132,7 @@ inline void Type_::BackGiveCodePoint( Queue & theQueue )
 		{
 			std::string & theString = theOperator.thisString;
 			{
-				Sources::CodePointStringBackSource<
-					std::string::const_iterator
-				> theCodePointStringRange(
+				Sources::CodePointStringBackSource< std::string::const_iterator > theCodePointStringRange(
 					this->thisString.begin(),
 					this->thisString.end()
 				);
@@ -126,9 +140,7 @@ inline void Type_::BackGiveCodePoint( Queue & theQueue )
 				theCodePointStringRange->swap( theString );
 			}
 			assert( !theString.empty() );
-			this->thisString.erase(
-				this->thisString.size() - theString.size()
-			);
+			this->thisString.erase( this->thisString.size() - theString.size() );
 		}
 		theQueue.TakeElement( theOperator );
 	}
@@ -142,31 +154,23 @@ inline void Type_::BackGiveSegment( Queue & theQueue )
 		{
 			std::string & theString = theOperator.thisString;
 			{
-				typedef boost::locale::boundary::segment_index<
-					std::string::const_iterator
-				> SegmentCollection;
+				typedef boost::locale::boundary::segment_index< std::string::const_iterator > SegmentCollection;
 
 				typedef SegmentCollection::const_iterator SegmentIterator;
 
 				SegmentCollection const theSegmentCollection(
-					static_cast<
-						boost::locale::boundary::boundary_type
-					>( theSegment ),
+					static_cast< boost::locale::boundary::boundary_type >( theSegment ),
 					this->thisString.begin(),
 					this->thisString.end()
 				);
 
-				SegmentIterator theSegmentIterator(
-					theSegmentCollection.end()
-				);
+				SegmentIterator theSegmentIterator( theSegmentCollection.end() );
 				assert( theSegmentCollection.begin() != theSegmentIterator );
 				--theSegmentIterator;
 				theSegmentIterator->str().swap( theString );
 			}
 			assert( !theString.empty() );
-			this->thisString.erase(
-				this->thisString.size() - theString.size()
-			);
+			this->thisString.erase( this->thisString.size() - theString.size() );
 		}
 		theQueue.TakeElement( theOperator );
 	}
@@ -175,9 +179,10 @@ inline void Type_::BackGiveSegment( Queue & theQueue )
 template< typename TheQueue >
 inline void Type_::Decode( TheQueue & theQueue ) const
 {
-	Sources::CodePointSource<
-		std::string::const_iterator
-	> theCodePointSource( this->thisString.begin(), this->thisString.end() );
+	Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
+		this->thisString.begin(),
+		this->thisString.end()
+	);
 	Parser theParser( theCodePointSource );
 	theQueue.ReadElements( theParser );
 }
@@ -188,7 +193,9 @@ inline void Type_::Encode( TheQueue & theQueue )
 	this->thisString.clear();
 	Sinks::CodePointSink<
 		std::back_insert_iterator< std::string >
-	> theCodePointSink( std::back_inserter( this->thisString ) );
+	> theCodePointSink(
+		std::back_inserter( this->thisString )
+	);
 	Writer theWriter( theCodePointSink );
 	theQueue.GiveElements( theWriter );
 }
@@ -200,9 +207,7 @@ inline void Type_::FrontGiveCodePoint( Queue & theQueue )
 		{
 			std::string & theString = theOperator.thisString;
 			{
-				Sources::CodePointStringFrontSource<
-					std::string::const_iterator
-				> theCodePointStringRange(
+				Sources::CodePointStringFrontSource< std::string::const_iterator > theCodePointStringRange(
 					this->thisString.begin(),
 					this->thisString.end()
 				);
@@ -210,7 +215,10 @@ inline void Type_::FrontGiveCodePoint( Queue & theQueue )
 				theCodePointStringRange->swap( theString );
 			}
 			assert( !theString.empty() );
-			this->thisString.erase( 0, theString.size() );
+			this->thisString.erase(
+				0,
+				theString.size()
+			);
 		}
 		theQueue.TakeElement( theOperator );
 	}
@@ -224,26 +232,23 @@ inline void Type_::FrontGiveSegment( Queue & theQueue )
 		{
 			std::string & theString = theOperator.thisString;
 			{
-				typedef boost::locale::boundary::segment_index<
-					std::string::const_iterator
-				> SegmentCollection;
+				typedef boost::locale::boundary::segment_index< std::string::const_iterator > SegmentCollection;
 
 				SegmentCollection const theSegmentCollection(
-					static_cast<
-						boost::locale::boundary::boundary_type
-					>( theSegment ),
+					static_cast< boost::locale::boundary::boundary_type >( theSegment ),
 					this->thisString.begin(),
 					this->thisString.end()
 				);
 
-				SegmentCollection::const_iterator const theSegmentIterator(
-					theSegmentCollection.begin()
-				);
+				SegmentCollection::const_iterator const theSegmentIterator( theSegmentCollection.begin() );
 				assert( theSegmentCollection.end() != theSegmentIterator );
 				theSegmentIterator->str().swap( theString );
 			}
 			assert( !theString.empty() );
-			this->thisString.erase( 0, theString.size() );
+			this->thisString.erase(
+				0,
+				theString.size()
+			);
 		}
 		theQueue.TakeElement( theOperator );
 	}
@@ -251,9 +256,10 @@ inline void Type_::FrontGiveSegment( Queue & theQueue )
 
 inline void Type_::Normalize()
 {
-	boost::locale::normalize( this->thisString, boost::locale::norm_nfkd ).swap(
-		this->thisString
-	);
+	boost::locale::normalize(
+		this->thisString,
+		boost::locale::norm_nfkd
+	).swap( this->thisString );
 }
 
 inline void Type_::ReadElements( Parser & theParser )
@@ -265,7 +271,9 @@ inline void Type_::ReadElements( Parser & theParser )
 		case Symbols::theStartOperandSymbol:
 			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
-			this->thisString.push_back( static_cast< char >( *theParser ) );
+			this->thisString.push_back(
+				static_cast< char >( *theParser )
+			);
 			theParser.Pop();
 			continue;
 		}
@@ -291,7 +299,9 @@ inline void Type_::TakeOperand( TheOperand & theOperand )
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator )
 {
-	assert( typeid( theOperator ) == typeid( *this ) );
+	assert(
+		typeid( theOperator ) == typeid( *this )
+	);
 	assert( !theOperator.IsEmpty() );
 	assert(
 		boost::locale::normalize(
@@ -310,9 +320,10 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 
 	// Normalization is required even when combining two NFD-normalized strings.
 	// TODO: Optimize to only do an incremental normalization at the boundary.
-	boost::locale::normalize( this->thisString, boost::locale::norm_nfd ).swap(
-		this->thisString
-	);
+	boost::locale::normalize(
+		this->thisString,
+		boost::locale::norm_nfd
+	).swap( this->thisString );
 }
 
 template< typename TheQueue >
@@ -336,12 +347,16 @@ inline void Type_::TakeSeparator( TheSeparator & theSeparator )
 // MARK: boost
 
 template<>
-inline void boost::swap( Om::Operator & theFirst, Om::Operator & theSecond )
+inline void boost::swap(
+	Om::Operator & theFirst,
+	Om::Operator & theSecond
+)
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/operator.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -367,17 +382,13 @@ namespace Om
 			// Positive match
 			CHECK_EQUAL(
 				"{{test` `{ing`}}}",
-				System::Get().Evaluate(
-					"= operator{test {ing}} {test` `{ing`}}"
-				)
+				System::Get().Evaluate( "= operator{test {ing}} {test` `{ing`}}" )
 			);
 
 			// Positive match
 			CHECK_EQUAL(
 				"{{a`{b`}`{c`}`\nd`{e`}}}",
-				System::Get().Evaluate(
-					"= operator{a{b}{c}\nd{e}} {a`{b`}`{c`}`\nd`{e`}}"
-				)
+				System::Get().Evaluate( "= operator{a{b}{c}\nd{e}} {a`{b`}`{c`}`\nd`{e`}}" )
 			);
 
 			// Negative match
@@ -412,7 +423,10 @@ namespace Om
 				theOperator.TakeQuotedQueue( theLiteral );
 				assert( theLiteral.IsEmpty() );
 			}
-			CHECK_EQUAL( "{a{b{c}}}", theOperator.GetString() );
+			CHECK_EQUAL(
+				"{a{b{c}}}",
+				theOperator.GetString()
+			);
 		}
 
 		TEST( Normalization )
@@ -421,7 +435,10 @@ namespace Om
 			Operator theLeftOperator( "s\xCC\x87" );
 			Operator theRightOperator( "\xCC\xA3" );
 			theLeftOperator.TakeElement( theRightOperator );
-			CHECK_EQUAL( "s\xCC\xA3\xCC\x87", theLeftOperator.GetString() );
+			CHECK_EQUAL(
+				"s\xCC\xA3\xCC\x87",
+				theLeftOperator.GetString()
+			);
 		}
 
 		TEST( Read )
@@ -431,7 +448,9 @@ namespace Om
 			{
 				Sinks::CodePointSink<
 					std::back_insert_iterator< std::string >
-				> theCodePointSink( std::back_inserter( theResult ) );
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
 				Writer theWriter( theCodePointSink );
 
 				Sources::CodePointSource<> theCodePointSource( theCode );

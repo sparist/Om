@@ -8,24 +8,22 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Sources_CodePointStringFrontSource_ )
 
 	#include "om/utf8.hpp"
 
 // MARK: Om::Sources::CodePointStringFrontSource
 
-	#define Template_ template< typename ThisStringIterator >
+	#define Template_ \
+	template< typename ThisStringIterator >
 
-	#define Type_ Om::Sources::CodePointStringFrontSource< \
-		ThisStringIterator \
-	>
+	#define Type_ \
+	Om::Sources::CodePointStringFrontSource< ThisStringIterator >
 
 // MARK: public (non-static)
 
@@ -43,18 +41,14 @@ thisCodePoint()
 }
 
 Template_
-inline Type_ & Type_::operator =(
-	CodePointStringFrontSource theCodePointStringFrontSource
-)
+inline Type_ & Type_::operator =( CodePointStringFrontSource theCodePointStringFrontSource )
 {
 	this->Swap( theCodePointStringFrontSource );
 	return( *this );
 }
 
 Template_
-inline bool Type_::operator ==(
-	CodePointStringFrontSource const & theSource
-) const
+inline bool Type_::operator ==( CodePointStringFrontSource const & theSource ) const
 {
 	return( this->thisStringIterator == theSource.thisStringIterator );
 }
@@ -79,9 +73,7 @@ inline void Type_::Pop()
 }
 
 Template_
-inline void Type_::Swap(
-	CodePointStringFrontSource & theCodePointStringFrontSource
-)
+inline void Type_::Swap( CodePointStringFrontSource & theCodePointStringFrontSource )
 {
 	boost::swap(
 		this->thisStringIterator,
@@ -103,19 +95,31 @@ Template_
 inline void Type_::Update()
 {
 	assert( this->thisCodePoint.empty() );
-	if( this->thisStringEnd == this->thisStringIterator ){ return; }
+	if( this->thisStringEnd == this->thisStringIterator ){
+		return;
+	}
 	char theCodeUnit = *this->thisStringIterator;
 	++this->thisStringIterator;
-	if( Utf8::is_lead( theCodeUnit ) ){
+	if(
+		Utf8::is_lead( theCodeUnit )
+	){
 		this->thisCodePoint.push_back( theCodeUnit );
-		int theTrailCount = Utf8::trail_length( theCodeUnit );
-		for( ; ; --theTrailCount, ++this->thisStringIterator ){
-			if( !theTrailCount ){ return; }
+		for(
+			int theTrailCount = Utf8::trail_length( theCodeUnit );
+			;
+			--theTrailCount
+		){
+			if( !theTrailCount ){
+				return;
+			}
 			if(
 				this->thisStringEnd == this->thisStringIterator ||
 				!Utf8::is_trail( theCodeUnit = *this->thisStringIterator )
-			){ break; }
+			){
+				break;
+			}
 			this->thisCodePoint.push_back( theCodeUnit );
+			++this->thisStringIterator;
 		}
 	}
 	this->thisCodePoint = "\xEF\xBF\xBD" /* Replacement character */;
@@ -137,6 +141,7 @@ inline void boost::swap(
 }
 
 #else
+
 	#include "om/sources/code_point_string_front_source.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -154,81 +159,160 @@ namespace Om
 			{
 				std::string theString(
 					"P" /* ASCII character */
-					"o""\xCC\x88" /* ASCII + combining multi-byte character */
+					"o"
+					"\xCC\x88" /* Combining multi-byte character */
 					"r" /* ASCII character */
 					"k" /* ASCII character */
 					"\xE2\x98\xB9" /* Non-combining multi-byte character */
 				);
 
 				{
-					CodePointStringFrontSource<
-						std::string::const_iterator
-					> theSource( theString.begin(), theString.end() );
+					CodePointStringFrontSource< std::string::const_iterator > theSource(
+						theString.begin(),
+						theString.end()
+					);
 
-					CHECK_EQUAL( false, !theSource );
-					CHECK_EQUAL( "P", *theSource );
+					CHECK_EQUAL(
+						false,
+						!theSource
+					);
+					CHECK_EQUAL(
+						"P",
+						*theSource
+					);
 					theSource.Pop();
 
-					CHECK_EQUAL( false, !theSource );
-					CHECK_EQUAL( "o", *theSource );
+					CHECK_EQUAL(
+						false,
+						!theSource
+					);
+					CHECK_EQUAL(
+						"o",
+						*theSource
+					);
 					theSource.Pop();
 
-					CHECK_EQUAL( false, !theSource );
-					CHECK_EQUAL( "\xCC\x88", *theSource );
+					CHECK_EQUAL(
+						false,
+						!theSource
+					);
+					CHECK_EQUAL(
+						"\xCC\x88",
+						*theSource
+					);
 					theSource.Pop();
 
-					CHECK_EQUAL( false, !theSource );
-					CHECK_EQUAL( "r", *theSource );
+					CHECK_EQUAL(
+						false,
+						!theSource
+					);
+					CHECK_EQUAL(
+						"r",
+						*theSource
+					);
 					theSource.Pop();
 
-					CHECK_EQUAL( false, !theSource );
-					CHECK_EQUAL( "k", *theSource );
+					CHECK_EQUAL(
+						false,
+						!theSource
+					);
+					CHECK_EQUAL(
+						"k",
+						*theSource
+					);
 					theSource.Pop();
 
-					CHECK_EQUAL( false, !theSource );
-					CHECK_EQUAL( "\xE2\x98\xB9", *theSource );
+					CHECK_EQUAL(
+						false,
+						!theSource
+					);
+					CHECK_EQUAL(
+						"\xE2\x98\xB9",
+						*theSource
+					);
 					theSource.Pop();
 
-					CHECK_EQUAL( true, !theSource );
+					CHECK_EQUAL(
+						true,
+						!theSource
+					);
 				}
 			}
 
 			TEST( InvalidNoTrailing )
 			{
-				std::string theString( "\xE2" "!" );
+				std::string theString(
+					"\xE2"
+					"!"
+				);
 
-				CodePointStringFrontSource<
-					std::string::const_iterator
-				> theSource( theString.begin(), theString.end() );
+				CodePointStringFrontSource< std::string::const_iterator > theSource(
+					theString.begin(),
+					theString.end()
+				);
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "\xEF\xBF\xBD", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"\xEF\xBF\xBD",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "!", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"!",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( true, !theSource );
+				CHECK_EQUAL(
+					true,
+					!theSource
+				);
 			}
 
 			TEST( InvalidInsufficientTrailing )
 			{
-				std::string theString( "\xE2\x98" "!" );
+				std::string theString(
+					"\xE2\x98"
+					"!"
+				);
 
-				CodePointStringFrontSource<
-					std::string::const_iterator
-				> theSource( theString.begin(), theString.end() );
+				CodePointStringFrontSource< std::string::const_iterator > theSource(
+					theString.begin(),
+					theString.end()
+				);
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "\xEF\xBF\xBD", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"\xEF\xBF\xBD",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "!", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"!",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( true, !theSource );
+				CHECK_EQUAL(
+					true,
+					!theSource
+				);
 			}
 
 			TEST( InvalidExtraTrailing )
@@ -239,23 +323,45 @@ namespace Om
 					"!"
 				);
 
-				CodePointStringFrontSource<
-					std::string::const_iterator
-				> theSource( theString.begin(), theString.end() );
+				CodePointStringFrontSource< std::string::const_iterator > theSource(
+					theString.begin(),
+					theString.end()
+				);
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "\xE2\x98\xB9", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"\xE2\x98\xB9",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "\xEF\xBF\xBD", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"\xEF\xBF\xBD",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "!", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"!",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( true, !theSource );
+				CHECK_EQUAL(
+					true,
+					!theSource
+				);
 			}
 
 			TEST( InvalidMissingLeading )
@@ -265,34 +371,60 @@ namespace Om
 					"!"
 				);
 
-				CodePointStringFrontSource<
-					std::string::const_iterator
-				> theSource( theString.begin(), theString.end() );
+				CodePointStringFrontSource< std::string::const_iterator > theSource(
+					theString.begin(),
+					theString.end()
+				);
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "\xEF\xBF\xBD", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"\xEF\xBF\xBD",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "!", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"!",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( true, !theSource );
+				CHECK_EQUAL(
+					true,
+					!theSource
+				);
 			}
 
 			TEST( InvalidEarlyTermination )
 			{
 				std::string theString( "\xE2\x98" /* Invalid */ );
 
-				CodePointStringFrontSource<
-					std::string::const_iterator
-				> theSource( theString.begin(), theString.end() );
+				CodePointStringFrontSource< std::string::const_iterator > theSource(
+					theString.begin(),
+					theString.end()
+				);
 
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( "\xEF\xBF\xBD", *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"\xEF\xBF\xBD",
+					*theSource
+				);
 				theSource.Pop();
 
-				CHECK_EQUAL( true, !theSource );
+				CHECK_EQUAL(
+					true,
+					!theSource
+				);
 			}
 		}
 	}

@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #include "om.hpp"
 
 #include "om/sinks/stream_sink.hpp"
@@ -32,13 +30,18 @@
 	-	The program invocation.
 	-	(optional) A valid UTF-8 locale string compatible with boost::locale.
 */
-int main( int const theArgumentCount, char const * const theArgumentArray[] )
+int main(
+	int const theArgumentCount,
+	char const * const theArgumentArray[]
+)
 {
 	assert( 0 < theArgumentCount );
 	assert( theArgumentArray );
 
 	Om::System::Get().Initialize(
-		( 1 < theArgumentCount ) ? theArgumentArray[1] : "en_US.UTF-8"
+		( 1 < theArgumentCount ) ?
+		theArgumentArray[1] :
+		"en_US.UTF-8"
 	);
 
 #if defined( Om_Macros_Test_ )
@@ -47,17 +50,19 @@ int main( int const theArgumentCount, char const * const theArgumentArray[] )
 
 	typedef Om::Sources::StreamSource<> CodeUnitSource;
 	CodeUnitSource theCodeUnitSource( std::cin );
-	Om::Sources::CodePointSource<
-		CodeUnitSource
-	> theCodePointSource( theCodeUnitSource, CodeUnitSource() );
+	Om::Sources::CodePointSource< CodeUnitSource > theCodePointSource(
+		theCodeUnitSource,
+		CodeUnitSource()
+	);
 
 	typedef Om::Sinks::StreamSink<> CodeUnitSink;
 	CodeUnitSink theCodeUnitSink( std::cout );
-	Om::Sinks::CodePointSink<
-		CodeUnitSink
-	> theCodePointSink( theCodeUnitSink );
+	Om::Sinks::CodePointSink< CodeUnitSink > theCodePointSink( theCodeUnitSink );
 
-	Om::System::Get().Evaluate( theCodePointSource, theCodePointSink );
+	Om::System::Get().Evaluate(
+		theCodePointSource,
+		theCodePointSink
+	);
 
 #if defined( Om_Macros_Test_ )
 	return( theResult );

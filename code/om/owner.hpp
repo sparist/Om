@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Owner_ )
-	#define Om_Owner_ Om::Owner
+
+	#define Om_Owner_ \
+	Om::Owner
 
 	#include "external.hpp"
 	#include "om/taker.hpp"
@@ -28,13 +28,14 @@ namespace Om
 	\brief
 		A polymorphic object with value semantics.
 
-	This struct can be considered a "fat pointer" that holds the pointee, such
-	that copying the pointer also copies the pointee (lazily).
+	This struct can be considered a "fat pointer" that holds the pointee, such that copying the pointer also copies the pointee (lazily).
 	*/
 	template< typename ThisValue >
 	struct Owner
 	:
-	Taker< Owner< ThisValue > >
+	Taker<
+		Owner< ThisValue >
+	>
 	{
 	public: // MARK: public (static)
 
@@ -48,12 +49,13 @@ namespace Om
 		Owner( Owner const & );
 
 		template< typename TheValue >
-		explicit Owner( std::auto_ptr< TheValue > );
+		explicit Owner(
+			std::auto_ptr< TheValue >
+		);
 
 		/*!
 		\post
-			Any references to the contained value, obtained via dereference,
-			are invalidated.
+			Any references to the contained value, obtained via dereference, are invalidated.
 		*/
 		Owner & operator =( Owner );
 
@@ -85,8 +87,7 @@ namespace Om
 
 		/*!
 		\post
-			Any references to the contained value, obtained via dereference,
-			are invalidated.
+			Any references to the contained value, obtained via dereference, are invalidated.
 		*/
 		void Clear();
 
@@ -102,16 +103,16 @@ namespace Om
 
 		/*!
 		\post
-			Any references to the contained value, obtained via dereference,
-			are invalidated.
+			Any references to the contained value, obtained via dereference, are invalidated.
 		*/
 		template< typename TheValue >
-		void SetValue( std::auto_ptr< TheValue > );
+		void SetValue(
+			std::auto_ptr< TheValue >
+		);
 
 		/*!
 		\post
-			Any references to the contained value, obtained via dereference,
-			are invalidated.
+			Any references to the contained value, obtained via dereference, are invalidated.
 		*/
 		void Swap( Owner & );
 
@@ -131,8 +132,12 @@ namespace Om
 namespace boost
 {
 	template< typename ThisValue >
-	void swap( Om::Owner< ThisValue > &, Om::Owner< ThisValue > & );
+	void swap(
+		Om::Owner< ThisValue > &,
+		Om::Owner< ThisValue > &
+	);
 }
 
 	#include "om/owner.cpp"
+
 #endif

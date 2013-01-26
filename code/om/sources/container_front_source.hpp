@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Sources_ContainerFrontSource_ )
-	#define Om_Sources_ContainerFrontSource_ Om::Sources::ContainerFrontSource
+
+	#define Om_Sources_ContainerFrontSource_ \
+	Om::Sources::ContainerFrontSource
 
 	#include "om/sources/default_source.hpp"
 
@@ -29,12 +29,18 @@ namespace Om
 		\brief
 			A Source adapter for a container; pulls items from the front.
 		*/
-		template< typename ThisItem, typename ThisContainer >
+		template<
+			typename ThisItem,
+			typename ThisContainer
+		>
 		struct ContainerFrontSource
 		:
 		DefaultSource<
 			ThisItem,
-			ContainerFrontSource< ThisItem, ThisContainer >
+			ContainerFrontSource<
+				ThisItem,
+				ThisContainer
+			>
 		>
 		{
 		public: // MARK: public (non-static)
@@ -64,12 +70,22 @@ namespace Om
 // MARK: - boost
 namespace boost
 {
-	template< typename ThisItem, typename ThisContainer >
+	template<
+		typename ThisItem,
+		typename ThisContainer
+	>
 	void swap(
-		Om::Sources::ContainerFrontSource< ThisItem, ThisContainer > &,
-		Om::Sources::ContainerFrontSource< ThisItem, ThisContainer > &
+		Om::Sources::ContainerFrontSource<
+			ThisItem,
+			ThisContainer
+		> &,
+		Om::Sources::ContainerFrontSource<
+			ThisItem,
+			ThisContainer
+		> &
 	);
 }
 
 	#include "om/sources/container_front_source.cpp"
+
 #endif

@@ -8,18 +8,17 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_SubstituteOperation_ )
 
 // MARK: Om::Operations::SubstituteOperation
 
-	#define Type_ Om::Operations::SubstituteOperation
+	#define Type_ \
+	Om::Operations::SubstituteOperation
 
 // MARK: public (static)
 
@@ -37,13 +36,17 @@ inline void Type_::Translate(
 	Expression & theExpression
 ) const
 {
-	Evaluator theScope( theExpression, *this->thisLexicon );
+	Evaluator theScope(
+		theExpression,
+		*this->thisLexicon
+	);
 	theQueue.GiveElements( theScope );
 }
 
 	#undef Type_
 
 #else
+
 	#include "om/operations/substitute_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -110,9 +113,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{A{{C}}}{{C}}",
-					System::Get().Evaluate(
-						"substitute { A {{B}} A {{C}} } {A}"
-					)
+					System::Get().Evaluate( "substitute { A {{B}} A {{C}} } {A}" )
 				);
 			}
 
@@ -131,20 +132,16 @@ namespace Om
 				CHECK_EQUAL(
 					(
 						"{A{B}}{"
-							"unquote{A}\n"
-							"B"
+						"unquote{A}\n"
+						"B"
 						"}"
 					),
-					System::Get().Evaluate(
-						"substitute {A {B}} {unquote {A} A}"
-					)
+					System::Get().Evaluate( "substitute {A {B}} {unquote {A} A}" )
 				);
 
 				CHECK_EQUAL(
 					"{blaven{42}}{do{blaven}}",
-					System::Get().Evaluate(
-						"substitute{blaven{42}}{do{blaven}}"
-					)
+					System::Get().Evaluate( "substitute{blaven{42}}{do{blaven}}" )
 				);
 			}
 		}

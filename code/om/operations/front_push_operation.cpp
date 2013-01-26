@@ -8,25 +8,25 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_FrontPushOperation_ )
 
 	#include "om/operations/program_operation.hpp"
 
 // MARK: Om::Operations::FrontPushOperation
 
-	#define Template_ template< \
+	#define Template_ \
+	template< \
 		typename ThisProgram, \
 		typename ThisImplementation \
 	>
 
-	#define Type_ Om::Operations::FrontPushOperation< \
+	#define Type_ \
+	Om::Operations::FrontPushOperation< \
 		ThisProgram, \
 		ThisImplementation \
 	>
@@ -83,7 +83,12 @@ inline bool Type_::TakeOperand(
 )
 {
 	assert( !theOperand.IsEmpty() );
-	return( this->TakeQuotedQueue( theEvaluation, *theOperand.GetProgram() ) );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
 }
 
 // MARK: private (static)
@@ -99,5 +104,7 @@ inline Om::Operator const & Type_::GetOperator()
 	#undef Template_
 
 #else
+
 	#include "om/operations/front_push_operation.hpp"
+
 #endif

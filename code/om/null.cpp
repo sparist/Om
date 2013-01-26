@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Null_ )
 
 	#include "om/parser.hpp"
@@ -22,7 +20,8 @@
 
 // MARK: Om::Null
 
-	#define Type_ Om::Null
+	#define Type_ \
+	Om::Null
 
 // MARK: public (static)
 
@@ -53,10 +52,14 @@ inline void Type_::Clear()
 {
 }
 
-inline std::auto_ptr< Om::Source< Om::Element > > Type_::GetElementRange()
+inline std::auto_ptr<
+	Om::Source< Om::Element >
+> Type_::GetElementRange()
 {
 	return(
-		std::auto_ptr< Source< Element > >(
+		std::auto_ptr<
+			Source< Element >
+		>(
 			new Sources::EmptySource< Element >
 		)
 	);
@@ -67,7 +70,9 @@ inline std::auto_ptr<
 > Type_::GetElementRange() const
 {
 	return(
-		std::auto_ptr< Source< Element const > >(
+		std::auto_ptr<
+			Source< Element const >
+		>(
 			new Sources::EmptySource< Element const >
 		)
 	);
@@ -88,12 +93,20 @@ inline bool Type_::IsEmpty() const
 
 inline void Type_::ReadElements( Parser & theParser )
 {
-	for( ; theParser; theParser.Pop() ){}
+	for(
+		;
+		theParser;
+		theParser.Pop()
+	){}
 }
 
 inline void Type_::ReadQuotedElements( Parser & theParser )
 {
-	for( ; theParser; theParser.Pop() ){}
+	for(
+		;
+		theParser;
+		theParser.Pop()
+	){}
 }
 
 inline void Type_::Swap( Null & )
@@ -134,11 +147,16 @@ inline void Type_::TakeSeparator( TheSeparator & )
 // MARK: boost
 
 template<>
-inline void boost::swap( Om::Null & theFirst, Om::Null & theSecond )
+inline void boost::swap(
+	Om::Null & theFirst,
+	Om::Null & theSecond
+)
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/null.hpp"
+
 #endif

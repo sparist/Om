@@ -8,20 +8,19 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Expression_ )
 
 	#include "om/literal.hpp"
 
 // MARK: Om::Expression
 
-	#define Type_ Om::Expression
+	#define Type_ \
+	Om::Expression
 
 // MARK: public (static)
 
@@ -151,7 +150,11 @@ inline std::auto_ptr<
 > Type_::GetElementRange() const
 {
 	return(
-		std::auto_ptr< Source< Element const > >( new ElementRange( *this ) )
+		std::auto_ptr<
+			Source< Element const >
+		>(
+			new ElementRange( *this )
+		)
 	);
 }
 
@@ -193,7 +196,9 @@ inline void Type_::ReadElements( Parser & theParser )
 				Parser theOperandParser( theCodePointSource );
 				this->ReadQuotedElements( theOperandParser );
 			}
-			if( !theParser ){ return; }
+			if( !theParser ){
+				return;
+			}
 			assert( Symbols::theEndOperandSymbol == *theParser );
 			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
@@ -229,7 +234,9 @@ inline void Type_::TakeElements( Expression & theExpression )
 			if( theCurrent->GetOperator().IsEmpty() ){
 				theFormDeque.front().GiveElements( *this );
 				theFormDeque.pop_front();
-				if( theFormDeque.empty() ){ return; }
+				if( theFormDeque.empty() ){
+					return;
+				}
 				theCurrent = theFormDeque.begin();
 			}
 			FormDeque::iterator const theEnd = theFormDeque.end();
@@ -270,16 +277,28 @@ inline void Type_::TakeElements( Expression const & theExpression )
 
 inline void Type_::TakeElements( Queue & theQueue )
 {
-	if( typeid( theQueue ) == typeid( Expression ) ){
-		this->TakeElements( static_cast< Expression & >( theQueue ) );
-	} else{ theQueue.GiveElements( *this ); }
+	if(
+		typeid( theQueue ) == typeid( Expression )
+	){
+		this->TakeElements(
+			static_cast< Expression & >( theQueue )
+		);
+	} else{
+		theQueue.GiveElements( *this );
+	}
 }
 
 inline void Type_::TakeElements( Queue const & theQueue )
 {
-	if( typeid( theQueue ) == typeid( Expression const ) ){
-		this->TakeElements( static_cast< Expression const & >( theQueue ) );
-	} else{ theQueue.GiveElements( *this ); }
+	if(
+		typeid( theQueue ) == typeid( Expression const )
+	){
+		this->TakeElements(
+			static_cast< Expression const & >( theQueue )
+		);
+	} else{
+		theQueue.GiveElements( *this );
+	}
 }
 
 template< typename TheOperand >
@@ -317,10 +336,16 @@ inline void Type_::GiveElements(
 )
 {
 	if( theEnd != theCurrent ){
-		for( ; ; theQueue.TakeElement( Separator::GetLineSeparator() ) ){
+		for(
+			;
+			;
+			theQueue.TakeElement( Separator::GetLineSeparator() )
+		){
 			assert( !theCurrent->IsEmpty() );
 			theCurrent->GiveElements( theQueue );
-			if( theEnd == ++theCurrent ){ return; }
+			if( theEnd == ++theCurrent ){
+				return;
+			}
 		}
 	}
 }
@@ -351,23 +376,26 @@ inline Om::Form & Type_::GetFrontTaker()
 // MARK: -
 // MARK: Om::Expression::FormRange
 
-	#define Type_ Om::Expression::FormRange
+	#define Type_ \
+	Om::Expression::FormRange
 
 // MARK: public (non-static)
 
 inline Type_< Om::Form >::FormRange( Expression & theExpression )
 :
-Sources::CollectionFrontSource< Form, FormDeque::iterator >(
-	theExpression.thisFormDeque
-)
+Sources::CollectionFrontSource<
+	Form,
+	FormDeque::iterator
+>( theExpression.thisFormDeque )
 {
 }
 
 inline Type_< Om::Form const >::FormRange( Expression const & theExpression )
 :
-Sources::CollectionFrontSource< Form const, FormDeque::const_iterator >(
-	theExpression.thisFormDeque
-)
+Sources::CollectionFrontSource<
+	Form const,
+	FormDeque::const_iterator
+>( theExpression.thisFormDeque )
 {
 }
 
@@ -376,7 +404,8 @@ Sources::CollectionFrontSource< Form const, FormDeque::const_iterator >(
 // MARK: -
 // MARK: Om::Expression::ElementRange
 
-	#define Type_ Om::Expression::ElementRange
+	#define Type_ \
+	Om::Expression::ElementRange
 
 // MARK: public (non-static)
 
@@ -429,7 +458,9 @@ inline void Type_::Pop()
 	if( *this->thisFormElementRange ){
 		this->thisFormElementRange->Pop();
 		if( !*this->thisFormElementRange ){
-			if( this->thisFormEnd == ++this->thisFormIterator ){ this->End(); }
+			if( this->thisFormEnd == ++this->thisFormIterator ){
+				this->End();
+			}
 		}
 	} else{
 		this->thisFormElementRange = boost::in_place(
@@ -445,12 +476,16 @@ inline void Type_::Pop()
 // MARK: boost
 
 template<>
-inline void boost::swap( Om::Expression & theFirst, Om::Expression & theSecond )
+inline void boost::swap(
+	Om::Expression & theFirst,
+	Om::Expression & theSecond
+)
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/expression.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -468,8 +503,8 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"{a}{b}\n"
-						"c{d}"
+					"{a}{b}\n"
+					"c{d}"
 					"}"
 				),
 				System::Get().Evaluate( "evaluate {{a}{b}c{d}}" )
@@ -483,18 +518,27 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"a{b}{c}\n"
-						"d{e}{f}"
+					"a{b}{c}\n"
+					"d{e}{f}"
 					"}"
 				),
 				System::Get().Evaluate( "evaluate {a{b}{c}d{e}{f}}" )
 			);
 
-			CHECK_EQUAL( "{c}", System::Get().Evaluate( "evaluate {c}" ) );
+			CHECK_EQUAL(
+				"{c}",
+				System::Get().Evaluate( "evaluate {c}" )
+			);
 
-			CHECK_EQUAL( "{{d}}", System::Get().Evaluate( "evaluate {{d}}" ) );
+			CHECK_EQUAL(
+				"{{d}}",
+				System::Get().Evaluate( "evaluate {{d}}" )
+			);
 
-			CHECK_EQUAL( "{}", System::Get().Evaluate( "evaluate {}" ) );
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "evaluate {}" )
+			);
 		}
 
 		TEST( Equality )
@@ -503,16 +547,16 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"{"
-							"a{b}{c}\n"
-							"d{e}"
-						"}"
+					"{"
+					"a{b}{c}\n"
+					"d{e}"
+					"}"
 					"}"
 				),
 				System::Get().Evaluate(
 					"= expression{a{b}{c}d{e}} {"
-						"a{b}{c}\n"
-						"d{e}"
+					"a{b}{c}\n"
+					"d{e}"
 					"}"
 				)
 			);
@@ -567,7 +611,9 @@ namespace Om
 			{
 				Sinks::CodePointSink<
 					std::back_insert_iterator< std::string >
-				> theCodePointSink( std::back_inserter( theResult ) );
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
 				Writer theWriter( theCodePointSink );
 
 				Sources::CodePointSource<> theCodePointSource( theCode );

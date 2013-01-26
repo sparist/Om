@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operand_ )
 
 	#include "om/literal.hpp"
@@ -22,7 +20,8 @@
 
 // MARK: Om::Operand
 
-	#define Type_ Om::Operand
+	#define Type_ \
+	Om::Operand
 
 // MARK: public (static)
 
@@ -40,7 +39,9 @@ thisProgram()
 }
 
 template< typename TheProgram >
-inline Type_::Operand( std::auto_ptr< TheProgram > theProgram )
+inline Type_::Operand(
+	std::auto_ptr< TheProgram > theProgram
+)
 :
 thisProgram( theProgram )
 {
@@ -63,12 +64,20 @@ inline bool Type_::operator ==( Operand const & theOperand ) const
 
 inline Om::Program & Type_::operator *()
 {
-	return( this->thisProgram.IsEmpty() ? Null::Get(): *this->thisProgram );
+	return(
+		this->thisProgram.IsEmpty() ?
+		Null::Get():
+		*this->thisProgram
+	);
 }
 
 inline Om::Program const & Type_::operator *() const
 {
-	return( this->thisProgram.IsEmpty() ? Null::Get(): *this->thisProgram );
+	return(
+		this->thisProgram.IsEmpty() ?
+		Null::Get():
+		*this->thisProgram
+	);
 }
 
 inline void Type_::Clear()
@@ -94,8 +103,14 @@ inline bool Type_::IsEmpty() const
 inline void Type_::ReadElements( Parser & theParser )
 {
 	if( this->IsEmpty() ){
-		for( ; ; theParser.Pop() ){
-			if( !theParser ){ return; }
+		for(
+			;
+			;
+			theParser.Pop()
+		){
+			if( !theParser ){
+				return;
+			}
 			assert( Symbols::theEndOperandSymbol != *theParser );
 			switch( *theParser ){
 			default:
@@ -118,7 +133,12 @@ inline void Type_::ReadElements( Parser & theParser )
 			break;
 		}
 	}
-	for( ; theParser; theParser.Pop() ){}
+
+	for(
+		;
+		theParser;
+		theParser.Pop()
+	){}
 }
 
 inline void Type_::ReadQuotedElements( Parser & theParser )
@@ -129,7 +149,9 @@ inline void Type_::ReadQuotedElements( Parser & theParser )
 }
 
 template< typename TheProgram >
-inline void Type_::SetProgram( std::auto_ptr< TheProgram > theProgram )
+inline void Type_::SetProgram(
+	std::auto_ptr< TheProgram > theProgram
+)
 {
 	this->thisProgram.SetValue( theProgram );
 }
@@ -185,11 +207,16 @@ inline void Type_::TakeSeparator( TheSeparator & )
 // MARK: boost
 
 template<>
-inline void boost::swap( Om::Operand & theFirst, Om::Operand & theSecond )
+inline void boost::swap(
+	Om::Operand & theFirst,
+	Om::Operand & theSecond
+)
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/operand.hpp"
+
 #endif

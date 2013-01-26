@@ -8,21 +8,22 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Lexicon_ )
-	#define Om_Lexicon_ Om::Lexicon
+
+	#define Om_Lexicon_ \
+	Om::Lexicon
 
 	#include "om/pair.hpp"
 	#include "om/sources/default_source.hpp"
 	#include "om/translator.hpp"
 
-	#define Om_Lexicon_GetName_() "lexicon"
+	#define Om_Lexicon_GetName_() \
+	"lexicon"
 
 namespace Om
 {
@@ -96,7 +97,10 @@ namespace Om
 		template< typename TheSeparator >
 		void TakeSeparator( TheSeparator & );
 
-		virtual bool Translate( Evaluation &, Operator const & ) const;
+		virtual bool Translate(
+			Evaluation &,
+			Operator const &
+		) const;
 
 	private: // MARK: private (static)
 
@@ -104,7 +108,10 @@ namespace Om
 		struct Node;
 		//! \endcond
 
-		typedef boost::ptr_map< std::string, Node > Map;
+		typedef boost::ptr_map<
+			std::string,
+			Node
+		> Map;
 
 		/*!
 		\brief
@@ -115,7 +122,10 @@ namespace Om
 			The Queue to give them to.
 		*/
 		template< typename TheNode >
-		static void GiveElements( TheNode * theFirstNode, Queue & theQueue );
+		static void GiveElements(
+			TheNode * theFirstNode,
+			Queue & theQueue
+		);
 
 	private: // MARK: private (non-static)
 
@@ -143,23 +153,17 @@ namespace Om
 
 		/*!
 		\brief
-			Ensures that there is a last Node with an empty Operand, and with
-			any Operator, and returns a reference to it.
+			Ensures that there is a last Node with an empty Operand, and with any Operator, and returns a reference to it.
 		\return
-			If there is no last Node, or it has an Operand, appends a new one
-			with an empty Operator and returns a reference to it.  Otherwise,
-			returns a reference to the last Node.
+			If there is no last Node, or it has an Operand, appends a new one with an empty Operator and returns a reference to it.  Otherwise, returns a reference to the last Node.
 		*/
 		Node & GetOperandTaker();
 
 		/*!
 		\brief
-			Ensures that there is a last Node with an empty Operand, and the
-			given Operator, and returns a reference to it.
+			Ensures that there is a last Node with an empty Operand, and the given Operator, and returns a reference to it.
 		\return
-			If there is already a Node for this Operator, relinks it to the back
-			and returns a reference to it.  Otherwise, constructs a Node with
-			the given Operator, appends it, and returns a reference to it.
+			If there is already a Node for this Operator, relinks it to the back and returns a reference to it.  Otherwise, constructs a Node with the given Operator, appends it, and returns a reference to it.
 		*/
 		template< typename TheOperator >
 		Node & GetOperandTaker( TheOperator & );
@@ -180,7 +184,10 @@ namespace Om
 	*/
 	struct Lexicon::ElementRange
 	:
-	Sources::DefaultSource< Element const, ElementRange >
+	Sources::DefaultSource<
+		Element const,
+		ElementRange
+	>
 	{
 	public: // MARK: public (non-static)
 
@@ -222,7 +229,10 @@ namespace Om
 		\param theLastNode
 			The last Node, or null if empty.
 		*/
-		static void UnlinkFirst( Node * & theFirstNode, Node * & theLastNode );
+		static void UnlinkFirst(
+			Node * & theFirstNode,
+			Node * & theLastNode
+		);
 
 		/*!
 		\param theFirstNode
@@ -230,7 +240,10 @@ namespace Om
 		\param theLastNode
 			The last Node, or null if empty.
 		*/
-		static void UnlinkLast( Node * & theFirstNode, Node * & theLastNode );
+		static void UnlinkLast(
+			Node * & theFirstNode,
+			Node * & theLastNode
+		);
 
 	public: // MARK: public (non-static)
 
@@ -266,7 +279,10 @@ namespace Om
 		\param theLastNode
 			The last Node, or null if empty.
 		*/
-		void LinkToBack( Node * & theFirstNode, Node * & theLastNode );
+		void LinkToBack(
+			Node * & theFirstNode,
+			Node * & theLastNode
+		);
 
 		/*!
 		\brief
@@ -276,7 +292,10 @@ namespace Om
 		\param theLastNode
 			The last Node, or null if empty.
 		*/
-		void RelinkToBack( Node * & theFirstNode, Node * & theLastNode );
+		void RelinkToBack(
+			Node * & theFirstNode,
+			Node * & theLastNode
+		);
 
 	private: // MARK: private (non-static)
 
@@ -292,8 +311,12 @@ namespace Om
 namespace boost
 {
 	template<>
-	void swap( Om::Lexicon &, Om::Lexicon & );
+	void swap(
+		Om::Lexicon &,
+		Om::Lexicon &
+	);
 }
 
 	#include "om/lexicon.cpp"
+
 #endif

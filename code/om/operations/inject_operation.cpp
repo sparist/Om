@@ -8,18 +8,17 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_InjectOperation_ )
 
 // MARK: Om::Operations::InjectOperation
 
-	#define Type_ Om::Operations::InjectOperation
+	#define Type_ \
+	Om::Operations::InjectOperation
 
 // MARK: public (static)
 
@@ -93,12 +92,18 @@ inline bool Type_::TakeOperand(
 )
 {
 	assert( !theOperand.IsEmpty() );
-	return( this->TakeQuotedQueue( theEvaluation, *theOperand.GetProgram() ) );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
 }
 
 	#undef Type_
 
 #else
+
 	#include "om/operations/inject_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -125,48 +130,42 @@ namespace Om
 				CHECK_EQUAL(
 					(
 						"{"
-							"{"
-								"a{{A}}\n"
-								"b{{B}}\n"
-								"c{{C}}"
-							"}"
+						"{"
+						"a{{A}}\n"
+						"b{{B}}\n"
+						"c{{C}}"
+						"}"
 						"}{D}{E}"
 					),
-					System::Get().Evaluate(
-						"inject {quote} {fill {a b{{B}} c}} {A} {C} {D} {E}"
-					)
+					System::Get().Evaluate( "inject {quote} {fill {a b{{B}} c}} {A} {C} {D} {E}" )
 				);
 
 				CHECK_EQUAL(
 					(
 						"{"
-							"{"
-								"a{A}\n"
-								"b{B}\n"
-								"c{A}\n"
-								"d{C}"
-							"}{C}"
+						"{"
+						"a{A}\n"
+						"b{B}\n"
+						"c{A}\n"
+						"d{C}"
+						"}{C}"
 						"}{D}{E}"
 					),
-					System::Get().Evaluate(
-						"inject {copy} {fill {a b{B} c d}} {A} {C} {D} {E}"
-					)
+					System::Get().Evaluate( "inject {copy} {fill {a b{B} c d}} {A} {C} {D} {E}" )
 				);
 
 				CHECK_EQUAL(
 					(
 						"inject{drop}{"
-							"fill{"
-								"a\n"
-								"b{B}\n"
-								"c\n"
-								"d"
-							"}"
+						"fill{"
+						"a\n"
+						"b{B}\n"
+						"c\n"
+						"d"
+						"}"
 						"}"
 					),
-					System::Get().Evaluate(
-						"inject {drop} {fill {a b{B} c d}} {A} {C} {D} {E}"
-					)
+					System::Get().Evaluate( "inject {drop} {fill {a b{B} c d}} {A} {C} {D} {E}" )
 				);
 			}
 
@@ -175,16 +174,14 @@ namespace Om
 				CHECK_EQUAL(
 					(
 						"{"
-							"{"
-								"a{A}\n"
-								"b{B}\n"
-								"c{C}"
-							"}"
+						"{"
+						"a{A}\n"
+						"b{B}\n"
+						"c{C}"
+						"}"
 						"}{D}{E}"
 					),
-					System::Get().Evaluate(
-						"inject {} {fill {a b{B} c}} {A} {C} {D} {E}"
-					)
+					System::Get().Evaluate( "inject {} {fill {a b{B} c}} {A} {C} {D} {E}" )
 				);
 			}
 
@@ -192,9 +189,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"{}{A}{C}{D}{E}",
-					System::Get().Evaluate(
-						"inject {quote} {} {A} {C} {D} {E}"
-					)
+					System::Get().Evaluate( "inject {quote} {} {A} {C} {D} {E}" )
 				);
 			}
 
@@ -227,16 +222,14 @@ namespace Om
 				CHECK_EQUAL(
 					(
 						"inject{quote}{"
-							"fill{"
-								"a{A}\n"
-								"b{B}\n"
-								"c"
-							"}"
+						"fill{"
+						"a{A}\n"
+						"b{B}\n"
+						"c"
+						"}"
 						"}"
 					),
-					System::Get().Evaluate(
-						"inject {quote} {fill {a b c} {A} {B} }"
-					)
+					System::Get().Evaluate( "inject {quote} {fill {a b c} {A} {B} }" )
 				);
 			}
 		}

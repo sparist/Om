@@ -2,8 +2,7 @@
 \defgroup do_operation do
 	\ingroup operations
 	\brief
-		Converts an \ref operand to a quoted \ref operator, then
-		\ref dequote_operation "dequotes".
+		Converts an \ref operand to a quoted \ref operator, then \ref dequote_operation "dequotes".
 	\par Input
 		<tt>{hello, world!}</tt>
 	\par Output

@@ -8,22 +8,22 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Sources_CodePointSource_ )
 
 	#include "om/utf8.hpp"
 
 // MARK: Om::Sources::CodePointSource
 
-	#define Template_ template< typename ThisCodeUnitIterator >
+	#define Template_ \
+	template< typename ThisCodeUnitIterator >
 
-	#define Type_ Om::Sources::CodePointSource< ThisCodeUnitIterator >
+	#define Type_ \
+	Om::Sources::CodePointSource< ThisCodeUnitIterator >
 
 // MARK: public (non-static)
 
@@ -111,7 +111,8 @@ inline void Type_::Swap( CodePointSource & theCodePointSource )
 // MARK: -
 // MARK: Om::Sources::CodePointSource< char const * >
 
-	#define Type_ Om::Sources::CodePointSource< char const * >
+	#define Type_ \
+	Om::Sources::CodePointSource< char const * >
 
 // MARK: public (non-static)
 
@@ -139,6 +140,7 @@ inline void boost::swap(
 	#undef Type_
 
 #else
+
 	#include "om/sources/code_point_source.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -154,17 +156,36 @@ namespace Om
 		{
 			TEST( General )
 			{
-				std::string theString( "\xC7\xBE""A" );
-				CodePointSource<
-					std::string::const_iterator
-				> theSource( theString.begin(), theString.end() );
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( 510U, *theSource );
+				std::string theString(
+					"\xC7\xBE"
+					"A"
+				);
+				CodePointSource< std::string::const_iterator > theSource(
+					theString.begin(),
+					theString.end()
+				);
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					510U,
+					*theSource
+				);
 				theSource.Pop();
-				CHECK_EQUAL( false, !theSource );
-				CHECK_EQUAL( 65U, *theSource );
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					65U,
+					*theSource
+				);
 				theSource.Pop();
-				CHECK_EQUAL( true, !theSource );
+				CHECK_EQUAL(
+					true,
+					!theSource
+				);
 			}
 		}
 	}

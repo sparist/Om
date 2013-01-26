@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Parser_ )
 
 	#include "om/symbols/operand_symbol.hpp"
@@ -22,11 +20,14 @@
 
 // MARK: Om::Parser
 
-	#define Type_ Om::Parser
+	#define Type_ \
+	Om::Parser
 
 // MARK: public (non-static)
 
-inline Type_::Parser( Source< CodePoint const > & theCodePointSource )
+inline Type_::Parser(
+	Source< CodePoint const > & theCodePointSource
+)
 :
 thisCodePointSource( theCodePointSource ),
 thisDepth(),
@@ -52,7 +53,8 @@ inline Om::CodePoint const & Type_::operator *() const
 inline bool Type_::operator !() const
 {
 	return(
-		!this->thisCodePointSource || (
+		!this->thisCodePointSource ||
+		(
 			!this->thisDepth &&
 			!this->thisIsEncoded &&
 			Symbols::theEndOperandSymbol == *this->thisCodePointSource
@@ -68,8 +70,12 @@ inline void Type_::Pop()
 		if( this->thisIsEncoded ){
 			this->thisIsEncoded = false;
 		} else{
-			if( static_cast< size_t >( -1 ) == this->thisDepth ){
-				throw( std::overflow_error( "Operand overflow." ) );
+			if(
+				static_cast< size_t >( -1 ) == this->thisDepth
+			){
+				throw(
+					std::overflow_error( "Operand overflow." )
+				);
 			}
 			++this->thisDepth;
 		}
@@ -95,5 +101,7 @@ inline void Type_::Pop()
 	#undef Type_
 
 #else
+
 	#include "om/parser.hpp"
+
 #endif

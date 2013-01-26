@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Sinks_CodePointSink_ )
-	#define Om_Sinks_CodePointSink_ Om::Sinks::CodePointSink
+
+	#define Om_Sinks_CodePointSink_ \
+	Om::Sinks::CodePointSink
 
 	#include "om/code_point.hpp"
 	#include "om/sinks/default_sink.hpp"
@@ -33,7 +33,10 @@ namespace Om
 		template< typename ThisCodeUnitIterator >
 		struct CodePointSink
 		:
-		DefaultSink< CodePoint const, CodePointSink< ThisCodeUnitIterator > >
+		DefaultSink<
+			CodePoint const,
+			CodePointSink< ThisCodeUnitIterator >
+		>
 		{
 		public: // MARK: public (non-static)
 
@@ -64,4 +67,5 @@ namespace boost
 }
 
 	#include "om/sinks/code_point_sink.cpp"
+
 #endif

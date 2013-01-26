@@ -8,21 +8,21 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Operations_NormalizeOperation_ )
+
 	#define Om_Operations_NormalizeOperation_ \
 	Om::Operations::NormalizeOperation
 
 	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 
-	#define Om_Operations_NormalizeOperation_GetName_() "normalize"
+	#define Om_Operations_NormalizeOperation_GetName_() \
+	"normalize"
 
 namespace Om
 {
@@ -42,25 +42,33 @@ namespace Om
 			static char const * GetName();
 
 			template< typename TheNormalizeOperation >
-			static void GiveElements( TheNormalizeOperation &, Queue & );
+			static void GiveElements(
+				TheNormalizeOperation &,
+				Queue &
+			);
 
 		public: // MARK: public (non-static)
 
 			template< typename TheOperand >
-			bool TakeOperand( Evaluation &, TheOperand & );
+			bool TakeOperand(
+				Evaluation &,
+				TheOperand &
+			);
 
 			template< typename TheQueue >
-			bool TakeQuotedQueue( Evaluation &, TheQueue & );
+			bool TakeQuotedQueue(
+				Evaluation &,
+				TheQueue &
+			);
 		};
 
 		namespace
 		{
-			static Definition<
-				NormalizeOperation
-			> const theNormalizeDefinition;
+			static Definition< NormalizeOperation > const theNormalizeDefinition;
 		}
 	}
 }
 
 	#include "om/operations/normalize_operation.cpp"
+
 #endif

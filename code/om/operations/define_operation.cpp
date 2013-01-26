@@ -8,20 +8,19 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_DefineOperation_ )
 
 	#include "om/environment.hpp"
 
 // MARK: Om::Operations::DefineOperation
 
-	#define Type_ Om::Operations::DefineOperation
+	#define Type_ \
+	Om::Operations::DefineOperation
 
 // MARK: public (static)
 
@@ -57,7 +56,12 @@ inline bool Type_::TakeOperand(
 )
 {
 	assert( !theOperand.IsEmpty() );
-	return( this->TakeQuotedQueue( theEvaluation, *theOperand.GetProgram() ) );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
 }
 
 template< typename TheQueue >
@@ -73,7 +77,10 @@ inline bool Type_::TakeQuotedQueue(
 			theEnvironment.Push( System::Get() );
 			theEnvironment.Push( theEvaluation.GetTranslator() );
 			theEnvironment.Push( *this->thisLexicon );
-			Evaluator theScope( theExpression, theEnvironment );
+			Evaluator theScope(
+				theExpression,
+				theEnvironment
+			);
 			theQueue.GiveElements( theScope );
 		}
 		theEvaluation.TakeQueue( theExpression );
@@ -88,6 +95,7 @@ inline bool Type_::TakeQuotedQueue(
 	#undef Type_
 
 #else
+
 	#include "om/operations/define_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -135,7 +143,10 @@ namespace Om
 
 			TEST( EmptyLexicon )
 			{
-				CHECK_EQUAL( "", System::Get().Evaluate( "define {} {}" ) );
+				CHECK_EQUAL(
+					"",
+					System::Get().Evaluate( "define {} {}" )
+				);
 			}
 
 			TEST( EmptyKeyFallThrough )
@@ -179,16 +190,14 @@ namespace Om
 					"{1}",
 					System::Get().Evaluate(
 						"define{\n"
-							"a` b\n"
-							"{{1}}\n"
+						"a` b\n"
+						"{{1}}\n"
 						"}{do{a b}}\n"
 					)
 				);
 				CHECK_EQUAL(
 					"1",
-					System::Get().Evaluate(
-						"define fill {a` b} {1} {do{a b}}"
-					)
+					System::Get().Evaluate( "define fill {a` b} {1} {do{a b}}" )
 				);
 				CHECK_EQUAL(
 					"{1}",
@@ -199,8 +208,8 @@ namespace Om
 					System::Get().Evaluate(
 						"define"
 						"{"
-							"the` flaven{{1}}"
-							"the` glaven{{2}}"
+						"the` flaven{{1}}"
+						"the` glaven{{2}}"
 						"}"
 						"{do{the` glaven} do{the` flaven}}"
 					)
@@ -214,7 +223,7 @@ namespace Om
 					"{a-default}",
 					System::Get().Evaluate(
 						"define { b {B} {{b-default}} }{"
-							"define { a {A} {{a-default}} } { b }"
+						"define { a {A} {{a-default}} } { b }"
 						"}"
 					)
 				);
@@ -222,7 +231,7 @@ namespace Om
 					"{b-default}",
 					System::Get().Evaluate(
 						"define { b {B} {{b-default}} }{"
-							"define { a {A} } { b }"
+						"define { a {A} } { b }"
 						"}"
 					)
 				);
@@ -232,9 +241,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"c",
-					System::Get().Evaluate(
-						"define{a{define{b{c}}{b}}}{a}"
-					)
+					System::Get().Evaluate( "define{a{define{b{c}}{b}}}{a}" )
 				);
 			}
 
@@ -242,9 +249,7 @@ namespace Om
 			{
 				CHECK_EQUAL(
 					"A",
-	 				System::Get().Evaluate(
-						"define {define} {define {a{A}} {a}}"
-					)
+	 				System::Get().Evaluate( "define {define} {define {a{A}} {a}}" )
 				);
  			}
 

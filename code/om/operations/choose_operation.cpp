@@ -8,20 +8,19 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_ChooseOperation_ )
 
 	#include "om/literal.hpp"
 
 // MARK: Om::Operations::ChooseOperation
 
-	#define Type_ Om::Operations::ChooseOperation
+	#define Type_ \
+	Om::Operations::ChooseOperation
 
 // MARK: public (static)
 
@@ -62,7 +61,12 @@ inline bool Type_::TakeQuotedQueue(
 )
 {
 	Operand theOperand( theQueue.GiveProgram() );
-	return( this->TakeOperand( theEvaluation, theOperand ) );
+	return(
+		this->TakeOperand(
+			theEvaluation,
+			theOperand
+		)
+	);
 }
 
 template< typename TheOperand >
@@ -96,6 +100,7 @@ inline bool Type_::TakeOperand(
 	#undef Type_
 
 #else
+
 	#include "om/operations/choose_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -127,9 +132,7 @@ namespace Om
 
 				CHECK_EQUAL(
 					"{non-empty}",
-					System::Get().Evaluate(
-						"choose{empty}{non-empty}{some operators}"
-					)
+					System::Get().Evaluate( "choose{empty}{non-empty}{some operators}" )
 				);
 			}
 		}

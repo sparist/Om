@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Element_ )
-	#define Om_Element_ Om::Element
+
+	#define Om_Element_ \
+	Om::Element
 
 	#include "om/program.hpp"
 
@@ -27,8 +27,7 @@ namespace Om
 	\brief
 		An "elemental" Program comprised of a single item (or empty).
 
-	Element instances are used to represent both the Program, and the single
-	item that the Program contains (when IsEmpty() returns false).
+	Element instances are used to represent both the Program, and the single item that the Program contains (when IsEmpty() returns false).
 	*/
 	struct Element
 	:
@@ -61,7 +60,9 @@ namespace Om
 		\return
 			An Element range containing only this Element.
 		*/
-		virtual std::auto_ptr< Source< Element > > GetElementRange() = 0;
+		virtual std::auto_ptr<
+			Source< Element >
+		> GetElementRange() = 0;
 
 		/*!
 		\return
@@ -104,4 +105,5 @@ namespace Om
 }
 
 	#include "om/element.cpp"
+
 #endif

@@ -8,18 +8,17 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Pair_ )
 
 // MARK: Om::Pair
 
-	#define Type_ Om::Pair
+	#define Type_ \
+	Om::Pair
 
 // MARK: public (static)
 
@@ -59,19 +58,28 @@ inline Om::Operator const & Type_::GetOperator() const
 
 inline void Type_::GiveElements( Queue & theQueue )
 {
-	this->GiveElements( *this, theQueue );
+	this->GiveElements(
+		*this,
+		theQueue
+	);
 	this->thisOperator.Clear();
 	this->thisOperand.Clear();
 }
 
 inline void Type_::GiveElements( Queue & theQueue ) const
 {
-	this->GiveElements( *this, theQueue );
+	this->GiveElements(
+		*this,
+		theQueue
+	);
 }
 
 inline bool Type_::IsEmpty() const
 {
-	return( this->thisOperator.IsEmpty() && this->thisOperand.IsEmpty() );
+	return(
+		this->thisOperator.IsEmpty() &&
+		this->thisOperand.IsEmpty()
+	);
 }
 
 template< typename TheOperand >
@@ -95,7 +103,10 @@ inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 // MARK: private (non-static)
 
 template< typename ThePair >
-inline void Type_::GiveElements( ThePair & thePair, Queue & theQueue )
+inline void Type_::GiveElements(
+	ThePair & thePair,
+	Queue & theQueue
+)
 {
 	if( !thePair.thisOperator.IsEmpty() ){
 		theQueue.TakeElement( thePair.thisOperator );
@@ -108,5 +119,7 @@ inline void Type_::GiveElements( ThePair & thePair, Queue & theQueue )
 	#undef Type_
 
 #else
+
 	#include "om/pair.hpp"
+
 #endif

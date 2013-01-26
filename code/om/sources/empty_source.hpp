@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Sources_EmptySource_ )
-	#define Om_Sources_EmptySource_ Om::Sources::EmptySource
+
+	#define Om_Sources_EmptySource_ \
+	Om::Sources::EmptySource
 
 	#include "om/sources/default_source.hpp"
 
@@ -32,7 +32,10 @@ namespace Om
 		template< typename ThisItem >
 		struct EmptySource
 		:
-		DefaultSource< ThisItem, EmptySource< ThisItem > >
+		DefaultSource<
+			ThisItem,
+			EmptySource< ThisItem >
+		>
 		{
 		public: // MARK: public (static)
 
@@ -68,4 +71,5 @@ namespace boost
 }
 
 	#include "om/sources/empty_source.cpp"
+
 #endif

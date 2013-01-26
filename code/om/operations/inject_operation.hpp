@@ -8,21 +8,22 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Operations_InjectOperation_ )
-	#define Om_Operations_InjectOperation_ Om::Operations::InjectOperation
+
+	#define Om_Operations_InjectOperation_ \
+	Om::Operations::InjectOperation
 
 	#include "om/default_operation.hpp"
 	#include "om/definition.hpp"
 	#include "om/expression.hpp"
 
-	#define Om_Operations_InjectOperation_GetName_() "inject"
+	#define Om_Operations_InjectOperation_GetName_() \
+	"inject"
 
 namespace Om
 {
@@ -42,17 +43,26 @@ namespace Om
 			static char const * GetName();
 
 			template< typename TheInjectOperation >
-			static void GiveElements( TheInjectOperation &, Queue & );
+			static void GiveElements(
+				TheInjectOperation &,
+				Queue &
+			);
 
 		public: // MARK: public (non-static)
 
 			InjectOperation();
 
 			template< typename TheOperand >
-			bool TakeOperand( Evaluation &, TheOperand & );
+			bool TakeOperand(
+				Evaluation &,
+				TheOperand &
+			);
 
 			template< typename TheQueue >
-			bool TakeQuotedQueue( Evaluation &, TheQueue & );
+			bool TakeQuotedQueue(
+				Evaluation &,
+				TheQueue &
+			);
 
 		private: // MARK: private (non-static)
 
@@ -65,8 +75,7 @@ namespace Om
 			\brief
 				The local Evaluator.
 			\note
-				This will hold a reference to the Evaluator's Translator, which
-				must remain alive.
+				This will hold a reference to the Evaluator's Translator, which must remain alive.
 			*/
 			boost::optional< Evaluator > thisScope;
 		};
@@ -79,4 +88,5 @@ namespace Om
 }
 
 	#include "om/operations/inject_operation.cpp"
+
 #endif

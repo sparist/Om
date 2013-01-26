@@ -5,106 +5,39 @@ project( Om )
 set( CMAKE_SUPPRESS_REGENERATION TRUE )
 
 if( MSVC )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3 /WX /wd4355 /wd4505 /wd4706" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_CRT_SECURE_NO_WARNINGS" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_SCL_SECURE_NO_WARNINGS" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3 /WX /wd4355 /wd4505 /wd4706 /D_CRT_SECURE_NO_WARNINGS /D_SCL_SECURE_NO_WARNINGS" )
 elseif( CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-align" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-qual" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wdisabled-optimization" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wempty-body" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wfloat-equal" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wformat=2" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winit-self" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winline" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winvalid-pch" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-field-initializers" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-format-attribute" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverlength-strings" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpacked" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpointer-arith" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wredundant-decls" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wcast-align -Wcast-qual -Wdisabled-optimization -Wempty-body -Werror -Wfloat-equal -Wformat=2 -Winit-self -Winline -Winvalid-pch -Wmissing-field-initializers -Wmissing-format-attribute -Woverlength-strings -Wpacked -Wpointer-arith -Wredundant-decls -Wvariadic-macros" )
 endif()
 
-set( UnitTest ""
-	CACHE PATH "The UnitTest library build directory path"
-)
-set( Boost ""
-	CACHE PATH "The Boost library build directory path"
-)
-set( Icu ""
-	CACHE PATH "The ICU library build directory path"
-)
+set( UnitTest "" CACHE PATH "The UnitTest library build directory path" )
+set( Boost "" CACHE PATH "The Boost library build directory path" )
+set( Icu "" CACHE PATH "The ICU library build directory path" )
 
 if( UnitTest )
 	add_definitions( -DOm_Macros_Test_ )
 endif()
 
-aux_source_directory(
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/"
-	Cpp_Code
-)
-aux_source_directory(
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/"
-	Cpp_Code_Om
-)
-aux_source_directory(
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/"
-	Cpp_Code_Om_Operations
-)
-aux_source_directory(
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/"
-	Cpp_Code_Om_Sinks
-)
-aux_source_directory(
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/"
-	Cpp_Code_Om_Sources
-)
-aux_source_directory(
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/"
-	Cpp_Code_Om_Symbols
-)
+aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/" Cpp_Code )
+aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/" Cpp_Code_Om )
+aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/" Cpp_Code_Om_Operations )
+aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/" Cpp_Code_Om_Sinks )
+aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/" Cpp_Code_Om_Sources )
+aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/" Cpp_Code_Om_Symbols )
 
-file( GLOB Hpp_Code
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/*.hpp"
-)
-file( GLOB Hpp_Code_Om
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/*.hpp"
-)
-file( GLOB Hpp_Code_Om_Operations
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/*.hpp"
-)
-file( GLOB Hpp_Code_Om_Sinks
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/*.hpp"
-)
-file( GLOB Hpp_Code_Om_Sources
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/*.hpp"
-)
-file( GLOB Hpp_Code_Om_Symbols
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.hpp"
-)
+file( GLOB Hpp_Code "${CMAKE_CURRENT_SOURCE_DIR}/code/*.hpp" )
+file( GLOB Hpp_Code_Om "${CMAKE_CURRENT_SOURCE_DIR}/code/om/*.hpp" )
+file( GLOB Hpp_Code_Om_Operations "${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/*.hpp" )
+file( GLOB Hpp_Code_Om_Sinks "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/*.hpp" )
+file( GLOB Hpp_Code_Om_Sources "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/*.hpp" )
+file( GLOB Hpp_Code_Om_Symbols "${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.hpp" )
 
-file( GLOB Dox_Code
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/*.dox"
-)
-file( GLOB Dox_Code_Om
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/*.dox"
-)
-file( GLOB Dox_Code_Om_Operations
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/*.dox"
-)
-file( GLOB Dox_Code_Om_Sinks
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/*.dox"
-)
-file( GLOB Dox_Code_Om_Sources
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/*.dox"
-)
-file( GLOB Dox_Code_Om_Symbols
-	"${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.dox"
-)
+file( GLOB Dox_Code "${CMAKE_CURRENT_SOURCE_DIR}/code/*.dox" )
+file( GLOB Dox_Code_Om "${CMAKE_CURRENT_SOURCE_DIR}/code/om/*.dox" )
+file( GLOB Dox_Code_Om_Operations "${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/*.dox" )
+file( GLOB Dox_Code_Om_Sinks "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/*.dox" )
+file( GLOB Dox_Code_Om_Sources "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/*.dox" )
+file( GLOB Dox_Code_Om_Symbols "${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.dox" )
 
 set( Hpp
 	${Hpp_Code}
@@ -177,13 +110,9 @@ add_executable( Om ${Code} )
 
 if( MSVC )
 	if( UnitTest )
-		find_library( UnitTestDebugLibrary
-			"UnitTest++.vsnet2010" "${UnitTest}/Debug" NO_DEFAULT_PATH
-		)
+		find_library( UnitTestDebugLibrary "UnitTest++.vsnet2010" "${UnitTest}/Debug" NO_DEFAULT_PATH )
 	
-		find_library( UnitTestReleaseLibrary
-			"UnitTest++.vsnet2010" "${UnitTest}/Release" NO_DEFAULT_PATH
-		)
+		find_library( UnitTestReleaseLibrary "UnitTest++.vsnet2010" "${UnitTest}/Release" NO_DEFAULT_PATH )
 
 		target_link_libraries( Om
 			debug "${UnitTestDebugLibrary}"
@@ -191,31 +120,15 @@ if( MSVC )
 		)	
 	endif()
 
-	find_library( BoostChronoDebugLibrary
-		libboost_chrono-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
-	)
-	find_library( BoostLocaleDebugLibrary
-		libboost_locale-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
-	)
-	find_library( BoostSystemDebugLibrary
-		libboost_system-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
-	)
-	find_library( BoostThreadDebugLibrary
-		libboost_thread-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
-	)
+	find_library( BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostLocaleDebugLibrary libboost_locale-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostSystemDebugLibrary libboost_system-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostThreadDebugLibrary libboost_thread-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
 
-	find_library( BoostChronoReleaseLibrary
-		libboost_chrono-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
-	)
-	find_library( BoostLocaleReleaseLibrary
-		libboost_locale-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
-	)
-	find_library( BoostSystemReleaseLibrary
-		libboost_system-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
-	)
-	find_library( BoostThreadReleaseLibrary
-		libboost_thread-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH
-	)
+	find_library( BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostLocaleReleaseLibrary libboost_locale-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostSystemReleaseLibrary libboost_system-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostThreadReleaseLibrary libboost_thread-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
 
 	target_link_libraries( Om
 		debug "${BoostLocaleDebugLibrary}"
@@ -326,30 +239,19 @@ if( MSVC )
 	)
 else()
 	set_target_properties( Om PROPERTIES
-		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER
-			"${CMAKE_CURRENT_SOURCE_DIR}/${PrecompiledHeader}"
+		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/${PrecompiledHeader}"
 		XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
 	)
 
 	if( UnitTest )
-		find_library( UnitTestLibrary
-			"UnitTest++" "${UnitTest}" NO_DEFAULT_PATH
-		)
+		find_library( UnitTestLibrary "UnitTest++" "${UnitTest}" NO_DEFAULT_PATH )
 
-		target_link_libraries( Om
-			"${UnitTestLibrary}"
-		)
+		target_link_libraries( Om "${UnitTestLibrary}" )
 	endif()
 
-	find_library( BoostLocaleLibrary
-		boost_locale "${Boost}/lib" NO_DEFAULT_PATH
-	)
-	find_library( BoostSystemLibrary
-		boost_system "${Boost}/lib" NO_DEFAULT_PATH
-	)
-	find_library( BoostThreadLibrary
-		boost_thread "${Boost}/lib" NO_DEFAULT_PATH
-	)
+	find_library( BoostLocaleLibrary boost_locale "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostSystemLibrary boost_system "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostThreadLibrary boost_thread "${Boost}/lib" NO_DEFAULT_PATH )
 
 	target_link_libraries( Om
 		"${BoostLocaleLibrary}"

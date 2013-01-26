@@ -8,14 +8,13 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Sources_CodePointStringFrontSource_ )
+
 	#define Om_Sources_CodePointStringFrontSource_ \
 	Om::Sources::CodePointStringFrontSource
 
@@ -30,12 +29,9 @@ namespace Om
 		\brief
 			A Source of #CodePoint strings from the front of a string.
 		\note
-			Const methods are not thread-safe due to a non-mutexed mutable
-			member.
+			Const methods are not thread-safe due to a non-mutexed mutable member.
 		\note
-			Dereferencing exposes a non-const reference to the member string
-			cache of the current segment, allowing swap as an optimization.
-			Modifying the string will not modify the source data.
+			Dereferencing exposes a non-const reference to the member string cache of the current segment, allowing swap as an optimization.  Modifying the string will not modify the source data.
 		*/
 		template< typename ThisStringIterator >
 		struct CodePointStringFrontSource
@@ -74,8 +70,7 @@ namespace Om
 
 			/*!
 			\brief
-				Populates the #CodePoint string with each code unit of the next
-				#CodePoint.
+				Populates the #CodePoint string with each code unit of the next #CodePoint.
 			*/
 			void Update();
 
@@ -100,4 +95,5 @@ namespace boost
 }
 
 	#include "om/sources/code_point_string_front_source.cpp"
+
 #endif

@@ -8,22 +8,23 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Operator_ )
-	#define Om_Operator_ Om::Operator
+
+	#define Om_Operator_ \
+	Om::Operator
 
 	#include "om/default_atom.hpp"
 	#include "om/symbols/operand_symbol.hpp"
 	#include "om/symbols/operator_symbol.hpp"
 	#include "om/symbols/separator_symbol.hpp"
 
-	#define Om_Operator_GetName_() "operator"
+	#define Om_Operator_GetName_() \
+	"operator"
 
 namespace Om
 {
@@ -51,12 +52,13 @@ namespace Om
 
 		/*!
 		\param theCodeUnitIterator
-			A non-null pointer to the null-terminated code unit array to
-			normalize and copy directly into the Operator.
+			A non-null pointer to the null-terminated code unit array to normalize and copy directly into the Operator.
 		*/
 		explicit Operator( char const theCodeUnitIterator[] );
 
-		explicit Operator( Source< CodePoint const > & );
+		explicit Operator(
+			Source< CodePoint const > &
+		);
 
 		explicit Operator( Symbols::OperandSymbol const );
 
@@ -75,16 +77,14 @@ namespace Om
 
 		/*!
 		\brief
-			Decodes this Operator and gives each resulting Element to the
-			argument.
+			Decodes this Operator and gives each resulting Element to the argument.
 		*/
 		template< typename TheQueue >
 		void Decode( TheQueue & ) const;
 
 		/*!
 		\brief
-			Encodes the elements and replaces the contents of this Operator with
-			the result.
+			Encodes the elements and replaces the contents of this Operator with the result.
 		*/
 		template< typename TheQueue >
 		void Encode( TheQueue & );
@@ -121,8 +121,12 @@ namespace Om
 namespace boost
 {
 	template<>
-	void swap( Om::Operator &, Om::Operator & );
+	void swap(
+		Om::Operator &,
+		Om::Operator &
+	);
 }
 
 	#include "om/operator.cpp"
+
 #endif

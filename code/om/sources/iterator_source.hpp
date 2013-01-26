@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Sources_IteratorSource_ )
-	#define Om_Sources_IteratorSource_ Om::Sources::IteratorSource
+
+	#define Om_Sources_IteratorSource_ \
+	Om::Sources::IteratorSource
 
 	#include "om/sources/default_source.hpp"
 
@@ -29,15 +29,23 @@ namespace Om
 		\brief
 			A Source adapter for a sentinal-terminated input iterator.
 		\tparam ThisItem
-			The item type, which must implement the \c ! operator such that it
-			only returns true for the sentinal.
+			The item type, which must implement the \c ! operator such that it only returns true for the sentinal.
 		\tparam ThisIterator
 			The iterator type.
 		*/
-		template< typename ThisItem, typename ThisIterator >
+		template<
+			typename ThisItem,
+			typename ThisIterator
+		>
 		struct IteratorSource
 		:
-		DefaultSource< ThisItem, IteratorSource< ThisItem, ThisIterator > >
+		DefaultSource<
+			ThisItem,
+			IteratorSource<
+				ThisItem,
+				ThisIterator
+			>
+		>
 		{
 		public: // MARK: public (non-static)
 
@@ -70,12 +78,22 @@ namespace Om
 // MARK: - boost
 namespace boost
 {
-	template< typename ThisItem, typename ThisIterator >
+	template<
+		typename ThisItem,
+		typename ThisIterator
+	>
 	void swap(
-		Om::Sources::IteratorSource< ThisItem, ThisIterator > &,
-		Om::Sources::IteratorSource< ThisItem, ThisIterator > &
+		Om::Sources::IteratorSource<
+			ThisItem,
+			ThisIterator
+		> &,
+		Om::Sources::IteratorSource<
+			ThisItem,
+			ThisIterator
+		> &
 	);
 }
 
 	#include "om/sources/iterator_source.cpp"
+
 #endif

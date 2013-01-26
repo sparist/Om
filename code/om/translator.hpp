@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Translator_ )
-	#define Om_Translator_ Om::Translator
+
+	#define Om_Translator_ \
+	Om::Translator
 
 	#include "om/code_point.hpp"
 
@@ -47,8 +47,7 @@ namespace Om
 
 		/*!
 		\brief
-			Evaluates input from the #CodePoint Source and pushes it to the
-			#CodePoint Sink.
+			Evaluates input from the #CodePoint Source and pushes it to the #CodePoint Sink.
 		*/
 		void Evaluate(
 			Source< CodePoint const > &,
@@ -57,8 +56,7 @@ namespace Om
 
 		/*!
 		\brief
-			A convenience overload that evaluates input from the string and
-			returns the output string.
+			A convenience overload that evaluates input from the string and returns the output string.
 		\param theCodeUnitIterator
 			A non-null pointer to a null-terminated code unit array.
 		\return
@@ -74,14 +72,17 @@ namespace Om
 
 		/*!
 		\brief
-			Translates the Operator to an object that is then given to the
-			Evaluation.
+			Translates the Operator to an object that is then given to the Evaluation.
 		\return
 			True if the Operator was found.
 		*/
-		virtual bool Translate( Evaluation &, Operator const & ) const = 0;
+		virtual bool Translate(
+			Evaluation &,
+			Operator const &
+		) const = 0;
 	};
 }
 
 	#include "om/translator.cpp"
+
 #endif

@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Lexicon_ )
 
 	#include "om/evaluation.hpp"
@@ -23,7 +21,8 @@
 
 // MARK: Om::Lexicon
 
-	#define Type_ Om::Lexicon
+	#define Type_ \
+	Om::Lexicon
 
 // MARK: public (static)
 
@@ -49,14 +48,25 @@ thisMap(),
 thisFirstNode(),
 thisLastNode()
 {
-	Node const * theNode = theLexicon.thisFirstNode;
-	for( ; theNode; theNode = theNode->GetNext() ){
-		std::auto_ptr< Node > theNewNode( new Node( *theNode ) );
+	for(
+		Node const * theNode = theLexicon.thisFirstNode;
+		theNode;
+		theNode = theNode->GetNext()
+	){
+		std::auto_ptr< Node > theNewNode(
+			new Node( *theNode )
+		);
 		assert( theNewNode.get() );
-		theNewNode->LinkToBack( this->thisFirstNode, this->thisLastNode );
+		theNewNode->LinkToBack(
+			this->thisFirstNode,
+			this->thisLastNode
+		);
 
 		std::string const & theString = theNewNode->GetOperator().GetString();
-		this->thisMap.insert( theString, theNewNode );
+		this->thisMap.insert(
+			theString,
+			theNewNode
+		);
 	}
 }
 
@@ -69,13 +79,14 @@ inline Type_ & Type_::operator =( Lexicon theLexicon )
 inline void Type_::BackGivePair( Queue & theQueue )
 {
 	if( this->thisLastNode ){
-		Map::iterator const theIterator = this->thisMap.find(
-			this->thisLastNode->GetOperator().GetString()
-		);
+		Map::iterator const theIterator = this->thisMap.find( this->thisLastNode->GetOperator().GetString() );
 		assert( this->thisMap.end() != theIterator );
 
 		assert( this->thisFirstNode );
-		Node::UnlinkLast( this->thisFirstNode, this->thisLastNode );
+		Node::UnlinkLast(
+			this->thisFirstNode,
+			this->thisLastNode
+		);
 
 		Map::auto_type theNode = this->thisMap.release( theIterator );
 		assert( theNode );
@@ -92,21 +103,26 @@ inline void Type_::Clear()
 inline Om::Pair const & Type_::Find( Operator const & theOperator ) const
 {
 	typedef Map::const_iterator Iterator;
-	Iterator theIterator( this->thisMap.find( theOperator.GetString() ) );
-	if( this->thisMap.end() == theIterator ){ return( Pair::GetEmpty() ); }
+	Iterator theIterator(
+		this->thisMap.find( theOperator.GetString() )
+	);
+	if( this->thisMap.end() == theIterator ){
+		return( Pair::GetEmpty() );
+	}
 	return( *theIterator->second );
 }
 
 inline void Type_::FrontGivePair( Queue & theQueue )
 {
 	if( this->thisFirstNode ){
-		Map::iterator const theIterator = this->thisMap.find(
-			this->thisFirstNode->GetOperator().GetString()
-		);
+		Map::iterator const theIterator = this->thisMap.find( this->thisFirstNode->GetOperator().GetString() );
 		assert( this->thisMap.end() != theIterator );
 
 		assert( this->thisLastNode );
-		Node::UnlinkFirst( this->thisFirstNode, this->thisLastNode );
+		Node::UnlinkFirst(
+			this->thisFirstNode,
+			this->thisLastNode
+		);
 
 		Map::auto_type theNode = this->thisMap.release( theIterator );
 		assert( theNode );
@@ -119,26 +135,39 @@ inline std::auto_ptr<
 > Type_::GetElementRange() const
 {
 	return(
-		std::auto_ptr< Source< Element const > >( new ElementRange( *this ) )
+		std::auto_ptr<
+			Source< Element const >
+		>(
+			new ElementRange( *this )
+		)
 	);
 }
 
 inline void Type_::GiveElements( Queue & theQueue )
 {
-	this->GiveElements( this->GetFirstNode(), theQueue );
+	this->GiveElements(
+		this->GetFirstNode(),
+		theQueue
+	);
 	this->Clear();
 }
 
 inline void Type_::GiveElements( Queue & theQueue ) const
 {
-	this->GiveElements( this->GetFirstNode(), theQueue );
+	this->GiveElements(
+		this->GetFirstNode(),
+		theQueue
+	);
 }
 
 inline bool Type_::IsEmpty() const
 {
 	assert(
 		!this->thisMap.empty() ||
-		( !this->thisFirstNode && !this->thisLastNode )
+		(
+			!this->thisFirstNode &&
+			!this->thisLastNode
+		)
 	);
 	return( this->thisMap.empty() );
 }
@@ -157,7 +186,9 @@ inline void Type_::ReadElements( Parser & theParser )
 				Parser theOperandParser( theCodePointSource );
 				this->ReadQuotedElements( theOperandParser );
 			}
-			if( !theParser ){ return; }
+			if( !theParser ){
+				return;
+			}
 			assert( Symbols::theEndOperandSymbol == *theParser );
 			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
@@ -179,8 +210,14 @@ inline void Type_::ReadQuotedElements( Parser & theParser )
 inline void Type_::Swap( Lexicon & theLexicon )
 {
 	this->thisMap.swap( theLexicon.thisMap );
-	boost::swap( this->thisFirstNode, theLexicon.thisFirstNode );
-	boost::swap( this->thisLastNode, theLexicon.thisLastNode );
+	boost::swap(
+		this->thisFirstNode,
+		theLexicon.thisFirstNode
+	);
+	boost::swap(
+		this->thisLastNode,
+		theLexicon.thisLastNode
+	);
 }
 
 template< typename TheOperand >
@@ -214,11 +251,18 @@ inline bool Type_::Translate(
 ) const
 {
 	Pair const & thePair = this->Find( theOperator );
-	if( thePair.IsEmpty() ){ return( false ); }
+	if( thePair.IsEmpty() ){
+		return( false );
+	}
 	Operand const & theOperand = thePair.GetOperand();
 	if( theOperand.IsEmpty() ){
 		assert( thePair.GetOperator() == theOperator );
-		return( System::Get().Translate( theEvaluation, theOperator ) );
+		return(
+			System::Get().Translate(
+				theEvaluation,
+				theOperator
+			)
+		);
 	}
 	theEvaluation.TakeQueue( *theOperand.GetProgram() );
 	return( true );
@@ -227,13 +271,27 @@ inline bool Type_::Translate(
 // MARK: private (static)
 
 template< typename TheNode >
-inline void Type_::GiveElements( TheNode * theFirstNode, Queue & theQueue )
+inline void Type_::GiveElements(
+	TheNode * theFirstNode,
+	Queue & theQueue
+)
 {
 	if( theFirstNode ){
-		for( ; ; theQueue.TakeElement( Separator::GetLineSeparator() ) ){
-			assert( theFirstNode && !theFirstNode->IsEmpty() );
+		for(
+			;
+			;
+			theQueue.TakeElement( Separator::GetLineSeparator() )
+		){
+			assert(
+				theFirstNode &&
+				!theFirstNode->IsEmpty()
+			);
 			theFirstNode->GiveElements( theQueue );
-			if( !( theFirstNode = theFirstNode->GetNext() ) ){ return; }
+			if(
+				!( theFirstNode = theFirstNode->GetNext() )
+			){
+				return;
+			}
 		}
 	}
 }
@@ -262,9 +320,14 @@ inline Type_::Node const * Type_::GetLastNode() const
 
 inline Type_::Node & Type_::GetOperandTaker()
 {
-	if( !this->thisLastNode || !this->thisLastNode->GetOperand().IsEmpty() ){
+	if(
+		!this->thisLastNode ||
+		!this->thisLastNode->GetOperand().IsEmpty()
+	){
 		Operator const theOperator;
-		return( this->GetOperandTaker( theOperator ) );
+		return(
+			this->GetOperandTaker( theOperator )
+		);
 	}
 	return( *this->thisLastNode );
 }
@@ -280,14 +343,23 @@ inline Type_::Node & Type_::GetOperandTaker( TheOperator & theOperator )
 			std::auto_ptr< Node > theNewNode( new Node );
 			assert( theNewNode.get() );
 			theNode = theNewNode.get();
-			this->thisMap.insert( theString, theNewNode );
+			this->thisMap.insert(
+				theString,
+				theNewNode
+			);
 		}
 		theNode->TakeOperator( theOperator ); // May swap.
-		theNode->LinkToBack( this->thisFirstNode, this->thisLastNode );
+		theNode->LinkToBack(
+			this->thisFirstNode,
+			this->thisLastNode
+		);
 		assert( theNode->GetOperand().IsEmpty() );
 	} else{
 		theNode = &*theIterator->second;
-		theNode->RelinkToBack( this->thisFirstNode, this->thisLastNode );
+		theNode->RelinkToBack(
+			this->thisFirstNode,
+			this->thisLastNode
+		);
 		theNode->ClearOperand();
 	}
 	return( *theNode );
@@ -298,7 +370,8 @@ inline Type_::Node & Type_::GetOperandTaker( TheOperator & theOperator )
 // MARK: -
 // MARK: Om::Lexicon::ElementRange
 
-	#define Type_ Om::Lexicon::ElementRange
+	#define Type_ \
+	Om::Lexicon::ElementRange
 
 // MARK: public (non-static)
 
@@ -312,7 +385,10 @@ thisOffset()
 inline Type_::ElementRange( Lexicon const & theLexicon )
 :
 thisNode( theLexicon.thisFirstNode ),
-thisOffset( this->thisNode && thisNode->GetOperator().IsEmpty() )
+thisOffset(
+	this->thisNode &&
+	thisNode->GetOperator().IsEmpty()
+)
 {
 }
 
@@ -370,11 +446,15 @@ inline void Type_::Pop()
 // MARK: -
 // MARK: Om::Lexicon::Node
 
-	#define Type_ Om::Lexicon::Node
+	#define Type_ \
+	Om::Lexicon::Node
 
 // MARK: public (static)
 
-inline void Type_::UnlinkFirst( Node * & theFirstNode, Node * & theLastNode )
+inline void Type_::UnlinkFirst(
+	Node * & theFirstNode,
+	Node * & theLastNode
+)
 {
 	assert( theFirstNode );
 	assert( theLastNode );
@@ -388,7 +468,10 @@ inline void Type_::UnlinkFirst( Node * & theFirstNode, Node * & theLastNode )
 	}
 }
 
-inline void Type_::UnlinkLast( Node * & theFirstNode, Node * & theLastNode )
+inline void Type_::UnlinkLast(
+	Node * & theFirstNode,
+	Node * & theLastNode
+)
 {
 	assert( theFirstNode );
 	assert( theLastNode );
@@ -431,7 +514,10 @@ inline Type_ const * Type_::GetPrior() const
 	return( this->thisPriorNode );
 }
 
-inline void Type_::LinkToBack( Node * & theFirstNode, Node * & theLastNode )
+inline void Type_::LinkToBack(
+	Node * & theFirstNode,
+	Node * & theLastNode
+)
 {
 	this->thisPriorNode = theLastNode;
 	if( theLastNode ){
@@ -443,7 +529,10 @@ inline void Type_::LinkToBack( Node * & theFirstNode, Node * & theLastNode )
 	theLastNode = this;
 }
 
-inline void Type_::RelinkToBack( Node * & theFirstNode, Node * & theLastNode )
+inline void Type_::RelinkToBack(
+	Node * & theFirstNode,
+	Node * & theLastNode
+)
 {
 	if( this->thisNextNode ){
 		this->thisNextNode->thisPriorNode = this->thisPriorNode;
@@ -451,7 +540,10 @@ inline void Type_::RelinkToBack( Node * & theFirstNode, Node * & theLastNode )
 			this->thisPriorNode->thisNextNode = this->thisNextNode;
 		}
 
-		this->LinkToBack( theFirstNode, theLastNode );
+		this->LinkToBack(
+			theFirstNode,
+			theLastNode
+		);
 	}
 }
 
@@ -461,12 +553,16 @@ inline void Type_::RelinkToBack( Node * & theFirstNode, Node * & theLastNode )
 // MARK: boost
 
 template<>
-inline void boost::swap( Om::Lexicon & theFirst, Om::Lexicon & theSecond )
+inline void boost::swap(
+	Om::Lexicon & theFirst,
+	Om::Lexicon & theSecond
+)
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/lexicon.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -483,8 +579,8 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"a{A}\n"
-						"b{B}"
+					"a{A}\n"
+					"b{B}"
 					"}"
 				),
 				System::Get().Evaluate( "lexicon {a {A} b {B}}" )
@@ -493,8 +589,8 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"b\n"
-						"a"
+					"b\n"
+					"a"
 					"}"
 				),
 				System::Get().Evaluate( "->lexicon{b} lexicon{a}" )
@@ -511,8 +607,8 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"b\n"
-						"a"
+					"b\n"
+					"a"
 					"}{a}"
 				),
 				System::Get().Evaluate( "->lexicon{b}copy{a}" )
@@ -521,8 +617,8 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"b\n"
-						"a"
+					"b\n"
+					"a"
 					"}{a}"
 				),
 				System::Get().Evaluate( "->lexicon{b}copy lexicon{a}" )
@@ -531,8 +627,8 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"a\n"
-						"b"
+					"a\n"
+					"b"
 					"}{a}"
 				),
 				System::Get().Evaluate( "lexicon<-{b}copy lexicon{a}" )
@@ -541,12 +637,12 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"a{A}\n"
-						"b{B}\n"
-						"c{C}"
+					"a{A}\n"
+					"b{B}\n"
+					"c{C}"
 					"}{"
-						"a{A}\n"
-						"b{B}"
+					"a{A}\n"
+					"b{B}"
 					"}"
 				),
 				System::Get().Evaluate(
@@ -562,16 +658,16 @@ namespace Om
 			CHECK_EQUAL(
 				(
 					"{"
-						"{"
-							"a{b}\n"
-							"c{d}"
-						"}"
+					"{"
+					"a{b}\n"
+					"c{d}"
+					"}"
 					"}"
 				),
 				System::Get().Evaluate(
 					"= lexicon{a{b}c{d}} {"
-						"a{b}\n"
-						"c{d}"
+					"a{b}\n"
+					"c{d}"
 					"}"
 				)
 			);
@@ -614,7 +710,9 @@ namespace Om
 			{
 				Sinks::CodePointSink<
 					std::back_insert_iterator< std::string >
-				> theCodePointSink( std::back_inserter( theResult ) );
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
 				Writer theWriter( theCodePointSink );
 
 				Sources::CodePointSource<> theCodePointSource( theCode );

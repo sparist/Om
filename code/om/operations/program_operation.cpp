@@ -8,20 +8,20 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_ProgramOperation_ )
 
 // MARK: Om::Operations::ProgramOperation
 
-	#define Template_ template< typename ThisProgram >
+	#define Template_ \
+	template< typename ThisProgram >
 
-	#define Type_ Om::Operations::ProgramOperation< ThisProgram >
+	#define Type_ \
+	Om::Operations::ProgramOperation< ThisProgram >
 
 // MARK: public (static)
 
@@ -33,10 +33,15 @@ inline char const * Type_::GetName()
 
 Template_
 template< typename TheProgramOperation >
-inline void Type_::GiveElements( TheProgramOperation &, Queue & theQueue )
+inline void Type_::GiveElements(
+	TheProgramOperation &,
+	Queue & theQueue
+)
 {
 	theQueue.TakeElement(
-		DefaultOperation< ProgramOperation< ThisProgram > >::GetOperator()
+		DefaultOperation<
+			ProgramOperation< ThisProgram >
+		>::GetOperator()
 	);
 }
 
@@ -62,7 +67,12 @@ inline bool Type_::TakeOperand(
 )
 {
 	assert( !theOperand.IsEmpty() );
-	return( this->TakeQuotedQueue( theEvaluation, *theOperand.GetProgram() ) );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
 }
 
 Template_
@@ -82,5 +92,7 @@ inline bool Type_::TakeQuotedQueue(
 	#undef Template_
 
 #else
+
 	#include "om/operations/program_operation.hpp"
+
 #endif

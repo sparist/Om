@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_FrontPullElementOperation_ )
 
 	#include "om/literal.hpp"
@@ -22,7 +20,8 @@
 
 // MARK: Om::Operations::FrontPullElementOperation
 
-	#define Type_ Om::Operations::FrontPullElementOperation
+	#define Type_ \
+	Om::Operations::FrontPullElementOperation
 
 // MARK: public (static)
 
@@ -35,13 +34,19 @@ inline void Type_::Give( Evaluation & theEvaluation )
 {
 	theEvaluation.TakeOperation(
 		std::auto_ptr< Operation >(
-			new PullOperation< Literal, FrontPullElementOperation >
+			new PullOperation<
+				Literal,
+				FrontPullElementOperation
+			>
 		)
 	);
 }
 
 template< typename TheQueue >
-inline void Type_::Pull( Literal & theLiteral, TheQueue & theQueue )
+inline void Type_::Pull(
+	Literal & theLiteral,
+	TheQueue & theQueue
+)
 {
 	theLiteral.FrontGiveElement( theQueue );
 }
@@ -49,6 +54,7 @@ inline void Type_::Pull( Literal & theLiteral, TheQueue & theQueue )
 	#undef Type_
 
 #else
+
 	#include "om/operations/front_pull_element_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )

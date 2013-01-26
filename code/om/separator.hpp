@@ -8,20 +8,21 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Separator_ )
-	#define Om_Separator_ Om::Separator
+
+	#define Om_Separator_ \
+	Om::Separator
 
 	#include "om/default_atom.hpp"
 	#include "om/symbols/separator_symbol.hpp"
 
-	#define Om_Separator_GetName_() "separator"
+	#define Om_Separator_GetName_() \
+	"separator"
 
 namespace Om
 {
@@ -30,11 +31,9 @@ namespace Om
 	\brief
 		The \ref separator implementation.
 
-	An Atom defined by a string containing only Symbols::SeparatorSymbol
-	characters.
+	An Atom defined by a string containing only Symbols::SeparatorSymbol characters.
 
-	As a Queue, the Separator filters out all top-level Element instances except
-	Separator.
+	As a Queue, the Separator filters out all top-level Element instances except Separator.
 	*/
 	struct Separator
 	:
@@ -54,7 +53,9 @@ namespace Om
 
 		Separator();
 
-		explicit Separator( Source< CodePoint const > & );
+		explicit Separator(
+			Source< CodePoint const > &
+		);
 
 		/*!
 		\param theSeparatorSymbol
@@ -88,8 +89,12 @@ namespace Om
 namespace boost
 {
 	template<>
-	void swap( Om::Separator &, Om::Separator & );
+	void swap(
+		Om::Separator &,
+		Om::Separator &
+	);
 }
 
 	#include "om/separator.cpp"
+
 #endif

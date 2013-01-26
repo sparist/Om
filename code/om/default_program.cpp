@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_DefaultProgram_ )
 
 	#include "om/element.hpp"
@@ -22,12 +20,17 @@
 
 // MARK: Om::DefaultProgram
 
-	#define Template_ template< \
+	#define Template_ \
+	template< \
 		typename ThisImplementation, \
 		typename ThisInterface \
 	>
 
-	#define Type_ Om::DefaultProgram< ThisImplementation, ThisInterface >
+	#define Type_ \
+	Om::DefaultProgram< \
+		ThisImplementation, \
+		ThisInterface \
+	>
 
 // MARK: public (non-static)
 
@@ -38,13 +41,14 @@ inline Type_::~DefaultProgram()
 
 /*!
 \note
-	This must be implemented in this class, vs. Program, due to Element
-	dependency.
+	This must be implemented in this class, vs. Program, due to Element dependency.
 */
 Template_
 inline bool Type_::operator ==( Program const & theProgram ) const
 {
-	std::auto_ptr< Source< Element const > > theRange = this->GetElementRange();
+	std::auto_ptr<
+		Source< Element const >
+	> theRange = this->GetElementRange();
 	assert( theRange.get() );
 
 	std::auto_ptr<
@@ -52,13 +56,25 @@ inline bool Type_::operator ==( Program const & theProgram ) const
 	> theOtherRange = theProgram.GetElementRange();
 	assert( theOtherRange.get() );
 
-	for( ; ; theRange->Pop(), theOtherRange->Pop() ){
+	for(
+		;
+		;
+	){
 		bool const theRangeHasNext = *theRange;
 		bool const theOtherRangeHasNext = *theOtherRange;
-		if( !theRangeHasNext || !theOtherRangeHasNext ){
+		if(
+			!theRangeHasNext ||
+			!theOtherRangeHasNext
+		){
 			return( theRangeHasNext == theOtherRangeHasNext );
 		}
-		if( !( **theRange == **theOtherRange ) ){ return( false ); }
+		if(
+			!( **theRange == **theOtherRange )
+		){
+			return( false );
+		}
+		theRange->Pop();
+		theOtherRange->Pop();
 	}
 }
 
@@ -77,19 +93,35 @@ inline void Type_::TakeElements( Queue const & theQueue )
 // MARK: private (non-static)
 
 Template_
-template< typename TheCast, typename TheQueue >
+template<
+	typename TheCast,
+	typename TheQueue
+>
 inline void Type_::TakeQueueElements( TheQueue & theQueue )
 {
-	assert( dynamic_cast< ThisImplementation * >( this ) );
-	assert( typeid( TheCast ) == typeid( ThisImplementation ) );
-	if( typeid( TheCast ) == typeid( theQueue ) && this->IsEmpty() ){
-		this->Take( static_cast< TheCast & >( theQueue ) );
-	} else{ theQueue.GiveElements( *this ); }
+	assert(
+		dynamic_cast< ThisImplementation * >( this )
+	);
+	assert(
+		typeid( TheCast ) == typeid( ThisImplementation )
+	);
+	if(
+		typeid( TheCast ) == typeid( theQueue ) &&
+		this->IsEmpty()
+	){
+		this->Take(
+			static_cast< TheCast & >( theQueue )
+		);
+	} else{
+		theQueue.GiveElements( *this );
+	}
 }
 
 	#undef Type_
 	#undef Template_
 
 #else
+
 	#include "om/default_program.hpp"
+
 #endif

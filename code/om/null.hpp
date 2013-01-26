@@ -8,19 +8,20 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Null_ )
-	#define Om_Null_ Om::Null
+
+	#define Om_Null_ \
+	Om::Null
 
 	#include "om/default_program.hpp"
 
-	#define Om_Null_GetName_() "null"
+	#define Om_Null_GetName_() \
+	"null"
 
 namespace Om
 {
@@ -37,9 +38,7 @@ namespace Om
 
 		/*!
 		\return
-			The static Null.
-			This can be a mutable reference because Null is immutable
-			regardless.
+			The static Null.  This can be a mutable reference because Null is immutable regardless.
 		*/
 		static Null & Get();
 
@@ -53,7 +52,9 @@ namespace Om
 
 		virtual void Clear();
 
-		virtual std::auto_ptr< Source< Element > > GetElementRange();
+		virtual std::auto_ptr<
+			Source< Element >
+		> GetElementRange();
 
 		virtual std::auto_ptr<
 			Source< Element const >
@@ -93,8 +94,12 @@ namespace Om
 namespace boost
 {
 	template<>
-	void swap( Om::Null &, Om::Null & );
+	void swap(
+		Om::Null &,
+		Om::Null &
+	);
 }
 
 	#include "om/null.cpp"
+
 #endif

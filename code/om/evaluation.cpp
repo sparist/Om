@@ -8,20 +8,19 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Evaluation_ )
 
 	#include "om/evaluator.hpp"
 
 // MARK: Om::Evaluation
 
-	#define Type_ Om::Evaluation
+	#define Type_ \
+	Om::Evaluation
 
 // MARK: public (non-static)
 
@@ -47,7 +46,9 @@ inline Om::Translator const & Type_::GetTranslator() const
 
 inline bool Type_::GiveTerm( Evaluator & theEvaluator )
 {
-	if( this->thisExpression.IsEmpty() ){ return( false ); }
+	if( this->thisExpression.IsEmpty() ){
+		return( false );
+	}
 	Expression::FormRange< Form > theFormRange( this->thisExpression );
 	assert( theFormRange );
 	if( theFormRange->GetOperator().IsEmpty() ){
@@ -58,11 +59,17 @@ inline bool Type_::GiveTerm( Evaluator & theEvaluator )
 			theOperand.Swap( *theOperandRange );
 		}
 		this->thisExpression.FrontPopTerm();
-		theEvaluator.TakeOperand( *this, theOperand );
+		theEvaluator.TakeOperand(
+			*this,
+			theOperand
+		);
 	} else{
 		Operator theOperator;
 		this->thisExpression.FrontGiveTerm( theOperator );
-		theEvaluator.TakeOperator( *this, theOperator );
+		theEvaluator.TakeOperator(
+			*this,
+			theOperator
+		);
 	}
 	return( true );
 }
@@ -75,7 +82,9 @@ inline void Type_::TakeOperand( TheOperand & theOperand )
 }
 
 template< typename TheOperation >
-inline void Type_::TakeOperation( std::auto_ptr< TheOperation > theOperation )
+inline void Type_::TakeOperation(
+	std::auto_ptr< TheOperation > theOperation
+)
 {
 	this->thisEvaluator.TakeOperation( theOperation );
 }
@@ -105,5 +114,7 @@ inline void Type_::TakeQueue( TheQueue & theQueue )
 	#undef Type_
 
 #else
+
 	#include "om/evaluation.hpp"
+
 #endif

@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Form_ )
-	#define Om_Form_ Om::Form
+
+	#define Om_Form_ \
+	Om::Form
 
 	#include "om/operator.hpp"
 	#include "om/sources/collection_front_source.hpp"
@@ -26,8 +26,7 @@ namespace Om
 	// MARK: - Om::Form
 	/*!
 	\brief
-		An Operator (which may be empty), followed by zero or more Operand
-		instances.
+		An Operator (which may be empty), followed by zero or more Operand instances.
 	*/
 	struct Form
 	{
@@ -98,8 +97,14 @@ namespace Om
 
 		typedef std::deque< Operand > OperandDeque;
 
-		template< typename TheOperandIterator, typename TheForm >
-		static void GiveElements( TheForm &, Queue & );
+		template<
+			typename TheOperandIterator,
+			typename TheForm
+		>
+		static void GiveElements(
+			TheForm &,
+			Queue &
+		);
 
 	private: // MARK: private (non-static)
 
@@ -115,7 +120,10 @@ namespace Om
 	*/
 	struct Form::ElementRange
 	:
-	Sources::DefaultSource< Element const, ElementRange >
+	Sources::DefaultSource<
+		Element const,
+		ElementRange
+	>
 	{
 	public: // MARK: public (non-static)
 
@@ -148,7 +156,10 @@ namespace Om
 	template<>
 	struct Form::OperandRange< Operand >
 	:
-	Sources::CollectionFrontSource< Operand, OperandDeque::iterator >
+	Sources::CollectionFrontSource<
+		Operand,
+		OperandDeque::iterator
+	>
 	{
 	public: // MARK: public (non-static)
 
@@ -178,8 +189,12 @@ namespace Om
 namespace boost
 {
 	template<>
-	void swap( Om::Form &, Om::Form & );
+	void swap(
+		Om::Form &,
+		Om::Form &
+	);
 }
 
 	#include "om/form.cpp"
+
 #endif

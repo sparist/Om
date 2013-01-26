@@ -8,20 +8,20 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Operations_FrontPullTermOperation_ )
+
 	#define Om_Operations_FrontPullTermOperation_ \
 	Om::Operations::FrontPullTermOperation
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_FrontPullTermOperation_GetName_() "<-terms"
+	#define Om_Operations_FrontPullTermOperation_GetName_() \
+	"<-terms"
 
 namespace Om
 {
@@ -46,17 +46,19 @@ namespace Om
 
 			//! The callback for PullOperation.
 			template< typename TheQueue >
-			static void Pull( Expression &, TheQueue & );
+			static void Pull(
+				Expression &,
+				TheQueue &
+			);
 		};
 
 		namespace
 		{
-			static Definition<
-				FrontPullTermOperation
-			> const theFrontPullTermDefinition;
+			static Definition< FrontPullTermOperation > const theFrontPullTermDefinition;
 		}
 	}
 }
 
 	#include "om/operations/front_pull_term_operation.cpp"
+
 #endif

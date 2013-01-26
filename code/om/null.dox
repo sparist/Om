@@ -4,11 +4,9 @@
 	\brief
 		The null \ref programs "Program".
 	\par Interpretation
-		A \ref null \ref programs "Program" is an interpretation that disregards
-		all contents.
+		A \ref null \ref programs "Program" is an interpretation that disregards all contents.
 	\par Normalization
-		A \ref programs "Program" is normalized as \ref null by discarding all
-		contents.
+		A \ref programs "Program" is normalized as \ref null by discarding all contents.
 	\par Implementation
 		Om::Null
 */

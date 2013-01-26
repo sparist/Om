@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_DefaultAtom_ )
-	#define Om_DefaultAtom_ Om::DefaultAtom
+
+	#define Om_DefaultAtom_ \
+	Om::DefaultAtom
 
 	#include "om/atom.hpp"
 	#include "om/default_element.hpp"
@@ -27,7 +27,10 @@ namespace Om
 	template< typename ThisImplementation >
 	struct DefaultAtom
 	:
-	DefaultElement< ThisImplementation, Atom >
+	DefaultElement<
+		ThisImplementation,
+		Atom
+	>
 	{
 	public: // MARK: public (non-static)
 
@@ -37,8 +40,7 @@ namespace Om
 		\brief
 			Compares with a Atom; required for use as index in containers.
 		\return
-			True if this Atom string precedes the argument Atom string in a
-			byte-wise ordering.
+			True if this Atom string precedes the argument Atom string in a byte-wise ordering.
 		*/
 		bool operator <( DefaultAtom const & );
 
@@ -46,7 +48,9 @@ namespace Om
 
 		virtual void Clear();
 
-		virtual std::auto_ptr< Source< Element > > GetElementRange();
+		virtual std::auto_ptr<
+			Source< Element >
+		> GetElementRange();
 
 		virtual std::auto_ptr<
 			Source< Element const >
@@ -62,13 +66,14 @@ namespace Om
 		\return
 			True if empty.
 
-		An empty Atom cannot be represented in Om code, but can be handy as an
-		efficient "null" representation in implementation (e.g. the result after
-		a move).
+		An empty Atom cannot be represented in Om code, but can be handy as an efficient "null" representation in implementation (e.g. the result after a move).
 		*/
 		virtual bool IsEmpty() const;
 
-		using DefaultElement< ThisImplementation, Atom >::Merge;
+		using DefaultElement<
+			ThisImplementation,
+			Atom
+		>::Merge;
 
 		/*!
 		\return
@@ -109,4 +114,5 @@ namespace Om
 }
 
 	#include "om/default_atom.cpp"
+
 #endif

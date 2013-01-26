@@ -8,20 +8,26 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Sources_IteratorSource_ )
 
 // MARK: Om::Sources::IteratorSource
 
-	#define Template_ template< typename ThisItem, typename ThisIterator >
+	#define Template_ \
+	template< \
+		typename ThisItem, \
+		typename ThisIterator \
+	>
 
-	#define Type_ Om::Sources::IteratorSource< ThisItem, ThisIterator >
+	#define Type_ \
+	Om::Sources::IteratorSource< \
+		ThisItem, \
+		ThisIterator \
+	>
 
 // MARK: public (non-static)
 
@@ -44,7 +50,10 @@ inline bool Type_::operator ==( IteratorSource const & theSource ) const
 {
 	return(
 		this->thisIterator == theSource.thisIterator ||
-		( !*this->thisIterator && !*theSource.thisIterator )
+		(
+			!*this->thisIterator &&
+			!*theSource.thisIterator
+		)
 	);
 }
 
@@ -83,16 +92,26 @@ inline void Type_::Swap( IteratorSource & theIteratorSource )
 // MARK: -
 // MARK: boost
 
-template< typename ThisItem, typename ThisIterator >
+template<
+	typename ThisItem,
+	typename ThisIterator
+>
 inline void boost::swap(
-	Om::Sources::IteratorSource< ThisItem, ThisIterator > & theFirst,
-	Om::Sources::IteratorSource< ThisItem, ThisIterator > & theSecond
+	Om::Sources::IteratorSource<
+		ThisItem,
+		ThisIterator
+	> & theFirst,
+	Om::Sources::IteratorSource<
+		ThisItem,
+		ThisIterator
+	> & theSecond
 )
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/sources/iterator_source.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -113,7 +132,10 @@ namespace Om
 			)
 			{
 				typedef char const * Iterator;
-				typedef Sources::IteratorSource< char const, Iterator > Source;
+				typedef Sources::IteratorSource<
+					char const,
+					Iterator
+				> Source;
 				Source theSource( theCodeUnitIterator );
 				Source const theSourceEnd( "" );
 
@@ -123,7 +145,11 @@ namespace Om
 				> Sink;
 				Sink theSink( theSinkString );
 
-				std::copy( theSource, theSourceEnd, theSink );
+				std::copy(
+					theSource,
+					theSourceEnd,
+					theSink
+				);
 			}
 
 			struct Item
@@ -146,33 +172,71 @@ namespace Om
 		TEST( General )
 		{
 			typedef Item * Iterator;
-			typedef Sources::IteratorSource< Item, Iterator > Source;
+			typedef Sources::IteratorSource<
+				Item,
+				Iterator
+			> Source;
 
-			Item theSourceArray[] = { '0', '1', '2', 0 };
+			Item theSourceArray[] = {
+				'0',
+				'1',
+				'2',
+				0
+			};
 			Source theSource( theSourceArray );
 			Item theSourceArrayEnd[] = { 0 };
 			Source const theSourceEnd( theSourceArrayEnd );
 
 			CHECK( theSourceEnd != theSource );
-			CHECK_EQUAL( '0', theSource->thisCodeUnit );
+			CHECK_EQUAL(
+				'0',
+				theSource->thisCodeUnit
+			);
 
 			++theSource;
 			CHECK( theSourceEnd != theSource );
-			CHECK_EQUAL( '1', ( *theSource ).thisCodeUnit );
+			CHECK_EQUAL(
+				'1',
+				( *theSource ).thisCodeUnit
+			);
 
 			Source theIterator = ++theSource;
 			CHECK( theSourceEnd != theSource );
-			CHECK_EQUAL( '2', theIterator->thisCodeUnit );
-			CHECK_EQUAL( '2', theSource->thisCodeUnit );
+			CHECK_EQUAL(
+				'2',
+				theIterator->thisCodeUnit
+			);
+			CHECK_EQUAL(
+				'2',
+				theSource->thisCodeUnit
+			);
 
 			theIterator->thisCodeUnit = '3';
 			( *theSource ).thisCodeUnit = '4';
-			CHECK_EQUAL( '4', ( *theIterator ).thisCodeUnit );
-			CHECK_EQUAL( '4', theSource->thisCodeUnit );
-			CHECK_EQUAL( '0', theSourceArray[ 0 ].thisCodeUnit );
-			CHECK_EQUAL( '1', theSourceArray[ 1 ].thisCodeUnit );
-			CHECK_EQUAL( '4', theSourceArray[ 2 ].thisCodeUnit );
-			CHECK_EQUAL( 0, theSourceArray[ 3 ].thisCodeUnit );
+			CHECK_EQUAL(
+				'4',
+				( *theIterator ).thisCodeUnit
+			);
+			CHECK_EQUAL(
+				'4',
+				theSource->thisCodeUnit
+			);
+			CHECK_EQUAL(
+				'0',
+				theSourceArray[ 0 ].thisCodeUnit
+			);
+			CHECK_EQUAL(
+				'1',
+				theSourceArray[ 1 ].thisCodeUnit
+			);
+			CHECK_EQUAL(
+				'4',
+				theSourceArray[ 2 ].thisCodeUnit
+			);
+			CHECK_EQUAL(
+				0,
+				theSourceArray[ 3 ].thisCodeUnit
+			);
 
 			++theSource;
 			CHECK( theSourceEnd == theSource );
@@ -182,27 +246,45 @@ namespace Om
 		{
 			char const theSourceNullTerminatedString[] = "01";
 			std::string theSinkString;
-			CopyWithIterators( theSourceNullTerminatedString, theSinkString );
+			CopyWithIterators(
+				theSourceNullTerminatedString,
+				theSinkString
+			);
 
-			CHECK_EQUAL( theSourceNullTerminatedString, theSinkString );
+			CHECK_EQUAL(
+				theSourceNullTerminatedString,
+				theSinkString
+			);
 		}
 
 		TEST( CopySingleItem )
 		{
 			char const theSourceNullTerminatedString[] = "0";
 			std::string theSinkString;
-			CopyWithIterators( theSourceNullTerminatedString, theSinkString );
+			CopyWithIterators(
+				theSourceNullTerminatedString,
+				theSinkString
+			);
 
-			CHECK_EQUAL( theSourceNullTerminatedString, theSinkString );
+			CHECK_EQUAL(
+				theSourceNullTerminatedString,
+				theSinkString
+			);
 		}
 
 		TEST( CopyNoItems )
 		{
 			char const theSourceNullTerminatedString[] = "";
 			std::string theSinkString;
-			CopyWithIterators( theSourceNullTerminatedString, theSinkString );
+			CopyWithIterators(
+				theSourceNullTerminatedString,
+				theSinkString
+			);
 
-			CHECK_EQUAL( theSourceNullTerminatedString, theSinkString );
+			CHECK_EQUAL(
+				theSourceNullTerminatedString,
+				theSinkString
+			);
 		}
 	}
 }

@@ -8,20 +8,26 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Sources_ContainerBackSource_ )
 
 // MARK: Om::Sources::ContainerBackSource
 
-	#define Template_ template< typename ThisItem, typename ThisContainer >
+	#define Template_ \
+	template< \
+		typename ThisItem, \
+		typename ThisContainer \
+	>
 
-	#define Type_ Om::Sources::ContainerBackSource< ThisItem, ThisContainer >
+	#define Type_ \
+	Om::Sources::ContainerBackSource< \
+		ThisItem, \
+		ThisContainer \
+	>
 
 // MARK: public (non-static)
 
@@ -33,9 +39,7 @@ thisContainer( theContainer )
 }
 
 Template_
-inline Type_ & Type_::operator =(
-	ContainerBackSource theContainerBackSource
-)
+inline Type_ & Type_::operator =( ContainerBackSource theContainerBackSource )
 {
 	this->Swap( theContainerBackSource );
 	return( *this );
@@ -46,7 +50,10 @@ inline bool Type_::operator ==( ContainerBackSource const & theSource ) const
 {
 	return(
 		&this->thisContainer == &theSource.thisContainer ||
-		( this->thisContainer.empty() && theSource.thisContainer.empty() )
+		(
+			this->thisContainer.empty() &&
+			theSource.thisContainer.empty()
+		)
 	);
 }
 
@@ -82,10 +89,19 @@ inline void Type_::Swap( ContainerBackSource & theContainerBackSource )
 // MARK: -
 // MARK: boost
 
-template< typename ThisItem, typename ThisContainer >
+template<
+	typename ThisItem,
+	typename ThisContainer
+>
 inline void boost::swap(
-	Om::Sources::ContainerBackSource< ThisItem, ThisContainer > & theFirst,
-	Om::Sources::ContainerBackSource< ThisItem, ThisContainer > & theSecond
+	Om::Sources::ContainerBackSource<
+		ThisItem,
+		ThisContainer
+	> & theFirst,
+	Om::Sources::ContainerBackSource<
+		ThisItem,
+		ThisContainer
+	> & theSecond
 )
 {
 	theFirst.Swap( theSecond );
@@ -95,5 +111,7 @@ inline void boost::swap(
 	#undef Template_
 
 #else
+
 	#include "om/sources/container_back_source.hpp"
+
 #endif

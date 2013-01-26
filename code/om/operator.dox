@@ -4,12 +4,9 @@
 	\brief
 		An atomic \ref programs "Program" element defined by any UTF-8 string.
 	\par Interpretation
-		An \ref operator is an interpretation of a \ref programs "Program" as
-		a single atomic UTF-8 string element containing the encoded text of all
-		elements, merged verbatim.
+		An \ref operator is an interpretation of a \ref programs "Program" as a single atomic UTF-8 string element containing the encoded text of all elements, merged verbatim.
 	\par Normalization
-		A \ref programs "Program" is normalized as an \ref operator by encoding
-		and merging all contents.
+		A \ref programs "Program" is normalized as an \ref operator by encoding and merging all contents.
 	\par Implementation
 		Om::Operator
 */

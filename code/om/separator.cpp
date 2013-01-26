@@ -8,18 +8,17 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Separator_ )
 
 // MARK: Om::Separator
 
-	#define Type_ Om::Separator
+	#define Type_ \
+	Om::Separator
 
 // MARK: public (static)
 
@@ -40,9 +39,15 @@ inline Type_::Separator()
 {
 }
 
-inline Type_::Separator( Source< CodePoint const > & theCodePointSource )
+inline Type_::Separator(
+	Source< CodePoint const > & theCodePointSource
+)
 {
-	for( ; theCodePointSource; theCodePointSource.Pop() ){
+	for(
+		;
+		theCodePointSource;
+		theCodePointSource.Pop()
+	){
 		switch( *theCodePointSource ){
 		default:
 			return;
@@ -57,7 +62,9 @@ inline Type_::Separator( Source< CodePoint const > & theCodePointSource )
 
 inline Type_::Separator( Symbols::SeparatorSymbol const theSeparatorSymbol )
 :
-DefaultAtom< Separator >( static_cast< char >( theSeparatorSymbol ) )
+DefaultAtom< Separator >(
+	static_cast< char >( theSeparatorSymbol )
+)
 {
 	assert(
 		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol ||
@@ -74,7 +81,11 @@ inline Type_ & Type_::operator =( Separator theSeparator )
 
 inline void Type_::ReadElements( Parser & theParser )
 {
-	for( ; theParser; theParser.Pop() ){
+	for(
+		;
+		theParser;
+		theParser.Pop()
+	){
 		assert( Symbols::theEndOperandSymbol != *theParser );
 		switch( *theParser ){
 		case Symbols::theStartOperandSymbol:
@@ -86,11 +97,15 @@ inline void Type_::ReadElements( Parser & theParser )
 				Parser theOperandParser( theCodePointSource );
 				this->ReadQuotedElements( theOperandParser );
 			}
-			if( !theParser ){ return; }
+			if( !theParser ){
+				return;
+			}
 			assert( Symbols::theEndOperandSymbol == *theParser );
 			continue;
 		Om_Symbols_SeparatorSymbol_GetCases_():
-			this->thisString.push_back( static_cast< char >( *theParser ) );
+			this->thisString.push_back(
+				static_cast< char >( *theParser )
+			);
 			// Fall out.
 		}
 	}
@@ -98,7 +113,11 @@ inline void Type_::ReadElements( Parser & theParser )
 
 inline void Type_::ReadQuotedElements( Parser & theParser )
 {
-	for( ; theParser; theParser.Pop() ){}
+	for(
+		;
+		theParser;
+		theParser.Pop()
+	){}
 }
 
 template< typename TheOperand >
@@ -127,7 +146,9 @@ inline void Type_::TakeSeparatorSymbol(
 	Symbols::SeparatorSymbol const theSymbol
 )
 {
-	this->thisString.push_back( static_cast< char >( theSymbol ) );
+	this->thisString.push_back(
+		static_cast< char >( theSymbol )
+	);
 }
 
 	#undef Type_
@@ -136,12 +157,16 @@ inline void Type_::TakeSeparatorSymbol(
 // MARK: boost
 
 template<>
-inline void boost::swap( Om::Separator & theFirst, Om::Separator & theSecond )
+inline void boost::swap(
+	Om::Separator & theFirst,
+	Om::Separator & theSecond
+)
 {
 	theFirst.Swap( theSecond );
 }
 
 #else
+
 	#include "om/separator.hpp"
 
 	#if defined( Om_Macros_Test_ )
@@ -161,7 +186,9 @@ namespace Om
 			{
 				Sinks::CodePointSink<
 					std::back_insert_iterator< std::string >
-				> theCodePointSink( std::back_inserter( theResult ) );
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
 				Writer theWriter( theCodePointSink );
 
 				Sources::CodePointSource<> theCodePointSource( theCode );
@@ -170,7 +197,10 @@ namespace Om
 				theSeparator.ReadElements( theParser );
 				theSeparator.GiveElements( theWriter );
 			}
-			CHECK_EQUAL( "\n\t   \n", theResult );
+			CHECK_EQUAL(
+				"\n\t   \n",
+				theResult
+			);
 		}
 	}
 }

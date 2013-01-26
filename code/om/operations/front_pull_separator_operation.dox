@@ -2,8 +2,7 @@
 \defgroup front_pull_separator_operation separator<-elements
 	\ingroup operations
 	\brief
-		Casts to \ref literal and pops the first \ref separator (if any),
-		quoted.
+		Casts to \ref literal and pops the first \ref separator (if any), quoted.
 	\par Input
 		<tt>{ A B}</tt>
 	\par Output

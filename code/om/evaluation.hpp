@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Evaluation_ )
-	#define Om_Evaluation_ Om::Evaluation
+
+	#define Om_Evaluation_ \
+	Om::Evaluation
 
 	#include "om/expression.hpp"
 
@@ -33,12 +33,9 @@ namespace Om
 	\brief
 		The current evaluation.
 
-	An Evaluation contains an Expression and a reference to an Evaluator, and
-	prevents a more recursive evaluation algorithm that would overflow the stack
-	in the event of a recursive Om program.
+	An Evaluation contains an Expression and a reference to an Evaluator, and prevents a more recursive evaluation algorithm that would overflow the stack in the event of a recursive Om program.
 
-	Each Element that it takes is pushed onto a stack, resulting in a
-	LIFO-ordered application of each Element to the Evaluator.
+	Each Element that it takes is pushed onto a stack, resulting in a LIFO-ordered application of each Element to the Evaluator.
 	*/
 	struct Evaluation
 	{
@@ -59,7 +56,9 @@ namespace Om
 
 		//! Takes the Operation, and gives it to the Evaluator.
 		template< typename TheOperation >
-		void TakeOperation( std::auto_ptr< TheOperation > );
+		void TakeOperation(
+			std::auto_ptr< TheOperation >
+		);
 
 		//! Pushes the Operator onto the front of the Expression.
 		template< typename TheOperator >
@@ -88,4 +87,5 @@ namespace Om
 }
 
 	#include "om/evaluation.cpp"
+
 #endif

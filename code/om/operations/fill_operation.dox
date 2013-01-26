@@ -2,8 +2,7 @@
 \defgroup fill_operation fill
 	\ingroup operations
 	\brief
-		"Fills" an \ref expression such that none of its
-		\ref operator "Operators" is not followed by an \ref operand.
+		"Fills" an \ref expression such that none of its \ref operator "Operators" is not followed by an \ref operand.
 	\par Input
 		<tt>{expression} ...</tt>
 	\par Output
@@ -16,7 +15,5 @@
 	\par Implementation
 		Om::Operations::FillOperation
 
-	For each \ref operator in an \ref expression that has no \ref operand
-	following it, pulls the next \ref operand following the \ref expression and
-	inserts it after the \ref operator.
+	For each \ref operator in an \ref expression that has no \ref operand following it, pulls the next \ref operand following the \ref expression and inserts it after the \ref operator.
 */

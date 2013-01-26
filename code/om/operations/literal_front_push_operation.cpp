@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_LiteralFrontPushOperation_ )
 
 	#include "om/literal.hpp"
@@ -22,7 +20,8 @@
 
 // MARK: Om::Operations::LiteralFrontPushOperation
 
-	#define Type_ Om::Operations::LiteralFrontPushOperation
+	#define Type_ \
+	Om::Operations::LiteralFrontPushOperation
 
 // MARK: public (static)
 
@@ -35,7 +34,10 @@ inline void Type_::Give( Evaluation & theEvaluation )
 {
 	theEvaluation.TakeOperation(
 		std::auto_ptr< Operation >(
-			new FrontPushOperation< Literal, LiteralFrontPushOperation >
+			new FrontPushOperation<
+				Literal,
+				LiteralFrontPushOperation
+			>
 		)
 	);
 }
@@ -43,6 +45,7 @@ inline void Type_::Give( Evaluation & theEvaluation )
 	#undef Type_
 
 #else
+
 	#include "om/operations/literal_front_push_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )

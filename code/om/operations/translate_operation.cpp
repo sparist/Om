@@ -8,22 +8,22 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_TranslateOperation_ )
 
 	#include "om/expression.hpp"
 
 // MARK: Om::Operations::TranslateOperation
 
-	#define Template_ template< typename ThisImplementation >
+	#define Template_ \
+	template< typename ThisImplementation >
 
-	#define Type_ Om::Operations::TranslateOperation< ThisImplementation >
+	#define Type_ \
+	Om::Operations::TranslateOperation< ThisImplementation >
 
 // MARK: public (static)
 
@@ -34,7 +34,9 @@ inline void Type_::GiveElements(
 	Queue & theQueue
 )
 {
-	assert( typeid( TheTranslateOperation ) == typeid( ThisImplementation ) );
+	assert(
+		typeid( TheTranslateOperation ) == typeid( ThisImplementation )
+	);
 	theQueue.TakeElement( ThisImplementation::GetOperator() );
 	if( theTranslateOperation.thisLexicon ){
 		theQueue.TakeQuotedElements( *theTranslateOperation.thisLexicon );
@@ -56,7 +58,12 @@ inline bool Type_::TakeOperand(
 )
 {
 	assert( !theOperand.IsEmpty() );
-	return( this->TakeQuotedQueue( theEvaluation, *theOperand.GetProgram() ) );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
 }
 
 Template_
@@ -69,14 +76,13 @@ inline bool Type_::TakeQuotedQueue(
 	if( this->thisLexicon ){
 		{
 			/*
-			Perform the translation.  Note that this uses this->thisLexicon and
-			must be done before the lexicon is given to the Evaluation.
+			Perform the translation.  Note that this uses this->thisLexicon and must be done before the lexicon is given to the Evaluation.
 			*/
 			Expression theExpression;
-			assert( dynamic_cast< ThisImplementation * >( this ) );
-			static_cast< ThisImplementation & >(
-				*this
-			).Translate(
+			assert(
+				dynamic_cast< ThisImplementation * >( this )
+			);
+			static_cast< ThisImplementation & >( *this ).Translate(
 				theEvaluation.GetTranslator(),
 				theQueue,
 				theExpression
@@ -105,5 +111,7 @@ thisLexicon()
 	#undef Template_
 
 #else
+
 	#include "om/operations/translate_operation.hpp"
+
 #endif

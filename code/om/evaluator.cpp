@@ -8,13 +8,11 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Evaluator_ )
 
 	#include "om/evaluation.hpp"
@@ -24,7 +22,8 @@
 
 // MARK: Om::Evaluator
 
-	#define Type_ Om::Evaluator
+	#define Type_ \
+	Om::Evaluator
 
 // MARK: public (non-static)
 
@@ -40,7 +39,10 @@ inline Type_::~Evaluator()
 	} catch( ... ){}
 }
 
-inline Type_::Evaluator( Queue & theOutput, Translator const & theTranslator )
+inline Type_::Evaluator(
+	Queue & theOutput,
+	Translator const & theTranslator
+)
 :
 thisOutput( theOutput ),
 thisTranslator( theTranslator ),
@@ -87,12 +89,16 @@ inline void Type_::GiveElements( Queue & theQueue ) const
 
 inline std::auto_ptr< Om::Program > Type_::GiveProgram()
 {
-	return( this->GiveProgram( *this ) );
+	return(
+		this->GiveProgram( *this )
+	);
 }
 
 inline std::auto_ptr< Om::Program > Type_::GiveProgram() const
 {
-	return( this->GiveProgram( *this ) );
+	return(
+		this->GiveProgram( *this )
+	);
 }
 
 inline bool Type_::IsEmpty() const
@@ -114,7 +120,9 @@ inline void Type_::ReadElements( Parser & theParser )
 				Parser theOperandParser( theCodePointSource );
 				this->ReadQuotedElements( theOperandParser );
 			}
-			if( !theParser ){ return; }
+			if( !theParser ){
+				return;
+			}
 			assert( Symbols::theEndOperandSymbol == *theParser );
 			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
@@ -129,7 +137,10 @@ inline void Type_::ReadElements( Parser & theParser )
 inline void Type_::ReadQuotedElements( Parser & theParser )
 {
 	Evaluation theEvaluation( *this );
-	this->ReadQuotedElements( theEvaluation, theParser );
+	this->ReadQuotedElements(
+		theEvaluation,
+		theParser
+	);
 	this->Evaluate( theEvaluation );
 }
 
@@ -146,7 +157,12 @@ inline void Type_::ReadQuotedElements(
 			this->thisOperationVector.pop_back().release()
 		);
 		assert( theOperation.get() );
-		if( !theOperation->ReadQuotedElements( theEvaluation, theParser ) ){
+		if(
+			!theOperation->ReadQuotedElements(
+				theEvaluation,
+				theParser
+			)
+		){
 			this->thisOperationVector.push_back( theOperation );
 		}
 	}
@@ -157,7 +173,10 @@ inline void Type_::TakeOperand( TheOperand & theOperand )
 {
 	assert( !theOperand.IsEmpty() );
 	Evaluation theEvaluation( *this );
-	this->TakeOperand( theEvaluation, theOperand );
+	this->TakeOperand(
+		theEvaluation,
+		theOperand
+	);
 	this->Evaluate( theEvaluation );
 }
 
@@ -176,14 +195,21 @@ inline void Type_::TakeOperand(
 			this->thisOperationVector.pop_back().release()
 		);
 		assert( theOperation.get() );
-		if( !theOperation->TakeElement( theEvaluation, theOperand ) ){
+		if(
+			!theOperation->TakeElement(
+				theEvaluation,
+				theOperand
+			)
+		){
 			this->thisOperationVector.push_back( theOperation );
 		}
 	}
 }
 
 template< typename TheOperation >
-inline void Type_::TakeOperation( std::auto_ptr< TheOperation > theOperation )
+inline void Type_::TakeOperation(
+	std::auto_ptr< TheOperation > theOperation
+)
 {
 	this->thisOperationVector.push_back( theOperation );
 }
@@ -192,7 +218,10 @@ template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator )
 {
 	Evaluation theEvaluation( *this );
-	this->TakeOperator( theEvaluation, theOperator );
+	this->TakeOperator(
+		theEvaluation,
+		theOperator
+	);
 	this->Evaluate( theEvaluation );
 }
 
@@ -204,8 +233,14 @@ inline void Type_::TakeOperator(
 {
 	assert( !theOperator.IsEmpty() );
 	if(
-		!this->thisTranslator.Translate( theEvaluation, theOperator ) &&
-		!this->thisTranslator.Translate( theEvaluation, Operator() )
+		!this->thisTranslator.Translate(
+			theEvaluation,
+			theOperator
+		) &&
+		!this->thisTranslator.Translate(
+			theEvaluation,
+			Operator()
+		)
 	){
 		// Flush everything up to, and including, the operator.
 		// At the very least, the operator will be flushed.
@@ -230,7 +265,10 @@ template< typename TheQueue >
 inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
 {
 	Evaluation theEvaluation( *this );
-	this->TakeQuotedQueue( theEvaluation, theQueue );
+	this->TakeQuotedQueue(
+		theEvaluation,
+		theQueue
+	);
 	this->Evaluate( theEvaluation );
 }
 
@@ -244,11 +282,14 @@ inline void Type_::TakeQuotedQueue(
 		this->thisOutput.TakeQuotedElements( theQueue );
 		this->thisGaveElementToOutput = true;
 	} else{
-		std::auto_ptr< Operation > theOperation(
-			this->thisOperationVector.pop_back().release()
-		);
+		std::auto_ptr< Operation > theOperation( this->thisOperationVector.pop_back().release() );
 		assert( theOperation.get() );
-		if( !theOperation->TakeQuotedElements( theEvaluation, theQueue ) ){
+		if(
+			!theOperation->TakeQuotedElements(
+				theEvaluation,
+				theQueue
+			)
+		){
 			this->thisOperationVector.push_back( theOperation );
 		}
 	}
@@ -269,17 +310,21 @@ inline void Type_::GiveElements(
 )
 {
 	if( theEnd != theCurrent ){
-		for( ; ; theQueue.TakeElement( Separator::GetLineSeparator() ) ){
+		for(
+			;
+			;
+			theQueue.TakeElement( Separator::GetLineSeparator() )
+		){
 			theCurrent->GiveElements( theQueue );
-			if( theEnd == ++theCurrent ){ return; }
+			if( theEnd == ++theCurrent ){
+				return;
+			}
 		}
 	}
 }
 
 template< typename TheEvaluator >
-inline std::auto_ptr< Om::Program > Type_::GiveProgram(
-	TheEvaluator & theEvaluator
-)
+inline std::auto_ptr< Om::Program > Type_::GiveProgram( TheEvaluator & theEvaluator )
 {
 	std::auto_ptr< Program > theExpression( new Expression );
 	assert( theExpression.get() );
@@ -291,11 +336,15 @@ inline std::auto_ptr< Om::Program > Type_::GiveProgram(
 
 inline void Type_::Evaluate( Evaluation & theEvaluation )
 {
-	while( theEvaluation.GiveTerm( *this ) ){}
+	while(
+		theEvaluation.GiveTerm( *this )
+	){}
 }
 
 	#undef Type_
 
 #else
+
 	#include "om/evaluator.hpp"
+
 #endif

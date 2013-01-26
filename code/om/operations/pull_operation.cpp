@@ -8,23 +8,23 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if defined( Om_Operations_PullOperation_ )
 
 // MARK: Om::Operations::PullOperation
 
-	#define Template_ template< \
+	#define Template_ \
+	template< \
 		typename ThisProgram, \
 		typename ThisImplementation \
 	>
 
-	#define Type_ Om::Operations::PullOperation< \
+	#define Type_ \
+	Om::Operations::PullOperation< \
 		ThisProgram, \
 		ThisImplementation \
 	>
@@ -33,7 +33,10 @@
 
 Template_
 template< typename ThePullOperation >
-inline void Type_::GiveElements( ThePullOperation &, Queue & theQueue )
+inline void Type_::GiveElements(
+	ThePullOperation &,
+	Queue & theQueue
+)
 {
 	theQueue.TakeElement( GetOperator() );
 }
@@ -48,7 +51,12 @@ inline bool Type_::ReadQuotedElements(
 {
 	ThisProgram theProgram;
 	theProgram.ReadElements( theParser );
-	return( this->TakeQuotedElements( theEvaluation, theProgram ) );
+	return(
+		this->TakeQuotedElements(
+			theEvaluation,
+			theProgram
+		)
+	);
 }
 
 Template_
@@ -59,7 +67,12 @@ inline bool Type_::TakeOperand(
 )
 {
 	assert( !theOperand.IsEmpty() );
-	return( this->TakeQuotedQueue( theEvaluation, *theOperand.GetProgram() ) );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
 }
 
 Template_
@@ -73,7 +86,10 @@ inline bool Type_::TakeQuotedQueue(
 	theProgramToPullFrom.TakeElements( theQueue );
 
 	ThisProgram thePulledProgram;
-	ThisImplementation::Pull( theProgramToPullFrom, thePulledProgram );
+	ThisImplementation::Pull(
+		theProgramToPullFrom,
+		thePulledProgram
+	);
 
 	theEvaluation.TakeQuotedQueue( theProgramToPullFrom );
 	theEvaluation.TakeQuotedQueue( thePulledProgram );
@@ -93,5 +109,7 @@ inline Om::Operator const & Type_::GetOperator()
 	#undef Template_
 
 #else
+
 	#include "om/operations/pull_operation.hpp"
+
 #endif

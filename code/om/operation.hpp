@@ -8,15 +8,15 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Operation_ )
-	#define Om_Operation_ Om::Operation
+
+	#define Om_Operation_ \
+	Om::Operation
 
 	#include "om/code_point.hpp"
 
@@ -35,9 +35,7 @@ namespace Om
 	// MARK: - Om::Operation
 	/*!
 	\brief
-		An \ref operations "Operation" that has yet to consume one or more
-		\ref Operand "Operands", and therefore must live in memory while
-		"incomplete".
+		An \ref operations "Operation" that has yet to consume one or more \ref Operand "Operands", and therefore must live in memory while "incomplete".
 	*/
 	struct Operation
 	{
@@ -56,38 +54,48 @@ namespace Om
 		//! \overload
 		virtual void GiveElements( Queue & ) const = 0;
 
-		virtual bool ReadQuotedElements( Evaluation &, Parser & ) = 0;
+		virtual bool ReadQuotedElements(
+			Evaluation &,
+			Parser &
+		) = 0;
 
 		/*!
 		\brief
 			Takes an Operand.
 		\return
-			True if this call completes the Operation, in which case any further
-			calls on the Operation are undefined.
+			True if this call completes the Operation, in which case any further calls on the Operation are undefined.
 		\post
-			If true was returned, any further calls on the Operation are
-			undefined.
+			If true was returned, any further calls on the Operation are undefined.
 		*/
-		virtual bool TakeElement( Evaluation &, Operand & ) = 0;
+		virtual bool TakeElement(
+			Evaluation &,
+			Operand &
+		) = 0;
 
 		//! \overload
-		virtual bool TakeElement( Evaluation &, Operand const & ) = 0;
+		virtual bool TakeElement(
+			Evaluation &,
+			Operand const &
+		) = 0;
 
 		/*!
 		\brief
-			Constructs and takes an Operand, which takes each Element from the
-			argument.
+			Constructs and takes an Operand, which takes each Element from the argument.
 		\return
-			True if this call completes the Operation, in which case any further
-			calls on the Operation are undefined.
+			True if this call completes the Operation, in which case any further calls on the Operation are undefined.
 		\post
-			If true was returned, any further calls on the Operation are
-			undefined.
+			If true was returned, any further calls on the Operation are undefined.
 		*/
-		virtual bool TakeQuotedElements( Evaluation &, Queue & ) = 0;
+		virtual bool TakeQuotedElements(
+			Evaluation &,
+			Queue &
+		) = 0;
 
 		//! \overload
-		virtual bool TakeQuotedElements( Evaluation &, Queue const & ) = 0;
+		virtual bool TakeQuotedElements(
+			Evaluation &,
+			Queue const &
+		) = 0;
 
 	protected: // MARK: protected (non-static)
 
@@ -102,4 +110,5 @@ namespace Om
 }
 
 	#include "om/operation.cpp"
+
 #endif

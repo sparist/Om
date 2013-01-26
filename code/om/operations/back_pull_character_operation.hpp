@@ -8,20 +8,20 @@
 		2012-2013
 	\copyright
 		Copyright (c) Jason Erb.
-		All rights reserved.  This program and the accompanying materials are
-		made available under the terms of the
-		<a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse
-		Public License, Version 1.0</a>, which accompanies this distribution.
+		All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
+
 #if !defined( Om_Operations_BackPullCharacterOperation_ )
+
 	#define Om_Operations_BackPullCharacterOperation_ \
 	Om::Operations::BackPullCharacterOperation
 
 	#include "om/definition.hpp"
 
-	#define Om_Operations_BackPullCharacterOperation_GetName_() "characters->"
+	#define Om_Operations_BackPullCharacterOperation_GetName_() \
+	"characters->"
 
 namespace Om
 {
@@ -42,17 +42,19 @@ namespace Om
 
 			//! The callback for PullOperation.
 			template< typename TheQueue >
-			static void Pull( Operator &, TheQueue & );
+			static void Pull(
+				Operator &,
+				TheQueue &
+			);
 		};
 
 		namespace
 		{
-			static Definition<
-				BackPullCharacterOperation
-			> const theBackPullCharacterDefinition;
+			static Definition< BackPullCharacterOperation > const theBackPullCharacterDefinition;
 		}
 	}
 }
 
 	#include "om/operations/back_pull_character_operation.cpp"
+
 #endif
