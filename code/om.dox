@@ -7,16 +7,14 @@
 
 The development of the <a href="http://om-language.org">Om language</a> was guided by a single question:
 
-<em>What is the simplest possible abstract syntax that can articulate any algorithm for precise, efficient evaluation?</em>
-
-The result is a fundamentally simple and unique programming language.
+<em>What is the simplest high-level programming language possible?</em>
 
 %Om is:
 -	A <b>concatenative, homoiconic programming language</b> with:
 	-	An extremely minimal syntax, comprised of only three elements.
 	-	Prefix, rather than postfix, notation.  Instead of a data stack, functions manipulate the remainder of the program itself.
 	-	A unique <em>panmorphic</em> type system in which there is only one data type&mdash;the program&mdash;exposed in the language, even though the implementation can optimize data representations for operations.
--	An <b>abstract algorithmic notation</b> that does not rely on any computer implementation details (such as byte or machine word length).
+-	An <b>algorithm notation language</b> that is completely abstracted from any concept of a computer.
 -	A <b>data transfer format</b> that is trivial to parse.
 -	<b>Embeddable</b>: implemented as a header-only C++ library (with only <a href="http://boost.org">Boost</a> and <a href="http://icu-project.org">ICU</a> dependencies) that can be incorporated into any C++ or Objective-C++ program.
 -	<b>Extensible</b>: new native operations can be implemented as C++ classes.
