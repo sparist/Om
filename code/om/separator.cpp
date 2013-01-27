@@ -106,7 +106,7 @@ inline void Type_::ReadElements( Parser & theParser )
 			this->thisString.push_back(
 				static_cast< char >( *theParser )
 			);
-			// Fall out.
+			// Fall through.
 		}
 	}
 }
