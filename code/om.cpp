@@ -28,7 +28,7 @@
 \param theArgumentArray
 	The argument array contains (in order):
 	-	The program invocation.
-	-	(optional) A valid UTF-8 locale string compatible with boost::locale.
+	-	<em>(Optional)</em> A valid UTF-8 locale string compatible with boost::locale.
 */
 int main(
 	int const theArgumentCount,
