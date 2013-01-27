@@ -139,28 +139,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a52dd29a8650d250a444d344b444b4c74">   76</a></span>&#160;            ThisStringIterator <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a52dd29a8650d250a444d344b444b4c74">thisStringIterator</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a707b8b12d577d68c286a14a1aa534557">   79</a></span>&#160;            ThisStringIterator <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a707b8b12d577d68c286a14a1aa534557" title="The current CodePoint string iterator.">thisCodePointIterator</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a2eb400a2692eae560ae5c175d54b7159">   82</a></span>&#160;            ThisStringIterator <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a2eb400a2692eae560ae5c175d54b7159" title="The current CodePoint string end.">thisCodePointEnd</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a707b8b12d577d68c286a14a1aa534557">   82</a></span>&#160;            ThisStringIterator <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a707b8b12d577d68c286a14a1aa534557" title="The current CodePoint string iterator.">thisCodePointIterator</a>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#ac10c67a6326a5437548301b9e5d3763a">   85</a></span>&#160;            <span class="keyword">mutable</span> std::string <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#ac10c67a6326a5437548301b9e5d3763a" title="The current CodePoint string.">thisCodePoint</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        };</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a2eb400a2692eae560ae5c175d54b7159">   88</a></span>&#160;            ThisStringIterator <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#a2eb400a2692eae560ae5c175d54b7159" title="The current CodePoint string end.">thisCodePointEnd</a>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// MARK: - boost</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">namespace </span>boost</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisStringIterator &gt;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html" title="A Source of CodePoint strings from the back of a string.">Om::Sources::CodePointStringBackSource&lt; ThisStringIterator &gt;</a> &amp;,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html" title="A Source of CodePoint strings from the back of a string.">Om::Sources::CodePointStringBackSource&lt; ThisStringIterator &gt;</a> &amp;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    );</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="code__point__string__back__source_8cpp.html" title="Om cpp file.">om/sources/code_point_string_back_source.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#ac10c67a6326a5437548301b9e5d3763a">   94</a></span>&#160;            <span class="keyword">mutable</span> std::string <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html#ac10c67a6326a5437548301b9e5d3763a" title="The current CodePoint string.">thisCodePoint</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        };</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">// MARK: - boost</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">namespace </span>boost</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisStringIterator &gt;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html" title="A Source of CodePoint strings from the back of a string.">Om::Sources::CodePointStringBackSource&lt; ThisStringIterator &gt;</a> &amp;,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="struct_om_1_1_sources_1_1_code_point_string_back_source.html" title="A Source of CodePoint strings from the back of a string.">Om::Sources::CodePointStringBackSource&lt; ThisStringIterator &gt;</a> &amp;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    );</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="code__point__string__back__source_8cpp.html" title="Om cpp file.">om/sources/code_point_string_back_source.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 		<hr class="footer"/><address class="footer"><small>
