@@ -139,12 +139,11 @@ inline void Type_::TakeSeparator( TheSeparator & theSeparator )
 {
 	assert( !theSeparator.IsEmpty() );
 	std::string const & theString = theSeparator.GetString();
-	Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
-		theString.begin(),
-		theString.end()
-	);
 	for(
-		;
+		Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
+			theString.begin(),
+			theString.end()
+		);
 		theCodePointSource;
 		theCodePointSource.Pop()
 	){
