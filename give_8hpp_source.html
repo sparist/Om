@@ -94,36 +94,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="give_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if !defined( Om_Give_ )</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="give_8hpp.html#a5f5a3e7f95955df14715b603872e1939">   18</a></span>&#160;<span class="preprocessor">    #define Om_Give_ \</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    Om::Give</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="external_8hpp.html" title="Om hpp file.">external.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// MARK: - Om</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>Om</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheGiveable &gt;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::auto_ptr&lt; TheGiveable &gt; <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>( TheGiveable &amp; );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheGiveable &gt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::auto_ptr&lt; TheGiveable &gt; <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>(</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::auto_ptr&lt; TheGiveable &gt; &amp;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    );</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheGiveable &gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::auto_ptr&lt; TheGiveable &gt; <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>( TheGiveable <span class="keyword">const</span> &amp; );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheGiveable &gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::auto_ptr&lt; TheGiveable &gt; <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        std::auto_ptr&lt; TheGiveable &gt; <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    );</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="give_8cpp.html" title="Om cpp file.">om/give.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Give_ )</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="give_8hpp.html#a5f5a3e7f95955df14715b603872e1939">   17</a></span>&#160;<span class="preprocessor">    #define Om_Give_ \</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Give</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="external_8hpp.html" title="Om hpp file.">external.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// MARK: - Om</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>Om</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheGiveable &gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::auto_ptr&lt; TheGiveable &gt; <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>( TheGiveable &amp; );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheGiveable &gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::auto_ptr&lt; TheGiveable &gt; <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>(</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::auto_ptr&lt; TheGiveable &gt; &amp;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheGiveable &gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::auto_ptr&lt; TheGiveable &gt; <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>( TheGiveable <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheGiveable &gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::auto_ptr&lt; TheGiveable &gt; <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>(</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::auto_ptr&lt; TheGiveable &gt; <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="give_8cpp.html" title="Om cpp file.">om/give.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 		<hr class="footer"/><address class="footer"><small>

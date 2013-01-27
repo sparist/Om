@@ -94,40 +94,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="literal__back__push__operation_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if !defined( Om_Operations_LiteralBackPushOperation_ )</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="literal__back__push__operation_8hpp.html#adf56e6574a5f3cd1bb88ad3f15e39907">   18</a></span>&#160;<span class="preprocessor">    #define Om_Operations_LiteralBackPushOperation_ \</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    Om::Operations::LiteralBackPushOperation</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="definition_8hpp.html" title="Om hpp file.">om/definition.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="literal__back__push__operation_8hpp.html#a32c54b438439f7d897b6400e640fa774">   23</a></span>&#160;<span class="preprocessor">    #define Om_Operations_LiteralBackPushOperation_GetName_() \</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    &quot;literal&lt;-&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>Om</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">namespace </span>Operations</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// MARK: - Om::Operations::LiteralBackPushOperation</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="struct_om_1_1_operations_1_1_literal_back_push_operation.html">   35</a></span>&#160;<span class="comment"></span>        <span class="keyword">struct </span><a class="code" href="struct_om_1_1_operations_1_1_literal_back_push_operation.html" title="The literal&lt;- Operation implementation.">LiteralBackPushOperation</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="struct_om_1_1_operations_1_1_literal_back_push_operation.html#a99823805926898ff9a1c5d6077bb4061">GetName</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_operations_1_1_literal_back_push_operation.html#a9859e7688b7054140df1ad7c401cc275">Give</a>( <a class="code" href="struct_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp; );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        };</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">namespace</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">static</span> <a class="code" href="struct_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt; LiteralBackPushOperation &gt;</a> <span class="keyword">const</span> theLiteralBackPushDefinition;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="literal__back__push__operation_8cpp.html" title="Om cpp file.">om/operations/literal_back_push_operation.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Operations_LiteralBackPushOperation_ )</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="literal__back__push__operation_8hpp.html#adf56e6574a5f3cd1bb88ad3f15e39907">   17</a></span>&#160;<span class="preprocessor">    #define Om_Operations_LiteralBackPushOperation_ \</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Operations::LiteralBackPushOperation</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="definition_8hpp.html" title="Om hpp file.">om/definition.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="literal__back__push__operation_8hpp.html#a32c54b438439f7d897b6400e640fa774">   22</a></span>&#160;<span class="preprocessor">    #define Om_Operations_LiteralBackPushOperation_GetName_() \</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    &quot;literal&lt;-&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>Om</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">namespace </span>Operations</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// MARK: - Om::Operations::LiteralBackPushOperation</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="struct_om_1_1_operations_1_1_literal_back_push_operation.html">   34</a></span>&#160;<span class="comment"></span>        <span class="keyword">struct </span><a class="code" href="struct_om_1_1_operations_1_1_literal_back_push_operation.html" title="The literal&lt;- Operation implementation.">LiteralBackPushOperation</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="struct_om_1_1_operations_1_1_literal_back_push_operation.html#a99823805926898ff9a1c5d6077bb4061">GetName</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_operations_1_1_literal_back_push_operation.html#a9859e7688b7054140df1ad7c401cc275">Give</a>( <a class="code" href="struct_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp; );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        };</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">namespace</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">static</span> <a class="code" href="struct_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt; LiteralBackPushOperation &gt;</a> <span class="keyword">const</span> theLiteralBackPushDefinition;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="literal__back__push__operation_8cpp.html" title="Om cpp file.">om/operations/literal_back_push_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 		<hr class="footer"/><address class="footer"><small>
