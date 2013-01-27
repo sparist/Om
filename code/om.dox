@@ -116,7 +116,6 @@ All program implementations provided are documented in the \ref programs module.
 \subsection evaluation__evaluator Evaluator
 
 The evaluator reads, parses and evaluates the input stream in a single pass, sending results to the output stream as soon as they can be evaluated.  This is possible because %Om uses prefix notation rather than the postfix notation typical of concatenative languages.  Prefix notation has the following advantages over postfix notation:
-
 -	Stack underflows are impossible.
 -	Operations can be optimized to only read into memory the data that is required; stack-based postfix languages have no knowledge of the operation to apply until the data is already in memory, on the stack.
 -	An IDE can provide hints to the user about the data that is expected by an operation.
@@ -185,7 +184,7 @@ Unicode is fully supported:
 -	<tt>&lt;-characters {한글}</tt>
 	<blockquote><tt>{한}{글}</tt></blockquote>
 -	<tt>&lt;-code` points {한글}</tt>
-	<blockquote><tt>{ᄒ}{ᅡᆫ글}</tt></blockquote>
+	<blockquote><tt>{ᄒ}{ᅡᆫ글}</tt></blockquote>
 -	<tt>&lt;-terms {한글 韓}</tt>
 	<blockquote><tt>{한글}{韓}</tt></blockquote>
 
@@ -289,8 +288,7 @@ Each step of an evaluation can be represented as a program.  The following is th
 
 \section downloading Downloading
 
-Code can be downloaded from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>.
-
+Code can be downloaded from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>:
 -	<b>Current version</b>:
 	<a href="https://github.com/sparist/Om">main page</a>
 -	<b>Released versions</b>:
@@ -427,7 +425,6 @@ For more information about this license, please see the <a href="http://www.ecli
 \section contributing Contributing
 
 There are several ways to contribute to the %Om project:
-
 -	By funding development of the %Om language, either for general or domain-specific functionality.  If interested, please contact me at <a href="mailto:information@sparist.com?subject=Om%20Funding">information@sparist.com</a>.
 -	By developing new \ref operations and \ref programs.  See \ref developing for details.
 -	By reporting bugs, patches, or enhancement requests.  See \ref issue_tracking for details.
