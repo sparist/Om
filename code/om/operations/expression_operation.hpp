@@ -25,7 +25,10 @@ namespace Om
 {
 	namespace Operations
 	{
-		//! The \ref expression_operation Operation implementation.
+		/*!
+		\brief
+			The \ref expression_operation Operation implementation.
+		*/
 		typedef ProgramOperation< Expression > ExpressionOperation;
 
 		namespace

@@ -64,16 +64,25 @@ namespace Om
 		*/
 		virtual void GiveElements( Queue & ) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void GiveElements( Queue & ) const = 0;
 
 		template< typename TheProgram >
 		bool operator !=( TheProgram const & ) const;
 
-		//! Returns a new Program populated with the contents of this.
+		/*!
+		\brief
+			Returns a new Program populated with the contents of this.
+		*/
 		virtual std::auto_ptr< Program > GiveProgram() = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual std::auto_ptr< Program > GiveProgram() const = 0;
 
 		/*!
@@ -96,25 +105,46 @@ namespace Om
 		*/
 		virtual void TakeElement( Operand & ) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void TakeElement( Operand const & ) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void TakeElement( Operator & ) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void TakeElement( Operator const & ) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void TakeElement( Separator & ) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void TakeElement( Separator const & ) = 0;
 
-		//! Takes each Element of the argument.
+		/*!
+		\brief
+			Takes each Element of the argument.
+		*/
 		virtual void TakeElements( Queue & ) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void TakeElements( Queue const & ) = 0;
 
 		/*!
@@ -123,7 +153,10 @@ namespace Om
 		*/
 		virtual void TakeQuotedElements( Queue & ) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void TakeQuotedElements( Queue const & ) = 0;
 
 	private: // MARK: private (non-static)

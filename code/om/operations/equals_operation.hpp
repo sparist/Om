@@ -64,7 +64,10 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The Operand to compare with.
+			/*!
+			\brief
+				The Operand to compare with.
+			*/
 			Operand thisOperand;
 		};
 

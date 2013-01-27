@@ -38,7 +38,10 @@ namespace Om
 	{
 	public: // MARK: public (static)
 
-		//! The implementation of the Safe Boolean idiom.
+		/*!
+		\brief
+			The implementation of the Safe Boolean idiom.
+		*/
 		typedef void ( Owner::* Boolean )() const;
 
 	public: // MARK: public (non-static)
@@ -81,7 +84,10 @@ namespace Om
 		*/
 		bool operator !() const;
 
-		//! Implements the "safe boolean" idiom.
+		/*!
+		\brief
+			Implements the "safe boolean" idiom.
+		*/
 		operator Boolean() const;
 
 		/*!
@@ -119,10 +125,16 @@ namespace Om
 
 		void UncomparableBoolean() const;
 
-		//! The pointer to the contained, lazily-copied value.
+		/*!
+		\brief
+			The pointer to the contained, lazily-copied value.
+		*/
 		boost::intrusive_ptr< ThisValue > thisValue;
 
-		//! True if the contained value was exposed for modification.
+		/*!
+		\brief
+			True if the contained value was exposed for modification.
+		*/
 		bool thisWasExposed;
 	};
 }

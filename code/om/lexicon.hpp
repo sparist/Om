@@ -169,10 +169,16 @@ namespace Om
 
 		Map thisMap;
 
-		//! The first Node; null if empty.
+		/*!
+		\brief
+			The first Node; null if empty.
+		*/
 		Node * thisFirstNode;
 
-		//! The last Node; null if empty.
+		/*!
+		\brief
+			The last Node; null if empty.
+		*/
 		Node * thisLastNode;
 	};
 
@@ -204,10 +210,16 @@ namespace Om
 
 	private: // MARK: private (non-static)
 
-		//! The current Node, or null if none.
+		/*!
+		\brief
+			The current Node, or null if none.
+		*/
 		Node const * thisNode;
 
-		//! The Element offset in the current Node.
+		/*!
+		\brief
+			The Element offset in the current Node.
+		*/
 		char unsigned thisOffset;
 	};
 
@@ -298,10 +310,16 @@ namespace Om
 
 	private: // MARK: private (non-static)
 
-		//! The prior Node; null if first.
+		/*!
+		\brief
+			The prior Node; null if first.
+		*/
 		Node * thisPriorNode;
 
-		//! The next Node; null if last.
+		/*!
+		\brief
+			The next Node; null if last.
+		*/
 		Node * thisNextNode;
 	};
 }

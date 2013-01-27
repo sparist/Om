@@ -67,7 +67,10 @@ namespace Om
 
 			Expression thisInjector;
 
-			//! The argument to be used as Output.
+			/*!
+			\brief
+				The argument to be used as Output.
+			*/
 			Expression thisOutput;
 
 			/*!

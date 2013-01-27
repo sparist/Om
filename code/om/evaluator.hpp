@@ -78,7 +78,10 @@ namespace Om
 		*/
 		virtual void GiveElements( Queue & );
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void GiveElements( Queue & ) const;
 
 		virtual std::auto_ptr< Program > GiveProgram();
@@ -139,7 +142,10 @@ namespace Om
 
 	private: // MARK: private (static)
 
-		//! An Operation vector.
+		/*!
+		\brief
+			An Operation vector.
+		*/
 		typedef boost::ptr_vector< Operation > OperationVector;
 
 		template< typename TheIterator >
@@ -160,16 +166,28 @@ namespace Om
 
 		void Evaluate( Evaluation & );
 
-		//! The output Queue.
+		/*!
+		\brief
+			The output Queue.
+		*/
 		Queue & thisOutput;
 
-		//! The Translator used for resolving Operator to Operation.
+		/*!
+		\brief
+			The Translator used for resolving Operator to Operation.
+		*/
 		Translator const & thisTranslator;
 
-		//! A vector of Operation with the most current at the back.
+		/*!
+		\brief
+			A vector of Operation with the most current at the back.
+		*/
 		OperationVector thisOperationVector;
 
-		//! True if an Element has been given to the output Queue.
+		/*!
+		\brief
+			True if an Element has been given to the output Queue.
+		*/
 		bool thisGaveElementToOutput;
 	};
 }

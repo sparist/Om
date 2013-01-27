@@ -66,7 +66,10 @@ namespace Om
 
 			StreamIterator thisStreamIterator;
 
-			//! The current item.
+			/*!
+			\brief
+				The current item.
+			*/
 			mutable boost::optional< ThisItem > thisItem;
 		};
 	}

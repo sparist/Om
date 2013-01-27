@@ -29,7 +29,10 @@ namespace Om
 	{
 	public: // MARK: public (static)
 
-		//! The implementation of the "safe boolean" idiom.
+		/*!
+		\brief
+			The implementation of the "safe boolean" idiom.
+		*/
 		typedef void ( Source::* Boolean )() const;
 
 	public: // MARK: public (non-static)
@@ -59,7 +62,10 @@ namespace Om
 		*/
 		virtual bool operator !() const = 0;
 
-		//! Implements the "safe boolean" idiom.
+		/*!
+		\brief
+			Implements the "safe boolean" idiom.
+		*/
 		operator Boolean() const;
 
 		/*!

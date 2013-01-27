@@ -64,13 +64,22 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The empty case handler.
+			/*!
+			\brief
+				The empty case handler.
+			*/
 			Operand thisEmptyCase;
 
-			//! The non-empty case handler.
+			/*!
+			\brief
+				The non-empty case handler.
+			*/
 			Operand thisNonEmptyCase;
 
-			//! The number of Operands received thus far.
+			/*!
+			\brief
+				The number of Operands received thus far.
+			*/
 			char unsigned thisOperandCount;
 		};
 

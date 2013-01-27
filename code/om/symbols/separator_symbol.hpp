@@ -19,33 +19,54 @@
 
 	#include "om/macros.hpp"
 
-	//! Generates switch cases for each Om::Symbols::SeparatorSymbol.
+	/*!
+	\brief
+		Generates switch cases for each Om::Symbols::SeparatorSymbol.
+	*/
 	#define Om_Symbols_SeparatorSymbol_GetCases_() \
 	case Symbols::theSpaceSeparatorSymbol: \
 	case Symbols::theLineSeparatorSymbol: \
 	case Symbols::theTabSeparatorSymbol
 
-	//! Gets the bare hexadecimal code for Om::Symbols::theSpaceSeparatorSymbol.
+	/*!
+	\brief
+		Gets the bare hexadecimal code for Om::Symbols::theSpaceSeparatorSymbol.
+	*/
 	#define Om_Symbols_SeparatorSymbol_GetSpaceHex_() \
 	20
 
-	//! Gets the bare hexadecimal code for Om::Symbols::theLineSeparatorSymbol.
+	/*!
+	\brief
+		Gets the bare hexadecimal code for Om::Symbols::theLineSeparatorSymbol.
+	*/
 	#define Om_Symbols_SeparatorSymbol_GetLineHex_() \
 	0A
 
-	//! Gets the bare hexadecimal code for Om::Symbols::theTabSeparatorSymbol.
+	/*!
+	\brief
+		Gets the bare hexadecimal code for Om::Symbols::theTabSeparatorSymbol.
+	*/
 	#define Om_Symbols_SeparatorSymbol_GetTabHex_() \
 	09
 
-	//! A string literal representation of Om::Symbols::theSpaceSeparatorSymbol.
+	/*!
+	\brief
+		A string literal representation of Om::Symbols::theSpaceSeparatorSymbol.
+	*/
 	#define Om_Symbols_SeparatorSymbol_GetSpaceString_() \
 	Om_Macros_GetString_( Om_Symbols_SeparatorSymbol_GetSpaceHex_() )
 
-	//! A string literal representation of Om::Symbols::theLineSeparatorSymbol.
+	/*!
+	\brief
+		A string literal representation of Om::Symbols::theLineSeparatorSymbol.
+	*/
 	#define Om_Symbols_SeparatorSymbol_GetLineString_() \
 	Om_Macros_GetString_( Om_Symbols_SeparatorSymbol_GetLineHex_() )
 
-	//! A string literal representation of Om::Symbols::theTabSeparatorSymbol.
+	/*!
+	\brief
+		A string literal representation of Om::Symbols::theTabSeparatorSymbol.
+	*/
 	#define Om_Symbols_SeparatorSymbol_GetTabString_() \
 	Om_Macros_GetString_( Om_Symbols_SeparatorSymbol_GetTabHex_() )
 
@@ -53,7 +74,10 @@ namespace Om
 {
 	namespace Symbols
 	{
-		//! A Separator symbol.
+		/*!
+		\brief
+			A Separator symbol.
+		*/
 		enum SeparatorSymbol
 		{
 			theSpaceSeparatorSymbol = Om_Macros_GetNumber_( Om_Symbols_SeparatorSymbol_GetSpaceHex_() ),

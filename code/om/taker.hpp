@@ -31,10 +31,16 @@ namespace Om
 
 		virtual ~Taker() = 0;
 
-		//! Swaps.
+		/*!
+		\brief
+			Swaps.
+		*/
 		void Take( ThisImplementation & );
 
-		//! Assigns.
+		/*!
+		\brief
+			Assigns.
+		*/
 		void Take( ThisImplementation const & );
 
 	private: // MARK: private (non-static)

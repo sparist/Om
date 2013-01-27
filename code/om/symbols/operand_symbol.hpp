@@ -19,24 +19,39 @@
 
 	#include "om/macros.hpp"
 
-	//! Generates switch cases for each Om::Symbols::OperandSymbol.
+	/*!
+	\brief
+		Generates switch cases for each Om::Symbols::OperandSymbol.
+	*/
 	#define Om_Symbols_OperandSymbol_GetCases_() \
 	case Symbols::theStartOperandSymbol: \
 	case Symbols::theEndOperandSymbol
 
-	//! Gets the bare hexadecimal code for Om::Symbols::theStartOperandSymbol.
+	/*!
+	\brief
+		Gets the bare hexadecimal code for Om::Symbols::theStartOperandSymbol.
+	*/
 	#define Om_Symbols_OperandSymbol_GetStartHex_() \
 	7B
 
-	//! Gets the bare hexadecimal code for Om::Symbols::theEndOperandSymbol.
+	/*!
+	\brief
+		Gets the bare hexadecimal code for Om::Symbols::theEndOperandSymbol.
+	*/
 	#define Om_Symbols_OperandSymbol_GetEndHex_() \
 	7D
 
-	//! A string literal representation of Om::Symbols::theStartOperandSymbol.
+	/*!
+	\brief
+		A string literal representation of Om::Symbols::theStartOperandSymbol.
+	*/
 	#define Om_Symbols_OperandSymbol_GetStartString_() \
 	Om_Macros_GetString_( Om_Symbols_OperandSymbol_GetStartHex_() )
 
-	//! A string literal representation of Om::Symbols::theEndOperandSymbol.
+	/*!
+	\brief
+		A string literal representation of Om::Symbols::theEndOperandSymbol.
+	*/
 	#define Om_Symbols_OperandSymbol_GetEndString_() \
 	Om_Macros_GetString_( Om_Symbols_OperandSymbol_GetEndHex_() )
 
@@ -44,7 +59,10 @@ namespace Om
 {
 	namespace Symbols
 	{
-		//! An Operand symbol.
+		/*!
+		\brief
+			An Operand symbol.
+		*/
 		enum OperandSymbol
 		{
 			theStartOperandSymbol = Om_Macros_GetNumber_( Om_Symbols_OperandSymbol_GetStartHex_() ),

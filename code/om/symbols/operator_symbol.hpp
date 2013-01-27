@@ -19,11 +19,17 @@
 
 	#include "om/macros.hpp"
 
-	//! Gets the bare hexadecimal code for Om::Symbols::theEncodeOperatorSymbol.
+	/*!
+	\brief
+		Gets the bare hexadecimal code for Om::Symbols::theEncodeOperatorSymbol.
+	*/
 	#define Om_Symbols_OperatorSymbol_GetEncodeHex_() \
 	60
 
-	//! A string literal representation of Om::Symbols::theEncodeOperatorSymbol.
+	/*!
+	\brief
+		A string literal representation of Om::Symbols::theEncodeOperatorSymbol.
+	*/
 	#define Om_Symbols_OperatorSymbol_GetEncodeString_() \
 	Om_Macros_GetString_( Om_Symbols_OperatorSymbol_GetEncodeHex_() )
 
@@ -31,11 +37,15 @@ namespace Om
 {
 	namespace Symbols
 	{
-		//! An Operator symbol.
+		/*!
+		\brief
+			An Operator symbol.
+		*/
 		enum OperatorSymbol
 		{
 			/*!
-			Encodes the next #CodePoint as an Operator #CodePoint.  Redundant when followed by a non-symbol #CodePoint.
+			\brief
+				Encodes the next #CodePoint as an Operator #CodePoint.  Redundant when followed by a non-symbol #CodePoint.
 			*/
 			theEncodeOperatorSymbol = Om_Macros_GetNumber_( Om_Symbols_OperatorSymbol_GetEncodeHex_() )
 		};

@@ -69,10 +69,16 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The output argument that is being filled.
+			/*!
+			\brief
+				The output argument that is being filled.
+			*/
 			Expression thisExpression;
 
-			//! The current position in the output argument.
+			/*!
+			\brief
+				The current position in the output argument.
+			*/
 			boost::optional< FormRange > thisFormRange;
 		};
 

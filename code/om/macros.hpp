@@ -23,25 +23,40 @@
 	#define Om_Macros_ \
 	Om::Macros
 
-	//! Prepends <code>0x</code>.
+	/*!
+	\brief
+		Prepends <code>0x</code>.
+	*/
 	#define Om_Macros_PrependZeroX_( theArgument ) \
 	0x ##theArgument
 
-	//! Prepends <code>\\x</code> and converts the result to a string literal.
+	/*!
+	\brief
+		Prepends <code>\\x</code> and converts the result to a string literal.
+	*/
 	#define Om_Macros_PrependSlashXAndStringize_( theArgument ) \
 	BOOST_PP_STRINGIZE( \x ##theArgument )
 
-	//! Converts a bare hexadecimal to a numeric literal.
+	/*!
+	\brief
+		Converts a bare hexadecimal to a numeric literal.
+	*/
 	#define Om_Macros_GetNumber_( theHex ) \
 	Om_Macros_PrependZeroX_( theHex )
 
-	//! Converts a bare hexadecimal to a string literal.
+	/*!
+	\brief
+		Converts a bare hexadecimal to a string literal.
+	*/
 	#define Om_Macros_GetString_( theHex ) \
 	Om_Macros_PrependSlashXAndStringize_( theHex )
 
 namespace Om
 {
-	//! A namespace for all code used to implement global macros.
+	/*!
+	\brief
+		A namespace for all code used to implement global macros.
+	*/
 	namespace Macros
 	{
 	}

@@ -19,7 +19,10 @@
 
 namespace Om
 {
-	//! A namespace for types derived from Source.
+	/*!
+	\brief
+		A namespace for types derived from Source.
+	*/
 	namespace Sources
 	{
 	}

@@ -42,32 +42,50 @@ namespace Om
 
 		virtual ~Evaluation();
 
-		//! Constructs an Evaluation on the given Evaluator.
+		/*!
+		\brief
+			Constructs an Evaluation on the given Evaluator.
+		*/
 		explicit Evaluation( Evaluator & );
 
 		Translator const & GetTranslator() const;
 
 		bool GiveTerm( Evaluator & );
 
-		//! Pushes the Operand onto the front of the Expression.
+		/*!
+		\brief
+			Pushes the Operand onto the front of the Expression.
+		*/
 		template< typename TheOperand >
 		void TakeOperand( TheOperand & );
 
-		//! Takes the Operation, and gives it to the Evaluator.
+		/*!
+		\brief
+			Takes the Operation, and gives it to the Evaluator.
+		*/
 		template< typename TheOperation >
 		void TakeOperation(
 			std::auto_ptr< TheOperation >
 		);
 
-		//! Pushes the Operator onto the front of the Expression.
+		/*!
+		\brief
+			Pushes the Operator onto the front of the Expression.
+		*/
 		template< typename TheOperator >
 		void TakeOperator( TheOperator & );
 
-		//! Pushes the quoted Queue onto the front of the Expression.
+		/*!
+		\brief
+			Pushes the quoted Queue onto the front of the Expression.
+		*/
 		template< typename TheQueue >
 		void TakeQuotedQueue( TheQueue & );
 
-		//! Pushes the Queue onto the front of the Expression, last first.
+		/*!
+		\brief
+			Pushes the Queue onto the front of the Expression, last first.
+		*/
 		template< typename TheQueue >
 		void TakeQueue( TheQueue & );
 
@@ -77,10 +95,16 @@ namespace Om
 
 		Evaluation const & operator =( Evaluation const & );
 
-		//! The Expression.
+		/*!
+		\brief
+			The Expression.
+		*/
 		Expression thisExpression;
 
-		//! The Evaluator.
+		/*!
+		\brief
+			The Evaluator.
+		*/
 		Evaluator & thisEvaluator;
 	};
 }

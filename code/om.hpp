@@ -17,7 +17,10 @@
 	#define Om_ \
 	Om
 
-//! The Om language implementation.
+/*!
+\brief
+	The Om language implementation.
+*/
 namespace Om
 {
 }

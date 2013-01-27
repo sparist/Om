@@ -60,7 +60,10 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The container to pull from.
+			/*!
+			\brief
+				The container to pull from.
+			*/
 			ThisContainer & thisContainer;
 		};
 	}

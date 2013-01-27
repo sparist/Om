@@ -65,7 +65,10 @@ namespace Om
 			Operand &
 		);
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual bool TakeElement(
 			Evaluation &,
 			Operand const &

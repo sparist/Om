@@ -25,7 +25,10 @@ namespace Om
 {
 	namespace Operations
 	{
-		//! The \ref lexicon_operation Operation implementation.
+		/*!
+		\brief
+			The \ref lexicon_operation Operation implementation.
+		*/
 		typedef ProgramOperation< Lexicon > LexiconOperation;
 
 		namespace

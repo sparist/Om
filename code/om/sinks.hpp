@@ -19,7 +19,10 @@
 
 namespace Om
 {
-	//! A namespace for types derived from Sink.
+	/*!
+	\brief
+		A namespace for types derived from Sink.
+	*/
 	namespace Sinks
 	{
 	}

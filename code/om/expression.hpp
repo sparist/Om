@@ -210,13 +210,22 @@ namespace Om
 
 	private: // MARK: private (non-static)
 
-		//! The #FormDeque iterator.
+		/*!
+		\brief
+			The #FormDeque iterator.
+		*/
 		FormDeque::const_iterator thisFormIterator;
 
-		//! The #FormDeque end.
+		/*!
+		\brief
+			The #FormDeque end.
+		*/
 		FormDeque::const_iterator thisFormEnd;
 
-		//! The Element range for the current Form.
+		/*!
+		\brief
+			The Element range for the current Form.
+		*/
 		boost::optional< Form::ElementRange > thisFormElementRange;
 	};
 }

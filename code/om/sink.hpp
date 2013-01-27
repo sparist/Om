@@ -51,7 +51,10 @@ namespace Om
 		*/
 		Sink * operator ->();
 
-		//! Pushes an item.
+		/*!
+		\brief
+			Pushes an item.
+		*/
 		virtual void Push( ThisItem & ) = 0;
 
 	private: // MARK: private (non-static)

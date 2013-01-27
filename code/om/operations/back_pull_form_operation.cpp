@@ -98,7 +98,6 @@ namespace Om
 					System::Get().Evaluate( "forms-> {only}" )
 				);
 
-				// Flush
 				CHECK_EQUAL(
 					"forms->",
 					System::Get().Evaluate( "forms->" )

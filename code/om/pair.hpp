@@ -49,7 +49,10 @@ namespace Om
 		template< typename TheOperand >
 		void TakeOperand( TheOperand & );
 
-		//! Replaces the Form Operator.
+		/*!
+		\brief
+			Replaces the Operator.
+		*/
 		template< typename TheOperator >
 		void TakeOperator( TheOperator & );
 

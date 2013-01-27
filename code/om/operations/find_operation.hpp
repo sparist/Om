@@ -68,7 +68,10 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The Operator to find.
+			/*!
+			\brief
+				The Operator to find.
+			*/
 			boost::optional< Operator > thisOperator;
 		};
 

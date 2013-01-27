@@ -80,7 +80,10 @@ namespace Om
 
 		Writer const & operator =( Writer const & );
 
-		//! The output #CodePoint Sink.
+		/*!
+		\brief
+			The output #CodePoint Sink.
+		*/
 		Sink< CodePoint const > & thisCodePointSink;
 	};
 }

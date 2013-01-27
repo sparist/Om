@@ -68,7 +68,10 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The input iterator.
+			/*!
+			\brief
+				The input iterator.
+			*/
 			ThisIterator thisIterator;
 		};
 	}

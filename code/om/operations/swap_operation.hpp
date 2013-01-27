@@ -64,7 +64,10 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The Operand to swap with.
+			/*!
+			\brief
+				The Operand to swap with.
+			*/
 			Operand thisOperand;
 		};
 

@@ -49,7 +49,10 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The output code unit iterator.
+			/*!
+			\brief
+				The output code unit iterator.
+			*/
 			ThisCodeUnitIterator thisCodeUnitIterator;
 		};
 	}

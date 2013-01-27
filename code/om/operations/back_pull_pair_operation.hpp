@@ -43,7 +43,10 @@ namespace Om
 
 			static void Give( Evaluation & );
 
-			//! The callback for PullOperation.
+			/*!
+			\brief
+				The callback for PullOperation.
+			*/
 			template< typename TheQueue >
 			static void Pull(
 				Lexicon &,

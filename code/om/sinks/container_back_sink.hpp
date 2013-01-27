@@ -54,7 +54,10 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The container to push into.
+			/*!
+			\brief
+				The container to push into.
+			*/
 			ThisContainer & thisContainer;
 		};
 	}

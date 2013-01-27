@@ -71,10 +71,16 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The current input iterator.
+			/*!
+			\brief
+				The current input iterator.
+			*/
 			ThisIterator thisCurrent;
 
-			//! The end input iterator.
+			/*!
+			\brief
+				The end input iterator.
+			*/
 			ThisIterator thisEnd;
 		};
 	}

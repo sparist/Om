@@ -21,7 +21,10 @@
 
 namespace Om
 {
-	//! The UTF-8 traits type.
+	/*!
+	\brief
+		The UTF-8 traits type.
+	*/
 	typedef boost::locale::utf::utf_traits< char > Utf8;
 }
 

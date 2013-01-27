@@ -46,7 +46,10 @@ namespace Om
 
 		Operator();
 
-		//! Normalizes the string and copies directly into the Operator.
+		/*!
+		\brief
+			Normalizes the string and copies directly into the Operator.
+		*/
 		explicit Operator( std::string const & );
 
 		/*!
@@ -67,10 +70,16 @@ namespace Om
 
 		Operator & operator =( Operator );
 
-		//! Gives the last ::CodePoint as an Atom.
+		/*!
+		\brief
+			Gives the last ::CodePoint as an Atom.
+		*/
 		void BackGiveCodePoint( Queue & );
 
-		//! Gives the last segment of the given type to the Queue.
+		/*!
+		\brief
+			Gives the last segment of the given type to the Queue.
+		*/
 		template< boost::locale::boundary::boundary_type theSegment >
 		void BackGiveSegment( Queue & );
 
@@ -88,14 +97,23 @@ namespace Om
 		template< typename TheQueue >
 		void Encode( TheQueue & );
 
-		//! Gives the first ::CodePoint as an Atom.
+		/*!
+		\brief
+			Gives the first ::CodePoint as an Atom.
+		*/
 		void FrontGiveCodePoint( Queue & );
 
-		//! Gives the first segment of the given type to the Queue.
+		/*!
+		\brief
+			Gives the first segment of the given type to the Queue.
+		*/
 		template< boost::locale::boundary::boundary_type theSegment >
 		void FrontGiveSegment( Queue & );
 
-		//! Applies Unicode compatibility normalization.
+		/*!
+		\brief
+			Applies Unicode compatibility normalization.
+		*/
 		void Normalize();
 
 		virtual void ReadElements( Parser & );

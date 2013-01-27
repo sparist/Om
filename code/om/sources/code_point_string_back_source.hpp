@@ -75,13 +75,22 @@ namespace Om
 
 			ThisStringIterator thisStringIterator;
 
-			//! The current #CodePoint string iterator.
+			/*!
+			\brief
+				The current #CodePoint string iterator.
+			*/
 			ThisStringIterator thisCodePointIterator;
 
-			//! The current #CodePoint string end.
+			/*!
+			\brief
+				The current #CodePoint string end.
+			*/
 			ThisStringIterator thisCodePointEnd;
 
-			//! The current #CodePoint string.
+			/*!
+			\brief
+				The current #CodePoint string.
+			*/
 			mutable std::string thisCodePoint;
 		};
 	}

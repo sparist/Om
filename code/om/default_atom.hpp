@@ -103,7 +103,10 @@ namespace Om
 		*/
 		explicit DefaultAtom( char const theCodeUnit );
 
-		//! The NFD-normalized string that defines the Atom.
+		/*!
+		\brief
+			The NFD-normalized string that defines the Atom.
+		*/
 		std::string thisString;
 
 	private: // MARK: private (non-static)

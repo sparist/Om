@@ -88,7 +88,10 @@ namespace Om
 
 		void Swap( Form & );
 
-		//! Replaces the Form Operator.
+		/*!
+		\brief
+			Replaces the Form Operator.
+		*/
 		template< typename TheOperator >
 		void TakeOperator( TheOperator & );
 

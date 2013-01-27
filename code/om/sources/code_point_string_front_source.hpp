@@ -77,7 +77,9 @@ namespace Om
 
 			ThisStringIterator thisStringEnd;
 
-			//! The current #CodePoint string; empty if invalid.
+			/*!
+				The current #CodePoint string; empty if invalid.
+			*/
 			mutable std::string thisCodePoint;
 		};
 	}

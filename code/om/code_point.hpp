@@ -21,7 +21,10 @@
 
 namespace Om
 {
-	//! A UTF-8 code point.
+	/*!
+	\brief
+		A UTF-8 code point.
+	*/
 	typedef boost::locale::utf::code_point CodePoint;
 }
 

@@ -87,7 +87,10 @@ namespace Om
 
 		virtual void ReadQuotedElements( Parser & );
 
-		//! Replaces the Program owned by this Operand with the argument.
+		/*!
+		\brief
+			Replaces the Program owned by this Operand with the argument.
+		*/
 		template< typename TheProgram >
 		void SetProgram(
 			std::auto_ptr< TheProgram >

@@ -64,13 +64,22 @@ namespace Om
 
 		private: // MARK: private (non-static)
 
-			//! The input code unit start iterator.
+			/*!
+			\brief
+				The input code unit start iterator.
+			*/
 			ThisCodeUnitIterator thisInputIterator;
 
-			//! The input code unit end iterator.
+			/*!
+			\brief
+				The input code unit end iterator.
+			*/
 			ThisCodeUnitIterator thisInputEnd;
 
-			//! The current #CodePoint.
+			/*!
+			\brief
+				The current #CodePoint.
+			*/
 			CodePoint thisCodePoint;
 		};
 
@@ -96,7 +105,10 @@ namespace Om
 
 		private: // MARK: private (static)
 
-			//! A convenience typedef of the underlying IteratorSource.
+			/*!
+			\brief
+				A convenience typedef of the underlying IteratorSource.
+			*/
 			typedef IteratorSource< char const, char const * > CodeUnitSource;
 		};
 	}

@@ -50,7 +50,10 @@ namespace Om
 		*/
 		virtual void GiveElements( Queue & ) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual void GiveElements( Queue & ) const = 0;
 
 		virtual bool ReadQuotedElements(
@@ -71,7 +74,10 @@ namespace Om
 			Operand &
 		) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual bool TakeElement(
 			Evaluation &,
 			Operand const &
@@ -90,7 +96,10 @@ namespace Om
 			Queue &
 		) = 0;
 
-		//! \overload
+		/*!
+		\brief
+			\overload
+		*/
 		virtual bool TakeQuotedElements(
 			Evaluation &,
 			Queue const &
