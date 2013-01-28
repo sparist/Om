@@ -26,7 +26,7 @@
 inline Type_::~Evaluation()
 {
 	assert(
-		this->thisExpression.IsEmpty() &&
+		this->thisExpression.IsEmpty() and
 		"The Evaluation was not fully consumed."
 	);
 }

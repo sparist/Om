@@ -22,7 +22,7 @@ inline void Om::intrusive_ptr_add_ref(
 )
 {
 	assert(
-		thePointee &&
+		thePointee and
 		"The pointer cannot be null."
 	);
 	thePointee->IncrementOwnerCount();
@@ -34,7 +34,7 @@ inline void Om::intrusive_ptr_release(
 )
 {
 	assert(
-		thePointee &&
+		thePointee and
 		"The pointer cannot be null."
 	);
 	thePointee->DecrementOwnerCount();
@@ -58,7 +58,7 @@ Template_
 inline Type_::~Shareable()
 {
 	assert(
-		!this->thisOwnerCount &&
+		!this->thisOwnerCount and
 		"Non-zero owner count."
 	);
 }
@@ -95,7 +95,7 @@ Template_
 inline void Type_::DecrementOwnerCount()
 {
 	assert(
-		this->thisOwnerCount &&
+		this->thisOwnerCount and
 		"Owner count underflow."
 	);
 	--this->thisOwnerCount;

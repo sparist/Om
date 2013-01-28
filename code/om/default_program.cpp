@@ -62,7 +62,7 @@ inline bool Type_::operator ==( Program const & theProgram ) const
 		bool const theRangeHasNext = *theRange;
 		bool const theOtherRangeHasNext = *theOtherRange;
 		if(
-			!theRangeHasNext ||
+			!theRangeHasNext or
 			!theOtherRangeHasNext
 		){
 			return( theRangeHasNext == theOtherRangeHasNext );
@@ -105,7 +105,7 @@ inline void Type_::TakeQueueElements( TheQueue & theQueue )
 		typeid( TheCast ) == typeid( ThisImplementation )
 	);
 	if(
-		typeid( TheCast ) == typeid( theQueue ) &&
+		typeid( TheCast ) == typeid( theQueue ) and
 		this->IsEmpty()
 	){
 		this->Take(

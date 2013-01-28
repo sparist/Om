@@ -361,7 +361,7 @@ inline Om::Form & Type_::GetBackTaker()
 inline Om::Form & Type_::GetFrontTaker()
 {
 	if(
-		this->thisFormDeque.empty() ||
+		this->thisFormDeque.empty() or
 		!this->thisFormDeque.front().GetOperator().IsEmpty()
 	){
 		this->thisFormDeque.push_front( Form() );
@@ -421,7 +421,7 @@ thisFormElementRange()
 inline bool Type_::operator ==( ElementRange const & theRange ) const
 {
 	return(
-		this->thisFormElementRange == theRange.thisFormElementRange &&
+		this->thisFormElementRange == theRange.thisFormElementRange and
 		this->thisFormIterator == theRange.thisFormIterator
 	);
 }

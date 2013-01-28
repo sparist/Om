@@ -65,8 +65,8 @@ DefaultAtom< Separator >(
 )
 {
 	assert(
-		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol ||
-		Symbols::theLineSeparatorSymbol == theSeparatorSymbol ||
+		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol or
+		Symbols::theLineSeparatorSymbol == theSeparatorSymbol or
 		Symbols::theTabSeparatorSymbol == theSeparatorSymbol
 	);
 }

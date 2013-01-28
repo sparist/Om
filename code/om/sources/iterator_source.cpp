@@ -47,9 +47,9 @@ Template_
 inline bool Type_::operator ==( IteratorSource const & theSource ) const
 {
 	return(
-		this->thisIterator == theSource.thisIterator ||
+		this->thisIterator == theSource.thisIterator or
 		(
-			!*this->thisIterator &&
+			!*this->thisIterator and
 			!*theSource.thisIterator
 		)
 	);

@@ -70,11 +70,11 @@ inline bool Type_::TakeQuotedQueue(
 	if( this->thisFormRange ){
 		FormRange & theFormRange = *this->thisFormRange;
 		assert(
-			theFormRange &&
+			theFormRange and
 			!this->thisExpression.IsEmpty()
 		);
 		assert(
-			!Form::OperandRange< Operand const >( *theFormRange ) &&
+			!Form::OperandRange< Operand const >( *theFormRange ) and
 			"The Form should have no Operands."
 		);
 		theFormRange->BackTakeQuotedQueue( theQueue );

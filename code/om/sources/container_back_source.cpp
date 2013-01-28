@@ -47,9 +47,9 @@ Template_
 inline bool Type_::operator ==( ContainerBackSource const & theSource ) const
 {
 	return(
-		&this->thisContainer == &theSource.thisContainer ||
+		&this->thisContainer == &theSource.thisContainer or
 		(
-			this->thisContainer.empty() &&
+			this->thisContainer.empty() and
 			theSource.thisContainer.empty()
 		)
 	);

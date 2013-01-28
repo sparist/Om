@@ -303,7 +303,7 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 		boost::locale::normalize(
 			theOperator.thisString,
 			boost::locale::norm_nfd
-		) == theOperator.thisString &&
+		) == theOperator.thisString and
 		"Operator strings must be NFC normalized."
 	);
 

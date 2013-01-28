@@ -160,9 +160,9 @@ inline void Type_::GiveElements( Queue & theQueue ) const
 inline bool Type_::IsEmpty() const
 {
 	assert(
-		!this->thisMap.empty() ||
+		!this->thisMap.empty() or
 		(
-			!this->thisFirstNode &&
+			!this->thisFirstNode and
 			!this->thisLastNode
 		)
 	);
@@ -280,7 +280,7 @@ inline void Type_::GiveElements(
 			theQueue.TakeElement( Separator::GetLineSeparator() )
 		){
 			assert(
-				theFirstNode &&
+				theFirstNode and
 				!theFirstNode->IsEmpty()
 			);
 			theFirstNode->GiveElements( theQueue );
@@ -318,7 +318,7 @@ inline Type_::Node const * Type_::GetLastNode() const
 inline Type_::Node & Type_::GetOperandTaker()
 {
 	if(
-		!this->thisLastNode ||
+		!this->thisLastNode or
 		!this->thisLastNode->GetOperand().IsEmpty()
 	){
 		Operator const theOperator;
@@ -381,7 +381,7 @@ thisOffset()
 inline Type_::ElementRange( Lexicon const & theLexicon ):
 thisNode( theLexicon.thisFirstNode ),
 thisOffset(
-	this->thisNode &&
+	this->thisNode and
 	thisNode->GetOperator().IsEmpty()
 )
 {
@@ -390,7 +390,7 @@ thisOffset(
 inline bool Type_::operator ==( ElementRange const & theElementRange ) const
 {
 	return(
-		this->thisNode == theElementRange.thisNode &&
+		this->thisNode == theElementRange.thisNode and
 		this->thisOffset == theElementRange.thisOffset
 	);
 }
