@@ -53,7 +53,9 @@ inline void Type_::BackGiveTerm( Queue & theQueue )
 {
 	if( !this->thisFormDeque.empty() ){
 		Form & theForm = this->thisFormDeque.back();
-		if( theForm.BackGiveTerm( theQueue ) ){
+		if(
+			theForm.BackGiveTerm( theQueue )
+		){
 			assert( theForm.IsEmpty() );
 			this->thisFormDeque.pop_back();
 		}
@@ -107,7 +109,9 @@ inline void Type_::FrontGiveTerm( Queue & theQueue )
 {
 	if( !this->thisFormDeque.empty() ){
 		Form & theForm = this->thisFormDeque.front();
-		if( theForm.FrontGiveTerm( theQueue ) ){
+		if(
+			theForm.FrontGiveTerm( theQueue )
+		){
 			assert( theForm.IsEmpty() );
 			this->thisFormDeque.pop_front();
 		}
