@@ -32,8 +32,7 @@ namespace Om
 			typename ThisItem,
 			typename ThisContainer
 		>
-		struct ContainerBackSink
-		:
+		struct ContainerBackSink:
 		DefaultSink<
 			ThisItem,
 			ContainerBackSink<

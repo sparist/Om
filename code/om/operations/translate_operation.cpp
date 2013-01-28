@@ -98,8 +98,7 @@ inline bool Type_::TakeQuotedQueue(
 // MARK: protected (non-static)
 
 Template_
-inline Type_::TranslateOperation()
-:
+inline Type_::TranslateOperation():
 thisLexicon()
 {
 }

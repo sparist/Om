@@ -29,8 +29,7 @@ namespace Om
 			A Sink adapter for an output stream.
 		*/
 		template< typename ThisItem = char >
-		struct StreamSink
-		:
+		struct StreamSink:
 		IteratorSink<
 			ThisItem const,
 			std::ostreambuf_iterator< ThisItem >

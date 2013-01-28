@@ -27,8 +27,7 @@ namespace Om
 	\brief
 		An object that can be copied or moved via #Give.
 	*/
-	struct Giveable
-	:
+	struct Giveable:
 	Copyable,
 	Moveable
 	{

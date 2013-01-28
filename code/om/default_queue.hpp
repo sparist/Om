@@ -30,8 +30,7 @@ namespace Om
 		typename ThisImplementation,
 		typename ThisInterface = Queue
 	>
-	struct DefaultQueue
-	:
+	struct DefaultQueue:
 	ThisInterface
 	{
 	public: // MARK: public (non-static)

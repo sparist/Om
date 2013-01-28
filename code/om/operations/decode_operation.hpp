@@ -32,8 +32,7 @@ namespace Om
 		\brief
 			The \ref decode_operation Operation implementation.
 		*/
-		struct DecodeOperation
-		:
+		struct DecodeOperation:
 		DefaultOperation< DecodeOperation >
 		{
 		public: // MARK: public (static)

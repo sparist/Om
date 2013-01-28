@@ -94,24 +94,21 @@ inline Type_::Operator(
 	).swap( this->thisString );
 }
 
-inline Type_::Operator( Symbols::OperandSymbol const theOperandSymbol )
-:
+inline Type_::Operator( Symbols::OperandSymbol const theOperandSymbol ):
 DefaultAtom< Operator >(
 	static_cast< char >( theOperandSymbol )
 )
 {
 }
 
-inline Type_::Operator( Symbols::OperatorSymbol const theOperatorSymbol )
-:
+inline Type_::Operator( Symbols::OperatorSymbol const theOperatorSymbol ):
 DefaultAtom< Operator >(
 	static_cast< char >( theOperatorSymbol )
 )
 {
 }
 
-inline Type_::Operator( Symbols::SeparatorSymbol const theSeparatorSymbol )
-:
+inline Type_::Operator( Symbols::SeparatorSymbol const theSeparatorSymbol ):
 DefaultAtom< Operator >(
 	static_cast< char >( theSeparatorSymbol )
 )

@@ -72,15 +72,13 @@ inline ThisOwnerCount Type_::GetOwnerCount() const
 // MARK: protected (non-static)
 
 Template_
-inline Type_::Shareable()
-:
+inline Type_::Shareable():
 thisOwnerCount()
 {
 }
 
 Template_
-inline Type_::Shareable( Shareable const & )
-:
+inline Type_::Shareable( Shareable const & ):
 thisOwnerCount()
 {
 }

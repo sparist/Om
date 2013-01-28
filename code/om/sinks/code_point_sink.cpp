@@ -27,8 +27,7 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::CodePointSink( ThisCodeUnitIterator theCodeUnitIterator )
-:
+inline Type_::CodePointSink( ThisCodeUnitIterator theCodeUnitIterator ):
 thisCodeUnitIterator( theCodeUnitIterator )
 {
 }

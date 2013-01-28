@@ -32,8 +32,7 @@ namespace Om
 		\brief
 			The \ref quote_operation Operation implementation.
 		*/
-		struct QuoteOperation
-		:
+		struct QuoteOperation:
 		DefaultOperation< QuoteOperation >
 		{
 		public: // MARK: public (static)

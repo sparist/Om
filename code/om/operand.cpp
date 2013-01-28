@@ -31,8 +31,7 @@ inline char const * Type_::GetName()
 
 // MARK: public (non-static)
 
-inline Type_::Operand()
-:
+inline Type_::Operand():
 thisProgram()
 {
 }
@@ -40,8 +39,7 @@ thisProgram()
 template< typename TheProgram >
 inline Type_::Operand(
 	std::auto_ptr< TheProgram > theProgram
-)
-:
+):
 thisProgram( theProgram )
 {
 }
@@ -55,8 +53,8 @@ inline Type_ & Type_::operator =( Operand theOperand )
 inline bool Type_::operator ==( Operand const & theOperand ) const
 {
 	return(
-		this->IsEmpty() ?
-		theOperand.IsEmpty() :
+		this->IsEmpty()?
+		theOperand.IsEmpty():
 		( *this->GetProgram() == *theOperand.GetProgram() )
 	);
 }
@@ -64,7 +62,7 @@ inline bool Type_::operator ==( Operand const & theOperand ) const
 inline Om::Program & Type_::operator *()
 {
 	return(
-		this->thisProgram.IsEmpty() ?
+		this->thisProgram.IsEmpty()?
 		Null::Get():
 		*this->thisProgram
 	);
@@ -73,7 +71,7 @@ inline Om::Program & Type_::operator *()
 inline Om::Program const & Type_::operator *() const
 {
 	return(
-		this->thisProgram.IsEmpty() ?
+		this->thisProgram.IsEmpty()?
 		Null::Get():
 		*this->thisProgram
 	);

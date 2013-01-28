@@ -33,8 +33,7 @@ namespace Om
 		\brief
 			The \ref skip_operation Operation implementation.
 		*/
-		struct SkipOperation
-		:
+		struct SkipOperation:
 		DefaultOperation< SkipOperation >
 		{
 		public: // MARK: public (static)

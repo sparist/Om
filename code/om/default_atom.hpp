@@ -24,8 +24,7 @@ namespace Om
 {
 	// MARK: - Om::DefaultAtom
 	template< typename ThisImplementation >
-	struct DefaultAtom
-	:
+	struct DefaultAtom:
 	DefaultElement<
 		ThisImplementation,
 		Atom

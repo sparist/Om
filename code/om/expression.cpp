@@ -30,8 +30,7 @@ inline char const * Type_::GetName()
 
 // MARK: public (non-static)
 
-inline Type_::Expression()
-:
+inline Type_::Expression():
 thisFormDeque()
 {
 }
@@ -380,8 +379,7 @@ inline Om::Form & Type_::GetFrontTaker()
 
 // MARK: public (non-static)
 
-inline Type_< Om::Form >::FormRange( Expression & theExpression )
-:
+inline Type_< Om::Form >::FormRange( Expression & theExpression ):
 Sources::CollectionFrontSource<
 	Form,
 	FormDeque::iterator
@@ -389,8 +387,7 @@ Sources::CollectionFrontSource<
 {
 }
 
-inline Type_< Om::Form const >::FormRange( Expression const & theExpression )
-:
+inline Type_< Om::Form const >::FormRange( Expression const & theExpression ):
 Sources::CollectionFrontSource<
 	Form const,
 	FormDeque::const_iterator
@@ -408,8 +405,7 @@ Sources::CollectionFrontSource<
 
 // MARK: public (non-static)
 
-inline Type_::ElementRange( Expression const & theExpression )
-:
+inline Type_::ElementRange( Expression const & theExpression ):
 thisFormIterator( theExpression.thisFormDeque.begin() ),
 thisFormEnd( theExpression.thisFormDeque.end() ),
 thisFormElementRange()
@@ -439,8 +435,8 @@ inline Om::Element const & Type_::operator *() const
 {
 	assert( this->thisFormElementRange );
 	return(
-		*this->thisFormElementRange ?
-		**this->thisFormElementRange :
+		( *this->thisFormElementRange )?
+		( **this->thisFormElementRange ):
 		Separator::GetLineSeparator()
 	);
 }

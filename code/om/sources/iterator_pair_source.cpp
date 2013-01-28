@@ -34,8 +34,7 @@ Template_
 inline Type_::IteratorPairSource(
 	ThisIterator theCurrent,
 	ThisIterator const theEnd
-)
-:
+):
 thisCurrent( theCurrent ),
 thisEnd( theEnd )
 {

@@ -120,8 +120,7 @@ namespace Om
 	\brief
 		A Form Element range.
 	*/
-	struct Form::ElementRange
-	:
+	struct Form::ElementRange:
 	Sources::DefaultSource<
 		Element const,
 		ElementRange
@@ -156,8 +155,7 @@ namespace Om
 		Specialization on a mutable Operand.
 	*/
 	template<>
-	struct Form::OperandRange< Operand >
-	:
+	struct Form::OperandRange< Operand >:
 	Sources::CollectionFrontSource<
 		Operand,
 		OperandDeque::iterator
@@ -174,8 +172,7 @@ namespace Om
 		Specialization on an immutable Operand.
 	*/
 	template<>
-	struct Form::OperandRange< Operand const >
-	:
+	struct Form::OperandRange< Operand const >:
 	Sources::CollectionFrontSource<
 		Operand const,
 		OperandDeque::const_iterator

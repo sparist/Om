@@ -45,8 +45,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::ChooseOperation()
-:
+inline Type_::ChooseOperation():
 thisEmptyCase(),
 thisNonEmptyCase(),
 thisOperandCount()
@@ -87,8 +86,8 @@ inline bool Type_::TakeOperand(
 		{
 			TheOperand const & theConstOperand = theOperand;
 			theEvaluation.TakeOperand(
-				theConstOperand.GetProgram()->IsEmpty() ?
-				this->thisEmptyCase :
+				theConstOperand.GetProgram()->IsEmpty()?
+				this->thisEmptyCase:
 				this->thisNonEmptyCase
 			);
 		}

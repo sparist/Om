@@ -25,16 +25,14 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::Owner()
-:
+inline Type_::Owner():
 thisValue(),
 thisWasExposed()
 {
 }
 
 Template_
-inline Type_::Owner( Owner const & theOwner )
-:
+inline Type_::Owner( Owner const & theOwner ):
 thisValue(),
 thisWasExposed()
 {
@@ -52,8 +50,7 @@ Template_
 template< typename TheValue >
 inline Type_::Owner(
 	std::auto_ptr< TheValue > theValue
-)
-:
+):
 thisValue( theValue.release() ),
 thisWasExposed()
 {
@@ -109,8 +106,8 @@ Template_
 inline Type_::operator Boolean() const
 {
 	return(
-		this->thisValue ?
-		&Owner::UncomparableBoolean :
+		this->thisValue?
+		&Owner::UncomparableBoolean:
 		0
 	);
 }
@@ -126,8 +123,8 @@ Template_
 ThisValue * Type_::GetValue()
 {
 	return(
-		this->thisValue ?
-		&**this :
+		this->thisValue?
+		( &**this ):
 		0
 	);
 }
@@ -203,13 +200,11 @@ namespace Om
 	{
 		namespace
 		{
-			struct TestValue
-			:
+			struct TestValue:
 			DefaultCopyable< TestValue >,
 			Shareable<>
 			{
-				explicit TestValue( int theNumber )
-				:
+				explicit TestValue( int theNumber ):
 				thisNumber( theNumber )
 				{
 				}

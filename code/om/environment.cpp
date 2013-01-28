@@ -21,8 +21,7 @@
 
 // MARK: public (non-static)
 
-inline Type_::Environment()
-:
+inline Type_::Environment():
 thisTranslatorVector()
 {
 }

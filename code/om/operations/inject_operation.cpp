@@ -46,8 +46,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::InjectOperation()
-:
+inline Type_::InjectOperation():
 thisInjector(),
 thisOutput(),
 thisScope()

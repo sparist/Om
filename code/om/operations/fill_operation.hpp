@@ -33,8 +33,7 @@ namespace Om
 		\brief
 			The \ref fill_operation Operation implementation.
 		*/
-		struct FillOperation
-		:
+		struct FillOperation:
 		DefaultOperation< FillOperation >
 		{
 		public: // MARK: public (static)

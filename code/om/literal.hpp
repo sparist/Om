@@ -30,8 +30,7 @@ namespace Om
 	\brief
 		The \ref literal Program implementation.
 	*/
-	struct Literal
-	:
+	struct Literal:
 	DefaultProgram< Literal >
 	{
 	public: // MARK: public (static)
@@ -128,8 +127,7 @@ namespace Om
 		A mutable Element range.
 	*/
 	template<>
-	struct Literal::ElementRange< Literal >
-	:
+	struct Literal::ElementRange< Literal >:
 	Sources::CollectionFrontSource<
 		Element,
 		ElementDeque::iterator
@@ -146,8 +144,7 @@ namespace Om
 		An immutable Element range.
 	*/
 	template<>
-	struct Literal::ElementRange< Literal const >
-	:
+	struct Literal::ElementRange< Literal const >:
 	Sources::CollectionFrontSource<
 		Element const,
 		ElementDeque::const_iterator

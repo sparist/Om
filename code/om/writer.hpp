@@ -34,8 +34,7 @@ namespace Om
 
 	Giving an Element does nothing.
 	*/
-	struct Writer
-	:
+	struct Writer:
 	DefaultQueue< Writer >
 	{
 	public: // MARK: public (non-static)

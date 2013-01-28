@@ -30,8 +30,7 @@ namespace Om
 			A #CodePoint Source that reads each code unit from the iterator.
 		*/
 		template< typename ThisCodeUnitIterator = char const * >
-		struct CodePointSource
-		:
+		struct CodePointSource:
 		DefaultSource<
 			CodePoint const,
 			CodePointSource< ThisCodeUnitIterator >
@@ -89,10 +88,12 @@ namespace Om
 			A specialization for null-terminated code unit array.
 		*/
 		template<>
-		struct CodePointSource< char const * >
-		:
+		struct CodePointSource< char const * >:
 		CodePointSource<
-			IteratorSource< char const, char const * >
+			IteratorSource<
+				char const,
+				char const *
+			>
 		>
 		{
 		public: // MARK: public (non-static)
@@ -109,7 +110,10 @@ namespace Om
 			\brief
 				A convenience typedef of the underlying IteratorSource.
 			*/
-			typedef IteratorSource< char const, char const * > CodeUnitSource;
+			typedef IteratorSource<
+				char const,
+				char const *
+			> CodeUnitSource;
 		};
 	}
 }

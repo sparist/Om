@@ -48,8 +48,7 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 Template_
-inline Type_::FrontPushOperation()
-:
+inline Type_::FrontPushOperation():
 thisProgram()
 {
 }

@@ -32,8 +32,7 @@ namespace Om
 		\brief
 			The \ref drop_operation Operation implementation.
 		*/
-		struct DropOperation
-		:
+		struct DropOperation:
 		DefaultOperation< DropOperation >
 		{
 		public: // MARK: public (static)

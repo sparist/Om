@@ -77,8 +77,8 @@ Template_
 inline Type_::operator Boolean() const
 {
 	return(
-		!*this ?
-		0 :
+		( !*this )?
+		0:
 		&Source::UncomparableBoolean
 	);
 }

@@ -32,8 +32,7 @@ namespace Om
 			typename ThisItem,
 			typename ThisIterator
 		>
-		struct IteratorSink
-		:
+		struct IteratorSink:
 		DefaultSink<
 			ThisItem,
 			IteratorSink<

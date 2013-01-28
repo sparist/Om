@@ -35,8 +35,7 @@ namespace Om
 	\brief
 		The \ref lexicon Program implementation.
 	*/
-	struct Lexicon
-	:
+	struct Lexicon:
 	DefaultProgram< Lexicon >,
 	Translator
 	{
@@ -187,8 +186,7 @@ namespace Om
 	\brief
 		A Lexicon Element range.
 	*/
-	struct Lexicon::ElementRange
-	:
+	struct Lexicon::ElementRange:
 	Sources::DefaultSource<
 		Element const,
 		ElementRange
@@ -228,8 +226,7 @@ namespace Om
 	\brief
 		A Lexicon linked list node, extending Pair with next and prior pointers.
 	*/
-	struct Lexicon::Node
-	:
+	struct Lexicon::Node:
 	Pair
 	{
 	public: // MARK: public (static)

@@ -30,8 +30,7 @@ namespace Om
 		typename ThisImplementation,
 		typename ThisInterface = Moveable
 	>
-	struct DefaultMoveable
-	:
+	struct DefaultMoveable:
 	ThisInterface
 	{
 		template< typename TheMoveable >

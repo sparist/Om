@@ -32,8 +32,7 @@ namespace Om
 
 	Encloses a Program in Symbols::theStartOperandSymbol and Symbols::theEndOperandSymbol.  The Operand owns the embedded Program.
 	*/
-	struct Operand
-	:
+	struct Operand:
 	DefaultElement< Operand >
 	{
 	public: // MARK: public (static)

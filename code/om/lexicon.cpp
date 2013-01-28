@@ -32,16 +32,14 @@ inline char const * Type_::GetName()
 
 // MARK: public (non-static)
 
-inline Type_::Lexicon()
-:
+inline Type_::Lexicon():
 thisMap(),
 thisFirstNode(),
 thisLastNode()
 {
 }
 
-inline Type_::Lexicon( Lexicon const & theLexicon )
-:
+inline Type_::Lexicon( Lexicon const & theLexicon ):
 DefaultProgram< Lexicon >( theLexicon ),
 thisMap(),
 thisFirstNode(),
@@ -374,15 +372,13 @@ inline Type_::Node & Type_::GetOperandTaker( TheOperator & theOperator )
 
 // MARK: public (non-static)
 
-inline Type_::ElementRange()
-:
+inline Type_::ElementRange():
 thisNode(),
 thisOffset()
 {
 }
 
-inline Type_::ElementRange( Lexicon const & theLexicon )
-:
+inline Type_::ElementRange( Lexicon const & theLexicon ):
 thisNode( theLexicon.thisFirstNode ),
 thisOffset(
 	this->thisNode &&
@@ -486,8 +482,7 @@ inline void Type_::UnlinkLast(
 
 // MARK: public (non-static)
 
-inline Type_::Node()
-:
+inline Type_::Node():
 thisPriorNode(),
 thisNextNode()
 {

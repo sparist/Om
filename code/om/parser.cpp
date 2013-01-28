@@ -26,8 +26,7 @@
 
 inline Type_::Parser(
 	Source< CodePoint const > & theCodePointSource
-)
-:
+):
 thisCodePointSource( theCodePointSource ),
 thisDepth(),
 thisIsEncoded()

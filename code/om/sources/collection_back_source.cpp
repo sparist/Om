@@ -32,8 +32,7 @@
 
 Template_
 template< typename TheCollection >
-inline Type_::CollectionBackSource( TheCollection & theCollection )
-:
+inline Type_::CollectionBackSource( TheCollection & theCollection ):
 IteratorPairSource< ThisItem, ThisIterator >(
 	theCollection.rbegin(),
 	theCollection.rend()

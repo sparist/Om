@@ -32,8 +32,7 @@ namespace Om
 			typename ThisItem,
 			typename ThisIterator
 		>
-		struct CollectionBackSource
-		:
+		struct CollectionBackSource:
 		IteratorPairSource<
 			ThisItem,
 			ThisIterator

@@ -30,8 +30,7 @@ Template_
 inline Type_::CodePointStringFrontSource(
 	ThisStringIterator theStringStart,
 	ThisStringIterator const theStringEnd
-)
-:
+):
 thisStringIterator( theStringStart ),
 thisStringEnd( theStringEnd ),
 thisCodePoint()

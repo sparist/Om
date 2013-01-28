@@ -43,8 +43,7 @@ inline Type_::~Literal()
 	} catch( ... ){}
 }
 
-inline Type_::Literal()
-:
+inline Type_::Literal():
 thisElementDeque()
 {
 }
@@ -283,8 +282,7 @@ inline void Type_::TakeAtom( TheAtom & theAtom )
 
 // MARK: public (non-static)
 
-inline Type_< Om::Literal >::ElementRange( Literal & theLiteral )
-:
+inline Type_< Om::Literal >::ElementRange( Literal & theLiteral ):
 Sources::CollectionFrontSource<
 	Element,
 	ElementDeque::iterator
@@ -292,8 +290,7 @@ Sources::CollectionFrontSource<
 {
 }
 
-inline Type_< Om::Literal const >::ElementRange( Literal const & theLiteral )
-:
+inline Type_< Om::Literal const >::ElementRange( Literal const & theLiteral ):
 Sources::CollectionFrontSource<
 	Element const,
 	ElementDeque::const_iterator

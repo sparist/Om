@@ -30,8 +30,7 @@ namespace Om
 			An Operation that applies each Translator to a Program.
 		*/
 		template< typename ThisImplementation >
-		struct TranslateOperation
-		:
+		struct TranslateOperation:
 		DefaultOperation< ThisImplementation >
 		{
 		public: // MARK: public (static)

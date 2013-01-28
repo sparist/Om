@@ -28,8 +28,7 @@ namespace Om
 
 	Element instances are used to represent both the Program, and the single item that the Program contains (when IsEmpty() returns false).
 	*/
-	struct Element
-	:
+	struct Element:
 	Program
 	{
 	public: // MARK: public (non-static)

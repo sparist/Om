@@ -32,8 +32,7 @@ namespace Om
 		\brief
 			The \ref equals_operation Operation implementation.
 		*/
-		struct EqualsOperation
-		:
+		struct EqualsOperation:
 		DefaultOperation< EqualsOperation >
 		{
 		public: // MARK: public (static)

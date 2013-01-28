@@ -119,8 +119,7 @@ inline bool Type_::Translate(
 
 // MARK: private (non-static)
 
-inline Type_::System()
-:
+inline Type_::System():
 thisMap()
 {
 }

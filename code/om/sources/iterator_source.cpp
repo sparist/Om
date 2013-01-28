@@ -31,8 +31,7 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::IteratorSource( ThisIterator const theIterator )
-:
+inline Type_::IteratorSource( ThisIterator const theIterator ):
 thisIterator( theIterator )
 {
 }
@@ -153,8 +152,7 @@ namespace Om
 
 			struct Item
 			{
-				Item( char theCodeUnit )
-				:
+				Item( char theCodeUnit ):
 				thisCodeUnit( theCodeUnit )
 				{
 				}

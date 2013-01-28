@@ -34,8 +34,7 @@ namespace Om
 
 	As a Queue, the Operator appends each taken Element verbatim.
 	*/
-	struct Operator
-	:
+	struct Operator:
 	DefaultAtom< Operator >
 	{
 	public: // MARK: public (static)

@@ -33,8 +33,7 @@ inline Type_::~Pair()
 {
 }
 
-inline Type_::Pair()
-:
+inline Type_::Pair():
 thisOperator(),
 thisOperand()
 {

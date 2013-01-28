@@ -49,8 +49,8 @@ inline std::auto_ptr< TheGiveable > Om::Give(
 )
 {
 	return(
-		theGiveable.get() ?
-		Give( *theGiveable ) :
+		theGiveable.get()?
+		Give( *theGiveable ):
 		std::auto_ptr< TheGiveable >()
 	);
 }

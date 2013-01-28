@@ -41,8 +41,7 @@ inline Type_::~Evaluator()
 inline Type_::Evaluator(
 	Queue & theOutput,
 	Translator const & theTranslator
-)
-:
+):
 thisOutput( theOutput ),
 thisTranslator( theTranslator ),
 thisOperationVector(),

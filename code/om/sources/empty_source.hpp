@@ -29,8 +29,7 @@ namespace Om
 			An empty Source.
 		*/
 		template< typename ThisItem >
-		struct EmptySource
-		:
+		struct EmptySource:
 		DefaultSource<
 			ThisItem,
 			EmptySource< ThisItem >

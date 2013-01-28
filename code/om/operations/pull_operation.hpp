@@ -32,8 +32,7 @@ namespace Om
 			typename ThisProgram,
 			typename ThisImplementation
 		>
-		struct PullOperation
-		:
+		struct PullOperation:
 		DefaultOperation<
 			PullOperation<
 				ThisProgram,

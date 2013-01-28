@@ -32,8 +32,7 @@ namespace Om
 			typename ThisItem,
 			typename ThisImplementation
 		>
-		struct DefaultSink
-		:
+		struct DefaultSink:
 		Sink< ThisItem >,
 		std::iterator<
 			std::output_iterator_tag,

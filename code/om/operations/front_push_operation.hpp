@@ -32,8 +32,7 @@ namespace Om
 			typename ThisProgram,
 			typename ThisImplementation
 		>
-		struct FrontPushOperation
-		:
+		struct FrontPushOperation:
 		DefaultOperation<
 			FrontPushOperation<
 				ThisProgram,

@@ -30,8 +30,7 @@ namespace Om
 	This struct can be considered a "fat pointer" that holds the pointee, such that copying the pointer also copies the pointee (lazily).
 	*/
 	template< typename ThisValue >
-	struct Owner
-	:
+	struct Owner:
 	Taker<
 		Owner< ThisValue >
 	>

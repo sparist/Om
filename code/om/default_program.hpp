@@ -29,8 +29,7 @@ namespace Om
 		typename ThisImplementation,
 		typename ThisInterface = Program
 	>
-	struct DefaultProgram
-	:
+	struct DefaultProgram:
 	DefaultQueue<
 		ThisImplementation,
 		DefaultGiveable<

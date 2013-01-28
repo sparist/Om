@@ -33,8 +33,7 @@ namespace Om
 		\brief
 			The \ref inject_operation Operation implementation.
 		*/
-		struct InjectOperation
-		:
+		struct InjectOperation:
 		DefaultOperation< InjectOperation >
 		{
 		public: // MARK: public (static)

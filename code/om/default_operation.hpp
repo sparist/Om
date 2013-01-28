@@ -31,8 +31,7 @@ namespace Om
 		A partial implementation of Operation.
 	*/
 	template< typename ThisImplementation >
-	struct DefaultOperation
-	:
+	struct DefaultOperation:
 	Operation
 	{
 	public: // MARK: public (static)

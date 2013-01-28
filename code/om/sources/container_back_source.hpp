@@ -32,8 +32,7 @@ namespace Om
 			typename ThisItem,
 			typename ThisContainer
 		>
-		struct ContainerBackSource
-		:
+		struct ContainerBackSource:
 		DefaultSource<
 			ThisItem,
 			ContainerBackSource<

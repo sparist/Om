@@ -31,8 +31,7 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::IteratorSink( ThisIterator theIterator )
-:
+inline Type_::IteratorSink( ThisIterator theIterator ):
 thisIterator( theIterator )
 {
 }

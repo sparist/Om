@@ -36,8 +36,7 @@ namespace Om
 		\brief
 			The \ref find_operation Operation implementation.
 		*/
-		struct FindOperation
-		:
+		struct FindOperation:
 		DefaultOperation< FindOperation >
 		{
 		public: // MARK: public (static)

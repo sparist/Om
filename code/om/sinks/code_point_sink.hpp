@@ -30,8 +30,7 @@ namespace Om
 			A #CodePoint Sink that pushes each code unit to the iterator.
 		*/
 		template< typename ThisCodeUnitIterator >
-		struct CodePointSink
-		:
+		struct CodePointSink:
 		DefaultSink<
 			CodePoint const,
 			CodePointSink< ThisCodeUnitIterator >

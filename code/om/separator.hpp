@@ -35,8 +35,7 @@ namespace Om
 
 	As a Queue, the Separator filters out all top-level Element instances except Separator.
 	*/
-	struct Separator
-	:
+	struct Separator:
 	DefaultAtom< Separator >
 	{
 	public: // MARK: public (static)

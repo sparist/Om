@@ -30,8 +30,7 @@
 
 inline Type_::Writer(
 	Sink< CodePoint const > & theCodePointSink
-)
-:
+):
 thisCodePointSink( theCodePointSink )
 {
 }
