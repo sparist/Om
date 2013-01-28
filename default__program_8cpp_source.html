@@ -140,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">bool</span> <span class="keyword">const</span> theRangeHasNext = *theRange;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">bool</span> <span class="keyword">const</span> theOtherRangeHasNext = *theOtherRange;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span>(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            !theRangeHasNext ||</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            !theRangeHasNext or</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            !theOtherRangeHasNext</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ){</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">return</span>( theRangeHasNext == theOtherRangeHasNext );</div>
@@ -183,7 +183,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keyword">typeid</span>( TheCast ) == <span class="keyword">typeid</span>( ThisImplementation )</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    );</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span>(</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">typeid</span>( TheCast ) == <span class="keyword">typeid</span>( theQueue ) &amp;&amp;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">typeid</span>( TheCast ) == <span class="keyword">typeid</span>( theQueue ) and</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        this-&gt;IsEmpty()</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ){</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        this-&gt;Take(</div>

@@ -110,38 +110,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keyword">typename</span> ThisItem,</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">typename</span> ThisImplementation</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        &gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="struct_om_1_1_sources_1_1_default_source.html">   35</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="struct_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source.">DefaultSource</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        :</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="struct_om_1_1_source.html" title="Any object that items can be pulled from.">Source</a>&lt; ThisItem &gt;,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::iterator&lt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::input_iterator_tag,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            ThisItem</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        &gt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#afbee54564e1367618b36451e506e2e32">~DefaultSource</a>() = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a869ea4d6cc8c03f2357ecde0ed5e1ad9">operator ==</a>(</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="struct_om_1_1_source.html" title="Any object that items can be pulled from.">Source&lt; ThisItem &gt;</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a869ea4d6cc8c03f2357ecde0ed5e1ad9">operator ==</a>( ThisImplementation <span class="keyword">const</span> &amp; ) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            ThisImplementation &amp; <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a6d9bb3a2efe88141d9bcf7799001634b" title="Pulls the next item from the Source.">operator ++</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            ThisImplementation <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a6d9bb3a2efe88141d9bcf7799001634b" title="Pulls the next item from the Source.">operator ++</a>( <span class="keywordtype">int</span> );</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="struct_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source.">DefaultSource</a> &amp; <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a4f598b1fc5e097ca7e9adf3bb536c289">operator =</a>( <a class="code" href="struct_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source.">DefaultSource</a> <span class="keyword">const</span> &amp; );</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        };</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__source_8cpp.html" title="Om cpp file.">om/sources/default_source.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="struct_om_1_1_sources_1_1_default_source.html">   35</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="struct_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source.">DefaultSource</a>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="struct_om_1_1_source.html" title="Any object that items can be pulled from.">Source</a>&lt; ThisItem &gt;,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        std::iterator&lt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            std::input_iterator_tag,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            ThisItem</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        &gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#afbee54564e1367618b36451e506e2e32">~DefaultSource</a>() = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a869ea4d6cc8c03f2357ecde0ed5e1ad9">operator ==</a>(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="struct_om_1_1_source.html" title="Any object that items can be pulled from.">Source&lt; ThisItem &gt;</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a869ea4d6cc8c03f2357ecde0ed5e1ad9">operator ==</a>( ThisImplementation <span class="keyword">const</span> &amp; ) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            ThisImplementation &amp; <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a6d9bb3a2efe88141d9bcf7799001634b" title="Pulls the next item from the Source.">operator ++</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            ThisImplementation <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a6d9bb3a2efe88141d9bcf7799001634b" title="Pulls the next item from the Source.">operator ++</a>( <span class="keywordtype">int</span> );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="struct_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source.">DefaultSource</a> &amp; <a class="code" href="struct_om_1_1_sources_1_1_default_source.html#a4f598b1fc5e097ca7e9adf3bb536c289">operator =</a>( <a class="code" href="struct_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source.">DefaultSource</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        };</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__source_8cpp.html" title="Om cpp file.">om/sources/default_source.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 		<hr class="footer"/><address class="footer"><small>

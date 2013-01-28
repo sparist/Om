@@ -159,8 +159,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">inline</span> Type_::operator Boolean()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span>(</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        !*<span class="keyword">this</span> ?</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        0 :</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        ( !*<span class="keyword">this</span> )?</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        0:</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        &amp;Source::UncomparableBoolean</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    );</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
