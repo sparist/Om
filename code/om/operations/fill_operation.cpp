@@ -1,7 +1,7 @@
 /*!
 \file
 	\brief
-		Om cpp file.
+		<a href="http://om-language.org">Om</a> source file.
 	\version
 		0.1.2
 	\date
