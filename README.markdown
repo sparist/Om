@@ -1,7 +1,6 @@
 # Documentation
 
-See the <a href="http://sparist.github.com/Om">the Om GitHub Page</a> for
-documentation.
+See <a href="http://sparist.github.com/Om">sparist.github.com/Om</a> for documentation.
 
 # Changes
 
@@ -28,20 +27,17 @@ documentation.
 	-	`codepoints->` to ``code` points->``
 -	Modified:
 	-	`evaluate`: now evaluates in place using the current environment
-	-	`find`: now provides information about whether the operator
-		is included, and the output is reordered for ease of use
+	-	`find`: now provides information about whether the operator is included, and the output is reordered for ease of use
 
 ### Programs
 
--	Fixed Operand program semantics so that an "empty" Operand is an empty
-	Program.
+-	Fixed Operand program semantics so that an "empty" Operand is an empty Program.
 
 ### Documentation
 
 -	Made documentation content and style improvements.
 -	Removed temporary generated documentation file on Windows.
--	Created "gh-pages" branch containing generated Doxygen for
-	<a href="http://sparist.github.com/Om">the Om GitHub Page</a>.
+-	Created "gh-pages" branch containing generated Doxygen for the documentation.
 -	Updated Doxygen to 1.8.3.
 
 ### Testing
