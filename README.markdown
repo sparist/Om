@@ -1,6 +1,6 @@
 # Documentation
 
-See <a href="http://sparist.github.com/Om">sparist.github.com/Om</a> for documentation.
+See the <a href="http://sparist.github.com/Om">Om page</a> for documentation.
 
 # Changes
 
