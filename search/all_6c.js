@@ -19,6 +19,7 @@ var searchData=
   ['lexiconbackpushoperation',['LexiconBackPushOperation',['../struct_om_1_1_operations_1_1_lexicon_back_push_operation.html',1,'Om::Operations']]],
   ['lexiconfrontpushoperation',['LexiconFrontPushOperation',['../struct_om_1_1_operations_1_1_lexicon_front_push_operation.html',1,'Om::Operations']]],
   ['lexiconoperation',['LexiconOperation',['../namespace_om_1_1_operations.html#af030cdf9ea74b069265ff361bc712d4f',1,'Om::Operations']]],
+  ['license',['License',['../license.html',1,'']]],
   ['linktoback',['LinkToBack',['../struct_om_1_1_lexicon_1_1_node.html#a6e9f4c5291c3efd8a71f74faa7a8a7f9',1,'Om::Lexicon::Node']]],
   ['literal',['Literal',['../struct_om_1_1_literal.html',1,'Om']]],
   ['literal',['Literal',['../struct_om_1_1_literal.html#ac7299589e5544819c3afbc3618f62ce9',1,'Om::Literal::Literal()'],['../group__literal.html',1,'(Global Namespace)']]],

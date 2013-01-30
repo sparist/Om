@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main_20page',['Main Page',['../index.html',1,'']]],
   ['macros_2ecpp',['macros.cpp',['../macros_8cpp.html',1,'']]],
   ['macros_2ehpp',['macros.hpp',['../macros_8hpp.html',1,'']]],
   ['main',['main',['../om_8cpp.html#a597a38d78dcca44c98ffacf0be043d31',1,'om.cpp']]],
