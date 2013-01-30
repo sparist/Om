@@ -7,9 +7,9 @@ The development of the <a href="http://om-language.org">Om language</a> was guid
 
 %Om is:
 -	A <b>concatenative, homoiconic programming language</b> with:
-	-	Minimal syntax, comprised of only three elements.
-	-	Prefix, rather than postfix, notation.  Instead of a data stack, functions manipulate the remainder of the program itself.
-	-	A unique <em>panmorphic</em> type system in which there is only one data type&mdash;the program&mdash;exposed in the language, even though the implementation can optimize data representations for operations.
+	-	A <b>minimal syntax</b> comprised of only three elements.
+	-	<b>Prefix notation</b> rather than postfix.  Instead of a data stack, functions manipulate the remainder of the program itself.
+	-	A unique <em>panmorphic</em> type system in which there is only <b>one data type</b>&mdash;the program&mdash;exposed in the language, even though the implementation can optimize data representations for operations.
 -	An <b>algorithm notation language</b> that is completely abstracted from any concept of a computer.
 -	A <b>data transfer format</b> that is trivial to parse.
 -	A <b>C++ scripting library</b> that can be:
@@ -17,7 +17,7 @@ The development of the <a href="http://om-language.org">Om language</a> was guid
 	-	<b>Extended</b> with new data types or operations through class derivation.
 -	<b>Unicode-correct</b>: any <a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order marker) defines a valid %Om program.
 
-%Om is <b>not</b>:
+%Om is <b><em>not</em></b>:
 -	<b>Complete</b>.  Although the intent is to develop %Om into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic number and file operations) and optimizations before it can be considered useful for any real-world purpose.  It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.
 -	<b>Stationary</b>.  %Om will likely undergo significant changes on its way to version 1.0.
 
