@@ -115,7 +115,7 @@ All program implementations provided are documented in the \ref programs module.
 The evaluator reads, parses and evaluates the input stream in a single pass, sending results to the output stream as soon as they can be evaluated.  This is possible because %Om uses prefix notation rather than the postfix notation typical of concatenative languages.  Prefix notation has the following advantages over postfix notation:
 -	Stack underflows are impossible.
 -	Operations can be optimized to only read into memory the data that is required; stack-based postfix languages have no knowledge of the operation to apply until the data is already in memory, on the stack.
--	Incoming data, such as events, become simple to handle at a language level: a program might evaluate to a function that acts as a state machine, processing any additional operands appended to the program and transitioning to a new state, ready to process new data.
+-	Incoming data, such as events, become simple to handle at a language level: a program might evaluate to a function that acts as a state machine that processes any additional operands appended to the program and transitions to a new state, ready to process new data.
 -	An IDE can provide hints to the user about the data that is expected by an operation.
 
 \page examples Examples
