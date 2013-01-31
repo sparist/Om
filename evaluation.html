@@ -120,10 +120,10 @@ Functions</h1>
 </li>
 </ul>
 <h2><a class="anchor" id="evaluation__functions__empty"></a>
-Empty Function</h2>
+Empty Program</h2>
 <p>The empty program evaluates to the identity function.</p>
 <h2><a class="anchor" id="evaluation__functions__single"></a>
-Single-Element Functions</h2>
+Single-Element Programs</h2>
 <p>Programs that contain only a single element evaluate to functions as follows:</p>
 <ul>
 <li><b>Separator</b>: Evaluates to the identity function.</li>
@@ -131,7 +131,7 @@ Single-Element Functions</h2>
 <li><b>Operator</b>: Evaluates to the operation defined for the operator in the environment; if none, evaluates to a constant function that pushes the operator, followed by all input terms, onto the output program.</li>
 </ul>
 <h2><a class="anchor" id="evaluation__functions__multiple"></a>
-Multiple-Element Functions</h2>
+Multiple-Element Programs</h2>
 <p>Programs that contain multiple elements can be considered a concatenation of sub-programs that each contain one of the elements. The concatenated program thus evaluates to the composition of the functions that each sub-program evaluates to.</p>
 <p>For example, program "A B" is the concatenation of programs "A", " ", and "B". The separator evaluates to the identity operation and can be disregarded. The programs "A" and "B" evaluate to functions which will be denoted as <code>A</code> and <code>B</code>, respectively. The input and output are handled by the composed function as follows:</p>
 <ul>

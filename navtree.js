@@ -12,9 +12,9 @@ var NAVTREE =
     [ "Evaluation", "evaluation.html", [
       [ "Prefix Notation", "evaluation.html#evaluation__prefix", null ],
       [ "Functions", "evaluation.html#evaluation__functions", [
-        [ "Empty Function", "evaluation.html#evaluation__functions__empty", null ],
-        [ "Single-Element Functions", "evaluation.html#evaluation__functions__single", null ],
-        [ "Multiple-Element Functions", "evaluation.html#evaluation__functions__multiple", null ],
+        [ "Empty Program", "evaluation.html#evaluation__functions__empty", null ],
+        [ "Single-Element Programs", "evaluation.html#evaluation__functions__single", null ],
+        [ "Multiple-Element Programs", "evaluation.html#evaluation__functions__multiple", null ],
         [ "Implementation", "evaluation.html#evaluation__functions__implementation", null ]
       ] ],
       [ "Data Types", "evaluation.html#evaluation__data_types", [
