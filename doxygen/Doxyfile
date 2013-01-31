@@ -976,7 +976,7 @@ HTML_COLORSTYLE_GAMMA  = 130
 # page will contain the date and time when the page was generated. Setting 
 # this to NO can help when comparing the output of multiple runs.
 
-HTML_TIMESTAMP         = YES
+HTML_TIMESTAMP         = NO
 
 # If the HTML_DYNAMIC_SECTIONS tag is set to YES then the generated HTML 
 # documentation will contain sections that can be hidden and shown after the 
@@ -1177,7 +1177,7 @@ ENUM_VALUES_PER_LINE   = 1
 # used to set the initial width (in pixels) of the frame in which the tree 
 # is shown.
 
-TREEVIEW_WIDTH         = 250
+TREEVIEW_WIDTH         = 200
 
 # When the EXT_LINKS_IN_WINDOW option is set to YES doxygen will open 
 # links to external symbols imported via tag files in a separate window.
