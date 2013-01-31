@@ -7,14 +7,14 @@ The development of the <a href="http://om-language.org">Om language</a> was guid
 
 %Om is:
 -	A <b>concatenative, homoiconic programming language</b> with:
-	-	A <b>minimal syntax</b> comprised of only three elements.
-	-	<b>Prefix notation</b> rather than postfix.  Instead of a data stack, functions manipulate the remainder of the program itself.
-	-	A unique <em>panmorphic</em> type system that allows programming <b>without data types</b>.
+	-	\ref syntax "Minimal syntax" containing only three elements.
+	-	\ref evaluation__prefix "Prefix notation" in which functions manipulate the remainder of the program itself.
+	-	\ref evaluation__data_types "Panmorphic typing" that allows programming without data types.
 -	An <b>algorithm notation language</b> that is completely abstracted from any concept of a computer.
 -	A <b>data transfer format</b> that is trivial to parse.
 -	A <b>C++ scripting library</b> that can be:
-	-	<b>Embedded</b> into any C++ or Objective-C++ program.
-	-	<b>Extended</b> with new data types or operations through class derivation.
+	-	\ref using "Embedded" into any C++ or Objective-C++ program.
+	-	\ref contributing__developing "Extended" with new data types or operations through class derivation.
 -	<b>Unicode-correct</b>: any <a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order marker) defines a valid %Om program.
 
 %Om is <b><em>not</em></b>:
