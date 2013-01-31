@@ -94,10 +94,24 @@ $(document).ready(function(){initNavTree('examples.html','');});
 <div class="title">Examples </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The following program contains a single operand:</p>
+<div class="textblock"><p>The following program contains a single operand containing an operator "<code>Hello,</code>", a separator "<code> </code>", and another operator "<code>world!</code>":</p>
 <ul>
 <li><code>{Hello, world!}</code> <blockquote class="doxtable">
 <p><code>{Hello, world!}</code></p>
+</blockquote>
+</li>
+</ul>
+<p>The following program contains a single operand containing an operator "<code>Hello,</code>", a separator "<code> </code>", and an operand "<code>{universe!}</code>" which in turn contains a single operator "<code>universe!</code>":</p>
+<ul>
+<li><code>{Hello, {universe!}}</code> <blockquote class="doxtable">
+<p><code>{Hello, {universe!}}</code></p>
+</blockquote>
+</li>
+</ul>
+<p>Note that separators are significant inside operands:</p>
+<ul>
+<li><code>{Hello, &#160;&#160;world!}</code> <blockquote class="doxtable">
+<p><code>{Hello, &#160;&#160;world!}</code></p>
 </blockquote>
 </li>
 </ul>
