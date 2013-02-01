@@ -32,13 +32,13 @@ The following reading may help explain some of the concepts that contributed to 
 
 \section syntax__program Program
 
-An %Om <b>program</b> is a combination of three elements&mdash;operator, separator, and operand&mdash;as follows:
+An %Om program is a combination of three elements&mdash;operator, separator, and operand&mdash;as follows:
 
 \image html "program.png"
 
 \section syntax__operator Operator
 
-An <b>operator</b> has the following syntax:
+An operator has the following syntax:
 
 \image html "operator.png"
 
@@ -46,13 +46,13 @@ Backquotes (<tt>`</tt>) in operators are disregarded if the code point following
 
 \section syntax__separator Separator
 
-A <b>separator</b> has the following syntax:
+A separator has the following syntax:
 
 \image html "separator.png"
 
 \section syntax__operand Operand
 
-An <b>operand</b> has the following syntax:
+An operand has the following syntax:
 
 \image html "operand.png"
 
