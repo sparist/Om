@@ -18,7 +18,6 @@
 	Om::Definition
 
 namespace Om {
-
 	// MARK: - Om::Definition
 	/*!
 	\brief

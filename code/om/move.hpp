@@ -21,7 +21,6 @@
 
 // MARK: - Om
 namespace Om {
-
 	/*!
 	\return
 		A polymorphic move of the object.

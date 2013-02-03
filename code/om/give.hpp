@@ -21,7 +21,6 @@
 
 // MARK: - Om
 namespace Om {
-
 	/*!
 	\brief
 		Calls #Move on the object.

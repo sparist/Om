@@ -20,7 +20,6 @@
 	#include "om/moveable.hpp"
 
 namespace Om {
-
 	// MARK: - Om::DefaultMoveable
 	/*!
 	\brief
@@ -32,7 +31,6 @@ namespace Om {
 	>
 	class DefaultMoveable:
 	public ThisInterface {
-
 		template< typename TheMoveable >
 		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );
 

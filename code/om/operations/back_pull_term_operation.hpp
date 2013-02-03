@@ -23,13 +23,11 @@
 	"terms->"
 
 namespace Om {
-
 	//! \cond
 	class Expression;
 	//! \endcond
 
 	namespace Operations {
-
 		// MARK: - Om::Operations::BackPullTermOperation
 		/*!
 		\brief

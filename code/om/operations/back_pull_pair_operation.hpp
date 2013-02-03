@@ -23,13 +23,11 @@
 	"pairs->"
 
 namespace Om {
-
 	//! \cond
 	class Lexicon;
 	//! \endcond
 
 	namespace Operations {
-
 		// MARK: - Om::Operations::BackPullPairOperation
 		/*!
 		\brief

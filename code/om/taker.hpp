@@ -18,7 +18,6 @@
 	Om::Taker
 
 namespace Om {
-
 	// MARK: - Om::Taker
 	/*!
 	\brief

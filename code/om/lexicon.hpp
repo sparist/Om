@@ -25,7 +25,6 @@
 	"lexicon"
 
 namespace Om {
-
 	//! \cond
 	class Evaluation;
 	//! \endcond

@@ -20,7 +20,6 @@
 	#include "om/default_program.hpp"
 
 namespace Om {
-
 	// MARK: - Om::DefaultElement
 	template<
 		typename ThisImplementation,

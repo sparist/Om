@@ -23,13 +23,11 @@
 	"elements->operand"
 
 namespace Om {
-
 	//! \cond
 	class Literal;
 	//! \endcond
 
 	namespace Operations {
-
 		// MARK: - Om::Operations::BackPullOperandOperation
 		/*!
 		\brief

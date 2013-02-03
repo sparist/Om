@@ -22,7 +22,6 @@
 
 namespace Om {
 	namespace Operations {
-
 		// MARK: - Om::Operations::TranslateOperation
 		/*!
 		\brief

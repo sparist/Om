@@ -20,7 +20,6 @@
 	#include "om/operation.hpp"
 
 namespace Om {
-
 	//! \cond
 	class Operator;
 	//! \endcond

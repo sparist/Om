@@ -20,7 +20,6 @@
 	#include "om/translator.hpp"
 
 namespace Om {
-
 	// MARK: - Om::Environment
 	/*!
 	\brief

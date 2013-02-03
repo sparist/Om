@@ -20,7 +20,6 @@
 	#include "external.hpp"
 
 namespace Om {
-
 	//! \cond
 	class Operand;
 

@@ -23,13 +23,11 @@
 	"operand<-elements"
 
 namespace Om {
-
 	//! \cond
 	class Literal;
 	//! \endcond
 
 	namespace Operations {
-
 		// MARK: - Om::Operations::FrontPullOperandOperation
 		/*!
 		\brief

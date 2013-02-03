@@ -21,7 +21,6 @@
 	#include "om/moveable.hpp"
 
 namespace Om {
-
 	// MARK: - Om::Giveable
 	/*!
 	\brief

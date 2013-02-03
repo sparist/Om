@@ -22,7 +22,6 @@
 
 namespace Om {
 	namespace Operations {
-
 		/*!
 		\brief
 			The \ref operator_operation Operation implementation.

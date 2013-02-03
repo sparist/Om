@@ -20,7 +20,6 @@
 	#include "om/element.hpp"
 
 namespace Om {
-
 	// MARK: - Om::Atom
 	/*!
 	\brief

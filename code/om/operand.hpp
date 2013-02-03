@@ -24,7 +24,6 @@
 	"operand"
 
 namespace Om {
-
 	// MARK: - Om::Operand
 	/*!
 	\brief

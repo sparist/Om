@@ -18,7 +18,6 @@
 	Om::Operations
 
 namespace Om {
-
 	/*!
 	\brief
 		A namespace for all \ref operations.

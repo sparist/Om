@@ -31,7 +31,6 @@ inline char const * Type_::GetName() {
 // MARK: public (non-static)
 
 inline Type_::~Literal() {
-
 	// Flatten the ElementDeque to avoid recursive destructor calls.
 	try {
 		while( !this->thisElementDeque.empty() ) {
@@ -297,7 +296,6 @@ inline void boost::swap(
 namespace Om {
 	SUITE( Literal ) {
 		TEST( Equality ) {
-
 			// Positive match
 			CHECK_EQUAL(
 				"{{a{b}{c}\nd{e}}}",

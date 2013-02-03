@@ -25,7 +25,6 @@
 
 namespace Om {
 	namespace Operations {
-
 		// MARK: - Om::Operations::DropOperation
 		/*!
 		\brief

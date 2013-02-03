@@ -18,7 +18,6 @@
 	Om::Source
 
 namespace Om {
-
 	// MARK: - Om::Source
 	/*!
 	\brief

@@ -21,7 +21,6 @@
 
 namespace Om {
 	namespace Sources {
-
 		// MARK: - Om::Sources::CollectionBackSource
 		/*!
 		\brief

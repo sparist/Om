@@ -23,7 +23,6 @@
 	"expression"
 
 namespace Om {
-
 	// MARK: - Om::Expression
 	/*!
 	\brief

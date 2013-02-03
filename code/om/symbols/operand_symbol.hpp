@@ -57,7 +57,6 @@
 
 namespace Om {
 	namespace Symbols {
-
 		/*!
 		\brief
 			An Operand symbol.

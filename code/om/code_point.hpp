@@ -20,7 +20,6 @@
 	#include "external.hpp"
 
 namespace Om {
-
 	/*!
 	\brief
 		A UTF-8 code point.

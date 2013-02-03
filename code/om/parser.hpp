@@ -21,7 +21,6 @@
 	#include "om/sources/default_source.hpp"
 
 namespace Om {
-
 	// MARK: - Om::Parser
 	/*!
 	\brief

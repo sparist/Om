@@ -22,7 +22,6 @@
 	#include "om/giveable.hpp"
 
 namespace Om {
-
 	// MARK: - Om::DefaultGiveable
 	/*!
 	\brief

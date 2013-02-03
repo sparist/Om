@@ -26,7 +26,6 @@
 	"operator"
 
 namespace Om {
-
 	// MARK: - Om::Operator
 	/*!
 	\brief

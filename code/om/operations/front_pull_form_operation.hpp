@@ -23,13 +23,11 @@
 	"<-forms"
 
 namespace Om {
-
 	//! \cond
 	class Expression;
 	//! \endcond
 
 	namespace Operations {
-
 		// MARK: - Om::Operations::FrontPullFormOperation
 		/*!
 		\brief

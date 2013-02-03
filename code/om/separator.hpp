@@ -25,7 +25,6 @@
 	"separator"
 
 namespace Om {
-
 	// MARK: - Om::Separator
 	/*!
 	\brief

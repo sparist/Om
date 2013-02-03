@@ -20,7 +20,6 @@
 	#include "external.hpp"
 
 namespace Om {
-
 	// MARK: - Om
 	/*!
 	\return

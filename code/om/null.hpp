@@ -23,7 +23,6 @@
 	"null"
 
 namespace Om {
-
 	// MARK: - Om::Null
 	/*!
 	\brief

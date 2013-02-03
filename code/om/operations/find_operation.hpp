@@ -24,13 +24,11 @@
 	"find"
 
 namespace Om {
-
 	//! \cond
 	class Lexicon;
 	//! \endcond
 
 	namespace Operations {
-
 		// MARK: - Om::Operations::FindOperation
 		/*!
 		\brief

@@ -35,7 +35,6 @@
 
 namespace Om {
 	namespace Symbols {
-
 		/*!
 		\brief
 			An Operator symbol.

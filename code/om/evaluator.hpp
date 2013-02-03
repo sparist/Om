@@ -20,7 +20,6 @@
 	#include "om/default_queue.hpp"
 
 namespace Om {
-
 	//! \cond
 	class Evaluation;
 

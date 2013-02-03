@@ -21,7 +21,6 @@
 	#include "om/default_queue.hpp"
 
 namespace Om {
-
 	//! \cond
 	template< typename ThisItem >
 	class Sink;

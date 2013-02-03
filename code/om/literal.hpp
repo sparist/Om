@@ -24,7 +24,6 @@
 	"literal"
 
 namespace Om {
-
 	// MARK: - Om::Literal
 	/*!
 	\brief

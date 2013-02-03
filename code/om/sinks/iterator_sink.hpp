@@ -21,7 +21,6 @@
 
 namespace Om {
 	namespace Sinks {
-
 		// MARK: - Om::Sinks::IteratorSink
 		/*!
 		\brief

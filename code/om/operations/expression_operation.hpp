@@ -23,7 +23,6 @@
 
 namespace Om {
 	namespace Operations {
-
 		/*!
 		\brief
 			The \ref expression_operation Operation implementation.

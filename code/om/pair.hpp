@@ -20,7 +20,6 @@
 	#include "om/operator.hpp"
 
 namespace Om {
-
 	// MARK: - Om::Pair
 	class Pair {
 	public: // MARK: public (static)

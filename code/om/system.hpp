@@ -21,7 +21,6 @@
 	#include "om/translator.hpp"
 
 namespace Om {
-
 	//! \cond
 	class Evaluation;
 
@@ -41,7 +40,6 @@ namespace Om {
 	*/
 	class System:
 	public Translator {
-
 		template< typename ThisOperation >
 		friend class Definition;
 

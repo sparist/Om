@@ -18,7 +18,6 @@
 	Om::Sink
 
 namespace Om {
-
 	// MARK: - Om::Sink
 	/*!
 	\brief

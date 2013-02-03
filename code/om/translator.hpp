@@ -20,7 +20,6 @@
 	#include "om/code_point.hpp"
 
 namespace Om {
-
 	//! \cond
 	class Evaluation;
 

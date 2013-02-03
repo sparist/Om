@@ -20,7 +20,6 @@
 	#include "om/queue.hpp"
 
 namespace Om {
-
 	// MARK: - Om::DefaultQueue
 	/*!
 	\brief

@@ -72,7 +72,6 @@
 
 namespace Om {
 	namespace Symbols {
-
 		/*!
 		\brief
 			A Separator symbol.

@@ -20,7 +20,6 @@
 	#include "om/copyable.hpp"
 
 namespace Om {
-
 	// MARK: - Om::DefaultCopyable
 	/*!
 	\brief
@@ -32,7 +31,6 @@ namespace Om {
 	>
 	class DefaultCopyable:
 	public ThisInterface {
-
 		template< typename TheCopyable >
 		friend std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
 

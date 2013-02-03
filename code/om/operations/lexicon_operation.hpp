@@ -23,7 +23,6 @@
 
 namespace Om {
 	namespace Operations {
-
 		/*!
 		\brief
 			The \ref lexicon_operation Operation implementation.

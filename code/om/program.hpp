@@ -22,7 +22,6 @@
 	#include "om/shareable.hpp"
 
 namespace Om {
-
 	//! \cond
 	class Element;
 

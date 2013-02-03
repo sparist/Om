@@ -21,7 +21,6 @@
 	#include "om/sources/collection_front_source.hpp"
 
 namespace Om {
-
 	// MARK: - Om::Form
 	/*!
 	\brief

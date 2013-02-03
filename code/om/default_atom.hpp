@@ -21,7 +21,6 @@
 	#include "om/default_element.hpp"
 
 namespace Om {
-
 	// MARK: - Om::DefaultAtom
 	template< typename ThisImplementation >
 	class DefaultAtom:

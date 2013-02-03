@@ -23,13 +23,11 @@
 	"operator<-elements"
 
 namespace Om {
-
 	//! \cond
 	class Literal;
 	//! \endcond
 
 	namespace Operations {
-
 		// MARK: - Om::Operations::FrontPullOperatorOperation
 		/*!
 		\brief

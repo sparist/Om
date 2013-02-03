@@ -26,7 +26,6 @@
 
 namespace Om {
 	namespace Operations {
-
 		// MARK: - Om::Operations::InjectOperation
 		/*!
 		\brief

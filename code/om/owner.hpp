@@ -21,7 +21,6 @@
 	#include "om/taker.hpp"
 
 namespace Om {
-
 	// MARK: - Om::Owner
 	/*!
 	\brief

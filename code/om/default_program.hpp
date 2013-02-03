@@ -23,7 +23,6 @@
 	#include "om/taker.hpp"
 
 namespace Om {
-
 	// MARK: - Om::DefaultProgram
 	template<
 		typename ThisImplementation,

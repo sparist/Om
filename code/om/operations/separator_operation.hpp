@@ -22,7 +22,6 @@
 
 namespace Om {
 	namespace Operations {
-
 		/*!
 		\brief
 			The \ref separator_operation Operation implementation.

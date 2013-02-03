@@ -18,7 +18,6 @@
 	Om::Symbols
 
 namespace Om {
-
 	/*!
 	\brief
 		A namespace for ASCII #CodePoint symbol enumerations.

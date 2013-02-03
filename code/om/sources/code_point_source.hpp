@@ -22,7 +22,6 @@
 
 namespace Om {
 	namespace Sources {
-
 		// MARK: - Om::Sources::CodePointSource
 		/*!
 		\brief
