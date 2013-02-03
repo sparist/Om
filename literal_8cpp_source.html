@@ -376,62 +376,67 @@ $(document).ready(function(){initNavTree('literal_8cpp_source.html','');});
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">        #include &quot;UnitTest++.h&quot;</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">// MARK: -</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keyword">namespace </span>Om {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    SUITE( Literal ) {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        TEST( Equality ) {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="comment">// Positive match</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            CHECK_EQUAL(</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                <span class="stringliteral">&quot;{{a{b}{c}\nd{e}}}&quot;</span>,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().<a class="code" href="class_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="stringliteral">&quot;= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}&quot;</span> )</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            );</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="comment">// Negative match</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            CHECK_EQUAL(</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                <span class="stringliteral">&quot;{}&quot;</span>,</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().<a class="code" href="class_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="stringliteral">&quot;= {a{b}{c}} {a{b}{d}}&quot;</span> )</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            );</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="comment">// Empty match</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            CHECK_EQUAL(</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="stringliteral">&quot;{}&quot;</span>,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().<a class="code" href="class_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="stringliteral">&quot;= {} {a{b}{c}}&quot;</span> )</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            );</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="comment">// Empty match</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            CHECK_EQUAL(</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <span class="stringliteral">&quot;{{}}&quot;</span>,</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().<a class="code" href="class_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="stringliteral">&quot;= {} {}&quot;</span> )</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            );</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        TEST( Recursion ) {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="keywordtype">size_t</span> <span class="keyword">const</span> theDepth = 50000;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keyword">namespace </span>Om {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    SUITE( Literal ) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        TEST( Equality ) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="comment">// Positive match</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            CHECK_EQUAL(</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <span class="stringliteral">&quot;{{a{b}{c}\nd{e}}}&quot;</span>,</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().<a class="code" href="class_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="stringliteral">&quot;= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}&quot;</span> )</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            );</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="comment">// Negative match</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            CHECK_EQUAL(</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                <span class="stringliteral">&quot;{}&quot;</span>,</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().<a class="code" href="class_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="stringliteral">&quot;= {a{b}{c}} {a{b}{d}}&quot;</span> )</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            );</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="comment">// Empty match</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            CHECK_EQUAL(</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                <span class="stringliteral">&quot;{}&quot;</span>,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().<a class="code" href="class_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="stringliteral">&quot;= {} {a{b}{c}}&quot;</span> )</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            );</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="comment">// Empty match</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            CHECK_EQUAL(</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                <span class="stringliteral">&quot;{{}}&quot;</span>,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().<a class="code" href="class_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Evaluate</a>( <span class="stringliteral">&quot;= {} {}&quot;</span> )</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            );</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        }</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            std::string theString;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">for</span>(</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                <span class="keywordtype">size_t</span> theLevel = theDepth;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                theLevel;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                --theLevel</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            ) {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                theString = <span class="stringliteral">&quot;{&quot;</span> + theString + <span class="stringliteral">&quot;}&quot;</span>;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            }</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            Sources::CodePointSource&lt; std::string::const_iterator &gt; theCodePointSource(</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                theString.begin(),</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                theString.end()</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            );</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            Parser theParser( theCodePointSource );</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            Literal theLiteral;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            theLiteral.ReadElements( theParser );</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            Literal theCopy( theLiteral );</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        TEST( Recursion ) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordtype">size_t</span> <span class="keyword">const</span> theDepth = 50000;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            std::string theString;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <span class="keywordflow">for</span>(</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                <span class="keywordtype">size_t</span> theLevel = theDepth;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                theLevel;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                --theLevel</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            ) {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                theString = <span class="stringliteral">&quot;{&quot;</span> + theString + <span class="stringliteral">&quot;}&quot;</span>;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            Sources::CodePointSource&lt; std::string::const_iterator &gt; theCodePointSource(</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                theString.begin(),</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                theString.end()</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            );</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            Parser theParser( theCodePointSource );</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            Literal theLiteral;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            theLiteral.ReadElements( theParser );</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            Literal theCopy( theLiteral );</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        }</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

@@ -103,64 +103,67 @@ $(document).ready(function(){initNavTree('operation_8hpp_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="code__point_8hpp.html" title="Om header file.">om/code_point.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>Om {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">class </span>Evaluation;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">class </span>Operand;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">class </span>Parser;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">class </span>Queue;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// MARK: - Om::Operation</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_om_1_1_operation.html">   38</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="class_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_operation.html#a041127361515ec497e86c8f95743a1b7">~Operation</a>() = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation.html#a4f77e2500a18696ed83c3982e3bec49f" title="Gives the contents.">GiveElements</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; ) = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation.html#a4f77e2500a18696ed83c3982e3bec49f" title="Gives the contents.">GiveElements</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; ) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#a9a0042fc8d18b557f28f3c422e109145">ReadQuotedElements</a>(</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> &amp;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        ) = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#a48004843712ba95d984f56eb19eb4f51" title="Takes an Operand.">TakeElement</a>(</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="class_om_1_1_operand.html" title="The Operand implementation.">Operand</a> &amp;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        ) = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#a48004843712ba95d984f56eb19eb4f51" title="Takes an Operand.">TakeElement</a>(</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="class_om_1_1_operand.html" title="The Operand implementation.">Operand</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        ) = 0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#ae48fc3f9b48f97a59fe1533ca0c710ac" title="Constructs and takes an Operand, which takes each Element from the argument.">TakeQuotedElements</a>(</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        ) = 0;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#ae48fc3f9b48f97a59fe1533ca0c710ac" title="Constructs and takes an Operand, which takes each Element from the argument.">TakeQuotedElements</a>(</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        ) = 0;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">protected</span>: <span class="comment">// MARK: protected (non-static)</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="class_om_1_1_operation.html#aff69710f69f19db07291b817bf23934d">Operation</a>();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="class_om_1_1_operation.html#aff69710f69f19db07291b817bf23934d">Operation</a>( <a class="code" href="class_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> <span class="keyword">const</span> &amp; );</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="class_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_operation.html#a1800a92c3aa0e29dad7f64fa654040a0">operator =</a>( <a class="code" href="class_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> <span class="keyword">const</span> &amp; );</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    };</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operation_8cpp.html" title="Om source file.">om/operation.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">class </span>Evaluation;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">class </span>Operand;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">class </span>Parser;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">class </span>Queue;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// MARK: - Om::Operation</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_om_1_1_operation.html">   39</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="class_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_operation.html#a041127361515ec497e86c8f95743a1b7">~Operation</a>() = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation.html#a4f77e2500a18696ed83c3982e3bec49f" title="Gives the contents.">GiveElements</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; ) = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation.html#a4f77e2500a18696ed83c3982e3bec49f" title="Gives the contents.">GiveElements</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; ) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#a9a0042fc8d18b557f28f3c422e109145">ReadQuotedElements</a>(</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> &amp;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        ) = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#a48004843712ba95d984f56eb19eb4f51" title="Takes an Operand.">TakeElement</a>(</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="class_om_1_1_operand.html" title="The Operand implementation.">Operand</a> &amp;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        ) = 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#a48004843712ba95d984f56eb19eb4f51" title="Takes an Operand.">TakeElement</a>(</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_om_1_1_operand.html" title="The Operand implementation.">Operand</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        ) = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#ae48fc3f9b48f97a59fe1533ca0c710ac" title="Constructs and takes an Operand, which takes each Element from the argument.">TakeQuotedElements</a>(</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        ) = 0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation.html#ae48fc3f9b48f97a59fe1533ca0c710ac" title="Constructs and takes an Operand, which takes each Element from the argument.">TakeQuotedElements</a>(</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        ) = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">protected</span>: <span class="comment">// MARK: protected (non-static)</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="class_om_1_1_operation.html#aff69710f69f19db07291b817bf23934d">Operation</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="class_om_1_1_operation.html#aff69710f69f19db07291b817bf23934d">Operation</a>( <a class="code" href="class_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="class_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_operation.html#a1800a92c3aa0e29dad7f64fa654040a0">operator =</a>( <a class="code" href="class_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">Operation</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    };</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operation_8cpp.html" title="Om source file.">om/operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
