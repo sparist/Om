@@ -23,11 +23,13 @@
 	"pairs->"
 
 namespace Om {
+
 	//! \cond
 	class Lexicon;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullPairOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Lexicon &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< BackPullPairOperation > const theBackPullPairDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/back_pull_pair_operation.cpp"

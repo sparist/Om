@@ -23,11 +23,13 @@
 	"<-terms"
 
 namespace Om {
+
 	//! \cond
 	class Expression;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullTermOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Expression &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< FrontPullTermOperation > const theFrontPullTermDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/front_pull_term_operation.cpp"

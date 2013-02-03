@@ -23,6 +23,7 @@
 	#include "om/taker.hpp"
 
 namespace Om {
+
 	// MARK: - Om::DefaultProgram
 	template<
 		typename ThisImplementation,
@@ -53,7 +54,9 @@ namespace Om {
 
 		template< typename TheCast, typename TheQueue >
 		void TakeQueueElements( TheQueue & );
+
 	};
+
 }
 
 	#include "om/default_program.cpp"

@@ -25,6 +25,7 @@
 	"separator"
 
 namespace Om {
+
 	// MARK: - Om::Separator
 	/*!
 	\brief
@@ -79,16 +80,20 @@ namespace Om {
 		void TakeSeparator( TheSeparator & );
 
 		void TakeSeparatorSymbol( Symbols::SeparatorSymbol const );
+
 	};
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<>
 	void swap(
 		Om::Separator &,
 		Om::Separator &
 	);
+
 }
 
 	#include "om/separator.cpp"

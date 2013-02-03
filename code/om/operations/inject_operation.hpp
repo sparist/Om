@@ -25,7 +25,9 @@
 	"inject"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::InjectOperation
 		/*!
 		\brief
@@ -76,12 +78,17 @@ namespace Om {
 				This will hold a reference to the Evaluator's Translator, which must remain alive.
 			*/
 			boost::optional< Evaluator > thisScope;
+
 		};
 
 		namespace {
+
 			static Definition< InjectOperation > const theInjectDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/inject_operation.cpp"

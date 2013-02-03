@@ -21,6 +21,7 @@
 	#include "om/sources/default_source.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Parser
 	/*!
 	\brief
@@ -56,7 +57,9 @@ namespace Om {
 		size_t thisDepth;
 
 		bool thisIsEncoded;
+
 	};
+
 }
 
 	#include "om/parser.cpp"

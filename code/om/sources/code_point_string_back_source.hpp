@@ -20,7 +20,9 @@
 	#include "om/sources/default_source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::CodePointStringBackSource
 		/*!
 		\brief
@@ -88,17 +90,22 @@ namespace Om {
 				The current #CodePoint string.
 			*/
 			mutable std::string thisCodePoint;
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template< typename ThisStringIterator >
 	void swap(
 		Om::Sources::CodePointStringBackSource< ThisStringIterator > &,
 		Om::Sources::CodePointStringBackSource< ThisStringIterator > &
 	);
+
 }
 
 	#include "om/sources/code_point_string_back_source.cpp"

@@ -24,7 +24,9 @@
 	"normalize"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::NormalizeOperation
 		/*!
 		\brief
@@ -55,12 +57,17 @@ namespace Om {
 				Evaluation &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< NormalizeOperation > const theNormalizeDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/normalize_operation.cpp"

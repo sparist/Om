@@ -20,7 +20,9 @@
 	#include "om/sources/iterator_pair_source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::CollectionBackSource
 		/*!
 		\brief
@@ -37,9 +39,13 @@ namespace Om {
 		> {
 		public: // MARK: public (non-static)
 
-			template< typename TheCollection > explicit CollectionBackSource( TheCollection & );
+			template< typename TheCollection >
+			explicit CollectionBackSource( TheCollection & );
+
 		};
+
 	}
+
 }
 
 	#include "om/sources/collection_back_source.cpp"

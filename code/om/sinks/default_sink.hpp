@@ -20,7 +20,9 @@
 	#include "om/sink.hpp"
 
 namespace Om {
+
 	namespace Sinks {
+
 		// MARK: - Om::Sinks::DefaultSink
 		/*!
 		\brief
@@ -47,8 +49,11 @@ namespace Om {
 		private: // MARK: private (non-static)
 
 			DefaultSink & operator =( DefaultSink const & );
+
 		};
+
 	}
+
 }
 
 	#include "om/sinks/default_sink.cpp"

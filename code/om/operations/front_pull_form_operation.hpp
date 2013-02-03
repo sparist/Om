@@ -23,11 +23,13 @@
 	"<-forms"
 
 namespace Om {
+
 	//! \cond
 	class Expression;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullFormOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Expression &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< FrontPullFormOperation > const theFrontPullFormDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/front_pull_form_operation.cpp"

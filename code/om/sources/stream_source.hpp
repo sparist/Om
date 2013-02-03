@@ -20,7 +20,9 @@
 	#include "om/sources/default_source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::StreamSource
 		/*!
 		\brief
@@ -67,17 +69,22 @@ namespace Om {
 				The current item.
 			*/
 			mutable boost::optional< ThisItem > thisItem;
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template< typename ThisItem >
 	void swap(
 		Om::Sources::StreamSource< ThisItem > &,
 		Om::Sources::StreamSource< ThisItem > &
 	);
+
 }
 
 	#include "om/sources/stream_source.cpp"

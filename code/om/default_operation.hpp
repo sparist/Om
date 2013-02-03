@@ -20,6 +20,7 @@
 	#include "om/operation.hpp"
 
 namespace Om {
+
 	//! \cond
 	class Operator;
 	//! \endcond
@@ -80,7 +81,9 @@ namespace Om {
 			Evaluation &,
 			Queue const &
 		);
+
 	};
+
 }
 
 	#include "om/default_operation.cpp"

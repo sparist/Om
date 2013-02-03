@@ -143,8 +143,11 @@ inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	SUITE( Writer ) {
+
 		TEST( General ) {
 			char const theCode[] = "\n\t {\n\t {\n\t }\n\t }\n\t";
 			std::string theResult;
@@ -165,7 +168,9 @@ namespace Om {
 				theResult
 			);
 		}
+
 	}
+
 }
 
 	#endif

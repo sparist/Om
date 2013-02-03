@@ -59,9 +59,13 @@ inline void Type_::Pull(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( FrontPullSeparatorOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{separator<-elements}",
@@ -100,8 +104,11 @@ namespace Om {
 					System::Get().Evaluate( "separator<-elements" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

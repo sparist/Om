@@ -23,11 +23,13 @@
 	"separator<-elements"
 
 namespace Om {
+
 	//! \cond
 	class Literal;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullSeparatorOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Literal &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< FrontPullSeparatorOperation > const theFrontPullSeparatorDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/front_pull_separator_operation.cpp"

@@ -44,17 +44,24 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( LexiconBackPushOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{lexicon<-}",
 					System::Get().Evaluate( "drop find {lexicon<-} system" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

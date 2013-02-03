@@ -20,7 +20,9 @@
 	#include "om/default_operation.hpp"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::PullOperation
 		/*!
 		\brief
@@ -67,8 +69,11 @@ namespace Om {
 		private: // MARK: private (static)
 
 			static Operator const & GetOperator();
+
 		};
+
 	}
+
 }
 
 	#include "om/operations/pull_operation.cpp"

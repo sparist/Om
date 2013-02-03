@@ -81,9 +81,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( EvaluateOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{evaluate}",
@@ -97,8 +101,11 @@ namespace Om {
 					System::Get().Evaluate( "evaluate {copy {A}}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

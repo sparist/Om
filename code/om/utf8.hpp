@@ -20,11 +20,13 @@
 	#include "external.hpp"
 
 namespace Om {
+
 	/*!
 	\brief
 		The UTF-8 traits type.
 	*/
 	typedef boost::locale::utf::utf_traits< char > Utf8;
+
 }
 
 #endif

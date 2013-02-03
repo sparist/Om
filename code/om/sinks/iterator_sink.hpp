@@ -20,7 +20,9 @@
 	#include "om/sinks/default_sink.hpp"
 
 namespace Om {
+
 	namespace Sinks {
+
 		// MARK: - Om::Sinks::IteratorSink
 		/*!
 		\brief
@@ -55,12 +57,16 @@ namespace Om {
 				The output iterator.
 			*/
 			ThisIterator thisIterator;
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<
 		typename ThisItem,
 		typename ThisIterator
@@ -75,6 +81,7 @@ namespace boost {
 			ThisIterator
 		> &
 	);
+
 }
 
 	#include "om/sinks/iterator_sink.cpp"

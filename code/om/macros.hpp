@@ -52,11 +52,13 @@
 	Om_Macros_PrependSlashXAndStringize_( theHex )
 
 namespace Om {
+
 	/*!
 	\brief
 		A namespace for all code used to implement global macros.
 	*/
 	namespace Macros {}
+
 }
 
 #endif

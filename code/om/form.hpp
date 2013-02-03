@@ -21,6 +21,7 @@
 	#include "om/sources/collection_front_source.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Form
 	/*!
 	\brief
@@ -111,6 +112,7 @@ namespace Om {
 		Operator thisOperator;
 
 		OperandDeque thisOperandDeque;
+
 	};
 
 	// MARK: - Om::Form::ElementRange
@@ -144,6 +146,7 @@ namespace Om {
 		OperandDeque::const_iterator thisOperandEnd;
 
 		Element const * thisElement;
+
 	};
 
 	// MARK: - Om::Form::OperandRange< Operand >
@@ -160,6 +163,7 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit OperandRange( Form & );
+
 	};
 
 	// MARK: - Om::Form::OperandRange< Operand const >
@@ -176,16 +180,20 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit OperandRange( Form const & );
+
 	};
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<>
 	void swap(
 		Om::Form &,
 		Om::Form &
 	);
+
 }
 
 	#include "om/form.cpp"

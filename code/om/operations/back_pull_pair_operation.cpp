@@ -59,9 +59,13 @@ inline void Type_::Pull(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( BackPullPairOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{pairs->}",
@@ -112,8 +116,11 @@ namespace Om {
 					System::Get().Evaluate( "pairs->" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

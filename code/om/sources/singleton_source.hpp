@@ -20,7 +20,9 @@
 	#include "om/sources/default_source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::SingletonSource
 		/*!
 		\brief
@@ -57,17 +59,22 @@ namespace Om {
 		private: // MARK: private (non-static)
 
 			ThisItem * thisItem;
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template< typename ThisItem >
 	void swap(
 		Om::Sources::SingletonSource< ThisItem > &,
 		Om::Sources::SingletonSource< ThisItem > &
 	);
+
 }
 
 	#include "om/sources/singleton_source.cpp"

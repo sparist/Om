@@ -18,6 +18,7 @@
 	Om::Operations
 
 namespace Om {
+
 	/*!
 	\brief
 		A namespace for all \ref operations.
@@ -31,6 +32,7 @@ namespace Om {
 	\ref operations that consume at least one Operand must live in memory while waiting for the Operand.  These \ref operations are derived from Operation.
 	*/
 	namespace Operations {}
+
 }
 
 #endif

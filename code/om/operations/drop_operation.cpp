@@ -73,9 +73,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( DropOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{drop}",
@@ -89,8 +93,11 @@ namespace Om {
 					System::Get().Evaluate( "drop {1{2}3}{4{5}6}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

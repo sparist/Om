@@ -56,17 +56,23 @@
 	Om_Macros_GetString_( Om_Symbols_OperandSymbol_GetEndHex_() )
 
 namespace Om {
+
 	namespace Symbols {
+
 		/*!
 		\brief
 			An Operand symbol.
 		*/
 		enum OperandSymbol {
+
 			theStartOperandSymbol = Om_Macros_GetNumber_( Om_Symbols_OperandSymbol_GetStartHex_() ),
 
 			theEndOperandSymbol = Om_Macros_GetNumber_( Om_Symbols_OperandSymbol_GetEndHex_() )
+
 		};
+
 	}
+
 }
 
 #endif

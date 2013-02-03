@@ -150,9 +150,13 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Sources {
+
 		SUITE( CodePointStringBackSource ) {
+
 			TEST( Valid ) {
 				std::string theString(
 					"P" /* ASCII character */
@@ -163,77 +167,75 @@ namespace Om {
 					"\xE2\x98\xB9" /* Non-combining multi-byte character */
 				);
 
-				{
-					CodePointStringBackSource< std::string::const_iterator > theSource(
-						theString.begin(),
-						theString.end()
-					);
+				CodePointStringBackSource< std::string::const_iterator > theSource(
+					theString.begin(),
+					theString.end()
+				);
 
-					CHECK_EQUAL(
-						false,
-						!theSource
-					);
-					CHECK_EQUAL(
-						"\xE2\x98\xB9",
-						*theSource
-					);
-					theSource.Pop();
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"\xE2\x98\xB9",
+					*theSource
+				);
+				theSource.Pop();
 
-					CHECK_EQUAL(
-						false,
-						!theSource
-					);
-					CHECK_EQUAL(
-						"k",
-						*theSource
-					);
-					theSource.Pop();
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"k",
+					*theSource
+				);
+				theSource.Pop();
 
-					CHECK_EQUAL(
-						false,
-						!theSource
-					);
-					CHECK_EQUAL(
-						"r",
-						*theSource
-					);
-					theSource.Pop();
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"r",
+					*theSource
+				);
+				theSource.Pop();
 
-					CHECK_EQUAL(
-						false,
-						!theSource
-					);
-					CHECK_EQUAL(
-						"\xCC\x88",
-						*theSource
-					);
-					theSource.Pop();
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"\xCC\x88",
+					*theSource
+				);
+				theSource.Pop();
 
-					CHECK_EQUAL(
-						false,
-						!theSource
-					);
-					CHECK_EQUAL(
-						"o",
-						*theSource
-					);
-					theSource.Pop();
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"o",
+					*theSource
+				);
+				theSource.Pop();
 
-					CHECK_EQUAL(
-						false,
-						!theSource
-					);
-					CHECK_EQUAL(
-						"P",
-						*theSource
-					);
-					theSource.Pop();
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					"P",
+					*theSource
+				);
+				theSource.Pop();
 
-					CHECK_EQUAL(
-						true,
-						!theSource
-					);
-				}
+				CHECK_EQUAL(
+					true,
+					!theSource
+				);
 			}
 
 			TEST( InvalidNoTrailing ) {
@@ -418,8 +420,11 @@ namespace Om {
 					!theSource
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

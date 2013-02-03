@@ -20,7 +20,9 @@
 	#include "om/sources/default_source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::ContainerBackSource
 		/*!
 		\brief
@@ -61,12 +63,16 @@ namespace Om {
 				The container to pull from.
 			*/
 			ThisContainer & thisContainer;
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<
 		typename ThisItem,
 		typename ThisContainer
@@ -81,6 +87,7 @@ namespace boost {
 			ThisContainer
 		> &
 	);
+
 }
 
 	#include "om/sources/container_back_source.cpp"

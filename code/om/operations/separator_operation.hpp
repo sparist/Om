@@ -21,7 +21,9 @@
 	#include "om/operations/program_operation.hpp"
 
 namespace Om {
+
 	namespace Operations {
+
 		/*!
 		\brief
 			The \ref separator_operation Operation implementation.
@@ -29,9 +31,13 @@ namespace Om {
 		typedef ProgramOperation< Separator > SeparatorOperation;
 
 		namespace {
+
 			static Definition< SeparatorOperation > const theSeparatorDefinition;
+
 		}
+
 	}
+
 }
 
 #endif

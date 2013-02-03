@@ -78,9 +78,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( DecodeOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{decode}",
@@ -115,8 +119,11 @@ namespace Om {
 					System::Get().Evaluate( "decode { the {end: } really: }" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

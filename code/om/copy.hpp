@@ -20,6 +20,7 @@
 	#include "external.hpp"
 
 namespace Om {
+
 	// MARK: - Om
 	/*!
 	\return
@@ -27,6 +28,7 @@ namespace Om {
 	*/
 	template< typename TheCopyable >
 	std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
+
 }
 
 	#include "om/copy.cpp"

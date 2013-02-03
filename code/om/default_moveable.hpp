@@ -20,6 +20,7 @@
 	#include "om/moveable.hpp"
 
 namespace Om {
+
 	// MARK: - Om::DefaultMoveable
 	/*!
 	\brief
@@ -49,7 +50,9 @@ namespace Om {
 			An owner pointer to a moved object.
 		*/
 		virtual ThisInterface * Move();
+
 	};
+
 }
 
 	#include "om/default_moveable.cpp"

@@ -18,6 +18,7 @@
 	Om::Sink
 
 namespace Om {
+
 	// MARK: - Om::Sink
 	/*!
 	\brief
@@ -58,7 +59,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		Sink & operator =( Sink const & );
+
 	};
+
 }
 
 	#include "om/sink.cpp"

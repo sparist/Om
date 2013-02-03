@@ -23,11 +23,13 @@
 	"elements->separator"
 
 namespace Om {
+
 	//! \cond
 	class Literal;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullSeparatorOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Literal &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< BackPullSeparatorOperation > const theBackPullSeparatorDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/back_pull_separator_operation.cpp"

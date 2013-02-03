@@ -23,11 +23,13 @@
 	"<-pairs"
 
 namespace Om {
+
 	//! \cond
 	class Lexicon;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullPairOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Lexicon &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< FrontPullPairOperation > const theFrontPullPairDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/front_pull_pair_operation.cpp"

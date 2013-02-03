@@ -24,7 +24,9 @@
 	"drop"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::DropOperation
 		/*!
 		\brief
@@ -60,12 +62,17 @@ namespace Om {
 				Evaluation &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< DropOperation > const theDropDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/drop_operation.cpp"

@@ -20,6 +20,7 @@
 	#include "om/copy.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Copyable
 	/*!
 	\brief
@@ -44,7 +45,9 @@ namespace Om {
 			An owner pointer to a copy.
 		*/
 		virtual Copyable * Copy() const = 0;
+
 	};
+
 }
 
 	#include "om/copyable.cpp"

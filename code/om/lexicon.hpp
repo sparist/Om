@@ -25,6 +25,7 @@
 	"lexicon"
 
 namespace Om {
+
 	//! \cond
 	class Evaluation;
 	//! \endcond
@@ -177,6 +178,7 @@ namespace Om {
 			The last Node; null if empty.
 		*/
 		Node * thisLastNode;
+
 	};
 
 	// MARK: - Om::Lexicon::ElementRange
@@ -216,6 +218,7 @@ namespace Om {
 			The Element offset in the current Node.
 		*/
 		char unsigned thisOffset;
+
 	};
 
 	// MARK: - Om::Lexicon::Node
@@ -314,16 +317,20 @@ namespace Om {
 			The next Node; null if last.
 		*/
 		Node * thisNextNode;
+
 	};
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<>
 	void swap(
 		Om::Lexicon &,
 		Om::Lexicon &
 	);
+
 }
 
 	#include "om/lexicon.cpp"

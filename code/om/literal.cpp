@@ -293,8 +293,11 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	SUITE( Literal ) {
+
 		TEST( Equality ) {
 			// Positive match
 			CHECK_EQUAL(
@@ -343,7 +346,9 @@ namespace Om {
 
 			Literal theCopy( theLiteral );
 		}
+
 	}
+
 }
 
 	#endif

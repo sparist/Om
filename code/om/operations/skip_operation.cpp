@@ -80,9 +80,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( SkipOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{skip}",
@@ -106,8 +110,11 @@ namespace Om {
 					System::Get().Evaluate( "skip{}{A}{B}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

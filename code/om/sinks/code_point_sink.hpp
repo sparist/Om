@@ -21,7 +21,9 @@
 	#include "om/sinks/default_sink.hpp"
 
 namespace Om {
+
 	namespace Sinks {
+
 		// MARK: - Om::Sinks::CodePointSink
 		/*!
 		\brief
@@ -50,17 +52,22 @@ namespace Om {
 				The output code unit iterator.
 			*/
 			ThisCodeUnitIterator thisCodeUnitIterator;
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template< typename ThisCodeUnitIterator >
 	void swap(
 		Om::Sinks::CodePointSink< ThisCodeUnitIterator > &,
 		Om::Sinks::CodePointSink< ThisCodeUnitIterator > &
 	);
+
 }
 
 	#include "om/sinks/code_point_sink.cpp"

@@ -20,7 +20,9 @@
 	#include "om/sources/iterator_pair_source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::CollectionFrontSource
 		/*!
 		\brief
@@ -39,8 +41,11 @@ namespace Om {
 
 			template< typename TheCollection >
 			explicit CollectionFrontSource( TheCollection & );
+
 		};
+
 	}
+
 }
 
 	#include "om/sources/collection_front_source.cpp"

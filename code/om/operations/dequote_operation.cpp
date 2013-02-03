@@ -70,9 +70,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( DequoteOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{dequote}",
@@ -99,8 +103,11 @@ namespace Om {
 					System::Get().Evaluate( "define {a {A}} {dequote {a{b}c}}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

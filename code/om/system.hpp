@@ -21,6 +21,7 @@
 	#include "om/translator.hpp"
 
 namespace Om {
+
 	//! \cond
 	class Evaluation;
 
@@ -104,7 +105,9 @@ namespace Om {
 		System const & operator =( System const & );
 
 		Map thisMap;
+
 	};
+
 }
 
 	#include "om/system.cpp"

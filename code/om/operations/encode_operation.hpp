@@ -24,7 +24,9 @@
 	"encode"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::EncodeOperation
 		/*!
 		\brief
@@ -55,12 +57,17 @@ namespace Om {
 				Evaluation &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< EncodeOperation > const theEncodeDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/encode_operation.cpp"

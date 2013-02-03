@@ -103,9 +103,13 @@ inline bool Type_::TakeOperand(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( InjectOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{inject}",
@@ -213,8 +217,11 @@ namespace Om {
 					System::Get().Evaluate( "inject {quote} {fill {a b c} {A} {B} }" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

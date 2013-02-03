@@ -20,6 +20,7 @@
 	#include "om/operator.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Pair
 	class Pair {
 	public: // MARK: public (static)
@@ -70,7 +71,9 @@ namespace Om {
 		Operator thisOperator;
 
 		Operand thisOperand;
+
 	};
+
 }
 
 	#include "om/pair.cpp"

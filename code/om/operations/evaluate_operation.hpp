@@ -24,7 +24,9 @@
 	"evaluate"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::EvaluateOperation
 		/*!
 		\brief
@@ -57,12 +59,17 @@ namespace Om {
 				Evaluation &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< EvaluateOperation > const theEvaluateDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/evaluate_operation.cpp"

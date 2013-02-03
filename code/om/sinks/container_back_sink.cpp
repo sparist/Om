@@ -85,9 +85,13 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Sinks {
+
 		SUITE( ContainerBackSink ) {
+
 			TEST( General ) {
 				std::string theSinkString( "01" );
 				ContainerBackSink<
@@ -111,8 +115,11 @@ namespace Om {
 					theSinkString
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

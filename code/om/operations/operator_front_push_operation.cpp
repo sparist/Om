@@ -49,17 +49,24 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( OperatorFrontPushOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{->operator}",
 					System::Get().Evaluate( "drop find {->operator} system" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

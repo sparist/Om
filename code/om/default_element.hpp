@@ -20,6 +20,7 @@
 	#include "om/default_program.hpp"
 
 namespace Om {
+
 	// MARK: - Om::DefaultElement
 	template<
 		typename ThisImplementation,
@@ -51,7 +52,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		Element & operator =( Element const & );
+
 	};
+
 }
 
 	#include "om/default_element.cpp"

@@ -21,7 +21,9 @@
 	#include "om/operations/program_operation.hpp"
 
 namespace Om {
+
 	namespace Operations {
+
 		/*!
 		\brief
 			The \ref operator_operation Operation implementation.
@@ -29,9 +31,13 @@ namespace Om {
 		typedef ProgramOperation< Operator > OperatorOperation;
 
 		namespace {
+
 			static Definition< OperatorOperation > const theOperatorDefinition;
+
 		}
+
 	}
+
 }
 
 #endif

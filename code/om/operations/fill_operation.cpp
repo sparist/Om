@@ -108,9 +108,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( FillOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{fill}",
@@ -158,8 +162,11 @@ namespace Om {
 					System::Get().Evaluate( "fill}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

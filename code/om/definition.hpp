@@ -18,6 +18,7 @@
 	Om::Definition
 
 namespace Om {
+
 	// MARK: - Om::Definition
 	/*!
 	\brief
@@ -36,7 +37,9 @@ namespace Om {
 		If there is already an Operation mapped to the same Operator, it will be removed.
 		*/
 		Definition();
+
 	};
+
 }
 
 	#include "om/definition.cpp"

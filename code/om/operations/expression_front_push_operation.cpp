@@ -50,9 +50,13 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( ExpressionFrontPushOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{->expression}",
@@ -118,8 +122,11 @@ namespace Om {
 					System::Get().Evaluate( "->expression{2}quote{3}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

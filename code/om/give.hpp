@@ -21,6 +21,7 @@
 
 // MARK: - Om
 namespace Om {
+
 	/*!
 	\brief
 		Calls #Move on the object.
@@ -62,6 +63,7 @@ namespace Om {
 	std::auto_ptr< TheGiveable > Give(
 		std::auto_ptr< TheGiveable > const &
 	);
+
 }
 
 	#include "om/give.cpp"

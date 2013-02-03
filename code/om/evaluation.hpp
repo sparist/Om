@@ -20,6 +20,7 @@
 	#include "om/expression.hpp"
 
 namespace Om {
+
 	//! \cond
 	class Evaluator;
 
@@ -104,7 +105,9 @@ namespace Om {
 			The Evaluator.
 		*/
 		Evaluator & thisEvaluator;
+
 	};
+
 }
 
 	#include "om/evaluation.cpp"

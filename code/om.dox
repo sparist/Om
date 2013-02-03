@@ -411,7 +411,9 @@ For any operation implementation, code must be added to the operation header tha
 
 \code
 namespace {
+
 	static Definition< WhateverOperation > const theWhateverDefinition;
+
 }
 \endcode
 

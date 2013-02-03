@@ -20,7 +20,9 @@
 	#include "om/sinks/iterator_sink.hpp"
 
 namespace Om {
+
 	namespace Sinks {
+
 		// MARK: - Om::Sinks::StreamSink
 		/*!
 		\brief
@@ -35,8 +37,11 @@ namespace Om {
 		public: // MARK: public (non-static)
 
 			explicit StreamSink( std::ostream & );
+
 		};
+
 	}
+
 }
 
 	#include "om/sinks/stream_sink.cpp"

@@ -20,6 +20,7 @@
 	#include "om/move.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Moveable
 	/*!
 	\brief
@@ -44,7 +45,9 @@ namespace Om {
 			An owner pointer to a moved object.
 		*/
 		virtual Moveable * Move() = 0;
+
 	};
+
 }
 
 	#include "om/moveable.cpp"

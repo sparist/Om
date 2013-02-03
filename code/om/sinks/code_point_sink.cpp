@@ -76,9 +76,13 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Sinks {
+
 		SUITE( CodePointSink ) {
+
 			TEST( General ) {
 				typedef std::back_insert_iterator< std::string > Iterator;
 				std::string theString;
@@ -98,8 +102,11 @@ namespace Om {
 					theString
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

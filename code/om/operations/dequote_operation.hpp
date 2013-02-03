@@ -24,7 +24,9 @@
 	"dequote"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::DequoteOperation
 		/*!
 		\brief
@@ -55,12 +57,17 @@ namespace Om {
 				Evaluation &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< DequoteOperation > const theDequoteDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/dequote_operation.cpp"

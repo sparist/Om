@@ -24,7 +24,9 @@
 	"define"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::DefineOperation
 		/*!
 		\brief
@@ -61,12 +63,17 @@ namespace Om {
 		private: // MARK: private (non-static)
 
 			boost::optional< Lexicon > thisLexicon;
+
 		};
 
 		namespace {
+
 			static Definition< DefineOperation > const theDefineDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/define_operation.cpp"

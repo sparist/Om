@@ -446,8 +446,11 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	SUITE( Expression ) {
+
 		TEST( General ) {
 			CHECK_EQUAL(
 				(
@@ -577,7 +580,9 @@ namespace Om {
 				theResult
 			);
 		}
+
 	}
+
 }
 
 	#endif

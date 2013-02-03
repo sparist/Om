@@ -57,9 +57,13 @@ inline void Type_::Pull(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( FrontPullCharacterOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{<-characters}",
@@ -128,8 +132,11 @@ namespace Om {
 					)
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

@@ -23,7 +23,9 @@
 	"environment"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::EnvironmentOperation
 		/*!
 		\brief
@@ -35,12 +37,17 @@ namespace Om {
 			static char const * GetName();
 
 			static void Give( Evaluation & );
+
 		};
 
 		namespace {
+
 			static Definition< EnvironmentOperation > const theEnvironmentDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/environment_operation.cpp"

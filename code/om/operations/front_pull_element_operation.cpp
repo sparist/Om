@@ -58,9 +58,13 @@ inline void Type_::Pull(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( FrontPullElementOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{<-elements}",
@@ -94,8 +98,11 @@ namespace Om {
 					System::Get().Evaluate( "<-elements" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

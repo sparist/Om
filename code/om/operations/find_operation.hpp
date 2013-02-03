@@ -24,11 +24,13 @@
 	"find"
 
 namespace Om {
+
 	//! \cond
 	class Lexicon;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::FindOperation
 		/*!
 		\brief
@@ -69,12 +71,17 @@ namespace Om {
 				The Operator to find.
 			*/
 			boost::optional< Operator > thisOperator;
+
 		};
 
 		namespace {
+
 			static Definition< FindOperation > const theFindDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/find_operation.cpp"

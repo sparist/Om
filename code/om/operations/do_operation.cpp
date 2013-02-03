@@ -45,9 +45,13 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( DoOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{do}",
@@ -61,8 +65,11 @@ namespace Om {
 					System::Get().Evaluate( "do {<-code points} {abc}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

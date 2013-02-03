@@ -23,11 +23,13 @@
 	"terms->"
 
 namespace Om {
+
 	//! \cond
 	class Expression;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullTermOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Expression &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< BackPullTermOperation > const theBackPullTermDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/back_pull_term_operation.cpp"

@@ -25,7 +25,9 @@
 	"substitute"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::SubstituteOperation
 		/*!
 		\brief
@@ -45,12 +47,17 @@ namespace Om {
 				TheQueue &,
 				Expression &
 			) const;
+
 		};
 
 		namespace {
+
 			static Definition< SubstituteOperation > const theSubstituteDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/substitute_operation.cpp"

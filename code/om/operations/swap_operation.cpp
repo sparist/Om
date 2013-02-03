@@ -83,9 +83,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( SwapOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{swap}",
@@ -99,8 +103,11 @@ namespace Om {
 					System::Get().Evaluate( "swap {1{2}3}{4{5}6}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

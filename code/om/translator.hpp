@@ -20,6 +20,7 @@
 	#include "om/code_point.hpp"
 
 namespace Om {
+
 	//! \cond
 	class Evaluation;
 
@@ -77,7 +78,9 @@ namespace Om {
 			Evaluation &,
 			Operator const &
 		) const = 0;
+
 	};
+
 }
 
 	#include "om/translator.cpp"

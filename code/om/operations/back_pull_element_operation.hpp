@@ -23,11 +23,13 @@
 	"elements->"
 
 namespace Om {
+
 	//! \cond
 	class Literal;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullElementOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Literal &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< BackPullElementOperation > const theBackPullElementDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/back_pull_element_operation.cpp"

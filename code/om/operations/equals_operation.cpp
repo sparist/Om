@@ -90,9 +90,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( EqualsOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{=}",
@@ -121,8 +125,11 @@ namespace Om {
 					System::Get().Evaluate( "= {} {Not empty}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

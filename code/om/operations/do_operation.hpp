@@ -23,7 +23,9 @@
 	"do"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::DoOperation
 		/*!
 		\brief
@@ -35,12 +37,17 @@ namespace Om {
 			static char const * GetName();
 
 			static void Give( Evaluation & );
+
 		};
 
 		namespace {
+
 			static Definition< DoOperation > const theDoDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/do_operation.cpp"

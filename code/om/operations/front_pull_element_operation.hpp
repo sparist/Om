@@ -23,11 +23,13 @@
 	"<-elements"
 
 namespace Om {
+
 	//! \cond
 	class Literal;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullElementOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Literal &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< FrontPullElementOperation > const theFrontPullElementDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/front_pull_element_operation.cpp"

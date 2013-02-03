@@ -21,12 +21,14 @@
 
 // MARK: - Om
 namespace Om {
+
 	/*!
 	\return
 		A polymorphic move of the object.
 	*/
 	template< typename TheMoveable >
 	std::auto_ptr< TheMoveable > Move( TheMoveable & );
+
 }
 
 	#include "om/move.cpp"

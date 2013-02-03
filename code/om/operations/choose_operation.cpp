@@ -101,9 +101,13 @@ inline bool Type_::TakeOperand(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( ChooseOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{choose}",
@@ -122,8 +126,11 @@ namespace Om {
 					System::Get().Evaluate( "choose{empty}{non-empty}{some operators}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

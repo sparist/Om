@@ -20,6 +20,7 @@
 	#include "external.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Shareable
 	/*!
 	\brief
@@ -29,6 +30,7 @@ namespace Om {
 	*/
 	template< typename ThisOwnerCount = size_t >
 	class Shareable {
+
 		/*!
 		\cond internal_symbols
 		\exception std::overflow_error
@@ -80,11 +82,14 @@ namespace Om {
 		Automatic instances have a owner count of 0.  If the owner count is incremented from 0, it is owned by a boost::intrusive_ptr and is deleted when decremented back to zero.
 		*/
 		ThisOwnerCount thisOwnerCount;
+
 	};
+
 }
 
 // MARK: - Om
 namespace Om {
+
 	//! \cond internal_symbols
 	template< typename TheOwnerCount >
 	void intrusive_ptr_add_ref(
@@ -96,6 +101,7 @@ namespace Om {
 		Shareable< TheOwnerCount > * const
 	);
 	//! \endcond
+
 }
 
 	#include "om/shareable.cpp"

@@ -23,7 +23,9 @@
 	"operator<-"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::OperatorBackPushOperation
 		/*!
 		\brief
@@ -35,12 +37,17 @@ namespace Om {
 			static char const * GetName();
 
 			static void Give( Evaluation & );
+
 		};
 
 		namespace {
+
 			static Definition< OperatorBackPushOperation > const theOperatorBackPushDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/operator_back_push_operation.cpp"

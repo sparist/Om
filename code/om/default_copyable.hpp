@@ -20,6 +20,7 @@
 	#include "om/copyable.hpp"
 
 namespace Om {
+
 	// MARK: - Om::DefaultCopyable
 	/*!
 	\brief
@@ -49,7 +50,9 @@ namespace Om {
 			An owner pointer to a copy.
 		*/
 		virtual ThisInterface * Copy() const;
+
 	};
+
 }
 
 	#include "om/default_copyable.cpp"

@@ -21,7 +21,9 @@
 	#include "om/lexicon.hpp"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::TranslateOperation
 		/*!
 		\brief
@@ -59,8 +61,11 @@ namespace Om {
 			TranslateOperation();
 
 			boost::optional< Lexicon > thisLexicon;
+
 		};
+
 	}
+
 }
 
 	#include "om/operations/translate_operation.cpp"

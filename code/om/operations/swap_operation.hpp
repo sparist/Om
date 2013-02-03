@@ -24,7 +24,9 @@
 	"swap"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::SwapOperation
 		/*!
 		\brief
@@ -65,12 +67,17 @@ namespace Om {
 				The Operand to swap with.
 			*/
 			Operand thisOperand;
+
 		};
 
 		namespace {
+
 			static Definition< SwapOperation > const theSwapDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/swap_operation.cpp"

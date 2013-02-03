@@ -21,6 +21,7 @@
 	#include "om/taker.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Owner
 	/*!
 	\brief
@@ -133,16 +134,20 @@ namespace Om {
 			True if the contained value was exposed for modification.
 		*/
 		bool thisWasExposed;
+
 	};
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template< typename ThisValue >
 	void swap(
 		Om::Owner< ThisValue > &,
 		Om::Owner< ThisValue > &
 	);
+
 }
 
 	#include "om/owner.cpp"

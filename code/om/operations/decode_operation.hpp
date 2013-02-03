@@ -24,7 +24,9 @@
 	"decode"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::DecodeOperation
 		/*!
 		\brief
@@ -55,12 +57,17 @@ namespace Om {
 				Evaluation &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< DecodeOperation > const theDecodeDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/decode_operation.cpp"

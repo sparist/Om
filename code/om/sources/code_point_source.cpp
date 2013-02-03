@@ -135,9 +135,13 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Sources {
+
 		SUITE( CodePointSource ) {
+
 			TEST( General ) {
 				std::string theString(
 					"\xC7\xBE"
@@ -170,8 +174,11 @@ namespace Om {
 					!theSource
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

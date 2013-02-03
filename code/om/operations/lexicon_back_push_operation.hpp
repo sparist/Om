@@ -23,7 +23,9 @@
 	"lexicon<-"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::LexiconBackPushOperation
 		/*!
 		\brief
@@ -35,12 +37,17 @@ namespace Om {
 			static char const * GetName();
 
 			static void Give( Evaluation & );
+
 		};
 
 		namespace {
+
 			static Definition< LexiconBackPushOperation > const theLexiconBackPushDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/lexicon_back_push_operation.cpp"

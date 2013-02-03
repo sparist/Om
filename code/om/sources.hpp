@@ -18,11 +18,13 @@
 	Om::Sources
 
 namespace Om {
+
 	/*!
 	\brief
 		A namespace for types derived from Source.
 	*/
 	namespace Sources {}
+
 }
 
 #endif

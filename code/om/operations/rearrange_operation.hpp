@@ -23,7 +23,9 @@
 	"rearrange"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::RearrangeOperation
 		/*!
 		\brief
@@ -35,12 +37,17 @@ namespace Om {
 			static char const * GetName();
 
 			static void Give( Evaluation & );
+
 		};
 
 		namespace {
+
 			static Definition< RearrangeOperation > const theRearrangeDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/rearrange_operation.cpp"

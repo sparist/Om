@@ -51,9 +51,13 @@ inline void Type_::Translate(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( SubstituteOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{substitute}",
@@ -129,8 +133,11 @@ namespace Om {
 					System::Get().Evaluate( "substitute{blaven{42}}{do{blaven}}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

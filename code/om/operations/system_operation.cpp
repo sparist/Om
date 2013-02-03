@@ -41,17 +41,24 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( SystemOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{system}",
 					System::Get().Evaluate( "drop find {system} system" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

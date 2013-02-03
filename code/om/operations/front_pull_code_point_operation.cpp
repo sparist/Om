@@ -57,9 +57,13 @@ inline void Type_::Pull(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( FrontPullCodePointOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{<-code` points}",
@@ -129,8 +133,11 @@ namespace Om {
 					)
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

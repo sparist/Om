@@ -20,6 +20,7 @@
 	#include "om/queue.hpp"
 
 namespace Om {
+
 	// MARK: - Om::DefaultQueue
 	/*!
 	\brief
@@ -58,7 +59,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		DefaultQueue & operator =( DefaultQueue const & );
+
 	};
+
 }
 
 	#include "om/default_queue.cpp"

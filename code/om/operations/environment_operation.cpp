@@ -43,9 +43,13 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( EnvironmentOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{environment}",
@@ -64,8 +68,11 @@ namespace Om {
 					)
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

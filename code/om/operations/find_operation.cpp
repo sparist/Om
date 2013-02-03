@@ -90,9 +90,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( FindOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{find}",
@@ -180,8 +184,11 @@ namespace Om {
 					System::Get().Evaluate( "find {c}{b{B} a{A} c{}}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

@@ -516,8 +516,11 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	SUITE( Lexicon ) {
+
 		TEST( Basic ) {
 			CHECK_EQUAL(
 				(
@@ -669,7 +672,9 @@ namespace Om {
 				theResult
 			);
 		}
+
 	}
+
 }
 
 	#endif

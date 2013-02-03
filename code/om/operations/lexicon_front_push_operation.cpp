@@ -50,9 +50,13 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( LexiconFrontPushOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{->lexicon}",
@@ -86,8 +90,11 @@ namespace Om {
 					System::Get().Evaluate( "->lexicon {a{A}} {a{B} a b{C}}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

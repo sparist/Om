@@ -22,6 +22,7 @@
 	#include "om/shareable.hpp"
 
 namespace Om {
+
 	//! \cond
 	class Element;
 
@@ -61,7 +62,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		Program & operator =( Program const & );
+
 	};
+
 }
 
 	#include "om/program.cpp"

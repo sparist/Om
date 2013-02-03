@@ -23,7 +23,9 @@
 	"->literal"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::LiteralFrontPushOperation
 		/*!
 		\brief
@@ -35,12 +37,17 @@ namespace Om {
 			static char const * GetName();
 
 			static void Give( Evaluation & );
+
 		};
 
 		namespace {
+
 			static Definition< LiteralFrontPushOperation > const theLiteralFrontPushDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/literal_front_push_operation.cpp"

@@ -24,6 +24,7 @@
 	"literal"
 
 namespace Om {
+
 	// MARK: - Om::Literal
 	/*!
 	\brief
@@ -117,6 +118,7 @@ namespace Om {
 		void TakeAtom( TheAtom & );
 
 		ElementDeque thisElementDeque;
+
 	};
 
 	// MARK: - Om::Literal::ElementRange< Literal >
@@ -133,6 +135,7 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit ElementRange( Literal & );
+
 	};
 
 	// MARK: - Om::Literal::ElementRange< Literal const >
@@ -149,16 +152,19 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit ElementRange( Literal const & );
+
 	};
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<>
 	void swap(
 		Om::Literal &,
 		Om::Literal &
 	);
+
 }
 
 	#include "om/literal.cpp"

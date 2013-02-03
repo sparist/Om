@@ -23,7 +23,9 @@
 	"code points->"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullCodePointOperation
 		/*!
 		\brief
@@ -45,12 +47,17 @@ namespace Om {
 				Operator &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< BackPullCodePointOperation > const theBackPullCodePointDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/back_pull_code_point_operation.cpp"

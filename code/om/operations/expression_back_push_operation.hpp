@@ -23,7 +23,9 @@
 	"expression<-"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::ExpressionBackPushOperation
 		/*!
 		\brief
@@ -35,12 +37,17 @@ namespace Om {
 			static char const * GetName();
 
 			static void Give( Evaluation & );
+
 		};
 
 		namespace {
+
 			static Definition< ExpressionBackPushOperation > const theExpressionBackPushDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/expression_back_push_operation.cpp"

@@ -20,6 +20,7 @@
 	#include "external.hpp"
 
 namespace Om {
+
 	//! \cond
 	class Operand;
 
@@ -160,7 +161,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		Queue & operator =( Queue const & );
+
 	};
+
 }
 
 	#include "om/queue.cpp"

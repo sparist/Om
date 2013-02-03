@@ -24,7 +24,9 @@
 	"quote"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::QuoteOperation
 		/*!
 		\brief
@@ -55,12 +57,17 @@ namespace Om {
 				Evaluation &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< QuoteOperation > const theQuoteDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/quote_operation.cpp"

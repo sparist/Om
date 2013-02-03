@@ -21,6 +21,7 @@
 	#include "om/default_element.hpp"
 
 namespace Om {
+
 	// MARK: - Om::DefaultAtom
 	template< typename ThisImplementation >
 	class DefaultAtom:
@@ -109,7 +110,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		DefaultAtom & operator =( DefaultAtom const & );
+
 	};
+
 }
 
 	#include "om/default_atom.cpp"

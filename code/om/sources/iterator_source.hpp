@@ -20,7 +20,9 @@
 	#include "om/sources/default_source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::IteratorSource
 		/*!
 		\brief
@@ -69,12 +71,16 @@ namespace Om {
 				The input iterator.
 			*/
 			ThisIterator thisIterator;
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<
 		typename ThisItem,
 		typename ThisIterator
@@ -89,6 +95,7 @@ namespace boost {
 			ThisIterator
 		> &
 	);
+
 }
 
 	#include "om/sources/iterator_source.cpp"

@@ -20,6 +20,7 @@
 	#include "om/translator.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Environment
 	/*!
 	\brief
@@ -61,7 +62,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		TranslatorVector thisTranslatorVector;
+
 	};
+
 }
 
 	#include "om/environment.cpp"

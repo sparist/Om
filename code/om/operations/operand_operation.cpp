@@ -19,8 +19,11 @@
 	#include "UnitTest++.h"
 
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( OperandOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{operand}",
@@ -49,8 +52,11 @@ namespace Om {
 					System::Get().Evaluate( "drop swap operand copy{ a {b} {c} d }" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 #endif

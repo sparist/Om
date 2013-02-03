@@ -22,7 +22,9 @@
 	#include "om/operations/program_operation.hpp"
 
 namespace Om {
+
 	namespace Operations {
+
 		/*!
 		\brief
 			The \ref expression_operation Operation implementation.
@@ -30,9 +32,13 @@ namespace Om {
 		typedef ProgramOperation< Expression > ExpressionOperation;
 
 		namespace {
+
 			static Definition< ExpressionOperation > const theExpressionDefinition;
+
 		}
+
 	}
+
 }
 
 #endif

@@ -23,7 +23,9 @@
 	"characters->"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullCharacterOperation
 		/*!
 		\brief
@@ -45,12 +47,17 @@ namespace Om {
 				Operator &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< BackPullCharacterOperation > const theBackPullCharacterDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/back_pull_character_operation.cpp"

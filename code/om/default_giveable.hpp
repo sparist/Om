@@ -22,6 +22,7 @@
 	#include "om/giveable.hpp"
 
 namespace Om {
+
 	// MARK: - Om::DefaultGiveable
 	/*!
 	\brief
@@ -46,7 +47,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		DefaultGiveable & operator =( DefaultGiveable const & );
+
 	};
+
 }
 
 	#include "om/default_giveable.cpp"

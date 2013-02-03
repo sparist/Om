@@ -74,9 +74,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( EncodeOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{encode}",
@@ -90,8 +94,11 @@ namespace Om {
 					System::Get().Evaluate( "encode {`{`}` {{}} }" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

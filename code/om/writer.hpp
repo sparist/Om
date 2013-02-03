@@ -21,6 +21,7 @@
 	#include "om/default_queue.hpp"
 
 namespace Om {
+
 	//! \cond
 	template< typename ThisItem >
 	class Sink;
@@ -82,7 +83,9 @@ namespace Om {
 			The output #CodePoint Sink.
 		*/
 		Sink< CodePoint const > & thisCodePointSink;
+
 	};
+
 }
 
 	#include "om/writer.cpp"

@@ -20,7 +20,9 @@
 	#include "om/default_operation.hpp"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPushOperation
 		/*!
 		\brief
@@ -68,8 +70,11 @@ namespace Om {
 		private: // MARK: private (non-static)
 
 			ThisProgram thisProgram;
+
 		};
+
 	}
+
 }
 
 	#include "om/operations/front_push_operation.cpp"

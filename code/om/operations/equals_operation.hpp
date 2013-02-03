@@ -24,7 +24,9 @@
 	"="
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::EqualsOperation
 		/*!
 		\brief
@@ -65,12 +67,17 @@ namespace Om {
 				The Operand to compare with.
 			*/
 			Operand thisOperand;
+
 		};
 
 		namespace {
+
 			static Definition< EqualsOperation > const theEqualsDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/equals_operation.cpp"

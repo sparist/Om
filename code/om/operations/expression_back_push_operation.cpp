@@ -44,17 +44,24 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( ExpressionBackPushOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{expression<-}",
 					System::Get().Evaluate( "drop find {expression<-} system" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

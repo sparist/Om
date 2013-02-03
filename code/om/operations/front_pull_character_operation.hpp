@@ -23,7 +23,9 @@
 	"<-characters"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullCharacterOperation
 		/*!
 		\brief
@@ -45,12 +47,17 @@ namespace Om {
 				Operator &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< FrontPullCharacterOperation > const theFrontPullCharacterDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/front_pull_character_operation.cpp"

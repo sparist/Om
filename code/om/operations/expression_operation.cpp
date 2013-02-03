@@ -19,8 +19,11 @@
 	#include "UnitTest++.h"
 
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( ExpressionOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{expression}",
@@ -39,8 +42,11 @@ namespace Om {
 					System::Get().Evaluate( "expression {1{2}{5}6{7 {8}}   }" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 #endif

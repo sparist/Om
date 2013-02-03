@@ -23,7 +23,9 @@
 	"literal<-"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::LiteralBackPushOperation
 		/*!
 		\brief
@@ -35,12 +37,17 @@ namespace Om {
 			static char const * GetName();
 
 			static void Give( Evaluation & );
+
 		};
 
 		namespace {
+
 			static Definition< LiteralBackPushOperation > const theLiteralBackPushDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/literal_back_push_operation.cpp"

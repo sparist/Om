@@ -20,7 +20,9 @@
 	#include "om/sources/default_source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::EmptySource
 		/*!
 		\brief
@@ -51,17 +53,22 @@ namespace Om {
 			virtual void Pop();
 
 			void Swap( EmptySource & );
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template< typename ThisItem >
 	void swap(
 		Om::Sources::EmptySource< ThisItem > &,
 		Om::Sources::EmptySource< ThisItem > &
 	);
+
 }
 
 	#include "om/sources/empty_source.cpp"

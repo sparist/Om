@@ -95,9 +95,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( DefineOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{define}",
@@ -236,8 +240,11 @@ namespace Om {
 					System::Get().Evaluate( "define {a{{1}c{2}} c{{3}}} {a}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

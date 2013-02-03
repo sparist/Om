@@ -24,7 +24,9 @@
 	"choose"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::ChooseOperation
 		/*!
 		\brief
@@ -77,12 +79,17 @@ namespace Om {
 				The number of Operands received thus far.
 			*/
 			char unsigned thisOperandCount;
+
 		};
 
 		namespace {
+
 			static Definition< ChooseOperation > const theChooseDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/choose_operation.cpp"

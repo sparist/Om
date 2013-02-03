@@ -20,7 +20,9 @@
 	#include "om/default_operation.hpp"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::ProgramOperation
 		/*!
 		\brief
@@ -59,8 +61,11 @@ namespace Om {
 				Evaluation &,
 				TheQueue &
 			);
+
 		};
+
 	}
+
 }
 
 	#include "om/operations/program_operation.cpp"

@@ -25,7 +25,9 @@
 	"fill"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::FillOperation
 		/*!
 		\brief
@@ -76,12 +78,17 @@ namespace Om {
 				The current position in the output argument.
 			*/
 			boost::optional< FormRange > thisFormRange;
+
 		};
 
 		namespace {
+
 			static Definition< FillOperation > const theReadDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/fill_operation.cpp"

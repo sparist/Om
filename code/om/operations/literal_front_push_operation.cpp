@@ -50,9 +50,13 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( LiteralFrontPushOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{->literal}",
@@ -91,8 +95,11 @@ namespace Om {
 					System::Get().Evaluate( "->literal{2}quote{3}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

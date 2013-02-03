@@ -109,9 +109,13 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	SUITE( IteratorSource ) {
+
 		namespace {
+
 			static void CopyWithIterators(
 				char const theCodeUnitIterator[],
 				std::string & theSinkString
@@ -149,7 +153,9 @@ namespace Om {
 				}
 
 				char thisCodeUnit;
+
 			};
+
 		}
 
 		TEST( General ) {
@@ -265,7 +271,9 @@ namespace Om {
 				theSinkString
 			);
 		}
+
 	}
+
 }
 
 	#endif

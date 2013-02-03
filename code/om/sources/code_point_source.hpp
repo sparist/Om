@@ -21,7 +21,9 @@
 	#include "om/sources/iterator_source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::CodePointSource
 		/*!
 		\brief
@@ -77,6 +79,7 @@ namespace Om {
 				The current #CodePoint.
 			*/
 			CodePoint thisCodePoint;
+
 		};
 
 		// MARK: - Om::Sources::CodePointSource< char const * >
@@ -110,17 +113,22 @@ namespace Om {
 				char const,
 				char const *
 			> CodeUnitSource;
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template< typename ThisCodeUnitIterator >
 	void swap(
 		Om::Sources::CodePointSource< ThisCodeUnitIterator > &,
 		Om::Sources::CodePointSource< ThisCodeUnitIterator > &
 	);
+
 }
 
 	#include "om/sources/code_point_source.cpp"

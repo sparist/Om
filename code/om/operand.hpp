@@ -24,6 +24,7 @@
 	"operand"
 
 namespace Om {
+
 	// MARK: - Om::Operand
 	/*!
 	\brief
@@ -114,16 +115,20 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		Owner< Program > thisProgram;
+
 	};
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<>
 	void swap(
 		Om::Operand &,
 		Om::Operand &
 	);
+
 }
 
 	#include "om/operand.cpp"

@@ -334,8 +334,11 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	SUITE( Operator ) {
+
 		TEST( Basic ) {
 			CHECK_EQUAL(
 				"{a` `{b`}}",
@@ -433,7 +436,9 @@ namespace Om {
 				theResult
 			);
 		}
+
 	}
+
 }
 
 	#endif

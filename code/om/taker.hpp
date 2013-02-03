@@ -18,6 +18,7 @@
 	Om::Taker
 
 namespace Om {
+
 	// MARK: - Om::Taker
 	/*!
 	\brief
@@ -44,7 +45,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		Taker & operator =( Taker const & );
+
 	};
+
 }
 
 	#include "om/taker.cpp"

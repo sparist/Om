@@ -23,6 +23,7 @@
 	"null"
 
 namespace Om {
+
 	// MARK: - Om::Null
 	/*!
 	\brief
@@ -83,16 +84,20 @@ namespace Om {
 
 		template< typename TheSeparator >
 		void TakeSeparator( TheSeparator & );
+
 	};
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<>
 	void swap(
 		Om::Null &,
 		Om::Null &
 	);
+
 }
 
 	#include "om/null.cpp"

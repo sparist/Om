@@ -23,6 +23,7 @@
 	"expression"
 
 namespace Om {
+
 	// MARK: - Om::Expression
 	/*!
 	\brief
@@ -141,6 +142,7 @@ namespace Om {
 		Form & GetFrontTaker();
 
 		FormDeque thisFormDeque;
+
 	};
 
 	// MARK: - Om::Expression::FormRange< Form >
@@ -157,6 +159,7 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit FormRange( Expression & );
+
 	};
 
 	// MARK: - Om::Expression::FormRange< Form const >
@@ -173,6 +176,7 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit FormRange( Expression const & );
+
 	};
 
 	// MARK: - Om::Expression::ElementRange
@@ -218,16 +222,19 @@ namespace Om {
 			The Element range for the current Form.
 		*/
 		boost::optional< Form::ElementRange > thisFormElementRange;
+
 	};
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<>
 	void swap(
 		Om::Expression &,
 		Om::Expression &
 	);
+
 }
 
 	#include "om/expression.cpp"

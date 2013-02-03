@@ -18,6 +18,7 @@
 	Om::Source
 
 namespace Om {
+
 	// MARK: - Om::Source
 	/*!
 	\brief
@@ -79,7 +80,9 @@ namespace Om {
 		Source & operator =( Source const & );
 
 		void UncomparableBoolean() const;
+
 	};
+
 }
 
 	#include "om/source.cpp"

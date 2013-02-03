@@ -72,9 +72,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( NormalizeOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{normalize}",
@@ -98,8 +102,11 @@ namespace Om {
 					)
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

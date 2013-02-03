@@ -23,7 +23,9 @@
 	"system"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::SystemOperation
 		/*!
 		\brief
@@ -35,12 +37,17 @@ namespace Om {
 			static char const * GetName();
 
 			static void Give( Evaluation & );
+
 		};
 
 		namespace {
+
 			static Definition< SystemOperation > const theSystemDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/system_operation.cpp"

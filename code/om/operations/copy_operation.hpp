@@ -24,7 +24,9 @@
 	"copy"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::CopyOperation
 		/*!
 		\brief
@@ -55,12 +57,17 @@ namespace Om {
 				Evaluation &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< CopyOperation > const theCopyDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/copy_operation.cpp"

@@ -68,9 +68,13 @@ inline bool Type_::TakeQuotedQueue(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( QuoteOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{quote}",
@@ -84,8 +88,11 @@ namespace Om {
 					System::Get().Evaluate( "quote {1{2}3}" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 	#endif

@@ -25,7 +25,9 @@
 	"skip"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::SkipOperation
 		/*!
 		\brief
@@ -65,12 +67,17 @@ namespace Om {
 			If an empty Expression is taken as the first Operand, the Operation is complete.  Therefore, the empty Expression can be used to indicate that the first Operand has not yet been received.
 			*/
 			Expression thisExpression;
+
 		};
 
 		namespace {
+
 			static Definition< SkipOperation > const theSkipDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/skip_operation.cpp"

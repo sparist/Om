@@ -26,6 +26,7 @@
 	"operator"
 
 namespace Om {
+
 	// MARK: - Om::Operator
 	/*!
 	\brief
@@ -128,16 +129,20 @@ namespace Om {
 
 		template< typename TheSeparator >
 		void TakeSeparator( TheSeparator & );
+
 	};
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<>
 	void swap(
 		Om::Operator &,
 		Om::Operator &
 	);
+
 }
 
 	#include "om/operator.cpp"

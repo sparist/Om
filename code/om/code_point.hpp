@@ -20,11 +20,13 @@
 	#include "external.hpp"
 
 namespace Om {
+
 	/*!
 	\brief
 		A UTF-8 code point.
 	*/
 	typedef boost::locale::utf::code_point CodePoint;
+
 }
 
 #endif

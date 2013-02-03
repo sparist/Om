@@ -23,7 +23,9 @@
 	"<-code points"
 
 namespace Om {
+
 	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullCodePointOperation
 		/*!
 		\brief
@@ -45,12 +47,17 @@ namespace Om {
 				Operator &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< FrontPullCodePointOperation > const theFrontPullCodePointDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/front_pull_code_point_operation.cpp"

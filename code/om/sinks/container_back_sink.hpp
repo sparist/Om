@@ -20,7 +20,9 @@
 	#include "om/sinks/default_sink.hpp"
 
 namespace Om {
+
 	namespace Sinks {
+
 		// MARK: - Om::Sinks::ContainerBackSink
 		/*!
 		\brief
@@ -55,12 +57,16 @@ namespace Om {
 				The container to push into.
 			*/
 			ThisContainer & thisContainer;
+
 		};
+
 	}
+
 }
 
 // MARK: - boost
 namespace boost {
+
 	template<
 		typename ThisItem,
 		typename ThisContainer
@@ -75,6 +81,7 @@ namespace boost {
 			ThisContainer
 		> &
 	);
+
 }
 
 	#include "om/sinks/container_back_sink.cpp"

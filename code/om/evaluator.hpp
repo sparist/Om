@@ -20,6 +20,7 @@
 	#include "om/default_queue.hpp"
 
 namespace Om {
+
 	//! \cond
 	class Evaluation;
 
@@ -186,7 +187,9 @@ namespace Om {
 			True if an Element has been given to the output Queue.
 		*/
 		bool thisGaveElementToOutput;
+
 	};
+
 }
 
 	#include "om/evaluator.cpp"

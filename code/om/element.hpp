@@ -20,6 +20,7 @@
 	#include "om/program.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Element
 	/*!
 	\brief
@@ -84,6 +85,7 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		Element & operator =( Element const & );
+
 	};
 
 	// MARK: - Om
@@ -98,6 +100,7 @@ namespace Om {
 	/*!
 	\endcond
 	*/
+
 }
 
 	#include "om/element.cpp"

@@ -18,11 +18,13 @@
 	Om::Sinks
 
 namespace Om {
+
 	/*!
 	\brief
 		A namespace for types derived from Sink.
 	*/
 	namespace Sinks {}
+
 }
 
 #endif

@@ -23,11 +23,13 @@
 	"forms->"
 
 namespace Om {
+
 	//! \cond
 	class Expression;
 	//! \endcond
 
 	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullFormOperation
 		/*!
 		\brief
@@ -49,12 +51,17 @@ namespace Om {
 				Expression &,
 				TheQueue &
 			);
+
 		};
 
 		namespace {
+
 			static Definition< BackPullFormOperation > const theBackPullFormDefinition;
+
 		}
+
 	}
+
 }
 
 	#include "om/operations/back_pull_form_operation.cpp"

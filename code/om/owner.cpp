@@ -173,9 +173,13 @@ inline void boost::swap(
 		#include "UnitTest++.h"
 
 // MARK: -
+
 namespace Om {
+
 	SUITE( Owner ) {
+
 		namespace {
+
 			class TestValue:
 			public DefaultCopyable< TestValue >,
 			public Shareable<> {
@@ -189,7 +193,9 @@ namespace Om {
 				}
 
 				int thisNumber;
+
 			};
+
 		}
 
 		TEST( LazinessTest ) {
@@ -289,7 +295,9 @@ namespace Om {
 				theFourthValue.thisNumber
 			);
 		}
+
 	}
+
 }
 
 	#endif

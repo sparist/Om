@@ -21,6 +21,7 @@
 	#include "om/moveable.hpp"
 
 namespace Om {
+
 	// MARK: - Om::Giveable
 	/*!
 	\brief
@@ -36,7 +37,9 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		Giveable & operator =( Giveable const & );
+
 	};
+
 }
 
 	#include "om/giveable.cpp"

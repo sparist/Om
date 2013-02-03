@@ -19,8 +19,11 @@
 	#include "UnitTest++.h"
 
 namespace Om {
+
 	namespace Operations {
+
 		SUITE( SeparatorOperation ) {
+
 			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{separator}",
@@ -49,8 +52,11 @@ namespace Om {
 					System::Get().Evaluate( "drop swap separator copy{ a {b} \n\t {c} d }" )
 				);
 			}
+
 		}
+
 	}
+
 }
 
 #endif

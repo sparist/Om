@@ -20,7 +20,9 @@
 	#include "om/source.hpp"
 
 namespace Om {
+
 	namespace Sources {
+
 		// MARK: - Om::Sources::DefaultSource
 		/*!
 		\brief
@@ -76,8 +78,11 @@ namespace Om {
 		private: // MARK: private (non-static)
 
 			DefaultSource & operator =( DefaultSource const & );
+
 		};
+
 	}
+
 }
 
 	#include "om/sources/default_source.cpp"
