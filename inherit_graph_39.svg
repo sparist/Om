@@ -15,7 +15,7 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<a xlink:href="struct_om_1_1_default_copyable.html" target="_top" xlink:title="A partial implementation of Copyable.">
+<a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="A partial implementation of Copyable.">
 <polygon fill="none" stroke="black" points="819,-716.5 819,-757.5 929,-757.5 929,-716.5 819,-716.5"/>
 <text text-anchor="start" x="827" y="-745.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="start" x="827" y="-734.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node8 -->
 <g id="node15" class="node"><title>Node8</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="A partial implementation of Moveable.">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="A partial implementation of Moveable.">
 <polygon fill="none" stroke="black" points="819,-606.5 819,-647.5 929,-647.5 929,-606.5 819,-606.5"/>
 <text text-anchor="start" x="827" y="-635.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="827" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -43,7 +43,7 @@
 </g>
 <!-- Node9 -->
 <g id="node17" class="node"><title>Node9</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="A partial implementation of Queue.">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="A partial implementation of Queue.">
 <polygon fill="none" stroke="black" points="780.5,-667 780.5,-697 967.5,-697 967.5,-667 780.5,-667"/>
 <text text-anchor="start" x="788.5" y="-685" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; ThisImplementation,</text>
 <text text-anchor="middle" x="874" y="-674" font-family="Helvetica,sans-Serif" font-size="10.00"> ThisInterface &gt;</text>
@@ -56,7 +56,7 @@
 </g>
 <!-- Node3 -->
 <g id="node5" class="node"><title>Node3</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; ThisImplementation,\l DefaultCopyable\&lt; ThisImplementation,\l ThisInterface \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; ThisImplementation,\l DefaultCopyable\&lt; ThisImplementation,\l ThisInterface \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1004.5,-703 1004.5,-755 1187.5,-755 1187.5,-703 1004.5,-703"/>
 <text text-anchor="start" x="1012.5" y="-743" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="1012.5" y="-732" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -71,7 +71,7 @@
 </g>
 <!-- Node4 -->
 <g id="node7" class="node"><title>Node4</title>
-<a xlink:href="struct_om_1_1_default_giveable.html" target="_top" xlink:title="A partial implementation of Giveable.">
+<a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="A partial implementation of Giveable.">
 <polygon fill="none" stroke="black" points="1243.5,-706.5 1243.5,-747.5 1350.5,-747.5 1350.5,-706.5 1243.5,-706.5"/>
 <text text-anchor="start" x="1251.5" y="-735.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="start" x="1251.5" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -85,7 +85,7 @@
 </g>
 <!-- Node5 -->
 <g id="node9" class="node"><title>Node5</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; ThisImplementation,\l DefaultGiveable\&lt; ThisImplementation,\l ThisInterface \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; ThisImplementation,\l DefaultGiveable\&lt; ThisImplementation,\l ThisInterface \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1406.5,-705.5 1406.5,-746.5 1593.5,-746.5 1593.5,-705.5 1406.5,-705.5"/>
 <text text-anchor="start" x="1414.5" y="-734.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; ThisImplementation,</text>
 <text text-anchor="start" x="1414.5" y="-723.5" font-family="Helvetica,sans-Serif" font-size="10.00"> DefaultGiveable&lt; ThisImplementation,</text>
@@ -99,7 +99,7 @@
 </g>
 <!-- Node6 -->
 <g id="node11" class="node"><title>Node6</title>
-<a xlink:href="struct_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; ThisImplementation,\l ThisInterface \&gt;">
+<a xlink:href="class_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; ThisImplementation,\l ThisInterface \&gt;">
 <polygon fill="none" stroke="black" points="1630.5,-661.5 1630.5,-702.5 1737.5,-702.5 1737.5,-661.5 1630.5,-661.5"/>
 <text text-anchor="start" x="1638.5" y="-690.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultProgram</text>
 <text text-anchor="start" x="1638.5" y="-679.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -113,7 +113,7 @@
 </g>
 <!-- Node7 -->
 <g id="node13" class="node"><title>Node7</title>
-<a xlink:href="struct_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; ThisImplementation,\l ThisInterface \&gt;">
+<a xlink:href="class_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; ThisImplementation,\l ThisInterface \&gt;">
 <polygon fill="none" stroke="black" points="1774.5,-661.5 1774.5,-702.5 1881.5,-702.5 1881.5,-661.5 1774.5,-661.5"/>
 <text text-anchor="start" x="1782.5" y="-690.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultElement</text>
 <text text-anchor="start" x="1782.5" y="-679.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -127,14 +127,14 @@
 </g>
 <!-- Node10 -->
 <g id="node18" class="node"><title>Node10</title>
-<a xlink:href="struct_om_1_1_copyable.html" target="_top" xlink:title="An object that can be passed to Copy to be copied.">
+<a xlink:href="class_om_1_1_copyable.html" target="_top" xlink:title="An object that can be passed to Copy to be copied.">
 <polygon fill="none" stroke="black" points="0,-182.5 0,-201.5 80,-201.5 80,-182.5 0,-182.5"/>
 <text text-anchor="middle" x="40" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Copyable</text>
 </a>
 </g>
 <!-- Node11 -->
 <g id="node20" class="node"><title>Node11</title>
-<a xlink:href="struct_om_1_1_giveable.html" target="_top" xlink:title="An object that can be copied or moved via Give.">
+<a xlink:href="class_om_1_1_giveable.html" target="_top" xlink:title="An object that can be copied or moved via Give.">
 <polygon fill="none" stroke="black" points="124,-163.5 124,-182.5 200,-182.5 200,-163.5 124,-163.5"/>
 <text text-anchor="middle" x="162" y="-170.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Giveable</text>
 </a>
@@ -146,7 +146,7 @@
 </g>
 <!-- Node12 -->
 <g id="node22" class="node"><title>Node12</title>
-<a xlink:href="struct_om_1_1_program.html" target="_top" xlink:title="The Program implementation.">
+<a xlink:href="class_om_1_1_program.html" target="_top" xlink:title="The Program implementation.">
 <polygon fill="none" stroke="black" points="285,-182.5 285,-201.5 357,-201.5 357,-182.5 285,-182.5"/>
 <text text-anchor="middle" x="321" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Program</text>
 </a>
@@ -158,7 +158,7 @@
 </g>
 <!-- Node13 -->
 <g id="node24" class="node"><title>Node13</title>
-<a xlink:href="struct_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Expression, Program \&gt;">
+<a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Expression, Program \&gt;">
 <polygon fill="none" stroke="black" points="434,-153 434,-183 556,-183 556,-153 434,-153"/>
 <text text-anchor="start" x="442" y="-171" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="middle" x="495" y="-160" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Expression, Program &gt;</text>
@@ -171,7 +171,7 @@
 </g>
 <!-- Node19 -->
 <g id="node36" class="node"><title>Node19</title>
-<a xlink:href="struct_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Lexicon, Program \&gt;">
+<a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Lexicon, Program \&gt;">
 <polygon fill="none" stroke="black" points="440,-104 440,-134 550,-134 550,-104 440,-104"/>
 <text text-anchor="start" x="448" y="-122" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="middle" x="495" y="-111" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Lexicon, Program &gt;</text>
@@ -184,7 +184,7 @@
 </g>
 <!-- Node25 -->
 <g id="node48" class="node"><title>Node25</title>
-<a xlink:href="struct_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Literal, Program \&gt;">
+<a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Literal, Program \&gt;">
 <polygon fill="none" stroke="black" points="440,-276 440,-306 550,-306 550,-276 440,-276"/>
 <text text-anchor="start" x="448" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="middle" x="495" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Literal, Program &gt;</text>
@@ -197,7 +197,7 @@
 </g>
 <!-- Node31 -->
 <g id="node60" class="node"><title>Node31</title>
-<a xlink:href="struct_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Null, Program \&gt;">
+<a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Null, Program \&gt;">
 <polygon fill="none" stroke="black" points="440,-202 440,-232 550,-232 550,-202 440,-202"/>
 <text text-anchor="start" x="448" y="-220" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="middle" x="495" y="-209" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Null, Program &gt;</text>
@@ -210,7 +210,7 @@
 </g>
 <!-- Node37 -->
 <g id="node72" class="node"><title>Node37</title>
-<a xlink:href="struct_om_1_1_element.html" target="_top" xlink:title="An &quot;elemental&quot; Program comprised of a single item (or empty).">
+<a xlink:href="class_om_1_1_element.html" target="_top" xlink:title="An &quot;elemental&quot; Program comprised of a single item (or empty).">
 <polygon fill="none" stroke="black" points="459.5,-398.5 459.5,-417.5 530.5,-417.5 530.5,-398.5 459.5,-398.5"/>
 <text text-anchor="middle" x="495" y="-405.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Element</text>
 </a>
@@ -222,7 +222,7 @@
 </g>
 <!-- Node14 -->
 <g id="node26" class="node"><title>Node14</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Expression, DefaultCopyable\l\&lt; Expression, Program \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Expression, DefaultCopyable\l\&lt; Expression, Program \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="592.5,-136.5 592.5,-177.5 743.5,-177.5 743.5,-136.5 592.5,-136.5"/>
 <text text-anchor="start" x="600.5" y="-165.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="600.5" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Expression, DefaultCopyable</text>
@@ -236,7 +236,7 @@
 </g>
 <!-- Node15 -->
 <g id="node28" class="node"><title>Node15</title>
-<a xlink:href="struct_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Expression, Program \&gt;">
+<a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Expression, Program \&gt;">
 <polygon fill="none" stroke="black" points="813,-142 813,-172 935,-172 935,-142 813,-142"/>
 <text text-anchor="start" x="821" y="-160" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="middle" x="874" y="-149" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Expression, Program &gt;</text>
@@ -249,7 +249,7 @@
 </g>
 <!-- Node16 -->
 <g id="node30" class="node"><title>Node16</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Expression,\l DefaultGiveable\&lt; Expression,\l Program \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Expression,\l DefaultGiveable\&lt; Expression,\l Program \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1018.5,-136.5 1018.5,-177.5 1173.5,-177.5 1173.5,-136.5 1018.5,-136.5"/>
 <text text-anchor="start" x="1026.5" y="-165.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; Expression,</text>
 <text text-anchor="start" x="1026.5" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00"> DefaultGiveable&lt; Expression,</text>
@@ -263,7 +263,7 @@
 </g>
 <!-- Node17 -->
 <g id="node32" class="node"><title>Node17</title>
-<a xlink:href="struct_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Expression \&gt;">
+<a xlink:href="class_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Expression \&gt;">
 <polygon fill="none" stroke="black" points="1246,-93 1246,-123 1348,-123 1348,-93 1246,-93"/>
 <text text-anchor="start" x="1254" y="-111" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultProgram</text>
 <text text-anchor="middle" x="1297" y="-100" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Expression &gt;</text>
@@ -276,7 +276,7 @@
 </g>
 <!-- Node18 -->
 <g id="node34" class="node"><title>Node18</title>
-<a xlink:href="struct_om_1_1_expression.html" target="_top" xlink:title="The Expression Program implementation.">
+<a xlink:href="class_om_1_1_expression.html" target="_top" xlink:title="The Expression Program implementation.">
 <polygon fill="none" stroke="black" points="1457.5,-82.5 1457.5,-101.5 1542.5,-101.5 1542.5,-82.5 1457.5,-82.5"/>
 <text text-anchor="middle" x="1500" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Expression</text>
 </a>
@@ -288,7 +288,7 @@
 </g>
 <!-- Node20 -->
 <g id="node38" class="node"><title>Node20</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Lexicon, DefaultCopyable\l\&lt; Lexicon, Program \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Lexicon, DefaultCopyable\l\&lt; Lexicon, Program \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="600.5,-57.5 600.5,-98.5 735.5,-98.5 735.5,-57.5 600.5,-57.5"/>
 <text text-anchor="start" x="608.5" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="608.5" y="-75.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Lexicon, DefaultCopyable</text>
@@ -302,7 +302,7 @@
 </g>
 <!-- Node21 -->
 <g id="node40" class="node"><title>Node21</title>
-<a xlink:href="struct_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Lexicon, Program \&gt;">
+<a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Lexicon, Program \&gt;">
 <polygon fill="none" stroke="black" points="821,-54 821,-84 927,-84 927,-54 821,-54"/>
 <text text-anchor="start" x="829" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="middle" x="874" y="-61" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Lexicon, Program &gt;</text>
@@ -315,7 +315,7 @@
 </g>
 <!-- Node22 -->
 <g id="node42" class="node"><title>Node22</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Lexicon,\l DefaultGiveable\&lt; Lexicon,\l Program \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Lexicon,\l DefaultGiveable\&lt; Lexicon,\l Program \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1026.5,-38.5 1026.5,-79.5 1165.5,-79.5 1165.5,-38.5 1026.5,-38.5"/>
 <text text-anchor="start" x="1034.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; Lexicon,</text>
 <text text-anchor="start" x="1034.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00"> DefaultGiveable&lt; Lexicon,</text>
@@ -329,7 +329,7 @@
 </g>
 <!-- Node23 -->
 <g id="node44" class="node"><title>Node23</title>
-<a xlink:href="struct_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Lexicon \&gt;">
+<a xlink:href="class_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Lexicon \&gt;">
 <polygon fill="none" stroke="black" points="1246,-44 1246,-74 1348,-74 1348,-44 1246,-44"/>
 <text text-anchor="start" x="1254" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultProgram</text>
 <text text-anchor="middle" x="1297" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Lexicon &gt;</text>
@@ -342,7 +342,7 @@
 </g>
 <!-- Node24 -->
 <g id="node46" class="node"><title>Node24</title>
-<a xlink:href="struct_om_1_1_lexicon.html" target="_top" xlink:title="The Lexicon Program implementation.">
+<a xlink:href="class_om_1_1_lexicon.html" target="_top" xlink:title="The Lexicon Program implementation.">
 <polygon fill="none" stroke="black" points="1465.5,-120.5 1465.5,-139.5 1534.5,-139.5 1534.5,-120.5 1465.5,-120.5"/>
 <text text-anchor="middle" x="1500" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Lexicon</text>
 </a>
@@ -354,7 +354,7 @@
 </g>
 <!-- Node26 -->
 <g id="node50" class="node"><title>Node26</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Literal, DefaultCopyable\l\&lt; Literal, Program \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Literal, DefaultCopyable\l\&lt; Literal, Program \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="604.5,-275.5 604.5,-316.5 731.5,-316.5 731.5,-275.5 604.5,-275.5"/>
 <text text-anchor="start" x="612.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="612.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Literal, DefaultCopyable</text>
@@ -368,7 +368,7 @@
 </g>
 <!-- Node27 -->
 <g id="node52" class="node"><title>Node27</title>
-<a xlink:href="struct_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Literal, Program \&gt;">
+<a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Literal, Program \&gt;">
 <polygon fill="none" stroke="black" points="821,-291 821,-321 927,-321 927,-291 821,-291"/>
 <text text-anchor="start" x="829" y="-309" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="middle" x="874" y="-298" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Literal, Program &gt;</text>
@@ -381,7 +381,7 @@
 </g>
 <!-- Node28 -->
 <g id="node54" class="node"><title>Node28</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Literal,\l DefaultGiveable\&lt; Literal,\l Program \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Literal,\l DefaultGiveable\&lt; Literal,\l Program \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1030.5,-294.5 1030.5,-335.5 1161.5,-335.5 1161.5,-294.5 1030.5,-294.5"/>
 <text text-anchor="start" x="1038.5" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; Literal,</text>
 <text text-anchor="start" x="1038.5" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00"> DefaultGiveable&lt; Literal,</text>
@@ -395,7 +395,7 @@
 </g>
 <!-- Node29 -->
 <g id="node56" class="node"><title>Node29</title>
-<a xlink:href="struct_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Literal \&gt;">
+<a xlink:href="class_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Literal \&gt;">
 <polygon fill="none" stroke="black" points="1246,-300 1246,-330 1348,-330 1348,-300 1246,-300"/>
 <text text-anchor="start" x="1254" y="-318" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultProgram</text>
 <text text-anchor="middle" x="1297" y="-307" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Literal &gt;</text>
@@ -408,7 +408,7 @@
 </g>
 <!-- Node30 -->
 <g id="node58" class="node"><title>Node30</title>
-<a xlink:href="struct_om_1_1_literal.html" target="_top" xlink:title="The Literal Program implementation.">
+<a xlink:href="class_om_1_1_literal.html" target="_top" xlink:title="The Literal Program implementation.">
 <polygon fill="none" stroke="black" points="1469.5,-305.5 1469.5,-324.5 1530.5,-324.5 1530.5,-305.5 1469.5,-305.5"/>
 <text text-anchor="middle" x="1500" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Literal</text>
 </a>
@@ -420,7 +420,7 @@
 </g>
 <!-- Node32 -->
 <g id="node62" class="node"><title>Node32</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Null, DefaultCopyable\l\&lt; Null, Program \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Null, DefaultCopyable\l\&lt; Null, Program \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="609,-196.5 609,-237.5 727,-237.5 727,-196.5 609,-196.5"/>
 <text text-anchor="start" x="617" y="-225.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="617" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Null, DefaultCopyable</text>
@@ -434,7 +434,7 @@
 </g>
 <!-- Node33 -->
 <g id="node64" class="node"><title>Node33</title>
-<a xlink:href="struct_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Null, Program \&gt;">
+<a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Null, Program \&gt;">
 <polygon fill="none" stroke="black" points="821,-202 821,-232 927,-232 927,-202 821,-202"/>
 <text text-anchor="start" x="829" y="-220" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="middle" x="874" y="-209" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Null, Program &gt;</text>
@@ -447,7 +447,7 @@
 </g>
 <!-- Node34 -->
 <g id="node66" class="node"><title>Node34</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Null,\l DefaultGiveable\&lt; Null,\l Program \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Null,\l DefaultGiveable\&lt; Null,\l Program \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1035,-196.5 1035,-237.5 1157,-237.5 1157,-196.5 1035,-196.5"/>
 <text text-anchor="start" x="1043" y="-225.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; Null,</text>
 <text text-anchor="start" x="1043" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00"> DefaultGiveable&lt; Null,</text>
@@ -461,7 +461,7 @@
 </g>
 <!-- Node35 -->
 <g id="node68" class="node"><title>Node35</title>
-<a xlink:href="struct_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Null \&gt;">
+<a xlink:href="class_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Null \&gt;">
 <polygon fill="none" stroke="black" points="1246,-240 1246,-270 1348,-270 1348,-240 1246,-240"/>
 <text text-anchor="start" x="1254" y="-258" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultProgram</text>
 <text text-anchor="middle" x="1297" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Null &gt;</text>
@@ -474,7 +474,7 @@
 </g>
 <!-- Node36 -->
 <g id="node70" class="node"><title>Node36</title>
-<a xlink:href="struct_om_1_1_null.html" target="_top" xlink:title="The Null Program implementation.">
+<a xlink:href="class_om_1_1_null.html" target="_top" xlink:title="The Null Program implementation.">
 <polygon fill="none" stroke="black" points="1474,-245.5 1474,-264.5 1526,-264.5 1526,-245.5 1474,-245.5"/>
 <text text-anchor="middle" x="1500" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Null</text>
 </a>
@@ -486,7 +486,7 @@
 </g>
 <!-- Node38 -->
 <g id="node74" class="node"><title>Node38</title>
-<a xlink:href="struct_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Operand, Element \&gt;">
+<a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Operand, Element \&gt;">
 <polygon fill="none" stroke="black" points="613,-393 613,-423 723,-423 723,-393 613,-393"/>
 <text text-anchor="start" x="621" y="-411" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="middle" x="668" y="-400" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operand, Element &gt;</text>
@@ -499,7 +499,7 @@
 </g>
 <!-- Node45 -->
 <g id="node88" class="node"><title>Node45</title>
-<a xlink:href="struct_om_1_1_atom.html" target="_top" xlink:title="A leaf Element defined by a string.">
+<a xlink:href="class_om_1_1_atom.html" target="_top" xlink:title="A leaf Element defined by a string.">
 <polygon fill="none" stroke="black" points="638.5,-477.5 638.5,-496.5 697.5,-496.5 697.5,-477.5 638.5,-477.5"/>
 <text text-anchor="middle" x="668" y="-484.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Atom</text>
 </a>
@@ -511,7 +511,7 @@
 </g>
 <!-- Node39 -->
 <g id="node76" class="node"><title>Node39</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Operand, DefaultCopyable\l\&lt; Operand, Element \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Operand, DefaultCopyable\l\&lt; Operand, Element \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="803.5,-387.5 803.5,-428.5 944.5,-428.5 944.5,-387.5 803.5,-387.5"/>
 <text text-anchor="start" x="811.5" y="-416.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="811.5" y="-405.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operand, DefaultCopyable</text>
@@ -525,7 +525,7 @@
 </g>
 <!-- Node40 -->
 <g id="node78" class="node"><title>Node40</title>
-<a xlink:href="struct_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Operand, Element \&gt;">
+<a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Operand, Element \&gt;">
 <polygon fill="none" stroke="black" points="1041,-393 1041,-423 1151,-423 1151,-393 1041,-393"/>
 <text text-anchor="start" x="1049" y="-411" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="middle" x="1096" y="-400" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operand, Element &gt;</text>
@@ -538,7 +538,7 @@
 </g>
 <!-- Node41 -->
 <g id="node80" class="node"><title>Node41</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Operand,\l DefaultGiveable\&lt; Operand,\l Element \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Operand,\l DefaultGiveable\&lt; Operand,\l Element \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1224.5,-387.5 1224.5,-428.5 1369.5,-428.5 1369.5,-387.5 1224.5,-387.5"/>
 <text text-anchor="start" x="1232.5" y="-416.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; Operand,</text>
 <text text-anchor="start" x="1232.5" y="-405.5" font-family="Helvetica,sans-Serif" font-size="10.00"> DefaultGiveable&lt; Operand,</text>
@@ -552,7 +552,7 @@
 </g>
 <!-- Node42 -->
 <g id="node82" class="node"><title>Node42</title>
-<a xlink:href="struct_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Operand, Element \&gt;">
+<a xlink:href="class_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Operand, Element \&gt;">
 <polygon fill="none" stroke="black" points="1445,-449 1445,-479 1555,-479 1555,-449 1445,-449"/>
 <text text-anchor="start" x="1453" y="-467" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultProgram</text>
 <text text-anchor="middle" x="1500" y="-456" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operand, Element &gt;</text>
@@ -565,7 +565,7 @@
 </g>
 <!-- Node43 -->
 <g id="node84" class="node"><title>Node43</title>
-<a xlink:href="struct_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; Operand \&gt;">
+<a xlink:href="class_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; Operand \&gt;">
 <polygon fill="none" stroke="black" points="1633.5,-449 1633.5,-479 1734.5,-479 1734.5,-449 1633.5,-449"/>
 <text text-anchor="start" x="1641.5" y="-467" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultElement</text>
 <text text-anchor="middle" x="1684" y="-456" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operand &gt;</text>
@@ -578,7 +578,7 @@
 </g>
 <!-- Node44 -->
 <g id="node86" class="node"><title>Node44</title>
-<a xlink:href="struct_om_1_1_operand.html" target="_top" xlink:title="The Operand implementation.">
+<a xlink:href="class_om_1_1_operand.html" target="_top" xlink:title="The Operand implementation.">
 <polygon fill="none" stroke="black" points="1790.5,-454.5 1790.5,-473.5 1865.5,-473.5 1865.5,-454.5 1790.5,-454.5"/>
 <text text-anchor="middle" x="1828" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operand</text>
 </a>
@@ -590,7 +590,7 @@
 </g>
 <!-- Node46 -->
 <g id="node90" class="node"><title>Node46</title>
-<a xlink:href="struct_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Operator, Atom \&gt;">
+<a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Operator, Atom \&gt;">
 <polygon fill="none" stroke="black" points="819,-497 819,-527 929,-527 929,-497 819,-497"/>
 <text text-anchor="start" x="827" y="-515" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="middle" x="874" y="-504" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operator, Atom &gt;</text>
@@ -603,7 +603,7 @@
 </g>
 <!-- Node54 -->
 <g id="node106" class="node"><title>Node54</title>
-<a xlink:href="struct_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Separator, Atom \&gt;">
+<a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Separator, Atom \&gt;">
 <polygon fill="none" stroke="black" points="819,-448 819,-478 929,-478 929,-448 819,-448"/>
 <text text-anchor="start" x="827" y="-466" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="middle" x="874" y="-455" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, Atom &gt;</text>
@@ -616,7 +616,7 @@
 </g>
 <!-- Node62 -->
 <g id="node122" class="node"><title>Node62</title>
-<a xlink:href="struct_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; ThisImplementation,\l Atom \&gt;">
+<a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; ThisImplementation,\l Atom \&gt;">
 <polygon fill="none" stroke="black" points="819,-546.5 819,-587.5 929,-587.5 929,-546.5 819,-546.5"/>
 <text text-anchor="start" x="827" y="-575.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="start" x="827" y="-564.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -630,7 +630,7 @@
 </g>
 <!-- Node47 -->
 <g id="node92" class="node"><title>Node47</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Operator, DefaultCopyable\l\&lt; Operator, Atom \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Operator, DefaultCopyable\l\&lt; Operator, Atom \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1026,-511.5 1026,-552.5 1166,-552.5 1166,-511.5 1026,-511.5"/>
 <text text-anchor="start" x="1034" y="-540.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="1034" y="-529.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operator, DefaultCopyable</text>
@@ -644,7 +644,7 @@
 </g>
 <!-- Node48 -->
 <g id="node94" class="node"><title>Node48</title>
-<a xlink:href="struct_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Operator, Atom \&gt;">
+<a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Operator, Atom \&gt;">
 <polygon fill="none" stroke="black" points="1244,-538 1244,-568 1350,-568 1350,-538 1244,-538"/>
 <text text-anchor="start" x="1252" y="-556" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="middle" x="1297" y="-545" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operator, Atom &gt;</text>
@@ -657,7 +657,7 @@
 </g>
 <!-- Node49 -->
 <g id="node96" class="node"><title>Node49</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Operator,\l DefaultGiveable\&lt; Operator,\l Atom \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Operator,\l DefaultGiveable\&lt; Operator,\l Atom \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1428,-536.5 1428,-577.5 1572,-577.5 1572,-536.5 1428,-536.5"/>
 <text text-anchor="start" x="1436" y="-565.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; Operator,</text>
 <text text-anchor="start" x="1436" y="-554.5" font-family="Helvetica,sans-Serif" font-size="10.00"> DefaultGiveable&lt; Operator,</text>
@@ -671,7 +671,7 @@
 </g>
 <!-- Node50 -->
 <g id="node98" class="node"><title>Node50</title>
-<a xlink:href="struct_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Operator, Atom \&gt;">
+<a xlink:href="class_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Operator, Atom \&gt;">
 <polygon fill="none" stroke="black" points="1633,-520 1633,-550 1735,-550 1735,-520 1633,-520"/>
 <text text-anchor="start" x="1641" y="-538" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultProgram</text>
 <text text-anchor="middle" x="1684" y="-527" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operator, Atom &gt;</text>
@@ -684,7 +684,7 @@
 </g>
 <!-- Node51 -->
 <g id="node100" class="node"><title>Node51</title>
-<a xlink:href="struct_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; Operator, Atom \&gt;">
+<a xlink:href="class_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; Operator, Atom \&gt;">
 <polygon fill="none" stroke="black" points="1777.5,-520 1777.5,-550 1878.5,-550 1878.5,-520 1777.5,-520"/>
 <text text-anchor="start" x="1785.5" y="-538" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultElement</text>
 <text text-anchor="middle" x="1828" y="-527" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operator, Atom &gt;</text>
@@ -697,7 +697,7 @@
 </g>
 <!-- Node52 -->
 <g id="node102" class="node"><title>Node52</title>
-<a xlink:href="struct_om_1_1_default_atom.html" target="_top" xlink:title="Om::DefaultAtom\&lt; Operator \&gt;">
+<a xlink:href="class_om_1_1_default_atom.html" target="_top" xlink:title="Om::DefaultAtom\&lt; Operator \&gt;">
 <polygon fill="none" stroke="black" points="1939.5,-525.5 1939.5,-544.5 2082.5,-544.5 2082.5,-525.5 1939.5,-525.5"/>
 <text text-anchor="middle" x="2011" y="-532.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultAtom&lt; Operator &gt;</text>
 </a>
@@ -709,7 +709,7 @@
 </g>
 <!-- Node53 -->
 <g id="node104" class="node"><title>Node53</title>
-<a xlink:href="struct_om_1_1_operator.html" target="_top" xlink:title="The Operator implementation.">
+<a xlink:href="class_om_1_1_operator.html" target="_top" xlink:title="The Operator implementation.">
 <polygon fill="none" stroke="black" points="2143,-525.5 2143,-544.5 2217,-544.5 2217,-525.5 2143,-525.5"/>
 <text text-anchor="middle" x="2180" y="-532.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operator</text>
 </a>
@@ -721,7 +721,7 @@
 </g>
 <!-- Node55 -->
 <g id="node108" class="node"><title>Node55</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Separator, DefaultCopyable\l\&lt; Separator, Atom \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Separator, DefaultCopyable\l\&lt; Separator, Atom \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1023.5,-442.5 1023.5,-483.5 1168.5,-483.5 1168.5,-442.5 1023.5,-442.5"/>
 <text text-anchor="start" x="1031.5" y="-471.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="1031.5" y="-460.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, DefaultCopyable</text>
@@ -735,7 +735,7 @@
 </g>
 <!-- Node56 -->
 <g id="node110" class="node"><title>Node56</title>
-<a xlink:href="struct_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Separator, Atom \&gt;">
+<a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Separator, Atom \&gt;">
 <polygon fill="none" stroke="black" points="1244,-448 1244,-478 1350,-478 1350,-448 1244,-448"/>
 <text text-anchor="start" x="1252" y="-466" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="middle" x="1297" y="-455" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, Atom &gt;</text>
@@ -748,7 +748,7 @@
 </g>
 <!-- Node57 -->
 <g id="node112" class="node"><title>Node57</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Separator,\l DefaultGiveable\&lt; Separator,\l Atom \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Separator,\l DefaultGiveable\&lt; Separator,\l Atom \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1425.5,-350.5 1425.5,-391.5 1574.5,-391.5 1574.5,-350.5 1425.5,-350.5"/>
 <text text-anchor="start" x="1433.5" y="-379.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; Separator,</text>
 <text text-anchor="start" x="1433.5" y="-368.5" font-family="Helvetica,sans-Serif" font-size="10.00"> DefaultGiveable&lt; Separator,</text>
@@ -762,7 +762,7 @@
 </g>
 <!-- Node58 -->
 <g id="node114" class="node"><title>Node58</title>
-<a xlink:href="struct_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Separator, Atom \&gt;">
+<a xlink:href="class_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; Separator, Atom \&gt;">
 <polygon fill="none" stroke="black" points="1633,-378 1633,-408 1735,-408 1735,-378 1633,-378"/>
 <text text-anchor="start" x="1641" y="-396" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultProgram</text>
 <text text-anchor="middle" x="1684" y="-385" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, Atom &gt;</text>
@@ -775,7 +775,7 @@
 </g>
 <!-- Node59 -->
 <g id="node116" class="node"><title>Node59</title>
-<a xlink:href="struct_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; Separator, Atom \&gt;">
+<a xlink:href="class_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; Separator, Atom \&gt;">
 <polygon fill="none" stroke="black" points="1777,-378 1777,-408 1879,-408 1879,-378 1777,-378"/>
 <text text-anchor="start" x="1785" y="-396" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultElement</text>
 <text text-anchor="middle" x="1828" y="-385" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, Atom &gt;</text>
@@ -788,7 +788,7 @@
 </g>
 <!-- Node60 -->
 <g id="node118" class="node"><title>Node60</title>
-<a xlink:href="struct_om_1_1_default_atom.html" target="_top" xlink:title="Om::DefaultAtom\&lt; Separator \&gt;">
+<a xlink:href="class_om_1_1_default_atom.html" target="_top" xlink:title="Om::DefaultAtom\&lt; Separator \&gt;">
 <polygon fill="none" stroke="black" points="1937.5,-383.5 1937.5,-402.5 2084.5,-402.5 2084.5,-383.5 1937.5,-383.5"/>
 <text text-anchor="middle" x="2011" y="-390.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultAtom&lt; Separator &gt;</text>
 </a>
@@ -800,7 +800,7 @@
 </g>
 <!-- Node61 -->
 <g id="node120" class="node"><title>Node61</title>
-<a xlink:href="struct_om_1_1_separator.html" target="_top" xlink:title="The Separator implementation.">
+<a xlink:href="class_om_1_1_separator.html" target="_top" xlink:title="The Separator implementation.">
 <polygon fill="none" stroke="black" points="2140.5,-383.5 2140.5,-402.5 2219.5,-402.5 2219.5,-383.5 2140.5,-383.5"/>
 <text text-anchor="middle" x="2180" y="-390.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Separator</text>
 </a>
@@ -812,7 +812,7 @@
 </g>
 <!-- Node63 -->
 <g id="node124" class="node"><title>Node63</title>
-<a xlink:href="struct_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; ThisImplementation,\l DefaultCopyable\&lt; ThisImplementation,\l Atom \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; ThisImplementation,\l DefaultCopyable\&lt; ThisImplementation,\l Atom \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1004.5,-582 1004.5,-634 1187.5,-634 1187.5,-582 1004.5,-582"/>
 <text text-anchor="start" x="1012.5" y="-622" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="1012.5" y="-611" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -827,7 +827,7 @@
 </g>
 <!-- Node64 -->
 <g id="node126" class="node"><title>Node64</title>
-<a xlink:href="struct_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; ThisImplementation,\l Atom \&gt;">
+<a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; ThisImplementation,\l Atom \&gt;">
 <polygon fill="none" stroke="black" points="1243.5,-595.5 1243.5,-636.5 1350.5,-636.5 1350.5,-595.5 1243.5,-595.5"/>
 <text text-anchor="start" x="1251.5" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="start" x="1251.5" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -841,7 +841,7 @@
 </g>
 <!-- Node65 -->
 <g id="node128" class="node"><title>Node65</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; ThisImplementation,\l DefaultGiveable\&lt; ThisImplementation,\l Atom \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; ThisImplementation,\l DefaultGiveable\&lt; ThisImplementation,\l Atom \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="1406.5,-597.5 1406.5,-638.5 1593.5,-638.5 1593.5,-597.5 1406.5,-597.5"/>
 <text text-anchor="start" x="1414.5" y="-626.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; ThisImplementation,</text>
 <text text-anchor="start" x="1414.5" y="-615.5" font-family="Helvetica,sans-Serif" font-size="10.00"> DefaultGiveable&lt; ThisImplementation,</text>
@@ -855,7 +855,7 @@
 </g>
 <!-- Node66 -->
 <g id="node130" class="node"><title>Node66</title>
-<a xlink:href="struct_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; ThisImplementation,\l Atom \&gt;">
+<a xlink:href="class_om_1_1_default_program.html" target="_top" xlink:title="Om::DefaultProgram\l\&lt; ThisImplementation,\l Atom \&gt;">
 <polygon fill="none" stroke="black" points="1630.5,-600.5 1630.5,-641.5 1737.5,-641.5 1737.5,-600.5 1630.5,-600.5"/>
 <text text-anchor="start" x="1638.5" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultProgram</text>
 <text text-anchor="start" x="1638.5" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -869,7 +869,7 @@
 </g>
 <!-- Node67 -->
 <g id="node132" class="node"><title>Node67</title>
-<a xlink:href="struct_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; ThisImplementation,\l Atom \&gt;">
+<a xlink:href="class_om_1_1_default_element.html" target="_top" xlink:title="Om::DefaultElement\l\&lt; ThisImplementation,\l Atom \&gt;">
 <polygon fill="none" stroke="black" points="1774.5,-600.5 1774.5,-641.5 1881.5,-641.5 1881.5,-600.5 1774.5,-600.5"/>
 <text text-anchor="start" x="1782.5" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultElement</text>
 <text text-anchor="start" x="1782.5" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -883,7 +883,7 @@
 </g>
 <!-- Node68 -->
 <g id="node134" class="node"><title>Node68</title>
-<a xlink:href="struct_om_1_1_default_atom.html" target="_top" xlink:title="Om::DefaultAtom\&lt; ThisImplementation \&gt;">
+<a xlink:href="class_om_1_1_default_atom.html" target="_top" xlink:title="Om::DefaultAtom\&lt; ThisImplementation \&gt;">
 <polygon fill="none" stroke="black" points="1918.5,-611.5 1918.5,-630.5 2103.5,-630.5 2103.5,-611.5 1918.5,-611.5"/>
 <text text-anchor="middle" x="2011" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultAtom&lt; ThisImplementation &gt;</text>
 </a>
@@ -895,7 +895,7 @@
 </g>
 <!-- Node69 -->
 <g id="node135" class="node"><title>Node69</title>
-<a xlink:href="struct_om_1_1_moveable.html" target="_top" xlink:title="An object that can be passed to Move to be moved.">
+<a xlink:href="class_om_1_1_moveable.html" target="_top" xlink:title="An object that can be passed to Move to be moved.">
 <polygon fill="none" stroke="black" points="0,-144.5 0,-163.5 80,-163.5 80,-144.5 0,-144.5"/>
 <text text-anchor="middle" x="40" y="-151.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Moveable</text>
 </a>
@@ -907,7 +907,7 @@
 </g>
 <!-- Node70 -->
 <g id="node137" class="node"><title>Node70</title>
-<a xlink:href="struct_om_1_1_queue.html" target="_top" xlink:title="A first&#45;in, first&#45;out Element processor.">
+<a xlink:href="class_om_1_1_queue.html" target="_top" xlink:title="A first&#45;in, first&#45;out Element processor.">
 <polygon fill="none" stroke="black" points="129,-65.5 129,-84.5 195,-84.5 195,-65.5 129,-65.5"/>
 <text text-anchor="middle" x="162" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Queue</text>
 </a>
@@ -919,7 +919,7 @@
 </g>
 <!-- Node71 -->
 <g id="node139" class="node"><title>Node71</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Evaluator \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Evaluator \&gt;">
 <polygon fill="none" stroke="black" points="244.5,-27.5 244.5,-46.5 397.5,-46.5 397.5,-27.5 244.5,-27.5"/>
 <text text-anchor="middle" x="321" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; Evaluator &gt;</text>
 </a>
@@ -931,7 +931,7 @@
 </g>
 <!-- Node73 -->
 <g id="node143" class="node"><title>Node73</title>
-<a xlink:href="struct_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Writer \&gt;">
+<a xlink:href="class_om_1_1_default_queue.html" target="_top" xlink:title="Om::DefaultQueue\&lt; Writer \&gt;">
 <polygon fill="none" stroke="black" points="253,-65.5 253,-84.5 389,-84.5 389,-65.5 253,-65.5"/>
 <text text-anchor="middle" x="321" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultQueue&lt; Writer &gt;</text>
 </a>
@@ -943,7 +943,7 @@
 </g>
 <!-- Node72 -->
 <g id="node141" class="node"><title>Node72</title>
-<a xlink:href="struct_om_1_1_evaluator.html" target="_top" xlink:title="A Queue that evaluates Program instances.">
+<a xlink:href="class_om_1_1_evaluator.html" target="_top" xlink:title="A Queue that evaluates Program instances.">
 <polygon fill="none" stroke="black" points="456.5,-27.5 456.5,-46.5 533.5,-46.5 533.5,-27.5 456.5,-27.5"/>
 <text text-anchor="middle" x="495" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Evaluator</text>
 </a>
@@ -955,7 +955,7 @@
 </g>
 <!-- Node74 -->
 <g id="node145" class="node"><title>Node74</title>
-<a xlink:href="struct_om_1_1_writer.html" target="_top" xlink:title="A Queue that pushes each Element to a CodePoint Sink upon receipt.">
+<a xlink:href="class_om_1_1_writer.html" target="_top" xlink:title="A Queue that pushes each Element to a CodePoint Sink upon receipt.">
 <polygon fill="none" stroke="black" points="465,-65.5 465,-84.5 525,-84.5 525,-65.5 465,-65.5"/>
 <text text-anchor="middle" x="495" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Writer</text>
 </a>
@@ -967,7 +967,7 @@
 </g>
 <!-- Node75 -->
 <g id="node147" class="node"><title>Node75</title>
-<a xlink:href="struct_om_1_1_taker.html" target="_top" xlink:title="An object that can take (copy or swap) another of the same type.">
+<a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title="An object that can take (copy or swap) another of the same type.">
 <polygon fill="none" stroke="black" points="1421.5,-667.5 1421.5,-686.5 1578.5,-686.5 1578.5,-667.5 1421.5,-667.5"/>
 <text text-anchor="middle" x="1500" y="-674.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; ThisImplementation &gt;</text>
 </a>
@@ -984,7 +984,7 @@
 </g>
 <!-- Node76 -->
 <g id="node150" class="node"><title>Node76</title>
-<a xlink:href="struct_om_1_1_translator.html" target="_top" xlink:title="An Operator lookup for use by an Evaluator.">
+<a xlink:href="class_om_1_1_translator.html" target="_top" xlink:title="An Operator lookup for use by an Evaluator.">
 <polygon fill="none" stroke="black" points="1258,-158.5 1258,-177.5 1336,-177.5 1336,-158.5 1258,-158.5"/>
 <text text-anchor="middle" x="1297" y="-165.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Translator</text>
 </a>
@@ -996,7 +996,7 @@
 </g>
 <!-- Node77 -->
 <g id="node152" class="node"><title>Node77</title>
-<a xlink:href="struct_om_1_1_environment.html" target="_top" xlink:title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">
+<a xlink:href="class_om_1_1_environment.html" target="_top" xlink:title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">
 <polygon fill="none" stroke="black" points="1455.5,-196.5 1455.5,-215.5 1544.5,-215.5 1544.5,-196.5 1455.5,-196.5"/>
 <text text-anchor="middle" x="1500" y="-203.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Environment</text>
 </a>
@@ -1008,7 +1008,7 @@
 </g>
 <!-- Node78 -->
 <g id="node155" class="node"><title>Node78</title>
-<a xlink:href="struct_om_1_1_system.html" target="_top" xlink:title="Translates an Operator to an Operation.">
+<a xlink:href="class_om_1_1_system.html" target="_top" xlink:title="Translates an Operator to an Operation.">
 <polygon fill="none" stroke="black" points="1465.5,-158.5 1465.5,-177.5 1534.5,-177.5 1534.5,-158.5 1465.5,-158.5"/>
 <text text-anchor="middle" x="1500" y="-165.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::System</text>
 </a>
@@ -1020,7 +1020,7 @@
 </g>
 <!-- Node79 -->
 <g id="node156" class="node"><title>Node79</title>
-<a xlink:href="struct_om_1_1_shareable.html" target="_top" xlink:title="Om::Shareable\&lt;\&gt;">
+<a xlink:href="class_om_1_1_shareable.html" target="_top" xlink:title="Om::Shareable\&lt;\&gt;">
 <polygon fill="none" stroke="black" points="116,-201.5 116,-220.5 208,-220.5 208,-201.5 116,-201.5"/>
 <text text-anchor="middle" x="162" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Shareable&lt;&gt;</text>
 </a>
@@ -1032,7 +1032,7 @@
 </g>
 <!-- Node80 -->
 <g id="node158" class="node"><title>Node80</title>
-<a xlink:href="struct_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Expression \&gt;">
+<a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Expression \&gt;">
 <polygon fill="none" stroke="black" points="1033.5,-98.5 1033.5,-117.5 1158.5,-117.5 1158.5,-98.5 1033.5,-98.5"/>
 <text text-anchor="middle" x="1096" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; Expression &gt;</text>
 </a>
@@ -1044,7 +1044,7 @@
 </g>
 <!-- Node81 -->
 <g id="node160" class="node"><title>Node81</title>
-<a xlink:href="struct_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Lexicon \&gt;">
+<a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Lexicon \&gt;">
 <polygon fill="none" stroke="black" points="1041.5,-0.5 1041.5,-19.5 1150.5,-19.5 1150.5,-0.5 1041.5,-0.5"/>
 <text text-anchor="middle" x="1096" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; Lexicon &gt;</text>
 </a>
@@ -1056,7 +1056,7 @@
 </g>
 <!-- Node82 -->
 <g id="node162" class="node"><title>Node82</title>
-<a xlink:href="struct_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Literal \&gt;">
+<a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Literal \&gt;">
 <polygon fill="none" stroke="black" points="1045.5,-354.5 1045.5,-373.5 1146.5,-373.5 1146.5,-354.5 1045.5,-354.5"/>
 <text text-anchor="middle" x="1096" y="-361.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; Literal &gt;</text>
 </a>
@@ -1068,7 +1068,7 @@
 </g>
 <!-- Node83 -->
 <g id="node164" class="node"><title>Node83</title>
-<a xlink:href="struct_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Null \&gt;">
+<a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Null \&gt;">
 <polygon fill="none" stroke="black" points="1050,-256.5 1050,-275.5 1142,-275.5 1142,-256.5 1050,-256.5"/>
 <text text-anchor="middle" x="1096" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; Null &gt;</text>
 </a>
@@ -1080,7 +1080,7 @@
 </g>
 <!-- Node84 -->
 <g id="node166" class="node"><title>Node84</title>
-<a xlink:href="struct_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Operand \&gt;">
+<a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Operand \&gt;">
 <polygon fill="none" stroke="black" points="1239.5,-497.5 1239.5,-516.5 1354.5,-516.5 1354.5,-497.5 1239.5,-497.5"/>
 <text text-anchor="middle" x="1297" y="-504.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; Operand &gt;</text>
 </a>
@@ -1092,7 +1092,7 @@
 </g>
 <!-- Node85 -->
 <g id="node168" class="node"><title>Node85</title>
-<a xlink:href="struct_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Operator \&gt;">
+<a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Operator \&gt;">
 <polygon fill="none" stroke="black" points="1443,-498.5 1443,-517.5 1557,-517.5 1557,-498.5 1443,-498.5"/>
 <text text-anchor="middle" x="1500" y="-505.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; Operator &gt;</text>
 </a>
@@ -1104,7 +1104,7 @@
 </g>
 <!-- Node86 -->
 <g id="node170" class="node"><title>Node86</title>
-<a xlink:href="struct_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Separator \&gt;">
+<a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Separator \&gt;">
 <polygon fill="none" stroke="black" points="1440.5,-410.5 1440.5,-429.5 1559.5,-429.5 1559.5,-410.5 1440.5,-410.5"/>
 <text text-anchor="middle" x="1500" y="-417.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; Separator &gt;</text>
 </a>

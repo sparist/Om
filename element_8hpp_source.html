@@ -102,52 +102,50 @@ $(document).ready(function(){initNavTree('element_8hpp_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="program_8hpp.html" title="Om header file.">om/program.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>Om</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// MARK: - Om::Element</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="struct_om_1_1_element.html">   31</a></span>&#160;<span class="comment"></span>    <span class="keyword">struct </span><a class="code" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="struct_om_1_1_program.html" title="The Program implementation.">Program</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>Om {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// MARK: - Om::Element</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="class_om_1_1_element.html">   30</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_element.html#a1ec979009bf37669e82a3241993d3bc7">~Element</a>() = 0;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="struct_om_1_1_element.html#a1ec979009bf37669e82a3241993d3bc7">~Element</a>() = 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_element.html#ab6212893353f9633c257ed2ba62a1a3f">operator ==</a>( <a class="code" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> <span class="keyword">const</span> &amp; ) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_element.html#ab6212893353f9633c257ed2ba62a1a3f">operator ==</a>( <a class="code" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> <span class="keyword">const</span> &amp; ) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="struct_om_1_1_program.html" title="The Program implementation.">Program</a> &amp; <a class="code" href="struct_om_1_1_element.html#ae7cd2886a3881936a125ece4e449a317">operator *</a>() = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="struct_om_1_1_program.html" title="The Program implementation.">Program</a> <span class="keyword">const</span> &amp; <a class="code" href="struct_om_1_1_element.html#ae7cd2886a3881936a125ece4e449a317">operator *</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> &amp; <a class="code" href="class_om_1_1_element.html#ae7cd2886a3881936a125ece4e449a317">operator *</a>() = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_element.html#ae7cd2886a3881936a125ece4e449a317">operator *</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> * <a class="code" href="class_om_1_1_element.html#afe04314646c65eb85c4b155905e132f3">operator -&gt;</a>();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="struct_om_1_1_program.html" title="The Program implementation.">Program</a> * <a class="code" href="struct_om_1_1_element.html#afe04314646c65eb85c4b155905e132f3">operator -&gt;</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_element.html#afe04314646c65eb85c4b155905e132f3">operator -&gt;</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="struct_om_1_1_program.html" title="The Program implementation.">Program</a> <span class="keyword">const</span> * <a class="code" href="struct_om_1_1_element.html#afe04314646c65eb85c4b155905e132f3">operator -&gt;</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">using</span> <a class="code" href="class_om_1_1_program.html#a4489eaf8527d5bab1772d444cedfd69c">Program::GetElementRange</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">using</span> <a class="code" href="struct_om_1_1_program.html#a4489eaf8527d5bab1772d444cedfd69c">Program::GetElementRange</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">virtual</span> std::auto_ptr&lt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="struct_om_1_1_source.html">Source&lt; Element &gt;</a></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        &gt; <a class="code" href="struct_om_1_1_element.html#ad0aa643648064b77b18dbb0901f5d49b">GetElementRange</a>() = 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_element.html#a0fc8f773a0d3bc231a0823fa4230f7b0">Merge</a>( <a class="code" href="struct_om_1_1_operator.html" title="The Operator implementation.">Operator</a> &amp; );</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_element.html#a0fc8f773a0d3bc231a0823fa4230f7b0">Merge</a>( <a class="code" href="struct_om_1_1_operator.html" title="The Operator implementation.">Operator</a> <span class="keyword">const</span> &amp; );</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_element.html#a0fc8f773a0d3bc231a0823fa4230f7b0">Merge</a>( <a class="code" href="struct_om_1_1_separator.html" title="The Separator implementation.">Separator</a> &amp; );</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_element.html#a0fc8f773a0d3bc231a0823fa4230f7b0">Merge</a>( <a class="code" href="struct_om_1_1_separator.html" title="The Separator implementation.">Separator</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">virtual</span> std::auto_ptr&lt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="class_om_1_1_source.html">Source&lt; Element &gt;</a></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        &gt; <a class="code" href="class_om_1_1_element.html#ad0aa643648064b77b18dbb0901f5d49b">GetElementRange</a>() = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_element.html#a0fc8f773a0d3bc231a0823fa4230f7b0">Merge</a>( <a class="code" href="class_om_1_1_operator.html" title="The Operator implementation.">Operator</a> &amp; );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_element.html#a0fc8f773a0d3bc231a0823fa4230f7b0">Merge</a>( <a class="code" href="class_om_1_1_operator.html" title="The Operator implementation.">Operator</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_element.html#a0fc8f773a0d3bc231a0823fa4230f7b0">Merge</a>( <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a> &amp; );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_element.html#a0fc8f773a0d3bc231a0823fa4230f7b0">Merge</a>( <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> &amp; <a class="code" href="struct_om_1_1_element.html#a07ef744aa0fcd03ab646e6297cedf6bf">operator =</a>( <a class="code" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> <span class="keyword">const</span> &amp; );</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    };</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// MARK: - Om</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"></span>    <a class="code" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> * new_clone( <a class="code" href="struct_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> <span class="keyword">const</span> &amp; );</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> &amp; <a class="code" href="class_om_1_1_element.html#a07ef744aa0fcd03ab646e6297cedf6bf">operator =</a>( <a class="code" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// MARK: - Om</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"></span>    <a class="code" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> * new_clone( <a class="code" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="element_8cpp.html" title="Om source file.">om/element.cpp</a>&quot;</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="element_8cpp.html" title="Om source file.">om/element.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

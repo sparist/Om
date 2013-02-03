@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['definition',['Definition',['../struct_om_1_1_system.html#a8e436edc1f0c18b450e7ac127f20b249',1,'Om::System']]]
+  ['definition',['Definition',['../class_om_1_1_system.html#a26653d7509ad41467eb1d4bb410c3c41',1,'Om::System']]]
 ];

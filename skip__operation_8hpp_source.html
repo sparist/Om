@@ -107,55 +107,51 @@ $(document).ready(function(){initNavTree('skip__operation_8hpp_source.html','');
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="skip__operation_8hpp.html#a9dd454c80cf96abf2898f636f0fe747a">   24</a></span>&#160;<span class="preprocessor">    #define Om_Operations_SkipOperation_GetName_() \</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">    &quot;skip&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operations</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// MARK: - Om::Operations::SkipOperation</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="struct_om_1_1_operations_1_1_skip_operation.html">   36</a></span>&#160;<span class="comment"></span>        <span class="keyword">struct </span><a class="code" href="struct_om_1_1_operations_1_1_skip_operation.html" title="The skip Operation implementation.">SkipOperation</a>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="struct_om_1_1_default_operation.html" title="A partial implementation of Operation.">DefaultOperation</a>&lt; SkipOperation &gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="struct_om_1_1_operations_1_1_skip_operation.html#a17da8ae8ae14bba5e7809b8123f5cccf">GetName</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheSkipOperation &gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_operations_1_1_skip_operation.html#a0db1ddaae7ef6fe6ad76c4b43e10fc6b">GiveElements</a>(</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                TheSkipOperation &amp;,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="struct_om_1_1_operations_1_1_skip_operation.html#a6a951e2a0a247ef62a183f17847e4c2b">SkipOperation</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_operations_1_1_skip_operation.html#a9aae6434b0b6332382f53da9c9f15d07">TakeOperand</a>(</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <a class="code" href="struct_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                TheOperand &amp;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_operations_1_1_skip_operation.html#afd5a28655a0c035442163af73f66ceeb">TakeQuotedQueue</a>(</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="struct_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                TheQueue &amp;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            );</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="struct_om_1_1_operations_1_1_skip_operation.html#a456531c0393d60d183ce50d845dcf8fb">   70</a></span>&#160;            <a class="code" href="struct_om_1_1_expression.html" title="The Expression Program implementation.">Expression</a> <a class="code" href="struct_om_1_1_operations_1_1_skip_operation.html#a456531c0393d60d183ce50d845dcf8fb">thisExpression</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        };</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">namespace</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keyword">static</span> <a class="code" href="struct_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt; SkipOperation &gt;</a> <span class="keyword">const</span> theSkipDefinition;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="skip__operation_8cpp.html" title="Om source file.">om/operations/skip_operation.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// MARK: - Om::Operations::SkipOperation</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="class_om_1_1_operations_1_1_skip_operation.html">   34</a></span>&#160;<span class="comment"></span>        <span class="keyword">class </span><a class="code" href="class_om_1_1_operations_1_1_skip_operation.html" title="The skip Operation implementation.">SkipOperation</a>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_operation.html" title="A partial implementation of Operation.">DefaultOperation</a>&lt; SkipOperation &gt; {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operations_1_1_skip_operation.html#a17da8ae8ae14bba5e7809b8123f5cccf">GetName</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheSkipOperation &gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_skip_operation.html#a0db1ddaae7ef6fe6ad76c4b43e10fc6b">GiveElements</a>(</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                TheSkipOperation &amp;,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="class_om_1_1_operations_1_1_skip_operation.html#a6a951e2a0a247ef62a183f17847e4c2b">SkipOperation</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_skip_operation.html#a9aae6434b0b6332382f53da9c9f15d07">TakeOperand</a>(</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                TheOperand &amp;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_skip_operation.html#afd5a28655a0c035442163af73f66ceeb">TakeQuotedQueue</a>(</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                TheQueue &amp;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="class_om_1_1_operations_1_1_skip_operation.html#a456531c0393d60d183ce50d845dcf8fb">   67</a></span>&#160;            <a class="code" href="class_om_1_1_expression.html" title="The Expression Program implementation.">Expression</a> <a class="code" href="class_om_1_1_operations_1_1_skip_operation.html#a456531c0393d60d183ce50d845dcf8fb">thisExpression</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        };</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt; SkipOperation &gt;</a> <span class="keyword">const</span> theSkipDefinition;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="skip__operation_8cpp.html" title="Om source file.">om/operations/skip_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

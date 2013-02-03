@@ -10,14 +10,14 @@
 <title>Graphical Class Hierarchy</title>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<a xlink:href="struct_om_1_1_operation.html" target="_top" xlink:title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">
+<a xlink:href="class_om_1_1_operation.html" target="_top" xlink:title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i...">
 <polygon fill="none" stroke="black" points="0.5,-519.5 0.5,-538.5 79.5,-538.5 79.5,-519.5 0.5,-519.5"/>
 <text text-anchor="middle" x="40" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operation</text>
 </a>
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; ChooseOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; ChooseOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-1004 151.5,-1034 260.5,-1034 260.5,-1004 151.5,-1004"/>
 <text text-anchor="start" x="159.5" y="-1022" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-1011" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ChooseOperation &gt;</text>
@@ -30,7 +30,7 @@
 </g>
 <!-- Node4 -->
 <g id="node7" class="node"><title>Node4</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; CopyOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; CopyOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-955 151.5,-985 260.5,-985 260.5,-955 151.5,-955"/>
 <text text-anchor="start" x="159.5" y="-973" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-962" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; CopyOperation &gt;</text>
@@ -43,7 +43,7 @@
 </g>
 <!-- Node6 -->
 <g id="node11" class="node"><title>Node6</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; DecodeOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; DecodeOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-906 151.5,-936 260.5,-936 260.5,-906 151.5,-906"/>
 <text text-anchor="start" x="159.5" y="-924" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-913" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; DecodeOperation &gt;</text>
@@ -56,7 +56,7 @@
 </g>
 <!-- Node8 -->
 <g id="node15" class="node"><title>Node8</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; DefineOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; DefineOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-857 151.5,-887 260.5,-887 260.5,-857 151.5,-857"/>
 <text text-anchor="start" x="159.5" y="-875" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-864" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; DefineOperation &gt;</text>
@@ -69,7 +69,7 @@
 </g>
 <!-- Node10 -->
 <g id="node19" class="node"><title>Node10</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; DequoteOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; DequoteOperation \&gt;">
 <polygon fill="none" stroke="black" points="150.5,-808 150.5,-838 261.5,-838 261.5,-808 150.5,-808"/>
 <text text-anchor="start" x="158.5" y="-826" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-815" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; DequoteOperation &gt;</text>
@@ -82,7 +82,7 @@
 </g>
 <!-- Node12 -->
 <g id="node23" class="node"><title>Node12</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; DropOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; DropOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-759 151.5,-789 260.5,-789 260.5,-759 151.5,-759"/>
 <text text-anchor="start" x="159.5" y="-777" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-766" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; DropOperation &gt;</text>
@@ -95,7 +95,7 @@
 </g>
 <!-- Node14 -->
 <g id="node27" class="node"><title>Node14</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; EncodeOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; EncodeOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-710 151.5,-740 260.5,-740 260.5,-710 151.5,-710"/>
 <text text-anchor="start" x="159.5" y="-728" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; EncodeOperation &gt;</text>
@@ -108,7 +108,7 @@
 </g>
 <!-- Node16 -->
 <g id="node31" class="node"><title>Node16</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; EqualsOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; EqualsOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-661 151.5,-691 260.5,-691 260.5,-661 151.5,-661"/>
 <text text-anchor="start" x="159.5" y="-679" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-668" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; EqualsOperation &gt;</text>
@@ -121,7 +121,7 @@
 </g>
 <!-- Node18 -->
 <g id="node35" class="node"><title>Node18</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; EvaluateOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; EvaluateOperation \&gt;">
 <polygon fill="none" stroke="black" points="149.5,-612 149.5,-642 262.5,-642 262.5,-612 149.5,-612"/>
 <text text-anchor="start" x="157.5" y="-630" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-619" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; EvaluateOperation &gt;</text>
@@ -134,7 +134,7 @@
 </g>
 <!-- Node20 -->
 <g id="node39" class="node"><title>Node20</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; FillOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; FillOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-563 151.5,-593 260.5,-593 260.5,-563 151.5,-563"/>
 <text text-anchor="start" x="159.5" y="-581" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-570" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; FillOperation &gt;</text>
@@ -147,7 +147,7 @@
 </g>
 <!-- Node22 -->
 <g id="node43" class="node"><title>Node22</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; FindOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; FindOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-514 151.5,-544 260.5,-544 260.5,-514 151.5,-514"/>
 <text text-anchor="start" x="159.5" y="-532" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-521" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; FindOperation &gt;</text>
@@ -160,7 +160,7 @@
 </g>
 <!-- Node24 -->
 <g id="node47" class="node"><title>Node24</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; FrontPushOperation\l\&lt; ThisProgram, ThisImplementation \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; FrontPushOperation\l\&lt; ThisProgram, ThisImplementation \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="116.5,-453.5 116.5,-494.5 295.5,-494.5 295.5,-453.5 116.5,-453.5"/>
 <text text-anchor="start" x="124.5" y="-482.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="start" x="124.5" y="-471.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; FrontPushOperation</text>
@@ -174,7 +174,7 @@
 </g>
 <!-- Node26 -->
 <g id="node51" class="node"><title>Node26</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; InjectOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; InjectOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-404 151.5,-434 260.5,-434 260.5,-404 151.5,-404"/>
 <text text-anchor="start" x="159.5" y="-422" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-411" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; InjectOperation &gt;</text>
@@ -187,7 +187,7 @@
 </g>
 <!-- Node28 -->
 <g id="node55" class="node"><title>Node28</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; NormalizeOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; NormalizeOperation \&gt;">
 <polygon fill="none" stroke="black" points="148,-355 148,-385 264,-385 264,-355 148,-355"/>
 <text text-anchor="start" x="156" y="-373" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; NormalizeOperation &gt;</text>
@@ -200,7 +200,7 @@
 </g>
 <!-- Node30 -->
 <g id="node59" class="node"><title>Node30</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; ProgramOperation\&lt; ThisProgram \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; ProgramOperation\&lt; ThisProgram \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="116.5,-306 116.5,-336 295.5,-336 295.5,-306 116.5,-306"/>
 <text text-anchor="start" x="124.5" y="-324" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-313" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ProgramOperation&lt; ThisProgram &gt; &gt;</text>
@@ -213,7 +213,7 @@
 </g>
 <!-- Node32 -->
 <g id="node63" class="node"><title>Node32</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; PullOperation\&lt; ThisProgram,\l ThisImplementation \&gt; \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; PullOperation\&lt; ThisProgram,\l ThisImplementation \&gt; \&gt;">
 <polygon fill="none" stroke="black" points="133.5,-245.5 133.5,-286.5 278.5,-286.5 278.5,-245.5 133.5,-245.5"/>
 <text text-anchor="start" x="141.5" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="start" x="141.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; PullOperation&lt; ThisProgram,</text>
@@ -227,7 +227,7 @@
 </g>
 <!-- Node34 -->
 <g id="node67" class="node"><title>Node34</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; QuoteOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; QuoteOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-196 151.5,-226 260.5,-226 260.5,-196 151.5,-196"/>
 <text text-anchor="start" x="159.5" y="-214" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; QuoteOperation &gt;</text>
@@ -240,7 +240,7 @@
 </g>
 <!-- Node36 -->
 <g id="node71" class="node"><title>Node36</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; SkipOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; SkipOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-147 151.5,-177 260.5,-177 260.5,-147 151.5,-147"/>
 <text text-anchor="start" x="159.5" y="-165" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-154" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; SkipOperation &gt;</text>
@@ -253,7 +253,7 @@
 </g>
 <!-- Node38 -->
 <g id="node75" class="node"><title>Node38</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; SubstituteOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; SubstituteOperation \&gt;">
 <polygon fill="none" stroke="black" points="147.5,-98 147.5,-128 264.5,-128 264.5,-98 147.5,-98"/>
 <text text-anchor="start" x="155.5" y="-116" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-105" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; SubstituteOperation &gt;</text>
@@ -266,7 +266,7 @@
 </g>
 <!-- Node41 -->
 <g id="node81" class="node"><title>Node41</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; SwapOperation \&gt;">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="Om::DefaultOperation\l\&lt; SwapOperation \&gt;">
 <polygon fill="none" stroke="black" points="151.5,-49 151.5,-79 260.5,-79 260.5,-49 151.5,-49"/>
 <text text-anchor="start" x="159.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-56" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; SwapOperation &gt;</text>
@@ -279,7 +279,7 @@
 </g>
 <!-- Node43 -->
 <g id="node85" class="node"><title>Node43</title>
-<a xlink:href="struct_om_1_1_default_operation.html" target="_top" xlink:title="A partial implementation of Operation.">
+<a xlink:href="class_om_1_1_default_operation.html" target="_top" xlink:title="A partial implementation of Operation.">
 <polygon fill="none" stroke="black" points="149.5,-0 149.5,-30 262.5,-30 262.5,-0 149.5,-0"/>
 <text text-anchor="start" x="157.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultOperation</text>
 <text text-anchor="middle" x="206" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation &gt;</text>
@@ -292,7 +292,7 @@
 </g>
 <!-- Node3 -->
 <g id="node5" class="node"><title>Node3</title>
-<a xlink:href="struct_om_1_1_operations_1_1_choose_operation.html" target="_top" xlink:title="The choose Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_choose_operation.html" target="_top" xlink:title="The choose Operation implementation.">
 <polygon fill="none" stroke="black" points="336,-1009.5 336,-1028.5 500,-1028.5 500,-1009.5 336,-1009.5"/>
 <text text-anchor="middle" x="418" y="-1016.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::ChooseOperation</text>
 </a>
@@ -304,7 +304,7 @@
 </g>
 <!-- Node5 -->
 <g id="node9" class="node"><title>Node5</title>
-<a xlink:href="struct_om_1_1_operations_1_1_copy_operation.html" target="_top" xlink:title="The copy Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_copy_operation.html" target="_top" xlink:title="The copy Operation implementation.">
 <polygon fill="none" stroke="black" points="340.5,-960.5 340.5,-979.5 495.5,-979.5 495.5,-960.5 340.5,-960.5"/>
 <text text-anchor="middle" x="418" y="-967.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::CopyOperation</text>
 </a>
@@ -316,7 +316,7 @@
 </g>
 <!-- Node7 -->
 <g id="node13" class="node"><title>Node7</title>
-<a xlink:href="struct_om_1_1_operations_1_1_decode_operation.html" target="_top" xlink:title="The decode Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_decode_operation.html" target="_top" xlink:title="The decode Operation implementation.">
 <polygon fill="none" stroke="black" points="336,-911.5 336,-930.5 500,-930.5 500,-911.5 336,-911.5"/>
 <text text-anchor="middle" x="418" y="-918.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::DecodeOperation</text>
 </a>
@@ -328,7 +328,7 @@
 </g>
 <!-- Node9 -->
 <g id="node17" class="node"><title>Node9</title>
-<a xlink:href="struct_om_1_1_operations_1_1_define_operation.html" target="_top" xlink:title="The define Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_define_operation.html" target="_top" xlink:title="The define Operation implementation.">
 <polygon fill="none" stroke="black" points="339,-862.5 339,-881.5 497,-881.5 497,-862.5 339,-862.5"/>
 <text text-anchor="middle" x="418" y="-869.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::DefineOperation</text>
 </a>
@@ -340,7 +340,7 @@
 </g>
 <!-- Node11 -->
 <g id="node21" class="node"><title>Node11</title>
-<a xlink:href="struct_om_1_1_operations_1_1_dequote_operation.html" target="_top" xlink:title="The dequote Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_dequote_operation.html" target="_top" xlink:title="The dequote Operation implementation.">
 <polygon fill="none" stroke="black" points="334.5,-813.5 334.5,-832.5 501.5,-832.5 501.5,-813.5 334.5,-813.5"/>
 <text text-anchor="middle" x="418" y="-820.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::DequoteOperation</text>
 </a>
@@ -352,7 +352,7 @@
 </g>
 <!-- Node13 -->
 <g id="node25" class="node"><title>Node13</title>
-<a xlink:href="struct_om_1_1_operations_1_1_drop_operation.html" target="_top" xlink:title="The drop Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_drop_operation.html" target="_top" xlink:title="The drop Operation implementation.">
 <polygon fill="none" stroke="black" points="342,-764.5 342,-783.5 494,-783.5 494,-764.5 342,-764.5"/>
 <text text-anchor="middle" x="418" y="-771.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::DropOperation</text>
 </a>
@@ -364,7 +364,7 @@
 </g>
 <!-- Node15 -->
 <g id="node29" class="node"><title>Node15</title>
-<a xlink:href="struct_om_1_1_operations_1_1_encode_operation.html" target="_top" xlink:title="The encode Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_encode_operation.html" target="_top" xlink:title="The encode Operation implementation.">
 <polygon fill="none" stroke="black" points="336.5,-715.5 336.5,-734.5 499.5,-734.5 499.5,-715.5 336.5,-715.5"/>
 <text text-anchor="middle" x="418" y="-722.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::EncodeOperation</text>
 </a>
@@ -376,7 +376,7 @@
 </g>
 <!-- Node17 -->
 <g id="node33" class="node"><title>Node17</title>
-<a xlink:href="struct_om_1_1_operations_1_1_equals_operation.html" target="_top" xlink:title="The = Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_equals_operation.html" target="_top" xlink:title="The = Operation implementation.">
 <polygon fill="none" stroke="black" points="337.5,-666.5 337.5,-685.5 498.5,-685.5 498.5,-666.5 337.5,-666.5"/>
 <text text-anchor="middle" x="418" y="-673.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::EqualsOperation</text>
 </a>
@@ -388,7 +388,7 @@
 </g>
 <!-- Node19 -->
 <g id="node37" class="node"><title>Node19</title>
-<a xlink:href="struct_om_1_1_operations_1_1_evaluate_operation.html" target="_top" xlink:title="The define Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_evaluate_operation.html" target="_top" xlink:title="The define Operation implementation.">
 <polygon fill="none" stroke="black" points="354.5,-612 354.5,-642 481.5,-642 481.5,-612 354.5,-612"/>
 <text text-anchor="start" x="362.5" y="-630" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::Evaluate</text>
 <text text-anchor="middle" x="418" y="-619" font-family="Helvetica,sans-Serif" font-size="10.00">Operation</text>
@@ -401,7 +401,7 @@
 </g>
 <!-- Node21 -->
 <g id="node41" class="node"><title>Node21</title>
-<a xlink:href="struct_om_1_1_operations_1_1_fill_operation.html" target="_top" xlink:title="The fill Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_fill_operation.html" target="_top" xlink:title="The fill Operation implementation.">
 <polygon fill="none" stroke="black" points="348,-568.5 348,-587.5 488,-587.5 488,-568.5 348,-568.5"/>
 <text text-anchor="middle" x="418" y="-575.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::FillOperation</text>
 </a>
@@ -413,7 +413,7 @@
 </g>
 <!-- Node23 -->
 <g id="node45" class="node"><title>Node23</title>
-<a xlink:href="struct_om_1_1_operations_1_1_find_operation.html" target="_top" xlink:title="The find Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_find_operation.html" target="_top" xlink:title="The find Operation implementation.">
 <polygon fill="none" stroke="black" points="344,-519.5 344,-538.5 492,-538.5 492,-519.5 344,-519.5"/>
 <text text-anchor="middle" x="418" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::FindOperation</text>
 </a>
@@ -425,7 +425,7 @@
 </g>
 <!-- Node25 -->
 <g id="node49" class="node"><title>Node25</title>
-<a xlink:href="struct_om_1_1_operations_1_1_front_push_operation.html" target="_top" xlink:title="An Operation that joins an Operand to the front of a Program.">
+<a xlink:href="class_om_1_1_operations_1_1_front_push_operation.html" target="_top" xlink:title="An Operation that joins an Operand to the front of a Program.">
 <polygon fill="none" stroke="black" points="352.5,-453.5 352.5,-494.5 483.5,-494.5 483.5,-453.5 352.5,-453.5"/>
 <text text-anchor="start" x="360.5" y="-482.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::FrontPush</text>
 <text text-anchor="start" x="360.5" y="-471.5" font-family="Helvetica,sans-Serif" font-size="10.00">Operation&lt; ThisProgram,</text>
@@ -439,7 +439,7 @@
 </g>
 <!-- Node27 -->
 <g id="node53" class="node"><title>Node27</title>
-<a xlink:href="struct_om_1_1_operations_1_1_inject_operation.html" target="_top" xlink:title="The inject Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_inject_operation.html" target="_top" xlink:title="The inject Operation implementation.">
 <polygon fill="none" stroke="black" points="342,-409.5 342,-428.5 494,-428.5 494,-409.5 342,-409.5"/>
 <text text-anchor="middle" x="418" y="-416.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::InjectOperation</text>
 </a>
@@ -451,7 +451,7 @@
 </g>
 <!-- Node29 -->
 <g id="node57" class="node"><title>Node29</title>
-<a xlink:href="struct_om_1_1_operations_1_1_normalize_operation.html" target="_top" xlink:title="The normalize Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_normalize_operation.html" target="_top" xlink:title="The normalize Operation implementation.">
 <polygon fill="none" stroke="black" points="353,-355 353,-385 483,-385 483,-355 353,-355"/>
 <text text-anchor="start" x="361" y="-373" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::Normalize</text>
 <text text-anchor="middle" x="418" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">Operation</text>
@@ -464,7 +464,7 @@
 </g>
 <!-- Node31 -->
 <g id="node61" class="node"><title>Node31</title>
-<a xlink:href="struct_om_1_1_operations_1_1_program_operation.html" target="_top" xlink:title="An Operation that normalizes a Program to a specific type.">
+<a xlink:href="class_om_1_1_operations_1_1_program_operation.html" target="_top" xlink:title="An Operation that normalizes a Program to a specific type.">
 <polygon fill="none" stroke="black" points="335,-306 335,-336 501,-336 501,-306 335,-306"/>
 <text text-anchor="start" x="343" y="-324" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::ProgramOperation</text>
 <text text-anchor="middle" x="418" y="-313" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisProgram &gt;</text>
@@ -477,7 +477,7 @@
 </g>
 <!-- Node33 -->
 <g id="node65" class="node"><title>Node33</title>
-<a xlink:href="struct_om_1_1_operations_1_1_pull_operation.html" target="_top" xlink:title="An Operation that pulls part of a Program.">
+<a xlink:href="class_om_1_1_operations_1_1_pull_operation.html" target="_top" xlink:title="An Operation that pulls part of a Program.">
 <polygon fill="none" stroke="black" points="332.5,-251 332.5,-281 503.5,-281 503.5,-251 332.5,-251"/>
 <text text-anchor="start" x="340.5" y="-269" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::PullOperation</text>
 <text text-anchor="middle" x="418" y="-258" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisProgram, ThisImplementation &gt;</text>
@@ -490,7 +490,7 @@
 </g>
 <!-- Node35 -->
 <g id="node69" class="node"><title>Node35</title>
-<a xlink:href="struct_om_1_1_operations_1_1_quote_operation.html" target="_top" xlink:title="The quote Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_quote_operation.html" target="_top" xlink:title="The quote Operation implementation.">
 <polygon fill="none" stroke="black" points="339.5,-201.5 339.5,-220.5 496.5,-220.5 496.5,-201.5 339.5,-201.5"/>
 <text text-anchor="middle" x="418" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::QuoteOperation</text>
 </a>
@@ -502,7 +502,7 @@
 </g>
 <!-- Node37 -->
 <g id="node73" class="node"><title>Node37</title>
-<a xlink:href="struct_om_1_1_operations_1_1_skip_operation.html" target="_top" xlink:title="The skip Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_skip_operation.html" target="_top" xlink:title="The skip Operation implementation.">
 <polygon fill="none" stroke="black" points="343.5,-152.5 343.5,-171.5 492.5,-171.5 492.5,-152.5 343.5,-152.5"/>
 <text text-anchor="middle" x="418" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::SkipOperation</text>
 </a>
@@ -514,7 +514,7 @@
 </g>
 <!-- Node39 -->
 <g id="node77" class="node"><title>Node39</title>
-<a xlink:href="struct_om_1_1_operations_1_1_translate_operation.html" target="_top" xlink:title="Om::Operations::Translate\lOperation\&lt; SubstituteOperation \&gt;">
+<a xlink:href="class_om_1_1_operations_1_1_translate_operation.html" target="_top" xlink:title="Om::Operations::Translate\lOperation\&lt; SubstituteOperation \&gt;">
 <polygon fill="none" stroke="black" points="338.5,-98 338.5,-128 497.5,-128 497.5,-98 338.5,-98"/>
 <text text-anchor="start" x="346.5" y="-116" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::Translate</text>
 <text text-anchor="middle" x="418" y="-105" font-family="Helvetica,sans-Serif" font-size="10.00">Operation&lt; SubstituteOperation &gt;</text>
@@ -527,7 +527,7 @@
 </g>
 <!-- Node40 -->
 <g id="node79" class="node"><title>Node40</title>
-<a xlink:href="struct_om_1_1_operations_1_1_substitute_operation.html" target="_top" xlink:title="The substitute Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_substitute_operation.html" target="_top" xlink:title="The substitute Operation implementation.">
 <polygon fill="none" stroke="black" points="540.5,-98 540.5,-128 671.5,-128 671.5,-98 540.5,-98"/>
 <text text-anchor="start" x="548.5" y="-116" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::Substitute</text>
 <text text-anchor="middle" x="606" y="-105" font-family="Helvetica,sans-Serif" font-size="10.00">Operation</text>
@@ -540,7 +540,7 @@
 </g>
 <!-- Node42 -->
 <g id="node83" class="node"><title>Node42</title>
-<a xlink:href="struct_om_1_1_operations_1_1_swap_operation.html" target="_top" xlink:title="The swap Operation implementation.">
+<a xlink:href="class_om_1_1_operations_1_1_swap_operation.html" target="_top" xlink:title="The swap Operation implementation.">
 <polygon fill="none" stroke="black" points="339,-54.5 339,-73.5 497,-73.5 497,-54.5 339,-54.5"/>
 <text text-anchor="middle" x="418" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::SwapOperation</text>
 </a>
@@ -552,7 +552,7 @@
 </g>
 <!-- Node44 -->
 <g id="node87" class="node"><title>Node44</title>
-<a xlink:href="struct_om_1_1_operations_1_1_translate_operation.html" target="_top" xlink:title="An Operation that applies each Translator to a Program.">
+<a xlink:href="class_om_1_1_operations_1_1_translate_operation.html" target="_top" xlink:title="An Operation that applies each Translator to a Program.">
 <polygon fill="none" stroke="black" points="340.5,-0 340.5,-30 495.5,-30 495.5,-0 340.5,-0"/>
 <text text-anchor="start" x="348.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Operations::Translate</text>
 <text text-anchor="middle" x="418" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Operation&lt; ThisImplementation &gt;</text>

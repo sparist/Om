@@ -106,55 +106,51 @@ $(document).ready(function(){initNavTree('equals__operation_8hpp_source.html',''
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="equals__operation_8hpp.html#a535f71f1def74420da4d319ac572a399">   23</a></span>&#160;<span class="preprocessor">    #define Om_Operations_EqualsOperation_GetName_() \</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    &quot;=&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>Om</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">namespace </span>Operations</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// MARK: - Om::Operations::EqualsOperation</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="struct_om_1_1_operations_1_1_equals_operation.html">   35</a></span>&#160;<span class="comment"></span>        <span class="keyword">struct </span><a class="code" href="struct_om_1_1_operations_1_1_equals_operation.html" title="The = Operation implementation.">EqualsOperation</a>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="struct_om_1_1_default_operation.html" title="A partial implementation of Operation.">DefaultOperation</a>&lt; EqualsOperation &gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="struct_om_1_1_operations_1_1_equals_operation.html#ad63a86aa671adf73169cfbf029217bc6">GetName</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheEqualsOperation &gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="struct_om_1_1_operations_1_1_equals_operation.html#a28b776af8b2b4fc386b369b5a6abdce9">GiveElements</a>(</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                TheEqualsOperation &amp;,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="struct_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            );</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="struct_om_1_1_operations_1_1_equals_operation.html#a9875c09d7c33a80375e0cb53883cd116">EqualsOperation</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_operations_1_1_equals_operation.html#ad31021285ef4d554c2357544d4e4c099">TakeOperand</a>(</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="struct_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                TheOperand &amp;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="struct_om_1_1_operations_1_1_equals_operation.html#a742edfe7a6685d80bd0f99649971a39a">TakeQuotedQueue</a>(</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <a class="code" href="struct_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                TheQueue &amp;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            );</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="struct_om_1_1_operations_1_1_equals_operation.html#ae8524152c3d2452f6dc203f0efad3984">   70</a></span>&#160;            <a class="code" href="struct_om_1_1_operand.html" title="The Operand implementation.">Operand</a> <a class="code" href="struct_om_1_1_operations_1_1_equals_operation.html#ae8524152c3d2452f6dc203f0efad3984" title="The Operand to compare with.">thisOperand</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        };</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">namespace</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keyword">static</span> <a class="code" href="struct_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt; EqualsOperation &gt;</a> <span class="keyword">const</span> theEqualsDefinition;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="equals__operation_8cpp.html" title="Om source file.">om/operations/equals_operation.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>Om {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// MARK: - Om::Operations::EqualsOperation</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="class_om_1_1_operations_1_1_equals_operation.html">   33</a></span>&#160;<span class="comment"></span>        <span class="keyword">class </span><a class="code" href="class_om_1_1_operations_1_1_equals_operation.html" title="The = Operation implementation.">EqualsOperation</a>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_operation.html" title="A partial implementation of Operation.">DefaultOperation</a>&lt; EqualsOperation &gt; {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operations_1_1_equals_operation.html#ad63a86aa671adf73169cfbf029217bc6">GetName</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheEqualsOperation &gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_equals_operation.html#a28b776af8b2b4fc386b369b5a6abdce9">GiveElements</a>(</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                TheEqualsOperation &amp;,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="class_om_1_1_operations_1_1_equals_operation.html#a9875c09d7c33a80375e0cb53883cd116">EqualsOperation</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_equals_operation.html#ad31021285ef4d554c2357544d4e4c099">TakeOperand</a>(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                TheOperand &amp;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_equals_operation.html#a742edfe7a6685d80bd0f99649971a39a">TakeQuotedQueue</a>(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                TheQueue &amp;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="class_om_1_1_operations_1_1_equals_operation.html#ae8524152c3d2452f6dc203f0efad3984">   67</a></span>&#160;            <a class="code" href="class_om_1_1_operand.html" title="The Operand implementation.">Operand</a> <a class="code" href="class_om_1_1_operations_1_1_equals_operation.html#ae8524152c3d2452f6dc203f0efad3984" title="The Operand to compare with.">thisOperand</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        };</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt; EqualsOperation &gt;</a> <span class="keyword">const</span> theEqualsDefinition;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="equals__operation_8cpp.html" title="Om source file.">om/operations/equals_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

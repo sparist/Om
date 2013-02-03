@@ -113,13 +113,13 @@ Adding Operations</h2>
 <p>There are two ways to implement an operation: as a composite operation, or an atomic operation.</p>
 <p>To implement a composite operation, or an atomic operation that consumes no operands:</p>
 <ul>
-<li>Define the operation <code>struct</code> in the <code><a class="el" href="namespace_om_1_1_operations.html" title="A namespace for all Operations.">Om::Operations</a></code> namespace.</li>
+<li>Define the operation <code>class</code> in the <code><a class="el" href="namespace_om_1_1_operations.html" title="A namespace for all Operations.">Om::Operations</a></code> namespace.</li>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
 <li>Define the static <code>Give( Evaluation &amp; )</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
 </ul>
 <p>To define an atomic operation that consumes one or more operands:</p>
 <ul>
-<li>Define the operation <code>struct</code>, derived from <code><a class="el" href="struct_om_1_1_default_operation.html" title="A partial implementation of Operation.">Om::DefaultOperation</a>&lt;</code> <em>operation</em> <code>&gt;</code> (where <em>operation</em> is the name of the operation <code>struct</code>), in the <code><a class="el" href="namespace_om_1_1_operations.html" title="A namespace for all Operations.">Om::Operations</a></code> namespace.</li>
+<li>Define the operation <code>class</code>, derived from <code><a class="el" href="class_om_1_1_default_operation.html" title="A partial implementation of Operation.">Om::DefaultOperation</a>&lt;</code> <em>operation</em> <code>&gt;</code> (where <em>operation</em> is the name of the operation <code>class</code>), in the <code><a class="el" href="namespace_om_1_1_operations.html" title="A namespace for all Operations.">Om::Operations</a></code> namespace.</li>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
 <li>Add the implementation, using existing operations as a guide:<ul>
 <li>Implement the functions necessary to compile.</li>
@@ -127,14 +127,13 @@ Adding Operations</h2>
 </ul>
 </li>
 </ul>
-<p>For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <code>WhateverOperation</code> is a stand-in for the name of the operation <code>struct</code>):</p>
-<div class="fragment"><div class="line"><span class="keyword">namespace</span></div>
-<div class="line">{</div>
+<p>For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <code>WhateverOperation</code> is a stand-in for the name of the operation <code>class</code>):</p>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span>{</div>
 <div class="line">    <span class="keyword">static</span> Definition&lt; WhateverOperation &gt; <span class="keyword">const</span> theWhateverDefinition;</div>
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="contributing__developing__adding_programs"></a>
 Adding Programs</h2>
-<p>New data types can be added to Om by extending <code><a class="el" href="struct_om_1_1_program.html" title="The Program implementation.">Om::Program</a></code> and defining the functions necessary to instantiate the class. Use existing programs as a guide.</p>
+<p>New data types can be added to Om by extending <code><a class="el" href="class_om_1_1_program.html" title="The Program implementation.">Om::Program</a></code> and defining the functions necessary to instantiate the class. Use existing programs as a guide.</p>
 <p>Program types should be defined in the <code><a class="el" href="namespace_om.html" title="The Om language implementation.">Om</a></code> namespace.</p>
 <h2><a class="anchor" id="contributing__developing__analyzing_code"></a>
 Analyzing Code</h2>
