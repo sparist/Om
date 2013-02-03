@@ -19,8 +19,8 @@
 
 	#include "om/queue.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::DefaultQueue
 	/*!
 	\brief
@@ -31,8 +31,7 @@ namespace Om
 		typename ThisInterface = Queue
 	>
 	struct DefaultQueue:
-	ThisInterface
-	{
+	public ThisInterface {
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultQueue() = 0;

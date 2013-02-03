@@ -19,10 +19,9 @@
 
 	#include "om/sources/default_source.hpp"
 
-namespace Om
-{
-	namespace Sources
-	{
+namespace Om {
+	namespace Sources {
+
 		// MARK: - Om::Sources::SingletonSource
 		/*!
 		\brief
@@ -30,11 +29,10 @@ namespace Om
 		*/
 		template< typename ThisItem >
 		struct SingletonSource:
-		DefaultSource<
+		public DefaultSource<
 			ThisItem,
 			SingletonSource< ThisItem >
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			SingletonSource();
@@ -65,8 +63,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template< typename ThisItem >
 	void swap(
 		Om::Sources::SingletonSource< ThisItem > &,

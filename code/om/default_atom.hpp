@@ -20,16 +20,15 @@
 	#include "om/atom.hpp"
 	#include "om/default_element.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::DefaultAtom
 	template< typename ThisImplementation >
 	struct DefaultAtom:
-	DefaultElement<
+	public DefaultElement<
 		ThisImplementation,
 		Atom
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultAtom() = 0;

@@ -20,8 +20,8 @@
 	#include "external.hpp"
 	#include "om/translator.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Evaluation;
 
@@ -40,8 +40,8 @@ namespace Om
 	There is a single System instance, returned by the static Get() method.
 	*/
 	struct System:
-	Translator
-	{
+	public Translator {
+
 		template< typename ThisOperation >
 		friend struct Definition;
 

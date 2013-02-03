@@ -19,8 +19,8 @@
 
 	#include "om/code_point.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Evaluation;
 
@@ -40,8 +40,7 @@ namespace Om
 	\brief
 		An Operator lookup for use by an Evaluator.
 	*/
-	struct Translator
-	{
+	struct Translator {
 	public: // MARK: public (non-static)
 
 		/*!

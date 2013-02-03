@@ -22,17 +22,15 @@
 	#define Om_Operations_SystemOperation_GetName_() \
 	"system"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::SystemOperation
 		/*!
 		\brief
 			The \ref system_operation Operation implementation.
 		*/
-		struct SystemOperation
-		{
+		struct SystemOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -40,8 +38,7 @@ namespace Om
 			static void Give( Evaluation & );
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< SystemOperation > const theSystemDefinition;
 		}
 	}

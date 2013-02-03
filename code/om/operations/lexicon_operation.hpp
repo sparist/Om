@@ -21,18 +21,16 @@
 	#include "om/lexicon.hpp"
 	#include "om/operations/program_operation.hpp"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		/*!
 		\brief
 			The \ref lexicon_operation Operation implementation.
 		*/
 		typedef ProgramOperation< Lexicon > LexiconOperation;
 
-		namespace
-		{
+		namespace {
 			static Definition< LexiconOperation > const theLexiconDefinition;
 		}
 	}

@@ -19,8 +19,8 @@
 
 	#include "external.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om
 	/*!
 	\return

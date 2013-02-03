@@ -19,8 +19,8 @@
 
 	#include "om/default_queue.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Evaluation;
 
@@ -42,8 +42,7 @@ namespace Om
 	The program output by the Evaluator is an Expression.  Note that if each line in the Expression was terminated by Symbols::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbols::theLineSeparatorSymbol to the final output.
 	*/
 	struct Evaluator:
-	DefaultQueue< Evaluator >
-	{
+	public DefaultQueue< Evaluator > {
 	public: // MARK: public (non-static)
 
 		/*!

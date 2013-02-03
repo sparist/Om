@@ -19,10 +19,9 @@
 
 	#include "om/sink.hpp"
 
-namespace Om
-{
-	namespace Sinks
-	{
+namespace Om {
+	namespace Sinks {
+
 		// MARK: - Om::Sinks::DefaultSink
 		/*!
 		\brief
@@ -33,12 +32,11 @@ namespace Om
 			typename ThisImplementation
 		>
 		struct DefaultSink:
-		Sink< ThisItem >,
-		std::iterator<
+		public Sink< ThisItem >,
+		public std::iterator<
 			std::output_iterator_tag,
 			ThisItem
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			virtual ~DefaultSink() = 0;

@@ -19,16 +19,15 @@
 
 	#include "om/translator.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Environment
 	/*!
 	\brief
 		An unowned Translator collection for which lookups are done for each Translator, in reverse order, until a match is found.
 	*/
 	struct Environment:
-	Translator
-	{
+	public Translator {
 	public: // MARK: public (non-static)
 
 		Environment();

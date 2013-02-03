@@ -39,9 +39,7 @@ IteratorPairSource<
 >(
 	theCollection.begin(),
 	theCollection.end()
-)
-{
-}
+) {}
 
 	#undef Type_
 	#undef Template_

@@ -27,13 +27,10 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~Source()
-{
-}
+inline Type_::~Source() {}
 
 Template_
-inline bool Type_::operator ==( Source const & ) const
-{
+inline bool Type_::operator ==( Source const & ) const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -42,16 +39,14 @@ inline bool Type_::operator ==( Source const & ) const
 
 Template_
 template< typename TheSource >
-inline bool Type_::operator !=( TheSource const & theSource ) const
-{
+inline bool Type_::operator !=( TheSource const & theSource ) const {
 	return(
 		!( theSource == *this )
 	);
 }
 
 Template_
-inline ThisItem & Type_::operator *() const
-{
+inline ThisItem & Type_::operator *() const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -59,14 +54,12 @@ inline ThisItem & Type_::operator *() const
 }
 
 Template_
-inline ThisItem * Type_::operator ->() const
-{
+inline ThisItem * Type_::operator ->() const {
 	return( &**this );
 }
 
 Template_
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -74,8 +67,7 @@ inline bool Type_::operator !() const
 }
 
 Template_
-inline Type_::operator Boolean() const
-{
+inline Type_::operator Boolean() const {
 	return(
 		( !*this )?
 		0:
@@ -84,8 +76,7 @@ inline Type_::operator Boolean() const
 }
 
 Template_
-inline void Type_::Pop()
-{
+inline void Type_::Pop() {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -95,9 +86,7 @@ inline void Type_::Pop()
 // MARK: private (non-static)
 
 Template_
-inline void Type_::UncomparableBoolean() const
-{
-}
+inline void Type_::UncomparableBoolean() const {}
 
 	#undef Type_
 	#undef Template_

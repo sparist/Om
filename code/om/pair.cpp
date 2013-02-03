@@ -21,41 +21,32 @@
 
 // MARK: public (static)
 
-inline Om::Pair const & Type_::GetEmpty()
-{
+inline Om::Pair const & Type_::GetEmpty() {
 	static Pair thePair;
 	return( thePair );
 }
 
 // MARK: public (non-static)
 
-inline Type_::~Pair()
-{
-}
+inline Type_::~Pair() {}
 
 inline Type_::Pair():
 thisOperator(),
-thisOperand()
-{
-}
+thisOperand() {}
 
-inline void Type_::ClearOperand()
-{
+inline void Type_::ClearOperand() {
 	this->thisOperand.Clear();
 }
 
-inline Om::Operand const & Type_::GetOperand() const
-{
+inline Om::Operand const & Type_::GetOperand() const {
 	return( this->thisOperand );
 }
 
-inline Om::Operator const & Type_::GetOperator() const
-{
+inline Om::Operator const & Type_::GetOperator() const {
 	return( this->thisOperator );
 }
 
-inline void Type_::GiveElements( Queue & theQueue )
-{
+inline void Type_::GiveElements( Queue & theQueue ) {
 	this->GiveElements(
 		*this,
 		theQueue
@@ -64,16 +55,14 @@ inline void Type_::GiveElements( Queue & theQueue )
 	this->thisOperand.Clear();
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) const
-{
+inline void Type_::GiveElements( Queue & theQueue ) const {
 	this->GiveElements(
 		*this,
 		theQueue
 	);
 }
 
-inline bool Type_::IsEmpty() const
-{
+inline bool Type_::IsEmpty() const {
 	return(
 		this->thisOperator.IsEmpty() and
 		this->thisOperand.IsEmpty()
@@ -81,20 +70,17 @@ inline bool Type_::IsEmpty() const
 }
 
 template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & theOperand )
-{
+inline void Type_::TakeOperand( TheOperand & theOperand ) {
 	this->thisOperand.Take( theOperand );
 }
 
 template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & theOperator )
-{
+inline void Type_::TakeOperator( TheOperator & theOperator ) {
 	this->thisOperator.Take( theOperator );
 }
 
 template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
-{
+inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
 	this->thisOperand.SetProgram( theQueue.GiveProgram() );
 }
 
@@ -104,12 +90,11 @@ template< typename ThePair >
 inline void Type_::GiveElements(
 	ThePair & thePair,
 	Queue & theQueue
-)
-{
-	if( !thePair.thisOperator.IsEmpty() ){
+) {
+	if( !thePair.thisOperator.IsEmpty() ) {
 		theQueue.TakeElement( thePair.thisOperator );
 	}
-	if( !thePair.thisOperand.IsEmpty() ){
+	if( !thePair.thisOperand.IsEmpty() ) {
 		theQueue.TakeElement( thePair.thisOperand );
 	}
 }

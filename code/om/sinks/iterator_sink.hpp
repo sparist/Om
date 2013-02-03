@@ -19,10 +19,9 @@
 
 	#include "om/sinks/default_sink.hpp"
 
-namespace Om
-{
-	namespace Sinks
-	{
+namespace Om {
+	namespace Sinks {
+
 		// MARK: - Om::Sinks::IteratorSink
 		/*!
 		\brief
@@ -33,14 +32,13 @@ namespace Om
 			typename ThisIterator
 		>
 		struct IteratorSink:
-		DefaultSink<
+		public DefaultSink<
 			ThisItem,
 			IteratorSink<
 				ThisItem,
 				ThisIterator
 			>
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			explicit IteratorSink( ThisIterator );
@@ -63,8 +61,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<
 		typename ThisItem,
 		typename ThisIterator

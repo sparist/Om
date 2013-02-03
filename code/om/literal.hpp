@@ -23,16 +23,15 @@
 	#define Om_Literal_GetName_() \
 	"literal"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Literal
 	/*!
 	\brief
 		The \ref literal Program implementation.
 	*/
 	struct Literal:
-	DefaultProgram< Literal >
-	{
+	public DefaultProgram< Literal > {
 	public: // MARK: public (static)
 
 		//! \cond
@@ -128,11 +127,10 @@ namespace Om
 	*/
 	template<>
 	struct Literal::ElementRange< Literal >:
-	Sources::CollectionFrontSource<
+	public Sources::CollectionFrontSource<
 		Element,
 		ElementDeque::iterator
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		explicit ElementRange( Literal & );
@@ -145,11 +143,10 @@ namespace Om
 	*/
 	template<>
 	struct Literal::ElementRange< Literal const >:
-	Sources::CollectionFrontSource<
+	public Sources::CollectionFrontSource<
 		Element const,
 		ElementDeque::const_iterator
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		explicit ElementRange( Literal const & );
@@ -157,8 +154,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<>
 	void swap(
 		Om::Literal &,

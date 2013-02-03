@@ -23,8 +23,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_EqualsOperation_GetName_() );
 }
 
@@ -32,10 +31,9 @@ template< typename TheEqualsOperation >
 inline void Type_::GiveElements(
 	TheEqualsOperation & theEqualsOperation,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
-	if( !theEqualsOperation.thisOperand.IsEmpty() ){
+	if( !theEqualsOperation.thisOperand.IsEmpty() ) {
 		theQueue.TakeElement( theEqualsOperation.thisOperand );
 	}
 }
@@ -43,23 +41,20 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 inline Type_::EqualsOperation():
-thisOperand()
-{
-}
+thisOperand() {}
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
-	if( this->thisOperand.IsEmpty() ){
+	if( this->thisOperand.IsEmpty() ) {
 		this->thisOperand.Take( theOperand );
 		return( false );
 	}
 	Expression theExpression;
-	if( this->thisOperand == theOperand ){
+	if( this->thisOperand == theOperand ) {
 		theExpression.TakeOperand( this->thisOperand );
 	}
 	theEvaluation.TakeQuotedQueue( theExpression );
@@ -70,14 +65,13 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
-	if( this->thisOperand.IsEmpty() ){
+) {
+	if( this->thisOperand.IsEmpty() ) {
 		this->thisOperand.SetProgram( theQueue.GiveProgram() );
 		return( false );
 	}
 	Expression theExpression;
-	if( theQueue == *this->thisOperand.GetProgram() ){
+	if( theQueue == *this->thisOperand.GetProgram() ) {
 		theExpression.TakeOperand( this->thisOperand );
 	}
 	theEvaluation.TakeQuotedQueue( theExpression );
@@ -95,23 +89,18 @@ inline bool Type_::TakeQuotedQueue(
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( EqualsOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( EqualsOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{=}",
 					System::Get().Evaluate( "drop find {=} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{{A}}",
 					System::Get().Evaluate( "= {A} {A}" )

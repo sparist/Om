@@ -21,8 +21,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_SubstituteOperation_GetName_() );
 }
 
@@ -33,8 +32,7 @@ inline void Type_::Translate(
 	Translator const &,
 	TheQueue & theQueue,
 	Expression & theExpression
-) const
-{
+) const {
 	Evaluator theScope(
 		theExpression,
 		*this->thisLexicon
@@ -52,55 +50,46 @@ inline void Type_::Translate(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( SubstituteOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( SubstituteOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{substitute}",
 					System::Get().Evaluate( "drop find {substitute} system" )
 				);
 			}
 
-			TEST( BasicSubstitution )
-			{
+			TEST( BasicSubstitution ) {
 				CHECK_EQUAL(
 					"{A{B}}{B}",
 					System::Get().Evaluate( "substitute {A {B}} {A}" )
 				);
 			}
 
-			TEST( IdentityDefinition )
-			{
+			TEST( IdentityDefinition ) {
 				CHECK_EQUAL(
 					"{A{}}{}",
 					System::Get().Evaluate( "substitute {A {}} {A}" )
 				);
 			}
 
-			TEST( EmptyDefinition )
-			{
+			TEST( EmptyDefinition ) {
 				CHECK_EQUAL(
 					"{A}{A}",
 					System::Get().Evaluate( "substitute {A} {A}" )
 				);
 			}
 
-			TEST( EmptyLexicon )
-			{
+			TEST( EmptyLexicon ) {
 				CHECK_EQUAL(
 					"{}{}",
 					System::Get().Evaluate( "substitute {} {}" )
 				);
 			}
 
-			TEST( EmptyKeyFallThrough )
-			{
+			TEST( EmptyKeyFallThrough ) {
 				CHECK_EQUAL(
 					"{{{A}}}{{A}}",
 					System::Get().Evaluate( "substitute {{{A}}} {B}" )
@@ -108,8 +97,7 @@ namespace Om
 			}
 
 			// Confirms that the last definition wins.
-			TEST( MultipleDefinition )
-			{
+			TEST( MultipleDefinition ) {
 				CHECK_EQUAL(
 					"{A{{C}}}{{C}}",
 					System::Get().Evaluate( "substitute { A {{B}} A {{C}} } {A}" )
@@ -117,8 +105,7 @@ namespace Om
 			}
 
 			// Confirms that the last definition wins.
-			TEST( MultipleEmptyKey )
-			{
+			TEST( MultipleEmptyKey ) {
 				CHECK_EQUAL(
 					"{{{C}}}{{C}}",
 					System::Get().Evaluate( "substitute { {{B}} {{C}} } {A}" )
@@ -126,8 +113,7 @@ namespace Om
 			}
 
 			// Confirms that underlying non-constant definitions are used.
-			TEST( ChainedLookup )
-			{
+			TEST( ChainedLookup ) {
 				CHECK_EQUAL(
 					(
 						"{A{B}}{"

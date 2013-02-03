@@ -32,26 +32,21 @@
 
 Template_
 inline Type_::IteratorSink( ThisIterator theIterator ):
-thisIterator( theIterator )
-{
-}
+thisIterator( theIterator ) {}
 
 Template_
-inline Type_ & Type_::operator =( IteratorSink theIteratorSink )
-{
+inline Type_ & Type_::operator =( IteratorSink theIteratorSink ) {
 	this->Swap( theIteratorSink );
 	return( *this );
 }
 
 Template_
-inline void Type_::Push( ThisItem & theItem )
-{
+inline void Type_::Push( ThisItem & theItem ) {
 	*this->thisIterator++ = theItem;
 }
 
 Template_
-inline void Type_::Swap( IteratorSink & theIteratorSink )
-{
+inline void Type_::Swap( IteratorSink & theIteratorSink ) {
 	boost::swap(
 		this->thisIterator,
 		theIteratorSink.thisIterator
@@ -78,8 +73,7 @@ inline void boost::swap(
 		ThisItem,
 		ThisIterator
 	> & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 

@@ -24,18 +24,16 @@
 	#define Om_Operations_SkipOperation_GetName_() \
 	"skip"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::SkipOperation
 		/*!
 		\brief
 			The \ref skip_operation Operation implementation.
 		*/
 		struct SkipOperation:
-		DefaultOperation< SkipOperation >
-		{
+		public DefaultOperation< SkipOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -70,8 +68,7 @@ namespace Om
 			Expression thisExpression;
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< SkipOperation > const theSkipDefinition;
 		}
 	}

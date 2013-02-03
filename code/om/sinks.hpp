@@ -17,15 +17,13 @@
 	#define Om_Sinks_ \
 	Om::Sinks
 
-namespace Om
-{
+namespace Om {
+
 	/*!
 	\brief
 		A namespace for types derived from Sink.
 	*/
-	namespace Sinks
-	{
-	}
+	namespace Sinks {}
 }
 
 #endif

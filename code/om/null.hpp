@@ -22,16 +22,15 @@
 	#define Om_Null_GetName_() \
 	"null"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Null
 	/*!
 	\brief
 		The \ref null Program implementation.
 	*/
 	struct Null:
-	DefaultProgram< Null >
-	{
+	public DefaultProgram< Null > {
 	public: // MARK: public (static)
 
 		/*!
@@ -89,8 +88,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<>
 	void swap(
 		Om::Null &,

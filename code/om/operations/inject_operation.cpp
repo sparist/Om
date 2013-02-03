@@ -21,8 +21,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_InjectOperation_GetName_() );
 }
 
@@ -30,12 +29,11 @@ template< typename TheInjectOperation >
 inline void Type_::GiveElements(
 	TheInjectOperation & theInjectOperation,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
-	if( theInjectOperation.thisScope ){
+	if( theInjectOperation.thisScope ) {
 		theQueue.TakeQuotedElements( theInjectOperation.thisInjector );
-		if( !theInjectOperation.thisScope->IsEmpty() ){
+		if( !theInjectOperation.thisScope->IsEmpty() ) {
 			Expression theOutput;
 			theOutput.Take( theInjectOperation.thisOutput );
 			theInjectOperation.thisScope->GiveElements( theOutput );
@@ -49,31 +47,28 @@ inline void Type_::GiveElements(
 inline Type_::InjectOperation():
 thisInjector(),
 thisOutput(),
-thisScope()
-{
-}
+thisScope() {}
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
-	if( this->thisScope ){
-		if( this->thisScope->IsEmpty() ){
+) {
+	if( this->thisScope ) {
+		if( this->thisScope->IsEmpty() ) {
 			theQueue.GiveElements( *this->thisScope );
-		} else{
+		} else {
 			{
 				Expression const & theInjector = this->thisInjector;
 				theInjector.GiveElements( *this->thisScope );
 			}
 			this->thisScope->TakeQuotedQueue( theQueue );
 		}
-		if( this->thisScope->IsEmpty() ){
+		if( this->thisScope->IsEmpty() ) {
 			theEvaluation.TakeQuotedQueue( this->thisOutput );
 			return( true );
 		}
-	} else{
+	} else {
 		this->thisScope = boost::in_place(
 			boost::ref( this->thisOutput ),
 			boost::ref( theEvaluation.GetTranslator() )
@@ -87,8 +82,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -108,23 +102,18 @@ inline bool Type_::TakeOperand(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( InjectOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( InjectOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{inject}",
 					System::Get().Evaluate( "drop find {inject} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					(
 						"{"
@@ -167,8 +156,7 @@ namespace Om
 				);
 			}
 
-			TEST( EmptyInjector )
-			{
+			TEST( EmptyInjector ) {
 				CHECK_EQUAL(
 					(
 						"{"
@@ -183,40 +171,35 @@ namespace Om
 				);
 			}
 
-			TEST( EmptyOperation )
-			{
+			TEST( EmptyOperation ) {
 				CHECK_EQUAL(
 					"{}{A}{C}{D}{E}",
 					System::Get().Evaluate( "inject {quote} {} {A} {C} {D} {E}" )
 				);
 			}
 
-			TEST( FlushWithNoOperands )
-			{
+			TEST( FlushWithNoOperands ) {
 				CHECK_EQUAL(
 					"inject",
 					System::Get().Evaluate( "inject }" )
 				);
 			}
 
-			TEST( FlushWithOneOperand )
-			{
+			TEST( FlushWithOneOperand ) {
 				CHECK_EQUAL(
 					"inject{quote}",
 					System::Get().Evaluate( "inject {quote} }" )
 				);
 			}
 
-			TEST( FlushWithTwoOperands )
-			{
+			TEST( FlushWithTwoOperands ) {
 				CHECK_EQUAL(
 					"inject{quote}{copy}",
 					System::Get().Evaluate( "inject {quote} {copy} }" )
 				);
 			}
 
-			TEST( FlushWithMoreThanTwoOperands )
-			{
+			TEST( FlushWithMoreThanTwoOperands ) {
 				CHECK_EQUAL(
 					(
 						"inject{quote}{"

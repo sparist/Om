@@ -27,34 +27,28 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultAtom()
-{
-}
+inline Type_::~DefaultAtom() {}
 
 Template_
-inline bool Type_::operator <( DefaultAtom const & theAtom )
-{
+inline bool Type_::operator <( DefaultAtom const & theAtom ) {
 	return( this->thisString < theAtom.thisString );
 }
 
 Template_
-inline bool Type_::operator ==( ThisImplementation const & theAtom ) const
-{
+inline bool Type_::operator ==( ThisImplementation const & theAtom ) const {
 	return( this->thisString == theAtom.thisString );
 }
 
 Template_
-inline void Type_::Clear()
-{
+inline void Type_::Clear() {
 	this->thisString.clear();
 }
 
 Template_
 inline std::auto_ptr<
 	Om::Source< Om::Element >
-> Type_::GetElementRange()
-{
-	if( this->IsEmpty() ){
+> Type_::GetElementRange() {
+	if( this->IsEmpty() ) {
 		return(
 			std::auto_ptr<
 				Source< Element >
@@ -74,9 +68,8 @@ inline std::auto_ptr<
 Template_
 inline std::auto_ptr<
 	Om::Source< Om::Element const >
-> Type_::GetElementRange() const
-{
-	if( this->IsEmpty() ){
+> Type_::GetElementRange() const {
+	if( this->IsEmpty() ) {
 		return(
 			std::auto_ptr<
 				Source< Element const >
@@ -94,34 +87,29 @@ inline std::auto_ptr<
 }
 
 Template_
-inline std::string const & Type_::GetString() const
-{
+inline std::string const & Type_::GetString() const {
 	return( this->thisString );
 }
 
 Template_
-inline bool Type_::IsEmpty() const
-{
+inline bool Type_::IsEmpty() const {
 	return( this->thisString.empty() );
 }
 
 Template_
-inline bool Type_::Merge( ThisImplementation & theAtom )
-{
+inline bool Type_::Merge( ThisImplementation & theAtom ) {
 	this->TakeElement( theAtom );
 	return( true );
 }
 
 Template_
-inline bool Type_::Merge( ThisImplementation const & theAtom )
-{
+inline bool Type_::Merge( ThisImplementation const & theAtom ) {
 	this->TakeElement( theAtom );
 	return( true );
 }
 
 Template_
-inline void Type_::Swap( ThisImplementation & theAtom )
-{
+inline void Type_::Swap( ThisImplementation & theAtom ) {
 	this->thisString.swap( theAtom.thisString );
 }
 
@@ -129,14 +117,11 @@ inline void Type_::Swap( ThisImplementation & theAtom )
 
 Template_
 inline Type_::DefaultAtom():
-thisString()
-{
-}
+thisString() {}
 
 Template_
 inline Type_::DefaultAtom( char const theCodeUnitIterator[] ):
-thisString( theCodeUnitIterator )
-{
+thisString( theCodeUnitIterator ) {
 	assert(
 		theCodeUnitIterator and
 		"The argument cannot be null."
@@ -155,8 +140,7 @@ inline Type_::DefaultAtom( char const theCodeUnit ):
 thisString(
 	1,
 	theCodeUnit
-)
-{
+) {
 	assert(
 		boost::locale::normalize(
 			this->thisString,

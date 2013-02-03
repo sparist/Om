@@ -36,52 +36,43 @@ inline Type_::IteratorPairSource(
 	ThisIterator const theEnd
 ):
 thisCurrent( theCurrent ),
-thisEnd( theEnd )
-{
-}
+thisEnd( theEnd ) {}
 
 Template_
-inline Type_ & Type_::operator =( IteratorPairSource theIteratorPairSource )
-{
+inline Type_ & Type_::operator =( IteratorPairSource theIteratorPairSource ) {
 	this->Swap( theIteratorPairSource );
 	return( *this );
 }
 
 Template_
-inline bool Type_::operator ==( IteratorPairSource const & theSource ) const
-{
+inline bool Type_::operator ==( IteratorPairSource const & theSource ) const {
 	return( this->thisCurrent == theSource.thisCurrent );
 }
 
 Template_
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	return( this->thisEnd == this->thisCurrent );
 }
 
 Template_
-inline ThisItem & Type_::operator *() const
-{
+inline ThisItem & Type_::operator *() const {
 	assert( this->thisEnd != this->thisCurrent );
 	return( *this->thisCurrent );
 }
 
 Template_
-inline void Type_::End()
-{
+inline void Type_::End() {
 	this->thisCurrent = this->thisEnd;
 }
 
 Template_
-inline void Type_::Pop()
-{
+inline void Type_::Pop() {
 	assert( this->thisEnd != this->thisCurrent );
 	++this->thisCurrent;
 }
 
 Template_
-inline void Type_::Swap( IteratorPairSource & theIteratorPairSource )
-{
+inline void Type_::Swap( IteratorPairSource & theIteratorPairSource ) {
 	boost::swap(
 		this->thisCurrent,
 		theIteratorPairSource.thisCurrent
@@ -111,8 +102,7 @@ inline void boost::swap(
 		ThisItem,
 		ThisIterator
 	> & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 

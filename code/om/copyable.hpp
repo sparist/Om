@@ -19,15 +19,15 @@
 
 	#include "om/copy.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Copyable
 	/*!
 	\brief
 		An object that can be passed to #Copy to be copied.
 	*/
-	struct Copyable
-	{
+	struct Copyable {
+
 		template< typename TheCopyable >
 		friend std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
 

@@ -19,10 +19,9 @@
 
 	#include "om/default_operation.hpp"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPushOperation
 		/*!
 		\brief
@@ -33,13 +32,12 @@ namespace Om
 			typename ThisImplementation
 		>
 		struct FrontPushOperation:
-		DefaultOperation<
+		public DefaultOperation<
 			FrontPushOperation<
 				ThisProgram,
 				ThisImplementation
 			>
-		>
-		{
+		> {
 		public: // MARK: public (static)
 
 			template< typename TheFrontPushOperation >

@@ -24,18 +24,16 @@
 	#define Om_Operations_SubstituteOperation_GetName_() \
 	"substitute"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::SubstituteOperation
 		/*!
 		\brief
 			The \ref substitute_operation Operation implementation.
 		*/
 		struct SubstituteOperation:
-		TranslateOperation< SubstituteOperation >
-		{
+		public TranslateOperation< SubstituteOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -50,8 +48,7 @@ namespace Om
 			) const;
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< SubstituteOperation > const theSubstituteDefinition;
 		}
 	}

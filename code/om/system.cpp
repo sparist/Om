@@ -24,26 +24,23 @@
 
 // MARK: public (static)
 
-inline Type_ & Type_::Get()
-{
+inline Type_ & Type_::Get() {
 	static System theSystem;
 	return( theSystem );
 }
 
 // MARK: public (non-static)
 
-inline Om::Lexicon const & Type_::GetLexicon() const
-{
+inline Om::Lexicon const & Type_::GetLexicon() const {
 	static Lexicon theLexicon;
-	if( theLexicon.IsEmpty() ){
+	if( theLexicon.IsEmpty() ) {
 		this->GiveElements( theLexicon );
 	}
 	return( theLexicon );
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) const
-{
-	if( !this->IsEmpty() ){
+inline void Type_::GiveElements( Queue & theQueue ) const {
+	if( !this->IsEmpty() ) {
 		Map::const_iterator const theEnd = this->thisMap.end();
 		Map::const_iterator theCurrent = this->thisMap.begin();
 		assert( theEnd != theCurrent );
@@ -51,18 +48,17 @@ inline void Type_::GiveElements( Queue & theQueue ) const
 			;
 			;
 			theQueue.TakeElement( Separator::GetLineSeparator() )
-		){
+		) {
 			Operator theOperator( theCurrent->first );
 			theQueue.TakeElement( theOperator );
-			if( theEnd == ++theCurrent ){
+			if( theEnd == ++theCurrent ) {
 				return;
 			}
 		}
 	}
 }
 
-inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] )
-{
+inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] ) {
 	// Set the global locale.
 	{
 		boost::locale::generator theGenerator;
@@ -84,7 +80,7 @@ inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] )
 			;
 			theEnd != theCurrent;
 			++theCurrent
-		){
+		) {
 			assert(
 				boost::locale::normalize(
 					theCurrent->first,
@@ -96,20 +92,18 @@ inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] )
 	#endif
 }
 
-inline bool Type_::IsEmpty() const
-{
+inline bool Type_::IsEmpty() const {
 	return( this->thisMap.empty() );
 }
 
 inline bool Type_::Translate(
 	Evaluation & theEvaluation,
 	Operator const & theOperator
-) const
-{
+) const {
 	Map::const_iterator theIterator(
 		this->thisMap.find( theOperator.GetString() )
 	);
-	if( this->thisMap.end() == theIterator ){
+	if( this->thisMap.end() == theIterator ) {
 		return( false );
 	}
 	assert( theIterator->second );
@@ -120,9 +114,7 @@ inline bool Type_::Translate(
 // MARK: private (non-static)
 
 inline Type_::System():
-thisMap()
-{
-}
+thisMap() {}
 
 	#undef Type_
 

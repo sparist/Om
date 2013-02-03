@@ -26,52 +26,42 @@
 
 Template_
 inline Type_::SingletonSource():
-thisItem()
-{
-}
+thisItem() {}
 
 Template_
 inline Type_::SingletonSource( ThisItem & theItem ):
-thisItem( &theItem )
-{
-}
+thisItem( &theItem ) {}
 
 Template_
-inline Type_ & Type_::operator =( SingletonSource theSingletonSource )
-{
+inline Type_ & Type_::operator =( SingletonSource theSingletonSource ) {
 	this->Swap( theSingletonSource );
 	return( *this );
 }
 
 Template_
-inline bool Type_::operator ==( SingletonSource const & theSource ) const
-{
+inline bool Type_::operator ==( SingletonSource const & theSource ) const {
 	return( this->thisItem == theSource.thisItem );
 }
 
 Template_
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	return( !this->thisItem );
 }
 
 Template_
-inline ThisItem & Type_::operator *() const
-{
+inline ThisItem & Type_::operator *() const {
 	assert( this->thisItem );
 	return( *this->thisItem );
 }
 
 Template_
-inline void Type_::Pop()
-{
+inline void Type_::Pop() {
 	assert( this->thisItem );
 	this->thisItem = 0;
 }
 
 Template_
-inline void Type_::Swap( SingletonSource & theSingletonSource )
-{
+inline void Type_::Swap( SingletonSource & theSingletonSource ) {
 	boost::swap(
 		this->thisItem,
 		theSingletonSource.thisItem
@@ -88,8 +78,7 @@ template< typename ThisItem >
 inline void boost::swap(
 	Om::Sources::SingletonSource< ThisItem > & theFirst,
 	Om::Sources::SingletonSource< ThisItem > & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 

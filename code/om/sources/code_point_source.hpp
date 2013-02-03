@@ -20,10 +20,9 @@
 	#include "om/code_point.hpp"
 	#include "om/sources/iterator_source.hpp"
 
-namespace Om
-{
-	namespace Sources
-	{
+namespace Om {
+	namespace Sources {
+
 		// MARK: - Om::Sources::CodePointSource
 		/*!
 		\brief
@@ -31,11 +30,10 @@ namespace Om
 		*/
 		template< typename ThisCodeUnitIterator = char const * >
 		struct CodePointSource:
-		DefaultSource<
+		public DefaultSource<
 			CodePoint const,
 			CodePointSource< ThisCodeUnitIterator >
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			/*!
@@ -89,13 +87,12 @@ namespace Om
 		*/
 		template<>
 		struct CodePointSource< char const * >:
-		CodePointSource<
+		public CodePointSource<
 			IteratorSource<
 				char const,
 				char const *
 			>
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			/*!
@@ -119,8 +116,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template< typename ThisCodeUnitIterator >
 	void swap(
 		Om::Sources::CodePointSource< ThisCodeUnitIterator > &,

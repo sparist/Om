@@ -19,11 +19,10 @@
 
 	#include "om/operator.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Pair
-	struct Pair
-	{
+	struct Pair {
 	public: // MARK: public (static)
 
 		static Pair const & GetEmpty();

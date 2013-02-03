@@ -21,13 +21,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_EnvironmentOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	Lexicon theLexicon;
 	theEvaluation.GetTranslator().GiveElements( theLexicon );
 	theEvaluation.TakeQuotedQueue( theLexicon );
@@ -44,23 +42,18 @@ inline void Type_::Give( Evaluation & theEvaluation )
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( EnvironmentOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( EnvironmentOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{environment}",
 					System::Get().Evaluate( "drop find {environment} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{pass}",
 					System::Get().Evaluate(

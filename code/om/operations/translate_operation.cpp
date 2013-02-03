@@ -31,13 +31,12 @@ template< typename TheTranslateOperation >
 inline void Type_::GiveElements(
 	TheTranslateOperation & theTranslateOperation,
 	Queue & theQueue
-)
-{
+) {
 	assert(
 		typeid( TheTranslateOperation ) == typeid( ThisImplementation )
 	);
 	theQueue.TakeElement( ThisImplementation::GetOperator() );
-	if( theTranslateOperation.thisLexicon ){
+	if( theTranslateOperation.thisLexicon ) {
 		theQueue.TakeQuotedElements( *theTranslateOperation.thisLexicon );
 	}
 }
@@ -45,17 +44,14 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 Template_
-inline Type_::~TranslateOperation()
-{
-}
+inline Type_::~TranslateOperation() {}
 
 Template_
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -70,9 +66,8 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
-	if( this->thisLexicon ){
+) {
+	if( this->thisLexicon ) {
 		{
 			// Perform the translation.  Note that this uses this->thisLexicon and must be done before the lexicon is given to the Evaluation.
 			Expression theExpression;
@@ -99,9 +94,7 @@ inline bool Type_::TakeQuotedQueue(
 
 Template_
 inline Type_::TranslateOperation():
-thisLexicon()
-{
-}
+thisLexicon() {}
 
 	#undef Type_
 	#undef Template_

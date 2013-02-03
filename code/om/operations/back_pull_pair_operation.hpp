@@ -22,21 +22,20 @@
 	#define Om_Operations_BackPullPairOperation_GetName_() \
 	"pairs->"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Lexicon;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullPairOperation
 		/*!
 		\brief
 			The \ref back_pull_pair_operation Operation implementation.
 		*/
-		struct BackPullPairOperation
-		{
+		struct BackPullPairOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< BackPullPairOperation > const theBackPullPairDefinition;
 		}
 	}

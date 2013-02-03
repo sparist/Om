@@ -21,14 +21,11 @@
 
 // MARK: public (non-static)
 
-inline Type_::~Moveable()
-{
-}
+inline Type_::~Moveable() {}
 
 // MARK: private (non-static)
 
-inline Type_ * Type_::Move()
-{
+inline Type_ * Type_::Move() {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )

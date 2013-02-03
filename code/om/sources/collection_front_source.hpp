@@ -19,10 +19,9 @@
 
 	#include "om/sources/iterator_pair_source.hpp"
 
-namespace Om
-{
-	namespace Sources
-	{
+namespace Om {
+	namespace Sources {
+
 		// MARK: - Om::Sources::CollectionFrontSource
 		/*!
 		\brief
@@ -33,11 +32,10 @@ namespace Om
 			typename ThisIterator
 		>
 		struct CollectionFrontSource:
-		IteratorPairSource<
+		public IteratorPairSource<
 			ThisItem,
 			ThisIterator
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			template< typename TheCollection >

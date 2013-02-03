@@ -23,29 +23,24 @@
 
 // MARK: public (non-static)
 
-inline Type_::~Program()
-{
-}
+inline Type_::~Program() {}
 
 inline std::auto_ptr<
 	Om::Source< Om::Element const >
-> Type_::GetElementRange() const
-{
+> Type_::GetElementRange() const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline std::auto_ptr< Om::Program > Type_::GiveProgram()
-{
+inline std::auto_ptr< Om::Program > Type_::GiveProgram() {
 	return(
 		Give( *this )
 	);
 }
 
-inline std::auto_ptr< Om::Program > Type_::GiveProgram() const
-{
+inline std::auto_ptr< Om::Program > Type_::GiveProgram() const {
 	return(
 		Give( *this )
 	);

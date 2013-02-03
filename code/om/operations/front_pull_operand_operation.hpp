@@ -22,21 +22,20 @@
 	#define Om_Operations_FrontPullOperandOperation_GetName_() \
 	"operand<-elements"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Literal;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullOperandOperation
 		/*!
 		\brief
 			The \ref front_pull_operand_operation Operation implementation.
 		*/
-		struct FrontPullOperandOperation
-		{
+		struct FrontPullOperandOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< FrontPullOperandOperation > const theFrontPullOperandDefinition;
 		}
 	}

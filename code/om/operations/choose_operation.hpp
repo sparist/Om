@@ -23,18 +23,16 @@
 	#define Om_Operations_ChooseOperation_GetName_() \
 	"choose"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::ChooseOperation
 		/*!
 		\brief
 			The \ref choose_operation Operation implementation.
 		*/
 		struct ChooseOperation:
-		DefaultOperation< ChooseOperation >
-		{
+		public DefaultOperation< ChooseOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -82,8 +80,7 @@ namespace Om
 			char unsigned thisOperandCount;
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< ChooseOperation > const theChooseDefinition;
 		}
 	}

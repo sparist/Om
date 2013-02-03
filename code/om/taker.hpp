@@ -17,16 +17,15 @@
 	#define Om_Taker_ \
 	Om::Taker
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Taker
 	/*!
 	\brief
 		An object that can take (copy or swap) another of the same type.
 	*/
 	template< typename ThisImplementation >
-	struct Taker
-	{
+	struct Taker {
 	public: // MARK: public (non-static)
 
 		virtual ~Taker() = 0;

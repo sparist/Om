@@ -23,18 +23,16 @@
 	#define Om_Operations_SwapOperation_GetName_() \
 	"swap"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::SwapOperation
 		/*!
 		\brief
 			The \ref swap_operation Operation implementation.
 		*/
 		struct SwapOperation:
-		DefaultOperation< SwapOperation >
-		{
+		public DefaultOperation< SwapOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -70,8 +68,7 @@ namespace Om
 			Operand thisOperand;
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< SwapOperation > const theSwapDefinition;
 		}
 	}

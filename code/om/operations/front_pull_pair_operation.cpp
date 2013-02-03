@@ -24,13 +24,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_FrontPullPairOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	theEvaluation.TakeOperation(
 		std::auto_ptr< Operation >(
 			new PullOperation<
@@ -45,8 +43,7 @@ template< typename TheQueue >
 inline void Type_::Pull(
 	Lexicon & theLexicon,
 	TheQueue & theQueue
-)
-{
+) {
 	theLexicon.FrontGivePair( theQueue );
 }
 
@@ -60,23 +57,18 @@ inline void Type_::Pull(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( FrontPullPairOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( FrontPullPairOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{<-pairs}",
 					System::Get().Evaluate( "drop find {<-pairs} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{1{2}}{4{5}}",
 					System::Get().Evaluate( "<-pairs {1{2}4{5}}" )
@@ -113,8 +105,7 @@ namespace Om
 				);
 			}
 
-			TEST( Flush )
-			{
+			TEST( Flush ) {
 				CHECK_EQUAL(
 					"<-pairs",
 					System::Get().Evaluate( "<-pairs" )

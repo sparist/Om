@@ -17,16 +17,15 @@
 	#define Om_Source_ \
 	Om::Source
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Source
 	/*!
 	\brief
 		Any object that items can be pulled from.
 	*/
 	template< typename ThisItem >
-	struct Source
-	{
+	struct Source {
 	public: // MARK: public (static)
 
 		/*!

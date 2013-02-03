@@ -17,17 +17,15 @@
 	#define Om_Symbols_ \
 	Om::Symbols
 
-namespace Om
-{
+namespace Om {
+
 	/*!
 	\brief
 		A namespace for ASCII #CodePoint symbol enumerations.
 
 	Every Unicode #CodePoint has an interpretation in code.  Each symbol #CodePoint has a specified interpretation, and each other is interpreted as an Operator #CodePoint.
 	*/
-	namespace Symbols
-	{
-	}
+	namespace Symbols {}
 }
 
 #endif

@@ -32,26 +32,21 @@
 
 Template_
 inline Type_::ContainerBackSink( ThisContainer & theContainer ):
-thisContainer( theContainer )
-{
-}
+thisContainer( theContainer ) {}
 
 Template_
-inline Type_ & Type_::operator =( ContainerBackSink theContainerBackSink )
-{
+inline Type_ & Type_::operator =( ContainerBackSink theContainerBackSink ) {
 	this->Swap( theContainerBackSink );
 	return( *this );
 }
 
 Template_
-inline void Type_::Push( ThisItem & thisItem )
-{
+inline void Type_::Push( ThisItem & thisItem ) {
 	this->thisContainer.push_back( thisItem );
 }
 
 Template_
-inline void Type_::Swap( ContainerBackSink & theContainerBackSink )
-{
+inline void Type_::Swap( ContainerBackSink & theContainerBackSink ) {
 	boost::swap(
 		this->thisContainer,
 		theContainerBackSink.thisContainer
@@ -77,8 +72,7 @@ inline void boost::swap(
 		ThisItem,
 		ThisContainer
 	> & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 
@@ -90,15 +84,11 @@ inline void boost::swap(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Sinks
-	{
-		// MARK: -
-		SUITE( ContainerBackSink )
-		{
-			TEST( General )
-			{
+// MARK: -
+namespace Om {
+	namespace Sinks {
+		SUITE( ContainerBackSink ) {
+			TEST( General ) {
 				std::string theSinkString( "01" );
 				ContainerBackSink<
 					char const,

@@ -23,13 +23,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_BackPullCodePointOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	theEvaluation.TakeOperation(
 		std::auto_ptr< Operation >(
 			new PullOperation<
@@ -44,8 +42,7 @@ template< typename TheQueue >
 inline void Type_::Pull(
 	Operator & theOperator,
 	TheQueue & theQueue
-)
-{
+) {
 	theOperator.BackGiveCodePoint( theQueue );
 }
 
@@ -60,23 +57,18 @@ inline void Type_::Pull(
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( BackPullCodePointOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( BackPullCodePointOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{code` points->}",
 					System::Get().Evaluate( "drop find {code` points->} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{e}{1`{2`}thre}",
 					System::Get().Evaluate( "code` points-> {1{2}three}" )
@@ -118,8 +110,7 @@ namespace Om
 				);
 			}
 
-			TEST( MultiCodePointCharacter )
-			{
+			TEST( MultiCodePointCharacter ) {
 				CHECK_EQUAL(
 					(
 						"{"

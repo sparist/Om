@@ -31,13 +31,10 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultSink()
-{
-}
+inline Type_::~DefaultSink() {}
 
 Template_
-inline ThisImplementation & Type_::operator ++()
-{
+inline ThisImplementation & Type_::operator ++() {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);
@@ -47,8 +44,7 @@ inline ThisImplementation & Type_::operator ++()
 }
 
 Template_
-inline ThisImplementation Type_::operator ++( int )
-{
+inline ThisImplementation Type_::operator ++( int ) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);

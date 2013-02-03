@@ -18,14 +18,10 @@
 
 	#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		SUITE( OperatorOperation )
-		{
-			TEST( Definition )
-			{
+namespace Om {
+	namespace Operations {
+		SUITE( OperatorOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{operator}",
 					System::Get().Evaluate( "drop find {operator} system" )

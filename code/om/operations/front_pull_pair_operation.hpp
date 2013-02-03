@@ -22,21 +22,20 @@
 	#define Om_Operations_FrontPullPairOperation_GetName_() \
 	"<-pairs"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Lexicon;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullPairOperation
 		/*!
 		\brief
 			The \ref front_pull_pair_operation Operation implementation.
 		*/
-		struct FrontPullPairOperation
-		{
+		struct FrontPullPairOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< FrontPullPairOperation > const theFrontPullPairDefinition;
 		}
 	}

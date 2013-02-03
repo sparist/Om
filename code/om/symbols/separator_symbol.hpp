@@ -70,16 +70,14 @@
 	#define Om_Symbols_SeparatorSymbol_GetTabString_() \
 	Om_Macros_GetString_( Om_Symbols_SeparatorSymbol_GetTabHex_() )
 
-namespace Om
-{
-	namespace Symbols
-	{
+namespace Om {
+	namespace Symbols {
+
 		/*!
 		\brief
 			A Separator symbol.
 		*/
-		enum SeparatorSymbol
-		{
+		enum SeparatorSymbol {
 			theSpaceSeparatorSymbol = Om_Macros_GetNumber_( Om_Symbols_SeparatorSymbol_GetSpaceHex_() ),
 
 			theLineSeparatorSymbol = Om_Macros_GetNumber_( Om_Symbols_SeparatorSymbol_GetLineHex_() ),

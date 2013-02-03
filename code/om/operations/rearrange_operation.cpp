@@ -29,13 +29,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_RearrangeOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	// define swap skip {dequote inject {quote} ->expression {fill} quote}
 	DefineOperation::Give( theEvaluation );
 	SwapOperation::Give( theEvaluation );
@@ -63,23 +61,18 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( RearrangeOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( RearrangeOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{rearrange}",
 					System::Get().Evaluate( "drop find {rearrange} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{2}{1}",
 					System::Get().Evaluate( "rearrange{b a}{a b}{1}{2}" )

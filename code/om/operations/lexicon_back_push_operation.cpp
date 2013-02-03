@@ -24,13 +24,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_LexiconBackPushOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	LexiconFrontPushOperation::Give( theEvaluation );
 	SwapOperation::Give( theEvaluation );
 }
@@ -45,15 +43,11 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( LexiconBackPushOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( LexiconBackPushOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{lexicon<-}",
 					System::Get().Evaluate( "drop find {lexicon<-} system" )

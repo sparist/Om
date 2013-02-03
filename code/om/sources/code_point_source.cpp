@@ -33,48 +33,42 @@ inline Type_::CodePointSource(
 ):
 thisInputIterator( theInputStart ),
 thisInputEnd( theInputEnd ),
-thisCodePoint()
-{
+thisCodePoint() {
 	this->Pop();
 }
 
 Template_
-inline Type_ & Type_::operator =( CodePointSource theCodePointSource )
-{
+inline Type_ & Type_::operator =( CodePointSource theCodePointSource ) {
 	this->Swap( theCodePointSource );
 	return( *this );
 }
 
 Template_
-inline bool Type_::operator ==( CodePointSource const & theSource ) const
-{
+inline bool Type_::operator ==( CodePointSource const & theSource ) const {
 	return( this->thisInputIterator == theSource.thisInputIterator );
 }
 
 Template_
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	return( !this->thisCodePoint );
 }
 
 Template_
-inline Om::CodePoint const & Type_::operator *() const
-{
+inline Om::CodePoint const & Type_::operator *() const {
 	assert( this->thisCodePoint );
 	return( this->thisCodePoint );
 }
 
 Template_
-inline void Type_::Pop()
-{
-	if( this->thisInputEnd == this->thisInputIterator ){
+inline void Type_::Pop() {
+	if( this->thisInputEnd == this->thisInputIterator ) {
 		this->thisCodePoint = 0;
-	} else{
+	} else {
 		this->thisCodePoint = Utf8::decode(
 			this->thisInputIterator,
 			this->thisInputEnd
 		);
-		switch( this->thisCodePoint ){
+		switch( this->thisCodePoint ) {
 		default:
 			return;
 		case boost::locale::utf::incomplete:
@@ -87,8 +81,7 @@ inline void Type_::Pop()
 }
 
 Template_
-inline void Type_::Swap( CodePointSource & theCodePointSource )
-{
+inline void Type_::Swap( CodePointSource & theCodePointSource ) {
 	boost::swap(
 		this->thisInputIterator,
 		theCodePointSource.thisInputIterator
@@ -118,9 +111,7 @@ inline Type_::CodePointSource( char const theCodeUnitIterator[] ):
 CodePointSource< CodeUnitSource >(
 	CodeUnitSource( theCodeUnitIterator ),
 	CodeUnitSource( "" )
-)
-{
-}
+) {}
 
 // MARK: -
 // MARK: boost
@@ -129,8 +120,7 @@ template< typename ThisCodeUnitIterator >
 inline void boost::swap(
 	Om::Sources::CodePointSource< ThisCodeUnitIterator > & theFirst,
 	Om::Sources::CodePointSource< ThisCodeUnitIterator > & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 
@@ -144,15 +134,11 @@ inline void boost::swap(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Sources
-	{
-		// MARK: -
-		SUITE( CodePointSource )
-		{
-			TEST( General )
-			{
+// MARK: -
+namespace Om {
+	namespace Sources {
+		SUITE( CodePointSource ) {
+			TEST( General ) {
 				std::string theString(
 					"\xC7\xBE"
 					"A"

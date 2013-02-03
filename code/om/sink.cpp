@@ -27,32 +27,26 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~Sink()
-{
-}
+inline Type_::~Sink() {}
 
 Template_
-inline Type_ & Type_::operator =( ThisItem & theItem )
-{
+inline Type_ & Type_::operator =( ThisItem & theItem ) {
 	this->Push( theItem );
 	return( *this );
 }
 
 Template_
-inline Type_ & Type_::operator *()
-{
+inline Type_ & Type_::operator *() {
 	return( *this );
 }
 
 Template_
-inline Type_ * Type_::operator ->()
-{
+inline Type_ * Type_::operator ->() {
 	return( this );
 }
 
 Template_
-inline void Type_::Push( ThisItem & )
-{
+inline void Type_::Push( ThisItem & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )

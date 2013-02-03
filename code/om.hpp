@@ -21,8 +21,6 @@
 \brief
 	The Om language implementation.
 */
-namespace Om
-{
-}
+namespace Om {}
 
 #endif

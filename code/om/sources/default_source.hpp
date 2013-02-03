@@ -19,10 +19,9 @@
 
 	#include "om/source.hpp"
 
-namespace Om
-{
-	namespace Sources
-	{
+namespace Om {
+	namespace Sources {
+
 		// MARK: - Om::Sources::DefaultSource
 		/*!
 		\brief
@@ -33,12 +32,11 @@ namespace Om
 			typename ThisImplementation
 		>
 		struct DefaultSource:
-		Source< ThisItem >,
-		std::iterator<
+		public Source< ThisItem >,
+		public std::iterator<
 			std::input_iterator_tag,
 			ThisItem
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			virtual ~DefaultSource() = 0;

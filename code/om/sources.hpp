@@ -17,15 +17,13 @@
 	#define Om_Sources_ \
 	Om::Sources
 
-namespace Om
-{
+namespace Om {
+
 	/*!
 	\brief
 		A namespace for types derived from Source.
 	*/
-	namespace Sources
-	{
-	}
+	namespace Sources {}
 }
 
 #endif

@@ -23,8 +23,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_QuoteOperation_GetName_() );
 }
 
@@ -32,8 +31,7 @@ template< typename TheQuoteOperation >
 inline void Type_::GiveElements(
 	TheQuoteOperation &,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
 }
 
@@ -43,8 +41,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	theEvaluation.TakeQuotedQueue( theOperand );
 	return( true );
@@ -54,8 +51,7 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
+) {
 	Operand theOperand( theQueue.GiveProgram() );
 	theEvaluation.TakeQuotedQueue( theOperand );
 	return( true );
@@ -71,23 +67,18 @@ inline bool Type_::TakeQuotedQueue(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( QuoteOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( QuoteOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{quote}",
 					System::Get().Evaluate( "drop find {quote} system" )
 				);
 			}
 
-			TEST( Simple )
-			{
+			TEST( Simple ) {
 				CHECK_EQUAL(
 					"{{1{2}3}}",
 					System::Get().Evaluate( "quote {1{2}3}" )

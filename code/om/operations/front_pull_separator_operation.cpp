@@ -24,13 +24,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_FrontPullSeparatorOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	theEvaluation.TakeOperation(
 		std::auto_ptr< Operation >(
 			new PullOperation<
@@ -45,8 +43,7 @@ template< typename TheQueue >
 inline void Type_::Pull(
 	Literal & theLiteral,
 	TheQueue & theQueue
-)
-{
+) {
 	theLiteral.FrontGive< Separator >( theQueue );
 }
 
@@ -61,23 +58,18 @@ inline void Type_::Pull(
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( FrontPullSeparatorOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( FrontPullSeparatorOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{separator<-elements}",
 					System::Get().Evaluate( "drop find {separator<-elements} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{ }{1{2}}",
 					System::Get().Evaluate( "separator<-elements { 1{2}}" )

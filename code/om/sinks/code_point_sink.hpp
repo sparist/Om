@@ -20,10 +20,9 @@
 	#include "om/code_point.hpp"
 	#include "om/sinks/default_sink.hpp"
 
-namespace Om
-{
-	namespace Sinks
-	{
+namespace Om {
+	namespace Sinks {
+
 		// MARK: - Om::Sinks::CodePointSink
 		/*!
 		\brief
@@ -31,11 +30,10 @@ namespace Om
 		*/
 		template< typename ThisCodeUnitIterator >
 		struct CodePointSink:
-		DefaultSink<
+		public DefaultSink<
 			CodePoint const,
 			CodePointSink< ThisCodeUnitIterator >
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			explicit CodePointSink( ThisCodeUnitIterator );
@@ -58,8 +56,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template< typename ThisCodeUnitIterator >
 	void swap(
 		Om::Sinks::CodePointSink< ThisCodeUnitIterator > &,

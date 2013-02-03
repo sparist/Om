@@ -31,15 +31,12 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultMoveable()
-{
-}
+inline Type_::~DefaultMoveable() {}
 
 // MARK: private (non-static)
 
 Template_
-inline ThisInterface * Type_::Move()
-{
+inline ThisInterface * Type_::Move() {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);

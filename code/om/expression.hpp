@@ -22,16 +22,15 @@
 	#define Om_Expression_GetName_() \
 	"expression"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Expression
 	/*!
 	\brief
 		The \ref expression Program implementation.
 	*/
 	struct Expression:
-	DefaultProgram< Expression >
-	{
+	public DefaultProgram< Expression > {
 	public: // MARK: public (static)
 
 		//! \cond
@@ -152,11 +151,10 @@ namespace Om
 	*/
 	template<>
 	struct Expression::FormRange< Form >:
-	Sources::CollectionFrontSource<
+	public Sources::CollectionFrontSource<
 		Form,
 		FormDeque::iterator
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		explicit FormRange( Expression & );
@@ -169,11 +167,10 @@ namespace Om
 	*/
 	template<>
 	struct Expression::FormRange< Form const >:
-	Sources::CollectionFrontSource<
+	public Sources::CollectionFrontSource<
 		Form const,
 		FormDeque::const_iterator
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		explicit FormRange( Expression const & );
@@ -185,11 +182,10 @@ namespace Om
 		An Expression Element range.
 	*/
 	struct Expression::ElementRange:
-	Sources::DefaultSource<
+	public Sources::DefaultSource<
 		Element const,
 		ElementRange
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		explicit ElementRange( Expression const & );
@@ -227,8 +223,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<>
 	void swap(
 		Om::Expression &,

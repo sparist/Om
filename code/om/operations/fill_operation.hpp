@@ -24,18 +24,16 @@
 	#define Om_Operations_FillOperation_GetName_() \
 	"fill"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::FillOperation
 		/*!
 		\brief
 			The \ref fill_operation Operation implementation.
 		*/
 		struct FillOperation:
-		DefaultOperation< FillOperation >
-		{
+		public DefaultOperation< FillOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -81,8 +79,7 @@ namespace Om
 			boost::optional< FormRange > thisFormRange;
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< FillOperation > const theReadDefinition;
 		}
 	}

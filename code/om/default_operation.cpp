@@ -27,15 +27,13 @@
 // MARK: public (static)
 
 Template_
-inline Om::Operator const & Type_::GetOperator()
-{
+inline Om::Operator const & Type_::GetOperator() {
 	static Operator const theOperator( ThisImplementation::GetName() );
 	return( theOperator );
 }
 
 Template_
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	theEvaluation.TakeOperation(
 		std::auto_ptr< ThisImplementation >( new ThisImplementation )
 	);
@@ -44,13 +42,10 @@ inline void Type_::Give( Evaluation & theEvaluation )
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultOperation()
-{
-}
+inline Type_::~DefaultOperation() {}
 
 Template_
-inline void Type_::GiveElements( Queue & theQueue )
-{
+inline void Type_::GiveElements( Queue & theQueue ) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);
@@ -61,8 +56,7 @@ inline void Type_::GiveElements( Queue & theQueue )
 }
 
 Template_
-inline void Type_::GiveElements( Queue & theQueue ) const
-{
+inline void Type_::GiveElements( Queue & theQueue ) const {
 	assert(
 		dynamic_cast< ThisImplementation const * >( this )
 	);
@@ -76,8 +70,7 @@ Template_
 inline bool Type_::ReadQuotedElements(
 	Evaluation & theEvaluation,
 	Parser & theParser
-)
-{
+) {
 	Literal theLiteral;
 	theLiteral.ReadElements( theParser );
 	return(
@@ -92,8 +85,7 @@ Template_
 inline bool Type_::TakeElement(
 	Evaluation & theEvaluation,
 	Operand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
@@ -110,8 +102,7 @@ Template_
 inline bool Type_::TakeElement(
 	Evaluation & theEvaluation,
 	Operand const & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
@@ -128,8 +119,7 @@ Template_
 inline bool Type_::TakeQuotedElements(
 	Evaluation & theEvaluation,
 	Queue & theQueue
-)
-{
+) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);
@@ -145,8 +135,7 @@ Template_
 inline bool Type_::TakeQuotedElements(
 	Evaluation & theEvaluation,
 	Queue const & theQueue
-)
-{
+) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);

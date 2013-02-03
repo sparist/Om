@@ -26,16 +26,15 @@
 
 // MARK: public (non-static)
 
-inline Type_::~Evaluator()
-{
-	try{
-		if( !this->IsEmpty() ){
-			if( this->thisGaveElementToOutput ){
+inline Type_::~Evaluator() {
+	try {
+		if( !this->IsEmpty() ) {
+			if( this->thisGaveElementToOutput ) {
 				this->thisOutput.TakeElement( Separator::GetLineSeparator() );
 			}
 			this->GiveElements( this->thisOutput );
 		}
-	} catch( ... ){}
+	} catch( ... ) {}
 }
 
 inline Type_::Evaluator(
@@ -45,29 +44,23 @@ inline Type_::Evaluator(
 thisOutput( theOutput ),
 thisTranslator( theTranslator ),
 thisOperationVector(),
-thisGaveElementToOutput()
-{
-}
+thisGaveElementToOutput() {}
 
-inline bool Type_::operator ==( Program const & theProgram ) const
-{
+inline bool Type_::operator ==( Program const & theProgram ) const {
 	Expression theExpression;
 	this->GiveElements( theExpression );
 	return( theExpression == theProgram );
 }
 
-inline void Type_::Clear()
-{
+inline void Type_::Clear() {
 	this->thisOperationVector.clear();
 }
 
-inline Om::Translator const & Type_::GetTranslator() const
-{
+inline Om::Translator const & Type_::GetTranslator() const {
 	return( this->thisTranslator );
 }
 
-inline void Type_::GiveElements( Queue & theQueue )
-{
+inline void Type_::GiveElements( Queue & theQueue ) {
 	this->GiveElements(
 		this->thisOperationVector.begin(),
 		this->thisOperationVector.end(),
@@ -76,8 +69,7 @@ inline void Type_::GiveElements( Queue & theQueue )
 	this->Clear();
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) const
-{
+inline void Type_::GiveElements( Queue & theQueue ) const {
 	this->GiveElements(
 		this->thisOperationVector.begin(),
 		this->thisOperationVector.end(),
@@ -85,30 +77,26 @@ inline void Type_::GiveElements( Queue & theQueue ) const
 	);
 }
 
-inline std::auto_ptr< Om::Program > Type_::GiveProgram()
-{
+inline std::auto_ptr< Om::Program > Type_::GiveProgram() {
 	return(
 		this->GiveProgram( *this )
 	);
 }
 
-inline std::auto_ptr< Om::Program > Type_::GiveProgram() const
-{
+inline std::auto_ptr< Om::Program > Type_::GiveProgram() const {
 	return(
 		this->GiveProgram( *this )
 	);
 }
 
-inline bool Type_::IsEmpty() const
-{
+inline bool Type_::IsEmpty() const {
 	return( this->thisOperationVector.empty() );
 }
 
-inline void Type_::ReadElements( Parser & theParser )
-{
-	while( theParser ){
+inline void Type_::ReadElements( Parser & theParser ) {
+	while( theParser ) {
 		assert( Symbols::theEndOperandSymbol != *theParser );
-		switch( *theParser ){
+		switch( *theParser ) {
 		case Symbols::theStartOperandSymbol:
 			theParser.Pop();
 			{
@@ -118,7 +106,7 @@ inline void Type_::ReadElements( Parser & theParser )
 				Parser theOperandParser( theCodePointSource );
 				this->ReadQuotedElements( theOperandParser );
 			}
-			if( !theParser ){
+			if( !theParser ) {
 				return;
 			}
 			assert( Symbols::theEndOperandSymbol == *theParser );
@@ -132,8 +120,7 @@ inline void Type_::ReadElements( Parser & theParser )
 	}
 }
 
-inline void Type_::ReadQuotedElements( Parser & theParser )
-{
+inline void Type_::ReadQuotedElements( Parser & theParser ) {
 	Evaluation theEvaluation( *this );
 	this->ReadQuotedElements(
 		theEvaluation,
@@ -145,12 +132,11 @@ inline void Type_::ReadQuotedElements( Parser & theParser )
 inline void Type_::ReadQuotedElements(
 	Evaluation & theEvaluation,
 	Parser & theParser
-)
-{
-	if( this->thisOperationVector.empty() ){
+) {
+	if( this->thisOperationVector.empty() ) {
 		this->thisOutput.ReadQuotedElements( theParser );
 		this->thisGaveElementToOutput = true;
-	} else{
+	} else {
 		std::auto_ptr< Operation > theOperation(
 			this->thisOperationVector.pop_back().release()
 		);
@@ -160,15 +146,14 @@ inline void Type_::ReadQuotedElements(
 				theEvaluation,
 				theParser
 			)
-		){
+		) {
 			this->thisOperationVector.push_back( theOperation );
 		}
 	}
 }
 
 template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & theOperand )
-{
+inline void Type_::TakeOperand( TheOperand & theOperand ) {
 	assert( !theOperand.IsEmpty() );
 	Evaluation theEvaluation( *this );
 	this->TakeOperand(
@@ -182,13 +167,12 @@ template< typename TheOperand >
 inline void Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
-	if( this->thisOperationVector.empty() ){
+	if( this->thisOperationVector.empty() ) {
 		this->thisOutput.TakeElement( theOperand );
 		this->thisGaveElementToOutput = true;
-	} else{
+	} else {
 		std::auto_ptr< Operation > theOperation(
 			this->thisOperationVector.pop_back().release()
 		);
@@ -198,7 +182,7 @@ inline void Type_::TakeOperand(
 				theEvaluation,
 				theOperand
 			)
-		){
+		) {
 			this->thisOperationVector.push_back( theOperation );
 		}
 	}
@@ -207,14 +191,12 @@ inline void Type_::TakeOperand(
 template< typename TheOperation >
 inline void Type_::TakeOperation(
 	std::auto_ptr< TheOperation > theOperation
-)
-{
+) {
 	this->thisOperationVector.push_back( theOperation );
 }
 
 template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & theOperator )
-{
+inline void Type_::TakeOperator( TheOperator & theOperator ) {
 	Evaluation theEvaluation( *this );
 	this->TakeOperator(
 		theEvaluation,
@@ -227,8 +209,7 @@ template< typename TheOperator >
 inline void Type_::TakeOperator(
 	Evaluation & theEvaluation,
 	TheOperator & theOperator
-)
-{
+) {
 	assert( !theOperator.IsEmpty() );
 	if(
 		!this->thisTranslator.Translate(
@@ -239,16 +220,16 @@ inline void Type_::TakeOperator(
 			theEvaluation,
 			Operator()
 		)
-	){
+	) {
 		// Flush everything up to, and including, the operator.
 		// At the very least, the operator will be flushed.
-		if( this->thisGaveElementToOutput ){
+		if( this->thisGaveElementToOutput ) {
 			this->thisOutput.TakeElement( Separator::GetLineSeparator() );
 		}
 
 		// Flush the evaluation.
 		// Starts with Operator; leading Operands would have been sent.
-		if( !this->IsEmpty() ){
+		if( !this->IsEmpty() ) {
 			this->GiveElements( this->thisOutput );
 			this->thisOutput.TakeElement( Separator::GetLineSeparator() );
 		}
@@ -260,8 +241,7 @@ inline void Type_::TakeOperator(
 }
 
 template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
-{
+inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
 	Evaluation theEvaluation( *this );
 	this->TakeQuotedQueue(
 		theEvaluation,
@@ -274,12 +254,11 @@ template< typename TheQueue >
 inline void Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
-	if( this->thisOperationVector.empty() ){
+) {
+	if( this->thisOperationVector.empty() ) {
 		this->thisOutput.TakeQuotedElements( theQueue );
 		this->thisGaveElementToOutput = true;
-	} else{
+	} else {
 		std::auto_ptr< Operation > theOperation( this->thisOperationVector.pop_back().release() );
 		assert( theOperation.get() );
 		if(
@@ -287,16 +266,14 @@ inline void Type_::TakeQuotedQueue(
 				theEvaluation,
 				theQueue
 			)
-		){
+		) {
 			this->thisOperationVector.push_back( theOperation );
 		}
 	}
 }
 
 template< typename TheSeparator >
-inline void Type_::TakeSeparator( TheSeparator & )
-{
-}
+inline void Type_::TakeSeparator( TheSeparator & ) {}
 
 // MARK: private (static)
 
@@ -305,16 +282,15 @@ inline void Type_::GiveElements(
 	TheIterator theCurrent,
 	TheIterator const theEnd,
 	Queue & theQueue
-)
-{
-	if( theEnd != theCurrent ){
+) {
+	if( theEnd != theCurrent ) {
 		for(
 			;
 			;
 			theQueue.TakeElement( Separator::GetLineSeparator() )
-		){
+		) {
 			theCurrent->GiveElements( theQueue );
-			if( theEnd == ++theCurrent ){
+			if( theEnd == ++theCurrent ) {
 				return;
 			}
 		}
@@ -322,8 +298,7 @@ inline void Type_::GiveElements(
 }
 
 template< typename TheEvaluator >
-inline std::auto_ptr< Om::Program > Type_::GiveProgram( TheEvaluator & theEvaluator )
-{
+inline std::auto_ptr< Om::Program > Type_::GiveProgram( TheEvaluator & theEvaluator ) {
 	std::auto_ptr< Program > theExpression( new Expression );
 	assert( theExpression.get() );
 	theEvaluator.GiveElements( *theExpression );
@@ -332,11 +307,10 @@ inline std::auto_ptr< Om::Program > Type_::GiveProgram( TheEvaluator & theEvalua
 
 // MARK: private (non-static)
 
-inline void Type_::Evaluate( Evaluation & theEvaluation )
-{
+inline void Type_::Evaluate( Evaluation & theEvaluation ) {
 	while(
 		theEvaluation.GiveTerm( *this )
-	){}
+	) {}
 }
 
 	#undef Type_

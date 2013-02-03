@@ -19,8 +19,8 @@
 
 	#include "external.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Operand;
 
@@ -40,8 +40,7 @@ namespace Om
 
 	A Queue can take \ref Element "Elements" from another Queue, process them however the implementation decides, and give the resulting \ref Element "Elements" to another Queue.
 	*/
-	struct Queue
-	{
+	struct Queue {
 	public: // MARK: public (non-static)
 
 		virtual ~Queue() = 0;

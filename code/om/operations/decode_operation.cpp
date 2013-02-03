@@ -23,8 +23,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_DecodeOperation_GetName_() );
 }
 
@@ -32,8 +31,7 @@ template< typename TheDecodeOperation >
 inline void Type_::GiveElements(
 	TheDecodeOperation &,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
 }
 
@@ -43,8 +41,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -58,8 +55,7 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
+) {
 	Literal theLiteral;
 	{
 		Operator theOperator;
@@ -81,23 +77,18 @@ inline bool Type_::TakeQuotedQueue(
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( DecodeOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( DecodeOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{decode}",
 					System::Get().Evaluate( "drop find {decode} system" )
 				);
 			}
 
-			TEST( Simple )
-			{
+			TEST( Simple ) {
 				CHECK_EQUAL(
 					"{`{`}` {{}} {quote{s}} }",
 					System::Get().Evaluate( "decode {```{```}``` `{`{`}`}` {quote{s}} }" )

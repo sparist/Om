@@ -20,19 +20,18 @@
 	#include "om/code_point.hpp"
 	#include "om/sources/default_source.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Parser
 	/*!
 	\brief
 		Produces each #CodePoint until the end of the Queue or the Source.
 	*/
 	struct Parser:
-	Sources::DefaultSource<
+	public Sources::DefaultSource<
 		CodePoint const,
 		Parser
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		explicit Parser(

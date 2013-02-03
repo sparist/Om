@@ -23,18 +23,16 @@
 	#define Om_Operations_CopyOperation_GetName_() \
 	"copy"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::CopyOperation
 		/*!
 		\brief
 			The \ref copy_operation Operation implementation.
 		*/
 		struct CopyOperation:
-		DefaultOperation< CopyOperation >
-		{
+		public DefaultOperation< CopyOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -60,8 +58,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< CopyOperation > const theCopyDefinition;
 		}
 	}

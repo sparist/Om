@@ -20,10 +20,9 @@
 	#include "om/default_operation.hpp"
 	#include "om/lexicon.hpp"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::TranslateOperation
 		/*!
 		\brief
@@ -31,8 +30,7 @@ namespace Om
 		*/
 		template< typename ThisImplementation >
 		struct TranslateOperation:
-		DefaultOperation< ThisImplementation >
-		{
+		public DefaultOperation< ThisImplementation > {
 		public: // MARK: public (static)
 
 			template< typename TheTranslateOperation >

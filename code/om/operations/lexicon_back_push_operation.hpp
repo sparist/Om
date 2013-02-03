@@ -22,17 +22,15 @@
 	#define Om_Operations_LexiconBackPushOperation_GetName_() \
 	"lexicon<-"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::LexiconBackPushOperation
 		/*!
 		\brief
 			The \ref lexicon_back_push_operation Operation implementation.
 		*/
-		struct LexiconBackPushOperation
-		{
+		struct LexiconBackPushOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -40,8 +38,7 @@ namespace Om
 			static void Give( Evaluation & );
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< LexiconBackPushOperation > const theLexiconBackPushDefinition;
 		}
 	}

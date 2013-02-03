@@ -19,8 +19,8 @@
 
 	#include "om/copyable.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::DefaultCopyable
 	/*!
 	\brief
@@ -31,8 +31,8 @@ namespace Om
 		typename ThisInterface = Copyable
 	>
 	struct DefaultCopyable:
-	ThisInterface
-	{
+	public ThisInterface {
+
 		template< typename TheCopyable >
 		friend std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
 

@@ -22,17 +22,15 @@
 	#define Om_Operations_FrontPullCharacterOperation_GetName_() \
 	"<-characters"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullCharacterOperation
 		/*!
 		\brief
 			The \ref front_pull_character_operation Operation implementation.
 		*/
-		struct FrontPullCharacterOperation
-		{
+		struct FrontPullCharacterOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -50,8 +48,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< FrontPullCharacterOperation > const theFrontPullCharacterDefinition;
 		}
 	}

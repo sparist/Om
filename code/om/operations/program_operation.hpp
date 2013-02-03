@@ -19,10 +19,9 @@
 
 	#include "om/default_operation.hpp"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::ProgramOperation
 		/*!
 		\brief
@@ -30,10 +29,9 @@ namespace Om
 		*/
 		template< typename ThisProgram >
 		struct ProgramOperation:
-		DefaultOperation<
+		public DefaultOperation<
 			ProgramOperation< ThisProgram >
-		>
-		{
+		> {
 		public: // MARK: public (static)
 
 			static char const * GetName();

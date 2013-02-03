@@ -23,8 +23,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_FindOperation_GetName_() );
 }
 
@@ -32,10 +31,9 @@ template< typename TheFindOperation >
 inline void Type_::GiveElements(
 	TheFindOperation & theFindOperation,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
-	if( theFindOperation.thisOperator ){
+	if( theFindOperation.thisOperator ) {
 		theQueue.TakeQuotedElements( *theFindOperation.thisOperator );
 	}
 }
@@ -43,16 +41,13 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 inline Type_::FindOperation():
-thisOperator()
-{
-}
+thisOperator() {}
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -66,9 +61,8 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
-	if( this->thisOperator ){
+) {
+	if( this->thisOperator ) {
 		Lexicon theLexicon;
 		theLexicon.TakeElements( theQueue );
 
@@ -95,23 +89,18 @@ inline bool Type_::TakeQuotedQueue(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( FindOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( FindOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{find}",
 					System::Get().Evaluate( "drop find {find} system" )
 				);
 			}
 
-			TEST( Simple )
-			{
+			TEST( Simple ) {
 				CHECK_EQUAL(
 					(
 						"{"

@@ -22,21 +22,20 @@
 	#define Om_Operations_BackPullElementOperation_GetName_() \
 	"elements->"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Literal;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullElementOperation
 		/*!
 		\brief
 			The \ref back_pull_element_operation Operation implementation.
 		*/
-		struct BackPullElementOperation
-		{
+		struct BackPullElementOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< BackPullElementOperation > const theBackPullElementDefinition;
 		}
 	}

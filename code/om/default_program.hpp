@@ -22,23 +22,22 @@
 	#include "om/program.hpp"
 	#include "om/taker.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::DefaultProgram
 	template<
 		typename ThisImplementation,
 		typename ThisInterface = Program
 	>
 	struct DefaultProgram:
-	DefaultQueue<
+	public DefaultQueue<
 		ThisImplementation,
 		DefaultGiveable<
 			ThisImplementation,
 			ThisInterface
 		>
 	>,
-	Taker< ThisImplementation >
-	{
+	public Taker< ThisImplementation > {
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultProgram() = 0;

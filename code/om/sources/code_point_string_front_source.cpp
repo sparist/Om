@@ -33,46 +33,39 @@ inline Type_::CodePointStringFrontSource(
 ):
 thisStringIterator( theStringStart ),
 thisStringEnd( theStringEnd ),
-thisCodePoint()
-{
+thisCodePoint() {
 	this->Update();
 }
 
 Template_
-inline Type_ & Type_::operator =( CodePointStringFrontSource theCodePointStringFrontSource )
-{
+inline Type_ & Type_::operator =( CodePointStringFrontSource theCodePointStringFrontSource ) {
 	this->Swap( theCodePointStringFrontSource );
 	return( *this );
 }
 
 Template_
-inline bool Type_::operator ==( CodePointStringFrontSource const & theSource ) const
-{
+inline bool Type_::operator ==( CodePointStringFrontSource const & theSource ) const {
 	return( this->thisStringIterator == theSource.thisStringIterator );
 }
 
 Template_
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	return( this->thisCodePoint.empty() );
 }
 
 Template_
-inline std::string & Type_::operator *() const
-{
+inline std::string & Type_::operator *() const {
 	return( this->thisCodePoint );
 }
 
 Template_
-inline void Type_::Pop()
-{
+inline void Type_::Pop() {
 	this->thisCodePoint.clear();
 	this->Update();
 }
 
 Template_
-inline void Type_::Swap( CodePointStringFrontSource & theCodePointStringFrontSource )
-{
+inline void Type_::Swap( CodePointStringFrontSource & theCodePointStringFrontSource ) {
 	boost::swap(
 		this->thisStringIterator,
 		theCodePointStringFrontSource.thisStringIterator
@@ -90,30 +83,29 @@ inline void Type_::Swap( CodePointStringFrontSource & theCodePointStringFrontSou
 // MARK: private (non-static)
 
 Template_
-inline void Type_::Update()
-{
+inline void Type_::Update() {
 	assert( this->thisCodePoint.empty() );
-	if( this->thisStringEnd == this->thisStringIterator ){
+	if( this->thisStringEnd == this->thisStringIterator ) {
 		return;
 	}
 	char theCodeUnit = *this->thisStringIterator;
 	++this->thisStringIterator;
 	if(
 		Utf8::is_lead( theCodeUnit )
-	){
+	) {
 		this->thisCodePoint.push_back( theCodeUnit );
 		for(
 			int theTrailCount = Utf8::trail_length( theCodeUnit );
 			;
 			--theTrailCount
-		){
-			if( !theTrailCount ){
+		) {
+			if( !theTrailCount ) {
 				return;
 			}
 			if(
 				this->thisStringEnd == this->thisStringIterator or
 				!Utf8::is_trail( theCodeUnit = *this->thisStringIterator )
-			){
+			) {
 				break;
 			}
 			this->thisCodePoint.push_back( theCodeUnit );
@@ -133,8 +125,7 @@ template< typename ThisStringIterator >
 inline void boost::swap(
 	Om::Sources::CodePointStringFrontSource< ThisStringIterator > & theFirst,
 	Om::Sources::CodePointStringFrontSource< ThisStringIterator > & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 
@@ -146,15 +137,11 @@ inline void boost::swap(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Sources
-	{
-		// MARK: -
-		SUITE( CodePointStringFrontSource )
-		{
-			TEST( Valid )
-			{
+// MARK: -
+namespace Om {
+	namespace Sources {
+		SUITE( CodePointStringFrontSource ) {
+			TEST( Valid ) {
 				std::string theString(
 					"P" /* ASCII character */
 					"o"
@@ -237,8 +224,7 @@ namespace Om
 				}
 			}
 
-			TEST( InvalidNoTrailing )
-			{
+			TEST( InvalidNoTrailing ) {
 				std::string theString(
 					"\xE2"
 					"!"
@@ -275,8 +261,7 @@ namespace Om
 				);
 			}
 
-			TEST( InvalidInsufficientTrailing )
-			{
+			TEST( InvalidInsufficientTrailing ) {
 				std::string theString(
 					"\xE2\x98"
 					"!"
@@ -313,8 +298,7 @@ namespace Om
 				);
 			}
 
-			TEST( InvalidExtraTrailing )
-			{
+			TEST( InvalidExtraTrailing ) {
 				std::string theString(
 					"\xE2\x98\xB9" /* Valid */
 					"\xB9" /* Invalid */
@@ -362,8 +346,7 @@ namespace Om
 				);
 			}
 
-			TEST( InvalidMissingLeading )
-			{
+			TEST( InvalidMissingLeading ) {
 				std::string theString(
 					"\xB9" /* Invalid */
 					"!"
@@ -400,8 +383,7 @@ namespace Om
 				);
 			}
 
-			TEST( InvalidEarlyTermination )
-			{
+			TEST( InvalidEarlyTermination ) {
 				std::string theString( "\xE2\x98" /* Invalid */ );
 
 				CodePointStringFrontSource< std::string::const_iterator > theSource(

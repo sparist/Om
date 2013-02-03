@@ -24,34 +24,27 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operand_GetName_() );
 }
 
 // MARK: public (non-static)
 
 inline Type_::Operand():
-thisProgram()
-{
-}
+thisProgram() {}
 
 template< typename TheProgram >
 inline Type_::Operand(
 	std::auto_ptr< TheProgram > theProgram
 ):
-thisProgram( theProgram )
-{
-}
+thisProgram( theProgram ) {}
 
-inline Type_ & Type_::operator =( Operand theOperand )
-{
+inline Type_ & Type_::operator =( Operand theOperand ) {
 	this->Swap( theOperand );
 	return( *this );
 }
 
-inline bool Type_::operator ==( Operand const & theOperand ) const
-{
+inline bool Type_::operator ==( Operand const & theOperand ) const {
 	return(
 		this->IsEmpty()?
 		theOperand.IsEmpty():
@@ -59,8 +52,7 @@ inline bool Type_::operator ==( Operand const & theOperand ) const
 	);
 }
 
-inline Om::Program & Type_::operator *()
-{
+inline Om::Program & Type_::operator *() {
 	return(
 		this->thisProgram.IsEmpty()?
 		Null::Get():
@@ -68,8 +60,7 @@ inline Om::Program & Type_::operator *()
 	);
 }
 
-inline Om::Program const & Type_::operator *() const
-{
+inline Om::Program const & Type_::operator *() const {
 	return(
 		this->thisProgram.IsEmpty()?
 		Null::Get():
@@ -77,39 +68,34 @@ inline Om::Program const & Type_::operator *() const
 	);
 }
 
-inline void Type_::Clear()
-{
+inline void Type_::Clear() {
 	this->thisProgram.Clear();
 }
 
-inline Om::Program * Type_::GetProgram()
-{
+inline Om::Program * Type_::GetProgram() {
 	return( this->thisProgram.GetValue() );
 }
 
-inline Om::Program const * Type_::GetProgram() const
-{
+inline Om::Program const * Type_::GetProgram() const {
 	return( this->thisProgram.GetValue() );
 }
 
-inline bool Type_::IsEmpty() const
-{
+inline bool Type_::IsEmpty() const {
 	return( !this->thisProgram );
 }
 
-inline void Type_::ReadElements( Parser & theParser )
-{
-	if( this->IsEmpty() ){
+inline void Type_::ReadElements( Parser & theParser ) {
+	if( this->IsEmpty() ) {
 		for(
 			;
 			;
 			theParser.Pop()
-		){
-			if( !theParser ){
+		) {
+			if( !theParser ) {
 				return;
 			}
 			assert( Symbols::theEndOperandSymbol != *theParser );
-			switch( *theParser ){
+			switch( *theParser ) {
 			default:
 				continue;
 			case Symbols::theStartOperandSymbol:
@@ -135,11 +121,10 @@ inline void Type_::ReadElements( Parser & theParser )
 		;
 		theParser;
 		theParser.Pop()
-	){}
+	) {}
 }
 
-inline void Type_::ReadQuotedElements( Parser & theParser )
-{
+inline void Type_::ReadQuotedElements( Parser & theParser ) {
 	Literal theLiteral;
 	theLiteral.ReadElements( theParser );
 	this->TakeQuotedQueue( theLiteral );
@@ -148,55 +133,45 @@ inline void Type_::ReadQuotedElements( Parser & theParser )
 template< typename TheProgram >
 inline void Type_::SetProgram(
 	std::auto_ptr< TheProgram > theProgram
-)
-{
+) {
 	this->thisProgram.SetValue( theProgram );
 }
 
-inline void Type_::Swap( Operand & theOperand )
-{
+inline void Type_::Swap( Operand & theOperand ) {
 	this->thisProgram.Swap( theOperand.thisProgram );
 }
 
-inline void Type_::TakeElements( Queue & theQueue )
-{
-	if( this->IsEmpty() ){
+inline void Type_::TakeElements( Queue & theQueue ) {
+	if( this->IsEmpty() ) {
 		DefaultElement< Operand >::TakeElements( theQueue );
 	}
 }
 
-inline void Type_::TakeElements( Queue const & theQueue )
-{
-	if( this->IsEmpty() ){
+inline void Type_::TakeElements( Queue const & theQueue ) {
+	if( this->IsEmpty() ) {
 		DefaultElement< Operand >::TakeElements( theQueue );
 	}
 }
 
 template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & theOperand )
-{
-	if( this->IsEmpty() ){
+inline void Type_::TakeOperand( TheOperand & theOperand ) {
+	if( this->IsEmpty() ) {
 		this->Take( theOperand );
 	}
 }
 
 template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & )
-{
-}
+inline void Type_::TakeOperator( TheOperator & ) {}
 
 template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
-{
-	if( this->IsEmpty() ){
+inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
+	if( this->IsEmpty() ) {
 		this->SetProgram( theQueue.GiveProgram() );
 	}
 }
 
 template< typename TheSeparator >
-inline void Type_::TakeSeparator( TheSeparator & )
-{
-}
+inline void Type_::TakeSeparator( TheSeparator & ) {}
 
 	#undef Type_
 
@@ -207,8 +182,7 @@ template<>
 inline void boost::swap(
 	Om::Operand & theFirst,
 	Om::Operand & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 

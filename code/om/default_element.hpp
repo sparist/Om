@@ -19,19 +19,18 @@
 
 	#include "om/default_program.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::DefaultElement
 	template<
 		typename ThisImplementation,
 		typename ThisInterface = Element
 	>
 	struct DefaultElement:
-	DefaultProgram<
+	public DefaultProgram<
 		ThisImplementation,
 		ThisInterface
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultElement() = 0;

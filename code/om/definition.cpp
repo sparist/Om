@@ -27,8 +27,7 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::Definition()
-{
+inline Type_::Definition() {
 	System::Get().thisMap[ ThisOperation::GetName() ] = &ThisOperation::Give;
 }
 

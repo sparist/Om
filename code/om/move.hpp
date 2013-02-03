@@ -20,8 +20,8 @@
 	#include "external.hpp"
 
 // MARK: - Om
-namespace Om
-{
+namespace Om {
+
 	/*!
 	\return
 		A polymorphic move of the object.

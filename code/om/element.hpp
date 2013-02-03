@@ -19,8 +19,8 @@
 
 	#include "om/program.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Element
 	/*!
 	\brief
@@ -29,8 +29,7 @@ namespace Om
 	Element instances are used to represent both the Program, and the single item that the Program contains (when IsEmpty() returns false).
 	*/
 	struct Element:
-	Program
-	{
+	public Program {
 	public: // MARK: public (non-static)
 
 		virtual ~Element() = 0;

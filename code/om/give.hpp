@@ -20,8 +20,8 @@
 	#include "external.hpp"
 
 // MARK: - Om
-namespace Om
-{
+namespace Om {
+
 	/*!
 	\brief
 		Calls #Move on the object.

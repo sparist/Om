@@ -18,22 +18,17 @@
 
 	#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		SUITE( ExpressionOperation )
-		{
-			TEST( Definition )
-			{
+namespace Om {
+	namespace Operations {
+		SUITE( ExpressionOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{expression}",
 					System::Get().Evaluate( "drop find {expression} system" )
 				);
 			}
 
-			TEST( Basic )
-			{
+			TEST( Basic ) {
 				CHECK_EQUAL(
 					(
 						"{"

@@ -31,15 +31,12 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultSource()
-{
-}
+inline Type_::~DefaultSource() {}
 
 Template_
 inline bool Type_::operator ==(
 	Source< ThisItem > const & theSource
-) const
-{
+) const {
 	assert(
 		dynamic_cast< ThisImplementation const * >( this )
 	);
@@ -51,8 +48,7 @@ inline bool Type_::operator ==(
 }
 
 Template_
-inline ThisImplementation & Type_::operator ++()
-{
+inline ThisImplementation & Type_::operator ++() {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);
@@ -64,8 +60,7 @@ inline ThisImplementation & Type_::operator ++()
 }
 
 Template_
-inline ThisImplementation Type_::operator ++( int )
-{
+inline ThisImplementation Type_::operator ++( int ) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);

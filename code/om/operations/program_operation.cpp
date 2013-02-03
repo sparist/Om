@@ -25,8 +25,7 @@
 // MARK: public (static)
 
 Template_
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( ThisProgram::GetName() );
 }
 
@@ -35,8 +34,7 @@ template< typename TheProgramOperation >
 inline void Type_::GiveElements(
 	TheProgramOperation &,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement(
 		DefaultOperation<
 			ProgramOperation< ThisProgram >
@@ -50,8 +48,7 @@ Template_
 inline bool Type_::ReadQuotedElements(
 	Evaluation & theEvaluation,
 	Parser & theParser
-)
-{
+) {
 	ThisProgram theProgram;
 	theProgram.ReadElements( theParser );
 	theEvaluation.TakeQuotedQueue( theProgram );
@@ -63,8 +60,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -79,8 +75,7 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
+) {
 	ThisProgram theProgram;
 	theProgram.TakeElements( theQueue );
 	theEvaluation.TakeQuotedQueue( theProgram );

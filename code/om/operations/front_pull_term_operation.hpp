@@ -22,21 +22,20 @@
 	#define Om_Operations_FrontPullTermOperation_GetName_() \
 	"<-terms"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Expression;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullTermOperation
 		/*!
 		\brief
 			The \ref front_pull_term_operation Operation implementation.
 		*/
-		struct FrontPullTermOperation
-		{
+		struct FrontPullTermOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< FrontPullTermOperation > const theFrontPullTermDefinition;
 		}
 	}

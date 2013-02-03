@@ -19,15 +19,15 @@
 
 	#include "om/move.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Moveable
 	/*!
 	\brief
 		An object that can be passed to #Move to be moved.
 	*/
-	struct Moveable
-	{
+	struct Moveable {
+
 		template< typename TheMoveable >
 		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );
 

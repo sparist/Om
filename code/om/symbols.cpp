@@ -22,12 +22,9 @@
 	#include "om/symbols/separator_symbol.hpp"
 	#include "UnitTest++.h"
 
-namespace Om
-{
-	SUITE( Symbols )
-	{
-		TEST( Stringization )
-		{
+namespace Om {
+	SUITE( Symbols ) {
+		TEST( Stringization ) {
 			CHECK_EQUAL(
 				"{test}` \t\n",
 				(

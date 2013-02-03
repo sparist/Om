@@ -20,15 +20,14 @@
 	#include "om/operator.hpp"
 	#include "om/sources/collection_front_source.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Form
 	/*!
 	\brief
 		An Operator (which may be empty), followed by zero or more Operand instances.
 	*/
-	struct Form
-	{
+	struct Form {
 	public: // MARK: public (static)
 
 		//! \cond
@@ -121,11 +120,10 @@ namespace Om
 		A Form Element range.
 	*/
 	struct Form::ElementRange:
-	Sources::DefaultSource<
+	public Sources::DefaultSource<
 		Element const,
 		ElementRange
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		explicit ElementRange( Form const & );
@@ -156,11 +154,10 @@ namespace Om
 	*/
 	template<>
 	struct Form::OperandRange< Operand >:
-	Sources::CollectionFrontSource<
+	public Sources::CollectionFrontSource<
 		Operand,
 		OperandDeque::iterator
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		explicit OperandRange( Form & );
@@ -173,11 +170,10 @@ namespace Om
 	*/
 	template<>
 	struct Form::OperandRange< Operand const >:
-	Sources::CollectionFrontSource<
+	public Sources::CollectionFrontSource<
 		Operand const,
 		OperandDeque::const_iterator
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		explicit OperandRange( Form const & );
@@ -185,8 +181,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<>
 	void swap(
 		Om::Form &,

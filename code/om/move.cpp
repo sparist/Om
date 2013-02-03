@@ -17,8 +17,7 @@
 // MARK: Om
 
 template< typename TheMoveable >
-inline std::auto_ptr< TheMoveable > Om::Move( TheMoveable & theMoveable )
-{
+inline std::auto_ptr< TheMoveable > Om::Move( TheMoveable & theMoveable ) {
 	return(
 		std::auto_ptr< TheMoveable >(
 			static_cast< TheMoveable * >( theMoveable.Move() )

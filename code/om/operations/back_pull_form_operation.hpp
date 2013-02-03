@@ -22,21 +22,20 @@
 	#define Om_Operations_BackPullFormOperation_GetName_() \
 	"forms->"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Expression;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullFormOperation
 		/*!
 		\brief
 			The \ref back_pull_form_operation Operation implementation.
 		*/
-		struct BackPullFormOperation
-		{
+		struct BackPullFormOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< BackPullFormOperation > const theBackPullFormDefinition;
 		}
 	}

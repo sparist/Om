@@ -19,8 +19,8 @@
 
 	#include "om/expression.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Evaluator;
 
@@ -36,8 +36,7 @@ namespace Om
 
 	Each Element that it takes is pushed onto a stack, resulting in a LIFO-ordered application of each Element to the Evaluator.
 	*/
-	struct Evaluation
-	{
+	struct Evaluation {
 	public: // MARK: public (non-static)
 
 		virtual ~Evaluation();

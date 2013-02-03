@@ -17,8 +17,8 @@
 	#define Om_Definition_ \
 	Om::Definition
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Definition
 	/*!
 	\brief
@@ -27,8 +27,7 @@ namespace Om
 	This is safe to construct before main, but the order of construction is implementation-defined; if there is more than one Operation with the same Operator, the choice of which to apply first will be implementation-defined.
 	*/
 	template< typename ThisOperation >
-	struct Definition
-	{
+	struct Definition {
 	public: // MARK: public (non-static)
 
 		/*!

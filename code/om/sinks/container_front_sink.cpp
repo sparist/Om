@@ -32,26 +32,21 @@
 
 Template_
 inline Type_::ContainerFrontSink( ThisContainer & theContainer ):
-thisContainer( theContainer )
-{
-}
+thisContainer( theContainer ) {}
 
 Template_
-inline Type_ & Type_::operator =( ContainerFrontSink theContainerFrontSink )
-{
+inline Type_ & Type_::operator =( ContainerFrontSink theContainerFrontSink ) {
 	this->Swap( theContainerFrontSink );
 	return( *this );
 }
 
 Template_
-inline void Type_::Push( ThisItem & thisItem )
-{
+inline void Type_::Push( ThisItem & thisItem ) {
 	this->thisContainer.push_front( thisItem );
 }
 
 Template_
-inline void Type_::Swap( ContainerFrontSink & theContainerFrontSink )
-{
+inline void Type_::Swap( ContainerFrontSink & theContainerFrontSink ) {
 	boost::swap(
 		this->thisContainer,
 		theContainerFrontSink.thisContainer
@@ -78,8 +73,7 @@ inline void boost::swap(
 		ThisItem,
 		ThisContainer
 	> & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 

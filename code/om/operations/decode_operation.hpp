@@ -23,18 +23,16 @@
 	#define Om_Operations_DecodeOperation_GetName_() \
 	"decode"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::DecodeOperation
 		/*!
 		\brief
 			The \ref decode_operation Operation implementation.
 		*/
 		struct DecodeOperation:
-		DefaultOperation< DecodeOperation >
-		{
+		public DefaultOperation< DecodeOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -60,8 +58,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< DecodeOperation > const theDecodeDefinition;
 		}
 	}

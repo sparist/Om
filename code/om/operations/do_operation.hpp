@@ -22,17 +22,15 @@
 	#define Om_Operations_DoOperation_GetName_() \
 	"do"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::DoOperation
 		/*!
 		\brief
 			The \ref do_operation Operation implementation.
 		*/
-		struct DoOperation
-		{
+		struct DoOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -40,8 +38,7 @@ namespace Om
 			static void Give( Evaluation & );
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< DoOperation > const theDoDefinition;
 		}
 	}

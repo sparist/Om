@@ -19,8 +19,8 @@
 
 	#include "external.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	/*!
 	\brief
 		A UTF-8 code point.

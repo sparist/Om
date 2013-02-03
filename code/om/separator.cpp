@@ -21,33 +21,28 @@
 
 // MARK: public (static)
 
-inline Type_ const & Type_::GetLineSeparator()
-{
+inline Type_ const & Type_::GetLineSeparator() {
 	static Separator const theSeparator( Symbols::theLineSeparatorSymbol );
 	return( theSeparator );
 }
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Separator_GetName_() );
 }
 
 // MARK: public (non-static)
 
-inline Type_::Separator()
-{
-}
+inline Type_::Separator() {}
 
 inline Type_::Separator(
 	Source< CodePoint const > & theCodePointSource
-)
-{
+) {
 	for(
 		;
 		theCodePointSource;
 		theCodePointSource.Pop()
-	){
-		switch( *theCodePointSource ){
+	) {
+		switch( *theCodePointSource ) {
 		default:
 			return;
 		Om_Symbols_SeparatorSymbol_GetCases_():
@@ -62,8 +57,7 @@ inline Type_::Separator(
 inline Type_::Separator( Symbols::SeparatorSymbol const theSeparatorSymbol ):
 DefaultAtom< Separator >(
 	static_cast< char >( theSeparatorSymbol )
-)
-{
+) {
 	assert(
 		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol or
 		Symbols::theLineSeparatorSymbol == theSeparatorSymbol or
@@ -71,21 +65,19 @@ DefaultAtom< Separator >(
 	);
 }
 
-inline Type_ & Type_::operator =( Separator theSeparator )
-{
+inline Type_ & Type_::operator =( Separator theSeparator ) {
 	this->Swap( theSeparator );
 	return( *this );
 }
 
-inline void Type_::ReadElements( Parser & theParser )
-{
+inline void Type_::ReadElements( Parser & theParser ) {
 	for(
 		;
 		theParser;
 		theParser.Pop()
-	){
+	) {
 		assert( Symbols::theEndOperandSymbol != *theParser );
-		switch( *theParser ){
+		switch( *theParser ) {
 		case Symbols::theStartOperandSymbol:
 			theParser.Pop();
 			{
@@ -95,7 +87,7 @@ inline void Type_::ReadElements( Parser & theParser )
 				Parser theOperandParser( theCodePointSource );
 				this->ReadQuotedElements( theOperandParser );
 			}
-			if( !theParser ){
+			if( !theParser ) {
 				return;
 			}
 			assert( Symbols::theEndOperandSymbol == *theParser );
@@ -109,41 +101,32 @@ inline void Type_::ReadElements( Parser & theParser )
 	}
 }
 
-inline void Type_::ReadQuotedElements( Parser & theParser )
-{
+inline void Type_::ReadQuotedElements( Parser & theParser ) {
 	for(
 		;
 		theParser;
 		theParser.Pop()
-	){}
+	) {}
 }
 
 template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & )
-{
-}
+inline void Type_::TakeOperand( TheOperand & ) {}
 
 template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & )
-{
-}
+inline void Type_::TakeOperator( TheOperator & ) {}
 
 template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & )
-{
-}
+inline void Type_::TakeQuotedQueue( TheQueue & ) {}
 
 template< typename TheSeparator >
-inline void Type_::TakeSeparator( TheSeparator & theSeparator )
-{
+inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
 	assert( !theSeparator.IsEmpty() );
 	this->thisString.append( theSeparator.thisString );
 }
 
 inline void Type_::TakeSeparatorSymbol(
 	Symbols::SeparatorSymbol const theSymbol
-)
-{
+) {
 	this->thisString.push_back(
 		static_cast< char >( theSymbol )
 	);
@@ -158,8 +141,7 @@ template<>
 inline void boost::swap(
 	Om::Separator & theFirst,
 	Om::Separator & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 
@@ -172,13 +154,10 @@ inline void boost::swap(
 		#include "om/writer.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	// MARK: -
-	SUITE( Separator )
-	{
-		TEST( Read )
-		{
+// MARK: -
+namespace Om {
+	SUITE( Separator ) {
+		TEST( Read ) {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
 			std::string theResult;
 			{

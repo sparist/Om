@@ -25,13 +25,10 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~Taker()
-{
-}
+inline Type_::~Taker() {}
 
 Template_
-inline void Type_::Take( ThisImplementation & theTaker )
-{
+inline void Type_::Take( ThisImplementation & theTaker ) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);
@@ -39,8 +36,7 @@ inline void Type_::Take( ThisImplementation & theTaker )
 }
 
 Template_
-inline void Type_::Take( ThisImplementation const & theTaker )
-{
+inline void Type_::Take( ThisImplementation const & theTaker ) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);

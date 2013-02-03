@@ -31,15 +31,12 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultCopyable()
-{
-}
+inline Type_::~DefaultCopyable() {}
 
 // MARK: private (non-static)
 
 Template_
-inline ThisInterface * Type_::Copy() const
-{
+inline ThisInterface * Type_::Copy() const {
 	assert(
 		dynamic_cast< ThisImplementation const * >( this )
 	);

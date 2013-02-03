@@ -22,17 +22,15 @@
 	#define Om_Operations_BackPullCodePointOperation_GetName_() \
 	"code points->"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullCodePointOperation
 		/*!
 		\brief
 			The \ref back_pull_code_point_operation Operation implementation.
 		*/
-		struct BackPullCodePointOperation
-		{
+		struct BackPullCodePointOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -50,8 +48,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< BackPullCodePointOperation > const theBackPullCodePointDefinition;
 		}
 	}

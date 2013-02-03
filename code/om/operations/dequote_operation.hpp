@@ -23,18 +23,16 @@
 	#define Om_Operations_DequoteOperation_GetName_() \
 	"dequote"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::DequoteOperation
 		/*!
 		\brief
 			The \ref dequote_operation Operation implementation.
 		*/
 		struct DequoteOperation:
-		DefaultOperation< DequoteOperation >
-		{
+		public DefaultOperation< DequoteOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -60,8 +58,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< DequoteOperation > const theDequoteDefinition;
 		}
 	}

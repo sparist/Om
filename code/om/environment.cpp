@@ -22,55 +22,50 @@
 // MARK: public (non-static)
 
 inline Type_::Environment():
-thisTranslatorVector()
-{
-}
+thisTranslatorVector() {}
 
-inline void Type_::GiveElements( Queue & theQueue ) const
-{
-	if( !this->IsEmpty() ){
+inline void Type_::GiveElements( Queue & theQueue ) const {
+	if( !this->IsEmpty() ) {
 		typedef TranslatorVector::const_iterator Iterator;
 		Iterator const theEnd = this->thisTranslatorVector.end();
 		for(
 			Iterator theCurrent = this->thisTranslatorVector.begin();
 			;
 			theQueue.TakeElement( Separator::GetLineSeparator() )
-		){
+		) {
 			assert( *theCurrent );
 			Translator const & theTranslator = **theCurrent;
 			assert( !theTranslator.IsEmpty() );
 			theTranslator.GiveElements( theQueue );
-			if( theEnd == ++theCurrent ){
+			if( theEnd == ++theCurrent ) {
 				return;
 			}
 		}
 	}
 }
 
-inline bool Type_::IsEmpty() const
-{
+inline bool Type_::IsEmpty() const {
 	return( this->thisTranslatorVector.empty() );
 }
 
-inline void Type_::Push( Translator const & theTranslator )
-{
+inline void Type_::Push( Translator const & theTranslator ) {
 	Translator const * theTranslatorPointer = &theTranslator;
 	for(
 		std::stack< Translator const * > theStack;
 		;
 		theStack.pop()
-	){
+	) {
 		assert( theTranslatorPointer );
 		if(
 			Environment const * const theEnvironment = dynamic_cast< Environment const * >( theTranslatorPointer )
-		){
+		) {
 			typedef TranslatorVector::const_reverse_iterator Iterator;
 			Iterator const theEnd = theEnvironment->thisTranslatorVector.rend();
 			for(
 				Iterator theCurrent = theEnvironment->thisTranslatorVector.rbegin();
 				theEnd != theCurrent;
 				++theCurrent
-			){
+			) {
 				assert(
 					*theCurrent and
 					!( *theCurrent )->IsEmpty()
@@ -80,10 +75,10 @@ inline void Type_::Push( Translator const & theTranslator )
 		} else if(
 			this->IsEmpty() or
 			this->thisTranslatorVector.back() != theTranslatorPointer
-		){
+		) {
 			this->thisTranslatorVector.push_back( theTranslatorPointer );
 		}
-		if( theStack.empty() ){
+		if( theStack.empty() ) {
 			return;
 		}
 		theTranslatorPointer = theStack.top();
@@ -93,21 +88,20 @@ inline void Type_::Push( Translator const & theTranslator )
 inline bool Type_::Translate(
 	Evaluation & theEvaluation,
 	Operator const & theOperator
-) const
-{
+) const {
 	typedef TranslatorVector::const_reverse_iterator Iterator;
 	Iterator const theEnd = this->thisTranslatorVector.rend();
 	for(
 		Iterator theCurrent = this->thisTranslatorVector.rbegin();
 		theEnd != theCurrent;
 		++theCurrent
-	){
+	) {
 		if(
 			( *theCurrent )->Translate(
 				theEvaluation,
 				theOperator
 			)
-		){
+		) {
 			return( true );
 		}
 	}

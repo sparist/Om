@@ -22,21 +22,20 @@
 	#define Om_Operations_BackPullSeparatorOperation_GetName_() \
 	"elements->separator"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Literal;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullSeparatorOperation
 		/*!
 		\brief
 			The \ref back_pull_separator_operation Operation implementation.
 		*/
-		struct BackPullSeparatorOperation
-		{
+		struct BackPullSeparatorOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< BackPullSeparatorOperation > const theBackPullSeparatorDefinition;
 		}
 	}

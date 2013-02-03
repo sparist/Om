@@ -23,18 +23,16 @@
 	#define Om_Operations_NormalizeOperation_GetName_() \
 	"normalize"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::NormalizeOperation
 		/*!
 		\brief
 			The \ref normalize_operation Operation implementation.
 		*/
 		struct NormalizeOperation:
-		DefaultOperation< NormalizeOperation >
-		{
+		public DefaultOperation< NormalizeOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -60,8 +58,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< NormalizeOperation > const theNormalizeDefinition;
 		}
 	}

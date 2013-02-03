@@ -24,8 +24,8 @@
 	#define Om_Lexicon_GetName_() \
 	"lexicon"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Evaluation;
 	//! \endcond
@@ -36,9 +36,8 @@ namespace Om
 		The \ref lexicon Program implementation.
 	*/
 	struct Lexicon:
-	DefaultProgram< Lexicon >,
-	Translator
-	{
+	public DefaultProgram< Lexicon >,
+	public Translator {
 	public: // MARK: public (static)
 
 		//! \cond
@@ -187,11 +186,10 @@ namespace Om
 		A Lexicon Element range.
 	*/
 	struct Lexicon::ElementRange:
-	Sources::DefaultSource<
+	public Sources::DefaultSource<
 		Element const,
 		ElementRange
-	>
-	{
+	> {
 	public: // MARK: public (non-static)
 
 		ElementRange();
@@ -227,8 +225,7 @@ namespace Om
 		A Lexicon linked list node, extending Pair with next and prior pointers.
 	*/
 	struct Lexicon::Node:
-	Pair
-	{
+	public Pair {
 	public: // MARK: public (static)
 
 		/*!
@@ -322,8 +319,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<>
 	void swap(
 		Om::Lexicon &,

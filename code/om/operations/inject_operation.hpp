@@ -24,18 +24,16 @@
 	#define Om_Operations_InjectOperation_GetName_() \
 	"inject"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::InjectOperation
 		/*!
 		\brief
 			The \ref inject_operation Operation implementation.
 		*/
 		struct InjectOperation:
-		DefaultOperation< InjectOperation >
-		{
+		public DefaultOperation< InjectOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -81,8 +79,7 @@ namespace Om
 			boost::optional< Evaluator > thisScope;
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< InjectOperation > const theInjectDefinition;
 		}
 	}

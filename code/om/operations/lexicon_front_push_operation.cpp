@@ -24,13 +24,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_LexiconFrontPushOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	theEvaluation.TakeOperation(
 		std::auto_ptr< Operation >(
 			new FrontPushOperation<
@@ -51,23 +49,18 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( LexiconFrontPushOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( LexiconFrontPushOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{->lexicon}",
 					System::Get().Evaluate( "drop find {->lexicon} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{a{B}}",
 					System::Get().Evaluate( "->lexicon {a{A}} {a{B}}" )

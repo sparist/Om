@@ -22,17 +22,15 @@
 	#define Om_Operations_ExpressionFrontPushOperation_GetName_() \
 	"->expression"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::ExpressionFrontPushOperation
 		/*!
 		\brief
 			The \ref expression_front_push_operation Operation implementation.
 		*/
-		struct ExpressionFrontPushOperation
-		{
+		struct ExpressionFrontPushOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -40,8 +38,7 @@ namespace Om
 			static void Give( Evaluation & );
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< ExpressionFrontPushOperation > const theExpressionFrontPushDefinition;
 		}
 	}

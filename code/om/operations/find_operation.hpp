@@ -23,22 +23,21 @@
 	#define Om_Operations_FindOperation_GetName_() \
 	"find"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Lexicon;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::FindOperation
 		/*!
 		\brief
 			The \ref find_operation Operation implementation.
 		*/
 		struct FindOperation:
-		DefaultOperation< FindOperation >
-		{
+		public DefaultOperation< FindOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -74,8 +73,7 @@ namespace Om
 			boost::optional< Operator > thisOperator;
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< FindOperation > const theFindDefinition;
 		}
 	}

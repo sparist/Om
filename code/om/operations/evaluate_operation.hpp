@@ -23,18 +23,16 @@
 	#define Om_Operations_EvaluateOperation_GetName_() \
 	"evaluate"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::EvaluateOperation
 		/*!
 		\brief
 			The \ref define_operation Operation implementation.
 		*/
 		struct EvaluateOperation:
-		DefaultOperation< EvaluateOperation >
-		{
+		public DefaultOperation< EvaluateOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -62,8 +60,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< EvaluateOperation > const theEvaluateDefinition;
 		}
 	}

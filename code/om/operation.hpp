@@ -19,8 +19,8 @@
 
 	#include "om/code_point.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Evaluation;
 
@@ -36,8 +36,7 @@ namespace Om
 	\brief
 		An \ref operations "Operation" that has yet to consume one or more \ref Operand "Operands", and therefore must live in memory while "incomplete".
 	*/
-	struct Operation
-	{
+	struct Operation {
 	public: // MARK: public (non-static)
 
 		virtual ~Operation() = 0;

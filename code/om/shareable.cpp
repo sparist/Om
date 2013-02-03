@@ -19,8 +19,7 @@
 template< typename TheOwnerCount >
 inline void Om::intrusive_ptr_add_ref(
 	Shareable< TheOwnerCount > * const thePointee
-)
-{
+) {
 	assert(
 		thePointee and
 		"The pointer cannot be null."
@@ -31,14 +30,13 @@ inline void Om::intrusive_ptr_add_ref(
 template< typename TheOwnerCount >
 inline void Om::intrusive_ptr_release(
 	Shareable< TheOwnerCount > * const thePointee
-)
-{
+) {
 	assert(
 		thePointee and
 		"The pointer cannot be null."
 	);
 	thePointee->DecrementOwnerCount();
-	if( !thePointee->thisOwnerCount ){
+	if( !thePointee->thisOwnerCount ) {
 		boost::checked_delete( thePointee );
 	}
 }
@@ -55,8 +53,7 @@ inline void Om::intrusive_ptr_release(
 // MARK: public (non-static)
 
 Template_
-inline Type_::~Shareable()
-{
+inline Type_::~Shareable() {
 	assert(
 		!this->thisOwnerCount and
 		"Non-zero owner count."
@@ -64,8 +61,7 @@ inline Type_::~Shareable()
 }
 
 Template_
-inline ThisOwnerCount Type_::GetOwnerCount() const
-{
+inline ThisOwnerCount Type_::GetOwnerCount() const {
 	return( this->thisOwnerCount );
 }
 
@@ -73,27 +69,21 @@ inline ThisOwnerCount Type_::GetOwnerCount() const
 
 Template_
 inline Type_::Shareable():
-thisOwnerCount()
-{
-}
+thisOwnerCount() {}
 
 Template_
 inline Type_::Shareable( Shareable const & ):
-thisOwnerCount()
-{
-}
+thisOwnerCount() {}
 
 Template_
-inline Type_ & Type_::operator =( Shareable const & )
-{
+inline Type_ & Type_::operator =( Shareable const & ) {
 	return( *this );
 }
 
 // MARK: private (non-static)
 
 Template_
-inline void Type_::DecrementOwnerCount()
-{
+inline void Type_::DecrementOwnerCount() {
 	assert(
 		this->thisOwnerCount and
 		"Owner count underflow."
@@ -102,11 +92,10 @@ inline void Type_::DecrementOwnerCount()
 }
 
 Template_
-inline void Type_::IncrementOwnerCount()
-{
+inline void Type_::IncrementOwnerCount() {
 	if(
 		boost::integer_traits< ThisOwnerCount >::const_max == this->thisOwnerCount
-	){
+	) {
 		throw(
 			std::overflow_error( "Owner count overflow." )
 		);

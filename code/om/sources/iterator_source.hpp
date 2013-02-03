@@ -19,10 +19,9 @@
 
 	#include "om/sources/default_source.hpp"
 
-namespace Om
-{
-	namespace Sources
-	{
+namespace Om {
+	namespace Sources {
+
 		// MARK: - Om::Sources::IteratorSource
 		/*!
 		\brief
@@ -37,14 +36,13 @@ namespace Om
 			typename ThisIterator
 		>
 		struct IteratorSource:
-		DefaultSource<
+		public DefaultSource<
 			ThisItem,
 			IteratorSource<
 				ThisItem,
 				ThisIterator
 			>
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			/*!
@@ -77,8 +75,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<
 		typename ThisItem,
 		typename ThisIterator

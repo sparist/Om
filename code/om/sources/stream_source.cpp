@@ -27,54 +27,44 @@
 Template_
 inline Type_::StreamSource():
 thisStreamIterator(),
-thisItem()
-{
-}
+thisItem() {}
 
 Template_
 inline Type_::StreamSource( std::istream & theStream ):
 thisStreamIterator( theStream ),
-thisItem()
-{
-}
+thisItem() {}
 
 Template_
-inline Type_ & Type_::operator =( StreamSource theStreamSource )
-{
+inline Type_ & Type_::operator =( StreamSource theStreamSource ) {
 	this->Swap( theStreamSource );
 	return( *this );
 }
 
 Template_
-inline bool Type_::operator ==( StreamSource const & theSource ) const
-{
+inline bool Type_::operator ==( StreamSource const & theSource ) const {
 	return( this->thisStreamIterator == theSource.thisStreamIterator );
 }
 
 Template_
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	return( StreamIterator() == this->thisStreamIterator );
 }
 
 Template_
-inline ThisItem const & Type_::operator *() const
-{
+inline ThisItem const & Type_::operator *() const {
 	assert( StreamIterator() != this->thisStreamIterator );
 	this->thisItem = *this->thisStreamIterator;
 	return( *this->thisItem );
 }
 
 Template_
-inline void Type_::Pop()
-{
+inline void Type_::Pop() {
 	assert( StreamIterator() != this->thisStreamIterator );
 	++this->thisStreamIterator;
 }
 
 Template_
-inline void Type_::Swap( StreamSource & theStreamSource )
-{
+inline void Type_::Swap( StreamSource & theStreamSource ) {
 	boost::swap(
 		this->thisStreamIterator,
 		theStreamSource.thisStreamIterator
@@ -92,8 +82,7 @@ template< typename ThisItem >
 inline void boost::swap(
 	Om::Sources::StreamSource< ThisItem > & theFirst,
 	Om::Sources::StreamSource< ThisItem > & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 

@@ -23,13 +23,11 @@
 
 // MARK: public (non-static)
 
-inline Om::Program & Type_::operator *()
-{
+inline Om::Program & Type_::operator *() {
 	return( Null::Get() );
 }
 
-inline Om::Program const & Type_::operator *() const
-{
+inline Om::Program const & Type_::operator *() const {
 	return( Null::Get() );
 }
 
@@ -38,8 +36,7 @@ inline Om::Program const & Type_::operator *() const
 // MARK: -
 // MARK: Om
 
-inline Om::Atom * Om::new_clone( Atom const & theAtom )
-{
+inline Om::Atom * Om::new_clone( Atom const & theAtom ) {
 	return(
 		Copy( theAtom ).release()
 	);

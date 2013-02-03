@@ -31,9 +31,7 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultGiveable()
-{
-}
+inline Type_::~DefaultGiveable() {}
 
 	#undef Type_
 	#undef Template_

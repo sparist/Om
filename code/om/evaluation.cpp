@@ -23,8 +23,7 @@
 
 // MARK: public (non-static)
 
-inline Type_::~Evaluation()
-{
+inline Type_::~Evaluation() {
 	assert(
 		this->thisExpression.IsEmpty() and
 		"The Evaluation was not fully consumed."
@@ -33,23 +32,19 @@ inline Type_::~Evaluation()
 
 inline Type_::Evaluation( Evaluator & theEvaluator ):
 thisExpression(),
-thisEvaluator( theEvaluator )
-{
-}
+thisEvaluator( theEvaluator ) {}
 
-inline Om::Translator const & Type_::GetTranslator() const
-{
+inline Om::Translator const & Type_::GetTranslator() const {
 	return( this->thisEvaluator.GetTranslator() );
 }
 
-inline bool Type_::GiveTerm( Evaluator & theEvaluator )
-{
-	if( this->thisExpression.IsEmpty() ){
+inline bool Type_::GiveTerm( Evaluator & theEvaluator ) {
+	if( this->thisExpression.IsEmpty() ) {
 		return( false );
 	}
 	Expression::FormRange< Form > theFormRange( this->thisExpression );
 	assert( theFormRange );
-	if( theFormRange->GetOperator().IsEmpty() ){
+	if( theFormRange->GetOperator().IsEmpty() ) {
 		Operand theOperand;
 		{
 			Form::OperandRange< Operand > theOperandRange( *theFormRange );
@@ -61,7 +56,7 @@ inline bool Type_::GiveTerm( Evaluator & theEvaluator )
 			*this,
 			theOperand
 		);
-	} else{
+	} else {
 		Operator theOperator;
 		this->thisExpression.FrontGiveTerm( theOperator );
 		theEvaluator.TakeOperator(
@@ -73,8 +68,7 @@ inline bool Type_::GiveTerm( Evaluator & theEvaluator )
 }
 
 template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & theOperand )
-{
+inline void Type_::TakeOperand( TheOperand & theOperand ) {
 	assert( !theOperand.IsEmpty() );
 	this->thisExpression.FrontTakeOperand( theOperand );
 }
@@ -82,27 +76,23 @@ inline void Type_::TakeOperand( TheOperand & theOperand )
 template< typename TheOperation >
 inline void Type_::TakeOperation(
 	std::auto_ptr< TheOperation > theOperation
-)
-{
+) {
 	this->thisEvaluator.TakeOperation( theOperation );
 }
 
 template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & theOperator )
-{
+inline void Type_::TakeOperator( TheOperator & theOperator ) {
 	assert( !theOperator.IsEmpty() );
 	this->thisExpression.FrontTakeOperator( theOperator );
 }
 
 template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
-{
+inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
 	this->thisExpression.FrontTakeQuotedQueue( theQueue );
 }
 
 template< typename TheQueue >
-inline void Type_::TakeQueue( TheQueue & theQueue )
-{
+inline void Type_::TakeQueue( TheQueue & theQueue ) {
 	Expression theExpression;
 	theExpression.TakeElements( theQueue );
 	theExpression.TakeElements( this->thisExpression );

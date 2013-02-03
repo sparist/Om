@@ -23,18 +23,16 @@
 	#define Om_Operations_DropOperation_GetName_() \
 	"drop"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::DropOperation
 		/*!
 		\brief
 			The \ref drop_operation Operation implementation.
 		*/
 		struct DropOperation:
-		DefaultOperation< DropOperation >
-		{
+		public DefaultOperation< DropOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -65,8 +63,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< DropOperation > const theDropDefinition;
 		}
 	}

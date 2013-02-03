@@ -32,20 +32,16 @@
 
 Template_
 inline Type_::ContainerBackSource( ThisContainer & theContainer ):
-thisContainer( theContainer )
-{
-}
+thisContainer( theContainer ) {}
 
 Template_
-inline Type_ & Type_::operator =( ContainerBackSource theContainerBackSource )
-{
+inline Type_ & Type_::operator =( ContainerBackSource theContainerBackSource ) {
 	this->Swap( theContainerBackSource );
 	return( *this );
 }
 
 Template_
-inline bool Type_::operator ==( ContainerBackSource const & theSource ) const
-{
+inline bool Type_::operator ==( ContainerBackSource const & theSource ) const {
 	return(
 		&this->thisContainer == &theSource.thisContainer or
 		(
@@ -56,28 +52,24 @@ inline bool Type_::operator ==( ContainerBackSource const & theSource ) const
 }
 
 Template_
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	return( this->thisContainer.empty() );
 }
 
 Template_
-inline ThisItem & Type_::operator *() const
-{
+inline ThisItem & Type_::operator *() const {
 	assert( !this->thisContainer.empty() );
 	return( this->thisContainer.back() );
 }
 
 Template_
-inline void Type_::Pop()
-{
+inline void Type_::Pop() {
 	assert( !this->thisContainer.empty() );
 	this->thisContainer.pop_back();
 }
 
 Template_
-inline void Type_::Swap( ContainerBackSource & theContainerBackSource )
-{
+inline void Type_::Swap( ContainerBackSource & theContainerBackSource ) {
 	boost::swap(
 		this->thisContainer,
 		theContainerBackSource.thisContainer
@@ -100,8 +92,7 @@ inline void boost::swap(
 		ThisItem,
 		ThisContainer
 	> & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 

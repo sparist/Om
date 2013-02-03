@@ -20,8 +20,8 @@
 	#include "om/code_point.hpp"
 	#include "om/default_queue.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	template< typename ThisItem >
 	struct Sink;
@@ -35,8 +35,7 @@ namespace Om
 	Giving an Element does nothing.
 	*/
 	struct Writer:
-	DefaultQueue< Writer >
-	{
+	public DefaultQueue< Writer > {
 	public: // MARK: public (non-static)
 
 		explicit Writer(

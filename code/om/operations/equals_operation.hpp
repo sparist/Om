@@ -23,18 +23,16 @@
 	#define Om_Operations_EqualsOperation_GetName_() \
 	"="
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::EqualsOperation
 		/*!
 		\brief
 			The \ref equals_operation Operation implementation.
 		*/
 		struct EqualsOperation:
-		DefaultOperation< EqualsOperation >
-		{
+		public DefaultOperation< EqualsOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -70,8 +68,7 @@ namespace Om
 			Operand thisOperand;
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< EqualsOperation > const theEqualsDefinition;
 		}
 	}

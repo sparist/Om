@@ -25,8 +25,8 @@
 	#define Om_Operator_GetName_() \
 	"operator"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Operator
 	/*!
 	\brief
@@ -35,8 +35,7 @@ namespace Om
 	As a Queue, the Operator appends each taken Element verbatim.
 	*/
 	struct Operator:
-	DefaultAtom< Operator >
-	{
+	public DefaultAtom< Operator > {
 	public: // MARK: public (static)
 
 		static char const * GetName();
@@ -134,8 +133,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<>
 	void swap(
 		Om::Operator &,

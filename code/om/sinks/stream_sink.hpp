@@ -19,10 +19,9 @@
 
 	#include "om/sinks/iterator_sink.hpp"
 
-namespace Om
-{
-	namespace Sinks
-	{
+namespace Om {
+	namespace Sinks {
+
 		// MARK: - Om::Sinks::StreamSink
 		/*!
 		\brief
@@ -30,12 +29,12 @@ namespace Om
 		*/
 		template< typename ThisItem = char >
 		struct StreamSink:
-		IteratorSink<
+		public IteratorSink<
 			ThisItem const,
 			std::ostreambuf_iterator< ThisItem >
-		>
-		{
-			// MARK: public (non-static)
+		> {
+		public: // MARK: public (non-static)
+
 			explicit StreamSink( std::ostream & );
 		};
 	}

@@ -35,8 +35,7 @@ template< typename ThePullOperation >
 inline void Type_::GiveElements(
 	ThePullOperation &,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
 }
 
@@ -46,8 +45,7 @@ Template_
 inline bool Type_::ReadQuotedElements(
 	Evaluation & theEvaluation,
 	Parser & theParser
-)
-{
+) {
 	ThisProgram theProgram;
 	theProgram.ReadElements( theParser );
 	return(
@@ -63,8 +61,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -79,8 +76,7 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
+) {
 	ThisProgram theProgramToPullFrom;
 	theProgramToPullFrom.TakeElements( theQueue );
 
@@ -98,8 +94,7 @@ inline bool Type_::TakeQuotedQueue(
 // MARK: private (static)
 
 Template_
-inline Om::Operator const & Type_::GetOperator()
-{
+inline Om::Operator const & Type_::GetOperator() {
 	static Operator const theOperator( ThisImplementation::GetName() );
 	return( theOperator );
 }

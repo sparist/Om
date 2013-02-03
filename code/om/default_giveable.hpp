@@ -21,8 +21,8 @@
 	#include "om/default_moveable.hpp"
 	#include "om/giveable.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::DefaultGiveable
 	/*!
 	\brief
@@ -33,14 +33,13 @@ namespace Om
 		typename ThisInterface = Giveable
 	>
 	struct DefaultGiveable:
-	DefaultMoveable<
+	public DefaultMoveable<
 		ThisImplementation,
 		DefaultCopyable<
 			ThisImplementation,
 			ThisInterface
 		>
-	>
-	{
+	> {
 	public:  // MARK: public (non-static)
 
 		virtual ~DefaultGiveable() = 0;

@@ -25,8 +25,7 @@
 // MARK: public (static)
 
 Template_
-inline Type_ & Type_::Get()
-{
+inline Type_ & Type_::Get() {
 	static Type_ theEmptySource;
 	return( theEmptySource );
 }
@@ -34,31 +33,25 @@ inline Type_ & Type_::Get()
 // MARK: public (non-static)
 
 Template_
-inline Type_::EmptySource()
-{
-}
+inline Type_::EmptySource() {}
 
 Template_
-inline Type_ & Type_::operator =( EmptySource theEmptySource )
-{
+inline Type_ & Type_::operator =( EmptySource theEmptySource ) {
 	return( *this );
 }
 
 Template_
-inline bool Type_::operator ==( EmptySource const & ) const
-{
+inline bool Type_::operator ==( EmptySource const & ) const {
 	return( true );
 }
 
 Template_
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	return( true );
 }
 
 Template_
-inline ThisItem & Type_::operator *() const
-{
+inline ThisItem & Type_::operator *() const {
 	assert( 0 );
 	throw(
 		std::logic_error( "The source is empty." )
@@ -66,8 +59,7 @@ inline ThisItem & Type_::operator *() const
 }
 
 Template_
-inline void Type_::Pop()
-{
+inline void Type_::Pop() {
 	assert( 0 );
 	throw(
 		std::logic_error( "The source is empty." )
@@ -75,9 +67,7 @@ inline void Type_::Pop()
 }
 
 Template_
-inline void Type_::Swap( EmptySource & )
-{
-}
+inline void Type_::Swap( EmptySource & ) {}
 
 	#undef Type_
 	#undef Template_
@@ -89,8 +79,7 @@ template< typename ThisItem >
 inline void boost::swap(
 	Om::Sources::EmptySource< ThisItem > & theFirst,
 	Om::Sources::EmptySource< ThisItem > & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 

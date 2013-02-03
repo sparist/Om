@@ -34,17 +34,14 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultProgram()
-{
-}
+inline Type_::~DefaultProgram() {}
 
 /*!
 \note
 	This must be implemented in this class, vs. Program, due to Element dependency.
 */
 Template_
-inline bool Type_::operator ==( Program const & theProgram ) const
-{
+inline bool Type_::operator ==( Program const & theProgram ) const {
 	std::auto_ptr<
 		Source< Element const >
 	> theRange = this->GetElementRange();
@@ -58,18 +55,18 @@ inline bool Type_::operator ==( Program const & theProgram ) const
 	for(
 		;
 		;
-	){
+	) {
 		bool const theRangeHasNext = *theRange;
 		bool const theOtherRangeHasNext = *theOtherRange;
 		if(
 			!theRangeHasNext or
 			!theOtherRangeHasNext
-		){
+		) {
 			return( theRangeHasNext == theOtherRangeHasNext );
 		}
 		if(
 			!( **theRange == **theOtherRange )
-		){
+		) {
 			return( false );
 		}
 		theRange->Pop();
@@ -78,14 +75,12 @@ inline bool Type_::operator ==( Program const & theProgram ) const
 }
 
 Template_
-inline void Type_::TakeElements( Queue & theQueue )
-{
+inline void Type_::TakeElements( Queue & theQueue ) {
 	this->TakeQueueElements< ThisImplementation >( theQueue );
 }
 
 Template_
-inline void Type_::TakeElements( Queue const & theQueue )
-{
+inline void Type_::TakeElements( Queue const & theQueue ) {
 	this->TakeQueueElements< ThisImplementation const >( theQueue );
 }
 
@@ -96,8 +91,7 @@ template<
 	typename TheCast,
 	typename TheQueue
 >
-inline void Type_::TakeQueueElements( TheQueue & theQueue )
-{
+inline void Type_::TakeQueueElements( TheQueue & theQueue ) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);
@@ -107,11 +101,11 @@ inline void Type_::TakeQueueElements( TheQueue & theQueue )
 	if(
 		typeid( TheCast ) == typeid( theQueue ) and
 		this->IsEmpty()
-	){
+	) {
 		this->Take(
 			static_cast< TheCast & >( theQueue )
 		);
-	} else{
+	} else {
 		theQueue.GiveElements( *this );
 	}
 }

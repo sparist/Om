@@ -23,8 +23,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_EncodeOperation_GetName_() );
 }
 
@@ -32,8 +31,7 @@ template< typename TheEncodeOperation >
 inline void Type_::GiveElements(
 	TheEncodeOperation &,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
 }
 
@@ -43,8 +41,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -58,8 +55,7 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
+) {
 	Operator theOperator;
 	theOperator.Encode( theQueue );
 	theEvaluation.TakeQuotedQueue( theOperator );
@@ -77,23 +73,18 @@ inline bool Type_::TakeQuotedQueue(
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( EncodeOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( EncodeOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{encode}",
 					System::Get().Evaluate( "drop find {encode} system" )
 				);
 			}
 
-			TEST( Simple )
-			{
+			TEST( Simple ) {
 				CHECK_EQUAL(
 					"{```{```}``` `{`{`}`}` }",
 					System::Get().Evaluate( "encode {`{`}` {{}} }" )

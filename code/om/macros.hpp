@@ -51,15 +51,13 @@
 	#define Om_Macros_GetString_( theHex ) \
 	Om_Macros_PrependSlashXAndStringize_( theHex )
 
-namespace Om
-{
+namespace Om {
+
 	/*!
 	\brief
 		A namespace for all code used to implement global macros.
 	*/
-	namespace Macros
-	{
-	}
+	namespace Macros {}
 }
 
 #endif

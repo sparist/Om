@@ -20,8 +20,8 @@
 	#include "external.hpp"
 	#include "om/taker.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Owner
 	/*!
 	\brief
@@ -31,10 +31,9 @@ namespace Om
 	*/
 	template< typename ThisValue >
 	struct Owner:
-	Taker<
+	public Taker<
 		Owner< ThisValue >
-	>
-	{
+	> {
 	public: // MARK: public (static)
 
 		/*!
@@ -139,8 +138,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template< typename ThisValue >
 	void swap(
 		Om::Owner< ThisValue > &,

@@ -23,18 +23,16 @@
 	#define Om_Operations_QuoteOperation_GetName_() \
 	"quote"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::QuoteOperation
 		/*!
 		\brief
 			The \ref quote_operation Operation implementation.
 		*/
 		struct QuoteOperation:
-		DefaultOperation< QuoteOperation >
-		{
+		public DefaultOperation< QuoteOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -60,8 +58,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< QuoteOperation > const theQuoteDefinition;
 		}
 	}

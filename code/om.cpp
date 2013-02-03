@@ -32,8 +32,7 @@
 int main(
 	int const theArgumentCount,
 	char const * const theArgumentArray[]
-)
-{
+) {
 	assert( 0 < theArgumentCount );
 	assert( theArgumentArray );
 

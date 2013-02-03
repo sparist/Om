@@ -37,10 +37,9 @@ template< typename TheFrontPushOperation >
 inline void Type_::GiveElements(
 	TheFrontPushOperation & theFrontPushOperation,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
-	if( !theFrontPushOperation.thisProgram.IsEmpty() ){
+	if( !theFrontPushOperation.thisProgram.IsEmpty() ) {
 		theQueue.TakeQuotedElements( theFrontPushOperation.thisProgram );
 	}
 }
@@ -49,20 +48,17 @@ inline void Type_::GiveElements(
 
 Template_
 inline Type_::FrontPushOperation():
-thisProgram()
-{
-}
+thisProgram() {}
 
 Template_
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
-	if( this->thisProgram.IsEmpty() ){
+) {
+	if( this->thisProgram.IsEmpty() ) {
 		this->thisProgram.TakeElements( theQueue );
-		if( this->thisProgram.IsEmpty() ){
+		if( this->thisProgram.IsEmpty() ) {
 			ProgramOperation< ThisProgram >::Give( theEvaluation );
 			return( true );
 		}
@@ -78,8 +74,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -92,8 +87,7 @@ inline bool Type_::TakeOperand(
 // MARK: private (static)
 
 Template_
-inline Om::Operator const & Type_::GetOperator()
-{
+inline Om::Operator const & Type_::GetOperator() {
 	static Operator const theOperator( ThisImplementation::GetName() );
 	return( theOperator );
 }

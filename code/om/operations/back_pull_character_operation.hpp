@@ -22,17 +22,15 @@
 	#define Om_Operations_BackPullCharacterOperation_GetName_() \
 	"characters->"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullCharacterOperation
 		/*!
 		\brief
 			The \ref back_pull_character_operation Operation implementation.
 		*/
-		struct BackPullCharacterOperation
-		{
+		struct BackPullCharacterOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -50,8 +48,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< BackPullCharacterOperation > const theBackPullCharacterDefinition;
 		}
 	}

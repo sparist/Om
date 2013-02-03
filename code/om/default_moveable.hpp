@@ -19,8 +19,8 @@
 
 	#include "om/moveable.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::DefaultMoveable
 	/*!
 	\brief
@@ -31,8 +31,8 @@ namespace Om
 		typename ThisInterface = Moveable
 	>
 	struct DefaultMoveable:
-	ThisInterface
-	{
+	public ThisInterface {
+
 		template< typename TheMoveable >
 		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );
 

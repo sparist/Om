@@ -22,21 +22,20 @@
 	#define Om_Operations_FrontPullFormOperation_GetName_() \
 	"<-forms"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Expression;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullFormOperation
 		/*!
 		\brief
 			The \ref front_pull_form_operation Operation implementation.
 		*/
-		struct FrontPullFormOperation
-		{
+		struct FrontPullFormOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< FrontPullFormOperation > const theFrontPullFormDefinition;
 		}
 	}

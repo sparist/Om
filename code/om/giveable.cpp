@@ -21,9 +21,7 @@
 
 // MARK: public (non-static)
 
-inline Type_::~Giveable()
-{
-}
+inline Type_::~Giveable() {}
 
 	#undef Type_
 

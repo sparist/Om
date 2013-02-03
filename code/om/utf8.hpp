@@ -19,8 +19,8 @@
 
 	#include "external.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	/*!
 	\brief
 		The UTF-8 traits type.

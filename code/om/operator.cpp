@@ -29,27 +29,22 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operator_GetName_() );
 }
 
 // MARK: public (non-static)
 
-inline Type_::Operator()
-{
-}
+inline Type_::Operator() {}
 
-inline Type_::Operator( std::string const & theString )
-{
+inline Type_::Operator( std::string const & theString ) {
 	boost::locale::normalize(
 		theString,
 		boost::locale::norm_nfd
 	).swap( this->thisString );
 }
 
-inline Type_::Operator( char const theCodeUnitIterator[] )
-{
+inline Type_::Operator( char const theCodeUnitIterator[] ) {
 	boost::locale::normalize(
 		theCodeUnitIterator,
 		boost::locale::norm_nfd
@@ -58,23 +53,22 @@ inline Type_::Operator( char const theCodeUnitIterator[] )
 
 inline Type_::Operator(
 	Source< CodePoint const > & theCodePointSource
-)
-{
+) {
 	std::string theString;
 	std::back_insert_iterator< std::string > theInserter( theString );
 	for(
 		;
 		theCodePointSource;
 		theCodePointSource.Pop()
-	){
-		switch( *theCodePointSource ){
+	) {
+		switch( *theCodePointSource ) {
 		Om_Symbols_OperandSymbol_GetCases_():
 			// Fall through.
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			break;
 		case Symbols::theEncodeOperatorSymbol:
 			theCodePointSource.Pop();
-			if( !theCodePointSource ){
+			if( !theCodePointSource ) {
 				theString.push_back( Symbols::theEndOperandSymbol );
 				break;
 			}
@@ -97,33 +91,25 @@ inline Type_::Operator(
 inline Type_::Operator( Symbols::OperandSymbol const theOperandSymbol ):
 DefaultAtom< Operator >(
 	static_cast< char >( theOperandSymbol )
-)
-{
-}
+) {}
 
 inline Type_::Operator( Symbols::OperatorSymbol const theOperatorSymbol ):
 DefaultAtom< Operator >(
 	static_cast< char >( theOperatorSymbol )
-)
-{
-}
+) {}
 
 inline Type_::Operator( Symbols::SeparatorSymbol const theSeparatorSymbol ):
 DefaultAtom< Operator >(
 	static_cast< char >( theSeparatorSymbol )
-)
-{
-}
+) {}
 
-inline Type_ & Type_::operator =( Operator theOperator )
-{
+inline Type_ & Type_::operator =( Operator theOperator ) {
 	this->Swap( theOperator );
 	return( *this );
 }
 
-inline void Type_::BackGiveCodePoint( Queue & theQueue )
-{
-	if( !this->thisString.empty() ){
+inline void Type_::BackGiveCodePoint( Queue & theQueue ) {
+	if( !this->thisString.empty() ) {
 		Operator theOperator;
 		{
 			std::string & theString = theOperator.thisString;
@@ -143,9 +129,8 @@ inline void Type_::BackGiveCodePoint( Queue & theQueue )
 }
 
 template< boost::locale::boundary::boundary_type theSegment >
-inline void Type_::BackGiveSegment( Queue & theQueue )
-{
-	if( !this->thisString.empty() ){
+inline void Type_::BackGiveSegment( Queue & theQueue ) {
+	if( !this->thisString.empty() ) {
 		Operator theOperator;
 		{
 			std::string & theString = theOperator.thisString;
@@ -173,8 +158,7 @@ inline void Type_::BackGiveSegment( Queue & theQueue )
 }
 
 template< typename TheQueue >
-inline void Type_::Decode( TheQueue & theQueue ) const
-{
+inline void Type_::Decode( TheQueue & theQueue ) const {
 	Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
 		this->thisString.begin(),
 		this->thisString.end()
@@ -184,8 +168,7 @@ inline void Type_::Decode( TheQueue & theQueue ) const
 }
 
 template< typename TheQueue >
-inline void Type_::Encode( TheQueue & theQueue )
-{
+inline void Type_::Encode( TheQueue & theQueue ) {
 	this->thisString.clear();
 	Sinks::CodePointSink<
 		std::back_insert_iterator< std::string >
@@ -196,9 +179,8 @@ inline void Type_::Encode( TheQueue & theQueue )
 	theQueue.GiveElements( theWriter );
 }
 
-inline void Type_::FrontGiveCodePoint( Queue & theQueue )
-{
-	if( !this->thisString.empty() ){
+inline void Type_::FrontGiveCodePoint( Queue & theQueue ) {
+	if( !this->thisString.empty() ) {
 		Operator theOperator;
 		{
 			std::string & theString = theOperator.thisString;
@@ -221,9 +203,8 @@ inline void Type_::FrontGiveCodePoint( Queue & theQueue )
 }
 
 template< boost::locale::boundary::boundary_type theSegment >
-inline void Type_::FrontGiveSegment( Queue & theQueue )
-{
-	if( !this->thisString.empty() ){
+inline void Type_::FrontGiveSegment( Queue & theQueue ) {
+	if( !this->thisString.empty() ) {
 		Operator theOperator;
 		{
 			std::string & theString = theOperator.thisString;
@@ -250,18 +231,16 @@ inline void Type_::FrontGiveSegment( Queue & theQueue )
 	}
 }
 
-inline void Type_::Normalize()
-{
+inline void Type_::Normalize() {
 	boost::locale::normalize(
 		this->thisString,
 		boost::locale::norm_nfkd
 	).swap( this->thisString );
 }
 
-inline void Type_::ReadElements( Parser & theParser )
-{
-	while( theParser ){
-		switch( *theParser ){
+inline void Type_::ReadElements( Parser & theParser ) {
+	while( theParser ) {
+		switch( *theParser ) {
 		case Symbols::theEndOperandSymbol:
 			// Fall through.
 		case Symbols::theStartOperandSymbol:
@@ -278,23 +257,20 @@ inline void Type_::ReadElements( Parser & theParser )
 	}
 }
 
-inline void Type_::ReadQuotedElements( Parser & theParser )
-{
+inline void Type_::ReadQuotedElements( Parser & theParser ) {
 	this->thisString.push_back( Symbols::theStartOperandSymbol );
 	this->ReadElements( theParser );
 	this->thisString.push_back( Symbols::theEndOperandSymbol );
 }
 
 template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & theOperand )
-{
+inline void Type_::TakeOperand( TheOperand & theOperand ) {
 	assert( !theOperand.IsEmpty() );
 	this->TakeQuotedQueue( *theOperand.GetProgram() );
 }
 
 template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & theOperator )
-{
+inline void Type_::TakeOperator( TheOperator & theOperator ) {
 	assert(
 		typeid( theOperator ) == typeid( *this )
 	);
@@ -307,7 +283,7 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 		"Operator strings must be NFC normalized."
 	);
 
-	if( this->IsEmpty() ){
+	if( this->IsEmpty() ) {
 		this->Take( theOperator );
 		return;
 	}
@@ -323,16 +299,14 @@ inline void Type_::TakeOperator( TheOperator & theOperator )
 }
 
 template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & theQueue )
-{
+inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
 	this->thisString.push_back( Symbols::theStartOperandSymbol );
 	theQueue.GiveElements( *this );
 	this->thisString.push_back( Symbols::theEndOperandSymbol );
 }
 
 template< typename TheSeparator >
-inline void Type_::TakeSeparator( TheSeparator & theSeparator )
-{
+inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
 	assert( !theSeparator.IsEmpty() );
 	this->thisString.append( theSeparator.GetString() );
 }
@@ -346,8 +320,7 @@ template<>
 inline void boost::swap(
 	Om::Operator & theFirst,
 	Om::Operator & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 
@@ -360,21 +333,17 @@ inline void boost::swap(
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	// MARK: -
-	SUITE( Operator )
-	{
-		TEST( Basic )
-		{
+// MARK: -
+namespace Om {
+	SUITE( Operator ) {
+		TEST( Basic ) {
 			CHECK_EQUAL(
 				"{a` `{b`}}",
 				System::Get().Evaluate( "operator{a {b}}" )
 			);
 		}
 
-		TEST( Equality )
-		{
+		TEST( Equality ) {
 			// Positive match
 			CHECK_EQUAL(
 				"{{test` `{ing`}}}",
@@ -406,8 +375,7 @@ namespace Om
 			);
 		}
 
-		TEST( TakeQuotedElements )
-		{
+		TEST( TakeQuotedElements ) {
 			Operator theOperator;
 			{
 				Literal theLiteral;
@@ -425,8 +393,7 @@ namespace Om
 			);
 		}
 
-		TEST( Normalization )
-		{
+		TEST( Normalization ) {
 			// Test combining character reordering under NFD.
 			Operator theLeftOperator( "s\xCC\x87" );
 			Operator theRightOperator( "\xCC\xA3" );
@@ -437,8 +404,7 @@ namespace Om
 			);
 		}
 
-		TEST( Read )
-		{
+		TEST( Read ) {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
 			std::string theResult;
 			{

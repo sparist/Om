@@ -24,13 +24,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_DoOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	DequoteOperation::Give( theEvaluation );
 	OperatorOperation::Give( theEvaluation );
 }
@@ -46,23 +44,18 @@ inline void Type_::Give( Evaluation & theEvaluation )
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( DoOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( DoOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{do}",
 					System::Get().Evaluate( "drop find {do} system" )
 				);
 			}
 
-			TEST( Simple )
-			{
+			TEST( Simple ) {
 				CHECK_EQUAL(
 					"{a}{bc}",
 					System::Get().Evaluate( "do {<-code points} {abc}" )

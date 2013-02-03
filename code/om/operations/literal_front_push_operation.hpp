@@ -22,17 +22,15 @@
 	#define Om_Operations_LiteralFrontPushOperation_GetName_() \
 	"->literal"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::LiteralFrontPushOperation
 		/*!
 		\brief
 			The \ref literal_front_push_operation Operation implementation.
 		*/
-		struct LiteralFrontPushOperation
-		{
+		struct LiteralFrontPushOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -40,8 +38,7 @@ namespace Om
 			static void Give( Evaluation & );
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< LiteralFrontPushOperation > const theLiteralFrontPushDefinition;
 		}
 	}

@@ -19,8 +19,8 @@
 
 	#include "om/operation.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Operator;
 	//! \endcond
@@ -32,8 +32,7 @@ namespace Om
 	*/
 	template< typename ThisImplementation >
 	struct DefaultOperation:
-	Operation
-	{
+	public Operation {
 	public: // MARK: public (static)
 
 		static Operator const & GetOperator();

@@ -19,10 +19,9 @@
 
 	#include "om/sources/default_source.hpp"
 
-namespace Om
-{
-	namespace Sources
-	{
+namespace Om {
+	namespace Sources {
+
 		// MARK: - Om::Sources::ContainerFrontSource
 		/*!
 		\brief
@@ -33,14 +32,13 @@ namespace Om
 			typename ThisContainer
 		>
 		struct ContainerFrontSource:
-		DefaultSource<
+		public DefaultSource<
 			ThisItem,
 			ContainerFrontSource<
 				ThisItem,
 				ThisContainer
 			>
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			explicit ContainerFrontSource( ThisContainer & );
@@ -69,8 +67,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<
 		typename ThisItem,
 		typename ThisContainer

@@ -18,22 +18,17 @@
 
 	#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		SUITE( SeparatorOperation )
-		{
-			TEST( Definition )
-			{
+namespace Om {
+	namespace Operations {
+		SUITE( SeparatorOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{separator}",
 					System::Get().Evaluate( "drop find {separator} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{}",
 					System::Get().Evaluate( "separator{}" )

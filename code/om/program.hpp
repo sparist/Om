@@ -21,8 +21,8 @@
 	#include "om/queue.hpp"
 	#include "om/shareable.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Element;
 
@@ -40,10 +40,9 @@ namespace Om
 	Each concrete derivation must have a GetName() function that returns a null-terminated, NFD-normalized UTF-8 string to be used as a corresponding Operator name.
 	*/
 	struct Program:
-	Giveable,
-	Queue,
-	Shareable<>
-	{
+	public Giveable,
+	public Queue,
+	public Shareable<> {
 	public: // MARK: public (non-static)
 
 		virtual ~Program() = 0;

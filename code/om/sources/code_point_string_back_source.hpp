@@ -19,10 +19,9 @@
 
 	#include "om/sources/default_source.hpp"
 
-namespace Om
-{
-	namespace Sources
-	{
+namespace Om {
+	namespace Sources {
+
 		// MARK: - Om::Sources::CodePointStringBackSource
 		/*!
 		\brief
@@ -34,11 +33,10 @@ namespace Om
 		*/
 		template< typename ThisStringIterator >
 		struct CodePointStringBackSource:
-		DefaultSource<
+		public DefaultSource<
 			std::string,
 			CodePointStringBackSource< ThisStringIterator >
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			/*!
@@ -96,8 +94,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template< typename ThisStringIterator >
 	void swap(
 		Om::Sources::CodePointStringBackSource< ThisStringIterator > &,

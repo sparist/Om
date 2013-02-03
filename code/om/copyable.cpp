@@ -21,14 +21,11 @@
 
 // MARK: public (non-static)
 
-inline Type_::~Copyable()
-{
-}
+inline Type_::~Copyable() {}
 
 // MARK: private (non-static)
 
-inline Type_ * Type_::Copy() const
-{
+inline Type_ * Type_::Copy() const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )

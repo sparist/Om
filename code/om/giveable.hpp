@@ -20,17 +20,16 @@
 	#include "om/copyable.hpp"
 	#include "om/moveable.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Giveable
 	/*!
 	\brief
 		An object that can be copied or moved via #Give.
 	*/
 	struct Giveable:
-	Copyable,
-	Moveable
-	{
+	public Copyable,
+	public Moveable {
 	public: // MARK: public (non-static)
 
 		virtual ~Giveable() = 0;

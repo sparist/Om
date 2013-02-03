@@ -19,16 +19,15 @@
 
 	#include "om/element.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Atom
 	/*!
 	\brief
 		A leaf Element defined by a string.
 	*/
 	struct Atom:
-	Element
-	{
+	public Element {
 	public: // MARK: public (non-static)
 
 		virtual Program & operator *();

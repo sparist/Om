@@ -21,8 +21,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_DropOperation_GetName_() );
 }
 
@@ -30,8 +29,7 @@ template< typename TheDropOperation >
 inline void Type_::GiveElements(
 	TheDropOperation &,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
 }
 
@@ -40,9 +38,8 @@ inline void Type_::GiveElements(
 inline bool Type_::ReadQuotedElements(
 	Evaluation &,
 	Parser & theParser
-)
-{
-	while( theParser ){
+) {
+	while( theParser ) {
 		theParser.Pop();
 	}
 	return( true );
@@ -52,8 +49,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation &,
 	TheOperand &
-)
-{
+) {
 	return( true );
 }
 
@@ -61,8 +57,7 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation &,
 	TheQueue &
-)
-{
+) {
 	return( true );
 }
 
@@ -77,23 +72,18 @@ inline bool Type_::TakeQuotedQueue(
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( DropOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( DropOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{drop}",
 					System::Get().Evaluate( "drop find {drop} system" )
 				);
 			}
 
-			TEST( Simple )
-			{
+			TEST( Simple ) {
 				CHECK_EQUAL(
 					"{4{5}6}",
 					System::Get().Evaluate( "drop {1{2}3}{4{5}6}" )

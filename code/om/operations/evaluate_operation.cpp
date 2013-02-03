@@ -23,8 +23,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_EvaluateOperation_GetName_() );
 }
 
@@ -32,23 +31,19 @@ template< typename TheEvaluateOperation >
 inline void Type_::GiveElements(
 	TheEvaluateOperation &,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
 }
 
 // MARK: public (non-static)
 
-inline Type_::EvaluateOperation()
-{
-}
+inline Type_::EvaluateOperation() {}
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -62,8 +57,7 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
+) {
 	Expression theExpression;
 	{
 		Evaluator theScope(
@@ -86,23 +80,18 @@ inline bool Type_::TakeQuotedQueue(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( EvaluateOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( EvaluateOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{evaluate}",
 					System::Get().Evaluate( "drop find {evaluate} system" )
 				);
 			}
 
-			TEST( Basic )
-			{
+			TEST( Basic ) {
 				CHECK_EQUAL(
 					"{{A}{A}}",
 					System::Get().Evaluate( "evaluate {copy {A}}" )

@@ -21,20 +21,16 @@
 
 // MARK: public (non-static)
 
-inline Type_::~Operation()
-{
-}
+inline Type_::~Operation() {}
 
-inline void Type_::GiveElements( Queue & )
-{
+inline void Type_::GiveElements( Queue & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::GiveElements( Queue & ) const
-{
+inline void Type_::GiveElements( Queue & ) const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -44,8 +40,7 @@ inline void Type_::GiveElements( Queue & ) const
 inline bool Type_::ReadQuotedElements(
 	Evaluation &,
 	Parser &
-)
-{
+) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -55,8 +50,7 @@ inline bool Type_::ReadQuotedElements(
 inline bool Type_::TakeElement(
 	Evaluation &,
 	Operand &
-)
-{
+) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -66,8 +60,7 @@ inline bool Type_::TakeElement(
 inline bool Type_::TakeElement(
 	Evaluation &,
 	Operand const &
-)
-{
+) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -77,8 +70,7 @@ inline bool Type_::TakeElement(
 inline bool Type_::TakeQuotedElements(
 	Evaluation &,
 	Queue &
-)
-{
+) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -88,8 +80,7 @@ inline bool Type_::TakeQuotedElements(
 inline bool Type_::TakeQuotedElements(
 	Evaluation &,
 	Queue const &
-)
-{
+) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -98,9 +89,7 @@ inline bool Type_::TakeQuotedElements(
 
 // MARK: protected (non-static)
 
-inline Type_::Operation()
-{
-}
+inline Type_::Operation() {}
 
 	#undef Type_
 

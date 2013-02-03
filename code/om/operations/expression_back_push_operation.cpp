@@ -24,13 +24,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_ExpressionBackPushOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	ExpressionFrontPushOperation::Give( theEvaluation );
 	SwapOperation::Give( theEvaluation );
 }
@@ -45,15 +43,11 @@ inline void Type_::Give( Evaluation & theEvaluation )
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( ExpressionBackPushOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( ExpressionBackPushOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{expression<-}",
 					System::Get().Evaluate( "drop find {expression<-} system" )

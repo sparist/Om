@@ -19,8 +19,8 @@
 
 	#include "external.hpp"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Shareable
 	/*!
 	\brief
@@ -29,8 +29,8 @@ namespace Om
 	This type can be used as a template argument for boost::intrusive_ptr.  Shared ownership is implemented via owner counting.
 	*/
 	template< typename ThisOwnerCount = size_t >
-	struct Shareable
-	{
+	struct Shareable {
+
 		/*!
 		\cond internal_symbols
 		\exception std::overflow_error
@@ -86,8 +86,8 @@ namespace Om
 }
 
 // MARK: - Om
-namespace Om
-{
+namespace Om {
+
 	//! \cond internal_symbols
 	template< typename TheOwnerCount >
 	void intrusive_ptr_add_ref(

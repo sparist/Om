@@ -29,12 +29,9 @@ inline Type_::Parser(
 ):
 thisCodePointSource( theCodePointSource ),
 thisDepth(),
-thisIsEncoded()
-{
-}
+thisIsEncoded() {}
 
-inline bool Type_::operator ==( Parser const & theParser ) const
-{
+inline bool Type_::operator ==( Parser const & theParser ) const {
 	assert(
 		this->thisCodePointSource != theParser.thisCodePointSource or
 		this->thisDepth == theParser.thisDepth
@@ -42,14 +39,12 @@ inline bool Type_::operator ==( Parser const & theParser ) const
 	return( this->thisCodePointSource == theParser.thisCodePointSource );
 }
 
-inline Om::CodePoint const & Type_::operator *() const
-{
+inline Om::CodePoint const & Type_::operator *() const {
 	assert( !this->operator !() );
 	return( *this->thisCodePointSource );
 }
 
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	return(
 		!this->thisCodePointSource or
 		(
@@ -60,17 +55,16 @@ inline bool Type_::operator !() const
 	);
 }
 
-inline void Type_::Pop()
-{
+inline void Type_::Pop() {
 	assert( this->thisCodePointSource );
-	switch( *this->thisCodePointSource ){
+	switch( *this->thisCodePointSource ) {
 	case Symbols::theStartOperandSymbol:
-		if( this->thisIsEncoded ){
+		if( this->thisIsEncoded ) {
 			this->thisIsEncoded = false;
-		} else{
+		} else {
 			if(
 				static_cast< size_t >( -1 ) == this->thisDepth
-			){
+			) {
 				throw(
 					std::overflow_error( "Operand overflow." )
 				);
@@ -79,9 +73,9 @@ inline void Type_::Pop()
 		}
 		break;
 	case Symbols::theEndOperandSymbol:
-		if( this->thisIsEncoded ){
+		if( this->thisIsEncoded ) {
 			this->thisIsEncoded = false;
-		} else{
+		} else {
 			assert( this->thisDepth );
 			--this->thisDepth;
 		}

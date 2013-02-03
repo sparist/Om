@@ -22,17 +22,15 @@
 	#define Om_Operations_RearrangeOperation_GetName_() \
 	"rearrange"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::RearrangeOperation
 		/*!
 		\brief
 			The \ref rearrange_operation Operation implementation.
 		*/
-		struct RearrangeOperation
-		{
+		struct RearrangeOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -40,8 +38,7 @@ namespace Om
 			static void Give( Evaluation & );
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< RearrangeOperation > const theRearrangeDefinition;
 		}
 	}

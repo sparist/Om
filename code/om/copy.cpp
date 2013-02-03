@@ -17,8 +17,7 @@
 // MARK: Om
 
 template< typename TheCopyable >
-inline std::auto_ptr< TheCopyable > Om::Copy( TheCopyable const & theCopyable )
-{
+inline std::auto_ptr< TheCopyable > Om::Copy( TheCopyable const & theCopyable ) {
 	return(
 		std::auto_ptr< TheCopyable >(
 			static_cast< TheCopyable * >(

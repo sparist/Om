@@ -21,8 +21,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_NormalizeOperation_GetName_() );
 }
 
@@ -30,8 +29,7 @@ template< typename TheNormalizeOperation >
 inline void Type_::GiveElements(
 	TheNormalizeOperation &,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
 }
 
@@ -41,8 +39,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -56,8 +53,7 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
+) {
 	Operator theOperator;
 	theOperator.TakeElements( theQueue );
 	theOperator.Normalize();
@@ -75,23 +71,18 @@ inline bool Type_::TakeQuotedQueue(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( NormalizeOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( NormalizeOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{normalize}",
 					System::Get().Evaluate( "drop find {normalize} system" )
 				);
 			}
 
-			TEST( Simple )
-			{
+			TEST( Simple ) {
 				CHECK_EQUAL(
 					(
 						"{"

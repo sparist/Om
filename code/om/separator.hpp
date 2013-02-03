@@ -24,8 +24,8 @@
 	#define Om_Separator_GetName_() \
 	"separator"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Separator
 	/*!
 	\brief
@@ -36,8 +36,7 @@ namespace Om
 	As a Queue, the Separator filters out all top-level Element instances except Separator.
 	*/
 	struct Separator:
-	DefaultAtom< Separator >
-	{
+	public DefaultAtom< Separator > {
 	public: // MARK: public (static)
 
 		/*!
@@ -85,8 +84,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<>
 	void swap(
 		Om::Separator &,

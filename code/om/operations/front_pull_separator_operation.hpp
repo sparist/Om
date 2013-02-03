@@ -22,21 +22,20 @@
 	#define Om_Operations_FrontPullSeparatorOperation_GetName_() \
 	"separator<-elements"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Literal;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::FrontPullSeparatorOperation
 		/*!
 		\brief
 			The \ref front_pull_separator_operation Operation implementation.
 		*/
-		struct FrontPullSeparatorOperation
-		{
+		struct FrontPullSeparatorOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< FrontPullSeparatorOperation > const theFrontPullSeparatorDefinition;
 		}
 	}

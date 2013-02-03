@@ -19,10 +19,9 @@
 
 	#include "om/sinks/default_sink.hpp"
 
-namespace Om
-{
-	namespace Sinks
-	{
+namespace Om {
+	namespace Sinks {
+
 		// MARK: - Om::Sinks::ContainerBackSink
 		/*!
 		\brief
@@ -33,14 +32,13 @@ namespace Om
 			typename ThisContainer
 		>
 		struct ContainerBackSink:
-		DefaultSink<
+		public DefaultSink<
 			ThisItem,
 			ContainerBackSink<
 				ThisItem,
 				ThisContainer
 			>
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			explicit ContainerBackSink( ThisContainer & );
@@ -63,8 +61,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<
 		typename ThisItem,
 		typename ThisContainer

@@ -23,18 +23,16 @@
 	#define Om_Operations_DefineOperation_GetName_() \
 	"define"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::DefineOperation
 		/*!
 		\brief
 			The \ref define_operation Operation implementation.
 		*/
 		struct DefineOperation:
-		DefaultOperation< DefineOperation >
-		{
+		public DefaultOperation< DefineOperation > {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -66,8 +64,7 @@ namespace Om
 			boost::optional< Lexicon > thisLexicon;
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< DefineOperation > const theDefineDefinition;
 		}
 	}

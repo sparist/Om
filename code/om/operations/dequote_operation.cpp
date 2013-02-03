@@ -21,8 +21,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_DequoteOperation_GetName_() );
 }
 
@@ -30,8 +29,7 @@ template< typename TheDequoteOperation >
 inline void Type_::GiveElements(
 	TheDequoteOperation &,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
 }
 
@@ -41,8 +39,7 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -56,8 +53,7 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
+) {
 	theEvaluation.TakeQueue( theQueue );
 	return( true );
 }
@@ -73,23 +69,18 @@ inline bool Type_::TakeQuotedQueue(
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( DequoteOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( DequoteOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{dequote}",
 					System::Get().Evaluate( "drop find {dequote} system" )
 				);
 			}
 
-			TEST( Simple )
-			{
+			TEST( Simple ) {
 				CHECK_EQUAL(
 					(
 						"1{2}\n"
@@ -99,8 +90,7 @@ namespace Om
 				);
 			}
 
-			TEST( SimpleDequoteThenEvaluate )
-			{
+			TEST( SimpleDequoteThenEvaluate ) {
 				CHECK_EQUAL(
 					(
 						"A{b}\n"

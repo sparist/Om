@@ -23,8 +23,8 @@
 	#define Om_Operand_GetName_() \
 	"operand"
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Operand
 	/*!
 	\brief
@@ -33,8 +33,7 @@ namespace Om
 	Encloses a Program in Symbols::theStartOperandSymbol and Symbols::theEndOperandSymbol.  The Operand owns the embedded Program.
 	*/
 	struct Operand:
-	DefaultElement< Operand >
-	{
+	public DefaultElement< Operand > {
 	public: // MARK: public (static)
 
 		static char const * GetName();
@@ -120,8 +119,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template<>
 	void swap(
 		Om::Operand &,

@@ -410,8 +410,7 @@ To define an atomic operation that consumes one or more operands:
 For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <tt>WhateverOperation</tt> is a stand-in for the name of the operation <tt>struct</tt>):
 
 \code
-namespace
-{
+namespace {
 	static Definition< WhateverOperation > const theWhateverDefinition;
 }
 \endcode

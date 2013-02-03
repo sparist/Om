@@ -21,8 +21,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_SkipOperation_GetName_() );
 }
 
@@ -30,10 +29,9 @@ template< typename TheSkipOperation >
 inline void Type_::GiveElements(
 	TheSkipOperation & theSkipOperation,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
-	if( !theSkipOperation.thisExpression.IsEmpty() ){
+	if( !theSkipOperation.thisExpression.IsEmpty() ) {
 		theQueue.TakeQuotedElements( theSkipOperation.thisExpression );
 	}
 }
@@ -41,16 +39,13 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 inline Type_::SkipOperation():
-thisExpression()
-{
-}
+thisExpression() {}
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -64,9 +59,8 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
-	if( this->thisExpression.IsEmpty() ){
+) {
+	if( this->thisExpression.IsEmpty() ) {
 		this->thisExpression.TakeElements( theQueue );
 		return( this->thisExpression.IsEmpty() );
 	}
@@ -85,23 +79,18 @@ inline bool Type_::TakeQuotedQueue(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( SkipOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( SkipOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{skip}",
 					System::Get().Evaluate( "drop find {skip} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{A}{B}{B}",
 					System::Get().Evaluate( "skip{copy}{A}{B}" )

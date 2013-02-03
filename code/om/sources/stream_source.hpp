@@ -19,10 +19,9 @@
 
 	#include "om/sources/default_source.hpp"
 
-namespace Om
-{
-	namespace Sources
-	{
+namespace Om {
+	namespace Sources {
+
 		// MARK: - Om::Sources::StreamSource
 		/*!
 		\brief
@@ -34,11 +33,10 @@ namespace Om
 		*/
 		template< typename ThisItem = char >
 		struct StreamSource:
-		DefaultSource<
+		public DefaultSource<
 			ThisItem const,
 			StreamSource< ThisItem >
-		>
-		{
+		> {
 		public: // MARK: public (non-static)
 
 			StreamSource();
@@ -75,8 +73,7 @@ namespace Om
 }
 
 // MARK: - boost
-namespace boost
-{
+namespace boost {
 	template< typename ThisItem >
 	void swap(
 		Om::Sources::StreamSource< ThisItem > &,

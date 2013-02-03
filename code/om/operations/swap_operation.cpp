@@ -23,8 +23,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_SwapOperation_GetName_() );
 }
 
@@ -32,10 +31,9 @@ template< typename TheSwapOperation >
 inline void Type_::GiveElements(
 	TheSwapOperation & theSwapOperation,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
-	if( !theSwapOperation.thisOperand.IsEmpty() ){
+	if( !theSwapOperation.thisOperand.IsEmpty() ) {
 		theQueue.TakeElement( theSwapOperation.thisOperand );
 	}
 }
@@ -43,18 +41,15 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 inline Type_::SwapOperation():
-thisOperand()
-{
-}
+thisOperand() {}
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
-	if( this->thisOperand.IsEmpty() ){
+	if( this->thisOperand.IsEmpty() ) {
 		this->thisOperand.Take( theOperand );
 		return( false );
 	}
@@ -67,9 +62,8 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
-	if( this->thisOperand.IsEmpty() ){
+) {
+	if( this->thisOperand.IsEmpty() ) {
 		this->thisOperand.SetProgram( theQueue.GiveProgram() );
 		return( false );
 	}
@@ -88,23 +82,18 @@ inline bool Type_::TakeQuotedQueue(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( SwapOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( SwapOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{swap}",
 					System::Get().Evaluate( "drop find {swap} system" )
 				);
 			}
 
-			TEST( Simple )
-			{
+			TEST( Simple ) {
 				CHECK_EQUAL(
 					"{4{5}6}{1{2}3}",
 					System::Get().Evaluate( "swap {1{2}3}{4{5}6}" )

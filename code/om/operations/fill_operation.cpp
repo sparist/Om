@@ -21,8 +21,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_FillOperation_GetName_() );
 }
 
@@ -30,10 +29,9 @@ template< typename TheFillOperation >
 inline void Type_::GiveElements(
 	TheFillOperation & theFillOperation,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
-	if( theFillOperation.thisFormRange ){
+	if( theFillOperation.thisFormRange ) {
 		theQueue.TakeQuotedElements( theFillOperation.thisExpression );
 	}
 }
@@ -42,16 +40,13 @@ inline void Type_::GiveElements(
 
 inline Type_::FillOperation():
 thisExpression(),
-thisFormRange()
-{
-}
+thisFormRange() {}
 
 template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	return(
 		this->TakeQuotedQueue(
@@ -65,9 +60,8 @@ template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
-	if( this->thisFormRange ){
+) {
+	if( this->thisFormRange ) {
 		FormRange & theFormRange = *this->thisFormRange;
 		assert(
 			theFormRange and
@@ -79,7 +73,7 @@ inline bool Type_::TakeQuotedQueue(
 		);
 		theFormRange->BackTakeQuotedQueue( theQueue );
 		theFormRange.Pop();
-	} else{
+	} else {
 		this->thisExpression.TakeElements( theQueue );
 		this->thisFormRange = boost::in_place(
 			boost::ref( this->thisExpression )
@@ -92,10 +86,10 @@ inline bool Type_::TakeQuotedQueue(
 		FormRange & theFormRange = *this->thisFormRange;
 		theFormRange;
 		theFormRange.Pop()
-	){
+	) {
 		if(
 			!Form::OperandRange< Operand const >( *theFormRange )
-		){
+		) {
 			return( false );
 		}
 	}
@@ -113,23 +107,18 @@ inline bool Type_::TakeQuotedQueue(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( FillOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( FillOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{fill}",
 					System::Get().Evaluate( "drop find {fill} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					(
 						"{"
@@ -152,8 +141,7 @@ namespace Om
 				);
 			}
 			
-			TEST( EarlyTermination )
-			{
+			TEST( EarlyTermination ) {
 				CHECK_EQUAL(
 					(
 						"fill{"

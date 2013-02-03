@@ -20,18 +20,16 @@
 	#include "om/definition.hpp"
 	#include "om/operations/program_operation.hpp"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		/*!
 		\brief
 			The \ref operator_operation Operation implementation.
 		*/
 		typedef ProgramOperation< Operator > OperatorOperation;
 
-		namespace
-		{
+		namespace {
 			static Definition< OperatorOperation > const theOperatorDefinition;
 		}
 	}

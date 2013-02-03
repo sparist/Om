@@ -33,16 +33,13 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultElement()
-{
-}
+inline Type_::~DefaultElement() {}
 
 Template_
-inline bool Type_::operator ==( Element const & theElement ) const
-{
+inline bool Type_::operator ==( Element const & theElement ) const {
 	if(
 		typeid( theElement ) == typeid( ThisImplementation )
-	){
+	) {
 		assert(
 			dynamic_cast< ThisImplementation const * >( &theElement )
 		);
@@ -62,8 +59,7 @@ inline bool Type_::operator ==( Element const & theElement ) const
 Template_
 inline std::auto_ptr<
 	Om::Source< Om::Element >
-> Type_::GetElementRange()
-{
+> Type_::GetElementRange() {
 	return(
 		std::auto_ptr<
 			Source< Element >
@@ -76,8 +72,7 @@ inline std::auto_ptr<
 Template_
 inline std::auto_ptr<
 	Om::Source< Om::Element const >
-> Type_::GetElementRange() const
-{
+> Type_::GetElementRange() const {
 	return(
 		std::auto_ptr<
 			Source< Element const >
@@ -88,12 +83,11 @@ inline std::auto_ptr<
 }
 
 Template_
-inline void Type_::GiveElements( Queue & theQueue )
-{
+inline void Type_::GiveElements( Queue & theQueue ) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);
-	if( !this->IsEmpty() ){
+	if( !this->IsEmpty() ) {
 		theQueue.TakeElement(
 			static_cast< ThisImplementation & >( *this )
 		);
@@ -101,12 +95,11 @@ inline void Type_::GiveElements( Queue & theQueue )
 }
 
 Template_
-inline void Type_::GiveElements( Queue & theQueue ) const
-{
+inline void Type_::GiveElements( Queue & theQueue ) const {
 	assert(
 		dynamic_cast< ThisImplementation const * >( this )
 	);
-	if( !this->IsEmpty() ){
+	if( !this->IsEmpty() ) {
 		theQueue.TakeElement(
 			static_cast< ThisImplementation const & >( *this )
 		);

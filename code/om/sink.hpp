@@ -17,16 +17,15 @@
 	#define Om_Sink_ \
 	Om::Sink
 
-namespace Om
-{
+namespace Om {
+
 	// MARK: - Om::Sink
 	/*!
 	\brief
 		Any object that items can be pushed to.
 	*/
 	template< typename ThisItem >
-	struct Sink
-	{
+	struct Sink {
 	public: // MARK: public (non-static)
 
 		virtual ~Sink() = 0;

@@ -22,17 +22,15 @@
 	#define Om_Operations_EnvironmentOperation_GetName_() \
 	"environment"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::EnvironmentOperation
 		/*!
 		\brief
 			The \ref system_operation Operation implementation.
 		*/
-		struct EnvironmentOperation
-		{
+		struct EnvironmentOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -40,8 +38,7 @@ namespace Om
 			static void Give( Evaluation & );
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< EnvironmentOperation > const theEnvironmentDefinition;
 		}
 	}

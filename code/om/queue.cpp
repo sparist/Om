@@ -21,12 +21,9 @@
 
 // MARK: public (non-static)
 
-inline Type_::~Queue()
-{
-}
+inline Type_::~Queue() {}
 
-inline bool Type_::operator ==( Program const & ) const
-{
+inline bool Type_::operator ==( Program const & ) const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -34,151 +31,132 @@ inline bool Type_::operator ==( Program const & ) const
 }
 
 template< typename TheProgram >
-inline bool Type_::operator !=( TheProgram const & theProgram ) const
-{
+inline bool Type_::operator !=( TheProgram const & theProgram ) const {
 	return(
 		!( theProgram == *this )
 	);
 }
 
-inline void Type_::Clear()
-{
+inline void Type_::Clear() {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::GiveElements( Queue & )
-{
+inline void Type_::GiveElements( Queue & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::GiveElements( Queue & ) const
-{
+inline void Type_::GiveElements( Queue & ) const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline std::auto_ptr< Om::Program > Type_::GiveProgram()
-{
+inline std::auto_ptr< Om::Program > Type_::GiveProgram() {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline std::auto_ptr< Om::Program > Type_::GiveProgram() const
-{
+inline std::auto_ptr< Om::Program > Type_::GiveProgram() const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline bool Type_::IsEmpty() const
-{
+inline bool Type_::IsEmpty() const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::ReadElements( Parser & )
-{
+inline void Type_::ReadElements( Parser & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::ReadQuotedElements( Parser & )
-{
+inline void Type_::ReadQuotedElements( Parser & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeElement( Operand & )
-{
+inline void Type_::TakeElement( Operand & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeElement( Operand const & )
-{
+inline void Type_::TakeElement( Operand const & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeElement( Operator & )
-{
+inline void Type_::TakeElement( Operator & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeElement( Operator const & )
-{
+inline void Type_::TakeElement( Operator const & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeElement( Separator & )
-{
+inline void Type_::TakeElement( Separator & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeElement( Separator const & )
-{
+inline void Type_::TakeElement( Separator const & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeElements( Queue & )
-{
+inline void Type_::TakeElements( Queue & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeElements( Queue const & )
-{
+inline void Type_::TakeElements( Queue const & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeQuotedElements( Queue & )
-{
+inline void Type_::TakeQuotedElements( Queue & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline void Type_::TakeQuotedElements( Queue const & )
-{
+inline void Type_::TakeQuotedElements( Queue const & ) {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )

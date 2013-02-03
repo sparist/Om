@@ -27,8 +27,7 @@
 inline void Type_::Evaluate(
 	Source< CodePoint const > & theCodePointSource,
 	Sink< CodePoint const > & theCodePointSink
-) const
-{
+) const {
 	Writer theWriter( theCodePointSink );
 	Parser theParser( theCodePointSource );
 	Evaluator(
@@ -37,8 +36,7 @@ inline void Type_::Evaluate(
 	).ReadElements( theParser );
 }
 
-inline std::string Type_::Evaluate( char const theCodeUnitIterator[] ) const
-{
+inline std::string Type_::Evaluate( char const theCodeUnitIterator[] ) const {
 	assert( theCodeUnitIterator );
 	std::string theString;
 	{
@@ -56,16 +54,14 @@ inline std::string Type_::Evaluate( char const theCodeUnitIterator[] ) const
 	return( theString );
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) const
-{
+inline void Type_::GiveElements( Queue & theQueue ) const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
 	);
 }
 
-inline bool Type_::IsEmpty() const
-{
+inline bool Type_::IsEmpty() const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )
@@ -75,8 +71,7 @@ inline bool Type_::IsEmpty() const
 inline bool Type_::Translate(
 	Evaluation &,
 	Operator const &
-) const
-{
+) const {
 	assert( 0 );
 	throw(
 		std::logic_error( "Pure virtual function called." )

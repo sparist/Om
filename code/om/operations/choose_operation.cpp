@@ -23,8 +23,7 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_ChooseOperation_GetName_() );
 }
 
@@ -32,12 +31,11 @@ template< typename TheChooseOperation >
 inline void Type_::GiveElements(
 	TheChooseOperation & theChooseOperation,
 	Queue & theQueue
-)
-{
+) {
 	theQueue.TakeElement( GetOperator() );
-	if( 0 < theChooseOperation.thisOperandCount ){
+	if( 0 < theChooseOperation.thisOperandCount ) {
 		theQueue.TakeElement( theChooseOperation.thisEmptyCase );
-		if( 1 < theChooseOperation.thisOperandCount ){
+		if( 1 < theChooseOperation.thisOperandCount ) {
 			theQueue.TakeElement( theChooseOperation.thisNonEmptyCase );
 		}
 	}
@@ -48,16 +46,13 @@ inline void Type_::GiveElements(
 inline Type_::ChooseOperation():
 thisEmptyCase(),
 thisNonEmptyCase(),
-thisOperandCount()
-{
-}
+thisOperandCount() {}
 
 template< typename TheQueue >
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
-)
-{
+) {
 	Operand theOperand( theQueue.GiveProgram() );
 	return(
 		this->TakeOperand(
@@ -71,11 +66,10 @@ template< typename TheOperand >
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
-)
-{
+) {
 	assert( !theOperand.IsEmpty() );
 	assert( this->thisOperandCount < 3 );
-	switch( this->thisOperandCount++ ){
+	switch( this->thisOperandCount++ ) {
 	case 0:
 		this->thisEmptyCase.Take( theOperand );
 		return( false );
@@ -106,23 +100,18 @@ inline bool Type_::TakeOperand(
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( ChooseOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( ChooseOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{choose}",
 					System::Get().Evaluate( "drop find {choose} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{empty}",
 					System::Get().Evaluate( "choose{empty}{non-empty}{}" )

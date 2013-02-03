@@ -55,16 +55,14 @@
 	#define Om_Symbols_OperandSymbol_GetEndString_() \
 	Om_Macros_GetString_( Om_Symbols_OperandSymbol_GetEndHex_() )
 
-namespace Om
-{
-	namespace Symbols
-	{
+namespace Om {
+	namespace Symbols {
+
 		/*!
 		\brief
 			An Operand symbol.
 		*/
-		enum OperandSymbol
-		{
+		enum OperandSymbol {
 			theStartOperandSymbol = Om_Macros_GetNumber_( Om_Symbols_OperandSymbol_GetStartHex_() ),
 
 			theEndOperandSymbol = Om_Macros_GetNumber_( Om_Symbols_OperandSymbol_GetEndHex_() )

@@ -22,21 +22,20 @@
 	#define Om_Operations_BackPullTermOperation_GetName_() \
 	"terms->"
 
-namespace Om
-{
+namespace Om {
+
 	//! \cond
 	struct Expression;
 	//! \endcond
 
-	namespace Operations
-	{
+	namespace Operations {
+
 		// MARK: - Om::Operations::BackPullTermOperation
 		/*!
 		\brief
 			The \ref back_pull_term_operation Operation implementation.
 		*/
-		struct BackPullTermOperation
-		{
+		struct BackPullTermOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -54,8 +53,7 @@ namespace Om
 			);
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< BackPullTermOperation > const theBackPullTermDefinition;
 		}
 	}

@@ -24,13 +24,11 @@
 
 // MARK: public (static)
 
-inline char const * Type_::GetName()
-{
+inline char const * Type_::GetName() {
 	return( Om_Operations_FrontPullElementOperation_GetName_() );
 }
 
-inline void Type_::Give( Evaluation & theEvaluation )
-{
+inline void Type_::Give( Evaluation & theEvaluation ) {
 	theEvaluation.TakeOperation(
 		std::auto_ptr< Operation >(
 			new PullOperation<
@@ -45,8 +43,7 @@ template< typename TheQueue >
 inline void Type_::Pull(
 	Literal & theLiteral,
 	TheQueue & theQueue
-)
-{
+) {
 	theLiteral.FrontGiveElement( theQueue );
 }
 
@@ -60,23 +57,18 @@ inline void Type_::Pull(
 
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	namespace Operations
-	{
-		// MARK: -
-		SUITE( FrontPullElementOperation )
-		{
-			TEST( Definition )
-			{
+// MARK: -
+namespace Om {
+	namespace Operations {
+		SUITE( FrontPullElementOperation ) {
+			TEST( Definition ) {
 				CHECK_EQUAL(
 					"{<-elements}",
 					System::Get().Evaluate( "drop find {<-elements} system" )
 				);
 			}
 
-			TEST( General )
-			{
+			TEST( General ) {
 				CHECK_EQUAL(
 					"{1}{{2}3}",
 					System::Get().Evaluate( "<-elements {1{2}3}" )

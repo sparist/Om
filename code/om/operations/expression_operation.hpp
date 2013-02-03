@@ -21,18 +21,16 @@
 	#include "om/expression.hpp"
 	#include "om/operations/program_operation.hpp"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		/*!
 		\brief
 			The \ref expression_operation Operation implementation.
 		*/
 		typedef ProgramOperation< Expression > ExpressionOperation;
 
-		namespace
-		{
+		namespace {
 			static Definition< ExpressionOperation > const theExpressionDefinition;
 		}
 	}

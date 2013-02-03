@@ -32,20 +32,16 @@
 
 Template_
 inline Type_::IteratorSource( ThisIterator const theIterator ):
-thisIterator( theIterator )
-{
-}
+thisIterator( theIterator ) {}
 
 Template_
-inline Type_ & Type_::operator =( IteratorSource theIteratorSource )
-{
+inline Type_ & Type_::operator =( IteratorSource theIteratorSource ) {
 	this->Swap( theIteratorSource );
 	return( *this );
 }
 
 Template_
-inline bool Type_::operator ==( IteratorSource const & theSource ) const
-{
+inline bool Type_::operator ==( IteratorSource const & theSource ) const {
 	return(
 		this->thisIterator == theSource.thisIterator or
 		(
@@ -56,28 +52,24 @@ inline bool Type_::operator ==( IteratorSource const & theSource ) const
 }
 
 Template_
-inline bool Type_::operator !() const
-{
+inline bool Type_::operator !() const {
 	return( !*this->thisIterator );
 }
 
 Template_
-inline ThisItem & Type_::operator *() const
-{
+inline ThisItem & Type_::operator *() const {
 	assert( !!*this->thisIterator );
 	return( *this->thisIterator );
 }
 
 Template_
-inline void Type_::Pop()
-{
+inline void Type_::Pop() {
 	assert( !!*this->thisIterator );
 	++this->thisIterator;
 }
 
 Template_
-inline void Type_::Swap( IteratorSource & theIteratorSource )
-{
+inline void Type_::Swap( IteratorSource & theIteratorSource ) {
 	boost::swap(
 		this->thisIterator,
 		theIteratorSource.thisIterator
@@ -103,8 +95,7 @@ inline void boost::swap(
 		ThisItem,
 		ThisIterator
 	> & theSecond
-)
-{
+) {
 	theFirst.Swap( theSecond );
 }
 
@@ -117,18 +108,14 @@ inline void boost::swap(
 		#include "om/sinks/container_back_sink.hpp"
 		#include "UnitTest++.h"
 
-namespace Om
-{
-	// MARK: -
-	SUITE( IteratorSource )
-	{
-		namespace
-		{
+// MARK: -
+namespace Om {
+	SUITE( IteratorSource ) {
+		namespace {
 			static void CopyWithIterators(
 				char const theCodeUnitIterator[],
 				std::string & theSinkString
-			)
-			{
+			) {
 				typedef char const * Iterator;
 				typedef Sources::IteratorSource<
 					char const,
@@ -150,15 +137,14 @@ namespace Om
 				);
 			}
 
-			struct Item
-			{
-				Item( char theCodeUnit ):
-				thisCodeUnit( theCodeUnit )
-				{
-				}
+			struct Item {
+			public:
 
-				bool operator !() const
-				{
+				// Note: this is intentionally non-explicit.
+				Item( char const theCodeUnit ):
+				thisCodeUnit( theCodeUnit ) {}
+
+				bool operator !() const {
 					return( !this->thisCodeUnit );
 				}
 
@@ -166,8 +152,7 @@ namespace Om
 			};
 		}
 
-		TEST( General )
-		{
+		TEST( General ) {
 			typedef Item * Iterator;
 			typedef Sources::IteratorSource<
 				Item,
@@ -239,8 +224,7 @@ namespace Om
 			CHECK( theSourceEnd == theSource );
 		}
 
-		TEST( CopyMultipleItems )
-		{
+		TEST( CopyMultipleItems ) {
 			char const theSourceNullTerminatedString[] = "01";
 			std::string theSinkString;
 			CopyWithIterators(
@@ -254,8 +238,7 @@ namespace Om
 			);
 		}
 
-		TEST( CopySingleItem )
-		{
+		TEST( CopySingleItem ) {
 			char const theSourceNullTerminatedString[] = "0";
 			std::string theSinkString;
 			CopyWithIterators(
@@ -269,8 +252,7 @@ namespace Om
 			);
 		}
 
-		TEST( CopyNoItems )
-		{
+		TEST( CopyNoItems ) {
 			char const theSourceNullTerminatedString[] = "";
 			std::string theSinkString;
 			CopyWithIterators(

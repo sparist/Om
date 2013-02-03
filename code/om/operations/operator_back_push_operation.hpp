@@ -22,17 +22,15 @@
 	#define Om_Operations_OperatorBackPushOperation_GetName_() \
 	"operator<-"
 
-namespace Om
-{
-	namespace Operations
-	{
+namespace Om {
+	namespace Operations {
+
 		// MARK: - Om::Operations::OperatorBackPushOperation
 		/*!
 		\brief
 			The \ref operator_back_push_operation Operation implementation.
 		*/
-		struct OperatorBackPushOperation
-		{
+		struct OperatorBackPushOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();
@@ -40,8 +38,7 @@ namespace Om
 			static void Give( Evaluation & );
 		};
 
-		namespace
-		{
+		namespace {
 			static Definition< OperatorBackPushOperation > const theOperatorBackPushDefinition;
 		}
 	}
