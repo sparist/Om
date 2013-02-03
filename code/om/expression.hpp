@@ -29,15 +29,15 @@ namespace Om {
 	\brief
 		The \ref expression Program implementation.
 	*/
-	struct Expression:
+	class Expression:
 	public DefaultProgram< Expression > {
 	public: // MARK: public (static)
 
 		//! \cond
-		struct ElementRange;
+		class ElementRange;
 
 		template< typename ThisForm >
-		struct FormRange;
+		class FormRange;
 		//! \endcond
 
 		static char const * GetName();
@@ -150,7 +150,7 @@ namespace Om {
 		Specialization on a mutable Form.
 	*/
 	template<>
-	struct Expression::FormRange< Form >:
+	class Expression::FormRange< Form >:
 	public Sources::CollectionFrontSource<
 		Form,
 		FormDeque::iterator
@@ -166,7 +166,7 @@ namespace Om {
 		Specialization on an immutable Form.
 	*/
 	template<>
-	struct Expression::FormRange< Form const >:
+	class Expression::FormRange< Form const >:
 	public Sources::CollectionFrontSource<
 		Form const,
 		FormDeque::const_iterator
@@ -181,7 +181,7 @@ namespace Om {
 	\brief
 		An Expression Element range.
 	*/
-	struct Expression::ElementRange:
+	class Expression::ElementRange:
 	public Sources::DefaultSource<
 		Element const,
 		ElementRange

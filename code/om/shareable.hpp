@@ -29,7 +29,7 @@ namespace Om {
 	This type can be used as a template argument for boost::intrusive_ptr.  Shared ownership is implemented via owner counting.
 	*/
 	template< typename ThisOwnerCount = size_t >
-	struct Shareable {
+	class Shareable {
 
 		/*!
 		\cond internal_symbols

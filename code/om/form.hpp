@@ -27,14 +27,14 @@ namespace Om {
 	\brief
 		An Operator (which may be empty), followed by zero or more Operand instances.
 	*/
-	struct Form {
+	class Form {
 	public: // MARK: public (static)
 
 		//! \cond
-		struct ElementRange;
+		class ElementRange;
 
 		template< typename ThisOperand >
-		struct OperandRange;
+		class OperandRange;
 		//! \endcond
 
 	public: // MARK: public (non-static)
@@ -119,7 +119,7 @@ namespace Om {
 	\brief
 		A Form Element range.
 	*/
-	struct Form::ElementRange:
+	class Form::ElementRange:
 	public Sources::DefaultSource<
 		Element const,
 		ElementRange
@@ -153,7 +153,7 @@ namespace Om {
 		Specialization on a mutable Operand.
 	*/
 	template<>
-	struct Form::OperandRange< Operand >:
+	class Form::OperandRange< Operand >:
 	public Sources::CollectionFrontSource<
 		Operand,
 		OperandDeque::iterator
@@ -169,7 +169,7 @@ namespace Om {
 		Specialization on an immutable Operand.
 	*/
 	template<>
-	struct Form::OperandRange< Operand const >:
+	class Form::OperandRange< Operand const >:
 	public Sources::CollectionFrontSource<
 		Operand const,
 		OperandDeque::const_iterator

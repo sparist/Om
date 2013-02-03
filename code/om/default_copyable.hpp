@@ -30,7 +30,7 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Copyable
 	>
-	struct DefaultCopyable:
+	class DefaultCopyable:
 	public ThisInterface {
 
 		template< typename TheCopyable >

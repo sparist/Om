@@ -31,7 +31,7 @@ namespace Om {
 			typename ThisProgram,
 			typename ThisImplementation
 		>
-		struct FrontPushOperation:
+		class FrontPushOperation:
 		public DefaultOperation<
 			FrontPushOperation<
 				ThisProgram,

@@ -22,7 +22,7 @@
 namespace Om {
 
 	//! \cond
-	struct Operator;
+	class Operator;
 	//! \endcond
 
 	// MARK: - Om::Operations::DefaultOperation
@@ -31,7 +31,7 @@ namespace Om {
 		A partial implementation of Operation.
 	*/
 	template< typename ThisImplementation >
-	struct DefaultOperation:
+	class DefaultOperation:
 	public Operation {
 	public: // MARK: public (static)
 

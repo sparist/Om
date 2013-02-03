@@ -31,7 +31,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisContainer
 		>
-		struct ContainerBackSource:
+		class ContainerBackSource:
 		public DefaultSource<
 			ThisItem,
 			ContainerBackSource<

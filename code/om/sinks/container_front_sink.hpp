@@ -31,7 +31,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisContainer
 		>
-		struct ContainerFrontSink:
+		class ContainerFrontSink:
 		public DefaultSink<
 			ThisItem,
 			ContainerFrontSink<

@@ -27,7 +27,7 @@ namespace Om {
 	\brief
 		An object that can be copied or moved via #Give.
 	*/
-	struct Giveable:
+	class Giveable:
 	public Copyable,
 	public Moveable {
 	public: // MARK: public (non-static)

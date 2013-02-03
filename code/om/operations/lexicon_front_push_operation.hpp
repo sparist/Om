@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref lexicon_front_push_operation Operation implementation.
 		*/
-		struct LexiconFrontPushOperation {
+		class LexiconFrontPushOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

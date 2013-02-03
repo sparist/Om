@@ -25,7 +25,7 @@
 namespace Om {
 
 	//! \cond
-	struct Expression;
+	class Expression;
 	//! \endcond
 
 	namespace Operations {
@@ -35,7 +35,7 @@ namespace Om {
 		\brief
 			The \ref front_pull_term_operation Operation implementation.
 		*/
-		struct FrontPullTermOperation {
+		class FrontPullTermOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

@@ -31,7 +31,7 @@ namespace Om {
 		\brief
 			The \ref normalize_operation Operation implementation.
 		*/
-		struct NormalizeOperation:
+		class NormalizeOperation:
 		public DefaultOperation< NormalizeOperation > {
 		public: // MARK: public (static)
 

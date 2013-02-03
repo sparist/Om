@@ -31,7 +31,7 @@ namespace Om {
 			typename ThisProgram,
 			typename ThisImplementation
 		>
-		struct PullOperation:
+		class PullOperation:
 		public DefaultOperation<
 			PullOperation<
 				ThisProgram,

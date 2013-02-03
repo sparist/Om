@@ -22,17 +22,17 @@
 namespace Om {
 
 	//! \cond
-	struct Evaluation;
+	class Evaluation;
 
-	struct Operator;
-
-	template< typename ThisItem >
-	struct Sink;
+	class Operator;
 
 	template< typename ThisItem >
-	struct Source;
+	class Sink;
 
-	struct Queue;
+	template< typename ThisItem >
+	class Source;
+
+	class Queue;
 	//! \endcond
 
 	// MARK: - Om::Translator
@@ -40,7 +40,7 @@ namespace Om {
 	\brief
 		An Operator lookup for use by an Evaluator.
 	*/
-	struct Translator {
+	class Translator {
 	public: // MARK: public (non-static)
 
 		/*!

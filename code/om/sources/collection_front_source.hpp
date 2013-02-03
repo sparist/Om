@@ -31,7 +31,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisIterator
 		>
-		struct CollectionFrontSource:
+		class CollectionFrontSource:
 		public IteratorPairSource<
 			ThisItem,
 			ThisIterator

@@ -27,7 +27,7 @@
 namespace Om {
 
 	//! \cond
-	struct Evaluation;
+	class Evaluation;
 	//! \endcond
 
 	// MARK: - Om::Lexicon
@@ -35,13 +35,13 @@ namespace Om {
 	\brief
 		The \ref lexicon Program implementation.
 	*/
-	struct Lexicon:
+	class Lexicon:
 	public DefaultProgram< Lexicon >,
 	public Translator {
 	public: // MARK: public (static)
 
 		//! \cond
-		struct ElementRange;
+		class ElementRange;
 		//! \endcond
 
 		static char const * GetName();
@@ -102,7 +102,7 @@ namespace Om {
 	private: // MARK: private (static)
 
 		//! \cond
-		struct Node;
+		class Node;
 		//! \endcond
 
 		typedef boost::ptr_map<
@@ -185,7 +185,7 @@ namespace Om {
 	\brief
 		A Lexicon Element range.
 	*/
-	struct Lexicon::ElementRange:
+	class Lexicon::ElementRange:
 	public Sources::DefaultSource<
 		Element const,
 		ElementRange
@@ -224,7 +224,7 @@ namespace Om {
 	\brief
 		A Lexicon linked list node, extending Pair with next and prior pointers.
 	*/
-	struct Lexicon::Node:
+	class Lexicon::Node:
 	public Pair {
 	public: // MARK: public (static)
 

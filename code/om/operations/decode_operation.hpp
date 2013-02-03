@@ -31,7 +31,7 @@ namespace Om {
 		\brief
 			The \ref decode_operation Operation implementation.
 		*/
-		struct DecodeOperation:
+		class DecodeOperation:
 		public DefaultOperation< DecodeOperation > {
 		public: // MARK: public (static)
 

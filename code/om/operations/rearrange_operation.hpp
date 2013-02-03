@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref rearrange_operation Operation implementation.
 		*/
-		struct RearrangeOperation {
+		class RearrangeOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

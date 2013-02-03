@@ -22,7 +22,7 @@
 namespace Om {
 
 	// MARK: - Om::Pair
-	struct Pair {
+	class Pair {
 	public: // MARK: public (static)
 
 		static Pair const & GetEmpty();

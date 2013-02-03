@@ -24,7 +24,7 @@ namespace Om {
 
 	//! \cond
 	template< typename ThisItem >
-	struct Sink;
+	class Sink;
 	//! \endcond
 
 	// MARK: - Om::Writer
@@ -34,7 +34,7 @@ namespace Om {
 
 	Giving an Element does nothing.
 	*/
-	struct Writer:
+	class Writer:
 	public DefaultQueue< Writer > {
 	public: // MARK: public (non-static)
 

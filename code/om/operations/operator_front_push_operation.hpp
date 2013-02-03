@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref operator_front_push_operation Operation implementation.
 		*/
-		struct OperatorFrontPushOperation {
+		class OperatorFrontPushOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

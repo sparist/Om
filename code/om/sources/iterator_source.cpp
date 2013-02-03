@@ -137,7 +137,7 @@ namespace Om {
 				);
 			}
 
-			struct Item {
+			class Item {
 			public:
 
 				// Note: this is intentionally non-explicit.

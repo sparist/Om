@@ -32,7 +32,7 @@ namespace Om {
 		\brief
 			The \ref substitute_operation Operation implementation.
 		*/
-		struct SubstituteOperation:
+		class SubstituteOperation:
 		public TranslateOperation< SubstituteOperation > {
 		public: // MARK: public (static)
 

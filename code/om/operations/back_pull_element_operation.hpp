@@ -25,7 +25,7 @@
 namespace Om {
 
 	//! \cond
-	struct Literal;
+	class Literal;
 	//! \endcond
 
 	namespace Operations {
@@ -35,7 +35,7 @@ namespace Om {
 		\brief
 			The \ref back_pull_element_operation Operation implementation.
 		*/
-		struct BackPullElementOperation {
+		class BackPullElementOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

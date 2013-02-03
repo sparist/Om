@@ -22,11 +22,11 @@
 namespace Om {
 
 	//! \cond
-	struct Evaluation;
+	class Evaluation;
 
-	struct Operation;
+	class Operation;
 
-	struct Translator;
+	class Translator;
 	//! \endcond
 
 	// MARK: - Om::Evaluator
@@ -41,7 +41,7 @@ namespace Om {
 
 	The program output by the Evaluator is an Expression.  Note that if each line in the Expression was terminated by Symbols::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbols::theLineSeparatorSymbol to the final output.
 	*/
-	struct Evaluator:
+	class Evaluator:
 	public DefaultQueue< Evaluator > {
 	public: // MARK: public (non-static)
 

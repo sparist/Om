@@ -24,10 +24,10 @@
 namespace Om {
 
 	//! \cond
-	struct Element;
+	class Element;
 
 	template< typename ThisItem >
-	struct Source;
+	class Source;
 	//! \endcond
 
 	// MARK: - Om::Program
@@ -39,7 +39,7 @@ namespace Om {
 
 	Each concrete derivation must have a GetName() function that returns a null-terminated, NFD-normalized UTF-8 string to be used as a corresponding Operator name.
 	*/
-	struct Program:
+	class Program:
 	public Giveable,
 	public Queue,
 	public Shareable<> {

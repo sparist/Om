@@ -26,7 +26,7 @@ namespace Om {
 	\brief
 		An object that can be passed to #Move to be moved.
 	*/
-	struct Moveable {
+	class Moveable {
 
 		template< typename TheMoveable >
 		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );

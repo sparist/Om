@@ -27,7 +27,7 @@ namespace Om {
 	This is safe to construct before main, but the order of construction is implementation-defined; if there is more than one Operation with the same Operator, the choice of which to apply first will be implementation-defined.
 	*/
 	template< typename ThisOperation >
-	struct Definition {
+	class Definition {
 	public: // MARK: public (non-static)
 
 		/*!

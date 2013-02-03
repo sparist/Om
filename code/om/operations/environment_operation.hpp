@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref system_operation Operation implementation.
 		*/
-		struct EnvironmentOperation {
+		class EnvironmentOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

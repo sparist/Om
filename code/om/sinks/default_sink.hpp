@@ -31,7 +31,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisImplementation
 		>
-		struct DefaultSink:
+		class DefaultSink:
 		public Sink< ThisItem >,
 		public std::iterator<
 			std::output_iterator_tag,

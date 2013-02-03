@@ -31,7 +31,7 @@ namespace Om {
 		\brief
 			The \ref equals_operation Operation implementation.
 		*/
-		struct EqualsOperation:
+		class EqualsOperation:
 		public DefaultOperation< EqualsOperation > {
 		public: // MARK: public (static)
 

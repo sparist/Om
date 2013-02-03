@@ -32,7 +32,7 @@ namespace Om {
 		\brief
 			The \ref fill_operation Operation implementation.
 		*/
-		struct FillOperation:
+		class FillOperation:
 		public DefaultOperation< FillOperation > {
 		public: // MARK: public (static)
 

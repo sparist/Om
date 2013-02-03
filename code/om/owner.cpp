@@ -176,7 +176,7 @@ inline void boost::swap(
 namespace Om {
 	SUITE( Owner ) {
 		namespace {
-			struct TestValue:
+			class TestValue:
 			public DefaultCopyable< TestValue >,
 			public Shareable<> {
 			public:

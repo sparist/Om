@@ -26,7 +26,7 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Element
 	>
-	struct DefaultElement:
+	class DefaultElement:
 	public DefaultProgram<
 		ThisImplementation,
 		ThisInterface

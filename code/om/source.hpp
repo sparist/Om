@@ -25,7 +25,7 @@ namespace Om {
 		Any object that items can be pulled from.
 	*/
 	template< typename ThisItem >
-	struct Source {
+	class Source {
 	public: // MARK: public (static)
 
 		/*!

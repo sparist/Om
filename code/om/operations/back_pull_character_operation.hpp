@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref back_pull_character_operation Operation implementation.
 		*/
-		struct BackPullCharacterOperation {
+		class BackPullCharacterOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

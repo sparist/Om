@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref literal_front_push_operation Operation implementation.
 		*/
-		struct LiteralFrontPushOperation {
+		class LiteralFrontPushOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

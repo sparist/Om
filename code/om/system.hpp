@@ -23,13 +23,13 @@
 namespace Om {
 
 	//! \cond
-	struct Evaluation;
+	class Evaluation;
 
-	struct Lexicon;
+	class Lexicon;
 
-	struct Operator;
+	class Operator;
 
-	struct Queue;
+	class Queue;
 	//! \endcond
 
 	// MARK: - Om::System
@@ -39,11 +39,11 @@ namespace Om {
 
 	There is a single System instance, returned by the static Get() method.
 	*/
-	struct System:
+	class System:
 	public Translator {
 
 		template< typename ThisOperation >
-		friend struct Definition;
+		friend class Definition;
 
 	public: // MARK: public (static)
 

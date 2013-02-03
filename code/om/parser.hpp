@@ -27,7 +27,7 @@ namespace Om {
 	\brief
 		Produces each #CodePoint until the end of the Queue or the Source.
 	*/
-	struct Parser:
+	class Parser:
 	public Sources::DefaultSource<
 		CodePoint const,
 		Parser

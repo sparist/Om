@@ -25,7 +25,7 @@
 namespace Om {
 
 	//! \cond
-	struct Lexicon;
+	class Lexicon;
 	//! \endcond
 
 	namespace Operations {
@@ -35,7 +35,7 @@ namespace Om {
 		\brief
 			The \ref back_pull_pair_operation Operation implementation.
 		*/
-		struct BackPullPairOperation {
+		class BackPullPairOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

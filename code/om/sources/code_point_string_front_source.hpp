@@ -32,7 +32,7 @@ namespace Om {
 			Dereferencing exposes a non-const reference to the member string cache of the current segment, allowing swap as an optimization.  Modifying the string will not modify the source data.
 		*/
 		template< typename ThisStringIterator >
-		struct CodePointStringFrontSource:
+		class CodePointStringFrontSource:
 		public DefaultSource<
 			std::string,
 			CodePointStringFrontSource< ThisStringIterator >

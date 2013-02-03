@@ -57,7 +57,7 @@ namespace Om {
 	\return
 		The resulting object.
 
-	This is useful in situations where the argument auto_ptr is a member of a const struct.
+	This is useful in situations where the argument auto_ptr is a member of a const class.
 	*/
 	template< typename TheGiveable >
 	std::auto_ptr< TheGiveable > Give(

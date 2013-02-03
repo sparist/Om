@@ -28,7 +28,7 @@ namespace Om {
 			An Operation that normalizes a Program to a specific type.
 		*/
 		template< typename ThisProgram >
-		struct ProgramOperation:
+		class ProgramOperation:
 		public DefaultOperation<
 			ProgramOperation< ThisProgram >
 		> {

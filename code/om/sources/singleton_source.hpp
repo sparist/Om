@@ -28,7 +28,7 @@ namespace Om {
 			A single item Source.
 		*/
 		template< typename ThisItem >
-		struct SingletonSource:
+		class SingletonSource:
 		public DefaultSource<
 			ThisItem,
 			SingletonSource< ThisItem >

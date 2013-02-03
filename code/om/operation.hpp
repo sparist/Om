@@ -22,13 +22,13 @@
 namespace Om {
 
 	//! \cond
-	struct Evaluation;
+	class Evaluation;
 
-	struct Operand;
+	class Operand;
 
-	struct Parser;
+	class Parser;
 
-	struct Queue;
+	class Queue;
 	//! \endcond
 
 	// MARK: - Om::Operation
@@ -36,7 +36,7 @@ namespace Om {
 	\brief
 		An \ref operations "Operation" that has yet to consume one or more \ref Operand "Operands", and therefore must live in memory while "incomplete".
 	*/
-	struct Operation {
+	class Operation {
 	public: // MARK: public (non-static)
 
 		virtual ~Operation() = 0;

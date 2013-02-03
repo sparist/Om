@@ -26,7 +26,7 @@ namespace Om {
 	\brief
 		An object that can be passed to #Copy to be copied.
 	*/
-	struct Copyable {
+	class Copyable {
 
 		template< typename TheCopyable >
 		friend std::auto_ptr< TheCopyable > Copy( TheCopyable const & );

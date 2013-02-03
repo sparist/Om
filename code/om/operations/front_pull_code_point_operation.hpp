@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref front_pull_code_point_operation Operation implementation.
 		*/
-		struct FrontPullCodePointOperation {
+		class FrontPullCodePointOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

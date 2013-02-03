@@ -22,9 +22,9 @@
 namespace Om {
 
 	//! \cond
-	struct Evaluator;
+	class Evaluator;
 
-	struct Translator;
+	class Translator;
 	//! \endcond
 
 	// MARK: - Om::Evaluation
@@ -36,7 +36,7 @@ namespace Om {
 
 	Each Element that it takes is pushed onto a stack, resulting in a LIFO-ordered application of each Element to the Evaluator.
 	*/
-	struct Evaluation {
+	class Evaluation {
 	public: // MARK: public (non-static)
 
 		virtual ~Evaluation();

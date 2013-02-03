@@ -31,7 +31,7 @@ namespace Om {
 		\brief
 			The \ref copy_operation Operation implementation.
 		*/
-		struct CopyOperation:
+		class CopyOperation:
 		public DefaultOperation< CopyOperation > {
 		public: // MARK: public (static)
 

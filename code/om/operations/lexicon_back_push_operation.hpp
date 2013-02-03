@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref lexicon_back_push_operation Operation implementation.
 		*/
-		struct LexiconBackPushOperation {
+		class LexiconBackPushOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

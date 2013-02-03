@@ -29,7 +29,7 @@ namespace Om {
 	\brief
 		The \ref null Program implementation.
 	*/
-	struct Null:
+	class Null:
 	public DefaultProgram< Null > {
 	public: // MARK: public (static)
 

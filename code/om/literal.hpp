@@ -30,13 +30,13 @@ namespace Om {
 	\brief
 		The \ref literal Program implementation.
 	*/
-	struct Literal:
+	class Literal:
 	public DefaultProgram< Literal > {
 	public: // MARK: public (static)
 
 		//! \cond
 		template< typename ThisLiteral >
-		struct ElementRange;
+		class ElementRange;
 		//! \endcond
 
 		static char const * GetName();
@@ -126,7 +126,7 @@ namespace Om {
 		A mutable Element range.
 	*/
 	template<>
-	struct Literal::ElementRange< Literal >:
+	class Literal::ElementRange< Literal >:
 	public Sources::CollectionFrontSource<
 		Element,
 		ElementDeque::iterator
@@ -142,7 +142,7 @@ namespace Om {
 		An immutable Element range.
 	*/
 	template<>
-	struct Literal::ElementRange< Literal const >:
+	class Literal::ElementRange< Literal const >:
 	public Sources::CollectionFrontSource<
 		Element const,
 		ElementDeque::const_iterator

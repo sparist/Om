@@ -32,7 +32,7 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Giveable
 	>
-	struct DefaultGiveable:
+	class DefaultGiveable:
 	public DefaultMoveable<
 		ThisImplementation,
 		DefaultCopyable<

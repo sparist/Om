@@ -31,7 +31,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisImplementation
 		>
-		struct DefaultSource:
+		class DefaultSource:
 		public Source< ThisItem >,
 		public std::iterator<
 			std::input_iterator_tag,

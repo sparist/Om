@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref back_pull_code_point_operation Operation implementation.
 		*/
-		struct BackPullCodePointOperation {
+		class BackPullCodePointOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

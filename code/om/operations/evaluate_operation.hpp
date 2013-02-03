@@ -31,7 +31,7 @@ namespace Om {
 		\brief
 			The \ref define_operation Operation implementation.
 		*/
-		struct EvaluateOperation:
+		class EvaluateOperation:
 		public DefaultOperation< EvaluateOperation > {
 		public: // MARK: public (static)
 

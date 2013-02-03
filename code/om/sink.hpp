@@ -25,7 +25,7 @@ namespace Om {
 		Any object that items can be pushed to.
 	*/
 	template< typename ThisItem >
-	struct Sink {
+	class Sink {
 	public: // MARK: public (non-static)
 
 		virtual ~Sink() = 0;

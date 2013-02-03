@@ -31,7 +31,7 @@ namespace Om {
 		\brief
 			The \ref encode_operation Operation implementation.
 		*/
-		struct EncodeOperation:
+		class EncodeOperation:
 		public DefaultOperation< EncodeOperation > {
 		public: // MARK: public (static)
 

@@ -31,7 +31,7 @@ namespace Om {
 		\brief
 			The \ref swap_operation Operation implementation.
 		*/
-		struct SwapOperation:
+		class SwapOperation:
 		public DefaultOperation< SwapOperation > {
 		public: // MARK: public (static)
 

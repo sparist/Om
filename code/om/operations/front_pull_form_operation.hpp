@@ -25,7 +25,7 @@
 namespace Om {
 
 	//! \cond
-	struct Expression;
+	class Expression;
 	//! \endcond
 
 	namespace Operations {
@@ -35,7 +35,7 @@ namespace Om {
 		\brief
 			The \ref front_pull_form_operation Operation implementation.
 		*/
-		struct FrontPullFormOperation {
+		class FrontPullFormOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

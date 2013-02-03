@@ -396,18 +396,18 @@ Additional native functionality can be added to %Om by implementing new operatio
 There are two ways to implement an operation: as a composite operation, or an atomic operation.
 
 To implement a composite operation, or an atomic operation that consumes no operands:
--	Define the operation <tt>struct</tt> in the <tt>Om::Operations</tt> namespace.
+-	Define the operation <tt>class</tt> in the <tt>Om::Operations</tt> namespace.
 -	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
 -	Define the static <tt>Give( Evaluation &amp; )</tt> method, with no return value, to give existing operations and/or elements to the evaluation.
 
 To define an atomic operation that consumes one or more operands:
--	Define the operation <tt>struct</tt>, derived from <tt>Om::DefaultOperation&lt;</tt> <em>operation</em> <tt>&gt;</tt> (where <em>operation</em> is the name of the operation <tt>struct</tt>), in the <tt>Om::Operations</tt> namespace.
+-	Define the operation <tt>class</tt>, derived from <tt>Om::DefaultOperation&lt;</tt> <em>operation</em> <tt>&gt;</tt> (where <em>operation</em> is the name of the operation <tt>class</tt>), in the <tt>Om::Operations</tt> namespace.
 -	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
 -	Add the implementation, using existing operations as a guide:
 	-	Implement the functions necessary to compile.
 	-	Optionally override virtual function implementations in <tt>DefaultOperation</tt>, such as <tt>ReadQuotedElements</tt>, that may be more optimally implemented in the operation.
 
-For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <tt>WhateverOperation</tt> is a stand-in for the name of the operation <tt>struct</tt>):
+For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <tt>WhateverOperation</tt> is a stand-in for the name of the operation <tt>class</tt>):
 
 \code
 namespace {

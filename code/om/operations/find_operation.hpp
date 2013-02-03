@@ -26,7 +26,7 @@
 namespace Om {
 
 	//! \cond
-	struct Lexicon;
+	class Lexicon;
 	//! \endcond
 
 	namespace Operations {
@@ -36,7 +36,7 @@ namespace Om {
 		\brief
 			The \ref find_operation Operation implementation.
 		*/
-		struct FindOperation:
+		class FindOperation:
 		public DefaultOperation< FindOperation > {
 		public: // MARK: public (static)
 

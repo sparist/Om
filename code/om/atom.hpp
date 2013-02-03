@@ -26,7 +26,7 @@ namespace Om {
 	\brief
 		A leaf Element defined by a string.
 	*/
-	struct Atom:
+	class Atom:
 	public Element {
 	public: // MARK: public (non-static)
 

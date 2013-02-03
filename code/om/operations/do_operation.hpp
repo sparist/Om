@@ -30,7 +30,7 @@ namespace Om {
 		\brief
 			The \ref do_operation Operation implementation.
 		*/
-		struct DoOperation {
+		class DoOperation {
 		public: // MARK: public (static)
 
 			static char const * GetName();

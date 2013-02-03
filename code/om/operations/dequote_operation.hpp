@@ -31,7 +31,7 @@ namespace Om {
 		\brief
 			The \ref dequote_operation Operation implementation.
 		*/
-		struct DequoteOperation:
+		class DequoteOperation:
 		public DefaultOperation< DequoteOperation > {
 		public: // MARK: public (static)
 

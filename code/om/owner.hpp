@@ -27,10 +27,10 @@ namespace Om {
 	\brief
 		A polymorphic object with value semantics.
 
-	This struct can be considered a "fat pointer" that holds the pointee, such that copying the pointer also copies the pointee (lazily).
+	This class can be considered a "fat pointer" that holds the pointee, such that copying the pointer also copies the pointee (lazily).
 	*/
 	template< typename ThisValue >
-	struct Owner:
+	class Owner:
 	public Taker<
 		Owner< ThisValue >
 	> {

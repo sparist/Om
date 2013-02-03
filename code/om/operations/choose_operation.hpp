@@ -31,7 +31,7 @@ namespace Om {
 		\brief
 			The \ref choose_operation Operation implementation.
 		*/
-		struct ChooseOperation:
+		class ChooseOperation:
 		public DefaultOperation< ChooseOperation > {
 		public: // MARK: public (static)
 
