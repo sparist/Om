@@ -248,9 +248,13 @@ boost::locale::utf::utf_traits<br class="typebreak"/>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a68ad9f81b67305e5316381dcf85b8b3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_om_1_1_atom.html">Atom</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_om.html#a68ad9f81b67305e5316381dcf85b8b3b">new_clone</a> (<a class="el" href="class_om_1_1_atom.html">Atom</a> const &amp;)</td></tr>
+<tr class="separator:a68ad9f81b67305e5316381dcf85b8b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9109dc9887bc064a39d365a493e2cd04"><td class="memTemplParams" colspan="2">template&lt;typename TheCopyable &gt; </td></tr>
 <tr class="memitem:a9109dc9887bc064a39d365a493e2cd04"><td class="memTemplItemLeft" align="right" valign="top">std::auto_ptr&lt; TheCopyable &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_om.html#a9109dc9887bc064a39d365a493e2cd04">Copy</a> (TheCopyable const &amp;)</td></tr>
 <tr class="separator:a9109dc9887bc064a39d365a493e2cd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72146912b265c8d0b213c4cf775f123c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_om_1_1_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_om.html#a72146912b265c8d0b213c4cf775f123c">new_clone</a> (<a class="el" href="class_om_1_1_element.html">Element</a> const &amp;)</td></tr>
+<tr class="separator:a72146912b265c8d0b213c4cf775f123c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7b1cad2b7764d60b1eba0d64e117848"><td class="memTemplParams" colspan="2">template&lt;typename TheGiveable &gt; </td></tr>
 <tr class="memitem:aa7b1cad2b7764d60b1eba0d64e117848"><td class="memTemplItemLeft" align="right" valign="top">std::auto_ptr&lt; TheGiveable &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848">Give</a> (TheGiveable &amp;)</td></tr>
 <tr class="memdesc:aa7b1cad2b7764d60b1eba0d64e117848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="namespace_om.html#aeab4820d4b0d48c130cc99959302e415">Move</a> on the object.  <a href="#aa7b1cad2b7764d60b1eba0d64e117848">More...</a><br/></td></tr>
@@ -270,6 +274,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aeab4820d4b0d48c130cc99959302e415"><td class="memTemplParams" colspan="2">template&lt;typename TheMoveable &gt; </td></tr>
 <tr class="memitem:aeab4820d4b0d48c130cc99959302e415"><td class="memTemplItemLeft" align="right" valign="top">std::auto_ptr&lt; TheMoveable &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_om.html#aeab4820d4b0d48c130cc99959302e415">Move</a> (TheMoveable &amp;)</td></tr>
 <tr class="separator:aeab4820d4b0d48c130cc99959302e415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ae26ee1aa1781e156577385c3ac2fb"><td class="memTemplParams" colspan="2">template&lt;typename TheOwnerCount &gt; </td></tr>
+<tr class="memitem:af7ae26ee1aa1781e156577385c3ac2fb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_om.html#af7ae26ee1aa1781e156577385c3ac2fb">intrusive_ptr_add_ref</a> (<a class="el" href="class_om_1_1_shareable.html">Shareable</a>&lt; TheOwnerCount &gt; *const )</td></tr>
+<tr class="separator:af7ae26ee1aa1781e156577385c3ac2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb703c4ae1a906888d3dfdc2a9063e2"><td class="memTemplParams" colspan="2">template&lt;typename TheOwnerCount &gt; </td></tr>
+<tr class="memitem:afcb703c4ae1a906888d3dfdc2a9063e2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_om.html#afcb703c4ae1a906888d3dfdc2a9063e2">intrusive_ptr_release</a> (<a class="el" href="class_om_1_1_shareable.html">Shareable</a>&lt; TheOwnerCount &gt; *const )</td></tr>
+<tr class="separator:afcb703c4ae1a906888d3dfdc2a9063e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="a61e52f05ef3e135408edb1e291c8d5cc"></a>
@@ -301,6 +311,24 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a68ad9f81b67305e5316381dcf85b8b3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_om_1_1_atom.html">Atom</a>* Om::new_clone </td>
+          <td>(</td>
+          <td class="paramtype">Atom const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a new copy. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Required by boost::ptr_container classes. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a9109dc9887bc064a39d365a493e2cd04"></a>
 <div class="memitem">
 <div class="memproto">
@@ -317,6 +345,24 @@ template&lt;typename TheCopyable &gt; </div>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A polymorphic copy of the object. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a72146912b265c8d0b213c4cf775f123c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_om_1_1_element.html">Element</a>* Om::new_clone </td>
+          <td>(</td>
+          <td class="paramtype">Element const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a new copy. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Required by boost::ptr_container classes. </dd></dl>
 
 </div>
 </div>
@@ -413,6 +459,50 @@ template&lt;typename TheMoveable &gt; </div>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A polymorphic move of the object. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af7ae26ee1aa1781e156577385c3ac2fb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TheOwnerCount &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Om::intrusive_ptr_add_ref </td>
+          <td>(</td>
+          <td class="paramtype">Shareable&lt; TheOwnerCount &gt; *&#160;</td>
+          <td class="paramname"><em>const</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::overflow_error</td><td>On overflow. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Called by the boost::intrusive_ptr constructors. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afcb703c4ae1a906888d3dfdc2a9063e2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TheOwnerCount &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Om::intrusive_ptr_release </td>
+          <td>(</td>
+          <td class="paramtype">Shareable&lt; TheOwnerCount &gt; *&#160;</td>
+          <td class="paramname"><em>const</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Called by the boost::intrusive_ptr destructor. </dd></dl>
 
 </div>
 </div>
