@@ -32,7 +32,6 @@ namespace Om {
 	class Shareable {
 
 		/*!
-		\cond internal_symbols
 		\exception std::overflow_error
 			On overflow.
 		\note
@@ -51,9 +50,6 @@ namespace Om {
 		friend void intrusive_ptr_release(
 			Shareable< TheOwnerCount > * const
 		);
-		/*!
-		\endcond
-		*/
 
 	public: // MARK: public (non-static)
 
@@ -90,7 +86,6 @@ namespace Om {
 // MARK: - Om
 namespace Om {
 
-	//! \cond internal_symbols
 	template< typename TheOwnerCount >
 	void intrusive_ptr_add_ref(
 		Shareable< TheOwnerCount > * const
@@ -100,7 +95,6 @@ namespace Om {
 	void intrusive_ptr_release(
 		Shareable< TheOwnerCount > * const
 	);
-	//! \endcond
 
 }
 
