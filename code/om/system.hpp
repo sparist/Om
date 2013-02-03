@@ -40,9 +40,6 @@ namespace Om {
 	*/
 	class System:
 	public Translator {
-		template< typename ThisOperation >
-		friend class Definition;
-
 	public: // MARK: public (static)
 
 		/*!
@@ -85,6 +82,9 @@ namespace Om {
 		) const;
 
 	private: // MARK: private (static)
+
+		template< typename ThisOperation >
+		friend class Definition;
 
 		/*!
 		\brief

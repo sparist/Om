@@ -31,12 +31,14 @@ namespace Om {
 	>
 	class DefaultMoveable:
 	public ThisInterface {
-		template< typename TheMoveable >
-		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );
-
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultMoveable() = 0;
+
+	private: // MARK: private (static)
+
+		template< typename TheMoveable >
+		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );
 
 	private: // MARK: private (non-static)
 

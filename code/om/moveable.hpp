@@ -26,12 +26,14 @@ namespace Om {
 		An object that can be passed to #Move to be moved.
 	*/
 	class Moveable {
-		template< typename TheMoveable >
-		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );
-
 	public: // MARK: public (non-static)
 
 		virtual ~Moveable() = 0;
+
+	private: // MARK: private (static)
+
+		template< typename TheMoveable >
+		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );
 
 	private: // MARK: private (non-static)
 

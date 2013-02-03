@@ -31,12 +31,14 @@ namespace Om {
 	>
 	class DefaultCopyable:
 	public ThisInterface {
-		template< typename TheCopyable >
-		friend std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
-
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultCopyable() = 0;
+
+	private: // MARK: private (static)
+
+		template< typename TheCopyable >
+		friend std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
 
 	private: // MARK: private (non-static)
 
