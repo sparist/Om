@@ -42,13 +42,12 @@ inline Om::Lexicon const & Type_::GetLexicon() const {
 inline void Type_::GiveElements( Queue & theQueue ) const {
 	if( !this->IsEmpty() ) {
 		Map::const_iterator const theEnd = this->thisMap.end();
-		Map::const_iterator theCurrent = this->thisMap.begin();
-		assert( theEnd != theCurrent );
 		for(
-			;
+			Map::const_iterator theCurrent = this->thisMap.begin();
 			;
 			theQueue.TakeElement( Separator::GetLineSeparator() )
 		) {
+			assert( theEnd != theCurrent );
 			Operator theOperator( theCurrent->first );
 			theQueue.TakeElement( theOperator );
 			if( theEnd == ++theCurrent ) {
@@ -75,9 +74,8 @@ inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] ) {
 	// Assert that the name keys are NFD-normalized.
 	{
 		Map::const_iterator const theEnd = this->thisMap.end();
-		Map::const_iterator theCurrent = this->thisMap.begin();
 		for(
-			;
+			Map::const_iterator theCurrent = this->thisMap.begin();
 			theEnd != theCurrent;
 			++theCurrent
 		) {

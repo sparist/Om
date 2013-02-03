@@ -55,9 +55,8 @@ inline Type_::Operator(
 	Source< CodePoint const > & theCodePointSource
 ) {
 	std::string theString;
-	std::back_insert_iterator< std::string > theInserter( theString );
 	for(
-		;
+		std::back_insert_iterator< std::string > theInserter( theString );
 		theCodePointSource;
 		theCodePointSource.Pop()
 	) {

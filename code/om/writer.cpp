@@ -85,12 +85,11 @@ template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator ) {
 	assert( !theOperator.IsEmpty() );
 	std::string const & theString = theOperator.GetString();
-	Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
-		theString.begin(),
-		theString.end()
-	);
 	for(
-		;
+		Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
+			theString.begin(),
+			theString.end()
+		);
 		theCodePointSource;
 		theCodePointSource.Pop()
 	) {
