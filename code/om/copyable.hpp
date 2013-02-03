@@ -27,14 +27,13 @@ namespace Om {
 		An object that can be passed to #Copy to be copied.
 	*/
 	class Copyable {
-	public: // MARK: public (non-static)
-
-		virtual ~Copyable() = 0;
-
-	private: // MARK: private (static)
 
 		template< typename TheCopyable >
 		friend std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
+
+	public: // MARK: public (non-static)
+
+		virtual ~Copyable() = 0;
 
 	private: // MARK: private (non-static)
 
