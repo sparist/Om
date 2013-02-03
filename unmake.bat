@@ -1,3 +1,3 @@
 @echo off
 
-del products\vs
+del products\projects\vs

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rm -rf "products/xcode"
+rm -rf "products/projects/xcode"

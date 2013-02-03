@@ -41,7 +41,7 @@ then
 	cd "$Directory"
 fi
 
-mkdir -p products/xcode
-cd products/xcode
-cmake -G "Xcode" -D Icu:PATH="$Icu/build" -D Boost:PATH="$Boost/build" -D UnitTest:PATH="$UnitTest" ../..
+mkdir -p products/projects/xcode
+cd products/projects/xcode
+cmake -G "Xcode" -D Icu:PATH="$Icu/build" -D Boost:PATH="$Boost/build" -D UnitTest:PATH="$UnitTest" ../../..
 cd "$Directory"

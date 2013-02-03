@@ -2,10 +2,10 @@
 
 Directory=`pwd -P`
 
-if [ ! -d "products/xcode" ]; then
-	echo The products/xcode folder does not exist.  Please run make.sh.
+if [ ! -d "products/projects/xcode" ]; then
+	echo The products/projects/xcode folder does not exist.  Please run make.sh.
 	exit
 fi
-cd products/xcode
-cmake ../..
+cd products/projects/xcode
+cmake ../../..
 cd "$Directory"

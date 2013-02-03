@@ -39,9 +39,11 @@ cd "%OldDirectory%"
 :Finish
 mkdir products
 cd products
+mkdir projects
+cd projects
 mkdir vs
 cd vs
-cmake -G "Visual Studio 10" -D Icu:PATH="%Icu%" -D Boost:PATH="%Boost%" -D UnitTest:PATH="%UnitTest%" ..\..
+cmake -G "Visual Studio 10" -D Icu:PATH="%Icu%" -D Boost:PATH="%Boost%" -D UnitTest:PATH="%UnitTest%" ..\..\..
 cd "%OldDirectory%"
 set PATH=%OldPath%
 exit /b 0

@@ -309,8 +309,8 @@ Code can be downloaded from the <a href="https://github.com/sparist/Om">Om GitHu
 \section building__targets Targets
 
 %Om project files are generated using <a href="http://cmake.org">CMake</a> and contain the following targets:
--	<b>%Om</b>: builds the interpreter project into <tt>products/</tt><em>platform</em>.
--	<b>%Om Documentation</b>: builds the documentation into <tt>products/doxygen</tt>.  Open <tt>html/index.html</tt> to view the HTML documentation in a browser.
+-	<b>%Om</b>: builds the interpreter project into <tt>products/projects/</tt><em>platform</em>.
+-	<b>%Om Documentation</b>: builds the documentation into <tt>products/documentation/doxygen</tt>.  Open <tt>html/index.html</tt> to view the HTML documentation in a browser.
 
 \section building__platforms Platforms
 
@@ -324,7 +324,7 @@ Building in Xcode requires:
 -	<a href="http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12">Xcode</a>
 -	<a href="http://doxygen.org">Doxygen</a> and <a href="http://www.macports.org/ports.php?by=name&substr=graphviz">Graphviz (via MacPorts)</a>
 
-To generate the <tt>Om.xcodeproj</tt> file (in <tt>products/xcode</tt>):
+To generate the <tt>Om.xcodeproj</tt> file (in <tt>products/projects/xcode</tt>):
 -	Ensure that Doxygen and Graphviz are installed, and in the path variable visible to applications.  <a href="http://overwatering.org/blog/2012-2013/08/setting-path-osx-mountain-lion">This article</a> explains how to do so.
 -	Clone the Git repository.
 -	Run <tt>make.sh</tt> and pass it the following arguments (in order):
@@ -348,7 +348,7 @@ Building in Visual Studio requires:
 	<a href="http://graphviz.org">Graphviz</a>
 -	<a href="http://subversion.tigris.org">Subversion</a> (if unit tests are to be included)
 
-To generate the <tt>Om.sln</tt> file (in <tt>products/vs</tt>):
+To generate the <tt>Om.sln</tt> file (in <tt>products/projects/vs</tt>):
 -	Ensure that Doxygen and Graphviz are installed, and in the path variable.
 -	Clone the Git repository.
 -	Run <tt>make.bat</tt> and pass it the following arguments (in order):
