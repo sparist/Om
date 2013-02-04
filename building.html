@@ -98,8 +98,8 @@ $(document).ready(function(){initNavTree('building.html','');});
 Targets</h1>
 <p>Om project files are generated using <a href="http://cmake.org">CMake</a> and contain the following targets:</p>
 <ul>
-<li><b>Om</b>: builds the interpreter project into <code>products/</code><em>platform</em>.</li>
-<li><b>Om Documentation</b>: builds the documentation into <code>products/doxygen</code>. Open <code>html/index.html</code> to view the HTML documentation in a browser.</li>
+<li><b>Om</b>: builds the interpreter project into <code>products/projects/</code><em>platform</em>.</li>
+<li><b>Om Documentation</b>: builds the documentation into <code>products/documentation/doxygen</code>. Open <code>html/index.html</code> to view the HTML documentation in a browser.</li>
 </ul>
 <h1><a class="anchor" id="building__platforms"></a>
 Platforms</h1>
@@ -115,7 +115,7 @@ Xcode</h2>
 <li><a href="http://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;mt=12">Xcode</a></li>
 <li><a href="http://doxygen.org">Doxygen</a> and <a href="http://www.macports.org/ports.php?by=name&amp;substr=graphviz">Graphviz (via MacPorts)</a></li>
 </ul>
-<p>To generate the <code>Om.xcodeproj</code> file (in <code>products/xcode</code>):</p>
+<p>To generate the <code>Om.xcodeproj</code> file (in <code>products/projects/xcode</code>):</p>
 <ul>
 <li>Ensure that Doxygen and Graphviz are installed, and in the path variable visible to applications. <a href="http://overwatering.org/blog/2012-2013/08/setting-path-osx-mountain-lion">This article</a> explains how to do so.</li>
 <li>Clone the Git repository.</li>
@@ -144,7 +144,7 @@ Visual Studio</h2>
 <li><a href="http://doxygen.org">Doxygen</a> and <a href="http://graphviz.org">Graphviz</a></li>
 <li><a href="http://subversion.tigris.org">Subversion</a> (if unit tests are to be included)</li>
 </ul>
-<p>To generate the <code>Om.sln</code> file (in <code>products/vs</code>):</p>
+<p>To generate the <code>Om.sln</code> file (in <code>products/projects/vs</code>):</p>
 <ul>
 <li>Ensure that Doxygen and Graphviz are installed, and in the path variable.</li>
 <li>Clone the Git repository.</li>

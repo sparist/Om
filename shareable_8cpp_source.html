@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('shareable_8cpp_source.html','');});
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Shareable&lt; TheOwnerCount &gt; * <span class="keyword">const</span> thePointee</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;) {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    assert(</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        thePointee and</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        thePointee &amp;&amp;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="stringliteral">&quot;The pointer cannot be null.&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    );</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    thePointee-&gt;IncrementOwnerCount();</div>
@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('shareable_8cpp_source.html','');});
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    Shareable&lt; TheOwnerCount &gt; * <span class="keyword">const</span> thePointee</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    assert(</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        thePointee and</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        thePointee &amp;&amp;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="stringliteral">&quot;The pointer cannot be null.&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    );</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    thePointee-&gt;DecrementOwnerCount();</div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('shareable_8cpp_source.html','');});
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;Template_</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">inline</span> Type_::~Shareable() {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    assert(</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        !this-&gt;thisOwnerCount and</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        !this-&gt;thisOwnerCount &amp;&amp;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="stringliteral">&quot;Non-zero owner count.&quot;</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    );</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('shareable_8cpp_source.html','');});
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;Template_</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::DecrementOwnerCount() {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    assert(</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        this-&gt;thisOwnerCount and</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        this-&gt;thisOwnerCount &amp;&amp;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="stringliteral">&quot;Owner count underflow.&quot;</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    );</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    --this-&gt;thisOwnerCount;</div>

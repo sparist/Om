@@ -206,14 +206,14 @@ $(document).ready(function(){initNavTree('default__atom_8cpp_source.html','');})
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">inline</span> Type_::DefaultAtom( <span class="keywordtype">char</span> <span class="keyword">const</span> theCodeUnitIterator[] ):</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;thisString( theCodeUnitIterator ) {</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    assert(</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        theCodeUnitIterator and</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        theCodeUnitIterator &amp;&amp;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="stringliteral">&quot;The argument cannot be null.&quot;</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    );</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    assert(</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        boost::locale::normalize(</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            this-&gt;thisString,</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            boost::locale::norm_nfd</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        ) == this-&gt;thisString and</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        ) == this-&gt;thisString &amp;&amp;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="stringliteral">&quot;The string must be NFD-normalized.&quot;</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    );</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
@@ -228,7 +228,7 @@ $(document).ready(function(){initNavTree('default__atom_8cpp_source.html','');})
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        boost::locale::normalize(</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            this-&gt;thisString,</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            boost::locale::norm_nfd</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        ) == this-&gt;thisString and</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        ) == this-&gt;thisString &amp;&amp;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="stringliteral">&quot;The code unit must be NFD-normalized.&quot;</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    );</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>

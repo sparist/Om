@@ -412,7 +412,7 @@ $(document).ready(function(){initNavTree('expression_8cpp_source.html','');});
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Om::Form</a> &amp; Type_::GetFrontTaker() {</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">if</span>(</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        this-&gt;thisFormDeque.empty() or</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        this-&gt;thisFormDeque.empty() ||</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        !this-&gt;thisFormDeque.front().GetOperator().IsEmpty()</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    ) {</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        this-&gt;thisFormDeque.push_front( Form() );</div>
@@ -466,7 +466,7 @@ $(document).ready(function(){initNavTree('expression_8cpp_source.html','');});
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::operator ==( ElementRange <span class="keyword">const</span> &amp; theRange )<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordflow">return</span>(</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        this-&gt;thisFormElementRange == theRange.thisFormElementRange and</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        this-&gt;thisFormElementRange == theRange.thisFormElementRange &amp;&amp;</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        this-&gt;thisFormIterator == theRange.thisFormIterator</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    );</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>

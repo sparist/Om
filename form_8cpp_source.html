@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('form_8cpp_source.html','');});
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::IsEmpty()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span>(</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        this-&gt;thisOperator.IsEmpty() and</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        this-&gt;thisOperator.IsEmpty() &amp;&amp;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        this-&gt;thisOperandDeque.empty()</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    );</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>

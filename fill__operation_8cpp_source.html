@@ -147,11 +147,11 @@ $(document).ready(function(){initNavTree('fill__operation_8cpp_source.html','');
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span>( this-&gt;thisFormRange ) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        FormRange &amp; theFormRange = *this-&gt;thisFormRange;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        assert(</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            theFormRange and</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            theFormRange &amp;&amp;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            !this-&gt;thisExpression.IsEmpty()</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        );</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        assert(</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            !Form::OperandRange&lt; Operand const &gt;( *theFormRange ) and</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            !Form::OperandRange&lt; Operand const &gt;( *theFormRange ) &amp;&amp;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="stringliteral">&quot;The Form should have no Operands.&quot;</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        );</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        theFormRange-&gt;BackTakeQuotedQueue( theQueue );</div>

@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('default__program_8cpp_source.html','')
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">bool</span> <span class="keyword">const</span> theRangeHasNext = *theRange;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">bool</span> <span class="keyword">const</span> theOtherRangeHasNext = *theOtherRange;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span>(</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            !theRangeHasNext or</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            !theRangeHasNext ||</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            !theOtherRangeHasNext</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        ) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">return</span>( theRangeHasNext == theOtherRangeHasNext );</div>
@@ -178,7 +178,7 @@ $(document).ready(function(){initNavTree('default__program_8cpp_source.html','')
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">typeid</span>( TheCast ) == <span class="keyword">typeid</span>( ThisImplementation )</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    );</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span>(</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">typeid</span>( TheCast ) == <span class="keyword">typeid</span>( theQueue ) and</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">typeid</span>( TheCast ) == <span class="keyword">typeid</span>( theQueue ) &amp;&amp;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        this-&gt;IsEmpty()</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    ) {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        this-&gt;Take(</div>
