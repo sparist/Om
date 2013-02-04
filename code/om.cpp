@@ -14,9 +14,6 @@
 
 #include "om.hpp"
 
-#include "om/sinks/stream_sink.hpp"
-#include "om/sources/stream_source.hpp"
-#include "om/system.hpp"
 #if defined( Om_Macros_Test_ )
 	#include "UnitTest++.h"
 #endif

@@ -186,6 +186,15 @@ if( MSVC )
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 	)
 
+	add_custom_command(
+		TARGET Om
+		PRE_BUILD
+		COMMAND scripts\list_headers.bat
+		COMMENT "Generating Code..."
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		VERBATIM
+	)
+
 	add_custom_command( TARGET Om POST_BUILD
 		COMMAND "${CMAKE_COMMAND}" -E copy
 			"${Icu}/bin/icudt49.dll"
@@ -237,6 +246,8 @@ if( MSVC )
 		COMMAND "${CMAKE_COMMAND}" -E copy
 			"${Icu}/bin/icuuc49d.dll"
 			"$<TARGET_FILE_DIR:Om>"
+
+		VERBATIM
 	)
 else()
 	set_target_properties( Om PROPERTIES
@@ -278,6 +289,15 @@ else()
 		"${IcuTestLibrary}"
 		"${IcuTuLibrary}"
 		"${IcuUcLibrary}"
+	)
+
+	add_custom_command(
+		TARGET Om
+		PRE_BUILD
+		COMMAND scripts/list_headers.sh
+		COMMENT "Generating Code..."
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		VERBATIM
 	)
 
 	add_custom_target( "Om Documentation"
