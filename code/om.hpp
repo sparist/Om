@@ -19,8 +19,7 @@
 	#define Om_ \
 	Om
 
-	// Includes the automatically generated list of headers.
-	#include "om.inc"
+	#include "internal.hpp"
 
 /*!
 \brief

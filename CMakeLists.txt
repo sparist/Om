@@ -18,6 +18,8 @@ if( UnitTest )
 	add_definitions( -DOm_Macros_Test_ )
 endif()
 
+file( WRITE "${CMAKE_CURRENT_SOURCE_DIR}/code/internal.hpp" "" )
+
 aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/" Cpp_Code )
 aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/" Cpp_Code_Om )
 aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/" Cpp_Code_Om_Operations )
@@ -40,12 +42,19 @@ file( GLOB Dox_Code_Om_Sources "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/*.do
 file( GLOB Dox_Code_Om_Symbols "${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.dox" )
 
 set( Hpp
-	${Hpp_Code}
 	${Hpp_Code_Om}
 	${Hpp_Code_Om_Operations}
 	${Hpp_Code_Om_Sinks}
 	${Hpp_Code_Om_Sources}
 	${Hpp_Code_Om_Symbols}
+)
+foreach( header_path ${Hpp} )
+	string( REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/code/" "" header "${header_path}" )
+    file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/internal.hpp" "#include \"${header}\"\n" )
+endforeach()
+set( Hpp
+	${Hpp_Code}
+	${Hpp}
 )
 
 set( Cpp
@@ -280,15 +289,6 @@ else()
 		"${IcuTestLibrary}"
 		"${IcuTuLibrary}"
 		"${IcuUcLibrary}"
-	)
-
-	add_custom_command(
-		TARGET Om
-		PRE_BUILD
-		COMMAND scripts/list_headers.sh
-		COMMENT "Generating Code..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-		VERBATIM
 	)
 
 	add_custom_target( "Om Documentation"
