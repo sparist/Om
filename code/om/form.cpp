@@ -115,7 +115,7 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 
 inline bool Type_::IsEmpty() const {
 	return(
-		this->thisOperator.IsEmpty() and
+		this->thisOperator.IsEmpty() &&
 		this->thisOperandDeque.empty()
 	);
 }

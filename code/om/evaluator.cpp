@@ -215,7 +215,7 @@ inline void Type_::TakeOperator(
 		!this->thisTranslator.Translate(
 			theEvaluation,
 			theOperator
-		) and
+		) &&
 		!this->thisTranslator.Translate(
 			theEvaluation,
 			Operator()

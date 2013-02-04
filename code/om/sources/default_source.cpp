@@ -42,7 +42,7 @@ inline bool Type_::operator ==(
 	);
 	ThisImplementation const * const theImplementation = static_cast< ThisImplementation const * >( &theSource );
 	return(
-		theImplementation and
+		theImplementation &&
 		static_cast< ThisImplementation const & >( *this ) == *theImplementation
 	);
 }

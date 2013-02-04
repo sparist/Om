@@ -59,8 +59,8 @@ DefaultAtom< Separator >(
 	static_cast< char >( theSeparatorSymbol )
 ) {
 	assert(
-		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol or
-		Symbols::theLineSeparatorSymbol == theSeparatorSymbol or
+		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol ||
+		Symbols::theLineSeparatorSymbol == theSeparatorSymbol ||
 		Symbols::theTabSeparatorSymbol == theSeparatorSymbol
 	);
 }

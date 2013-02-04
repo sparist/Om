@@ -52,7 +52,7 @@ inline Type_ & Type_::operator =( Literal theLiteral ) {
 template< typename TheElement >
 inline void Type_::BackGive( Queue & theQueue ) {
 	if(
-		!this->thisElementDeque.empty() and
+		!this->thisElementDeque.empty() &&
 		dynamic_cast< TheElement const * >( &this->thisElementDeque.back() )
 	) {
 		this->thisElementDeque.pop_back()->GiveElements( theQueue );
@@ -72,7 +72,7 @@ inline void Type_::Clear() {
 template< typename TheElement >
 inline void Type_::FrontGive( Queue & theQueue ) {
 	if(
-		!this->thisElementDeque.empty() and
+		!this->thisElementDeque.empty() &&
 		dynamic_cast< TheElement const * >( &this->thisElementDeque.front() )
 	) {
 		this->thisElementDeque.pop_front()->GiveElements( theQueue );
@@ -138,7 +138,7 @@ inline void Type_::ReadElements( Parser & theParser ) {
 		switch( *theParser ) {
 		case Symbols::theEndOperandSymbol:
 			assert(
-				!theStack.empty() and
+				!theStack.empty() &&
 				this != theStack.top()
 			);
 			theStack.pop();
@@ -156,7 +156,7 @@ inline void Type_::ReadElements( Parser & theParser ) {
 			break;
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			assert(
-				!theStack.empty() and
+				!theStack.empty() &&
 				theStack.top()
 			);
 			{
@@ -166,7 +166,7 @@ inline void Type_::ReadElements( Parser & theParser ) {
 			continue;
 		default:
 			assert(
-				!theStack.empty() and
+				!theStack.empty() &&
 				theStack.top()
 			);
 			{
@@ -239,7 +239,7 @@ template< typename TheAtom >
 inline void Type_::TakeAtom( TheAtom & theAtom ) {
 	assert( !theAtom.IsEmpty() );
 	if(
-		this->thisElementDeque.empty() or
+		this->thisElementDeque.empty() ||
 		!this->thisElementDeque.back().Merge( theAtom )
 	) {
 		this->thisElementDeque.push_back(

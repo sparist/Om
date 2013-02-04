@@ -51,7 +51,7 @@ inline bool Type_::operator ==( Element const & theElement ) const {
 		);
 	}
 	return(
-		this->IsEmpty() and
+		this->IsEmpty() &&
 		theElement.IsEmpty()
 	);
 }

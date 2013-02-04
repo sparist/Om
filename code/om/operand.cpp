@@ -108,7 +108,7 @@ inline void Type_::ReadElements( Parser & theParser ) {
 					this->ReadQuotedElements( theOperandParser );
 				}
 				assert(
-					!theParser or
+					!theParser ||
 					Symbols::theEndOperandSymbol == *theParser
 				);
 				// Fall through.

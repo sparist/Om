@@ -33,7 +33,7 @@ thisIsEncoded() {}
 
 inline bool Type_::operator ==( Parser const & theParser ) const {
 	assert(
-		this->thisCodePointSource != theParser.thisCodePointSource or
+		this->thisCodePointSource != theParser.thisCodePointSource ||
 		this->thisDepth == theParser.thisDepth
 	);
 	return( this->thisCodePointSource == theParser.thisCodePointSource );
@@ -46,10 +46,10 @@ inline Om::CodePoint const & Type_::operator *() const {
 
 inline bool Type_::operator !() const {
 	return(
-		!this->thisCodePointSource or
+		!this->thisCodePointSource ||
 		(
-			!this->thisDepth and
-			!this->thisIsEncoded and
+			!this->thisDepth &&
+			!this->thisIsEncoded &&
 			Symbols::theEndOperandSymbol == *this->thisCodePointSource
 		)
 	);

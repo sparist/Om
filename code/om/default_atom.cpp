@@ -123,14 +123,14 @@ Template_
 inline Type_::DefaultAtom( char const theCodeUnitIterator[] ):
 thisString( theCodeUnitIterator ) {
 	assert(
-		theCodeUnitIterator and
+		theCodeUnitIterator &&
 		"The argument cannot be null."
 	);
 	assert(
 		boost::locale::normalize(
 			this->thisString,
 			boost::locale::norm_nfd
-		) == this->thisString and
+		) == this->thisString &&
 		"The string must be NFD-normalized."
 	);
 }
@@ -145,7 +145,7 @@ thisString(
 		boost::locale::normalize(
 			this->thisString,
 			boost::locale::norm_nfd
-		) == this->thisString and
+		) == this->thisString &&
 		"The code unit must be NFD-normalized."
 	);
 }

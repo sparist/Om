@@ -67,13 +67,13 @@ inline void Type_::Push( Translator const & theTranslator ) {
 				++theCurrent
 			) {
 				assert(
-					*theCurrent and
+					*theCurrent &&
 					!( *theCurrent )->IsEmpty()
 				);
 				theStack.push( *theCurrent );
 			}
 		} else if(
-			this->IsEmpty() or
+			this->IsEmpty() ||
 			this->thisTranslatorVector.back() != theTranslatorPointer
 		) {
 			this->thisTranslatorVector.push_back( theTranslatorPointer );
