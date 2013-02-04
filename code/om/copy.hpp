@@ -17,7 +17,7 @@
 	#define Om_Copy_ \
 	Om::Copy
 
-	#include "external.hpp"
+	#include "om/external.hpp"
 
 namespace Om {
 

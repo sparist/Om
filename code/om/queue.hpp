@@ -17,7 +17,7 @@
 	#define Om_Queue_ \
 	Om::Queue
 
-	#include "external.hpp"
+	#include "om/external.hpp"
 
 namespace Om {
 

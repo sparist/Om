@@ -14,7 +14,7 @@
 
 #if defined( Om_Sink_ )
 
-	#include "external.hpp"
+	#include "om/external.hpp"
 
 // MARK: Om::Sink
 

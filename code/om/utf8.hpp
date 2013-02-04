@@ -17,7 +17,7 @@
 	#define Om_Utf8_ \
 	Om::Utf8
 
-	#include "external.hpp"
+	#include "om/external.hpp"
 
 namespace Om {
 

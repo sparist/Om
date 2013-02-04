@@ -17,7 +17,7 @@
 	#define Om_Shareable_ \
 	Om::Shareable
 
-	#include "external.hpp"
+	#include "om/external.hpp"
 
 namespace Om {
 

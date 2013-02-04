@@ -18,7 +18,10 @@ if( UnitTest )
 	add_definitions( -DOm_Macros_Test_ )
 endif()
 
-file( WRITE "${CMAKE_CURRENT_SOURCE_DIR}/code/internal.hpp" "" )
+file( WRITE "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#if !defined( Om_Internal_ )\n" )
+file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
+file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#define Om_Internal_\n" )
+file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
 
 aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/" Cpp_Code )
 aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/" Cpp_Code_Om )
@@ -42,19 +45,12 @@ file( GLOB Dox_Code_Om_Sources "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/*.do
 file( GLOB Dox_Code_Om_Symbols "${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.dox" )
 
 set( Hpp
+	${Hpp_Code}
 	${Hpp_Code_Om}
 	${Hpp_Code_Om_Operations}
 	${Hpp_Code_Om_Sinks}
 	${Hpp_Code_Om_Sources}
 	${Hpp_Code_Om_Symbols}
-)
-foreach( header_path ${Hpp} )
-	string( REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/code/" "" header "${header_path}" )
-    file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/internal.hpp" "#include \"${header}\"\n" )
-endforeach()
-set( Hpp
-	${Hpp_Code}
-	${Hpp}
 )
 
 set( Cpp
@@ -81,8 +77,15 @@ set( Code
 	${Dox}
 )
 
-set( PrecompiledHeader code/external.hpp )
-set( PrecompiledSource code/external.cpp )
+foreach( header_path ${Hpp} )
+	string( REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/code/" "" header "${header_path}" )
+    file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#include \"${header}\"\n" )
+endforeach()
+file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
+file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#endif\n" )
+
+set( PrecompiledHeader code/om/external.hpp )
+set( PrecompiledSource code/om/external.cpp )
 
 source_group( "Source Files" FILES ${Cpp_Code} )
 source_group( "Source Files\\om" FILES ${Cpp_Code_Om} )

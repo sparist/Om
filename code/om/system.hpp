@@ -17,7 +17,7 @@
 	#define Om_System_ \
 	Om::System
 
-	#include "external.hpp"
+	#include "om/external.hpp"
 	#include "om/translator.hpp"
 
 namespace Om {

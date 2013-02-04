@@ -16,7 +16,7 @@
 
 #if defined( Om_Macros_Test_ )
 
-	#include "external.hpp"
+	#include "om/external.hpp"
 	#include "om/symbols/operand_symbol.hpp"
 	#include "om/symbols/operator_symbol.hpp"
 	#include "om/symbols/separator_symbol.hpp"

@@ -17,7 +17,7 @@
 	#define Om_CodePoint_ \
 	Om::CodePoint
 
-	#include "external.hpp"
+	#include "om/external.hpp"
 
 namespace Om {
 

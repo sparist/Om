@@ -14,7 +14,7 @@
 
 #if defined( Om_Source_ )
 
-	#include "external.hpp"
+	#include "om/external.hpp"
 
 // MARK: Om::Source
 

@@ -19,7 +19,7 @@
 	#define Om_ \
 	Om
 
-	#include "internal.hpp"
+	#include "om/internal.hpp"
 
 /*!
 \brief
