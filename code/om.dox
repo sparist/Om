@@ -88,9 +88,9 @@ The empty program evaluates to the identity function.
 \subsection evaluation__functions__single Single-Element Programs
 
 Programs that contain only a single element evaluate to functions as follows:
--	<b>Separator</b>: Evaluates to the identity function.
--	<b>Operand</b>: Evaluates to a constant function that pushes the operand, followed by all input terms, onto the output program.
--	<b>Operator</b>: Evaluates to the operation defined for the operator in the environment; if none, evaluates to a constant function that pushes the operator, followed by all input terms, onto the output program.
+-	<b>Separator</b>: Evaluates to the <b>identity function</b>.
+-	<b>Operand</b>: Evaluates to a <b>constant function</b> that pushes the operand, followed by all input terms, onto the output program.
+-	<b>Operator</b>: Evaluates to the <b>operation</b> defined for the operator in the environment.  If none, evaluates to a <b>constant function</b> that pushes the operator, followed by all input terms, onto the output program.
 
 \subsection evaluation__functions__multiple Multiple-Element Programs
 
@@ -102,7 +102,7 @@ For example, program "A B" is the concatenation of programs "A", " ", and "B".  
 
 Any programs may be concatenated together; however, note that concatenating programs "A" and "B" without an intervening separator would result in a program containing a single operator "AB", which is unrelated to operators "A" or "B".
 
-\subsection evaluation__functions__implementation Implementation
+\subsection evaluation__functions__documentation Documentation
 
 All operation implementations provided are documented in the \ref operations module.
 
@@ -119,6 +119,8 @@ The actual implementation of operands takes advantage of some optimizations:
 -	Operations can interrogate an input operand for its program implementation type; if it is the optimal implementation type for the operation, the operation can manipulate the operand directly to produce the same result more efficiently.
 
 Operations in a program can be ordered by the programmer to increase performance by minimizing conversions between program implementations, but it is not necessary for obtaining a correct computation.  Where relevant, an operation will document the program implementation types of its inputs and outputs to allow for this optional level of optimization.
+
+\subsection evaluation__data_types__documentation Documentation
 
 All program implementations provided are documented in the \ref programs module.
 
