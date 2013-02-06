@@ -20,11 +20,7 @@
 
 namespace Om {
 
-	namespace Symbols {
-
-		SUITE( CodePoint ) {}
-
-	}
+	SUITE( CodePoint ) {}
 
 }
 
