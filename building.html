@@ -94,31 +94,24 @@ $(document).ready(function(){initNavTree('building.html','');});
 <div class="title">Building </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="building__targets"></a>
-Targets</h1>
-<p>Om project files are generated using <a href="http://cmake.org">CMake</a> and contain the following targets:</p>
+<div class="textblock"><h1><a class="anchor" id="building__scripts"></a>
+Scripts</h1>
+<p>Scripts are included that use <a href="http://cmake.org">CMake</a> to generate project files having the following targets:</p>
 <ul>
-<li><b>Om</b>: builds the interpreter project into <code>products/projects/</code><em>platform</em>.</li>
+<li><b>Om</b>: builds the executable into <code>products/projects/</code><em>platform</em>. The Om executable is an interpreter that:<ul>
+<li>Accepts an optional argument that specifies the desired UTF-8 locale. The default value is "en_US.UTF-8".</li>
+<li>Runs all unit tests (if compiled with <code>Om_Macros_Test_</code> defined).</li>
+<li>Reads input from the standard input stream, ending at the first unbalanced end brace.</li>
+<li>Writes output to the standard output stream.</li>
+</ul>
+</li>
 <li><b>Om Documentation</b>: builds the documentation into <code>products/documentation/doxygen</code>. Open <code>html/index.html</code> to view the HTML documentation in a browser.</li>
 </ul>
-<h1><a class="anchor" id="building__platforms"></a>
-Platforms</h1>
-<p>Although it should be possible to build the code on any mainstream platform, it has only been built and tested on:</p>
-<ul>
-<li><a class="el" href="building.html#building__platforms__xcode">Xcode</a> 4.5.2 on Mac OS X 10.8.2 (Mountain Lion)</li>
-<li><a class="el" href="building.html#building__platforms__visual_studio">Visual Studio</a> 2010 Express on Windows Vista</li>
-</ul>
-<h2><a class="anchor" id="building__platforms__xcode"></a>
-Xcode</h2>
-<p>Building in Xcode requires:</p>
-<ul>
-<li><a href="http://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;mt=12">Xcode</a></li>
-<li><a href="http://doxygen.org">Doxygen</a> and <a href="http://www.macports.org/ports.php?by=name&amp;substr=graphviz">Graphviz (via MacPorts)</a></li>
-</ul>
+<h2><a class="anchor" id="building__scripts__xcode"></a>
+Xcode 4.6</h2>
 <p>To generate the <code>Om.xcodeproj</code> file (in <code>products/projects/xcode</code>):</p>
 <ul>
-<li>Ensure that Doxygen and Graphviz are installed, and in the path variable visible to applications. <a href="http://overwatering.org/blog/2012-2013/08/setting-path-osx-mountain-lion">This article</a> explains how to do so.</li>
-<li>Clone the Git repository.</li>
+<li>Ensure that <a href="http://doxygen.org">Doxygen</a> and <a href="http://www.macports.org/ports.php?by=name&amp;substr=graphviz">Graphviz (via MacPorts)</a> are installed, and in the path variable visible to applications. <a href="http://overwatering.org/blog/2012-2013/08/setting-path-osx-mountain-lion">This article</a> explains how to do so.</li>
 <li>Run <code>make.sh</code> and pass it the following arguments (in order):<ul>
 <li>The ICU root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/50.1.2/icu4c-50_1_1-src.tgz">ICU4C 50.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.</li>
 <li>The Boost root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.tar.gz/download">Boost 1.52.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.</li>
@@ -134,24 +127,15 @@ Xcode</h2>
 <ul>
 <li>Run <code>unmake.sh</code>.</li>
 </ul>
-<h2><a class="anchor" id="building__platforms__visual_studio"></a>
-Visual Studio</h2>
-<p>Building in Visual Studio requires:</p>
-<ul>
-<li><a href="http://www.microsoft.com/visualstudio/eng/downloads">Visual Studio 2010</a></li>
-<li><a href="http://msysgit.github.com">Git</a></li>
-<li><a href="http://www.cmake.org">CMake</a></li>
-<li><a href="http://doxygen.org">Doxygen</a> and <a href="http://graphviz.org">Graphviz</a></li>
-<li><a href="http://subversion.tigris.org">Subversion</a> (if unit tests are to be included)</li>
-</ul>
+<h2><a class="anchor" id="building__scripts__visual_studio"></a>
+Visual Studio 2010 Express</h2>
 <p>To generate the <code>Om.sln</code> file (in <code>products/projects/vs</code>):</p>
 <ul>
-<li>Ensure that Doxygen and Graphviz are installed, and in the path variable.</li>
-<li>Clone the Git repository.</li>
+<li>Ensure that <a href="http://doxygen.org">Doxygen</a> and <a href="http://graphviz.org">Graphviz</a> are installed, and in the path variable.</li>
 <li>Run <code>make.bat</code> and pass it the following arguments (in order):<ul>
 <li>The ICU root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C 49.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>. (Note that ICU4C 50.1.1 cannot be used due to a <a href="https://svn.boost.org/trac/boost/ticket/7839">bug</a> that prevents building on Windows.)</li>
 <li>The Boost root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.52.0/boost_1_52_0.zip/download">Boost 1.52.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.</li>
-<li><b>Optional:</b> The UnitTest++ root directory path. If omitted, unit tests will be excluded from the build. To create this directory, get the UnitTest++ 1.4 code via Subversion checkout (described on the <a href="https://sourceforge.net/projects/unittest-cpp/develop">UnitTest++ developer page</a>) and apply the patch attached to the <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3583690&amp;group_id=158151&amp;atid=806686">Visual Studio 2010 support ticket</a>. The UnitTest++ root directory is the <code>UnitTest++</code> subdirectory of the Subversion checkout directory.</li>
+<li><b>Optional:</b> The UnitTest++ root directory path. If omitted, unit tests will be excluded from the build. To create this directory, get the UnitTest++ 1.4 code via <a href="http://subversion.tigris.org">Subversion</a> checkout (described on the <a href="https://sourceforge.net/projects/unittest-cpp/develop">UnitTest++ developer page</a>) and apply the patch attached to the <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3583690&amp;group_id=158151&amp;atid=806686">Visual Studio 2010 support ticket</a>. The UnitTest++ root directory is the <code>UnitTest++</code> subdirectory of the Subversion checkout directory.</li>
 </ul>
 </li>
 </ul>
@@ -161,7 +145,19 @@ Visual Studio</h2>
 </ul>
 <p>To remove the directory generated by <code>make.bat</code>:</p>
 <ul>
-<li>Run <code>unmake.bat</code>. </li>
+<li>Run <code>unmake.bat</code>.</li>
+</ul>
+<h2><a class="anchor" id="building__scripts__other"></a>
+Other Platforms</h2>
+<p>Because Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <code>CMakeLists.txt</code> file. If this is of interest, please contribute the result via pull request and/or /ref contributing__issue_reporting "report" any code portability errors encountered.</p>
+<h1><a class="anchor" id="building__manually"></a>
+Manually</h1>
+<p>Om can be incorporated into any C++ or Objective-C++ project as follows:</p>
+<ul>
+<li>Add the Om <code>code</code> directory to the include path and include the desired files. Inclusion of any operation files will automatically add the corresponding operation to the global system. Include <code><a class="el" href="om_8hpp.html" title="Om &quot;umbrella&quot; header file.">om.hpp</a></code> to include all Om header files.</li>
+<li>Configure the project to link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a> and/or <a href="http://boost.org">Boost (1.51.0)</a> library dependencies, and build these with the correct configuration for the project. See <code>make.sh</code> and <code>make.bat</code> for guidance.</li>
+<li>Call the <code><a class="el" href="class_om_1_1_system.html#a03f046dac47073768dbdc97d8e211bda" title="Initializes the System.">Om::System::Initialize</a></code> function prior to use (eg. in the <code>main</code> function), passing in the desired UTF-8 locale (eg. "en_US.UTF-8").</li>
+<li>Construct an <code><a class="el" href="class_om_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">Om::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code>Evaluate</code> functions to evaluate a program. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

@@ -49,6 +49,5 @@ var searchData=
   ['backtakeoperator',['BackTakeOperator',['../class_om_1_1_expression.html#a0a773c5cd44ec1d02d35007f7d987d9b',1,'Om::Expression']]],
   ['backtakequotedqueue',['BackTakeQuotedQueue',['../class_om_1_1_expression.html#a5553be11a3a3ff926f81ec11b8ade4cb',1,'Om::Expression::BackTakeQuotedQueue()'],['../class_om_1_1_form.html#a3be289e5f7593ff397c1715ed5b1d8d3',1,'Om::Form::BackTakeQuotedQueue()']]],
   ['boolean',['Boolean',['../class_om_1_1_owner.html#a277de20c90efd001b658fb0a73cbbf4c',1,'Om::Owner::Boolean()'],['../class_om_1_1_source.html#a2e6e668fc888bf4283686413a9237432',1,'Om::Source::Boolean()']]],
-  ['boost',['boost',['../namespaceboost.html',1,'']]],
-  ['building',['Building',['../building.html',1,'']]]
+  ['boost',['boost',['../namespaceboost.html',1,'']]]
 ];

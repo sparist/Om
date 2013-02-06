@@ -23,20 +23,21 @@ var NAVTREE =
     ] ],
     [ "Examples", "examples.html", null ],
     [ "Downloading", "downloading.html", null ],
-    [ "Building", "building.html", [
-      [ "Targets", "building.html#building__targets", null ],
-      [ "Platforms", "building.html#building__platforms", [
-        [ "Xcode", "building.html#building__platforms__xcode", null ],
-        [ "Visual Studio", "building.html#building__platforms__visual_studio", null ]
-      ] ]
+    [ "Using", "using.html", [
+      [ "Scripts", "using.html#using__scripts", [
+        [ "Xcode 4.6", "using.html#using__scripts__xcode", null ],
+        [ "Visual Studio 2010 Express", "using.html#using__scripts__visual_studio", null ],
+        [ "Other Platforms", "using.html#using__scripts__other", null ]
+      ] ],
+      [ "Library", "using.html#using__library", null ]
     ] ],
-    [ "Using", "using.html", null ],
     [ "Contributing", "contributing.html", [
       [ "Developing", "contributing.html#contributing__developing", [
         [ "Coding Standard", "contributing.html#contributing__developing__coding_standard", null ],
         [ "Adding Operations", "contributing.html#contributing__developing__adding_operations", null ],
         [ "Adding Programs", "contributing.html#contributing__developing__adding_programs", null ],
-        [ "Analyzing Code", "contributing.html#contributing__developing__analyzing_code", null ]
+        [ "Analyzing Code", "contributing.html#contributing__developing__analyzing_code", null ],
+        [ "Making Pull Requests", "contributing.html#contributing__developing__pull_requests", null ]
       ] ],
       [ "Issue Reporting", "contributing.html#contributing__issue_reporting", null ],
       [ "Funding", "contributing.html#contributing__funding", null ]
@@ -79,13 +80,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_om_1_1_expression.html#adec3d38be5c60322440b68f72bcb8f47",
-"class_om_1_1_operations_1_1_copy_operation.html#ac109f6c549f88eabfff4a2b9084f7bf7",
-"class_om_1_1_pair.html#ac8baa52b82ef51247f92e853d13845f8",
-"class_om_1_1_taker.html#a314ec3efeb0322d73bba27b47a2490e9",
-"evaluate__operation_8hpp_source.html",
-"inject__operation_8cpp.html",
-"rearrange__operation_8hpp.html#a8364a0a0bf080a6b566ffe7f38840a5a"
+"class_om_1_1_expression.html#af759d2979668ce5d23075f66b39b48f8",
+"class_om_1_1_operations_1_1_decode_operation.html#afa6ea96096a508accc49c624cb0b1a02",
+"class_om_1_1_parser.html#a4a57d3cd38dc2e20faddb0ddc5035dda",
+"class_om_1_1_translator.html#ab4bdc54b12c138a533825e5edb4a88e5",
+"evaluation.html#evaluation__functions",
+"inject__operation_8hpp.html#a8eb8c5bbdb5561e086bbcb4b565e46e2",
+"separator_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
