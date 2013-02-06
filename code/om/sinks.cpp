@@ -12,16 +12,20 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#include "om/sinks.hpp"
+#if !defined( Om_Sinks_ )
 
-#if defined( Om_Macros_Test_ )
+	#include "om/sinks.hpp"
 
-	#include "UnitTest++.h"
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
 
 namespace Om {
 
 	SUITE( Sinks ) {}
 
 }
+
+	#endif
 
 #endif

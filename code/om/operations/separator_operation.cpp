@@ -12,11 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#include "om/operations/separator_operation.hpp"
+#if !defined( Om_Operations_SeparatorOperation_ )
 
-#if defined( Om_Macros_Test_ )
+	#include "om/operations/separator_operation.hpp"
 
-	#include "UnitTest++.h"
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
 
 namespace Om {
 
@@ -58,5 +60,7 @@ namespace Om {
 	}
 
 }
+
+	#endif
 
 #endif

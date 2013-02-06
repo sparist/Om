@@ -1,1 +1,5 @@
-#include "om/internal.hpp"
+#if !defined( Om_Internal_ )
+
+	#include "om/internal.hpp"
+
+#endif

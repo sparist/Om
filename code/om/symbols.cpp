@@ -12,15 +12,17 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#include "om/symbols.hpp"
+#if !defined( Om_Symbols_ )
 
-#if defined( Om_Macros_Test_ )
+	#include "om/symbols.hpp"
 
-	#include "om/external.hpp"
-	#include "om/symbols/operand_symbol.hpp"
-	#include "om/symbols/operator_symbol.hpp"
-	#include "om/symbols/separator_symbol.hpp"
-	#include "UnitTest++.h"
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/external.hpp"
+		#include "om/symbols/operand_symbol.hpp"
+		#include "om/symbols/operator_symbol.hpp"
+		#include "om/symbols/separator_symbol.hpp"
+		#include "UnitTest++.h"
 
 namespace Om {
 
@@ -44,5 +46,7 @@ namespace Om {
 	}
 
 }
+
+	#endif
 
 #endif

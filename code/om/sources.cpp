@@ -12,16 +12,20 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#include "om/sources.hpp"
+#if !defined( Om_Sources_ )
 
-#if defined( Om_Macros_Test_ )
+	#include "om/sources.hpp"
 
-	#include "UnitTest++.h"
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
 
 namespace Om {
 
 	SUITE( Sources ) {}
 
 }
+
+	#endif
 
 #endif

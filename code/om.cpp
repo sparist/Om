@@ -12,13 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#include "om.hpp"
+#if !defined( Om_ )
 
-#if defined( Om_Macros_Test_ )
+	#include "om.hpp"
 
-	#include "UnitTest++.h"
+	#if defined( Om_Macros_Test_ )
 
-#endif
+		#include "UnitTest++.h"
+
+	#endif
 
 /*!
 \param theArgumentCount
@@ -41,11 +43,11 @@ int main(
 		"en_US.UTF-8"
 	);
 
-#if defined( Om_Macros_Test_ )
+	#if defined( Om_Macros_Test_ )
 
 	int const theResult = UnitTest::RunAllTests();
 
-#endif
+	#endif
 
 	typedef Om::Sources::StreamSource<> CodeUnitSource;
 	CodeUnitSource theCodeUnitSource( std::cin );
@@ -63,13 +65,15 @@ int main(
 		theCodePointSink
 	);
 
-#if defined( Om_Macros_Test_ )
+	#if defined( Om_Macros_Test_ )
 
 	return( theResult );
 
-#else
+	#else
 
 	return( EXIT_SUCCESS );
 
-#endif
+	#endif
 }
+
+#endif

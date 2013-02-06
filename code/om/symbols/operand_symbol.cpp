@@ -12,11 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#include "om/symbols/operand_symbol.hpp"
+#if !defined( Om_Symbols_OperandSymbol_ )
 
-#if defined( Om_Macros_Test_ )
+	#include "om/symbols/operand_symbol.hpp"
 
-	#include "UnitTest++.h"
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
 
 namespace Om {
 
@@ -27,5 +29,7 @@ namespace Om {
 	}
 
 }
+
+	#endif
 
 #endif

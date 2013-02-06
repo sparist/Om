@@ -1,1 +1,5 @@
-#include "om/external.hpp"
+#if !defined( Om_External_ )
+
+	#include "om/external.hpp"
+
+#endif

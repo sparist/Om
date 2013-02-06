@@ -12,16 +12,20 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#include "om/code_point.hpp"
+#if !defined( Om_CodePoint_ )
 
-#if defined( Om_Macros_Test_ )
+	#include "om/code_point.hpp"
 
-	#include "UnitTest++.h"
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
 
 namespace Om {
 
 	SUITE( CodePoint ) {}
 
 }
+
+	#endif
 
 #endif

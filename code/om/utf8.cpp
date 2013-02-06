@@ -12,16 +12,20 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#include "om/utf8.hpp"
+#if !defined( Om_Utf8_ )
 
-#if defined( Om_Macros_Test_ )
+	#include "om/utf8.hpp"
 
-	#include "UnitTest++.h"
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
 
 namespace Om {
 
 	SUITE( Utf8 ) {}
 
 }
+
+	#endif
 
 #endif
