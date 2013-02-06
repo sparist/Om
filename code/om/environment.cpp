@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Environment_ )
+#if !defined( Om_Environment_ )
 
-// MARK: Om::Environment
+	#include "om/environment.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Environment ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Environment
 
 	#define Type_ \
 	Om::Environment
@@ -109,9 +125,5 @@ inline bool Type_::Translate(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/environment.hpp"
 
 #endif

@@ -12,12 +12,28 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Give_ )
+#if !defined( Om_Give_ )
+
+	#include "om/give.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Give ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/copy.hpp"
 	#include "om/move.hpp"
 
-// MARK: Om
+// MARK: - Om
 
 template< typename TheGiveable >
 inline std::auto_ptr< TheGiveable > Om::Give( TheGiveable & theGiveable ) {
@@ -50,9 +66,5 @@ inline std::auto_ptr< TheGiveable > Om::Give(
 		std::auto_ptr< TheGiveable >()
 	);
 }
-
-#else
-
-	#include "om/give.hpp"
 
 #endif

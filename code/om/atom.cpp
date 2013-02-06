@@ -12,11 +12,27 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Atom_ )
+#if !defined( Om_Atom_ )
+
+	#include "om/atom.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Atom ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/null.hpp"
 
-// MARK: Om::Atom
+// MARK: - Om::Atom
 
 	#define Type_ \
 	Om::Atom
@@ -33,17 +49,12 @@ inline Om::Program const & Type_::operator *() const {
 
 	#undef Type_
 
-// MARK: -
-// MARK: Om
+// MARK: - Om
 
 inline Om::Atom * Om::new_clone( Atom const & theAtom ) {
 	return(
 		Copy( theAtom ).release()
 	);
 }
-
-#else
-
-	#include "om/atom.hpp"
 
 #endif

@@ -12,38 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_LiteralBackPushOperation_ )
-
-	#include "om/operations/literal_front_push_operation.hpp"
-	#include "om/operations/swap_operation.hpp"
-
-// MARK: Om::Operations::LiteralBackPushOperation
-
-	#define Type_ \
-	Om::Operations::LiteralBackPushOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_LiteralBackPushOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	LiteralFrontPushOperation::Give( theEvaluation );
-	SwapOperation::Give( theEvaluation );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_LiteralBackPushOperation_ )
 
 	#include "om/operations/literal_back_push_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -65,5 +40,28 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/operations/literal_front_push_operation.hpp"
+	#include "om/operations/swap_operation.hpp"
+
+// MARK: - Om::Operations::LiteralBackPushOperation
+
+	#define Type_ \
+	Om::Operations::LiteralBackPushOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_LiteralBackPushOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	LiteralFrontPushOperation::Give( theEvaluation );
+	SwapOperation::Give( theEvaluation );
+}
+
+	#undef Type_
 
 #endif

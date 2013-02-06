@@ -12,37 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Shareable_ )
+#if !defined( Om_Shareable_ )
 
-// MARK: Om
+	#include "om/shareable.hpp"
 
-template< typename TheOwnerCount >
-inline void Om::intrusive_ptr_add_ref(
-	Shareable< TheOwnerCount > * const thePointee
-) {
-	assert(
-		thePointee &&
-		"The pointer cannot be null."
-	);
-	thePointee->IncrementOwnerCount();
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Shareable ) {}
+
 }
 
-template< typename TheOwnerCount >
-inline void Om::intrusive_ptr_release(
-	Shareable< TheOwnerCount > * const thePointee
-) {
-	assert(
-		thePointee &&
-		"The pointer cannot be null."
-	);
-	thePointee->DecrementOwnerCount();
-	if( !thePointee->thisOwnerCount ) {
-		boost::checked_delete( thePointee );
-	}
-}
+	#endif
 
-// MARK: -
-// MARK: Om::Shareable
+#else
+
+// MARK: - Om::Shareable
 
 	#define Template_ \
 	template< typename ThisOwnerCount >
@@ -106,8 +94,31 @@ inline void Type_::IncrementOwnerCount() {
 	#undef Type_
 	#undef Template_
 
-#else
+// MARK: - Om
 
-	#include "om/shareable.hpp"
+template< typename TheOwnerCount >
+inline void Om::intrusive_ptr_add_ref(
+	Shareable< TheOwnerCount > * const thePointee
+) {
+	assert(
+		thePointee &&
+		"The pointer cannot be null."
+	);
+	thePointee->IncrementOwnerCount();
+}
+
+template< typename TheOwnerCount >
+inline void Om::intrusive_ptr_release(
+	Shareable< TheOwnerCount > * const thePointee
+) {
+	assert(
+		thePointee &&
+		"The pointer cannot be null."
+	);
+	thePointee->DecrementOwnerCount();
+	if( !thePointee->thisOwnerCount ) {
+		boost::checked_delete( thePointee );
+	}
+}
 
 #endif

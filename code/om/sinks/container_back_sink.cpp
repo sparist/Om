@@ -12,9 +12,55 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sinks_ContainerBackSink_ )
+#if !defined( Om_Sinks_ContainerBackSink_ )
 
-// MARK: Om::Sinks::ContainerBackSink
+	#include "om/sinks/container_back_sink.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sinks {
+
+		SUITE( ContainerBackSink ) {
+
+			TEST( General ) {
+				std::string theSinkString( "01" );
+				ContainerBackSink<
+					char const,
+					std::string
+				> theSink( theSinkString );
+
+				*theSink++ = '2';
+				CHECK_EQUAL(
+					"012",
+					theSinkString
+				);
+				*++theSink = '3';
+				CHECK_EQUAL(
+					"0123",
+					theSinkString
+				);
+				*theSink = '4';
+				CHECK_EQUAL(
+					"01234",
+					theSinkString
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sinks::ContainerBackSink
 
 	#define Template_ \
 	template< \
@@ -56,8 +102,7 @@ inline void Type_::Swap( ContainerBackSink & theContainerBackSink ) {
 	#undef Type_
 	#undef Template_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<
 	typename ThisItem,
@@ -75,53 +120,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/sinks/container_back_sink.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Sinks {
-
-		SUITE( ContainerBackSink ) {
-
-			TEST( General ) {
-				std::string theSinkString( "01" );
-				ContainerBackSink<
-					char const,
-					std::string
-				> theSink( theSinkString );
-
-				*theSink++ = '2';
-				CHECK_EQUAL(
-					"012",
-					theSinkString
-				);
-				*++theSink = '3';
-				CHECK_EQUAL(
-					"0123",
-					theSinkString
-				);
-				*theSink = '4';
-				CHECK_EQUAL(
-					"01234",
-					theSinkString
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

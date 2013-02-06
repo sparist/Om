@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_EmptySource_ )
+#if !defined( Om_Sources_EmptySource_ )
 
-// MARK: Om::Sources::EmptySource
+	#include "om/sources/empty_source.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sources {
+
+		SUITE( EmptySource ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sources::EmptySource
 
 	#define Template_ \
 	template< typename ThisItem >
@@ -72,8 +92,7 @@ inline void Type_::Swap( EmptySource & ) {}
 	#undef Type_
 	#undef Template_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template< typename ThisItem >
 inline void boost::swap(
@@ -82,9 +101,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/sources/empty_source.hpp"
 
 #endif

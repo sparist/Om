@@ -12,7 +12,46 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Writer_ )
+#if !defined( Om_Writer_ )
+
+	#include "om/writer.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Writer ) {
+
+		TEST( General ) {
+			char const theCode[] = "\n\t {\n\t {\n\t }\n\t }\n\t";
+			std::string theResult;
+			{
+				Sinks::CodePointSink<
+					std::back_insert_iterator< std::string >
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
+				Writer theWriter( theCodePointSink );
+
+				Sources::CodePointSource<> theCodePointSource( theCode );
+				Parser theParser( theCodePointSource );
+				theWriter.ReadElements( theParser );
+			}
+			CHECK_EQUAL(
+				"\n\t {\n\t {\n\t }\n\t }\n\t",
+				theResult
+			);
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/null.hpp"
 	#include "om/operator.hpp"
@@ -21,7 +60,7 @@
 	#include "om/symbols/operator_symbol.hpp"
 	#include "om/symbols/separator_symbol.hpp"
 
-// MARK: Om::Writer
+// MARK: - Om::Writer
 
 	#define Type_ \
 	Om::Writer
@@ -132,46 +171,5 @@ inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/writer.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	SUITE( Writer ) {
-
-		TEST( General ) {
-			char const theCode[] = "\n\t {\n\t {\n\t }\n\t }\n\t";
-			std::string theResult;
-			{
-				Sinks::CodePointSink<
-					std::back_insert_iterator< std::string >
-				> theCodePointSink(
-					std::back_inserter( theResult )
-				);
-				Writer theWriter( theCodePointSink );
-
-				Sources::CodePointSource<> theCodePointSource( theCode );
-				Parser theParser( theCodePointSource );
-				theWriter.ReadElements( theParser );
-			}
-			CHECK_EQUAL(
-				"\n\t {\n\t {\n\t }\n\t }\n\t",
-				theResult
-			);
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

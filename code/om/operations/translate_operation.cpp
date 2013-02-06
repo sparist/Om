@@ -12,11 +12,31 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_TranslateOperation_ )
+#if !defined( Om_Operations_TranslateOperation_ )
+
+	#include "om/operations/translate_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( TranslateOperation ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/expression.hpp"
 
-// MARK: Om::Operations::TranslateOperation
+// MARK: - Om::Operations::TranslateOperation
 
 	#define Template_ \
 	template< typename ThisImplementation >
@@ -98,9 +118,5 @@ thisLexicon() {}
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/operations/translate_operation.hpp"
 
 #endif

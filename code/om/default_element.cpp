@@ -12,11 +12,27 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_DefaultElement_ )
+#if !defined( Om_DefaultElement_ )
+
+	#include "om/default_element.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( DefaultElement ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/sources/singleton_source.hpp"
 
-// MARK: Om::DefaultElement
+// MARK: - Om::DefaultElement
 
 	#define Template_ \
 	template< \
@@ -108,9 +124,5 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/default_element.hpp"
 
 #endif

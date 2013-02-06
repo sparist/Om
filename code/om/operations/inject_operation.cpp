@@ -12,97 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_InjectOperation_ )
-
-// MARK: Om::Operations::InjectOperation
-
-	#define Type_ \
-	Om::Operations::InjectOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_InjectOperation_GetName_() );
-}
-
-template< typename TheInjectOperation >
-inline void Type_::GiveElements(
-	TheInjectOperation & theInjectOperation,
-	Queue & theQueue
-) {
-	theQueue.TakeElement( GetOperator() );
-	if( theInjectOperation.thisScope ) {
-		theQueue.TakeQuotedElements( theInjectOperation.thisInjector );
-		if( !theInjectOperation.thisScope->IsEmpty() ) {
-			Expression theOutput;
-			theOutput.Take( theInjectOperation.thisOutput );
-			theInjectOperation.thisScope->GiveElements( theOutput );
-			theQueue.TakeQuotedElements( theOutput );
-		}
-	}
-}
-
-// MARK: public (non-static)
-
-inline Type_::InjectOperation():
-thisInjector(),
-thisOutput(),
-thisScope() {}
-
-template< typename TheQueue >
-inline bool Type_::TakeQuotedQueue(
-	Evaluation & theEvaluation,
-	TheQueue & theQueue
-) {
-	if( this->thisScope ) {
-		if( this->thisScope->IsEmpty() ) {
-			theQueue.GiveElements( *this->thisScope );
-		} else {
-			{
-				Expression const & theInjector = this->thisInjector;
-				theInjector.GiveElements( *this->thisScope );
-			}
-			this->thisScope->TakeQuotedQueue( theQueue );
-		}
-		if( this->thisScope->IsEmpty() ) {
-			theEvaluation.TakeQuotedQueue( this->thisOutput );
-			return( true );
-		}
-	} else {
-		this->thisScope = boost::in_place(
-			boost::ref( this->thisOutput ),
-			boost::ref( theEvaluation.GetTranslator() )
-		);
-		this->thisInjector.TakeElements( theQueue );
-	}
-	return( false );
-}
-
-template< typename TheOperand >
-inline bool Type_::TakeOperand(
-	Evaluation & theEvaluation,
-	TheOperand & theOperand
-) {
-	assert( !theOperand.IsEmpty() );
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
-	);
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_InjectOperation_ )
 
 	#include "om/operations/inject_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -225,5 +141,87 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+// MARK: - Om::Operations::InjectOperation
+
+	#define Type_ \
+	Om::Operations::InjectOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_InjectOperation_GetName_() );
+}
+
+template< typename TheInjectOperation >
+inline void Type_::GiveElements(
+	TheInjectOperation & theInjectOperation,
+	Queue & theQueue
+) {
+	theQueue.TakeElement( GetOperator() );
+	if( theInjectOperation.thisScope ) {
+		theQueue.TakeQuotedElements( theInjectOperation.thisInjector );
+		if( !theInjectOperation.thisScope->IsEmpty() ) {
+			Expression theOutput;
+			theOutput.Take( theInjectOperation.thisOutput );
+			theInjectOperation.thisScope->GiveElements( theOutput );
+			theQueue.TakeQuotedElements( theOutput );
+		}
+	}
+}
+
+// MARK: public (non-static)
+
+inline Type_::InjectOperation():
+thisInjector(),
+thisOutput(),
+thisScope() {}
+
+template< typename TheQueue >
+inline bool Type_::TakeQuotedQueue(
+	Evaluation & theEvaluation,
+	TheQueue & theQueue
+) {
+	if( this->thisScope ) {
+		if( this->thisScope->IsEmpty() ) {
+			theQueue.GiveElements( *this->thisScope );
+		} else {
+			{
+				Expression const & theInjector = this->thisInjector;
+				theInjector.GiveElements( *this->thisScope );
+			}
+			this->thisScope->TakeQuotedQueue( theQueue );
+		}
+		if( this->thisScope->IsEmpty() ) {
+			theEvaluation.TakeQuotedQueue( this->thisOutput );
+			return( true );
+		}
+	} else {
+		this->thisScope = boost::in_place(
+			boost::ref( this->thisOutput ),
+			boost::ref( theEvaluation.GetTranslator() )
+		);
+		this->thisInjector.TakeElements( theQueue );
+	}
+	return( false );
+}
+
+template< typename TheOperand >
+inline bool Type_::TakeOperand(
+	Evaluation & theEvaluation,
+	TheOperand & theOperand
+) {
+	assert( !theOperand.IsEmpty() );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
+}
+
+	#undef Type_
 
 #endif

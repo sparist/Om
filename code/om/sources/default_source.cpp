@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_DefaultSource_ )
+#if !defined( Om_Sources_DefaultSource_ )
 
-// MARK: Om::Sources::DefaultSource
+	#include "om/sources/default_source.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sources {
+
+		SUITE( DefaultSource ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sources::DefaultSource
 
 	#define Template_ \
 	template< \
@@ -73,9 +93,5 @@ inline ThisImplementation Type_::operator ++( int ) {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/sources/default_source.hpp"
 
 #endif

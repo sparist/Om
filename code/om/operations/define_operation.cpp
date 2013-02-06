@@ -12,89 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_DefineOperation_ )
-
-	#include "om/environment.hpp"
-
-// MARK: Om::Operations::DefineOperation
-
-	#define Type_ \
-	Om::Operations::DefineOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_DefineOperation_GetName_() );
-}
-
-template< typename TheDefineOperation >
-inline void Type_::GiveElements(
-	TheDefineOperation & theDefineOperation,
-	Queue & theQueue
-) {
-	theQueue.TakeElement( GetOperator() );
-	if( theDefineOperation.thisLexicon ) {
-		theQueue.TakeQuotedElements( *theDefineOperation.thisLexicon );
-	}
-}
-
-// MARK: public (non-static)
-
-inline Type_::DefineOperation():
-thisLexicon() {}
-
-template< typename TheOperand >
-inline bool Type_::TakeOperand(
-	Evaluation & theEvaluation,
-	TheOperand & theOperand
-) {
-	assert( !theOperand.IsEmpty() );
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
-	);
-}
-
-template< typename TheQueue >
-inline bool Type_::TakeQuotedQueue(
-	Evaluation & theEvaluation,
-	TheQueue & theQueue
-) {
-	if( this->thisLexicon ) {
-		Expression theExpression;
-		{
-			Environment theEnvironment;
-			theEnvironment.Push( System::Get() );
-			theEnvironment.Push( theEvaluation.GetTranslator() );
-			theEnvironment.Push( *this->thisLexicon );
-			Evaluator theScope(
-				theExpression,
-				theEnvironment
-			);
-			theQueue.GiveElements( theScope );
-		}
-		theEvaluation.TakeQueue( theExpression );
-		return( true );
-	}
-	this->thisLexicon = boost::in_place();
-	assert( this->thisLexicon );
-	this->thisLexicon->TakeElements( theQueue );
-	return( false );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_DefineOperation_ )
 
 	#include "om/operations/define_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -248,5 +172,79 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/environment.hpp"
+
+// MARK: - Om::Operations::DefineOperation
+
+	#define Type_ \
+	Om::Operations::DefineOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_DefineOperation_GetName_() );
+}
+
+template< typename TheDefineOperation >
+inline void Type_::GiveElements(
+	TheDefineOperation & theDefineOperation,
+	Queue & theQueue
+) {
+	theQueue.TakeElement( GetOperator() );
+	if( theDefineOperation.thisLexicon ) {
+		theQueue.TakeQuotedElements( *theDefineOperation.thisLexicon );
+	}
+}
+
+// MARK: public (non-static)
+
+inline Type_::DefineOperation():
+thisLexicon() {}
+
+template< typename TheOperand >
+inline bool Type_::TakeOperand(
+	Evaluation & theEvaluation,
+	TheOperand & theOperand
+) {
+	assert( !theOperand.IsEmpty() );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
+}
+
+template< typename TheQueue >
+inline bool Type_::TakeQuotedQueue(
+	Evaluation & theEvaluation,
+	TheQueue & theQueue
+) {
+	if( this->thisLexicon ) {
+		Expression theExpression;
+		{
+			Environment theEnvironment;
+			theEnvironment.Push( System::Get() );
+			theEnvironment.Push( theEvaluation.GetTranslator() );
+			theEnvironment.Push( *this->thisLexicon );
+			Evaluator theScope(
+				theExpression,
+				theEnvironment
+			);
+			theQueue.GiveElements( theScope );
+		}
+		theEvaluation.TakeQueue( theExpression );
+		return( true );
+	}
+	this->thisLexicon = boost::in_place();
+	assert( this->thisLexicon );
+	this->thisLexicon->TakeElements( theQueue );
+	return( false );
+}
+
+	#undef Type_
 
 #endif

@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sinks_IteratorSink_ )
+#if !defined( Om_Sinks_IteratorSink_ )
 
-// MARK: Om::Sinks::IteratorSink
+	#include "om/sinks/iterator_sink.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sinks {
+
+		SUITE( IteratorSink ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sinks::IteratorSink
 
 	#define Template_ \
 	template< \
@@ -57,8 +77,7 @@ inline void Type_::Swap( IteratorSink & theIteratorSink ) {
 	#undef Type_
 	#undef Template_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<
 	typename ThisItem,
@@ -76,9 +95,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/sinks/iterator_sink.hpp"
 
 #endif

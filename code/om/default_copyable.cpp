@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_DefaultCopyable_ )
+#if !defined( Om_DefaultCopyable_ )
 
-// MARK: Om::DefaultCopyable
+	#include "om/default_copyable.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( DefaultCopyable ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::DefaultCopyable
 
 	#define Template_ \
 	template< \
@@ -49,9 +65,5 @@ inline ThisInterface * Type_::Copy() const {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/default_copyable.hpp"
 
 #endif

@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_ProgramOperation_ )
+#if !defined( Om_Operations_ProgramOperation_ )
 
-// MARK: Om::Operations::ProgramOperation
+	#include "om/operations/program_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( ProgramOperation ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Operations::ProgramOperation
 
 	#define Template_ \
 	template< typename ThisProgram >
@@ -84,9 +104,5 @@ inline bool Type_::TakeQuotedQueue(
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/operations/program_operation.hpp"
 
 #endif

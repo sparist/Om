@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_DefaultQueue_ )
+#if !defined( Om_DefaultQueue_ )
 
-// MARK: Om::DefaultQueue
+	#include "om/default_queue.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( DefaultQueue ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::DefaultQueue
 
 	#define Template_ \
 	template< \
@@ -109,9 +125,5 @@ inline void Type_::TakeQuotedElements( Queue const & theQueue ) {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/default_queue.hpp"
 
 #endif

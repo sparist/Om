@@ -12,11 +12,31 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_FrontPushOperation_ )
+#if !defined( Om_Operations_FrontPushOperation_ )
+
+	#include "om/operations/front_push_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( FrontPushOperation ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/operations/program_operation.hpp"
 
-// MARK: Om::Operations::FrontPushOperation
+// MARK: - Om::Operations::FrontPushOperation
 
 	#define Template_ \
 	template< \
@@ -94,9 +114,5 @@ inline Om::Operator const & Type_::GetOperator() {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/operations/front_push_operation.hpp"
 
 #endif

@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_CollectionBackSource_ )
+#if !defined( Om_Sources_CollectionBackSource_ )
 
-// MARK: Om::Sources::CollectionBackSource
+	#include "om/sources/collection_back_source.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sources {
+
+		SUITE( CollectionBackSource ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sources::CollectionBackSource
 
 	#define Template_ \
 	template< \
@@ -40,9 +60,5 @@ IteratorPairSource< ThisItem, ThisIterator >(
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/sources/collection_back_source.hpp"
 
 #endif

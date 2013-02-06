@@ -12,11 +12,27 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Definition_ )
+#if !defined( Om_Definition_ )
+
+	#include "om/definition.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Definition ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/system.hpp"
 
-// MARK: Om::Definition
+// MARK: - Om::Definition
 
 	#define Template_ \
 	template< typename ThisOperation >
@@ -33,9 +49,5 @@ inline Type_::Definition() {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/definition.hpp"
 
 #endif

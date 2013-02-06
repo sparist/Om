@@ -12,44 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_FrontPullOperandOperation_ )
-
-	#include "om/literal.hpp"
-	#include "om/operations/pull_operation.hpp"
-
-// MARK: Om::Operations::FrontPullOperandOperation
-
-	#define Type_ \
-	Om::Operations::FrontPullOperandOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_FrontPullOperandOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
-			new PullOperation<
-				Literal,
-				FrontPullOperandOperation
-			>
-		)
-	);
-}
-
-template< typename TheQueue >
-inline void Type_::Pull(
-	Literal & theLiteral,
-	TheQueue & theQueue
-) {
-	theLiteral.FrontGive< Operand >( theQueue );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_FrontPullOperandOperation_ )
 
 	#include "om/operations/front_pull_operand_operation.hpp"
 
@@ -57,8 +20,6 @@ inline void Type_::Pull(
 
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -107,5 +68,42 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/literal.hpp"
+	#include "om/operations/pull_operation.hpp"
+
+// MARK: - Om::Operations::FrontPullOperandOperation
+
+	#define Type_ \
+	Om::Operations::FrontPullOperandOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_FrontPullOperandOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	theEvaluation.TakeOperation(
+		std::auto_ptr< Operation >(
+			new PullOperation<
+				Literal,
+				FrontPullOperandOperation
+			>
+		)
+	);
+}
+
+template< typename TheQueue >
+inline void Type_::Pull(
+	Literal & theLiteral,
+	TheQueue & theQueue
+) {
+	theLiteral.FrontGive< Operand >( theQueue );
+}
+
+	#undef Type_
 
 #endif

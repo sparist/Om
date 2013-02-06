@@ -12,12 +12,28 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Parser_ )
+#if !defined( Om_Parser_ )
+
+	#include "om/parser.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Parser ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/symbols/operand_symbol.hpp"
 	#include "om/symbols/operator_symbol.hpp"
 
-// MARK: Om::Parser
+// MARK: - Om::Parser
 
 	#define Type_ \
 	Om::Parser
@@ -91,9 +107,5 @@ inline void Type_::Pop() {
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/parser.hpp"
 
 #endif

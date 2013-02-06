@@ -12,44 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_LiteralFrontPushOperation_ )
-
-	#include "om/literal.hpp"
-	#include "om/operations/front_push_operation.hpp"
-
-// MARK: Om::Operations::LiteralFrontPushOperation
-
-	#define Type_ \
-	Om::Operations::LiteralFrontPushOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_LiteralFrontPushOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
-			new FrontPushOperation<
-				Literal,
-				LiteralFrontPushOperation
-			>
-		)
-	);
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_LiteralFrontPushOperation_ )
 
 	#include "om/operations/literal_front_push_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -103,5 +72,34 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/literal.hpp"
+	#include "om/operations/front_push_operation.hpp"
+
+// MARK: - Om::Operations::LiteralFrontPushOperation
+
+	#define Type_ \
+	Om::Operations::LiteralFrontPushOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_LiteralFrontPushOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	theEvaluation.TakeOperation(
+		std::auto_ptr< Operation >(
+			new FrontPushOperation<
+				Literal,
+				LiteralFrontPushOperation
+			>
+		)
+	);
+}
+
+	#undef Type_
 
 #endif

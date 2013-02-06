@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operation_ )
+#if !defined( Om_Operation_ )
 
-// MARK: Om::Operation
+	#include "om/operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Operation ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Operation
 
 	#define Type_ \
 	Om::Operation
@@ -92,9 +108,5 @@ inline bool Type_::TakeQuotedElements(
 inline Type_::Operation() {}
 
 	#undef Type_
-
-#else
-
-	#include "om/operation.hpp"
 
 #endif

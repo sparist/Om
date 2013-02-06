@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_DefaultGiveable_ )
+#if !defined( Om_DefaultGiveable_ )
 
-// MARK: Om::DefaultGiveable
+	#include "om/default_giveable.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( DefaultGiveable ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::DefaultGiveable
 
 	#define Template_ \
 	template< \
@@ -35,9 +51,5 @@ inline Type_::~DefaultGiveable() {}
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/default_giveable.hpp"
 
 #endif

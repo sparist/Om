@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Giveable_ )
+#if !defined( Om_Giveable_ )
 
-// MARK: Om::Giveable
+	#include "om/giveable.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Giveable ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Giveable
 
 	#define Type_ \
 	Om::Giveable
@@ -24,9 +40,5 @@
 inline Type_::~Giveable() {}
 
 	#undef Type_
-
-#else
-
-	#include "om/giveable.hpp"
 
 #endif

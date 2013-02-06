@@ -12,11 +12,63 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_EqualsOperation_ )
+#if !defined( Om_Operations_EqualsOperation_ )
+
+	#include "om/operations/equals_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( EqualsOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{=}",
+					System::Get().Evaluate( "drop find {=} system" )
+				);
+			}
+
+			TEST( General ) {
+				CHECK_EQUAL(
+					"{{A}}",
+					System::Get().Evaluate( "= {A} {A}" )
+				);
+
+				CHECK_EQUAL(
+					"{}",
+					System::Get().Evaluate( "= {A} {Not A}" )
+				);
+
+				CHECK_EQUAL(
+					"{{}}",
+					System::Get().Evaluate( "= {} {}" )
+				);
+
+				CHECK_EQUAL(
+					"{}",
+					System::Get().Evaluate( "= {} {Not empty}" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/expression.hpp"
 
-// MARK: Om::Operations::EqualsOperation
+// MARK: - Om::Operations::EqualsOperation
 
 	#define Type_ \
 	Om::Operations::EqualsOperation
@@ -79,59 +131,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/equals_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/system.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( EqualsOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{=}",
-					System::Get().Evaluate( "drop find {=} system" )
-				);
-			}
-
-			TEST( General ) {
-				CHECK_EQUAL(
-					"{{A}}",
-					System::Get().Evaluate( "= {A} {A}" )
-				);
-
-				CHECK_EQUAL(
-					"{}",
-					System::Get().Evaluate( "= {A} {Not A}" )
-				);
-
-				CHECK_EQUAL(
-					"{{}}",
-					System::Get().Evaluate( "= {} {}" )
-				);
-
-				CHECK_EQUAL(
-					"{}",
-					System::Get().Evaluate( "= {} {Not empty}" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

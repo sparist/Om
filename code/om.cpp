@@ -15,7 +15,9 @@
 #include "om.hpp"
 
 #if defined( Om_Macros_Test_ )
+
 	#include "UnitTest++.h"
+
 #endif
 
 /*!
@@ -40,7 +42,9 @@ int main(
 	);
 
 #if defined( Om_Macros_Test_ )
+
 	int const theResult = UnitTest::RunAllTests();
+
 #endif
 
 	typedef Om::Sources::StreamSource<> CodeUnitSource;
@@ -60,8 +64,12 @@ int main(
 	);
 
 #if defined( Om_Macros_Test_ )
+
 	return( theResult );
+
 #else
+
 	return( EXIT_SUCCESS );
+
 #endif
 }

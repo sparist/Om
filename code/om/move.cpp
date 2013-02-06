@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Move_ )
+#if !defined( Om_Move_ )
 
-// MARK: Om
+	#include "om/move.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Move ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om
 
 template< typename TheMoveable >
 inline std::auto_ptr< TheMoveable > Om::Move( TheMoveable & theMoveable ) {
@@ -24,9 +40,5 @@ inline std::auto_ptr< TheMoveable > Om::Move( TheMoveable & theMoveable ) {
 		)
 	);
 }
-
-#else
-
-	#include "om/move.hpp"
 
 #endif

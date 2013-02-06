@@ -12,30 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_DoOperation_ )
-
-	#include "om/operations/dequote_operation.hpp"
-	#include "om/operations/operator_operation.hpp"
-
-// MARK: Om::Operations::DoOperation
-
-	#define Type_ \
-	Om::Operations::DoOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_DoOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	DequoteOperation::Give( theEvaluation );
-	OperatorOperation::Give( theEvaluation );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_DoOperation_ )
 
 	#include "om/operations/do_operation.hpp"
 
@@ -43,8 +20,6 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -73,5 +48,28 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/operations/dequote_operation.hpp"
+	#include "om/operations/operator_operation.hpp"
+
+// MARK: - Om::Operations::DoOperation
+
+	#define Type_ \
+	Om::Operations::DoOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_DoOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	DequoteOperation::Give( theEvaluation );
+	OperatorOperation::Give( theEvaluation );
+}
+
+	#undef Type_
 
 #endif

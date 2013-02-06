@@ -12,11 +12,48 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_CopyOperation_ )
+#if !defined( Om_Operations_CopyOperation_ )
+
+	#include "om/operations/copy_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( CopyOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{copy}",
+					System::Get().Evaluate( "drop find {copy} system" )
+				);
+			}
+
+			TEST( Simple ) {
+				CHECK_EQUAL(
+					"{1{2}3}{1{2}3}",
+					System::Get().Evaluate( "copy {1{2}3}" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/literal.hpp"
 
-// MARK: Om::Operations::CopyOperation
+// MARK: - Om::Operations::CopyOperation
 
 	#define Type_ \
 	Om::Operations::CopyOperation
@@ -65,44 +102,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/copy_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/system.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( CopyOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{copy}",
-					System::Get().Evaluate( "drop find {copy} system" )
-				);
-			}
-
-			TEST( Simple ) {
-				CHECK_EQUAL(
-					"{1{2}3}{1{2}3}",
-					System::Get().Evaluate( "copy {1{2}3}" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

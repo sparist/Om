@@ -12,11 +12,48 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_EncodeOperation_ )
+#if !defined( Om_Operations_EncodeOperation_ )
+
+	#include "om/operations/encode_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( EncodeOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{encode}",
+					System::Get().Evaluate( "drop find {encode} system" )
+				);
+			}
+
+			TEST( Simple ) {
+				CHECK_EQUAL(
+					"{```{```}``` `{`{`}`}` }",
+					System::Get().Evaluate( "encode {`{`}` {{}} }" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/literal.hpp"
 
-// MARK: Om::Operations::EncodeOperation
+// MARK: - Om::Operations::EncodeOperation
 
 	#define Type_ \
 	Om::Operations::EncodeOperation
@@ -63,44 +100,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/encode_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/system.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( EncodeOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{encode}",
-					System::Get().Evaluate( "drop find {encode} system" )
-				);
-			}
-
-			TEST( Simple ) {
-				CHECK_EQUAL(
-					"{```{```}``` `{`{`}`}` }",
-					System::Get().Evaluate( "encode {`{`}` {{}} }" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

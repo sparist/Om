@@ -12,9 +12,59 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_DequoteOperation_ )
+#if !defined( Om_Operations_DequoteOperation_ )
 
-// MARK: Om::Operations::DequoteOperation
+	#include "om/operations/dequote_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( DequoteOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{dequote}",
+					System::Get().Evaluate( "drop find {dequote} system" )
+				);
+			}
+
+			TEST( Simple ) {
+				CHECK_EQUAL(
+					(
+						"1{2}\n"
+						"3"
+					),
+					System::Get().Evaluate( "dequote {1{2}3}" )
+				);
+			}
+
+			TEST( SimpleDequoteThenEvaluate ) {
+				CHECK_EQUAL(
+					(
+						"A{b}\n"
+						"c"
+					),
+					System::Get().Evaluate( "define {a {A}} {dequote {a{b}c}}" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Operations::DequoteOperation
 
 	#define Type_ \
 	Om::Operations::DequoteOperation
@@ -59,57 +109,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/dequote_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/system.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( DequoteOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{dequote}",
-					System::Get().Evaluate( "drop find {dequote} system" )
-				);
-			}
-
-			TEST( Simple ) {
-				CHECK_EQUAL(
-					(
-						"1{2}\n"
-						"3"
-					),
-					System::Get().Evaluate( "dequote {1{2}3}" )
-				);
-			}
-
-			TEST( SimpleDequoteThenEvaluate ) {
-				CHECK_EQUAL(
-					(
-						"A{b}\n"
-						"c"
-					),
-					System::Get().Evaluate( "define {a {A}} {dequote {a{b}c}}" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

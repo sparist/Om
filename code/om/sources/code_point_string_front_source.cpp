@@ -12,132 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_CodePointStringFrontSource_ )
-
-	#include "om/utf8.hpp"
-
-// MARK: Om::Sources::CodePointStringFrontSource
-
-	#define Template_ \
-	template< typename ThisStringIterator >
-
-	#define Type_ \
-	Om::Sources::CodePointStringFrontSource< ThisStringIterator >
-
-// MARK: public (non-static)
-
-Template_
-inline Type_::CodePointStringFrontSource(
-	ThisStringIterator theStringStart,
-	ThisStringIterator const theStringEnd
-):
-thisStringIterator( theStringStart ),
-thisStringEnd( theStringEnd ),
-thisCodePoint() {
-	this->Update();
-}
-
-Template_
-inline Type_ & Type_::operator =( CodePointStringFrontSource theCodePointStringFrontSource ) {
-	this->Swap( theCodePointStringFrontSource );
-	return( *this );
-}
-
-Template_
-inline bool Type_::operator ==( CodePointStringFrontSource const & theSource ) const {
-	return( this->thisStringIterator == theSource.thisStringIterator );
-}
-
-Template_
-inline bool Type_::operator !() const {
-	return( this->thisCodePoint.empty() );
-}
-
-Template_
-inline std::string & Type_::operator *() const {
-	return( this->thisCodePoint );
-}
-
-Template_
-inline void Type_::Pop() {
-	this->thisCodePoint.clear();
-	this->Update();
-}
-
-Template_
-inline void Type_::Swap( CodePointStringFrontSource & theCodePointStringFrontSource ) {
-	boost::swap(
-		this->thisStringIterator,
-		theCodePointStringFrontSource.thisStringIterator
-	);
-	boost::swap(
-		this->thisStringEnd,
-		theCodePointStringFrontSource.thisStringEnd
-	);
-	boost::swap(
-		this->thisCodePoint,
-		theCodePointStringFrontSource.thisCodePoint
-	);
-}
-
-// MARK: private (non-static)
-
-Template_
-inline void Type_::Update() {
-	assert( this->thisCodePoint.empty() );
-	if( this->thisStringEnd == this->thisStringIterator ) {
-		return;
-	}
-	char theCodeUnit = *this->thisStringIterator;
-	++this->thisStringIterator;
-	if(
-		Utf8::is_lead( theCodeUnit )
-	) {
-		this->thisCodePoint.push_back( theCodeUnit );
-		for(
-			int theTrailCount = Utf8::trail_length( theCodeUnit );
-			;
-			--theTrailCount
-		) {
-			if( !theTrailCount ) {
-				return;
-			}
-			if(
-				this->thisStringEnd == this->thisStringIterator ||
-				!Utf8::is_trail( theCodeUnit = *this->thisStringIterator )
-			) {
-				break;
-			}
-			this->thisCodePoint.push_back( theCodeUnit );
-			++this->thisStringIterator;
-		}
-	}
-	this->thisCodePoint = "\xEF\xBF\xBD" /* Replacement character */;
-}
-
-	#undef Type_
-	#undef Template_
-
-// MARK: -
-// MARK: boost
-
-template< typename ThisStringIterator >
-inline void boost::swap(
-	Om::Sources::CodePointStringFrontSource< ThisStringIterator > & theFirst,
-	Om::Sources::CodePointStringFrontSource< ThisStringIterator > & theSecond
-) {
-	theFirst.Swap( theSecond );
-}
-
-#else
+#if !defined( Om_Sources_CodePointStringFrontSource_ )
 
 	#include "om/sources/code_point_string_front_source.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -416,5 +297,121 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/utf8.hpp"
+
+// MARK: - Om::Sources::CodePointStringFrontSource
+
+	#define Template_ \
+	template< typename ThisStringIterator >
+
+	#define Type_ \
+	Om::Sources::CodePointStringFrontSource< ThisStringIterator >
+
+// MARK: public (non-static)
+
+Template_
+inline Type_::CodePointStringFrontSource(
+	ThisStringIterator theStringStart,
+	ThisStringIterator const theStringEnd
+):
+thisStringIterator( theStringStart ),
+thisStringEnd( theStringEnd ),
+thisCodePoint() {
+	this->Update();
+}
+
+Template_
+inline Type_ & Type_::operator =( CodePointStringFrontSource theCodePointStringFrontSource ) {
+	this->Swap( theCodePointStringFrontSource );
+	return( *this );
+}
+
+Template_
+inline bool Type_::operator ==( CodePointStringFrontSource const & theSource ) const {
+	return( this->thisStringIterator == theSource.thisStringIterator );
+}
+
+Template_
+inline bool Type_::operator !() const {
+	return( this->thisCodePoint.empty() );
+}
+
+Template_
+inline std::string & Type_::operator *() const {
+	return( this->thisCodePoint );
+}
+
+Template_
+inline void Type_::Pop() {
+	this->thisCodePoint.clear();
+	this->Update();
+}
+
+Template_
+inline void Type_::Swap( CodePointStringFrontSource & theCodePointStringFrontSource ) {
+	boost::swap(
+		this->thisStringIterator,
+		theCodePointStringFrontSource.thisStringIterator
+	);
+	boost::swap(
+		this->thisStringEnd,
+		theCodePointStringFrontSource.thisStringEnd
+	);
+	boost::swap(
+		this->thisCodePoint,
+		theCodePointStringFrontSource.thisCodePoint
+	);
+}
+
+// MARK: private (non-static)
+
+Template_
+inline void Type_::Update() {
+	assert( this->thisCodePoint.empty() );
+	if( this->thisStringEnd == this->thisStringIterator ) {
+		return;
+	}
+	char theCodeUnit = *this->thisStringIterator;
+	++this->thisStringIterator;
+	if(
+		Utf8::is_lead( theCodeUnit )
+	) {
+		this->thisCodePoint.push_back( theCodeUnit );
+		for(
+			int theTrailCount = Utf8::trail_length( theCodeUnit );
+			;
+			--theTrailCount
+		) {
+			if( !theTrailCount ) {
+				return;
+			}
+			if(
+				this->thisStringEnd == this->thisStringIterator ||
+				!Utf8::is_trail( theCodeUnit = *this->thisStringIterator )
+			) {
+				break;
+			}
+			this->thisCodePoint.push_back( theCodeUnit );
+			++this->thisStringIterator;
+		}
+	}
+	this->thisCodePoint = "\xEF\xBF\xBD" /* Replacement character */;
+}
+
+	#undef Type_
+	#undef Template_
+
+// MARK: - boost
+
+template< typename ThisStringIterator >
+inline void boost::swap(
+	Om::Sources::CodePointStringFrontSource< ThisStringIterator > & theFirst,
+	Om::Sources::CodePointStringFrontSource< ThisStringIterator > & theSecond
+) {
+	theFirst.Swap( theSecond );
+}
 
 #endif

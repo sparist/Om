@@ -12,11 +12,27 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Program_ )
+#if !defined( Om_Program_ )
+
+	#include "om/program.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Program ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/give.hpp"
 
-// MARK: Om::Program
+// MARK: - Om::Program
 
 	#define Type_ \
 	Om::Program
@@ -47,9 +63,5 @@ inline std::auto_ptr< Om::Program > Type_::GiveProgram() const {
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/program.hpp"
 
 #endif

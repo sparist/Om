@@ -12,44 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_BackPullPairOperation_ )
-
-	#include "om/lexicon.hpp"
-	#include "om/operations/pull_operation.hpp"
-
-// MARK: Om::Operations::BackPullPairOperation
-
-	#define Type_ \
-	Om::Operations::BackPullPairOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_BackPullPairOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
-			new PullOperation<
-				Lexicon,
-				BackPullPairOperation
-			>
-		)
-	);
-}
-
-template< typename TheQueue >
-inline void Type_::Pull(
-	Lexicon & theLexicon,
-	TheQueue & theQueue
-) {
-	theLexicon.BackGivePair( theQueue );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_BackPullPairOperation_ )
 
 	#include "om/operations/back_pull_pair_operation.hpp"
 
@@ -57,8 +20,6 @@ inline void Type_::Pull(
 
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -124,5 +85,42 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/lexicon.hpp"
+	#include "om/operations/pull_operation.hpp"
+
+// MARK: - Om::Operations::BackPullPairOperation
+
+	#define Type_ \
+	Om::Operations::BackPullPairOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_BackPullPairOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	theEvaluation.TakeOperation(
+		std::auto_ptr< Operation >(
+			new PullOperation<
+				Lexicon,
+				BackPullPairOperation
+			>
+		)
+	);
+}
+
+template< typename TheQueue >
+inline void Type_::Pull(
+	Lexicon & theLexicon,
+	TheQueue & theQueue
+) {
+	theLexicon.BackGivePair( theQueue );
+}
+
+	#undef Type_
 
 #endif

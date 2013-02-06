@@ -12,12 +12,80 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Literal_ )
+#if !defined( Om_Literal_ )
+
+	#include "om/literal.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Literal ) {
+
+		TEST( Equality ) {
+			// Positive match
+			CHECK_EQUAL(
+				"{{a{b}{c}\nd{e}}}",
+				System::Get().Evaluate( "= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}" )
+			);
+
+			// Negative match
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "= {a{b}{c}} {a{b}{d}}" )
+			);
+
+			// Empty match
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "= {} {a{b}{c}}" )
+			);
+
+			// Empty match
+			CHECK_EQUAL(
+				"{{}}",
+				System::Get().Evaluate( "= {} {}" )
+			);
+		}
+
+		TEST( Recursion ) {
+			size_t const theDepth = 50000;
+
+			std::string theString;
+			for(
+				size_t theLevel = theDepth;
+				theLevel;
+				--theLevel
+			) {
+				theString = "{" + theString + "}";
+			}
+
+			Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
+				theString.begin(),
+				theString.end()
+			);
+			Parser theParser( theCodePointSource );
+			Literal theLiteral;
+			theLiteral.ReadElements( theParser );
+
+			Literal theCopy( theLiteral );
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/operator.hpp"
 	#include "om/separator.hpp"
 
-// MARK: Om::Literal
+// MARK: - Om::Literal
 
 	#define Type_ \
 	Om::Literal
@@ -250,8 +318,7 @@ inline void Type_::TakeAtom( TheAtom & theAtom ) {
 
 	#undef Type_
 
-// MARK: -
-// MARK: Om::Literal::ElementRange
+// MARK: - Om::Literal::ElementRange
 
 	#define Type_ \
 	Om::Literal::ElementRange
@@ -272,8 +339,7 @@ Sources::CollectionFrontSource<
 
 	#undef Type_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<>
 inline void boost::swap(
@@ -282,75 +348,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/literal.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/system.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	SUITE( Literal ) {
-
-		TEST( Equality ) {
-			// Positive match
-			CHECK_EQUAL(
-				"{{a{b}{c}\nd{e}}}",
-				System::Get().Evaluate( "= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}" )
-			);
-
-			// Negative match
-			CHECK_EQUAL(
-				"{}",
-				System::Get().Evaluate( "= {a{b}{c}} {a{b}{d}}" )
-			);
-
-			// Empty match
-			CHECK_EQUAL(
-				"{}",
-				System::Get().Evaluate( "= {} {a{b}{c}}" )
-			);
-
-			// Empty match
-			CHECK_EQUAL(
-				"{{}}",
-				System::Get().Evaluate( "= {} {}" )
-			);
-		}
-
-		TEST( Recursion ) {
-			size_t const theDepth = 50000;
-
-			std::string theString;
-			for(
-				size_t theLevel = theDepth;
-				theLevel;
-				--theLevel
-			) {
-				theString = "{" + theString + "}";
-			}
-
-			Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
-				theString.begin(),
-				theString.end()
-			);
-			Parser theParser( theCodePointSource );
-			Literal theLiteral;
-			theLiteral.ReadElements( theParser );
-
-			Literal theCopy( theLiteral );
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

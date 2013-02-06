@@ -12,11 +12,53 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_ChooseOperation_ )
+#if !defined( Om_Operations_ChooseOperation_ )
+
+	#include "om/operations/choose_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( ChooseOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{choose}",
+					System::Get().Evaluate( "drop find {choose} system" )
+				);
+			}
+
+			TEST( General ) {
+				CHECK_EQUAL(
+					"{empty}",
+					System::Get().Evaluate( "choose{empty}{non-empty}{}" )
+				);
+
+				CHECK_EQUAL(
+					"{non-empty}",
+					System::Get().Evaluate( "choose{empty}{non-empty}{some operators}" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/literal.hpp"
 
-// MARK: Om::Operations::ChooseOperation
+// MARK: - Om::Operations::ChooseOperation
 
 	#define Type_ \
 	Om::Operations::ChooseOperation
@@ -90,49 +132,5 @@ inline bool Type_::TakeOperand(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/choose_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/system.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( ChooseOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{choose}",
-					System::Get().Evaluate( "drop find {choose} system" )
-				);
-			}
-
-			TEST( General ) {
-				CHECK_EQUAL(
-					"{empty}",
-					System::Get().Evaluate( "choose{empty}{non-empty}{}" )
-				);
-
-				CHECK_EQUAL(
-					"{non-empty}",
-					System::Get().Evaluate( "choose{empty}{non-empty}{some operators}" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

@@ -12,51 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_FrontPullCharacterOperation_ )
-
-	#include "om/operations/pull_operation.hpp"
-
-// MARK: Om::Operations::FrontPullCharacterOperation
-
-	#define Type_ \
-	Om::Operations::FrontPullCharacterOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_FrontPullCharacterOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
-			new PullOperation<
-				Operator,
-				FrontPullCharacterOperation
-			>
-		)
-	);
-}
-
-template< typename TheQueue >
-inline void Type_::Pull(
-	Operator & theOperator,
-	TheQueue & theQueue
-) {
-	theOperator.FrontGiveSegment< boost::locale::boundary::character >( theQueue );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_FrontPullCharacterOperation_ )
 
 	#include "om/operations/front_pull_character_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -140,5 +102,41 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/operations/pull_operation.hpp"
+
+// MARK: - Om::Operations::FrontPullCharacterOperation
+
+	#define Type_ \
+	Om::Operations::FrontPullCharacterOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_FrontPullCharacterOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	theEvaluation.TakeOperation(
+		std::auto_ptr< Operation >(
+			new PullOperation<
+				Operator,
+				FrontPullCharacterOperation
+			>
+		)
+	);
+}
+
+template< typename TheQueue >
+inline void Type_::Pull(
+	Operator & theOperator,
+	TheQueue & theQueue
+) {
+	theOperator.FrontGiveSegment< boost::locale::boundary::character >( theQueue );
+}
+
+	#undef Type_
 
 #endif

@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_ContainerBackSource_ )
+#if !defined( Om_Sources_ContainerBackSource_ )
 
-// MARK: Om::Sources::ContainerBackSource
+	#include "om/sources/container_back_source.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sources {
+
+		SUITE( ContainerBackSource ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sources::ContainerBackSource
 
 	#define Template_ \
 	template< \
@@ -76,8 +96,10 @@ inline void Type_::Swap( ContainerBackSource & theContainerBackSource ) {
 	);
 }
 
-// MARK: -
-// MARK: boost
+	#undef Type_
+	#undef Template_
+
+// MARK: - boost
 
 template<
 	typename ThisItem,
@@ -95,12 +117,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-	#undef Type_
-	#undef Template_
-
-#else
-
-	#include "om/sources/container_back_source.hpp"
 
 #endif

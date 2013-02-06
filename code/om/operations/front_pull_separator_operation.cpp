@@ -12,44 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_FrontPullSeparatorOperation_ )
-
-	#include "om/literal.hpp"
-	#include "om/operations/pull_operation.hpp"
-
-// MARK: Om::Operations::FrontPullSeparatorOperation
-
-	#define Type_ \
-	Om::Operations::FrontPullSeparatorOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_FrontPullSeparatorOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
-			new PullOperation<
-				Literal,
-				FrontPullSeparatorOperation
-			>
-		)
-	);
-}
-
-template< typename TheQueue >
-inline void Type_::Pull(
-	Literal & theLiteral,
-	TheQueue & theQueue
-) {
-	theLiteral.FrontGive< Separator >( theQueue );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_FrontPullSeparatorOperation_ )
 
 	#include "om/operations/front_pull_separator_operation.hpp"
 
@@ -57,8 +20,6 @@ inline void Type_::Pull(
 
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -112,5 +73,42 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/literal.hpp"
+	#include "om/operations/pull_operation.hpp"
+
+// MARK: - Om::Operations::FrontPullSeparatorOperation
+
+	#define Type_ \
+	Om::Operations::FrontPullSeparatorOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_FrontPullSeparatorOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	theEvaluation.TakeOperation(
+		std::auto_ptr< Operation >(
+			new PullOperation<
+				Literal,
+				FrontPullSeparatorOperation
+			>
+		)
+	);
+}
+
+template< typename TheQueue >
+inline void Type_::Pull(
+	Literal & theLiteral,
+	TheQueue & theQueue
+) {
+	theLiteral.FrontGive< Separator >( theQueue );
+}
+
+	#undef Type_
 
 #endif

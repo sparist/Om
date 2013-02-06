@@ -12,11 +12,27 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_DefaultOperation_ )
+#if !defined( Om_DefaultOperation_ )
+
+	#include "om/default_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( DefaultOperation ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/evaluator.hpp"
 
-// MARK: Om::DefaultOperation
+// MARK: - Om::DefaultOperation
 
 	#define Template_ \
 	template< typename ThisImplementation >
@@ -149,9 +165,5 @@ inline bool Type_::TakeQuotedElements(
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/default_operation.hpp"
 
 #endif

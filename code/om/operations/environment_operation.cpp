@@ -12,28 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_EnvironmentOperation_ )
-
-// MARK: Om::Operations::EnvironmentOperation
-
-	#define Type_ \
-	Om::Operations::EnvironmentOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_EnvironmentOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	Lexicon theLexicon;
-	theEvaluation.GetTranslator().GiveElements( theLexicon );
-	theEvaluation.TakeQuotedQueue( theLexicon );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_EnvironmentOperation_ )
 
 	#include "om/operations/environment_operation.hpp"
 
@@ -41,8 +20,6 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -76,5 +53,26 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+// MARK: - Om::Operations::EnvironmentOperation
+
+	#define Type_ \
+	Om::Operations::EnvironmentOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_EnvironmentOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	Lexicon theLexicon;
+	theEvaluation.GetTranslator().GiveElements( theLexicon );
+	theEvaluation.TakeQuotedQueue( theLexicon );
+}
+
+	#undef Type_
 
 #endif

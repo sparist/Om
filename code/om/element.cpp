@@ -12,18 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Element_ )
+#if !defined( Om_Element_ )
 
-// MARK: Om
+	#include "om/element.hpp"
 
-inline Om::Element * Om::new_clone( Element const & theElement ) {
-	return(
-		Copy( theElement ).release()
-	);
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Element ) {}
+
 }
 
-// MARK: -
-// MARK: Om::Element
+	#endif
+
+#else
+
+// MARK: - Om::Element
 
 	#define Type_ \
 	Om::Element
@@ -88,8 +95,12 @@ inline bool Type_::Merge( Separator const & ) {
 
 	#undef Type_
 
-#else
+// MARK: - Om
 
-	#include "om/element.hpp"
+inline Om::Element * Om::new_clone( Element const & theElement ) {
+	return(
+		Copy( theElement ).release()
+	);
+}
 
 #endif

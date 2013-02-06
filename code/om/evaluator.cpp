@@ -12,14 +12,30 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Evaluator_ )
+#if !defined( Om_Evaluator_ )
+
+	#include "om/evaluator.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Environment ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/evaluation.hpp"
 	#include "om/operation.hpp"
 	#include "om/operator.hpp"
 	#include "om/translator.hpp"
 
-// MARK: Om::Evaluator
+// MARK: - Om::Evaluator
 
 	#define Type_ \
 	Om::Evaluator
@@ -314,9 +330,5 @@ inline void Type_::Evaluate( Evaluation & theEvaluation ) {
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/evaluator.hpp"
 
 #endif

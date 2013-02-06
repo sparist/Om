@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_SingletonSource_ )
+#if !defined( Om_Sources_SingletonSource_ )
 
-// MARK: Om::Sources::SingletonSource
+	#include "om/sources/singleton_source.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sources {
+
+		SUITE( SingletonSource ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sources::SingletonSource
 
 	#define Template_ \
 	template< typename ThisItem >
@@ -71,8 +91,7 @@ inline void Type_::Swap( SingletonSource & theSingletonSource ) {
 	#undef Type_
 	#undef Template_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template< typename ThisItem >
 inline void boost::swap(
@@ -81,9 +100,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/sources/singleton_source.hpp"
 
 #endif

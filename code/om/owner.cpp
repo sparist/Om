@@ -12,9 +12,147 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Owner_ )
+#if !defined( Om_Owner_ )
 
-// MARK: Om::Owner
+	#include "om/owner.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/default_copyable.hpp"
+		#include "om/shareable.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Owner ) {
+
+		namespace {
+
+			class TestValue:
+			public DefaultCopyable< TestValue >,
+			public Shareable<> {
+			public:
+
+				explicit TestValue( int const theNumber ):
+				thisNumber( theNumber ) {}
+
+				bool operator ==( TestValue const theTestValue ) const {
+					return( this->thisNumber == theTestValue.thisNumber );
+				}
+
+				int thisNumber;
+
+			};
+
+		}
+
+		TEST( LazinessTest ) {
+			Owner< TestValue > theFirst(
+				std::auto_ptr< TestValue >(
+					new TestValue( 1 )
+				)
+			);
+			assert( theFirst );
+
+			Owner< TestValue > const & theConstFirst = theFirst;
+			TestValue const & theFirstValue = *theConstFirst;
+
+			Owner< TestValue > theSecond( theFirst );
+
+			Owner< TestValue > const & theConstSecond = theSecond;
+			TestValue const & theSecondValue = *theConstSecond;
+
+			CHECK_EQUAL(
+				&theFirstValue,
+				&theSecondValue
+			);
+		}
+
+		TEST( CopyTest ) {
+			Owner< TestValue > theFirst(
+				std::auto_ptr< TestValue >(
+					new TestValue( 1 )
+				)
+			);
+			assert( theFirst );
+
+			TestValue & theFirstValue = *theFirst;
+			CHECK_EQUAL(
+				1,
+				theFirstValue.thisNumber
+			);
+			theFirstValue.thisNumber = 2;
+			CHECK_EQUAL(
+				2,
+				theFirstValue.thisNumber
+			);
+
+			Owner< TestValue > theSecond( theFirst );
+
+			TestValue & theSecondValue = *theSecond;
+			CHECK_EQUAL(
+				2,
+				theFirstValue.thisNumber
+			);
+			CHECK_EQUAL(
+				2,
+				theSecondValue.thisNumber
+			);
+
+			theSecondValue.thisNumber = 3;
+			theFirstValue.thisNumber = 4;
+
+			Owner< TestValue > theThird( theFirst );
+			Owner< TestValue > theFourth( theThird );
+
+			TestValue & theThirdValue = *theThird;
+			Owner< TestValue > const & theConstFourth = theFourth;
+			TestValue const & theFourthValue = *theConstFourth;
+			CHECK_EQUAL(
+				4,
+				theFirstValue.thisNumber
+			);
+			CHECK_EQUAL(
+				3,
+				theSecondValue.thisNumber
+			);
+			CHECK_EQUAL(
+				4,
+				theThirdValue.thisNumber
+			);
+			CHECK_EQUAL(
+				4,
+				theFourthValue.thisNumber
+			);
+
+			theThirdValue.thisNumber = 5;
+			CHECK_EQUAL(
+				4,
+				theFirstValue.thisNumber
+			);
+			CHECK_EQUAL(
+				3,
+				theSecondValue.thisNumber
+			);
+			CHECK_EQUAL(
+				5,
+				theThirdValue.thisNumber
+			);
+			CHECK_EQUAL(
+				4,
+				theFourthValue.thisNumber
+			);
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Owner
 
 	#define Template_ \
 	template< typename ThisValue >
@@ -151,8 +289,7 @@ inline void Type_::UncomparableBoolean() const {}
 	#undef Type_
 	#undef Template_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template< typename ThisValue >
 inline void boost::swap(
@@ -161,145 +298,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/owner.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/default_copyable.hpp"
-		#include "om/shareable.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	SUITE( Owner ) {
-
-		namespace {
-
-			class TestValue:
-			public DefaultCopyable< TestValue >,
-			public Shareable<> {
-			public:
-
-				explicit TestValue( int const theNumber ):
-				thisNumber( theNumber ) {}
-
-				bool operator ==( TestValue const theTestValue ) const {
-					return( this->thisNumber == theTestValue.thisNumber );
-				}
-
-				int thisNumber;
-
-			};
-
-		}
-
-		TEST( LazinessTest ) {
-			Owner< TestValue > theFirst(
-				std::auto_ptr< TestValue >(
-					new TestValue( 1 )
-				)
-			);
-			assert( theFirst );
-
-			Owner< TestValue > const & theConstFirst = theFirst;
-			TestValue const & theFirstValue = *theConstFirst;
-
-			Owner< TestValue > theSecond( theFirst );
-
-			Owner< TestValue > const & theConstSecond = theSecond;
-			TestValue const & theSecondValue = *theConstSecond;
-
-			CHECK_EQUAL(
-				&theFirstValue,
-				&theSecondValue
-			);
-		}
-
-		TEST( CopyTest ) {
-			Owner< TestValue > theFirst(
-				std::auto_ptr< TestValue >(
-					new TestValue( 1 )
-				)
-			);
-			assert( theFirst );
-
-			TestValue & theFirstValue = *theFirst;
-			CHECK_EQUAL(
-				1,
-				theFirstValue.thisNumber
-			);
-			theFirstValue.thisNumber = 2;
-			CHECK_EQUAL(
-				2,
-				theFirstValue.thisNumber
-			);
-
-			Owner< TestValue > theSecond( theFirst );
-
-			TestValue & theSecondValue = *theSecond;
-			CHECK_EQUAL(
-				2,
-				theFirstValue.thisNumber
-			);
-			CHECK_EQUAL(
-				2,
-				theSecondValue.thisNumber
-			);
-
-			theSecondValue.thisNumber = 3;
-			theFirstValue.thisNumber = 4;
-
-			Owner< TestValue > theThird( theFirst );
-			Owner< TestValue > theFourth( theThird );
-
-			TestValue & theThirdValue = *theThird;
-			Owner< TestValue > const & theConstFourth = theFourth;
-			TestValue const & theFourthValue = *theConstFourth;
-			CHECK_EQUAL(
-				4,
-				theFirstValue.thisNumber
-			);
-			CHECK_EQUAL(
-				3,
-				theSecondValue.thisNumber
-			);
-			CHECK_EQUAL(
-				4,
-				theThirdValue.thisNumber
-			);
-			CHECK_EQUAL(
-				4,
-				theFourthValue.thisNumber
-			);
-
-			theThirdValue.thisNumber = 5;
-			CHECK_EQUAL(
-				4,
-				theFirstValue.thisNumber
-			);
-			CHECK_EQUAL(
-				3,
-				theSecondValue.thisNumber
-			);
-			CHECK_EQUAL(
-				5,
-				theThirdValue.thisNumber
-			);
-			CHECK_EQUAL(
-				4,
-				theFourthValue.thisNumber
-			);
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

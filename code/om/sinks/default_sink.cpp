@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sinks_DefaultSink_ )
+#if !defined( Om_Sinks_DefaultSink_ )
 
-// MARK: Om::Sinks::DefaultSink
+	#include "om/sinks/default_sink.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sinks {
+
+		SUITE( DefaultSink ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sinks::DefaultSink
 
 	#define Template_ \
 	template< \
@@ -55,9 +75,5 @@ inline ThisImplementation Type_::operator ++( int ) {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/sinks/default_sink.hpp"
 
 #endif

@@ -12,26 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_SystemOperation_ )
-
-// MARK: Om::Operations::SystemOperation
-
-	#define Type_ \
-	Om::Operations::SystemOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_SystemOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	theEvaluation.TakeQuotedQueue( System::Get().GetLexicon() );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_SystemOperation_ )
 
 	#include "om/operations/system_operation.hpp"
 
@@ -39,8 +20,6 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 
 		#include "om/system.hpp"
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -62,5 +41,24 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+// MARK: - Om::Operations::SystemOperation
+
+	#define Type_ \
+	Om::Operations::SystemOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_SystemOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	theEvaluation.TakeQuotedQueue( System::Get().GetLexicon() );
+}
+
+	#undef Type_
 
 #endif

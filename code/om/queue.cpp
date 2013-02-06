@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Queue_ )
+#if !defined( Om_Queue_ )
 
-// MARK: Om::Queue
+	#include "om/queue.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Queue ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Queue
 
 	#define Type_ \
 	Om::Queue
@@ -164,9 +180,5 @@ inline void Type_::TakeQuotedElements( Queue const & ) {
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/queue.hpp"
 
 #endif

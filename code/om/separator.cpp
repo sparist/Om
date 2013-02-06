@@ -12,9 +12,51 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Separator_ )
+#if !defined( Om_Separator_ )
 
-// MARK: Om::Separator
+	#include "om/separator.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/writer.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Separator ) {
+
+		TEST( Read ) {
+			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
+			std::string theResult;
+			{
+				Sinks::CodePointSink<
+					std::back_insert_iterator< std::string >
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
+				Writer theWriter( theCodePointSink );
+
+				Sources::CodePointSource<> theCodePointSource( theCode );
+				Parser theParser( theCodePointSource );
+				Separator theSeparator;
+				theSeparator.ReadElements( theParser );
+				theSeparator.GiveElements( theWriter );
+			}
+			CHECK_EQUAL(
+				"\n\t   \n",
+				theResult
+			);
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Separator
 
 	#define Type_ \
 	Om::Separator
@@ -134,8 +176,7 @@ inline void Type_::TakeSeparatorSymbol(
 
 	#undef Type_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<>
 inline void boost::swap(
@@ -144,49 +185,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/separator.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/writer.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	SUITE( Separator ) {
-
-		TEST( Read ) {
-			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
-			std::string theResult;
-			{
-				Sinks::CodePointSink<
-					std::back_insert_iterator< std::string >
-				> theCodePointSink(
-					std::back_inserter( theResult )
-				);
-				Writer theWriter( theCodePointSink );
-
-				Sources::CodePointSource<> theCodePointSource( theCode );
-				Parser theParser( theCodePointSource );
-				Separator theSeparator;
-				theSeparator.ReadElements( theParser );
-				theSeparator.GiveElements( theWriter );
-			}
-			CHECK_EQUAL(
-				"\n\t   \n",
-				theResult
-			);
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

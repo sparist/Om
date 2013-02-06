@@ -12,9 +12,79 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_FillOperation_ )
+#if !defined( Om_Operations_FillOperation_ )
 
-// MARK: Om::Operations::FillOperation
+	#include "om/operations/fill_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( FillOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{fill}",
+					System::Get().Evaluate( "drop find {fill} system" )
+				);
+			}
+
+			TEST( General ) {
+				CHECK_EQUAL(
+					(
+						"{"
+						"a{A}\n"
+						"b{B}\n"
+						"c{C}"
+						"}{Unused}"
+					),
+					System::Get().Evaluate( "fill{a b{B} c}{A}{C}{Unused}" )
+				);
+
+				CHECK_EQUAL(
+					"{}{A}{B}",
+					System::Get().Evaluate( "fill{}{A}{B}" )
+				);
+
+				CHECK_EQUAL(
+					"{{Used}}{A}{B}",
+					System::Get().Evaluate( "fill{{Used}}{A}{B}" )
+				);
+			}
+			
+			TEST( EarlyTermination ) {
+				CHECK_EQUAL(
+					(
+						"fill{"
+						"a{A}\n"
+						"b{B}\n"
+						"c"
+						"}"
+					),
+					System::Get().Evaluate( "fill{a b{B} c}{A}}{C}{Unused}" )
+				);
+
+				CHECK_EQUAL(
+					"fill",
+					System::Get().Evaluate( "fill}" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Operations::FillOperation
 
 	#define Type_ \
 	Om::Operations::FillOperation
@@ -98,77 +168,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/fill_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( FillOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{fill}",
-					System::Get().Evaluate( "drop find {fill} system" )
-				);
-			}
-
-			TEST( General ) {
-				CHECK_EQUAL(
-					(
-						"{"
-						"a{A}\n"
-						"b{B}\n"
-						"c{C}"
-						"}{Unused}"
-					),
-					System::Get().Evaluate( "fill{a b{B} c}{A}{C}{Unused}" )
-				);
-
-				CHECK_EQUAL(
-					"{}{A}{B}",
-					System::Get().Evaluate( "fill{}{A}{B}" )
-				);
-
-				CHECK_EQUAL(
-					"{{Used}}{A}{B}",
-					System::Get().Evaluate( "fill{{Used}}{A}{B}" )
-				);
-			}
-			
-			TEST( EarlyTermination ) {
-				CHECK_EQUAL(
-					(
-						"fill{"
-						"a{A}\n"
-						"b{B}\n"
-						"c"
-						"}"
-					),
-					System::Get().Evaluate( "fill{a b{B} c}{A}}{C}{Unused}" )
-				);
-
-				CHECK_EQUAL(
-					"fill",
-					System::Get().Evaluate( "fill}" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

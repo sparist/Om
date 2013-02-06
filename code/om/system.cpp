@@ -12,12 +12,28 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_System_ )
+#if !defined( Om_System_ )
+
+	#include "om/system.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( System ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/lexicon.hpp"
 	#include "om/operator.hpp"
 
-// MARK: Om::System
+// MARK: - Om::System
 
 	#define Type_ \
 	Om::System
@@ -115,9 +131,5 @@ inline Type_::System():
 thisMap() {}
 
 	#undef Type_
-
-#else
-
-	#include "om/system.hpp"
 
 #endif

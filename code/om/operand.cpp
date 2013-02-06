@@ -12,12 +12,28 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operand_ )
+#if !defined( Om_Operand_ )
+
+	#include "om/operand.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Operand ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/literal.hpp"
 	#include "om/null.hpp"
 
-// MARK: Om::Operand
+// MARK: - Om::Operand
 
 	#define Type_ \
 	Om::Operand
@@ -175,8 +191,7 @@ inline void Type_::TakeSeparator( TheSeparator & ) {}
 
 	#undef Type_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<>
 inline void boost::swap(
@@ -185,9 +200,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/operand.hpp"
 
 #endif

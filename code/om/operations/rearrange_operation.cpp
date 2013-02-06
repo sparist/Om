@@ -12,56 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_RearrangeOperation_ )
-
-	#include "om/operations/define_operation.hpp"
-	#include "om/operations/dequote_operation.hpp"
-	#include "om/operations/expression_back_push_operation.hpp"
-	#include "om/operations/fill_operation.hpp"
-	#include "om/operations/inject_operation.hpp"
-	#include "om/operations/quote_operation.hpp"
-	#include "om/operations/skip_operation.hpp"
-
-// MARK: Om::Operations::RearrangeOperation
-
-	#define Type_ \
-	Om::Operations::RearrangeOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_RearrangeOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	// define swap skip {dequote inject {quote} ->expression {fill} quote}
-	DefineOperation::Give( theEvaluation );
-	SwapOperation::Give( theEvaluation );
-	SkipOperation::Give( theEvaluation );
-	Expression theExpression;
-	theExpression.TakeOperator( DequoteOperation::GetOperator() );
-	theExpression.TakeOperator( InjectOperation::GetOperator() );
-	theExpression.TakeQuotedQueue( QuoteOperation::GetOperator() );
-	{
-		Operator theOperator( ExpressionFrontPushOperation::GetName() );
-		theExpression.TakeOperator( theOperator );
-	}
-	theExpression.TakeQuotedQueue( FillOperation::GetOperator() );
-	theExpression.TakeOperator( QuoteOperation::GetOperator() );
-	theEvaluation.TakeQuotedQueue( theExpression );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_RearrangeOperation_ )
 
 	#include "om/operations/rearrange_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -110,5 +67,46 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/operations/define_operation.hpp"
+	#include "om/operations/dequote_operation.hpp"
+	#include "om/operations/expression_back_push_operation.hpp"
+	#include "om/operations/fill_operation.hpp"
+	#include "om/operations/inject_operation.hpp"
+	#include "om/operations/quote_operation.hpp"
+	#include "om/operations/skip_operation.hpp"
+
+// MARK: - Om::Operations::RearrangeOperation
+
+	#define Type_ \
+	Om::Operations::RearrangeOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_RearrangeOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	// define swap skip {dequote inject {quote} ->expression {fill} quote}
+	DefineOperation::Give( theEvaluation );
+	SwapOperation::Give( theEvaluation );
+	SkipOperation::Give( theEvaluation );
+	Expression theExpression;
+	theExpression.TakeOperator( DequoteOperation::GetOperator() );
+	theExpression.TakeOperator( InjectOperation::GetOperator() );
+	theExpression.TakeQuotedQueue( QuoteOperation::GetOperator() );
+	{
+		Operator theOperator( ExpressionFrontPushOperation::GetName() );
+		theExpression.TakeOperator( theOperator );
+	}
+	theExpression.TakeQuotedQueue( FillOperation::GetOperator() );
+	theExpression.TakeOperator( QuoteOperation::GetOperator() );
+	theEvaluation.TakeQuotedQueue( theExpression );
+}
+
+	#undef Type_
 
 #endif

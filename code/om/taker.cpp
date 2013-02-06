@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Taker_ )
+#if !defined( Om_Taker_ )
 
-// MARK: Om::Taker
+	#include "om/taker.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Taker ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Taker
 
 	#define Template_ \
 	template< typename ThisImplementation >
@@ -43,13 +59,7 @@ inline void Type_::Take( ThisImplementation const & theTaker ) {
 	static_cast< ThisImplementation & >( *this ) = theTaker;
 }
 
-// MARK: private (non-static)
-
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/taker.hpp"
 
 #endif

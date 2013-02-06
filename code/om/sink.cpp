@@ -12,11 +12,27 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sink_ )
+#if !defined( Om_Sink_ )
+
+	#include "om/sink.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Sink ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/external.hpp"
 
-// MARK: Om::Sink
+// MARK: - Om::Sink
 
 	#define Template_ \
 	template< typename ThisItem >
@@ -55,9 +71,5 @@ inline void Type_::Push( ThisItem & ) {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/sink.hpp"
 
 #endif

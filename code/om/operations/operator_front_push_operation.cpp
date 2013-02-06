@@ -12,11 +12,40 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_OperatorFrontPushOperation_ )
+#if !defined( Om_Operations_OperatorFrontPushOperation_ )
+
+	#include "om/operations/operator_front_push_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( OperatorFrontPushOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{->operator}",
+					System::Get().Evaluate( "drop find {->operator} system" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/operations/front_push_operation.hpp"
 
-// MARK: Om::Operations::OperatorFrontPushOperation
+// MARK: - Om::Operations::OperatorFrontPushOperation
 
 	#define Type_ \
 	Om::Operations::OperatorFrontPushOperation
@@ -39,36 +68,5 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/operator_front_push_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( OperatorFrontPushOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{->operator}",
-					System::Get().Evaluate( "drop find {->operator} system" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

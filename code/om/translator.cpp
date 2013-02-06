@@ -12,12 +12,28 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Translator_ )
+#if !defined( Om_Translator_ )
+
+	#include "om/translator.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Translator ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/writer.hpp"
 	#include "om/evaluator.hpp"
 
-// MARK: Om::Translator
+// MARK: - Om::Translator
 
 	#define Type_ \
 	Om::Translator
@@ -79,9 +95,5 @@ inline bool Type_::Translate(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/translator.hpp"
 
 #endif

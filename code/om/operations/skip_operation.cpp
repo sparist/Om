@@ -12,9 +12,55 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_SkipOperation_ )
+#if !defined( Om_Operations_SkipOperation_ )
 
-// MARK: Om::Operations::SkipOperation
+	#include "om/operations/skip_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( SkipOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{skip}",
+					System::Get().Evaluate( "drop find {skip} system" )
+				);
+			}
+
+			TEST( General ) {
+				CHECK_EQUAL(
+					"{A}{B}{B}",
+					System::Get().Evaluate( "skip{copy}{A}{B}" )
+				);
+
+				CHECK_EQUAL(
+					"{A}{}{}",
+					System::Get().Evaluate( "skip{copy}{A}{}" )
+				);
+
+				CHECK_EQUAL(
+					"{A}{B}",
+					System::Get().Evaluate( "skip{}{A}{B}" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Operations::SkipOperation
 
 	#define Type_ \
 	Om::Operations::SkipOperation
@@ -70,53 +116,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/skip_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( SkipOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{skip}",
-					System::Get().Evaluate( "drop find {skip} system" )
-				);
-			}
-
-			TEST( General ) {
-				CHECK_EQUAL(
-					"{A}{B}{B}",
-					System::Get().Evaluate( "skip{copy}{A}{B}" )
-				);
-
-				CHECK_EQUAL(
-					"{A}{}{}",
-					System::Get().Evaluate( "skip{copy}{A}{}" )
-				);
-
-				CHECK_EQUAL(
-					"{A}{B}",
-					System::Get().Evaluate( "skip{}{A}{B}" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

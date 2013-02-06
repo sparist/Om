@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Form_ )
+#if !defined( Om_Form_ )
 
-// MARK: Om::Form
+	#include "om/form.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Form ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Form
 
 	#define Type_ \
 	Om::Form
@@ -157,8 +173,7 @@ inline void Type_::GiveElements(
 
 	#undef Type_
 
-// MARK: -
-// MARK: Om::Form::ElementRange
+// MARK: - Om::Form::ElementRange
 
 	#define Type_ \
 	Om::Form::ElementRange
@@ -203,8 +218,7 @@ inline void Type_::Pop() {
 
 	#undef Type_
 
-// MARK: -
-// MARK: Om::Form::OperandRange
+// MARK: - Om::Form::OperandRange
 
 	#define Type_ \
 	Om::Form::OperandRange
@@ -225,8 +239,7 @@ Sources::CollectionFrontSource<
 
 	#undef Type_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<>
 inline void boost::swap(
@@ -235,9 +248,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/form.hpp"
 
 #endif

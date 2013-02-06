@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Copy_ )
+#if !defined( Om_Copy_ )
 
-// MARK: Om
+	#include "om/copy.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Copy ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om
 
 template< typename TheCopyable >
 inline std::auto_ptr< TheCopyable > Om::Copy( TheCopyable const & theCopyable ) {
@@ -26,9 +42,5 @@ inline std::auto_ptr< TheCopyable > Om::Copy( TheCopyable const & theCopyable ) 
 		)
 	);
 }
-
-#else
-
-	#include "om/copy.hpp"
 
 #endif

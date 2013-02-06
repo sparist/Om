@@ -12,11 +12,27 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Evaluation_ )
+#if !defined( Om_Evaluation_ )
+
+	#include "om/evaluation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Environment ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/evaluator.hpp"
 
-// MARK: Om::Evaluation
+// MARK: - Om::Evaluation
 
 	#define Type_ \
 	Om::Evaluation
@@ -100,9 +116,5 @@ inline void Type_::TakeQueue( TheQueue & theQueue ) {
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/evaluation.hpp"
 
 #endif

@@ -12,11 +12,53 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sinks_CodePointSink_ )
+#if !defined( Om_Sinks_CodePointSink_ )
+
+	#include "om/sinks/code_point_sink.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sinks {
+
+		SUITE( CodePointSink ) {
+
+			TEST( General ) {
+				typedef std::back_insert_iterator< std::string > Iterator;
+				std::string theString;
+				Iterator theIterator( theString );
+				CodePointSink< Iterator > theSink( theIterator );
+				theSink.Push( 510U );
+				CHECK_EQUAL(
+					"\xC7\xBE",
+					theString
+				);
+				theSink.Push( 65U );
+				CHECK_EQUAL(
+					(
+						"\xC7\xBE"
+						"A"
+					),
+					theString
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/utf8.hpp"
 
-// MARK: Om::Sinks::CodePointSink
+// MARK: - Om::Sinks::CodePointSink
 
 	#define Template_ \
 	template< typename ThisCodeUnitIterator >
@@ -53,8 +95,10 @@ inline void Type_::Swap( CodePointSink & theCodePointSink ) {
 	return( *this );
 }
 
-// MARK: -
-// MARK: boost
+	#undef Type_
+	#undef Template_
+
+// MARK: - boost
 
 template< typename ThisCodeUnitIterator >
 inline void boost::swap(
@@ -63,52 +107,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-	#undef Type_
-	#undef Template_
-
-#else
-
-	#include "om/sinks/code_point_sink.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Sinks {
-
-		SUITE( CodePointSink ) {
-
-			TEST( General ) {
-				typedef std::back_insert_iterator< std::string > Iterator;
-				std::string theString;
-				Iterator theIterator( theString );
-				CodePointSink< Iterator > theSink( theIterator );
-				theSink.Push( 510U );
-				CHECK_EQUAL(
-					"\xC7\xBE",
-					theString
-				);
-				theSink.Push( 65U );
-				CHECK_EQUAL(
-					(
-						"\xC7\xBE"
-						"A"
-					),
-					theString
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

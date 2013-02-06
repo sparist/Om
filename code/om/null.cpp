@@ -12,12 +12,28 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Null_ )
+#if !defined( Om_Null_ )
+
+	#include "om/null.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Null ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/parser.hpp"
 	#include "om/sources/empty_source.hpp"
 
-// MARK: Om::Null
+// MARK: - Om::Null
 
 	#define Type_ \
 	Om::Null
@@ -113,8 +129,7 @@ inline void Type_::TakeSeparator( TheSeparator & ) {}
 
 	#undef Type_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<>
 inline void boost::swap(
@@ -123,9 +138,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/null.hpp"
 
 #endif

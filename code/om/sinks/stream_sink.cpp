@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sinks_StreamSink_ )
+#if !defined( Om_Sinks_StreamSink_ )
 
-// MARK: Om::Sinks::StreamSink
+	#include "om/sinks/stream_sink.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sinks {
+
+		SUITE( StreamSink ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sinks::StreamSink
 
 	#define Template_ \
 	template< typename ThisItem >
@@ -33,9 +53,5 @@ IteratorSink<
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/sinks/stream_sink.hpp"
 
 #endif

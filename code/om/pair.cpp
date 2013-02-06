@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Pair_ )
+#if !defined( Om_Pair_ )
 
-// MARK: Om::Pair
+	#include "om/pair.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Pair ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Pair
 
 	#define Type_ \
 	Om::Pair
@@ -100,9 +116,5 @@ inline void Type_::GiveElements(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/pair.hpp"
 
 #endif

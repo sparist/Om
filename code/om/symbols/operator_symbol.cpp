@@ -13,3 +13,19 @@
 */
 
 #include "om/symbols/operator_symbol.hpp"
+
+#if defined( Om_Macros_Test_ )
+
+	#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Symbols {
+
+		SUITE( OperatorSymbol ) {}
+
+	}
+
+}
+
+#endif

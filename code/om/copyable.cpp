@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Copyable_ )
+#if !defined( Om_Copyable_ )
 
-// MARK: Om::Copyable
+	#include "om/copyable.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Copyable ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Copyable
 
 	#define Type_ \
 	Om::Copyable
@@ -33,9 +49,5 @@ inline Type_ * Type_::Copy() const {
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/copyable.hpp"
 
 #endif

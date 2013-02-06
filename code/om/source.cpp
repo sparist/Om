@@ -12,11 +12,27 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Source_ )
+#if !defined( Om_Source_ )
+
+	#include "om/source.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Source ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/external.hpp"
 
-// MARK: Om::Source
+// MARK: - Om::Source
 
 	#define Template_ \
 	template< typename ThisItem >
@@ -90,9 +106,5 @@ inline void Type_::UncomparableBoolean() const {}
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/source.hpp"
 
 #endif

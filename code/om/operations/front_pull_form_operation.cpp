@@ -12,52 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_FrontPullFormOperation_ )
-
-	#include "om/expression.hpp"
-	#include "om/operations/pull_operation.hpp"
-
-// MARK: Om::Operations::FrontPullFormOperation
-
-	#define Type_ \
-	Om::Operations::FrontPullFormOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_FrontPullFormOperation_GetName_() );
-}
-
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
-			new PullOperation<
-				Expression,
-				FrontPullFormOperation
-			>
-		)
-	);
-}
-
-template< typename TheQueue >
-inline void Type_::Pull(
-	Expression & theExpression,
-	TheQueue & theQueue
-) {
-	theExpression.FrontGiveForm( theQueue );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_FrontPullFormOperation_ )
 
 	#include "om/operations/front_pull_form_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -111,5 +72,42 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/expression.hpp"
+	#include "om/operations/pull_operation.hpp"
+
+// MARK: - Om::Operations::FrontPullFormOperation
+
+	#define Type_ \
+	Om::Operations::FrontPullFormOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_FrontPullFormOperation_GetName_() );
+}
+
+inline void Type_::Give( Evaluation & theEvaluation ) {
+	theEvaluation.TakeOperation(
+		std::auto_ptr< Operation >(
+			new PullOperation<
+				Expression,
+				FrontPullFormOperation
+			>
+		)
+	);
+}
+
+template< typename TheQueue >
+inline void Type_::Pull(
+	Expression & theExpression,
+	TheQueue & theQueue
+) {
+	theExpression.FrontGiveForm( theQueue );
+}
+
+	#undef Type_
 
 #endif

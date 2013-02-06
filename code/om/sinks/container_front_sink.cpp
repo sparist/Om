@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sinks_ContainerFrontSink_ )
+#if !defined( Om_Sinks_ContainerFrontSink_ )
 
-// MARK: Om::Sinks::ContainerFrontSink
+	#include "om/sinks/container_front_sink.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sinks {
+
+		SUITE( ContainerFrontSink ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sinks::ContainerFrontSink
 
 	#define Template_ \
 	template< \
@@ -57,8 +77,7 @@ inline void Type_::Swap( ContainerFrontSink & theContainerFrontSink ) {
 	#undef Type_
 	#undef Template_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<
 	typename ThisItem,
@@ -76,9 +95,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/sinks/container_front_sink.hpp"
 
 #endif

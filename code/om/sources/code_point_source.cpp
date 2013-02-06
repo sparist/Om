@@ -12,11 +12,66 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_CodePointSource_ )
+#if !defined( Om_Sources_CodePointSource_ )
+
+	#include "om/sources/code_point_source.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sources {
+
+		SUITE( CodePointSource ) {
+
+			TEST( General ) {
+				std::string theString(
+					"\xC7\xBE"
+					"A"
+				);
+				CodePointSource< std::string::const_iterator > theSource(
+					theString.begin(),
+					theString.end()
+				);
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					510U,
+					*theSource
+				);
+				theSource.Pop();
+				CHECK_EQUAL(
+					false,
+					!theSource
+				);
+				CHECK_EQUAL(
+					65U,
+					*theSource
+				);
+				theSource.Pop();
+				CHECK_EQUAL(
+					true,
+					!theSource
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/utf8.hpp"
 
-// MARK: Om::Sources::CodePointSource
+// MARK: - Om::Sources::CodePointSource
 
 	#define Template_ \
 	template< typename ThisCodeUnitIterator >
@@ -99,8 +154,7 @@ inline void Type_::Swap( CodePointSource & theCodePointSource ) {
 	#undef Type_
 	#undef Template_
 
-// MARK: -
-// MARK: Om::Sources::CodePointSource< char const * >
+// MARK: - Om::Sources::CodePointSource< char const * >
 
 	#define Type_ \
 	Om::Sources::CodePointSource< char const * >
@@ -113,8 +167,9 @@ CodePointSource< CodeUnitSource >(
 	CodeUnitSource( "" )
 ) {}
 
-// MARK: -
-// MARK: boost
+	#undef Type_
+
+// MARK: - boost
 
 template< typename ThisCodeUnitIterator >
 inline void boost::swap(
@@ -123,64 +178,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-	#undef Type_
-
-#else
-
-	#include "om/sources/code_point_source.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Sources {
-
-		SUITE( CodePointSource ) {
-
-			TEST( General ) {
-				std::string theString(
-					"\xC7\xBE"
-					"A"
-				);
-				CodePointSource< std::string::const_iterator > theSource(
-					theString.begin(),
-					theString.end()
-				);
-				CHECK_EQUAL(
-					false,
-					!theSource
-				);
-				CHECK_EQUAL(
-					510U,
-					*theSource
-				);
-				theSource.Pop();
-				CHECK_EQUAL(
-					false,
-					!theSource
-				);
-				CHECK_EQUAL(
-					65U,
-					*theSource
-				);
-				theSource.Pop();
-				CHECK_EQUAL(
-					true,
-					!theSource
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

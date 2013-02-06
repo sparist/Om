@@ -12,11 +12,47 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_SwapOperation_ )
+#if !defined( Om_Operations_SwapOperation_ )
+
+	#include "om/operations/swap_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( SwapOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{swap}",
+					System::Get().Evaluate( "drop find {swap} system" )
+				);
+			}
+
+			TEST( Simple ) {
+				CHECK_EQUAL(
+					"{4{5}6}{1{2}3}",
+					System::Get().Evaluate( "swap {1{2}3}{4{5}6}" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/literal.hpp"
 
-// MARK: Om::Operations::SwapOperation
+// MARK: - Om::Operations::SwapOperation
 
 	#define Type_ \
 	Om::Operations::SwapOperation
@@ -73,43 +109,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/swap_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( SwapOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{swap}",
-					System::Get().Evaluate( "drop find {swap} system" )
-				);
-			}
-
-			TEST( Simple ) {
-				CHECK_EQUAL(
-					"{4{5}6}{1{2}3}",
-					System::Get().Evaluate( "swap {1{2}3}{4{5}6}" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

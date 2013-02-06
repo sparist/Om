@@ -12,11 +12,47 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_EvaluateOperation_ )
+#if !defined( Om_Operations_EvaluateOperation_ )
+
+	#include "om/operations/evaluate_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( EvaluateOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{evaluate}",
+					System::Get().Evaluate( "drop find {evaluate} system" )
+				);
+			}
+
+			TEST( Basic ) {
+				CHECK_EQUAL(
+					"{{A}{A}}",
+					System::Get().Evaluate( "evaluate {copy {A}}" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/environment.hpp"
 
-// MARK: Om::Operations::EvaluateOperation
+// MARK: - Om::Operations::EvaluateOperation
 
 	#define Type_ \
 	Om::Operations::EvaluateOperation
@@ -71,43 +107,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/evaluate_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( EvaluateOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{evaluate}",
-					System::Get().Evaluate( "drop find {evaluate} system" )
-				);
-			}
-
-			TEST( Basic ) {
-				CHECK_EQUAL(
-					"{{A}{A}}",
-					System::Get().Evaluate( "evaluate {copy {A}}" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

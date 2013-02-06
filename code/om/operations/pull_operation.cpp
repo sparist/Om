@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_PullOperation_ )
+#if !defined( Om_Operations_PullOperation_ )
 
-// MARK: Om::Operations::PullOperation
+	#include "om/operations/pull_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( PullOperation ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Operations::PullOperation
 
 	#define Template_ \
 	template< \
@@ -101,9 +121,5 @@ inline Om::Operator const & Type_::GetOperator() {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/operations/pull_operation.hpp"
 
 #endif

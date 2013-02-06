@@ -12,84 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_FindOperation_ )
-
-	#include "om/lexicon.hpp"
-
-// MARK: Om::Operations::FindOperation
-
-	#define Type_ \
-	Om::Operations::FindOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_FindOperation_GetName_() );
-}
-
-template< typename TheFindOperation >
-inline void Type_::GiveElements(
-	TheFindOperation & theFindOperation,
-	Queue & theQueue
-) {
-	theQueue.TakeElement( GetOperator() );
-	if( theFindOperation.thisOperator ) {
-		theQueue.TakeQuotedElements( *theFindOperation.thisOperator );
-	}
-}
-
-// MARK: public (non-static)
-
-inline Type_::FindOperation():
-thisOperator() {}
-
-template< typename TheOperand >
-inline bool Type_::TakeOperand(
-	Evaluation & theEvaluation,
-	TheOperand & theOperand
-) {
-	assert( !theOperand.IsEmpty() );
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
-	);
-}
-
-template< typename TheQueue >
-inline bool Type_::TakeQuotedQueue(
-	Evaluation & theEvaluation,
-	TheQueue & theQueue
-) {
-	if( this->thisOperator ) {
-		Lexicon theLexicon;
-		theLexicon.TakeElements( theQueue );
-
-		Expression theExpression;
-		theLexicon.Find( *this->thisOperator ).GiveElements( theExpression );
-
-		theEvaluation.TakeQuotedQueue( theExpression );
-		theEvaluation.TakeQuotedQueue( theLexicon );
-		return( true );
-	}
-	this->thisOperator = boost::in_place();
-	assert( this->thisOperator );
-	this->thisOperator->TakeElements( theQueue );
-	return( false );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_FindOperation_ )
 
 	#include "om/operations/find_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -192,5 +121,74 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+	#include "om/lexicon.hpp"
+
+// MARK: - Om::Operations::FindOperation
+
+	#define Type_ \
+	Om::Operations::FindOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_FindOperation_GetName_() );
+}
+
+template< typename TheFindOperation >
+inline void Type_::GiveElements(
+	TheFindOperation & theFindOperation,
+	Queue & theQueue
+) {
+	theQueue.TakeElement( GetOperator() );
+	if( theFindOperation.thisOperator ) {
+		theQueue.TakeQuotedElements( *theFindOperation.thisOperator );
+	}
+}
+
+// MARK: public (non-static)
+
+inline Type_::FindOperation():
+thisOperator() {}
+
+template< typename TheOperand >
+inline bool Type_::TakeOperand(
+	Evaluation & theEvaluation,
+	TheOperand & theOperand
+) {
+	assert( !theOperand.IsEmpty() );
+	return(
+		this->TakeQuotedQueue(
+			theEvaluation,
+			*theOperand.GetProgram()
+		)
+	);
+}
+
+template< typename TheQueue >
+inline bool Type_::TakeQuotedQueue(
+	Evaluation & theEvaluation,
+	TheQueue & theQueue
+) {
+	if( this->thisOperator ) {
+		Lexicon theLexicon;
+		theLexicon.TakeElements( theQueue );
+
+		Expression theExpression;
+		theLexicon.Find( *this->thisOperator ).GiveElements( theExpression );
+
+		theEvaluation.TakeQuotedQueue( theExpression );
+		theEvaluation.TakeQuotedQueue( theLexicon );
+		return( true );
+	}
+	this->thisOperator = boost::in_place();
+	assert( this->thisOperator );
+	this->thisOperator->TakeElements( theQueue );
+	return( false );
+}
+
+	#undef Type_
 
 #endif

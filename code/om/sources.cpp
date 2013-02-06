@@ -13,3 +13,15 @@
 */
 
 #include "om/sources.hpp"
+
+#if defined( Om_Macros_Test_ )
+
+	#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Sources ) {}
+
+}
+
+#endif

@@ -13,3 +13,15 @@
 */
 
 #include "om/utf8.hpp"
+
+#if defined( Om_Macros_Test_ )
+
+	#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Utf8 ) {}
+
+}
+
+#endif

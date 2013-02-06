@@ -12,11 +12,69 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_DecodeOperation_ )
+#if !defined( Om_Operations_DecodeOperation_ )
+
+	#include "om/operations/decode_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( DecodeOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{decode}",
+					System::Get().Evaluate( "drop find {decode} system" )
+				);
+			}
+
+			TEST( Simple ) {
+				CHECK_EQUAL(
+					"{`{`}` {{}} {quote{s}} }",
+					System::Get().Evaluate( "decode {```{```}``` `{`{`}`}` {quote{s}} }" )
+				);
+
+				CHECK_EQUAL(
+					"{{} {{}} {quote{s}} }",
+					System::Get().Evaluate( "decode {`{`}` {{}} {quote{s}} }" )
+				);
+
+				CHECK_EQUAL(
+					"{ the {end: `} really: } ! }",
+					System::Get().Evaluate( "decode {` the` `{end:` ```}` really:` `}` !` }" )
+				);
+
+				// Test that each remaining encoded Operand Symbol is decoded.
+				CHECK_EQUAL(
+					"{ the {end: } really: }",
+					System::Get().Evaluate( "decode { the {end: `} really: } ! }" )
+				);
+
+				CHECK_EQUAL(
+					"{ the {end: } really: }",
+					System::Get().Evaluate( "decode { the {end: } really: }" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/literal.hpp"
 
-// MARK: Om::Operations::DecodeOperation
+// MARK: - Om::Operations::DecodeOperation
 
 	#define Type_ \
 	Om::Operations::DecodeOperation
@@ -67,65 +125,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/decode_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/system.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( DecodeOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{decode}",
-					System::Get().Evaluate( "drop find {decode} system" )
-				);
-			}
-
-			TEST( Simple ) {
-				CHECK_EQUAL(
-					"{`{`}` {{}} {quote{s}} }",
-					System::Get().Evaluate( "decode {```{```}``` `{`{`}`}` {quote{s}} }" )
-				);
-
-				CHECK_EQUAL(
-					"{{} {{}} {quote{s}} }",
-					System::Get().Evaluate( "decode {`{`}` {{}} {quote{s}} }" )
-				);
-
-				CHECK_EQUAL(
-					"{ the {end: `} really: } ! }",
-					System::Get().Evaluate( "decode {` the` `{end:` ```}` really:` `}` !` }" )
-				);
-
-				// Test that each remaining encoded Operand Symbol is decoded.
-				CHECK_EQUAL(
-					"{ the {end: } really: }",
-					System::Get().Evaluate( "decode { the {end: `} really: } ! }" )
-				);
-
-				CHECK_EQUAL(
-					"{ the {end: } really: }",
-					System::Get().Evaluate( "decode { the {end: } really: }" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

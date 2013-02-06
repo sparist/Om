@@ -12,11 +12,160 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Expression_ )
+#if !defined( Om_Expression_ )
+
+	#include "om/expression.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Expression ) {
+
+		TEST( General ) {
+			CHECK_EQUAL(
+				(
+					"{"
+					"{a}{b}\n"
+					"c{d}"
+					"}"
+				),
+				System::Get().Evaluate( "evaluate {{a}{b}c{d}}" )
+			);
+
+			CHECK_EQUAL(
+				"{c{d}{a}{b}}",
+				System::Get().Evaluate( "evaluate {c{d}{a}{b}}" )
+			);
+
+			CHECK_EQUAL(
+				(
+					"{"
+					"a{b}{c}\n"
+					"d{e}{f}"
+					"}"
+				),
+				System::Get().Evaluate( "evaluate {a{b}{c}d{e}{f}}" )
+			);
+
+			CHECK_EQUAL(
+				"{c}",
+				System::Get().Evaluate( "evaluate {c}" )
+			);
+
+			CHECK_EQUAL(
+				"{{d}}",
+				System::Get().Evaluate( "evaluate {{d}}" )
+			);
+
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "evaluate {}" )
+			);
+		}
+
+		TEST( Equality ) {
+			// Positive match
+			CHECK_EQUAL(
+				(
+					"{"
+					"{"
+					"a{b}{c}\n"
+					"d{e}"
+					"}"
+					"}"
+				),
+				System::Get().Evaluate(
+					"= expression{a{b}{c}d{e}} {"
+					"a{b}{c}\n"
+					"d{e}"
+					"}"
+				)
+			);
+
+			// Positive match
+			CHECK_EQUAL(
+				"{{a{b}{c}}}",
+				System::Get().Evaluate( "= expression{a{b}{c}} {a{b}{c}}" )
+			);
+
+			// Positive match
+			CHECK_EQUAL(
+				"{{a{b}}}",
+				System::Get().Evaluate( "= expression{a{b}} {a{b}}" )
+			);
+
+			// Positive match
+			CHECK_EQUAL(
+				"{{a}}",
+				System::Get().Evaluate( "= expression{a} {a}" )
+			);
+
+			// Positive match
+			CHECK_EQUAL(
+				"{{{a}}}",
+				System::Get().Evaluate( "= expression{{a}}{{a}}" )
+			);
+
+			// Negative match
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "= expression{a{b}{c}} {A{B}{C}}" )
+			);
+
+			// Negative match
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "= expression{} {a{b}{c}}" )
+			);
+
+			// Positive empty match
+			CHECK_EQUAL(
+				"{{}}",
+				System::Get().Evaluate( "= expression{} {}" )
+			);
+		}
+
+		TEST( Read ) {
+			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
+			std::string theResult;
+			{
+				Sinks::CodePointSink<
+					std::back_insert_iterator< std::string >
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
+				Writer theWriter( theCodePointSink );
+
+				Sources::CodePointSource<> theCodePointSource( theCode );
+				Parser theParser( theCodePointSource );
+				Expression theExpression;
+				theExpression.ReadElements( theParser );
+				theExpression.GiveElements( theWriter );
+			}
+			CHECK_EQUAL(
+				(
+					"0{1\n\t {2\n\t } 3\n\t }{4\n\t}\n"
+					"5"
+				),
+				theResult
+			);
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/literal.hpp"
 
-// MARK: Om::Expression
+// MARK: - Om::Expression
 
 	#define Type_ \
 	Om::Expression
@@ -339,8 +488,7 @@ inline Om::Form & Type_::GetFrontTaker() {
 
 	#undef Type_
 
-// MARK: -
-// MARK: Om::Expression::FormRange
+// MARK: - Om::Expression::FormRange
 
 	#define Type_ \
 	Om::Expression::FormRange
@@ -361,8 +509,7 @@ Sources::CollectionFrontSource<
 
 	#undef Type_
 
-// MARK: -
-// MARK: Om::Expression::ElementRange
+// MARK: - Om::Expression::ElementRange
 
 	#define Type_ \
 	Om::Expression::ElementRange
@@ -425,8 +572,7 @@ inline void Type_::Pop() {
 
 	#undef Type_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<>
 inline void boost::swap(
@@ -435,156 +581,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/expression.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/system.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	SUITE( Expression ) {
-
-		TEST( General ) {
-			CHECK_EQUAL(
-				(
-					"{"
-					"{a}{b}\n"
-					"c{d}"
-					"}"
-				),
-				System::Get().Evaluate( "evaluate {{a}{b}c{d}}" )
-			);
-
-			CHECK_EQUAL(
-				"{c{d}{a}{b}}",
-				System::Get().Evaluate( "evaluate {c{d}{a}{b}}" )
-			);
-
-			CHECK_EQUAL(
-				(
-					"{"
-					"a{b}{c}\n"
-					"d{e}{f}"
-					"}"
-				),
-				System::Get().Evaluate( "evaluate {a{b}{c}d{e}{f}}" )
-			);
-
-			CHECK_EQUAL(
-				"{c}",
-				System::Get().Evaluate( "evaluate {c}" )
-			);
-
-			CHECK_EQUAL(
-				"{{d}}",
-				System::Get().Evaluate( "evaluate {{d}}" )
-			);
-
-			CHECK_EQUAL(
-				"{}",
-				System::Get().Evaluate( "evaluate {}" )
-			);
-		}
-
-		TEST( Equality ) {
-			// Positive match
-			CHECK_EQUAL(
-				(
-					"{"
-					"{"
-					"a{b}{c}\n"
-					"d{e}"
-					"}"
-					"}"
-				),
-				System::Get().Evaluate(
-					"= expression{a{b}{c}d{e}} {"
-					"a{b}{c}\n"
-					"d{e}"
-					"}"
-				)
-			);
-
-			// Positive match
-			CHECK_EQUAL(
-				"{{a{b}{c}}}",
-				System::Get().Evaluate( "= expression{a{b}{c}} {a{b}{c}}" )
-			);
-
-			// Positive match
-			CHECK_EQUAL(
-				"{{a{b}}}",
-				System::Get().Evaluate( "= expression{a{b}} {a{b}}" )
-			);
-
-			// Positive match
-			CHECK_EQUAL(
-				"{{a}}",
-				System::Get().Evaluate( "= expression{a} {a}" )
-			);
-
-			// Positive match
-			CHECK_EQUAL(
-				"{{{a}}}",
-				System::Get().Evaluate( "= expression{{a}}{{a}}" )
-			);
-
-			// Negative match
-			CHECK_EQUAL(
-				"{}",
-				System::Get().Evaluate( "= expression{a{b}{c}} {A{B}{C}}" )
-			);
-
-			// Negative match
-			CHECK_EQUAL(
-				"{}",
-				System::Get().Evaluate( "= expression{} {a{b}{c}}" )
-			);
-
-			// Positive empty match
-			CHECK_EQUAL(
-				"{{}}",
-				System::Get().Evaluate( "= expression{} {}" )
-			);
-		}
-
-		TEST( Read ) {
-			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
-			std::string theResult;
-			{
-				Sinks::CodePointSink<
-					std::back_insert_iterator< std::string >
-				> theCodePointSink(
-					std::back_inserter( theResult )
-				);
-				Writer theWriter( theCodePointSink );
-
-				Sources::CodePointSource<> theCodePointSource( theCode );
-				Parser theParser( theCodePointSource );
-				Expression theExpression;
-				theExpression.ReadElements( theParser );
-				theExpression.GiveElements( theWriter );
-			}
-			CHECK_EQUAL(
-				(
-					"0{1\n\t {2\n\t } 3\n\t }{4\n\t}\n"
-					"5"
-				),
-				theResult
-			);
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

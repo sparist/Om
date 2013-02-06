@@ -12,11 +12,27 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_DefaultAtom_ )
+#if !defined( Om_DefaultAtom_ )
+
+	#include "om/default_atom.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( DefaultAtom ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/sources/empty_source.hpp"
 
-// MARK: Om::DefaultAtom
+// MARK: - Om::DefaultAtom
 
 	#define Template_ \
 	template< typename ThisImplementation >
@@ -152,9 +168,5 @@ thisString(
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/default_atom.hpp"
 
 #endif

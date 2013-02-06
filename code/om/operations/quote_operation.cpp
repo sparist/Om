@@ -12,11 +12,47 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_QuoteOperation_ )
+#if !defined( Om_Operations_QuoteOperation_ )
+
+	#include "om/operations/quote_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( QuoteOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{quote}",
+					System::Get().Evaluate( "drop find {quote} system" )
+				);
+			}
+
+			TEST( Simple ) {
+				CHECK_EQUAL(
+					"{{1{2}3}}",
+					System::Get().Evaluate( "quote {1{2}3}" )
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/literal.hpp"
 
-// MARK: Om::Operations::QuoteOperation
+// MARK: - Om::Operations::QuoteOperation
 
 	#define Type_ \
 	Om::Operations::QuoteOperation
@@ -58,43 +94,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/quote_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( QuoteOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{quote}",
-					System::Get().Evaluate( "drop find {quote} system" )
-				);
-			}
-
-			TEST( Simple ) {
-				CHECK_EQUAL(
-					"{{1{2}3}}",
-					System::Get().Evaluate( "quote {1{2}3}" )
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

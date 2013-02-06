@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_IteratorPairSource_ )
+#if !defined( Om_Sources_IteratorPairSource_ )
 
-// MARK: Om::Sources::IteratorPairSource
+	#include "om/sources/iterator_pair_source.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sources {
+
+		SUITE( IteratorPairSource ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sources::IteratorPairSource
 
 	#define Template_ \
 	template< \
@@ -86,8 +106,7 @@ inline void Type_::Swap( IteratorPairSource & theIteratorPairSource ) {
 	#undef Type_
 	#undef Template_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<
 	typename ThisItem,
@@ -105,9 +124,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/sources/iterator_pair_source.hpp"
 
 #endif

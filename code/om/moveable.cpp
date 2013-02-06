@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Moveable_ )
+#if !defined( Om_Moveable_ )
 
-// MARK: Om::Moveable
+	#include "om/moveable.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Moveable ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Moveable
 
 	#define Type_ \
 	Om::Moveable
@@ -33,9 +49,5 @@ inline Type_ * Type_::Move() {
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/moveable.hpp"
 
 #endif

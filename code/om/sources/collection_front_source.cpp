@@ -12,9 +12,29 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_CollectionFrontSource_ )
+#if !defined( Om_Sources_CollectionFrontSource_ )
 
-// MARK: Om::Sources::CollectionFrontSource
+	#include "om/sources/collection_front_source.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Sources {
+
+		SUITE( CollectionFrontSource ) {}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Sources::CollectionFrontSource
 
 	#define Template_ \
 	template< \
@@ -43,9 +63,5 @@ IteratorPairSource<
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/sources/collection_front_source.hpp"
 
 #endif

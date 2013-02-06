@@ -12,9 +12,55 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_NormalizeOperation_ )
+#if !defined( Om_Operations_NormalizeOperation_ )
 
-// MARK: Om::Operations::NormalizeOperation
+	#include "om/operations/normalize_operation.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	namespace Operations {
+
+		SUITE( NormalizeOperation ) {
+
+			TEST( Definition ) {
+				CHECK_EQUAL(
+					"{normalize}",
+					System::Get().Evaluate( "drop find {normalize} system" )
+				);
+			}
+
+			TEST( Simple ) {
+				CHECK_EQUAL(
+					(
+						"{"
+						"\xE1\x84\x80"
+						"\xE1\x85\xA1"
+						"\xE1\x86\xA8"
+						"}"
+					),
+					System::Get().Evaluate(
+						"normalize {"
+						"\xEA\xB0\x81"
+						"}"
+					)
+				);
+			}
+
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::Operations::NormalizeOperation
 
 	#define Type_ \
 	Om::Operations::NormalizeOperation
@@ -62,53 +108,5 @@ inline bool Type_::TakeQuotedQueue(
 }
 
 	#undef Type_
-
-#else
-
-	#include "om/operations/normalize_operation.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	namespace Operations {
-
-		SUITE( NormalizeOperation ) {
-
-			TEST( Definition ) {
-				CHECK_EQUAL(
-					"{normalize}",
-					System::Get().Evaluate( "drop find {normalize} system" )
-				);
-			}
-
-			TEST( Simple ) {
-				CHECK_EQUAL(
-					(
-						"{"
-						"\xE1\x84\x80"
-						"\xE1\x85\xA1"
-						"\xE1\x86\xA8"
-						"}"
-					),
-					System::Get().Evaluate(
-						"normalize {"
-						"\xEA\xB0\x81"
-						"}"
-					)
-				);
-			}
-
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

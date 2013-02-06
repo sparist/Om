@@ -12,94 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Sources_IteratorSource_ )
-
-// MARK: Om::Sources::IteratorSource
-
-	#define Template_ \
-	template< \
-		typename ThisItem, \
-		typename ThisIterator \
-	>
-
-	#define Type_ \
-	Om::Sources::IteratorSource< \
-		ThisItem, \
-		ThisIterator \
-	>
-
-// MARK: public (non-static)
-
-Template_
-inline Type_::IteratorSource( ThisIterator const theIterator ):
-thisIterator( theIterator ) {}
-
-Template_
-inline Type_ & Type_::operator =( IteratorSource theIteratorSource ) {
-	this->Swap( theIteratorSource );
-	return( *this );
-}
-
-Template_
-inline bool Type_::operator ==( IteratorSource const & theSource ) const {
-	return(
-		this->thisIterator == theSource.thisIterator ||
-		(
-			!*this->thisIterator &&
-			!*theSource.thisIterator
-		)
-	);
-}
-
-Template_
-inline bool Type_::operator !() const {
-	return( !*this->thisIterator );
-}
-
-Template_
-inline ThisItem & Type_::operator *() const {
-	assert( !!*this->thisIterator );
-	return( *this->thisIterator );
-}
-
-Template_
-inline void Type_::Pop() {
-	assert( !!*this->thisIterator );
-	++this->thisIterator;
-}
-
-Template_
-inline void Type_::Swap( IteratorSource & theIteratorSource ) {
-	boost::swap(
-		this->thisIterator,
-		theIteratorSource.thisIterator
-	);
-}
-
-	#undef Type_
-	#undef Template_
-
-// MARK: -
-// MARK: boost
-
-template<
-	typename ThisItem,
-	typename ThisIterator
->
-inline void boost::swap(
-	Om::Sources::IteratorSource<
-		ThisItem,
-		ThisIterator
-	> & theFirst,
-	Om::Sources::IteratorSource<
-		ThisItem,
-		ThisIterator
-	> & theSecond
-) {
-	theFirst.Swap( theSecond );
-}
-
-#else
+#if !defined( Om_Sources_IteratorSource_ )
 
 	#include "om/sources/iterator_source.hpp"
 
@@ -107,8 +20,6 @@ inline void boost::swap(
 
 		#include "om/sinks/container_back_sink.hpp"
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -277,5 +188,91 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+// MARK: - Om::Sources::IteratorSource
+
+	#define Template_ \
+	template< \
+		typename ThisItem, \
+		typename ThisIterator \
+	>
+
+	#define Type_ \
+	Om::Sources::IteratorSource< \
+		ThisItem, \
+		ThisIterator \
+	>
+
+// MARK: public (non-static)
+
+Template_
+inline Type_::IteratorSource( ThisIterator const theIterator ):
+thisIterator( theIterator ) {}
+
+Template_
+inline Type_ & Type_::operator =( IteratorSource theIteratorSource ) {
+	this->Swap( theIteratorSource );
+	return( *this );
+}
+
+Template_
+inline bool Type_::operator ==( IteratorSource const & theSource ) const {
+	return(
+		this->thisIterator == theSource.thisIterator ||
+		(
+			!*this->thisIterator &&
+			!*theSource.thisIterator
+		)
+	);
+}
+
+Template_
+inline bool Type_::operator !() const {
+	return( !*this->thisIterator );
+}
+
+Template_
+inline ThisItem & Type_::operator *() const {
+	assert( !!*this->thisIterator );
+	return( *this->thisIterator );
+}
+
+Template_
+inline void Type_::Pop() {
+	assert( !!*this->thisIterator );
+	++this->thisIterator;
+}
+
+Template_
+inline void Type_::Swap( IteratorSource & theIteratorSource ) {
+	boost::swap(
+		this->thisIterator,
+		theIteratorSource.thisIterator
+	);
+}
+
+	#undef Type_
+	#undef Template_
+
+// MARK: - boost
+
+template<
+	typename ThisItem,
+	typename ThisIterator
+>
+inline void boost::swap(
+	Om::Sources::IteratorSource<
+		ThisItem,
+		ThisIterator
+	> & theFirst,
+	Om::Sources::IteratorSource<
+		ThisItem,
+		ThisIterator
+	> & theSecond
+) {
+	theFirst.Swap( theSecond );
+}
 
 #endif

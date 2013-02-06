@@ -12,7 +12,124 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operator_ )
+#if !defined( Om_Operator_ )
+
+	#include "om/operator.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "om/system.hpp"
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Operator ) {
+
+		TEST( Basic ) {
+			CHECK_EQUAL(
+				"{a` `{b`}}",
+				System::Get().Evaluate( "operator{a {b}}" )
+			);
+		}
+
+		TEST( Equality ) {
+			// Positive match
+			CHECK_EQUAL(
+				"{{test` `{ing`}}}",
+				System::Get().Evaluate( "= operator{test {ing}} {test` `{ing`}}" )
+			);
+
+			// Positive match
+			CHECK_EQUAL(
+				"{{a`{b`}`{c`}`\nd`{e`}}}",
+				System::Get().Evaluate( "= operator{a{b}{c}\nd{e}} {a`{b`}`{c`}`\nd`{e`}}" )
+			);
+
+			// Negative match
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "= operator{a{b}{c}} {a`{b`}`{d`}}" )
+			);
+
+			// Empty match
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "= operator{} {a{b}{c}}" )
+			);
+
+			// Empty match
+			CHECK_EQUAL(
+				"{{}}",
+				System::Get().Evaluate( "= operator{} {}" )
+			);
+		}
+
+		TEST( TakeQuotedElements ) {
+			Operator theOperator;
+			{
+				Literal theLiteral;
+				{
+					Sources::CodePointSource<> theCodePointSource( "a{b{c}}" );
+					Parser theParser( theCodePointSource );
+					theLiteral.ReadElements( theParser );
+				}
+				theOperator.TakeQuotedQueue( theLiteral );
+				assert( theLiteral.IsEmpty() );
+			}
+			CHECK_EQUAL(
+				"{a{b{c}}}",
+				theOperator.GetString()
+			);
+		}
+
+		TEST( Normalization ) {
+			// Test combining character reordering under NFD.
+			Operator theLeftOperator( "s\xCC\x87" );
+			Operator theRightOperator( "\xCC\xA3" );
+			theLeftOperator.TakeElement( theRightOperator );
+			CHECK_EQUAL(
+				"s\xCC\xA3\xCC\x87",
+				theLeftOperator.GetString()
+			);
+		}
+
+		TEST( Read ) {
+			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
+			std::string theResult;
+			{
+				Sinks::CodePointSink<
+					std::back_insert_iterator< std::string >
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
+				Writer theWriter( theCodePointSink );
+
+				Sources::CodePointSource<> theCodePointSource( theCode );
+				Parser theParser( theCodePointSource );
+				Operator theOperator;
+				theOperator.ReadElements( theParser );
+				theOperator.GiveElements( theWriter );
+			}
+			CHECK_EQUAL(
+				(
+					"0`\n"
+					"`\t` `{1`\n"
+					"`\t` `{2`\n"
+					"`\t` `}` 3`\n"
+					"`\t` `}` `{4`\n"
+					"`\t`}` 5`\n"
+				),
+				theResult
+			);
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/operand.hpp"
 	#include "om/separator.hpp"
@@ -22,7 +139,7 @@
 	#include "om/sources/code_point_string_front_source.hpp"
 	#include "om/writer.hpp"
 
-// MARK: Om::Operator
+// MARK: - Om::Operator
 
 	#define Type_ \
 	Om::Operator
@@ -312,8 +429,7 @@ inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
 
 	#undef Type_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<>
 inline void boost::swap(
@@ -322,124 +438,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/operator.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "om/system.hpp"
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	SUITE( Operator ) {
-
-		TEST( Basic ) {
-			CHECK_EQUAL(
-				"{a` `{b`}}",
-				System::Get().Evaluate( "operator{a {b}}" )
-			);
-		}
-
-		TEST( Equality ) {
-			// Positive match
-			CHECK_EQUAL(
-				"{{test` `{ing`}}}",
-				System::Get().Evaluate( "= operator{test {ing}} {test` `{ing`}}" )
-			);
-
-			// Positive match
-			CHECK_EQUAL(
-				"{{a`{b`}`{c`}`\nd`{e`}}}",
-				System::Get().Evaluate( "= operator{a{b}{c}\nd{e}} {a`{b`}`{c`}`\nd`{e`}}" )
-			);
-
-			// Negative match
-			CHECK_EQUAL(
-				"{}",
-				System::Get().Evaluate( "= operator{a{b}{c}} {a`{b`}`{d`}}" )
-			);
-
-			// Empty match
-			CHECK_EQUAL(
-				"{}",
-				System::Get().Evaluate( "= operator{} {a{b}{c}}" )
-			);
-
-			// Empty match
-			CHECK_EQUAL(
-				"{{}}",
-				System::Get().Evaluate( "= operator{} {}" )
-			);
-		}
-
-		TEST( TakeQuotedElements ) {
-			Operator theOperator;
-			{
-				Literal theLiteral;
-				{
-					Sources::CodePointSource<> theCodePointSource( "a{b{c}}" );
-					Parser theParser( theCodePointSource );
-					theLiteral.ReadElements( theParser );
-				}
-				theOperator.TakeQuotedQueue( theLiteral );
-				assert( theLiteral.IsEmpty() );
-			}
-			CHECK_EQUAL(
-				"{a{b{c}}}",
-				theOperator.GetString()
-			);
-		}
-
-		TEST( Normalization ) {
-			// Test combining character reordering under NFD.
-			Operator theLeftOperator( "s\xCC\x87" );
-			Operator theRightOperator( "\xCC\xA3" );
-			theLeftOperator.TakeElement( theRightOperator );
-			CHECK_EQUAL(
-				"s\xCC\xA3\xCC\x87",
-				theLeftOperator.GetString()
-			);
-		}
-
-		TEST( Read ) {
-			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
-			std::string theResult;
-			{
-				Sinks::CodePointSink<
-					std::back_insert_iterator< std::string >
-				> theCodePointSink(
-					std::back_inserter( theResult )
-				);
-				Writer theWriter( theCodePointSink );
-
-				Sources::CodePointSource<> theCodePointSource( theCode );
-				Parser theParser( theCodePointSource );
-				Operator theOperator;
-				theOperator.ReadElements( theParser );
-				theOperator.GiveElements( theWriter );
-			}
-			CHECK_EQUAL(
-				(
-					"0`\n"
-					"`\t` `{1`\n"
-					"`\t` `{2`\n"
-					"`\t` `}` 3`\n"
-					"`\t` `}` `{4`\n"
-					"`\t`}` 5`\n"
-				),
-				theResult
-			);
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif

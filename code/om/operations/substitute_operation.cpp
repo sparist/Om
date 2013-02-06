@@ -12,45 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Operations_SubstituteOperation_ )
-
-// MARK: Om::Operations::SubstituteOperation
-
-	#define Type_ \
-	Om::Operations::SubstituteOperation
-
-// MARK: public (static)
-
-inline char const * Type_::GetName() {
-	return( Om_Operations_SubstituteOperation_GetName_() );
-}
-
-// MARK: public (non-static)
-
-template< typename TheQueue >
-inline void Type_::Translate(
-	Translator const &,
-	TheQueue & theQueue,
-	Expression & theExpression
-) const {
-	Evaluator theScope(
-		theExpression,
-		*this->thisLexicon
-	);
-	theQueue.GiveElements( theScope );
-}
-
-	#undef Type_
-
-#else
+#if !defined( Om_Operations_SubstituteOperation_ )
 
 	#include "om/operations/substitute_operation.hpp"
 
 	#if defined( Om_Macros_Test_ )
 
 		#include "UnitTest++.h"
-
-// MARK: -
 
 namespace Om {
 
@@ -141,5 +109,35 @@ namespace Om {
 }
 
 	#endif
+
+#else
+
+// MARK: - Om::Operations::SubstituteOperation
+
+	#define Type_ \
+	Om::Operations::SubstituteOperation
+
+// MARK: public (static)
+
+inline char const * Type_::GetName() {
+	return( Om_Operations_SubstituteOperation_GetName_() );
+}
+
+// MARK: public (non-static)
+
+template< typename TheQueue >
+inline void Type_::Translate(
+	Translator const &,
+	TheQueue & theQueue,
+	Expression & theExpression
+) const {
+	Evaluator theScope(
+		theExpression,
+		*this->thisLexicon
+	);
+	theQueue.GiveElements( theScope );
+}
+
+	#undef Type_
 
 #endif

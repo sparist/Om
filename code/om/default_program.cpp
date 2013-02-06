@@ -12,12 +12,28 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_DefaultProgram_ )
+#if !defined( Om_DefaultProgram_ )
+
+	#include "om/default_program.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( DefaultProgram ) {}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/element.hpp"
 	#include "om/source.hpp"
 
-// MARK: Om::DefaultProgram
+// MARK: - Om::DefaultProgram
 
 	#define Template_ \
 	template< \
@@ -112,9 +128,5 @@ inline void Type_::TakeQueueElements( TheQueue & theQueue ) {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/default_program.hpp"
 
 #endif

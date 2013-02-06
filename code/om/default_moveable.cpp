@@ -12,9 +12,25 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_DefaultMoveable_ )
+#if !defined( Om_DefaultMoveable_ )
 
-// MARK: Om::DefaultMoveable
+	#include "om/default_moveable.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( DefaultMoveable ) {}
+
+}
+
+	#endif
+
+#else
+
+// MARK: - Om::DefaultMoveable
 
 	#define Template_ \
 	template< \
@@ -49,9 +65,5 @@ inline ThisInterface * Type_::Move() {
 
 	#undef Type_
 	#undef Template_
-
-#else
-
-	#include "om/default_moveable.hpp"
 
 #endif

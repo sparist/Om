@@ -12,13 +12,183 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if defined( Om_Lexicon_ )
+#if !defined( Om_Lexicon_ )
+
+	#include "om/lexicon.hpp"
+
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+namespace Om {
+
+	SUITE( Lexicon ) {
+
+		TEST( Basic ) {
+			CHECK_EQUAL(
+				(
+					"{"
+					"a{A}\n"
+					"b{B}"
+					"}"
+				),
+				System::Get().Evaluate( "lexicon {a {A} b {B}}" )
+			);
+
+			CHECK_EQUAL(
+				(
+					"{"
+					"b\n"
+					"a"
+					"}"
+				),
+				System::Get().Evaluate( "->lexicon{b} lexicon{a}" )
+			);
+		}
+
+		TEST( Copy ) {
+			CHECK_EQUAL(
+				"{{a}}{a}",
+				System::Get().Evaluate( "quote copy lexicon{a}" )
+			);
+
+			CHECK_EQUAL(
+				(
+					"{"
+					"b\n"
+					"a"
+					"}{a}"
+				),
+				System::Get().Evaluate( "->lexicon{b}copy{a}" )
+			);
+
+			CHECK_EQUAL(
+				(
+					"{"
+					"b\n"
+					"a"
+					"}{a}"
+				),
+				System::Get().Evaluate( "->lexicon{b}copy lexicon{a}" )
+			);
+
+			CHECK_EQUAL(
+				(
+					"{"
+					"a\n"
+					"b"
+					"}{a}"
+				),
+				System::Get().Evaluate( "lexicon<-{b}copy lexicon{a}" )
+			);
+
+			CHECK_EQUAL(
+				(
+					"{"
+					"a{A}\n"
+					"b{B}\n"
+					"c{C}"
+					"}{"
+					"a{A}\n"
+					"b{B}"
+					"}"
+				),
+				System::Get().Evaluate(
+					"lexicon<- {{C}} lexicon<- {c} "
+					"copy lexicon {a {A} b {B}}"
+				)
+			);
+		}
+
+		TEST( Equality ) {
+			// Positive match
+			CHECK_EQUAL(
+				(
+					"{"
+					"{"
+					"a{b}\n"
+					"c{d}"
+					"}"
+					"}"
+				),
+				System::Get().Evaluate(
+					"= lexicon{a{b}c{d}} {"
+					"a{b}\n"
+					"c{d}"
+					"}"
+				)
+			);
+
+			// Positive match
+			CHECK_EQUAL(
+				"{{a{b}}}",
+				System::Get().Evaluate( "= lexicon{a{b}} {a{b}}" )
+			);
+
+			// Positive match
+			CHECK_EQUAL(
+				"{{{b}}}",
+				System::Get().Evaluate( "= lexicon{{b}} {{b}}" )
+			);
+
+			// Negative match
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "= lexicon{a{b}} {a{c}}" )
+			);
+
+			// Empty match
+			CHECK_EQUAL(
+				"{}",
+				System::Get().Evaluate( "= lexicon{} {a{b}}" )
+			);
+
+			// Empty match
+			CHECK_EQUAL(
+				"{{}}",
+				System::Get().Evaluate( "= lexicon{} {}" )
+			);
+		}
+
+		TEST( Read ) {
+			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } 4\n\t";
+			std::string theResult;
+			{
+				Sinks::CodePointSink<
+					std::back_insert_iterator< std::string >
+				> theCodePointSink(
+					std::back_inserter( theResult )
+				);
+				Writer theWriter( theCodePointSink );
+
+				Sources::CodePointSource<> theCodePointSource( theCode );
+				Parser theParser( theCodePointSource );
+				Lexicon theLexicon;
+				theLexicon.ReadElements( theParser );
+				theLexicon.GiveElements( theWriter );
+			}
+			CHECK_EQUAL(
+				(
+					"0{1\n\t {2\n\t } 3\n\t }\n"
+					"4"
+				),
+				theResult
+			);
+		}
+
+	}
+
+}
+
+	#endif
+
+#else
 
 	#include "om/evaluation.hpp"
 	#include "om/literal.hpp"
 	#include "om/system.hpp"
 
-// MARK: Om::Lexicon
+// MARK: - Om::Lexicon
 
 	#define Type_ \
 	Om::Lexicon
@@ -335,8 +505,7 @@ inline Type_::Node & Type_::GetOperandTaker( TheOperator & theOperator ) {
 
 	#undef Type_
 
-// MARK: -
-// MARK: Om::Lexicon::ElementRange
+// MARK: - Om::Lexicon::ElementRange
 
 	#define Type_ \
 	Om::Lexicon::ElementRange
@@ -401,8 +570,7 @@ inline void Type_::Pop() {
 
 	#undef Type_
 
-// MARK: -
-// MARK: Om::Lexicon::Node
+// MARK: - Om::Lexicon::Node
 
 	#define Type_ \
 	Om::Lexicon::Node
@@ -496,8 +664,7 @@ inline void Type_::RelinkToBack(
 
 	#undef Type_
 
-// MARK: -
-// MARK: boost
+// MARK: - boost
 
 template<>
 inline void boost::swap(
@@ -506,177 +673,5 @@ inline void boost::swap(
 ) {
 	theFirst.Swap( theSecond );
 }
-
-#else
-
-	#include "om/lexicon.hpp"
-
-	#if defined( Om_Macros_Test_ )
-
-		#include "UnitTest++.h"
-
-// MARK: -
-
-namespace Om {
-
-	SUITE( Lexicon ) {
-
-		TEST( Basic ) {
-			CHECK_EQUAL(
-				(
-					"{"
-					"a{A}\n"
-					"b{B}"
-					"}"
-				),
-				System::Get().Evaluate( "lexicon {a {A} b {B}}" )
-			);
-
-			CHECK_EQUAL(
-				(
-					"{"
-					"b\n"
-					"a"
-					"}"
-				),
-				System::Get().Evaluate( "->lexicon{b} lexicon{a}" )
-			);
-		}
-
-		TEST( Copy ) {
-			CHECK_EQUAL(
-				"{{a}}{a}",
-				System::Get().Evaluate( "quote copy lexicon{a}" )
-			);
-
-			CHECK_EQUAL(
-				(
-					"{"
-					"b\n"
-					"a"
-					"}{a}"
-				),
-				System::Get().Evaluate( "->lexicon{b}copy{a}" )
-			);
-
-			CHECK_EQUAL(
-				(
-					"{"
-					"b\n"
-					"a"
-					"}{a}"
-				),
-				System::Get().Evaluate( "->lexicon{b}copy lexicon{a}" )
-			);
-
-			CHECK_EQUAL(
-				(
-					"{"
-					"a\n"
-					"b"
-					"}{a}"
-				),
-				System::Get().Evaluate( "lexicon<-{b}copy lexicon{a}" )
-			);
-
-			CHECK_EQUAL(
-				(
-					"{"
-					"a{A}\n"
-					"b{B}\n"
-					"c{C}"
-					"}{"
-					"a{A}\n"
-					"b{B}"
-					"}"
-				),
-				System::Get().Evaluate(
-					"lexicon<- {{C}} lexicon<- {c} "
-					"copy lexicon {a {A} b {B}}"
-				)
-			);
-		}
-
-		TEST( Equality ) {
-			// Positive match
-			CHECK_EQUAL(
-				(
-					"{"
-					"{"
-					"a{b}\n"
-					"c{d}"
-					"}"
-					"}"
-				),
-				System::Get().Evaluate(
-					"= lexicon{a{b}c{d}} {"
-					"a{b}\n"
-					"c{d}"
-					"}"
-				)
-			);
-
-			// Positive match
-			CHECK_EQUAL(
-				"{{a{b}}}",
-				System::Get().Evaluate( "= lexicon{a{b}} {a{b}}" )
-			);
-
-			// Positive match
-			CHECK_EQUAL(
-				"{{{b}}}",
-				System::Get().Evaluate( "= lexicon{{b}} {{b}}" )
-			);
-
-			// Negative match
-			CHECK_EQUAL(
-				"{}",
-				System::Get().Evaluate( "= lexicon{a{b}} {a{c}}" )
-			);
-
-			// Empty match
-			CHECK_EQUAL(
-				"{}",
-				System::Get().Evaluate( "= lexicon{} {a{b}}" )
-			);
-
-			// Empty match
-			CHECK_EQUAL(
-				"{{}}",
-				System::Get().Evaluate( "= lexicon{} {}" )
-			);
-		}
-
-		TEST( Read ) {
-			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } 4\n\t";
-			std::string theResult;
-			{
-				Sinks::CodePointSink<
-					std::back_insert_iterator< std::string >
-				> theCodePointSink(
-					std::back_inserter( theResult )
-				);
-				Writer theWriter( theCodePointSink );
-
-				Sources::CodePointSource<> theCodePointSource( theCode );
-				Parser theParser( theCodePointSource );
-				Lexicon theLexicon;
-				theLexicon.ReadElements( theParser );
-				theLexicon.GiveElements( theWriter );
-			}
-			CHECK_EQUAL(
-				(
-					"0{1\n\t {2\n\t } 3\n\t }\n"
-					"4"
-				),
-				theResult
-			);
-		}
-
-	}
-
-}
-
-	#endif
 
 #endif
