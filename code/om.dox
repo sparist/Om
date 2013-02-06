@@ -424,7 +424,7 @@ Some basic free static analysis tools can be applied to the %Om code.
 -	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts.  If Perl is installed, CLOC can be applied to %Om by entering the following at the terminal from inside the %Om directory:
 	<blockquote><tt>cloc.pl code</tt></blockquote>
 
-\subsection contributing__developing__pull_requests Making Pull Requests
+\subsection contributing__developing__pull_requests Pull Requests
 
 Pull requests can be made via the <a href="http://github.com/sparist/Om">%Om GitHub repository</a>.
 
