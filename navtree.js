@@ -15,21 +15,22 @@ var NAVTREE =
         [ "Empty Program", "evaluation.html#evaluation__functions__empty", null ],
         [ "Single-Element Programs", "evaluation.html#evaluation__functions__single", null ],
         [ "Multiple-Element Programs", "evaluation.html#evaluation__functions__multiple", null ],
-        [ "Implementation", "evaluation.html#evaluation__functions__implementation", null ]
+        [ "Documentation", "evaluation.html#evaluation__functions__documentation", null ]
       ] ],
       [ "Data Types", "evaluation.html#evaluation__data_types", [
-        [ "Implementation", "evaluation.html#evaluation__data_types__implementation", null ]
+        [ "Implementation", "evaluation.html#evaluation__data_types__implementation", null ],
+        [ "Documentation", "evaluation.html#evaluation__data_types__documentation", null ]
       ] ]
     ] ],
     [ "Examples", "examples.html", null ],
     [ "Downloading", "downloading.html", null ],
     [ "Using", "using.html", [
+      [ "Library", "using.html#using__library", null ],
       [ "Scripts", "using.html#using__scripts", [
-        [ "Xcode 4.6", "using.html#using__scripts__xcode", null ],
-        [ "Visual Studio 2010 Express", "using.html#using__scripts__visual_studio", null ],
+        [ "Xcode", "using.html#using__scripts__xcode", null ],
+        [ "Visual Studio", "using.html#using__scripts__visual_studio", null ],
         [ "Other Platforms", "using.html#using__scripts__other", null ]
-      ] ],
-      [ "Library", "using.html#using__library", null ]
+      ] ]
     ] ],
     [ "Contributing", "contributing.html", [
       [ "Developing", "contributing.html#contributing__developing", [
@@ -37,7 +38,7 @@ var NAVTREE =
         [ "Adding Operations", "contributing.html#contributing__developing__adding_operations", null ],
         [ "Adding Programs", "contributing.html#contributing__developing__adding_programs", null ],
         [ "Analyzing Code", "contributing.html#contributing__developing__analyzing_code", null ],
-        [ "Making Pull Requests", "contributing.html#contributing__developing__pull_requests", null ]
+        [ "Pull Requests", "contributing.html#contributing__developing__pull_requests", null ]
       ] ],
       [ "Issue Reporting", "contributing.html#contributing__issue_reporting", null ],
       [ "Funding", "contributing.html#contributing__funding", null ]
@@ -84,9 +85,9 @@ var NAVTREEINDEX =
 "class_om_1_1_operations_1_1_decode_operation.html#afa6ea96096a508accc49c624cb0b1a02",
 "class_om_1_1_parser.html#a4a57d3cd38dc2e20faddb0ddc5035dda",
 "class_om_1_1_translator.html#ab4bdc54b12c138a533825e5edb4a88e5",
-"evaluation.html#evaluation__functions",
-"inject__operation_8hpp.html#a8eb8c5bbdb5561e086bbcb4b565e46e2",
-"separator_8hpp.html"
+"evaluation.html#evaluation__data_types__implementation",
+"inject__operation_8hpp.html#a4d156967cf7ce405b6681ce42df511e7",
+"separator_8cpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

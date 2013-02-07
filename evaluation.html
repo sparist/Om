@@ -126,9 +126,9 @@ Empty Program</h2>
 Single-Element Programs</h2>
 <p>Programs that contain only a single element evaluate to functions as follows:</p>
 <ul>
-<li><b>Separator</b>: Evaluates to the identity function.</li>
-<li><b>Operand</b>: Evaluates to a constant function that pushes the operand, followed by all input terms, onto the output program.</li>
-<li><b>Operator</b>: Evaluates to the operation defined for the operator in the environment; if none, evaluates to a constant function that pushes the operator, followed by all input terms, onto the output program.</li>
+<li><b>Separator</b>: Evaluates to the <b>identity</b> function.</li>
+<li><b>Operand</b>: Evaluates to a <b>constant</b> function that pushes the operand, followed by all input terms, onto the output program.</li>
+<li><b>Operator</b>: Evaluates to the <b>operation</b> defined for the operator in the environment. If none, evaluates to a <b>constant</b> function that pushes the operator, followed by all input terms, onto the output program.</li>
 </ul>
 <h2><a class="anchor" id="evaluation__functions__multiple"></a>
 Multiple-Element Programs</h2>
@@ -139,8 +139,8 @@ Multiple-Element Programs</h2>
 <li>Function <code>A</code> receives the input, and its output becomes that of the composed function.</li>
 </ul>
 <p>Any programs may be concatenated together; however, note that concatenating programs "A" and "B" without an intervening separator would result in a program containing a single operator "AB", which is unrelated to operators "A" or "B".</p>
-<h2><a class="anchor" id="evaluation__functions__implementation"></a>
-Implementation</h2>
+<h2><a class="anchor" id="evaluation__functions__documentation"></a>
+Documentation</h2>
 <p>All operation implementations provided are documented in the <a class="el" href="group__operations.html">Operations</a> module.</p>
 <h1><a class="anchor" id="evaluation__data_types"></a>
 Data Types</h1>
@@ -154,6 +154,8 @@ Implementation</h2>
 <li>Operations can interrogate an input operand for its program implementation type; if it is the optimal implementation type for the operation, the operation can manipulate the operand directly to produce the same result more efficiently.</li>
 </ul>
 <p>Operations in a program can be ordered by the programmer to increase performance by minimizing conversions between program implementations, but it is not necessary for obtaining a correct computation. Where relevant, an operation will document the program implementation types of its inputs and outputs to allow for this optional level of optimization.</p>
+<h2><a class="anchor" id="evaluation__data_types__documentation"></a>
+Documentation</h2>
 <p>All program implementations provided are documented in the <a class="el" href="group__programs.html">Programs</a> module. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

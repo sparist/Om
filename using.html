@@ -94,7 +94,16 @@ $(document).ready(function(){initNavTree('using.html','');});
 <div class="title">Using </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="using__scripts"></a>
+<div class="textblock"><h1><a class="anchor" id="using__library"></a>
+Library</h1>
+<p>Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:</p>
+<ul>
+<li>Add the Om <code>code</code> directory to the include path and include the desired files. Inclusion of any operation files will automatically add the corresponding operation to the global system. Include <code><a class="el" href="om_8hpp.html" title="Om &quot;umbrella&quot; header file.">om.hpp</a></code> to include all Om header files.</li>
+<li>Configure the project to link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a> and/or <a href="http://boost.org">Boost (1.51.0)</a> library dependencies, and build these with the correct configuration for the project. See <code>make.sh</code> and <code>make.bat</code> for guidance.</li>
+<li>Call the <code><a class="el" href="class_om_1_1_system.html#a03f046dac47073768dbdc97d8e211bda" title="Initializes the System.">Om::System::Initialize</a></code> function prior to use (eg. in the <code>main</code> function), passing in the desired UTF-8 locale (eg. "en_US.UTF-8").</li>
+<li>Construct an <code><a class="el" href="class_om_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">Om::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code>Evaluate</code> functions to evaluate a program.</li>
+</ul>
+<h1><a class="anchor" id="using__scripts"></a>
 Scripts</h1>
 <p>Scripts are included that use <a href="http://cmake.org">CMake</a> to generate project files with the following targets:</p>
 <ul>
@@ -114,7 +123,7 @@ Scripts</h1>
 </li>
 </ul>
 <h2><a class="anchor" id="using__scripts__xcode"></a>
-Xcode 4.6</h2>
+Xcode</h2>
 <p>To generate the <code>Om.xcodeproj</code> file (in <code>products/projects/xcode</code>):</p>
 <ul>
 <li>Ensure that <a href="http://doxygen.org">Doxygen</a> and <a href="http://www.macports.org/ports.php?by=name&amp;substr=graphviz">Graphviz (via MacPorts)</a> are installed and available to applications via the path variable. <a href="http://overwatering.org/blog/2012-2013/08/setting-path-osx-mountain-lion">This article</a> explains how to do so.</li>
@@ -133,8 +142,9 @@ Xcode 4.6</h2>
 <ul>
 <li>Run <code>unmake.sh</code>.</li>
 </ul>
+<p>The above scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mountain Lion).</p>
 <h2><a class="anchor" id="using__scripts__visual_studio"></a>
-Visual Studio 2010 Express</h2>
+Visual Studio</h2>
 <p>To generate the <code>Om.sln</code> file (in <code>products/projects/vs</code>):</p>
 <ul>
 <li>Ensure that <a href="http://doxygen.org">Doxygen</a> and <a href="http://graphviz.org">Graphviz</a> are installed and in the path variable.</li>
@@ -153,18 +163,10 @@ Visual Studio 2010 Express</h2>
 <ul>
 <li>Run <code>unmake.bat</code>.</li>
 </ul>
+<p>The above scripts have been tested with Visual Sutdio 2010 Express on Windows Vista.</p>
 <h2><a class="anchor" id="using__scripts__other"></a>
 Other Platforms</h2>
-<p>Because Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <code>CMakeLists.txt</code> file. If this is of interest, please contribute the result via <a class="el" href="contributing.html#contributing__developing__pull_requests">pull request</a> and/or <a class="el" href="contributing.html#contributing__issue_reporting">report</a> any code portability errors encountered.</p>
-<h1><a class="anchor" id="using__library"></a>
-Library</h1>
-<p>Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:</p>
-<ul>
-<li>Add the Om <code>code</code> directory to the include path and include the desired files. Inclusion of any operation files will automatically add the corresponding operation to the global system. Include <code><a class="el" href="om_8hpp.html" title="Om &quot;umbrella&quot; header file.">om.hpp</a></code> to include all Om header files.</li>
-<li>Configure the project to link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a> and/or <a href="http://boost.org">Boost (1.51.0)</a> library dependencies, and build these with the correct configuration for the project. See <code>make.sh</code> and <code>make.bat</code> for guidance.</li>
-<li>Call the <code><a class="el" href="class_om_1_1_system.html#a03f046dac47073768dbdc97d8e211bda" title="Initializes the System.">Om::System::Initialize</a></code> function prior to use (eg. in the <code>main</code> function), passing in the desired UTF-8 locale (eg. "en_US.UTF-8").</li>
-<li>Construct an <code><a class="el" href="class_om_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">Om::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code>Evaluate</code> functions to evaluate a program. </li>
-</ul>
+<p>Because Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <code>CMakeLists.txt</code> file. If this is of interest, please contribute the result via <a class="el" href="contributing.html#contributing__developing__pull_requests">pull request</a> and/or <a class="el" href="contributing.html#contributing__issue_reporting">report</a> any code portability errors encountered. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"separator_8cpp_source.html":[12,0,0,0,80],
 "separator_8hpp.html":[12,0,0,0,81],
 "separator_8hpp.html#a31166dd268c9f23daac957ebe4155ad3":[12,0,0,0,81,1],
 "separator_8hpp.html#a33ca0583e5b833adbce43df24902983f":[12,0,0,0,81,2],
@@ -126,11 +127,11 @@ var NAVTREEINDEX7 =
 "translator_8hpp.html#ad9eee14e14315871aedba18be6ecba58":[12,0,0,0,99,1],
 "translator_8hpp_source.html":[12,0,0,0,99],
 "using.html":[6],
-"using.html#using__library":[6,1],
-"using.html#using__scripts":[6,0],
-"using.html#using__scripts__other":[6,0,2],
-"using.html#using__scripts__visual_studio":[6,0,1],
-"using.html#using__scripts__xcode":[6,0,0],
+"using.html#using__library":[6,0],
+"using.html#using__scripts":[6,1],
+"using.html#using__scripts__other":[6,1,2],
+"using.html#using__scripts__visual_studio":[6,1,1],
+"using.html#using__scripts__xcode":[6,1,0],
 "utf8_8cpp.html":[12,0,0,0,100],
 "utf8_8cpp_source.html":[12,0,0,0,100],
 "utf8_8hpp.html":[12,0,0,0,101],
