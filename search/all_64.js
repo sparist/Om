@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['data',['Data',['../data.html',1,'']]],
   ['decode',['Decode',['../class_om_1_1_operator.html#ac9aa0a32ff10989dc60f4c3c592ccd04',1,'Om::Operator']]],
   ['decode',['decode',['../group__decode__operation.html',1,'']]],
   ['decode_5foperation_2ecpp',['decode_operation.cpp',['../decode__operation_8cpp.html',1,'']]],

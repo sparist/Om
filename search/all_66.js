@@ -68,9 +68,10 @@ var searchData=
   ['frontpullpairoperation',['FrontPullPairOperation',['../class_om_1_1_operations_1_1_front_pull_pair_operation.html',1,'Om::Operations']]],
   ['frontpullseparatoroperation',['FrontPullSeparatorOperation',['../class_om_1_1_operations_1_1_front_pull_separator_operation.html',1,'Om::Operations']]],
   ['frontpulltermoperation',['FrontPullTermOperation',['../class_om_1_1_operations_1_1_front_pull_term_operation.html',1,'Om::Operations']]],
-  ['frontpushoperation',['FrontPushOperation',['../class_om_1_1_operations_1_1_front_push_operation.html#aa8e9b8fb9e52805cda091e0b00cfdec0',1,'Om::Operations::FrontPushOperation']]],
   ['frontpushoperation',['FrontPushOperation',['../class_om_1_1_operations_1_1_front_push_operation.html',1,'Om::Operations']]],
+  ['frontpushoperation',['FrontPushOperation',['../class_om_1_1_operations_1_1_front_push_operation.html#aa8e9b8fb9e52805cda091e0b00cfdec0',1,'Om::Operations::FrontPushOperation']]],
   ['fronttakeoperand',['FrontTakeOperand',['../class_om_1_1_expression.html#a6bd69d91d7abe45d32946c048e2441ef',1,'Om::Expression::FrontTakeOperand()'],['../class_om_1_1_form.html#a1c4000e3fb466de13e97c4906df80fa0',1,'Om::Form::FrontTakeOperand()']]],
   ['fronttakeoperator',['FrontTakeOperator',['../class_om_1_1_expression.html#ad3e11702300b8da86c369bda9f3b6d90',1,'Om::Expression']]],
-  ['fronttakequotedqueue',['FrontTakeQuotedQueue',['../class_om_1_1_expression.html#adec3d38be5c60322440b68f72bcb8f47',1,'Om::Expression::FrontTakeQuotedQueue()'],['../class_om_1_1_form.html#a12caa261b16fa5a84eee6fc1132cba23',1,'Om::Form::FrontTakeQuotedQueue()']]]
+  ['fronttakequotedqueue',['FrontTakeQuotedQueue',['../class_om_1_1_expression.html#adec3d38be5c60322440b68f72bcb8f47',1,'Om::Expression::FrontTakeQuotedQueue()'],['../class_om_1_1_form.html#a12caa261b16fa5a84eee6fc1132cba23',1,'Om::Form::FrontTakeQuotedQueue()']]],
+  ['functions',['Functions',['../function.html',1,'']]]
 ];

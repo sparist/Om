@@ -9,18 +9,21 @@ var NAVTREE =
       [ "Separator", "syntax.html#syntax__separator", null ],
       [ "Operand", "syntax.html#syntax__operand", null ]
     ] ],
-    [ "Evaluation", "evaluation.html", [
-      [ "Prefix Notation", "evaluation.html#evaluation__prefix", null ],
-      [ "Functions", "evaluation.html#evaluation__functions", [
-        [ "Empty Program", "evaluation.html#evaluation__functions__empty", null ],
-        [ "Single-Element Programs", "evaluation.html#evaluation__functions__single", null ],
-        [ "Multiple-Element Programs", "evaluation.html#evaluation__functions__multiple", null ],
-        [ "Documentation", "evaluation.html#evaluation__functions__documentation", null ]
+    [ "Functions", "function.html", [
+      [ "Terms", "function.html#function__terms", null ],
+      [ "Types", "function.html#function__types", null ],
+      [ "Evaluation", "function.html#function__evaluation", [
+        [ "Empty Program", "function.html#function__programs__empty", null ],
+        [ "Single-Element Programs", "function.html#function__programs__single", null ],
+        [ "Multiple-Element Programs", "function.html#function__programs__multiple", null ]
       ] ],
-      [ "Data Types", "evaluation.html#evaluation__data_types", [
-        [ "Implementation", "evaluation.html#evaluation__data_types__implementation", null ],
-        [ "Documentation", "evaluation.html#evaluation__data_types__documentation", null ]
-      ] ]
+      [ "Prefix Notation", "function.html#function__prefix", null ],
+      [ "Operations", "function.html#function__operations", null ]
+    ] ],
+    [ "Data", "data.html", [
+      [ "Panmorphism", "data.html#data__panmorphism", null ],
+      [ "Implementation", "data.html#data__implementation", null ],
+      [ "Programs", "data.html#data__programs", null ]
     ] ],
     [ "Examples", "examples.html", null ],
     [ "Downloading", "downloading.html", null ],
@@ -85,9 +88,9 @@ var NAVTREEINDEX =
 "class_om_1_1_operations_1_1_decode_operation.html#afa6ea96096a508accc49c624cb0b1a02",
 "class_om_1_1_parser.html#a4a57d3cd38dc2e20faddb0ddc5035dda",
 "class_om_1_1_translator.html#ab4bdc54b12c138a533825e5edb4a88e5",
-"evaluation.html#evaluation__data_types__implementation",
-"inject__operation_8hpp.html#a4d156967cf7ce405b6681ce42df511e7",
-"separator_8cpp_source.html"
+"evaluate__operation_8hpp_source.html",
+"inject__operation_8cpp.html",
+"rearrange__operation_8hpp.html#a8364a0a0bf080a6b566ffe7f38840a5a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
