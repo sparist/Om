@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['data',['Data',['../data.html',1,'']]],
-  ['downloading',['Downloading',['../downloading.html',1,'']]]
+  ['data',['Data',['../data__.html',1,'']]],
+  ['downloading',['Downloading',['../downloading__.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['syntax',['Syntax',['../syntax.html',1,'']]]
+  ['syntax',['Syntax',['../syntax__.html',1,'']]]
 ];

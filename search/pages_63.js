@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['contributing',['Contributing',['../contributing.html',1,'']]]
+  ['contributing',['Contributing',['../contributing__.html',1,'']]]
 ];

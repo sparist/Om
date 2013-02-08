@@ -2,51 +2,50 @@ var NAVTREE =
 [
   [ "Om", "index.html", [
     [ "Introduction", "index.html", null ],
-    [ "Background", "background.html", null ],
-    [ "Syntax", "syntax.html", [
-      [ "Program", "syntax.html#syntax__program", null ],
-      [ "Operator", "syntax.html#syntax__operator", null ],
-      [ "Separator", "syntax.html#syntax__separator", null ],
-      [ "Operand", "syntax.html#syntax__operand", null ]
+    [ "Background", "background__.html", null ],
+    [ "Syntax", "syntax__.html", [
+      [ "Operator", "syntax__.html#syntax__operator__", null ],
+      [ "Separator", "syntax__.html#syntax__separator__", null ],
+      [ "Operand", "syntax__.html#syntax__operand__", null ]
     ] ],
-    [ "Functions", "function.html", [
-      [ "Terms", "function.html#function__terms", null ],
-      [ "Types", "function.html#function__types", null ],
-      [ "Evaluation", "function.html#function__evaluation", [
-        [ "Empty Program", "function.html#function__programs__empty", null ],
-        [ "Single-Element Programs", "function.html#function__programs__single", null ],
-        [ "Multiple-Element Programs", "function.html#function__programs__multiple", null ]
+    [ "Functions", "functions__.html", [
+      [ "Terms", "functions__.html#functions__terms__", null ],
+      [ "Types", "functions__.html#functions__types__", null ],
+      [ "Evaluation", "functions__.html#functions__evaluation__", [
+        [ "Empty Program", "functions__.html#functions__programs__empty__", null ],
+        [ "Single-Element Programs", "functions__.html#functions__programs__single__", null ],
+        [ "Multiple-Element Programs", "functions__.html#functions__programs__multiple__", null ]
       ] ],
-      [ "Prefix Notation", "function.html#function__prefix", null ],
-      [ "Operations", "function.html#function__operations", null ]
+      [ "Prefix Notation", "functions__.html#functions__prefix__", null ],
+      [ "Operations", "functions__.html#functions__operations__", null ]
     ] ],
-    [ "Data", "data.html", [
-      [ "Panmorphism", "data.html#data__panmorphism", null ],
-      [ "Implementation", "data.html#data__implementation", null ],
-      [ "Programs", "data.html#data__programs", null ]
+    [ "Data", "data__.html", [
+      [ "Panmorphism", "data__.html#data__panmorphism__", null ],
+      [ "Implementation", "data__.html#data__implementation__", null ],
+      [ "Programs", "data__.html#data__programs__", null ]
     ] ],
-    [ "Examples", "examples.html", null ],
-    [ "Downloading", "downloading.html", null ],
-    [ "Using", "using.html", [
-      [ "Library", "using.html#using__library", null ],
-      [ "Scripts", "using.html#using__scripts", [
-        [ "Xcode", "using.html#using__scripts__xcode", null ],
-        [ "Visual Studio", "using.html#using__scripts__visual_studio", null ],
-        [ "Other Platforms", "using.html#using__scripts__other", null ]
+    [ "Examples", "examples__.html", null ],
+    [ "Downloading", "downloading__.html", null ],
+    [ "Using", "using__.html", [
+      [ "Library", "using__.html#using__library__", null ],
+      [ "Scripts", "using__.html#using__scripts__", [
+        [ "Xcode", "using__.html#using__scripts__xcode__", null ],
+        [ "Visual Studio", "using__.html#using__scripts__visual_studio__", null ],
+        [ "Other Platforms", "using__.html#using__scripts__other__", null ]
       ] ]
     ] ],
-    [ "Contributing", "contributing.html", [
-      [ "Developing", "contributing.html#contributing__developing", [
-        [ "Coding Standard", "contributing.html#contributing__developing__coding_standard", null ],
-        [ "Adding Operations", "contributing.html#contributing__developing__adding_operations", null ],
-        [ "Adding Programs", "contributing.html#contributing__developing__adding_programs", null ],
-        [ "Analyzing Code", "contributing.html#contributing__developing__analyzing_code", null ],
-        [ "Pull Requests", "contributing.html#contributing__developing__pull_requests", null ]
+    [ "Contributing", "contributing__.html", [
+      [ "Developing", "contributing__.html#contributing__developing__", [
+        [ "Coding Standard", "contributing__.html#contributing__developing__coding_standard__", null ],
+        [ "Adding Operations", "contributing__.html#contributing__developing__adding_operations__", null ],
+        [ "Adding Programs", "contributing__.html#contributing__developing__adding_programs__", null ],
+        [ "Analyzing Code", "contributing__.html#contributing__developing__analyzing_code__", null ],
+        [ "Pull Requests", "contributing__.html#contributing__developing__pull_requests__", null ]
       ] ],
-      [ "Issue Reporting", "contributing.html#contributing__issue_reporting", null ],
-      [ "Funding", "contributing.html#contributing__funding", null ]
+      [ "Issue Reporting", "contributing__.html#contributing__issue_reporting__", null ],
+      [ "Funding", "contributing__.html#contributing__funding__", null ]
     ] ],
-    [ "License", "license.html", null ],
+    [ "License", "license__.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
