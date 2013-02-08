@@ -58,9 +58,23 @@ An operand has the following syntax:
 
 Each %Om program evaluates to a function.
 
+\section functions__input_and_output Input and Output
+
+A function takes a program as input and returns a program as output, pulling elements from the front of the input program and pushing elements to the back of the output program.
+
+\section functions__prefix__ Prefix Notation
+
+%Om uses prefix notation, in which functions read their inputs from the right.  Prefix notation has the following advantages over postfix notation typical of concatenative languages:
+-	Stack underflows are impossible.
+-	Prefix notation more closely models function composition.  Instead of storing a data stack in memory, the %Om evaluator stores a composed partial function.
+-	The evaluator can read, parse and evaluate the input stream in a single pass, sending results to the output stream as soon as they are evaluated.  This cannot be done with a postfix, stack-based language because any data on the stack must remain there as it may be needed by a function later.
+-	Functions can be optimized to only read into memory the data that is required; stack-based postfix languages have no knowledge of the function to apply until the data is already in memory, on the stack.
+-	Incoming data, such as events, become simple to handle at a language level: a program might evaluate to a function that acts as a state machine that processes any additional data appended to the program and transitions to a new state, ready to process new data.
+-	An IDE can provide hints to the user about the data that is expected by a function.
+
 \section functions__terms__ Terms
 
-A function takes a program as input and returns a program as output, pulling elements from the front of the input program and pushing elements to the back of the output program.  Only <em>terms</em> (operators and operands) are significant to functions; separators are discarded from input, and are inserted between output terms in a "normalized" form (for consistent formatting and proper operator separation).  Therefore, only input and output terms are relevant in describing a function.
+Only <em>terms</em> (operators and operands) are significant to functions; separators are discarded from input, and are inserted between output terms in a "normalized" form (for consistent formatting and proper operator separation).  Therefore, only input and output terms are relevant in describing a function.
 
 \section functions__types__ Types
 
@@ -93,16 +107,6 @@ For example, program "A B" is the concatenation of programs "A", " ", and "B".  
 -	Function <tt>A</tt> receives the input, and its output becomes that of the composed function.
 
 Any programs may be concatenated together; however, note that concatenating programs "A" and "B" without an intervening separator would result in a program containing a single operator "AB", which is unrelated to operators "A" or "B".
-
-\section functions__prefix__ Prefix Notation
-
-%Om uses prefix notation rather than the postfix notation typical of concatenative languages.  Prefix notation has the following advantages over postfix notation:
--	Stack underflows are impossible.
--	Prefix notation more closely models function composition.  Instead of storing a data stack in memory, the %Om evaluator stores a composed partial function.
--	The evaluator can read, parse and evaluate the input stream in a single pass, sending results to the output stream as soon as they are evaluated.  This cannot be done with a postfix, stack-based language because any data on the stack must remain there as it may be needed by a function later.
--	Functions can be optimized to only read into memory the data that is required; stack-based postfix languages have no knowledge of the function to apply until the data is already in memory, on the stack.
--	Incoming data, such as events, become simple to handle at a language level: a program might evaluate to a function that acts as a state machine that processes any additional data appended to the program and transitions to a new state, ready to process new data.
--	An IDE can provide hints to the user about the data that is expected by a function.
 
 \section functions__operations__ Operations
 
