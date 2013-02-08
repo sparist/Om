@@ -30,8 +30,6 @@ The following reading may help explain some of the concepts that contributed to 
 
 \page syntax Syntax
 
-\section syntax__program Program
-
 An %Om program is a combination of three elements&mdash;operator, separator, and operand&mdash;as follows:
 
 \image html "program.png"
@@ -58,7 +56,7 @@ An operand has the following syntax:
 
 \page function Functions
 
-Each program evaluates to a function.
+Each %Om program evaluates to a function.
 
 \section function__terms Terms
 
@@ -112,18 +110,18 @@ All operation implementations provided are documented in the \ref operations mod
 
 \page data Data
 
-Every data value is represented by a program, wrapped by an operand.
+There are no traditional data types in %Om: every data value is represented by an operand.
 
 \section data__panmorphism Panmorphism
 
 %Om uses a unique <em>panmorphic</em> type system, from Ancient Greek πᾶν (pan, "all") and μορφή (morphē, “form”), in which all data values are exposed exclusively through a common immutable interface.
 
-In the case of %Om, the common data interface is a program, wrapped by an operand.  Because every data value is entirely represented in the language as an operand, there are no traditional data types in %Om.  Any operation will accept any operand as a valid input and interrogate its data solely through its contained program (a sequence of operator, separator, and/or operand).  The operation is then free to process the data however is appropriate, and any operand that it produces as output can then be interrogated and processed by the next operation in the same way.
+In the case of %Om, every data value is entirely represented in the language as an operand.  Any operation will accept any operand as a valid input and interrogate its data solely through its contained program (a sequence of operator, separator, and/or operand).  The operation is then free to process the data however is appropriate, and any operand that it produces as output can then be interrogated and processed by the next operation in the same way.
 
 \section data__implementation Implementation
 
-The actual implementation of operands takes advantage of some optimizations:
--	Although each operand could be treated as a literal array of operand, operator and/or separator elements, each operand in memory contains one of several possible program implementations, each optimized for a specific set of operations.  For example, some operations treat separators as insignificant; operands produced by these operations could contain a program implementation that stores only terms (operators and/or operands) and presents a "normalized" separator (such as a line separator) between each term.
+Although any operand can be treated as containing a literal array of operand, operator and/or separator elements, the implementation of operands takes advantage of some optimizations:
+-	Each operand in memory actually contains one of several possible program implementations, each optimized for a specific set of operations.  For example, some operations treat separators as insignificant; operands produced by these operations could contain a program implementation that stores only terms (operators and/or operands) and presents a "normalized" separator (such as a line separator) between each term.
 -	Operations can interrogate an input operand for its program implementation type; if it is the optimal implementation type for the operation, the operation can manipulate the operand directly to produce the same result more efficiently.
 
 Operations in a program can be ordered by the programmer to increase performance by minimizing conversions between program implementations, but it is not necessary for obtaining a correct computation.  Where relevant, an operation will document the program implementation types of its inputs and outputs to allow for this optional level of optimization.
@@ -313,6 +311,8 @@ Code can be downloaded from the <a href="https://github.com/sparist/Om">Om GitHu
 -	<a href="https://github.com/sparist/Om/tags">Released versions</a>
 
 \page using Using
+
+%Om can be used as a library or a stand-alone interpreter.
 
 \section using__library Library
 
