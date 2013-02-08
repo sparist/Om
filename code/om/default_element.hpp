@@ -22,6 +22,10 @@
 namespace Om {
 
 	// MARK: - Om::DefaultElement
+	/*!
+	\brief
+		A partial implementation of Element.
+	*/
 	template<
 		typename ThisImplementation,
 		typename ThisInterface = Element

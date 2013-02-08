@@ -25,6 +25,10 @@
 namespace Om {
 
 	// MARK: - Om::DefaultProgram
+	/*!
+	\brief
+		A partial implementation of Program.
+	*/
 	template<
 		typename ThisImplementation,
 		typename ThisInterface = Program

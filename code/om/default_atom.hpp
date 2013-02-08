@@ -23,6 +23,10 @@
 namespace Om {
 
 	// MARK: - Om::DefaultAtom
+	/*!
+	\brief
+		A partial implementation of Atom.
+	*/
 	template< typename ThisImplementation >
 	class DefaultAtom:
 	public DefaultElement<
