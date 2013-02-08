@@ -29,7 +29,7 @@ namespace Om {
 		// MARK: - Om::Operations::EnvironmentOperation
 		/*!
 		\brief
-			The \ref system_operation Operation implementation.
+			The \ref om__operations__system_operation__ operation implementation.
 		*/
 		class EnvironmentOperation {
 		public: // MARK: public (static)

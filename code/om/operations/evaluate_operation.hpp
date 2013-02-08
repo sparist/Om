@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::EvaluateOperation
 		/*!
 		\brief
-			The \ref define_operation Operation implementation.
+			The \ref om__operations__define_operation__ operation implementation.
 		*/
 		class EvaluateOperation:
 		public DefaultOperation< EvaluateOperation > {

@@ -29,7 +29,7 @@ namespace Om {
 		// MARK: - Om::Operations::LexiconBackPushOperation
 		/*!
 		\brief
-			The \ref lexicon_back_push_operation Operation implementation.
+			The \ref om__operations__lexicon_back_push_operation__ operation implementation.
 		*/
 		class LexiconBackPushOperation {
 		public: // MARK: public (static)

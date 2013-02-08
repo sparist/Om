@@ -33,7 +33,7 @@ namespace Om {
 	// MARK: - Om::Lexicon
 	/*!
 	\brief
-		The \ref lexicon Program implementation.
+		The \ref om__lexicon__ Program implementation.
 	*/
 	class Lexicon:
 	public DefaultProgram< Lexicon >,

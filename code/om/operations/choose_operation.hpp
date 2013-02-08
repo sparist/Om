@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::ChooseOperation
 		/*!
 		\brief
-			The \ref choose_operation Operation implementation.
+			The \ref om__operations__choose_operation__ operation implementation.
 		*/
 		class ChooseOperation:
 		public DefaultOperation< ChooseOperation > {

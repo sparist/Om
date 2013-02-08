@@ -1,12 +1,12 @@
 /*!
-\defgroup null Null
-	\ingroup programs
+\defgroup om__null__ Null
+	\ingroup om__programs__
 	\brief
-		The null \ref programs "Program".
+		The null \ref om__programs__ "Program".
 	\par Interpretation
-		A \ref null \ref programs "Program" is an interpretation that disregards all contents.
+		A \ref om__null__ \ref om__programs__ "Program" is an interpretation that disregards all contents.
 	\par Normalization
-		A \ref programs "Program" is normalized as \ref null by discarding all contents.
+		A \ref om__programs__ "Program" is normalized as \ref om__null__ by discarding all contents.
 	\par Implementation
 		Om::Null
 */

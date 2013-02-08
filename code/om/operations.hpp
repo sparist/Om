@@ -21,15 +21,15 @@ namespace Om {
 
 	/*!
 	\brief
-		A namespace for all \ref operations.
+		A namespace for all \ref om__operations__.
 
-	Each \ref operations "Operation" implementation requires the following:
+	Each operation implementation requires the following:
 	-	A <tt>static char const * GetName()</tt> function that returns a null-terminated, NFD-normalized UTF-8 string to be used as a corresponding Operator name.
-	-	A <tt>static void Give( </tt><em>Evaluation</em><tt> )</tt> function, which gives the implementation of the \ref operations Operation to the Evaluation.
+	-	A <tt>static void Give( </tt><em>Evaluation</em><tt> )</tt> function, which gives the implementation of the operation to the Evaluation.
 
-	Including the header for an \ref operations "Operation" will cause the \ref operations "Operation" to be added to the System automatically.
+	Including the header for an operation will cause the operation to be added to the System automatically.
 
-	\ref operations that consume at least one Operand must live in memory while waiting for the Operand.  These \ref operations are derived from Operation.
+	%Operations that consume at least one Operand must live in memory while waiting for the Operand.  These operations are derived from Operation.
 	*/
 	namespace Operations {}
 

@@ -29,7 +29,7 @@ namespace Om {
 		// MARK: - Om::Operations::BackPullCodePointOperation
 		/*!
 		\brief
-			The \ref back_pull_code_point_operation Operation implementation.
+			The \ref om__operations__back_pull_code_point_operation__ operation implementation.
 		*/
 		class BackPullCodePointOperation {
 		public: // MARK: public (static)

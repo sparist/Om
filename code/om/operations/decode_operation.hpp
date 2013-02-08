@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::DecodeOperation
 		/*!
 		\brief
-			The \ref decode_operation Operation implementation.
+			The \ref om__operations__decode_operation__ operation implementation.
 		*/
 		class DecodeOperation:
 		public DefaultOperation< DecodeOperation > {

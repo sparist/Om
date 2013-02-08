@@ -1,10 +1,10 @@
 /*!
-\defgroup system_operation system
-	\ingroup operations
+\defgroup om__operations__system_operation__ system
+	\ingroup om__operations__
 	\brief
-		Produces the system \ref lexicon.
+		Produces the system \ref om__lexicon__.
 	\par Details
-		The system \ref lexicon contains each \ref operator defined by the system.  Each \ref operator is without an \ref operand mapping to indicate that the "native" system operation is to be used.
+		The system \ref om__lexicon__ contains each \ref om__operator__ defined by the system.  Each \ref om__operator__ is without an \ref om__operand__ mapping to indicate that the "native" system operation is to be used.
 	\par Implementation
 		Om::Operations::SystemOperation
 */

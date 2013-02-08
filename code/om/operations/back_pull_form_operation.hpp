@@ -33,7 +33,7 @@ namespace Om {
 		// MARK: - Om::Operations::BackPullFormOperation
 		/*!
 		\brief
-			The \ref back_pull_form_operation Operation implementation.
+			The \ref om__operations__back_pull_form_operation__ operation implementation.
 		*/
 		class BackPullFormOperation {
 		public: // MARK: public (static)

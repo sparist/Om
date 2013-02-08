@@ -1,8 +1,8 @@
 /*!
-\defgroup do_operation do
-	\ingroup operations
+\defgroup om__operations__do_operation__ do
+	\ingroup om__operations__
 	\brief
-		Converts an \ref operand to a quoted \ref operator, then \ref dequote_operation "dequotes".
+		Converts an \ref om__operand__ to a quoted \ref om__operator__, then \ref om__operations__dequote_operation__ "dequotes".
 	\par Input
 		<tt>{hello, world!}</tt>
 	\par Output

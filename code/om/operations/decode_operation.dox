@@ -1,6 +1,6 @@
 /*!
-\defgroup decode_operation decode
-	\ingroup operations
+\defgroup om__operations__decode_operation__ decode
+	\ingroup om__operations__
 	\brief
 		Decodes encoded characters (non-recursively).
 	\par Input
@@ -10,5 +10,5 @@
 	\par Implementation
 		Om::Operations::DecodeOperation
 
-	Decoding the output of \ref encode_operation results in an \ref operand equivalent to the input of \ref encode_operation.
+	Decoding the output of \ref om__operations__encode_operation__ results in an \ref om__operand__ equivalent to the input of \ref om__operations__encode_operation__.
 */

@@ -1,8 +1,8 @@
 /*!
-\defgroup lexicon_back_push_operation lexicon<-
-	\ingroup operations
+\defgroup om__operations__lexicon_back_push_operation__ lexicon<-
+	\ingroup om__operations__
 	\brief
-		Pushes the contents of an \ref operand onto the back of a \ref lexicon (quoted).
+		Pushes the contents of an \ref om__operand__ onto the back of a \ref om__lexicon__ (quoted).
 	\par Input
 		<tt>{A} {B}</tt>
 	\par Output

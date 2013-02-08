@@ -28,7 +28,7 @@ namespace Om {
 	// MARK: - Om::Operand
 	/*!
 	\brief
-		The \ref operand implementation.
+		The \ref om__operand__ implementation.
 
 	Encloses a Program in Symbols::theStartOperandSymbol and Symbols::theEndOperandSymbol.  The Operand owns the embedded Program.
 	*/

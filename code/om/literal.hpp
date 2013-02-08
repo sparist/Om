@@ -28,7 +28,7 @@ namespace Om {
 	// MARK: - Om::Literal
 	/*!
 	\brief
-		The \ref literal Program implementation.
+		The \ref om__literal__ Program implementation.
 	*/
 	class Literal:
 	public DefaultProgram< Literal > {

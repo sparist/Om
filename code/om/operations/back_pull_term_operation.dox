@@ -1,8 +1,8 @@
 /*!
-\defgroup back_pull_term_operation terms->
-	\ingroup operations
+\defgroup om__operations__back_pull_term_operation__ terms->
+	\ingroup om__operations__
 	\brief
-		Pops the last term (\ref operator or \ref operand), quoted.
+		Pops the last term (\ref om__operator__ or \ref om__operand__), quoted.
 	\par Input
 		<tt>{A B}</tt>
 	\par Output

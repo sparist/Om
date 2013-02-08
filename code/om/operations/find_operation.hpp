@@ -34,7 +34,7 @@ namespace Om {
 		// MARK: - Om::Operations::FindOperation
 		/*!
 		\brief
-			The \ref find_operation Operation implementation.
+			The \ref om__operations__find_operation__ operation implementation.
 		*/
 		class FindOperation:
 		public DefaultOperation< FindOperation > {

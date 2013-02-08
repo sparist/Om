@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::SwapOperation
 		/*!
 		\brief
-			The \ref swap_operation Operation implementation.
+			The \ref om__operations__swap_operation__ operation implementation.
 		*/
 		class SwapOperation:
 		public DefaultOperation< SwapOperation > {

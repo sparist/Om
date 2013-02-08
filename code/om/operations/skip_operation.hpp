@@ -31,7 +31,7 @@ namespace Om {
 		// MARK: - Om::Operations::SkipOperation
 		/*!
 		\brief
-			The \ref skip_operation Operation implementation.
+			The \ref om__operations__skip_operation__ operation implementation.
 		*/
 		class SkipOperation:
 		public DefaultOperation< SkipOperation > {

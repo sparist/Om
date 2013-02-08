@@ -31,7 +31,7 @@ namespace Om {
 		// MARK: - Om::Operations::SubstituteOperation
 		/*!
 		\brief
-			The \ref substitute_operation Operation implementation.
+			The \ref om__operations__substitute_operation__ operation implementation.
 		*/
 		class SubstituteOperation:
 		public TranslateOperation< SubstituteOperation > {

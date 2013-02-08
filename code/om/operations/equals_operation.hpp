@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::EqualsOperation
 		/*!
 		\brief
-			The \ref equals_operation Operation implementation.
+			The \ref om__operations__equals_operation__ operation implementation.
 		*/
 		class EqualsOperation:
 		public DefaultOperation< EqualsOperation > {

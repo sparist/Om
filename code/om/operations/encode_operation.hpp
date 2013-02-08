@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::EncodeOperation
 		/*!
 		\brief
-			The \ref encode_operation Operation implementation.
+			The \ref om__operations__encode_operation__ operation implementation.
 		*/
 		class EncodeOperation:
 		public DefaultOperation< EncodeOperation > {

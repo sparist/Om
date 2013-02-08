@@ -1,8 +1,8 @@
 /*!
-\defgroup front_pull_form_operation <-forms
-	\ingroup operations
+\defgroup om__operations__front_pull_form_operation__ <-forms
+	\ingroup om__operations__
 	\brief
-		Pops the first form (a non-empty list of zero or one \ref operator "Operator(s)", followed by zero or more \ref operand "Operands"), quoted.
+		Pops the first form (a non-empty list of zero or one \ref om__operator__ "Operator(s)", followed by zero or more \ref om__operand__ "Operands"), quoted.
 	\par Implementation
 		Om::Operations::FrontPullFormOperation
 */

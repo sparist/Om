@@ -26,7 +26,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref separator_operation Operation implementation.
+			The \ref om__operations__separator_operation__ operation implementation.
 		*/
 		typedef ProgramOperation< Separator > SeparatorOperation;
 

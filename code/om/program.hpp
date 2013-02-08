@@ -33,7 +33,7 @@ namespace Om {
 	// MARK: - Om::Program
 	/*!
 	\brief
-		The \ref programs "Program" implementation.
+		The \ref om__programs__ "Program" implementation.
 
 	A Program is a Giveable, Shareable Queue whose entire state is represented by an Element collection.
 

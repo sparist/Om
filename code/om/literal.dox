@@ -1,10 +1,10 @@
 /*!
-\defgroup literal Literal
-	\ingroup programs
+\defgroup om__literal__ Literal
+	\ingroup om__programs__
 	\brief
-		A literal \ref programs "Program".
+		A literal \ref om__programs__ "Program".
 	\par Interpretation
-		A \ref literal is a verbatim interpretation of a \ref programs "Program" as a sequence of elements, where none are disregarded.
+		A \ref om__literal__ is a verbatim interpretation of a \ref om__programs__ "Program" as a sequence of elements, where none are disregarded.
 	\par Normalization
 		No normalization is required.
 	\par Implementation

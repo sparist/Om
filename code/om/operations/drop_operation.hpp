@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::DropOperation
 		/*!
 		\brief
-			The \ref drop_operation Operation implementation.
+			The \ref om__operations__drop_operation__ operation implementation.
 		*/
 		class DropOperation:
 		public DefaultOperation< DropOperation > {

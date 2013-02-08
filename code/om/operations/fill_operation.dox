@@ -1,8 +1,8 @@
 /*!
-\defgroup fill_operation fill
-	\ingroup operations
+\defgroup om__operations__fill_operation__ fill
+	\ingroup om__operations__
 	\brief
-		"Fills" an \ref expression such that none of its \ref operator "Operators" is not followed by an \ref operand.
+		"Fills" an \ref om__expression__ such that none of its \ref om__operator__ "Operators" is not followed by an \ref om__operand__.
 	\par Input
 		<tt>{expression} ...</tt>
 	\par Output
@@ -15,5 +15,5 @@
 	\par Implementation
 		Om::Operations::FillOperation
 
-	For each \ref operator in an \ref expression that has no \ref operand following it, pulls the next \ref operand following the \ref expression and inserts it after the \ref operator.
+	For each \ref om__operator__ in an \ref om__expression__ that has no \ref om__operand__ following it, pulls the next \ref om__operand__ following the \ref om__expression__ and inserts it after the \ref om__operator__.
 */

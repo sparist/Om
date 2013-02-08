@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::DequoteOperation
 		/*!
 		\brief
-			The \ref dequote_operation Operation implementation.
+			The \ref om__operations__dequote_operation__ operation implementation.
 		*/
 		class DequoteOperation:
 		public DefaultOperation< DequoteOperation > {

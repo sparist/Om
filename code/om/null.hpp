@@ -27,7 +27,7 @@ namespace Om {
 	// MARK: - Om::Null
 	/*!
 	\brief
-		The \ref null Program implementation.
+		The \ref om__null__ Program implementation.
 	*/
 	class Null:
 	public DefaultProgram< Null > {

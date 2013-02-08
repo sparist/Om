@@ -31,7 +31,7 @@ namespace Om {
 		// MARK: - Om::Operations::InjectOperation
 		/*!
 		\brief
-			The \ref inject_operation Operation implementation.
+			The \ref om__operations__inject_operation__ operation implementation.
 		*/
 		class InjectOperation:
 		public DefaultOperation< InjectOperation > {

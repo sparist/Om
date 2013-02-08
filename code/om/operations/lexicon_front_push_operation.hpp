@@ -29,7 +29,7 @@ namespace Om {
 		// MARK: - Om::Operations::LexiconFrontPushOperation
 		/*!
 		\brief
-			The \ref lexicon_front_push_operation Operation implementation.
+			The \ref om__operations__lexicon_front_push_operation__ operation implementation.
 		*/
 		class LexiconFrontPushOperation {
 		public: // MARK: public (static)

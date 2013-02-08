@@ -29,7 +29,7 @@ namespace Om {
 		// MARK: - Om::Operations::DoOperation
 		/*!
 		\brief
-			The \ref do_operation Operation implementation.
+			The \ref om__operations__do_operation__ operation implementation.
 		*/
 		class DoOperation {
 		public: // MARK: public (static)

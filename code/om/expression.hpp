@@ -27,7 +27,7 @@ namespace Om {
 	// MARK: - Om::Expression
 	/*!
 	\brief
-		The \ref expression Program implementation.
+		The \ref om__expression__ Program implementation.
 	*/
 	class Expression:
 	public DefaultProgram< Expression > {

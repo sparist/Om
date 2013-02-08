@@ -29,7 +29,7 @@ namespace Om {
 		// MARK: - Om::Operations::ExpressionBackPushOperation
 		/*!
 		\brief
-			The \ref expression_back_push_operation Operation implementation.
+			The \ref om__operations__expression_back_push_operation__ operation implementation.
 		*/
 		class ExpressionBackPushOperation {
 		public: // MARK: public (static)

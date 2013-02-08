@@ -33,7 +33,7 @@ namespace Om {
 		// MARK: - Om::Operations::BackPullSeparatorOperation
 		/*!
 		\brief
-			The \ref back_pull_separator_operation Operation implementation.
+			The \ref om__operations__back_pull_separator_operation__ operation implementation.
 		*/
 		class BackPullSeparatorOperation {
 		public: // MARK: public (static)

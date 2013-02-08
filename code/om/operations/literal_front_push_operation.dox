@@ -1,8 +1,8 @@
 /*!
-\defgroup literal_front_push_operation ->literal
-	\ingroup operations
+\defgroup om__operations__literal_front_push_operation__ ->literal
+	\ingroup om__operations__
 	\brief
-		Pushes the contents of an \ref operand onto the front of a \ref literal (quoted).
+		Pushes the contents of an \ref om__operand__ onto the front of a \ref om__literal__ (quoted).
 	\par Input
 		<tt>{A} {B}</tt>
 	\par Output
@@ -10,5 +10,5 @@
 	\par Implementation
 		Om::Operations::LiteralFrontPushOperation
 
-	Normalization to a \ref literal only happens if an append occurs (i.e. the first \ref operand is non-empty); otherwise, it is left unchanged.  However, since everything represents as a \ref literal, this doesn't make an observable difference.
+	Normalization to a \ref om__literal__ only happens if an append occurs (i.e. the first \ref om__operand__ is non-empty); otherwise, it is left unchanged.  However, since everything represents as a \ref om__literal__, this doesn't make an observable difference.
 */

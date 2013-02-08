@@ -31,7 +31,7 @@ namespace Om {
 		// MARK: - Om::Operations::FillOperation
 		/*!
 		\brief
-			The \ref fill_operation Operation implementation.
+			The \ref om__operations__fill_operation__ operation implementation.
 		*/
 		class FillOperation:
 		public DefaultOperation< FillOperation > {

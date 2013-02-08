@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::CopyOperation
 		/*!
 		\brief
-			The \ref copy_operation Operation implementation.
+			The \ref om__operations__copy_operation__ operation implementation.
 		*/
 		class CopyOperation:
 		public DefaultOperation< CopyOperation > {

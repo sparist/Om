@@ -29,7 +29,7 @@ namespace Om {
 		// MARK: - Om::Operations::LiteralFrontPushOperation
 		/*!
 		\brief
-			The \ref literal_front_push_operation Operation implementation.
+			The \ref om__operations__literal_front_push_operation__ operation implementation.
 		*/
 		class LiteralFrontPushOperation {
 		public: // MARK: public (static)

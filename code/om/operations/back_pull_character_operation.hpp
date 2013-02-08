@@ -29,7 +29,7 @@ namespace Om {
 		// MARK: - Om::Operations::BackPullCharacterOperation
 		/*!
 		\brief
-			The \ref back_pull_character_operation Operation implementation.
+			The \ref om__operations__back_pull_character_operation__ operation implementation.
 		*/
 		class BackPullCharacterOperation {
 		public: // MARK: public (static)

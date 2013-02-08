@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::NormalizeOperation
 		/*!
 		\brief
-			The \ref normalize_operation Operation implementation.
+			The \ref om__operations__normalize_operation__ operation implementation.
 		*/
 		class NormalizeOperation:
 		public DefaultOperation< NormalizeOperation > {

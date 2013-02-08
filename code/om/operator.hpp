@@ -30,7 +30,7 @@ namespace Om {
 	// MARK: - Om::Operator
 	/*!
 	\brief
-		The \ref operator implementation.
+		The \ref om__operator__ implementation.
 
 	As a Queue, the Operator appends each taken Element verbatim.
 	*/

@@ -29,7 +29,7 @@ namespace Om {
 	// MARK: - Om::Separator
 	/*!
 	\brief
-		The \ref separator implementation.
+		The \ref om__separator__ implementation.
 
 	An Atom defined by a string containing only Symbols::SeparatorSymbol characters.
 

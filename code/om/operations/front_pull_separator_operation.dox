@@ -1,8 +1,8 @@
 /*!
-\defgroup front_pull_separator_operation separator<-elements
-	\ingroup operations
+\defgroup om__operations__front_pull_separator_operation__ separator<-elements
+	\ingroup om__operations__
 	\brief
-		Casts to \ref literal and pops the first \ref separator (if any), quoted.
+		Casts to \ref om__literal__ and pops the first \ref om__separator__ (if any), quoted.
 	\par Input
 		<tt>{ A B}</tt>
 	\par Output

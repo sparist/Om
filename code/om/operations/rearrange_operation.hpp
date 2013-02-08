@@ -29,7 +29,7 @@ namespace Om {
 		// MARK: - Om::Operations::RearrangeOperation
 		/*!
 		\brief
-			The \ref rearrange_operation Operation implementation.
+			The \ref om__operations__rearrange_operation__ operation implementation.
 		*/
 		class RearrangeOperation {
 		public: // MARK: public (static)

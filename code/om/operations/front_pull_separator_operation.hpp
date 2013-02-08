@@ -33,7 +33,7 @@ namespace Om {
 		// MARK: - Om::Operations::FrontPullSeparatorOperation
 		/*!
 		\brief
-			The \ref front_pull_separator_operation Operation implementation.
+			The \ref om__operations__front_pull_separator_operation__ operation implementation.
 		*/
 		class FrontPullSeparatorOperation {
 		public: // MARK: public (static)

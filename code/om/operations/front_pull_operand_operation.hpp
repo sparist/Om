@@ -33,7 +33,7 @@ namespace Om {
 		// MARK: - Om::Operations::FrontPullOperandOperation
 		/*!
 		\brief
-			The \ref front_pull_operand_operation Operation implementation.
+			The \ref om__operations__front_pull_operand_operation__ operation implementation.
 		*/
 		class FrontPullOperandOperation {
 		public: // MARK: public (static)

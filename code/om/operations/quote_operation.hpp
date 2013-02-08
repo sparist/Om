@@ -30,7 +30,7 @@ namespace Om {
 		// MARK: - Om::Operations::QuoteOperation
 		/*!
 		\brief
-			The \ref quote_operation Operation implementation.
+			The \ref om__operations__quote_operation__ operation implementation.
 		*/
 		class QuoteOperation:
 		public DefaultOperation< QuoteOperation > {

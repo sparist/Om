@@ -1,8 +1,8 @@
 /*!
-\defgroup choose_operation choose
-	\ingroup operations
+\defgroup om__operations__choose_operation__ choose
+	\ingroup om__operations__
 	\brief
-		If the conditional \ref operand is empty, it is replaced with the empty-case \ref operand; otherwise, it is replaced with the non-empty-case \ref operand.
+		If the conditional \ref om__operand__ is empty, it is replaced with the empty-case \ref om__operand__; otherwise, it is replaced with the non-empty-case \ref om__operand__.
 	\par Input
 		<tt>{empty case} {non-empty case} {conditional}</tt>
 	\par Implementation

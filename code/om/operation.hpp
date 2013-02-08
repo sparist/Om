@@ -34,7 +34,7 @@ namespace Om {
 	// MARK: - Om::Operation
 	/*!
 	\brief
-		An \ref operations "Operation" that has yet to consume one or more \ref Operand "Operands", and therefore must live in memory while "incomplete".
+		An \ref om__operations__ "Operation" that has yet to consume one or more \ref Operand "Operands", and therefore must live in memory while "incomplete".
 	*/
 	class Operation {
 	public: // MARK: public (non-static)
