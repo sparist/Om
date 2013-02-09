@@ -1,12 +1,14 @@
-# Documentation
+# Om
 
-See the <a href="http://sparist.github.com/Om">Om page</a> for documentation.
+<a href="http://om-language.org">Om</a> is an experimental high-level programming language with the goal of maximal simplicity.
 
-# Changes
+See the <a href="http://sparist.github.com/Om">Om documentation</a> for more information.
 
-## 0.1.1
+## Changes
 
-### Operations
+### 0.1.1
+
+#### Operations
 
 -	Added:
 	-	`system`
@@ -29,22 +31,22 @@ See the <a href="http://sparist.github.com/Om">Om page</a> for documentation.
 	-	`evaluate`: now evaluates in place using the current environment
 	-	`find`: now provides information about whether the operator is included, and the output is reordered for ease of use
 
-### Programs
+#### Programs
 
 -	Fixed Operand program semantics so that an "empty" Operand is an empty Program.
 
-### Documentation
+#### Documentation
 
 -	Made documentation content and style improvements.
 -	Removed temporary generated documentation file on Windows.
 -	Created "gh-pages" branch containing generated Doxygen for the documentation.
 -	Updated Doxygen to 1.8.3.
 
-### Testing
+#### Testing
 
 -	Improved unit test coverage.
 
-### General
+#### General
 
 -	Removed recursion that was not statically bounded (#2).
 -	Moved roadmap to issue tracker (#3).
@@ -54,6 +56,6 @@ See the <a href="http://sparist.github.com/Om">Om page</a> for documentation.
 -	Tested with Boost 1.52.0 and updated build documentation.
 -	Tested with ICU4C 50.1.1 and updated build documentation.
 
-## 0.1
+### 0.1
 
 Initial release.
