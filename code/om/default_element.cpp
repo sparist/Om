@@ -103,7 +103,9 @@ inline void Type_::GiveElements( Queue & theQueue ) {
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);
-	if( !this->IsEmpty() ) {
+	if(
+		!this->IsEmpty()
+	) {
 		theQueue.TakeElement(
 			static_cast< ThisImplementation & >( *this )
 		);
@@ -115,7 +117,9 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 	assert(
 		dynamic_cast< ThisImplementation const * >( this )
 	);
-	if( !this->IsEmpty() ) {
+	if(
+		!this->IsEmpty()
+	) {
 		theQueue.TakeElement(
 			static_cast< ThisImplementation const & >( *this )
 		);

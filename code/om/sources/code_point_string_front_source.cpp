@@ -336,7 +336,9 @@ inline bool Type_::operator ==( CodePointStringFrontSource const & theSource ) c
 
 Template_
 inline bool Type_::operator !() const {
-	return( this->thisCodePoint.empty() );
+	return(
+		this->thisCodePoint.empty()
+	);
 }
 
 Template_
@@ -370,7 +372,9 @@ inline void Type_::Swap( CodePointStringFrontSource & theCodePointStringFrontSou
 
 Template_
 inline void Type_::Update() {
-	assert( this->thisCodePoint.empty() );
+	assert(
+		this->thisCodePoint.empty()
+	);
 	if( this->thisStringEnd == this->thisStringIterator ) {
 		return;
 	}

@@ -60,7 +60,9 @@ inline ThisInterface * Type_::Move() {
 	theMoveable->Swap(
 		static_cast< ThisImplementation & >( *this )
 	);
-	return( theMoveable.release() );
+	return(
+		theMoveable.release()
+	);
 }
 
 	#undef Type_

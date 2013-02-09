@@ -63,9 +63,9 @@ inline Type_ & Type_::operator =( ContainerBackSource theContainerBackSource ) {
 Template_
 inline bool Type_::operator ==( ContainerBackSource const & theSource ) const {
 	return(
-		&this->thisContainer == &theSource.thisContainer or
+		&this->thisContainer == &theSource.thisContainer ||
 		(
-			this->thisContainer.empty() and
+			this->thisContainer.empty() &&
 			theSource.thisContainer.empty()
 		)
 	);
@@ -73,18 +73,26 @@ inline bool Type_::operator ==( ContainerBackSource const & theSource ) const {
 
 Template_
 inline bool Type_::operator !() const {
-	return( this->thisContainer.empty() );
+	return(
+		this->thisContainer.empty()
+	);
 }
 
 Template_
 inline ThisItem & Type_::operator *() const {
-	assert( !this->thisContainer.empty() );
-	return( this->thisContainer.back() );
+	assert(
+		!this->thisContainer.empty()
+	);
+	return(
+		this->thisContainer.back()
+	);
 }
 
 Template_
 inline void Type_::Pop() {
-	assert( !this->thisContainer.empty() );
+	assert(
+		!this->thisContainer.empty()
+	);
 	this->thisContainer.pop_back();
 }
 

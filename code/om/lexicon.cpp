@@ -196,7 +196,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Lexicon_GetName_() );
+	return(
+		Om_Lexicon_GetName_()
+	);
 }
 
 // MARK: public (non-static)
@@ -219,7 +221,9 @@ thisLastNode() {
 		std::auto_ptr< Node > theNewNode(
 			new Node( *theNode )
 		);
-		assert( theNewNode.get() );
+		assert(
+			theNewNode.get()
+		);
 		theNewNode->LinkToBack(
 			this->thisFirstNode,
 			this->thisLastNode
@@ -240,8 +244,12 @@ inline Type_ & Type_::operator =( Lexicon theLexicon ) {
 
 inline void Type_::BackGivePair( Queue & theQueue ) {
 	if( this->thisLastNode ) {
-		Map::iterator const theIterator = this->thisMap.find( this->thisLastNode->GetOperator().GetString() );
-		assert( this->thisMap.end() != theIterator );
+		Map::iterator const theIterator = this->thisMap.find(
+			this->thisLastNode->GetOperator().GetString()
+		);
+		assert(
+			this->thisMap.end() != theIterator
+		);
 
 		assert( this->thisFirstNode );
 		Node::UnlinkLast(
@@ -263,18 +271,28 @@ inline void Type_::Clear() {
 inline Om::Pair const & Type_::Find( Operator const & theOperator ) const {
 	typedef Map::const_iterator Iterator;
 	Iterator theIterator(
-		this->thisMap.find( theOperator.GetString() )
+		this->thisMap.find(
+			theOperator.GetString()
+		)
 	);
-	if( this->thisMap.end() == theIterator ) {
-		return( Pair::GetEmpty() );
+	if(
+		this->thisMap.end() == theIterator
+	) {
+		return(
+			Pair::GetEmpty()
+		);
 	}
 	return( *theIterator->second );
 }
 
 inline void Type_::FrontGivePair( Queue & theQueue ) {
 	if( this->thisFirstNode ) {
-		Map::iterator const theIterator = this->thisMap.find( this->thisFirstNode->GetOperator().GetString() );
-		assert( this->thisMap.end() != theIterator );
+		Map::iterator const theIterator = this->thisMap.find(
+			this->thisFirstNode->GetOperator().GetString()
+		);
+		assert(
+			this->thisMap.end() != theIterator
+		);
 
 		assert( this->thisLastNode );
 		Node::UnlinkFirst(
@@ -323,7 +341,9 @@ inline bool Type_::IsEmpty() const {
 			!this->thisLastNode
 		)
 	);
-	return( this->thisMap.empty() );
+	return(
+		this->thisMap.empty()
+	);
 }
 
 inline void Type_::ReadElements( Parser & theParser ) {
@@ -373,13 +393,17 @@ inline void Type_::Swap( Lexicon & theLexicon ) {
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	this->GetOperandTaker().TakeOperand( theOperand );
 }
 
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator ) {
-	assert( !theOperator.IsEmpty() );
+	assert(
+		!theOperator.IsEmpty()
+	);
 	this->GetOperandTaker( theOperator );
 }
 
@@ -396,12 +420,18 @@ inline bool Type_::Translate(
 	Operator const & theOperator
 ) const {
 	Pair const & thePair = this->Find( theOperator );
-	if( thePair.IsEmpty() ) {
+	if(
+		thePair.IsEmpty()
+	) {
 		return( false );
 	}
 	Operand const & theOperand = thePair.GetOperand();
-	if( theOperand.IsEmpty() ) {
-		assert( thePair.GetOperator() == theOperator );
+	if(
+		theOperand.IsEmpty()
+	) {
+		assert(
+			thePair.GetOperator() == theOperator
+		);
 		return(
 			System::Get().Translate(
 				theEvaluation,
@@ -409,7 +439,9 @@ inline bool Type_::Translate(
 			)
 		);
 	}
-	theEvaluation.TakeQueue( *theOperand.GetProgram() );
+	theEvaluation.TakeQueue(
+		*theOperand.GetProgram()
+	);
 	return( true );
 }
 
@@ -424,7 +456,9 @@ inline void Type_::GiveElements(
 		for(
 			;
 			;
-			theQueue.TakeElement( Separator::GetLineSeparator() )
+			theQueue.TakeElement(
+				Separator::GetLineSeparator()
+			)
 		) {
 			assert(
 				theFirstNode &&
@@ -432,7 +466,9 @@ inline void Type_::GiveElements(
 			);
 			theFirstNode->GiveElements( theQueue );
 			if(
-				!( theFirstNode = theFirstNode->GetNext() )
+				!(
+					theFirstNode = theFirstNode->GetNext()
+				)
 			) {
 				return;
 			}
@@ -476,10 +512,14 @@ inline Type_::Node & Type_::GetOperandTaker( TheOperator & theOperator ) {
 	Node * theNode;
 	std::string const & theString = theOperator.GetString();
 	typename Map::iterator const theIterator = this->thisMap.find( theString );
-	if( this->thisMap.end() == theIterator ) {
+	if(
+		this->thisMap.end() == theIterator
+	) {
 		{
 			std::auto_ptr< Node > theNewNode( new Node );
-			assert( theNewNode.get() );
+			assert(
+				theNewNode.get()
+			);
 			theNode = theNewNode.get();
 			this->thisMap.insert(
 				theString,
@@ -491,7 +531,9 @@ inline Type_::Node & Type_::GetOperandTaker( TheOperator & theOperator ) {
 			this->thisFirstNode,
 			this->thisLastNode
 		);
-		assert( theNode->GetOperand().IsEmpty() );
+		assert(
+			theNode->GetOperand().IsEmpty()
+		);
 	} else {
 		theNode = &*theIterator->second;
 		theNode->RelinkToBack(
@@ -538,22 +580,36 @@ inline Om::Element const & Type_::operator *() const {
 	assert( this->thisNode );
 	switch( this->thisOffset ) {
 	case 0:
-		assert( !this->thisNode->GetOperator().IsEmpty() );
-		return( this->thisNode->GetOperator() );
+		assert(
+			!this->thisNode->GetOperator().IsEmpty()
+		);
+		return(
+			this->thisNode->GetOperator()
+		);
 	case 1:
-		assert( !this->thisNode->GetOperand().IsEmpty() );
-		return( this->thisNode->GetOperand() );
+		assert(
+			!this->thisNode->GetOperand().IsEmpty()
+		);
+		return(
+			this->thisNode->GetOperand()
+		);
 	default:
-		return( Separator::GetLineSeparator() );
+		return(
+			Separator::GetLineSeparator()
+		);
 	}
 }
 
 inline void Type_::Pop() {
 	assert( this->thisNode );
-	assert( !this->thisNode->IsEmpty() );
+	assert(
+		!this->thisNode->IsEmpty()
+	);
 	switch( this->thisOffset ) {
 	case 0:
-		if( !this->thisNode->GetOperand().IsEmpty() ) {
+		if(
+			!this->thisNode->GetOperand().IsEmpty()
+		) {
 			this->thisOffset = 1;
 			return;
 		}

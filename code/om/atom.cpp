@@ -40,11 +40,15 @@ namespace Om {
 // MARK: public (non-static)
 
 inline Om::Program & Type_::operator *() {
-	return( Null::Get() );
+	return(
+		Null::Get()
+	);
 }
 
 inline Om::Program const & Type_::operator *() const {
-	return( Null::Get() );
+	return(
+		Null::Get()
+	);
 }
 
 	#undef Type_

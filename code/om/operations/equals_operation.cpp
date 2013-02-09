@@ -76,7 +76,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_EqualsOperation_GetName_() );
+	return(
+		Om_Operations_EqualsOperation_GetName_()
+	);
 }
 
 template< typename TheEqualsOperation >
@@ -84,8 +86,12 @@ inline void Type_::GiveElements(
 	TheEqualsOperation & theEqualsOperation,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
-	if( !theEqualsOperation.thisOperand.IsEmpty() ) {
+	theQueue.TakeElement(
+		GetOperator()
+	);
+	if(
+		!theEqualsOperation.thisOperand.IsEmpty()
+	) {
 		theQueue.TakeElement( theEqualsOperation.thisOperand );
 	}
 }
@@ -100,8 +106,12 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
-	if( this->thisOperand.IsEmpty() ) {
+	assert(
+		!theOperand.IsEmpty()
+	);
+	if(
+		this->thisOperand.IsEmpty()
+	) {
 		this->thisOperand.Take( theOperand );
 		return( false );
 	}
@@ -118,12 +128,18 @@ inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if( this->thisOperand.IsEmpty() ) {
-		this->thisOperand.SetProgram( theQueue.GiveProgram() );
+	if(
+		this->thisOperand.IsEmpty()
+	) {
+		this->thisOperand.SetProgram(
+			theQueue.GiveProgram()
+		);
 		return( false );
 	}
 	Expression theExpression;
-	if( theQueue == *this->thisOperand.GetProgram() ) {
+	if(
+		theQueue == *this->thisOperand.GetProgram()
+	) {
 		theExpression.TakeOperand( this->thisOperand );
 	}
 	theEvaluation.TakeQuotedQueue( theExpression );

@@ -46,7 +46,9 @@ namespace Om {
 
 Template_
 inline char const * Type_::GetName() {
-	return( ThisProgram::GetName() );
+	return(
+		ThisProgram::GetName()
+	);
 }
 
 Template_
@@ -81,7 +83,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	return(
 		this->TakeQuotedQueue(
 			theEvaluation,

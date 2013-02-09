@@ -52,11 +52,15 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_SystemOperation_GetName_() );
+	return(
+		Om_Operations_SystemOperation_GetName_()
+	);
 }
 
 inline void Type_::Give( Evaluation & theEvaluation ) {
-	theEvaluation.TakeQuotedQueue( System::Get().GetLexicon() );
+	theEvaluation.TakeQuotedQueue(
+		System::Get().GetLexicon()
+	);
 }
 
 	#undef Type_

@@ -93,7 +93,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Literal_GetName_() );
+	return(
+		Om_Literal_GetName_()
+	);
 }
 
 // MARK: public (non-static)
@@ -101,9 +103,15 @@ inline char const * Type_::GetName() {
 inline Type_::~Literal() {
 	// Flatten the ElementDeque to avoid recursive destructor calls.
 	try {
-		while( !this->thisElementDeque.empty() ) {
-			std::auto_ptr< Element > theElement( this->thisElementDeque.pop_front().release() );
-			assert( theElement.get() );
+		while(
+			!this->thisElementDeque.empty()
+		) {
+			std::auto_ptr< Element > theElement(
+				this->thisElementDeque.pop_front().release()
+			);
+			assert(
+				theElement.get()
+			);
 			( *theElement )->GiveElements( *this );
 		}
 	} catch( ... ) {}
@@ -121,14 +129,18 @@ template< typename TheElement >
 inline void Type_::BackGive( Queue & theQueue ) {
 	if(
 		!this->thisElementDeque.empty() &&
-		dynamic_cast< TheElement const * >( &this->thisElementDeque.back() )
+		dynamic_cast< TheElement const * >(
+			&this->thisElementDeque.back()
+		)
 	) {
 		this->thisElementDeque.pop_back()->GiveElements( theQueue );
 	}
 }
 
 inline void Type_::BackGiveElement( Queue & theQueue ) {
-	if( !this->thisElementDeque.empty() ) {
+	if(
+		!this->thisElementDeque.empty()
+	) {
 		this->thisElementDeque.pop_back()->GiveElements( theQueue );
 	}
 }
@@ -141,14 +153,18 @@ template< typename TheElement >
 inline void Type_::FrontGive( Queue & theQueue ) {
 	if(
 		!this->thisElementDeque.empty() &&
-		dynamic_cast< TheElement const * >( &this->thisElementDeque.front() )
+		dynamic_cast< TheElement const * >(
+			&this->thisElementDeque.front()
+		)
 	) {
 		this->thisElementDeque.pop_front()->GiveElements( theQueue );
 	}
 }
 
 inline void Type_::FrontGiveElement( Queue & theQueue ) {
-	if( !this->thisElementDeque.empty() ) {
+	if(
+		!this->thisElementDeque.empty()
+	) {
 		this->thisElementDeque.pop_front()->GiveElements( theQueue );
 	}
 }
@@ -195,7 +211,9 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 }
 
 inline bool Type_::IsEmpty() const {
-	return( this->thisElementDeque.empty() );
+	return(
+		this->thisElementDeque.empty()
+	);
 }
 
 inline void Type_::ReadElements( Parser & theParser ) {
@@ -259,7 +277,9 @@ inline void Type_::Swap( Literal & theLiteral ) {
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	this->thisElementDeque.push_back(
 		Give( theOperand )
 	);
@@ -267,20 +287,26 @@ inline void Type_::TakeOperand( TheOperand & theOperand ) {
 
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator ) {
-	assert( !theOperator.IsEmpty() );
+	assert(
+		!theOperator.IsEmpty()
+	);
 	this->TakeAtom( theOperator );
 }
 
 template< typename TheQueue >
 inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
 	this->thisElementDeque.push_back(
-		new Operand( theQueue.GiveProgram() )
+		new Operand(
+			theQueue.GiveProgram()
+		)
 	);
 }
 
 template< typename TheSeparator >
 inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
-	assert( !theSeparator.IsEmpty() );
+	assert(
+		!theSeparator.IsEmpty()
+	);
 	this->TakeAtom( theSeparator );
 }
 
@@ -305,7 +331,9 @@ inline void Type_::GiveElements(
 
 template< typename TheAtom >
 inline void Type_::TakeAtom( TheAtom & theAtom ) {
-	assert( !theAtom.IsEmpty() );
+	assert(
+		!theAtom.IsEmpty()
+	);
 	if(
 		this->thisElementDeque.empty() ||
 		!this->thisElementDeque.back().Merge( theAtom )

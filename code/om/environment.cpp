@@ -41,17 +41,23 @@ inline Type_::Environment():
 thisTranslatorVector() {}
 
 inline void Type_::GiveElements( Queue & theQueue ) const {
-	if( !this->IsEmpty() ) {
+	if(
+		!this->IsEmpty()
+	) {
 		typedef TranslatorVector::const_iterator Iterator;
 		Iterator const theEnd = this->thisTranslatorVector.end();
 		for(
 			Iterator theCurrent = this->thisTranslatorVector.begin();
 			;
-			theQueue.TakeElement( Separator::GetLineSeparator() )
+			theQueue.TakeElement(
+				Separator::GetLineSeparator()
+			)
 		) {
 			assert( *theCurrent );
 			Translator const & theTranslator = **theCurrent;
-			assert( !theTranslator.IsEmpty() );
+			assert(
+				!theTranslator.IsEmpty()
+			);
 			theTranslator.GiveElements( theQueue );
 			if( theEnd == ++theCurrent ) {
 				return;
@@ -61,7 +67,9 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 }
 
 inline bool Type_::IsEmpty() const {
-	return( this->thisTranslatorVector.empty() );
+	return(
+		this->thisTranslatorVector.empty()
+	);
 }
 
 inline void Type_::Push( Translator const & theTranslator ) {
@@ -94,7 +102,9 @@ inline void Type_::Push( Translator const & theTranslator ) {
 		) {
 			this->thisTranslatorVector.push_back( theTranslatorPointer );
 		}
-		if( theStack.empty() ) {
+		if(
+			theStack.empty()
+		) {
 			return;
 		}
 		theTranslatorPointer = theStack.top();

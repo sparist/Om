@@ -71,7 +71,9 @@ namespace Om {
 
 		Initializes the global locale to en_US.UTF-8 (using boost::locale) and asserts that all name keys in the System are NFD-normalized.  This must be called in main, prior to any Program evaluation.
 		*/
-		void Initialize( char const theLocaleCodeUnitIterator[] );
+		void Initialize(
+			char const theLocaleCodeUnitIterator[]
+		);
 
 		virtual bool IsEmpty() const;
 

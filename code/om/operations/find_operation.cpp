@@ -134,7 +134,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_FindOperation_GetName_() );
+	return(
+		Om_Operations_FindOperation_GetName_()
+	);
 }
 
 template< typename TheFindOperation >
@@ -142,7 +144,9 @@ inline void Type_::GiveElements(
 	TheFindOperation & theFindOperation,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
+	theQueue.TakeElement(
+		GetOperator()
+	);
 	if( theFindOperation.thisOperator ) {
 		theQueue.TakeQuotedElements( *theFindOperation.thisOperator );
 	}
@@ -158,7 +162,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	return(
 		this->TakeQuotedQueue(
 			theEvaluation,

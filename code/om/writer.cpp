@@ -73,7 +73,9 @@ inline Type_::Writer(
 thisCodePointSink( theCodePointSink ) {}
 
 inline bool Type_::operator ==( Program const & theProgram ) const {
-	return( theProgram.IsEmpty() );
+	return(
+		theProgram.IsEmpty()
+	);
 }
 
 inline void Type_::Clear() {}
@@ -116,13 +118,19 @@ inline void Type_::ReadQuotedElements( Parser & theParser ) {
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand ) {
-	assert( !theOperand.IsEmpty() );
-	this->TakeQuotedQueue( *theOperand.GetProgram() );
+	assert(
+		!theOperand.IsEmpty()
+	);
+	this->TakeQuotedQueue(
+		*theOperand.GetProgram()
+	);
 }
 
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator ) {
-	assert( !theOperator.IsEmpty() );
+	assert(
+		!theOperator.IsEmpty()
+	);
 	std::string const & theString = theOperator.GetString();
 	for(
 		Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
@@ -156,7 +164,9 @@ inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
 
 template< typename TheSeparator >
 inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
-	assert( !theSeparator.IsEmpty() );
+	assert(
+		!theSeparator.IsEmpty()
+	);
 	std::string const & theString = theSeparator.GetString();
 	for(
 		Sources::CodePointSource< std::string::const_iterator > theCodePointSource(

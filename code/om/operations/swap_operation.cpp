@@ -60,7 +60,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_SwapOperation_GetName_() );
+	return(
+		Om_Operations_SwapOperation_GetName_()
+	);
 }
 
 template< typename TheSwapOperation >
@@ -68,8 +70,12 @@ inline void Type_::GiveElements(
 	TheSwapOperation & theSwapOperation,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
-	if( !theSwapOperation.thisOperand.IsEmpty() ) {
+	theQueue.TakeElement(
+		GetOperator()
+	);
+	if(
+		!theSwapOperation.thisOperand.IsEmpty()
+	) {
 		theQueue.TakeElement( theSwapOperation.thisOperand );
 	}
 }
@@ -84,8 +90,12 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
-	if( this->thisOperand.IsEmpty() ) {
+	assert(
+		!theOperand.IsEmpty()
+	);
+	if(
+		this->thisOperand.IsEmpty()
+	) {
 		this->thisOperand.Take( theOperand );
 		return( false );
 	}
@@ -99,8 +109,12 @@ inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if( this->thisOperand.IsEmpty() ) {
-		this->thisOperand.SetProgram( theQueue.GiveProgram() );
+	if(
+		this->thisOperand.IsEmpty()
+	) {
+		this->thisOperand.SetProgram(
+			theQueue.GiveProgram()
+		);
 		return( false );
 	}
 	theEvaluation.TakeOperand( this->thisOperand );

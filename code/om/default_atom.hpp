@@ -97,7 +97,9 @@ namespace Om {
 		\param theCodeUnitIterator
 			A non-null pointer to the null-terminated code unit array to copy.
 		*/
-		explicit DefaultAtom( char const theCodeUnitIterator[] );
+		explicit DefaultAtom(
+			char const theCodeUnitIterator[]
+		);
 
 		/*!
 		\param theCodeUnit

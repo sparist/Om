@@ -61,7 +61,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_CopyOperation_GetName_() );
+	return(
+		Om_Operations_CopyOperation_GetName_()
+	);
 }
 
 template< typename TheCopyOperation >
@@ -69,7 +71,9 @@ inline void Type_::GiveElements(
 	TheCopyOperation &,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
+	theQueue.TakeElement(
+		GetOperator()
+	);
 }
 
 // MARK: public (non-static)
@@ -79,7 +83,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	{
 		Operand const & theConstOperand( theOperand );
 		theEvaluation.TakeOperand( theConstOperand );

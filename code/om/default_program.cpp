@@ -61,12 +61,16 @@ inline bool Type_::operator ==( Program const & theProgram ) const {
 	std::auto_ptr<
 		Source< Element const >
 	> theRange = this->GetElementRange();
-	assert( theRange.get() );
+	assert(
+		theRange.get()
+	);
 
 	std::auto_ptr<
 		Source< Element const >
 	> theOtherRange = theProgram.GetElementRange();
-	assert( theOtherRange.get() );
+	assert(
+		theOtherRange.get()
+	);
 
 	for(
 		;

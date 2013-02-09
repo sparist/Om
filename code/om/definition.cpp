@@ -44,7 +44,9 @@ namespace Om {
 
 Template_
 inline Type_::Definition() {
-	System::Get().thisMap[ ThisOperation::GetName() ] = &ThisOperation::Give;
+	System::Get().thisMap[
+		ThisOperation::GetName()
+	] = &ThisOperation::Give;
 }
 
 	#undef Type_

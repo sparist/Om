@@ -46,7 +46,9 @@ inline Type_ & Type_::Get() {
 }
 
 inline char const * Type_::GetName() {
-	return( Om_Null_GetName_() );
+	return(
+		Om_Null_GetName_()
+	);
 }
 
 // MARK: public (non-static)
@@ -56,7 +58,9 @@ inline Type_ & Type_::operator =( Null const & ) {
 }
 
 inline bool Type_::operator ==( Program const & theProgram ) const {
-	return( theProgram.IsEmpty() );
+	return(
+		theProgram.IsEmpty()
+	);
 }
 
 inline void Type_::Clear() {}

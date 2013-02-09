@@ -60,7 +60,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_QuoteOperation_GetName_() );
+	return(
+		Om_Operations_QuoteOperation_GetName_()
+	);
 }
 
 template< typename TheQuoteOperation >
@@ -68,7 +70,9 @@ inline void Type_::GiveElements(
 	TheQuoteOperation &,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
+	theQueue.TakeElement(
+		GetOperator()
+	);
 }
 
 // MARK: public (non-static)
@@ -78,7 +82,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	theEvaluation.TakeQuotedQueue( theOperand );
 	return( true );
 }
@@ -88,7 +94,9 @@ inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	Operand theOperand( theQueue.GiveProgram() );
+	Operand theOperand(
+		theQueue.GiveProgram()
+	);
 	theEvaluation.TakeQuotedQueue( theOperand );
 	return( true );
 }

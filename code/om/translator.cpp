@@ -52,7 +52,9 @@ inline void Type_::Evaluate(
 	).ReadElements( theParser );
 }
 
-inline std::string Type_::Evaluate( char const theCodeUnitIterator[] ) const {
+inline std::string Type_::Evaluate(
+	char const theCodeUnitIterator[]
+) const {
 	assert( theCodeUnitIterator );
 	std::string theString;
 	{

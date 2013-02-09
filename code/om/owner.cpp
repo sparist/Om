@@ -186,7 +186,9 @@ template< typename TheValue >
 inline Type_::Owner(
 	std::auto_ptr< TheValue > theValue
 ):
-thisValue( theValue.release() ),
+thisValue(
+	theValue.release()
+),
 thisWasExposed() {}
 
 Template_
@@ -198,7 +200,9 @@ inline Type_ & Type_::operator =( Owner theOwner ) {
 Template_
 inline ThisValue & Type_::operator *() {
 	assert( this->thisValue );
-	if( 1 < this->thisValue->GetOwnerCount() ) {
+	if(
+		1 < this->thisValue->GetOwnerCount()
+	) {
 		this->thisValue.reset(
 			Copy( *this->thisValue ).release()
 		);
@@ -255,7 +259,9 @@ ThisValue * Type_::GetValue() {
 
 Template_
 ThisValue const * Type_::GetValue() const {
-	return( this->thisValue.get() );
+	return(
+		this->thisValue.get()
+	);
 }
 
 Template_
@@ -268,7 +274,9 @@ template< typename TheValue >
 inline void Type_::SetValue(
 	std::auto_ptr< TheValue > theValue
 ) {
-	this->thisValue.reset( theValue.release() );
+	this->thisValue.reset(
+		theValue.release()
+	);
 	this->thisWasExposed = false;
 }
 

@@ -68,7 +68,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_SkipOperation_GetName_() );
+	return(
+		Om_Operations_SkipOperation_GetName_()
+	);
 }
 
 template< typename TheSkipOperation >
@@ -76,8 +78,12 @@ inline void Type_::GiveElements(
 	TheSkipOperation & theSkipOperation,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
-	if( !theSkipOperation.thisExpression.IsEmpty() ) {
+	theQueue.TakeElement(
+		GetOperator()
+	);
+	if(
+		!theSkipOperation.thisExpression.IsEmpty()
+	) {
 		theQueue.TakeQuotedElements( theSkipOperation.thisExpression );
 	}
 }
@@ -92,7 +98,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	return(
 		this->TakeQuotedQueue(
 			theEvaluation,
@@ -106,9 +114,13 @@ inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if( this->thisExpression.IsEmpty() ) {
+	if(
+		this->thisExpression.IsEmpty()
+	) {
 		this->thisExpression.TakeElements( theQueue );
-		return( this->thisExpression.IsEmpty() );
+		return(
+			this->thisExpression.IsEmpty()
+		);
 	}
 	theEvaluation.TakeQueue( this->thisExpression );
 	theEvaluation.TakeQuotedQueue( theQueue );

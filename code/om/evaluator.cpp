@@ -44,9 +44,13 @@ namespace Om {
 
 inline Type_::~Evaluator() {
 	try {
-		if( !this->IsEmpty() ) {
+		if(
+			!this->IsEmpty()
+		) {
 			if( this->thisGaveElementToOutput ) {
-				this->thisOutput.TakeElement( Separator::GetLineSeparator() );
+				this->thisOutput.TakeElement(
+					Separator::GetLineSeparator()
+				);
 			}
 			this->GiveElements( this->thisOutput );
 		}
@@ -106,7 +110,9 @@ inline std::auto_ptr< Om::Program > Type_::GiveProgram() const {
 }
 
 inline bool Type_::IsEmpty() const {
-	return( this->thisOperationVector.empty() );
+	return(
+		this->thisOperationVector.empty()
+	);
 }
 
 inline void Type_::ReadElements( Parser & theParser ) {
@@ -149,14 +155,18 @@ inline void Type_::ReadQuotedElements(
 	Evaluation & theEvaluation,
 	Parser & theParser
 ) {
-	if( this->thisOperationVector.empty() ) {
+	if(
+		this->thisOperationVector.empty()
+	) {
 		this->thisOutput.ReadQuotedElements( theParser );
 		this->thisGaveElementToOutput = true;
 	} else {
 		std::auto_ptr< Operation > theOperation(
 			this->thisOperationVector.pop_back().release()
 		);
-		assert( theOperation.get() );
+		assert(
+			theOperation.get()
+		);
 		if(
 			!theOperation->ReadQuotedElements(
 				theEvaluation,
@@ -170,7 +180,9 @@ inline void Type_::ReadQuotedElements(
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	Evaluation theEvaluation( *this );
 	this->TakeOperand(
 		theEvaluation,
@@ -184,15 +196,21 @@ inline void Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
-	if( this->thisOperationVector.empty() ) {
+	assert(
+		!theOperand.IsEmpty()
+	);
+	if(
+		this->thisOperationVector.empty()
+	) {
 		this->thisOutput.TakeElement( theOperand );
 		this->thisGaveElementToOutput = true;
 	} else {
 		std::auto_ptr< Operation > theOperation(
 			this->thisOperationVector.pop_back().release()
 		);
-		assert( theOperation.get() );
+		assert(
+			theOperation.get()
+		);
 		if(
 			!theOperation->TakeElement(
 				theEvaluation,
@@ -226,7 +244,9 @@ inline void Type_::TakeOperator(
 	Evaluation & theEvaluation,
 	TheOperator & theOperator
 ) {
-	assert( !theOperator.IsEmpty() );
+	assert(
+		!theOperator.IsEmpty()
+	);
 	if(
 		!this->thisTranslator.Translate(
 			theEvaluation,
@@ -240,14 +260,20 @@ inline void Type_::TakeOperator(
 		// Flush everything up to, and including, the operator.
 		// At the very least, the operator will be flushed.
 		if( this->thisGaveElementToOutput ) {
-			this->thisOutput.TakeElement( Separator::GetLineSeparator() );
+			this->thisOutput.TakeElement(
+				Separator::GetLineSeparator()
+			);
 		}
 
 		// Flush the evaluation.
 		// Starts with Operator; leading Operands would have been sent.
-		if( !this->IsEmpty() ) {
+		if(
+			!this->IsEmpty()
+		) {
 			this->GiveElements( this->thisOutput );
-			this->thisOutput.TakeElement( Separator::GetLineSeparator() );
+			this->thisOutput.TakeElement(
+				Separator::GetLineSeparator()
+			);
 		}
 
 		// Flush the operator.
@@ -271,12 +297,18 @@ inline void Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if( this->thisOperationVector.empty() ) {
+	if(
+		this->thisOperationVector.empty()
+	) {
 		this->thisOutput.TakeQuotedElements( theQueue );
 		this->thisGaveElementToOutput = true;
 	} else {
-		std::auto_ptr< Operation > theOperation( this->thisOperationVector.pop_back().release() );
-		assert( theOperation.get() );
+		std::auto_ptr< Operation > theOperation(
+			this->thisOperationVector.pop_back().release()
+		);
+		assert(
+			theOperation.get()
+		);
 		if(
 			!theOperation->TakeQuotedElements(
 				theEvaluation,
@@ -303,7 +335,9 @@ inline void Type_::GiveElements(
 		for(
 			;
 			;
-			theQueue.TakeElement( Separator::GetLineSeparator() )
+			theQueue.TakeElement(
+				Separator::GetLineSeparator()
+			)
 		) {
 			theCurrent->GiveElements( theQueue );
 			if( theEnd == ++theCurrent ) {
@@ -316,7 +350,9 @@ inline void Type_::GiveElements(
 template< typename TheEvaluator >
 inline std::auto_ptr< Om::Program > Type_::GiveProgram( TheEvaluator & theEvaluator ) {
 	std::auto_ptr< Program > theExpression( new Expression );
-	assert( theExpression.get() );
+	assert(
+		theExpression.get()
+	);
 	theEvaluator.GiveElements( *theExpression );
 	return( theExpression );
 }

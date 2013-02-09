@@ -49,19 +49,25 @@ inline Type_ & Type_::Get() {
 
 inline Om::Lexicon const & Type_::GetLexicon() const {
 	static Lexicon theLexicon;
-	if( theLexicon.IsEmpty() ) {
+	if(
+		theLexicon.IsEmpty()
+	) {
 		this->GiveElements( theLexicon );
 	}
 	return( theLexicon );
 }
 
 inline void Type_::GiveElements( Queue & theQueue ) const {
-	if( !this->IsEmpty() ) {
+	if(
+		!this->IsEmpty()
+	) {
 		Map::const_iterator const theEnd = this->thisMap.end();
 		for(
 			Map::const_iterator theCurrent = this->thisMap.begin();
 			;
-			theQueue.TakeElement( Separator::GetLineSeparator() )
+			theQueue.TakeElement(
+				Separator::GetLineSeparator()
+			)
 		) {
 			assert( theEnd != theCurrent );
 			Operator theOperator( theCurrent->first );
@@ -73,7 +79,9 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 	}
 }
 
-inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] ) {
+inline void Type_::Initialize(
+	char const theLocaleCodeUnitIterator[]
+) {
 	// Set the global locale.
 	{
 		boost::locale::generator theGenerator;
@@ -82,7 +90,9 @@ inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] ) {
 			theGenerator( theLocaleCodeUnitIterator )
 		);
 		assert(
-			std::use_facet< boost::locale::info >( std::locale() ).utf8()
+			std::use_facet< boost::locale::info >(
+				std::locale()
+			).utf8()
 		);
 	}
 
@@ -107,7 +117,9 @@ inline void Type_::Initialize( char const theLocaleCodeUnitIterator[] ) {
 }
 
 inline bool Type_::IsEmpty() const {
-	return( this->thisMap.empty() );
+	return(
+		this->thisMap.empty()
+	);
 }
 
 inline bool Type_::Translate(
@@ -115,9 +127,13 @@ inline bool Type_::Translate(
 	Operator const & theOperator
 ) const {
 	Map::const_iterator theIterator(
-		this->thisMap.find( theOperator.GetString() )
+		this->thisMap.find(
+			theOperator.GetString()
+		)
 	);
-	if( this->thisMap.end() == theIterator ) {
+	if(
+		this->thisMap.end() == theIterator
+	) {
 		return( false );
 	}
 	assert( theIterator->second );

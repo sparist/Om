@@ -54,7 +54,9 @@ namespace Om {
 		\param theCodeUnitIterator
 			A non-null pointer to the null-terminated code unit array to normalize and copy directly into the Operator.
 		*/
-		explicit Operator( char const theCodeUnitIterator[] );
+		explicit Operator(
+			char const theCodeUnitIterator[]
+		);
 
 		explicit Operator(
 			Source< CodePoint const > &

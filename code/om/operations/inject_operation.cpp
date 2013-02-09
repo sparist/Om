@@ -152,7 +152,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_InjectOperation_GetName_() );
+	return(
+		Om_Operations_InjectOperation_GetName_()
+	);
 }
 
 template< typename TheInjectOperation >
@@ -160,10 +162,14 @@ inline void Type_::GiveElements(
 	TheInjectOperation & theInjectOperation,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
+	theQueue.TakeElement(
+		GetOperator()
+	);
 	if( theInjectOperation.thisScope ) {
 		theQueue.TakeQuotedElements( theInjectOperation.thisInjector );
-		if( !theInjectOperation.thisScope->IsEmpty() ) {
+		if(
+			!theInjectOperation.thisScope->IsEmpty()
+		) {
 			Expression theOutput;
 			theOutput.Take( theInjectOperation.thisOutput );
 			theInjectOperation.thisScope->GiveElements( theOutput );
@@ -185,7 +191,9 @@ inline bool Type_::TakeQuotedQueue(
 	TheQueue & theQueue
 ) {
 	if( this->thisScope ) {
-		if( this->thisScope->IsEmpty() ) {
+		if(
+			this->thisScope->IsEmpty()
+		) {
 			theQueue.GiveElements( *this->thisScope );
 		} else {
 			{
@@ -194,14 +202,18 @@ inline bool Type_::TakeQuotedQueue(
 			}
 			this->thisScope->TakeQuotedQueue( theQueue );
 		}
-		if( this->thisScope->IsEmpty() ) {
+		if(
+			this->thisScope->IsEmpty()
+		) {
 			theEvaluation.TakeQuotedQueue( this->thisOutput );
 			return( true );
 		}
 	} else {
 		this->thisScope = boost::in_place(
 			boost::ref( this->thisOutput ),
-			boost::ref( theEvaluation.GetTranslator() )
+			boost::ref(
+				theEvaluation.GetTranslator()
+			)
 		);
 		this->thisInjector.TakeElements( theQueue );
 	}
@@ -213,7 +225,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	return(
 		this->TakeQuotedQueue(
 			theEvaluation,

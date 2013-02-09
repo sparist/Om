@@ -161,7 +161,9 @@ inline void Type_::Swap( CodePointSource & theCodePointSource ) {
 
 // MARK: public (non-static)
 
-inline Type_::CodePointSource( char const theCodeUnitIterator[] ):
+inline Type_::CodePointSource(
+	char const theCodeUnitIterator[]
+):
 CodePointSource< CodeUnitSource >(
 	CodeUnitSource( theCodeUnitIterator ),
 	CodeUnitSource( "" )

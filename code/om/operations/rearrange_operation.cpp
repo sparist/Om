@@ -86,7 +86,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_RearrangeOperation_GetName_() );
+	return(
+		Om_Operations_RearrangeOperation_GetName_()
+	);
 }
 
 inline void Type_::Give( Evaluation & theEvaluation ) {
@@ -95,15 +97,27 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 	SwapOperation::Give( theEvaluation );
 	SkipOperation::Give( theEvaluation );
 	Expression theExpression;
-	theExpression.TakeOperator( DequoteOperation::GetOperator() );
-	theExpression.TakeOperator( InjectOperation::GetOperator() );
-	theExpression.TakeQuotedQueue( QuoteOperation::GetOperator() );
+	theExpression.TakeOperator(
+		DequoteOperation::GetOperator()
+	);
+	theExpression.TakeOperator(
+		InjectOperation::GetOperator()
+	);
+	theExpression.TakeQuotedQueue(
+		QuoteOperation::GetOperator()
+	);
 	{
-		Operator theOperator( ExpressionFrontPushOperation::GetName() );
+		Operator theOperator(
+			ExpressionFrontPushOperation::GetName()
+		);
 		theExpression.TakeOperator( theOperator );
 	}
-	theExpression.TakeQuotedQueue( FillOperation::GetOperator() );
-	theExpression.TakeOperator( QuoteOperation::GetOperator() );
+	theExpression.TakeQuotedQueue(
+		FillOperation::GetOperator()
+	);
+	theExpression.TakeOperator(
+		QuoteOperation::GetOperator()
+	);
 	theEvaluation.TakeQuotedQueue( theExpression );
 }
 

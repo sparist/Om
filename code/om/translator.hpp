@@ -62,7 +62,9 @@ namespace Om {
 
 		This form is implemented in terms of the other form.
 		*/
-		std::string Evaluate( char const theCodeUnitIterator[] ) const;
+		std::string Evaluate(
+			char const theCodeUnitIterator[]
+		) const;
 
 		virtual void GiveElements( Queue & ) const = 0;
 

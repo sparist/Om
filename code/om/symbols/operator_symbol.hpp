@@ -31,7 +31,9 @@
 		A string literal representation of Om::Symbols::theEncodeOperatorSymbol.
 	*/
 	#define Om_Symbols_OperatorSymbol_GetEncodeString_() \
-	Om_Macros_GetString_( Om_Symbols_OperatorSymbol_GetEncodeHex_() )
+	Om_Macros_GetString_( \
+		Om_Symbols_OperatorSymbol_GetEncodeHex_() \
+	)
 
 namespace Om {
 
@@ -46,7 +48,9 @@ namespace Om {
 			/*!
 			Encodes the next #CodePoint as an Operator #CodePoint.  Redundant when followed by a non-symbol #CodePoint.
 			*/
-			theEncodeOperatorSymbol = Om_Macros_GetNumber_( Om_Symbols_OperatorSymbol_GetEncodeHex_() )
+			theEncodeOperatorSymbol = Om_Macros_GetNumber_(
+				Om_Symbols_OperatorSymbol_GetEncodeHex_()
+			)
 
 		};
 

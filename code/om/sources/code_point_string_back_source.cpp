@@ -379,7 +379,9 @@ inline void Type_::Swap( CodePointStringBackSource & theCodePointStringBackSourc
 Template_
 inline void Type_::Update() {
 	assert( this->thisCodePointEnd == this->thisCodePointIterator );
-	assert( this->thisCodePoint.empty() );
+	assert(
+		this->thisCodePoint.empty()
+	);
 	if( this->thisStringIterator == this->thisCodePointIterator ) {
 		return;
 	}

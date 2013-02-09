@@ -56,7 +56,9 @@ inline bool Type_::operator ==( Parser const & theParser ) const {
 }
 
 inline Om::CodePoint const & Type_::operator *() const {
-	assert( !this->operator !() );
+	assert(
+		!this->operator !()
+	);
 	return( *this->thisCodePointSource );
 }
 

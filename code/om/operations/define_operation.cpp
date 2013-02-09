@@ -185,7 +185,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_DefineOperation_GetName_() );
+	return(
+		Om_Operations_DefineOperation_GetName_()
+	);
 }
 
 template< typename TheDefineOperation >
@@ -193,7 +195,9 @@ inline void Type_::GiveElements(
 	TheDefineOperation & theDefineOperation,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
+	theQueue.TakeElement(
+		GetOperator()
+	);
 	if( theDefineOperation.thisLexicon ) {
 		theQueue.TakeQuotedElements( *theDefineOperation.thisLexicon );
 	}
@@ -209,7 +213,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	return(
 		this->TakeQuotedQueue(
 			theEvaluation,
@@ -227,8 +233,12 @@ inline bool Type_::TakeQuotedQueue(
 		Expression theExpression;
 		{
 			Environment theEnvironment;
-			theEnvironment.Push( System::Get() );
-			theEnvironment.Push( theEvaluation.GetTranslator() );
+			theEnvironment.Push(
+				System::Get()
+			);
+			theEnvironment.Push(
+				theEvaluation.GetTranslator()
+			);
 			theEnvironment.Push( *this->thisLexicon );
 			Evaluator theScope(
 				theExpression,

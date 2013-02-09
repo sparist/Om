@@ -97,7 +97,9 @@ inline void Type_::TakeOperator( TheOperator & theOperator ) {
 
 template< typename TheQueue >
 inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
-	this->thisOperand.SetProgram( theQueue.GiveProgram() );
+	this->thisOperand.SetProgram(
+		theQueue.GiveProgram()
+	);
 }
 
 // MARK: private (non-static)
@@ -107,10 +109,14 @@ inline void Type_::GiveElements(
 	ThePair & thePair,
 	Queue & theQueue
 ) {
-	if( !thePair.thisOperator.IsEmpty() ) {
+	if(
+		!thePair.thisOperator.IsEmpty()
+	) {
 		theQueue.TakeElement( thePair.thisOperator );
 	}
-	if( !thePair.thisOperand.IsEmpty() ) {
+	if(
+		!thePair.thisOperand.IsEmpty()
+	) {
 		theQueue.TakeElement( thePair.thisOperand );
 	}
 }

@@ -173,7 +173,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Expression_GetName_() );
+	return(
+		Om_Expression_GetName_()
+	);
 }
 
 // MARK: public (non-static)
@@ -187,29 +189,41 @@ inline Type_ & Type_::operator =( Expression theExpression ) {
 }
 
 inline void Type_::BackGiveForm( Queue & theQueue ) {
-	if( !this->thisFormDeque.empty() ) {
+	if(
+		!this->thisFormDeque.empty()
+	) {
 		this->thisFormDeque.back().GiveElements( theQueue );
 		this->thisFormDeque.pop_back();
 	}
 }
 
 inline void Type_::BackGiveTerm( Queue & theQueue ) {
-	if( !this->thisFormDeque.empty() ) {
+	if(
+		!this->thisFormDeque.empty()
+	) {
 		Form & theForm = this->thisFormDeque.back();
 		if(
 			theForm.BackGiveTerm( theQueue )
 		) {
-			assert( theForm.IsEmpty() );
+			assert(
+				theForm.IsEmpty()
+			);
 			this->thisFormDeque.pop_back();
 		}
 	}
 }
 
 inline void Type_::BackPopTerm() {
-	assert( !this->thisFormDeque.empty() );
+	assert(
+		!this->thisFormDeque.empty()
+	);
 	Form & theForm = this->thisFormDeque.back();
-	if( theForm.BackPopTerm() ) {
-		assert( theForm.IsEmpty() );
+	if(
+		theForm.BackPopTerm()
+	) {
+		assert(
+			theForm.IsEmpty()
+		);
 		this->thisFormDeque.pop_back();
 	}
 }
@@ -221,8 +235,12 @@ inline void Type_::BackTakeOperand( TheOperand & theOperand ) {
 
 template< typename TheOperator >
 inline void Type_::BackTakeOperator( TheOperator & theOperator ) {
-	assert( !theOperator.IsEmpty() );
-	this->thisFormDeque.push_back( Form() );
+	assert(
+		!theOperator.IsEmpty()
+	);
+	this->thisFormDeque.push_back(
+		Form()
+	);
 	this->thisFormDeque.back().TakeOperator( theOperator );
 }
 
@@ -236,29 +254,41 @@ inline void Type_::Clear() {
 }
 
 inline void Type_::FrontGiveForm( Queue & theQueue ) {
-	if( !this->thisFormDeque.empty() ) {
+	if(
+		!this->thisFormDeque.empty()
+	) {
 		this->thisFormDeque.front().GiveElements( theQueue );
 		this->thisFormDeque.pop_front();
 	}
 }
 
 inline void Type_::FrontGiveTerm( Queue & theQueue ) {
-	if( !this->thisFormDeque.empty() ) {
+	if(
+		!this->thisFormDeque.empty()
+	) {
 		Form & theForm = this->thisFormDeque.front();
 		if(
 			theForm.FrontGiveTerm( theQueue )
 		) {
-			assert( theForm.IsEmpty() );
+			assert(
+				theForm.IsEmpty()
+			);
 			this->thisFormDeque.pop_front();
 		}
 	}
 }
 
 inline void Type_::FrontPopTerm() {
-	assert( !this->thisFormDeque.empty() );
+	assert(
+		!this->thisFormDeque.empty()
+	);
 	Form & theForm = this->thisFormDeque.front();
-	if( theForm.FrontPopTerm() ) {
-		assert( theForm.IsEmpty() );
+	if(
+		theForm.FrontPopTerm()
+	) {
+		assert(
+			theForm.IsEmpty()
+		);
 		this->thisFormDeque.pop_front();
 	}
 }
@@ -270,7 +300,9 @@ inline void Type_::FrontTakeOperand( TheOperand & theOperand ) {
 
 template< typename TheOperator >
 inline void Type_::FrontTakeOperator( TheOperator & theOperator ) {
-	assert( !theOperator.IsEmpty() );
+	assert(
+		!theOperator.IsEmpty()
+	);
 	this->GetFrontTaker().TakeOperator( theOperator );
 }
 
@@ -309,7 +341,9 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 }
 
 inline bool Type_::IsEmpty() const {
-	return( this->thisFormDeque.empty() );
+	return(
+		this->thisFormDeque.empty()
+	);
 }
 
 inline void Type_::ReadElements( Parser & theParser ) {
@@ -350,17 +384,27 @@ inline void Type_::Swap( Expression & theExpression ) {
 }
 
 inline void Type_::TakeElements( Expression & theExpression ) {
-	if( !theExpression.IsEmpty() ) {
-		if( this->IsEmpty() ) {
+	if(
+		!theExpression.IsEmpty()
+	) {
+		if(
+			this->IsEmpty()
+		) {
 			this->Take( theExpression );
 		} else {
 			FormDeque & theFormDeque = theExpression.thisFormDeque;
-			assert( !theFormDeque.empty() );
+			assert(
+				!theFormDeque.empty()
+			);
 			FormDeque::iterator theCurrent = theFormDeque.begin();
-			if( theCurrent->GetOperator().IsEmpty() ) {
+			if(
+				theCurrent->GetOperator().IsEmpty()
+			) {
 				theFormDeque.front().GiveElements( *this );
 				theFormDeque.pop_front();
-				if( theFormDeque.empty() ) {
+				if(
+					theFormDeque.empty()
+				) {
 					return;
 				}
 				theCurrent = theFormDeque.begin();
@@ -368,8 +412,12 @@ inline void Type_::TakeElements( Expression & theExpression ) {
 			FormDeque::iterator const theEnd = theFormDeque.end();
 			assert( theEnd != theCurrent );
 			do {
-				assert( !theCurrent->GetOperator().IsEmpty() );
-				this->thisFormDeque.push_back( Form() );
+				assert(
+					!theCurrent->GetOperator().IsEmpty()
+				);
+				this->thisFormDeque.push_back(
+					Form()
+				);
 				this->thisFormDeque.back().Swap( *theCurrent );
 			} while( theEnd != ++theCurrent );
 			Expression().Swap( theExpression );
@@ -378,16 +426,24 @@ inline void Type_::TakeElements( Expression & theExpression ) {
 }
 
 inline void Type_::TakeElements( Expression const & theExpression ) {
-	if( !theExpression.IsEmpty() ) {
-		if( this->IsEmpty() ) {
+	if(
+		!theExpression.IsEmpty()
+	) {
+		if(
+			this->IsEmpty()
+		) {
 			this->Take( theExpression );
 		} else {
 			FormDeque const & theFormDeque = theExpression.thisFormDeque;
-			assert( !theFormDeque.empty() );
+			assert(
+				!theFormDeque.empty()
+			);
 			FormDeque::const_iterator const theEnd = theFormDeque.end();
 			FormDeque::const_iterator theCurrent = theFormDeque.begin();
 			assert( theEnd != theCurrent );
-			if( theCurrent->GetOperator().IsEmpty() ) {
+			if(
+				theCurrent->GetOperator().IsEmpty()
+			) {
 				theFormDeque.front().GiveElements( *this );
 				++theCurrent;
 			}
@@ -426,13 +482,17 @@ inline void Type_::TakeElements( Queue const & theQueue ) {
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	this->BackTakeOperand( theOperand );
 }
 
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator ) {
-	assert( !theOperator.IsEmpty() );
+	assert(
+		!theOperator.IsEmpty()
+	);
 	this->BackTakeOperator( theOperator );
 }
 
@@ -456,9 +516,13 @@ inline void Type_::GiveElements(
 		for(
 			;
 			;
-			theQueue.TakeElement( Separator::GetLineSeparator() )
+			theQueue.TakeElement(
+				Separator::GetLineSeparator()
+			)
 		) {
-			assert( !theCurrent->IsEmpty() );
+			assert(
+				!theCurrent->IsEmpty()
+			);
 			theCurrent->GiveElements( theQueue );
 			if( theEnd == ++theCurrent ) {
 				return;
@@ -470,10 +534,16 @@ inline void Type_::GiveElements(
 // MARK: private (non-static)
 
 inline Om::Form & Type_::GetBackTaker() {
-	if( this->thisFormDeque.empty() ) {
-		this->thisFormDeque.push_back( Form() );
+	if(
+		this->thisFormDeque.empty()
+	) {
+		this->thisFormDeque.push_back(
+			Form()
+		);
 	}
-	return( this->thisFormDeque.back() );
+	return(
+		this->thisFormDeque.back()
+	);
 }
 
 inline Om::Form & Type_::GetFrontTaker() {
@@ -481,9 +551,13 @@ inline Om::Form & Type_::GetFrontTaker() {
 		this->thisFormDeque.empty() ||
 		!this->thisFormDeque.front().GetOperator().IsEmpty()
 	) {
-		this->thisFormDeque.push_front( Form() );
+		this->thisFormDeque.push_front(
+			Form()
+		);
 	}
-	return( this->thisFormDeque.front() );
+	return(
+		this->thisFormDeque.front()
+	);
 }
 
 	#undef Type_
@@ -517,8 +591,12 @@ Sources::CollectionFrontSource<
 // MARK: public (non-static)
 
 inline Type_::ElementRange( Expression const & theExpression ):
-thisFormIterator( theExpression.thisFormDeque.begin() ),
-thisFormEnd( theExpression.thisFormDeque.end() ),
+thisFormIterator(
+	theExpression.thisFormDeque.begin()
+),
+thisFormEnd(
+	theExpression.thisFormDeque.end()
+),
 thisFormElementRange() {
 	if( this->thisFormEnd != this->thisFormIterator ) {
 		this->thisFormElementRange = boost::in_place(

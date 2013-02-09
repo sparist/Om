@@ -120,7 +120,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_SubstituteOperation_GetName_() );
+	return(
+		Om_Operations_SubstituteOperation_GetName_()
+	);
 }
 
 // MARK: public (non-static)

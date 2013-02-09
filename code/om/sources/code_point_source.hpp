@@ -101,7 +101,9 @@ namespace Om {
 			\param theCodeUnitIterator
 				A non-null pointer to a null-terminated code unit array.
 			*/
-			explicit CodePointSource( char const theCodeUnitIterator[] );
+			explicit CodePointSource(
+				char const theCodeUnitIterator[]
+			);
 
 		private: // MARK: private (static)
 

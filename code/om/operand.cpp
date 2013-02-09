@@ -41,7 +41,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operand_GetName_() );
+	return(
+		Om_Operand_GetName_()
+	);
 }
 
 // MARK: public (non-static)
@@ -64,7 +66,9 @@ inline bool Type_::operator ==( Operand const & theOperand ) const {
 	return(
 		this->IsEmpty()?
 		theOperand.IsEmpty():
-		( *this->GetProgram() == *theOperand.GetProgram() )
+		(
+			*this->GetProgram() == *theOperand.GetProgram()
+		)
 	);
 }
 
@@ -89,11 +93,15 @@ inline void Type_::Clear() {
 }
 
 inline Om::Program * Type_::GetProgram() {
-	return( this->thisProgram.GetValue() );
+	return(
+		this->thisProgram.GetValue()
+	);
 }
 
 inline Om::Program const * Type_::GetProgram() const {
-	return( this->thisProgram.GetValue() );
+	return(
+		this->thisProgram.GetValue()
+	);
 }
 
 inline bool Type_::IsEmpty() const {
@@ -101,7 +109,9 @@ inline bool Type_::IsEmpty() const {
 }
 
 inline void Type_::ReadElements( Parser & theParser ) {
-	if( this->IsEmpty() ) {
+	if(
+		this->IsEmpty()
+	) {
 		for(
 			;
 			;
@@ -158,20 +168,26 @@ inline void Type_::Swap( Operand & theOperand ) {
 }
 
 inline void Type_::TakeElements( Queue & theQueue ) {
-	if( this->IsEmpty() ) {
+	if(
+		this->IsEmpty()
+	) {
 		DefaultElement< Operand >::TakeElements( theQueue );
 	}
 }
 
 inline void Type_::TakeElements( Queue const & theQueue ) {
-	if( this->IsEmpty() ) {
+	if(
+		this->IsEmpty()
+	) {
 		DefaultElement< Operand >::TakeElements( theQueue );
 	}
 }
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand ) {
-	if( this->IsEmpty() ) {
+	if(
+		this->IsEmpty()
+	) {
 		this->Take( theOperand );
 	}
 }
@@ -181,8 +197,12 @@ inline void Type_::TakeOperator( TheOperator & ) {}
 
 template< typename TheQueue >
 inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
-	if( this->IsEmpty() ) {
-		this->SetProgram( theQueue.GiveProgram() );
+	if(
+		this->IsEmpty()
+	) {
+		this->SetProgram(
+			theQueue.GiveProgram()
+		);
 	}
 }
 

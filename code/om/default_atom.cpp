@@ -64,7 +64,9 @@ Template_
 inline std::auto_ptr<
 	Om::Source< Om::Element >
 > Type_::GetElementRange() {
-	if( this->IsEmpty() ) {
+	if(
+		this->IsEmpty()
+	) {
 		return(
 			std::auto_ptr<
 				Source< Element >
@@ -85,7 +87,9 @@ Template_
 inline std::auto_ptr<
 	Om::Source< Om::Element const >
 > Type_::GetElementRange() const {
-	if( this->IsEmpty() ) {
+	if(
+		this->IsEmpty()
+	) {
 		return(
 			std::auto_ptr<
 				Source< Element const >
@@ -109,7 +113,9 @@ inline std::string const & Type_::GetString() const {
 
 Template_
 inline bool Type_::IsEmpty() const {
-	return( this->thisString.empty() );
+	return(
+		this->thisString.empty()
+	);
 }
 
 Template_
@@ -136,7 +142,9 @@ inline Type_::DefaultAtom():
 thisString() {}
 
 Template_
-inline Type_::DefaultAtom( char const theCodeUnitIterator[] ):
+inline Type_::DefaultAtom(
+	char const theCodeUnitIterator[]
+):
 thisString( theCodeUnitIterator ) {
 	assert(
 		theCodeUnitIterator &&

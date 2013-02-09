@@ -56,7 +56,9 @@ inline void Type_::GiveElements(
 	ThePullOperation &,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
+	theQueue.TakeElement(
+		GetOperator()
+	);
 }
 
 // MARK: public (non-static)
@@ -82,7 +84,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	return(
 		this->TakeQuotedQueue(
 			theEvaluation,
@@ -115,7 +119,9 @@ inline bool Type_::TakeQuotedQueue(
 
 Template_
 inline Om::Operator const & Type_::GetOperator() {
-	static Operator const theOperator( ThisImplementation::GetName() );
+	static Operator const theOperator(
+		ThisImplementation::GetName()
+	);
 	return( theOperator );
 }
 

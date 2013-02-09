@@ -51,16 +51,22 @@ thisExpression(),
 thisEvaluator( theEvaluator ) {}
 
 inline Om::Translator const & Type_::GetTranslator() const {
-	return( this->thisEvaluator.GetTranslator() );
+	return(
+		this->thisEvaluator.GetTranslator()
+	);
 }
 
 inline bool Type_::GiveTerm( Evaluator & theEvaluator ) {
-	if( this->thisExpression.IsEmpty() ) {
+	if(
+		this->thisExpression.IsEmpty()
+	) {
 		return( false );
 	}
 	Expression::FormRange< Form > theFormRange( this->thisExpression );
 	assert( theFormRange );
-	if( theFormRange->GetOperator().IsEmpty() ) {
+	if(
+		theFormRange->GetOperator().IsEmpty()
+	) {
 		Operand theOperand;
 		{
 			Form::OperandRange< Operand > theOperandRange( *theFormRange );
@@ -85,7 +91,9 @@ inline bool Type_::GiveTerm( Evaluator & theEvaluator ) {
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	this->thisExpression.FrontTakeOperand( theOperand );
 }
 
@@ -98,7 +106,9 @@ inline void Type_::TakeOperation(
 
 template< typename TheOperator >
 inline void Type_::TakeOperator( TheOperator & theOperator ) {
-	assert( !theOperator.IsEmpty() );
+	assert(
+		!theOperator.IsEmpty()
+	);
 	this->thisExpression.FrontTakeOperator( theOperator );
 }
 

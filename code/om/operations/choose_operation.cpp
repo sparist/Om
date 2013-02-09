@@ -66,7 +66,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_ChooseOperation_GetName_() );
+	return(
+		Om_Operations_ChooseOperation_GetName_()
+	);
 }
 
 template< typename TheChooseOperation >
@@ -74,7 +76,9 @@ inline void Type_::GiveElements(
 	TheChooseOperation & theChooseOperation,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
+	theQueue.TakeElement(
+		GetOperator()
+	);
 	if( 0 < theChooseOperation.thisOperandCount ) {
 		theQueue.TakeElement( theChooseOperation.thisEmptyCase );
 		if( 1 < theChooseOperation.thisOperandCount ) {
@@ -95,7 +99,9 @@ inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	Operand theOperand( theQueue.GiveProgram() );
+	Operand theOperand(
+		theQueue.GiveProgram()
+	);
 	return(
 		this->TakeOperand(
 			theEvaluation,
@@ -109,7 +115,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	assert( this->thisOperandCount < 3 );
 	switch( this->thisOperandCount++ ) {
 	case 0:

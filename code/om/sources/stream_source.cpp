@@ -67,19 +67,25 @@ inline bool Type_::operator ==( StreamSource const & theSource ) const {
 
 Template_
 inline bool Type_::operator !() const {
-	return( StreamIterator() == this->thisStreamIterator );
+	return(
+		StreamIterator() == this->thisStreamIterator
+	);
 }
 
 Template_
 inline ThisItem const & Type_::operator *() const {
-	assert( StreamIterator() != this->thisStreamIterator );
+	assert(
+		StreamIterator() != this->thisStreamIterator
+	);
 	this->thisItem = *this->thisStreamIterator;
 	return( *this->thisItem );
 }
 
 Template_
 inline void Type_::Pop() {
-	assert( StreamIterator() != this->thisStreamIterator );
+	assert(
+		StreamIterator() != this->thisStreamIterator
+	);
 	++this->thisStreamIterator;
 }
 

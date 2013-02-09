@@ -74,7 +74,9 @@ namespace Om {
 					theLiteral.ReadElements( theParser );
 				}
 				theOperator.TakeQuotedQueue( theLiteral );
-				assert( theLiteral.IsEmpty() );
+				assert(
+					theLiteral.IsEmpty()
+				);
 			}
 			CHECK_EQUAL(
 				"{a{b{c}}}",
@@ -147,7 +149,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operator_GetName_() );
+	return(
+		Om_Operator_GetName_()
+	);
 }
 
 // MARK: public (non-static)
@@ -161,7 +165,9 @@ inline Type_::Operator( std::string const & theString ) {
 	).swap( this->thisString );
 }
 
-inline Type_::Operator( char const theCodeUnitIterator[] ) {
+inline Type_::Operator(
+	char const theCodeUnitIterator[]
+) {
 	boost::locale::normalize(
 		theCodeUnitIterator,
 		boost::locale::norm_nfd
@@ -225,7 +231,9 @@ inline Type_ & Type_::operator =( Operator theOperator ) {
 }
 
 inline void Type_::BackGiveCodePoint( Queue & theQueue ) {
-	if( !this->thisString.empty() ) {
+	if(
+		!this->thisString.empty()
+	) {
 		Operator theOperator;
 		{
 			std::string & theString = theOperator.thisString;
@@ -237,8 +245,12 @@ inline void Type_::BackGiveCodePoint( Queue & theQueue ) {
 				assert( theCodePointStringRange );
 				theCodePointStringRange->swap( theString );
 			}
-			assert( !theString.empty() );
-			this->thisString.erase( this->thisString.size() - theString.size() );
+			assert(
+				!theString.empty()
+			);
+			this->thisString.erase(
+				this->thisString.size() - theString.size()
+			);
 		}
 		theQueue.TakeElement( theOperator );
 	}
@@ -246,7 +258,9 @@ inline void Type_::BackGiveCodePoint( Queue & theQueue ) {
 
 template< boost::locale::boundary::boundary_type theSegment >
 inline void Type_::BackGiveSegment( Queue & theQueue ) {
-	if( !this->thisString.empty() ) {
+	if(
+		!this->thisString.empty()
+	) {
 		Operator theOperator;
 		{
 			std::string & theString = theOperator.thisString;
@@ -261,13 +275,21 @@ inline void Type_::BackGiveSegment( Queue & theQueue ) {
 					this->thisString.end()
 				);
 
-				SegmentIterator theSegmentIterator( theSegmentCollection.end() );
-				assert( theSegmentCollection.begin() != theSegmentIterator );
+				SegmentIterator theSegmentIterator(
+					theSegmentCollection.end()
+				);
+				assert(
+					theSegmentCollection.begin() != theSegmentIterator
+				);
 				--theSegmentIterator;
 				theSegmentIterator->str().swap( theString );
 			}
-			assert( !theString.empty() );
-			this->thisString.erase( this->thisString.size() - theString.size() );
+			assert(
+				!theString.empty()
+			);
+			this->thisString.erase(
+				this->thisString.size() - theString.size()
+			);
 		}
 		theQueue.TakeElement( theOperator );
 	}
@@ -296,7 +318,9 @@ inline void Type_::Encode( TheQueue & theQueue ) {
 }
 
 inline void Type_::FrontGiveCodePoint( Queue & theQueue ) {
-	if( !this->thisString.empty() ) {
+	if(
+		!this->thisString.empty()
+	) {
 		Operator theOperator;
 		{
 			std::string & theString = theOperator.thisString;
@@ -308,7 +332,9 @@ inline void Type_::FrontGiveCodePoint( Queue & theQueue ) {
 				assert( theCodePointStringRange );
 				theCodePointStringRange->swap( theString );
 			}
-			assert( !theString.empty() );
+			assert(
+				!theString.empty()
+			);
 			this->thisString.erase(
 				0,
 				theString.size()
@@ -320,7 +346,9 @@ inline void Type_::FrontGiveCodePoint( Queue & theQueue ) {
 
 template< boost::locale::boundary::boundary_type theSegment >
 inline void Type_::FrontGiveSegment( Queue & theQueue ) {
-	if( !this->thisString.empty() ) {
+	if(
+		!this->thisString.empty()
+	) {
 		Operator theOperator;
 		{
 			std::string & theString = theOperator.thisString;
@@ -333,11 +361,17 @@ inline void Type_::FrontGiveSegment( Queue & theQueue ) {
 					this->thisString.end()
 				);
 
-				SegmentCollection::const_iterator const theSegmentIterator( theSegmentCollection.begin() );
-				assert( theSegmentCollection.end() != theSegmentIterator );
+				SegmentCollection::const_iterator const theSegmentIterator(
+					theSegmentCollection.begin()
+				);
+				assert(
+					theSegmentCollection.end() != theSegmentIterator
+				);
 				theSegmentIterator->str().swap( theString );
 			}
-			assert( !theString.empty() );
+			assert(
+				!theString.empty()
+			);
 			this->thisString.erase(
 				0,
 				theString.size()
@@ -381,8 +415,12 @@ inline void Type_::ReadQuotedElements( Parser & theParser ) {
 
 template< typename TheOperand >
 inline void Type_::TakeOperand( TheOperand & theOperand ) {
-	assert( !theOperand.IsEmpty() );
-	this->TakeQuotedQueue( *theOperand.GetProgram() );
+	assert(
+		!theOperand.IsEmpty()
+	);
+	this->TakeQuotedQueue(
+		*theOperand.GetProgram()
+	);
 }
 
 template< typename TheOperator >
@@ -390,7 +428,9 @@ inline void Type_::TakeOperator( TheOperator & theOperator ) {
 	assert(
 		typeid( theOperator ) == typeid( *this )
 	);
-	assert( !theOperator.IsEmpty() );
+	assert(
+		!theOperator.IsEmpty()
+	);
 	assert(
 		boost::locale::normalize(
 			theOperator.thisString,
@@ -399,7 +439,9 @@ inline void Type_::TakeOperator( TheOperator & theOperator ) {
 		"Operator strings must be NFC normalized."
 	);
 
-	if( this->IsEmpty() ) {
+	if(
+		this->IsEmpty()
+	) {
 		this->Take( theOperator );
 		return;
 	}
@@ -423,8 +465,12 @@ inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
 
 template< typename TheSeparator >
 inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
-	assert( !theSeparator.IsEmpty() );
-	this->thisString.append( theSeparator.GetString() );
+	assert(
+		!theSeparator.IsEmpty()
+	);
+	this->thisString.append(
+		theSeparator.GetString()
+	);
 }
 
 	#undef Type_

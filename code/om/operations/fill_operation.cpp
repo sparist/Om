@@ -92,7 +92,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_FillOperation_GetName_() );
+	return(
+		Om_Operations_FillOperation_GetName_()
+	);
 }
 
 template< typename TheFillOperation >
@@ -100,7 +102,9 @@ inline void Type_::GiveElements(
 	TheFillOperation & theFillOperation,
 	Queue & theQueue
 ) {
-	theQueue.TakeElement( GetOperator() );
+	theQueue.TakeElement(
+		GetOperator()
+	);
 	if( theFillOperation.thisFormRange ) {
 		theQueue.TakeQuotedElements( theFillOperation.thisExpression );
 	}
@@ -117,7 +121,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	return(
 		this->TakeQuotedQueue(
 			theEvaluation,

@@ -55,7 +55,9 @@ inline void Type_::GiveElements(
 	assert(
 		typeid( TheTranslateOperation ) == typeid( ThisImplementation )
 	);
-	theQueue.TakeElement( ThisImplementation::GetOperator() );
+	theQueue.TakeElement(
+		ThisImplementation::GetOperator()
+	);
 	if( theTranslateOperation.thisLexicon ) {
 		theQueue.TakeQuotedElements( *theTranslateOperation.thisLexicon );
 	}
@@ -72,7 +74,9 @@ inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	return(
 		this->TakeQuotedQueue(
 			theEvaluation,

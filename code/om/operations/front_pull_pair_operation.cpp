@@ -98,7 +98,9 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return( Om_Operations_FrontPullPairOperation_GetName_() );
+	return(
+		Om_Operations_FrontPullPairOperation_GetName_()
+	);
 }
 
 inline void Type_::Give( Evaluation & theEvaluation ) {

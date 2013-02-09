@@ -44,7 +44,9 @@ namespace Om {
 
 Template_
 inline Om::Operator const & Type_::GetOperator() {
-	static Operator const theOperator( ThisImplementation::GetName() );
+	static Operator const theOperator(
+		ThisImplementation::GetName()
+	);
 	return( theOperator );
 }
 
@@ -102,7 +104,9 @@ inline bool Type_::TakeElement(
 	Evaluation & theEvaluation,
 	Operand & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);
@@ -119,7 +123,9 @@ inline bool Type_::TakeElement(
 	Evaluation & theEvaluation,
 	Operand const & theOperand
 ) {
-	assert( !theOperand.IsEmpty() );
+	assert(
+		!theOperand.IsEmpty()
+	);
 	assert(
 		dynamic_cast< ThisImplementation * >( this )
 	);

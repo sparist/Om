@@ -69,7 +69,9 @@ inline Type_ const & Type_::GetLineSeparator() {
 }
 
 inline char const * Type_::GetName() {
-	return( Om_Separator_GetName_() );
+	return(
+		Om_Separator_GetName_()
+	);
 }
 
 // MARK: public (non-static)
@@ -162,7 +164,9 @@ inline void Type_::TakeQuotedQueue( TheQueue & ) {}
 
 template< typename TheSeparator >
 inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
-	assert( !theSeparator.IsEmpty() );
+	assert(
+		!theSeparator.IsEmpty()
+	);
 	this->thisString.append( theSeparator.thisString );
 }
 
