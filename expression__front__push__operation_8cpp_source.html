@@ -196,23 +196,25 @@ $(document).ready(function(){initNavTree('expression__front__push__operation_8cp
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * Type_::GetName() {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span>( <a class="code" href="expression__front__push__operation_8hpp.html#a7f5c6e588d60c6fb8ba544498c315576">Om_Operations_ExpressionFrontPushOperation_GetName_</a>() );</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Type_::Give</a>( Evaluation &amp; theEvaluation ) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    theEvaluation.TakeOperation(</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        std::auto_ptr&lt; Operation &gt;(</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keyword">new</span> FrontPushOperation&lt;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                Expression,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                ExpressionFrontPushOperation</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            &gt;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        )</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    );</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span>(</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="expression__front__push__operation_8hpp.html#a7f5c6e588d60c6fb8ba544498c315576">Om_Operations_ExpressionFrontPushOperation_GetName_</a>()</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    );</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Type_::Give</a>( Evaluation &amp; theEvaluation ) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    theEvaluation.TakeOperation(</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        std::auto_ptr&lt; Operation &gt;(</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keyword">new</span> FrontPushOperation&lt;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                Expression,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                ExpressionFrontPushOperation</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            &gt;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        )</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    );</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

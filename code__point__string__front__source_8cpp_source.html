@@ -419,85 +419,89 @@ $(document).ready(function(){initNavTree('code__point__string__front__source_8cp
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;Template_</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::operator !()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">return</span>( this-&gt;thisCodePoint.empty() );</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;Template_</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="keyword">inline</span> std::string &amp; Type_::operator *()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">return</span>( this-&gt;thisCodePoint );</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;}</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;Template_</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Pop() {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    this-&gt;thisCodePoint.clear();</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    this-&gt;Update();</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;Template_</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Swap( CodePointStringFrontSource &amp; theCodePointStringFrontSource ) {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        this-&gt;thisStringIterator,</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        theCodePointStringFrontSource.thisStringIterator</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    );</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        this-&gt;thisStringEnd,</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        theCodePointStringFrontSource.thisStringEnd</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    );</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        this-&gt;thisCodePoint,</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        theCodePointStringFrontSource.thisCodePoint</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    );</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">return</span>(</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        this-&gt;thisCodePoint.empty()</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    );</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;Template_</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keyword">inline</span> std::string &amp; Type_::operator *()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span>( this-&gt;thisCodePoint );</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;Template_</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Pop() {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    this-&gt;thisCodePoint.clear();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    this-&gt;Update();</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;Template_</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Swap( CodePointStringFrontSource &amp; theCodePointStringFrontSource ) {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        this-&gt;thisStringIterator,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        theCodePointStringFrontSource.thisStringIterator</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    );</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        this-&gt;thisStringEnd,</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        theCodePointStringFrontSource.thisStringEnd</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    );</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        this-&gt;thisCodePoint,</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        theCodePointStringFrontSource.thisCodePoint</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    );</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;}</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;Template_</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Update() {</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    assert( this-&gt;thisCodePoint.empty() );</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span>( this-&gt;thisStringEnd == this-&gt;thisStringIterator ) {</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordtype">char</span> theCodeUnit = *this-&gt;thisStringIterator;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    ++this-&gt;thisStringIterator;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">if</span>(</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        Utf8::is_lead( theCodeUnit )</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    ) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        this-&gt;thisCodePoint.push_back( theCodeUnit );</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">for</span>(</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="keywordtype">int</span> theTrailCount = Utf8::trail_length( theCodeUnit );</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            ;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            --theTrailCount</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        ) {</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordflow">if</span>( !theTrailCount ) {</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="keywordflow">if</span>(</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                this-&gt;thisStringEnd == this-&gt;thisStringIterator ||</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                !Utf8::is_trail( theCodeUnit = *this-&gt;thisStringIterator )</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            ) {</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            }</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            this-&gt;thisCodePoint.push_back( theCodeUnit );</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            ++this-&gt;thisStringIterator;</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        }</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    }</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    this-&gt;thisCodePoint = <span class="stringliteral">&quot;\xEF\xBF\xBD&quot;</span> <span class="comment">/* Replacement character */</span>;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #undef Template_</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="comment">// MARK: - boost</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisStringIterator &gt;</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <a class="code" href="class_om_1_1_sources_1_1_code_point_string_front_source.html" title="A Source of CodePoint strings from the front of a string.">Om::Sources::CodePointStringFrontSource&lt; ThisStringIterator &gt;</a> &amp; theFirst,</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <a class="code" href="class_om_1_1_sources_1_1_code_point_string_front_source.html" title="A Source of CodePoint strings from the front of a string.">Om::Sources::CodePointStringFrontSource&lt; ThisStringIterator &gt;</a> &amp; theSecond</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;) {</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    theFirst.<a class="code" href="class_om_1_1_sources_1_1_code_point_string_front_source.html#ae442bcc069727b0f76dbc41a1298c544">Swap</a>( theSecond );</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;Template_</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Update() {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    assert(</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        this-&gt;thisCodePoint.empty()</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    );</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span>( this-&gt;thisStringEnd == this-&gt;thisStringIterator ) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    }</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordtype">char</span> theCodeUnit = *this-&gt;thisStringIterator;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    ++this-&gt;thisStringIterator;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">if</span>(</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        Utf8::is_lead( theCodeUnit )</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    ) {</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        this-&gt;thisCodePoint.push_back( theCodeUnit );</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">for</span>(</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordtype">int</span> theTrailCount = Utf8::trail_length( theCodeUnit );</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            ;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            --theTrailCount</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        ) {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keywordflow">if</span>( !theTrailCount ) {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="keywordflow">if</span>(</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                this-&gt;thisStringEnd == this-&gt;thisStringIterator ||</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                !Utf8::is_trail( theCodeUnit = *this-&gt;thisStringIterator )</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            ) {</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            }</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            this-&gt;thisCodePoint.push_back( theCodeUnit );</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            ++this-&gt;thisStringIterator;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    this-&gt;thisCodePoint = <span class="stringliteral">&quot;\xEF\xBF\xBD&quot;</span> <span class="comment">/* Replacement character */</span>;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #undef Template_</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="comment">// MARK: - boost</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisStringIterator &gt;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <a class="code" href="class_om_1_1_sources_1_1_code_point_string_front_source.html" title="A Source of CodePoint strings from the front of a string.">Om::Sources::CodePointStringFrontSource&lt; ThisStringIterator &gt;</a> &amp; theFirst,</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <a class="code" href="class_om_1_1_sources_1_1_code_point_string_front_source.html" title="A Source of CodePoint strings from the front of a string.">Om::Sources::CodePointStringFrontSource&lt; ThisStringIterator &gt;</a> &amp; theSecond</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;) {</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    theFirst.<a class="code" href="class_om_1_1_sources_1_1_code_point_string_front_source.html#ae442bcc069727b0f76dbc41a1298c544">Swap</a>( theSecond );</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;}</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

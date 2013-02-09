@@ -9,8 +9,8 @@ var NAVTREE =
       [ "Operand", "syntax__.html#syntax__operand__", null ]
     ] ],
     [ "Functions", "functions__.html", [
-      [ "Input and Output", "functions__.html#functions__input_and_output", null ],
       [ "Prefix Notation", "functions__.html#functions__prefix__", null ],
+      [ "Input and Output", "functions__.html#functions__input_and_output", null ],
       [ "Terms", "functions__.html#functions__terms__", null ],
       [ "Types", "functions__.html#functions__types__", null ],
       [ "Evaluation", "functions__.html#functions__evaluation__", [

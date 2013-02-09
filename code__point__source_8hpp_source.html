@@ -154,35 +154,37 @@ $(document).ready(function(){initNavTree('code__point__source_8hpp_source.html',
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        &gt; {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a>( <span class="keywordtype">char</span> <span class="keyword">const</span> theCodeUnitIterator[] );</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (static)</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a>(</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordtype">char</span> <span class="keyword">const</span> theCodeUnitIterator[]</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            );</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keyword">typedef</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a>&lt;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordtype">char</span> <span class="keyword">const</span>,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordtype">char</span> <span class="keyword">const</span> *</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="class_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html#ad8408b61118abf46d58e82739dc341f8">  115</a></span>&#160;            &gt; <a class="code" href="class_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html#ad8408b61118abf46d58e82739dc341f8" title="A convenience typedef of the underlying IteratorSource.">CodeUnitSource</a>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        };</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (static)</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keyword">typedef</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a>&lt;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordtype">char</span> <span class="keyword">const</span>,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordtype">char</span> <span class="keyword">const</span> *</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="class_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html#ad8408b61118abf46d58e82739dc341f8">  117</a></span>&#160;            &gt; <a class="code" href="class_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html#ad8408b61118abf46d58e82739dc341f8" title="A convenience typedef of the underlying IteratorSource.">CodeUnitSource</a>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        };</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">// MARK: - boost</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">namespace </span>boost {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisCodeUnitIterator &gt;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">Om::Sources::CodePointSource&lt; ThisCodeUnitIterator &gt;</a> &amp;,</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">Om::Sources::CodePointSource&lt; ThisCodeUnitIterator &gt;</a> &amp;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    );</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// MARK: - boost</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">namespace </span>boost {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisCodeUnitIterator &gt;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">Om::Sources::CodePointSource&lt; ThisCodeUnitIterator &gt;</a> &amp;,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">Om::Sources::CodePointSource&lt; ThisCodeUnitIterator &gt;</a> &amp;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    );</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="code__point__source_8cpp.html" title="Om source file.">om/sources/code_point_source.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="code__point__source_8cpp.html" title="Om source file.">om/sources/code_point_source.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

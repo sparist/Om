@@ -119,12 +119,14 @@ $(document).ready(function(){initNavTree('move_8cpp_source.html','');});
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt; TheMoveable &gt; <a class="code" href="namespace_om.html#aeab4820d4b0d48c130cc99959302e415">Om::Move</a>( TheMoveable &amp; theMoveable ) {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span>(</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::auto_ptr&lt; TheMoveable &gt;(</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            static_cast&lt; TheMoveable * &gt;( theMoveable.Move() )</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        )</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            static_cast&lt; TheMoveable * &gt;(</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                theMoveable.Move()</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            )</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        )</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

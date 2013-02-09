@@ -181,31 +181,33 @@ $(document).ready(function(){initNavTree('front__pull__pair__operation_8cpp_sour
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * Type_::GetName() {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span>( <a class="code" href="front__pull__pair__operation_8hpp.html#a2dc82fada0638540660d437c0a86256f">Om_Operations_FrontPullPairOperation_GetName_</a>() );</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Type_::Give</a>( Evaluation &amp; theEvaluation ) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    theEvaluation.TakeOperation(</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        std::auto_ptr&lt; Operation &gt;(</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">new</span> PullOperation&lt;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                Lexicon,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                FrontPullPairOperation</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            &gt;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        )</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    );</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Pull(</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    Lexicon &amp; theLexicon,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    TheQueue &amp; theQueue</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    theLexicon.FrontGivePair( theQueue );</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span>(</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="front__pull__pair__operation_8hpp.html#a2dc82fada0638540660d437c0a86256f">Om_Operations_FrontPullPairOperation_GetName_</a>()</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Type_::Give</a>( Evaluation &amp; theEvaluation ) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    theEvaluation.TakeOperation(</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        std::auto_ptr&lt; Operation &gt;(</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keyword">new</span> PullOperation&lt;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                Lexicon,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                FrontPullPairOperation</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            &gt;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        )</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    );</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Pull(</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    Lexicon &amp; theLexicon,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    TheQueue &amp; theQueue</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    theLexicon.FrontGivePair( theQueue );</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
