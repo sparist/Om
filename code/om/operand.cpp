@@ -135,7 +135,7 @@ inline void Type_::ReadElements( Parser & theParser ) {
 				}
 				assert(
 					!theParser ||
-					Symbols::theEndOperandSymbol == *theParser
+					( Symbols::theEndOperandSymbol == *theParser )
 				);
 				// Fall through.
 			}

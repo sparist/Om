@@ -119,7 +119,9 @@ inline void Type_::TakeQueueElements( TheQueue & theQueue ) {
 		typeid( TheCast ) == typeid( ThisImplementation )
 	);
 	if(
-		typeid( TheCast ) == typeid( theQueue ) &&
+		(
+			typeid( TheCast ) == typeid( theQueue )
+		) &&
 		this->IsEmpty()
 	) {
 		this->Take(

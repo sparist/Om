@@ -623,8 +623,8 @@ thisFormElementRange() {
 
 inline bool Type_::operator ==( ElementRange const & theRange ) const {
 	return(
-		this->thisFormElementRange == theRange.thisFormElementRange &&
-		this->thisFormIterator == theRange.thisFormIterator
+		( this->thisFormElementRange == theRange.thisFormElementRange ) &&
+		( this->thisFormIterator == theRange.thisFormIterator )
 	);
 }
 

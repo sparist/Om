@@ -151,10 +151,12 @@ thisString( theCodeUnitIterator ) {
 		"The argument cannot be null."
 	);
 	assert(
-		boost::locale::normalize(
-			this->thisString,
-			boost::locale::norm_nfd
-		) == this->thisString &&
+		(
+			boost::locale::normalize(
+				this->thisString,
+				boost::locale::norm_nfd
+			) == this->thisString
+		) &&
 		"The string must be NFD-normalized."
 	);
 }
@@ -166,10 +168,12 @@ thisString(
 	theCodeUnit
 ) {
 	assert(
-		boost::locale::normalize(
-			this->thisString,
-			boost::locale::norm_nfd
-		) == this->thisString &&
+		(
+			boost::locale::normalize(
+				this->thisString,
+				boost::locale::norm_nfd
+			) == this->thisString
+		) &&
 		"The code unit must be NFD-normalized."
 	);
 }

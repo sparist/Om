@@ -63,7 +63,9 @@ inline bool Type_::operator ==(
 	ThisImplementation const * const theImplementation = static_cast< ThisImplementation const * >( &theSource );
 	return(
 		theImplementation &&
-		static_cast< ThisImplementation const & >( *this ) == *theImplementation
+		(
+			static_cast< ThisImplementation const & >( *this ) == *theImplementation
+		)
 	);
 }
 

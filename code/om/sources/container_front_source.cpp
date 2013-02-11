@@ -63,7 +63,7 @@ inline Type_ & Type_::operator =( ContainerFrontSource theContainerFrontSource )
 Template_
 inline bool Type_::operator ==( ContainerFrontSource const & theSource ) const {
 	return(
-		&this->thisContainer == &theSource.thisContainer ||
+		( &this->thisContainer == &theSource.thisContainer ) ||
 		(
 			this->thisContainer.empty() &&
 			theSource.thisContainer.empty()

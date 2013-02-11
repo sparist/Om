@@ -567,8 +567,8 @@ thisOffset(
 
 inline bool Type_::operator ==( ElementRange const & theElementRange ) const {
 	return(
-		this->thisNode == theElementRange.thisNode &&
-		this->thisOffset == theElementRange.thisOffset
+		( this->thisNode == theElementRange.thisNode ) &&
+		( this->thisOffset == theElementRange.thisOffset )
 	);
 }
 
