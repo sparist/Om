@@ -706,8 +706,8 @@ $(document).ready(function(){initNavTree('expression_8cpp_source.html','');});
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::operator ==( ElementRange <span class="keyword">const</span> &amp; theRange )<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="keywordflow">return</span>(</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        this-&gt;thisFormElementRange == theRange.thisFormElementRange &amp;&amp;</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        this-&gt;thisFormIterator == theRange.thisFormIterator</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        ( this-&gt;thisFormElementRange == theRange.thisFormElementRange ) &amp;&amp;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        ( this-&gt;thisFormIterator == theRange.thisFormIterator )</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    );</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;}</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;</div>

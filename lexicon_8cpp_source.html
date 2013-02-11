@@ -650,8 +650,8 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::operator ==( ElementRange <span class="keyword">const</span> &amp; theElementRange )<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    <span class="keywordflow">return</span>(</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        this-&gt;thisNode == theElementRange.thisNode &amp;&amp;</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        this-&gt;thisOffset == theElementRange.thisOffset</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        ( this-&gt;thisNode == theElementRange.thisNode ) &amp;&amp;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        ( this-&gt;thisOffset == theElementRange.thisOffset )</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    );</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;}</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;</div>

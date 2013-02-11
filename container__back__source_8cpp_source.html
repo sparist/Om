@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('container__back__source_8cpp_source.ht
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;Template_</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::operator ==( ContainerBackSource <span class="keyword">const</span> &amp; theSource )<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span>(</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        &amp;this-&gt;thisContainer == &amp;theSource.thisContainer ||</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        ( &amp;this-&gt;thisContainer == &amp;theSource.thisContainer ) ||</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        (</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            this-&gt;thisContainer.empty() &amp;&amp;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            theSource.thisContainer.empty()</div>

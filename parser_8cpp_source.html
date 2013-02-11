@@ -132,8 +132,8 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::operator ==( Parser <span class="keyword">const</span> &amp; theParser )<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    assert(</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        this-&gt;thisCodePointSource != theParser.thisCodePointSource ||</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        this-&gt;thisDepth == theParser.thisDepth</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        ( this-&gt;thisCodePointSource != theParser.thisCodePointSource ) ||</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ( this-&gt;thisDepth == theParser.thisDepth )</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    );</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span>( this-&gt;thisCodePointSource == theParser.thisCodePointSource );</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        (</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            !this-&gt;thisDepth &amp;&amp;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            !this-&gt;thisIsEncoded &amp;&amp;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a> == *this-&gt;thisCodePointSource</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            ( <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a> == *this-&gt;thisCodePointSource )</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        )</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    );</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>

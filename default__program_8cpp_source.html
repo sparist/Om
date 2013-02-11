@@ -198,21 +198,23 @@ $(document).ready(function(){initNavTree('default__program_8cpp_source.html','')
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keyword">typeid</span>( TheCast ) == <span class="keyword">typeid</span>( ThisImplementation )</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    );</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span>(</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">typeid</span>( TheCast ) == <span class="keyword">typeid</span>( theQueue ) &amp;&amp;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        this-&gt;IsEmpty()</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    ) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        this-&gt;Take(</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            static_cast&lt; TheCast &amp; &gt;( theQueue )</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        );</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        theQueue.GiveElements( *<span class="keyword">this</span> );</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #undef Template_</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        (</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keyword">typeid</span>( TheCast ) == <span class="keyword">typeid</span>( theQueue )</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        ) &amp;&amp;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        this-&gt;IsEmpty()</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    ) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        this-&gt;Take(</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            static_cast&lt; TheCast &amp; &gt;( theQueue )</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        );</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        theQueue.GiveElements( *<span class="keyword">this</span> );</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #undef Template_</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
