@@ -130,7 +130,14 @@ namespace Om {
 		}
 
 		TEST( Read ) {
-			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
+			char const theCode[] = (
+				"0\n"
+				"\t {1\n"
+				"\t {2\n"
+				"\t } 3\n"
+				"\t } {4\n"
+				"\t} 5\n"
+			);
 			std::string theResult;
 			{
 				Sinks::CodePointSink<
@@ -148,7 +155,11 @@ namespace Om {
 			}
 			CHECK_EQUAL(
 				(
-					"0{1\n\t {2\n\t } 3\n\t }{4\n\t}\n"
+					"0{1\n"
+					"\t {2\n"
+					"\t } 3\n"
+					"\t }{4\n"
+					"\t}\n"
 					"5"
 				),
 				theResult
@@ -396,6 +407,7 @@ inline void Type_::TakeElements( Expression & theExpression ) {
 			assert(
 				!theFormDeque.empty()
 			);
+
 			FormDeque::iterator theCurrent = theFormDeque.begin();
 			if(
 				theCurrent->GetOperator().IsEmpty()
@@ -409,6 +421,7 @@ inline void Type_::TakeElements( Expression & theExpression ) {
 				}
 				theCurrent = theFormDeque.begin();
 			}
+
 			FormDeque::iterator const theEnd = theFormDeque.end();
 			assert( theEnd != theCurrent );
 			do {
@@ -420,6 +433,7 @@ inline void Type_::TakeElements( Expression & theExpression ) {
 				);
 				this->thisFormDeque.back().Swap( *theCurrent );
 			} while( theEnd != ++theCurrent );
+
 			Expression().Swap( theExpression );
 		}
 	}
@@ -438,6 +452,7 @@ inline void Type_::TakeElements( Expression const & theExpression ) {
 			assert(
 				!theFormDeque.empty()
 			);
+
 			FormDeque::const_iterator const theEnd = theFormDeque.end();
 			FormDeque::const_iterator theCurrent = theFormDeque.begin();
 			assert( theEnd != theCurrent );
