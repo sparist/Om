@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('functions__.html','');});
 <div class="textblock"><p>Each Om program evaluates to a function.</p>
 <h1><a class="anchor" id="functions__prefix__"></a>
 Prefix Notation</h1>
-<p>Om uses <a href="http://en.wikipedia.org/wiki/Polish_notation">prefix notation</a>; functions read their inputs from the right. Prefix notation has the following advantages over postfix notation typical of concatenative languages:</p>
+<p>Om uses <a href="http://en.wikipedia.org/wiki/Polish_notation">prefix notation</a>: functions read their inputs from the right. Prefix notation has the following advantages over postfix notation typical of concatenative languages:</p>
 <ul>
 <li>Stack underflows are impossible.</li>
 <li>Prefix notation more closely models function composition. Instead of storing a data stack in memory, the Om evaluator stores a composed partial function.</li>
@@ -108,7 +108,8 @@ Prefix Notation</h1>
 </ul>
 <h1><a class="anchor" id="functions__input_and_output"></a>
 Input and Output</h1>
-<p>A function takes a program as input and returns a program as output, pulling elements from the front of the input program and pushing elements to the back of the output program.</p>
+<p>A function takes the remainder of the program as input and returns a program as output, pulling elements from the front of the input program and pushing elements to the back of the output program.</p>
+<p>The interpreter reads the input program from the input stream and writes the output program to the output stream.</p>
 <h1><a class="anchor" id="functions__terms__"></a>
 Terms</h1>
 <p>Only <em>terms</em> (operators and operands) are significant to functions; separators are discarded from input, and are inserted between output terms in a "normalized" form (for consistent formatting and proper operator separation). Therefore, only input and output terms are relevant in describing a function.</p>

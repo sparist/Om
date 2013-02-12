@@ -308,159 +308,161 @@ $(document).ready(function(){initNavTree('literal_8cpp_source.html','');});
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a>:</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            assert(</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                !theStack.empty() &amp;&amp;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                ( <span class="keyword">this</span> != theStack.top() )</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            );</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            theStack.pop();</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445">Symbols::theStartOperandSymbol</a>:</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                std::auto_ptr&lt; Literal &gt; theLiteral( <span class="keyword">new</span> Literal );</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                Literal * theLiteralPointer = theLiteral.get();</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    Operand theOperand( theLiteral );</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    theStack.top()-&gt;TakeOperand( theOperand );</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                theStack.push( theLiteralPointer );</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a98a23b0342d1c0ded1dad44f6cf8ed7b" title="Generates switch cases for each Om::Symbols::SeparatorSymbol.">Om_Symbols_SeparatorSymbol_GetCases_</a>():</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            assert(</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                !theStack.empty() &amp;&amp;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                theStack.top()</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            );</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                Separator theSeparator( theParser );</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                theStack.top()-&gt;TakeSeparator( theSeparator );</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            assert(</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                !theStack.empty() &amp;&amp;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                theStack.top()</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            );</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                Operator theOperator( theParser );</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                theStack.top()-&gt;TakeOperator( theOperator );</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        theParser.Pop();</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::ReadQuotedElements( Parser &amp; theParser ) {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    Literal theLiteral;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    theLiteral.ReadElements( theParser );</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    this-&gt;<a class="code" href="class_om_1_1_lexicon.html#abe4cce826a6c8d817df3fe64b75a930e">TakeQuotedQueue</a>( theLiteral );</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Swap( Literal &amp; theLiteral ) {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    this-&gt;thisElementDeque.swap( theLiteral.thisElementDeque );</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;}</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeOperand( TheOperand &amp; theOperand ) {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    assert(</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        !theOperand.IsEmpty()</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    );</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    this-&gt;thisElementDeque.push_back(</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>( theOperand )</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    );</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperator &gt;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeOperator( TheOperator &amp; theOperator ) {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    assert(</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        !theOperator.IsEmpty()</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    );</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    this-&gt;TakeAtom( theOperator );</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedQueue( TheQueue &amp; theQueue ) {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    this-&gt;thisElementDeque.push_back(</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keyword">new</span> Operand(</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            theQueue.GiveProgram()</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        )</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    );</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheSeparator &gt;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeSeparator( TheSeparator &amp; theSeparator ) {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    assert(</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        !theSeparator.IsEmpty()</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    );</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    this-&gt;TakeAtom( theSeparator );</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;}</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">// MARK: private (static)</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                (</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                    <span class="keyword">this</span> != theStack.top()</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                )</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            );</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            theStack.pop();</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445">Symbols::theStartOperandSymbol</a>:</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                std::auto_ptr&lt; Literal &gt; theLiteral( <span class="keyword">new</span> Literal );</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                Literal * theLiteralPointer = theLiteral.get();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    Operand theOperand( theLiteral );</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    theStack.top()-&gt;TakeOperand( theOperand );</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                theStack.push( theLiteralPointer );</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a98a23b0342d1c0ded1dad44f6cf8ed7b" title="Generates switch cases for each Om::Symbols::SeparatorSymbol.">Om_Symbols_SeparatorSymbol_GetCases_</a>():</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            assert(</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                !theStack.empty() &amp;&amp;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                theStack.top()</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            );</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                Separator theSeparator( theParser );</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                theStack.top()-&gt;TakeSeparator( theSeparator );</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            assert(</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                !theStack.empty() &amp;&amp;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                theStack.top()</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            );</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                Operator theOperator( theParser );</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                theStack.top()-&gt;TakeOperator( theOperator );</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        theParser.Pop();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::ReadQuotedElements( Parser &amp; theParser ) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    Literal theLiteral;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    theLiteral.ReadElements( theParser );</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    this-&gt;<a class="code" href="class_om_1_1_lexicon.html#abe4cce826a6c8d817df3fe64b75a930e">TakeQuotedQueue</a>( theLiteral );</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Swap( Literal &amp; theLiteral ) {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    this-&gt;thisElementDeque.swap( theLiteral.thisElementDeque );</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeOperand( TheOperand &amp; theOperand ) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    assert(</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        !theOperand.IsEmpty()</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    );</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    this-&gt;thisElementDeque.push_back(</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>( theOperand )</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    );</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperator &gt;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeOperator( TheOperator &amp; theOperator ) {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    assert(</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        !theOperator.IsEmpty()</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    );</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    this-&gt;TakeAtom( theOperator );</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedQueue( TheQueue &amp; theQueue ) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    this-&gt;thisElementDeque.push_back(</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keyword">new</span> Operand(</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            theQueue.GiveProgram()</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        )</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    );</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheSeparator &gt;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeSeparator( TheSeparator &amp; theSeparator ) {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    assert(</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        !theSeparator.IsEmpty()</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    );</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    this-&gt;TakeAtom( theSeparator );</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheElementIterator &gt;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    Queue &amp; theQueue,</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    TheElementIterator theCurrent,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    TheElementIterator <span class="keyword">const</span> theEnd</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;) {</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">for</span>(</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        ;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        theEnd != theCurrent;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        ++theCurrent</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    ) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        theCurrent-&gt;GiveElements( theQueue );</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment">// MARK: private (static)</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheElementIterator &gt;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    Queue &amp; theQueue,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    TheElementIterator theCurrent,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    TheElementIterator <span class="keyword">const</span> theEnd</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">for</span>(</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        ;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        theEnd != theCurrent;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        ++theCurrent</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    ) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        theCurrent-&gt;GiveElements( theQueue );</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheAtom &gt;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeAtom( TheAtom &amp; theAtom ) {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    assert(</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        !theAtom.IsEmpty()</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    );</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">if</span>(</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        this-&gt;thisElementDeque.empty() ||</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        !this-&gt;thisElementDeque.back().Merge( theAtom )</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    ) {</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        this-&gt;thisElementDeque.push_back(</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>( theAtom )</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        );</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;}</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment">// MARK: - Om::Literal::ElementRange</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">    Om::Literal::ElementRange</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="keyword">inline</span> Type_&lt; Om::Literal &gt;::ElementRange( Literal &amp; theLiteral ):</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;Sources::CollectionFrontSource&lt;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    Element,</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    ElementDeque::iterator</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;&gt;( theLiteral.thisElementDeque ) {}</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword">inline</span> Type_&lt; Om::Literal const &gt;::ElementRange( Literal <span class="keyword">const</span> &amp; theLiteral ):</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;Sources::CollectionFrontSource&lt;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    Element const,</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    ElementDeque::const_iterator</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;&gt;( theLiteral.thisElementDeque ) {}</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment">// MARK: - boost</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <a class="code" href="class_om_1_1_literal.html" title="The Literal Program implementation.">Om::Literal</a> &amp; theFirst,</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <a class="code" href="class_om_1_1_literal.html" title="The Literal Program implementation.">Om::Literal</a> &amp; theSecond</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;) {</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    theFirst.<a class="code" href="class_om_1_1_literal.html#a7b4b318f98437b3eb5cff1450757d772">Swap</a>( theSecond );</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheAtom &gt;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeAtom( TheAtom &amp; theAtom ) {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    assert(</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        !theAtom.IsEmpty()</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    );</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">if</span>(</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        this-&gt;thisElementDeque.empty() ||</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        !this-&gt;thisElementDeque.back().Merge( theAtom )</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    ) {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        this-&gt;thisElementDeque.push_back(</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <a class="code" href="namespace_om.html#aa7b1cad2b7764d60b1eba0d64e117848" title="Calls Move on the object.">Give</a>( theAtom )</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        );</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">// MARK: - Om::Literal::ElementRange</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">    Om::Literal::ElementRange</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">inline</span> Type_&lt; Om::Literal &gt;::ElementRange( Literal &amp; theLiteral ):</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;Sources::CollectionFrontSource&lt;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    Element,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    ElementDeque::iterator</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;&gt;( theLiteral.thisElementDeque ) {}</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="keyword">inline</span> Type_&lt; Om::Literal const &gt;::ElementRange( Literal <span class="keyword">const</span> &amp; theLiteral ):</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;Sources::CollectionFrontSource&lt;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    Element const,</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    ElementDeque::const_iterator</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;&gt;( theLiteral.thisElementDeque ) {}</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">// MARK: - boost</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <a class="code" href="class_om_1_1_literal.html" title="The Literal Program implementation.">Om::Literal</a> &amp; theFirst,</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <a class="code" href="class_om_1_1_literal.html" title="The Literal Program implementation.">Om::Literal</a> &amp; theSecond</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    theFirst.<a class="code" href="class_om_1_1_literal.html#a7b4b318f98437b3eb5cff1450757d772">Swap</a>( theSecond );</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;}</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
