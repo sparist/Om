@@ -60,7 +60,7 @@ Each %Om program evaluates to a function.
 
 \section functions__prefix__ Prefix Notation
 
-%Om uses <a href="http://en.wikipedia.org/wiki/Polish_notation">prefix notation</a>; functions read their inputs from the right.  Prefix notation has the following advantages over postfix notation typical of concatenative languages:
+%Om uses <a href="http://en.wikipedia.org/wiki/Polish_notation">prefix notation</a>: functions read their inputs from the right.  Prefix notation has the following advantages over postfix notation typical of concatenative languages:
 -	Stack underflows are impossible.
 -	Prefix notation more closely models function composition.  Instead of storing a data stack in memory, the %Om evaluator stores a composed partial function.
 -	The evaluator can read, parse and evaluate the input stream in a single pass, sending results to the output stream as soon as they are evaluated.  This cannot be done with a postfix, stack-based language because any data on the stack must remain there as it may be needed by a function later.
@@ -70,7 +70,9 @@ Each %Om program evaluates to a function.
 
 \section functions__input_and_output Input and Output
 
-A function takes a program as input and returns a program as output, pulling elements from the front of the input program and pushing elements to the back of the output program.
+A function takes the remainder of the program as input and returns a program as output, pulling elements from the front of the input program and pushing elements to the back of the output program.
+
+The interpreter reads the input program from the input stream and writes the output program to the output stream.
 
 \section functions__terms__ Terms
 
