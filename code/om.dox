@@ -72,8 +72,6 @@ Each %Om program evaluates to a function.
 
 A function takes the remainder of the program as input and returns a program as output, pulling elements from the front of the input program and pushing elements to the back of the output program.
 
-The interpreter reads the input program from the input stream and writes the output program to the output stream.
-
 \section functions__terms__ Terms
 
 Only <em>terms</em> (operators and operands) are significant to functions; separators are discarded from input, and are inserted between output terms in a "normalized" form (for consistent formatting and proper operator separation).  Therefore, only input and output terms are relevant in describing a function.
