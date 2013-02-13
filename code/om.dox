@@ -322,8 +322,8 @@ Code can be downloaded from the <a href="https://github.com/sparist/Om">Om GitHu
 
 %Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:
 -	Add the %Om <tt>code</tt> directory to the include path and include the desired files.  Inclusion of any operation files will automatically add the corresponding operation to the global system.  Include <tt>om.hpp</tt> to include all %Om header files.
--	Configure the project to link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a> and/or <a href="http://boost.org">Boost (1.51.0)</a> library dependencies, and build these with the correct configuration for the project.  See <tt>make.sh</tt> and <tt>make.bat</tt> for guidance.
--	Call the <tt>Om::System::Initialize</tt> function prior to use (eg. in the <tt>main</tt> function), passing in the desired UTF-8 locale (eg. "en_US.UTF-8").
+-	Configure the project to link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2 or greater)</a> and/or <a href="http://boost.org">Boost (1.53.0 or greater)</a> library dependencies, and build these with the correct configuration for the project.  See <tt>make.sh</tt> and <tt>make.bat</tt> for guidance.
+-	Call the <tt>Om::System::Initialize</tt> function prior to use (e.g. in the <tt>main</tt> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").
 -	Construct an <tt>Om::Environment</tt>, populate with any additional operator-program mappings, and call one of its <tt>Evaluate</tt> functions to evaluate a program.
 
 \section using__scripts__ Scripts
@@ -331,10 +331,9 @@ Code can be downloaded from the <a href="https://github.com/sparist/Om">Om GitHu
 Scripts are included that use <a href="http://cmake.org">CMake</a> to generate project files with the following targets:
 -	<b>%Om</b>:
 	-	Builds the %Om executable into <tt>products/projects/</tt><em>[platform]</em>.  The %Om executable is an interpreter that:
-		-	Accepts an optional argument that specifies the desired UTF-8 locale.  The default value is "en_US.UTF-8".
+		-	Accepts an optional argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>.  The default value is "en_US.UTF-8".
 		-	Runs all unit tests (if compiled with <tt>Om_Macros_Test_</tt> defined).
-		-	Reads input from the standard input stream, ending at the first unbalanced end brace.
-		-	Writes output to the standard output stream.
+		-	Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.
 -	<b>%Om Documentation</b>:
 	-	Builds the %Om documentation into <tt>products/documentation/doxygen</tt>.  To view the HTML documentation in a browser, open <tt>html/index.html</tt>.
 
