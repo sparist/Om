@@ -97,16 +97,19 @@ $(document).ready(function(){initNavTree('contributing__.html','');});
 <div class="textblock"><p>There are several ways to contribute to the Om project:</p>
 <ul>
 <li>By <a class="el" href="contributing__.html#contributing__developing__">Developing</a> new <a class="el" href="group__om____operations____.html">Operations</a> and <a class="el" href="group__om____programs____.html">Programs</a>.</li>
-<li>By <a class="el" href="contributing__.html#contributing__issue_reporting__">Issue Reporting</a> via bugs, patches, or enhancement requests.</li>
+<li>By <a class="el" href="contributing__.html#contributing__reporting_issues__">Reporting Issues</a> via bugs, patches, or enhancement requests.</li>
 <li>By <a class="el" href="contributing__.html#contributing__funding__">Funding</a> further development of the Om language.</li>
 </ul>
 <h1><a class="anchor" id="contributing__developing__"></a>
 Developing</h1>
-<p>Om is written in modern, portable C++ and can be forked from the <a href="http://github.com/sparist/Om">Om GitHub repository</a>.</p>
+<p>Om is written in modern, portable C++ that adheres to the <a href="http://sparist.github.com/cpp_coding_standard.html">Sparist C++ Coding Standard</a>.</p>
 <p><b>Note</b>: Because this is an early-stage project, there are not yet any compatibility guarantees between versions.</p>
-<h2><a class="anchor" id="contributing__developing__coding_standard__"></a>
-Coding Standard</h2>
-<p>All Om development must adhere to the <a href="http://sparist.github.com/cpp_coding_standard.html">Sparist C++ Coding Standard</a>.</p>
+<h2><a class="anchor" id="contributing__developing__forking__"></a>
+Forking</h2>
+<p>Om code can be <a href="https://github.com/sparist/Om/fork">forked</a> from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>.</p>
+<h2><a class="anchor" id="contributing__developing__building__"></a>
+Building</h2>
+<p>See <a class="el" href="using__.html">Using</a> for instructions on building the code.</p>
 <h2><a class="anchor" id="contributing__developing__adding_operations__"></a>
 Adding Operations</h2>
 <p>Additional native functionality can be added to Om by implementing new operations in C++.</p>
@@ -115,7 +118,7 @@ Adding Operations</h2>
 <ul>
 <li>Define the operation <code>class</code> in the <code><a class="el" href="namespace_om_1_1_operations.html" title="A namespace for all Operations.">Om::Operations</a></code> namespace.</li>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
-<li>Define the static <code>Give( Evaluation &amp; )</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
+<li>Define the static <code>Give( <a class="el" href="class_om_1_1_evaluation.html" title="The current evaluation.">Om::Evaluation</a> &amp; )</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
 </ul>
 <p>To define an atomic operation that consumes one or more operands:</p>
 <ul>
@@ -123,7 +126,7 @@ Adding Operations</h2>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
 <li>Add the implementation, using existing operations as a guide:<ul>
 <li>Implement the functions necessary to compile.</li>
-<li>Optionally override virtual function implementations in <code>DefaultOperation</code>, such as <code>ReadQuotedElements</code>, that may be more optimally implemented in the operation.</li>
+<li>Optionally override virtual function implementations in <code><a class="el" href="class_om_1_1_default_operation.html" title="A partial implementation of Operation.">Om::DefaultOperation</a></code>, such as <code><a class="el" href="class_om_1_1_default_operation.html#abca3e9aae438d420b5d4af0c8caf4b5f">Om::DefaultOperation::ReadQuotedElements</a></code>, that may be more optimally implemented in the operation.</li>
 </ul>
 </li>
 </ul>
@@ -150,11 +153,11 @@ Analyzing Code</h2>
 </blockquote>
 </li>
 </ul>
-<h2><a class="anchor" id="contributing__developing__pull_requests__"></a>
-Pull Requests</h2>
-<p>Pull requests can be made via the <a href="http://github.com/sparist/Om">Om GitHub repository</a>.</p>
-<h1><a class="anchor" id="contributing__issue_reporting__"></a>
-Issue Reporting</h1>
+<h2><a class="anchor" id="contributing__developing__requesting_a_pull__"></a>
+Requesting a Pull</h2>
+<p>Changes can be submitted to Om via <a href="https://github.com/sparist/Om/pull/new/master">pull request</a>.</p>
+<h1><a class="anchor" id="contributing__reporting_issues__"></a>
+Reporting Issues</h1>
 <p>Issues are reported and tracked with the <a href="https://github.com/sparist/Om/issues">Om GitHub issue tracker</a>.</p>
 <p>Before reporting an issue, please search existing issues first to ensure that it is not a duplicate.</p>
 <h1><a class="anchor" id="contributing__funding__"></a>

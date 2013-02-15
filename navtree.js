@@ -26,7 +26,10 @@ var NAVTREE =
       [ "Programs", "data__.html#data__programs__", null ]
     ] ],
     [ "Examples", "examples__.html", null ],
-    [ "Downloading", "downloading__.html", null ],
+    [ "Downloading", "downloading__.html", [
+      [ "Development", "downloading__.html#downloading__development__", null ],
+      [ "Release", "downloading__.html#downloading__release__", null ]
+    ] ],
     [ "Using", "using__.html", [
       [ "Library", "using__.html#using__library__", null ],
       [ "Scripts", "using__.html#using__scripts__", [
@@ -37,13 +40,14 @@ var NAVTREE =
     ] ],
     [ "Contributing", "contributing__.html", [
       [ "Developing", "contributing__.html#contributing__developing__", [
-        [ "Coding Standard", "contributing__.html#contributing__developing__coding_standard__", null ],
+        [ "Forking", "contributing__.html#contributing__developing__forking__", null ],
+        [ "Building", "contributing__.html#contributing__developing__building__", null ],
         [ "Adding Operations", "contributing__.html#contributing__developing__adding_operations__", null ],
         [ "Adding Programs", "contributing__.html#contributing__developing__adding_programs__", null ],
         [ "Analyzing Code", "contributing__.html#contributing__developing__analyzing_code__", null ],
-        [ "Pull Requests", "contributing__.html#contributing__developing__pull_requests__", null ]
+        [ "Requesting a Pull", "contributing__.html#contributing__developing__requesting_a_pull__", null ]
       ] ],
-      [ "Issue Reporting", "contributing__.html#contributing__issue_reporting__", null ],
+      [ "Reporting Issues", "contributing__.html#contributing__reporting_issues__", null ],
       [ "Funding", "contributing__.html#contributing__funding__", null ]
     ] ],
     [ "License", "license__.html", null ],
@@ -88,9 +92,9 @@ var NAVTREEINDEX =
 "class_om_1_1_operations_1_1_decode_operation.html#afa6ea96096a508accc49c624cb0b1a02",
 "class_om_1_1_parser.html#a4a57d3cd38dc2e20faddb0ddc5035dda",
 "class_om_1_1_translator.html#ab4bdc54b12c138a533825e5edb4a88e5",
-"evaluate__operation_8hpp_source.html",
-"index.html",
-"rearrange__operation_8hpp.html#a69aca82f4fb2370a6860a96bc306bf51"
+"evaluate__operation_8hpp.html",
+"group__om____separator____.html",
+"rearrange__operation_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -99,10 +99,10 @@ $(document).ready(function(){initNavTree('using__.html','');});
 Library</h1>
 <p>Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:</p>
 <ul>
-<li>Add the Om <code>code</code> directory to the include path and include the desired files. Inclusion of any operation files will automatically add the corresponding operation to the global system. Include <code><a class="el" href="om_8hpp.html" title="Om &quot;umbrella&quot; header file.">om.hpp</a></code> to include all Om header files.</li>
-<li>Configure the project to link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2 or greater)</a> and/or <a href="http://boost.org">Boost (1.53.0 or greater)</a> library dependencies, and build these with the correct configuration for the project. See <code>make.sh</code> and <code>make.bat</code> for guidance.</li>
+<li>Add the Om <code>code</code> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <code><a class="el" href="om_8hpp.html" title="Om &quot;umbrella&quot; header file.">om.hpp</a></code> to include all Om header files.</li>
+<li>Configure the project to link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2 or greater)</a> and <a href="http://boost.org">Boost (1.53.0 or greater)</a> library dependencies as necessary, and build these with the correct configuration for the project. See <code>make.sh</code> and <code>make.bat</code> for guidance.</li>
 <li>Call the <code><a class="el" href="class_om_1_1_system.html#a03f046dac47073768dbdc97d8e211bda" title="Initializes the System.">Om::System::Initialize</a></code> function prior to use (e.g. in the <code>main</code> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").</li>
-<li>Construct an <code><a class="el" href="class_om_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">Om::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code>Evaluate</code> functions to evaluate a program.</li>
+<li>Construct an <code><a class="el" href="class_om_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">Om::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code><a class="el" href="class_om_1_1_translator.html#aef15d47724244c647c2fc22182f3b4c2" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Om::Environment::Evaluate</a></code> functions to evaluate a program.</li>
 </ul>
 <h1><a class="anchor" id="using__scripts__"></a>
 Scripts</h1>
@@ -118,7 +118,11 @@ Scripts</h1>
 </ul>
 </li>
 <li><b>Om Documentation</b>:<ul>
-<li>Builds the Om documentation into <code>products/documentation/doxygen</code>. To view the HTML documentation in a browser, open <code>html/index.html</code>.</li>
+<li>Builds the Om documentation into the following folders in <code>products/documentation/doxygen</code>:<ul>
+<li><code>html</code>: The HTML documentation. To view in a browser, open <code>index.html</code>.</li>
+<li><code>xml</code>: The XML documentation, which can be read by an IDE to show context-sensitive documentation.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -128,9 +132,9 @@ Xcode</h2>
 <ul>
 <li>Ensure that <a href="http://doxygen.org">Doxygen</a> and <a href="http://www.macports.org/ports.php?by=name&amp;substr=graphviz">Graphviz (via MacPorts)</a> are installed and available to applications via the path variable. <a href="http://overwatering.org/blog/2012-2013/08/setting-path-osx-mountain-lion">This article</a> explains how to do so.</li>
 <li>Run <code>make.sh</code> and pass it the following arguments (in order):<ul>
-<li>The ICU root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/50.1.2/icu4c-50_1_2-src.tgz">ICU4C 50.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.</li>
-<li>The Boost root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.</li>
-<li><b>Optional:</b> The UnitTest++ root directory path. If omitted, unit tests will be excluded from the build. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/unittest-cpp/files/latest/download?source=files">UnitTest++ 1.4 code archive</a> from the <a href="http://sourceforge.net/projects/unittest-cpp/files">UnitTest++ download page</a>.</li>
+<li>The <a href="http://icu-project.org">ICU (ICU4C 49.1.2 or greater)</a> root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/50.1.2/icu4c-50_1_2-src.tgz">ICU4C 50.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.</li>
+<li>The <a href="http://boost.org">Boost (1.53.0 or greater)</a> root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.</li>
+<li><b>Optional:</b> The <a href="https://github.com/unittest-cpp/unittest-cpp">UnitTest++ (1.4 or greater)</a> root directory path. If omitted, unit tests will be excluded from the build. To create this directory, download and unpack the <a href="https://github.com/unittest-cpp/unittest-cpp/archive/v1.4.tar.gz">UnitTest++ 1.4 code archive</a> from the <a href="https://github.com/unittest-cpp/unittest-cpp/tags">UnitTest++ download page</a>.</li>
 </ul>
 </li>
 </ul>
@@ -149,9 +153,9 @@ Visual Studio</h2>
 <ul>
 <li>Ensure that <a href="http://doxygen.org">Doxygen</a> and <a href="http://graphviz.org">Graphviz</a> are installed and in the path variable.</li>
 <li>Run <code>make.bat</code> and pass it the following arguments (in order):<ul>
-<li>The ICU root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C 49.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>. (Note that ICU4C 50.1.1 or 50.1.2 cannot be used due to a <a href="https://svn.boost.org/trac/boost/ticket/7839">bug</a> that prevents building on Windows.)</li>
-<li>The Boost root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.zip/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.</li>
-<li><b>Optional:</b> The UnitTest++ root directory path. If omitted, unit tests will be excluded from the build. To create this directory, get the UnitTest++ 1.4 code via <a href="http://subversion.tigris.org">Subversion</a> checkout (described on the <a href="https://sourceforge.net/projects/unittest-cpp/develop">UnitTest++ developer page</a>) and apply the patch attached to the <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=3583690&amp;group_id=158151&amp;atid=806686">Visual Studio 2010 support ticket</a>. The UnitTest++ root directory is the <code>UnitTest++</code> subdirectory of the Subversion checkout directory.</li>
+<li>The <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a> root directory path. To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C 49.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>. (Note that ICU4C 50.1.1 or 50.1.2 cannot be used due to build issues on Windows.)</li>
+<li>The <a href="http://boost.org">Boost (1.53.0 or greater)</a> root directory path. To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.zip/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.</li>
+<li><b>Optional:</b> The <a href="https://github.com/unittest-cpp/unittest-cpp">UnitTest++ (1.5 prerelease or greater)</a> root directory path. If omitted, unit tests will be excluded from the build. To create this directory, check out the UnitTest++ 1.5 development code from the <a href="https://github.com/unittest-cpp/unittest-cpp">UnitTest++ Git repository</a>.</li>
 </ul>
 </li>
 </ul>
@@ -166,7 +170,7 @@ Visual Studio</h2>
 <p>The above scripts have been tested with Visual Studio 2010 Express on Windows Vista.</p>
 <h2><a class="anchor" id="using__scripts__other__"></a>
 Other Platforms</h2>
-<p>Because Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <code>CMakeLists.txt</code> file. If this is of interest, please contribute the result via <a class="el" href="contributing__.html#contributing__developing__pull_requests__">pull request</a> and/or <a class="el" href="contributing__.html#contributing__issue_reporting__">report</a> any code portability errors encountered. </p>
+<p>Because Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <code>CMakeLists.txt</code> file. If this is of interest, please contribute the result by <a class="el" href="contributing__.html#contributing__developing__requesting_a_pull__">Requesting a Pull</a> and/or <a class="el" href="contributing__.html#contributing__reporting_issues__">Reporting Issues</a> related for any code portability errors encountered. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
