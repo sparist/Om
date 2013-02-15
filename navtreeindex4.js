@@ -95,7 +95,7 @@ var NAVTREEINDEX4 =
 "contributing__.html#contributing__developing__analyzing_code__":[8,0,4],
 "contributing__.html#contributing__developing__building__":[8,0,1],
 "contributing__.html#contributing__developing__forking__":[8,0,0],
-"contributing__.html#contributing__developing__requesting_a_pull__":[8,0,5],
+"contributing__.html#contributing__developing__submitting_changes__":[8,0,5],
 "contributing__.html#contributing__funding__":[8,2],
 "contributing__.html#contributing__reporting_issues__":[8,1],
 "copy_8cpp.html":[13,0,0,0,8],

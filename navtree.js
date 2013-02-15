@@ -45,7 +45,7 @@ var NAVTREE =
         [ "Adding Operations", "contributing__.html#contributing__developing__adding_operations__", null ],
         [ "Adding Programs", "contributing__.html#contributing__developing__adding_programs__", null ],
         [ "Analyzing Code", "contributing__.html#contributing__developing__analyzing_code__", null ],
-        [ "Requesting a Pull", "contributing__.html#contributing__developing__requesting_a_pull__", null ]
+        [ "Submitting Changes", "contributing__.html#contributing__developing__submitting_changes__", null ]
       ] ],
       [ "Reporting Issues", "contributing__.html#contributing__reporting_issues__", null ],
       [ "Funding", "contributing__.html#contributing__funding__", null ]
