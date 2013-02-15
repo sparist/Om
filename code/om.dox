@@ -381,7 +381,7 @@ The above scripts have been tested with Visual Studio 2010 Express on Windows Vi
 
 \subsection using__scripts__other__ Other Platforms
 
-Because %Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <tt>CMakeLists.txt</tt> file.  If this is of interest, please contribute the result by \ref contributing__developing__requesting_a_pull__ and/or \ref contributing__reporting_issues__ related for any code portability errors encountered.
+Because %Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <tt>CMakeLists.txt</tt> file.  Please \ref contributing__developing__ "share" any enhancements to the build process and/or \ref contributing__reporting_issues__ "report" any code portability issues encountered.
 
 \page contributing__ Contributing
 
@@ -447,7 +447,7 @@ Some basic free static analysis tools can be applied to the %Om code.
 -	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts.  If Perl is installed, CLOC can be applied to %Om by entering the following at the terminal from inside the %Om directory:
 	<blockquote><tt>cloc.pl code</tt></blockquote>
 
-\subsection contributing__developing__requesting_a_pull__ Requesting a Pull
+\subsection contributing__developing__submitting_changes__ Submitting Changes
 
 Changes can be submitted to %Om via <a href="https://github.com/sparist/Om/pull/new/master">pull request</a>.
 
