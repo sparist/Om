@@ -28,7 +28,7 @@
 \param theArgumentArray
 	The argument array contains (in order):
 	-	The program invocation.
-	-	<em>(Optional)</em> A valid UTF-8 locale string compatible with boost::locale.
+	-	<em>(Optional)</em> A valid UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>; defaults to "en_US.UTF-8".
 */
 int main(
 	int const theArgumentCount,
