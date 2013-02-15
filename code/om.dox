@@ -310,9 +310,15 @@ Each step of an evaluation can be represented as a program.  The following is th
 
 \page downloading__ Downloading
 
-Code can be downloaded from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>:
--	<a href="https://github.com/sparist/Om">Development version</a>
--	<a href="https://github.com/sparist/Om/tags">Released versions</a>
+%Om is available in source code form, downloadable from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>.
+
+\section downloading__development__ Development
+
+The development version can be obtained via <a href="https://github.com/sparist/Om">Git check out</a> or <a href="https://github.com/sparist/Om/archive/master.zip">archive file</a>.
+
+\section downloading__release__ Release
+
+Released versions can be obtained via archive files from the <a href="https://github.com/sparist/Om/tags">GitHub tags page</a>.
 
 \page using__ Using
 
@@ -321,10 +327,10 @@ Code can be downloaded from the <a href="https://github.com/sparist/Om">Om GitHu
 \section using__library__ Library
 
 %Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:
--	Add the %Om <tt>code</tt> directory to the include path and include the desired files.  Inclusion of any operation files will automatically add the corresponding operation to the global system.  Include <tt>om.hpp</tt> to include all %Om header files.
--	Configure the project to link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2 or greater)</a> and/or <a href="http://boost.org">Boost (1.53.0 or greater)</a> library dependencies, and build these with the correct configuration for the project.  See <tt>make.sh</tt> and <tt>make.bat</tt> for guidance.
+-	Add the %Om <tt>code</tt> directory to the include path and include the desired files.  Inclusion of any operation header files will automatically add the corresponding operation to the global system.  Include <tt>om.hpp</tt> to include all %Om header files.
+-	Configure the project to link to the required <a href="http://icu-project.org">ICU (ICU4C 49.1.2 or greater)</a> and <a href="http://boost.org">Boost (1.53.0 or greater)</a> library dependencies as necessary, and build these with the correct configuration for the project.  See <tt>make.sh</tt> and <tt>make.bat</tt> for guidance.
 -	Call the <tt>Om::System::Initialize</tt> function prior to use (e.g. in the <tt>main</tt> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").
--	Construct an <tt>Om::Environment</tt>, populate with any additional operator-program mappings, and call one of its <tt>Evaluate</tt> functions to evaluate a program.
+-	Construct an <tt>Om::Environment</tt>, populate with any additional operator-program mappings, and call one of its <tt>Om::Environment::Evaluate</tt> functions to evaluate a program.
 
 \section using__scripts__ Scripts
 
@@ -335,16 +341,18 @@ Scripts are included that use <a href="http://cmake.org">CMake</a> to generate p
 		-	Runs all unit tests (if compiled with <tt>Om_Macros_Test_</tt> defined).
 		-	Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.
 -	<b>%Om Documentation</b>:
-	-	Builds the %Om documentation into <tt>products/documentation/doxygen</tt>.  To view the HTML documentation in a browser, open <tt>html/index.html</tt>.
+	-	Builds the %Om documentation into the following folders in <tt>products/documentation/doxygen</tt>:
+		-	<tt>html</tt>: The HTML documentation.  To view in a browser, open <tt>index.html</tt>.
+		-	<tt>xml</tt>: The XML documentation, which can be read by an IDE to show context-sensitive documentation.
 
 \subsection using__scripts__xcode__ Xcode
 
 To generate the <tt>Om.xcodeproj</tt> file (in <tt>products/projects/xcode</tt>):
 -	Ensure that <a href="http://doxygen.org">Doxygen</a> and <a href="http://www.macports.org/ports.php?by=name&substr=graphviz">Graphviz (via MacPorts)</a> are installed and available to applications via the path variable.  <a href="http://overwatering.org/blog/2012-2013/08/setting-path-osx-mountain-lion">This article</a> explains how to do so.
 -	Run <tt>make.sh</tt> and pass it the following arguments (in order):
-	- 	The ICU root directory path.  To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/50.1.2/icu4c-50_1_2-src.tgz">ICU4C 50.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.
-	-	The Boost root directory path.  To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.
-	-	<b>Optional:</b> The UnitTest++ root directory path.  If omitted, unit tests will be excluded from the build.  To create this directory, download and unpack the <a href="http://sourceforge.net/projects/unittest-cpp/files/latest/download?source=files">UnitTest++ 1.4 code archive</a> from the <a href="http://sourceforge.net/projects/unittest-cpp/files">UnitTest++ download page</a>.
+	- 	The <a href="http://icu-project.org">ICU (ICU4C 49.1.2 or greater)</a> root directory path.  To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/50.1.2/icu4c-50_1_2-src.tgz">ICU4C 50.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.
+	-	The <a href="http://boost.org">Boost (1.53.0 or greater)</a> root directory path.  To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.
+	-	<b>Optional:</b> The <a href="https://github.com/unittest-cpp/unittest-cpp">UnitTest++ (1.4 or greater)</a> root directory path.  If omitted, unit tests will be excluded from the build.  To create this directory, download and unpack the <a href="https://github.com/unittest-cpp/unittest-cpp/archive/v1.4.tar.gz">UnitTest++ 1.4 code archive</a> from the <a href="https://github.com/unittest-cpp/unittest-cpp/tags">UnitTest++ download page</a>.
 
 To update the Xcode project to reflect changes to the code directory tree:
 -	Run <tt>remake.sh</tt>.
@@ -359,9 +367,9 @@ The above scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mountain L
 To generate the <tt>Om.sln</tt> file (in <tt>products/projects/vs</tt>):
 -	Ensure that <a href="http://doxygen.org">Doxygen</a> and <a href="http://graphviz.org">Graphviz</a> are installed and in the path variable.
 -	Run <tt>make.bat</tt> and pass it the following arguments (in order):
-	- 	The ICU root directory path.  To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C 49.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.  (Note that ICU4C 50.1.1 or 50.1.2 cannot be used due to a <a href="https://svn.boost.org/trac/boost/ticket/7839">bug</a> that prevents building on Windows.)
-	-	The Boost root directory path.  To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.zip/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.
-	-	<b>Optional:</b> The UnitTest++ root directory path.  If omitted, unit tests will be excluded from the build.  To create this directory, get the UnitTest++ 1.4 code via <a href="http://subversion.tigris.org">Subversion</a> checkout (described on the <a href="https://sourceforge.net/projects/unittest-cpp/develop">UnitTest++ developer page</a>) and apply the patch attached to the <a href="https://sourceforge.net/tracker/?func=detail&aid=3583690&group_id=158151&atid=806686">Visual Studio 2010 support ticket</a>.  The UnitTest++ root directory is the <tt>UnitTest++</tt> subdirectory of the Subversion checkout directory.
+	- 	The <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a> root directory path.  To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C 49.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.  (Note that ICU4C 50.1.1 or 50.1.2 cannot be used due to build issues on Windows.)
+	-	The <a href="http://boost.org">Boost (1.53.0 or greater)</a> root directory path.  To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.zip/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.
+	-	<b>Optional:</b> The <a href="https://github.com/unittest-cpp/unittest-cpp">UnitTest++ (1.5 prerelease or greater)</a> root directory path.  If omitted, unit tests will be excluded from the build.  To create this directory, check out the UnitTest++ 1.5 development code from the <a href="https://github.com/unittest-cpp/unittest-cpp">UnitTest++ Git repository</a>.
 
 To update the Visual Studio solution to reflect changes to the code directory tree:
 -	Run <tt>remake.bat</tt>.
@@ -373,24 +381,28 @@ The above scripts have been tested with Visual Studio 2010 Express on Windows Vi
 
 \subsection using__scripts__other__ Other Platforms
 
-Because %Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <tt>CMakeLists.txt</tt> file.  If this is of interest, please contribute the result via \ref contributing__developing__pull_requests__ "pull request" and/or \ref contributing__issue_reporting__ "report" any code portability errors encountered.
+Because %Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <tt>CMakeLists.txt</tt> file.  If this is of interest, please contribute the result by \ref contributing__developing__requesting_a_pull__ and/or \ref contributing__reporting_issues__ related for any code portability errors encountered.
 
 \page contributing__ Contributing
 
 There are several ways to contribute to the %Om project:
 -	By \ref contributing__developing__ new \ref om__operations__ and \ref om__programs__.
--	By \ref contributing__issue_reporting__ via bugs, patches, or enhancement requests.
+-	By \ref contributing__reporting_issues__ via bugs, patches, or enhancement requests.
 -	By \ref contributing__funding__ further development of the %Om language.
 
 \section contributing__developing__ Developing
 
-%Om is written in modern, portable C++ and can be forked from the <a href="http://github.com/sparist/Om">%Om GitHub repository</a>.
+%Om is written in modern, portable C++ that adheres to the <a href="http://sparist.github.com/cpp_coding_standard.html">Sparist C++ Coding Standard</a>.
 
 <b>Note</b>: Because this is an early-stage project, there are not yet any compatibility guarantees between versions.
 
-\subsection contributing__developing__coding_standard__ Coding Standard
+\subsection contributing__developing__forking__ Forking
 
-All %Om development must adhere to the <a href="http://sparist.github.com/cpp_coding_standard.html">Sparist C++ Coding Standard</a>.
+%Om code can be <a href="https://github.com/sparist/Om/fork">forked</a> from the <a href="https://github.com/sparist/Om">%Om GitHub repository</a>.
+
+\subsection contributing__developing__building__ Building
+
+See \ref using__ for instructions on building the code.
 
 \subsection contributing__developing__adding_operations__ Adding Operations
 
@@ -435,11 +447,11 @@ Some basic free static analysis tools can be applied to the %Om code.
 -	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts.  If Perl is installed, CLOC can be applied to %Om by entering the following at the terminal from inside the %Om directory:
 	<blockquote><tt>cloc.pl code</tt></blockquote>
 
-\subsection contributing__developing__pull_requests__ Pull Requests
+\subsection contributing__developing__requesting_a_pull__ Requesting a Pull
 
-Pull requests can be made via the <a href="http://github.com/sparist/Om">%Om GitHub repository</a>.
+Changes can be submitted to %Om via <a href="https://github.com/sparist/Om/pull/new/master">pull request</a>.
 
-\section contributing__issue_reporting__ Issue Reporting
+\section contributing__reporting_issues__ Reporting Issues
 
 Issues are reported and tracked with the <a href="https://github.com/sparist/Om/issues">Om GitHub issue tracker</a>.
 
