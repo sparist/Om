@@ -123,24 +123,24 @@ add_executable( Om ${Code} )
 if( MSVC )
 	if( UnitTest )
 		find_library( UnitTestDebugLibrary "UnitTest++.vsnet2010" "${UnitTest}/Debug" NO_DEFAULT_PATH )
-	
+
 		find_library( UnitTestReleaseLibrary "UnitTest++.vsnet2010" "${UnitTest}/Release" NO_DEFAULT_PATH )
 
 		target_link_libraries( Om
 			debug "${UnitTestDebugLibrary}"
 			optimized "${UnitTestReleaseLibrary}"
-		)	
+		)
 	endif()
 
-	find_library( BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostLocaleDebugLibrary libboost_locale-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostSystemDebugLibrary libboost_system-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostThreadDebugLibrary libboost_thread-vc100-mt-gd-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostLocaleDebugLibrary libboost_locale-vc100-mt-gd-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostSystemDebugLibrary libboost_system-vc100-mt-gd-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostThreadDebugLibrary libboost_thread-vc100-mt-gd-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
 
-	find_library( BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostLocaleReleaseLibrary libboost_locale-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostSystemReleaseLibrary libboost_system-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostThreadReleaseLibrary libboost_thread-vc100-mt-1_52 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostLocaleReleaseLibrary libboost_locale-vc100-mt-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostSystemReleaseLibrary libboost_system-vc100-mt-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostThreadReleaseLibrary libboost_thread-vc100-mt-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
 
 	target_link_libraries( Om
 		debug "${BoostLocaleDebugLibrary}"
