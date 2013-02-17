@@ -113,7 +113,7 @@ include_directories(
 	"${UnitTest}/src"
 )
 if( MSVC )
-	include_directories( "${Boost}" )
+	include_directories( "${Boost}/include/boost-1_53" )
 else()
 	include_directories( "${Boost}/include" )
 endif()
@@ -123,80 +123,43 @@ add_executable( Om ${Code} )
 if( MSVC )
 	if( UnitTest )
 		find_library( UnitTestDebugLibrary "UnitTest++.vsnet2010" "${UnitTest}/Debug" NO_DEFAULT_PATH )
-
 		find_library( UnitTestReleaseLibrary "UnitTest++.vsnet2010" "${UnitTest}/Release" NO_DEFAULT_PATH )
-
-		target_link_libraries( Om
-			debug "${UnitTestDebugLibrary}"
-			optimized "${UnitTestReleaseLibrary}"
-		)
 	endif()
 
-	find_library( BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostLocaleDebugLibrary libboost_locale-vc100-mt-gd-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostSystemDebugLibrary libboost_system-vc100-mt-gd-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostThreadDebugLibrary libboost_thread-vc100-mt-gd-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 
-	find_library( BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostLocaleReleaseLibrary libboost_locale-vc100-mt-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostSystemReleaseLibrary libboost_system-vc100-mt-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
-	find_library( BoostThreadReleaseLibrary libboost_thread-vc100-mt-1_53 "${Boost}/stage/lib" NO_DEFAULT_PATH )
+	find_library( BoostLocaleDebugLibrary libboost_locale-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostLocaleReleaseLibrary libboost_locale-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 
-	target_link_libraries( Om
-		debug "${BoostLocaleDebugLibrary}"
-		debug "${BoostSystemDebugLibrary}"
-		debug "${BoostThreadDebugLibrary}"
-		debug "${BoostChronoDebugLibrary}"
-		optimized "${BoostLocaleReleaseLibrary}"
-		optimized "${BoostSystemReleaseLibrary}"
-		optimized "${BoostThreadReleaseLibrary}"
-		optimized "${BoostChronoReleaseLibrary}"
-	)
+	find_library( BoostSystemDebugLibrary libboost_system-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostSystemReleaseLibrary libboost_system-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+
+	find_library( BoostThreadDebugLibrary libboost_thread-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostThreadReleaseLibrary libboost_thread-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 
 	find_library( IcuDataLibrary icudt "${Icu}/lib" NO_DEFAULT_PATH )
 
 	find_library( IcuI18nDebugLibrary icuind "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuIoDebugLibrary icuiod "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuLeDebugLibrary iculed "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuLxDebugLibrary iculxd "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuTestDebugLibrary icutestd "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuTuDebugLibrary icutud "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuUcDebugLibrary icuucd "${Icu}/lib" NO_DEFAULT_PATH )
-
 	find_library( IcuI18nReleaseLibrary icuin "${Icu}/lib" NO_DEFAULT_PATH )
+
+	find_library( IcuIoDebugLibrary icuiod "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuIoReleaseLibrary icuio "${Icu}/lib" NO_DEFAULT_PATH )
+
+	find_library( IcuLeDebugLibrary iculed "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuLeReleaseLibrary icule "${Icu}/lib" NO_DEFAULT_PATH )
+
+	find_library( IcuLxDebugLibrary iculxd "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuLxReleaseLibrary iculx "${Icu}/lib" NO_DEFAULT_PATH )
+
+	find_library( IcuTestDebugLibrary icutestd "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuTestReleaseLibrary icutest "${Icu}/lib" NO_DEFAULT_PATH )
+
+	find_library( IcuTuDebugLibrary icutud "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuTuReleaseLibrary icutu "${Icu}/lib" NO_DEFAULT_PATH )
+
+	find_library( IcuUcDebugLibrary icuucd "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuUcReleaseLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH )
-
-	target_link_libraries( Om
-		"${IcuDataLibrary}"
-		debug "${IcuI18nDebugLibrary}"
-		debug "${IcuIoDebugLibrary}"
-		debug "${IcuLeDebugLibrary}"
-		debug "${IcuLxDebugLibrary}"
-		debug "${IcuTestDebugLibrary}"
-		debug "${IcuTuDebugLibrary}"
-		debug "${IcuUcDebugLibrary}"
-		optimized "${IcuI18nReleaseLibrary}"
-		optimized "${IcuIoReleaseLibrary}"
-		optimized "${IcuLeReleaseLibrary}"
-		optimized "${IcuLxReleaseLibrary}"
-		optimized "${IcuTestReleaseLibrary}"
-		optimized "${IcuTuReleaseLibrary}"
-		optimized "${IcuUcReleaseLibrary}"
-	)
-
-	add_custom_target( "Om Documentation"
-		COMMAND if not exist products mkdir products
-		COMMAND if not exist products\\documentation mkdir products\\documentation
-		COMMAND if not exist products\\documentation\\doxygen mkdir products\\documentation\\doxygen
-		COMMAND ( type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -
-		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-	)
 
 	add_custom_command( TARGET Om POST_BUILD
 		COMMAND "${CMAKE_COMMAND}" -E copy
@@ -252,46 +215,57 @@ if( MSVC )
 
 		VERBATIM
 	)
+
+	add_custom_target( "Om Documentation"
+		COMMAND if not exist products mkdir products
+		COMMAND if not exist products\\documentation mkdir products\\documentation
+		COMMAND if not exist products\\documentation\\doxygen mkdir products\\documentation\\doxygen
+		COMMAND ( type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -
+		COMMENT "Generating Documentation..."
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		VERBATIM
+	)
 else()
+	if( UnitTest )
+		find_library( UnitTestReleaseLibrary "UnitTest++" "${UnitTest}" NO_DEFAULT_PATH )
+		set( UnitTestDebugLibrary ${UnitTestReleaseLibrary} )
+	endif()
+
+	find_library( BoostLocaleReleaseLibrary boost_locale "${Boost}/lib" NO_DEFAULT_PATH )
+	set( BoostLocaleDebugLibrary ${BoostLocaleReleaseLibrary} )
+
+	find_library( BoostSystemReleaseLibrary boost_system "${Boost}/lib" NO_DEFAULT_PATH )
+	set( BoostSystemDebugLibrary ${BoostSystemReleaseLibrary} )
+
+	find_library( BoostThreadReleaseLibrary boost_thread "${Boost}/lib" NO_DEFAULT_PATH )
+	set( BoostThreadDebugLibrary ${BoostThreadReleaseLibrary} )
+
+	find_library( IcuDataLibrary icudata "${Icu}/lib" NO_DEFAULT_PATH )
+
+	find_library( IcuI18nReleaseLibrary icui18n "${Icu}/lib" NO_DEFAULT_PATH )
+	set( IcuI18nDebugLibrary ${IcuI18nReleaseLibrary} )
+
+	find_library( IcuIoReleaseLibrary icuio "${Icu}/lib" NO_DEFAULT_PATH )
+	set( IcuIoDebugLibrary ${IcuIoReleaseLibrary} )
+
+	find_library( IcuLeReleaseLibrary icule "${Icu}/lib" NO_DEFAULT_PATH )
+	set( IcuLeDebugLibrary ${IcuLeReleaseLibrary} )
+
+	find_library( IcuLxReleaseLibrary iculx "${Icu}/lib" NO_DEFAULT_PATH )
+	set( IcuLxDebugLibrary ${IcuLxReleaseLibrary} )
+
+	find_library( IcuTestReleaseLibrary icutest "${Icu}/lib" NO_DEFAULT_PATH )
+	set( IcuTestDebugLibrary ${IcuTestReleaseLibrary} )
+
+	find_library( IcuTuReleaseLibrary icutu "${Icu}/lib" NO_DEFAULT_PATH )
+	set( IcuTuDebugLibrary ${IcuTuReleaseLibrary} )
+
+	find_library( IcuUcReleaseLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH )
+	set( IcuUcDebugLibrary ${IcuUcReleaseLibrary} )
+
 	set_target_properties( Om PROPERTIES
 		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/${PrecompiledHeader}"
 		XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
-	)
-
-	if( UnitTest )
-		find_library( UnitTestLibrary "UnitTest++" "${UnitTest}" NO_DEFAULT_PATH )
-
-		target_link_libraries( Om "${UnitTestLibrary}" )
-	endif()
-
-	find_library( BoostLocaleLibrary boost_locale "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostSystemLibrary boost_system "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostThreadLibrary boost_thread "${Boost}/lib" NO_DEFAULT_PATH )
-
-	target_link_libraries( Om
-		"${BoostLocaleLibrary}"
-		"${BoostSystemLibrary}"
-		"${BoostThreadLibrary}"
-	)
-
-	find_library( IcuDataLibrary icudata "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuI18nLibrary icui18n "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuIoLibrary icuio "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuLeLibrary icule "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuLxLibrary iculx "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuTestLibrary icutest "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuTuLibrary icutu "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuUcLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH )
-
-	target_link_libraries( Om
-		"${IcuDataLibrary}"
-		"${IcuI18nLibrary}"
-		"${IcuIoLibrary}"
-		"${IcuLeLibrary}"
-		"${IcuLxLibrary}"
-		"${IcuTestLibrary}"
-		"${IcuTuLibrary}"
-		"${IcuUcLibrary}"
 	)
 
 	add_custom_target( "Om Documentation"
@@ -302,3 +276,49 @@ else()
 		VERBATIM
 	)
 endif()
+
+if( UnitTest )
+	target_link_libraries( Om
+		debug "${UnitTestDebugLibrary}"
+		optimized "${UnitTestReleaseLibrary}"
+	)
+endif()
+
+target_link_libraries( Om
+	debug "${BoostLocaleDebugLibrary}"
+	optimized "${BoostLocaleReleaseLibrary}"
+
+	debug "${BoostSystemDebugLibrary}"
+	optimized "${BoostSystemReleaseLibrary}"
+
+	debug "${BoostThreadDebugLibrary}"
+	optimized "${BoostThreadReleaseLibrary}"
+
+	debug "${BoostChronoDebugLibrary}"
+	optimized "${BoostChronoReleaseLibrary}"
+)
+
+target_link_libraries( Om
+	"${IcuDataLibrary}"
+
+	debug "${IcuI18nDebugLibrary}"
+	optimized "${IcuI18nReleaseLibrary}"
+
+	debug "${IcuIoDebugLibrary}"
+	optimized "${IcuIoReleaseLibrary}"
+
+	debug "${IcuLeDebugLibrary}"
+	optimized "${IcuLeReleaseLibrary}"
+
+	debug "${IcuLxDebugLibrary}"
+	optimized "${IcuLxReleaseLibrary}"
+
+	debug "${IcuTestDebugLibrary}"
+	optimized "${IcuTestReleaseLibrary}"
+
+	debug "${IcuTuDebugLibrary}"
+	optimized "${IcuTuReleaseLibrary}"
+
+	debug "${IcuUcDebugLibrary}"
+	optimized "${IcuUcReleaseLibrary}"
+)
