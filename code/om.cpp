@@ -20,7 +20,14 @@
 
 		#include "UnitTest++.h"
 
-	#endif
+int main() {
+	Om::System::Get().Initialize( "en_US.UTF-8" );
+	return(
+		UnitTest::RunAllTests()
+	);
+}
+
+	#else
 
 /*!
 \param theArgumentCount
@@ -43,12 +50,6 @@ int main(
 		"en_US.UTF-8"
 	);
 
-	#if defined( Om_Macros_Test_ )
-
-	int const theResult = UnitTest::RunAllTests();
-
-	#endif
-
 	typedef Om::Sources::StreamSource<> CodeUnitSource;
 	CodeUnitSource theCodeUnitSource( std::cin );
 	Om::Sources::CodePointSource< CodeUnitSource > theCodePointSource(
@@ -65,15 +66,9 @@ int main(
 		theCodePointSink
 	);
 
-	#if defined( Om_Macros_Test_ )
-
-	return( theResult );
-
-	#else
-
 	return( EXIT_SUCCESS );
+}
 
 	#endif
-}
 
 #endif

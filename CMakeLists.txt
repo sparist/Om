@@ -14,10 +14,6 @@ set( UnitTest "" CACHE PATH "The UnitTest library build directory path" )
 set( Boost "" CACHE PATH "The Boost library build directory path" )
 set( Icu "" CACHE PATH "The ICU library build directory path" )
 
-if( UnitTest )
-	add_definitions( -DOm_Macros_Test_ )
-endif()
-
 file( WRITE "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#if !defined( Om_Internal_ )\n" )
 file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
 file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#define Om_Internal_\n" )
@@ -108,19 +104,30 @@ source_group( "Doxygen Files\\om\\sinks" FILES ${Dox_Code_Om_Sinks} )
 source_group( "Doxygen Files\\om\\sources" FILES ${Dox_Code_Om_Sources} )
 source_group( "Doxygen Files\\om\\symbols" FILES ${Dox_Code_Om_Symbols} )
 
-include_directories(
-	"${CMAKE_CURRENT_SOURCE_DIR}/code"
-	"${UnitTest}/src"
-)
+include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" )
 if( MSVC )
 	include_directories( "${Boost}/include/boost-1_53" )
 else()
 	include_directories( "${Boost}/include" )
 endif()
+if( UnitTest )
+	include_directories( "${UnitTest}/src" )
+endif()
 
-add_executable( Om ${Code} )
+add_executable( "Om" ${Code} )
+add_executable( "Om.Test" ${Cpp} )
 
 if( MSVC )
+	add_custom_target( "Om.Documentation"
+		COMMAND if not exist products mkdir products
+		COMMAND if not exist products\\documentation mkdir products\\documentation
+		COMMAND if not exist products\\documentation\\doxygen mkdir products\\documentation\\doxygen
+		COMMAND ( type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -
+		COMMENT "Generating Documentation..."
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		VERBATIM
+	)
+
 	if( UnitTest )
 		find_library( UnitTestDebugLibrary "UnitTest++.vsnet2010" "${UnitTest}/Debug" NO_DEFAULT_PATH )
 		find_library( UnitTestReleaseLibrary "UnitTest++.vsnet2010" "${UnitTest}/Release" NO_DEFAULT_PATH )
@@ -160,72 +167,15 @@ if( MSVC )
 
 	find_library( IcuUcDebugLibrary icuucd "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuUcReleaseLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH )
-
-	add_custom_command( TARGET Om POST_BUILD
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icudt49.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/testplug.dll"
-			"$<TARGET_FILE_DIR:Om>"
-
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icuin49.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icuio49.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icule49.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/iculx49.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icutest49.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icutu49.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icuuc49.dll"
-			"$<TARGET_FILE_DIR:Om>"
-
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icuin49d.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icuio49d.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icule49d.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/iculx49d.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icutest49d.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icutu49d.dll"
-			"$<TARGET_FILE_DIR:Om>"
-		COMMAND "${CMAKE_COMMAND}" -E copy
-			"${Icu}/bin/icuuc49d.dll"
-			"$<TARGET_FILE_DIR:Om>"
-
-		VERBATIM
-	)
-
-	add_custom_target( "Om Documentation"
-		COMMAND if not exist products mkdir products
-		COMMAND if not exist products\\documentation mkdir products\\documentation
-		COMMAND if not exist products\\documentation\\doxygen mkdir products\\documentation\\doxygen
-		COMMAND ( type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -
+else()
+	add_custom_target( "Om.Documentation"
+		COMMAND mkdir -p products/documentation/doxygen
+		COMMAND doxygen doxygen/Doxyfile
 		COMMENT "Generating Documentation..."
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 		VERBATIM
 	)
-else()
+
 	if( UnitTest )
 		find_library( UnitTestReleaseLibrary "UnitTest++" "${UnitTest}" NO_DEFAULT_PATH )
 		set( UnitTestDebugLibrary ${UnitTestReleaseLibrary} )
@@ -262,63 +212,119 @@ else()
 
 	find_library( IcuUcReleaseLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH )
 	set( IcuUcDebugLibrary ${IcuUcReleaseLibrary} )
-
-	set_target_properties( Om PROPERTIES
-		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/${PrecompiledHeader}"
-		XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
-	)
-
-	add_custom_target( "Om Documentation"
-		COMMAND mkdir -p products/documentation/doxygen
-		COMMAND doxygen doxygen/Doxyfile
-		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-		VERBATIM
-	)
 endif()
 
+macro( om_target_link_libraries target )
+	target_link_libraries( ${target}
+		debug "${BoostLocaleDebugLibrary}"
+		optimized "${BoostLocaleReleaseLibrary}"
+	
+		debug "${BoostSystemDebugLibrary}"
+		optimized "${BoostSystemReleaseLibrary}"
+	
+		debug "${BoostThreadDebugLibrary}"
+		optimized "${BoostThreadReleaseLibrary}"
+	
+		debug "${BoostChronoDebugLibrary}"
+		optimized "${BoostChronoReleaseLibrary}"
+	)
+	
+	target_link_libraries( ${target}
+		"${IcuDataLibrary}"
+	
+		debug "${IcuI18nDebugLibrary}"
+		optimized "${IcuI18nReleaseLibrary}"
+	
+		debug "${IcuIoDebugLibrary}"
+		optimized "${IcuIoReleaseLibrary}"
+	
+		debug "${IcuLeDebugLibrary}"
+		optimized "${IcuLeReleaseLibrary}"
+	
+		debug "${IcuLxDebugLibrary}"
+		optimized "${IcuLxReleaseLibrary}"
+	
+		debug "${IcuTestDebugLibrary}"
+		optimized "${IcuTestReleaseLibrary}"
+	
+		debug "${IcuTuDebugLibrary}"
+		optimized "${IcuTuReleaseLibrary}"
+	
+		debug "${IcuUcDebugLibrary}"
+		optimized "${IcuUcReleaseLibrary}"
+	)
+
+	if( MSVC )
+		add_custom_command( TARGET ${target} POST_BUILD
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icudt49.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/testplug.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+	
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icuin49.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icuio49.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icule49.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/iculx49.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icutest49.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icutu49.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icuuc49.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+	
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icuin49d.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icuio49d.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icule49d.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/iculx49d.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icutest49d.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icutu49d.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+			COMMAND "${CMAKE_COMMAND}" -E copy
+				"${Icu}/bin/icuuc49d.dll"
+				"$<TARGET_FILE_DIR:${target}>"
+	
+			VERBATIM
+		)
+	else()
+		set_target_properties( ${target} PROPERTIES
+			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/${PrecompiledHeader}"
+			XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
+		)
+	endif()
+endmacro()
+
 if( UnitTest )
-	target_link_libraries( Om
+	set_target_properties( "Om.Test" PROPERTIES COMPILE_FLAGS -DOm_Macros_Test_ )
+
+	target_link_libraries( "Om.Test"
 		debug "${UnitTestDebugLibrary}"
 		optimized "${UnitTestReleaseLibrary}"
 	)
 endif()
 
-target_link_libraries( Om
-	debug "${BoostLocaleDebugLibrary}"
-	optimized "${BoostLocaleReleaseLibrary}"
-
-	debug "${BoostSystemDebugLibrary}"
-	optimized "${BoostSystemReleaseLibrary}"
-
-	debug "${BoostThreadDebugLibrary}"
-	optimized "${BoostThreadReleaseLibrary}"
-
-	debug "${BoostChronoDebugLibrary}"
-	optimized "${BoostChronoReleaseLibrary}"
-)
-
-target_link_libraries( Om
-	"${IcuDataLibrary}"
-
-	debug "${IcuI18nDebugLibrary}"
-	optimized "${IcuI18nReleaseLibrary}"
-
-	debug "${IcuIoDebugLibrary}"
-	optimized "${IcuIoReleaseLibrary}"
-
-	debug "${IcuLeDebugLibrary}"
-	optimized "${IcuLeReleaseLibrary}"
-
-	debug "${IcuLxDebugLibrary}"
-	optimized "${IcuLxReleaseLibrary}"
-
-	debug "${IcuTestDebugLibrary}"
-	optimized "${IcuTestReleaseLibrary}"
-
-	debug "${IcuTuDebugLibrary}"
-	optimized "${IcuTuReleaseLibrary}"
-
-	debug "${IcuUcDebugLibrary}"
-	optimized "${IcuUcReleaseLibrary}"
-)
+om_target_link_libraries( "Om" )
+om_target_link_libraries( "Om.Test" )
