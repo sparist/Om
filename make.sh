@@ -10,34 +10,25 @@ fi
 
 cd $1
 Icu=`pwd -P`
-if [ ! -d "build" ]
-then
-	mkdir -p build
-	mkdir -p make
-	cd make
-	../source/runConfigureICU MacOSX --enable-static --disable-shared --prefix="$Icu/build"
-	make check
-	make install
-fi
+mkdir -p build
+mkdir -p make
+cd make
+../source/runConfigureICU MacOSX --enable-static --disable-shared --prefix="$Icu/build"
+#make check
+make install
 cd "$Directory"
 
 cd $2
 Boost=`pwd -P`
-if [ ! -d "build" ]
-then
-	./bootstrap.sh --with-icu="$Icu/build" --prefix="$Boost/build"
-	./b2 boost.locale.iconv=off -sICU_PATH="$Icu/build" --with-chrono --with-locale --with-system --with-thread link=static install
-fi
+./bootstrap.sh --with-icu="$Icu/build" --prefix="$Boost/build"
+./b2 boost.locale.icu=on boost.locale.std=off boost.locale.iconv=off -sICU_PATH="$Icu/build" --with-chrono --with-locale --with-system --with-thread link=static install --prefix="$Boost/build"
 cd "$Directory"
 
 if [ $# -eq 3 ]
 then
 	cd $3
 	UnitTest=`pwd -P`
-	if [ ! -f libUnitTest++.a ]
-	then
-		make all
-	fi
+	make all
 	cd "$Directory"
 fi
 
