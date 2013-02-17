@@ -32,10 +32,17 @@ var NAVTREE =
     ] ],
     [ "Using", "using__.html", [
       [ "Library", "using__.html#using__library__", null ],
-      [ "Scripts", "using__.html#using__scripts__", [
-        [ "Xcode", "using__.html#using__scripts__xcode__", null ],
-        [ "Visual Studio", "using__.html#using__scripts__visual_studio__", null ],
-        [ "Other Platforms", "using__.html#using__scripts__other__", null ]
+      [ "Projects", "using__.html#using__projects__", [
+        [ "Targets", "using__.html#using__projects__targets__", [
+          [ "Om", "using__.html#using__projects__targets__om__", null ],
+          [ "Om.Documentation", "using__.html#using__projects__targets__om_documentation__", null ],
+          [ "Om.Test", "using__.html#using__projects__targets__om_test__", null ]
+        ] ],
+        [ "Platforms", "using__.html#using__projects__platforms__", [
+          [ "Xcode", "using__.html#using__projects__platforms__xcode__", null ],
+          [ "Visual Studio", "using__.html#using__projects__platforms__visual_studio__", null ],
+          [ "Other", "using__.html#using__projects__platforms__other__", null ]
+        ] ]
       ] ]
     ] ],
     [ "Contributing", "contributing__.html", [
