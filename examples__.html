@@ -333,8 +333,78 @@ $(document).ready(function(){initNavTree('examples__.html','');});
  { minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
  { {23} }</b><br/>
  </code></li>
-<li><code><em>{23}</em></code> </li>
+<li><code><em>{23}</em></code></li>
 </ul>
+<p>Concatenative languages stress the importance of factoring code into small functions in order to manage complexity. The following example is an implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a> (in a verbose style for the purposes of illustration), along with comments and an example usage:</p>
+<pre class="fragment">define
+{
+	(Comment)
+	{
+		drop
+	}
+
+	(Pair)
+	{
+		(Comment)
+		{
+			Constructs a pair.
+			Input: {a}{b}
+			Output: {a{b}}
+		}
+		
+		expression&lt;- quote swap
+	}
+	
+	(Next)
+	{
+		(Comment)
+		{
+			Constructs the next call.
+			Input: {function}{result}{remainder}
+			Output: {Fold&lt;-{function}{result}{remainder}}
+		}
+		
+		(Pair) (Pair) (Pair) {Fold&lt;-}
+	}
+	
+	(Repeat)
+	{
+		(Comment)
+		{
+			Repeats function application until the remainder is empty.
+		}
+		
+		rearrange
+		{
+			dequote
+			choose
+			quote Result
+			(Next) Function Result Remainder
+			Remainder
+		}
+		{Function Result Remainder}
+	}
+	
+	Fold&lt;-
+	{
+		(Comment)
+		{
+			Performs a left fold by popping terms and applying a function.
+		}
+		
+		rearrange
+		{
+			(Repeat)
+			Function
+			dequote Function Base &lt;-terms
+		}
+		{Function Base}
+	}
+}
+{
+	Fold&lt;- {literal&lt;-} {} {1 2 3}
+}
+</pre><p>The result is <code>{321}</code>. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
