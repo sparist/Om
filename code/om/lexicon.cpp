@@ -176,6 +176,19 @@ namespace Om {
 			);
 		}
 
+		TEST( Normalization ) {
+			CHECK_EQUAL(
+				(
+					"{B{2}\n"
+					"C\n"
+					"A{4}\n"
+					"D\n"
+					"E{5}}"
+				),
+				System::Get().Evaluate( "lexicon{A{1} B{2} A{3} C A{4} D E{5}}" )
+			);
+		}
+
 	}
 
 }
@@ -707,8 +720,12 @@ inline void Type_::RelinkToBack(
 ) {
 	if( this->thisNextNode ) {
 		this->thisNextNode->thisPriorNode = this->thisPriorNode;
+
 		if( this->thisPriorNode ) {
 			this->thisPriorNode->thisNextNode = this->thisNextNode;
+		} else {
+			assert( this == theFirstNode );
+			theFirstNode = this->thisNextNode;
 		}
 
 		this->LinkToBack(
