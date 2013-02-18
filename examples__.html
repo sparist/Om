@@ -335,16 +335,14 @@ $(document).ready(function(){initNavTree('examples__.html','');});
  </code></li>
 <li><code><em>{23}</em></code></li>
 </ul>
-<p>Concatenative languages stress the importance of factoring code into small functions in order to manage complexity. The following example is an implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a> (in a verbose style for the purposes of illustration), along with comments and an example usage:</p>
+<p>Concatenative languages stress the importance of factoring code into small functions in order to manage complexity. The following example is an implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a> (in a verbose style for the purposes of illustration), along with comments and an example usage: </p>
 <pre class="fragment">define
 {
-	(Comment)
-	{
+	(Comment) {
 		drop
 	}
 
-	(Pair)
-	{
+	(Pair) {
 		(Comment)
 		{
 			Constructs a pair.
@@ -355,8 +353,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 		expression&lt;- quote swap
 	}
 	
-	(Next)
-	{
+	(Next) {
 		(Comment)
 		{
 			Constructs the next call.
@@ -367,8 +364,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 		(Pair) (Pair) (Pair) {Fold&lt;-}
 	}
 	
-	(Repeat)
-	{
+	(Repeat) {
 		(Comment)
 		{
 			Repeats function application until the remainder is empty.
@@ -385,8 +381,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 		{Function Result Remainder}
 	}
 	
-	Fold&lt;-
-	{
+	Fold&lt;- {
 		(Comment)
 		{
 			Performs a left fold by popping terms and applying a function.
@@ -404,8 +399,33 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 {
 	Fold&lt;- {literal&lt;-} {} {1 2 3}
 }
-</pre><p>The result is <code>{321}</code>. </p>
-</div></div><!-- contents -->
+</pre><p>The result is <code>{321}</code>.</p>
+<p>A more compact version: </p>
+<pre class="fragment">define
+{
+	(Pair) {
+		expression&lt;- quote swap
+	}
+	
+	Fold&lt;- {
+		rearrange
+		{
+			rearrange
+			{
+				dequote choose
+				quote B
+				(Pair) (Pair) (Pair) {Fold&lt;-} A B copy
+			}
+			{A B}
+			A dequote A B &lt;-terms
+		}
+		{A B}
+	}
+}
+{
+	Fold&lt;- {literal&lt;-} {} {1 2 3}
+}
+</pre> </div></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
 	</body>
