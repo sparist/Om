@@ -309,17 +309,14 @@ Each step of an evaluation can be represented as a program.  The following is th
 -	<tt><em>{23}</em></tt>
 
 Concatenative languages stress the importance of factoring code into small functions in order to manage complexity.  The following example is an implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a> (in a verbose style for the purposes of illustration), along with comments and an example usage:
-
 \verbatim
 define
 {
-	(Comment)
-	{
+	(Comment) {
 		drop
 	}
 
-	(Pair)
-	{
+	(Pair) {
 		(Comment)
 		{
 			Constructs a pair.
@@ -330,8 +327,7 @@ define
 		expression<- quote swap
 	}
 	
-	(Next)
-	{
+	(Next) {
 		(Comment)
 		{
 			Constructs the next call.
@@ -342,8 +338,7 @@ define
 		(Pair) (Pair) (Pair) {Fold<-}
 	}
 	
-	(Repeat)
-	{
+	(Repeat) {
 		(Comment)
 		{
 			Repeats function application until the remainder is empty.
@@ -360,8 +355,7 @@ define
 		{Function Result Remainder}
 	}
 	
-	Fold<-
-	{
+	Fold<- {
 		(Comment)
 		{
 			Performs a left fold by popping terms and applying a function.
@@ -382,6 +376,34 @@ define
 \endverbatim
 
 The result is <tt>{321}</tt>.
+
+A more compact version:
+\verbatim
+define
+{
+	(Pair) {
+		expression<- quote swap
+	}
+	
+	Fold<- {
+		rearrange
+		{
+			rearrange
+			{
+				dequote choose
+				quote B
+				(Pair) (Pair) (Pair) {Fold<-} A B copy
+			}
+			{A B}
+			A dequote A B <-terms
+		}
+		{A B}
+	}
+}
+{
+	Fold<- {literal<-} {} {1 2 3}
+}
+\endverbatim
 
 \page downloading__ Downloading
 
