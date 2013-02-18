@@ -346,8 +346,8 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 		Comment
 		{
 			Constructs a pair.
-			Input: {a}{b}
-			Output: {a{b}}
+			* Input: {a}{b}
+			* Output: {a{b}}
 		}
 		
 		expression&lt;- quote swap
@@ -357,8 +357,8 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 		Comment
 		{
 			Constructs the next call.
-			Input: {function}{result}{remainder}
-			Output: {Fold&lt;-{function}{result}{remainder}}
+			* Input: {function}{result}{remainder}
+			* Output: {Fold&lt;-{function}{result}{remainder}}
 		}
 		
 		Pair Pair Pair {Fold&lt;-}
@@ -389,9 +389,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 		
 		rearrange
 		{
-			Repeat
-			Function
-			dequote Function Base &lt;-terms
+			Repeat Function dequote Function Base &lt;-terms
 		}
 		{Function Base}
 	}
@@ -412,20 +410,23 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 		{
 			rearrange
 			{
-				dequote choose
-				quote B
-				Pair Pair Pair {Fold&lt;-} A B copy
+				dequote
+				choose
+				quote Result
+				Pair Pair Pair {Fold&lt;-} Function Result copy
 			}
-			{A B}
-			A dequote A B &lt;-terms
+			{Function Result}
+
+			Function dequote Function Base &lt;-terms
 		}
-		{A B}
+		{Function Base}
 	}
 }
 {
 	Fold&lt;- {literal&lt;-} {} {1 2 3}
 }
-</pre> </div></div><!-- contents -->
+</pre><p>It would be possible for an integrated development environment to graphically group operations with the operands they consume. This would dramatically improve readability. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
 	</body>
