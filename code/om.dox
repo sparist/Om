@@ -312,12 +312,12 @@ Concatenative languages stress the importance of factoring code into small funct
 \verbatim
 define
 {
-	(Comment) {
+	Comment {
 		drop
 	}
 
-	(Pair) {
-		(Comment)
+	Pair {
+		Comment
 		{
 			Constructs a pair.
 			Input: {a}{b}
@@ -327,19 +327,19 @@ define
 		expression<- quote swap
 	}
 	
-	(Next) {
-		(Comment)
+	Next {
+		Comment
 		{
 			Constructs the next call.
 			Input: {function}{result}{remainder}
 			Output: {Fold<-{function}{result}{remainder}}
 		}
 		
-		(Pair) (Pair) (Pair) {Fold<-}
+		Pair Pair Pair {Fold<-}
 	}
 	
-	(Repeat) {
-		(Comment)
+	Repeat {
+		Comment
 		{
 			Repeats function application until the remainder is empty.
 		}
@@ -349,21 +349,21 @@ define
 			dequote
 			choose
 			quote Result
-			(Next) Function Result Remainder
+			Next Function Result Remainder
 			Remainder
 		}
 		{Function Result Remainder}
 	}
 	
 	Fold<- {
-		(Comment)
+		Comment
 		{
 			Performs a left fold by popping terms and applying a function.
 		}
 		
 		rearrange
 		{
-			(Repeat)
+			Repeat
 			Function
 			dequote Function Base <-terms
 		}
@@ -381,7 +381,7 @@ A more compact version:
 \verbatim
 define
 {
-	(Pair) {
+	Pair {
 		expression<- quote swap
 	}
 	
@@ -392,7 +392,7 @@ define
 			{
 				dequote choose
 				quote B
-				(Pair) (Pair) (Pair) {Fold<-} A B copy
+				Pair Pair Pair {Fold<-} A B copy
 			}
 			{A B}
 			A dequote A B <-terms
