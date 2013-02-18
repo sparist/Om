@@ -66,7 +66,7 @@ Each %Om program evaluates to a function.
 -	The evaluator can read, parse and evaluate the input stream in a single pass, sending results to the output stream as soon as they are evaluated.  This cannot be done with a postfix, stack-based language because any data on the stack must remain there as it may be needed by a function later.
 -	Functions can be optimized to only read into memory the data that is required; stack-based postfix languages have no knowledge of the function to apply until the data is already in memory, on the stack.
 -	Incoming data, such as events, become simple to handle at a language level: a program might evaluate to a function that acts as a state machine that processes any additional data appended to the program and transitions to a new state, ready to process new data.
--	An IDE can provide hints to the user about the data that is expected by a function.
+-	An integrated development environment can provide hints to the user about the data that is expected by a function.
 
 \section functions__input_and_output__ Input and Output
 
@@ -320,8 +320,8 @@ define
 		Comment
 		{
 			Constructs a pair.
-			Input: {a}{b}
-			Output: {a{b}}
+			* Input: {a}{b}
+			* Output: {a{b}}
 		}
 		
 		expression<- quote swap
@@ -331,8 +331,8 @@ define
 		Comment
 		{
 			Constructs the next call.
-			Input: {function}{result}{remainder}
-			Output: {Fold<-{function}{result}{remainder}}
+			* Input: {function}{result}{remainder}
+			* Output: {Fold<-{function}{result}{remainder}}
 		}
 		
 		Pair Pair Pair {Fold<-}
@@ -363,9 +363,7 @@ define
 		
 		rearrange
 		{
-			Repeat
-			Function
-			dequote Function Base <-terms
+			Repeat Function dequote Function Base <-terms
 		}
 		{Function Base}
 	}
@@ -390,20 +388,24 @@ define
 		{
 			rearrange
 			{
-				dequote choose
-				quote B
-				Pair Pair Pair {Fold<-} A B copy
+				dequote
+				choose
+				quote Result
+				Pair Pair Pair {Fold<-} Function Result copy
 			}
-			{A B}
-			A dequote A B <-terms
+			{Function Result}
+
+			Function dequote Function Base <-terms
 		}
-		{A B}
+		{Function Base}
 	}
 }
 {
 	Fold<- {literal<-} {} {1 2 3}
 }
 \endverbatim
+
+It would be possible for an integrated development environment to graphically group operations with the operands they consume.  This would dramatically improve readability.
 
 \page downloading__ Downloading
 
@@ -447,7 +449,7 @@ The %Om target builds the %Om interpreter executable into <tt>products/projects/
 
 The Om.Documentation target builds the %Om documentation into the following folders in <tt>products/documentation/doxygen</tt>:
 -	<tt>html</tt>: The HTML documentation.  To view in a browser, open <tt>index.html</tt>.
--	<tt>xml</tt>: The XML documentation, which can be read by an IDE to show context-sensitive documentation.
+-	<tt>xml</tt>: The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.
 
 \subsubsection using__projects__targets__om_test__ Om.Test
 
