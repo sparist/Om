@@ -371,10 +371,10 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 </li>
 <li>The first term is popped from the <code>Source</code>.</li>
 <li>The <code>Function</code> is applied to:<ul>
-<li>the <code>Base</code>;</li>
-<li>the popped first term of the <code>Source</code>;</li>
-<li>the remainder of the <code>Source</code>;</li>
-<li>the remainder of the input program.</li>
+<li>the <code>Base</code></li>
+<li>the popped first term of the <code>Source</code></li>
+<li>the remainder of the <code>Source</code></li>
+<li>the remainder of the input program</li>
 </ul>
 </li>
 <li>The first two operands output by the <code>Function</code> are:<ul>
@@ -384,9 +384,10 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 </li>
 <li>If the <code>Remainder</code> is empty, the <code>Result</code> is output. Otherwise, <code>Function</code>, <code>Result</code>, and <code>Remainder</code> are passed to a recursive <code>Fold&lt;-</code> call.</li>
 </ul>
+<p>The helper <code>Pair</code> function takes two operands (e.g. <code>{a}</code> and <code>{b}</code>) and constructs a pair (e.g. <code>{a{b}}</code>).</p>
 <p>A few things should be noted about the above example:</p>
 <ul>
-<li>The <a class="el" href="group__om____operations____.html">Operations</a> list is very short at the moment; as it expands, higher-level constructs will allow for simplification of algorithms such as this one.</li>
+<li>The <a class="el" href="group__om____operations____.html">Operations</a> list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.</li>
 <li>When reading Om code, it can be difficult to mentally group operations with the operands they consume (contrasted with Scheme, in which they are grouped at design time with parentheses). However, it should be possible for an Om integrated development environment to generate a graphical indication of these groupings dynamically. </li>
 </ul>
 </div></div><!-- contents -->
