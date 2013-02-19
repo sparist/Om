@@ -308,64 +308,27 @@ Each step of an evaluation can be represented as a program.  The following is th
 	</tt>
 -	<tt><em>{23}</em></tt>
 
-Concatenative languages stress the importance of factoring code into small functions in order to manage complexity.  The following example is an implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a> (in a verbose style for the purposes of illustration), along with comments and an example usage:
+The \ref om__operations__rearrange_operation__ operation provides operand name binding, allowing for a more applicative style.  The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call:
 \verbatim
 define
 {
-	Comment {
-		drop
-	}
+	Pair {expression<- quote swap}
 
-	Pair {
-		Comment
-		{
-			Constructs a pair.
-			* Input: {a}{b}
-			* Output: {a{b}}
-		}
-		
-		expression<- quote swap
-	}
-	
-	Next {
-		Comment
-		{
-			Constructs the next call.
-			* Input: {function}{result}{remainder}
-			* Output: {Fold<-{function}{result}{remainder}}
-		}
-		
-		Pair Pair Pair {Fold<-}
-	}
-	
-	Repeat {
-		Comment
-		{
-			Repeats function application until the remainder is empty.
-		}
-		
-		rearrange
-		{
-			dequote
-			choose
-			quote Result
-			Next Function Result Remainder
-			Remainder
-		}
-		{Function Result Remainder}
-	}
-	
 	Fold<- {
-		Comment
-		{
-			Performs a left fold by popping terms and applying a function.
-		}
-		
 		rearrange
 		{
-			Repeat Function dequote Function Base <-terms
+			rearrange
+			{
+				dequote
+				choose
+				quote Result
+				Pair Pair Pair {Fold<-} Function Result Remainder
+				Remainder
+			}
+			{Function Result Remainder}
+			Function dequote Function Base <-terms Source
 		}
-		{Function Base}
+		{Function Base Source}
 	}
 }
 {
@@ -375,37 +338,25 @@ define
 
 The result is <tt>{321}</tt>.
 
-A more compact version:
-\verbatim
-define
-{
-	Pair {
-		expression<- quote swap
-	}
-	
-	Fold<- {
-		rearrange
-		{
-			rearrange
-			{
-				dequote
-				choose
-				quote Result
-				Pair Pair Pair {Fold<-} Function Result copy
-			}
-			{Function Result}
+The example works as follows:
+-	<tt>Fold&lt;-</tt> takes three operands:
+	-	<tt>Function</tt>
+	-	<tt>Base</tt>
+	-	<tt>Source</tt>
+-	The first term is popped from the <tt>Source</tt>.
+-	The <tt>Function</tt> is applied to:
+	-	the <tt>Base</tt>;
+	-	the popped first term of the <tt>Source</tt>;
+	-	the remainder of the <tt>Source</tt>;
+	-	the remainder of the input program.
+-	The first two operands output by the <tt>Function</tt> are:
+	-	<tt>Result</tt>
+	-	<tt>Remainder</tt>
+-	If the <tt>Remainder</tt> is empty, the <tt>Result</tt> is output.  Otherwise, <tt>Function</tt>, <tt>Result</tt>, and <tt>Remainder</tt> are passed to a recursive <tt>Fold&lt;-</tt> call.
 
-			Function dequote Function Base <-terms
-		}
-		{Function Base}
-	}
-}
-{
-	Fold<- {literal<-} {} {1 2 3}
-}
-\endverbatim
-
-It would be possible for an integrated development environment to graphically group operations with the operands they consume.  This would dramatically improve readability.
+A few things should be noted about the above example:
+-	The \ref om__operations__ list is very short at the moment; as it expands, higher-level constructs will allow for simplification of algorithms such as this one.
+-	When reading %Om code, it can be difficult to mentally group operations with the operands they consume (contrasted with Scheme, in which they are grouped at design time with parentheses).  However, it should be possible for an %Om integrated development environment to generate a graphical indication of these groupings dynamically.
 
 \page downloading__ Downloading
 
