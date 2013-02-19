@@ -325,8 +325,8 @@ define
 				Pair Pair Pair {Fold<-} Function Result Remainder
 				Remainder
 			}
-			{Function Result Remainder}
-			Function dequote Function Base <-terms Source
+			{Result Remainder}
+			dequote Function Base <-terms Source
 		}
 		{Function Base Source}
 	}
