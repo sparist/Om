@@ -345,17 +345,19 @@ The example works as follows:
 	-	<tt>Source</tt>
 -	The first term is popped from the <tt>Source</tt>.
 -	The <tt>Function</tt> is applied to:
-	-	the <tt>Base</tt>;
-	-	the popped first term of the <tt>Source</tt>;
-	-	the remainder of the <tt>Source</tt>;
-	-	the remainder of the input program.
+	-	the <tt>Base</tt>
+	-	the popped first term of the <tt>Source</tt>
+	-	the remainder of the <tt>Source</tt>
+	-	the remainder of the input program
 -	The first two operands output by the <tt>Function</tt> are:
 	-	<tt>Result</tt>
 	-	<tt>Remainder</tt>
 -	If the <tt>Remainder</tt> is empty, the <tt>Result</tt> is output.  Otherwise, <tt>Function</tt>, <tt>Result</tt>, and <tt>Remainder</tt> are passed to a recursive <tt>Fold&lt;-</tt> call.
 
+The helper <tt>Pair</tt> function takes two operands (e.g. <tt>{a}</tt> and <tt>{b}</tt>) and constructs a pair (e.g. <tt>{a{b}}</tt>).
+
 A few things should be noted about the above example:
--	The \ref om__operations__ list is very short at the moment; as it expands, higher-level constructs will allow for simplification of algorithms such as this one.
+-	The \ref om__operations__ list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.
 -	When reading %Om code, it can be difficult to mentally group operations with the operands they consume (contrasted with Scheme, in which they are grouped at design time with parentheses).  However, it should be possible for an %Om integrated development environment to generate a graphical indication of these groupings dynamically.
 
 \page downloading__ Downloading
