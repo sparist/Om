@@ -335,76 +335,11 @@ $(document).ready(function(){initNavTree('examples__.html','');});
  </code></li>
 <li><code><em>{23}</em></code></li>
 </ul>
-<p>Concatenative languages stress the importance of factoring code into small functions in order to manage complexity. The following example is an implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a> (in a verbose style for the purposes of illustration), along with comments and an example usage: </p>
+<p>The <a class="el" href="group__om____operations____rearrange__operation____.html">rearrange</a> operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call: </p>
 <pre class="fragment">define
 {
-	Comment {
-		drop
-	}
+	Pair {expression&lt;- quote swap}
 
-	Pair {
-		Comment
-		{
-			Constructs a pair.
-			* Input: {a}{b}
-			* Output: {a{b}}
-		}
-		
-		expression&lt;- quote swap
-	}
-	
-	Next {
-		Comment
-		{
-			Constructs the next call.
-			* Input: {function}{result}{remainder}
-			* Output: {Fold&lt;-{function}{result}{remainder}}
-		}
-		
-		Pair Pair Pair {Fold&lt;-}
-	}
-	
-	Repeat {
-		Comment
-		{
-			Repeats function application until the remainder is empty.
-		}
-		
-		rearrange
-		{
-			dequote
-			choose
-			quote Result
-			Next Function Result Remainder
-			Remainder
-		}
-		{Function Result Remainder}
-	}
-	
-	Fold&lt;- {
-		Comment
-		{
-			Performs a left fold by popping terms and applying a function.
-		}
-		
-		rearrange
-		{
-			Repeat Function dequote Function Base &lt;-terms
-		}
-		{Function Base}
-	}
-}
-{
-	Fold&lt;- {literal&lt;-} {} {1 2 3}
-}
-</pre><p>The result is <code>{321}</code>.</p>
-<p>A more compact version: </p>
-<pre class="fragment">define
-{
-	Pair {
-		expression&lt;- quote swap
-	}
-	
 	Fold&lt;- {
 		rearrange
 		{
@@ -413,19 +348,47 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 				dequote
 				choose
 				quote Result
-				Pair Pair Pair {Fold&lt;-} Function Result copy
+				Pair Pair Pair {Fold&lt;-} Function Result Remainder
+				Remainder
 			}
-			{Function Result}
-
-			Function dequote Function Base &lt;-terms
+			{Function Result Remainder}
+			Function dequote Function Base &lt;-terms Source
 		}
-		{Function Base}
+		{Function Base Source}
 	}
 }
 {
 	Fold&lt;- {literal&lt;-} {} {1 2 3}
 }
-</pre><p>It would be possible for an integrated development environment to graphically group operations with the operands they consume. This would dramatically improve readability. </p>
+</pre><p>The result is <code>{321}</code>.</p>
+<p>The example works as follows:</p>
+<ul>
+<li><code>Fold&lt;-</code> takes three operands:<ul>
+<li><code>Function</code></li>
+<li><code>Base</code></li>
+<li><code>Source</code></li>
+</ul>
+</li>
+<li>The first term is popped from the <code>Source</code>.</li>
+<li>The <code>Function</code> is applied to:<ul>
+<li>the <code>Base</code>;</li>
+<li>the popped first term of the <code>Source</code>;</li>
+<li>the remainder of the <code>Source</code>;</li>
+<li>the remainder of the input program.</li>
+</ul>
+</li>
+<li>The first two operands output by the <code>Function</code> are:<ul>
+<li><code>Result</code></li>
+<li><code>Remainder</code></li>
+</ul>
+</li>
+<li>If the <code>Remainder</code> is empty, the <code>Result</code> is output. Otherwise, <code>Function</code>, <code>Result</code>, and <code>Remainder</code> are passed to a recursive <code>Fold&lt;-</code> call.</li>
+</ul>
+<p>A few things should be noted about the above example:</p>
+<ul>
+<li>The <a class="el" href="group__om____operations____.html">Operations</a> list is very short at the moment; as it expands, higher-level constructs will allow for simplification of algorithms such as this one.</li>
+<li>When reading Om code, it can be difficult to mentally group operations with the operands they consume (contrasted with Scheme, in which they are grouped at design time with parentheses). However, it should be possible for an Om integrated development environment to generate a graphical indication of these groupings dynamically. </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
