@@ -202,6 +202,7 @@ inline bool Type_::TakeQuotedQueue(
 			}
 			this->thisScope->TakeQuotedQueue( theQueue );
 		}
+
 		if(
 			this->thisScope->IsEmpty()
 		) {
