@@ -127,28 +127,6 @@ namespace Om {
 	private: // MARK: private (non-static)
 
 		/*!
-		\return
-			The first Node (whose mutability matches this), or null if none.
-		*/
-		Node * GetFirstNode();
-
-		/*!
-		\overload
-		*/
-		Node const * GetFirstNode() const;
-
-		/*!
-		\return
-			The last Node (whose mutability matches this), or null if none.
-		*/
-		Node * GetLastNode();
-
-		/*!
-		\overload
-		*/
-		Node const * GetLastNode() const;
-
-		/*!
 		\brief
 			Ensures that there is a last Node with an empty Operand, and with any Operator, and returns a reference to it.
 		\return

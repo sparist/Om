@@ -333,7 +333,7 @@ inline std::auto_ptr<
 
 inline void Type_::GiveElements( Queue & theQueue ) {
 	this->GiveElements(
-		this->GetFirstNode(),
+		this->thisFirstNode,
 		theQueue
 	);
 	this->Clear();
@@ -341,7 +341,7 @@ inline void Type_::GiveElements( Queue & theQueue ) {
 
 inline void Type_::GiveElements( Queue & theQueue ) const {
 	this->GiveElements(
-		this->GetFirstNode(),
+		this->thisFirstNode,
 		theQueue
 	);
 }
@@ -490,22 +490,6 @@ inline void Type_::GiveElements(
 }
 
 // MARK: private (non-static)
-
-inline Type_::Node * Type_::GetFirstNode() {
-	return( this->thisFirstNode );
-}
-
-inline Type_::Node const * Type_::GetFirstNode() const {
-	return( this->thisFirstNode );
-}
-
-inline Type_::Node * Type_::GetLastNode() {
-	return( this->thisLastNode );
-}
-
-inline Type_::Node const * Type_::GetLastNode() const {
-	return( this->thisLastNode );
-}
 
 inline Type_::Node & Type_::GetOperandTaker() {
 	if(
