@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "Om::List< Pair >", "class_om_1_1_list.html", null ],
     [ "Om::Copyable", "class_om_1_1_copyable.html", [
       [ "Om::Giveable", "class_om_1_1_giveable.html", [
         [ "Om::Program", "class_om_1_1_program.html", [
@@ -113,6 +114,8 @@ var hierarchy =
     [ "Om::Definition< ThisOperation >", "class_om_1_1_definition.html", null ],
     [ "Om::Evaluation", "class_om_1_1_evaluation.html", null ],
     [ "Om::Form", "class_om_1_1_form.html", null ],
+    [ "Om::List< ThisValue >", "class_om_1_1_list.html", null ],
+    [ "Om::List< ThisValue >::Node", "class_om_1_1_list_1_1_node.html", null ],
     [ "Om::Moveable", "class_om_1_1_moveable.html", [
       [ "Om::Giveable", "class_om_1_1_giveable.html", null ]
     ] ],
@@ -213,9 +216,7 @@ var hierarchy =
     [ "Om::Operations::OperatorFrontPushOperation", "class_om_1_1_operations_1_1_operator_front_push_operation.html", null ],
     [ "Om::Operations::RearrangeOperation", "class_om_1_1_operations_1_1_rearrange_operation.html", null ],
     [ "Om::Operations::SystemOperation", "class_om_1_1_operations_1_1_system_operation.html", null ],
-    [ "Om::Pair", "class_om_1_1_pair.html", [
-      [ "Om::Lexicon::Node", "class_om_1_1_lexicon_1_1_node.html", null ]
-    ] ],
+    [ "Om::Pair", "class_om_1_1_pair.html", null ],
     [ "Om::Queue", "class_om_1_1_queue.html", [
       [ "Om::DefaultQueue< Evaluator >", "class_om_1_1_default_queue.html", [
         [ "Om::Evaluator", "class_om_1_1_evaluator.html", null ]

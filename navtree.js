@@ -78,13 +78,15 @@ var NAVTREE =
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -96,12 +98,12 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "class_om_1_1_expression.html#af759d2979668ce5d23075f66b39b48f8",
-"class_om_1_1_operations_1_1_decode_operation.html#afa6ea96096a508accc49c624cb0b1a02",
-"class_om_1_1_parser.html#a4a57d3cd38dc2e20faddb0ddc5035dda",
-"class_om_1_1_translator.html#ab4bdc54b12c138a533825e5edb4a88e5",
-"evaluate__operation_8hpp.html",
-"group__om____separator____.html",
-"rearrange__operation_8cpp.html"
+"class_om_1_1_operations_1_1_copy_operation.html",
+"class_om_1_1_pair.html#a9ed7f8629d733a72348c59a9362c0ae7",
+"class_om_1_1_system.html#ad4a30a1f43df54e98137c7761b29f343",
+"environment__operation_8hpp_source.html",
+"group__om____operations____operand__operation____.html",
+"program__operation_8hpp.html#aeb2451b64477829775501515be28d6fa"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

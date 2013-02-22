@@ -204,7 +204,7 @@ $(document).ready(function(){initNavTree('literal_8cpp_source.html','');});
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;thisElementDeque() {}</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">inline</span> Type_ &amp; Type_::operator =( Literal theLiteral ) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    this-&gt;<a class="code" href="class_om_1_1_lexicon.html#a0bcf0f7851cd5e26e1dab0112cbf8252">Swap</a>( theLiteral );</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    this-&gt;<a class="code" href="class_om_1_1_list.html#afc21ad383f293703e3792d290117586c">Swap</a>( theLiteral );</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span>( *<span class="keyword">this</span> );</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
@@ -277,7 +277,7 @@ $(document).ready(function(){initNavTree('literal_8cpp_source.html','');});
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements( Queue &amp; theQueue ) {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    this-&gt;<a class="code" href="class_om_1_1_lexicon.html#a2c33f4b357614c422f078f364a12caf3" title="Gives each contained Element to the argument.">GiveElements</a>(</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    this-&gt;GiveElements(</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        theQueue,</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        this-&gt;thisElementDeque.begin(),</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        this-&gt;thisElementDeque.end()</div>
@@ -286,7 +286,7 @@ $(document).ready(function(){initNavTree('literal_8cpp_source.html','');});
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements( Queue &amp; theQueue )<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    this-&gt;<a class="code" href="class_om_1_1_lexicon.html#a2c33f4b357614c422f078f364a12caf3" title="Gives each contained Element to the argument.">GiveElements</a>(</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    this-&gt;GiveElements(</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        theQueue,</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        this-&gt;thisElementDeque.begin(),</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        this-&gt;thisElementDeque.end()</div>
@@ -353,7 +353,7 @@ $(document).ready(function(){initNavTree('literal_8cpp_source.html','');});
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::ReadQuotedElements( Parser &amp; theParser ) {</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    Literal theLiteral;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    theLiteral.ReadElements( theParser );</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    this-&gt;<a class="code" href="class_om_1_1_lexicon.html#abe4cce826a6c8d817df3fe64b75a930e">TakeQuotedQueue</a>( theLiteral );</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    this-&gt;TakeQuotedQueue( theLiteral );</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Swap( Literal &amp; theLiteral ) {</div>

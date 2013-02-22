@@ -1,8 +1,8 @@
 var class_om_1_1_lexicon =
 [
     [ "ElementRange", "class_om_1_1_lexicon_1_1_element_range.html", "class_om_1_1_lexicon_1_1_element_range" ],
-    [ "Node", "class_om_1_1_lexicon_1_1_node.html", "class_om_1_1_lexicon_1_1_node" ],
-    [ "Map", "class_om_1_1_lexicon.html#a02a457d646c3a998bb277f12027089a1", null ],
+    [ "List", "class_om_1_1_lexicon.html#ab7880165506248ddd4332243518289f2", null ],
+    [ "Map", "class_om_1_1_lexicon.html#a93bdb893c407f4a190b98bf6e36503e0", null ],
     [ "Lexicon", "class_om_1_1_lexicon.html#a4a02b42fc1eac3679f33355caab0dfa1", null ],
     [ "Lexicon", "class_om_1_1_lexicon.html#a2cf69c7e0131f59c87a399c65cc195b8", null ],
     [ "GetName", "class_om_1_1_lexicon.html#ac3ef51a20b1a2ce14739598c1093c526", null ],
@@ -24,13 +24,9 @@ var class_om_1_1_lexicon =
     [ "TakeSeparator", "class_om_1_1_lexicon.html#a30af94c5cdcc7720550605ace0420350", null ],
     [ "Translate", "class_om_1_1_lexicon.html#ac26596e4f14a14cbf3fe4daeffac0fba", null ],
     [ "GiveElements", "class_om_1_1_lexicon.html#af8c555b7103a5557d68930a0a9951fa2", null ],
-    [ "GetFirstNode", "class_om_1_1_lexicon.html#a3d062f73be8feeae386e23f702290890", null ],
-    [ "GetFirstNode", "class_om_1_1_lexicon.html#a7a58974fc8a1d9da33595aa641eb6281", null ],
-    [ "GetLastNode", "class_om_1_1_lexicon.html#a969efee2e72cc14c9f4088185bbdbbec", null ],
-    [ "GetLastNode", "class_om_1_1_lexicon.html#ac04454368064a9c383acd15b59d3cbf6", null ],
-    [ "GetOperandTaker", "class_om_1_1_lexicon.html#af518d3f6fdd970b2faae2e91d793ca63", null ],
-    [ "GetOperandTaker", "class_om_1_1_lexicon.html#a09f7bf752d8664500caa70c77c81f730", null ],
+    [ "GetOperandTaker", "class_om_1_1_lexicon.html#a04a735cdbeece06b075bb3d572b6d34a", null ],
+    [ "GetOperandTaker", "class_om_1_1_lexicon.html#ae27fba4f3fbc8e0b8b0bfd837c369183", null ],
+    [ "GivePair", "class_om_1_1_lexicon.html#a6b152a0c09272d297be59c655cc30671", null ],
     [ "thisMap", "class_om_1_1_lexicon.html#a58d7ff7894887bd497b1dc61368467a8", null ],
-    [ "thisFirstNode", "class_om_1_1_lexicon.html#ace274b4c888970976ae6d3cdef8cf4ca", null ],
-    [ "thisLastNode", "class_om_1_1_lexicon.html#ace7108814cef5286a525698838421ba0", null ]
+    [ "thisList", "class_om_1_1_lexicon.html#a7245f37ac083ec40639538c038f091c1", null ]
 ];

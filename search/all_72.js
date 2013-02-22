@@ -7,5 +7,5 @@ var searchData=
   ['rearrange_5foperation_2edox',['rearrange_operation.dox',['../rearrange__operation_8dox.html',1,'']]],
   ['rearrange_5foperation_2ehpp',['rearrange_operation.hpp',['../rearrange__operation_8hpp.html',1,'']]],
   ['rearrangeoperation',['RearrangeOperation',['../class_om_1_1_operations_1_1_rearrange_operation.html',1,'Om::Operations']]],
-  ['relinktoback',['RelinkToBack',['../class_om_1_1_lexicon_1_1_node.html#a6bbaa2700adc4d7a4af4ea2b6fdcd913',1,'Om::Lexicon::Node']]]
+  ['relinknode',['RelinkNode',['../class_om_1_1_list.html#a98a90d04109dde2f3136db5b2cfa5e7f',1,'Om::List']]]
 ];
