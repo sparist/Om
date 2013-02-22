@@ -22,7 +22,7 @@ namespace Om {
 	// MARK: - Om::List
 	/*!
 	\brief
-		A doubly-linked list; contents are unowned.
+		A doubly-linked list in which nodes are unowned.
 	*/
 	template< typename ThisValue >
 	class List {
@@ -43,17 +43,33 @@ namespace Om {
 
 		void Clear();
 
+		/*!
+		\brief
+			Gets the first or last Node.
+		*/
 		Node * GetNode( NodeIndex const );
 
+		/*!
+		\brief
+			\overload
+		*/
 		Node const * GetNode( NodeIndex const ) const;
 
 		bool IsEmpty() const;
 
+		/*!
+		\brief
+			Links the Node to the specified end.
+		*/
 		void LinkNode(
 			NodeIndex const,
 			Node &
 		);
 
+		/*!
+		\brief
+			Relinks the Node to the specified end.
+		*/
 		void RelinkNode(
 			NodeIndex const,
 			Node &
@@ -61,6 +77,10 @@ namespace Om {
 
 		void Swap( List & );
 
+		/*!
+		\brief
+			Unlinks the Node at the specified end and returns it.
+		*/
 		Node * UnlinkNode( NodeIndex const );
 
 	private: // MARK: private (static)
@@ -94,12 +114,28 @@ namespace Om {
 
 		Node();
 
+		/*!
+		\brief
+			Gets the prior or next Node.
+		*/
 		Node * GetNode( NodeIndex const );
 
+		/*!
+		\brief
+			\overload
+		*/
 		Node const * GetNode( NodeIndex const ) const;
 
+		/*!
+		\brief
+			Gets a reference to the stored value.
+		*/
 		ThisValue & GetValue();
 
+		/*!
+		\brief
+			\overload
+		*/
 		ThisValue const & GetValue() const;
 
 	private: // MARK: private (non-static)
