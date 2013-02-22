@@ -17,6 +17,7 @@
 	#define Om_Lexicon_ \
 	Om::Lexicon
 
+	#include "om/list.hpp"
 	#include "om/pair.hpp"
 	#include "om/sources/default_source.hpp"
 	#include "om/translator.hpp"
@@ -101,13 +102,11 @@ namespace Om {
 
 	private: // MARK: private (static)
 
-		//! \cond
-		class Node;
-		//! \endcond
+		typedef List< Pair > List;
 
 		typedef boost::ptr_map<
 			std::string,
-			Node
+			List::Node
 		> Map;
 
 		/*!
@@ -132,7 +131,7 @@ namespace Om {
 		\return
 			If there is no last Node, or it has an Operand, appends a new one with an empty Operator and returns a reference to it.  Otherwise, returns a reference to the last Node.
 		*/
-		Node & GetOperandTaker();
+		List::Node & GetOperandTaker();
 
 		/*!
 		\brief
@@ -141,21 +140,16 @@ namespace Om {
 			If there is already a Node for this Operator, relinks it to the back and returns a reference to it.  Otherwise, constructs a Node with the given Operator, appends it, and returns a reference to it.
 		*/
 		template< typename TheOperator >
-		Node & GetOperandTaker( TheOperator & );
+		List::Node & GetOperandTaker( TheOperator & );
+
+		void GivePair(
+			List::NodeIndex const,
+			Queue &
+		);
 
 		Map thisMap;
 
-		/*!
-		\brief
-			The first Node; null if empty.
-		*/
-		Node * thisFirstNode;
-
-		/*!
-		\brief
-			The last Node; null if empty.
-		*/
-		Node * thisLastNode;
+		List thisList;
 
 	};
 
@@ -189,112 +183,13 @@ namespace Om {
 		\brief
 			The current Node, or null if none.
 		*/
-		Node const * thisNode;
+		List::Node const * thisNode;
 
 		/*!
 		\brief
 			The Element offset in the current Node.
 		*/
 		char unsigned thisOffset;
-
-	};
-
-	// MARK: - Om::Lexicon::Node
-	/*!
-	\brief
-		A Lexicon linked list node, extending Pair with next and prior pointers.
-	*/
-	class Lexicon::Node:
-	public Pair {
-	public: // MARK: public (static)
-
-		/*!
-		\param theFirstNode
-			The first Node, or null if empty.
-		\param theLastNode
-			The last Node, or null if empty.
-		*/
-		static void UnlinkFirst(
-			Node * & theFirstNode,
-			Node * & theLastNode
-		);
-
-		/*!
-		\param theFirstNode
-			The first Node, or null if empty.
-		\param theLastNode
-			The last Node, or null if empty.
-		*/
-		static void UnlinkLast(
-			Node * & theFirstNode,
-			Node * & theLastNode
-		);
-
-	public: // MARK: public (non-static)
-
-		Node();
-
-		/*!
-		\return
-			The next Node, or null if none.
-		*/
-		Node * GetNext();
-
-		/*!
-		\overload
-		*/
-		Node const * GetNext() const;
-
-		/*!
-		\return
-			The prior Node, or null if none.
-		*/
-		Node * GetPrior();
-
-		/*!
-		\overload
-		*/
-		Node const * GetPrior() const;
-
-		/*!
-		\brief
-			Links this Node to the back.
-		\param theFirstNode
-			The first Node, or null if empty.
-		\param theLastNode
-			The last Node, or null if empty.
-		*/
-		void LinkToBack(
-			Node * & theFirstNode,
-			Node * & theLastNode
-		);
-
-		/*!
-		\brief
-			Unlinks this Node and links it to the back.
-		\param theFirstNode
-			The first Node, or null if empty.
-		\param theLastNode
-			The last Node, or null if empty.
-		*/
-		void RelinkToBack(
-			Node * & theFirstNode,
-			Node * & theLastNode
-		);
-
-	private: // MARK: private (non-static)
-
-		/*!
-		\brief
-			The prior Node; null if first.
-		*/
-		Node * thisPriorNode;
-
-		/*!
-		\brief
-			The next Node; null if last.
-		*/
-		Node * thisNextNode;
 
 	};
 

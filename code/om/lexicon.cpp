@@ -27,20 +27,16 @@ namespace Om {
 		TEST( Basic ) {
 			CHECK_EQUAL(
 				(
-					"{"
-					"a{A}\n"
-					"b{B}"
-					"}"
+					"{a{A}\n"
+					"b{B}}"
 				),
 				System::Get().Evaluate( "lexicon {a {A} b {B}}" )
 			);
 
 			CHECK_EQUAL(
 				(
-					"{"
-					"b\n"
-					"a"
-					"}"
+					"{b\n"
+					"a}"
 				),
 				System::Get().Evaluate( "->lexicon{b} lexicon{a}" )
 			);
@@ -53,45 +49,42 @@ namespace Om {
 			);
 
 			CHECK_EQUAL(
+				"{b\n"
+				"a}{a}",
+				System::Get().Evaluate( "->lexicon{b} copy lexicon{a}" )
+			);
+
+			CHECK_EQUAL(
 				(
-					"{"
-					"b\n"
-					"a"
-					"}{a}"
+					"{b\n"
+					"a}{a}"
 				),
 				System::Get().Evaluate( "->lexicon{b}copy{a}" )
 			);
 
 			CHECK_EQUAL(
 				(
-					"{"
-					"b\n"
-					"a"
-					"}{a}"
+					"{b\n"
+					"a}{a}"
 				),
 				System::Get().Evaluate( "->lexicon{b}copy lexicon{a}" )
 			);
 
 			CHECK_EQUAL(
 				(
-					"{"
-					"a\n"
-					"b"
-					"}{a}"
+					"{a\n"
+					"b}{a}"
 				),
 				System::Get().Evaluate( "lexicon<-{b}copy lexicon{a}" )
 			);
 
 			CHECK_EQUAL(
 				(
-					"{"
-					"a{A}\n"
+					"{a{A}\n"
 					"b{B}\n"
-					"c{C}"
-					"}{"
+					"c{C}}{"
 					"a{A}\n"
-					"b{B}"
-					"}"
+					"b{B}}"
 				),
 				System::Get().Evaluate(
 					"lexicon<- {{C}} lexicon<- {c} "
@@ -104,12 +97,8 @@ namespace Om {
 			// Positive match
 			CHECK_EQUAL(
 				(
-					"{"
-					"{"
-					"a{b}\n"
-					"c{d}"
-					"}"
-					"}"
+					"{{a{b}\n"
+					"c{d}}}"
 				),
 				System::Get().Evaluate(
 					"= lexicon{a{b}c{d}} {"
@@ -187,6 +176,40 @@ namespace Om {
 				),
 				System::Get().Evaluate( "lexicon{A{1} B{2} A{3} C A{4} D E{5}}" )
 			);
+
+			CHECK_EQUAL(
+				(
+					"{A{2}\n"
+					"{3}}"
+				),
+				System::Get().Evaluate( "lexicon{{1}A{2}{3}}" )
+			);
+
+			CHECK_EQUAL(
+				(
+					"{A{1}\n"
+					"B\n"
+					"C{3}\n"
+					"{4}}"
+				),
+				System::Get().Evaluate( "lexicon{ A{1}{2} B C{3}{4} }" )
+			);
+
+			CHECK_EQUAL(
+				(
+					"{{2}\n"
+					"A{3}}"
+				),
+				System::Get().Evaluate( "->lexicon{ A{1}{2} }{ A{3} }" )
+			);
+
+			CHECK_EQUAL(
+				(
+					"{{3}\n"
+					"A{1}}"
+				),
+				System::Get().Evaluate( "lexicon<-{ A{1} }{ A{2}{3} }" )
+			);
 		}
 
 	}
@@ -218,33 +241,31 @@ inline char const * Type_::GetName() {
 
 inline Type_::Lexicon():
 thisMap(),
-thisFirstNode(),
-thisLastNode() {}
+thisList() {}
 
 inline Type_::Lexicon( Lexicon const & theLexicon ):
 DefaultProgram< Lexicon >( theLexicon ),
 thisMap(),
-thisFirstNode(),
-thisLastNode() {
+thisList() {
 	for(
-		Node const * theNode = theLexicon.thisFirstNode;
+		List::Node const * theNode = theLexicon.thisList.GetNode( List::theFrontNodeIndex );
 		theNode;
-		theNode = theNode->GetNext()
+		theNode = theNode->GetNode( List::theBackNodeIndex )
 	) {
-		std::auto_ptr< Node > theNewNode(
-			new Node( *theNode )
+		std::auto_ptr< List::Node > theNewNode(
+			new List::Node( *theNode )
 		);
 		assert(
 			theNewNode.get()
 		);
-		theNewNode->LinkToBack(
-			this->thisFirstNode,
-			this->thisLastNode
+
+		this->thisList.LinkNode(
+			List::theBackNodeIndex,
+			*theNewNode
 		);
 
-		std::string const & theString = theNewNode->GetOperator().GetString();
 		this->thisMap.insert(
-			theString,
+			theNode->GetValue().GetOperator().GetString(),
 			theNewNode
 		);
 	}
@@ -256,29 +277,15 @@ inline Type_ & Type_::operator =( Lexicon theLexicon ) {
 }
 
 inline void Type_::BackGivePair( Queue & theQueue ) {
-	if( this->thisLastNode ) {
-		Map::iterator const theIterator = this->thisMap.find(
-			this->thisLastNode->GetOperator().GetString()
-		);
-		assert(
-			this->thisMap.end() != theIterator
-		);
-
-		assert( this->thisFirstNode );
-		Node::UnlinkLast(
-			this->thisFirstNode,
-			this->thisLastNode
-		);
-
-		Map::auto_type theNode = this->thisMap.release( theIterator );
-		assert( theNode );
-		theNode->GiveElements( theQueue );
-	}
+	this->GivePair(
+		List::theBackNodeIndex,
+		theQueue
+	);
 }
 
 inline void Type_::Clear() {
+	this->thisList.Clear();
 	this->thisMap.clear();
-	this->thisFirstNode = this->thisLastNode = 0;
 }
 
 inline Om::Pair const & Type_::Find( Operator const & theOperator ) const {
@@ -295,28 +302,14 @@ inline Om::Pair const & Type_::Find( Operator const & theOperator ) const {
 			Pair::GetEmpty()
 		);
 	}
-	return( *theIterator->second );
+	return( theIterator->second->GetValue() );
 }
 
 inline void Type_::FrontGivePair( Queue & theQueue ) {
-	if( this->thisFirstNode ) {
-		Map::iterator const theIterator = this->thisMap.find(
-			this->thisFirstNode->GetOperator().GetString()
-		);
-		assert(
-			this->thisMap.end() != theIterator
-		);
-
-		assert( this->thisLastNode );
-		Node::UnlinkFirst(
-			this->thisFirstNode,
-			this->thisLastNode
-		);
-
-		Map::auto_type theNode = this->thisMap.release( theIterator );
-		assert( theNode );
-		theNode->GiveElements( theQueue );
-	}
+	this->GivePair(
+		List::theFrontNodeIndex,
+		theQueue
+	);
 }
 
 inline std::auto_ptr<
@@ -333,7 +326,7 @@ inline std::auto_ptr<
 
 inline void Type_::GiveElements( Queue & theQueue ) {
 	this->GiveElements(
-		this->thisFirstNode,
+		this->thisList.GetNode( List::theFrontNodeIndex ),
 		theQueue
 	);
 	this->Clear();
@@ -341,7 +334,7 @@ inline void Type_::GiveElements( Queue & theQueue ) {
 
 inline void Type_::GiveElements( Queue & theQueue ) const {
 	this->GiveElements(
-		this->thisFirstNode,
+		this->thisList.GetNode( List::theFrontNodeIndex ),
 		theQueue
 	);
 }
@@ -349,10 +342,7 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 inline bool Type_::IsEmpty() const {
 	assert(
 		!this->thisMap.empty() ||
-		(
-			!this->thisFirstNode &&
-			!this->thisLastNode
-		)
+		this->thisList.IsEmpty()
 	);
 	return(
 		this->thisMap.empty()
@@ -394,14 +384,7 @@ inline void Type_::ReadQuotedElements( Parser & theParser ) {
 
 inline void Type_::Swap( Lexicon & theLexicon ) {
 	this->thisMap.swap( theLexicon.thisMap );
-	boost::swap(
-		this->thisFirstNode,
-		theLexicon.thisFirstNode
-	);
-	boost::swap(
-		this->thisLastNode,
-		theLexicon.thisLastNode
-	);
+	this->thisList.Swap( theLexicon.thisList );
 }
 
 template< typename TheOperand >
@@ -409,7 +392,7 @@ inline void Type_::TakeOperand( TheOperand & theOperand ) {
 	assert(
 		!theOperand.IsEmpty()
 	);
-	this->GetOperandTaker().TakeOperand( theOperand );
+	this->GetOperandTaker().GetValue().TakeOperand( theOperand );
 }
 
 template< typename TheOperator >
@@ -422,7 +405,7 @@ inline void Type_::TakeOperator( TheOperator & theOperator ) {
 
 template< typename TheQueue >
 inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
-	this->GetOperandTaker().TakeQuotedQueue( theQueue );
+	this->GetOperandTaker().GetValue().TakeQuotedQueue( theQueue );
 }
 
 template< typename TheSeparator >
@@ -438,6 +421,7 @@ inline bool Type_::Translate(
 	) {
 		return( false );
 	}
+
 	Operand const & theOperand = thePair.GetOperand();
 	if(
 		theOperand.IsEmpty()
@@ -452,6 +436,7 @@ inline bool Type_::Translate(
 			)
 		);
 	}
+
 	theEvaluation.TakeQueue(
 		*theOperand.GetProgram()
 	);
@@ -462,10 +447,10 @@ inline bool Type_::Translate(
 
 template< typename TheNode >
 inline void Type_::GiveElements(
-	TheNode * theFirstNode,
+	TheNode * theNode,
 	Queue & theQueue
 ) {
-	if( theFirstNode ) {
+	if( theNode ) {
 		for(
 			;
 			;
@@ -474,16 +459,13 @@ inline void Type_::GiveElements(
 			)
 		) {
 			assert(
-				theFirstNode &&
-				!theFirstNode->IsEmpty()
+				theNode &&
+				!theNode->GetValue().IsEmpty()
 			);
-			theFirstNode->GiveElements( theQueue );
-			if(
-				!(
-					theFirstNode = theFirstNode->GetNext()
-				)
-			) {
-				return;
+			theNode->GetValue().GiveElements( theQueue );
+			theNode = theNode->GetNode( List::theBackNodeIndex );
+			if( !theNode ) {
+				break;
 			}
 		}
 	}
@@ -491,55 +473,82 @@ inline void Type_::GiveElements(
 
 // MARK: private (non-static)
 
-inline Type_::Node & Type_::GetOperandTaker() {
+inline Type_::List::Node & Type_::GetOperandTaker() {
+	List::Node * const theNode = this->thisList.GetNode( List::theBackNodeIndex );
 	if(
-		!this->thisLastNode ||
-		!this->thisLastNode->GetOperand().IsEmpty()
+		!theNode ||
+		!theNode->GetValue().GetOperand().IsEmpty()
 	) {
 		Operator const theOperator;
 		return(
 			this->GetOperandTaker( theOperator )
 		);
 	}
-	return( *this->thisLastNode );
+	return( *theNode );
 }
 
 template< typename TheOperator >
-inline Type_::Node & Type_::GetOperandTaker( TheOperator & theOperator ) {
-	Node * theNode;
+inline Type_::List::Node & Type_::GetOperandTaker( TheOperator & theOperator ) {
 	std::string const & theString = theOperator.GetString();
 	typename Map::iterator const theIterator = this->thisMap.find( theString );
 	if(
 		this->thisMap.end() == theIterator
 	) {
+		List::Node * theNode;
 		{
-			std::auto_ptr< Node > theNewNode( new Node );
-			assert(
-				theNewNode.get()
-			);
+			std::auto_ptr< List::Node > theNewNode( new List::Node );
 			theNode = theNewNode.get();
 			this->thisMap.insert(
 				theString,
 				theNewNode
 			);
 		}
-		theNode->TakeOperator( theOperator ); // May swap.
-		theNode->LinkToBack(
-			this->thisFirstNode,
-			this->thisLastNode
+		assert( theNode );
+
+		theNode->GetValue().TakeOperator( theOperator ); // May swap.
+		assert(
+			theNode->GetValue().GetOperand().IsEmpty()
+		);
+
+		this->thisList.LinkNode(
+			List::theBackNodeIndex,
+			*theNode
+		);
+
+		return( *theNode );
+	}
+	{
+		List::Node & theNode = *theIterator->second;
+
+		theNode.GetValue().ClearOperand();
+
+		this->thisList.RelinkNode(
+			List::theBackNodeIndex,
+			theNode
+		);
+
+		return( theNode );
+	}
+}
+
+inline void Type_::GivePair(
+	List::NodeIndex const theNodeIndex,
+	Queue & theQueue
+) {
+	if(
+		List::Node const * const theNode = this->thisList.UnlinkNode( theNodeIndex )
+	) {
+		Map::iterator const theIterator = this->thisMap.find(
+			theNode->GetValue().GetOperator().GetString()
 		);
 		assert(
-			theNode->GetOperand().IsEmpty()
+			this->thisMap.end() != theIterator
 		);
-	} else {
-		theNode = &*theIterator->second;
-		theNode->RelinkToBack(
-			this->thisFirstNode,
-			this->thisLastNode
-		);
-		theNode->ClearOperand();
+
+		Map::auto_type theOldNode = this->thisMap.release( theIterator );
+		assert( theOldNode );
+		theOldNode->GetValue().GiveElements( theQueue );
 	}
-	return( *theNode );
 }
 
 	#undef Type_
@@ -556,10 +565,12 @@ thisNode(),
 thisOffset() {}
 
 inline Type_::ElementRange( Lexicon const & theLexicon ):
-thisNode( theLexicon.thisFirstNode ),
+thisNode(
+	theLexicon.thisList.GetNode( List::theFrontNodeIndex )
+),
 thisOffset(
 	this->thisNode &&
-	thisNode->GetOperator().IsEmpty()
+	thisNode->GetValue().GetOperator().IsEmpty()
 ) {}
 
 inline bool Type_::operator ==( ElementRange const & theElementRange ) const {
@@ -578,17 +589,17 @@ inline Om::Element const & Type_::operator *() const {
 	switch( this->thisOffset ) {
 	case 0:
 		assert(
-			!this->thisNode->GetOperator().IsEmpty()
+			!this->thisNode->GetValue().GetOperator().IsEmpty()
 		);
 		return(
-			this->thisNode->GetOperator()
+			this->thisNode->GetValue().GetOperator()
 		);
 	case 1:
 		assert(
-			!this->thisNode->GetOperand().IsEmpty()
+			!this->thisNode->GetValue().GetOperand().IsEmpty()
 		);
 		return(
-			this->thisNode->GetOperand()
+			this->thisNode->GetValue().GetOperand()
 		);
 	default:
 		return(
@@ -598,124 +609,26 @@ inline Om::Element const & Type_::operator *() const {
 }
 
 inline void Type_::Pop() {
-	assert( this->thisNode );
 	assert(
-		!this->thisNode->IsEmpty()
+		this->thisNode &&
+		!this->thisNode->GetValue().IsEmpty()
 	);
 	switch( this->thisOffset ) {
 	case 0:
 		if(
-			!this->thisNode->GetOperand().IsEmpty()
+			!this->thisNode->GetValue().GetOperand().IsEmpty()
 		) {
 			this->thisOffset = 1;
 			return;
 		}
 		// Fall through.
 	case 1:
-		this->thisNode = this->thisNode->GetNext();
+		this->thisNode = this->thisNode->GetNode( List::theBackNodeIndex );
 		this->thisOffset = 2;
 		return;
 	default:
-		this->thisOffset = this->thisNode->GetOperator().IsEmpty();
+		this->thisOffset = this->thisNode->GetValue().GetOperator().IsEmpty();
 		// Fall through.
-	}
-}
-
-	#undef Type_
-
-// MARK: - Om::Lexicon::Node
-
-	#define Type_ \
-	Om::Lexicon::Node
-
-// MARK: public (static)
-
-inline void Type_::UnlinkFirst(
-	Node * & theFirstNode,
-	Node * & theLastNode
-) {
-	assert( theFirstNode );
-	assert( theLastNode );
-	assert( !theFirstNode->thisPriorNode );
-	if( theFirstNode->thisNextNode ) {
-		theFirstNode = theFirstNode->thisNextNode;
-		theFirstNode->thisPriorNode = 0;
-	} else {
-		assert( theLastNode == theFirstNode );
-		theLastNode = theFirstNode = 0;
-	}
-}
-
-inline void Type_::UnlinkLast(
-	Node * & theFirstNode,
-	Node * & theLastNode
-) {
-	assert( theFirstNode );
-	assert( theLastNode );
-	assert( !theLastNode->thisNextNode );
-	if( theLastNode->thisPriorNode ) {
-		theLastNode = theLastNode->thisPriorNode;
-		theLastNode->thisNextNode = 0;
-	} else {
-		assert( theFirstNode == theLastNode );
-		theFirstNode = theLastNode = 0;
-	}
-}
-
-// MARK: public (non-static)
-
-inline Type_::Node():
-thisPriorNode(),
-thisNextNode() {}
-
-inline Type_ * Type_::GetNext() {
-	return( this->thisNextNode );
-}
-
-inline Type_ const * Type_::GetNext() const {
-	return( this->thisNextNode );
-}
-
-inline Type_ * Type_::GetPrior() {
-	return( this->thisPriorNode );
-}
-
-inline Type_ const * Type_::GetPrior() const {
-	return( this->thisPriorNode );
-}
-
-inline void Type_::LinkToBack(
-	Node * & theFirstNode,
-	Node * & theLastNode
-) {
-	this->thisPriorNode = theLastNode;
-	if( theLastNode ) {
-		theLastNode->thisNextNode = this;
-	} else {
-		assert( !theFirstNode );
-		theFirstNode = this;
-	}
-	theLastNode = this;
-}
-
-inline void Type_::RelinkToBack(
-	Node * & theFirstNode,
-	Node * & theLastNode
-) {
-	if( this->thisNextNode ) {
-		this->thisNextNode->thisPriorNode = this->thisPriorNode;
-
-		if( this->thisPriorNode ) {
-			this->thisPriorNode->thisNextNode = this->thisNextNode;
-		} else {
-			assert( this == theFirstNode );
-			theFirstNode = this->thisNextNode;
-		}
-
-		this->LinkToBack(
-			theFirstNode,
-			theLastNode
-		);
 	}
 }
 

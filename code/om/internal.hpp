@@ -27,6 +27,7 @@
 	#include "om/giveable.hpp"
 	#include "om/internal.hpp"
 	#include "om/lexicon.hpp"
+	#include "om/list.hpp"
 	#include "om/literal.hpp"
 	#include "om/macros.hpp"
 	#include "om/move.hpp"

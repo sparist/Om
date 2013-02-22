@@ -9,6 +9,7 @@
 	#include <stack>
 	#include <stdexcept>
 	#include <string>
+	#include "boost/array.hpp"
 	#include "boost/checked_delete.hpp"
 	#include "boost/integer_traits.hpp"
 	#include "boost/intrusive_ptr.hpp"
