@@ -353,3 +353,8 @@ endif()
 
 om_target_link_libraries( "Om" )
 om_target_link_libraries( "Om.Test" )
+
+enable_testing()
+add_test( "Om.Test.Build" "${CMAKE_COMMAND}" --build "${CMAKE_BINARY_DIR}" --target "Om.Test" )
+add_test( "Om.Test.Run" "Om.Test" )
+set_tests_properties( "Om.Test.Run" PROPERTIES DEPENDS "Om.Test.Build" )
