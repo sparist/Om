@@ -14,6 +14,12 @@
 
 #if !defined( Om_Macros_ )
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/preprocessor/stringize.hpp"
+
+	#endif
+
 	/*!
 	\brief
 		Defines a "namespace" for all global macros, aside from include guards.

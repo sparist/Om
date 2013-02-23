@@ -18,7 +18,11 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "UnitTest++.h"
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 
@@ -32,6 +36,13 @@ namespace Om {
 
 	#include "om/lexicon.hpp"
 	#include "om/operator.hpp"
+
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/locale/generator.hpp"
+		#include "boost/locale/info.hpp"
+
+	#endif
 
 // MARK: - Om::System
 

@@ -19,6 +19,12 @@
 
 	#include "om/default_queue.hpp"
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/ptr_container/ptr_vector.hpp"
+
+	#endif
+
 namespace Om {
 
 	//! \cond

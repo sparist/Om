@@ -18,7 +18,11 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "UnitTest++.h"
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 int main() {
 	Om::System::Get().Initialize( "en_US.UTF-8" );

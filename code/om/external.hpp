@@ -26,4 +26,10 @@
 	#include "boost/scoped_ptr.hpp"
 	#include "boost/swap.hpp"
 
+	#if defined( Om_Macros_Test_ )
+
+		#include "UnitTest++.h"
+
+	#endif
+
 #endif

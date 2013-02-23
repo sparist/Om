@@ -20,6 +20,12 @@
 	#include "om/default_element.hpp"
 	#include "om/owner.hpp"
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/swap.hpp"
+
+	#endif
+
 	#define Om_Operand_GetName_() \
 	"operand"
 

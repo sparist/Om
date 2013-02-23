@@ -17,7 +17,11 @@
 	#define Om_Give_ \
 	Om::Give
 
-	#include "om/external.hpp"
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <memory>
+
+	#endif
 
 // MARK: - Om
 namespace Om {

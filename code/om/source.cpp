@@ -18,7 +18,11 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "UnitTest++.h"
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 
@@ -30,7 +34,12 @@ namespace Om {
 
 #else
 
-	#include "om/external.hpp"
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <cassert>
+		#include <stdexcept>
+
+	#endif
 
 // MARK: - Om::Source
 

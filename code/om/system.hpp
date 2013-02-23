@@ -17,8 +17,13 @@
 	#define Om_System_ \
 	Om::System
 
-	#include "om/external.hpp"
 	#include "om/translator.hpp"
+
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <map>
+
+	#endif
 
 namespace Om {
 

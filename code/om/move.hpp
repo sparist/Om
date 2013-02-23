@@ -17,7 +17,11 @@
 	#define Om_Move_ \
 	Om::Move
 
-	#include "om/external.hpp"
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <memory>
+
+	#endif
 
 // MARK: - Om
 namespace Om {

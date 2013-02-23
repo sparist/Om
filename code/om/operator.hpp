@@ -22,6 +22,12 @@
 	#include "om/symbols/operator_symbol.hpp"
 	#include "om/symbols/separator_symbol.hpp"
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/locale/boundary.hpp"
+
+	#endif
+
 	#define Om_Operator_GetName_() \
 	"operator"
 

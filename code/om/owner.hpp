@@ -17,8 +17,14 @@
 	#define Om_Owner_ \
 	Om::Owner
 
-	#include "om/external.hpp"
 	#include "om/taker.hpp"
+
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <memory>
+		#include "boost/intrusive_ptr.hpp"
+
+	#endif
 
 namespace Om {
 

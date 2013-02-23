@@ -22,6 +22,12 @@
 	#include "om/sources/default_source.hpp"
 	#include "om/translator.hpp"
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/ptr_container/ptr_map.hpp"
+
+	#endif
+
 	#define Om_Lexicon_GetName_() \
 	"lexicon"
 

@@ -19,6 +19,12 @@
 
 	#include "om/sources/default_source.hpp"
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/optional.hpp"
+
+	#endif
+
 namespace Om {
 
 	namespace Sources {

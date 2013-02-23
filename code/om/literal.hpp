@@ -20,6 +20,13 @@
 	#include "om/default_program.hpp"
 	#include "om/sources/collection_front_source.hpp"
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/ptr_container/ptr_deque.hpp"
+		#include "boost/swap.hpp"
+
+	#endif
+
 	#define Om_Literal_GetName_() \
 	"literal"
 

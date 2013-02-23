@@ -17,7 +17,11 @@
 	#define Om_Utf8_ \
 	Om::Utf8
 
-	#include "om/external.hpp"
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/locale/utf.hpp"
+
+	#endif
 
 namespace Om {
 

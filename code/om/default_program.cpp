@@ -18,7 +18,11 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "UnitTest++.h"
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 
@@ -32,6 +36,12 @@ namespace Om {
 
 	#include "om/element.hpp"
 	#include "om/source.hpp"
+
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <typeinfo>
+
+	#endif
 
 // MARK: - Om::DefaultProgram
 

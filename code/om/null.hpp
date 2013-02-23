@@ -19,6 +19,12 @@
 
 	#include "om/default_program.hpp"
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/swap.hpp"
+
+	#endif
+
 	#define Om_Null_GetName_() \
 	"null"
 

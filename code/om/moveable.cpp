@@ -18,7 +18,11 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "UnitTest++.h"
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 
@@ -29,6 +33,13 @@ namespace Om {
 	#endif
 
 #else
+
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <cassert>
+		#include <stdexcept>
+
+	#endif
 
 // MARK: - Om::Moveable
 

@@ -19,6 +19,12 @@
 
 	#include "om/form.hpp"
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/optional.hpp"
+
+	#endif
+
 	#define Om_Expression_GetName_() \
 	"expression"
 

@@ -17,7 +17,11 @@
 	#define Om_Copy_ \
 	Om::Copy
 
-	#include "om/external.hpp"
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <memory>
+
+	#endif
 
 namespace Om {
 

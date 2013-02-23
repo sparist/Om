@@ -19,6 +19,12 @@
 
 	#include "om/code_point.hpp"
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <string>
+
+	#endif
+
 namespace Om {
 
 	//! \cond

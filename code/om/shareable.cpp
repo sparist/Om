@@ -18,7 +18,11 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "UnitTest++.h"
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 
@@ -29,6 +33,14 @@ namespace Om {
 	#endif
 
 #else
+
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <stdexcept>
+		#include "boost/checked_delete.hpp"
+		#include "boost/integer_traits.hpp"
+
+	#endif
 
 // MARK: - Om::Shareable
 

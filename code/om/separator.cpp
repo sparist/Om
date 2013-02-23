@@ -19,7 +19,12 @@
 	#if defined( Om_Macros_Test_ )
 
 		#include "om/writer.hpp"
-		#include "UnitTest++.h"
+
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 

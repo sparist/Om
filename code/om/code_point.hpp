@@ -17,7 +17,11 @@
 	#define Om_CodePoint_ \
 	Om::CodePoint
 
-	#include "om/external.hpp"
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/locale/utf.hpp"
+
+	#endif
 
 namespace Om {
 

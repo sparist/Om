@@ -19,7 +19,12 @@
 	#if defined( Om_Macros_Test_ )
 
 		#include "om/system.hpp"
-		#include "UnitTest++.h"
+
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 
@@ -175,6 +180,12 @@ namespace Om {
 #else
 
 	#include "om/literal.hpp"
+
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/ref.hpp"
+
+	#endif
 
 // MARK: - Om::Expression
 

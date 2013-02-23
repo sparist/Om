@@ -17,7 +17,11 @@
 	#define Om_Shareable_ \
 	Om::Shareable
 
-	#include "om/external.hpp"
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <cstddef>
+
+	#endif
 
 namespace Om {
 

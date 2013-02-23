@@ -18,11 +18,15 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "om/external.hpp"
 		#include "om/symbols/operand_symbol.hpp"
 		#include "om/symbols/operator_symbol.hpp"
 		#include "om/symbols/separator_symbol.hpp"
-		#include "UnitTest++.h"
+
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 

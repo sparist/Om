@@ -18,7 +18,11 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "UnitTest++.h"
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 
@@ -31,6 +35,12 @@ namespace Om {
 #else
 
 	#include "om/sources/empty_source.hpp"
+
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/locale/conversion.hpp"
+
+	#endif
 
 // MARK: - Om::DefaultAtom
 

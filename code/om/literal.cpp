@@ -19,7 +19,12 @@
 	#if defined( Om_Macros_Test_ )
 
 		#include "om/system.hpp"
-		#include "UnitTest++.h"
+
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 
@@ -84,6 +89,12 @@ namespace Om {
 
 	#include "om/operator.hpp"
 	#include "om/separator.hpp"
+
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include <stack>
+
+	#endif
 
 // MARK: - Om::Literal
 

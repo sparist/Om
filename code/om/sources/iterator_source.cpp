@@ -19,7 +19,12 @@
 	#if defined( Om_Macros_Test_ )
 
 		#include "om/sinks/container_back_sink.hpp"
-		#include "UnitTest++.h"
+
+		#if !defined( Om_Macros_Precompilation_ )
+
+			#include "UnitTest++.h"
+
+		#endif
 
 namespace Om {
 

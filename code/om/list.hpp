@@ -17,6 +17,12 @@
 	#define Om_List_ \
 	Om::List
 
+	#if !defined( Om_Macros_Precompilation_ )
+
+		#include "boost/array.hpp"
+
+	#endif
+
 namespace Om {
 
 	// MARK: - Om::List
