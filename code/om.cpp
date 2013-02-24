@@ -18,22 +18,14 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#if !defined( Om_Macros_Precompilation_ )
-
-			#include "boost/test/unit_test.hpp"
-
-		#endif
-
-		#define BOOST_TEST_MODULE OmTest
+		#define BOOST_TEST_MODULE \
+		OmTest
 
 		#include <boost/test/included/unit_test.hpp>
 
-boost::unit_test::test_suite * init_unit_test_suite(
-	int const,
-	char * []
-) {
+bool init_unit_test() {
 	Om::System::Get().Initialize( "en_US.UTF-8" );
-	return( 0 );
+	return( true );
 }
 
 	#else

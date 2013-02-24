@@ -348,11 +348,11 @@ endmacro()
 
 if( MSVC )
 	set_target_properties( "Om.Test" PROPERTIES
-		COMPILE_FLAGS "-DOm_Macros_Test_ /EHa"
+		COMPILE_FLAGS "/D Om_Macros_Test_ /D BOOST_TEST_ALTERNATIVE_INIT_API /EHa"
 	)
 else()
 	set_target_properties( "Om.Test" PROPERTIES
-		COMPILE_FLAGS "-DOm_Macros_Test_ -Wno-format-nonliteral -Wno-unneeded-internal-declaration -Wno-unused-variable"
+		COMPILE_FLAGS "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API -Wno-format-nonliteral -Wno-unneeded-internal-declaration -Wno-unused-variable"
 	)
 endif()
 
