@@ -21,10 +21,20 @@
 		#define BOOST_TEST_MODULE \
 		OmTest
 
-		#include <boost/test/included/unit_test.hpp>
+		#include "boost/test/included/unit_test.hpp"
+
+class OmFixture {
+public:
+
+	OmFixture() {
+		Om::System::Get().Initialize( "en_US.UTF-8" );
+	}
+
+};
+
+BOOST_GLOBAL_FIXTURE( OmFixture );
 
 bool init_unit_test() {
-	Om::System::Get().Initialize( "en_US.UTF-8" );
 	return( true );
 }
 
