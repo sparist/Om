@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,60 +28,60 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( FrontPullPairOperation ) {
+		BOOST_AUTO_TEST_SUITE( FrontPullPairOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{<-pairs}",
 					System::Get().Evaluate( "drop find {<-pairs} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					"{1{2}}{4{5}}",
 					System::Get().Evaluate( "<-pairs {1{2}4{5}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{1}{2}",
 					System::Get().Evaluate( "<-pairs {1 2}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{2}}{}",
 					System::Get().Evaluate( "<-pairs {{1}{2}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{}{}",
 					System::Get().Evaluate( "<-pairs {}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{only}{}",
 					System::Get().Evaluate( "<-pairs {only}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{a{b}}{{c}}",
 					System::Get().Evaluate( "<-pairs{a{b}{c}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{c}}{a{b}}",
 					System::Get().Evaluate( "<-pairs{{c}a{b}}" )
 				);
 			}
 
-			TEST( Flush ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( FlushTest ) {
+				BOOST_CHECK_EQUAL(
 					"<-pairs",
 					System::Get().Evaluate( "<-pairs" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

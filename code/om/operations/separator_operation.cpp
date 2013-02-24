@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,38 +28,38 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( SeparatorOperation ) {
+		BOOST_AUTO_TEST_SUITE( SeparatorOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{separator}",
 					System::Get().Evaluate( "drop find {separator} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					"{}",
 					System::Get().Evaluate( "separator{}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{ \n\t }",
 					System::Get().Evaluate( "separator{ \n\t }" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{   \n\t   }",
 					System::Get().Evaluate( "separator{ a {b} \n\t {c} d }" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{   \n\t   }",
 					System::Get().Evaluate( "drop swap separator copy{ a {b} \n\t {c} d }" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

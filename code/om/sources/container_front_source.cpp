@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sources {
 
-		SUITE( ContainerFrontSource ) {}
+		BOOST_AUTO_TEST_SUITE( ContainerFrontSourceTest )
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,17 +28,17 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( FindOperation ) {
+		BOOST_AUTO_TEST_SUITE( FindOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{find}",
 					System::Get().Evaluate( "drop find {find} system" )
 				);
 			}
 
-			TEST( Simple ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"b{B}\n"
@@ -48,7 +48,7 @@ namespace Om {
 					System::Get().Evaluate( "find {a}{b{B} a{A}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"b{B}\n"
@@ -58,12 +58,12 @@ namespace Om {
 					System::Get().Evaluate( "find {a}lexicon{b{B} a{A}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{}{}",
 					System::Get().Evaluate( "find {a}lexicon{}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"b{B}\n"
@@ -73,7 +73,7 @@ namespace Om {
 					System::Get().Evaluate( "find {c}{b{B} a{A}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"b{B}\n"
@@ -84,7 +84,7 @@ namespace Om {
 					System::Get().Evaluate( "find {c}{b{B} a{A} {C}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"b{B}\n"
@@ -95,7 +95,7 @@ namespace Om {
 					System::Get().Evaluate( "find {}{b{B} a{A} {C}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"b{B}\n"
@@ -106,7 +106,7 @@ namespace Om {
 					System::Get().Evaluate( "find {c}{b{B} a{A} c}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"b{B}\n"
@@ -118,7 +118,7 @@ namespace Om {
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

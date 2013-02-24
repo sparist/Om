@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,16 +28,16 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( LexiconBackPushOperation ) {
+		BOOST_AUTO_TEST_SUITE( LexiconBackPushOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{lexicon<-}",
 					System::Get().Evaluate( "drop find {lexicon<-} system" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

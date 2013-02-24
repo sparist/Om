@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,17 +28,17 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( ExpressionFrontPushOperation ) {
+		BOOST_AUTO_TEST_SUITE( ExpressionFrontPushOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{->expression}",
 					System::Get().Evaluate( "drop find {->expression} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"1{2}\n"
@@ -50,7 +50,7 @@ namespace Om {
 					System::Get().Evaluate( "->expression {1{2}3}{4{5}6}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"1{2}{5}\n"
@@ -60,7 +60,7 @@ namespace Om {
 					System::Get().Evaluate( "->expression {1{2}}{{5}6}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"{5}\n"
@@ -70,7 +70,7 @@ namespace Om {
 					System::Get().Evaluate( "->expression {}{{5}6}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"{5}\n"
@@ -80,7 +80,7 @@ namespace Om {
 					System::Get().Evaluate( "->expression {{5}6}{}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"{2}\n"
@@ -90,13 +90,13 @@ namespace Om {
 					System::Get().Evaluate( "->expression quote{2}{3}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{2{3}}",
 					System::Get().Evaluate( "->expression{2}quote{3}" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

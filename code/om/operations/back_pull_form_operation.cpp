@@ -22,7 +22,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -30,48 +30,48 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( BackPullFormOperation ) {
+		BOOST_AUTO_TEST_SUITE( BackPullFormOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{forms->}",
 					System::Get().Evaluate( "drop find {forms->} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					"{4{5}{6}}{1{2}{3}}",
 					System::Get().Evaluate( "forms-> {1{2}{3}4{5}{6}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{2}{1}",
 					System::Get().Evaluate( "forms-> {1 2}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{}{}",
 					System::Get().Evaluate( "forms-> {}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{only}{}",
 					System::Get().Evaluate( "forms-> {only}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"forms->",
 					System::Get().Evaluate( "forms->" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{a{b}{c}}{}",
 					System::Get().Evaluate( "forms->{a{b}{c}}" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

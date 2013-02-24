@@ -20,15 +20,15 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( Writer ) {
+	BOOST_AUTO_TEST_SUITE( WriterTest )
 
-		TEST( General ) {
+		BOOST_AUTO_TEST_CASE( GeneralTest ) {
 			char const theCode[] = "\n\t {\n\t {\n\t }\n\t }\n\t";
 			std::string theResult;
 			{
@@ -43,13 +43,13 @@ namespace Om {
 				Parser theParser( theCodePointSource );
 				theWriter.ReadElements( theParser );
 			}
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"\n\t {\n\t {\n\t }\n\t }\n\t",
 				theResult
 			);
 		}
 
-	}
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

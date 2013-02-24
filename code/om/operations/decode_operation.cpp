@@ -22,7 +22,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -30,44 +30,44 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( DecodeOperation ) {
+		BOOST_AUTO_TEST_SUITE( DecodeOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{decode}",
 					System::Get().Evaluate( "drop find {decode} system" )
 				);
 			}
 
-			TEST( Simple ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+				BOOST_CHECK_EQUAL(
 					"{`{`}` {{}} {quote{s}} }",
 					System::Get().Evaluate( "decode {```{```}``` `{`{`}`}` {quote{s}} }" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{} {{}} {quote{s}} }",
 					System::Get().Evaluate( "decode {`{`}` {{}} {quote{s}} }" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{ the {end: `} really: } ! }",
 					System::Get().Evaluate( "decode {` the` `{end:` ```}` really:` `}` !` }" )
 				);
 
 				// Test that each remaining encoded Operand Symbol is decoded.
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{ the {end: } really: }",
 					System::Get().Evaluate( "decode { the {end: `} really: } ! }" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{ the {end: } really: }",
 					System::Get().Evaluate( "decode { the {end: } really: }" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

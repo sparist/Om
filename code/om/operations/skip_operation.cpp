@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,33 +28,33 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( SkipOperation ) {
+		BOOST_AUTO_TEST_SUITE( SkipOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{skip}",
 					System::Get().Evaluate( "drop find {skip} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					"{A}{B}{B}",
 					System::Get().Evaluate( "skip{copy}{A}{B}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{A}{}{}",
 					System::Get().Evaluate( "skip{copy}{A}{}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{A}{B}",
 					System::Get().Evaluate( "skip{}{A}{B}" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

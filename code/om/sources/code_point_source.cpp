@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,9 +28,9 @@ namespace Om {
 
 	namespace Sources {
 
-		SUITE( CodePointSource ) {
+		BOOST_AUTO_TEST_SUITE( CodePointSourceTest )
 
-			TEST( General ) {
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
 				std::string theString(
 					"\xC7\xBE"
 					"A"
@@ -39,31 +39,31 @@ namespace Om {
 					theString.begin(),
 					theString.end()
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					510U,
 					*theSource
 				);
 				theSource.Pop();
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					65U,
 					*theSource
 				);
 				theSource.Pop();
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					true,
 					!theSource
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

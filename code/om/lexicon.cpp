@@ -20,16 +20,16 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( Lexicon ) {
+	BOOST_AUTO_TEST_SUITE( LexiconTest )
 
-		TEST( Basic ) {
-			CHECK_EQUAL(
+		BOOST_AUTO_TEST_CASE( BasicTest ) {
+			BOOST_CHECK_EQUAL(
 				(
 					"{a{A}\n"
 					"b{B}}"
@@ -37,7 +37,7 @@ namespace Om {
 				System::Get().Evaluate( "lexicon {a {A} b {B}}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{b\n"
 					"a}"
@@ -46,19 +46,19 @@ namespace Om {
 			);
 		}
 
-		TEST( Copy ) {
-			CHECK_EQUAL(
+		BOOST_AUTO_TEST_CASE( CopyTest ) {
+			BOOST_CHECK_EQUAL(
 				"{{a}}{a}",
 				System::Get().Evaluate( "quote copy lexicon{a}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{b\n"
 				"a}{a}",
 				System::Get().Evaluate( "->lexicon{b} copy lexicon{a}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{b\n"
 					"a}{a}"
@@ -66,7 +66,7 @@ namespace Om {
 				System::Get().Evaluate( "->lexicon{b}copy{a}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{b\n"
 					"a}{a}"
@@ -74,7 +74,7 @@ namespace Om {
 				System::Get().Evaluate( "->lexicon{b}copy lexicon{a}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{a\n"
 					"b}{a}"
@@ -82,7 +82,7 @@ namespace Om {
 				System::Get().Evaluate( "lexicon<-{b}copy lexicon{a}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{a{A}\n"
 					"b{B}\n"
@@ -97,9 +97,9 @@ namespace Om {
 			);
 		}
 
-		TEST( Equality ) {
+		BOOST_AUTO_TEST_CASE( EqualityTest ) {
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{{a{b}\n"
 					"c{d}}}"
@@ -113,37 +113,37 @@ namespace Om {
 			);
 
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{a{b}}}",
 				System::Get().Evaluate( "= lexicon{a{b}} {a{b}}" )
 			);
 
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{{b}}}",
 				System::Get().Evaluate( "= lexicon{{b}} {{b}}" )
 			);
 
 			// Negative match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{}",
 				System::Get().Evaluate( "= lexicon{a{b}} {a{c}}" )
 			);
 
 			// Empty match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{}",
 				System::Get().Evaluate( "= lexicon{} {a{b}}" )
 			);
 
 			// Empty match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{}}",
 				System::Get().Evaluate( "= lexicon{} {}" )
 			);
 		}
 
-		TEST( Read ) {
+		BOOST_AUTO_TEST_CASE( ReadTest ) {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } 4\n\t";
 			std::string theResult;
 			{
@@ -160,7 +160,7 @@ namespace Om {
 				theLexicon.ReadElements( theParser );
 				theLexicon.GiveElements( theWriter );
 			}
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"0{1\n\t {2\n\t } 3\n\t }\n"
 					"4"
@@ -169,8 +169,8 @@ namespace Om {
 			);
 		}
 
-		TEST( Normalization ) {
-			CHECK_EQUAL(
+		BOOST_AUTO_TEST_CASE( NormalizationTest ) {
+			BOOST_CHECK_EQUAL(
 				(
 					"{B{2}\n"
 					"C\n"
@@ -181,7 +181,7 @@ namespace Om {
 				System::Get().Evaluate( "lexicon{A{1} B{2} A{3} C A{4} D E{5}}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{A{2}\n"
 					"{3}}"
@@ -189,7 +189,7 @@ namespace Om {
 				System::Get().Evaluate( "lexicon{{1}A{2}{3}}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{A{1}\n"
 					"B\n"
@@ -199,7 +199,7 @@ namespace Om {
 				System::Get().Evaluate( "lexicon{ A{1}{2} B C{3}{4} }" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{{2}\n"
 					"A{3}}"
@@ -207,7 +207,7 @@ namespace Om {
 				System::Get().Evaluate( "->lexicon{ A{1}{2} }{ A{3} }" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"{{3}\n"
 					"A{1}}"
@@ -216,7 +216,7 @@ namespace Om {
 			);
 		}
 
-	}
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

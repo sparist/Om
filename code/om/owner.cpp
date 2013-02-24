@@ -23,13 +23,13 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( Owner ) {
+	BOOST_AUTO_TEST_SUITE( OwnerTest )
 
 		namespace {
 
@@ -51,7 +51,7 @@ namespace Om {
 
 		}
 
-		TEST( LazinessTest ) {
+		BOOST_AUTO_TEST_CASE( LazinessTest ) {
 			Owner< TestValue > theFirst(
 				std::auto_ptr< TestValue >(
 					new TestValue( 1 )
@@ -67,13 +67,13 @@ namespace Om {
 			Owner< TestValue > const & theConstSecond = theSecond;
 			TestValue const & theSecondValue = *theConstSecond;
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				&theFirstValue,
 				&theSecondValue
 			);
 		}
 
-		TEST( CopyTest ) {
+		BOOST_AUTO_TEST_CASE( CopyTest ) {
 			Owner< TestValue > theFirst(
 				std::auto_ptr< TestValue >(
 					new TestValue( 1 )
@@ -82,12 +82,12 @@ namespace Om {
 			assert( theFirst );
 
 			TestValue & theFirstValue = *theFirst;
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				1,
 				theFirstValue.thisNumber
 			);
 			theFirstValue.thisNumber = 2;
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				2,
 				theFirstValue.thisNumber
 			);
@@ -95,11 +95,11 @@ namespace Om {
 			Owner< TestValue > theSecond( theFirst );
 
 			TestValue & theSecondValue = *theSecond;
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				2,
 				theFirstValue.thisNumber
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				2,
 				theSecondValue.thisNumber
 			);
@@ -113,43 +113,43 @@ namespace Om {
 			TestValue & theThirdValue = *theThird;
 			Owner< TestValue > const & theConstFourth = theFourth;
 			TestValue const & theFourthValue = *theConstFourth;
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				4,
 				theFirstValue.thisNumber
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				3,
 				theSecondValue.thisNumber
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				4,
 				theThirdValue.thisNumber
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				4,
 				theFourthValue.thisNumber
 			);
 
 			theThirdValue.thisNumber = 5;
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				4,
 				theFirstValue.thisNumber
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				3,
 				theSecondValue.thisNumber
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				5,
 				theThirdValue.thisNumber
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				4,
 				theFourthValue.thisNumber
 			);
 		}
 
-	}
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

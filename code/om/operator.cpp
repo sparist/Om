@@ -22,54 +22,54 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( Operator ) {
+	BOOST_AUTO_TEST_SUITE( OperatorTest )
 
-		TEST( Basic ) {
-			CHECK_EQUAL(
+		BOOST_AUTO_TEST_CASE( BasicTest ) {
+			BOOST_CHECK_EQUAL(
 				"{a` `{b`}}",
 				System::Get().Evaluate( "operator{a {b}}" )
 			);
 		}
 
-		TEST( Equality ) {
+		BOOST_AUTO_TEST_CASE( EqualityTest ) {
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{test` `{ing`}}}",
 				System::Get().Evaluate( "= operator{test {ing}} {test` `{ing`}}" )
 			);
 
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{a`{b`}`{c`}`\nd`{e`}}}",
 				System::Get().Evaluate( "= operator{a{b}{c}\nd{e}} {a`{b`}`{c`}`\nd`{e`}}" )
 			);
 
 			// Negative match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{}",
 				System::Get().Evaluate( "= operator{a{b}{c}} {a`{b`}`{d`}}" )
 			);
 
 			// Empty match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{}",
 				System::Get().Evaluate( "= operator{} {a{b}{c}}" )
 			);
 
 			// Empty match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{}}",
 				System::Get().Evaluate( "= operator{} {}" )
 			);
 		}
 
-		TEST( TakeQuotedElements ) {
+		BOOST_AUTO_TEST_CASE( TakeQuotedElementsTest ) {
 			Operator theOperator;
 			{
 				Literal theLiteral;
@@ -83,24 +83,24 @@ namespace Om {
 					theLiteral.IsEmpty()
 				);
 			}
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{a{b{c}}}",
 				theOperator.GetString()
 			);
 		}
 
-		TEST( Normalization ) {
+		BOOST_AUTO_TEST_CASE( NormalizationTest ) {
 			// Test combining character reordering under NFD.
 			Operator theLeftOperator( "s\xCC\x87" );
 			Operator theRightOperator( "\xCC\xA3" );
 			theLeftOperator.TakeElement( theRightOperator );
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"s\xCC\xA3\xCC\x87",
 				theLeftOperator.GetString()
 			);
 		}
 
-		TEST( Read ) {
+		BOOST_AUTO_TEST_CASE( ReadTest ) {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
 			std::string theResult;
 			{
@@ -117,7 +117,7 @@ namespace Om {
 				theOperator.ReadElements( theParser );
 				theOperator.GiveElements( theWriter );
 			}
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
 					"0`\n"
 					"`\t` `{1`\n"
@@ -130,7 +130,7 @@ namespace Om {
 			);
 		}
 
-	}
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

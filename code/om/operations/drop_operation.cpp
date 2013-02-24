@@ -22,7 +22,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -30,23 +30,23 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( DropOperation ) {
+		BOOST_AUTO_TEST_SUITE( DropOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{drop}",
 					System::Get().Evaluate( "drop find {drop} system" )
 				);
 			}
 
-			TEST( Simple ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+				BOOST_CHECK_EQUAL(
 					"{4{5}6}",
 					System::Get().Evaluate( "drop {1{2}3}{4{5}6}" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

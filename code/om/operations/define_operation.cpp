@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,69 +28,69 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( DefineOperation ) {
+		BOOST_AUTO_TEST_SUITE( DefineOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{define}",
 					System::Get().Evaluate( "drop find {define} system" )
 				);
 			}
 
-			TEST( BasicSubstitution ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( BasicSubstitutionTest ) {
+				BOOST_CHECK_EQUAL(
 					"B",
 					System::Get().Evaluate( "define {A {B}} {A}" )
 				);
 			}
 
-			TEST( IdentityDefinition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( IdentityDefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"",
 					System::Get().Evaluate( "define {A {}} {A}" )
 				);
 			}
 
-			TEST( EmptyDefinition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EmptyDefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"A",
 					System::Get().Evaluate( "define {A} {A}" )
 				);
 			}
 
-			TEST( EmptyLexicon ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EmptyLexiconTest ) {
+				BOOST_CHECK_EQUAL(
 					"",
 					System::Get().Evaluate( "define {} {}" )
 				);
 			}
 
-			TEST( EmptyKeyFallThrough ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EmptyKeyFallThroughTest ) {
+				BOOST_CHECK_EQUAL(
 					"{A}",
 					System::Get().Evaluate( "define {{{A}}} {B}" )
 				);
 			}
 
 			// Confirms that the last definition wins.
-			TEST( MultipleDefinition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( MultipleDefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{C}",
 					System::Get().Evaluate( "define { A {{B}} A {{C}} } {A}" )
 				);
 			}
 
 			// Confirms that the last definition wins.
-			TEST( MultipleEmptyKey ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( MultipleEmptyKeyTest ) {
+				BOOST_CHECK_EQUAL(
 					"{C}",
 					System::Get().Evaluate( "define { {{B}} {{C}} } {A}" )
 				);
 			}
 
 			// Confirms that underlying non-constant definitions are used.
-			TEST( ChainedLookup ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( ChainedLookupTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"B\n"
 						"B"
@@ -98,7 +98,7 @@ namespace Om {
 					System::Get().Evaluate( "define {A {B}} {dequote {A} A}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{1}",
 					System::Get().Evaluate(
 						"define{\n"
@@ -107,15 +107,15 @@ namespace Om {
 						"}{do{a b}}\n"
 					)
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"1",
 					System::Get().Evaluate( "define fill {a` b} {1} {do{a b}}" )
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{1}",
 					System::Get().Evaluate( "define {a` b{{1}}} {do{a b}}" )
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{2}{1}",
 					System::Get().Evaluate(
 						"define"
@@ -129,8 +129,8 @@ namespace Om {
 			}
 
 			// Confirms evaluation order in nested scopes.
-			TEST( NestedEvaluationOrder ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( NestedEvaluationOrderTest ) {
+				BOOST_CHECK_EQUAL(
 					"{a-default}",
 					System::Get().Evaluate(
 						"define { b {B} {{b-default}} }{"
@@ -138,7 +138,7 @@ namespace Om {
 						"}"
 					)
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{b-default}",
 					System::Get().Evaluate(
 						"define { b {B} {{b-default}} }{"
@@ -148,28 +148,28 @@ namespace Om {
 				);
 			}
 
-			TEST( SimpleNested ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( SimpleNestedTest ) {
+				BOOST_CHECK_EQUAL(
 					"c",
 					System::Get().Evaluate( "define{a{define{b{c}}{b}}}{a}" )
 				);
 			}
 
-			TEST( DeletedOperator ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DeletedOperatorTest ) {
+				BOOST_CHECK_EQUAL(
 					"A",
 	 				System::Get().Evaluate( "define {define} {define {a{A}} {a}}" )
 				);
  			}
 
-			TEST( Evaluation ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EvaluationTest ) {
+				BOOST_CHECK_EQUAL(
 					"{1}{3}{2}",
 					System::Get().Evaluate( "define {a{{1}c{2}} c{{3}}} {a}" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

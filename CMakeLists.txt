@@ -1,4 +1,4 @@
-cmake_minimum_required( VERSION 2.8.8 )
+cmake_minimum_required( VERSION 2.8.10 )
 
 project( Om )
 
@@ -12,7 +12,7 @@ if( MSVC )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4706" )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_CRT_SECURE_NO_WARNINGS" )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_SCL_SECURE_NO_WARNINGS" )
-elseif( CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX )
+else()
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall" )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-align" )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-qual" )
@@ -33,7 +33,6 @@ elseif( CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros" )
 endif()
 
-set( UnitTest "" CACHE PATH "The UnitTest library build directory path" )
 set( Boost "" CACHE PATH "The Boost library build directory path" )
 set( Icu "" CACHE PATH "The ICU library build directory path" )
 
@@ -127,15 +126,12 @@ source_group( "Doxygen Files\\om\\sinks" FILES ${Dox_Code_Om_Sinks} )
 source_group( "Doxygen Files\\om\\sources" FILES ${Dox_Code_Om_Sources} )
 source_group( "Doxygen Files\\om\\symbols" FILES ${Dox_Code_Om_Symbols} )
 
-include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" )
 if( MSVC )
-	include_directories( "${Boost}/include/boost-1_53" )
+	include_directories( SYSTEM "${Boost}/include/boost-1_53" )
 else()
-	include_directories( "${Boost}/include" )
+	include_directories( SYSTEM "${Boost}/include" )
 endif()
-if( UnitTest )
-	include_directories( "${UnitTest}/src" )
-endif()
+include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" )
 
 add_executable( "Om" ${Code} )
 add_executable( "Om.Test" ${Cpp} )
@@ -151,10 +147,14 @@ if( MSVC )
 		VERBATIM
 	)
 
-	if( UnitTest )
-		find_library( UnitTestDebugLibrary "UnitTest++.vsnet2010" "${UnitTest}/Debug" NO_DEFAULT_PATH )
-		find_library( UnitTestReleaseLibrary "UnitTest++.vsnet2010" "${UnitTest}/Release" NO_DEFAULT_PATH )
-	endif()
+	find_library( BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+
+	find_library( BoostTestExecMonitorDebugLibrary boost_test_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostTestExecMonitorReleaseLibrary boost_test_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+
+	find_library( BoostUnitTestFrameworkDebugLibrary boost_unit_test_framework-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostUnitTestFrameworkReleaseLibrary boost_unit_test_framework-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 
 	find_library( BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 	find_library( BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
@@ -199,10 +199,14 @@ else()
 		VERBATIM
 	)
 
-	if( UnitTest )
-		find_library( UnitTestReleaseLibrary "UnitTest++" "${UnitTest}" NO_DEFAULT_PATH )
-		set( UnitTestDebugLibrary ${UnitTestReleaseLibrary} )
-	endif()
+	find_library( BoostPrgExecMonitorReleaseLibrary boost_prg_exec_monitor "${Boost}/lib" NO_DEFAULT_PATH )
+	set( BoostPrgExecMonitorDebugLibrary ${BoostPrgExecMonitorReleaseLibrary} )
+
+	find_library( BoostTestExecMonitorReleaseLibrary boost_test_exec_monitor "${Boost}/lib" NO_DEFAULT_PATH )
+	set( BoostTestExecMonitorDebugLibrary ${BoostTestExecMonitorReleaseLibrary} )
+
+	find_library( BoostUnitTestFrameworkReleaseLibrary boost_unit_test_framework "${Boost}/lib" NO_DEFAULT_PATH )
+	set( BoostUnitTestFrameworkDebugLibrary ${BoostUnitTestFrameworkReleaseLibrary} )
 
 	find_library( BoostLocaleReleaseLibrary boost_locale "${Boost}/lib" NO_DEFAULT_PATH )
 	set( BoostLocaleDebugLibrary ${BoostLocaleReleaseLibrary} )
@@ -342,14 +346,21 @@ macro( om_target_link_libraries target )
 	endif()
 endmacro()
 
-if( UnitTest )
-	set_target_properties( "Om.Test" PROPERTIES COMPILE_FLAGS -DOm_Macros_Test_ )
+# Ignore Boost.Test warnings
+set_target_properties( "Om.Test" PROPERTIES
+	COMPILE_FLAGS "-DOm_Macros_Test_ -Wno-format-nonliteral -Wno-unneeded-internal-declaration -Wno-unused-variable"
+)
 
-	target_link_libraries( "Om.Test"
-		debug "${UnitTestDebugLibrary}"
-		optimized "${UnitTestReleaseLibrary}"
-	)
-endif()
+target_link_libraries( "Om.Test"
+	debug "${BoostPrgExecMonitorDebugLibrary}"
+	optimized "${BoostPrgExecMonitorReleaseLibrary}"
+
+	debug "${BoostTestExecMonitorDebugLibrary}"
+	optimized "${BoostTestExecMonitorReleaseLibrary}"
+
+	debug "${BoostUnitTestFrameworkDebugLibrary}"
+	optimized "${BoostUnitTestFrameworkReleaseLibrary}"
+)
 
 om_target_link_libraries( "Om" )
 om_target_link_libraries( "Om.Test" )

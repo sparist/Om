@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,22 +28,22 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( RearrangeOperation ) {
+		BOOST_AUTO_TEST_SUITE( RearrangeOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{rearrange}",
 					System::Get().Evaluate( "drop find {rearrange} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					"{2}{1}",
 					System::Get().Evaluate( "rearrange{b a}{a b}{1}{2}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{2}{1}",
 					System::Get().Evaluate(
 						"rearrange"
@@ -53,7 +53,7 @@ namespace Om {
 					)
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{2}{1}",
 					System::Get().Evaluate(
 						"rearrange"
@@ -64,7 +64,7 @@ namespace Om {
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

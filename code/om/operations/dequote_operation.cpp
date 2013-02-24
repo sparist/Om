@@ -22,7 +22,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -30,17 +30,17 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( DequoteOperation ) {
+		BOOST_AUTO_TEST_SUITE( DequoteOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{dequote}",
 					System::Get().Evaluate( "drop find {dequote} system" )
 				);
 			}
 
-			TEST( Simple ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"1{2}\n"
 						"3"
@@ -49,8 +49,8 @@ namespace Om {
 				);
 			}
 
-			TEST( SimpleDequoteThenEvaluate ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( SimpleDequoteThenEvaluateTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"A{b}\n"
 						"c"
@@ -59,7 +59,7 @@ namespace Om {
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

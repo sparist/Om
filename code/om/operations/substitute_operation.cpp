@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,69 +28,69 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( SubstituteOperation ) {
+		BOOST_AUTO_TEST_SUITE( SubstituteOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{substitute}",
 					System::Get().Evaluate( "drop find {substitute} system" )
 				);
 			}
 
-			TEST( BasicSubstitution ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( BasicSubstitutionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{A{B}}{B}",
 					System::Get().Evaluate( "substitute {A {B}} {A}" )
 				);
 			}
 
-			TEST( IdentityDefinition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( IdentityDefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{A{}}{}",
 					System::Get().Evaluate( "substitute {A {}} {A}" )
 				);
 			}
 
-			TEST( EmptyDefinition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EmptyDefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{A}{A}",
 					System::Get().Evaluate( "substitute {A} {A}" )
 				);
 			}
 
-			TEST( EmptyLexicon ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EmptyLexiconTest ) {
+				BOOST_CHECK_EQUAL(
 					"{}{}",
 					System::Get().Evaluate( "substitute {} {}" )
 				);
 			}
 
-			TEST( EmptyKeyFallThrough ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EmptyKeyFallThroughTest ) {
+				BOOST_CHECK_EQUAL(
 					"{{{A}}}{{A}}",
 					System::Get().Evaluate( "substitute {{{A}}} {B}" )
 				);
 			}
 
 			// Confirms that the last definition wins.
-			TEST( MultipleDefinition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( MultipleDefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{A{{C}}}{{C}}",
 					System::Get().Evaluate( "substitute { A {{B}} A {{C}} } {A}" )
 				);
 			}
 
 			// Confirms that the last definition wins.
-			TEST( MultipleEmptyKey ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( MultipleEmptyKeyTest ) {
+				BOOST_CHECK_EQUAL(
 					"{{{C}}}{{C}}",
 					System::Get().Evaluate( "substitute { {{B}} {{C}} } {A}" )
 				);
 			}
 
 			// Confirms that underlying non-constant definitions are used.
-			TEST( ChainedLookup ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( ChainedLookupTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"{A{B}}{"
 						"unquote{A}\n"
@@ -100,13 +100,13 @@ namespace Om {
 					System::Get().Evaluate( "substitute {A {B}} {unquote {A} A}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{blaven{42}}{do{blaven}}",
 					System::Get().Evaluate( "substitute{blaven{42}}{do{blaven}}" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

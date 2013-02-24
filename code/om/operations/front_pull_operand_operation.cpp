@@ -22,7 +22,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -30,43 +30,43 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( FrontPullOperandOperation ) {
+		BOOST_AUTO_TEST_SUITE( FrontPullOperandOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{operand<-elements}",
 					System::Get().Evaluate( "drop find {operand<-elements} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					"{}{1{2}3}",
 					System::Get().Evaluate( "operand<-elements {1{2}3}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{1}}{2}",
 					System::Get().Evaluate( "operand<-elements {{1}2}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{}{}",
 					System::Get().Evaluate( "operand<-elements {}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{only}}{}",
 					System::Get().Evaluate( "operand<-elements {{only}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"operand<-elements",
 					System::Get().Evaluate( "operand<-elements" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

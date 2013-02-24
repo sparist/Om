@@ -22,15 +22,15 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( Separator ) {
+	BOOST_AUTO_TEST_SUITE( SeparatorTest )
 
-		TEST( Read ) {
+		BOOST_AUTO_TEST_CASE( ReadTest ) {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
 			std::string theResult;
 			{
@@ -47,13 +47,13 @@ namespace Om {
 				theSeparator.ReadElements( theParser );
 				theSeparator.GiveElements( theWriter );
 			}
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"\n\t   \n",
 				theResult
 			);
 		}
 
-	}
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

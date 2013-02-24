@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,9 +28,9 @@ namespace Om {
 
 	namespace Sources {
 
-		SUITE( CodePointStringFrontSource ) {
+		BOOST_AUTO_TEST_SUITE( CodePointStringFrontSourceTest )
 
-			TEST( Valid ) {
+			BOOST_AUTO_TEST_CASE( ValidTest ) {
 				std::string theString(
 					"P" /* ASCII character */
 					"o"
@@ -45,73 +45,73 @@ namespace Om {
 					theString.end()
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"P",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"o",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"\xCC\x88",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"r",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"k",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"\xE2\x98\xB9",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					true,
 					!theSource
 				);
 			}
 
-			TEST( InvalidNoTrailing ) {
+			BOOST_AUTO_TEST_CASE( InvalidNoTrailingTest ) {
 				std::string theString(
 					"\xE2"
 					"!"
@@ -122,33 +122,33 @@ namespace Om {
 					theString.end()
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"\xEF\xBF\xBD",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"!",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					true,
 					!theSource
 				);
 			}
 
-			TEST( InvalidInsufficientTrailing ) {
+			BOOST_AUTO_TEST_CASE( InvalidInsufficientTrailingTest ) {
 				std::string theString(
 					"\xE2\x98"
 					"!"
@@ -159,33 +159,33 @@ namespace Om {
 					theString.end()
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"\xEF\xBF\xBD",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"!",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					true,
 					!theSource
 				);
 			}
 
-			TEST( InvalidExtraTrailing ) {
+			BOOST_AUTO_TEST_CASE( InvalidExtraTrailingTest ) {
 				std::string theString(
 					"\xE2\x98\xB9" /* Valid */
 					"\xB9" /* Invalid */
@@ -197,43 +197,43 @@ namespace Om {
 					theString.end()
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"\xE2\x98\xB9",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"\xEF\xBF\xBD",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"!",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					true,
 					!theSource
 				);
 			}
 
-			TEST( InvalidMissingLeading ) {
+			BOOST_AUTO_TEST_CASE( InvalidMissingLeadingTest ) {
 				std::string theString(
 					"\xB9" /* Invalid */
 					"!"
@@ -244,33 +244,33 @@ namespace Om {
 					theString.end()
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"\xEF\xBF\xBD",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"!",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					true,
 					!theSource
 				);
 			}
 
-			TEST( InvalidEarlyTermination ) {
+			BOOST_AUTO_TEST_CASE( InvalidEarlyTerminationTest ) {
 				std::string theString( "\xE2\x98" /* Invalid */ );
 
 				CodePointStringFrontSource< std::string::const_iterator > theSource(
@@ -278,23 +278,23 @@ namespace Om {
 					theString.end()
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					false,
 					!theSource
 				);
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"\xEF\xBF\xBD",
 					*theSource
 				);
 				theSource.Pop();
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					true,
 					!theSource
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

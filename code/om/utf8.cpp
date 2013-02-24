@@ -20,13 +20,14 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( Utf8 ) {}
+	BOOST_AUTO_TEST_SUITE( Utf8Test )
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

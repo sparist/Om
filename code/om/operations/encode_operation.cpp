@@ -22,7 +22,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -30,23 +30,23 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( EncodeOperation ) {
+		BOOST_AUTO_TEST_SUITE( EncodeOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{encode}",
 					System::Get().Evaluate( "drop find {encode} system" )
 				);
 			}
 
-			TEST( Simple ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+				BOOST_CHECK_EQUAL(
 					"{```{```}``` `{`{`}`}` }",
 					System::Get().Evaluate( "encode {`{`}` {{}} }" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

@@ -22,66 +22,58 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( Expression ) {
+	BOOST_AUTO_TEST_SUITE( ExpressionTest )
 
-		TEST( General ) {
-			CHECK_EQUAL(
+		BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_CHECK_EQUAL(
 				(
-					"{"
-					"{a}{b}\n"
-					"c{d}"
-					"}"
+					"{{a}{b}\n"
+					"c{d}}"
 				),
 				System::Get().Evaluate( "evaluate {{a}{b}c{d}}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{c{d}{a}{b}}",
 				System::Get().Evaluate( "evaluate {c{d}{a}{b}}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
-					"{"
-					"a{b}{c}\n"
-					"d{e}{f}"
-					"}"
+					"{a{b}{c}\n"
+					"d{e}{f}}"
 				),
 				System::Get().Evaluate( "evaluate {a{b}{c}d{e}{f}}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{c}",
 				System::Get().Evaluate( "evaluate {c}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{d}}",
 				System::Get().Evaluate( "evaluate {{d}}" )
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{}",
 				System::Get().Evaluate( "evaluate {}" )
 			);
 		}
 
-		TEST( Equality ) {
+		BOOST_AUTO_TEST_CASE( EqualityTest ) {
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				(
-					"{"
-					"{"
-					"a{b}{c}\n"
-					"d{e}"
-					"}"
-					"}"
+					"{{a{b}{c}\n"
+					"d{e}}}"
 				),
 				System::Get().Evaluate(
 					"= expression{a{b}{c}d{e}} {"
@@ -92,49 +84,49 @@ namespace Om {
 			);
 
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{a{b}{c}}}",
 				System::Get().Evaluate( "= expression{a{b}{c}} {a{b}{c}}" )
 			);
 
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{a{b}}}",
 				System::Get().Evaluate( "= expression{a{b}} {a{b}}" )
 			);
 
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{a}}",
 				System::Get().Evaluate( "= expression{a} {a}" )
 			);
 
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{{a}}}",
 				System::Get().Evaluate( "= expression{{a}}{{a}}" )
 			);
 
 			// Negative match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{}",
 				System::Get().Evaluate( "= expression{a{b}{c}} {A{B}{C}}" )
 			);
 
 			// Negative match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{}",
 				System::Get().Evaluate( "= expression{} {a{b}{c}}" )
 			);
 
 			// Positive empty match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{}}",
 				System::Get().Evaluate( "= expression{} {}" )
 			);
 		}
 
-		TEST( Read ) {
+		BOOST_AUTO_TEST_CASE( ReadTest ) {
 			char const theCode[] = (
 				"0\n"
 				"\t {1\n"
@@ -158,8 +150,8 @@ namespace Om {
 				theExpression.ReadElements( theParser );
 				theExpression.GiveElements( theWriter );
 			}
-			CHECK_EQUAL(
-				(
+			BOOST_CHECK_EQUAL(
+				std::string(
 					"0{1\n"
 					"\t {2\n"
 					"\t } 3\n"
@@ -167,11 +159,11 @@ namespace Om {
 					"\t}\n"
 					"5"
 				),
-				theResult
+				std::string( theResult )
 			);
 		}
 
-	}
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

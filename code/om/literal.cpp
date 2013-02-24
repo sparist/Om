@@ -22,41 +22,41 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( Literal ) {
+	BOOST_AUTO_TEST_SUITE( LiteralTest )
 
-		TEST( Equality ) {
+		BOOST_AUTO_TEST_CASE( EqualityTest ) {
 			// Positive match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{a{b}{c}\nd{e}}}",
 				System::Get().Evaluate( "= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}" )
 			);
 
 			// Negative match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{}",
 				System::Get().Evaluate( "= {a{b}{c}} {a{b}{d}}" )
 			);
 
 			// Empty match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{}",
 				System::Get().Evaluate( "= {} {a{b}{c}}" )
 			);
 
 			// Empty match
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				"{{}}",
 				System::Get().Evaluate( "= {} {}" )
 			);
 		}
 
-		TEST( Recursion ) {
+		BOOST_AUTO_TEST_CASE( RecursionTest ) {
 			size_t const theDepth = 50000;
 
 			std::string theString;
@@ -79,7 +79,7 @@ namespace Om {
 			Literal theCopy( theLiteral );
 		}
 
-	}
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

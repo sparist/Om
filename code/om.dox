@@ -408,8 +408,6 @@ The Om.Documentation target builds the %Om documentation into the following fold
 
 The Om.Test target builds the Om.Test test executable into <tt>products/projects/</tt><em>[platform]</em>, which runs all unit tests.
 
-This target only exists if the scripts are supplied with the unit test library path.
-
 \subsection using__projects__platforms__ Platforms
 
 \subsubsection using__projects__platforms__xcode__ Xcode
@@ -422,7 +420,6 @@ The following scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mounta
 	-	Takes the following arguments (in order):
 		- 	The <a href="http://icu-project.org">ICU (ICU4C 49.1.2 or greater)</a> root directory path.  To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/50.1.2/icu4c-50_1_2-src.tgz">ICU4C 50.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.
 		-	The <a href="http://boost.org">Boost (1.53.0 or greater)</a> root directory path.  To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.
-		-	<b>Optional:</b> The <a href="https://github.com/unittest-cpp/unittest-cpp">UnitTest++ (1.4)</a> root directory path.  If omitted, unit tests will be excluded from the build.  To create this directory, download and unpack the <a href="https://github.com/unittest-cpp/unittest-cpp/archive/v1.4.tar.gz">UnitTest++ 1.4 code archive</a> from the <a href="https://github.com/unittest-cpp/unittest-cpp/tags">UnitTest++ download page</a>.
 -	<tt>make.sh</tt>:
 	-	Creates the <tt>Om.xcodeproj</tt> file in <tt>products/projects/xcode</tt>.
 	-	Takes the same arguments as <tt>premake.sh</tt>.
@@ -443,7 +440,6 @@ The following scripts have been tested with Visual Studio 2010 Express on Window
 	-	Takes the following arguments (in order):
 		- 	The <a href="http://icu-project.org">ICU (ICU4C 49.1.2)</a> root directory path.  To create this directory, download and unpack the <a href="http://download.icu-project.org/files/icu4c/49.1.2/icu4c-49_1_2-src.zip">ICU4C 49.1.2 code archive</a> from the <a href="http://site.icu-project.org/download">ICU download page</a>.  (Note that ICU4C 50.1.1 or 50.1.2 cannot be used due to build issues on Windows.)
 		-	The <a href="http://boost.org">Boost (1.53.0 or greater)</a> root directory path.  To create this directory, download and unpack the <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.zip/download">Boost 1.53.0 code archive</a> from the <a href="http://www.boost.org/users/download">Boost download page</a>.
-		-	<b>Optional:</b> The <a href="https://sourceforge.net/projects/unittest-cpp">UnitTest++ (1.4, patched with Visual Studio support as necessary)</a> root directory path.  If omitted, unit tests will be excluded from the build.  To create this directory, get the UnitTest++ 1.4 code via <a href="http://subversion.tigris.org">Subversion</a> checkout (described on the <a href="https://sourceforge.net/projects/unittest-cpp/develop">UnitTest++ developer page</a>) and apply the patch attached to the <a href="https://sourceforge.net/tracker/?func=detail&aid=3583690&group_id=158151&atid=806686">Visual Studio 2010 support ticket</a>.  The UnitTest++ root directory is the <tt>UnitTest++</tt> subdirectory of the Subversion checkout directory.
 -	<tt>make.bat</tt>:
 	-	Creates the <tt>Om.sln</tt> file in <tt>products/projects/vs</tt>.
 	-	Takes the same arguments as <tt>premake.bat</tt>.

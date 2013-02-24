@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,17 +28,17 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( NormalizeOperation ) {
+		BOOST_AUTO_TEST_SUITE( NormalizeOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{normalize}",
 					System::Get().Evaluate( "drop find {normalize} system" )
 				);
 			}
 
-			TEST( Simple ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"\xE1\x84\x80"
@@ -54,7 +54,7 @@ namespace Om {
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

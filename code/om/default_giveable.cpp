@@ -20,13 +20,14 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( DefaultGiveable ) {}
+	BOOST_AUTO_TEST_SUITE( DefaultGiveableTest )
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

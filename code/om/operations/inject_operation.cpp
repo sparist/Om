@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,17 +28,17 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( InjectOperation ) {
+		BOOST_AUTO_TEST_SUITE( InjectOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{inject}",
 					System::Get().Evaluate( "drop find {inject} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"{"
@@ -51,7 +51,7 @@ namespace Om {
 					System::Get().Evaluate( "inject {quote} {fill {a b{{B}} c}} {A} {C} {D} {E}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"{"
@@ -65,7 +65,7 @@ namespace Om {
 					System::Get().Evaluate( "inject {copy} {fill {a b{B} c d}} {A} {C} {D} {E}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"inject{drop}{"
 						"fill{"
@@ -80,8 +80,8 @@ namespace Om {
 				);
 			}
 
-			TEST( EmptyInjector ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EmptyInjectorTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"{"
@@ -95,36 +95,36 @@ namespace Om {
 				);
 			}
 
-			TEST( EmptyOperation ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EmptyOperationTest ) {
+				BOOST_CHECK_EQUAL(
 					"{}{A}{C}{D}{E}",
 					System::Get().Evaluate( "inject {quote} {} {A} {C} {D} {E}" )
 				);
 			}
 
-			TEST( FlushWithNoOperands ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( FlushWithNoOperandsTest ) {
+				BOOST_CHECK_EQUAL(
 					"inject",
 					System::Get().Evaluate( "inject }" )
 				);
 			}
 
-			TEST( FlushWithOneOperand ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( FlushWithOneOperandTest ) {
+				BOOST_CHECK_EQUAL(
 					"inject{quote}",
 					System::Get().Evaluate( "inject {quote} }" )
 				);
 			}
 
-			TEST( FlushWithTwoOperands ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( FlushWithTwoOperandsTest ) {
+				BOOST_CHECK_EQUAL(
 					"inject{quote}{copy}",
 					System::Get().Evaluate( "inject {quote} {copy} }" )
 				);
 			}
 
-			TEST( FlushWithMoreThanTwoOperands ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( FlushWithMoreThanTwoOperandsTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"inject{quote}{"
 						"fill{"
@@ -138,7 +138,7 @@ namespace Om {
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

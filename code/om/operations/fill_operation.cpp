@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,17 +28,17 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( FillOperation ) {
+		BOOST_AUTO_TEST_SUITE( FillOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{fill}",
 					System::Get().Evaluate( "drop find {fill} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"{"
 						"a{A}\n"
@@ -49,19 +49,19 @@ namespace Om {
 					System::Get().Evaluate( "fill{a b{B} c}{A}{C}{Unused}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{}{A}{B}",
 					System::Get().Evaluate( "fill{}{A}{B}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{Used}}{A}{B}",
 					System::Get().Evaluate( "fill{{Used}}{A}{B}" )
 				);
 			}
 			
-			TEST( EarlyTermination ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( EarlyTerminationTest ) {
+				BOOST_CHECK_EQUAL(
 					(
 						"fill{"
 						"a{A}\n"
@@ -72,13 +72,13 @@ namespace Om {
 					System::Get().Evaluate( "fill{a b{B} c}{A}}{C}{Unused}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"fill",
 					System::Get().Evaluate( "fill}" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

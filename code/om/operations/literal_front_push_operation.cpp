@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,48 +28,48 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( LiteralFrontPushOperation ) {
+		BOOST_AUTO_TEST_SUITE( LiteralFrontPushOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{->literal}",
 					System::Get().Evaluate( "drop find {->literal} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					"{1{2}34{5}6}",
 					System::Get().Evaluate( "->literal {1{2}3}{4{5}6}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{1{2}{5}6}",
 					System::Get().Evaluate( "->literal {1{2}}{{5}6}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{5}6}",
 					System::Get().Evaluate( "->literal {}{{5}6}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{5}6}",
 					System::Get().Evaluate( "->literal {{5}6}{}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{2}3}",
 					System::Get().Evaluate( "->literal quote{2}{3}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{2{3}}",
 					System::Get().Evaluate( "->literal{2}quote{3}" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

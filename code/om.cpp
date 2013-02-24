@@ -20,15 +20,20 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
-int main() {
+		#define BOOST_TEST_MODULE OmTest
+
+		#include <boost/test/included/unit_test.hpp>
+
+boost::unit_test::test_suite * init_unit_test_suite(
+	int const,
+	char * []
+) {
 	Om::System::Get().Initialize( "en_US.UTF-8" );
-	return(
-		UnitTest::RunAllTests()
-	);
+	return( 0 );
 }
 
 	#else

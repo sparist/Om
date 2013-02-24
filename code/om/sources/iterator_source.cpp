@@ -22,13 +22,13 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( IteratorSource ) {
+	BOOST_AUTO_TEST_SUITE( IteratorSourceTest )
 
 		namespace {
 
@@ -74,7 +74,7 @@ namespace Om {
 
 		}
 
-		TEST( General ) {
+		BOOST_AUTO_TEST_CASE( GeneralTest ) {
 			typedef Item * Iterator;
 			typedef Sources::IteratorSource<
 				Item,
@@ -91,62 +91,62 @@ namespace Om {
 			Item theSourceArrayEnd[] = { 0 };
 			Source const theSourceEnd( theSourceArrayEnd );
 
-			CHECK( theSourceEnd != theSource );
-			CHECK_EQUAL(
+			BOOST_CHECK( theSourceEnd != theSource );
+			BOOST_CHECK_EQUAL(
 				'0',
 				theSource->thisCodeUnit
 			);
 
 			++theSource;
-			CHECK( theSourceEnd != theSource );
-			CHECK_EQUAL(
+			BOOST_CHECK( theSourceEnd != theSource );
+			BOOST_CHECK_EQUAL(
 				'1',
 				( *theSource ).thisCodeUnit
 			);
 
 			Source theIterator = ++theSource;
-			CHECK( theSourceEnd != theSource );
-			CHECK_EQUAL(
+			BOOST_CHECK( theSourceEnd != theSource );
+			BOOST_CHECK_EQUAL(
 				'2',
 				theIterator->thisCodeUnit
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				'2',
 				theSource->thisCodeUnit
 			);
 
 			theIterator->thisCodeUnit = '3';
 			( *theSource ).thisCodeUnit = '4';
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				'4',
 				( *theIterator ).thisCodeUnit
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				'4',
 				theSource->thisCodeUnit
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				'0',
 				theSourceArray[ 0 ].thisCodeUnit
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				'1',
 				theSourceArray[ 1 ].thisCodeUnit
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				'4',
 				theSourceArray[ 2 ].thisCodeUnit
 			);
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				0,
 				theSourceArray[ 3 ].thisCodeUnit
 			);
 
 			++theSource;
-			CHECK( theSourceEnd == theSource );
+			BOOST_CHECK( theSourceEnd == theSource );
 		}
 
-		TEST( CopyMultipleItems ) {
+		BOOST_AUTO_TEST_CASE( CopyMultipleItemsTest ) {
 			char const theSourceNullTerminatedString[] = "01";
 			std::string theSinkString;
 			CopyWithIterators(
@@ -154,13 +154,13 @@ namespace Om {
 				theSinkString
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				theSourceNullTerminatedString,
 				theSinkString
 			);
 		}
 
-		TEST( CopySingleItem ) {
+		BOOST_AUTO_TEST_CASE( CopySingleItemTest ) {
 			char const theSourceNullTerminatedString[] = "0";
 			std::string theSinkString;
 			CopyWithIterators(
@@ -168,13 +168,13 @@ namespace Om {
 				theSinkString
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				theSourceNullTerminatedString,
 				theSinkString
 			);
 		}
 
-		TEST( CopyNoItems ) {
+		BOOST_AUTO_TEST_CASE( CopyNoItemsTest ) {
 			char const theSourceNullTerminatedString[] = "";
 			std::string theSinkString;
 			CopyWithIterators(
@@ -182,13 +182,13 @@ namespace Om {
 				theSinkString
 			);
 
-			CHECK_EQUAL(
+			BOOST_CHECK_EQUAL(
 				theSourceNullTerminatedString,
 				theSinkString
 			);
 		}
 
-	}
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,38 +28,38 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( OperandOperation ) {
+		BOOST_AUTO_TEST_SUITE( OperandOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{operand}",
 					System::Get().Evaluate( "drop find {operand} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					"{}",
 					System::Get().Evaluate( "operand{}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{}}",
 					System::Get().Evaluate( "operand{{}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{b}}",
 					System::Get().Evaluate( "operand{ a {b} {c} d }" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{{b}}",
 					System::Get().Evaluate( "drop swap operand copy{ a {b} {c} d }" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

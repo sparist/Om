@@ -24,16 +24,16 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
 namespace Om {
 
-	SUITE( Symbols ) {
+	BOOST_AUTO_TEST_SUITE( SymbolsTest )
 
-		TEST( Stringization ) {
-			CHECK_EQUAL(
+		BOOST_AUTO_TEST_CASE( StringizationTest ) {
+			BOOST_CHECK_EQUAL(
 				"{test}` \t\n",
 				(
 					Om_Symbols_OperandSymbol_GetStartString_()
@@ -47,7 +47,7 @@ namespace Om {
 			);
 		}
 
-	}
+	BOOST_AUTO_TEST_SUITE_END()
 
 }
 

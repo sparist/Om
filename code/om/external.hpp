@@ -28,7 +28,7 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#include "UnitTest++.h"
+		#include "boost/test/unit_test.hpp"
 
 	#endif
 

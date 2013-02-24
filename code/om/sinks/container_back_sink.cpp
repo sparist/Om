@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,9 +28,9 @@ namespace Om {
 
 	namespace Sinks {
 
-		SUITE( ContainerBackSink ) {
+		BOOST_AUTO_TEST_SUITE( ContainerBackSinkTest )
 
-			TEST( General ) {
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
 				std::string theSinkString( "01" );
 				ContainerBackSink<
 					char const,
@@ -38,23 +38,23 @@ namespace Om {
 				> theSink( theSinkString );
 
 				*theSink++ = '2';
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"012",
 					theSinkString
 				);
 				*++theSink = '3';
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"0123",
 					theSinkString
 				);
 				*theSink = '4';
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"01234",
 					theSinkString
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

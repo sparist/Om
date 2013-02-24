@@ -22,7 +22,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -30,48 +30,48 @@ namespace Om {
 
 	namespace Operations {
 
-		SUITE( BackPullSeparatorOperation ) {
+		BOOST_AUTO_TEST_SUITE( BackPullSeparatorOperationTest )
 
-			TEST( Definition ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+				BOOST_CHECK_EQUAL(
 					"{elements->separator}",
 					System::Get().Evaluate( "drop find {elements->separator} system" )
 				);
 			}
 
-			TEST( General ) {
-				CHECK_EQUAL(
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+				BOOST_CHECK_EQUAL(
 					"{ }{1{2}}",
 					System::Get().Evaluate( "elements->separator {1{2} }" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{}{1{2}}",
 					System::Get().Evaluate( "elements->separator {1{2}}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{}{1 2}",
 					System::Get().Evaluate( "elements->separator {1 2}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{}{}",
 					System::Get().Evaluate( "elements->separator {}" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"{ }{}",
 					System::Get().Evaluate( "elements->separator { }" )
 				);
 
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"elements->separator",
 					System::Get().Evaluate( "elements->separator" )
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 

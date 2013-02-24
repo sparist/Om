@@ -20,7 +20,7 @@
 
 		#if !defined( Om_Macros_Precompilation_ )
 
-			#include "UnitTest++.h"
+			#include "boost/test/unit_test.hpp"
 
 		#endif
 
@@ -28,20 +28,20 @@ namespace Om {
 
 	namespace Sinks {
 
-		SUITE( CodePointSink ) {
+		BOOST_AUTO_TEST_SUITE( CodePointSinkTest )
 
-			TEST( General ) {
+			BOOST_AUTO_TEST_CASE( GeneralTest ) {
 				typedef std::back_insert_iterator< std::string > Iterator;
 				std::string theString;
 				Iterator theIterator( theString );
 				CodePointSink< Iterator > theSink( theIterator );
 				theSink.Push( 510U );
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					"\xC7\xBE",
 					theString
 				);
 				theSink.Push( 65U );
-				CHECK_EQUAL(
+				BOOST_CHECK_EQUAL(
 					(
 						"\xC7\xBE"
 						"A"
@@ -50,7 +50,7 @@ namespace Om {
 				);
 			}
 
-		}
+		BOOST_AUTO_TEST_SUITE_END()
 
 	}
 
