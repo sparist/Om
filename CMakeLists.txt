@@ -150,11 +150,11 @@ if( MSVC )
 	find_library( BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 	find_library( BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 
-	find_library( BoostTestExecMonitorDebugLibrary boost_test_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostTestExecMonitorReleaseLibrary boost_test_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostTestExecMonitorDebugLibrary libboost_test_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostTestExecMonitorReleaseLibrary libboost_test_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 
-	find_library( BoostUnitTestFrameworkDebugLibrary boost_unit_test_framework-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostUnitTestFrameworkReleaseLibrary boost_unit_test_framework-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostUnitTestFrameworkDebugLibrary libboost_unit_test_framework-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library( BoostUnitTestFrameworkReleaseLibrary libboost_unit_test_framework-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 
 	find_library( BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 	find_library( BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
@@ -245,38 +245,38 @@ macro( om_target_link_libraries target )
 	target_link_libraries( ${target}
 		debug "${BoostLocaleDebugLibrary}"
 		optimized "${BoostLocaleReleaseLibrary}"
-	
+
 		debug "${BoostSystemDebugLibrary}"
 		optimized "${BoostSystemReleaseLibrary}"
-	
+
 		debug "${BoostThreadDebugLibrary}"
 		optimized "${BoostThreadReleaseLibrary}"
-	
+
 		debug "${BoostChronoDebugLibrary}"
 		optimized "${BoostChronoReleaseLibrary}"
 	)
-	
+
 	target_link_libraries( ${target}
 		"${IcuDataLibrary}"
-	
+
 		debug "${IcuI18nDebugLibrary}"
 		optimized "${IcuI18nReleaseLibrary}"
-	
+
 		debug "${IcuIoDebugLibrary}"
 		optimized "${IcuIoReleaseLibrary}"
-	
+
 		debug "${IcuLeDebugLibrary}"
 		optimized "${IcuLeReleaseLibrary}"
-	
+
 		debug "${IcuLxDebugLibrary}"
 		optimized "${IcuLxReleaseLibrary}"
-	
+
 		debug "${IcuTestDebugLibrary}"
 		optimized "${IcuTestReleaseLibrary}"
-	
+
 		debug "${IcuTuDebugLibrary}"
 		optimized "${IcuTuReleaseLibrary}"
-	
+
 		debug "${IcuUcDebugLibrary}"
 		optimized "${IcuUcReleaseLibrary}"
 	)
@@ -289,7 +289,7 @@ macro( om_target_link_libraries target )
 			COMMAND "${CMAKE_COMMAND}" -E copy
 				"${Icu}/bin/testplug.dll"
 				"$<TARGET_FILE_DIR:${target}>"
-	
+
 			COMMAND "${CMAKE_COMMAND}" -E copy
 				"${Icu}/bin/icuin49.dll"
 				"$<TARGET_FILE_DIR:${target}>"
@@ -311,7 +311,7 @@ macro( om_target_link_libraries target )
 			COMMAND "${CMAKE_COMMAND}" -E copy
 				"${Icu}/bin/icuuc49.dll"
 				"$<TARGET_FILE_DIR:${target}>"
-	
+
 			COMMAND "${CMAKE_COMMAND}" -E copy
 				"${Icu}/bin/icuin49d.dll"
 				"$<TARGET_FILE_DIR:${target}>"
@@ -333,7 +333,7 @@ macro( om_target_link_libraries target )
 			COMMAND "${CMAKE_COMMAND}" -E copy
 				"${Icu}/bin/icuuc49d.dll"
 				"$<TARGET_FILE_DIR:${target}>"
-	
+
 			VERBATIM
 		)
 	else()
@@ -346,10 +346,15 @@ macro( om_target_link_libraries target )
 	endif()
 endmacro()
 
-# Ignore Boost.Test warnings
-set_target_properties( "Om.Test" PROPERTIES
-	COMPILE_FLAGS "-DOm_Macros_Test_ -Wno-format-nonliteral -Wno-unneeded-internal-declaration -Wno-unused-variable"
-)
+if( MSVC )
+	set_target_properties( "Om.Test" PROPERTIES
+		COMPILE_FLAGS "-DOm_Macros_Test_ /EHa"
+	)
+else()
+	set_target_properties( "Om.Test" PROPERTIES
+		COMPILE_FLAGS "-DOm_Macros_Test_ -Wno-format-nonliteral -Wno-unneeded-internal-declaration -Wno-unused-variable"
+	)
+endif()
 
 target_link_libraries( "Om.Test"
 	debug "${BoostPrgExecMonitorDebugLibrary}"

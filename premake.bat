@@ -21,7 +21,7 @@ cd "%OldDirectory%"
 cd %2
 set Boost=%CD%
 call .\bootstrap --with-icu="%Icu%" --prefix="%Boost%\build"
-call .\b2 boost.locale.icu=on boost.locale.std=off boost.locale.iconv=off -sICU_PATH="%Icu%" --with-chrono --with-locale --with-system --with-thread --with-test link=static install --prefix="%Boost%\build"
+call .\b2 boost.locale.icu=on boost.locale.std=off -sICU_PATH="%Icu%" --with-chrono --with-locale --with-system --with-thread --with-test link=static install --prefix="%Boost%\build"
 cd "%OldDirectory%"
 
 exit /b 0
