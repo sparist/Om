@@ -169,28 +169,29 @@ if( MSVC )
 	find_library( BoostThreadDebugLibrary libboost_thread-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 	find_library( BoostThreadReleaseLibrary libboost_thread-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 
-	find_library( IcuDataLibrary icudt "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuDataDebugLibrary sicudtd "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuDataReleaseLibrary sicudt "${Icu}/lib" NO_DEFAULT_PATH )
 
-	find_library( IcuI18nDebugLibrary icuind "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuI18nReleaseLibrary icuin "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuI18nDebugLibrary sicuind "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuI18nReleaseLibrary sicuin "${Icu}/lib" NO_DEFAULT_PATH )
 
-	find_library( IcuIoDebugLibrary icuiod "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuIoReleaseLibrary icuio "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuIoDebugLibrary sicuiod "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuIoReleaseLibrary sicuio "${Icu}/lib" NO_DEFAULT_PATH )
 
-	find_library( IcuLeDebugLibrary iculed "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuLeReleaseLibrary icule "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuLeDebugLibrary siculed "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuLeReleaseLibrary sicule "${Icu}/lib" NO_DEFAULT_PATH )
 
-	find_library( IcuLxDebugLibrary iculxd "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuLxReleaseLibrary iculx "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuLxDebugLibrary siculxd "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuLxReleaseLibrary siculx "${Icu}/lib" NO_DEFAULT_PATH )
 
-	find_library( IcuTestDebugLibrary icutestd "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuTestReleaseLibrary icutest "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuTestDebugLibrary sicutestd "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuTestReleaseLibrary sicutest "${Icu}/lib" NO_DEFAULT_PATH )
 
-	find_library( IcuTuDebugLibrary icutud "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuTuReleaseLibrary icutu "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuTuDebugLibrary sicutud "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuTuReleaseLibrary sicutu "${Icu}/lib" NO_DEFAULT_PATH )
 
-	find_library( IcuUcDebugLibrary icuucd "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuUcReleaseLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuUcDebugLibrary sicuucd "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuUcReleaseLibrary sicuuc "${Icu}/lib" NO_DEFAULT_PATH )
 else()
 	add_custom_target( "Om.Documentation"
 		COMMAND mkdir -p products/documentation/doxygen
@@ -218,7 +219,8 @@ else()
 	find_library( BoostThreadReleaseLibrary boost_thread "${Boost}/lib" NO_DEFAULT_PATH )
 	set( BoostThreadDebugLibrary ${BoostThreadReleaseLibrary} )
 
-	find_library( IcuDataLibrary icudata "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library( IcuDataReleaseLibrary icudata "${Icu}/lib" NO_DEFAULT_PATH )
+	set( IcuDataDebugLibrary ${IcuDataReleaseLibrary} )
 
 	find_library( IcuI18nReleaseLibrary icui18n "${Icu}/lib" NO_DEFAULT_PATH )
 	set( IcuI18nDebugLibrary ${IcuI18nReleaseLibrary} )
@@ -258,7 +260,8 @@ macro( om_target_link_libraries target )
 	)
 
 	target_link_libraries( ${target}
-		"${IcuDataLibrary}"
+		debug "${IcuDataDebugLibrary}"
+		optimized "${IcuDataReleaseLibrary}"
 
 		debug "${IcuI18nDebugLibrary}"
 		optimized "${IcuI18nReleaseLibrary}"
@@ -283,60 +286,7 @@ macro( om_target_link_libraries target )
 	)
 
 	if( MSVC )
-		add_custom_command( TARGET ${target} POST_BUILD
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icudt49.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/testplug.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icuin49.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icuio49.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icule49.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/iculx49.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icutest49.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icutu49.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icuuc49.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icuin49d.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icuio49d.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icule49d.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/iculx49d.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icutest49d.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icutu49d.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-			COMMAND "${CMAKE_COMMAND}" -E copy
-				"${Icu}/bin/icuuc49d.dll"
-				"$<TARGET_FILE_DIR:${target}>"
-
-			VERBATIM
-		)
+		add_definitions( -DU_STATIC_IMPLEMENTATION=1 )
 	else()
 		add_definitions( -DOm_Macros_Precompilation_ )
 
@@ -347,15 +297,12 @@ macro( om_target_link_libraries target )
 	endif()
 endmacro()
 
+set( OmTestCompileFlags "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API" )
 if( MSVC )
-	set_target_properties( "Om.Test" PROPERTIES
-		COMPILE_FLAGS "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API"
-	)
 else()
-	set_target_properties( "Om.Test" PROPERTIES
-		COMPILE_FLAGS "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API -Wno-format-nonliteral -Wno-unneeded-internal-declaration -Wno-unused-variable"
-	)
+	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-format-nonliteral -Wno-unneeded-internal-declaration -Wno-unused-variable" )
 endif()
+set_target_properties( "Om.Test" PROPERTIES COMPILE_FLAGS "${OmTestCompileFlags}" )
 
 target_link_libraries( "Om.Test"
 	debug "${BoostPrgExecMonitorDebugLibrary}"
