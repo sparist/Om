@@ -35,8 +35,8 @@ var NAVTREE =
       [ "Projects", "using__.html#using__projects__", [
         [ "Targets", "using__.html#using__projects__targets__", [
           [ "Om", "using__.html#using__projects__targets__om__", null ],
-          [ "Om.Documentation", "using__.html#using__projects__targets__om_documentation__", null ],
-          [ "Om.Test", "using__.html#using__projects__targets__om_test__", null ]
+          [ "Om.Test", "using__.html#using__projects__targets__om_test__", null ],
+          [ "Om.Documentation", "using__.html#using__projects__targets__om_documentation__", null ]
         ] ],
         [ "Platforms", "using__.html#using__projects__platforms__", [
           [ "Xcode", "using__.html#using__projects__platforms__xcode__", null ],
