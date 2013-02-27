@@ -5,16 +5,16 @@ for %%x in (%*) do Set /A argC+=1
 if %argC% lss 2 goto Usage
 if %argc% gtr 2 goto Usage
 
-set OldDirectory=%CD%
+set Directory=%CD%
 call "%VS100COMNTOOLS%..\..\VC\vcvarsall.bat"
 
 cd %1
 set Icu=%CD%
-cd "%OldDirectory%"
+cd "%Directory%"
 
 cd %2
 set Boost=%CD%
-cd "%OldDirectory%"
+cd "%Directory%"
 
 mkdir products
 cd products
@@ -22,8 +22,8 @@ mkdir projects
 cd projects
 mkdir vs
 cd vs
-cmake -G "Visual Studio 10" -D Icu:PATH="%Icu%" -D Boost:PATH="%Boost%\build" ..\..\..
-cd "%OldDirectory%"
+cmake -G "Visual Studio 10" -D Icu:PATH="%Icu%\build" -D Boost:PATH="%Boost%\build" ..\..\..
+cd "%Directory%"
 exit /b 0
 
 :Usage
