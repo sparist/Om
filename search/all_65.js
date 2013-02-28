@@ -47,7 +47,7 @@ var searchData=
   ['evaluator',['Evaluator',['../class_om_1_1_evaluator.html',1,'Om']]],
   ['evaluator_2ecpp',['evaluator.cpp',['../evaluator_8cpp.html',1,'']]],
   ['evaluator_2ehpp',['evaluator.hpp',['../evaluator_8hpp.html',1,'']]],
-  ['examples',['Examples',['../examples__.html',1,'']]],
+  ['examples',['Examples',['../examples__.html',1,'language__']]],
   ['expression',['Expression',['../class_om_1_1_expression.html#a5b66c27156fa622941d21cae6b503ae0',1,'Om::Expression']]],
   ['expression',['Expression',['../class_om_1_1_expression.html',1,'Om']]],
   ['expression_2ecpp',['expression.cpp',['../expression_8cpp.html',1,'']]],

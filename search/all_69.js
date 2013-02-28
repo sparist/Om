@@ -1,7 +1,6 @@
 var searchData=
 [
   ['incrementownercount',['IncrementOwnerCount',['../class_om_1_1_shareable.html#ae92533c2c8d7999bb310aac6ca3e86e3',1,'Om::Shareable']]],
-  ['introduction',['Introduction',['../index.html',1,'']]],
   ['initialize',['Initialize',['../class_om_1_1_system.html#a03f046dac47073768dbdc97d8e211bda',1,'Om::System']]],
   ['inject_5foperation_2ecpp',['inject_operation.cpp',['../inject__operation_8cpp.html',1,'']]],
   ['inject_5foperation_2edox',['inject_operation.dox',['../inject__operation_8dox.html',1,'']]],

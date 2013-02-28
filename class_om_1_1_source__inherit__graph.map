@@ -1,19 +1,19 @@
 <map id="Om::Source&lt; ThisItem &gt;" name="Om::Source&lt; ThisItem &gt;">
-<area shape="rect" id="node3" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem\l const, StreamSource\&lt;\l ThisItem \&gt; \&gt;" alt="" coords="229,5,387,61"/>
-<area shape="rect" id="node7" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l ContainerBackSource\&lt;\l ThisItem, ThisContainer \&gt; \&gt;" alt="" coords="219,85,397,141"/>
-<area shape="rect" id="node11" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l ContainerFrontSource\l\&lt; ThisItem, ThisContainer \&gt; \&gt;" alt="" coords="215,165,401,221"/>
-<area shape="rect" id="node15" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l EmptySource\&lt; ThisItem \&gt; \&gt;" alt="" coords="217,246,399,287"/>
-<area shape="rect" id="node19" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l IteratorPairSource\&lt; ThisItem,\l ThisIterator \&gt; \&gt;" alt="" coords="216,312,400,368"/>
-<area shape="rect" id="node27" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l IteratorSource\&lt; ThisItem,\l ThisIterator \&gt; \&gt;" alt="" coords="227,392,389,448"/>
-<area shape="rect" id="node31" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l SingletonSource\&lt; ThisItem \&gt; \&gt;" alt="" coords="211,473,405,514"/>
-<area shape="rect" id="node35" href="$class_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source." alt="" coords="218,538,398,579"/>
-<area shape="rect" id="node5" href="$class_om_1_1_sources_1_1_stream_source.html" title="A Source adapter for an input stream." alt="" coords="470,13,650,54"/>
-<area shape="rect" id="node9" href="$class_om_1_1_sources_1_1_container_back_source.html" title="A Source adapter for a container; pulls items from the back." alt="" coords="453,93,667,134"/>
-<area shape="rect" id="node13" href="$class_om_1_1_sources_1_1_container_front_source.html" title="A Source adapter for a container; pulls items from the front." alt="" coords="453,173,667,214"/>
-<area shape="rect" id="node17" href="$class_om_1_1_sources_1_1_empty_source.html" title="An empty Source." alt="" coords="471,246,649,287"/>
-<area shape="rect" id="node21" href="$class_om_1_1_sources_1_1_iterator_pair_source.html" title="A Source adapter for a start and end input iterator pair." alt="" coords="462,319,658,361"/>
-<area shape="rect" id="node23" href="$class_om_1_1_sources_1_1_collection_back_source.html" title="A range over a collection, starting from the back." alt="" coords="715,286,911,327"/>
-<area shape="rect" id="node25" href="$class_om_1_1_sources_1_1_collection_front_source.html" title="A range over a collection, starting from the front." alt="" coords="715,351,911,393"/>
-<area shape="rect" id="node29" href="$class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal&#45;terminated input iterator." alt="" coords="471,399,649,441"/>
-<area shape="rect" id="node33" href="$class_om_1_1_sources_1_1_singleton_source.html" title="A single item Source." alt="" coords="465,473,655,514"/>
+<area shape="rect" id="node2" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem\l const, StreamSource\&lt;\l ThisItem \&gt; \&gt;" alt="" coords="241,5,409,65"/>
+<area shape="rect" id="node4" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l ContainerBackSource\&lt;\l ThisItem, ThisContainer \&gt; \&gt;" alt="" coords="231,89,420,149"/>
+<area shape="rect" id="node6" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l ContainerFrontSource\l\&lt; ThisItem, ThisContainer \&gt; \&gt;" alt="" coords="227,173,424,233"/>
+<area shape="rect" id="node8" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l EmptySource\&lt; ThisItem \&gt; \&gt;" alt="" coords="230,257,421,301"/>
+<area shape="rect" id="node10" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l IteratorPairSource\&lt; ThisItem,\l ThisIterator \&gt; \&gt;" alt="" coords="226,325,425,385"/>
+<area shape="rect" id="node14" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l IteratorSource\&lt; ThisItem,\l ThisIterator \&gt; \&gt;" alt="" coords="238,409,413,469"/>
+<area shape="rect" id="node16" href="$class_om_1_1_sources_1_1_default_source.html" title="DefaultSource\&lt; ThisItem,\l SingletonSource\&lt; ThisItem \&gt; \&gt;" alt="" coords="221,493,429,537"/>
+<area shape="rect" id="node18" href="$class_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source." alt="" coords="230,561,421,605"/>
+<area shape="rect" id="node3" href="$class_om_1_1_sources_1_1_stream_source.html" title="A Source adapter for an input stream." alt="" coords="496,13,688,57"/>
+<area shape="rect" id="node5" href="$class_om_1_1_sources_1_1_container_back_source.html" title="A Source adapter for a container; pulls items from the back." alt="" coords="478,97,706,141"/>
+<area shape="rect" id="node7" href="$class_om_1_1_sources_1_1_container_front_source.html" title="A Source adapter for a container; pulls items from the front." alt="" coords="478,181,706,225"/>
+<area shape="rect" id="node9" href="$class_om_1_1_sources_1_1_empty_source.html" title="An empty Source." alt="" coords="499,257,685,301"/>
+<area shape="rect" id="node11" href="$class_om_1_1_sources_1_1_iterator_pair_source.html" title="A Source adapter for a start and end input iterator pair." alt="" coords="486,333,698,377"/>
+<area shape="rect" id="node12" href="$class_om_1_1_sources_1_1_collection_back_source.html" title="A range over a collection, starting from the back." alt="" coords="755,299,967,343"/>
+<area shape="rect" id="node13" href="$class_om_1_1_sources_1_1_collection_front_source.html" title="A range over a collection, starting from the front." alt="" coords="755,367,967,411"/>
+<area shape="rect" id="node15" href="$class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal&#45;terminated input iterator." alt="" coords="496,417,688,461"/>
+<area shape="rect" id="node17" href="$class_om_1_1_sources_1_1_singleton_source.html" title="A single item Source." alt="" coords="490,493,694,537"/>
 </map>

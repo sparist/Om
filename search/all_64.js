@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data',['Data',['../data__.html',1,'']]],
+  ['data',['Data',['../data__.html',1,'language__']]],
   ['decode',['Decode',['../class_om_1_1_operator.html#ac9aa0a32ff10989dc60f4c3c592ccd04',1,'Om::Operator']]],
   ['decode_5foperation_2ecpp',['decode_operation.cpp',['../decode__operation_8cpp.html',1,'']]],
   ['decode_5foperation_2edox',['decode_operation.dox',['../decode__operation_8dox.html',1,'']]],

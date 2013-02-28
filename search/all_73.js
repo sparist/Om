@@ -76,7 +76,7 @@ var searchData=
   ['swapoperation',['SwapOperation',['../class_om_1_1_operations_1_1_swap_operation.html',1,'Om::Operations']]],
   ['symbols_2ecpp',['symbols.cpp',['../symbols_8cpp.html',1,'']]],
   ['symbols_2ehpp',['symbols.hpp',['../symbols_8hpp.html',1,'']]],
-  ['syntax',['Syntax',['../syntax__.html',1,'']]],
+  ['syntax',['Syntax',['../syntax__.html',1,'language__']]],
   ['system',['System',['../class_om_1_1_system.html#ad4a30a1f43df54e98137c7761b29f343',1,'Om::System::System()'],['../class_om_1_1_system.html#af13f2728ce6ccfdca51ed94bf24069bd',1,'Om::System::System(System const &amp;)']]],
   ['system',['System',['../class_om_1_1_system.html',1,'Om']]],
   ['system_2ecpp',['system.cpp',['../system_8cpp.html',1,'']]],

@@ -70,7 +70,7 @@ var searchData=
   ['fronttakeoperand',['FrontTakeOperand',['../class_om_1_1_expression.html#a6bd69d91d7abe45d32946c048e2441ef',1,'Om::Expression::FrontTakeOperand()'],['../class_om_1_1_form.html#a1c4000e3fb466de13e97c4906df80fa0',1,'Om::Form::FrontTakeOperand()']]],
   ['fronttakeoperator',['FrontTakeOperator',['../class_om_1_1_expression.html#ad3e11702300b8da86c369bda9f3b6d90',1,'Om::Expression']]],
   ['fronttakequotedqueue',['FrontTakeQuotedQueue',['../class_om_1_1_expression.html#adec3d38be5c60322440b68f72bcb8f47',1,'Om::Expression::FrontTakeQuotedQueue()'],['../class_om_1_1_form.html#a12caa261b16fa5a84eee6fc1132cba23',1,'Om::Form::FrontTakeQuotedQueue()']]],
-  ['functions',['Functions',['../functions__.html',1,'']]],
+  ['functions',['Functions',['../functions__.html',1,'language__']]],
   ['forms_2d_3e',['forms-&gt;',['../group__om____operations____back__pull__form__operation____.html',1,'']]],
   ['fill',['fill',['../group__om____operations____fill__operation____.html',1,'']]],
   ['find',['find',['../group__om____operations____find__operation____.html',1,'']]]
