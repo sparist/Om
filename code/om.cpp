@@ -35,6 +35,7 @@ public:
 BOOST_GLOBAL_FIXTURE( OmFixture );
 
 bool init_unit_test() {
+	boost::debug::detect_memory_leaks(false);
 	return( true );
 }
 
