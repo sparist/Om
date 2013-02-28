@@ -2,7 +2,12 @@ cmake_minimum_required( VERSION 2.8.10 )
 
 project( Om )
 
+set( Boost "" CACHE PATH "The Boost library build directory path" )
+set( Icu "" CACHE PATH "The ICU library build directory path" )
+
 set( CMAKE_SUPPRESS_REGENERATION TRUE )
+
+set( OmTestCompileFlags "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API" )
 
 if( MSVC )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3" )
@@ -13,6 +18,10 @@ if( MSVC )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_CRT_SECURE_NO_WARNINGS" )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_SCL_SECURE_NO_WARNINGS" )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHa" )
+
+	add_definitions( -DU_STATIC_IMPLEMENTATION=1 )
+
+	include_directories( SYSTEM "${Boost}/include/boost-1_53" )
 else()
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall" )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-align" )
@@ -32,63 +41,39 @@ else()
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpointer-arith" )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wredundant-decls" )
 	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros" )
+
+	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-format-nonliteral" )
+	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-unneeded-internal-declaration" )
+	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-unused-variable" )
+
+	add_definitions( -DOm_Macros_Precompilation_ )
+
+	include_directories( SYSTEM "${Boost}/include" )
 endif()
 
-set( Boost "" CACHE PATH "The Boost library build directory path" )
-set( Icu "" CACHE PATH "The ICU library build directory path" )
+include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" )
 
-file( WRITE "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#if !defined( Om_Internal_ )\n" )
-file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
-file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#define Om_Internal_\n" )
-file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
+file( GLOB_RECURSE new_list RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/code/*.*" )
+foreach( file_path ${new_list} )
+	get_filename_component( dir_path "${file_path}" PATH )
+	set( dir_list ${dir_list} "${dir_path}" )
+endforeach()
+list( REMOVE_DUPLICATES dir_list )
+foreach( OmSourceFolder ${dir_list} )
+	string( REPLACE "/" "\\" OmSourceGroup "${OmSourceFolder}" )
 
-aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/" Cpp_Code )
-aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/" Cpp_Code_Om )
-aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/" Cpp_Code_Om_Operations )
-aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/" Cpp_Code_Om_Sinks )
-aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/" Cpp_Code_Om_Sources )
-aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/" Cpp_Code_Om_Symbols )
+	aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}" Cpp_Code )
+	source_group( "Source Files\\${OmSourceGroup}" FILES ${Cpp_Code} )
+	list( APPEND Cpp ${Cpp_Code} )
 
-file( GLOB Hpp_Code "${CMAKE_CURRENT_SOURCE_DIR}/code/*.hpp" )
-file( GLOB Hpp_Code_Om "${CMAKE_CURRENT_SOURCE_DIR}/code/om/*.hpp" )
-file( GLOB Hpp_Code_Om_Operations "${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/*.hpp" )
-file( GLOB Hpp_Code_Om_Sinks "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/*.hpp" )
-file( GLOB Hpp_Code_Om_Sources "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/*.hpp" )
-file( GLOB Hpp_Code_Om_Symbols "${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.hpp" )
+	file( GLOB Hpp_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.hpp" )
+	source_group( "Header Files\\${OmSourceGroup}" FILES ${Hpp_Code} )
+	list( APPEND Hpp ${Hpp_Code} )
 
-file( GLOB Dox_Code "${CMAKE_CURRENT_SOURCE_DIR}/code/*.dox" )
-file( GLOB Dox_Code_Om "${CMAKE_CURRENT_SOURCE_DIR}/code/om/*.dox" )
-file( GLOB Dox_Code_Om_Operations "${CMAKE_CURRENT_SOURCE_DIR}/code/om/operations/*.dox" )
-file( GLOB Dox_Code_Om_Sinks "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sinks/*.dox" )
-file( GLOB Dox_Code_Om_Sources "${CMAKE_CURRENT_SOURCE_DIR}/code/om/sources/*.dox" )
-file( GLOB Dox_Code_Om_Symbols "${CMAKE_CURRENT_SOURCE_DIR}/code/om/symbols/*.dox" )
-
-set( Hpp
-	${Hpp_Code}
-	${Hpp_Code_Om}
-	${Hpp_Code_Om_Operations}
-	${Hpp_Code_Om_Sinks}
-	${Hpp_Code_Om_Sources}
-	${Hpp_Code_Om_Symbols}
-)
-
-set( Cpp
-	${Cpp_Code}
-	${Cpp_Code_Om}
-	${Cpp_Code_Om_Operations}
-	${Cpp_Code_Om_Sinks}
-	${Cpp_Code_Om_Sources}
-	${Cpp_Code_Om_Symbols}
-)
-
-set( Dox
-	${Dox_Code}
-	${Dox_Code_Om}
-	${Dox_Code_Om_Operations}
-	${Dox_Code_Om_Sinks}
-	${Dox_Code_Om_Sources}
-	${Dox_Code_Om_Symbols}
-)
+	file( GLOB Dox_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.dox" )
+	source_group( "Doxygen Files\\${OmSourceGroup}" FILES ${Dox_Code} )
+	list( APPEND Dox ${Dox_Code} )
+endforeach()
 
 set( Code
 	${Hpp}
@@ -96,43 +81,16 @@ set( Code
 	${Dox}
 )
 
+file( WRITE "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#if !defined( Om_Internal_ )\n" )
+file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
+file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#define Om_Internal_\n" )
+file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
 foreach( header_path ${Hpp} )
 	string( REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/code/" "" header "${header_path}" )
 	file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#include \"${header}\"\n" )
 endforeach()
 file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
 file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#endif\n" )
-
-set( PrecompiledHeader code/om/external.hpp )
-set( PrecompiledSource code/om/external.cpp )
-
-source_group( "Source Files" FILES ${Cpp_Code} )
-source_group( "Source Files\\om" FILES ${Cpp_Code_Om} )
-source_group( "Source Files\\om\\operations" FILES ${Cpp_Code_Om_Operations} )
-source_group( "Source Files\\om\\sinks" FILES ${Cpp_Code_Om_Sinks} )
-source_group( "Source Files\\om\\sources" FILES ${Cpp_Code_Om_Sources} )
-source_group( "Source Files\\om\\symbols" FILES ${Cpp_Code_Om_Symbols} )
-
-source_group( "Header Files" FILES ${Hpp_Code} )
-source_group( "Header Files\\om" FILES ${Hpp_Code_Om} )
-source_group( "Header Files\\om\\operations" FILES ${Hpp_Code_Om_Operations} )
-source_group( "Header Files\\om\\sinks" FILES ${Hpp_Code_Om_Sinks} )
-source_group( "Header Files\\om\\sources" FILES ${Hpp_Code_Om_Sources} )
-source_group( "Header Files\\om\\symbols" FILES ${Hpp_Code_Om_Symbols} )
-
-source_group( "Doxygen Files" FILES ${Dox_Code} )
-source_group( "Doxygen Files\\om" FILES ${Dox_Code_Om} )
-source_group( "Doxygen Files\\om\\operations" FILES ${Dox_Code_Om_Operations} )
-source_group( "Doxygen Files\\om\\sinks" FILES ${Dox_Code_Om_Sinks} )
-source_group( "Doxygen Files\\om\\sources" FILES ${Dox_Code_Om_Sources} )
-source_group( "Doxygen Files\\om\\symbols" FILES ${Dox_Code_Om_Symbols} )
-
-if( MSVC )
-	include_directories( SYSTEM "${Boost}/include/boost-1_53" )
-else()
-	include_directories( SYSTEM "${Boost}/include" )
-endif()
-include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" )
 
 add_executable( "Om" ${Code} )
 add_executable( "Om.Test" ${Cpp} )
@@ -244,7 +202,7 @@ else()
 	set( IcuUcDebugLibrary ${IcuUcReleaseLibrary} )
 endif()
 
-macro( om_target_link_libraries target )
+function( om_target_link_libraries target )
 	target_link_libraries( ${target}
 		debug "${BoostLocaleDebugLibrary}"
 		optimized "${BoostLocaleReleaseLibrary}"
@@ -285,24 +243,16 @@ macro( om_target_link_libraries target )
 		optimized "${IcuUcReleaseLibrary}"
 	)
 
-	if( MSVC )
-		add_definitions( -DU_STATIC_IMPLEMENTATION=1 )
-	else()
-		add_definitions( -DOm_Macros_Precompilation_ )
-
+	if( NOT MSVC )
 		set_target_properties( ${target} PROPERTIES
-			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/${PrecompiledHeader}"
+			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/code/om/external.hpp"
 			XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
 		)
 	endif()
-endmacro()
+endfunction()
 
-set( OmTestCompileFlags "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API" )
-if( MSVC )
-else()
-	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-format-nonliteral -Wno-unneeded-internal-declaration -Wno-unused-variable" )
-endif()
-set_target_properties( "Om.Test" PROPERTIES COMPILE_FLAGS "${OmTestCompileFlags}" )
+om_target_link_libraries( "Om" )
+om_target_link_libraries( "Om.Test" )
 
 target_link_libraries( "Om.Test"
 	debug "${BoostPrgExecMonitorDebugLibrary}"
@@ -315,8 +265,7 @@ target_link_libraries( "Om.Test"
 	optimized "${BoostUnitTestFrameworkReleaseLibrary}"
 )
 
-om_target_link_libraries( "Om" )
-om_target_link_libraries( "Om.Test" )
+set_target_properties( "Om.Test" PROPERTIES COMPILE_FLAGS "${OmTestCompileFlags}" )
 
 enable_testing()
 add_test( "Om.Test.Build" "${CMAKE_COMMAND}" --build "${CMAKE_BINARY_DIR}" --target "Om.Test" )
