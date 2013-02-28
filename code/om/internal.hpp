@@ -2,7 +2,6 @@
 
 	#define Om_Internal_
 
-	#include "om.hpp"
 	#include "om/atom.hpp"
 	#include "om/code_point.hpp"
 	#include "om/copy.hpp"
@@ -132,5 +131,6 @@
 	#include "om/symbols/operand_symbol.hpp"
 	#include "om/symbols/operator_symbol.hpp"
 	#include "om/symbols/separator_symbol.hpp"
+	#include "om.hpp"
 
 #endif

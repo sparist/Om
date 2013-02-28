@@ -21,91 +21,6 @@ if( MSVC )
 
 	add_definitions( -DU_STATIC_IMPLEMENTATION=1 )
 
-	include_directories( SYSTEM "${Boost}/include/boost-1_53" )
-else()
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-align" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-qual" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wdisabled-optimization" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wempty-body" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wfloat-equal" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wformat=2" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winit-self" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winline" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winvalid-pch" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-field-initializers" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-format-attribute" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverlength-strings" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpacked" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpointer-arith" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wredundant-decls" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros" )
-
-	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-format-nonliteral" )
-	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-unneeded-internal-declaration" )
-	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-unused-variable" )
-
-	add_definitions( -DOm_Macros_Precompilation_ )
-
-	include_directories( SYSTEM "${Boost}/include" )
-endif()
-
-include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" )
-
-file( GLOB_RECURSE new_list RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/code/*.*" )
-foreach( file_path ${new_list} )
-	get_filename_component( dir_path "${file_path}" PATH )
-	set( dir_list ${dir_list} "${dir_path}" )
-endforeach()
-list( REMOVE_DUPLICATES dir_list )
-foreach( OmSourceFolder ${dir_list} )
-	string( REPLACE "/" "\\" OmSourceGroup "${OmSourceFolder}" )
-
-	aux_source_directory( "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}" Cpp_Code )
-	source_group( "Source Files\\${OmSourceGroup}" FILES ${Cpp_Code} )
-	list( APPEND Cpp ${Cpp_Code} )
-
-	file( GLOB Hpp_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.hpp" )
-	source_group( "Header Files\\${OmSourceGroup}" FILES ${Hpp_Code} )
-	list( APPEND Hpp ${Hpp_Code} )
-
-	file( GLOB Dox_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.dox" )
-	source_group( "Doxygen Files\\${OmSourceGroup}" FILES ${Dox_Code} )
-	list( APPEND Dox ${Dox_Code} )
-endforeach()
-
-set( Code
-	${Hpp}
-	${Cpp}
-	${Dox}
-)
-
-file( WRITE "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#if !defined( Om_Internal_ )\n" )
-file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
-file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#define Om_Internal_\n" )
-file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
-foreach( header_path ${Hpp} )
-	string( REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/code/" "" header "${header_path}" )
-	file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#include \"${header}\"\n" )
-endforeach()
-file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
-file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#endif\n" )
-
-add_executable( "Om" ${Code} )
-add_executable( "Om.Test" ${Cpp} )
-
-if( MSVC )
-	add_custom_target( "Om.Documentation"
-		COMMAND if not exist products mkdir products
-		COMMAND if not exist products\\documentation mkdir products\\documentation
-		COMMAND if not exist products\\documentation\\doxygen mkdir products\\documentation\\doxygen
-		COMMAND ( type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -
-		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-		VERBATIM
-	)
-
 	find_library( BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 	find_library( BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
 
@@ -150,14 +65,33 @@ if( MSVC )
 
 	find_library( IcuUcDebugLibrary sicuucd "${Icu}/lib" NO_DEFAULT_PATH )
 	find_library( IcuUcReleaseLibrary sicuuc "${Icu}/lib" NO_DEFAULT_PATH )
+
+	include_directories( SYSTEM "${Boost}/include/boost-1_53" )
 else()
-	add_custom_target( "Om.Documentation"
-		COMMAND mkdir -p products/documentation/doxygen
-		COMMAND doxygen doxygen/Doxyfile
-		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-		VERBATIM
-	)
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-align" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-qual" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wdisabled-optimization" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wempty-body" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wfloat-equal" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wformat=2" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winit-self" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winline" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winvalid-pch" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-field-initializers" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-format-attribute" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverlength-strings" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpacked" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpointer-arith" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wredundant-decls" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros" )
+
+	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-format-nonliteral" )
+	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-unneeded-internal-declaration" )
+	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-unused-variable" )
+
+	add_definitions( -DOm_Macros_Precompilation_ )
 
 	find_library( BoostPrgExecMonitorReleaseLibrary boost_prg_exec_monitor "${Boost}/lib" NO_DEFAULT_PATH )
 	set( BoostPrgExecMonitorDebugLibrary ${BoostPrgExecMonitorReleaseLibrary} )
@@ -200,6 +134,77 @@ else()
 
 	find_library( IcuUcReleaseLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH )
 	set( IcuUcDebugLibrary ${IcuUcReleaseLibrary} )
+
+	include_directories( SYSTEM "${Boost}/include" )
+endif()
+
+include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" )
+
+function( om_populate_code )
+	file( GLOB_RECURSE new_list RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/code/*.*" )
+	foreach( file_path ${new_list} )
+		get_filename_component( dir_path "${file_path}" PATH )
+		set( dir_list ${dir_list} "${dir_path}" )
+	endforeach()
+	list( REMOVE_DUPLICATES dir_list )
+
+	foreach( OmSourceFolder ${dir_list} )
+		string( REPLACE "/" "\\" OmSourceGroup "${OmSourceFolder}" )
+
+		file( GLOB Cpp_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.cpp" )
+		source_group( "Source Files\\${OmSourceGroup}" FILES ${Cpp_Code} )
+		set( LocalCpp ${LocalCpp} ${Cpp_Code} )
+
+		file( GLOB Hpp_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.hpp" )
+		source_group( "Header Files\\${OmSourceGroup}" FILES ${Hpp_Code} )
+		set( LocalHpp ${LocalHpp} ${Hpp_Code} )
+
+		file( GLOB Dox_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.dox" )
+		source_group( "Doxygen Files\\${OmSourceGroup}" FILES ${Dox_Code} )
+		set( LocalDox ${LocalDox} ${Dox_Code} )
+	endforeach()
+
+	set( Cpp ${LocalCpp} PARENT_SCOPE )
+	set( Hpp ${LocalHpp} PARENT_SCOPE )
+	set( Dox ${LocalDox} PARENT_SCOPE )
+endfunction()
+om_populate_code()
+
+function( om_populate_internal )
+	file( WRITE "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#if !defined( Om_Internal_ )\n" )
+	file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
+	file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#define Om_Internal_\n" )
+	file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
+	foreach( header_path ${Hpp} )
+		string( REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/code/" "" header "${header_path}" )
+		file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\t#include \"${header}\"\n" )
+	endforeach()
+	file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "\n" )
+	file( APPEND "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" "#endif\n" )
+endfunction()
+om_populate_internal()
+
+add_executable( "Om" ${Cpp} ${Hpp} ${Dox} )
+add_executable( "Om.Test" ${Cpp} )
+
+if( MSVC )
+	add_custom_target( "Om.Documentation"
+		COMMAND if not exist products mkdir products
+		COMMAND if not exist products\\documentation mkdir products\\documentation
+		COMMAND if not exist products\\documentation\\doxygen mkdir products\\documentation\\doxygen
+		COMMAND ( type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -
+		COMMENT "Generating Documentation..."
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		VERBATIM
+	)
+else()
+	add_custom_target( "Om.Documentation"
+		COMMAND mkdir -p products/documentation/doxygen
+		COMMAND doxygen doxygen/Doxyfile
+		COMMENT "Generating Documentation..."
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		VERBATIM
+	)
 endif()
 
 function( om_target_link_libraries target )
@@ -250,7 +255,6 @@ function( om_target_link_libraries target )
 		)
 	endif()
 endfunction()
-
 om_target_link_libraries( "Om" )
 om_target_link_libraries( "Om.Test" )
 
