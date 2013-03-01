@@ -33,7 +33,5 @@ var searchData=
   ['expression_5ffront_5fpush_5foperation_2ehpp',['expression_front_push_operation.hpp',['../expression__front__push__operation_8hpp.html',1,'']]],
   ['expression_5foperation_2ecpp',['expression_operation.cpp',['../expression__operation_8cpp.html',1,'']]],
   ['expression_5foperation_2edox',['expression_operation.dox',['../expression__operation_8dox.html',1,'']]],
-  ['expression_5foperation_2ehpp',['expression_operation.hpp',['../expression__operation_8hpp.html',1,'']]],
-  ['external_2ecpp',['external.cpp',['../external_8cpp.html',1,'']]],
-  ['external_2ehpp',['external.hpp',['../external_8hpp.html',1,'']]]
+  ['expression_5foperation_2ehpp',['expression_operation.hpp',['../expression__operation_8hpp.html',1,'']]]
 ];
