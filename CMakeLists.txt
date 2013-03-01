@@ -153,14 +153,17 @@ function( om_populate_code )
 		string( REPLACE "/" "\\" OmSourceGroup "${OmSourceFolder}" )
 
 		file( GLOB Cpp_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.cpp" )
+		list( SORT Cpp_Code )
 		source_group( "Source Files\\${OmSourceGroup}" FILES ${Cpp_Code} )
 		set( LocalCpp ${LocalCpp} ${Cpp_Code} )
 
 		file( GLOB Hpp_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.hpp" )
+		list( SORT Hpp_Code )
 		source_group( "Header Files\\${OmSourceGroup}" FILES ${Hpp_Code} )
 		set( LocalHpp ${LocalHpp} ${Hpp_Code} )
 
 		file( GLOB Dox_Code "${CMAKE_CURRENT_SOURCE_DIR}/${OmSourceFolder}/*.dox" )
+		list( SORT Dox_Code )
 		source_group( "Doxygen Files\\${OmSourceGroup}" FILES ${Dox_Code} )
 		set( LocalDox ${LocalDox} ${Dox_Code} )
 	endforeach()
@@ -172,17 +175,12 @@ endfunction()
 om_populate_code()
 
 function( om_populate_internal )
-	set( Hpp_Internal "${CMAKE_CURRENT_SOURCE_DIR}/code/om/internal.hpp" )
-	file( WRITE "${Hpp_Internal}" "#if !defined( Om_Internal_ )\n" )
-	file( APPEND "${Hpp_Internal}" "\n" )
-	file( APPEND "${Hpp_Internal}" "\t#define Om_Internal_\n" )
-	file( APPEND "${Hpp_Internal}" "\n" )
+	set( Hpp_Internal "${CMAKE_CURRENT_SOURCE_DIR}/code/om.internal" )
+	file( WRITE "${Hpp_Internal}" "" )
 	foreach( header_path ${Hpp} )
 		string( REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/code/" "" header "${header_path}" )
-		file( APPEND "${Hpp_Internal}" "\t#include \"${header}\"\n" )
+		file( APPEND "${Hpp_Internal}" "#include \"${header}\"\n" )
 	endforeach()
-	file( APPEND "${Hpp_Internal}" "\n" )
-	file( APPEND "${Hpp_Internal}" "#endif\n" )
 endfunction()
 om_populate_internal()
 
@@ -252,7 +250,7 @@ function( om_target_link_libraries target )
 
 	if( NOT MSVC )
 		set_target_properties( ${target} PROPERTIES
-			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/code/om/external.hpp"
+			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/code/om.external"
 			XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
 		)
 	endif()
