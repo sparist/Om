@@ -18,24 +18,11 @@
 
 	#if defined( Om_Macros_Test_ )
 
-		#define BOOST_TEST_MODULE \
-		OmTest
-
 		#include "boost/test/included/unit_test.hpp"
-
-class OmFixture {
-public:
-
-	OmFixture() {
-		Om::System::Get().Initialize( "en_US.UTF-8" );
-	}
-
-};
-
-BOOST_GLOBAL_FIXTURE( OmFixture );
 
 bool init_unit_test() {
 	boost::debug::detect_memory_leaks(false);
+	Om::System::Get().Initialize( "en_US.UTF-8" );
 	return( true );
 }
 
