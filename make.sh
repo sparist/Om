@@ -8,11 +8,22 @@ then
   exit
 fi
 
-cd $1
+if [ ! -d "$1" ]
+then
+	echo "The ICU directory was not found at \"$1\"."
+	exit
+fi
+if [ ! -d "$2" ]
+then
+	echo "The Boost directory was not found at \"$2\"."
+	exit
+fi
+
+cd "$1"
 Icu=`pwd -P`
 cd "$Directory"
 
-cd $2
+cd "$2"
 Boost=`pwd -P`
 cd "$Directory"
 
