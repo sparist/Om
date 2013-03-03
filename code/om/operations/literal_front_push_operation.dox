@@ -10,5 +10,5 @@
 	\par Implementation
 		Om::Operations::LiteralFrontPushOperation
 
-	Normalization to a \ref om__literal__ only happens if an append occurs (i.e. the first \ref om__operand__ is non-empty); otherwise, it is left unchanged.  However, since everything represents as a \ref om__literal__, this doesn't make an observable difference.
+	Normalization to a \ref om__literal__ only happens if an append occurs (i.e. the first \ref om__operand__ is non-empty); otherwise, it is left unchanged. However, since everything represents as a \ref om__literal__, this doesn't make an observable difference.
 */

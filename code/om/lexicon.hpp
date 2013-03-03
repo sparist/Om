@@ -7,7 +7,7 @@
 	\date
 		2012-2013
 	\copyright
-		Copyright (c) <a href="http://sparist.com">Sparist</a>.  All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
+		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
@@ -135,7 +135,7 @@ namespace Om {
 		\brief
 			Ensures that there is a last Node with an empty Operand, and with any Operator, and returns a reference to it.
 		\return
-			If there is no last Node, or it has an Operand, appends a new one with an empty Operator and returns a reference to it.  Otherwise, returns a reference to the last Node.
+			If there is no last Node, or it has an Operand, appends a new one with an empty Operator and returns a reference to it. Otherwise, returns a reference to the last Node.
 		*/
 		List::Node & GetOperandTaker();
 
@@ -143,7 +143,7 @@ namespace Om {
 		\brief
 			Ensures that there is a last Node with an empty Operand, and the given Operator, and returns a reference to it.
 		\return
-			If there is already a Node for this Operator, relinks it to the back and returns a reference to it.  Otherwise, constructs a Node with the given Operator, appends it, and returns a reference to it.
+			If there is already a Node for this Operator, relinks it to the back and returns a reference to it. Otherwise, constructs a Node with the given Operator, appends it, and returns a reference to it.
 		*/
 		template< typename TheOperator >
 		List::Node & GetOperandTaker( TheOperator & );

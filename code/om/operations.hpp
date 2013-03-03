@@ -7,7 +7,7 @@
 	\date
 		2012-2013
 	\copyright
-		Copyright (c) <a href="http://sparist.com">Sparist</a>.  All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
+		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
@@ -29,7 +29,7 @@ namespace Om {
 
 	Including the header for an operation will cause the operation to be added to the System automatically.
 
-	%Operations that consume at least one Operand must live in memory while waiting for the Operand.  These operations are derived from Operation.
+	%Operations that consume at least one Operand must live in memory while waiting for the Operand. These operations are derived from Operation.
 	*/
 	namespace Operations {}
 

@@ -7,7 +7,7 @@
 	\date
 		2012-2013
 	\copyright
-		Copyright (c) <a href="http://sparist.com">Sparist</a>.  All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
+		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
@@ -98,7 +98,7 @@ inline bool Type_::TakeQuotedQueue(
 ) {
 	if( this->thisLexicon ) {
 		{
-			// Perform the translation.  Note that this uses this->thisLexicon and must be done before the lexicon is given to the Evaluation.
+			// Perform the translation. Note that this uses this->thisLexicon and must be done before the lexicon is given to the Evaluation.
 			Expression theExpression;
 			assert(
 				dynamic_cast< ThisImplementation * >( this )

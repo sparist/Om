@@ -7,7 +7,7 @@
 	\date
 		2012-2013
 	\copyright
-		Copyright (c) <a href="http://sparist.com">Sparist</a>.  All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
+		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
@@ -72,9 +72,9 @@ namespace Om {
 		\brief
 			Initializes the System.
 		\param theLocaleCodeUnitIterator
-			The null-terminated locale string (e.g. en_US.UTF-8).  The locale must use UTF-8 encoding.
+			The null-terminated locale string (e.g. en_US.UTF-8). The locale must use UTF-8 encoding.
 
-		Initializes the global locale to en_US.UTF-8 (using boost::locale) and asserts that all name keys in the System are NFD-normalized.  This must be called in main, prior to any Program evaluation.
+		Initializes the global locale to en_US.UTF-8 (using boost::locale) and asserts that all name keys in the System are NFD-normalized. This must be called in main, prior to any Program evaluation.
 		*/
 		void Initialize(
 			char const theLocaleCodeUnitIterator[]

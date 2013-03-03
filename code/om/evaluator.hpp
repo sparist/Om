@@ -7,7 +7,7 @@
 	\date
 		2012-2013
 	\copyright
-		Copyright (c) <a href="http://sparist.com">Sparist</a>.  All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
+		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
@@ -41,11 +41,11 @@ namespace Om {
 		A Queue that evaluates Program instances.
 
 	The Evaluator interprets each Element as follows:
-	-	When an Operator is taken, the Translator is queried for the corresponding Operation.  If found, its implementation is given to the Evaluator for further evaluation; otherwise, the Operation vector is flushed and the Operator is given to the output Queue.
-	-	When a Operand is taken, it is given to the most current Operation in the Operation vector.  If none, it is given to the output Queue.
+	-	When an Operator is taken, the Translator is queried for the corresponding Operation. If found, its implementation is given to the Evaluator for further evaluation; otherwise, the Operation vector is flushed and the Operator is given to the output Queue.
+	-	When a Operand is taken, it is given to the most current Operation in the Operation vector. If none, it is given to the output Queue.
 	-	When a Separator is taken, it is disregarded.
 
-	The program output by the Evaluator is an Expression.  Note that if each line in the Expression was terminated by Symbols::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbols::theLineSeparatorSymbol to the final output.
+	The program output by the Evaluator is an Expression. Note that if each line in the Expression was terminated by Symbols::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbols::theLineSeparatorSymbol to the final output.
 	*/
 	class Evaluator:
 	public DefaultQueue< Evaluator > {
@@ -55,7 +55,7 @@ namespace Om {
 		\brief
 			Flushes the contents.
 
-		If an exception is thrown, it will be caught and ignored, and each Element may not be flushed.  This would only occur in an extreme situation such as insufficient memory.
+		If an exception is thrown, it will be caught and ignored, and each Element may not be flushed. This would only occur in an extreme situation such as insufficient memory.
 		*/
 		virtual ~Evaluator();
 

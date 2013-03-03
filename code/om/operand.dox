@@ -4,7 +4,7 @@
 	\brief
 		A \ref om__programs__ "Program" element that wraps a \ref om__programs__ "Program".
 	\par Interpretation
-		An \ref om__operand__ is an interpretation of a \ref om__programs__ "Program" as either containing a single operand element (a \ref om__programs__ "Program" enclosed by braces), or being empty.  All elements other than the first operand element are disregarded.
+		An \ref om__operand__ is an interpretation of a \ref om__programs__ "Program" as either containing a single operand element (a \ref om__programs__ "Program" enclosed by braces), or being empty. All elements other than the first operand element are disregarded.
 	\par Normalization
 		A \ref om__programs__ "Program" is normalized as an \ref om__operand__ by discarding all elements other than the first operand element.
 	\par Implementation

@@ -7,7 +7,7 @@
 	\date
 		2012-2013
 	\copyright
-		Copyright (c) <a href="http://sparist.com">Sparist</a>.  All rights reserved.  This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
+		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
 */
@@ -30,7 +30,7 @@ namespace Om {
 	\brief
 		A pointee for boost::intrusive_ptr.
 
-	This type can be used as a template argument for boost::intrusive_ptr.  Shared ownership is implemented via owner counting.
+	This type can be used as a template argument for boost::intrusive_ptr. Shared ownership is implemented via owner counting.
 	*/
 	template< typename ThisOwnerCount = size_t >
 	class Shareable {
@@ -79,7 +79,7 @@ namespace Om {
 		\brief
 			The number of owners of this object.
 
-		Automatic instances have a owner count of 0.  If the owner count is incremented from 0, it is owned by a boost::intrusive_ptr and is deleted when decremented back to zero.
+		Automatic instances have a owner count of 0. If the owner count is incremented from 0, it is owned by a boost::intrusive_ptr and is deleted when decremented back to zero.
 		*/
 		ThisOwnerCount thisOwnerCount;
 
