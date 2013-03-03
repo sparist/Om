@@ -6,6 +6,9 @@ for %%x in (%*) do Set /A argC+=1
 if %argC% lss 2 goto Usage
 if %argc% gtr 2 goto Usage
 
+if not exist %1 goto IcuMissing
+if not exist %2 goto BoostMissing
+
 set Directory=%CD%
 call "%VS100COMNTOOLS%..\..\VC\vcvarsall.bat"
 
@@ -29,4 +32,12 @@ exit /b 0
 
 :Usage
 echo Usage: %0 "ICU path" "Boost path"
+exit /b 1
+
+:IcuMissing
+echo The ICU directory was not found at %1.
+exit /b 1
+
+:BoostMissing
+echo The Boost directory was not found at %2.
 exit /b 1

@@ -1,9 +1,9 @@
 @echo off
 setlocal
 
-set Directory=%CD%
-
 if not exist products\projects\vs goto FolderDoesNotExist
+
+set Directory=%CD%
 cd products\projects\vs
 cmake ..\..\..
 if %ERRORLEVEL% neq	0 goto CMakeError

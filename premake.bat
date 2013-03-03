@@ -45,9 +45,9 @@ echo Usage: %0 "ICU path" "Boost path"
 exit /b 1
 
 :IcuMissing
-echo The ICU directory was not found at "%1".
+echo The ICU directory was not found at %1.
 exit /b 1
 
 :BoostMissing
-echo The Boost directory was not found at "%2".
+echo The Boost directory was not found at %2.
 exit /b 1
