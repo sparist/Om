@@ -162,6 +162,9 @@ var hierarchy =
       [ "Om::DefaultOperation< NormalizeOperation >", "class_om_1_1_default_operation.html", [
         [ "Om::Operations::NormalizeOperation", "class_om_1_1_operations_1_1_normalize_operation.html", null ]
       ] ],
+      [ "Om::DefaultOperation< PairOperation >", "class_om_1_1_default_operation.html", [
+        [ "Om::Operations::PairOperation", "class_om_1_1_operations_1_1_pair_operation.html", null ]
+      ] ],
       [ "Om::DefaultOperation< ProgramOperation< ThisProgram > >", "class_om_1_1_default_operation.html", [
         [ "Om::Operations::ProgramOperation< ThisProgram >", "class_om_1_1_operations_1_1_program_operation.html", null ]
       ] ],

@@ -42,6 +42,7 @@ var group__om____operations____ =
     [ "operator", "group__om____operations____operator__operation____.html", null ],
     [ "operator<-", "group__om____operations____operator__back__push__operation____.html", null ],
     [ "operator<-elements", "group__om____operations____front__pull__operator__operation____.html", null ],
+    [ "pair", "group__om____operations____pair__operation____.html", null ],
     [ "pairs->", "group__om____operations____back__pull__pair__operation____.html", null ],
     [ "quote", "group__om____operations____quote__operation____.html", null ],
     [ "rearrange", "group__om____operations____rearrange__operation____.html", null ],

@@ -92,6 +92,8 @@ var dir_f701d43fd0805deab2391e327e0c4808 =
     [ "operator_front_push_operation.hpp", "operator__front__push__operation_8hpp.html", "operator__front__push__operation_8hpp" ],
     [ "operator_operation.cpp", "operator__operation_8cpp.html", null ],
     [ "operator_operation.hpp", "operator__operation_8hpp.html", "operator__operation_8hpp" ],
+    [ "pair_operation.cpp", "pair__operation_8cpp.html", null ],
+    [ "pair_operation.hpp", "pair__operation_8hpp.html", "pair__operation_8hpp" ],
     [ "program_operation.cpp", "program__operation_8cpp.html", null ],
     [ "program_operation.hpp", "program__operation_8hpp.html", "program__operation_8hpp" ],
     [ "pull_operation.cpp", "pull__operation_8cpp.html", null ],

@@ -42,6 +42,7 @@ var namespace_om_1_1_operations =
     [ "NormalizeOperation", "class_om_1_1_operations_1_1_normalize_operation.html", "class_om_1_1_operations_1_1_normalize_operation" ],
     [ "OperatorBackPushOperation", "class_om_1_1_operations_1_1_operator_back_push_operation.html", "class_om_1_1_operations_1_1_operator_back_push_operation" ],
     [ "OperatorFrontPushOperation", "class_om_1_1_operations_1_1_operator_front_push_operation.html", "class_om_1_1_operations_1_1_operator_front_push_operation" ],
+    [ "PairOperation", "class_om_1_1_operations_1_1_pair_operation.html", "class_om_1_1_operations_1_1_pair_operation" ],
     [ "ProgramOperation", "class_om_1_1_operations_1_1_program_operation.html", "class_om_1_1_operations_1_1_program_operation" ],
     [ "PullOperation", "class_om_1_1_operations_1_1_pull_operation.html", "class_om_1_1_operations_1_1_pull_operation" ],
     [ "QuoteOperation", "class_om_1_1_operations_1_1_quote_operation.html", "class_om_1_1_operations_1_1_quote_operation" ],

@@ -13,13 +13,14 @@
 <area shape="rect" id="node24" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; FrontPushOperation\l\&lt; ThisProgram, ThisImplementation \&gt; \&gt;" alt="" coords="163,753,418,813"/>
 <area shape="rect" id="node26" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; InjectOperation \&gt;" alt="" coords="215,837,366,881"/>
 <area shape="rect" id="node28" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; NormalizeOperation \&gt;" alt="" coords="209,905,372,949"/>
-<area shape="rect" id="node30" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; ProgramOperation\&lt; ThisProgram \&gt; \&gt;" alt="" coords="164,973,417,1017"/>
-<area shape="rect" id="node32" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; PullOperation\&lt; ThisProgram,\l ThisImplementation \&gt; \&gt;" alt="" coords="188,1041,393,1101"/>
-<area shape="rect" id="node34" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; QuoteOperation \&gt;" alt="" coords="215,1125,366,1169"/>
-<area shape="rect" id="node36" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; SkipOperation \&gt;" alt="" coords="215,1193,366,1237"/>
-<area shape="rect" id="node38" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; SubstituteOperation \&gt;" alt="" coords="210,1261,372,1305"/>
-<area shape="rect" id="node41" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; SwapOperation \&gt;" alt="" coords="215,1329,366,1373"/>
-<area shape="rect" id="node43" href="$class_om_1_1_default_operation.html" title="A partial implementation of Operation." alt="" coords="210,1397,371,1441"/>
+<area shape="rect" id="node30" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; PairOperation \&gt;" alt="" coords="215,973,366,1017"/>
+<area shape="rect" id="node32" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; ProgramOperation\&lt; ThisProgram \&gt; \&gt;" alt="" coords="164,1041,417,1085"/>
+<area shape="rect" id="node34" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; PullOperation\&lt; ThisProgram,\l ThisImplementation \&gt; \&gt;" alt="" coords="188,1109,393,1169"/>
+<area shape="rect" id="node36" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; QuoteOperation \&gt;" alt="" coords="215,1193,366,1237"/>
+<area shape="rect" id="node38" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; SkipOperation \&gt;" alt="" coords="215,1261,366,1305"/>
+<area shape="rect" id="node40" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; SubstituteOperation \&gt;" alt="" coords="210,1329,372,1373"/>
+<area shape="rect" id="node43" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; SwapOperation \&gt;" alt="" coords="215,1397,366,1441"/>
+<area shape="rect" id="node45" href="$class_om_1_1_default_operation.html" title="A partial implementation of Operation." alt="" coords="210,1465,371,1509"/>
 <area shape="rect" id="node3" href="$class_om_1_1_operations_1_1_choose_operation.html" title="The choose operation implementation." alt="" coords="476,13,703,41"/>
 <area shape="rect" id="node5" href="$class_om_1_1_operations_1_1_copy_operation.html" title="The copy operation implementation." alt="" coords="483,81,696,109"/>
 <area shape="rect" id="node7" href="$class_om_1_1_operations_1_1_decode_operation.html" title="The decode operation implementation." alt="" coords="476,149,703,177"/>
@@ -34,12 +35,13 @@
 <area shape="rect" id="node25" href="$class_om_1_1_operations_1_1_front_push_operation.html" title="An Operation that joins an Operand to the front of a Program." alt="" coords="497,753,682,813"/>
 <area shape="rect" id="node27" href="$class_om_1_1_operations_1_1_inject_operation.html" title="The inject operation implementation." alt="" coords="483,845,696,873"/>
 <area shape="rect" id="node29" href="$class_om_1_1_operations_1_1_normalize_operation.html" title="The normalize operation implementation." alt="" coords="498,905,681,949"/>
-<area shape="rect" id="node31" href="$class_om_1_1_operations_1_1_program_operation.html" title="An Operation that normalizes a Program to a specific type." alt="" coords="473,973,706,1017"/>
-<area shape="rect" id="node33" href="$class_om_1_1_operations_1_1_pull_operation.html" title="An Operation that pulls part of a Program." alt="" coords="467,1049,711,1093"/>
-<area shape="rect" id="node35" href="$class_om_1_1_operations_1_1_quote_operation.html" title="The quote operation implementation." alt="" coords="480,1133,698,1161"/>
-<area shape="rect" id="node37" href="$class_om_1_1_operations_1_1_skip_operation.html" title="The skip operation implementation." alt="" coords="486,1201,693,1229"/>
-<area shape="rect" id="node39" href="$class_om_1_1_operations_1_1_translate_operation.html" title="Om::Operations::Translate\lOperation\&lt; SubstituteOperation \&gt;" alt="" coords="479,1261,700,1305"/>
-<area shape="rect" id="node40" href="$class_om_1_1_operations_1_1_substitute_operation.html" title="The substitute operation implementation." alt="" coords="761,1261,943,1305"/>
-<area shape="rect" id="node42" href="$class_om_1_1_operations_1_1_swap_operation.html" title="The swap operation implementation." alt="" coords="482,1337,697,1365"/>
-<area shape="rect" id="node44" href="$class_om_1_1_operations_1_1_translate_operation.html" title="An Operation that applies each Translator to a Program." alt="" coords="480,1397,699,1441"/>
+<area shape="rect" id="node31" href="$class_om_1_1_operations_1_1_pair_operation.html" title="The pair operation implementation." alt="" coords="487,981,692,1009"/>
+<area shape="rect" id="node33" href="$class_om_1_1_operations_1_1_program_operation.html" title="An Operation that normalizes a Program to a specific type." alt="" coords="473,1041,706,1085"/>
+<area shape="rect" id="node35" href="$class_om_1_1_operations_1_1_pull_operation.html" title="An Operation that pulls part of a Program." alt="" coords="467,1117,711,1161"/>
+<area shape="rect" id="node37" href="$class_om_1_1_operations_1_1_quote_operation.html" title="The quote operation implementation." alt="" coords="480,1201,698,1229"/>
+<area shape="rect" id="node39" href="$class_om_1_1_operations_1_1_skip_operation.html" title="The skip operation implementation." alt="" coords="486,1269,693,1297"/>
+<area shape="rect" id="node41" href="$class_om_1_1_operations_1_1_translate_operation.html" title="Om::Operations::Translate\lOperation\&lt; SubstituteOperation \&gt;" alt="" coords="479,1329,700,1373"/>
+<area shape="rect" id="node42" href="$class_om_1_1_operations_1_1_substitute_operation.html" title="The substitute operation implementation." alt="" coords="761,1329,943,1373"/>
+<area shape="rect" id="node44" href="$class_om_1_1_operations_1_1_swap_operation.html" title="The swap operation implementation." alt="" coords="482,1405,697,1433"/>
+<area shape="rect" id="node46" href="$class_om_1_1_operations_1_1_translate_operation.html" title="An Operation that applies each Translator to a Program." alt="" coords="480,1465,699,1509"/>
 </map>

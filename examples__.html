@@ -301,8 +301,6 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 <p>The <a class="el" href="group__om____operations____rearrange__operation____.html">rearrange</a> operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call: </p>
 <pre class="fragment">define
 {
-	Pair {expression&lt;- quote swap}
-
 	Fold&lt;- {
 		rearrange
 		{
@@ -311,7 +309,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 				dequote
 				choose
 				quote Result
-				Pair Pair Pair {Fold&lt;-} Function Result Remainder
+				pair pair pair {Fold&lt;-} Function Result Remainder
 				Remainder
 			}
 			{Result Remainder}
@@ -347,7 +345,6 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 </li>
 <li>If the <code>Remainder</code> is empty, the <code>Result</code> is output. Otherwise, <code>Function</code>, <code>Result</code>, and <code>Remainder</code> are passed to a recursive <code>Fold&lt;-</code> call.</li>
 </ul>
-<p>The helper <code>Pair</code> function takes two operands (e.g. <code>{a}</code> and <code>{b}</code>) and constructs a pair (e.g. <code>{a{b}}</code>).</p>
 <p>A few things should be noted about the above example:</p>
 <ul>
 <li>The <a class="el" href="group__om____operations____.html">Operations</a> list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.</li>
