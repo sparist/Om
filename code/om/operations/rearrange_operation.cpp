@@ -76,11 +76,12 @@ namespace Om {
 
 	#include "om/operations/define_operation.hpp"
 	#include "om/operations/dequote_operation.hpp"
-	#include "om/operations/expression_back_push_operation.hpp"
 	#include "om/operations/fill_operation.hpp"
 	#include "om/operations/inject_operation.hpp"
+	#include "om/operations/pair_operation.hpp"
 	#include "om/operations/quote_operation.hpp"
 	#include "om/operations/skip_operation.hpp"
+	#include "om/operations/swap_operation.hpp"
 
 // MARK: - Om::Operations::RearrangeOperation
 
@@ -96,7 +97,7 @@ inline char const * Type_::GetName() {
 }
 
 inline void Type_::Give( Evaluation & theEvaluation ) {
-	// define swap skip {dequote inject {quote} ->expression {fill} quote}
+	// define swap skip {dequote inject {quote} pair {fill}}
 	DefineOperation::Give( theEvaluation );
 	SwapOperation::Give( theEvaluation );
 	SkipOperation::Give( theEvaluation );
@@ -110,17 +111,11 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 	theExpression.TakeQuotedQueue(
 		QuoteOperation::GetOperator()
 	);
-	{
-		Operator theOperator(
-			ExpressionFrontPushOperation::GetName()
-		);
-		theExpression.TakeOperator( theOperator );
-	}
+	theExpression.TakeOperator(
+		PairOperation::GetOperator()
+	);
 	theExpression.TakeQuotedQueue(
 		FillOperation::GetOperator()
-	);
-	theExpression.TakeOperator(
-		QuoteOperation::GetOperator()
 	);
 	theEvaluation.TakeQuotedQueue( theExpression );
 }
