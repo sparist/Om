@@ -22,6 +22,10 @@
 namespace Om {
 
 	// MARK: - Om::Pair
+	/*!
+	\brief
+		An Operator and an Operand.
+	*/
 	class Pair {
 	public: // MARK: public (static)
 
