@@ -26,10 +26,12 @@ Changes for each released version are listed below.
 -	Switched from UnitTest++ to the Boost Unit Test library.
 -	Added CMake test that runs the unit tests.
 
-### Dependency Versions
+### Versions
 
--	Updated Doxygen (1.8.3.1), Graphviz (2.30.1).
--	Updated Boost (1.53.0; addresses a security issue -- see boost.org for info), ICU (50.1.2).
+-	Updated Doxygen to 1.8.3.1.
+-	Updated Graphviz to 2.30.1.
+-	Updated Boost to 1.53.0, which addresses a <a href="http://www.boost.org/users/news/boost_locale_security_notice.html">security issue</a>.
+-	Updated ICU to 50.1.2.
 
 ### Build
 
@@ -44,9 +46,10 @@ Changes for each released version are listed below.
 -	Made fixes to Lexicon (#20, #21).
 -	Made om.hpp an "umbrella" header, populated automatically by CMake, which contains all Om headers (#18).
 -	Moved user documentation into ".dox" files, since these can contain non-ASCII UTF-8 characters (vs. C++ files, which should only contain ASCII).
--	Made changes to coding standard:
+-	Made changes to the coding standard:
 	-	Removed line width restriction, and made changes to ensure readability when soft-wrapping.
-	-	Changed `struct`s to `class`es, reserving the former for C-style POD types.
+	-	Replaced `struct` with `class`, reserving the former for C-style POD types.
+	-	Made stylistic changes for consistency and readability.
 -	Improved Doxygen naming convention to prevent conflicts with Doxygen-generated pages.
 -	Refactored code.
 
