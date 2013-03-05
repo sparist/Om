@@ -6,6 +6,50 @@ See the <a href="http://sparist.github.com/Om">Om documentation</a> for more inf
 
 Changes for each released version are listed below.
 
+## 0.1.2
+
+### Operations
+
+-	Added:
+	-	`pair`
+
+### Documentation
+
+-	Added more examples (#13).
+-	Improved general readability and organization.
+-	Better separated "C++ library" and "language"; the latter is in its own "Language" section.
+-	Removed search field, which didn't work on iPad.
+-	Added XML documentation generation, which can be used for "documentation metadata" (e.g. for IDE).
+
+### Testing
+
+-	Switched from UnitTest++ to the Boost Unit Test library.
+-	Added CMake test that runs the unit tests.
+
+### Dependency Versions
+
+-	Updated Doxygen (1.8.3.1), Graphviz (2.30.1).
+-	Updated Boost (1.53.0; addresses a security issue -- see boost.org for info), ICU (50.1.2).
+
+### Build
+
+-	Split external building into separate "premake" scripts.
+-	Added better argument checks to scripts.
+-	Changed Windows scripts to statically build ICU via Cygwin.
+-	Reorganized products folder.
+-	Added "setlocal" to Windows scripts to prevent non-local environment modifications.
+
+### General
+
+-	Made fixes to Lexicon (#20, #21).
+-	Made om.hpp an "umbrella" header, populated automatically by CMake, which contains all Om headers (#18).
+-	Moved user documentation into ".dox" files, since these can contain non-ASCII UTF-8 characters (vs. C++ files, which should only contain ASCII).
+-	Made changes to coding standard:
+	-	Removed line width restriction, and made changes to ensure readability when soft-wrapping.
+	-	Changed `struct`s to `class`es, reserving the former for C-style POD types.
+-	Improved Doxygen naming convention to prevent conflicts with Doxygen-generated pages.
+-	Refactored code.
+
 ## 0.1.1
 
 ### Operations
