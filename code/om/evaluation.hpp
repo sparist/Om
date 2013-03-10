@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Evaluation_ )
+#ifndef Om_Evaluation_
 
 	#define Om_Evaluation_ \
 	Om::Evaluation
@@ -45,54 +45,54 @@ namespace Om {
 		\brief
 			Constructs an Evaluation on the given Evaluator.
 		*/
-		explicit Evaluation( Evaluator & );
+		explicit Evaluation(Evaluator &);
 
 		Translator const & GetTranslator() const;
 
-		bool GiveTerm( Evaluator & );
+		bool GiveTerm(Evaluator &);
 
 		/*!
 		\brief
 			Pushes the Operand onto the front of the Expression.
 		*/
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
 		/*!
 		\brief
 			Takes the Operation, and gives it to the Evaluator.
 		*/
-		template< typename TheOperation >
+		template <typename TheOperation>
 		void TakeOperation(
-			std::auto_ptr< TheOperation >
+			std::auto_ptr<TheOperation>
 		);
 
 		/*!
 		\brief
 			Pushes the Operator onto the front of the Expression.
 		*/
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
 		/*!
 		\brief
 			Pushes the quoted Queue onto the front of the Expression.
 		*/
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
 		/*!
 		\brief
 			Pushes the Queue onto the front of the Expression, last first.
 		*/
-		template< typename TheQueue >
-		void TakeQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQueue(TheQueue &);
 
 	private: // MARK: private (non-static)
 
-		Evaluation( Evaluation const & );
+		Evaluation(Evaluation const &);
 
-		Evaluation const & operator =( Evaluation const & );
+		Evaluation const & operator =(Evaluation const &);
 
 		/*!
 		\brief

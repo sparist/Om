@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sink_ )
+#ifndef Om_Sink_
 
 	#define Om_Sink_ \
 	Om::Sink
@@ -24,7 +24,7 @@ namespace Om {
 	\brief
 		Any object that items can be pushed to.
 	*/
-	template< typename ThisItem >
+	template <typename ThisItem>
 	class Sink {
 	public: // MARK: public (non-static)
 
@@ -36,7 +36,7 @@ namespace Om {
 		\return
 			\c *this
 		*/
-		Sink & operator =( ThisItem & );
+		Sink & operator =(ThisItem &);
 
 		/*!
 		\return
@@ -54,11 +54,11 @@ namespace Om {
 		\brief
 			Pushes an item.
 		*/
-		virtual void Push( ThisItem & ) = 0;
+		virtual void Push(ThisItem &) = 0;
 
 	private: // MARK: private (non-static)
 
-		Sink & operator =( Sink const & );
+		Sink & operator =(Sink const &);
 
 	};
 

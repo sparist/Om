@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_PairOperation_ )
+#ifndef Om_Operations_PairOperation_
 
 	#define Om_Operations_PairOperation_ \
 	Om::Operations::PairOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__pair_operation__ operation implementation.
 		*/
 		class PairOperation:
-		public DefaultOperation< PairOperation > {
+		public DefaultOperation<PairOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename ThePairOperation >
+			template <typename ThePairOperation>
 			static void GiveElements(
 				ThePairOperation &,
 				Queue &
@@ -48,13 +48,13 @@ namespace Om {
 
 			PairOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -68,7 +68,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< PairOperation > const thePairDefinition;
+			static Definition<PairOperation> const thePairDefinition;
 
 		}
 

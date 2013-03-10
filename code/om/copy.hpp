@@ -12,12 +12,12 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Copy_ )
+#ifndef Om_Copy_
 
 	#define Om_Copy_ \
 	Om::Copy
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <memory>
 
@@ -30,8 +30,8 @@ namespace Om {
 	\return
 		A polymorphic copy of the object.
 	*/
-	template< typename TheCopyable >
-	std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
+	template <typename TheCopyable>
+	std::auto_ptr<TheCopyable> Copy(TheCopyable const &);
 
 }
 

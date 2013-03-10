@@ -12,14 +12,14 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_System_ )
+#ifndef Om_System_
 
 	#define Om_System_ \
 	Om::System
 
 	#include "om/translator.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <map>
 
@@ -47,7 +47,7 @@ namespace Om {
 	class System:
 	public Translator {
 
-		template< typename ThisOperation >
+		template <typename ThisOperation>
 		friend class Definition;
 
 	public: // MARK: public (static)
@@ -66,7 +66,7 @@ namespace Om {
 		*/
 		Lexicon const & GetLexicon() const;
 
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
 		/*!
 		\brief
@@ -101,16 +101,16 @@ namespace Om {
 		*/
 		typedef std::map<
 			std::string,
-			void ( * )( Evaluation & )
+			void (*)(Evaluation &)
 		> Map;
 
 	private: // MARK: private (non-static)
 
 		System();
 
-		System( System const & );
+		System(System const &);
 
-		System const & operator =( System const & );
+		System const & operator =(System const &);
 
 		Map thisMap;
 

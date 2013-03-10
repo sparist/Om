@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_LexiconFrontPushOperation_ )
+#ifndef Om_Operations_LexiconFrontPushOperation_
 
 	#include "om/operations/lexicon_front_push_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,29 +28,29 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( LexiconFrontPushOperationTest )
+		BOOST_AUTO_TEST_SUITE(LexiconFrontPushOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{->lexicon}",
-					System::Get().Evaluate( "drop find {->lexicon} system" )
+					System::Get().Evaluate("drop find {->lexicon} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{a{B}}",
-					System::Get().Evaluate( "->lexicon {a{A}} {a{B}}" )
+					System::Get().Evaluate("->lexicon {a{A}} {a{B}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{a{B}}",
-					System::Get().Evaluate( "->lexicon {a} {a{B}}" )
+					System::Get().Evaluate("->lexicon {a} {a{B}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{a}",
-					System::Get().Evaluate( "->lexicon {a{A}} {a}" )
+					System::Get().Evaluate("->lexicon {a{A}} {a}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -60,7 +60,7 @@ namespace Om {
 						"b{C}"
 						"}"
 					),
-					System::Get().Evaluate( "->lexicon {a{A}} {a{B} a b{C}}" )
+					System::Get().Evaluate("->lexicon {a{A}} {a{B} a b{C}}")
 				);
 			}
 
@@ -85,14 +85,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_LexiconFrontPushOperation_GetName_()
-	);
+	return Om_Operations_LexiconFrontPushOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
+		std::auto_ptr<Operation>(
 			new FrontPushOperation<
 				Lexicon,
 				LexiconFrontPushOperation

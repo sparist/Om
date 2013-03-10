@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operation_ )
+#ifndef Om_Operation_
 
 	#include "om/operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( OperationTest )
+	BOOST_AUTO_TEST_SUITE(OperationTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -35,7 +36,7 @@ namespace Om {
 
 #else
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <cassert>
 		#include <stdexcept>
@@ -51,68 +52,54 @@ namespace Om {
 
 inline Type_::~Operation() {}
 
-inline void Type_::GiveElements( Queue & ) {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+inline void Type_::GiveElements(Queue &) {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
-inline void Type_::GiveElements( Queue & ) const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+inline void Type_::GiveElements(Queue &) const {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline bool Type_::ReadQuotedElements(
 	Evaluation &,
 	Parser &
 ) {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline bool Type_::TakeElement(
 	Evaluation &,
 	Operand &
 ) {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline bool Type_::TakeElement(
 	Evaluation &,
 	Operand const &
 ) {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline bool Type_::TakeQuotedElements(
 	Evaluation &,
 	Queue &
 ) {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline bool Type_::TakeQuotedElements(
 	Evaluation &,
 	Queue const &
 ) {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 // MARK: protected (non-static)

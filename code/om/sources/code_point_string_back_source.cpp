@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_CodePointStringBackSource_ )
+#ifndef Om_Sources_CodePointStringBackSource_
 
 	#include "om/sources/code_point_string_back_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,9 +28,9 @@ namespace Om {
 
 	namespace Sources {
 
-		BOOST_AUTO_TEST_SUITE( CodePointStringBackSourceTest )
+		BOOST_AUTO_TEST_SUITE(CodePointStringBackSourceTest)
 
-			BOOST_AUTO_TEST_CASE( ValidTest ) {
+			BOOST_AUTO_TEST_CASE(ValidTest) {
 				std::string theString(
 					"P" /* ASCII character */
 					"o"
@@ -40,7 +40,7 @@ namespace Om {
 					"\xE2\x98\xB9" /* Non-combining multi-byte character */
 				);
 
-				CodePointStringBackSource< std::string::const_iterator > theSource(
+				CodePointStringBackSource<std::string::const_iterator> theSource(
 					theString.begin(),
 					theString.end()
 				);
@@ -111,13 +111,13 @@ namespace Om {
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( InvalidNoTrailingTest ) {
+			BOOST_AUTO_TEST_CASE(InvalidNoTrailingTest) {
 				std::string theString(
 					"\xE2"
 					"!"
 				);
 
-				CodePointStringBackSource< std::string::const_iterator > theSource(
+				CodePointStringBackSource<std::string::const_iterator> theSource(
 					theString.begin(),
 					theString.end()
 				);
@@ -148,13 +148,13 @@ namespace Om {
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( InvalidInsufficientTrailingTest ) {
+			BOOST_AUTO_TEST_CASE(InvalidInsufficientTrailingTest) {
 				std::string theString(
 					"\xE2\x98"
 					"!"
 				);
 
-				CodePointStringBackSource< std::string::const_iterator > theSource(
+				CodePointStringBackSource<std::string::const_iterator> theSource(
 					theString.begin(),
 					theString.end()
 				);
@@ -185,14 +185,14 @@ namespace Om {
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( InvalidExtraTrailingTest ) {
+			BOOST_AUTO_TEST_CASE(InvalidExtraTrailingTest) {
 				std::string theString(
 					"\xE2\x98\xB9" /* Valid */
 					"\xB9" /* Invalid */
 					"!"
 				);
 
-				CodePointStringBackSource< std::string::const_iterator > theSource(
+				CodePointStringBackSource<std::string::const_iterator> theSource(
 					theString.begin(),
 					theString.end()
 				);
@@ -233,13 +233,13 @@ namespace Om {
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( InvalidMissingLeadingTest ) {
+			BOOST_AUTO_TEST_CASE(InvalidMissingLeadingTest) {
 				std::string theString(
 					"\xB9" /* Invalid */
 					"!"
 				);
 
-				CodePointStringBackSource< std::string::const_iterator > theSource(
+				CodePointStringBackSource<std::string::const_iterator> theSource(
 					theString.begin(),
 					theString.end()
 				);
@@ -270,10 +270,12 @@ namespace Om {
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( InvalidEarlyTerminationTest ) {
-				std::string theString( "\xE2\x98" /* Invalid */ );
+			BOOST_AUTO_TEST_CASE(InvalidEarlyTerminationTest) {
+				std::string theString(
+					"\xE2\x98" /* Invalid */
+				);
 
-				CodePointStringBackSource< std::string::const_iterator > theSource(
+				CodePointStringBackSource<std::string::const_iterator> theSource(
 					theString.begin(),
 					theString.end()
 				);
@@ -309,10 +311,10 @@ namespace Om {
 // MARK: - Om::Sources::CodePointStringBackSource
 
 	#define Template_ \
-	template< typename ThisStringIterator >
+	template <typename ThisStringIterator>
 
 	#define Type_ \
-	Om::Sources::CodePointStringBackSource< ThisStringIterator >
+	Om::Sources::CodePointStringBackSource<ThisStringIterator>
 
 // MARK: public (non-static)
 
@@ -321,45 +323,45 @@ inline Type_::CodePointStringBackSource(
 	ThisStringIterator theStringStart,
 	ThisStringIterator const theStringEnd
 ):
-thisStringIterator( theStringStart ),
-thisCodePointIterator( theStringEnd ),
-thisCodePointEnd( theStringEnd ),
+thisStringIterator(theStringStart),
+thisCodePointIterator(theStringEnd),
+thisCodePointEnd(theStringEnd),
 thisCodePoint() {
 	this->Update();
 }
 
 Template_
-inline Type_ & Type_::operator =( CodePointStringBackSource theCodePointStringBackSource ) {
-	this->Swap( theCodePointStringBackSource );
-	return( *this );
+inline Type_ & Type_::operator =(CodePointStringBackSource theCodePointStringBackSource) {
+	this->Swap(theCodePointStringBackSource);
+	return *this;
 }
 
 Template_
-inline bool Type_::operator ==( CodePointStringBackSource const & theSource ) const {
-	return( this->thisCodePointIterator == theSource.thisCodePointIterator );
+inline bool Type_::operator ==(CodePointStringBackSource const & theSource) const {
+	return (this->thisCodePointIterator == theSource.thisCodePointIterator);
 }
 
 Template_
 inline bool Type_::operator !() const {
-	return( this->thisCodePointEnd == this->thisCodePointIterator );
+	return (this->thisCodePointEnd == this->thisCodePointIterator);
 }
 
 Template_
 inline std::string & Type_::operator *() const {
-	assert( this->thisCodePointEnd != this->thisCodePointIterator );
-	return( this->thisCodePoint );
+	assert(this->thisCodePointEnd != this->thisCodePointIterator);
+	return this->thisCodePoint;
 }
 
 Template_
 inline void Type_::Pop() {
-	assert( this->thisCodePointEnd != this->thisCodePointIterator );
+	assert(this->thisCodePointEnd != this->thisCodePointIterator);
 	this->thisCodePointEnd = this->thisCodePointIterator;
 	this->thisCodePoint.clear();
 	this->Update();
 }
 
 Template_
-inline void Type_::Swap( CodePointStringBackSource & theCodePointStringBackSource ) {
+inline void Type_::Swap(CodePointStringBackSource & theCodePointStringBackSource) {
 	boost::swap(
 		this->thisStringIterator,
 		theCodePointStringBackSource.thisStringIterator
@@ -382,37 +384,37 @@ inline void Type_::Swap( CodePointStringBackSource & theCodePointStringBackSourc
 
 Template_
 inline void Type_::Update() {
-	assert( this->thisCodePointEnd == this->thisCodePointIterator );
+	assert(this->thisCodePointEnd == this->thisCodePointIterator);
 	assert(
 		this->thisCodePoint.empty()
 	);
-	if( this->thisStringIterator == this->thisCodePointIterator ) {
+	if (this->thisStringIterator == this->thisCodePointIterator) {
 		return;
 	}
-	for(
+	for (
 		int theTrailCount = 0;
 		;
 		++theTrailCount
 	) {
-		assert( this->thisStringIterator != this->thisCodePointIterator );
+		assert(this->thisStringIterator != this->thisCodePointIterator);
 		char const theCodeUnit = *--this->thisCodePointIterator;
-		if(
-			Utf8::is_lead( theCodeUnit )
+		if (
+			Utf8::is_lead(theCodeUnit)
 		) {
-			int const theCorrectTrailCount = Utf8::trail_length( theCodeUnit );
-			if( theCorrectTrailCount == theTrailCount ) {
+			int const theCorrectTrailCount = Utf8::trail_length(theCodeUnit);
+			if (theCorrectTrailCount == theTrailCount) {
 				this->thisCodePoint.assign(
 					this->thisCodePointIterator,
 					this->thisCodePointEnd
 				);
 				return;
 			}
-			if( theCorrectTrailCount < theTrailCount ) {
-				this->thisCodePointIterator += ( theCorrectTrailCount + 1 );
+			if (theCorrectTrailCount < theTrailCount) {
+				this->thisCodePointIterator += (theCorrectTrailCount + 1);
 			}
 			break;
 		}
-		if( this->thisStringIterator == this->thisCodePointIterator ) {
+		if (this->thisStringIterator == this->thisCodePointIterator) {
 			break;
 		}
 	}
@@ -424,12 +426,12 @@ inline void Type_::Update() {
 
 // MARK: - boost
 
-template< typename ThisStringIterator >
+template <typename ThisStringIterator>
 inline void boost::swap(
-	Om::Sources::CodePointStringBackSource< ThisStringIterator > & theFirst,
-	Om::Sources::CodePointStringBackSource< ThisStringIterator > & theSecond
+	Om::Sources::CodePointStringBackSource<ThisStringIterator> & theFirst,
+	Om::Sources::CodePointStringBackSource<ThisStringIterator> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

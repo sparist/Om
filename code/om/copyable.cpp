@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Copyable_ )
+#ifndef Om_Copyable_
 
 	#include "om/copyable.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( CopyableTest )
+	BOOST_AUTO_TEST_SUITE(CopyableTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -35,7 +36,7 @@ namespace Om {
 
 #else
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <cassert>
 		#include <stdexcept>
@@ -54,10 +55,8 @@ inline Type_::~Copyable() {}
 // MARK: private (non-static)
 
 inline Type_ * Type_::Copy() const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 	#undef Type_

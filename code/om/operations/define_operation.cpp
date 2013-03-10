@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_DefineOperation_ )
+#ifndef Om_Operations_DefineOperation_
 
 	#include "om/operations/define_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,74 +28,74 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( DefineOperationTest )
+		BOOST_AUTO_TEST_SUITE(DefineOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{define}",
-					System::Get().Evaluate( "drop find {define} system" )
+					System::Get().Evaluate("drop find {define} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( BasicSubstitutionTest ) {
+			BOOST_AUTO_TEST_CASE(BasicSubstitutionTest) {
 				BOOST_CHECK_EQUAL(
 					"B",
-					System::Get().Evaluate( "define {A {B}} {A}" )
+					System::Get().Evaluate("define {A {B}} {A}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( IdentityDefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(IdentityDefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"",
-					System::Get().Evaluate( "define {A {}} {A}" )
+					System::Get().Evaluate("define {A {}} {A}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( EmptyDefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(EmptyDefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"A",
-					System::Get().Evaluate( "define {A} {A}" )
+					System::Get().Evaluate("define {A} {A}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( EmptyLexiconTest ) {
+			BOOST_AUTO_TEST_CASE(EmptyLexiconTest) {
 				BOOST_CHECK_EQUAL(
 					"",
-					System::Get().Evaluate( "define {} {}" )
+					System::Get().Evaluate("define {} {}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( EmptyKeyFallThroughTest ) {
+			BOOST_AUTO_TEST_CASE(EmptyKeyFallThroughTest) {
 				BOOST_CHECK_EQUAL(
 					"{A}",
-					System::Get().Evaluate( "define {{{A}}} {B}" )
+					System::Get().Evaluate("define {{{A}}} {B}")
 				);
 			}
 
 			// Confirms that the last definition wins.
-			BOOST_AUTO_TEST_CASE( MultipleDefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(MultipleDefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{C}",
-					System::Get().Evaluate( "define { A {{B}} A {{C}} } {A}" )
+					System::Get().Evaluate("define { A {{B}} A {{C}} } {A}")
 				);
 			}
 
 			// Confirms that the last definition wins.
-			BOOST_AUTO_TEST_CASE( MultipleEmptyKeyTest ) {
+			BOOST_AUTO_TEST_CASE(MultipleEmptyKeyTest) {
 				BOOST_CHECK_EQUAL(
 					"{C}",
-					System::Get().Evaluate( "define { {{B}} {{C}} } {A}" )
+					System::Get().Evaluate("define { {{B}} {{C}} } {A}")
 				);
 			}
 
 			// Confirms that underlying non-constant definitions are used.
-			BOOST_AUTO_TEST_CASE( ChainedLookupTest ) {
+			BOOST_AUTO_TEST_CASE(ChainedLookupTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"B\n"
 						"B"
 					),
-					System::Get().Evaluate( "define {A {B}} {dequote {A} A}" )
+					System::Get().Evaluate("define {A {B}} {dequote {A} A}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -109,11 +109,11 @@ namespace Om {
 				);
 				BOOST_CHECK_EQUAL(
 					"1",
-					System::Get().Evaluate( "define fill {a` b} {1} {do{a b}}" )
+					System::Get().Evaluate("define fill {a` b} {1} {do{a b}}")
 				);
 				BOOST_CHECK_EQUAL(
 					"{1}",
-					System::Get().Evaluate( "define {a` b{{1}}} {do{a b}}" )
+					System::Get().Evaluate("define {a` b{{1}}} {do{a b}}")
 				);
 				BOOST_CHECK_EQUAL(
 					"{2}{1}",
@@ -129,7 +129,7 @@ namespace Om {
 			}
 
 			// Confirms evaluation order in nested scopes.
-			BOOST_AUTO_TEST_CASE( NestedEvaluationOrderTest ) {
+			BOOST_AUTO_TEST_CASE(NestedEvaluationOrderTest) {
 				BOOST_CHECK_EQUAL(
 					"{a-default}",
 					System::Get().Evaluate(
@@ -148,24 +148,24 @@ namespace Om {
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( SimpleNestedTest ) {
+			BOOST_AUTO_TEST_CASE(SimpleNestedTest) {
 				BOOST_CHECK_EQUAL(
 					"c",
-					System::Get().Evaluate( "define{a{define{b{c}}{b}}}{a}" )
+					System::Get().Evaluate("define{a{define{b{c}}{b}}}{a}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( DeletedOperatorTest ) {
+			BOOST_AUTO_TEST_CASE(DeletedOperatorTest) {
 				BOOST_CHECK_EQUAL(
 					"A",
-	 				System::Get().Evaluate( "define {define} {define {a{A}} {a}}" )
+	 				System::Get().Evaluate("define {define} {define {a{A}} {a}}")
 				);
  			}
 
-			BOOST_AUTO_TEST_CASE( EvaluationTest ) {
+			BOOST_AUTO_TEST_CASE(EvaluationTest) {
 				BOOST_CHECK_EQUAL(
 					"{1}{3}{2}",
-					System::Get().Evaluate( "define {a{{1}c{2}} c{{3}}} {a}" )
+					System::Get().Evaluate("define {a{{1}c{2}} c{{3}}} {a}")
 				);
 			}
 
@@ -189,12 +189,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_DefineOperation_GetName_()
-	);
+	return Om_Operations_DefineOperation_GetName_();
 }
 
-template< typename TheDefineOperation >
+template <typename TheDefineOperation>
 inline void Type_::GiveElements(
 	TheDefineOperation & theDefineOperation,
 	Queue & theQueue
@@ -202,8 +200,8 @@ inline void Type_::GiveElements(
 	theQueue.TakeElement(
 		GetOperator()
 	);
-	if( theDefineOperation.thisLexicon ) {
-		theQueue.TakeQuotedElements( *theDefineOperation.thisLexicon );
+	if (theDefineOperation.thisLexicon) {
+		theQueue.TakeQuotedElements(*theDefineOperation.thisLexicon);
 	}
 }
 
@@ -212,7 +210,7 @@ inline void Type_::GiveElements(
 inline Type_::DefineOperation():
 thisLexicon() {}
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -220,20 +218,18 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if( this->thisLexicon ) {
+	if (this->thisLexicon) {
 		Expression theExpression;
 		{
 			Environment theEnvironment;
@@ -243,20 +239,20 @@ inline bool Type_::TakeQuotedQueue(
 			theEnvironment.Push(
 				theEvaluation.GetTranslator()
 			);
-			theEnvironment.Push( *this->thisLexicon );
+			theEnvironment.Push(*this->thisLexicon);
 			Evaluator theScope(
 				theExpression,
 				theEnvironment
 			);
-			theQueue.GiveElements( theScope );
+			theQueue.GiveElements(theScope);
 		}
-		theEvaluation.TakeQueue( theExpression );
-		return( true );
+		theEvaluation.TakeQueue(theExpression);
+		return true;
 	}
 	this->thisLexicon = boost::in_place();
-	assert( this->thisLexicon );
-	this->thisLexicon->TakeElements( theQueue );
-	return( false );
+	assert(this->thisLexicon);
+	this->thisLexicon->TakeElements(theQueue);
+	return false;
 }
 
 	#undef Type_

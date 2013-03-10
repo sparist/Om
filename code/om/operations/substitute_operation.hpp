@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_SubstituteOperation_ )
+#ifndef Om_Operations_SubstituteOperation_
 
 	#define Om_Operations_SubstituteOperation_ \
 	Om::Operations::SubstituteOperation
@@ -34,14 +34,14 @@ namespace Om {
 			The \ref om__operations__substitute_operation__ operation implementation.
 		*/
 		class SubstituteOperation:
-		public TranslateOperation< SubstituteOperation > {
+		public TranslateOperation<SubstituteOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
 		public: // MARK: public (non-static)
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			void Translate(
 				Translator const &,
 				TheQueue &,
@@ -52,7 +52,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< SubstituteOperation > const theSubstituteDefinition;
+			static Definition<SubstituteOperation> const theSubstituteDefinition;
 
 		}
 

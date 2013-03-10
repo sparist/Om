@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_EnvironmentOperation_ )
+#ifndef Om_Operations_EnvironmentOperation_
 
 	#define Om_Operations_EnvironmentOperation_ \
 	Om::Operations::EnvironmentOperation
@@ -36,13 +36,13 @@ namespace Om {
 
 			static char const * GetName();
 
-			static void Give( Evaluation & );
+			static void Give(Evaluation &);
 
 		};
 
 		namespace {
 
-			static Definition< EnvironmentOperation > const theEnvironmentDefinition;
+			static Definition<EnvironmentOperation> const theEnvironmentDefinition;
 
 		}
 

@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Element_ )
+#ifndef Om_Element_
 
 	#include "om/element.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( ElementTest )
+	BOOST_AUTO_TEST_SUITE(ElementTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -44,68 +45,58 @@ namespace Om {
 
 inline Type_::~Element() {}
 
-inline bool Type_::operator ==( Element const & ) const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+inline bool Type_::operator ==(Element const &) const {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline Om::Program & Type_::operator *() {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline Om::Program const & Type_::operator *() const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline Om::Program * Type_::operator ->() {
-	return( &**this );
+	return &**this;
 }
 
 inline Om::Program const * Type_::operator ->() const {
-	return( &**this );
+	return &**this;
 }
 
 inline std::auto_ptr<
-	Om::Source< Om::Element >
+	Om::Source<Om::Element>
 > Type_::GetElementRange() {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
-inline bool Type_::Merge( Operator & ) {
-	return( false );
+inline bool Type_::Merge(Operator &) {
+	return false;
 }
 
-inline bool Type_::Merge( Operator const & ) {
-	return( false );
+inline bool Type_::Merge(Operator const &) {
+	return false;
 }
 
-inline bool Type_::Merge( Separator & ) {
-	return( false );
+inline bool Type_::Merge(Separator &) {
+	return false;
 }
 
-inline bool Type_::Merge( Separator const & ) {
-	return( false );
+inline bool Type_::Merge(Separator const &) {
+	return false;
 }
 
 	#undef Type_
 
 // MARK: - Om
 
-inline Om::Element * Om::new_clone( Element const & theElement ) {
-	return(
-		Copy( theElement ).release()
-	);
+inline Om::Element * Om::new_clone(Element const & theElement) {
+	return Copy(theElement).release();
 }
 
 #endif

@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Moveable_ )
+#ifndef Om_Moveable_
 
 	#define Om_Moveable_ \
 	Om::Moveable
@@ -28,8 +28,8 @@ namespace Om {
 	*/
 	class Moveable {
 
-		template< typename TheMoveable >
-		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );
+		template <typename TheMoveable>
+		friend std::auto_ptr<TheMoveable> Move(TheMoveable &);
 
 	public: // MARK: public (non-static)
 
@@ -37,7 +37,7 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		Moveable & operator =( Moveable const & );
+		Moveable & operator =(Moveable const &);
 
 		/*!
 		\return

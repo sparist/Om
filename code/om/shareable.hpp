@@ -12,12 +12,12 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Shareable_ )
+#ifndef Om_Shareable_
 
 	#define Om_Shareable_ \
 	Om::Shareable
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <cstddef>
 
@@ -32,7 +32,7 @@ namespace Om {
 
 	This type can be used as a template argument for boost::intrusive_ptr. Shared ownership is implemented via owner counting.
 	*/
-	template< typename ThisOwnerCount = size_t >
+	template <typename ThisOwnerCount = size_t>
 	class Shareable {
 
 		/*!
@@ -41,18 +41,18 @@ namespace Om {
 		\note
 			Called by the boost::intrusive_ptr constructors.
 		*/
-		template< typename TheOwnerCount >
+		template <typename TheOwnerCount>
 		friend void intrusive_ptr_add_ref(
-			Shareable< TheOwnerCount > * const
+			Shareable<TheOwnerCount> * const
 		);
 
 		/*!
 		\note
 			Called by the boost::intrusive_ptr destructor.
 		*/
-		template< typename TheOwnerCount >
+		template <typename TheOwnerCount>
 		friend void intrusive_ptr_release(
-			Shareable< TheOwnerCount > * const
+			Shareable<TheOwnerCount> * const
 		);
 
 	public: // MARK: public (non-static)
@@ -65,9 +65,9 @@ namespace Om {
 
 		Shareable();
 
-		Shareable( Shareable const & );
+		Shareable(Shareable const &);
 
-		Shareable & operator =( Shareable const & );
+		Shareable & operator =(Shareable const &);
 
 	private: // MARK: private (non-static)
 
@@ -90,14 +90,14 @@ namespace Om {
 // MARK: - Om
 namespace Om {
 
-	template< typename TheOwnerCount >
+	template <typename TheOwnerCount>
 	void intrusive_ptr_add_ref(
-		Shareable< TheOwnerCount > * const
+		Shareable<TheOwnerCount> * const
 	);
 
-	template< typename TheOwnerCount >
+	template <typename TheOwnerCount>
 	void intrusive_ptr_release(
-		Shareable< TheOwnerCount > * const
+		Shareable<TheOwnerCount> * const
 	);
 
 }

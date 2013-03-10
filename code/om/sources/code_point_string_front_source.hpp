@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_CodePointStringFrontSource_ )
+#ifndef Om_Sources_CodePointStringFrontSource_
 
 	#define Om_Sources_CodePointStringFrontSource_ \
 	Om::Sources::CodePointStringFrontSource
@@ -32,11 +32,11 @@ namespace Om {
 		\note
 			Dereferencing exposes a non-const reference to the member string cache of the current segment, allowing swap as an optimization. Modifying the string will not modify the source data.
 		*/
-		template< typename ThisStringIterator >
+		template <typename ThisStringIterator>
 		class CodePointStringFrontSource:
 		public DefaultSource<
 			std::string,
-			CodePointStringFrontSource< ThisStringIterator >
+			CodePointStringFrontSource<ThisStringIterator>
 		> {
 		public: // MARK: public (non-static)
 
@@ -51,9 +51,9 @@ namespace Om {
 				ThisStringIterator const theStringEnd
 			);
 
-			CodePointStringFrontSource & operator =( CodePointStringFrontSource );
+			CodePointStringFrontSource & operator =(CodePointStringFrontSource);
 
-			bool operator ==( CodePointStringFrontSource const & ) const;
+			bool operator ==(CodePointStringFrontSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -61,7 +61,7 @@ namespace Om {
 
 			virtual void Pop();
 
-			void Swap( CodePointStringFrontSource & );
+			void Swap(CodePointStringFrontSource &);
 
 		private: // MARK: private (non-static)
 
@@ -89,10 +89,10 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template< typename ThisStringIterator >
+	template <typename ThisStringIterator>
 	void swap(
-		Om::Sources::CodePointStringFrontSource< ThisStringIterator > &,
-		Om::Sources::CodePointStringFrontSource< ThisStringIterator > &
+		Om::Sources::CodePointStringFrontSource<ThisStringIterator> &,
+		Om::Sources::CodePointStringFrontSource<ThisStringIterator> &
 	);
 
 }

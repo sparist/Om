@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_ContainerFrontSink_ )
+#ifndef Om_Sinks_ContainerFrontSink_
 
 	#include "om/sinks/container_front_sink.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sinks {
 
-		BOOST_AUTO_TEST_SUITE( ContainerFrontSinkTest )
+		BOOST_AUTO_TEST_SUITE(ContainerFrontSinkTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,7 +43,7 @@ namespace Om {
 // MARK: - Om::Sinks::ContainerFrontSink
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisItem, \
 		typename ThisContainer \
 	>
@@ -56,27 +57,27 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::ContainerFrontSink( ThisContainer & theContainer ):
-thisContainer( theContainer ) {}
+inline Type_::ContainerFrontSink(ThisContainer & theContainer):
+thisContainer(theContainer) {}
 
 Template_
-inline Type_ & Type_::operator =( ContainerFrontSink theContainerFrontSink ) {
-	this->Swap( theContainerFrontSink );
-	return( *this );
+inline Type_ & Type_::operator =(ContainerFrontSink theContainerFrontSink) {
+	this->Swap(theContainerFrontSink);
+	return *this;
 }
 
 Template_
-inline void Type_::Push( ThisItem & thisItem ) {
-	this->thisContainer.push_front( thisItem );
+inline void Type_::Push(ThisItem & thisItem) {
+	this->thisContainer.push_front(thisItem);
 }
 
 Template_
-inline void Type_::Swap( ContainerFrontSink & theContainerFrontSink ) {
+inline void Type_::Swap(ContainerFrontSink & theContainerFrontSink) {
 	boost::swap(
 		this->thisContainer,
 		theContainerFrontSink.thisContainer
 	);
-	return( *this );
+	return *this;
 }
 
 	#undef Type_
@@ -84,7 +85,7 @@ inline void Type_::Swap( ContainerFrontSink & theContainerFrontSink ) {
 
 // MARK: - boost
 
-template<
+template <
 	typename ThisItem,
 	typename ThisContainer
 >
@@ -98,7 +99,7 @@ inline void boost::swap(
 		ThisContainer
 	> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

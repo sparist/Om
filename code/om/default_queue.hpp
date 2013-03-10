@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultQueue_ )
+#ifndef Om_DefaultQueue_
 
 	#define Om_DefaultQueue_ \
 	Om::DefaultQueue
@@ -26,7 +26,7 @@ namespace Om {
 	\brief
 		A partial implementation of Queue.
 	*/
-	template<
+	template <
 		typename ThisImplementation,
 		typename ThisInterface = Queue
 	>
@@ -36,29 +36,29 @@ namespace Om {
 
 		virtual ~DefaultQueue() = 0;
 
-		virtual void TakeElement( Operand & );
+		virtual void TakeElement(Operand &);
 
-		virtual void TakeElement( Operand const & );
+		virtual void TakeElement(Operand const &);
 
-		virtual void TakeElement( Operator & );
+		virtual void TakeElement(Operator &);
 
-		virtual void TakeElement( Operator const & );
+		virtual void TakeElement(Operator const &);
 
-		virtual void TakeElement( Separator & );
+		virtual void TakeElement(Separator &);
 
-		virtual void TakeElement( Separator const & );
+		virtual void TakeElement(Separator const &);
 
-		virtual void TakeElements( Queue & );
+		virtual void TakeElements(Queue &);
 
-		virtual void TakeElements( Queue const & );
+		virtual void TakeElements(Queue const &);
 
-		virtual void TakeQuotedElements( Queue & );
+		virtual void TakeQuotedElements(Queue &);
 
-		virtual void TakeQuotedElements( Queue const & );
+		virtual void TakeQuotedElements(Queue const &);
 
 	private: // MARK: private (non-static)
 
-		DefaultQueue & operator =( DefaultQueue const & );
+		DefaultQueue & operator =(DefaultQueue const &);
 
 	};
 

@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Giveable_ )
+#ifndef Om_Giveable_
 
 	#define Om_Giveable_ \
 	Om::Giveable
@@ -36,7 +36,7 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		Giveable & operator =( Giveable const & );
+		Giveable & operator =(Giveable const &);
 
 	};
 

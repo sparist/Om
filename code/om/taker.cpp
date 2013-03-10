@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Taker_ )
+#ifndef Om_Taker_
 
 	#include "om/taker.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( TakerTest )
+	BOOST_AUTO_TEST_SUITE(TakerTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -38,10 +39,10 @@ namespace Om {
 // MARK: - Om::Taker
 
 	#define Template_ \
-	template< typename ThisImplementation >
+	template <typename ThisImplementation>
 
 	#define Type_ \
-	Om::Taker< ThisImplementation >
+	Om::Taker<ThisImplementation>
 
 // MARK: public (non-static)
 
@@ -49,19 +50,19 @@ Template_
 inline Type_::~Taker() {}
 
 Template_
-inline void Type_::Take( ThisImplementation & theTaker ) {
+inline void Type_::Take(ThisImplementation & theTaker) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ).Swap( theTaker );
+	static_cast<ThisImplementation &>(*this).Swap(theTaker);
 }
 
 Template_
-inline void Type_::Take( ThisImplementation const & theTaker ) {
+inline void Type_::Take(ThisImplementation const & theTaker) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ) = theTaker;
+	static_cast<ThisImplementation &>(*this) = theTaker;
 }
 
 	#undef Type_

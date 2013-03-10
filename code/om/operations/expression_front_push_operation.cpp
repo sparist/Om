@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_ExpressionFrontPushOperation_ )
+#ifndef Om_Operations_ExpressionFrontPushOperation_
 
 	#include "om/operations/expression_front_push_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,16 +28,16 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( ExpressionFrontPushOperationTest )
+		BOOST_AUTO_TEST_SUITE(ExpressionFrontPushOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{->expression}",
-					System::Get().Evaluate( "drop find {->expression} system" )
+					System::Get().Evaluate("drop find {->expression} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"{"
@@ -47,7 +47,7 @@ namespace Om {
 						"6"
 						"}"
 					),
-					System::Get().Evaluate( "->expression {1{2}3}{4{5}6}" )
+					System::Get().Evaluate("->expression {1{2}3}{4{5}6}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -57,7 +57,7 @@ namespace Om {
 						"6"
 						"}"
 					),
-					System::Get().Evaluate( "->expression {1{2}}{{5}6}" )
+					System::Get().Evaluate("->expression {1{2}}{{5}6}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -67,7 +67,7 @@ namespace Om {
 						"6"
 						"}"
 					),
-					System::Get().Evaluate( "->expression {}{{5}6}" )
+					System::Get().Evaluate("->expression {}{{5}6}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -77,7 +77,7 @@ namespace Om {
 						"6"
 						"}"
 					),
-					System::Get().Evaluate( "->expression {{5}6}{}" )
+					System::Get().Evaluate("->expression {{5}6}{}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -87,12 +87,12 @@ namespace Om {
 						"3"
 						"}"
 					),
-					System::Get().Evaluate( "->expression quote{2}{3}" )
+					System::Get().Evaluate("->expression quote{2}{3}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{2{3}}",
-					System::Get().Evaluate( "->expression{2}quote{3}" )
+					System::Get().Evaluate("->expression{2}quote{3}")
 				);
 			}
 
@@ -117,14 +117,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_ExpressionFrontPushOperation_GetName_()
-	);
+	return Om_Operations_ExpressionFrontPushOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
+		std::auto_ptr<Operation>(
 			new FrontPushOperation<
 				Expression,
 				ExpressionFrontPushOperation

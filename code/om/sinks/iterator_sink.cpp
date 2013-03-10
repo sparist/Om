@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_IteratorSink_ )
+#ifndef Om_Sinks_IteratorSink_
 
 	#include "om/sinks/iterator_sink.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sinks {
 
-		BOOST_AUTO_TEST_SUITE( IteratorSinkTest )
+		BOOST_AUTO_TEST_SUITE(IteratorSinkTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,7 +43,7 @@ namespace Om {
 // MARK: - Om::Sinks::IteratorSink
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisItem, \
 		typename ThisIterator \
 	>
@@ -56,27 +57,27 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::IteratorSink( ThisIterator theIterator ):
-thisIterator( theIterator ) {}
+inline Type_::IteratorSink(ThisIterator theIterator):
+thisIterator(theIterator) {}
 
 Template_
-inline Type_ & Type_::operator =( IteratorSink theIteratorSink ) {
-	this->Swap( theIteratorSink );
-	return( *this );
+inline Type_ & Type_::operator =(IteratorSink theIteratorSink) {
+	this->Swap(theIteratorSink);
+	return *this;
 }
 
 Template_
-inline void Type_::Push( ThisItem & theItem ) {
+inline void Type_::Push(ThisItem & theItem) {
 	*this->thisIterator++ = theItem;
 }
 
 Template_
-inline void Type_::Swap( IteratorSink & theIteratorSink ) {
+inline void Type_::Swap(IteratorSink & theIteratorSink) {
 	boost::swap(
 		this->thisIterator,
 		theIteratorSink.thisIterator
 	);
-	return( *this );
+	return *this;
 }
 
 	#undef Type_
@@ -84,7 +85,7 @@ inline void Type_::Swap( IteratorSink & theIteratorSink ) {
 
 // MARK: - boost
 
-template<
+template <
 	typename ThisItem,
 	typename ThisIterator
 >
@@ -98,7 +99,7 @@ inline void boost::swap(
 		ThisIterator
 	> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

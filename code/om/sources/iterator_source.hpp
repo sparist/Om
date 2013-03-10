@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_IteratorSource_ )
+#ifndef Om_Sources_IteratorSource_
 
 	#define Om_Sources_IteratorSource_ \
 	Om::Sources::IteratorSource
@@ -32,7 +32,7 @@ namespace Om {
 		\tparam ThisIterator
 			The iterator type.
 		*/
-		template<
+		template <
 			typename ThisItem,
 			typename ThisIterator
 		>
@@ -50,11 +50,11 @@ namespace Om {
 			\param theIterator
 				The input iterator, dereferencable to a valid item.
 			*/
-			explicit IteratorSource( ThisIterator const theIterator );
+			explicit IteratorSource(ThisIterator const theIterator);
 
-			IteratorSource & operator =( IteratorSource );
+			IteratorSource & operator =(IteratorSource);
 
-			bool operator ==( IteratorSource const & ) const;
+			bool operator ==(IteratorSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -62,7 +62,7 @@ namespace Om {
 
 			virtual void Pop();
 
-			void Swap( IteratorSource & );
+			void Swap(IteratorSource &);
 
 		private: // MARK: private (non-static)
 
@@ -81,7 +81,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<
+	template <
 		typename ThisItem,
 		typename ThisIterator
 	>

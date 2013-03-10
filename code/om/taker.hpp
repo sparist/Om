@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Taker_ )
+#ifndef Om_Taker_
 
 	#define Om_Taker_ \
 	Om::Taker
@@ -24,7 +24,7 @@ namespace Om {
 	\brief
 		An object that can take (copy or swap) another of the same type.
 	*/
-	template< typename ThisImplementation >
+	template <typename ThisImplementation>
 	class Taker {
 	public: // MARK: public (non-static)
 
@@ -34,17 +34,17 @@ namespace Om {
 		\brief
 			Swaps.
 		*/
-		void Take( ThisImplementation & );
+		void Take(ThisImplementation &);
 
 		/*!
 		\brief
 			Assigns.
 		*/
-		void Take( ThisImplementation const & );
+		void Take(ThisImplementation const &);
 
 	private: // MARK: private (non-static)
 
-		Taker & operator =( Taker const & );
+		Taker & operator =(Taker const &);
 
 	};
 

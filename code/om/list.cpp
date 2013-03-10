@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_List_ )
+#ifndef Om_List_
 
 	#include "om/list.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( ListTest )
+	BOOST_AUTO_TEST_SUITE(ListTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -38,10 +39,10 @@ namespace Om {
 // MARK: - Om::List
 
 	#define Template_ \
-	template< typename ThisValue >
+	template <typename ThisValue>
 
 	#define Type_ \
-	Om::List< ThisValue >
+	Om::List<ThisValue>
 
 // MARK: public (non-static)
 
@@ -53,30 +54,26 @@ thisNodeArray() {
 
 Template_
 inline void Type_::Clear() {
-	this->thisNodeArray[ theFrontNodeIndex ] = 0;
-	this->thisNodeArray[ theBackNodeIndex ] = 0;
+	this->thisNodeArray[theFrontNodeIndex] = 0;
+	this->thisNodeArray[theBackNodeIndex] = 0;
 }
 
 Template_
-inline typename Type_::Node * Type_::GetNode( NodeIndex const theNodeIndex ) {
-	return(
-		this->thisNodeArray[ theNodeIndex ]
-	);
+inline typename Type_::Node * Type_::GetNode(NodeIndex const theNodeIndex) {
+	return this->thisNodeArray[theNodeIndex];
 }
 
 Template_
-inline typename Type_::Node const * Type_::GetNode( NodeIndex const theNodeIndex ) const {
-	return(
-		this->thisNodeArray[ theNodeIndex ]
-	);
+inline typename Type_::Node const * Type_::GetNode(NodeIndex const theNodeIndex) const {
+	return this->thisNodeArray[theNodeIndex];
 }
 
 Template_
 inline bool Type_::IsEmpty() const {
 	assert(
-		!this->thisNodeArray[ theFrontNodeIndex ] == !this->thisNodeArray[ theBackNodeIndex ]
+		!this->thisNodeArray[theFrontNodeIndex] == !this->thisNodeArray[theBackNodeIndex]
 	);
-	return( !this->thisNodeArray[ theFrontNodeIndex ] );
+	return !this->thisNodeArray[theFrontNodeIndex];
 }
 
 Template_
@@ -84,18 +81,18 @@ inline void Type_::LinkNode(
 	NodeIndex const theNodeIndex,
 	Node & theNode
 ) {
-	Node * const theLinkedNode = this->thisNodeArray[ theNodeIndex ];
-	theNode.thisNodeArray[ theNodeIndex ] = 0;
-	theNode.thisNodeArray[ !theNodeIndex ] = theLinkedNode;
-	if( theLinkedNode ) {
-		theLinkedNode->thisNodeArray[ theNodeIndex ] = &theNode;
+	Node * const theLinkedNode = this->thisNodeArray[theNodeIndex];
+	theNode.thisNodeArray[theNodeIndex] = 0;
+	theNode.thisNodeArray[!theNodeIndex] = theLinkedNode;
+	if (theLinkedNode) {
+		theLinkedNode->thisNodeArray[theNodeIndex] = &theNode;
 	} else {
 		assert(
-			!this->thisNodeArray[ !theNodeIndex ]
+			!this->thisNodeArray[!theNodeIndex]
 		);
-		this->thisNodeArray[ !theNodeIndex ] = &theNode;
+		this->thisNodeArray[!theNodeIndex] = &theNode;
 	}
-	this->thisNodeArray[ theNodeIndex ] = &theNode;
+	this->thisNodeArray[theNodeIndex] = &theNode;
 }
 
 Template_
@@ -103,18 +100,18 @@ inline void Type_::RelinkNode(
 	NodeIndex const theNodeIndex,
 	Node & theNode
 ) {
-	if(
-		Node * const theNearNode = theNode.thisNodeArray[ theNodeIndex ]
+	if (
+		Node * const theNearNode = theNode.thisNodeArray[theNodeIndex]
 	) {
-		Node * const theFarNode = theNode.thisNodeArray[ !theNodeIndex ];
-		theNearNode->thisNodeArray[ !theNodeIndex ] = theFarNode;
-		if( theFarNode ) {
-			theFarNode->thisNodeArray[ theNodeIndex ] = theNearNode;
+		Node * const theFarNode = theNode.thisNodeArray[!theNodeIndex];
+		theNearNode->thisNodeArray[!theNodeIndex] = theFarNode;
+		if (theFarNode) {
+			theFarNode->thisNodeArray[theNodeIndex] = theNearNode;
 		} else {
 			assert(
-				this->thisNodeArray[ !theNodeIndex ] == &theNode
+				this->thisNodeArray[!theNodeIndex] == &theNode
 			);
-			this->thisNodeArray[ !theNodeIndex ] = theNearNode;
+			this->thisNodeArray[!theNodeIndex] = theNearNode;
 		}
 
 		this->LinkNode(
@@ -125,41 +122,41 @@ inline void Type_::RelinkNode(
 }
 
 Template_
-inline void Type_::Swap( List & theList ) {
+inline void Type_::Swap(List & theList) {
 	boost::swap(
-		this->thisNodeArray[ theFrontNodeIndex ],
-		theList.thisNodeArray[ theFrontNodeIndex ]
+		this->thisNodeArray[theFrontNodeIndex],
+		theList.thisNodeArray[theFrontNodeIndex]
 	);
 	boost::swap(
-		this->thisNodeArray[ theBackNodeIndex ],
-		theList.thisNodeArray[ theBackNodeIndex ]
+		this->thisNodeArray[theBackNodeIndex],
+		theList.thisNodeArray[theBackNodeIndex]
 	);
 }
 
 Template_
-inline typename Type_::Node * Type_::UnlinkNode( NodeIndex const theNodeIndex ) {
-	if(
-		Node * const theNode = this->thisNodeArray[ theNodeIndex ]
+inline typename Type_::Node * Type_::UnlinkNode(NodeIndex const theNodeIndex) {
+	if (
+		Node * const theNode = this->thisNodeArray[theNodeIndex]
 	) {
 		assert(
-			this->thisNodeArray[ !theNodeIndex ] &&
-			!theNode->thisNodeArray[ theNodeIndex ]
+			this->thisNodeArray[!theNodeIndex] &&
+			!theNode->thisNodeArray[theNodeIndex]
 		);
 
-		Node * const theFarNode = theNode->thisNodeArray[ !theNodeIndex ];
-		if( theFarNode ) {
-			theFarNode->thisNodeArray[ theNodeIndex ] = 0;
+		Node * const theFarNode = theNode->thisNodeArray[!theNodeIndex];
+		if (theFarNode) {
+			theFarNode->thisNodeArray[theNodeIndex] = 0;
 		} else {
 			assert(
-				this->thisNodeArray[ !theNodeIndex ] == theNode
+				this->thisNodeArray[!theNodeIndex] == theNode
 			);
-			this->thisNodeArray[ !theNodeIndex ] = 0;
+			this->thisNodeArray[!theNodeIndex] = 0;
 		}
-		this->thisNodeArray[ theNodeIndex ] = theFarNode;
+		this->thisNodeArray[theNodeIndex] = theFarNode;
 
-		return( theNode );
+		return theNode;
 	}
-	return( 0 );
+	return 0;
 }
 
 	#undef Type_
@@ -168,10 +165,10 @@ inline typename Type_::Node * Type_::UnlinkNode( NodeIndex const theNodeIndex ) 
 // MARK: - Om::List::Node
 
 	#define Template_ \
-	template< typename ThisValue >
+	template <typename ThisValue>
 
 	#define Type_ \
-	Om::List< ThisValue >::Node
+	Om::List<ThisValue>::Node
 
 // MARK: public (non-static)
 
@@ -179,32 +176,28 @@ Template_
 inline Type_::Node():
 thisNodeArray(),
 thisValue() {
-	this->thisNodeArray[ theFrontNodeIndex ] = 0;
-	this->thisNodeArray[ theBackNodeIndex ] = 0;
+	this->thisNodeArray[theFrontNodeIndex] = 0;
+	this->thisNodeArray[theBackNodeIndex] = 0;
 }
 
 Template_
-inline typename Type_ * Type_::GetNode( NodeIndex const theNodeIndex ) {
-	return(
-		this->thisNodeArray[ theNodeIndex ]
-	);
+inline typename Type_ * Type_::GetNode(NodeIndex const theNodeIndex) {
+	return this->thisNodeArray[theNodeIndex];
 }
 
 Template_
-inline typename Type_ const * Type_::GetNode( NodeIndex const theNodeIndex ) const {
-	return(
-		this->thisNodeArray[ theNodeIndex ]
-	);
+inline typename Type_ const * Type_::GetNode(NodeIndex const theNodeIndex) const {
+	return this->thisNodeArray[theNodeIndex];
 }
 
 Template_
 inline ThisValue & Type_::GetValue() {
-	return( this->thisValue );
+	return this->thisValue;
 }
 
 Template_
 inline ThisValue const & Type_::GetValue() const {
-	return( this->thisValue );
+	return this->thisValue;
 }
 
 	#undef Type_

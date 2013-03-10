@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_EqualsOperation_ )
+#ifndef Om_Operations_EqualsOperation_
 
 	#include "om/operations/equals_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,34 +30,34 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( EqualsOperationTest )
+		BOOST_AUTO_TEST_SUITE(EqualsOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{=}",
-					System::Get().Evaluate( "drop find {=} system" )
+					System::Get().Evaluate("drop find {=} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{{A}}",
-					System::Get().Evaluate( "= {A} {A}" )
+					System::Get().Evaluate("= {A} {A}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}",
-					System::Get().Evaluate( "= {A} {Not A}" )
+					System::Get().Evaluate("= {A} {Not A}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{}}",
-					System::Get().Evaluate( "= {} {}" )
+					System::Get().Evaluate("= {} {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}",
-					System::Get().Evaluate( "= {} {Not empty}" )
+					System::Get().Evaluate("= {} {Not empty}")
 				);
 			}
 
@@ -81,12 +81,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_EqualsOperation_GetName_()
-	);
+	return Om_Operations_EqualsOperation_GetName_();
 }
 
-template< typename TheEqualsOperation >
+template <typename TheEqualsOperation>
 inline void Type_::GiveElements(
 	TheEqualsOperation & theEqualsOperation,
 	Queue & theQueue
@@ -94,10 +92,10 @@ inline void Type_::GiveElements(
 	theQueue.TakeElement(
 		GetOperator()
 	);
-	if(
+	if (
 		!theEqualsOperation.thisOperand.IsEmpty()
 	) {
-		theQueue.TakeElement( theEqualsOperation.thisOperand );
+		theQueue.TakeElement(theEqualsOperation.thisOperand);
 	}
 }
 
@@ -106,7 +104,7 @@ inline void Type_::GiveElements(
 inline Type_::EqualsOperation():
 thisOperand() {}
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -114,41 +112,41 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	if(
+	if (
 		this->thisOperand.IsEmpty()
 	) {
-		this->thisOperand.Take( theOperand );
-		return( false );
+		this->thisOperand.Take(theOperand);
+		return false;
 	}
 	Expression theExpression;
-	if( this->thisOperand == theOperand ) {
-		theExpression.TakeOperand( this->thisOperand );
+	if (this->thisOperand == theOperand) {
+		theExpression.TakeOperand(this->thisOperand);
 	}
-	theEvaluation.TakeQuotedQueue( theExpression );
-	return( true );
+	theEvaluation.TakeQuotedQueue(theExpression);
+	return true;
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if(
+	if (
 		this->thisOperand.IsEmpty()
 	) {
 		this->thisOperand.SetProgram(
 			theQueue.GiveProgram()
 		);
-		return( false );
+		return false;
 	}
 	Expression theExpression;
-	if(
+	if (
 		theQueue == *this->thisOperand.GetProgram()
 	) {
-		theExpression.TakeOperand( this->thisOperand );
+		theExpression.TakeOperand(this->thisOperand);
 	}
-	theEvaluation.TakeQuotedQueue( theExpression );
-	return( true );
+	theEvaluation.TakeQuotedQueue(theExpression);
+	return true;
 }
 
 	#undef Type_

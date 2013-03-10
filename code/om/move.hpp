@@ -12,12 +12,12 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Move_ )
+#ifndef Om_Move_
 
 	#define Om_Move_ \
 	Om::Move
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <memory>
 
@@ -30,8 +30,8 @@ namespace Om {
 	\return
 		A polymorphic move of the object.
 	*/
-	template< typename TheMoveable >
-	std::auto_ptr< TheMoveable > Move( TheMoveable & );
+	template <typename TheMoveable>
+	std::auto_ptr<TheMoveable> Move(TheMoveable &);
 
 }
 

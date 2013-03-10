@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultMoveable_ )
+#ifndef Om_DefaultMoveable_
 
 	#include "om/default_moveable.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( DefaultMoveableTest )
+	BOOST_AUTO_TEST_SUITE(DefaultMoveableTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -38,7 +39,7 @@ namespace Om {
 // MARK: - Om::DefaultMoveable
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisImplementation, \
 		typename ThisInterface \
 	>
@@ -59,15 +60,13 @@ inline Type_::~DefaultMoveable() {}
 Template_
 inline ThisInterface * Type_::Move() {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	std::auto_ptr< ThisImplementation > theMoveable( new ThisImplementation );
+	std::auto_ptr<ThisImplementation> theMoveable(new ThisImplementation);
 	theMoveable->Swap(
-		static_cast< ThisImplementation & >( *this )
+		static_cast<ThisImplementation &>(*this)
 	);
-	return(
-		theMoveable.release()
-	);
+	return theMoveable.release();
 }
 
 	#undef Type_

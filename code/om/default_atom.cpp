@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultAtom_ )
+#ifndef Om_DefaultAtom_
 
 	#include "om/default_atom.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( DefaultAtomTest )
+	BOOST_AUTO_TEST_SUITE(DefaultAtomTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -37,7 +38,7 @@ namespace Om {
 
 	#include "om/sources/empty_source.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/locale/conversion.hpp"
 
@@ -46,10 +47,10 @@ namespace Om {
 // MARK: - Om::DefaultAtom
 
 	#define Template_ \
-	template< typename ThisImplementation >
+	template <typename ThisImplementation>
 
 	#define Type_ \
-	Om::DefaultAtom< ThisImplementation >
+	Om::DefaultAtom<ThisImplementation>
 
 // MARK: public (non-static)
 
@@ -57,13 +58,13 @@ Template_
 inline Type_::~DefaultAtom() {}
 
 Template_
-inline bool Type_::operator <( DefaultAtom const & theAtom ) {
-	return( this->thisString < theAtom.thisString );
+inline bool Type_::operator <(DefaultAtom const & theAtom) {
+	return (this->thisString < theAtom.thisString);
 }
 
 Template_
-inline bool Type_::operator ==( ThisImplementation const & theAtom ) const {
-	return( this->thisString == theAtom.thisString );
+inline bool Type_::operator ==(ThisImplementation const & theAtom) const {
+	return (this->thisString == theAtom.thisString);
 }
 
 Template_
@@ -73,77 +74,67 @@ inline void Type_::Clear() {
 
 Template_
 inline std::auto_ptr<
-	Om::Source< Om::Element >
+	Om::Source<Om::Element>
 > Type_::GetElementRange() {
-	if(
+	if (
 		this->IsEmpty()
 	) {
-		return(
-			std::auto_ptr<
-				Source< Element >
-			>(
-				new Sources::EmptySource< Element >
-			)
+		return std::auto_ptr<
+			Source<Element>
+		>(
+			new Sources::EmptySource<Element>
 		);
 	}
-	return(
-		this->DefaultElement<
-			ThisImplementation,
-			Atom
-		>::GetElementRange()
-	);
+	return this->DefaultElement<
+		ThisImplementation,
+		Atom
+	>::GetElementRange();
 }
 
 Template_
 inline std::auto_ptr<
-	Om::Source< Om::Element const >
+	Om::Source<Om::Element const>
 > Type_::GetElementRange() const {
-	if(
+	if (
 		this->IsEmpty()
 	) {
-		return(
-			std::auto_ptr<
-				Source< Element const >
-			>(
-				new Sources::EmptySource< Element const >
-			)
+		return std::auto_ptr<
+			Source<Element const>
+		>(
+			new Sources::EmptySource<Element const>
 		);
 	}
-	return(
-		this->DefaultElement<
-			ThisImplementation,
-			Atom
-		>::GetElementRange()
-	);
+	return this->DefaultElement<
+		ThisImplementation,
+		Atom
+	>::GetElementRange();
 }
 
 Template_
 inline std::string const & Type_::GetString() const {
-	return( this->thisString );
+	return this->thisString;
 }
 
 Template_
 inline bool Type_::IsEmpty() const {
-	return(
-		this->thisString.empty()
-	);
+	return this->thisString.empty();
 }
 
 Template_
-inline bool Type_::Merge( ThisImplementation & theAtom ) {
-	this->TakeElement( theAtom );
-	return( true );
+inline bool Type_::Merge(ThisImplementation & theAtom) {
+	this->TakeElement(theAtom);
+	return true;
 }
 
 Template_
-inline bool Type_::Merge( ThisImplementation const & theAtom ) {
-	this->TakeElement( theAtom );
-	return( true );
+inline bool Type_::Merge(ThisImplementation const & theAtom) {
+	this->TakeElement(theAtom);
+	return true;
 }
 
 Template_
-inline void Type_::Swap( ThisImplementation & theAtom ) {
-	this->thisString.swap( theAtom.thisString );
+inline void Type_::Swap(ThisImplementation & theAtom) {
+	this->thisString.swap(theAtom.thisString);
 }
 
 // MARK: protected (non-static)
@@ -156,7 +147,7 @@ Template_
 inline Type_::DefaultAtom(
 	char const theCodeUnitIterator[]
 ):
-thisString( theCodeUnitIterator ) {
+thisString(theCodeUnitIterator) {
 	assert(
 		theCodeUnitIterator &&
 		"The argument cannot be null."
@@ -173,7 +164,7 @@ thisString( theCodeUnitIterator ) {
 }
 
 Template_
-inline Type_::DefaultAtom( char const theCodeUnit ):
+inline Type_::DefaultAtom(char const theCodeUnit):
 thisString(
 	1,
 	theCodeUnit

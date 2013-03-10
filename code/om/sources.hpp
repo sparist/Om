@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_ )
+#ifndef Om_Sources_
 
 	#define Om_Sources_ \
 	Om::Sources

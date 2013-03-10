@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Copy_ )
+#ifndef Om_Copy_
 
 	#include "om/copy.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( CopyTest )
+	BOOST_AUTO_TEST_SUITE(CopyTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -37,13 +38,11 @@ namespace Om {
 
 // MARK: - Om
 
-template< typename TheCopyable >
-inline std::auto_ptr< TheCopyable > Om::Copy( TheCopyable const & theCopyable ) {
-	return(
-		std::auto_ptr< TheCopyable >(
-			static_cast< TheCopyable * >(
-				theCopyable.Copy()
-			)
+template <typename TheCopyable>
+inline std::auto_ptr<TheCopyable> Om::Copy(TheCopyable const & theCopyable) {
+	return std::auto_ptr<TheCopyable>(
+		static_cast<TheCopyable *>(
+			theCopyable.Copy()
 		)
 	);
 }

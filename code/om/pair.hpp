@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Pair_ )
+#ifndef Om_Pair_
 
 	#define Om_Pair_ \
 	Om::Pair
@@ -43,28 +43,28 @@ namespace Om {
 
 		Operator const & GetOperator() const;
 
-		void GiveElements( Queue & );
+		void GiveElements(Queue &);
 
-		void GiveElements( Queue & ) const;
+		void GiveElements(Queue &) const;
 
 		bool IsEmpty() const;
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
 		/*!
 		\brief
 			Replaces the Operator.
 		*/
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
 	private: // MARK: private (static)
 
-		template< typename ThePair >
+		template <typename ThePair>
 		static void GiveElements(
 			ThePair &,
 			Queue &

@@ -12,14 +12,14 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Owner_ )
+#ifndef Om_Owner_
 
 	#define Om_Owner_ \
 	Om::Owner
 
 	#include "om/taker.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <memory>
 		#include "boost/intrusive_ptr.hpp"
@@ -35,10 +35,10 @@ namespace Om {
 
 	This class can be considered a "fat pointer" that holds the pointee, such that copying the pointer also copies the pointee (lazily).
 	*/
-	template< typename ThisValue >
+	template <typename ThisValue>
 	class Owner:
 	public Taker<
-		Owner< ThisValue >
+		Owner<ThisValue>
 	> {
 	public: // MARK: public (static)
 
@@ -46,24 +46,24 @@ namespace Om {
 		\brief
 			The implementation of the Safe Boolean idiom.
 		*/
-		typedef void ( Owner::* Boolean )() const;
+		typedef void (Owner::* Boolean)() const;
 
 	public: // MARK: public (non-static)
 
 		Owner();
 
-		Owner( Owner const & );
+		Owner(Owner const &);
 
-		template< typename TheValue >
+		template <typename TheValue>
 		explicit Owner(
-			std::auto_ptr< TheValue >
+			std::auto_ptr<TheValue>
 		);
 
 		/*!
 		\post
 			Any references to the contained value, obtained via dereference, are invalidated.
 		*/
-		Owner & operator =( Owner );
+		Owner & operator =(Owner);
 
 		/*!
 		\pre
@@ -114,16 +114,16 @@ namespace Om {
 		\post
 			Any references to the contained value, obtained via dereference, are invalidated.
 		*/
-		template< typename TheValue >
+		template <typename TheValue>
 		void SetValue(
-			std::auto_ptr< TheValue >
+			std::auto_ptr<TheValue>
 		);
 
 		/*!
 		\post
 			Any references to the contained value, obtained via dereference, are invalidated.
 		*/
-		void Swap( Owner & );
+		void Swap(Owner &);
 
 	private: // MARK: private (non-static)
 
@@ -133,7 +133,7 @@ namespace Om {
 		\brief
 			The pointer to the contained, lazily-copied value.
 		*/
-		boost::intrusive_ptr< ThisValue > thisValue;
+		boost::intrusive_ptr<ThisValue> thisValue;
 
 		/*!
 		\brief
@@ -148,10 +148,10 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template< typename ThisValue >
+	template <typename ThisValue>
 	void swap(
-		Om::Owner< ThisValue > &,
-		Om::Owner< ThisValue > &
+		Om::Owner<ThisValue> &,
+		Om::Owner<ThisValue> &
 	);
 
 }

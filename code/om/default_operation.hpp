@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultOperation_ )
+#ifndef Om_DefaultOperation_
 
 	#define Om_DefaultOperation_ \
 	Om::DefaultOperation
@@ -30,22 +30,22 @@ namespace Om {
 	\brief
 		A partial implementation of Operation.
 	*/
-	template< typename ThisImplementation >
+	template <typename ThisImplementation>
 	class DefaultOperation:
 	public Operation {
 	public: // MARK: public (static)
 
 		static Operator const & GetOperator();
 
-		static void Give( Evaluation & );
+		static void Give(Evaluation &);
 
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultOperation() = 0;
 
-		virtual void GiveElements( Queue & );
+		virtual void GiveElements(Queue &);
 
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
 		virtual bool ReadQuotedElements(
 			Evaluation &,

@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Atom_ )
+#ifndef Om_Atom_
 
 	#include "om/atom.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( AtomTest )
+	BOOST_AUTO_TEST_SUITE(AtomTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -45,25 +46,19 @@ namespace Om {
 // MARK: public (non-static)
 
 inline Om::Program & Type_::operator *() {
-	return(
-		Null::Get()
-	);
+	return Null::Get();
 }
 
 inline Om::Program const & Type_::operator *() const {
-	return(
-		Null::Get()
-	);
+	return Null::Get();
 }
 
 	#undef Type_
 
 // MARK: - Om
 
-inline Om::Atom * Om::new_clone( Atom const & theAtom ) {
-	return(
-		Copy( theAtom ).release()
-	);
+inline Om::Atom * Om::new_clone(Atom const & theAtom) {
+	return Copy(theAtom).release();
 }
 
 #endif

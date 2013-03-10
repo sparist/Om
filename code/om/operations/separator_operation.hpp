@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_SeparatorOperation_ )
+#ifndef Om_Operations_SeparatorOperation_
 
 	#define Om_Operations_SeparatorOperation_ \
 	Om::Operations::SeparatorOperation
@@ -28,11 +28,11 @@ namespace Om {
 		\brief
 			The \ref om__operations__separator_operation__ operation implementation.
 		*/
-		typedef ProgramOperation< Separator > SeparatorOperation;
+		typedef ProgramOperation<Separator> SeparatorOperation;
 
 		namespace {
 
-			static Definition< SeparatorOperation > const theSeparatorDefinition;
+			static Definition<SeparatorOperation> const theSeparatorDefinition;
 
 		}
 

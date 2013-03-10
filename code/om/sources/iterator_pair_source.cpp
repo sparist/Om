@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_IteratorPairSource_ )
+#ifndef Om_Sources_IteratorPairSource_
 
 	#include "om/sources/iterator_pair_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sources {
 
-		BOOST_AUTO_TEST_SUITE( IteratorPairSourceTest )
+		BOOST_AUTO_TEST_SUITE(IteratorPairSourceTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,7 +43,7 @@ namespace Om {
 // MARK: - Om::Sources::IteratorPairSource
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisItem, \
 		typename ThisIterator \
 	>
@@ -60,29 +61,29 @@ inline Type_::IteratorPairSource(
 	ThisIterator theCurrent,
 	ThisIterator const theEnd
 ):
-thisCurrent( theCurrent ),
-thisEnd( theEnd ) {}
+thisCurrent(theCurrent),
+thisEnd(theEnd) {}
 
 Template_
-inline Type_ & Type_::operator =( IteratorPairSource theIteratorPairSource ) {
-	this->Swap( theIteratorPairSource );
-	return( *this );
+inline Type_ & Type_::operator =(IteratorPairSource theIteratorPairSource) {
+	this->Swap(theIteratorPairSource);
+	return *this;
 }
 
 Template_
-inline bool Type_::operator ==( IteratorPairSource const & theSource ) const {
-	return( this->thisCurrent == theSource.thisCurrent );
+inline bool Type_::operator ==(IteratorPairSource const & theSource) const {
+	return (this->thisCurrent == theSource.thisCurrent);
 }
 
 Template_
 inline bool Type_::operator !() const {
-	return( this->thisEnd == this->thisCurrent );
+	return (this->thisEnd == this->thisCurrent);
 }
 
 Template_
 inline ThisItem & Type_::operator *() const {
-	assert( this->thisEnd != this->thisCurrent );
-	return( *this->thisCurrent );
+	assert(this->thisEnd != this->thisCurrent);
+	return *this->thisCurrent;
 }
 
 Template_
@@ -92,12 +93,12 @@ inline void Type_::End() {
 
 Template_
 inline void Type_::Pop() {
-	assert( this->thisEnd != this->thisCurrent );
+	assert(this->thisEnd != this->thisCurrent);
 	++this->thisCurrent;
 }
 
 Template_
-inline void Type_::Swap( IteratorPairSource & theIteratorPairSource ) {
+inline void Type_::Swap(IteratorPairSource & theIteratorPairSource) {
 	boost::swap(
 		this->thisCurrent,
 		theIteratorPairSource.thisCurrent
@@ -113,7 +114,7 @@ inline void Type_::Swap( IteratorPairSource & theIteratorPairSource ) {
 
 // MARK: - boost
 
-template<
+template <
 	typename ThisItem,
 	typename ThisIterator
 >
@@ -127,7 +128,7 @@ inline void boost::swap(
 		ThisIterator
 	> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

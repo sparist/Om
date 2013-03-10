@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_SkipOperation_ )
+#ifndef Om_Operations_SkipOperation_
 
 	#define Om_Operations_SkipOperation_ \
 	Om::Operations::SkipOperation
@@ -34,12 +34,12 @@ namespace Om {
 			The \ref om__operations__skip_operation__ operation implementation.
 		*/
 		class SkipOperation:
-		public DefaultOperation< SkipOperation > {
+		public DefaultOperation<SkipOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheSkipOperation >
+			template <typename TheSkipOperation>
 			static void GiveElements(
 				TheSkipOperation &,
 				Queue &
@@ -49,13 +49,13 @@ namespace Om {
 
 			SkipOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -72,7 +72,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< SkipOperation > const theSkipDefinition;
+			static Definition<SkipOperation> const theSkipDefinition;
 
 		}
 

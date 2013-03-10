@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_InjectOperation_ )
+#ifndef Om_Operations_InjectOperation_
 
 	#define Om_Operations_InjectOperation_ \
 	Om::Operations::InjectOperation
@@ -34,12 +34,12 @@ namespace Om {
 			The \ref om__operations__inject_operation__ operation implementation.
 		*/
 		class InjectOperation:
-		public DefaultOperation< InjectOperation > {
+		public DefaultOperation<InjectOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheInjectOperation >
+			template <typename TheInjectOperation>
 			static void GiveElements(
 				TheInjectOperation &,
 				Queue &
@@ -49,13 +49,13 @@ namespace Om {
 
 			InjectOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -77,13 +77,13 @@ namespace Om {
 			\note
 				This will hold a reference to the Evaluator's Translator, which must remain alive.
 			*/
-			boost::optional< Evaluator > thisScope;
+			boost::optional<Evaluator> thisScope;
 
 		};
 
 		namespace {
 
-			static Definition< InjectOperation > const theInjectDefinition;
+			static Definition<InjectOperation> const theInjectDefinition;
 
 		}
 

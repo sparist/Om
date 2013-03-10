@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_ChooseOperation_ )
+#ifndef Om_Operations_ChooseOperation_
 
 	#include "om/operations/choose_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,24 +30,24 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( ChooseOperationTest )
+		BOOST_AUTO_TEST_SUITE(ChooseOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{choose}",
-					System::Get().Evaluate( "drop find {choose} system" )
+					System::Get().Evaluate("drop find {choose} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{empty}",
-					System::Get().Evaluate( "choose{empty}{non-empty}{}" )
+					System::Get().Evaluate("choose{empty}{non-empty}{}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{non-empty}",
-					System::Get().Evaluate( "choose{empty}{non-empty}{some operators}" )
+					System::Get().Evaluate("choose{empty}{non-empty}{some operators}")
 				);
 			}
 
@@ -71,12 +71,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_ChooseOperation_GetName_()
-	);
+	return Om_Operations_ChooseOperation_GetName_();
 }
 
-template< typename TheChooseOperation >
+template <typename TheChooseOperation>
 inline void Type_::GiveElements(
 	TheChooseOperation & theChooseOperation,
 	Queue & theQueue
@@ -84,10 +82,10 @@ inline void Type_::GiveElements(
 	theQueue.TakeElement(
 		GetOperator()
 	);
-	if( 0 < theChooseOperation.thisOperandCount ) {
-		theQueue.TakeElement( theChooseOperation.thisEmptyCase );
-		if( 1 < theChooseOperation.thisOperandCount ) {
-			theQueue.TakeElement( theChooseOperation.thisNonEmptyCase );
+	if (0 < theChooseOperation.thisOperandCount) {
+		theQueue.TakeElement(theChooseOperation.thisEmptyCase);
+		if (1 < theChooseOperation.thisOperandCount) {
+			theQueue.TakeElement(theChooseOperation.thisNonEmptyCase);
 		}
 	}
 }
@@ -99,7 +97,7 @@ thisEmptyCase(),
 thisNonEmptyCase(),
 thisOperandCount() {}
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
@@ -107,15 +105,13 @@ inline bool Type_::TakeQuotedQueue(
 	Operand theOperand(
 		theQueue.GiveProgram()
 	);
-	return(
-		this->TakeOperand(
-			theEvaluation,
-			theOperand
-		)
+	return this->TakeOperand(
+		theEvaluation,
+		theOperand
 	);
 }
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -123,24 +119,24 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	assert( this->thisOperandCount < 3 );
-	switch( this->thisOperandCount++ ) {
+	assert(this->thisOperandCount < 3);
+	switch (this->thisOperandCount++) {
 	case 0:
-		this->thisEmptyCase.Take( theOperand );
-		return( false );
+		this->thisEmptyCase.Take(theOperand);
+		return false;
 	case 1:
-		this->thisNonEmptyCase.Take( theOperand );
-		return( false );
+		this->thisNonEmptyCase.Take(theOperand);
+		return false;
 	default:
 		{
 			TheOperand const & theConstOperand = theOperand;
 			theEvaluation.TakeOperand(
-				theConstOperand.GetProgram()->IsEmpty()?
-				this->thisEmptyCase:
+				theConstOperand.GetProgram()->IsEmpty() ?
+				this->thisEmptyCase :
 				this->thisNonEmptyCase
 			);
 		}
-		return( true );
+		return true;
 	}
 }
 

@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_EvaluateOperation_ )
+#ifndef Om_Operations_EvaluateOperation_
 
 	#define Om_Operations_EvaluateOperation_ \
 	Om::Operations::EvaluateOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__define_operation__ operation implementation.
 		*/
 		class EvaluateOperation:
-		public DefaultOperation< EvaluateOperation > {
+		public DefaultOperation<EvaluateOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheEvaluateOperation >
+			template <typename TheEvaluateOperation>
 			static void GiveElements(
 				TheEvaluateOperation &,
 				Queue &
@@ -48,13 +48,13 @@ namespace Om {
 
 			EvaluateOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -64,7 +64,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< EvaluateOperation > const theEvaluateDefinition;
+			static Definition<EvaluateOperation> const theEvaluateDefinition;
 
 		}
 

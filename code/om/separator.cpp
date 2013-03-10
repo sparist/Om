@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Separator_ )
+#ifndef Om_Separator_
 
 	#include "om/separator.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/writer.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,24 +28,24 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( SeparatorTest )
+	BOOST_AUTO_TEST_SUITE(SeparatorTest)
 
-		BOOST_AUTO_TEST_CASE( ReadTest ) {
+		BOOST_AUTO_TEST_CASE(ReadTest) {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
 			std::string theResult;
 			{
 				Sinks::CodePointSink<
-					std::back_insert_iterator< std::string >
+					std::back_insert_iterator<std::string>
 				> theCodePointSink(
-					std::back_inserter( theResult )
+					std::back_inserter(theResult)
 				);
-				Writer theWriter( theCodePointSink );
+				Writer theWriter(theCodePointSink);
 
-				Sources::CodePointSource<> theCodePointSource( theCode );
-				Parser theParser( theCodePointSource );
+				Sources::CodePointSource<> theCodePointSource(theCode);
+				Parser theParser(theCodePointSource);
 				Separator theSeparator;
-				theSeparator.ReadElements( theParser );
-				theSeparator.GiveElements( theWriter );
+				theSeparator.ReadElements(theParser);
+				theSeparator.GiveElements(theWriter);
 			}
 			BOOST_CHECK_EQUAL(
 				"\n\t   \n",
@@ -69,14 +69,12 @@ namespace Om {
 // MARK: public (static)
 
 inline Type_ const & Type_::GetLineSeparator() {
-	static Separator const theSeparator( Symbols::theLineSeparatorSymbol );
-	return( theSeparator );
+	static Separator const theSeparator(Symbols::theLineSeparatorSymbol);
+	return theSeparator;
 }
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Separator_GetName_()
-	);
+	return Om_Separator_GetName_();
 }
 
 // MARK: public (non-static)
@@ -84,102 +82,102 @@ inline char const * Type_::GetName() {
 inline Type_::Separator() {}
 
 inline Type_::Separator(
-	Source< CodePoint const > & theCodePointSource
+	Source<CodePoint const> & theCodePointSource
 ) {
-	for(
+	for (
 		;
 		theCodePointSource;
 		theCodePointSource.Pop()
 	) {
-		switch( *theCodePointSource ) {
+		switch (*theCodePointSource) {
 		default:
 			return;
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			this->thisString.push_back(
-				static_cast< char >( *theCodePointSource )
+				static_cast<char>(*theCodePointSource)
 			);
 			// Fall through.
 		}
 	}
 }
 
-inline Type_::Separator( Symbols::SeparatorSymbol const theSeparatorSymbol ):
-DefaultAtom< Separator >(
-	static_cast< char >( theSeparatorSymbol )
+inline Type_::Separator(Symbols::SeparatorSymbol const theSeparatorSymbol):
+DefaultAtom<Separator>(
+	static_cast<char>(theSeparatorSymbol)
 ) {
 	assert(
-		( Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol ) ||
-		( Symbols::theLineSeparatorSymbol == theSeparatorSymbol ) ||
-		( Symbols::theTabSeparatorSymbol == theSeparatorSymbol )
+		(Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol) ||
+		(Symbols::theLineSeparatorSymbol == theSeparatorSymbol) ||
+		(Symbols::theTabSeparatorSymbol == theSeparatorSymbol)
 	);
 }
 
-inline Type_ & Type_::operator =( Separator theSeparator ) {
-	this->Swap( theSeparator );
-	return( *this );
+inline Type_ & Type_::operator =(Separator theSeparator) {
+	this->Swap(theSeparator);
+	return *this;
 }
 
-inline void Type_::ReadElements( Parser & theParser ) {
-	for(
+inline void Type_::ReadElements(Parser & theParser) {
+	for (
 		;
 		theParser;
 		theParser.Pop()
 	) {
-		assert( Symbols::theEndOperandSymbol != *theParser );
-		switch( *theParser ) {
+		assert(Symbols::theEndOperandSymbol != *theParser);
+		switch (*theParser) {
 		case Symbols::theStartOperandSymbol:
 			theParser.Pop();
 			{
 				// Ensure that this does not resolve to the copy constructor.
-				Source< CodePoint const > & theCodePointSource = theParser;
+				Source<CodePoint const> & theCodePointSource = theParser;
 
-				Parser theOperandParser( theCodePointSource );
-				this->ReadQuotedElements( theOperandParser );
+				Parser theOperandParser(theCodePointSource);
+				this->ReadQuotedElements(theOperandParser);
 			}
-			if( !theParser ) {
+			if (!theParser) {
 				return;
 			}
-			assert( Symbols::theEndOperandSymbol == *theParser );
+			assert(Symbols::theEndOperandSymbol == *theParser);
 			continue;
 		Om_Symbols_SeparatorSymbol_GetCases_():
 			this->thisString.push_back(
-				static_cast< char >( *theParser )
+				static_cast<char>(*theParser)
 			);
 			// Fall through.
 		}
 	}
 }
 
-inline void Type_::ReadQuotedElements( Parser & theParser ) {
-	for(
+inline void Type_::ReadQuotedElements(Parser & theParser) {
+	for (
 		;
 		theParser;
 		theParser.Pop()
 	) {}
 }
 
-template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & ) {}
+template <typename TheOperand>
+inline void Type_::TakeOperand(TheOperand &) {}
 
-template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & ) {}
+template <typename TheOperator>
+inline void Type_::TakeOperator(TheOperator &) {}
 
-template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & ) {}
+template <typename TheQueue>
+inline void Type_::TakeQuotedQueue(TheQueue &) {}
 
-template< typename TheSeparator >
-inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
+template <typename TheSeparator>
+inline void Type_::TakeSeparator(TheSeparator & theSeparator) {
 	assert(
 		!theSeparator.IsEmpty()
 	);
-	this->thisString.append( theSeparator.thisString );
+	this->thisString.append(theSeparator.thisString);
 }
 
 inline void Type_::TakeSeparatorSymbol(
 	Symbols::SeparatorSymbol const theSymbol
 ) {
 	this->thisString.push_back(
-		static_cast< char >( theSymbol )
+		static_cast<char>(theSymbol)
 	);
 }
 
@@ -187,12 +185,12 @@ inline void Type_::TakeSeparatorSymbol(
 
 // MARK: - boost
 
-template<>
+template <>
 inline void boost::swap(
 	Om::Separator & theFirst,
 	Om::Separator & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

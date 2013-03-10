@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_DoOperation_ )
+#ifndef Om_Operations_DoOperation_
 
 	#include "om/operations/do_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,19 +30,19 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( DoOperationTest )
+		BOOST_AUTO_TEST_SUITE(DoOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{do}",
-					System::Get().Evaluate( "drop find {do} system" )
+					System::Get().Evaluate("drop find {do} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+			BOOST_AUTO_TEST_CASE(SimpleTest) {
 				BOOST_CHECK_EQUAL(
 					"{a}{bc}",
-					System::Get().Evaluate( "do {<-code points} {abc}" )
+					System::Get().Evaluate("do {<-code points} {abc}")
 				);
 			}
 
@@ -67,14 +67,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_DoOperation_GetName_()
-	);
+	return Om_Operations_DoOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	DequoteOperation::Give( theEvaluation );
-	OperatorOperation::Give( theEvaluation );
+inline void Type_::Give(Evaluation & theEvaluation) {
+	DequoteOperation::Give(theEvaluation);
+	OperatorOperation::Give(theEvaluation);
 }
 
 	#undef Type_

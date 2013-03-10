@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_EvaluateOperation_ )
+#ifndef Om_Operations_EvaluateOperation_
 
 	#include "om/operations/evaluate_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,19 +28,19 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( EvaluateOperationTest )
+		BOOST_AUTO_TEST_SUITE(EvaluateOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{evaluate}",
-					System::Get().Evaluate( "drop find {evaluate} system" )
+					System::Get().Evaluate("drop find {evaluate} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( BasicTest ) {
+			BOOST_AUTO_TEST_CASE(BasicTest) {
 				BOOST_CHECK_EQUAL(
 					"{{A}{A}}",
-					System::Get().Evaluate( "evaluate {copy {A}}" )
+					System::Get().Evaluate("evaluate {copy {A}}")
 				);
 			}
 
@@ -64,12 +64,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_EvaluateOperation_GetName_()
-	);
+	return Om_Operations_EvaluateOperation_GetName_();
 }
 
-template< typename TheEvaluateOperation >
+template <typename TheEvaluateOperation>
 inline void Type_::GiveElements(
 	TheEvaluateOperation &,
 	Queue & theQueue
@@ -83,7 +81,7 @@ inline void Type_::GiveElements(
 
 inline Type_::EvaluateOperation() {}
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -91,15 +89,13 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
@@ -110,10 +106,10 @@ inline bool Type_::TakeQuotedQueue(
 			theExpression,
 			theEvaluation.GetTranslator()
 		);
-		theQueue.GiveElements( theScope );
+		theQueue.GiveElements(theScope);
 	}
-	theEvaluation.TakeQuotedQueue( theExpression );
-	return( true );
+	theEvaluation.TakeQuotedQueue(theExpression);
+	return true;
 }
 
 	#undef Type_

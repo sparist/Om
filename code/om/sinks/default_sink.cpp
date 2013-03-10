@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_DefaultSink_ )
+#ifndef Om_Sinks_DefaultSink_
 
 	#include "om/sinks/default_sink.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sinks {
 
-		BOOST_AUTO_TEST_SUITE( DefaultSinkTest )
+		BOOST_AUTO_TEST_SUITE(DefaultSinkTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,7 +43,7 @@ namespace Om {
 // MARK: - Om::Sinks::DefaultSink
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisItem, \
 		typename ThisImplementation \
 	>
@@ -61,21 +62,17 @@ inline Type_::~DefaultSink() {}
 Template_
 inline ThisImplementation & Type_::operator ++() {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	return(
-		static_cast< ThisImplementation & >( *this )
-	);
+	return static_cast<ThisImplementation &>(*this);
 }
 
 Template_
-inline ThisImplementation Type_::operator ++( int ) {
+inline ThisImplementation Type_::operator ++(int) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	return(
-		static_cast< ThisImplementation & >( *this )
-	);
+	return static_cast<ThisImplementation &>(*this);
 }
 
 	#undef Type_

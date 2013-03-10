@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_FrontPullSeparatorOperation_ )
+#ifndef Om_Operations_FrontPullSeparatorOperation_
 
 	#include "om/operations/front_pull_separator_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,44 +30,44 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( FrontPullSeparatorOperationTest )
+		BOOST_AUTO_TEST_SUITE(FrontPullSeparatorOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{separator<-elements}",
-					System::Get().Evaluate( "drop find {separator<-elements} system" )
+					System::Get().Evaluate("drop find {separator<-elements} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{ }{1{2}}",
-					System::Get().Evaluate( "separator<-elements { 1{2}}" )
+					System::Get().Evaluate("separator<-elements { 1{2}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{1{2}}",
-					System::Get().Evaluate( "separator<-elements {1{2}}" )
+					System::Get().Evaluate("separator<-elements {1{2}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{1 2}",
-					System::Get().Evaluate( "separator<-elements {1 2}" )
+					System::Get().Evaluate("separator<-elements {1 2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate( "separator<-elements {}" )
+					System::Get().Evaluate("separator<-elements {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{ }{}",
-					System::Get().Evaluate( "separator<-elements { }" )
+					System::Get().Evaluate("separator<-elements { }")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"separator<-elements",
-					System::Get().Evaluate( "separator<-elements" )
+					System::Get().Evaluate("separator<-elements")
 				);
 			}
 
@@ -92,14 +92,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_FrontPullSeparatorOperation_GetName_()
-	);
+	return Om_Operations_FrontPullSeparatorOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
+		std::auto_ptr<Operation>(
 			new PullOperation<
 				Literal,
 				FrontPullSeparatorOperation
@@ -108,12 +106,12 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline void Type_::Pull(
 	Literal & theLiteral,
 	TheQueue & theQueue
 ) {
-	theLiteral.FrontGive< Separator >( theQueue );
+	theLiteral.FrontGive<Separator>(theQueue);
 }
 
 	#undef Type_

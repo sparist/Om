@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Program_ )
+#ifndef Om_Program_
 
 	#define Om_Program_ \
 	Om::Program
@@ -26,7 +26,7 @@ namespace Om {
 	//! \cond
 	class Element;
 
-	template< typename ThisItem >
+	template <typename ThisItem>
 	class Source;
 	//! \endcond
 
@@ -52,16 +52,16 @@ namespace Om {
 			A non-null owner pointer to a new Element range.
 		*/
 		virtual std::auto_ptr<
-			Source< Element const >
+			Source<Element const>
 		> GetElementRange() const = 0;
 
-		virtual std::auto_ptr< Program > GiveProgram();
+		virtual std::auto_ptr<Program> GiveProgram();
 
-		virtual std::auto_ptr< Program > GiveProgram() const;
+		virtual std::auto_ptr<Program> GiveProgram() const;
 
 	private: // MARK: private (non-static)
 
-		Program & operator =( Program const & );
+		Program & operator =(Program const &);
 
 	};
 

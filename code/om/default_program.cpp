@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultProgram_ )
+#ifndef Om_DefaultProgram_
 
 	#include "om/default_program.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( DefaultProgramTest )
+	BOOST_AUTO_TEST_SUITE(DefaultProgramTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -38,7 +39,7 @@ namespace Om {
 	#include "om/element.hpp"
 	#include "om/source.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <typeinfo>
 
@@ -47,7 +48,7 @@ namespace Om {
 // MARK: - Om::DefaultProgram
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisImplementation, \
 		typename ThisInterface \
 	>
@@ -68,37 +69,37 @@ inline Type_::~DefaultProgram() {}
 	This must be implemented in this class, vs. Program, due to Element dependency.
 */
 Template_
-inline bool Type_::operator ==( Program const & theProgram ) const {
+inline bool Type_::operator ==(Program const & theProgram) const {
 	std::auto_ptr<
-		Source< Element const >
+		Source<Element const>
 	> theRange = this->GetElementRange();
 	assert(
 		theRange.get()
 	);
 
 	std::auto_ptr<
-		Source< Element const >
+		Source<Element const>
 	> theOtherRange = theProgram.GetElementRange();
 	assert(
 		theOtherRange.get()
 	);
 
-	for(
+	for (
 		;
 		;
 	) {
 		bool const theRangeHasNext = *theRange;
 		bool const theOtherRangeHasNext = *theOtherRange;
-		if(
+		if (
 			!theRangeHasNext ||
 			!theOtherRangeHasNext
 		) {
-			return( theRangeHasNext == theOtherRangeHasNext );
+			return (theRangeHasNext == theOtherRangeHasNext);
 		}
-		if(
-			!( **theRange == **theOtherRange )
+		if (
+			!(**theRange == **theOtherRange)
 		) {
-			return( false );
+			return false;
 		}
 		theRange->Pop();
 		theOtherRange->Pop();
@@ -106,40 +107,40 @@ inline bool Type_::operator ==( Program const & theProgram ) const {
 }
 
 Template_
-inline void Type_::TakeElements( Queue & theQueue ) {
-	this->TakeQueueElements< ThisImplementation >( theQueue );
+inline void Type_::TakeElements(Queue & theQueue) {
+	this->TakeQueueElements<ThisImplementation>(theQueue);
 }
 
 Template_
-inline void Type_::TakeElements( Queue const & theQueue ) {
-	this->TakeQueueElements< ThisImplementation const >( theQueue );
+inline void Type_::TakeElements(Queue const & theQueue) {
+	this->TakeQueueElements<ThisImplementation const>(theQueue);
 }
 
 // MARK: private (non-static)
 
 Template_
-template<
+template <
 	typename TheCast,
 	typename TheQueue
 >
-inline void Type_::TakeQueueElements( TheQueue & theQueue ) {
+inline void Type_::TakeQueueElements(TheQueue & theQueue) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
 	assert(
-		typeid( TheCast ) == typeid( ThisImplementation )
+		typeid(TheCast) == typeid(ThisImplementation)
 	);
-	if(
+	if (
 		(
-			typeid( TheCast ) == typeid( theQueue )
+			typeid(TheCast) == typeid(theQueue)
 		) &&
 		this->IsEmpty()
 	) {
 		this->Take(
-			static_cast< TheCast & >( theQueue )
+			static_cast<TheCast &>(theQueue)
 		);
 	} else {
-		theQueue.GiveElements( *this );
+		theQueue.GiveElements(*this);
 	}
 }
 

@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_SwapOperation_ )
+#ifndef Om_Operations_SwapOperation_
 
 	#define Om_Operations_SwapOperation_ \
 	Om::Operations::SwapOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__swap_operation__ operation implementation.
 		*/
 		class SwapOperation:
-		public DefaultOperation< SwapOperation > {
+		public DefaultOperation<SwapOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheSwapOperation >
+			template <typename TheSwapOperation>
 			static void GiveElements(
 				TheSwapOperation &,
 				Queue &
@@ -48,13 +48,13 @@ namespace Om {
 
 			SwapOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -72,7 +72,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< SwapOperation > const theSwapDefinition;
+			static Definition<SwapOperation> const theSwapDefinition;
 
 		}
 

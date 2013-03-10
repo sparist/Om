@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_NormalizeOperation_ )
+#ifndef Om_Operations_NormalizeOperation_
 
 	#define Om_Operations_NormalizeOperation_ \
 	Om::Operations::NormalizeOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__normalize_operation__ operation implementation.
 		*/
 		class NormalizeOperation:
-		public DefaultOperation< NormalizeOperation > {
+		public DefaultOperation<NormalizeOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheNormalizeOperation >
+			template <typename TheNormalizeOperation>
 			static void GiveElements(
 				TheNormalizeOperation &,
 				Queue &
@@ -46,13 +46,13 @@ namespace Om {
 
 		public: // MARK: public (non-static)
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -62,7 +62,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< NormalizeOperation > const theNormalizeDefinition;
+			static Definition<NormalizeOperation> const theNormalizeDefinition;
 
 		}
 

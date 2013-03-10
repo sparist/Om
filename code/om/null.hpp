@@ -12,14 +12,14 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Null_ )
+#ifndef Om_Null_
 
 	#define Om_Null_ \
 	Om::Null
 
 	#include "om/default_program.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/swap.hpp"
 
@@ -36,7 +36,7 @@ namespace Om {
 		The \ref om__null__ Program implementation.
 	*/
 	class Null:
-	public DefaultProgram< Null > {
+	public DefaultProgram<Null> {
 	public: // MARK: public (static)
 
 		/*!
@@ -49,47 +49,47 @@ namespace Om {
 
 	public: // MARK: public (non-static)
 
-		Null & operator =( Null const & );
+		Null & operator =(Null const &);
 
-		virtual bool operator ==( Program const & ) const;
+		virtual bool operator ==(Program const &) const;
 
 		virtual void Clear();
 
 		virtual std::auto_ptr<
-			Source< Element >
+			Source<Element>
 		> GetElementRange();
 
 		virtual std::auto_ptr<
-			Source< Element const >
+			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements( Queue & );
+		virtual void GiveElements(Queue &);
 
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
 		virtual bool IsEmpty() const;
 
-		virtual void ReadElements( Parser & );
+		virtual void ReadElements(Parser &);
 
-		virtual void ReadQuotedElements( Parser & );
+		virtual void ReadQuotedElements(Parser &);
 
-		virtual void Swap( Null & );
+		virtual void Swap(Null &);
 
-		virtual void TakeElements( Queue & );
+		virtual void TakeElements(Queue &);
 
-		virtual void TakeElements( Queue const & );
+		virtual void TakeElements(Queue const &);
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
-		template< typename TheSeparator >
-		void TakeSeparator( TheSeparator & );
+		template <typename TheSeparator>
+		void TakeSeparator(TheSeparator &);
 
 	};
 
@@ -98,7 +98,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<>
+	template <>
 	void swap(
 		Om::Null &,
 		Om::Null &

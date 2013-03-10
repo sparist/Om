@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_ContainerFrontSource_ )
+#ifndef Om_Sources_ContainerFrontSource_
 
 	#include "om/sources/container_front_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sources {
 
-		BOOST_AUTO_TEST_SUITE( ContainerFrontSourceTest )
+		BOOST_AUTO_TEST_SUITE(ContainerFrontSourceTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,7 +43,7 @@ namespace Om {
 // MARK: - Om::Sources::ContainerFrontSource
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisItem, \
 		typename ThisContainer \
 	>
@@ -56,19 +57,19 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::ContainerFrontSource( ThisContainer & theContainer ):
-thisContainer( theContainer ) {}
+inline Type_::ContainerFrontSource(ThisContainer & theContainer):
+thisContainer(theContainer) {}
 
 Template_
-inline Type_ & Type_::operator =( ContainerFrontSource theContainerFrontSource ) {
-	this->Swap( theContainerFrontSource );
-	return( *this );
+inline Type_ & Type_::operator =(ContainerFrontSource theContainerFrontSource) {
+	this->Swap(theContainerFrontSource);
+	return *this;
 }
 
 Template_
-inline bool Type_::operator ==( ContainerFrontSource const & theSource ) const {
-	return(
-		( &this->thisContainer == &theSource.thisContainer ) ||
+inline bool Type_::operator ==(ContainerFrontSource const & theSource) const {
+	return (
+		(&this->thisContainer == &theSource.thisContainer) ||
 		(
 			this->thisContainer.empty() &&
 			theSource.thisContainer.empty()
@@ -78,9 +79,7 @@ inline bool Type_::operator ==( ContainerFrontSource const & theSource ) const {
 
 Template_
 inline bool Type_::operator !() const {
-	return(
-		this->thisContainer.empty()
-	);
+	return this->thisContainer.empty();
 }
 
 Template_
@@ -88,9 +87,7 @@ inline ThisItem & Type_::operator *() const {
 	assert(
 		!this->thisContainer.empty()
 	);
-	return(
-		this->thisContainer.front()
-	);
+	return this->thisContainer.front();
 }
 
 Template_
@@ -102,7 +99,7 @@ inline void Type_::Pop() {
 }
 
 Template_
-inline void Type_::Swap( ContainerFrontSource & theContainerFrontSource ) {
+inline void Type_::Swap(ContainerFrontSource & theContainerFrontSource) {
 	boost::swap(
 		this->thisContainer,
 		theContainerFrontSource.thisContainer
@@ -114,7 +111,7 @@ inline void Type_::Swap( ContainerFrontSource & theContainerFrontSource ) {
 
 // MARK: - boost
 
-template<
+template <
 	typename ThisItem,
 	typename ThisContainer
 >
@@ -128,7 +125,7 @@ inline void boost::swap(
 		ThisContainer
 	> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

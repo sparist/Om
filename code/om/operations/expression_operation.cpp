@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_ExpressionOperation_ )
+#ifndef Om_Operations_ExpressionOperation_
 
 	#include "om/operations/expression_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,16 +28,16 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( ExpressionOperationTest )
+		BOOST_AUTO_TEST_SUITE(ExpressionOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{expression}",
-					System::Get().Evaluate( "drop find {expression} system" )
+					System::Get().Evaluate("drop find {expression} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( BasicTest ) {
+			BOOST_AUTO_TEST_CASE(BasicTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"{"
@@ -45,7 +45,7 @@ namespace Om {
 						"6{7 {8}}"
 						"}"
 					),
-					System::Get().Evaluate( "expression {1{2}{5}6{7 {8}}   }" )
+					System::Get().Evaluate("expression {1{2}{5}6{7 {8}}   }")
 				);
 			}
 

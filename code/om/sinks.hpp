@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_ )
+#ifndef Om_Sinks_
 
 	#define Om_Sinks_ \
 	Om::Sinks

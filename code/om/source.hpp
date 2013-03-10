@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Source_ )
+#ifndef Om_Source_
 
 	#define Om_Source_ \
 	Om::Source
@@ -24,7 +24,7 @@ namespace Om {
 	\brief
 		Any object that items can be pulled from.
 	*/
-	template< typename ThisItem >
+	template <typename ThisItem>
 	class Source {
 	public: // MARK: public (static)
 
@@ -32,7 +32,7 @@ namespace Om {
 		\brief
 			The implementation of the "safe boolean" idiom.
 		*/
-		typedef void ( Source::* Boolean )() const;
+		typedef void (Source::* Boolean)() const;
 
 	public: // MARK: public (non-static)
 
@@ -42,14 +42,14 @@ namespace Om {
 		\return
 			True when representing equivalent pointer-style iterators.
 		*/
-		virtual bool operator ==( Source const & ) const = 0;
+		virtual bool operator ==(Source const &) const = 0;
 
 		/*!
 		\return
 			True when not representing equivalent pointer-style iterators.
 		*/
-		template< typename TheSource >
-		bool operator !=( TheSource const & ) const;
+		template <typename TheSource>
+		bool operator !=(TheSource const &) const;
 
 		virtual ThisItem & operator *() const = 0;
 
@@ -77,7 +77,7 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		Source & operator =( Source const & );
+		Source & operator =(Source const &);
 
 		void UncomparableBoolean() const;
 

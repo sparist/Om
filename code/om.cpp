@@ -12,18 +12,18 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_ )
+#ifndef Om_
 
 	#include "om.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "boost/test/included/unit_test.hpp"
 
 bool init_unit_test() {
 	boost::debug::detect_memory_leaks(false);
-	Om::System::Get().Initialize( "en_US.UTF-8" );
-	return( true );
+	Om::System::Get().Initialize("en_US.UTF-8");
+	return true;
 }
 
 	#else
@@ -40,32 +40,32 @@ int main(
 	int const theArgumentCount,
 	char const * const theArgumentArray[]
 ) {
-	assert( 0 < theArgumentCount );
-	assert( theArgumentArray );
+	assert(0 < theArgumentCount);
+	assert(theArgumentArray);
 
 	Om::System::Get().Initialize(
-		( 1 < theArgumentCount )?
-		theArgumentArray[ 1 ]:
+		(1 < theArgumentCount) ?
+		theArgumentArray[1] :
 		"en_US.UTF-8"
 	);
 
 	typedef Om::Sources::StreamSource<> CodeUnitSource;
-	CodeUnitSource theCodeUnitSource( std::cin );
-	Om::Sources::CodePointSource< CodeUnitSource > theCodePointSource(
+	CodeUnitSource theCodeUnitSource(std::cin);
+	Om::Sources::CodePointSource<CodeUnitSource> theCodePointSource(
 		theCodeUnitSource,
 		CodeUnitSource()
 	);
 
 	typedef Om::Sinks::StreamSink<> CodeUnitSink;
-	CodeUnitSink theCodeUnitSink( std::cout );
-	Om::Sinks::CodePointSink< CodeUnitSink > theCodePointSink( theCodeUnitSink );
+	CodeUnitSink theCodeUnitSink(std::cout);
+	Om::Sinks::CodePointSink<CodeUnitSink> theCodePointSink(theCodeUnitSink);
 
 	Om::System::Get().Evaluate(
 		theCodePointSource,
 		theCodePointSink
 	);
 
-	return( EXIT_SUCCESS );
+	return EXIT_SUCCESS;
 }
 
 	#endif

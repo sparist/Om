@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultAtom_ )
+#ifndef Om_DefaultAtom_
 
 	#define Om_DefaultAtom_ \
 	Om::DefaultAtom
@@ -27,7 +27,7 @@ namespace Om {
 	\brief
 		A partial implementation of Atom.
 	*/
-	template< typename ThisImplementation >
+	template <typename ThisImplementation>
 	class DefaultAtom:
 	public DefaultElement<
 		ThisImplementation,
@@ -43,18 +43,18 @@ namespace Om {
 		\return
 			True if this Atom string precedes the argument Atom string in a byte-wise ordering.
 		*/
-		bool operator <( DefaultAtom const & );
+		bool operator <(DefaultAtom const &);
 
-		bool operator ==( ThisImplementation const & ) const;
+		bool operator ==(ThisImplementation const &) const;
 
 		virtual void Clear();
 
 		virtual std::auto_ptr<
-			Source< Element >
+			Source<Element>
 		> GetElementRange();
 
 		virtual std::auto_ptr<
-			Source< Element const >
+			Source<Element const>
 		> GetElementRange() const;
 
 		/*!
@@ -80,14 +80,14 @@ namespace Om {
 		\return
 			True if the Atom was merged.
 		*/
-		virtual bool Merge( ThisImplementation & );
+		virtual bool Merge(ThisImplementation &);
 
 		/*!
 		\overload
 		*/
-		virtual bool Merge( ThisImplementation const & );
+		virtual bool Merge(ThisImplementation const &);
 
-		void Swap( ThisImplementation & );
+		void Swap(ThisImplementation &);
 
 	protected: // MARK: protected (non-static)
 
@@ -105,7 +105,7 @@ namespace Om {
 		\param theCodeUnit
 			The ASCII #CodePoint to copy.
 		*/
-		explicit DefaultAtom( char const theCodeUnit );
+		explicit DefaultAtom(char const theCodeUnit);
 
 		/*!
 		\brief
@@ -115,7 +115,7 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		DefaultAtom & operator =( DefaultAtom const & );
+		DefaultAtom & operator =(DefaultAtom const &);
 
 	};
 

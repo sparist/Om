@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_LexiconOperation_ )
+#ifndef Om_Operations_LexiconOperation_
 
 	#include "om/operations/lexicon_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,12 +28,12 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( LexiconOperationTest )
+		BOOST_AUTO_TEST_SUITE(LexiconOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{lexicon}",
-					System::Get().Evaluate( "drop find {lexicon} system" )
+					System::Get().Evaluate("drop find {lexicon} system")
 				);
 			}
 

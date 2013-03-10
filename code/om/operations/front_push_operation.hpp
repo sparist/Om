@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_FrontPushOperation_ )
+#ifndef Om_Operations_FrontPushOperation_
 
 	#define Om_Operations_FrontPushOperation_ \
 	Om::Operations::FrontPushOperation
@@ -28,7 +28,7 @@ namespace Om {
 		\brief
 			An Operation that joins an Operand to the front of a Program.
 		*/
-		template<
+		template <
 			typename ThisProgram,
 			typename ThisImplementation
 		>
@@ -41,7 +41,7 @@ namespace Om {
 		> {
 		public: // MARK: public (static)
 
-			template< typename TheFrontPushOperation >
+			template <typename TheFrontPushOperation>
 			static void GiveElements(
 				TheFrontPushOperation &,
 				Queue &
@@ -51,13 +51,13 @@ namespace Om {
 
 			FrontPushOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &

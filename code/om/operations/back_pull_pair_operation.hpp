@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_BackPullPairOperation_ )
+#ifndef Om_Operations_BackPullPairOperation_
 
 	#define Om_Operations_BackPullPairOperation_ \
 	Om::Operations::BackPullPairOperation
@@ -40,13 +40,13 @@ namespace Om {
 
 			static char const * GetName();
 
-			static void Give( Evaluation & );
+			static void Give(Evaluation &);
 
 			/*!
 			\brief
 				The callback for PullOperation.
 			*/
-			template< typename TheQueue >
+			template <typename TheQueue>
 			static void Pull(
 				Lexicon &,
 				TheQueue &
@@ -56,7 +56,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< BackPullPairOperation > const theBackPullPairDefinition;
+			static Definition<BackPullPairOperation> const theBackPullPairDefinition;
 
 		}
 

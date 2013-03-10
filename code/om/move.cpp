@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Move_ )
+#ifndef Om_Move_
 
 	#include "om/move.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( MoveTest )
+	BOOST_AUTO_TEST_SUITE(MoveTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -37,13 +38,11 @@ namespace Om {
 
 // MARK: - Om
 
-template< typename TheMoveable >
-inline std::auto_ptr< TheMoveable > Om::Move( TheMoveable & theMoveable ) {
-	return(
-		std::auto_ptr< TheMoveable >(
-			static_cast< TheMoveable * >(
-				theMoveable.Move()
-			)
+template <typename TheMoveable>
+inline std::auto_ptr<TheMoveable> Om::Move(TheMoveable & theMoveable) {
+	return std::auto_ptr<TheMoveable>(
+		static_cast<TheMoveable *>(
+			theMoveable.Move()
 		)
 	);
 }

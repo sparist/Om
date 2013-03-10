@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Copyable_ )
+#ifndef Om_Copyable_
 
 	#define Om_Copyable_ \
 	Om::Copyable
@@ -28,8 +28,8 @@ namespace Om {
 	*/
 	class Copyable {
 
-		template< typename TheCopyable >
-		friend std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
+		template <typename TheCopyable>
+		friend std::auto_ptr<TheCopyable> Copy(TheCopyable const &);
 
 	public: // MARK: public (non-static)
 
@@ -37,7 +37,7 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		Copyable & operator =( Copyable const & );
+		Copyable & operator =(Copyable const &);
 
 		/*!
 		\return

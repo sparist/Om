@@ -1,205 +1,202 @@
-cmake_minimum_required( VERSION 2.8.10 )
+cmake_minimum_required(VERSION 2.8.10)
 
-project( Om )
+project(Om)
 
-set( Boost "" CACHE PATH "The Boost library build directory path" )
-set( Icu "" CACHE PATH "The ICU library build directory path" )
+set(Boost "" CACHE PATH "The Boost library build directory path")
+set(Icu "" CACHE PATH "The ICU library build directory path")
 
-set( CMAKE_SUPPRESS_REGENERATION TRUE )
+set(CMAKE_SUPPRESS_REGENERATION TRUE)
 
-set( OmTestCompileFlags "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API" )
+set(OmTestCompileFlags "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API")
+if(MSVC)
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4355")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4505")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4706")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_CRT_SECURE_NO_WARNINGS")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_SCL_SECURE_NO_WARNINGS")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHa")
 
-if( MSVC )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4355" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4505" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4706" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_CRT_SECURE_NO_WARNINGS" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_SCL_SECURE_NO_WARNINGS" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHa" )
+	add_definitions(-DU_STATIC_IMPLEMENTATION=1)
 
-	add_definitions( -DU_STATIC_IMPLEMENTATION=1 )
+	find_library(BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library( BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library(BoostTestExecMonitorDebugLibrary libboost_test_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostTestExecMonitorReleaseLibrary libboost_test_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library( BoostTestExecMonitorDebugLibrary libboost_test_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostTestExecMonitorReleaseLibrary libboost_test_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library(BoostUnitTestFrameworkDebugLibrary libboost_unit_test_framework-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostUnitTestFrameworkReleaseLibrary libboost_unit_test_framework-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library( BoostUnitTestFrameworkDebugLibrary libboost_unit_test_framework-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostUnitTestFrameworkReleaseLibrary libboost_unit_test_framework-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library(BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library( BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library(BoostLocaleDebugLibrary libboost_locale-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostLocaleReleaseLibrary libboost_locale-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library( BoostLocaleDebugLibrary libboost_locale-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostLocaleReleaseLibrary libboost_locale-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library(BoostSystemDebugLibrary libboost_system-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostSystemReleaseLibrary libboost_system-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library( BoostSystemDebugLibrary libboost_system-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostSystemReleaseLibrary libboost_system-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library(BoostThreadDebugLibrary libboost_thread-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostThreadReleaseLibrary libboost_thread-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library( BoostThreadDebugLibrary libboost_thread-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
-	find_library( BoostThreadReleaseLibrary libboost_thread-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH )
+	find_library(IcuDataDebugLibrary sicudtd "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(IcuDataReleaseLibrary sicudt "${Icu}/lib" NO_DEFAULT_PATH)
 
-	find_library( IcuDataDebugLibrary sicudtd "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuDataReleaseLibrary sicudt "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library(IcuI18nDebugLibrary sicuind "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(IcuI18nReleaseLibrary sicuin "${Icu}/lib" NO_DEFAULT_PATH)
 
-	find_library( IcuI18nDebugLibrary sicuind "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuI18nReleaseLibrary sicuin "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library(IcuIoDebugLibrary sicuiod "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(IcuIoReleaseLibrary sicuio "${Icu}/lib" NO_DEFAULT_PATH)
 
-	find_library( IcuIoDebugLibrary sicuiod "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuIoReleaseLibrary sicuio "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library(IcuLeDebugLibrary siculed "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(IcuLeReleaseLibrary sicule "${Icu}/lib" NO_DEFAULT_PATH)
 
-	find_library( IcuLeDebugLibrary siculed "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuLeReleaseLibrary sicule "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library(IcuLxDebugLibrary siculxd "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(IcuLxReleaseLibrary siculx "${Icu}/lib" NO_DEFAULT_PATH)
 
-	find_library( IcuLxDebugLibrary siculxd "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuLxReleaseLibrary siculx "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library(IcuTestDebugLibrary sicutestd "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(IcuTestReleaseLibrary sicutest "${Icu}/lib" NO_DEFAULT_PATH)
 
-	find_library( IcuTestDebugLibrary sicutestd "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuTestReleaseLibrary sicutest "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library(IcuTuDebugLibrary sicutud "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(IcuTuReleaseLibrary sicutu "${Icu}/lib" NO_DEFAULT_PATH)
 
-	find_library( IcuTuDebugLibrary sicutud "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuTuReleaseLibrary sicutu "${Icu}/lib" NO_DEFAULT_PATH )
+	find_library(IcuUcDebugLibrary sicuucd "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(IcuUcReleaseLibrary sicuuc "${Icu}/lib" NO_DEFAULT_PATH)
 
-	find_library( IcuUcDebugLibrary sicuucd "${Icu}/lib" NO_DEFAULT_PATH )
-	find_library( IcuUcReleaseLibrary sicuuc "${Icu}/lib" NO_DEFAULT_PATH )
-
-	include_directories( SYSTEM "${Boost}/include/boost-1_53" )
+	include_directories(SYSTEM "${Boost}/include/boost-1_53")
 else()
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-align" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-qual" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wdisabled-optimization" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wempty-body" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wfloat-equal" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wformat=2" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winit-self" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winline" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winvalid-pch" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-field-initializers" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-format-attribute" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverlength-strings" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpacked" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpointer-arith" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wredundant-decls" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros" )
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-align")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wcast-qual")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wdisabled-optimization")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wempty-body")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wfloat-equal")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wformat=2")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winit-self")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winline")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winvalid-pch")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-field-initializers")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wmissing-format-attribute")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverlength-strings")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpacked")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wpointer-arith")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wredundant-decls")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros")
 
-	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-format-nonliteral" )
-	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-unneeded-internal-declaration" )
-	set( OmTestCompileFlags "${OmTestCompileFlags} -Wno-unused-variable" )
+	set(OmTestCompileFlags "${OmTestCompileFlags} -Wno-format-nonliteral")
+	set(OmTestCompileFlags "${OmTestCompileFlags} -Wno-unneeded-internal-declaration")
+	set(OmTestCompileFlags "${OmTestCompileFlags} -Wno-unused-variable")
 
-	add_definitions( -DOm_Macros_Precompilation_ )
+	add_definitions(-DOm_Macros_Precompilation_)
 
-	find_library( BoostPrgExecMonitorReleaseLibrary boost_prg_exec_monitor "${Boost}/lib" NO_DEFAULT_PATH )
-	set( BoostPrgExecMonitorDebugLibrary ${BoostPrgExecMonitorReleaseLibrary} )
+	find_library(BoostPrgExecMonitorReleaseLibrary boost_prg_exec_monitor "${Boost}/lib" NO_DEFAULT_PATH)
+	set(BoostPrgExecMonitorDebugLibrary ${BoostPrgExecMonitorReleaseLibrary})
 
-	find_library( BoostTestExecMonitorReleaseLibrary boost_test_exec_monitor "${Boost}/lib" NO_DEFAULT_PATH )
-	set( BoostTestExecMonitorDebugLibrary ${BoostTestExecMonitorReleaseLibrary} )
+	find_library(BoostTestExecMonitorReleaseLibrary boost_test_exec_monitor "${Boost}/lib" NO_DEFAULT_PATH)
+	set(BoostTestExecMonitorDebugLibrary ${BoostTestExecMonitorReleaseLibrary})
 
-	find_library( BoostUnitTestFrameworkReleaseLibrary boost_unit_test_framework "${Boost}/lib" NO_DEFAULT_PATH )
-	set( BoostUnitTestFrameworkDebugLibrary ${BoostUnitTestFrameworkReleaseLibrary} )
+	find_library(BoostUnitTestFrameworkReleaseLibrary boost_unit_test_framework "${Boost}/lib" NO_DEFAULT_PATH)
+	set(BoostUnitTestFrameworkDebugLibrary ${BoostUnitTestFrameworkReleaseLibrary})
 
-	find_library( BoostLocaleReleaseLibrary boost_locale "${Boost}/lib" NO_DEFAULT_PATH )
-	set( BoostLocaleDebugLibrary ${BoostLocaleReleaseLibrary} )
+	find_library(BoostLocaleReleaseLibrary boost_locale "${Boost}/lib" NO_DEFAULT_PATH)
+	set(BoostLocaleDebugLibrary ${BoostLocaleReleaseLibrary})
 
-	find_library( BoostSystemReleaseLibrary boost_system "${Boost}/lib" NO_DEFAULT_PATH )
-	set( BoostSystemDebugLibrary ${BoostSystemReleaseLibrary} )
+	find_library(BoostSystemReleaseLibrary boost_system "${Boost}/lib" NO_DEFAULT_PATH)
+	set(BoostSystemDebugLibrary ${BoostSystemReleaseLibrary})
 
-	find_library( BoostThreadReleaseLibrary boost_thread "${Boost}/lib" NO_DEFAULT_PATH )
-	set( BoostThreadDebugLibrary ${BoostThreadReleaseLibrary} )
+	find_library(BoostThreadReleaseLibrary boost_thread "${Boost}/lib" NO_DEFAULT_PATH)
+	set(BoostThreadDebugLibrary ${BoostThreadReleaseLibrary})
 
-	find_library( IcuDataReleaseLibrary icudata "${Icu}/lib" NO_DEFAULT_PATH )
-	set( IcuDataDebugLibrary ${IcuDataReleaseLibrary} )
+	find_library(IcuDataReleaseLibrary icudata "${Icu}/lib" NO_DEFAULT_PATH)
+	set(IcuDataDebugLibrary ${IcuDataReleaseLibrary})
 
-	find_library( IcuI18nReleaseLibrary icui18n "${Icu}/lib" NO_DEFAULT_PATH )
-	set( IcuI18nDebugLibrary ${IcuI18nReleaseLibrary} )
+	find_library(IcuI18nReleaseLibrary icui18n "${Icu}/lib" NO_DEFAULT_PATH)
+	set(IcuI18nDebugLibrary ${IcuI18nReleaseLibrary})
 
-	find_library( IcuIoReleaseLibrary icuio "${Icu}/lib" NO_DEFAULT_PATH )
-	set( IcuIoDebugLibrary ${IcuIoReleaseLibrary} )
+	find_library(IcuIoReleaseLibrary icuio "${Icu}/lib" NO_DEFAULT_PATH)
+	set(IcuIoDebugLibrary ${IcuIoReleaseLibrary})
 
-	find_library( IcuLeReleaseLibrary icule "${Icu}/lib" NO_DEFAULT_PATH )
-	set( IcuLeDebugLibrary ${IcuLeReleaseLibrary} )
+	find_library(IcuLeReleaseLibrary icule "${Icu}/lib" NO_DEFAULT_PATH)
+	set(IcuLeDebugLibrary ${IcuLeReleaseLibrary})
 
-	find_library( IcuLxReleaseLibrary iculx "${Icu}/lib" NO_DEFAULT_PATH )
-	set( IcuLxDebugLibrary ${IcuLxReleaseLibrary} )
+	find_library(IcuLxReleaseLibrary iculx "${Icu}/lib" NO_DEFAULT_PATH)
+	set(IcuLxDebugLibrary ${IcuLxReleaseLibrary})
 
-	find_library( IcuTestReleaseLibrary icutest "${Icu}/lib" NO_DEFAULT_PATH )
-	set( IcuTestDebugLibrary ${IcuTestReleaseLibrary} )
+	find_library(IcuTestReleaseLibrary icutest "${Icu}/lib" NO_DEFAULT_PATH)
+	set(IcuTestDebugLibrary ${IcuTestReleaseLibrary})
 
-	find_library( IcuTuReleaseLibrary icutu "${Icu}/lib" NO_DEFAULT_PATH )
-	set( IcuTuDebugLibrary ${IcuTuReleaseLibrary} )
+	find_library(IcuTuReleaseLibrary icutu "${Icu}/lib" NO_DEFAULT_PATH)
+	set(IcuTuDebugLibrary ${IcuTuReleaseLibrary})
 
-	find_library( IcuUcReleaseLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH )
-	set( IcuUcDebugLibrary ${IcuUcReleaseLibrary} )
+	find_library(IcuUcReleaseLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH)
+	set(IcuUcDebugLibrary ${IcuUcReleaseLibrary})
 
-	include_directories( SYSTEM "${Boost}/include" )
+	include_directories(SYSTEM "${Boost}/include")
 endif()
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/code")
 
-include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/code" )
-
-function( om_populate_code )
-	file( GLOB_RECURSE Files "${CMAKE_CURRENT_SOURCE_DIR}/code/*.*" )
-	foreach( File ${Files} )
-		get_filename_component( Directory "${File}" PATH )
-		list( APPEND Directories "${Directory}" )
+function(om_populate_code)
+	file(GLOB_RECURSE Files "${CMAKE_CURRENT_SOURCE_DIR}/code/*.*")
+	foreach(File ${Files})
+		get_filename_component(Directory "${File}" PATH)
+		list(APPEND Directories "${Directory}")
 	endforeach()
-	list( REMOVE_DUPLICATES Directories )
-	list( SORT Directories )
+	list(REMOVE_DUPLICATES Directories)
+	list(SORT Directories)
 
-	foreach( Directory ${Directories} )
-		file( RELATIVE_PATH RelativeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/code" "${Directory}" )
-		string( REPLACE "/" "\\" SourceGroup "${RelativeDirectory}" )
+	foreach(Directory ${Directories})
+		file(RELATIVE_PATH RelativeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/code" "${Directory}")
+		string(REPLACE "/" "\\" SourceGroup "${RelativeDirectory}")
 
-		file( GLOB LocalCppFiles "${Directory}/*.cpp" )
-		list( SORT LocalCppFiles )
-		source_group( "Source Files\\${SourceGroup}" FILES ${LocalCppFiles} )
-		set( CppFiles ${CppFiles} ${LocalCppFiles} )
+		file(GLOB LocalCppFiles "${Directory}/*.cpp")
+		list(SORT LocalCppFiles)
+		source_group("Source Files\\${SourceGroup}" FILES ${LocalCppFiles})
+		set(CppFiles ${CppFiles} ${LocalCppFiles})
 
-		file( GLOB LocalHppFiles "${Directory}/*.hpp" )
-		list( SORT LocalHppFiles )
-		source_group( "Header Files\\${SourceGroup}" FILES ${LocalHppFiles} )
-		set( HppFiles ${HppFiles} ${LocalHppFiles} )
+		file(GLOB LocalHppFiles "${Directory}/*.hpp")
+		list(SORT LocalHppFiles)
+		source_group("Header Files\\${SourceGroup}" FILES ${LocalHppFiles})
+		set(HppFiles ${HppFiles} ${LocalHppFiles})
 
-		file( GLOB LocalDoxFiles "${Directory}/*.dox" )
-		list( SORT LocalDoxFiles )
-		source_group( "Doxygen Files\\${SourceGroup}" FILES ${LocalDoxFiles} )
-		set( DoxFiles ${DoxFiles} ${LocalDoxFiles} )
+		file(GLOB LocalDoxFiles "${Directory}/*.dox")
+		list(SORT LocalDoxFiles)
+		source_group("Doxygen Files\\${SourceGroup}" FILES ${LocalDoxFiles})
+		set(DoxFiles ${DoxFiles} ${LocalDoxFiles})
 	endforeach()
 
-	set( Cpp ${CppFiles} PARENT_SCOPE )
-	set( Hpp ${HppFiles} PARENT_SCOPE )
-	set( Dox ${DoxFiles} PARENT_SCOPE )
+	set(Cpp ${CppFiles} PARENT_SCOPE)
+	set(Hpp ${HppFiles} PARENT_SCOPE)
+	set(Dox ${DoxFiles} PARENT_SCOPE)
 endfunction()
 om_populate_code()
 
-function( om_populate_internal )
-	set( Internal "${CMAKE_CURRENT_SOURCE_DIR}/code/om.internal" )
-	file( WRITE "${Internal}" "" )
-	foreach( HeaderFile ${Hpp} )
-		file( RELATIVE_PATH RelativeHeaderFile "${CMAKE_CURRENT_SOURCE_DIR}/code" "${HeaderFile}" )
-		file( APPEND "${Internal}" "#include \"${RelativeHeaderFile}\"\n" )
+function(om_populate_internal)
+	set(Internal "${CMAKE_CURRENT_SOURCE_DIR}/code/om.internal")
+	file(WRITE "${Internal}" "")
+	foreach(HeaderFile ${Hpp})
+		file(RELATIVE_PATH RelativeHeaderFile "${CMAKE_CURRENT_SOURCE_DIR}/code" "${HeaderFile}")
+		file(APPEND "${Internal}" "#include \"${RelativeHeaderFile}\"\n")
 	endforeach()
 endfunction()
 om_populate_internal()
 
-add_executable( "Om" ${Cpp} ${Hpp} ${Dox} )
-add_executable( "Om.Test" ${Cpp} )
-
-if( MSVC )
-	add_custom_target( "Om.Documentation"
+add_executable("Om" ${Cpp} ${Hpp} ${Dox})
+add_executable("Om.Test" ${Cpp})
+if(MSVC)
+	add_custom_target("Om.Documentation"
 		COMMAND if not exist products mkdir products
 		COMMAND if not exist products\\documentation mkdir products\\documentation
 		COMMAND if not exist products\\documentation\\doxygen mkdir products\\documentation\\doxygen
-		COMMAND ( type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -
+		COMMAND (type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text") | doxygen -
 		COMMENT "Generating Documentation..."
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 		VERBATIM
 	)
 else()
-	add_custom_target( "Om.Documentation"
+	add_custom_target("Om.Documentation"
 		COMMAND mkdir -p products/documentation/doxygen
 		COMMAND doxygen doxygen/Doxyfile
 		COMMENT "Generating Documentation..."
@@ -208,8 +205,8 @@ else()
 	)
 endif()
 
-function( om_target_link_libraries target )
-	target_link_libraries( ${target}
+function(om_target_link_libraries target)
+	target_link_libraries(${target}
 		debug "${BoostLocaleDebugLibrary}"
 		optimized "${BoostLocaleReleaseLibrary}"
 
@@ -223,7 +220,7 @@ function( om_target_link_libraries target )
 		optimized "${BoostChronoReleaseLibrary}"
 	)
 
-	target_link_libraries( ${target}
+	target_link_libraries(${target}
 		debug "${IcuDataDebugLibrary}"
 		optimized "${IcuDataReleaseLibrary}"
 
@@ -248,18 +245,10 @@ function( om_target_link_libraries target )
 		debug "${IcuUcDebugLibrary}"
 		optimized "${IcuUcReleaseLibrary}"
 	)
-
-	if( NOT MSVC )
-		set_target_properties( ${target} PROPERTIES
-			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/code/om.external"
-			XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
-		)
-	endif()
 endfunction()
-om_target_link_libraries( "Om" )
-om_target_link_libraries( "Om.Test" )
-
-target_link_libraries( "Om.Test"
+om_target_link_libraries("Om")
+om_target_link_libraries("Om.Test")
+target_link_libraries("Om.Test"
 	debug "${BoostPrgExecMonitorDebugLibrary}"
 	optimized "${BoostPrgExecMonitorReleaseLibrary}"
 
@@ -270,9 +259,15 @@ target_link_libraries( "Om.Test"
 	optimized "${BoostUnitTestFrameworkReleaseLibrary}"
 )
 
-set_target_properties( "Om.Test" PROPERTIES COMPILE_FLAGS "${OmTestCompileFlags}" )
+if(NOT MSVC)
+	set_target_properties("Om" "Om.Test" PROPERTIES
+		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/code/om.external"
+		XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
+	)
+endif()
+set_target_properties("Om.Test" PROPERTIES COMPILE_FLAGS "${OmTestCompileFlags}")
 
 enable_testing()
-add_test( "Om.Test.Build" "${CMAKE_COMMAND}" --build "${CMAKE_BINARY_DIR}" --target "Om.Test" )
-add_test( "Om.Test.Run" "Om.Test" )
-set_tests_properties( "Om.Test.Run" PROPERTIES DEPENDS "Om.Test.Build" )
+add_test("Om.Test.Build" "${CMAKE_COMMAND}" --build "${CMAKE_BINARY_DIR}" --target "Om.Test")
+add_test("Om.Test.Run" "Om.Test")
+set_tests_properties("Om.Test.Run" PROPERTIES DEPENDS "Om.Test.Build")

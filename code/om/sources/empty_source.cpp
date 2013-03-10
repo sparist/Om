@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_EmptySource_ )
+#ifndef Om_Sources_EmptySource_
 
 	#include "om/sources/empty_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sources {
 
-		BOOST_AUTO_TEST_SUITE( EmptySourceTest )
+		BOOST_AUTO_TEST_SUITE(EmptySourceTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,17 +43,17 @@ namespace Om {
 // MARK: - Om::Sources::EmptySource
 
 	#define Template_ \
-	template< typename ThisItem >
+	template <typename ThisItem>
 
 	#define Type_ \
-	Om::Sources::EmptySource< ThisItem >
+	Om::Sources::EmptySource<ThisItem>
 
 // MARK: public (static)
 
 Template_
 inline Type_ & Type_::Get() {
 	static Type_ theEmptySource;
-	return( theEmptySource );
+	return theEmptySource;
 }
 
 // MARK: public (non-static)
@@ -61,50 +62,46 @@ Template_
 inline Type_::EmptySource() {}
 
 Template_
-inline Type_ & Type_::operator =( EmptySource theEmptySource ) {
-	return( *this );
+inline Type_ & Type_::operator =(EmptySource) {
+	return *this;
 }
 
 Template_
-inline bool Type_::operator ==( EmptySource const & ) const {
-	return( true );
+inline bool Type_::operator ==(EmptySource const &) const {
+	return true;
 }
 
 Template_
 inline bool Type_::operator !() const {
-	return( true );
+	return true;
 }
 
 Template_
 inline ThisItem & Type_::operator *() const {
-	assert( 0 );
-	throw(
-		std::logic_error( "The source is empty." )
-	);
+	assert(0);
+	throw std::logic_error("The source is empty.");
 }
 
 Template_
 inline void Type_::Pop() {
-	assert( 0 );
-	throw(
-		std::logic_error( "The source is empty." )
-	);
+	assert(0);
+	throw std::logic_error("The source is empty.");
 }
 
 Template_
-inline void Type_::Swap( EmptySource & ) {}
+inline void Type_::Swap(EmptySource &) {}
 
 	#undef Type_
 	#undef Template_
 
 // MARK: - boost
 
-template< typename ThisItem >
+template <typename ThisItem>
 inline void boost::swap(
-	Om::Sources::EmptySource< ThisItem > & theFirst,
-	Om::Sources::EmptySource< ThisItem > & theSecond
+	Om::Sources::EmptySource<ThisItem> & theFirst,
+	Om::Sources::EmptySource<ThisItem> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

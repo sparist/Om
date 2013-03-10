@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_EmptySource_ )
+#ifndef Om_Sources_EmptySource_
 
 	#define Om_Sources_EmptySource_ \
 	Om::Sources::EmptySource
@@ -28,11 +28,11 @@ namespace Om {
 		\brief
 			An empty Source.
 		*/
-		template< typename ThisItem >
+		template <typename ThisItem>
 		class EmptySource:
 		public DefaultSource<
 			ThisItem,
-			EmptySource< ThisItem >
+			EmptySource<ThisItem>
 		> {
 		public: // MARK: public (static)
 
@@ -42,9 +42,9 @@ namespace Om {
 
 			EmptySource();
 
-			EmptySource & operator =( EmptySource );
+			EmptySource & operator =(EmptySource);
 
-			bool operator ==( EmptySource const & ) const;
+			bool operator ==(EmptySource const &) const;
 
 			virtual bool operator !() const;
 
@@ -52,7 +52,7 @@ namespace Om {
 
 			virtual void Pop();
 
-			void Swap( EmptySource & );
+			void Swap(EmptySource &);
 
 		};
 
@@ -63,10 +63,10 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template< typename ThisItem >
+	template <typename ThisItem>
 	void swap(
-		Om::Sources::EmptySource< ThisItem > &,
-		Om::Sources::EmptySource< ThisItem > &
+		Om::Sources::EmptySource<ThisItem> &,
+		Om::Sources::EmptySource<ThisItem> &
 	);
 
 }

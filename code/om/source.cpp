@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Source_ )
+#ifndef Om_Source_
 
 	#include "om/source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( SourceTest )
+	BOOST_AUTO_TEST_SUITE(SourceTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -35,7 +36,7 @@ namespace Om {
 
 #else
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <cassert>
 		#include <stdexcept>
@@ -45,10 +46,10 @@ namespace Om {
 // MARK: - Om::Source
 
 	#define Template_ \
-	template< typename ThisItem >
+	template <typename ThisItem>
 
 	#define Type_ \
-	Om::Source< ThisItem >
+	Om::Source<ThisItem>
 
 // MARK: public (non-static)
 
@@ -56,57 +57,47 @@ Template_
 inline Type_::~Source() {}
 
 Template_
-inline bool Type_::operator ==( Source const & ) const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+inline bool Type_::operator ==(Source const &) const {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 Template_
-template< typename TheSource >
-inline bool Type_::operator !=( TheSource const & theSource ) const {
-	return(
-		!( theSource == *this )
-	);
+template <typename TheSource>
+inline bool Type_::operator !=(TheSource const & theSource) const {
+	return !(theSource == *this);
 }
 
 Template_
 inline ThisItem & Type_::operator *() const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 Template_
 inline ThisItem * Type_::operator ->() const {
-	return( &**this );
+	return &**this;
 }
 
 Template_
 inline bool Type_::operator !() const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 Template_
 inline Type_::operator Boolean() const {
-	return(
-		( !*this )?
-		0:
+	return (
+		!*this ?
+		0 :
 		&Source::UncomparableBoolean
 	);
 }
 
 Template_
 inline void Type_::Pop() {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 // MARK: private (non-static)

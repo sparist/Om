@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_FrontPullCharacterOperation_ )
+#ifndef Om_Operations_FrontPullCharacterOperation_
 
 	#define Om_Operations_FrontPullCharacterOperation_ \
 	Om::Operations::FrontPullCharacterOperation
@@ -36,13 +36,13 @@ namespace Om {
 
 			static char const * GetName();
 
-			static void Give( Evaluation & );
+			static void Give(Evaluation &);
 
 			/*!
 			\brief
 				The callback for PullOperation.
 			*/
-			template< typename TheQueue >
+			template <typename TheQueue>
 			static void Pull(
 				Operator &,
 				TheQueue &
@@ -52,7 +52,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< FrontPullCharacterOperation > const theFrontPullCharacterDefinition;
+			static Definition<FrontPullCharacterOperation> const theFrontPullCharacterDefinition;
 
 		}
 

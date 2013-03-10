@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_ContainerBackSink_ )
+#ifndef Om_Sinks_ContainerBackSink_
 
 	#include "om/sinks/container_back_sink.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,14 +28,14 @@ namespace Om {
 
 	namespace Sinks {
 
-		BOOST_AUTO_TEST_SUITE( ContainerBackSinkTest )
+		BOOST_AUTO_TEST_SUITE(ContainerBackSinkTest)
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
-				std::string theSinkString( "01" );
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
+				std::string theSinkString("01");
 				ContainerBackSink<
 					char const,
 					std::string
-				> theSink( theSinkString );
+				> theSink(theSinkString);
 
 				*theSink++ = '2';
 				BOOST_CHECK_EQUAL(
@@ -67,7 +67,7 @@ namespace Om {
 // MARK: - Om::Sinks::ContainerBackSink
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisItem, \
 		typename ThisContainer \
 	>
@@ -81,22 +81,22 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::ContainerBackSink( ThisContainer & theContainer ):
-thisContainer( theContainer ) {}
+inline Type_::ContainerBackSink(ThisContainer & theContainer):
+thisContainer(theContainer) {}
 
 Template_
-inline Type_ & Type_::operator =( ContainerBackSink theContainerBackSink ) {
-	this->Swap( theContainerBackSink );
-	return( *this );
+inline Type_ & Type_::operator =(ContainerBackSink theContainerBackSink) {
+	this->Swap(theContainerBackSink);
+	return *this;
 }
 
 Template_
-inline void Type_::Push( ThisItem & thisItem ) {
-	this->thisContainer.push_back( thisItem );
+inline void Type_::Push(ThisItem & thisItem) {
+	this->thisContainer.push_back(thisItem);
 }
 
 Template_
-inline void Type_::Swap( ContainerBackSink & theContainerBackSink ) {
+inline void Type_::Swap(ContainerBackSink & theContainerBackSink) {
 	boost::swap(
 		this->thisContainer,
 		theContainerBackSink.thisContainer
@@ -108,7 +108,7 @@ inline void Type_::Swap( ContainerBackSink & theContainerBackSink ) {
 
 // MARK: - boost
 
-template<
+template <
 	typename ThisItem,
 	typename ThisContainer
 >
@@ -122,7 +122,7 @@ inline void boost::swap(
 		ThisContainer
 	> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

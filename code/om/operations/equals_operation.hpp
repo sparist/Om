@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_EqualsOperation_ )
+#ifndef Om_Operations_EqualsOperation_
 
 	#define Om_Operations_EqualsOperation_ \
 	Om::Operations::EqualsOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__equals_operation__ operation implementation.
 		*/
 		class EqualsOperation:
-		public DefaultOperation< EqualsOperation > {
+		public DefaultOperation<EqualsOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheEqualsOperation >
+			template <typename TheEqualsOperation>
 			static void GiveElements(
 				TheEqualsOperation &,
 				Queue &
@@ -48,13 +48,13 @@ namespace Om {
 
 			EqualsOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -72,7 +72,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< EqualsOperation > const theEqualsDefinition;
+			static Definition<EqualsOperation> const theEqualsDefinition;
 
 		}
 

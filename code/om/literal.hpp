@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Literal_ )
+#ifndef Om_Literal_
 
 	#define Om_Literal_ \
 	Om::Literal
@@ -20,7 +20,7 @@
 	#include "om/default_program.hpp"
 	#include "om/sources/collection_front_source.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/ptr_container/ptr_deque.hpp"
 		#include "boost/swap.hpp"
@@ -38,11 +38,11 @@ namespace Om {
 		The \ref om__literal__ Program implementation.
 	*/
 	class Literal:
-	public DefaultProgram< Literal > {
+	public DefaultProgram<Literal> {
 	public: // MARK: public (static)
 
 		//! \cond
-		template< typename ThisLiteral >
+		template <typename ThisLiteral>
 		class ElementRange;
 		//! \endcond
 
@@ -54,55 +54,55 @@ namespace Om {
 
 		Literal();
 
-		Literal & operator =( Literal );
+		Literal & operator =(Literal);
 
-		template< typename TheElement >
-		void BackGive( Queue & );
+		template <typename TheElement>
+		void BackGive(Queue &);
 
-		void BackGiveElement( Queue & );
+		void BackGiveElement(Queue &);
 
 		virtual void Clear();
 
-		template< typename TheElement >
-		void FrontGive( Queue & );
+		template <typename TheElement>
+		void FrontGive(Queue &);
 
-		void FrontGiveElement( Queue & );
+		void FrontGiveElement(Queue &);
 
 		std::auto_ptr<
-			Source< Element >
+			Source<Element>
 		> GetElementRange();
 
 		virtual std::auto_ptr<
-			Source< Element const >
+			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements( Queue & );
+		virtual void GiveElements(Queue &);
 
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
 		virtual bool IsEmpty() const;
 
-		virtual void ReadElements( Parser & );
+		virtual void ReadElements(Parser &);
 
-		virtual void ReadQuotedElements( Parser & );
+		virtual void ReadQuotedElements(Parser &);
 
-		void Swap( Literal & );
+		void Swap(Literal &);
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
-		template< typename TheSeparator >
-		void TakeSeparator( TheSeparator & );
+		template <typename TheSeparator>
+		void TakeSeparator(TheSeparator &);
 
 	private: // MARK: private (static)
 
-		typedef boost::ptr_deque< Element > ElementDeque;
+		typedef boost::ptr_deque<Element> ElementDeque;
 
 		/*!
 		\param theQueue
@@ -112,7 +112,7 @@ namespace Om {
 		\param theEnd
 			The end Element iterator.
 		*/
-		template< typename TheElementIterator >
+		template <typename TheElementIterator>
 		static void GiveElements(
 			Queue & theQueue,
 			TheElementIterator theCurrent,
@@ -121,44 +121,44 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		template< typename TheAtom >
-		void TakeAtom( TheAtom & );
+		template <typename TheAtom>
+		void TakeAtom(TheAtom &);
 
 		ElementDeque thisElementDeque;
 
 	};
 
-	// MARK: - Om::Literal::ElementRange< Literal >
+	// MARK: - Om::Literal::ElementRange<Literal>
 	/*!
 	\brief
 		A mutable Element range.
 	*/
-	template<>
-	class Literal::ElementRange< Literal >:
+	template <>
+	class Literal::ElementRange<Literal>:
 	public Sources::CollectionFrontSource<
 		Element,
 		ElementDeque::iterator
 	> {
 	public: // MARK: public (non-static)
 
-		explicit ElementRange( Literal & );
+		explicit ElementRange(Literal &);
 
 	};
 
-	// MARK: - Om::Literal::ElementRange< Literal const >
+	// MARK: - Om::Literal::ElementRange<Literal const>
 	/*!
 	\brief
 		An immutable Element range.
 	*/
-	template<>
-	class Literal::ElementRange< Literal const >:
+	template <>
+	class Literal::ElementRange<Literal const>:
 	public Sources::CollectionFrontSource<
 		Element const,
 		ElementDeque::const_iterator
 	> {
 	public: // MARK: public (non-static)
 
-		explicit ElementRange( Literal const & );
+		explicit ElementRange(Literal const &);
 
 	};
 }
@@ -166,7 +166,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<>
+	template <>
 	void swap(
 		Om::Literal &,
 		Om::Literal &

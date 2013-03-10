@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultMoveable_ )
+#ifndef Om_DefaultMoveable_
 
 	#define Om_DefaultMoveable_ \
 	Om::DefaultMoveable
@@ -26,15 +26,15 @@ namespace Om {
 	\brief
 		A partial implementation of Moveable.
 	*/
-	template<
+	template <
 		typename ThisImplementation,
 		typename ThisInterface = Moveable
 	>
 	class DefaultMoveable:
 	public ThisInterface {
 
-		template< typename TheMoveable >
-		friend std::auto_ptr< TheMoveable > Move( TheMoveable & );
+		template <typename TheMoveable>
+		friend std::auto_ptr<TheMoveable> Move(TheMoveable &);
 
 	public: // MARK: public (non-static)
 
@@ -42,7 +42,7 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		DefaultMoveable & operator =( DefaultMoveable const & );
+		DefaultMoveable & operator =(DefaultMoveable const &);
 
 		/*!
 		\return

@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Environment_ )
+#ifndef Om_Environment_
 
 	#define Om_Environment_ \
 	Om::Environment
@@ -32,7 +32,7 @@ namespace Om {
 
 		Environment();
 
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
 		virtual bool IsEmpty() const;
 
@@ -42,7 +42,7 @@ namespace Om {
 
 		If the given Translator is already the last reference in the Environment, there is no change.
 		*/
-		void Push( Translator const & );
+		void Push(Translator const &);
 
 		virtual bool Translate(
 			Evaluation &,
@@ -57,7 +57,7 @@ namespace Om {
 
 		When looking up an Operator, the back Translator is used first. This requires the reverse iteration functionality provided by std::vector.
 		*/
-		typedef std::vector< Translator const * > TranslatorVector;
+		typedef std::vector<Translator const *> TranslatorVector;
 
 	private: // MARK: private (non-static)
 

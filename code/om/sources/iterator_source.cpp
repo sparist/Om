@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_IteratorSource_ )
+#ifndef Om_Sources_IteratorSource_
 
 	#include "om/sources/iterator_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/sinks/container_back_sink.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,7 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( IteratorSourceTest )
+	BOOST_AUTO_TEST_SUITE(IteratorSourceTest)
 
 		namespace {
 
@@ -41,14 +41,14 @@ namespace Om {
 					char const,
 					Iterator
 				> Source;
-				Source theSource( theCodeUnitIterator );
-				Source const theSourceEnd( "" );
+				Source theSource(theCodeUnitIterator);
+				Source const theSourceEnd("");
 
 				typedef Sinks::ContainerBackSink<
 					char const,
 					std::string
 				> Sink;
-				Sink theSink( theSinkString );
+				Sink theSink(theSinkString);
 
 				std::copy(
 					theSource,
@@ -61,11 +61,11 @@ namespace Om {
 			public:
 
 				// Note: this is intentionally non-explicit.
-				Item( char const theCodeUnit ):
-				thisCodeUnit( theCodeUnit ) {}
+				Item(char const theCodeUnit):
+				thisCodeUnit(theCodeUnit) {}
 
 				bool operator !() const {
-					return( !this->thisCodeUnit );
+					return !this->thisCodeUnit;
 				}
 
 				char thisCodeUnit;
@@ -74,7 +74,7 @@ namespace Om {
 
 		}
 
-		BOOST_AUTO_TEST_CASE( GeneralTest ) {
+		BOOST_AUTO_TEST_CASE(GeneralTest) {
 			typedef Item * Iterator;
 			typedef Sources::IteratorSource<
 				Item,
@@ -87,25 +87,25 @@ namespace Om {
 				'2',
 				0
 			};
-			Source theSource( theSourceArray );
-			Item theSourceArrayEnd[] = { 0 };
-			Source const theSourceEnd( theSourceArrayEnd );
+			Source theSource(theSourceArray);
+			Item theSourceArrayEnd[] = {0};
+			Source const theSourceEnd(theSourceArrayEnd);
 
-			BOOST_CHECK( theSourceEnd != theSource );
+			BOOST_CHECK(theSourceEnd != theSource);
 			BOOST_CHECK_EQUAL(
 				'0',
 				theSource->thisCodeUnit
 			);
 
 			++theSource;
-			BOOST_CHECK( theSourceEnd != theSource );
+			BOOST_CHECK(theSourceEnd != theSource);
 			BOOST_CHECK_EQUAL(
 				'1',
-				( *theSource ).thisCodeUnit
+				(*theSource).thisCodeUnit
 			);
 
 			Source theIterator = ++theSource;
-			BOOST_CHECK( theSourceEnd != theSource );
+			BOOST_CHECK(theSourceEnd != theSource);
 			BOOST_CHECK_EQUAL(
 				'2',
 				theIterator->thisCodeUnit
@@ -116,10 +116,10 @@ namespace Om {
 			);
 
 			theIterator->thisCodeUnit = '3';
-			( *theSource ).thisCodeUnit = '4';
+			(*theSource).thisCodeUnit = '4';
 			BOOST_CHECK_EQUAL(
 				'4',
-				( *theIterator ).thisCodeUnit
+				(*theIterator).thisCodeUnit
 			);
 			BOOST_CHECK_EQUAL(
 				'4',
@@ -127,26 +127,26 @@ namespace Om {
 			);
 			BOOST_CHECK_EQUAL(
 				'0',
-				theSourceArray[ 0 ].thisCodeUnit
+				theSourceArray[0].thisCodeUnit
 			);
 			BOOST_CHECK_EQUAL(
 				'1',
-				theSourceArray[ 1 ].thisCodeUnit
+				theSourceArray[1].thisCodeUnit
 			);
 			BOOST_CHECK_EQUAL(
 				'4',
-				theSourceArray[ 2 ].thisCodeUnit
+				theSourceArray[2].thisCodeUnit
 			);
 			BOOST_CHECK_EQUAL(
 				0,
-				theSourceArray[ 3 ].thisCodeUnit
+				theSourceArray[3].thisCodeUnit
 			);
 
 			++theSource;
-			BOOST_CHECK( theSourceEnd == theSource );
+			BOOST_CHECK(theSourceEnd == theSource);
 		}
 
-		BOOST_AUTO_TEST_CASE( CopyMultipleItemsTest ) {
+		BOOST_AUTO_TEST_CASE(CopyMultipleItemsTest) {
 			char const theSourceNullTerminatedString[] = "01";
 			std::string theSinkString;
 			CopyWithIterators(
@@ -160,7 +160,7 @@ namespace Om {
 			);
 		}
 
-		BOOST_AUTO_TEST_CASE( CopySingleItemTest ) {
+		BOOST_AUTO_TEST_CASE(CopySingleItemTest) {
 			char const theSourceNullTerminatedString[] = "0";
 			std::string theSinkString;
 			CopyWithIterators(
@@ -174,7 +174,7 @@ namespace Om {
 			);
 		}
 
-		BOOST_AUTO_TEST_CASE( CopyNoItemsTest ) {
+		BOOST_AUTO_TEST_CASE(CopyNoItemsTest) {
 			char const theSourceNullTerminatedString[] = "";
 			std::string theSinkString;
 			CopyWithIterators(
@@ -199,7 +199,7 @@ namespace Om {
 // MARK: - Om::Sources::IteratorSource
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisItem, \
 		typename ThisIterator \
 	>
@@ -213,19 +213,19 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::IteratorSource( ThisIterator const theIterator ):
-thisIterator( theIterator ) {}
+inline Type_::IteratorSource(ThisIterator const theIterator):
+thisIterator(theIterator) {}
 
 Template_
-inline Type_ & Type_::operator =( IteratorSource theIteratorSource ) {
-	this->Swap( theIteratorSource );
-	return( *this );
+inline Type_ & Type_::operator =(IteratorSource theIteratorSource) {
+	this->Swap(theIteratorSource);
+	return *this;
 }
 
 Template_
-inline bool Type_::operator ==( IteratorSource const & theSource ) const {
-	return(
-		( this->thisIterator == theSource.thisIterator ) ||
+inline bool Type_::operator ==(IteratorSource const & theSource) const {
+	return (
+		(this->thisIterator == theSource.thisIterator) ||
 		(
 			!*this->thisIterator &&
 			!*theSource.thisIterator
@@ -235,23 +235,23 @@ inline bool Type_::operator ==( IteratorSource const & theSource ) const {
 
 Template_
 inline bool Type_::operator !() const {
-	return( !*this->thisIterator );
+	return !*this->thisIterator;
 }
 
 Template_
 inline ThisItem & Type_::operator *() const {
-	assert( !!*this->thisIterator );
-	return( *this->thisIterator );
+	assert(!!*this->thisIterator);
+	return *this->thisIterator;
 }
 
 Template_
 inline void Type_::Pop() {
-	assert( !!*this->thisIterator );
+	assert(!!*this->thisIterator);
 	++this->thisIterator;
 }
 
 Template_
-inline void Type_::Swap( IteratorSource & theIteratorSource ) {
+inline void Type_::Swap(IteratorSource & theIteratorSource) {
 	boost::swap(
 		this->thisIterator,
 		theIteratorSource.thisIterator
@@ -263,7 +263,7 @@ inline void Type_::Swap( IteratorSource & theIteratorSource ) {
 
 // MARK: - boost
 
-template<
+template <
 	typename ThisItem,
 	typename ThisIterator
 >
@@ -277,7 +277,7 @@ inline void boost::swap(
 		ThisIterator
 	> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

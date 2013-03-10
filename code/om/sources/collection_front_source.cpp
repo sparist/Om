@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_CollectionFrontSource_ )
+#ifndef Om_Sources_CollectionFrontSource_
 
 	#include "om/sources/collection_front_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sources {
 
-		BOOST_AUTO_TEST_SUITE( CollectionFrontSourceTest )
+		BOOST_AUTO_TEST_SUITE(CollectionFrontSourceTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,7 +43,7 @@ namespace Om {
 // MARK: - Om::Sources::CollectionFrontSource
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisItem, \
 		typename ThisIterator \
 	>
@@ -56,8 +57,8 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-template< typename TheCollection >
-inline Type_::CollectionFrontSource( TheCollection & theCollection ):
+template <typename TheCollection>
+inline Type_::CollectionFrontSource(TheCollection & theCollection):
 IteratorPairSource<
 	ThisItem,
 	ThisIterator

@@ -12,12 +12,12 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Give_ )
+#ifndef Om_Give_
 
 	#define Om_Give_ \
 	Om::Give
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <memory>
 
@@ -32,8 +32,8 @@ namespace Om {
 	\return
 		The resulting object.
 	*/
-	template< typename TheGiveable >
-	std::auto_ptr< TheGiveable > Give( TheGiveable & );
+	template <typename TheGiveable>
+	std::auto_ptr<TheGiveable> Give(TheGiveable &);
 
 	/*!
 	\brief
@@ -41,9 +41,9 @@ namespace Om {
 	\return
 		The resulting object.
 	*/
-	template< typename TheGiveable >
-	std::auto_ptr< TheGiveable > Give(
-		std::auto_ptr< TheGiveable > &
+	template <typename TheGiveable>
+	std::auto_ptr<TheGiveable> Give(
+		std::auto_ptr<TheGiveable> &
 	);
 
 	/*!
@@ -52,8 +52,8 @@ namespace Om {
 	\return
 		The resulting object.
 	*/
-	template< typename TheGiveable >
-	std::auto_ptr< TheGiveable > Give( TheGiveable const & );
+	template <typename TheGiveable>
+	std::auto_ptr<TheGiveable> Give(TheGiveable const &);
 
 	/*!
 	\brief
@@ -63,9 +63,9 @@ namespace Om {
 
 	This is useful in situations where the argument auto_ptr is a member of a const class.
 	*/
-	template< typename TheGiveable >
-	std::auto_ptr< TheGiveable > Give(
-		std::auto_ptr< TheGiveable > const &
+	template <typename TheGiveable>
+	std::auto_ptr<TheGiveable> Give(
+		std::auto_ptr<TheGiveable> const &
 	);
 
 }

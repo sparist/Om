@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_CodePointSink_ )
+#ifndef Om_Sinks_CodePointSink_
 
 	#define Om_Sinks_CodePointSink_ \
 	Om::Sinks::CodePointSink
@@ -29,21 +29,21 @@ namespace Om {
 		\brief
 			A #CodePoint Sink that pushes each code unit to the iterator.
 		*/
-		template< typename ThisCodeUnitIterator >
+		template <typename ThisCodeUnitIterator>
 		class CodePointSink:
 		public DefaultSink<
 			CodePoint const,
-			CodePointSink< ThisCodeUnitIterator >
+			CodePointSink<ThisCodeUnitIterator>
 		> {
 		public: // MARK: public (non-static)
 
-			explicit CodePointSink( ThisCodeUnitIterator );
+			explicit CodePointSink(ThisCodeUnitIterator);
 
-			CodePointSink & operator =( CodePointSink );
+			CodePointSink & operator =(CodePointSink);
 
-			virtual void Push( CodePoint const & );
+			virtual void Push(CodePoint const &);
 
-			void Swap( CodePointSink & );
+			void Swap(CodePointSink &);
 
 		private: // MARK: private (non-static)
 
@@ -62,10 +62,10 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template< typename ThisCodeUnitIterator >
+	template <typename ThisCodeUnitIterator>
 	void swap(
-		Om::Sinks::CodePointSink< ThisCodeUnitIterator > &,
-		Om::Sinks::CodePointSink< ThisCodeUnitIterator > &
+		Om::Sinks::CodePointSink<ThisCodeUnitIterator> &,
+		Om::Sinks::CodePointSink<ThisCodeUnitIterator> &
 	);
 
 }

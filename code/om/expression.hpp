@@ -12,14 +12,14 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Expression_ )
+#ifndef Om_Expression_
 
 	#define Om_Expression_ \
 	Om::Expression
 
 	#include "om/form.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/optional.hpp"
 
@@ -36,13 +36,13 @@ namespace Om {
 		The \ref om__expression__ Program implementation.
 	*/
 	class Expression:
-	public DefaultProgram< Expression > {
+	public DefaultProgram<Expression> {
 	public: // MARK: public (static)
 
 		//! \cond
 		class ElementRange;
 
-		template< typename ThisForm >
+		template <typename ThisForm>
 		class FormRange;
 		//! \endcond
 
@@ -52,79 +52,79 @@ namespace Om {
 
 		Expression();
 
-		Expression & operator =( Expression );
+		Expression & operator =(Expression);
 
-		void BackGiveForm( Queue & );
+		void BackGiveForm(Queue &);
 
-		void BackGiveTerm( Queue & );
+		void BackGiveTerm(Queue &);
 
 		void BackPopTerm();
 
-		template< typename TheOperand >
-		void BackTakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void BackTakeOperand(TheOperand &);
 
-		template< typename TheOperator >
-		void BackTakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void BackTakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void BackTakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void BackTakeQuotedQueue(TheQueue &);
 
 		virtual void Clear();
 
-		void FrontGiveForm( Queue & );
+		void FrontGiveForm(Queue &);
 
-		void FrontGiveTerm( Queue & );
+		void FrontGiveTerm(Queue &);
 
 		void FrontPopTerm();
 
-		template< typename TheOperand >
-		void FrontTakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void FrontTakeOperand(TheOperand &);
 		
-		template< typename TheOperator >
-		void FrontTakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void FrontTakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void FrontTakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void FrontTakeQuotedQueue(TheQueue &);
 
 		virtual std::auto_ptr<
-			Source< Element const >
+			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements( Queue & );
+		virtual void GiveElements(Queue &);
 
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
 		virtual bool IsEmpty() const;
 
-		virtual void ReadElements( Parser & );
+		virtual void ReadElements(Parser &);
 
-		virtual void ReadQuotedElements( Parser & );
+		virtual void ReadQuotedElements(Parser &);
 
-		void Swap( Expression & );
+		void Swap(Expression &);
 
-		virtual void TakeElements( Expression & );
+		virtual void TakeElements(Expression &);
 
-		virtual void TakeElements( Expression const & );
+		virtual void TakeElements(Expression const &);
 
-		virtual void TakeElements( Queue & );
+		virtual void TakeElements(Queue &);
 
-		virtual void TakeElements( Queue const & );
+		virtual void TakeElements(Queue const &);
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
-		template< typename TheSeparator >
-		void TakeSeparator( TheSeparator & );
+		template <typename TheSeparator>
+		void TakeSeparator(TheSeparator &);
 
 	private: // MARK: private (static)
 
-		typedef std::deque< Form > FormDeque;
+		typedef std::deque<Form> FormDeque;
 
 		/*!
 		\param theQueue
@@ -134,7 +134,7 @@ namespace Om {
 		\param theEnd
 			The end Form iterator.
 		*/
-		template< typename TheFormIterator >
+		template <typename TheFormIterator>
 		static void GiveElements(
 			Queue & theQueue,
 			TheFormIterator theCurrent,
@@ -151,37 +151,37 @@ namespace Om {
 
 	};
 
-	// MARK: - Om::Expression::FormRange< Form >
+	// MARK: - Om::Expression::FormRange<Form>
 	/*!
 	\brief
 		Specialization on a mutable Form.
 	*/
-	template<>
-	class Expression::FormRange< Form >:
+	template <>
+	class Expression::FormRange<Form>:
 	public Sources::CollectionFrontSource<
 		Form,
 		FormDeque::iterator
 	> {
 	public: // MARK: public (non-static)
 
-		explicit FormRange( Expression & );
+		explicit FormRange(Expression &);
 
 	};
 
-	// MARK: - Om::Expression::FormRange< Form const >
+	// MARK: - Om::Expression::FormRange<Form const>
 	/*!
 	\brief
 		Specialization on an immutable Form.
 	*/
-	template<>
-	class Expression::FormRange< Form const >:
+	template <>
+	class Expression::FormRange<Form const>:
 	public Sources::CollectionFrontSource<
 		Form const,
 		FormDeque::const_iterator
 	> {
 	public: // MARK: public (non-static)
 
-		explicit FormRange( Expression const & );
+		explicit FormRange(Expression const &);
 
 	};
 
@@ -197,9 +197,9 @@ namespace Om {
 	> {
 	public: // MARK: public (non-static)
 
-		explicit ElementRange( Expression const & );
+		explicit ElementRange(Expression const &);
 
-		bool operator ==( ElementRange const & ) const;
+		bool operator ==(ElementRange const &) const;
 
 		virtual bool operator !() const;
 
@@ -227,7 +227,7 @@ namespace Om {
 		\brief
 			The Element range for the current Form.
 		*/
-		boost::optional< Form::ElementRange > thisFormElementRange;
+		boost::optional<Form::ElementRange> thisFormElementRange;
 
 	};
 }
@@ -235,7 +235,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<>
+	template <>
 	void swap(
 		Om::Expression &,
 		Om::Expression &

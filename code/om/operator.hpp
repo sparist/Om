@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operator_ )
+#ifndef Om_Operator_
 
 	#define Om_Operator_ \
 	Om::Operator
@@ -22,7 +22,7 @@
 	#include "om/symbols/operator_symbol.hpp"
 	#include "om/symbols/separator_symbol.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/locale/boundary.hpp"
 
@@ -41,7 +41,7 @@ namespace Om {
 	As a Queue, the Operator appends each taken Element verbatim.
 	*/
 	class Operator:
-	public DefaultAtom< Operator > {
+	public DefaultAtom<Operator> {
 	public: // MARK: public (static)
 
 		static char const * GetName();
@@ -54,7 +54,7 @@ namespace Om {
 		\brief
 			Normalizes the string and copies directly into the Operator.
 		*/
-		explicit Operator( std::string const & );
+		explicit Operator(std::string const &);
 
 		/*!
 		\param theCodeUnitIterator
@@ -65,56 +65,56 @@ namespace Om {
 		);
 
 		explicit Operator(
-			Source< CodePoint const > &
+			Source<CodePoint const> &
 		);
 
-		explicit Operator( Symbols::OperandSymbol const );
+		explicit Operator(Symbols::OperandSymbol const);
 
-		explicit Operator( Symbols::OperatorSymbol const );
+		explicit Operator(Symbols::OperatorSymbol const);
 
-		explicit Operator( Symbols::SeparatorSymbol const );
+		explicit Operator(Symbols::SeparatorSymbol const);
 
-		Operator & operator =( Operator );
+		Operator & operator =(Operator);
 
 		/*!
 		\brief
 			Gives the last ::CodePoint as an Atom.
 		*/
-		void BackGiveCodePoint( Queue & );
+		void BackGiveCodePoint(Queue &);
 
 		/*!
 		\brief
 			Gives the last segment of the given type to the Queue.
 		*/
-		template< boost::locale::boundary::boundary_type theSegment >
-		void BackGiveSegment( Queue & );
+		template <boost::locale::boundary::boundary_type theSegment>
+		void BackGiveSegment(Queue &);
 
 		/*!
 		\brief
 			Decodes this Operator and gives each resulting Element to the argument.
 		*/
-		template< typename TheQueue >
-		void Decode( TheQueue & ) const;
+		template <typename TheQueue>
+		void Decode(TheQueue &) const;
 
 		/*!
 		\brief
 			Encodes the elements and replaces the contents of this Operator with the result.
 		*/
-		template< typename TheQueue >
-		void Encode( TheQueue & );
+		template <typename TheQueue>
+		void Encode(TheQueue &);
 
 		/*!
 		\brief
 			Gives the first ::CodePoint as an Atom.
 		*/
-		void FrontGiveCodePoint( Queue & );
+		void FrontGiveCodePoint(Queue &);
 
 		/*!
 		\brief
 			Gives the first segment of the given type to the Queue.
 		*/
-		template< boost::locale::boundary::boundary_type theSegment >
-		void FrontGiveSegment( Queue & );
+		template <boost::locale::boundary::boundary_type theSegment>
+		void FrontGiveSegment(Queue &);
 
 		/*!
 		\brief
@@ -122,21 +122,21 @@ namespace Om {
 		*/
 		void Normalize();
 
-		virtual void ReadElements( Parser & );
+		virtual void ReadElements(Parser &);
 
-		virtual void ReadQuotedElements( Parser & );
+		virtual void ReadQuotedElements(Parser &);
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
-		template< typename TheSeparator >
-		void TakeSeparator( TheSeparator & );
+		template <typename TheSeparator>
+		void TakeSeparator(TheSeparator &);
 
 	};
 
@@ -145,7 +145,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<>
+	template <>
 	void swap(
 		Om::Operator &,
 		Om::Operator &

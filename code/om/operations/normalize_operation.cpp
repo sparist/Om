@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_NormalizeOperation_ )
+#ifndef Om_Operations_NormalizeOperation_
 
 	#include "om/operations/normalize_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,16 +28,16 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( NormalizeOperationTest )
+		BOOST_AUTO_TEST_SUITE(NormalizeOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{normalize}",
-					System::Get().Evaluate( "drop find {normalize} system" )
+					System::Get().Evaluate("drop find {normalize} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+			BOOST_AUTO_TEST_CASE(SimpleTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"{"
@@ -72,12 +72,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_NormalizeOperation_GetName_()
-	);
+	return Om_Operations_NormalizeOperation_GetName_();
 }
 
-template< typename TheNormalizeOperation >
+template <typename TheNormalizeOperation>
 inline void Type_::GiveElements(
 	TheNormalizeOperation &,
 	Queue & theQueue
@@ -89,7 +87,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -97,24 +95,22 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
 	Operator theOperator;
-	theOperator.TakeElements( theQueue );
+	theOperator.TakeElements(theQueue);
 	theOperator.Normalize();
-	theEvaluation.TakeQuotedQueue( theOperator );
-	return( true );
+	theEvaluation.TakeQuotedQueue(theOperator);
+	return true;
 }
 
 	#undef Type_

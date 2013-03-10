@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_CodePointStringBackSource_ )
+#ifndef Om_Sources_CodePointStringBackSource_
 
 	#define Om_Sources_CodePointStringBackSource_ \
 	Om::Sources::CodePointStringBackSource
@@ -32,11 +32,11 @@ namespace Om {
 		\note
 			Dereferencing exposes a reference to the member string cache of the current segment. Modifying the string will not modify the source data.
 		*/
-		template< typename ThisStringIterator >
+		template <typename ThisStringIterator>
 		class CodePointStringBackSource:
 		public DefaultSource<
 			std::string,
-			CodePointStringBackSource< ThisStringIterator >
+			CodePointStringBackSource<ThisStringIterator>
 		> {
 		public: // MARK: public (non-static)
 
@@ -51,9 +51,9 @@ namespace Om {
 				ThisStringIterator const theStringEnd
 			);
 
-			CodePointStringBackSource & operator =( CodePointStringBackSource );
+			CodePointStringBackSource & operator =(CodePointStringBackSource);
 
-			bool operator ==( CodePointStringBackSource const & ) const;
+			bool operator ==(CodePointStringBackSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -61,7 +61,7 @@ namespace Om {
 
 			virtual void Pop();
 
-			void Swap( CodePointStringBackSource & );
+			void Swap(CodePointStringBackSource &);
 
 		private: // MARK: private (non-static)
 
@@ -100,10 +100,10 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template< typename ThisStringIterator >
+	template <typename ThisStringIterator>
 	void swap(
-		Om::Sources::CodePointStringBackSource< ThisStringIterator > &,
-		Om::Sources::CodePointStringBackSource< ThisStringIterator > &
+		Om::Sources::CodePointStringBackSource<ThisStringIterator> &,
+		Om::Sources::CodePointStringBackSource<ThisStringIterator> &
 	);
 
 }

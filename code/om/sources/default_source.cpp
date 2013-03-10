@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_DefaultSource_ )
+#ifndef Om_Sources_DefaultSource_
 
 	#include "om/sources/default_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sources {
 
-		BOOST_AUTO_TEST_SUITE( DefaultSourceTest )
+		BOOST_AUTO_TEST_SUITE(DefaultSourceTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,7 +43,7 @@ namespace Om {
 // MARK: - Om::Sources::DefaultSource
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisItem, \
 		typename ThisImplementation \
 	>
@@ -60,16 +61,16 @@ inline Type_::~DefaultSource() {}
 
 Template_
 inline bool Type_::operator ==(
-	Source< ThisItem > const & theSource
+	Source<ThisItem> const & theSource
 ) const {
 	assert(
-		dynamic_cast< ThisImplementation const * >( this )
+		dynamic_cast<ThisImplementation const *>(this)
 	);
-	ThisImplementation const * const theImplementation = static_cast< ThisImplementation const * >( &theSource );
-	return(
+	ThisImplementation const * const theImplementation = dynamic_cast<ThisImplementation const *>(&theSource);
+	return (
 		theImplementation &&
 		(
-			static_cast< ThisImplementation const & >( *this ) == *theImplementation
+			static_cast<ThisImplementation const &>(*this) == *theImplementation
 		)
 	);
 }
@@ -77,25 +78,23 @@ inline bool Type_::operator ==(
 Template_
 inline ThisImplementation & Type_::operator ++() {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	assert( *this );
+	assert(*this);
 	this->Pop();
-	return(
-		static_cast< ThisImplementation & >( *this )
-	);
+	return static_cast<ThisImplementation &>(*this);
 }
 
 Template_
-inline ThisImplementation Type_::operator ++( int ) {
+inline ThisImplementation Type_::operator ++(int) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
 	ThisImplementation theSource(
-		static_cast< ThisImplementation & >( *this )
+		static_cast<ThisImplementation &>(*this)
 	);
 	++*this;
-	return( theSource );
+	return theSource;
 }
 
 	#undef Type_

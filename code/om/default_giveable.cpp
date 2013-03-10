@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultGiveable_ )
+#ifndef Om_DefaultGiveable_
 
 	#include "om/default_giveable.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( DefaultGiveableTest )
+	BOOST_AUTO_TEST_SUITE(DefaultGiveableTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -38,7 +39,7 @@ namespace Om {
 // MARK: - Om::DefaultGiveable
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisImplementation, \
 		typename ThisInterface \
 	>

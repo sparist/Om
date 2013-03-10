@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_OperatorFrontPushOperation_ )
+#ifndef Om_Operations_OperatorFrontPushOperation_
 
 	#include "om/operations/operator_front_push_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,12 +28,12 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( OperatorFrontPushOperationTest )
+		BOOST_AUTO_TEST_SUITE(OperatorFrontPushOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{->operator}",
-					System::Get().Evaluate( "drop find {->operator} system" )
+					System::Get().Evaluate("drop find {->operator} system")
 				);
 			}
 
@@ -57,14 +57,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_OperatorFrontPushOperation_GetName_()
-	);
+	return Om_Operations_OperatorFrontPushOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
+		std::auto_ptr<Operation>(
 			new FrontPushOperation<
 				Operator,
 				OperatorFrontPushOperation

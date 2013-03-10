@@ -12,14 +12,14 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_StreamSource_ )
+#ifndef Om_Sources_StreamSource_
 
 	#define Om_Sources_StreamSource_ \
 	Om::Sources::StreamSource
 
 	#include "om/sources/default_source.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/optional.hpp"
 
@@ -38,21 +38,21 @@ namespace Om {
 		\note
 			Dereferencing exposes a reference to a cache of the current item. Modifying the item will not modify the source data.
 		*/
-		template< typename ThisItem = char >
+		template <typename ThisItem = char>
 		class StreamSource:
 		public DefaultSource<
 			ThisItem const,
-			StreamSource< ThisItem >
+			StreamSource<ThisItem>
 		> {
 		public: // MARK: public (non-static)
 
 			StreamSource();
 
-			explicit StreamSource( std::istream & );
+			explicit StreamSource(std::istream &);
 
-			StreamSource & operator =( StreamSource );
+			StreamSource & operator =(StreamSource);
 
-			bool operator ==( StreamSource const & ) const;
+			bool operator ==(StreamSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -60,11 +60,11 @@ namespace Om {
 
 			virtual void Pop();
 
-			void Swap( StreamSource & );
+			void Swap(StreamSource &);
 
 		private: // MARK: private (static)
 
-			typedef std::istreambuf_iterator< ThisItem > StreamIterator;
+			typedef std::istreambuf_iterator<ThisItem> StreamIterator;
 
 		private: // MARK: private (non-static)
 
@@ -74,7 +74,7 @@ namespace Om {
 			\brief
 				The current item.
 			*/
-			mutable boost::optional< ThisItem > thisItem;
+			mutable boost::optional<ThisItem> thisItem;
 
 		};
 
@@ -85,10 +85,10 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template< typename ThisItem >
+	template <typename ThisItem>
 	void swap(
-		Om::Sources::StreamSource< ThisItem > &,
-		Om::Sources::StreamSource< ThisItem > &
+		Om::Sources::StreamSource<ThisItem> &,
+		Om::Sources::StreamSource<ThisItem> &
 	);
 
 }

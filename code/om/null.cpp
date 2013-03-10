@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Null_ )
+#ifndef Om_Null_
 
 	#include "om/null.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( NullTest )
+	BOOST_AUTO_TEST_SUITE(NullTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -47,105 +48,97 @@ namespace Om {
 
 inline Type_ & Type_::Get() {
 	static Null theNull;
-	return( theNull );
+	return theNull;
 }
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Null_GetName_()
-	);
+	return Om_Null_GetName_();
 }
 
 // MARK: public (non-static)
 
-inline Type_ & Type_::operator =( Null const & ) {
-	return( *this );
+inline Type_ & Type_::operator =(Null const &) {
+	return *this;
 }
 
-inline bool Type_::operator ==( Program const & theProgram ) const {
-	return(
-		theProgram.IsEmpty()
-	);
+inline bool Type_::operator ==(Program const & theProgram) const {
+	return theProgram.IsEmpty();
 }
 
 inline void Type_::Clear() {}
 
 inline std::auto_ptr<
-	Om::Source< Om::Element >
+	Om::Source<Om::Element>
 > Type_::GetElementRange() {
-	return(
-		std::auto_ptr<
-			Source< Element >
-		>(
-			new Sources::EmptySource< Element >
-		)
+	return std::auto_ptr<
+		Source<Element>
+	>(
+		new Sources::EmptySource<Element>
 	);
 }
 
 inline std::auto_ptr<
-	Om::Source< Om::Element const >
+	Om::Source<Om::Element const>
 > Type_::GetElementRange() const {
-	return(
-		std::auto_ptr<
-			Source< Element const >
-		>(
-			new Sources::EmptySource< Element const >
-		)
+	return std::auto_ptr<
+		Source<Element const>
+	>(
+		new Sources::EmptySource<Element const>
 	);
 }
 
-inline void Type_::GiveElements( Queue & ) {}
+inline void Type_::GiveElements(Queue &) {}
 
-inline void Type_::GiveElements( Queue & ) const {}
+inline void Type_::GiveElements(Queue &) const {}
 
 inline bool Type_::IsEmpty() const {
-	return( true );
+	return true;
 }
 
-inline void Type_::ReadElements( Parser & theParser ) {
-	for(
+inline void Type_::ReadElements(Parser & theParser) {
+	for (
 		;
 		theParser;
 		theParser.Pop()
 	) {}
 }
 
-inline void Type_::ReadQuotedElements( Parser & theParser ) {
-	for(
+inline void Type_::ReadQuotedElements(Parser & theParser) {
+	for (
 		;
 		theParser;
 		theParser.Pop()
 	) {}
 }
 
-inline void Type_::Swap( Null & ) {}
+inline void Type_::Swap(Null &) {}
 
-inline void Type_::TakeElements( Queue & ) {}
+inline void Type_::TakeElements(Queue &) {}
 
-inline void Type_::TakeElements( Queue const & ) {}
+inline void Type_::TakeElements(Queue const &) {}
 
-template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & ) {}
+template <typename TheOperand>
+inline void Type_::TakeOperand(TheOperand &) {}
 
-template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & ) {}
+template <typename TheOperator>
+inline void Type_::TakeOperator(TheOperator &) {}
 
-template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & ) {}
+template <typename TheQueue>
+inline void Type_::TakeQuotedQueue(TheQueue &) {}
 
-template< typename TheSeparator >
-inline void Type_::TakeSeparator( TheSeparator & ) {}
+template <typename TheSeparator>
+inline void Type_::TakeSeparator(TheSeparator &) {}
 
 	#undef Type_
 
 // MARK: - boost
 
-template<>
+template <>
 inline void boost::swap(
 	Om::Null & theFirst,
 	Om::Null & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultCopyable_ )
+#ifndef Om_DefaultCopyable_
 
 	#include "om/default_copyable.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( DefaultCopyableTest )
+	BOOST_AUTO_TEST_SUITE(DefaultCopyableTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -38,7 +39,7 @@ namespace Om {
 // MARK: - Om::DefaultCopyable
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisImplementation, \
 		typename ThisInterface \
 	>
@@ -59,12 +60,10 @@ inline Type_::~DefaultCopyable() {}
 Template_
 inline ThisInterface * Type_::Copy() const {
 	assert(
-		dynamic_cast< ThisImplementation const * >( this )
+		dynamic_cast<ThisImplementation const *>(this)
 	);
-	return(
-		new ThisImplementation(
-			static_cast< ThisImplementation const & >( *this )
-		)
+	return new ThisImplementation(
+		static_cast<ThisImplementation const &>(*this)
 	);
 }
 

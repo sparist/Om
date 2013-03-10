@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Macros_ )
+#ifndef Om_Macros_
 
 	#include "om/macros.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( MacrosTest )
+	BOOST_AUTO_TEST_SUITE(MacrosTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }

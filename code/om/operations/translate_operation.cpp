@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_TranslateOperation_ )
+#ifndef Om_Operations_TranslateOperation_
 
 	#include "om/operations/translate_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifdef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( TranslateOperationTest )
+		BOOST_AUTO_TEST_SUITE(TranslateOperationTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -44,27 +45,27 @@ namespace Om {
 // MARK: - Om::Operations::TranslateOperation
 
 	#define Template_ \
-	template< typename ThisImplementation >
+	template <typename ThisImplementation>
 
 	#define Type_ \
-	Om::Operations::TranslateOperation< ThisImplementation >
+	Om::Operations::TranslateOperation<ThisImplementation>
 
 // MARK: public (static)
 
 Template_
-template< typename TheTranslateOperation >
+template <typename TheTranslateOperation>
 inline void Type_::GiveElements(
 	TheTranslateOperation & theTranslateOperation,
 	Queue & theQueue
 ) {
 	assert(
-		typeid( TheTranslateOperation ) == typeid( ThisImplementation )
+		typeid(TheTranslateOperation) == typeid(ThisImplementation)
 	);
 	theQueue.TakeElement(
 		ThisImplementation::GetOperator()
 	);
-	if( theTranslateOperation.thisLexicon ) {
-		theQueue.TakeQuotedElements( *theTranslateOperation.thisLexicon );
+	if (theTranslateOperation.thisLexicon) {
+		theQueue.TakeQuotedElements(*theTranslateOperation.thisLexicon);
 	}
 }
 
@@ -74,7 +75,7 @@ Template_
 inline Type_::~TranslateOperation() {}
 
 Template_
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -82,41 +83,39 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
 Template_
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if( this->thisLexicon ) {
+	if (this->thisLexicon) {
 		{
 			// Perform the translation. Note that this uses this->thisLexicon and must be done before the lexicon is given to the Evaluation.
 			Expression theExpression;
 			assert(
-				dynamic_cast< ThisImplementation * >( this )
+				dynamic_cast<ThisImplementation *>(this)
 			);
-			static_cast< ThisImplementation & >( *this ).Translate(
+			static_cast<ThisImplementation &>(*this).Translate(
 				theEvaluation.GetTranslator(),
 				theQueue,
 				theExpression
 			);
-			theEvaluation.TakeQuotedQueue( theExpression );
+			theEvaluation.TakeQuotedQueue(theExpression);
 		}
-		theEvaluation.TakeQuotedQueue( *this->thisLexicon );
-		return( true );
+		theEvaluation.TakeQuotedQueue(*this->thisLexicon);
+		return true;
 	}
 	this->thisLexicon = boost::in_place();
-	assert( this->thisLexicon );
-	this->thisLexicon->TakeElements( theQueue );
-	return( false );
+	assert(this->thisLexicon);
+	this->thisLexicon->TakeElements(theQueue);
+	return false;
 }
 
 // MARK: protected (non-static)

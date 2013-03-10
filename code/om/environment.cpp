@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Environment_ )
+#ifndef Om_Environment_
 
 	#include "om/environment.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( EnvironmentTest )
+	BOOST_AUTO_TEST_SUITE(EnvironmentTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -45,26 +46,26 @@ namespace Om {
 inline Type_::Environment():
 thisTranslatorVector() {}
 
-inline void Type_::GiveElements( Queue & theQueue ) const {
-	if(
+inline void Type_::GiveElements(Queue & theQueue) const {
+	if (
 		!this->IsEmpty()
 	) {
 		typedef TranslatorVector::const_iterator Iterator;
 		Iterator const theEnd = this->thisTranslatorVector.end();
-		for(
+		for (
 			Iterator theCurrent = this->thisTranslatorVector.begin();
 			;
 			theQueue.TakeElement(
 				Separator::GetLineSeparator()
 			)
 		) {
-			assert( *theCurrent );
+			assert(*theCurrent);
 			Translator const & theTranslator = **theCurrent;
 			assert(
 				!theTranslator.IsEmpty()
 			);
-			theTranslator.GiveElements( theQueue );
-			if( theEnd == ++theCurrent ) {
+			theTranslator.GiveElements(theQueue);
+			if (theEnd == ++theCurrent) {
 				return;
 			}
 		}
@@ -72,46 +73,44 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 }
 
 inline bool Type_::IsEmpty() const {
-	return(
-		this->thisTranslatorVector.empty()
-	);
+	return this->thisTranslatorVector.empty();
 }
 
-inline void Type_::Push( Translator const & theTranslator ) {
+inline void Type_::Push(Translator const & theTranslator) {
 	Translator const * theTranslatorPointer = &theTranslator;
-	for(
-		std::stack< Translator const * > theStack;
+	for (
+		std::stack<Translator const *> theStack;
 		;
 		theStack.pop()
 	) {
-		assert( theTranslatorPointer );
+		assert(theTranslatorPointer);
 
-		if(
-			Environment const * const theEnvironment = dynamic_cast< Environment const * >( theTranslatorPointer )
+		if (
+			Environment const * const theEnvironment = dynamic_cast<Environment const *>(theTranslatorPointer)
 		) {
 			typedef TranslatorVector::const_reverse_iterator Iterator;
 			Iterator const theEnd = theEnvironment->thisTranslatorVector.rend();
-			for(
+			for (
 				Iterator theCurrent = theEnvironment->thisTranslatorVector.rbegin();
 				theEnd != theCurrent;
 				++theCurrent
 			) {
 				assert(
 					*theCurrent &&
-					!( *theCurrent )->IsEmpty()
+					!(*theCurrent)->IsEmpty()
 				);
-				theStack.push( *theCurrent );
+				theStack.push(*theCurrent);
 			}
-		} else if(
+		} else if (
 			this->IsEmpty() ||
 			(
 				this->thisTranslatorVector.back() != theTranslatorPointer
 			)
 		) {
-			this->thisTranslatorVector.push_back( theTranslatorPointer );
+			this->thisTranslatorVector.push_back(theTranslatorPointer);
 		}
 
-		if(
+		if (
 			theStack.empty()
 		) {
 			return;
@@ -127,21 +126,21 @@ inline bool Type_::Translate(
 ) const {
 	typedef TranslatorVector::const_reverse_iterator Iterator;
 	Iterator const theEnd = this->thisTranslatorVector.rend();
-	for(
+	for (
 		Iterator theCurrent = this->thisTranslatorVector.rbegin();
 		theEnd != theCurrent;
 		++theCurrent
 	) {
-		if(
-			( *theCurrent )->Translate(
+		if (
+			(*theCurrent)->Translate(
 				theEvaluation,
 				theOperator
 			)
 		) {
-			return( true );
+			return true;
 		}
 	}
-	return( false );
+	return false;
 }
 
 	#undef Type_

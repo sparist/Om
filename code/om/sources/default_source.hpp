@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_DefaultSource_ )
+#ifndef Om_Sources_DefaultSource_
 
 	#define Om_Sources_DefaultSource_ \
 	Om::Sources::DefaultSource
@@ -28,12 +28,12 @@ namespace Om {
 		\brief
 			A partial implementation of Source.
 		*/
-		template<
+		template <
 			typename ThisItem,
 			typename ThisImplementation
 		>
 		class DefaultSource:
-		public Source< ThisItem >,
+		public Source<ThisItem>,
 		public std::iterator<
 			std::input_iterator_tag,
 			ThisItem
@@ -49,13 +49,13 @@ namespace Om {
 				This is only required to test equality in the context of the pointer-like STL iterator; doesn't take end into account.
 			*/
 			virtual bool operator ==(
-				Source< ThisItem > const &
+				Source<ThisItem> const &
 			) const;
 
 			/*!
 			\overload
 			*/
-			virtual bool operator ==( ThisImplementation const & ) const = 0;
+			virtual bool operator ==(ThisImplementation const &) const = 0;
 
 			/*!
 			\brief
@@ -73,11 +73,11 @@ namespace Om {
 			\return
 				A copy of the derivation.
 			*/
-			ThisImplementation operator ++( int );
+			ThisImplementation operator ++(int);
 
 		private: // MARK: private (non-static)
 
-			DefaultSource & operator =( DefaultSource const & );
+			DefaultSource & operator =(DefaultSource const &);
 
 		};
 

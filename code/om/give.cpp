@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Give_ )
+#ifndef Om_Give_
 
 	#include "om/give.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( GiveTest )
+	BOOST_AUTO_TEST_SUITE(GiveTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -40,35 +41,31 @@ namespace Om {
 
 // MARK: - Om
 
-template< typename TheGiveable >
-inline std::auto_ptr< TheGiveable > Om::Give( TheGiveable & theGiveable ) {
-	return(
-		Move( theGiveable )
-	);
+template <typename TheGiveable>
+inline std::auto_ptr<TheGiveable> Om::Give(TheGiveable & theGiveable) {
+	return Move(theGiveable);
 }
 
-template< typename TheGiveable >
-inline std::auto_ptr< TheGiveable > Om::Give(
-	std::auto_ptr< TheGiveable > & theGiveable
+template <typename TheGiveable>
+inline std::auto_ptr<TheGiveable> Om::Give(
+	std::auto_ptr<TheGiveable> & theGiveable
 ) {
-	return( theGiveable );
+	return theGiveable;
 }
 
-template< typename TheGiveable >
-inline std::auto_ptr< TheGiveable > Om::Give( TheGiveable const & theGiveable ) {
-	return(
-		Copy( theGiveable )
-	);
+template <typename TheGiveable>
+inline std::auto_ptr<TheGiveable> Om::Give(TheGiveable const & theGiveable) {
+	return Copy(theGiveable);
 }
 
-template< typename TheGiveable >
-inline std::auto_ptr< TheGiveable > Om::Give(
-	std::auto_ptr< TheGiveable > const & theGiveable
+template <typename TheGiveable>
+inline std::auto_ptr<TheGiveable> Om::Give(
+	std::auto_ptr<TheGiveable> const & theGiveable
 ) {
-	return(
-		theGiveable.get()?
-		Give( *theGiveable ):
-		std::auto_ptr< TheGiveable >()
+	return (
+		theGiveable.get() ?
+		Give(*theGiveable) :
+		std::auto_ptr<TheGiveable>()
 	);
 }
 

@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_CopyOperation_ )
+#ifndef Om_Operations_CopyOperation_
 
 	#include "om/operations/copy_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,19 +30,19 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( CopyOperationTest )
+		BOOST_AUTO_TEST_SUITE(CopyOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{copy}",
-					System::Get().Evaluate( "drop find {copy} system" )
+					System::Get().Evaluate("drop find {copy} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+			BOOST_AUTO_TEST_CASE(SimpleTest) {
 				BOOST_CHECK_EQUAL(
 					"{1{2}3}{1{2}3}",
-					System::Get().Evaluate( "copy {1{2}3}" )
+					System::Get().Evaluate("copy {1{2}3}")
 				);
 			}
 
@@ -66,12 +66,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_CopyOperation_GetName_()
-	);
+	return Om_Operations_CopyOperation_GetName_();
 }
 
-template< typename TheCopyOperation >
+template <typename TheCopyOperation>
 inline void Type_::GiveElements(
 	TheCopyOperation &,
 	Queue & theQueue
@@ -83,7 +81,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -92,24 +90,24 @@ inline bool Type_::TakeOperand(
 		!theOperand.IsEmpty()
 	);
 	{
-		Operand const & theConstOperand( theOperand );
-		theEvaluation.TakeOperand( theConstOperand );
+		Operand const & theConstOperand(theOperand);
+		theEvaluation.TakeOperand(theConstOperand);
 	}
-	theEvaluation.TakeOperand( theOperand );
-	return( true );
+	theEvaluation.TakeOperand(theOperand);
+	return true;
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
 	{
-		TheQueue const & theConstQueue( theQueue );
-		theEvaluation.TakeQuotedQueue( theConstQueue );
+		TheQueue const & theConstQueue(theQueue);
+		theEvaluation.TakeQuotedQueue(theConstQueue);
 	}
-	theEvaluation.TakeQuotedQueue( theQueue );
-	return( true );
+	theEvaluation.TakeQuotedQueue(theQueue);
+	return true;
 }
 
 	#undef Type_

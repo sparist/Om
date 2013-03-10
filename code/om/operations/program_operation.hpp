@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_ProgramOperation_ )
+#ifndef Om_Operations_ProgramOperation_
 
 	#define Om_Operations_ProgramOperation_ \
 	Om::Operations::ProgramOperation
@@ -28,16 +28,16 @@ namespace Om {
 		\brief
 			An Operation that normalizes a Program to a specific type.
 		*/
-		template< typename ThisProgram >
+		template <typename ThisProgram>
 		class ProgramOperation:
 		public DefaultOperation<
-			ProgramOperation< ThisProgram >
+			ProgramOperation<ThisProgram>
 		> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheProgramOperation >
+			template <typename TheProgramOperation>
 			static void GiveElements(
 				TheProgramOperation &,
 				Queue &
@@ -50,13 +50,13 @@ namespace Om {
 				Parser &
 			);
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &

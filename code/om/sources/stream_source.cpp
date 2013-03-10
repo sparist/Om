@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_StreamSource_ )
+#ifndef Om_Sources_StreamSource_
 
 	#include "om/sources/stream_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sources {
 
-		BOOST_AUTO_TEST_SUITE( StreamSourceTest )
+		BOOST_AUTO_TEST_SUITE(StreamSourceTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,10 +43,10 @@ namespace Om {
 // MARK: - Om::Sources::StreamSource
 
 	#define Template_ \
-	template< typename ThisItem >
+	template <typename ThisItem>
 
 	#define Type_ \
-	Om::Sources::StreamSource< ThisItem >
+	Om::Sources::StreamSource<ThisItem>
 
 // MARK: public (non-static)
 
@@ -55,24 +56,24 @@ thisStreamIterator(),
 thisItem() {}
 
 Template_
-inline Type_::StreamSource( std::istream & theStream ):
-thisStreamIterator( theStream ),
+inline Type_::StreamSource(std::istream & theStream):
+thisStreamIterator(theStream),
 thisItem() {}
 
 Template_
-inline Type_ & Type_::operator =( StreamSource theStreamSource ) {
-	this->Swap( theStreamSource );
-	return( *this );
+inline Type_ & Type_::operator =(StreamSource theStreamSource) {
+	this->Swap(theStreamSource);
+	return *this;
 }
 
 Template_
-inline bool Type_::operator ==( StreamSource const & theSource ) const {
-	return( this->thisStreamIterator == theSource.thisStreamIterator );
+inline bool Type_::operator ==(StreamSource const & theSource) const {
+	return (this->thisStreamIterator == theSource.thisStreamIterator);
 }
 
 Template_
 inline bool Type_::operator !() const {
-	return(
+	return (
 		StreamIterator() == this->thisStreamIterator
 	);
 }
@@ -83,7 +84,7 @@ inline ThisItem const & Type_::operator *() const {
 		StreamIterator() != this->thisStreamIterator
 	);
 	this->thisItem = *this->thisStreamIterator;
-	return( *this->thisItem );
+	return *this->thisItem;
 }
 
 Template_
@@ -95,12 +96,12 @@ inline void Type_::Pop() {
 }
 
 Template_
-inline void Type_::Swap( StreamSource & theStreamSource ) {
+inline void Type_::Swap(StreamSource & theStreamSource) {
 	boost::swap(
 		this->thisStreamIterator,
 		theStreamSource.thisStreamIterator
 	);
-	this->thisItem.swap( theStreamSource.thisItem );
+	this->thisItem.swap(theStreamSource.thisItem);
 }
 
 	#undef Type_
@@ -108,12 +109,12 @@ inline void Type_::Swap( StreamSource & theStreamSource ) {
 
 // MARK: - boost
 
-template< typename ThisItem >
+template <typename ThisItem>
 inline void boost::swap(
-	Om::Sources::StreamSource< ThisItem > & theFirst,
-	Om::Sources::StreamSource< ThisItem > & theSecond
+	Om::Sources::StreamSource<ThisItem> & theFirst,
+	Om::Sources::StreamSource<ThisItem> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

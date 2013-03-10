@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_ContainerFrontSource_ )
+#ifndef Om_Sources_ContainerFrontSource_
 
 	#define Om_Sources_ContainerFrontSource_ \
 	Om::Sources::ContainerFrontSource
@@ -28,7 +28,7 @@ namespace Om {
 		\brief
 			A Source adapter for a container; pulls items from the front.
 		*/
-		template<
+		template <
 			typename ThisItem,
 			typename ThisContainer
 		>
@@ -42,11 +42,11 @@ namespace Om {
 		> {
 		public: // MARK: public (non-static)
 
-			explicit ContainerFrontSource( ThisContainer & );
+			explicit ContainerFrontSource(ThisContainer &);
 
-			ContainerFrontSource & operator =( ContainerFrontSource );
+			ContainerFrontSource & operator =(ContainerFrontSource);
 
-			bool operator ==( ContainerFrontSource const & ) const;
+			bool operator ==(ContainerFrontSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -54,7 +54,7 @@ namespace Om {
 
 			virtual void Pop();
 
-			void Swap( ContainerFrontSource & );
+			void Swap(ContainerFrontSource &);
 
 		private: // MARK: private (non-static)
 
@@ -73,7 +73,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<
+	template <
 		typename ThisItem,
 		typename ThisContainer
 	>

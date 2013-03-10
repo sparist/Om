@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_OperatorBackPushOperation_ )
+#ifndef Om_Operations_OperatorBackPushOperation_
 
 	#include "om/operations/operator_back_push_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,12 +28,12 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( OperatorBackPushOperationTest )
+		BOOST_AUTO_TEST_SUITE(OperatorBackPushOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{operator<-}",
-					System::Get().Evaluate( "drop find {operator<-} system" )
+					System::Get().Evaluate("drop find {operator<-} system")
 				);
 			}
 
@@ -58,14 +58,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_OperatorBackPushOperation_GetName_()
-	);
+	return Om_Operations_OperatorBackPushOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
-	OperatorFrontPushOperation::Give( theEvaluation );
-	SwapOperation::Give( theEvaluation );
+inline void Type_::Give(Evaluation & theEvaluation) {
+	OperatorFrontPushOperation::Give(theEvaluation);
+	SwapOperation::Give(theEvaluation);
 }
 
 	#undef Type_

@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Form_ )
+#ifndef Om_Form_
 
 	#include "om/form.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( FormTest )
+	BOOST_AUTO_TEST_SUITE(FormTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -46,52 +47,48 @@ inline Type_::Form():
 thisOperator(),
 thisOperandDeque() {}
 
-inline bool Type_::BackGiveTerm( Queue & theQueue ) {
-	if(
+inline bool Type_::BackGiveTerm(Queue & theQueue) {
+	if (
 		this->thisOperandDeque.empty()
 	) {
 		assert(
 			!this->thisOperator.IsEmpty()
 		);
-		this->thisOperator.GiveElements( theQueue );
+		this->thisOperator.GiveElements(theQueue);
 		assert(
 			this->thisOperator.IsEmpty()
 		);
-		return( true );
+		return true;
 	}
-	this->thisOperandDeque.back().GiveElements( theQueue );
+	this->thisOperandDeque.back().GiveElements(theQueue);
 	this->thisOperandDeque.pop_back();
-	return(
-		this->IsEmpty()
-	);
+	return this->IsEmpty();
 }
 
 inline bool Type_::BackPopTerm() {
-	if(
+	if (
 		this->thisOperandDeque.empty()
 	) {
 		assert(
 			!this->thisOperator.IsEmpty()
 		);
-		Operator().Swap( this->thisOperator );
-		return( true );
+		Operator().Swap(this->thisOperator);
+		return true;
 	}
 	this->thisOperandDeque.pop_back();
-	return(
-		this->IsEmpty()
-	);
+	return this->IsEmpty();
 }
 
-template< typename TheOperand >
-inline void Type_::BackTakeOperand( TheOperand & theOperand ) {
+template <typename TheOperand>
+inline void Type_::BackTakeOperand(TheOperand & theOperand) {
 	this->thisOperandDeque.push_back(
 		Operand()
 	);
-	this->thisOperandDeque.back().Take( theOperand );
+	this->thisOperandDeque.back().Take(theOperand);
 }
 
-template< typename TheQueue >
-inline void Type_::BackTakeQuotedQueue( TheQueue & theQueue ) {
+template <typename TheQueue>
+inline void Type_::BackTakeQuotedQueue(TheQueue & theQueue) {
 	this->thisOperandDeque.push_back(
 		Operand()
 	);
@@ -100,28 +97,26 @@ inline void Type_::BackTakeQuotedQueue( TheQueue & theQueue ) {
 	);
 }
 
-inline bool Type_::FrontGiveTerm( Queue & theQueue ) {
-	if(
+inline bool Type_::FrontGiveTerm(Queue & theQueue) {
+	if (
 		this->thisOperator.IsEmpty()
 	) {
 		assert(
 			!this->thisOperandDeque.empty()
 		);
-		this->thisOperandDeque.front().GiveElements( theQueue );
+		this->thisOperandDeque.front().GiveElements(theQueue);
 		this->thisOperandDeque.pop_front();
 	} else {
-		this->thisOperator.GiveElements( theQueue );
+		this->thisOperator.GiveElements(theQueue);
 		assert(
 			this->thisOperator.IsEmpty()
 		);
 	}
-	return(
-		this->thisOperandDeque.empty()
-	);
+	return this->thisOperandDeque.empty();
 }
 
 inline bool Type_::FrontPopTerm() {
-	if(
+	if (
 		this->thisOperator.IsEmpty()
 	) {
 		assert(
@@ -129,26 +124,24 @@ inline bool Type_::FrontPopTerm() {
 		);
 		this->thisOperandDeque.pop_front();
 	} else {
-		Operator().Swap( this->thisOperator );
+		Operator().Swap(this->thisOperator);
 		assert(
 			this->thisOperator.IsEmpty()
 		);
 	}
-	return(
-		this->thisOperandDeque.empty()
-	);
+	return this->thisOperandDeque.empty();
 }
 
-template< typename TheOperand >
-inline void Type_::FrontTakeOperand( TheOperand & theOperand ) {
+template <typename TheOperand>
+inline void Type_::FrontTakeOperand(TheOperand & theOperand) {
 	this->thisOperandDeque.push_front(
 		Operand()
 	);
-	this->thisOperandDeque.front().Take( theOperand );
+	this->thisOperandDeque.front().Take(theOperand);
 }
 
-template< typename TheQueue >
-inline void Type_::FrontTakeQuotedQueue( TheQueue & theQueue ) {
+template <typename TheQueue>
+inline void Type_::FrontTakeQuotedQueue(TheQueue & theQueue) {
 	this->thisOperandDeque.push_front(
 		Operand()
 	);
@@ -158,47 +151,47 @@ inline void Type_::FrontTakeQuotedQueue( TheQueue & theQueue ) {
 }
 
 inline Om::Operator const & Type_::GetOperator() const {
-	return( this->thisOperator );
+	return this->thisOperator;
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) {
-	this->GiveElements< OperandDeque::iterator >(
+inline void Type_::GiveElements(Queue & theQueue) {
+	this->GiveElements<OperandDeque::iterator>(
 		*this,
 		theQueue
 	);
 	this->thisOperandDeque.clear();
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) const {
-	this->GiveElements< OperandDeque::const_iterator >(
+inline void Type_::GiveElements(Queue & theQueue) const {
+	this->GiveElements<OperandDeque::const_iterator>(
 		*this,
 		theQueue
 	);
 }
 
 inline bool Type_::IsEmpty() const {
-	return(
+	return (
 		this->thisOperator.IsEmpty() &&
 		this->thisOperandDeque.empty()
 	);
 }
 
-inline void Type_::Swap( Form & theForm ) {
-	this->thisOperator.Swap( theForm.thisOperator );
-	this->thisOperandDeque.swap( theForm.thisOperandDeque );
+inline void Type_::Swap(Form & theForm) {
+	this->thisOperator.Swap(theForm.thisOperator);
+	this->thisOperandDeque.swap(theForm.thisOperandDeque);
 }
 
-template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & theOperator ) {
+template <typename TheOperator>
+inline void Type_::TakeOperator(TheOperator & theOperator) {
 	assert(
 		!theOperator.IsEmpty()
 	);
-	this->thisOperator.Take( theOperator );
+	this->thisOperator.Take(theOperator);
 }
 
 // MARK: private (static)
 
-template<
+template <
 	typename TheOperandIterator,
 	typename TheForm
 >
@@ -209,18 +202,18 @@ inline void Type_::GiveElements(
 	assert(
 		!theForm.IsEmpty()
 	);
-	if(
+	if (
 		!theForm.thisOperator.IsEmpty()
 	) {
-		theQueue.TakeElement( theForm.thisOperator );
+		theQueue.TakeElement(theForm.thisOperator);
 	}
 	TheOperandIterator const theEnd = theForm.thisOperandDeque.end();
-	for(
+	for (
 		TheOperandIterator theCurrent = theForm.thisOperandDeque.begin();
 		theEnd != theCurrent;
 		++theCurrent
 	) {
-		theQueue.TakeElement( *theCurrent );
+		theQueue.TakeElement(*theCurrent);
 	}
 }
 
@@ -233,33 +226,33 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::ElementRange( Form const & theForm ):
+inline Type_::ElementRange(Form const & theForm):
 thisOperandIterator(
 	theForm.thisOperandDeque.begin()
 ),
 thisOperandEnd(
 	theForm.thisOperandDeque.end()
 ),
-thisElement( &theForm.thisOperator ) {
-	if(
+thisElement(&theForm.thisOperator) {
+	if (
 		theForm.thisOperator.IsEmpty()
 	) {
-		assert( this->thisOperandEnd != this->thisOperandIterator );
+		assert(this->thisOperandEnd != this->thisOperandIterator);
 		this->thisElement = &*this->thisOperandIterator++;
 	}
 }
 
-inline bool Type_::operator ==( ElementRange const & theElementRange ) const {
-	return( this->thisElement == theElementRange.thisElement );
+inline bool Type_::operator ==(ElementRange const & theElementRange) const {
+	return (this->thisElement == theElementRange.thisElement);
 }
 
 inline bool Type_::operator !() const {
-	return( !this->thisElement );
+	return !this->thisElement;
 }
 
 inline Om::Element const & Type_::operator *() const {
-	assert( this->thisElement );
-	return( *this->thisElement );
+	assert(this->thisElement);
+	return *this->thisElement;
 }
 
 inline void Type_::End() {
@@ -267,10 +260,10 @@ inline void Type_::End() {
 }
 
 inline void Type_::Pop() {
-	assert( this->thisElement );
+	assert(this->thisElement);
 	this->thisElement = (
-		( this->thisOperandEnd == this->thisOperandIterator )?
-		0:
+		(this->thisOperandEnd == this->thisOperandIterator) ?
+		0 :
 		&*this->thisOperandIterator++
 	);
 }
@@ -284,28 +277,28 @@ inline void Type_::Pop() {
 
 // MARK: public (non-static)
 
-inline Type_< Om::Operand >::OperandRange( Form & theForm ):
+inline Type_<Om::Operand>::OperandRange(Form & theForm):
 Sources::CollectionFrontSource<
 	Operand,
 	OperandDeque::iterator
->( theForm.thisOperandDeque ) {}
+>(theForm.thisOperandDeque) {}
 
-inline Type_< Om::Operand const >::OperandRange( Form const & theForm ):
+inline Type_<Om::Operand const>::OperandRange(Form const & theForm):
 Sources::CollectionFrontSource<
 	Operand const,
 	OperandDeque::const_iterator
->( theForm.thisOperandDeque ) {}
+>(theForm.thisOperandDeque) {}
 
 	#undef Type_
 
 // MARK: - boost
 
-template<>
+template <>
 inline void boost::swap(
 	Om::Form & theFirst,
 	Om::Form & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

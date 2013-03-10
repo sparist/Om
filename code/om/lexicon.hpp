@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Lexicon_ )
+#ifndef Om_Lexicon_
 
 	#define Om_Lexicon_ \
 	Om::Lexicon
@@ -22,7 +22,7 @@
 	#include "om/sources/default_source.hpp"
 	#include "om/translator.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/ptr_container/ptr_map.hpp"
 
@@ -43,7 +43,7 @@ namespace Om {
 		The \ref om__lexicon__ Program implementation.
 	*/
 	class Lexicon:
-	public DefaultProgram< Lexicon >,
+	public DefaultProgram<Lexicon>,
 	public Translator {
 	public: // MARK: public (static)
 
@@ -57,11 +57,11 @@ namespace Om {
 
 		Lexicon();
 
-		Lexicon( Lexicon const & );
+		Lexicon(Lexicon const &);
 
-		Lexicon & operator =( Lexicon );
+		Lexicon & operator =(Lexicon);
 
-		void BackGivePair( Queue & );
+		void BackGivePair(Queue &);
 
 		virtual void Clear();
 
@@ -69,37 +69,37 @@ namespace Om {
 		\return
 			The Pair containing to the Operator, or empty if none.
 		*/
-		Pair const & Find( Operator const & ) const;
+		Pair const & Find(Operator const &) const;
 
-		void FrontGivePair( Queue & );
+		void FrontGivePair(Queue &);
 
 		virtual std::auto_ptr<
-			Source< Element const >
+			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements( Queue & );
+		virtual void GiveElements(Queue &);
 
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
 		virtual bool IsEmpty() const;
 
-		virtual void ReadElements( Parser & );
+		virtual void ReadElements(Parser &);
 
-		virtual void ReadQuotedElements( Parser & );
+		virtual void ReadQuotedElements(Parser &);
 
-		void Swap( Lexicon & );
+		void Swap(Lexicon &);
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
-		template< typename TheSeparator >
-		void TakeSeparator( TheSeparator & );
+		template <typename TheSeparator>
+		void TakeSeparator(TheSeparator &);
 
 		virtual bool Translate(
 			Evaluation &,
@@ -108,7 +108,7 @@ namespace Om {
 
 	private: // MARK: private (static)
 
-		typedef List< Pair > List;
+		typedef List<Pair> List;
 
 		typedef boost::ptr_map<
 			std::string,
@@ -123,7 +123,7 @@ namespace Om {
 		\param theQueue
 			The Queue to give them to.
 		*/
-		template< typename TheNode >
+		template <typename TheNode>
 		static void GiveElements(
 			TheNode * theFirstNode,
 			Queue & theQueue
@@ -145,8 +145,8 @@ namespace Om {
 		\return
 			If there is already a Node for this Operator, relinks it to the back and returns a reference to it. Otherwise, constructs a Node with the given Operator, appends it, and returns a reference to it.
 		*/
-		template< typename TheOperator >
-		List::Node & GetOperandTaker( TheOperator & );
+		template <typename TheOperator>
+		List::Node & GetOperandTaker(TheOperator &);
 
 		void GivePair(
 			List::NodeIndex const,
@@ -173,9 +173,9 @@ namespace Om {
 
 		ElementRange();
 
-		explicit ElementRange( Lexicon const & );
+		explicit ElementRange(Lexicon const &);
 
-		bool operator ==( ElementRange const & ) const;
+		bool operator ==(ElementRange const &) const;
 
 		virtual bool operator !() const;
 
@@ -204,7 +204,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<>
+	template <>
 	void swap(
 		Om::Lexicon &,
 		Om::Lexicon &

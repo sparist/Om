@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_FindOperation_ )
+#ifndef Om_Operations_FindOperation_
 
 	#define Om_Operations_FindOperation_ \
 	Om::Operations::FindOperation
@@ -37,12 +37,12 @@ namespace Om {
 			The \ref om__operations__find_operation__ operation implementation.
 		*/
 		class FindOperation:
-		public DefaultOperation< FindOperation > {
+		public DefaultOperation<FindOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheFindOperation >
+			template <typename TheFindOperation>
 			static void GiveElements(
 				TheFindOperation &,
 				Queue &
@@ -52,13 +52,13 @@ namespace Om {
 
 			FindOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -70,13 +70,13 @@ namespace Om {
 			\brief
 				The Operator to find.
 			*/
-			boost::optional< Operator > thisOperator;
+			boost::optional<Operator> thisOperator;
 
 		};
 
 		namespace {
 
-			static Definition< FindOperation > const theFindDefinition;
+			static Definition<FindOperation> const theFindDefinition;
 
 		}
 

@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_DefaultSink_ )
+#ifndef Om_Sinks_DefaultSink_
 
 	#define Om_Sinks_DefaultSink_ \
 	Om::Sinks::DefaultSink
@@ -28,12 +28,12 @@ namespace Om {
 		\brief
 			A partial Sink implementation.
 		*/
-		template<
+		template <
 			typename ThisItem,
 			typename ThisImplementation
 		>
 		class DefaultSink:
-		public Sink< ThisItem >,
+		public Sink<ThisItem>,
 		public std::iterator<
 			std::output_iterator_tag,
 			ThisItem
@@ -44,11 +44,11 @@ namespace Om {
 
 			ThisImplementation & operator ++();
 
-			ThisImplementation operator ++( int );
+			ThisImplementation operator ++(int);
 
 		private: // MARK: private (non-static)
 
-			DefaultSink & operator =( DefaultSink const & );
+			DefaultSink & operator =(DefaultSink const &);
 
 		};
 

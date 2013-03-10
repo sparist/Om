@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Symbols_SeparatorSymbol_ )
+#ifndef Om_Symbols_SeparatorSymbol_
 
 	#define Om_Symbols_SeparatorSymbol_ \
 	Om::Symbols::SeparatorSymbol

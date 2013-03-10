@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Definition_ )
+#ifndef Om_Definition_
 
 	#define Om_Definition_ \
 	Om::Definition
@@ -26,7 +26,7 @@ namespace Om {
 
 	This is safe to construct before main, but the order of construction is implementation-defined; if there is more than one Operation with the same Operator, the choice of which to apply first will be implementation-defined.
 	*/
-	template< typename ThisOperation >
+	template <typename ThisOperation>
 	class Definition {
 	public: // MARK: public (non-static)
 

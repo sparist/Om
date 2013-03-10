@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_PullOperation_ )
+#ifndef Om_Operations_PullOperation_
 
 	#include "om/operations/pull_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( PullOperationTest )
+		BOOST_AUTO_TEST_SUITE(PullOperationTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,7 +43,7 @@ namespace Om {
 // MARK: - Om::Operations::PullOperation
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisProgram, \
 		typename ThisImplementation \
 	>
@@ -56,7 +57,7 @@ namespace Om {
 // MARK: public (static)
 
 Template_
-template< typename ThePullOperation >
+template <typename ThePullOperation>
 inline void Type_::GiveElements(
 	ThePullOperation &,
 	Queue & theQueue
@@ -74,17 +75,15 @@ inline bool Type_::ReadQuotedElements(
 	Parser & theParser
 ) {
 	ThisProgram theProgram;
-	theProgram.ReadElements( theParser );
-	return(
-		this->TakeQuotedElements(
-			theEvaluation,
-			theProgram
-		)
+	theProgram.ReadElements(theParser);
+	return this->TakeQuotedElements(
+		theEvaluation,
+		theProgram
 	);
 }
 
 Template_
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -92,22 +91,20 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
 Template_
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
 	ThisProgram theProgramToPullFrom;
-	theProgramToPullFrom.TakeElements( theQueue );
+	theProgramToPullFrom.TakeElements(theQueue);
 
 	ThisProgram thePulledProgram;
 	ThisImplementation::Pull(
@@ -115,9 +112,9 @@ inline bool Type_::TakeQuotedQueue(
 		thePulledProgram
 	);
 
-	theEvaluation.TakeQuotedQueue( theProgramToPullFrom );
-	theEvaluation.TakeQuotedQueue( thePulledProgram );
-	return( true );
+	theEvaluation.TakeQuotedQueue(theProgramToPullFrom);
+	theEvaluation.TakeQuotedQueue(thePulledProgram);
+	return true;
 }
 
 // MARK: private (static)
@@ -127,7 +124,7 @@ inline Om::Operator const & Type_::GetOperator() {
 	static Operator const theOperator(
 		ThisImplementation::GetName()
 	);
-	return( theOperator );
+	return theOperator;
 }
 
 	#undef Type_

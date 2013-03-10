@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultElement_ )
+#ifndef Om_DefaultElement_
 
 	#define Om_DefaultElement_ \
 	Om::DefaultElement
@@ -26,7 +26,7 @@ namespace Om {
 	\brief
 		A partial implementation of Element.
 	*/
-	template<
+	template <
 		typename ThisImplementation,
 		typename ThisInterface = Element
 	>
@@ -39,23 +39,23 @@ namespace Om {
 
 		virtual ~DefaultElement() = 0;
 
-		virtual bool operator ==( Element const & ) const;
+		virtual bool operator ==(Element const &) const;
 
 		virtual std::auto_ptr<
-			Source< Element >
+			Source<Element>
 		> GetElementRange();
 
 		virtual std::auto_ptr<
-			Source< Element const >
+			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements( Queue & );
+		virtual void GiveElements(Queue &);
 
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
 	private: // MARK: private (non-static)
 
-		Element & operator =( Element const & );
+		Element & operator =(Element const &);
 
 	};
 

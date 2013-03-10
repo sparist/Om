@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_SubstituteOperation_ )
+#ifndef Om_Operations_SubstituteOperation_
 
 	#include "om/operations/substitute_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,68 +28,68 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( SubstituteOperationTest )
+		BOOST_AUTO_TEST_SUITE(SubstituteOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{substitute}",
-					System::Get().Evaluate( "drop find {substitute} system" )
+					System::Get().Evaluate("drop find {substitute} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( BasicSubstitutionTest ) {
+			BOOST_AUTO_TEST_CASE(BasicSubstitutionTest) {
 				BOOST_CHECK_EQUAL(
 					"{A{B}}{B}",
-					System::Get().Evaluate( "substitute {A {B}} {A}" )
+					System::Get().Evaluate("substitute {A {B}} {A}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( IdentityDefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(IdentityDefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{A{}}{}",
-					System::Get().Evaluate( "substitute {A {}} {A}" )
+					System::Get().Evaluate("substitute {A {}} {A}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( EmptyDefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(EmptyDefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{A}{A}",
-					System::Get().Evaluate( "substitute {A} {A}" )
+					System::Get().Evaluate("substitute {A} {A}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( EmptyLexiconTest ) {
+			BOOST_AUTO_TEST_CASE(EmptyLexiconTest) {
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate( "substitute {} {}" )
+					System::Get().Evaluate("substitute {} {}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( EmptyKeyFallThroughTest ) {
+			BOOST_AUTO_TEST_CASE(EmptyKeyFallThroughTest) {
 				BOOST_CHECK_EQUAL(
 					"{{{A}}}{{A}}",
-					System::Get().Evaluate( "substitute {{{A}}} {B}" )
+					System::Get().Evaluate("substitute {{{A}}} {B}")
 				);
 			}
 
 			// Confirms that the last definition wins.
-			BOOST_AUTO_TEST_CASE( MultipleDefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(MultipleDefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{A{{C}}}{{C}}",
-					System::Get().Evaluate( "substitute { A {{B}} A {{C}} } {A}" )
+					System::Get().Evaluate("substitute { A {{B}} A {{C}} } {A}")
 				);
 			}
 
 			// Confirms that the last definition wins.
-			BOOST_AUTO_TEST_CASE( MultipleEmptyKeyTest ) {
+			BOOST_AUTO_TEST_CASE(MultipleEmptyKeyTest) {
 				BOOST_CHECK_EQUAL(
 					"{{{C}}}{{C}}",
-					System::Get().Evaluate( "substitute { {{B}} {{C}} } {A}" )
+					System::Get().Evaluate("substitute { {{B}} {{C}} } {A}")
 				);
 			}
 
 			// Confirms that underlying non-constant definitions are used.
-			BOOST_AUTO_TEST_CASE( ChainedLookupTest ) {
+			BOOST_AUTO_TEST_CASE(ChainedLookupTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"{A{B}}{"
@@ -97,12 +97,12 @@ namespace Om {
 						"B"
 						"}"
 					),
-					System::Get().Evaluate( "substitute {A {B}} {unquote {A} A}" )
+					System::Get().Evaluate("substitute {A {B}} {unquote {A} A}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{blaven{42}}{do{blaven}}",
-					System::Get().Evaluate( "substitute{blaven{42}}{do{blaven}}" )
+					System::Get().Evaluate("substitute{blaven{42}}{do{blaven}}")
 				);
 			}
 
@@ -124,14 +124,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_SubstituteOperation_GetName_()
-	);
+	return Om_Operations_SubstituteOperation_GetName_();
 }
 
 // MARK: public (non-static)
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline void Type_::Translate(
 	Translator const &,
 	TheQueue & theQueue,
@@ -141,7 +139,7 @@ inline void Type_::Translate(
 		theExpression,
 		*this->thisLexicon
 	);
-	theQueue.GiveElements( theScope );
+	theQueue.GiveElements(theScope);
 }
 
 	#undef Type_

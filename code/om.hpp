@@ -14,7 +14,7 @@
 	Including this header file causes all other header files to be included.
 */
 
-#if !defined( Om_ )
+#ifndef Om_
 
 	#define Om_ \
 	Om

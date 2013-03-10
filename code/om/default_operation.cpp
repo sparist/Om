@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultOperation_ )
+#ifndef Om_DefaultOperation_
 
 	#include "om/default_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( DefaultOperationTest )
+	BOOST_AUTO_TEST_SUITE(DefaultOperationTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -40,10 +41,10 @@ namespace Om {
 // MARK: - Om::DefaultOperation
 
 	#define Template_ \
-	template< typename ThisImplementation >
+	template <typename ThisImplementation>
 
 	#define Type_ \
-	Om::DefaultOperation< ThisImplementation >
+	Om::DefaultOperation<ThisImplementation>
 
 // MARK: public (static)
 
@@ -52,13 +53,13 @@ inline Om::Operator const & Type_::GetOperator() {
 	static Operator const theOperator(
 		ThisImplementation::GetName()
 	);
-	return( theOperator );
+	return theOperator;
 }
 
 Template_
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr< ThisImplementation >( new ThisImplementation )
+		std::auto_ptr <ThisImplementation> (new ThisImplementation)
 	);
 }
 
@@ -68,23 +69,23 @@ Template_
 inline Type_::~DefaultOperation() {}
 
 Template_
-inline void Type_::GiveElements( Queue & theQueue ) {
+inline void Type_::GiveElements(Queue & theQueue) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
 	ThisImplementation::GiveElements(
-		static_cast< ThisImplementation & >( *this ),
+		static_cast<ThisImplementation &>(*this),
 		theQueue
 	);
 }
 
 Template_
-inline void Type_::GiveElements( Queue & theQueue ) const {
+inline void Type_::GiveElements(Queue & theQueue) const {
 	assert(
-		dynamic_cast< ThisImplementation const * >( this )
+		dynamic_cast<ThisImplementation const *>(this)
 	);
 	ThisImplementation::GiveElements(
-		static_cast< ThisImplementation const & >( *this ),
+		static_cast<ThisImplementation const &>(*this),
 		theQueue
 	);
 }
@@ -95,12 +96,10 @@ inline bool Type_::ReadQuotedElements(
 	Parser & theParser
 ) {
 	Literal theLiteral;
-	theLiteral.ReadElements( theParser );
-	return(
-		this->TakeQuotedElements(
-			theEvaluation,
-			theLiteral
-		)
+	theLiteral.ReadElements(theParser);
+	return this->TakeQuotedElements(
+		theEvaluation,
+		theLiteral
 	);
 }
 
@@ -113,13 +112,11 @@ inline bool Type_::TakeElement(
 		!theOperand.IsEmpty()
 	);
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	return(
-		static_cast< ThisImplementation & >( *this ).TakeOperand(
-			theEvaluation,
-			theOperand
-		)
+	return static_cast<ThisImplementation &>(*this).TakeOperand(
+		theEvaluation,
+		theOperand
 	);
 }
 
@@ -132,13 +129,11 @@ inline bool Type_::TakeElement(
 		!theOperand.IsEmpty()
 	);
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	return(
-		static_cast< ThisImplementation & >( *this ).TakeOperand(
-			theEvaluation,
-			theOperand
-		)
+	return static_cast<ThisImplementation &>(*this).TakeOperand(
+		theEvaluation,
+		theOperand
 	);
 }
 
@@ -148,13 +143,11 @@ inline bool Type_::TakeQuotedElements(
 	Queue & theQueue
 ) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	return(
-		static_cast< ThisImplementation & >( *this ).TakeQuotedQueue(
-			theEvaluation,
-			theQueue
-		)
+	return static_cast<ThisImplementation &>(*this).TakeQuotedQueue(
+		theEvaluation,
+		theQueue
 	);
 }
 
@@ -164,13 +157,11 @@ inline bool Type_::TakeQuotedElements(
 	Queue const & theQueue
 ) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	return(
-		static_cast< ThisImplementation & >( *this ).TakeQuotedQueue(
-			theEvaluation,
-			theQueue
-		)
+	return static_cast<ThisImplementation &>(*this).TakeQuotedQueue(
+		theEvaluation,
+		theQueue
 	);
 }
 

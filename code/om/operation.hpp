@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operation_ )
+#ifndef Om_Operation_
 
 	#define Om_Operation_ \
 	Om::Operation
@@ -47,13 +47,13 @@ namespace Om {
 		\post
 			Any calls on the Operation are undefined.
 		*/
-		virtual void GiveElements( Queue & ) = 0;
+		virtual void GiveElements(Queue &) = 0;
 
 		/*!
 		\brief
 			\overload
 		*/
-		virtual void GiveElements( Queue & ) const = 0;
+		virtual void GiveElements(Queue &) const = 0;
 
 		virtual bool ReadQuotedElements(
 			Evaluation &,
@@ -110,9 +110,9 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		Operation( Operation const & );
+		Operation(Operation const &);
 
-		Operation const & operator =( Operation const & );
+		Operation const & operator =(Operation const &);
 
 	};
 

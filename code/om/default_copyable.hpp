@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultCopyable_ )
+#ifndef Om_DefaultCopyable_
 
 	#define Om_DefaultCopyable_ \
 	Om::DefaultCopyable
@@ -26,15 +26,15 @@ namespace Om {
 	\brief
 		A partial implementation of Copyable.
 	*/
-	template<
+	template <
 		typename ThisImplementation,
 		typename ThisInterface = Copyable
 	>
 	class DefaultCopyable:
 	public ThisInterface {
 
-		template< typename TheCopyable >
-		friend std::auto_ptr< TheCopyable > Copy( TheCopyable const & );
+		template <typename TheCopyable>
+		friend std::auto_ptr<TheCopyable> Copy(TheCopyable const &);
 
 	public: // MARK: public (non-static)
 
@@ -42,7 +42,7 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		DefaultCopyable & operator =( DefaultCopyable const & );
+		DefaultCopyable & operator =(DefaultCopyable const &);
 
 		/*!
 		\return

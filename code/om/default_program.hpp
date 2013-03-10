@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultProgram_ )
+#ifndef Om_DefaultProgram_
 
 	#define Om_DefaultProgram_ \
 	Om::DefaultProgram
@@ -29,7 +29,7 @@ namespace Om {
 	\brief
 		A partial implementation of Program.
 	*/
-	template<
+	template <
 		typename ThisImplementation,
 		typename ThisInterface = Program
 	>
@@ -41,23 +41,26 @@ namespace Om {
 			ThisInterface
 		>
 	>,
-	public Taker< ThisImplementation > {
+	public Taker<ThisImplementation> {
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultProgram() = 0;
 
-		virtual bool operator ==( Program const & ) const;
+		virtual bool operator ==(Program const &) const;
 
-		virtual void TakeElements( Queue & );
+		virtual void TakeElements(Queue &);
 
-		virtual void TakeElements( Queue const & );
+		virtual void TakeElements(Queue const &);
 
 	private: // MARK: private (non-static)
 
-		DefaultProgram & operator =( DefaultProgram const & );
+		DefaultProgram & operator =(DefaultProgram const &);
 
-		template< typename TheCast, typename TheQueue >
-		void TakeQueueElements( TheQueue & );
+		template <
+			typename TheCast,
+			typename TheQueue
+		>
+		void TakeQueueElements(TheQueue &);
 
 	};
 

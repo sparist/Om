@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Element_ )
+#ifndef Om_Element_
 
 	#define Om_Element_ \
 	Om::Element
@@ -34,7 +34,7 @@ namespace Om {
 
 		virtual ~Element() = 0;
 
-		virtual bool operator ==( Element const & ) const = 0;
+		virtual bool operator ==(Element const &) const = 0;
 
 		/*!
 		\return
@@ -58,33 +58,33 @@ namespace Om {
 			An Element range containing only this Element.
 		*/
 		virtual std::auto_ptr<
-			Source< Element >
+			Source<Element>
 		> GetElementRange() = 0;
 
 		/*!
 		\return
 			True if the Element could be merged.
 		*/
-		virtual bool Merge( Operator & );
+		virtual bool Merge(Operator &);
 
 		/*!
 		\overload
 		*/
-		virtual bool Merge( Operator const & );
+		virtual bool Merge(Operator const &);
 
 		/*!
 		\overload
 		*/
-		virtual bool Merge( Separator & );
+		virtual bool Merge(Separator &);
 
 		/*!
 		\overload
 		*/
-		virtual bool Merge( Separator const & );
+		virtual bool Merge(Separator const &);
 
 	private: // MARK: private (non-static)
 
-		Element & operator =( Element const & );
+		Element & operator =(Element const &);
 
 	};
 
@@ -95,7 +95,7 @@ namespace Om {
 	\note
 		Required by boost::ptr_container classes.
 	*/
-	Element * new_clone( Element const & );
+	Element * new_clone(Element const &);
 
 }
 

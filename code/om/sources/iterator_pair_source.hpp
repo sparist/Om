@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_IteratorPairSource_ )
+#ifndef Om_Sources_IteratorPairSource_
 
 	#define Om_Sources_IteratorPairSource_ \
 	Om::Sources::IteratorPairSource
@@ -28,7 +28,7 @@ namespace Om {
 		\brief
 			A Source adapter for a start and end input iterator pair.
 		*/
-		template<
+		template <
 			typename ThisItem,
 			typename ThisIterator
 		>
@@ -53,9 +53,9 @@ namespace Om {
 				ThisIterator const theEnd
 			);
 
-			IteratorPairSource & operator =( IteratorPairSource );
+			IteratorPairSource & operator =(IteratorPairSource);
 
-			bool operator ==( IteratorPairSource const & ) const;
+			bool operator ==(IteratorPairSource const &) const;
 
 			virtual ThisItem & operator *() const;
 
@@ -65,7 +65,7 @@ namespace Om {
 
 			virtual void Pop();
 
-			void Swap( IteratorPairSource & );
+			void Swap(IteratorPairSource &);
 
 		private: // MARK: private (non-static)
 
@@ -90,7 +90,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<
+	template <
 		typename ThisItem,
 		typename ThisIterator
 	>

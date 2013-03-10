@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_ExpressionOperation_ )
+#ifndef Om_Operations_ExpressionOperation_
 
 	#define Om_Operations_ExpressionOperation_ \
 	Om::Operations::ExpressionOperation
@@ -29,11 +29,11 @@ namespace Om {
 		\brief
 			The \ref om__operations__expression_operation__ operation implementation.
 		*/
-		typedef ProgramOperation< Expression > ExpressionOperation;
+		typedef ProgramOperation<Expression> ExpressionOperation;
 
 		namespace {
 
-			static Definition< ExpressionOperation > const theExpressionDefinition;
+			static Definition<ExpressionOperation> const theExpressionDefinition;
 
 		}
 

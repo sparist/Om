@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_LiteralFrontPushOperation_ )
+#ifndef Om_Operations_LiteralFrontPushOperation_
 
 	#define Om_Operations_LiteralFrontPushOperation_ \
 	Om::Operations::LiteralFrontPushOperation
@@ -36,13 +36,13 @@ namespace Om {
 
 			static char const * GetName();
 
-			static void Give( Evaluation & );
+			static void Give(Evaluation &);
 
 		};
 
 		namespace {
 
-			static Definition< LiteralFrontPushOperation > const theLiteralFrontPushDefinition;
+			static Definition<LiteralFrontPushOperation> const theLiteralFrontPushDefinition;
 
 		}
 

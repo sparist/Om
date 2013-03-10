@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_RearrangeOperation_ )
+#ifndef Om_Operations_RearrangeOperation_
 
 	#include "om/operations/rearrange_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,19 +28,19 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( RearrangeOperationTest )
+		BOOST_AUTO_TEST_SUITE(RearrangeOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{rearrange}",
-					System::Get().Evaluate( "drop find {rearrange} system" )
+					System::Get().Evaluate("drop find {rearrange} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{2}{1}",
-					System::Get().Evaluate( "rearrange{b a}{a b}{1}{2}" )
+					System::Get().Evaluate("rearrange{b a}{a b}{1}{2}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -91,16 +91,14 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_RearrangeOperation_GetName_()
-	);
+	return Om_Operations_RearrangeOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	// define swap skip {dequote inject {quote} pair {fill}}
-	DefineOperation::Give( theEvaluation );
-	SwapOperation::Give( theEvaluation );
-	SkipOperation::Give( theEvaluation );
+	DefineOperation::Give(theEvaluation);
+	SwapOperation::Give(theEvaluation);
+	SkipOperation::Give(theEvaluation);
 	Expression theExpression;
 	theExpression.TakeOperator(
 		DequoteOperation::GetOperator()
@@ -117,7 +115,7 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 	theExpression.TakeQuotedQueue(
 		FillOperation::GetOperator()
 	);
-	theEvaluation.TakeQuotedQueue( theExpression );
+	theEvaluation.TakeQuotedQueue(theExpression);
 }
 
 	#undef Type_

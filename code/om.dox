@@ -490,7 +490,7 @@ There are two ways to implement an operation: as a composite operation, or an at
 To implement a composite operation, or an atomic operation that consumes no operands:
 -	Define the operation <tt>class</tt> in the <tt>Om::Operations</tt> namespace.
 -	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
--	Define the static <tt>Give( Om::Evaluation &amp; )</tt> method, with no return value, to give existing operations and/or elements to the evaluation.
+-	Define the static <tt>Give(Om::Evaluation &amp;)</tt> method, with no return value, to give existing operations and/or elements to the evaluation.
 
 To define an atomic operation that consumes one or more operands:
 -	Define the operation <tt>class</tt>, derived from <tt>Om::DefaultOperation&lt;</tt> <em>operation</em> <tt>&gt;</tt> (where <em>operation</em> is the name of the operation <tt>class</tt>), in the <tt>Om::Operations</tt> namespace.
@@ -504,7 +504,7 @@ For any operation implementation, code must be added to the operation header tha
 \code
 namespace {
 
-	static Definition< WhateverOperation > const theWhateverDefinition;
+	static Definition<WhateverOperation> const theWhateverDefinition;
 
 }
 \endcode

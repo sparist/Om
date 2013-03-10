@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_IteratorSink_ )
+#ifndef Om_Sinks_IteratorSink_
 
 	#define Om_Sinks_IteratorSink_ \
 	Om::Sinks::IteratorSink
@@ -28,7 +28,7 @@ namespace Om {
 		\brief
 			A Sink adapter for an output iterator.
 		*/
-		template<
+		template <
 			typename ThisItem,
 			typename ThisIterator
 		>
@@ -42,13 +42,13 @@ namespace Om {
 		> {
 		public: // MARK: public (non-static)
 
-			explicit IteratorSink( ThisIterator );
+			explicit IteratorSink(ThisIterator);
 
-			IteratorSink & operator =( IteratorSink );
+			IteratorSink & operator =(IteratorSink);
 
-			virtual void Push( ThisItem & );
+			virtual void Push(ThisItem &);
 
-			void Swap( IteratorSink & );
+			void Swap(IteratorSink &);
 
 		private: // MARK: private (non-static)
 
@@ -67,7 +67,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<
+	template <
 		typename ThisItem,
 		typename ThisIterator
 	>

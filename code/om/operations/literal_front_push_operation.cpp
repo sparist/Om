@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_LiteralFrontPushOperation_ )
+#ifndef Om_Operations_LiteralFrontPushOperation_
 
 	#include "om/operations/literal_front_push_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,44 +28,44 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( LiteralFrontPushOperationTest )
+		BOOST_AUTO_TEST_SUITE(LiteralFrontPushOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{->literal}",
-					System::Get().Evaluate( "drop find {->literal} system" )
+					System::Get().Evaluate("drop find {->literal} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{1{2}34{5}6}",
-					System::Get().Evaluate( "->literal {1{2}3}{4{5}6}" )
+					System::Get().Evaluate("->literal {1{2}3}{4{5}6}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{1{2}{5}6}",
-					System::Get().Evaluate( "->literal {1{2}}{{5}6}" )
+					System::Get().Evaluate("->literal {1{2}}{{5}6}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{5}6}",
-					System::Get().Evaluate( "->literal {}{{5}6}" )
+					System::Get().Evaluate("->literal {}{{5}6}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{5}6}",
-					System::Get().Evaluate( "->literal {{5}6}{}" )
+					System::Get().Evaluate("->literal {{5}6}{}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{2}3}",
-					System::Get().Evaluate( "->literal quote{2}{3}" )
+					System::Get().Evaluate("->literal quote{2}{3}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{2{3}}",
-					System::Get().Evaluate( "->literal{2}quote{3}" )
+					System::Get().Evaluate("->literal{2}quote{3}")
 				);
 			}
 
@@ -90,14 +90,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_LiteralFrontPushOperation_GetName_()
-	);
+	return Om_Operations_LiteralFrontPushOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
+		std::auto_ptr<Operation>(
 			new FrontPushOperation<
 				Literal,
 				LiteralFrontPushOperation

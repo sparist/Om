@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_QuoteOperation_ )
+#ifndef Om_Operations_QuoteOperation_
 
 	#define Om_Operations_QuoteOperation_ \
 	Om::Operations::QuoteOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__quote_operation__ operation implementation.
 		*/
 		class QuoteOperation:
-		public DefaultOperation< QuoteOperation > {
+		public DefaultOperation<QuoteOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheQuoteOperation >
+			template <typename TheQuoteOperation>
 			static void GiveElements(
 				TheQuoteOperation &,
 				Queue &
@@ -46,13 +46,13 @@ namespace Om {
 
 		public: // MARK: public (non-static)
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -62,7 +62,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< QuoteOperation > const theQuoteDefinition;
+			static Definition<QuoteOperation> const theQuoteDefinition;
 
 		}
 

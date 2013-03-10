@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_CodePointSink_ )
+#ifndef Om_Sinks_CodePointSink_
 
 	#include "om/sinks/code_point_sink.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,19 +28,19 @@ namespace Om {
 
 	namespace Sinks {
 
-		BOOST_AUTO_TEST_SUITE( CodePointSinkTest )
+		BOOST_AUTO_TEST_SUITE(CodePointSinkTest)
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
-				typedef std::back_insert_iterator< std::string > Iterator;
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
+				typedef std::back_insert_iterator<std::string> Iterator;
 				std::string theString;
-				Iterator theIterator( theString );
-				CodePointSink< Iterator > theSink( theIterator );
-				theSink.Push( 510U );
+				Iterator theIterator(theString);
+				CodePointSink<Iterator> theSink(theIterator);
+				theSink.Push(510U);
 				BOOST_CHECK_EQUAL(
 					"\xC7\xBE",
 					theString
 				);
-				theSink.Push( 65U );
+				theSink.Push(65U);
 				BOOST_CHECK_EQUAL(
 					(
 						"\xC7\xBE"
@@ -65,25 +65,25 @@ namespace Om {
 // MARK: - Om::Sinks::CodePointSink
 
 	#define Template_ \
-	template< typename ThisCodeUnitIterator >
+	template <typename ThisCodeUnitIterator>
 
 	#define Type_ \
-	Om::Sinks::CodePointSink< ThisCodeUnitIterator >
+	Om::Sinks::CodePointSink<ThisCodeUnitIterator>
 
 // MARK: public (non-static)
 
 Template_
-inline Type_::CodePointSink( ThisCodeUnitIterator theCodeUnitIterator ):
-thisCodeUnitIterator( theCodeUnitIterator ) {}
+inline Type_::CodePointSink(ThisCodeUnitIterator theCodeUnitIterator):
+thisCodeUnitIterator(theCodeUnitIterator) {}
 
 Template_
-inline Type_ & Type_::operator =( CodePointSink theCodePointSink ) {
-	this->Swap( theCodePointSink );
-	return( *this );
+inline Type_ & Type_::operator =(CodePointSink theCodePointSink) {
+	this->Swap(theCodePointSink);
+	return *this;
 }
 
 Template_
-inline void Type_::Push( CodePoint const & theCodePoint ) {
+inline void Type_::Push(CodePoint const & theCodePoint) {
 	Utf8::encode(
 		theCodePoint,
 		thisCodeUnitIterator
@@ -91,12 +91,12 @@ inline void Type_::Push( CodePoint const & theCodePoint ) {
 }
 
 Template_
-inline void Type_::Swap( CodePointSink & theCodePointSink ) {
+inline void Type_::Swap(CodePointSink & theCodePointSink) {
 	boost::swap(
 		this->thisCodeUnitIterator,
 		theCodePointSink.thisCodeUnitIterator
 	);
-	return( *this );
+	return *this;
 }
 
 	#undef Type_
@@ -104,12 +104,12 @@ inline void Type_::Swap( CodePointSink & theCodePointSink ) {
 
 // MARK: - boost
 
-template< typename ThisCodeUnitIterator >
+template <typename ThisCodeUnitIterator>
 inline void boost::swap(
-	Om::Sinks::CodePointSink< ThisCodeUnitIterator > & theFirst,
-	Om::Sinks::CodePointSink< ThisCodeUnitIterator > & theSecond
+	Om::Sinks::CodePointSink<ThisCodeUnitIterator> & theFirst,
+	Om::Sinks::CodePointSink<ThisCodeUnitIterator> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operand_ )
+#ifndef Om_Operand_
 
 	#include "om/operand.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( OperandTest )
+	BOOST_AUTO_TEST_SUITE(OperandTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -46,9 +47,7 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operand_GetName_()
-	);
+	return Om_Operand_GetName_();
 }
 
 // MARK: public (non-static)
@@ -56,21 +55,21 @@ inline char const * Type_::GetName() {
 inline Type_::Operand():
 thisProgram() {}
 
-template< typename TheProgram >
+template <typename TheProgram>
 inline Type_::Operand(
-	std::auto_ptr< TheProgram > theProgram
+	std::auto_ptr<TheProgram> theProgram
 ):
-thisProgram( theProgram ) {}
+thisProgram(theProgram) {}
 
-inline Type_ & Type_::operator =( Operand theOperand ) {
-	this->Swap( theOperand );
-	return( *this );
+inline Type_ & Type_::operator =(Operand theOperand) {
+	this->Swap(theOperand);
+	return *this;
 }
 
-inline bool Type_::operator ==( Operand const & theOperand ) const {
-	return(
-		this->IsEmpty()?
-		theOperand.IsEmpty():
+inline bool Type_::operator ==(Operand const & theOperand) const {
+	return (
+		this->IsEmpty() ?
+		theOperand.IsEmpty() :
 		(
 			*this->GetProgram() == *theOperand.GetProgram()
 		)
@@ -78,17 +77,17 @@ inline bool Type_::operator ==( Operand const & theOperand ) const {
 }
 
 inline Om::Program & Type_::operator *() {
-	return(
-		this->thisProgram.IsEmpty()?
-		Null::Get():
+	return (
+		this->thisProgram.IsEmpty() ?
+		Null::Get() :
 		*this->thisProgram
 	);
 }
 
 inline Om::Program const & Type_::operator *() const {
-	return(
-		this->thisProgram.IsEmpty()?
-		Null::Get():
+	return (
+		this->thisProgram.IsEmpty() ?
+		Null::Get() :
 		*this->thisProgram
 	);
 }
@@ -98,49 +97,45 @@ inline void Type_::Clear() {
 }
 
 inline Om::Program * Type_::GetProgram() {
-	return(
-		this->thisProgram.GetValue()
-	);
+	return this->thisProgram.GetValue();
 }
 
 inline Om::Program const * Type_::GetProgram() const {
-	return(
-		this->thisProgram.GetValue()
-	);
+	return this->thisProgram.GetValue();
 }
 
 inline bool Type_::IsEmpty() const {
-	return( !this->thisProgram );
+	return !this->thisProgram;
 }
 
-inline void Type_::ReadElements( Parser & theParser ) {
-	if(
+inline void Type_::ReadElements(Parser & theParser) {
+	if (
 		this->IsEmpty()
 	) {
-		for(
+		for (
 			;
 			;
 			theParser.Pop()
 		) {
-			if( !theParser ) {
+			if (!theParser) {
 				return;
 			}
-			assert( Symbols::theEndOperandSymbol != *theParser );
-			switch( *theParser ) {
+			assert(Symbols::theEndOperandSymbol != *theParser);
+			switch (*theParser) {
 			default:
 				continue;
 			case Symbols::theStartOperandSymbol:
 				theParser.Pop();
 				{
 					// Ensure against copy constructor call.
-					Source< CodePoint const > & theCodePointSource = theParser;
+					Source<CodePoint const> & theCodePointSource = theParser;
 
-					Parser theOperandParser( theCodePointSource );
-					this->ReadQuotedElements( theOperandParser );
+					Parser theOperandParser(theCodePointSource);
+					this->ReadQuotedElements(theOperandParser);
 				}
 				assert(
 					!theParser ||
-					( Symbols::theEndOperandSymbol == *theParser )
+					(Symbols::theEndOperandSymbol == *theParser)
 				);
 				// Fall through.
 			}
@@ -148,61 +143,61 @@ inline void Type_::ReadElements( Parser & theParser ) {
 		}
 	}
 
-	for(
+	for (
 		;
 		theParser;
 		theParser.Pop()
 	) {}
 }
 
-inline void Type_::ReadQuotedElements( Parser & theParser ) {
+inline void Type_::ReadQuotedElements(Parser & theParser) {
 	Literal theLiteral;
-	theLiteral.ReadElements( theParser );
-	this->TakeQuotedQueue( theLiteral );
+	theLiteral.ReadElements(theParser);
+	this->TakeQuotedQueue(theLiteral);
 }
 
-template< typename TheProgram >
+template <typename TheProgram>
 inline void Type_::SetProgram(
-	std::auto_ptr< TheProgram > theProgram
+	std::auto_ptr<TheProgram> theProgram
 ) {
-	this->thisProgram.SetValue( theProgram );
+	this->thisProgram.SetValue(theProgram);
 }
 
-inline void Type_::Swap( Operand & theOperand ) {
-	this->thisProgram.Swap( theOperand.thisProgram );
+inline void Type_::Swap(Operand & theOperand) {
+	this->thisProgram.Swap(theOperand.thisProgram);
 }
 
-inline void Type_::TakeElements( Queue & theQueue ) {
-	if(
+inline void Type_::TakeElements(Queue & theQueue) {
+	if (
 		this->IsEmpty()
 	) {
-		DefaultElement< Operand >::TakeElements( theQueue );
+		DefaultElement<Operand>::TakeElements(theQueue);
 	}
 }
 
-inline void Type_::TakeElements( Queue const & theQueue ) {
-	if(
+inline void Type_::TakeElements(Queue const & theQueue) {
+	if (
 		this->IsEmpty()
 	) {
-		DefaultElement< Operand >::TakeElements( theQueue );
+		DefaultElement<Operand>::TakeElements(theQueue);
 	}
 }
 
-template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & theOperand ) {
-	if(
+template <typename TheOperand>
+inline void Type_::TakeOperand(TheOperand & theOperand) {
+	if (
 		this->IsEmpty()
 	) {
-		this->Take( theOperand );
+		this->Take(theOperand);
 	}
 }
 
-template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & ) {}
+template <typename TheOperator>
+inline void Type_::TakeOperator(TheOperator &) {}
 
-template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
-	if(
+template <typename TheQueue>
+inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
+	if (
 		this->IsEmpty()
 	) {
 		this->SetProgram(
@@ -211,19 +206,19 @@ inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
 	}
 }
 
-template< typename TheSeparator >
-inline void Type_::TakeSeparator( TheSeparator & ) {}
+template <typename TheSeparator>
+inline void Type_::TakeSeparator(TheSeparator &) {}
 
 	#undef Type_
 
 // MARK: - boost
 
-template<>
+template <>
 inline void boost::swap(
 	Om::Operand & theFirst,
 	Om::Operand & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

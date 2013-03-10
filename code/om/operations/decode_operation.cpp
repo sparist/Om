@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_DecodeOperation_ )
+#ifndef Om_Operations_DecodeOperation_
 
 	#include "om/operations/decode_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,40 +30,40 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( DecodeOperationTest )
+		BOOST_AUTO_TEST_SUITE(DecodeOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{decode}",
-					System::Get().Evaluate( "drop find {decode} system" )
+					System::Get().Evaluate("drop find {decode} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+			BOOST_AUTO_TEST_CASE(SimpleTest) {
 				BOOST_CHECK_EQUAL(
 					"{`{`}` {{}} {quote{s}} }",
-					System::Get().Evaluate( "decode {```{```}``` `{`{`}`}` {quote{s}} }" )
+					System::Get().Evaluate("decode {```{```}``` `{`{`}`}` {quote{s}} }")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{} {{}} {quote{s}} }",
-					System::Get().Evaluate( "decode {`{`}` {{}} {quote{s}} }" )
+					System::Get().Evaluate("decode {`{`}` {{}} {quote{s}} }")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{ the {end: `} really: } ! }",
-					System::Get().Evaluate( "decode {` the` `{end:` ```}` really:` `}` !` }" )
+					System::Get().Evaluate("decode {` the` `{end:` ```}` really:` `}` !` }")
 				);
 
 				// Test that each remaining encoded Operand Symbol is decoded.
 				BOOST_CHECK_EQUAL(
 					"{ the {end: } really: }",
-					System::Get().Evaluate( "decode { the {end: `} really: } ! }" )
+					System::Get().Evaluate("decode { the {end: `} really: } ! }")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{ the {end: } really: }",
-					System::Get().Evaluate( "decode { the {end: } really: }" )
+					System::Get().Evaluate("decode { the {end: } really: }")
 				);
 			}
 
@@ -87,12 +87,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_DecodeOperation_GetName_()
-	);
+	return Om_Operations_DecodeOperation_GetName_();
 }
 
-template< typename TheDecodeOperation >
+template <typename TheDecodeOperation>
 inline void Type_::GiveElements(
 	TheDecodeOperation &,
 	Queue & theQueue
@@ -104,7 +102,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -112,15 +110,13 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
@@ -128,11 +124,11 @@ inline bool Type_::TakeQuotedQueue(
 	Literal theLiteral;
 	{
 		Operator theOperator;
-		theOperator.TakeElements( theQueue );
-		theOperator.Decode( theLiteral );
+		theOperator.TakeElements(theQueue);
+		theOperator.Decode(theLiteral);
 	}
-	theEvaluation.TakeQuotedQueue( theLiteral );
-	return( true );
+	theEvaluation.TakeQuotedQueue(theLiteral);
+	return true;
 }
 
 	#undef Type_

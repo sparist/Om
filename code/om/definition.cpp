@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Definition_ )
+#ifndef Om_Definition_
 
 	#include "om/definition.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( DefinitionTest )
+	BOOST_AUTO_TEST_SUITE(DefinitionTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -40,10 +41,10 @@ namespace Om {
 // MARK: - Om::Definition
 
 	#define Template_ \
-	template< typename ThisOperation >
+	template <typename ThisOperation>
 
 	#define Type_ \
-	Om::Definition< ThisOperation >
+	Om::Definition<ThisOperation>
 
 // MARK: public (non-static)
 

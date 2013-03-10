@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_SystemOperation_ )
+#ifndef Om_Operations_SystemOperation_
 
 	#define Om_Operations_SystemOperation_ \
 	Om::Operations::SystemOperation
@@ -36,13 +36,13 @@ namespace Om {
 
 			static char const * GetName();
 
-			static void Give( Evaluation & );
+			static void Give(Evaluation &);
 
 		};
 
 		namespace {
 
-			static Definition< SystemOperation > const theSystemDefinition;
+			static Definition<SystemOperation> const theSystemDefinition;
 
 		}
 

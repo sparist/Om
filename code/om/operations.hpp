@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_ )
+#ifndef Om_Operations_
 
 	#define Om_Operations_ \
 	Om::Operations
@@ -25,7 +25,7 @@ namespace Om {
 
 	Each operation implementation requires the following:
 	-	A <tt>static char const * GetName()</tt> function that returns a null-terminated, NFD-normalized UTF-8 string to be used as a corresponding Operator name.
-	-	A <tt>static void Give( </tt><em>Evaluation</em><tt> )</tt> function, which gives the implementation of the operation to the Evaluation.
+	-	A <tt>static void Give(</tt><em>Evaluation</em><tt>)</tt> function, which gives the implementation of the operation to the Evaluation.
 
 	Including the header for an operation will cause the operation to be added to the System automatically.
 

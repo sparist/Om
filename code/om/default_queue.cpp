@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultQueue_ )
+#ifndef Om_DefaultQueue_
 
 	#include "om/default_queue.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( DefaultQueueTest )
+	BOOST_AUTO_TEST_SUITE(DefaultQueueTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -38,7 +39,7 @@ namespace Om {
 // MARK: - Om::DefaultQueue
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisImplementation, \
 		typename ThisInterface \
 	>
@@ -55,77 +56,77 @@ Template_
 inline Type_::~DefaultQueue() {}
 
 Template_
-inline void Type_::TakeElement( Operand & theOperand ) {
+inline void Type_::TakeElement(Operand & theOperand) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ).TakeOperand( theOperand );
+	static_cast<ThisImplementation &>(*this).TakeOperand(theOperand);
 }
 
 Template_
-inline void Type_::TakeElement( Operand const & theOperand ) {
+inline void Type_::TakeElement(Operand const & theOperand) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ).TakeOperand( theOperand );
+	static_cast<ThisImplementation &>(*this).TakeOperand(theOperand);
 }
 
 Template_
-inline void Type_::TakeElement( Operator & theOperator ) {
+inline void Type_::TakeElement(Operator & theOperator) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ).TakeOperator( theOperator );
+	static_cast<ThisImplementation &>(*this).TakeOperator(theOperator);
 }
 
 Template_
-inline void Type_::TakeElement( Operator const & theOperator ) {
+inline void Type_::TakeElement(Operator const & theOperator) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ).TakeOperator( theOperator );
+	static_cast<ThisImplementation &>(*this).TakeOperator(theOperator);
 }
 
 Template_
-inline void Type_::TakeElement( Separator & theSeparator ) {
+inline void Type_::TakeElement(Separator & theSeparator) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ).TakeSeparator( theSeparator );
+	static_cast<ThisImplementation &>(*this).TakeSeparator(theSeparator);
 }
 
 Template_
-inline void Type_::TakeElement( Separator const & theSeparator ) {
+inline void Type_::TakeElement(Separator const & theSeparator) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ).TakeSeparator( theSeparator );
+	static_cast<ThisImplementation &>(*this).TakeSeparator(theSeparator);
 }
 
 Template_
-inline void Type_::TakeElements( Queue & theQueue ) {
-	theQueue.GiveElements( *this );
+inline void Type_::TakeElements(Queue & theQueue) {
+	theQueue.GiveElements(*this);
 }
 
 Template_
-inline void Type_::TakeElements( Queue const & theQueue ) {
-	theQueue.GiveElements( *this );
+inline void Type_::TakeElements(Queue const & theQueue) {
+	theQueue.GiveElements(*this);
 }
 
 Template_
-inline void Type_::TakeQuotedElements( Queue & theQueue ) {
+inline void Type_::TakeQuotedElements(Queue & theQueue) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ).TakeQuotedQueue( theQueue );
+	static_cast<ThisImplementation &>(*this).TakeQuotedQueue(theQueue);
 }
 
 Template_
-inline void Type_::TakeQuotedElements( Queue const & theQueue ) {
+inline void Type_::TakeQuotedElements(Queue const & theQueue) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast< ThisImplementation & >( *this ).TakeQuotedQueue( theQueue );
+	static_cast<ThisImplementation &>(*this).TakeQuotedQueue(theQueue);
 }
 
 	#undef Type_

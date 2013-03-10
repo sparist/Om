@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_DropOperation_ )
+#ifndef Om_Operations_DropOperation_
 
 	#define Om_Operations_DropOperation_ \
 	Om::Operations::DropOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__drop_operation__ operation implementation.
 		*/
 		class DropOperation:
-		public DefaultOperation< DropOperation > {
+		public DefaultOperation<DropOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheDropOperation >
+			template <typename TheDropOperation>
 			static void GiveElements(
 				TheDropOperation &,
 				Queue &
@@ -51,13 +51,13 @@ namespace Om {
 				Parser &
 			);
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -67,7 +67,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< DropOperation > const theDropDefinition;
+			static Definition<DropOperation> const theDropDefinition;
 
 		}
 

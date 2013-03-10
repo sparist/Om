@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Translator_ )
+#ifndef Om_Translator_
 
 	#include "om/translator.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( TranslatorTest )
+	BOOST_AUTO_TEST_SUITE(TranslatorTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -46,59 +47,53 @@ namespace Om {
 // MARK: public (non-static)
 
 inline void Type_::Evaluate(
-	Source< CodePoint const > & theCodePointSource,
-	Sink< CodePoint const > & theCodePointSink
+	Source<CodePoint const> & theCodePointSource,
+	Sink<CodePoint const> & theCodePointSink
 ) const {
-	Writer theWriter( theCodePointSink );
-	Parser theParser( theCodePointSource );
+	Writer theWriter(theCodePointSink);
+	Parser theParser(theCodePointSource);
 	Evaluator(
 		theWriter,
 		*this
-	).ReadElements( theParser );
+	).ReadElements(theParser);
 }
 
 inline std::string Type_::Evaluate(
 	char const theCodeUnitIterator[]
 ) const {
-	assert( theCodeUnitIterator );
+	assert(theCodeUnitIterator);
 	std::string theString;
 	{
-		Sources::CodePointSource<> theCodePointSource( theCodeUnitIterator );
+		Sources::CodePointSource<> theCodePointSource(theCodeUnitIterator);
 		Sinks::CodePointSink<
-			std::back_insert_iterator< std::string >
+			std::back_insert_iterator<std::string>
 		> theCodePointSink(
-			std::back_inserter( theString )
+			std::back_inserter(theString)
 		);
 		this->Evaluate(
 			theCodePointSource,
 			theCodePointSink
 		);
 	}
-	return( theString );
+	return theString;
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+inline void Type_::GiveElements(Queue & theQueue) const {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline bool Type_::IsEmpty() const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline bool Type_::Translate(
 	Evaluation &,
 	Operator const &
 ) const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 	#undef Type_

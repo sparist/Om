@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_ChooseOperation_ )
+#ifndef Om_Operations_ChooseOperation_
 
 	#define Om_Operations_ChooseOperation_ \
 	Om::Operations::ChooseOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__choose_operation__ operation implementation.
 		*/
 		class ChooseOperation:
-		public DefaultOperation< ChooseOperation > {
+		public DefaultOperation<ChooseOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheChooseOperation >
+			template <typename TheChooseOperation>
 			static void GiveElements(
 				TheChooseOperation &,
 				Queue &
@@ -48,13 +48,13 @@ namespace Om {
 
 			ChooseOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -84,7 +84,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< ChooseOperation > const theChooseDefinition;
+			static Definition<ChooseOperation> const theChooseDefinition;
 
 		}
 

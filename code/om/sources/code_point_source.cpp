@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_CodePointSource_ )
+#ifndef Om_Sources_CodePointSource_
 
 	#include "om/sources/code_point_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,14 +28,14 @@ namespace Om {
 
 	namespace Sources {
 
-		BOOST_AUTO_TEST_SUITE( CodePointSourceTest )
+		BOOST_AUTO_TEST_SUITE(CodePointSourceTest)
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				std::string theString(
 					"\xC7\xBE"
 					"A"
 				);
-				CodePointSource< std::string::const_iterator > theSource(
+				CodePointSource<std::string::const_iterator> theSource(
 					theString.begin(),
 					theString.end()
 				);
@@ -78,10 +78,10 @@ namespace Om {
 // MARK: - Om::Sources::CodePointSource
 
 	#define Template_ \
-	template< typename ThisCodeUnitIterator >
+	template <typename ThisCodeUnitIterator>
 
 	#define Type_ \
-	Om::Sources::CodePointSource< ThisCodeUnitIterator >
+	Om::Sources::CodePointSource<ThisCodeUnitIterator>
 
 // MARK: public (non-static)
 
@@ -90,44 +90,44 @@ inline Type_::CodePointSource(
 	ThisCodeUnitIterator theInputStart,
 	ThisCodeUnitIterator const theInputEnd
 ):
-thisInputIterator( theInputStart ),
-thisInputEnd( theInputEnd ),
+thisInputIterator(theInputStart),
+thisInputEnd(theInputEnd),
 thisCodePoint() {
 	this->Pop();
 }
 
 Template_
-inline Type_ & Type_::operator =( CodePointSource theCodePointSource ) {
-	this->Swap( theCodePointSource );
-	return( *this );
+inline Type_ & Type_::operator =(CodePointSource theCodePointSource) {
+	this->Swap(theCodePointSource);
+	return *this;
 }
 
 Template_
-inline bool Type_::operator ==( CodePointSource const & theSource ) const {
-	return( this->thisInputIterator == theSource.thisInputIterator );
+inline bool Type_::operator ==(CodePointSource const & theSource) const {
+	return (this->thisInputIterator == theSource.thisInputIterator);
 }
 
 Template_
 inline bool Type_::operator !() const {
-	return( !this->thisCodePoint );
+	return !this->thisCodePoint;
 }
 
 Template_
 inline Om::CodePoint const & Type_::operator *() const {
-	assert( this->thisCodePoint );
-	return( this->thisCodePoint );
+	assert(this->thisCodePoint);
+	return this->thisCodePoint;
 }
 
 Template_
 inline void Type_::Pop() {
-	if( this->thisInputEnd == this->thisInputIterator ) {
+	if (this->thisInputEnd == this->thisInputIterator) {
 		this->thisCodePoint = 0;
 	} else {
 		this->thisCodePoint = Utf8::decode(
 			this->thisInputIterator,
 			this->thisInputEnd
 		);
-		switch( this->thisCodePoint ) {
+		switch (this->thisCodePoint) {
 		default:
 			return;
 		case boost::locale::utf::incomplete:
@@ -140,7 +140,7 @@ inline void Type_::Pop() {
 }
 
 Template_
-inline void Type_::Swap( CodePointSource & theCodePointSource ) {
+inline void Type_::Swap(CodePointSource & theCodePointSource) {
 	boost::swap(
 		this->thisInputIterator,
 		theCodePointSource.thisInputIterator
@@ -158,31 +158,31 @@ inline void Type_::Swap( CodePointSource & theCodePointSource ) {
 	#undef Type_
 	#undef Template_
 
-// MARK: - Om::Sources::CodePointSource< char const * >
+// MARK: - Om::Sources::CodePointSource<char const *>
 
 	#define Type_ \
-	Om::Sources::CodePointSource< char const * >
+	Om::Sources::CodePointSource<char const *>
 
 // MARK: public (non-static)
 
 inline Type_::CodePointSource(
 	char const theCodeUnitIterator[]
 ):
-CodePointSource< CodeUnitSource >(
-	CodeUnitSource( theCodeUnitIterator ),
-	CodeUnitSource( "" )
+CodePointSource<CodeUnitSource>(
+	CodeUnitSource(theCodeUnitIterator),
+	CodeUnitSource("")
 ) {}
 
 	#undef Type_
 
 // MARK: - boost
 
-template< typename ThisCodeUnitIterator >
+template <typename ThisCodeUnitIterator>
 inline void boost::swap(
-	Om::Sources::CodePointSource< ThisCodeUnitIterator > & theFirst,
-	Om::Sources::CodePointSource< ThisCodeUnitIterator > & theSecond
+	Om::Sources::CodePointSource<ThisCodeUnitIterator> & theFirst,
+	Om::Sources::CodePointSource<ThisCodeUnitIterator> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

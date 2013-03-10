@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_FillOperation_ )
+#ifndef Om_Operations_FillOperation_
 
 	#define Om_Operations_FillOperation_ \
 	Om::Operations::FillOperation
@@ -34,12 +34,12 @@ namespace Om {
 			The \ref om__operations__fill_operation__ operation implementation.
 		*/
 		class FillOperation:
-		public DefaultOperation< FillOperation > {
+		public DefaultOperation<FillOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheFillOperation >
+			template <typename TheFillOperation>
 			static void GiveElements(
 				TheFillOperation &,
 				Queue &
@@ -49,13 +49,13 @@ namespace Om {
 
 			FillOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -63,7 +63,7 @@ namespace Om {
 
 		private: // MARK: private (static)
 
-			typedef Expression::FormRange< Form > FormRange;
+			typedef Expression::FormRange<Form> FormRange;
 
 		private: // MARK: private (non-static)
 
@@ -77,13 +77,13 @@ namespace Om {
 			\brief
 				The current position in the output argument.
 			*/
-			boost::optional< FormRange > thisFormRange;
+			boost::optional<FormRange> thisFormRange;
 
 		};
 
 		namespace {
 
-			static Definition< FillOperation > const theReadDefinition;
+			static Definition<FillOperation> const theReadDefinition;
 
 		}
 

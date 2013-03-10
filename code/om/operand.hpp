@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operand_ )
+#ifndef Om_Operand_
 
 	#define Om_Operand_ \
 	Om::Operand
@@ -20,7 +20,7 @@
 	#include "om/default_element.hpp"
 	#include "om/owner.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/swap.hpp"
 
@@ -39,7 +39,7 @@ namespace Om {
 	Encloses a Program in Symbols::theStartOperandSymbol and Symbols::theEndOperandSymbol. The Operand owns the embedded Program.
 	*/
 	class Operand:
-	public DefaultElement< Operand > {
+	public DefaultElement<Operand> {
 	public: // MARK: public (static)
 
 		static char const * GetName();
@@ -48,14 +48,14 @@ namespace Om {
 
 		Operand();
 
-		template< typename TheProgram >
+		template <typename TheProgram>
 		explicit Operand(
-			std::auto_ptr< TheProgram >
+			std::auto_ptr<TheProgram>
 		);
 
-		Operand & operator =( Operand );
+		Operand & operator =(Operand);
 
-		bool operator ==( Operand const & ) const;
+		bool operator ==(Operand const &) const;
 
 		/*!
 		\return
@@ -87,40 +87,40 @@ namespace Om {
 		*/
 		virtual bool IsEmpty() const;
 
-		virtual void ReadElements( Parser & );
+		virtual void ReadElements(Parser &);
 
-		virtual void ReadQuotedElements( Parser & );
+		virtual void ReadQuotedElements(Parser &);
 
 		/*!
 		\brief
 			Replaces the Program owned by this Operand with the argument.
 		*/
-		template< typename TheProgram >
+		template <typename TheProgram>
 		void SetProgram(
-			std::auto_ptr< TheProgram >
+			std::auto_ptr<TheProgram>
 		);
 
-		void Swap( Operand & );
+		void Swap(Operand &);
 
-		virtual void TakeElements( Queue & );
+		virtual void TakeElements(Queue &);
 
-		virtual void TakeElements( Queue const & );
+		virtual void TakeElements(Queue const &);
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
-		template< typename TheSeparator >
-		void TakeSeparator( TheSeparator & );
+		template <typename TheSeparator>
+		void TakeSeparator(TheSeparator &);
 
 	private: // MARK: private (non-static)
 
-		Owner< Program > thisProgram;
+		Owner<Program> thisProgram;
 
 	};
 
@@ -129,7 +129,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<>
+	template <>
 	void swap(
 		Om::Operand &,
 		Om::Operand &

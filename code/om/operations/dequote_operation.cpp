@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_DequoteOperation_ )
+#ifndef Om_Operations_DequoteOperation_
 
 	#include "om/operations/dequote_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,32 +30,32 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( DequoteOperationTest )
+		BOOST_AUTO_TEST_SUITE(DequoteOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{dequote}",
-					System::Get().Evaluate( "drop find {dequote} system" )
+					System::Get().Evaluate("drop find {dequote} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+			BOOST_AUTO_TEST_CASE(SimpleTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"1{2}\n"
 						"3"
 					),
-					System::Get().Evaluate( "dequote {1{2}3}" )
+					System::Get().Evaluate("dequote {1{2}3}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( SimpleDequoteThenEvaluateTest ) {
+			BOOST_AUTO_TEST_CASE(SimpleDequoteThenEvaluateTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"A{b}\n"
 						"c"
 					),
-					System::Get().Evaluate( "define {a {A}} {dequote {a{b}c}}" )
+					System::Get().Evaluate("define {a {A}} {dequote {a{b}c}}")
 				);
 			}
 
@@ -77,12 +77,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_DequoteOperation_GetName_()
-	);
+	return Om_Operations_DequoteOperation_GetName_();
 }
 
-template< typename TheDequoteOperation >
+template <typename TheDequoteOperation>
 inline void Type_::GiveElements(
 	TheDequoteOperation &,
 	Queue & theQueue
@@ -94,7 +92,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -102,21 +100,19 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	theEvaluation.TakeQueue( theQueue );
-	return( true );
+	theEvaluation.TakeQueue(theQueue);
+	return true;
 }
 
 	#undef Type_

@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_TranslateOperation_ )
+#ifndef Om_Operations_TranslateOperation_
 
 	#define Om_Operations_TranslateOperation_ \
 	Om::Operations::TranslateOperation
@@ -29,12 +29,12 @@ namespace Om {
 		\brief
 			An Operation that applies each Translator to a Program.
 		*/
-		template< typename ThisImplementation >
+		template <typename ThisImplementation>
 		class TranslateOperation:
-		public DefaultOperation< ThisImplementation > {
+		public DefaultOperation<ThisImplementation> {
 		public: // MARK: public (static)
 
-			template< typename TheTranslateOperation >
+			template <typename TheTranslateOperation>
 			static void GiveElements(
 				TheTranslateOperation &,
 				Queue &
@@ -44,13 +44,13 @@ namespace Om {
 
 			virtual ~TranslateOperation() = 0;
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -60,7 +60,7 @@ namespace Om {
 
 			TranslateOperation();
 
-			boost::optional< Lexicon > thisLexicon;
+			boost::optional<Lexicon> thisLexicon;
 
 		};
 

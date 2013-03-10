@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_ContainerBackSink_ )
+#ifndef Om_Sinks_ContainerBackSink_
 
 	#define Om_Sinks_ContainerBackSink_ \
 	Om::Sinks::ContainerBackSink
@@ -28,7 +28,7 @@ namespace Om {
 		\brief
 			A Sink adapter for a container; pushes items into the back.
 		*/
-		template<
+		template <
 			typename ThisItem,
 			typename ThisContainer
 		>
@@ -42,13 +42,13 @@ namespace Om {
 		> {
 		public: // MARK: public (non-static)
 
-			explicit ContainerBackSink( ThisContainer & );
+			explicit ContainerBackSink(ThisContainer &);
 
-			ContainerBackSink & operator =( ContainerBackSink );
+			ContainerBackSink & operator =(ContainerBackSink);
 
-			virtual void Push( ThisItem & );
+			virtual void Push(ThisItem &);
 
-			void Swap( ContainerBackSink & );
+			void Swap(ContainerBackSink &);
 
 		private: // MARK: private (non-static)
 
@@ -67,7 +67,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<
+	template <
 		typename ThisItem,
 		typename ThisContainer
 	>

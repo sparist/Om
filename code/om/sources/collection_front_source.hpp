@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_CollectionFrontSource_ )
+#ifndef Om_Sources_CollectionFrontSource_
 
 	#define Om_Sources_CollectionFrontSource_ \
 	Om::Sources::CollectionFrontSource
@@ -28,7 +28,7 @@ namespace Om {
 		\brief
 			A range over a collection, starting from the front.
 		*/
-		template<
+		template <
 			typename ThisItem,
 			typename ThisIterator
 		>
@@ -39,8 +39,8 @@ namespace Om {
 		> {
 		public: // MARK: public (non-static)
 
-			template< typename TheCollection >
-			explicit CollectionFrontSource( TheCollection & );
+			template <typename TheCollection>
+			explicit CollectionFrontSource(TheCollection &);
 
 		};
 

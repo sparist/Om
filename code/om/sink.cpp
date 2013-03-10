@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sink_ )
+#ifndef Om_Sink_
 
 	#include "om/sink.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( SinkTest )
+	BOOST_AUTO_TEST_SUITE(SinkTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -35,7 +36,7 @@ namespace Om {
 
 #else
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <cassert>
 		#include <stdexcept>
@@ -45,10 +46,10 @@ namespace Om {
 // MARK: - Om::Sink
 
 	#define Template_ \
-	template< typename ThisItem >
+	template <typename ThisItem>
 
 	#define Type_ \
-	Om::Sink< ThisItem >
+	Om::Sink<ThisItem>
 
 // MARK: public (non-static)
 
@@ -56,27 +57,25 @@ Template_
 inline Type_::~Sink() {}
 
 Template_
-inline Type_ & Type_::operator =( ThisItem & theItem ) {
-	this->Push( theItem );
-	return( *this );
+inline Type_ & Type_::operator =(ThisItem & theItem) {
+	this->Push(theItem);
+	return *this;
 }
 
 Template_
 inline Type_ & Type_::operator *() {
-	return( *this );
+	return *this;
 }
 
 Template_
 inline Type_ * Type_::operator ->() {
-	return( this );
+	return this;
 }
 
 Template_
-inline void Type_::Push( ThisItem & ) {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+inline void Type_::Push(ThisItem &) {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 	#undef Type_

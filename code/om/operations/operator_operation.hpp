@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_OperatorOperation_ )
+#ifndef Om_Operations_OperatorOperation_
 
 	#define Om_Operations_OperatorOperation_ \
 	Om::Operations::OperatorOperation
@@ -28,11 +28,11 @@ namespace Om {
 		\brief
 			The \ref om__operations__operator_operation__ operation implementation.
 		*/
-		typedef ProgramOperation< Operator > OperatorOperation;
+		typedef ProgramOperation<Operator> OperatorOperation;
 
 		namespace {
 
-			static Definition< OperatorOperation > const theOperatorDefinition;
+			static Definition<OperatorOperation> const theOperatorDefinition;
 
 		}
 

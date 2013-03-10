@@ -12,12 +12,12 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Utf8_ )
+#ifndef Om_Utf8_
 
 	#define Om_Utf8_ \
 	Om::Utf8
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/locale/utf.hpp"
 
@@ -29,7 +29,7 @@ namespace Om {
 	\brief
 		The UTF-8 traits type.
 	*/
-	typedef boost::locale::utf::utf_traits< char > Utf8;
+	typedef boost::locale::utf::utf_traits<char> Utf8;
 
 }
 

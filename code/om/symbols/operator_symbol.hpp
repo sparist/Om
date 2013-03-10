@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Symbols_OperatorSymbol_ )
+#ifndef Om_Symbols_OperatorSymbol_
 
 	#define Om_Symbols_OperatorSymbol_ \
 	Om::Symbols::OperatorSymbol

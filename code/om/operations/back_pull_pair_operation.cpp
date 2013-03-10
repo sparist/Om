@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_BackPullPairOperation_ )
+#ifndef Om_Operations_BackPullPairOperation_
 
 	#include "om/operations/back_pull_pair_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,56 +30,56 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( BackPullPairOperationTest )
+		BOOST_AUTO_TEST_SUITE(BackPullPairOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{pairs->}",
-					System::Get().Evaluate( "drop find {pairs->} system" )
+					System::Get().Evaluate("drop find {pairs->} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{4{5}}{1{2}}",
-					System::Get().Evaluate( "pairs-> {1{2}4{5}}" )
+					System::Get().Evaluate("pairs-> {1{2}4{5}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{2}{1}",
-					System::Get().Evaluate( "pairs-> {1 2}" )
+					System::Get().Evaluate("pairs-> {1 2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{2}}{}",
-					System::Get().Evaluate( "pairs-> {{1}{2}}" )
+					System::Get().Evaluate("pairs-> {{1}{2}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate( "pairs-> {}" )
+					System::Get().Evaluate("pairs-> {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate( "pairs-> {only}" )
+					System::Get().Evaluate("pairs-> {only}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{c}}{a{b}}",
-					System::Get().Evaluate( "pairs->{a{b}{c}}" )
+					System::Get().Evaluate("pairs->{a{b}{c}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{a{b}}{{c}}",
-					System::Get().Evaluate( "pairs->{{c}a{b}}" )
+					System::Get().Evaluate("pairs->{{c}a{b}}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( FlushTest ) {
+			BOOST_AUTO_TEST_CASE(FlushTest) {
 				BOOST_CHECK_EQUAL(
 					"pairs->",
-					System::Get().Evaluate( "pairs->" )
+					System::Get().Evaluate("pairs->")
 				);
 			}
 
@@ -104,14 +104,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_BackPullPairOperation_GetName_()
-	);
+	return Om_Operations_BackPullPairOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
+		std::auto_ptr<Operation>(
 			new PullOperation<
 				Lexicon,
 				BackPullPairOperation
@@ -120,12 +118,12 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline void Type_::Pull(
 	Lexicon & theLexicon,
 	TheQueue & theQueue
 ) {
-	theLexicon.BackGivePair( theQueue );
+	theLexicon.BackGivePair(theQueue);
 }
 
 	#undef Type_

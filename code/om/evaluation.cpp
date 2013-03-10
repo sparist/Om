@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Evaluation_ )
+#ifndef Om_Evaluation_
 
 	#include "om/evaluation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( EnvironmentTest )
+	BOOST_AUTO_TEST_SUITE(EnvironmentTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -51,32 +52,30 @@ inline Type_::~Evaluation() {
 	);
 }
 
-inline Type_::Evaluation( Evaluator & theEvaluator ):
+inline Type_::Evaluation(Evaluator & theEvaluator):
 thisExpression(),
-thisEvaluator( theEvaluator ) {}
+thisEvaluator(theEvaluator) {}
 
 inline Om::Translator const & Type_::GetTranslator() const {
-	return(
-		this->thisEvaluator.GetTranslator()
-	);
+	return this->thisEvaluator.GetTranslator();
 }
 
-inline bool Type_::GiveTerm( Evaluator & theEvaluator ) {
-	if(
+inline bool Type_::GiveTerm(Evaluator & theEvaluator) {
+	if (
 		this->thisExpression.IsEmpty()
 	) {
-		return( false );
+		return false;
 	}
-	Expression::FormRange< Form > theFormRange( this->thisExpression );
-	assert( theFormRange );
-	if(
+	Expression::FormRange<Form> theFormRange(this->thisExpression);
+	assert(theFormRange);
+	if (
 		theFormRange->GetOperator().IsEmpty()
 	) {
 		Operand theOperand;
 		{
-			Form::OperandRange< Operand > theOperandRange( *theFormRange );
-			assert( theOperandRange );
-			theOperand.Swap( *theOperandRange );
+			Form::OperandRange<Operand> theOperandRange(*theFormRange);
+			assert(theOperandRange);
+			theOperand.Swap(*theOperandRange);
 		}
 		this->thisExpression.FrontPopTerm();
 		theEvaluator.TakeOperand(
@@ -85,49 +84,49 @@ inline bool Type_::GiveTerm( Evaluator & theEvaluator ) {
 		);
 	} else {
 		Operator theOperator;
-		this->thisExpression.FrontGiveTerm( theOperator );
+		this->thisExpression.FrontGiveTerm(theOperator);
 		theEvaluator.TakeOperator(
 			*this,
 			theOperator
 		);
 	}
-	return( true );
+	return true;
 }
 
-template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & theOperand ) {
+template <typename TheOperand>
+inline void Type_::TakeOperand(TheOperand & theOperand) {
 	assert(
 		!theOperand.IsEmpty()
 	);
-	this->thisExpression.FrontTakeOperand( theOperand );
+	this->thisExpression.FrontTakeOperand(theOperand);
 }
 
-template< typename TheOperation >
+template <typename TheOperation>
 inline void Type_::TakeOperation(
-	std::auto_ptr< TheOperation > theOperation
+	std::auto_ptr<TheOperation> theOperation
 ) {
-	this->thisEvaluator.TakeOperation( theOperation );
+	this->thisEvaluator.TakeOperation(theOperation);
 }
 
-template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & theOperator ) {
+template <typename TheOperator>
+inline void Type_::TakeOperator(TheOperator & theOperator) {
 	assert(
 		!theOperator.IsEmpty()
 	);
-	this->thisExpression.FrontTakeOperator( theOperator );
+	this->thisExpression.FrontTakeOperator(theOperator);
 }
 
-template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
-	this->thisExpression.FrontTakeQuotedQueue( theQueue );
+template <typename TheQueue>
+inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
+	this->thisExpression.FrontTakeQuotedQueue(theQueue);
 }
 
-template< typename TheQueue >
-inline void Type_::TakeQueue( TheQueue & theQueue ) {
+template <typename TheQueue>
+inline void Type_::TakeQueue(TheQueue & theQueue) {
 	Expression theExpression;
-	theExpression.TakeElements( theQueue );
-	theExpression.TakeElements( this->thisExpression );
-	this->thisExpression.Swap( theExpression );
+	theExpression.TakeElements(theQueue);
+	theExpression.TakeElements(this->thisExpression);
+	this->thisExpression.Swap(theExpression);
 }
 
 	#undef Type_

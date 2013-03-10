@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Atom_ )
+#ifndef Om_Atom_
 
 	#define Om_Atom_ \
 	Om::Atom
@@ -36,7 +36,7 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		Atom & operator =( Atom const & );
+		Atom & operator =(Atom const &);
 
 	};
 
@@ -47,7 +47,7 @@ namespace Om {
 	\note
 		Required by boost::ptr_container classes.
 	*/
-	Atom * new_clone( Atom const & );
+	Atom * new_clone(Atom const &);
 
 }
 

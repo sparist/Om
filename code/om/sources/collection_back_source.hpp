@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_CollectionBackSource_ )
+#ifndef Om_Sources_CollectionBackSource_
 
 	#define Om_Sources_CollectionBackSource_ \
 	Om::Sources::CollectionBackSource
@@ -28,7 +28,7 @@ namespace Om {
 		\brief
 			A range over a collection, starting from the back.
 		*/
-		template<
+		template <
 			typename ThisItem,
 			typename ThisIterator
 		>
@@ -39,8 +39,8 @@ namespace Om {
 		> {
 		public: // MARK: public (non-static)
 
-			template< typename TheCollection >
-			explicit CollectionBackSource( TheCollection & );
+			template <typename TheCollection>
+			explicit CollectionBackSource(TheCollection &);
 
 		};
 

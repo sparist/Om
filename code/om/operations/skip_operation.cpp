@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_SkipOperation_ )
+#ifndef Om_Operations_SkipOperation_
 
 	#include "om/operations/skip_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,29 +28,29 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( SkipOperationTest )
+		BOOST_AUTO_TEST_SUITE(SkipOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{skip}",
-					System::Get().Evaluate( "drop find {skip} system" )
+					System::Get().Evaluate("drop find {skip} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{A}{B}{B}",
-					System::Get().Evaluate( "skip{copy}{A}{B}" )
+					System::Get().Evaluate("skip{copy}{A}{B}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{A}{}{}",
-					System::Get().Evaluate( "skip{copy}{A}{}" )
+					System::Get().Evaluate("skip{copy}{A}{}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{A}{B}",
-					System::Get().Evaluate( "skip{}{A}{B}" )
+					System::Get().Evaluate("skip{}{A}{B}")
 				);
 			}
 
@@ -72,12 +72,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_SkipOperation_GetName_()
-	);
+	return Om_Operations_SkipOperation_GetName_();
 }
 
-template< typename TheSkipOperation >
+template <typename TheSkipOperation>
 inline void Type_::GiveElements(
 	TheSkipOperation & theSkipOperation,
 	Queue & theQueue
@@ -85,10 +83,10 @@ inline void Type_::GiveElements(
 	theQueue.TakeElement(
 		GetOperator()
 	);
-	if(
+	if (
 		!theSkipOperation.thisExpression.IsEmpty()
 	) {
-		theQueue.TakeQuotedElements( theSkipOperation.thisExpression );
+		theQueue.TakeQuotedElements(theSkipOperation.thisExpression);
 	}
 }
 
@@ -97,7 +95,7 @@ inline void Type_::GiveElements(
 inline Type_::SkipOperation():
 thisExpression() {}
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -105,30 +103,26 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if(
+	if (
 		this->thisExpression.IsEmpty()
 	) {
-		this->thisExpression.TakeElements( theQueue );
-		return(
-			this->thisExpression.IsEmpty()
-		);
+		this->thisExpression.TakeElements(theQueue);
+		return this->thisExpression.IsEmpty();
 	}
-	theEvaluation.TakeQueue( this->thisExpression );
-	theEvaluation.TakeQuotedQueue( theQueue );
-	return( true );
+	theEvaluation.TakeQueue(this->thisExpression);
+	theEvaluation.TakeQuotedQueue(theQueue);
+	return true;
 }
 
 	#undef Type_

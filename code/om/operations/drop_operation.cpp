@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_DropOperation_ )
+#ifndef Om_Operations_DropOperation_
 
 	#include "om/operations/drop_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,19 +30,19 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( DropOperationTest )
+		BOOST_AUTO_TEST_SUITE(DropOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{drop}",
-					System::Get().Evaluate( "drop find {drop} system" )
+					System::Get().Evaluate("drop find {drop} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+			BOOST_AUTO_TEST_CASE(SimpleTest) {
 				BOOST_CHECK_EQUAL(
 					"{4{5}6}",
-					System::Get().Evaluate( "drop {1{2}3}{4{5}6}" )
+					System::Get().Evaluate("drop {1{2}3}{4{5}6}")
 				);
 			}
 
@@ -64,12 +64,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_DropOperation_GetName_()
-	);
+	return Om_Operations_DropOperation_GetName_();
 }
 
-template< typename TheDropOperation >
+template <typename TheDropOperation>
 inline void Type_::GiveElements(
 	TheDropOperation &,
 	Queue & theQueue
@@ -85,26 +83,26 @@ inline bool Type_::ReadQuotedElements(
 	Evaluation &,
 	Parser & theParser
 ) {
-	while( theParser ) {
+	while (theParser) {
 		theParser.Pop();
 	}
-	return( true );
+	return true;
 }
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation &,
 	TheOperand &
 ) {
-	return( true );
+	return true;
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation &,
 	TheQueue &
 ) {
-	return( true );
+	return true;
 }
 
 	#undef Type_

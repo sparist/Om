@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_InjectOperation_ )
+#ifndef Om_Operations_InjectOperation_
 
 	#include "om/operations/inject_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,16 +28,16 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( InjectOperationTest )
+		BOOST_AUTO_TEST_SUITE(InjectOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{inject}",
-					System::Get().Evaluate( "drop find {inject} system" )
+					System::Get().Evaluate("drop find {inject} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"{"
@@ -48,7 +48,7 @@ namespace Om {
 						"}"
 						"}{D}{E}"
 					),
-					System::Get().Evaluate( "inject {quote} {fill {a b{{B}} c}} {A} {C} {D} {E}" )
+					System::Get().Evaluate("inject {quote} {fill {a b{{B}} c}} {A} {C} {D} {E}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -62,7 +62,7 @@ namespace Om {
 						"}{C}"
 						"}{D}{E}"
 					),
-					System::Get().Evaluate( "inject {copy} {fill {a b{B} c d}} {A} {C} {D} {E}" )
+					System::Get().Evaluate("inject {copy} {fill {a b{B} c d}} {A} {C} {D} {E}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -76,11 +76,11 @@ namespace Om {
 						"}"
 						"}"
 					),
-					System::Get().Evaluate( "inject {drop} {fill {a b{B} c d}} {A} {C} {D} {E}" )
+					System::Get().Evaluate("inject {drop} {fill {a b{B} c d}} {A} {C} {D} {E}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( EmptyInjectorTest ) {
+			BOOST_AUTO_TEST_CASE(EmptyInjectorTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"{"
@@ -91,39 +91,39 @@ namespace Om {
 						"}"
 						"}{D}{E}"
 					),
-					System::Get().Evaluate( "inject {} {fill {a b{B} c}} {A} {C} {D} {E}" )
+					System::Get().Evaluate("inject {} {fill {a b{B} c}} {A} {C} {D} {E}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( EmptyOperationTest ) {
+			BOOST_AUTO_TEST_CASE(EmptyOperationTest) {
 				BOOST_CHECK_EQUAL(
 					"{}{A}{C}{D}{E}",
-					System::Get().Evaluate( "inject {quote} {} {A} {C} {D} {E}" )
+					System::Get().Evaluate("inject {quote} {} {A} {C} {D} {E}")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( FlushWithNoOperandsTest ) {
+			BOOST_AUTO_TEST_CASE(FlushWithNoOperandsTest) {
 				BOOST_CHECK_EQUAL(
 					"inject",
-					System::Get().Evaluate( "inject }" )
+					System::Get().Evaluate("inject }")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( FlushWithOneOperandTest ) {
+			BOOST_AUTO_TEST_CASE(FlushWithOneOperandTest) {
 				BOOST_CHECK_EQUAL(
 					"inject{quote}",
-					System::Get().Evaluate( "inject {quote} }" )
+					System::Get().Evaluate("inject {quote} }")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( FlushWithTwoOperandsTest ) {
+			BOOST_AUTO_TEST_CASE(FlushWithTwoOperandsTest) {
 				BOOST_CHECK_EQUAL(
 					"inject{quote}{copy}",
-					System::Get().Evaluate( "inject {quote} {copy} }" )
+					System::Get().Evaluate("inject {quote} {copy} }")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( FlushWithMoreThanTwoOperandsTest ) {
+			BOOST_AUTO_TEST_CASE(FlushWithMoreThanTwoOperandsTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"inject{quote}{"
@@ -134,7 +134,7 @@ namespace Om {
 						"}"
 						"}"
 					),
-					System::Get().Evaluate( "inject {quote} {fill {a b c} {A} {B} }" )
+					System::Get().Evaluate("inject {quote} {fill {a b c} {A} {B} }")
 				);
 			}
 
@@ -156,12 +156,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_InjectOperation_GetName_()
-	);
+	return Om_Operations_InjectOperation_GetName_();
 }
 
-template< typename TheInjectOperation >
+template <typename TheInjectOperation>
 inline void Type_::GiveElements(
 	TheInjectOperation & theInjectOperation,
 	Queue & theQueue
@@ -169,15 +167,15 @@ inline void Type_::GiveElements(
 	theQueue.TakeElement(
 		GetOperator()
 	);
-	if( theInjectOperation.thisScope ) {
-		theQueue.TakeQuotedElements( theInjectOperation.thisInjector );
-		if(
+	if (theInjectOperation.thisScope) {
+		theQueue.TakeQuotedElements(theInjectOperation.thisInjector);
+		if (
 			!theInjectOperation.thisScope->IsEmpty()
 		) {
 			Expression theOutput;
-			theOutput.Take( theInjectOperation.thisOutput );
-			theInjectOperation.thisScope->GiveElements( theOutput );
-			theQueue.TakeQuotedElements( theOutput );
+			theOutput.Take(theInjectOperation.thisOutput);
+			theInjectOperation.thisScope->GiveElements(theOutput);
+			theQueue.TakeQuotedElements(theOutput);
 		}
 	}
 }
@@ -189,43 +187,43 @@ thisInjector(),
 thisOutput(),
 thisScope() {}
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if( this->thisScope ) {
-		if(
+	if (this->thisScope) {
+		if (
 			this->thisScope->IsEmpty()
 		) {
-			theQueue.GiveElements( *this->thisScope );
+			theQueue.GiveElements(*this->thisScope);
 		} else {
 			{
 				Expression const & theInjector = this->thisInjector;
-				theInjector.GiveElements( *this->thisScope );
+				theInjector.GiveElements(*this->thisScope);
 			}
-			this->thisScope->TakeQuotedQueue( theQueue );
+			this->thisScope->TakeQuotedQueue(theQueue);
 		}
 
-		if(
+		if (
 			this->thisScope->IsEmpty()
 		) {
-			theEvaluation.TakeQuotedQueue( this->thisOutput );
-			return( true );
+			theEvaluation.TakeQuotedQueue(this->thisOutput);
+			return true;
 		}
 	} else {
 		this->thisScope = boost::in_place(
-			boost::ref( this->thisOutput ),
+			boost::ref(this->thisOutput),
 			boost::ref(
 				theEvaluation.GetTranslator()
 			)
 		);
-		this->thisInjector.TakeElements( theQueue );
+		this->thisInjector.TakeElements(theQueue);
 	}
-	return( false );
+	return false;
 }
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -233,11 +231,9 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 

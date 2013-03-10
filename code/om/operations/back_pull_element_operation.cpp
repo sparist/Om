@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_BackPullElementOperation_ )
+#ifndef Om_Operations_BackPullElementOperation_
 
 	#include "om/operations/back_pull_element_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,39 +30,39 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( BackPullElementOperationTest )
+		BOOST_AUTO_TEST_SUITE(BackPullElementOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{elements->}",
-					System::Get().Evaluate( "drop find {elements->} system" )
+					System::Get().Evaluate("drop find {elements->} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{3}{1{2}}",
-					System::Get().Evaluate( "elements-> {1{2}3}" )
+					System::Get().Evaluate("elements-> {1{2}3}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{2}{1 }",
-					System::Get().Evaluate( "elements-> {1 2}" )
+					System::Get().Evaluate("elements-> {1 2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate( "elements-> {}" )
+					System::Get().Evaluate("elements-> {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate( "elements-> {only}" )
+					System::Get().Evaluate("elements-> {only}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"elements->",
-					System::Get().Evaluate( "elements->" )
+					System::Get().Evaluate("elements->")
 				);
 			}
 
@@ -87,14 +87,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_BackPullElementOperation_GetName_()
-	);
+	return Om_Operations_BackPullElementOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
+		std::auto_ptr<Operation>(
 			new PullOperation<
 				Literal,
 				BackPullElementOperation
@@ -103,12 +101,12 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline void Type_::Pull(
 	Literal & theLiteral,
 	TheQueue & theQueue
 ) {
-	theLiteral.BackGiveElement( theQueue );
+	theLiteral.BackGiveElement(theQueue);
 }
 
 	#undef Type_

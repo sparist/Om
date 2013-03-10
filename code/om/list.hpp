@@ -12,12 +12,12 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_List_ )
+#ifndef Om_List_
 
 	#define Om_List_ \
 	Om::List
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/array.hpp"
 
@@ -30,7 +30,7 @@ namespace Om {
 	\brief
 		A doubly-linked list in which nodes are unowned.
 	*/
-	template< typename ThisValue >
+	template <typename ThisValue>
 	class List {
 	public: // MARK: public (static)
 
@@ -53,13 +53,13 @@ namespace Om {
 		\brief
 			Gets the first or last Node.
 		*/
-		Node * GetNode( NodeIndex const );
+		Node * GetNode(NodeIndex const);
 
 		/*!
 		\brief
 			\overload
 		*/
-		Node const * GetNode( NodeIndex const ) const;
+		Node const * GetNode(NodeIndex const) const;
 
 		bool IsEmpty() const;
 
@@ -81,13 +81,13 @@ namespace Om {
 			Node &
 		);
 
-		void Swap( List & );
+		void Swap(List &);
 
 		/*!
 		\brief
 			Unlinks the Node at the specified end and returns it.
 		*/
-		Node * UnlinkNode( NodeIndex const );
+		Node * UnlinkNode(NodeIndex const);
 
 	private: // MARK: private (static)
 
@@ -111,10 +111,10 @@ namespace Om {
 	\brief
 		A List node.
 	*/
-	template< typename ThisValue >
-	class List< ThisValue >::Node {
+	template <typename ThisValue>
+	class List<ThisValue>::Node {
 
-		friend class List< ThisValue >;
+		friend class List<ThisValue>;
 
 	public: // MARK: public (non-static)
 
@@ -124,13 +124,13 @@ namespace Om {
 		\brief
 			Gets the prior or next Node.
 		*/
-		Node * GetNode( NodeIndex const );
+		Node * GetNode(NodeIndex const);
 
 		/*!
 		\brief
 			\overload
 		*/
-		Node const * GetNode( NodeIndex const ) const;
+		Node const * GetNode(NodeIndex const) const;
 
 		/*!
 		\brief

@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_SwapOperation_ )
+#ifndef Om_Operations_SwapOperation_
 
 	#include "om/operations/swap_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,19 +28,19 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( SwapOperationTest )
+		BOOST_AUTO_TEST_SUITE(SwapOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{swap}",
-					System::Get().Evaluate( "drop find {swap} system" )
+					System::Get().Evaluate("drop find {swap} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( SimpleTest ) {
+			BOOST_AUTO_TEST_CASE(SimpleTest) {
 				BOOST_CHECK_EQUAL(
 					"{4{5}6}{1{2}3}",
-					System::Get().Evaluate( "swap {1{2}3}{4{5}6}" )
+					System::Get().Evaluate("swap {1{2}3}{4{5}6}")
 				);
 			}
 
@@ -64,12 +64,10 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_SwapOperation_GetName_()
-	);
+	return Om_Operations_SwapOperation_GetName_();
 }
 
-template< typename TheSwapOperation >
+template <typename TheSwapOperation>
 inline void Type_::GiveElements(
 	TheSwapOperation & theSwapOperation,
 	Queue & theQueue
@@ -77,10 +75,10 @@ inline void Type_::GiveElements(
 	theQueue.TakeElement(
 		GetOperator()
 	);
-	if(
+	if (
 		!theSwapOperation.thisOperand.IsEmpty()
 	) {
-		theQueue.TakeElement( theSwapOperation.thisOperand );
+		theQueue.TakeElement(theSwapOperation.thisOperand);
 	}
 }
 
@@ -89,7 +87,7 @@ inline void Type_::GiveElements(
 inline Type_::SwapOperation():
 thisOperand() {}
 
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -97,33 +95,33 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	if(
+	if (
 		this->thisOperand.IsEmpty()
 	) {
-		this->thisOperand.Take( theOperand );
-		return( false );
+		this->thisOperand.Take(theOperand);
+		return false;
 	}
-	theEvaluation.TakeOperand( this->thisOperand );
-	theEvaluation.TakeOperand( theOperand );
-	return( true );
+	theEvaluation.TakeOperand(this->thisOperand);
+	theEvaluation.TakeOperand(theOperand);
+	return true;
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if(
+	if (
 		this->thisOperand.IsEmpty()
 	) {
 		this->thisOperand.SetProgram(
 			theQueue.GiveProgram()
 		);
-		return( false );
+		return false;
 	}
-	theEvaluation.TakeOperand( this->thisOperand );
-	theEvaluation.TakeQuotedQueue( theQueue );
-	return( true );
+	theEvaluation.TakeOperand(this->thisOperand);
+	theEvaluation.TakeQuotedQueue(theQueue);
+	return true;
 }
 
 	#undef Type_

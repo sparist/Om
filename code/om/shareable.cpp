@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Shareable_ )
+#ifndef Om_Shareable_
 
 	#include "om/shareable.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( ShareableTest )
+	BOOST_AUTO_TEST_SUITE(ShareableTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -35,7 +36,7 @@ namespace Om {
 
 #else
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <stdexcept>
 		#include "boost/checked_delete.hpp"
@@ -46,10 +47,10 @@ namespace Om {
 // MARK: - Om::Shareable
 
 	#define Template_ \
-	template< typename ThisOwnerCount >
+	template <typename ThisOwnerCount>
 
 	#define Type_ \
-	Om::Shareable< ThisOwnerCount >
+	Om::Shareable<ThisOwnerCount>
 
 // MARK: public (non-static)
 
@@ -63,7 +64,7 @@ inline Type_::~Shareable() {
 
 Template_
 inline ThisOwnerCount Type_::GetOwnerCount() const {
-	return( this->thisOwnerCount );
+	return this->thisOwnerCount;
 }
 
 // MARK: protected (non-static)
@@ -73,12 +74,12 @@ inline Type_::Shareable():
 thisOwnerCount() {}
 
 Template_
-inline Type_::Shareable( Shareable const & ):
+inline Type_::Shareable(Shareable const &):
 thisOwnerCount() {}
 
 Template_
-inline Type_ & Type_::operator =( Shareable const & ) {
-	return( *this );
+inline Type_ & Type_::operator =(Shareable const &) {
+	return *this;
 }
 
 // MARK: private (non-static)
@@ -94,12 +95,10 @@ inline void Type_::DecrementOwnerCount() {
 
 Template_
 inline void Type_::IncrementOwnerCount() {
-	if(
-		boost::integer_traits< ThisOwnerCount >::const_max == this->thisOwnerCount
+	if (
+		boost::integer_traits<ThisOwnerCount>::const_max == this->thisOwnerCount
 	) {
-		throw(
-			std::overflow_error( "Owner count overflow." )
-		);
+		throw std::overflow_error("Owner count overflow.");
 	}
 	++this->thisOwnerCount;
 }
@@ -109,9 +108,9 @@ inline void Type_::IncrementOwnerCount() {
 
 // MARK: - Om
 
-template< typename TheOwnerCount >
+template <typename TheOwnerCount>
 inline void Om::intrusive_ptr_add_ref(
-	Shareable< TheOwnerCount > * const thePointee
+	Shareable<TheOwnerCount> * const thePointee
 ) {
 	assert(
 		thePointee &&
@@ -120,17 +119,17 @@ inline void Om::intrusive_ptr_add_ref(
 	thePointee->IncrementOwnerCount();
 }
 
-template< typename TheOwnerCount >
+template <typename TheOwnerCount>
 inline void Om::intrusive_ptr_release(
-	Shareable< TheOwnerCount > * const thePointee
+	Shareable<TheOwnerCount> * const thePointee
 ) {
 	assert(
 		thePointee &&
 		"The pointer cannot be null."
 	);
 	thePointee->DecrementOwnerCount();
-	if( !thePointee->thisOwnerCount ) {
-		boost::checked_delete( thePointee );
+	if (!thePointee->thisOwnerCount) {
+		boost::checked_delete(thePointee);
 	}
 }
 

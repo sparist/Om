@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_ProgramOperation_ )
+#ifndef Om_Operations_ProgramOperation_
 
 	#include "om/operations/program_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( ProgramOperationTest )
+		BOOST_AUTO_TEST_SUITE(ProgramOperationTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,29 +43,27 @@ namespace Om {
 // MARK: - Om::Operations::ProgramOperation
 
 	#define Template_ \
-	template< typename ThisProgram >
+	template <typename ThisProgram>
 
 	#define Type_ \
-	Om::Operations::ProgramOperation< ThisProgram >
+	Om::Operations::ProgramOperation<ThisProgram>
 
 // MARK: public (static)
 
 Template_
 inline char const * Type_::GetName() {
-	return(
-		ThisProgram::GetName()
-	);
+	return ThisProgram::GetName();
 }
 
 Template_
-template< typename TheProgramOperation >
+template <typename TheProgramOperation>
 inline void Type_::GiveElements(
 	TheProgramOperation &,
 	Queue & theQueue
 ) {
 	theQueue.TakeElement(
 		DefaultOperation<
-			ProgramOperation< ThisProgram >
+			ProgramOperation<ThisProgram>
 		>::GetOperator()
 	);
 }
@@ -77,13 +76,13 @@ inline bool Type_::ReadQuotedElements(
 	Parser & theParser
 ) {
 	ThisProgram theProgram;
-	theProgram.ReadElements( theParser );
-	theEvaluation.TakeQuotedQueue( theProgram );
-	return( true );
+	theProgram.ReadElements(theParser);
+	theEvaluation.TakeQuotedQueue(theProgram);
+	return true;
 }
 
 Template_
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -91,24 +90,22 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
 Template_
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
 	ThisProgram theProgram;
-	theProgram.TakeElements( theQueue );
-	theEvaluation.TakeQuotedQueue( theProgram );
-	return( true );
+	theProgram.TakeElements(theQueue);
+	theEvaluation.TakeQuotedQueue(theProgram);
+	return true;
 }
 
 	#undef Type_

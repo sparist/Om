@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Writer_ )
+#ifndef Om_Writer_
 
 	#define Om_Writer_ \
 	Om::Writer
@@ -23,7 +23,7 @@
 namespace Om {
 
 	//! \cond
-	template< typename ThisItem >
+	template <typename ThisItem>
 	class Sink;
 	//! \endcond
 
@@ -35,54 +35,54 @@ namespace Om {
 	Giving an Element does nothing.
 	*/
 	class Writer:
-	public DefaultQueue< Writer > {
+	public DefaultQueue<Writer> {
 	public: // MARK: public (non-static)
 
 		explicit Writer(
-			Sink< CodePoint const > &
+			Sink<CodePoint const> &
 		);
 
-		virtual bool operator ==( Program const & ) const;
+		virtual bool operator ==(Program const &) const;
 
 		virtual void Clear();
 
-		virtual void GiveElements( Queue & );
+		virtual void GiveElements(Queue &);
 
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
-		virtual std::auto_ptr< Program > GiveProgram();
+		virtual std::auto_ptr<Program> GiveProgram();
 
-		virtual std::auto_ptr< Program > GiveProgram() const;
+		virtual std::auto_ptr<Program> GiveProgram() const;
 
 		virtual bool IsEmpty() const;
 
-		virtual void ReadElements( Parser & );
+		virtual void ReadElements(Parser &);
 
-		virtual void ReadQuotedElements( Parser & );
+		virtual void ReadQuotedElements(Parser &);
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
-		template< typename TheSeparator >
-		void TakeSeparator( TheSeparator & );
+		template <typename TheSeparator>
+		void TakeSeparator(TheSeparator &);
 
 	private: // MARK: private (non-static)
 
-		Writer( Writer const & );
+		Writer(Writer const &);
 
-		Writer const & operator =( Writer const & );
+		Writer const & operator =(Writer const &);
 
 		/*!
 		\brief
 			The output #CodePoint Sink.
 		*/
-		Sink< CodePoint const > & thisCodePointSink;
+		Sink<CodePoint const> & thisCodePointSink;
 
 	};
 

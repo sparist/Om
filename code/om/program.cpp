@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Program_ )
+#ifndef Om_Program_
 
 	#include "om/program.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( ProgramTest )
+	BOOST_AUTO_TEST_SUITE(ProgramTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -47,24 +48,18 @@ namespace Om {
 inline Type_::~Program() {}
 
 inline std::auto_ptr<
-	Om::Source< Om::Element const >
+	Om::Source<Om::Element const>
 > Type_::GetElementRange() const {
-	assert( 0 );
-	throw(
-		std::logic_error( "Pure virtual function called." )
-	);
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
-inline std::auto_ptr< Om::Program > Type_::GiveProgram() {
-	return(
-		Give( *this )
-	);
+inline std::auto_ptr<Om::Program> Type_::GiveProgram() {
+	return Give(*this);
 }
 
-inline std::auto_ptr< Om::Program > Type_::GiveProgram() const {
-	return(
-		Give( *this )
-	);
+inline std::auto_ptr<Om::Program> Type_::GiveProgram() const {
+	return Give(*this);
 }
 
 	#undef Type_

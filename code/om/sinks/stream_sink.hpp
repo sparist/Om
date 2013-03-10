@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_StreamSink_ )
+#ifndef Om_Sinks_StreamSink_
 
 	#define Om_Sinks_StreamSink_ \
 	Om::Sinks::StreamSink
@@ -28,15 +28,15 @@ namespace Om {
 		\brief
 			A Sink adapter for an output stream.
 		*/
-		template< typename ThisItem = char >
+		template <typename ThisItem = char>
 		class StreamSink:
 		public IteratorSink<
 			ThisItem const,
-			std::ostreambuf_iterator< ThisItem >
+			std::ostreambuf_iterator<ThisItem>
 		> {
 		public: // MARK: public (non-static)
 
-			explicit StreamSink( std::ostream & );
+			explicit StreamSink(std::ostream &);
 
 		};
 

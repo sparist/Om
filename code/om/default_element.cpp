@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultElement_ )
+#ifndef Om_DefaultElement_
 
 	#include "om/default_element.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( DefaultElementTest )
+	BOOST_AUTO_TEST_SUITE(DefaultElementTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -40,7 +41,7 @@ namespace Om {
 // MARK: - Om::DefaultElement
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisImplementation, \
 		typename ThisInterface \
 	>
@@ -57,21 +58,21 @@ Template_
 inline Type_::~DefaultElement() {}
 
 Template_
-inline bool Type_::operator ==( Element const & theElement ) const {
-	if(
-		typeid( theElement ) == typeid( ThisImplementation )
+inline bool Type_::operator ==(Element const & theElement) const {
+	if (
+		typeid(theElement) == typeid(ThisImplementation)
 	) {
 		assert(
-			dynamic_cast< ThisImplementation const * >( &theElement )
+			dynamic_cast<ThisImplementation const *>(&theElement)
 		);
 		assert(
-			dynamic_cast< ThisImplementation const * >( this )
+			dynamic_cast<ThisImplementation const *>(this)
 		);
-		return(
-			static_cast< ThisImplementation const & >( theElement ) == static_cast< ThisImplementation const & >( *this )
+		return (
+			static_cast<ThisImplementation const &>(theElement) == static_cast<ThisImplementation const &>(*this)
 		);
 	}
-	return(
+	return (
 		this->IsEmpty() &&
 		theElement.IsEmpty()
 	);
@@ -79,54 +80,50 @@ inline bool Type_::operator ==( Element const & theElement ) const {
 
 Template_
 inline std::auto_ptr<
-	Om::Source< Om::Element >
+	Om::Source<Om::Element>
 > Type_::GetElementRange() {
-	return(
-		std::auto_ptr<
-			Source< Element >
-		>(
-			new Sources::SingletonSource< Element >( *this )
-		)
+	return std::auto_ptr<
+		Source<Element>
+	>(
+		new Sources::SingletonSource<Element>(*this)
 	);
 }
 
 Template_
 inline std::auto_ptr<
-	Om::Source< Om::Element const >
+	Om::Source<Om::Element const>
 > Type_::GetElementRange() const {
-	return(
-		std::auto_ptr<
-			Source< Element const >
-		>(
-			new Sources::SingletonSource< Element const >( *this )
-		)
+	return std::auto_ptr<
+		Source<Element const>
+	>(
+		new Sources::SingletonSource<Element const>(*this)
 	);
 }
 
 Template_
-inline void Type_::GiveElements( Queue & theQueue ) {
+inline void Type_::GiveElements(Queue & theQueue) {
 	assert(
-		dynamic_cast< ThisImplementation * >( this )
+		dynamic_cast<ThisImplementation *>(this)
 	);
-	if(
+	if (
 		!this->IsEmpty()
 	) {
 		theQueue.TakeElement(
-			static_cast< ThisImplementation & >( *this )
+			static_cast<ThisImplementation &>(*this)
 		);
 	}
 }
 
 Template_
-inline void Type_::GiveElements( Queue & theQueue ) const {
+inline void Type_::GiveElements(Queue & theQueue) const {
 	assert(
-		dynamic_cast< ThisImplementation const * >( this )
+		dynamic_cast<ThisImplementation const *>(this)
 	);
-	if(
+	if (
 		!this->IsEmpty()
 	) {
 		theQueue.TakeElement(
-			static_cast< ThisImplementation const & >( *this )
+			static_cast<ThisImplementation const &>(*this)
 		);
 	}
 }

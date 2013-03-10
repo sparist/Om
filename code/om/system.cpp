@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_System_ )
+#ifndef Om_System_
 
 	#include "om/system.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( SystemTest )
+	BOOST_AUTO_TEST_SUITE(SystemTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -38,7 +39,7 @@ namespace Om {
 	#include "om/lexicon.hpp"
 	#include "om/operator.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/locale/generator.hpp"
 		#include "boost/locale/info.hpp"
@@ -54,37 +55,37 @@ namespace Om {
 
 inline Type_ & Type_::Get() {
 	static System theSystem;
-	return( theSystem );
+	return theSystem;
 }
 
 // MARK: public (non-static)
 
 inline Om::Lexicon const & Type_::GetLexicon() const {
 	static Lexicon theLexicon;
-	if(
+	if (
 		theLexicon.IsEmpty()
 	) {
-		this->GiveElements( theLexicon );
+		this->GiveElements(theLexicon);
 	}
-	return( theLexicon );
+	return theLexicon;
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) const {
-	if(
+inline void Type_::GiveElements(Queue & theQueue) const {
+	if (
 		!this->IsEmpty()
 	) {
 		Map::const_iterator const theEnd = this->thisMap.end();
-		for(
+		for (
 			Map::const_iterator theCurrent = this->thisMap.begin();
 			;
 			theQueue.TakeElement(
 				Separator::GetLineSeparator()
 			)
 		) {
-			assert( theEnd != theCurrent );
-			Operator theOperator( theCurrent->first );
-			theQueue.TakeElement( theOperator );
-			if( theEnd == ++theCurrent ) {
+			assert(theEnd != theCurrent);
+			Operator theOperator(theCurrent->first);
+			theQueue.TakeElement(theOperator);
+			if (theEnd == ++theCurrent) {
 				return;
 			}
 		}
@@ -97,22 +98,22 @@ inline void Type_::Initialize(
 	// Set the global locale.
 	{
 		boost::locale::generator theGenerator;
-		theGenerator.characters( boost::locale::char_facet );
+		theGenerator.characters(boost::locale::char_facet);
 		std::locale::global(
-			theGenerator( theLocaleCodeUnitIterator )
+			theGenerator(theLocaleCodeUnitIterator)
 		);
 		assert(
-			std::use_facet< boost::locale::info >(
+			std::use_facet<boost::locale::info>(
 				std::locale()
 			).utf8()
 		);
 	}
 
-	#if !defined( NDEBUG )
+	#ifndef NDEBUG
 	// Assert that the name keys are NFD-normalized.
 	{
 		Map::const_iterator const theEnd = this->thisMap.end();
-		for(
+		for (
 			Map::const_iterator theCurrent = this->thisMap.begin();
 			theEnd != theCurrent;
 			++theCurrent
@@ -129,9 +130,7 @@ inline void Type_::Initialize(
 }
 
 inline bool Type_::IsEmpty() const {
-	return(
-		this->thisMap.empty()
-	);
+	return this->thisMap.empty();
 }
 
 inline bool Type_::Translate(
@@ -143,14 +142,14 @@ inline bool Type_::Translate(
 			theOperator.GetString()
 		)
 	);
-	if(
+	if (
 		this->thisMap.end() == theIterator
 	) {
-		return( false );
+		return false;
 	}
-	assert( theIterator->second );
-	( *theIterator->second )( theEvaluation );
-	return( true );
+	assert(theIterator->second);
+	(*theIterator->second)(theEvaluation);
+	return true;
 }
 
 // MARK: private (non-static)

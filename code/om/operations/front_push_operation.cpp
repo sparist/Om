@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_FrontPushOperation_ )
+#ifndef Om_Operations_FrontPushOperation_
 
 	#include "om/operations/front_push_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( FrontPushOperationTest )
+		BOOST_AUTO_TEST_SUITE(FrontPushOperationTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -44,7 +45,7 @@ namespace Om {
 // MARK: - Om::Operations::FrontPushOperation
 
 	#define Template_ \
-	template< \
+	template < \
 		typename ThisProgram, \
 		typename ThisImplementation \
 	>
@@ -58,7 +59,7 @@ namespace Om {
 // MARK: public (static)
 
 Template_
-template< typename TheFrontPushOperation >
+template <typename TheFrontPushOperation>
 inline void Type_::GiveElements(
 	TheFrontPushOperation & theFrontPushOperation,
 	Queue & theQueue
@@ -66,10 +67,10 @@ inline void Type_::GiveElements(
 	theQueue.TakeElement(
 		GetOperator()
 	);
-	if(
+	if (
 		!theFrontPushOperation.thisProgram.IsEmpty()
 	) {
-		theQueue.TakeQuotedElements( theFrontPushOperation.thisProgram );
+		theQueue.TakeQuotedElements(theFrontPushOperation.thisProgram);
 	}
 }
 
@@ -80,30 +81,30 @@ inline Type_::FrontPushOperation():
 thisProgram() {}
 
 Template_
-template< typename TheQueue >
+template <typename TheQueue>
 inline bool Type_::TakeQuotedQueue(
 	Evaluation & theEvaluation,
 	TheQueue & theQueue
 ) {
-	if(
+	if (
 		this->thisProgram.IsEmpty()
 	) {
-		this->thisProgram.TakeElements( theQueue );
-		if(
+		this->thisProgram.TakeElements(theQueue);
+		if (
 			this->thisProgram.IsEmpty()
 		) {
-			ProgramOperation< ThisProgram >::Give( theEvaluation );
-			return( true );
+			ProgramOperation<ThisProgram>::Give(theEvaluation);
+			return true;
 		}
-		return( false );
+		return false;
 	}
-	this->thisProgram.TakeElements( theQueue );
-	theEvaluation.TakeQuotedQueue( this->thisProgram );
-	return( true );
+	this->thisProgram.TakeElements(theQueue);
+	theEvaluation.TakeQuotedQueue(this->thisProgram);
+	return true;
 }
 
 Template_
-template< typename TheOperand >
+template <typename TheOperand>
 inline bool Type_::TakeOperand(
 	Evaluation & theEvaluation,
 	TheOperand & theOperand
@@ -111,11 +112,9 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return(
-		this->TakeQuotedQueue(
-			theEvaluation,
-			*theOperand.GetProgram()
-		)
+	return this->TakeQuotedQueue(
+		theEvaluation,
+		*theOperand.GetProgram()
 	);
 }
 
@@ -126,7 +125,7 @@ inline Om::Operator const & Type_::GetOperator() {
 	static Operator const theOperator(
 		ThisImplementation::GetName()
 	);
-	return( theOperator );
+	return theOperator;
 }
 
 	#undef Type_

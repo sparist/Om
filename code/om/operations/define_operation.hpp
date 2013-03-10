@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_DefineOperation_ )
+#ifndef Om_Operations_DefineOperation_
 
 	#define Om_Operations_DefineOperation_ \
 	Om::Operations::DefineOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__define_operation__ operation implementation.
 		*/
 		class DefineOperation:
-		public DefaultOperation< DefineOperation > {
+		public DefaultOperation<DefineOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheDefineOperation >
+			template <typename TheDefineOperation>
 			static void GiveElements(
 				TheDefineOperation &,
 				Queue &
@@ -48,13 +48,13 @@ namespace Om {
 
 			DefineOperation();
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -62,13 +62,13 @@ namespace Om {
 
 		private: // MARK: private (non-static)
 
-			boost::optional< Lexicon > thisLexicon;
+			boost::optional<Lexicon> thisLexicon;
 
 		};
 
 		namespace {
 
-			static Definition< DefineOperation > const theDefineDefinition;
+			static Definition<DefineOperation> const theDefineDefinition;
 
 		}
 

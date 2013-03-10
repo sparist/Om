@@ -12,15 +12,15 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Literal_ )
+#ifndef Om_Literal_
 
 	#include "om/literal.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,39 +28,39 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( LiteralTest )
+	BOOST_AUTO_TEST_SUITE(LiteralTest)
 
-		BOOST_AUTO_TEST_CASE( EqualityTest ) {
+		BOOST_AUTO_TEST_CASE(EqualityTest) {
 			// Positive match
 			BOOST_CHECK_EQUAL(
 				"{{a{b}{c}\nd{e}}}",
-				System::Get().Evaluate( "= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}" )
+				System::Get().Evaluate("= {a{b}{c}\nd{e}} {a{b}{c}\nd{e}}")
 			);
 
 			// Negative match
 			BOOST_CHECK_EQUAL(
 				"{}",
-				System::Get().Evaluate( "= {a{b}{c}} {a{b}{d}}" )
+				System::Get().Evaluate("= {a{b}{c}} {a{b}{d}}")
 			);
 
 			// Empty match
 			BOOST_CHECK_EQUAL(
 				"{}",
-				System::Get().Evaluate( "= {} {a{b}{c}}" )
+				System::Get().Evaluate("= {} {a{b}{c}}")
 			);
 
 			// Empty match
 			BOOST_CHECK_EQUAL(
 				"{{}}",
-				System::Get().Evaluate( "= {} {}" )
+				System::Get().Evaluate("= {} {}")
 			);
 		}
 
-		BOOST_AUTO_TEST_CASE( RecursionTest ) {
+		BOOST_AUTO_TEST_CASE(RecursionTest) {
 			size_t const theDepth = 50000;
 
 			std::string theString;
-			for(
+			for (
 				size_t theLevel = theDepth;
 				theLevel;
 				--theLevel
@@ -68,15 +68,15 @@ namespace Om {
 				theString = "{" + theString + "}";
 			}
 
-			Sources::CodePointSource< std::string::const_iterator > theCodePointSource(
+			Sources::CodePointSource<std::string::const_iterator> theCodePointSource(
 				theString.begin(),
 				theString.end()
 			);
-			Parser theParser( theCodePointSource );
+			Parser theParser(theCodePointSource);
 			Literal theLiteral;
-			theLiteral.ReadElements( theParser );
+			theLiteral.ReadElements(theParser);
 
-			Literal theCopy( theLiteral );
+			Literal theCopy(theLiteral);
 		}
 
 	BOOST_AUTO_TEST_SUITE_END()
@@ -90,7 +90,7 @@ namespace Om {
 	#include "om/operator.hpp"
 	#include "om/separator.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <stack>
 
@@ -104,9 +104,7 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Literal_GetName_()
-	);
+	return Om_Literal_GetName_();
 }
 
 // MARK: public (non-static)
@@ -114,45 +112,45 @@ inline char const * Type_::GetName() {
 inline Type_::~Literal() {
 	// Flatten the ElementDeque to avoid recursive destructor calls.
 	try {
-		while(
+		while (
 			!this->thisElementDeque.empty()
 		) {
-			std::auto_ptr< Element > theElement(
+			std::auto_ptr<Element> theElement(
 				this->thisElementDeque.pop_front().release()
 			);
 			assert(
 				theElement.get()
 			);
-			( *theElement )->GiveElements( *this );
+			(*theElement)->GiveElements(*this);
 		}
-	} catch( ... ) {}
+	} catch (...) {}
 }
 
 inline Type_::Literal():
 thisElementDeque() {}
 
-inline Type_ & Type_::operator =( Literal theLiteral ) {
-	this->Swap( theLiteral );
-	return( *this );
+inline Type_ & Type_::operator =(Literal theLiteral) {
+	this->Swap(theLiteral);
+	return *this;
 }
 
-template< typename TheElement >
-inline void Type_::BackGive( Queue & theQueue ) {
-	if(
+template <typename TheElement>
+inline void Type_::BackGive(Queue & theQueue) {
+	if (
 		!this->thisElementDeque.empty() &&
-		dynamic_cast< TheElement const * >(
+		dynamic_cast<TheElement const *>(
 			&this->thisElementDeque.back()
 		)
 	) {
-		this->thisElementDeque.pop_back()->GiveElements( theQueue );
+		this->thisElementDeque.pop_back()->GiveElements(theQueue);
 	}
 }
 
-inline void Type_::BackGiveElement( Queue & theQueue ) {
-	if(
+inline void Type_::BackGiveElement(Queue & theQueue) {
+	if (
 		!this->thisElementDeque.empty()
 	) {
-		this->thisElementDeque.pop_back()->GiveElements( theQueue );
+		this->thisElementDeque.pop_back()->GiveElements(theQueue);
 	}
 }
 
@@ -160,51 +158,47 @@ inline void Type_::Clear() {
 	this->thisElementDeque.clear();
 }
 
-template< typename TheElement >
-inline void Type_::FrontGive( Queue & theQueue ) {
-	if(
+template <typename TheElement>
+inline void Type_::FrontGive(Queue & theQueue) {
+	if (
 		!this->thisElementDeque.empty() &&
-		dynamic_cast< TheElement const * >(
+		dynamic_cast<TheElement const *>(
 			&this->thisElementDeque.front()
 		)
 	) {
-		this->thisElementDeque.pop_front()->GiveElements( theQueue );
+		this->thisElementDeque.pop_front()->GiveElements(theQueue);
 	}
 }
 
-inline void Type_::FrontGiveElement( Queue & theQueue ) {
-	if(
+inline void Type_::FrontGiveElement(Queue & theQueue) {
+	if (
 		!this->thisElementDeque.empty()
 	) {
-		this->thisElementDeque.pop_front()->GiveElements( theQueue );
+		this->thisElementDeque.pop_front()->GiveElements(theQueue);
 	}
 }
 
 inline std::auto_ptr<
-	Om::Source< Om::Element >
+	Om::Source<Om::Element>
 > Type_::GetElementRange() {
-	return(
-		std::auto_ptr<
-			Source< Element >
-		>(
-			new ElementRange< Literal >( *this )
-		)
+	return std::auto_ptr<
+		Source<Element>
+	>(
+		new ElementRange<Literal>(*this)
 	);
 }
 
 inline std::auto_ptr<
-	Om::Source< Om::Element const >
+	Om::Source<Om::Element const>
 > Type_::GetElementRange() const {
-	return(
-		std::auto_ptr<
-			Source< Element const >
-		>(
-			new ElementRange< Literal const >( *this )
-		)
+	return std::auto_ptr<
+		Source<Element const>
+	>(
+		new ElementRange<Literal const>(*this)
 	);
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) {
+inline void Type_::GiveElements(Queue & theQueue) {
 	this->GiveElements(
 		theQueue,
 		this->thisElementDeque.begin(),
@@ -213,7 +207,7 @@ inline void Type_::GiveElements( Queue & theQueue ) {
 	this->thisElementDeque.clear();
 }
 
-inline void Type_::GiveElements( Queue & theQueue ) const {
+inline void Type_::GiveElements(Queue & theQueue) const {
 	this->GiveElements(
 		theQueue,
 		this->thisElementDeque.begin(),
@@ -222,17 +216,15 @@ inline void Type_::GiveElements( Queue & theQueue ) const {
 }
 
 inline bool Type_::IsEmpty() const {
-	return(
-		this->thisElementDeque.empty()
-	);
+	return this->thisElementDeque.empty();
 }
 
-inline void Type_::ReadElements( Parser & theParser ) {
-	std::stack< Literal * > theStack;
-	theStack.push( this );
+inline void Type_::ReadElements(Parser & theParser) {
+	std::stack<Literal *> theStack;
+	theStack.push(this);
 
-	while( theParser ) {
-		switch( *theParser ) {
+	while (theParser) {
+		switch (*theParser) {
 		case Symbols::theEndOperandSymbol:
 			assert(
 				!theStack.empty() &&
@@ -244,13 +236,13 @@ inline void Type_::ReadElements( Parser & theParser ) {
 			break;
 		case Symbols::theStartOperandSymbol:
 			{
-				std::auto_ptr< Literal > theLiteral( new Literal );
+				std::auto_ptr<Literal> theLiteral(new Literal);
 				Literal * theLiteralPointer = theLiteral.get();
 				{
-					Operand theOperand( theLiteral );
-					theStack.top()->TakeOperand( theOperand );
+					Operand theOperand(theLiteral);
+					theStack.top()->TakeOperand(theOperand);
 				}
-				theStack.push( theLiteralPointer );
+				theStack.push(theLiteralPointer);
 			}
 			break;
 		Om_Symbols_SeparatorSymbol_GetCases_():
@@ -259,8 +251,8 @@ inline void Type_::ReadElements( Parser & theParser ) {
 				theStack.top()
 			);
 			{
-				Separator theSeparator( theParser );
-				theStack.top()->TakeSeparator( theSeparator );
+				Separator theSeparator(theParser);
+				theStack.top()->TakeSeparator(theSeparator);
 			}
 			continue;
 		default:
@@ -269,8 +261,8 @@ inline void Type_::ReadElements( Parser & theParser ) {
 				theStack.top()
 			);
 			{
-				Operator theOperator( theParser );
-				theStack.top()->TakeOperator( theOperator );
+				Operator theOperator(theParser);
+				theStack.top()->TakeOperator(theOperator);
 			}
 			continue;
 		}
@@ -278,36 +270,36 @@ inline void Type_::ReadElements( Parser & theParser ) {
 	}
 }
 
-inline void Type_::ReadQuotedElements( Parser & theParser ) {
+inline void Type_::ReadQuotedElements(Parser & theParser) {
 	Literal theLiteral;
-	theLiteral.ReadElements( theParser );
-	this->TakeQuotedQueue( theLiteral );
+	theLiteral.ReadElements(theParser);
+	this->TakeQuotedQueue(theLiteral);
 }
 
-inline void Type_::Swap( Literal & theLiteral ) {
-	this->thisElementDeque.swap( theLiteral.thisElementDeque );
+inline void Type_::Swap(Literal & theLiteral) {
+	this->thisElementDeque.swap(theLiteral.thisElementDeque);
 }
 
-template< typename TheOperand >
-inline void Type_::TakeOperand( TheOperand & theOperand ) {
+template <typename TheOperand>
+inline void Type_::TakeOperand(TheOperand & theOperand) {
 	assert(
 		!theOperand.IsEmpty()
 	);
 	this->thisElementDeque.push_back(
-		Give( theOperand )
+		Give(theOperand)
 	);
 }
 
-template< typename TheOperator >
-inline void Type_::TakeOperator( TheOperator & theOperator ) {
+template <typename TheOperator>
+inline void Type_::TakeOperator(TheOperator & theOperator) {
 	assert(
 		!theOperator.IsEmpty()
 	);
-	this->TakeAtom( theOperator );
+	this->TakeAtom(theOperator);
 }
 
-template< typename TheQueue >
-inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
+template <typename TheQueue>
+inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
 	this->thisElementDeque.push_back(
 		new Operand(
 			theQueue.GiveProgram()
@@ -315,44 +307,44 @@ inline void Type_::TakeQuotedQueue( TheQueue & theQueue ) {
 	);
 }
 
-template< typename TheSeparator >
-inline void Type_::TakeSeparator( TheSeparator & theSeparator ) {
+template <typename TheSeparator>
+inline void Type_::TakeSeparator(TheSeparator & theSeparator) {
 	assert(
 		!theSeparator.IsEmpty()
 	);
-	this->TakeAtom( theSeparator );
+	this->TakeAtom(theSeparator);
 }
 
 // MARK: private (static)
 
-template< typename TheElementIterator >
+template <typename TheElementIterator>
 inline void Type_::GiveElements(
 	Queue & theQueue,
 	TheElementIterator theCurrent,
 	TheElementIterator const theEnd
 ) {
-	for(
+	for (
 		;
 		theEnd != theCurrent;
 		++theCurrent
 	) {
-		theCurrent->GiveElements( theQueue );
+		theCurrent->GiveElements(theQueue);
 	}
 }
 
 // MARK: private (non-static)
 
-template< typename TheAtom >
-inline void Type_::TakeAtom( TheAtom & theAtom ) {
+template <typename TheAtom>
+inline void Type_::TakeAtom(TheAtom & theAtom) {
 	assert(
 		!theAtom.IsEmpty()
 	);
-	if(
+	if (
 		this->thisElementDeque.empty() ||
-		!this->thisElementDeque.back().Merge( theAtom )
+		!this->thisElementDeque.back().Merge(theAtom)
 	) {
 		this->thisElementDeque.push_back(
-			Give( theAtom )
+			Give(theAtom)
 		);
 	}
 }
@@ -366,28 +358,28 @@ inline void Type_::TakeAtom( TheAtom & theAtom ) {
 
 // MARK: public (non-static)
 
-inline Type_< Om::Literal >::ElementRange( Literal & theLiteral ):
+inline Type_<Om::Literal>::ElementRange(Literal & theLiteral):
 Sources::CollectionFrontSource<
 	Element,
 	ElementDeque::iterator
->( theLiteral.thisElementDeque ) {}
+>(theLiteral.thisElementDeque) {}
 
-inline Type_< Om::Literal const >::ElementRange( Literal const & theLiteral ):
+inline Type_<Om::Literal const>::ElementRange(Literal const & theLiteral):
 Sources::CollectionFrontSource<
 	Element const,
 	ElementDeque::const_iterator
->( theLiteral.thisElementDeque ) {}
+>(theLiteral.thisElementDeque) {}
 
 	#undef Type_
 
 // MARK: - boost
 
-template<>
+template <>
 inline void boost::swap(
 	Om::Literal & theFirst,
 	Om::Literal & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

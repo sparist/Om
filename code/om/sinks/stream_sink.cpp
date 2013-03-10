@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sinks_StreamSink_ )
+#ifndef Om_Sinks_StreamSink_
 
 	#include "om/sinks/stream_sink.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sinks {
 
-		BOOST_AUTO_TEST_SUITE( StreamSinkTest )
+		BOOST_AUTO_TEST_SUITE(StreamSinkTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,19 +43,19 @@ namespace Om {
 // MARK: - Om::Sinks::StreamSink
 
 	#define Template_ \
-	template< typename ThisItem >
+	template <typename ThisItem>
 
 	#define Type_ \
-	Om::Sinks::StreamSink< ThisItem >
+	Om::Sinks::StreamSink<ThisItem>
 
 // MARK: public (non-static)
 
 Template_
-inline Type_::StreamSink( std::ostream & theStream ):
+inline Type_::StreamSink(std::ostream & theStream):
 IteratorSink<
 	ThisItem const,
-	std::ostreambuf_iterator< ThisItem >
->( theStream ) {}
+	std::ostreambuf_iterator<ThisItem>
+>(theStream) {}
 
 	#undef Type_
 	#undef Template_

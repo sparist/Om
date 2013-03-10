@@ -12,9 +12,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Macros_ )
+#ifndef Om_Macros_
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/preprocessor/stringize.hpp"
 
@@ -33,29 +33,29 @@
 	\brief
 		Prepends <code>0x</code>.
 	*/
-	#define Om_Macros_PrependZeroX_( theArgument ) \
+	#define Om_Macros_PrependZeroX_(theArgument) \
 	0x ##theArgument
 
 	/*!
 	\brief
 		Prepends <code>\\x</code> and converts the result to a string literal.
 	*/
-	#define Om_Macros_PrependSlashXAndStringize_( theArgument ) \
-	BOOST_PP_STRINGIZE( \x ##theArgument )
+	#define Om_Macros_PrependSlashXAndStringize_(theArgument) \
+	BOOST_PP_STRINGIZE(\x ##theArgument)
 
 	/*!
 	\brief
 		Converts a bare hexadecimal to a numeric literal.
 	*/
-	#define Om_Macros_GetNumber_( theHex ) \
-	Om_Macros_PrependZeroX_( theHex )
+	#define Om_Macros_GetNumber_(theHex) \
+	Om_Macros_PrependZeroX_(theHex)
 
 	/*!
 	\brief
 		Converts a bare hexadecimal to a string literal.
 	*/
-	#define Om_Macros_GetString_( theHex ) \
-	Om_Macros_PrependSlashXAndStringize_( theHex )
+	#define Om_Macros_GetString_(theHex) \
+	Om_Macros_PrependSlashXAndStringize_(theHex)
 
 namespace Om {
 

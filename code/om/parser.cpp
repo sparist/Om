@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Parser_ )
+#ifndef Om_Parser_
 
 	#include "om/parser.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -26,7 +26,8 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( ParserTest )
+	BOOST_AUTO_TEST_SUITE(ParserTest)
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }
@@ -46,60 +47,58 @@ namespace Om {
 // MARK: public (non-static)
 
 inline Type_::Parser(
-	Source< CodePoint const > & theCodePointSource
+	Source<CodePoint const> & theCodePointSource
 ):
-thisCodePointSource( theCodePointSource ),
+thisCodePointSource(theCodePointSource),
 thisDepth(),
 thisIsEncoded() {}
 
-inline bool Type_::operator ==( Parser const & theParser ) const {
+inline bool Type_::operator ==(Parser const & theParser) const {
 	assert(
-		( this->thisCodePointSource != theParser.thisCodePointSource ) ||
-		( this->thisDepth == theParser.thisDepth )
+		(this->thisCodePointSource != theParser.thisCodePointSource) ||
+		(this->thisDepth == theParser.thisDepth)
 	);
-	return( this->thisCodePointSource == theParser.thisCodePointSource );
+	return (this->thisCodePointSource == theParser.thisCodePointSource);
 }
 
 inline Om::CodePoint const & Type_::operator *() const {
 	assert(
 		!this->operator !()
 	);
-	return( *this->thisCodePointSource );
+	return *this->thisCodePointSource;
 }
 
 inline bool Type_::operator !() const {
-	return(
+	return (
 		!this->thisCodePointSource ||
 		(
 			!this->thisDepth &&
 			!this->thisIsEncoded &&
-			( Symbols::theEndOperandSymbol == *this->thisCodePointSource )
+			(Symbols::theEndOperandSymbol == *this->thisCodePointSource)
 		)
 	);
 }
 
 inline void Type_::Pop() {
-	assert( this->thisCodePointSource );
-	switch( *this->thisCodePointSource ) {
+	assert(this->thisCodePointSource);
+	switch (*this->thisCodePointSource) {
 	case Symbols::theStartOperandSymbol:
-		if( this->thisIsEncoded ) {
+		if (this->thisIsEncoded) {
 			this->thisIsEncoded = false;
 		} else {
-			if(
-				static_cast< size_t >( -1 ) == this->thisDepth
+			if (
+				static_cast<size_t>(-1) == this->thisDepth
 			) {
-				throw(
-					std::overflow_error( "Operand overflow." )
-				);
+				throw std::overflow_error("Operand overflow.");
 			}
 			++this->thisDepth;
 		}
 		break;
 	case Symbols::theEndOperandSymbol:
-		if( this->thisIsEncoded ) {
+		if (this->thisIsEncoded) {
 			this->thisIsEncoded = false;
 		} else {
-			assert( this->thisDepth );
+			assert(this->thisDepth);
 			--this->thisDepth;
 		}
 		break;

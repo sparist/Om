@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_PullOperation_ )
+#ifndef Om_Operations_PullOperation_
 
 	#define Om_Operations_PullOperation_ \
 	Om::Operations::PullOperation
@@ -28,7 +28,7 @@ namespace Om {
 		\brief
 			An Operation that pulls part of a Program.
 		*/
-		template<
+		template <
 			typename ThisProgram,
 			typename ThisImplementation
 		>
@@ -41,7 +41,7 @@ namespace Om {
 		> {
 		public: // MARK: public (static)
 
-			template< typename ThePullOperation >
+			template <typename ThePullOperation>
 			static void GiveElements(
 				ThePullOperation &,
 				Queue &
@@ -54,13 +54,13 @@ namespace Om {
 				Parser &
 			);
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &

@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_FrontPullTermOperation_ )
+#ifndef Om_Operations_FrontPullTermOperation_
 
 	#include "om/operations/front_pull_term_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,16 +28,16 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( FrontPullTermOperationTest )
+		BOOST_AUTO_TEST_SUITE(FrontPullTermOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{<-terms}",
-					System::Get().Evaluate( "drop find {<-terms} system" )
+					System::Get().Evaluate("drop find {<-terms} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					(
 						"{1}{"
@@ -45,27 +45,27 @@ namespace Om {
 						"3"
 						"}"
 					),
-					System::Get().Evaluate( "<-terms {1{2}3}" )
+					System::Get().Evaluate("<-terms {1{2}3}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{1}{2}",
-					System::Get().Evaluate( "<-terms {1 2}" )
+					System::Get().Evaluate("<-terms {1 2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate( "<-terms {}" )
+					System::Get().Evaluate("<-terms {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate( "<-terms {only}" )
+					System::Get().Evaluate("<-terms {only}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"<-terms",
-					System::Get().Evaluate( "<-terms" )
+					System::Get().Evaluate("<-terms")
 				);
 			}
 
@@ -90,14 +90,12 @@ namespace Om {
 // MARK: public (static)
 
 inline char const * Type_::GetName() {
-	return(
-		Om_Operations_FrontPullTermOperation_GetName_()
-	);
+	return Om_Operations_FrontPullTermOperation_GetName_();
 }
 
-inline void Type_::Give( Evaluation & theEvaluation ) {
+inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr< Operation >(
+		std::auto_ptr<Operation>(
 			new PullOperation<
 				Expression,
 				FrontPullTermOperation
@@ -106,12 +104,12 @@ inline void Type_::Give( Evaluation & theEvaluation ) {
 	);
 }
 
-template< typename TheQueue >
+template <typename TheQueue>
 inline void Type_::Pull(
 	Expression & theExpression,
 	TheQueue & theQueue
 ) {
-	theExpression.FrontGiveTerm( theQueue );
+	theExpression.FrontGiveTerm(theQueue);
 }
 
 	#undef Type_

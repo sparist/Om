@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_CodePointSource_ )
+#ifndef Om_Sources_CodePointSource_
 
 	#define Om_Sources_CodePointSource_ \
 	Om::Sources::CodePointSource
@@ -29,11 +29,11 @@ namespace Om {
 		\brief
 			A #CodePoint Source that reads each code unit from the iterator.
 		*/
-		template< typename ThisCodeUnitIterator = char const * >
+		template <typename ThisCodeUnitIterator = char const *>
 		class CodePointSource:
 		public DefaultSource<
 			CodePoint const,
-			CodePointSource< ThisCodeUnitIterator >
+			CodePointSource<ThisCodeUnitIterator>
 		> {
 		public: // MARK: public (non-static)
 
@@ -48,9 +48,9 @@ namespace Om {
 				ThisCodeUnitIterator const theInputEnd
 			);
 
-			CodePointSource & operator =( CodePointSource );
+			CodePointSource & operator =(CodePointSource);
 
-			bool operator ==( CodePointSource const & ) const;
+			bool operator ==(CodePointSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -58,7 +58,7 @@ namespace Om {
 
 			virtual void Pop();
 
-			void Swap( CodePointSource & );
+			void Swap(CodePointSource &);
 
 		private: // MARK: private (non-static)
 
@@ -82,13 +82,13 @@ namespace Om {
 
 		};
 
-		// MARK: - Om::Sources::CodePointSource< char const * >
+		// MARK: - Om::Sources::CodePointSource<char const *>
 		/*!
 		\brief
 			A specialization for null-terminated code unit array.
 		*/
-		template<>
-		class CodePointSource< char const * >:
+		template <>
+		class CodePointSource<char const *>:
 		public CodePointSource<
 			IteratorSource<
 				char const,
@@ -125,10 +125,10 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template< typename ThisCodeUnitIterator >
+	template <typename ThisCodeUnitIterator>
 	void swap(
-		Om::Sources::CodePointSource< ThisCodeUnitIterator > &,
-		Om::Sources::CodePointSource< ThisCodeUnitIterator > &
+		Om::Sources::CodePointSource<ThisCodeUnitIterator> &,
+		Om::Sources::CodePointSource<ThisCodeUnitIterator> &
 	);
 
 }

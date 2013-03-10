@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Parser_ )
+#ifndef Om_Parser_
 
 	#define Om_Parser_ \
 	Om::Parser
@@ -35,10 +35,10 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit Parser(
-			Source< CodePoint const > &
+			Source<CodePoint const> &
 		);
 
-		bool operator ==( Parser const & ) const;
+		bool operator ==(Parser const &) const;
 
 		virtual CodePoint const & operator *() const;
 
@@ -48,11 +48,11 @@ namespace Om {
 
 	private: // MARK: private (non-static)
 
-		Parser( Parser const & );
+		Parser(Parser const &);
 
-		Parser const & operator =( Parser const & );
+		Parser const & operator =(Parser const &);
 
-		Source< CodePoint const > & thisCodePointSource;
+		Source<CodePoint const> & thisCodePointSource;
 
 		size_t thisDepth;
 

@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_SingletonSource_ )
+#ifndef Om_Sources_SingletonSource_
 
 	#include "om/sources/singleton_source.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,7 +28,8 @@ namespace Om {
 
 	namespace Sources {
 
-		BOOST_AUTO_TEST_SUITE( SingletonSourceTest )
+		BOOST_AUTO_TEST_SUITE(SingletonSourceTest)
+
 		BOOST_AUTO_TEST_SUITE_END()
 
 	}
@@ -42,10 +43,10 @@ namespace Om {
 // MARK: - Om::Sources::SingletonSource
 
 	#define Template_ \
-	template< typename ThisItem >
+	template <typename ThisItem>
 
 	#define Type_ \
-	Om::Sources::SingletonSource< ThisItem >
+	Om::Sources::SingletonSource<ThisItem>
 
 // MARK: public (non-static)
 
@@ -54,39 +55,39 @@ inline Type_::SingletonSource():
 thisItem() {}
 
 Template_
-inline Type_::SingletonSource( ThisItem & theItem ):
-thisItem( &theItem ) {}
+inline Type_::SingletonSource(ThisItem & theItem):
+thisItem(&theItem) {}
 
 Template_
-inline Type_ & Type_::operator =( SingletonSource theSingletonSource ) {
-	this->Swap( theSingletonSource );
-	return( *this );
+inline Type_ & Type_::operator =(SingletonSource theSingletonSource) {
+	this->Swap(theSingletonSource);
+	return *this;
 }
 
 Template_
-inline bool Type_::operator ==( SingletonSource const & theSource ) const {
-	return( this->thisItem == theSource.thisItem );
+inline bool Type_::operator ==(SingletonSource const & theSource) const {
+	return (this->thisItem == theSource.thisItem);
 }
 
 Template_
 inline bool Type_::operator !() const {
-	return( !this->thisItem );
+	return !this->thisItem;
 }
 
 Template_
 inline ThisItem & Type_::operator *() const {
-	assert( this->thisItem );
-	return( *this->thisItem );
+	assert(this->thisItem);
+	return *this->thisItem;
 }
 
 Template_
 inline void Type_::Pop() {
-	assert( this->thisItem );
+	assert(this->thisItem);
 	this->thisItem = 0;
 }
 
 Template_
-inline void Type_::Swap( SingletonSource & theSingletonSource ) {
+inline void Type_::Swap(SingletonSource & theSingletonSource) {
 	boost::swap(
 		this->thisItem,
 		theSingletonSource.thisItem
@@ -98,12 +99,12 @@ inline void Type_::Swap( SingletonSource & theSingletonSource ) {
 
 // MARK: - boost
 
-template< typename ThisItem >
+template <typename ThisItem>
 inline void boost::swap(
-	Om::Sources::SingletonSource< ThisItem > & theFirst,
-	Om::Sources::SingletonSource< ThisItem > & theSecond
+	Om::Sources::SingletonSource<ThisItem> & theFirst,
+	Om::Sources::SingletonSource<ThisItem> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

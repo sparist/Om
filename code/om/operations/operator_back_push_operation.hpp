@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_OperatorBackPushOperation_ )
+#ifndef Om_Operations_OperatorBackPushOperation_
 
 	#define Om_Operations_OperatorBackPushOperation_ \
 	Om::Operations::OperatorBackPushOperation
@@ -36,13 +36,13 @@ namespace Om {
 
 			static char const * GetName();
 
-			static void Give( Evaluation & );
+			static void Give(Evaluation &);
 
 		};
 
 		namespace {
 
-			static Definition< OperatorBackPushOperation > const theOperatorBackPushDefinition;
+			static Definition<OperatorBackPushOperation> const theOperatorBackPushDefinition;
 
 		}
 

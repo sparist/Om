@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_DefaultGiveable_ )
+#ifndef Om_DefaultGiveable_
 
 	#define Om_DefaultGiveable_ \
 	Om::DefaultGiveable
@@ -28,7 +28,7 @@ namespace Om {
 	\brief
 		A partial implementation of Giveable.
 	*/
-	template<
+	template <
 		typename ThisImplementation,
 		typename ThisInterface = Giveable
 	>
@@ -40,13 +40,13 @@ namespace Om {
 			ThisInterface
 		>
 	> {
-	public:  // MARK: public (non-static)
+	public: // MARK: public (non-static)
 
 		virtual ~DefaultGiveable() = 0;
 
 	private: // MARK: private (non-static)
 
-		DefaultGiveable & operator =( DefaultGiveable const & );
+		DefaultGiveable & operator =(DefaultGiveable const &);
 
 	};
 

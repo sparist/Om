@@ -13,7 +13,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Separator_ )
+#ifndef Om_Separator_
 
 	#define Om_Separator_ \
 	Om::Separator
@@ -36,7 +36,7 @@ namespace Om {
 	As a Queue, the Separator filters out all top-level Element instances except Separator.
 	*/
 	class Separator:
-	public DefaultAtom< Separator > {
+	public DefaultAtom<Separator> {
 	public: // MARK: public (static)
 
 		/*!
@@ -52,34 +52,34 @@ namespace Om {
 		Separator();
 
 		explicit Separator(
-			Source< CodePoint const > &
+			Source<CodePoint const> &
 		);
 
 		/*!
 		\param theSeparatorSymbol
 			The Symbols::SeparatorSymbol to copy directly into the Separator.
 		*/
-		explicit Separator( Symbols::SeparatorSymbol const theSeparatorSymbol );
+		explicit Separator(Symbols::SeparatorSymbol const theSeparatorSymbol);
 
-		Separator & operator =( Separator );
+		Separator & operator =(Separator);
 
-		virtual void ReadElements( Parser & );
+		virtual void ReadElements(Parser &);
 
-		virtual void ReadQuotedElements( Parser & );
+		virtual void ReadQuotedElements(Parser &);
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
-		template< typename TheSeparator >
-		void TakeSeparator( TheSeparator & );
+		template <typename TheSeparator>
+		void TakeSeparator(TheSeparator &);
 
-		void TakeSeparatorSymbol( Symbols::SeparatorSymbol const );
+		void TakeSeparatorSymbol(Symbols::SeparatorSymbol const);
 
 	};
 
@@ -88,7 +88,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<>
+	template <>
 	void swap(
 		Om::Separator &,
 		Om::Separator &

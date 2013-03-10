@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_DecodeOperation_ )
+#ifndef Om_Operations_DecodeOperation_
 
 	#define Om_Operations_DecodeOperation_ \
 	Om::Operations::DecodeOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__decode_operation__ operation implementation.
 		*/
 		class DecodeOperation:
-		public DefaultOperation< DecodeOperation > {
+		public DefaultOperation<DecodeOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheDecodeOperation >
+			template <typename TheDecodeOperation>
 			static void GiveElements(
 				TheDecodeOperation &,
 				Queue &
@@ -46,13 +46,13 @@ namespace Om {
 
 		public: // MARK: public (non-static)
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -62,7 +62,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< DecodeOperation > const theDecodeDefinition;
+			static Definition<DecodeOperation> const theDecodeDefinition;
 
 		}
 

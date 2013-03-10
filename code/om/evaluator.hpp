@@ -12,14 +12,14 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Evaluator_ )
+#ifndef Om_Evaluator_
 
 	#define Om_Evaluator_ \
 	Om::Evaluator
 
 	#include "om/default_queue.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/ptr_container/ptr_vector.hpp"
 
@@ -48,7 +48,7 @@ namespace Om {
 	The program output by the Evaluator is an Expression. Note that if each line in the Expression was terminated by Symbols::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbols::theLineSeparatorSymbol to the final output.
 	*/
 	class Evaluator:
-	public DefaultQueue< Evaluator > {
+	public DefaultQueue<Evaluator> {
 	public: // MARK: public (non-static)
 
 		/*!
@@ -70,7 +70,7 @@ namespace Om {
 			Translator const & theTranslator
 		);
 
-		virtual bool operator ==( Program const & ) const;
+		virtual bool operator ==(Program const &) const;
 
 		virtual void Clear();
 
@@ -80,41 +80,41 @@ namespace Om {
 		\brief
 			Gives to the argument each Element currently contained in the Evaluator.
 		*/
-		virtual void GiveElements( Queue & );
+		virtual void GiveElements(Queue &);
 
 		/*!
 		\brief
 			\overload
 		*/
-		virtual void GiveElements( Queue & ) const;
+		virtual void GiveElements(Queue &) const;
 
-		virtual std::auto_ptr< Program > GiveProgram();
+		virtual std::auto_ptr<Program> GiveProgram();
 
-		virtual std::auto_ptr< Program > GiveProgram() const;
+		virtual std::auto_ptr<Program> GiveProgram() const;
 
 		virtual bool IsEmpty() const;
 
-		virtual void ReadElements( Parser & );
+		virtual void ReadElements(Parser &);
 
-		virtual void ReadQuotedElements( Parser & );
+		virtual void ReadQuotedElements(Parser &);
 
 		void ReadQuotedElements(
 			Evaluation &,
 			Parser &
 		);
 
-		template< typename TheOperand >
-		void TakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void TakeOperand(TheOperand &);
 
-		template< typename TheOperand >
+		template <typename TheOperand>
 		void TakeOperand(
 			Evaluation &,
 			TheOperand &
 		);
 
-		template< typename TheOperation >
+		template <typename TheOperation>
 		void TakeOperation(
-			std::auto_ptr< TheOperation >
+			std::auto_ptr<TheOperation>
 		);
 
 		/*!
@@ -123,26 +123,26 @@ namespace Om {
 		-	Attempts to evaluate the empty Operator (for the default definition) in each Translator, in order.
 		If it was not done in this way, there would be no point in nesting if there was a default definition in the first Translator attempted.
 		*/
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
-		template< typename TheOperator >
+		template <typename TheOperator>
 		void TakeOperator(
 			Evaluation &,
 			TheOperator &
 		);
 
-		template< typename TheQueue >
-		void TakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void TakeQuotedQueue(TheQueue &);
 
-		template< typename TheQueue >
+		template <typename TheQueue>
 		void TakeQuotedQueue(
 			Evaluation &,
 			TheQueue &
 		);
 
-		template< typename TheSeparator >
-		void TakeSeparator( TheSeparator & );
+		template <typename TheSeparator>
+		void TakeSeparator(TheSeparator &);
 
 	private: // MARK: private (static)
 
@@ -150,25 +150,25 @@ namespace Om {
 		\brief
 			An Operation vector.
 		*/
-		typedef boost::ptr_vector< Operation > OperationVector;
+		typedef boost::ptr_vector<Operation> OperationVector;
 
-		template< typename TheIterator >
+		template <typename TheIterator>
 		static void GiveElements(
 			TheIterator,
 			TheIterator const,
 			Queue &
 		);
 
-		template< typename TheEvaluator >
-		static std::auto_ptr< Program > GiveProgram( TheEvaluator & );
+		template <typename TheEvaluator>
+		static std::auto_ptr<Program> GiveProgram(TheEvaluator &);
 
 	private: // MARK: private (non-static)
 
-		Evaluator( Evaluator const & );
+		Evaluator(Evaluator const &);
 
-		Evaluator const & operator =( Evaluator const & );
+		Evaluator const & operator =(Evaluator const &);
 
-		void Evaluate( Evaluation & );
+		void Evaluate(Evaluation &);
 
 		/*!
 		\brief

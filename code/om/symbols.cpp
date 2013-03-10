@@ -12,17 +12,17 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Symbols_ )
+#ifndef Om_Symbols_
 
 	#include "om/symbols.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/symbols/operand_symbol.hpp"
 		#include "om/symbols/operator_symbol.hpp"
 		#include "om/symbols/separator_symbol.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -30,9 +30,9 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( SymbolsTest )
+	BOOST_AUTO_TEST_SUITE(SymbolsTest)
 
-		BOOST_AUTO_TEST_CASE( StringizationTest ) {
+		BOOST_AUTO_TEST_CASE(StringizationTest) {
 			BOOST_CHECK_EQUAL(
 				"{test}` \t\n",
 				(

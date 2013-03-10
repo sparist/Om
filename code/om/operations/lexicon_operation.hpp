@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_LexiconOperation_ )
+#ifndef Om_Operations_LexiconOperation_
 
 	#define Om_Operations_LexiconOperation_ \
 	Om::Operations::LexiconOperation
@@ -29,11 +29,11 @@ namespace Om {
 		\brief
 			The \ref om__operations__lexicon_operation__ operation implementation.
 		*/
-		typedef ProgramOperation< Lexicon > LexiconOperation;
+		typedef ProgramOperation<Lexicon> LexiconOperation;
 
 		namespace {
 
-			static Definition< LexiconOperation > const theLexiconDefinition;
+			static Definition<LexiconOperation> const theLexiconDefinition;
 
 		}
 

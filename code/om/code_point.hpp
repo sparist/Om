@@ -12,12 +12,12 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_CodePoint_ )
+#ifndef Om_CodePoint_
 
 	#define Om_CodePoint_ \
 	Om::CodePoint
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/locale/utf.hpp"
 

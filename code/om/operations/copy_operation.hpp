@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_CopyOperation_ )
+#ifndef Om_Operations_CopyOperation_
 
 	#define Om_Operations_CopyOperation_ \
 	Om::Operations::CopyOperation
@@ -33,12 +33,12 @@ namespace Om {
 			The \ref om__operations__copy_operation__ operation implementation.
 		*/
 		class CopyOperation:
-		public DefaultOperation< CopyOperation > {
+		public DefaultOperation<CopyOperation> {
 		public: // MARK: public (static)
 
 			static char const * GetName();
 
-			template< typename TheCopyOperation >
+			template <typename TheCopyOperation>
 			static void GiveElements(
 				TheCopyOperation &,
 				Queue &
@@ -46,13 +46,13 @@ namespace Om {
 
 		public: // MARK: public (non-static)
 
-			template< typename TheOperand >
+			template <typename TheOperand>
 			bool TakeOperand(
 				Evaluation &,
 				TheOperand &
 			);
 
-			template< typename TheQueue >
+			template <typename TheQueue>
 			bool TakeQuotedQueue(
 				Evaluation &,
 				TheQueue &
@@ -62,7 +62,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition< CopyOperation > const theCopyDefinition;
+			static Definition<CopyOperation> const theCopyDefinition;
 
 		}
 

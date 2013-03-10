@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Form_ )
+#ifndef Om_Form_
 
 	#define Om_Form_ \
 	Om::Form
@@ -33,7 +33,7 @@ namespace Om {
 		//! \cond
 		class ElementRange;
 
-		template< typename ThisOperand >
+		template <typename ThisOperand>
 		class OperandRange;
 		//! \endcond
 
@@ -45,7 +45,7 @@ namespace Om {
 		\return
 			True if the call results in an empty Form.
 		*/
-		bool BackGiveTerm( Queue & );
+		bool BackGiveTerm(Queue &);
 
 		/*!
 		\return
@@ -53,17 +53,17 @@ namespace Om {
 		*/
 		bool BackPopTerm();
 
-		template< typename TheOperand >
-		void BackTakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void BackTakeOperand(TheOperand &);
 
-		template< typename TheQueue >
-		void BackTakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void BackTakeQuotedQueue(TheQueue &);
 
 		/*!
 		\return
 			True if the call results in an empty Form.
 		*/
-		bool FrontGiveTerm( Queue & );
+		bool FrontGiveTerm(Queue &);
 
 		/*!
 		\return
@@ -71,34 +71,34 @@ namespace Om {
 		*/
 		bool FrontPopTerm();
 
-		template< typename TheOperand >
-		void FrontTakeOperand( TheOperand & );
+		template <typename TheOperand>
+		void FrontTakeOperand(TheOperand &);
 
-		template< typename TheQueue >
-		void FrontTakeQuotedQueue( TheQueue & );
+		template <typename TheQueue>
+		void FrontTakeQuotedQueue(TheQueue &);
 
 		Operator const & GetOperator() const;
 
-		void GiveElements( Queue & );
+		void GiveElements(Queue &);
 
-		void GiveElements( Queue & ) const;
+		void GiveElements(Queue &) const;
 
 		bool IsEmpty() const;
 
-		void Swap( Form & );
+		void Swap(Form &);
 
 		/*!
 		\brief
 			Replaces the Form Operator.
 		*/
-		template< typename TheOperator >
-		void TakeOperator( TheOperator & );
+		template <typename TheOperator>
+		void TakeOperator(TheOperator &);
 
 	private: // MARK: private (static)
 
-		typedef std::deque< Operand > OperandDeque;
+		typedef std::deque<Operand> OperandDeque;
 
-		template<
+		template <
 			typename TheOperandIterator,
 			typename TheForm
 		>
@@ -127,9 +127,9 @@ namespace Om {
 	> {
 	public: // MARK: public (non-static)
 
-		explicit ElementRange( Form const & );
+		explicit ElementRange(Form const &);
 
-		bool operator ==( ElementRange const & ) const;
+		bool operator ==(ElementRange const &) const;
 
 		virtual bool operator !() const;
 
@@ -149,37 +149,37 @@ namespace Om {
 
 	};
 
-	// MARK: - Om::Form::OperandRange< Operand >
+	// MARK: - Om::Form::OperandRange<Operand>
 	/*!
 	\brief
 		Specialization on a mutable Operand.
 	*/
-	template<>
-	class Form::OperandRange< Operand >:
+	template <>
+	class Form::OperandRange<Operand>:
 	public Sources::CollectionFrontSource<
 		Operand,
 		OperandDeque::iterator
 	> {
 	public: // MARK: public (non-static)
 
-		explicit OperandRange( Form & );
+		explicit OperandRange(Form &);
 
 	};
 
-	// MARK: - Om::Form::OperandRange< Operand const >
+	// MARK: - Om::Form::OperandRange<Operand const>
 	/*!
 	\brief
 		Specialization on an immutable Operand.
 	*/
-	template<>
-	class Form::OperandRange< Operand const >:
+	template <>
+	class Form::OperandRange<Operand const>:
 	public Sources::CollectionFrontSource<
 		Operand const,
 		OperandDeque::const_iterator
 	> {
 	public: // MARK: public (non-static)
 
-		explicit OperandRange( Form const & );
+		explicit OperandRange(Form const &);
 
 	};
 
@@ -188,7 +188,7 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template<>
+	template <>
 	void swap(
 		Om::Form &,
 		Om::Form &

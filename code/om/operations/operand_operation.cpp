@@ -12,13 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Operations_OperandOperation_ )
+#ifndef Om_Operations_OperandOperation_
 
 	#include "om/operations/operand_operation.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -28,34 +28,34 @@ namespace Om {
 
 	namespace Operations {
 
-		BOOST_AUTO_TEST_SUITE( OperandOperationTest )
+		BOOST_AUTO_TEST_SUITE(OperandOperationTest)
 
-			BOOST_AUTO_TEST_CASE( DefinitionTest ) {
+			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
 					"{operand}",
-					System::Get().Evaluate( "drop find {operand} system" )
+					System::Get().Evaluate("drop find {operand} system")
 				);
 			}
 
-			BOOST_AUTO_TEST_CASE( GeneralTest ) {
+			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{}",
-					System::Get().Evaluate( "operand{}" )
+					System::Get().Evaluate("operand{}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{}}",
-					System::Get().Evaluate( "operand{{}}" )
+					System::Get().Evaluate("operand{{}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{b}}",
-					System::Get().Evaluate( "operand{ a {b} {c} d }" )
+					System::Get().Evaluate("operand{ a {b} {c} d }")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{b}}",
-					System::Get().Evaluate( "drop swap operand copy{ a {b} {c} d }" )
+					System::Get().Evaluate("drop swap operand copy{ a {b} {c} d }")
 				);
 			}
 

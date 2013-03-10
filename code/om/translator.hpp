@@ -12,14 +12,14 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Translator_ )
+#ifndef Om_Translator_
 
 	#define Om_Translator_ \
 	Om::Translator
 
 	#include "om/code_point.hpp"
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include <string>
 
@@ -32,10 +32,10 @@ namespace Om {
 
 	class Operator;
 
-	template< typename ThisItem >
+	template <typename ThisItem>
 	class Sink;
 
-	template< typename ThisItem >
+	template <typename ThisItem>
 	class Source;
 
 	class Queue;
@@ -54,8 +54,8 @@ namespace Om {
 			Evaluates input from the #CodePoint Source and pushes it to the #CodePoint Sink.
 		*/
 		void Evaluate(
-			Source< CodePoint const > &,
-			Sink< CodePoint const > &
+			Source<CodePoint const> &,
+			Sink<CodePoint const> &
 		) const;
 
 		/*!
@@ -72,7 +72,7 @@ namespace Om {
 			char const theCodeUnitIterator[]
 		) const;
 
-		virtual void GiveElements( Queue & ) const = 0;
+		virtual void GiveElements(Queue &) const = 0;
 
 		virtual bool IsEmpty() const = 0;
 

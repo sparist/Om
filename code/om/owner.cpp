@@ -12,16 +12,16 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Owner_ )
+#ifndef Om_Owner_
 
 	#include "om/owner.hpp"
 
-	#if defined( Om_Macros_Test_ )
+	#ifdef Om_Macros_Test_
 
 		#include "om/default_copyable.hpp"
 		#include "om/shareable.hpp"
 
-		#if !defined( Om_Macros_Precompilation_ )
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -29,20 +29,20 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE( OwnerTest )
+	BOOST_AUTO_TEST_SUITE(OwnerTest)
 
 		namespace {
 
 			class TestValue:
-			public DefaultCopyable< TestValue >,
+			public DefaultCopyable<TestValue>,
 			public Shareable<> {
 			public:
 
-				explicit TestValue( int const theNumber ):
-				thisNumber( theNumber ) {}
+				explicit TestValue(int const theNumber):
+				thisNumber(theNumber) {}
 
-				bool operator ==( TestValue const theTestValue ) const {
-					return( this->thisNumber == theTestValue.thisNumber );
+				bool operator ==(TestValue const theTestValue) const {
+					return (this->thisNumber == theTestValue.thisNumber);
 				}
 
 				int thisNumber;
@@ -51,20 +51,20 @@ namespace Om {
 
 		}
 
-		BOOST_AUTO_TEST_CASE( LazinessTest ) {
-			Owner< TestValue > theFirst(
-				std::auto_ptr< TestValue >(
-					new TestValue( 1 )
+		BOOST_AUTO_TEST_CASE(LazinessTest) {
+			Owner<TestValue> theFirst(
+				std::auto_ptr<TestValue>(
+					new TestValue(1)
 				)
 			);
-			assert( theFirst );
+			assert(theFirst);
 
-			Owner< TestValue > const & theConstFirst = theFirst;
+			Owner<TestValue> const & theConstFirst = theFirst;
 			TestValue const & theFirstValue = *theConstFirst;
 
-			Owner< TestValue > theSecond( theFirst );
+			Owner<TestValue> theSecond(theFirst);
 
-			Owner< TestValue > const & theConstSecond = theSecond;
+			Owner<TestValue> const & theConstSecond = theSecond;
 			TestValue const & theSecondValue = *theConstSecond;
 
 			BOOST_CHECK_EQUAL(
@@ -73,13 +73,13 @@ namespace Om {
 			);
 		}
 
-		BOOST_AUTO_TEST_CASE( CopyTest ) {
-			Owner< TestValue > theFirst(
-				std::auto_ptr< TestValue >(
-					new TestValue( 1 )
+		BOOST_AUTO_TEST_CASE(CopyTest) {
+			Owner<TestValue> theFirst(
+				std::auto_ptr<TestValue>(
+					new TestValue(1)
 				)
 			);
-			assert( theFirst );
+			assert(theFirst);
 
 			TestValue & theFirstValue = *theFirst;
 			BOOST_CHECK_EQUAL(
@@ -92,7 +92,7 @@ namespace Om {
 				theFirstValue.thisNumber
 			);
 
-			Owner< TestValue > theSecond( theFirst );
+			Owner<TestValue> theSecond(theFirst);
 
 			TestValue & theSecondValue = *theSecond;
 			BOOST_CHECK_EQUAL(
@@ -107,11 +107,11 @@ namespace Om {
 			theSecondValue.thisNumber = 3;
 			theFirstValue.thisNumber = 4;
 
-			Owner< TestValue > theThird( theFirst );
-			Owner< TestValue > theFourth( theThird );
+			Owner<TestValue> theThird(theFirst);
+			Owner<TestValue> theFourth(theThird);
 
 			TestValue & theThirdValue = *theThird;
-			Owner< TestValue > const & theConstFourth = theFourth;
+			Owner<TestValue> const & theConstFourth = theFourth;
 			TestValue const & theFourthValue = *theConstFourth;
 			BOOST_CHECK_EQUAL(
 				4,
@@ -157,7 +157,7 @@ namespace Om {
 
 #else
 
-	#if !defined( Om_Macros_Precompilation_ )
+	#ifndef Om_Macros_Precompilation_
 
 		#include "boost/swap.hpp"
 
@@ -166,10 +166,10 @@ namespace Om {
 // MARK: - Om::Owner
 
 	#define Template_ \
-	template< typename ThisValue >
+	template <typename ThisValue>
 
 	#define Type_ \
-	Om::Owner< ThisValue >
+	Om::Owner<ThisValue>
 
 // MARK: public (non-static)
 
@@ -179,13 +179,13 @@ thisValue(),
 thisWasExposed() {}
 
 Template_
-inline Type_::Owner( Owner const & theOwner ):
+inline Type_::Owner(Owner const & theOwner):
 thisValue(),
 thisWasExposed() {
-	if( theOwner.thisWasExposed ) {
-		assert( theOwner.thisValue );
+	if (theOwner.thisWasExposed) {
+		assert(theOwner.thisValue);
 		this->thisValue.reset(
-			Copy( *theOwner.thisValue ).release()
+			Copy(*theOwner.thisValue).release()
 		);
 	} else {
 		this->thisValue = theOwner.thisValue;
@@ -193,9 +193,9 @@ thisWasExposed() {
 }
 
 Template_
-template< typename TheValue >
+template <typename TheValue>
 inline Type_::Owner(
-	std::auto_ptr< TheValue > theValue
+	std::auto_ptr<TheValue> theValue
 ):
 thisValue(
 	theValue.release()
@@ -203,52 +203,52 @@ thisValue(
 thisWasExposed() {}
 
 Template_
-inline Type_ & Type_::operator =( Owner theOwner ) {
-	this->Swap( theOwner );
-	return( *this );
+inline Type_ & Type_::operator =(Owner theOwner) {
+	this->Swap(theOwner);
+	return *this;
 }
 
 Template_
 inline ThisValue & Type_::operator *() {
-	assert( this->thisValue );
-	if(
+	assert(this->thisValue);
+	if (
 		1 < this->thisValue->GetOwnerCount()
 	) {
 		this->thisValue.reset(
-			Copy( *this->thisValue ).release()
+			Copy(*this->thisValue).release()
 		);
-		assert( this->thisValue );
+		assert(this->thisValue);
 	}
 	this->thisWasExposed = true;
-	return( *this->thisValue );
+	return *this->thisValue;
 }
 
 Template_
 inline ThisValue const & Type_::operator *() const {
-	assert( this->thisValue );
-	return( *this->thisValue );
+	assert(this->thisValue);
+	return *this->thisValue;
 }
 
 Template_
 inline ThisValue * Type_::operator ->() {
-	return( &**this );
+	return &**this;
 }
 
 Template_
 inline ThisValue const * Type_::operator ->() const {
-	return( &**this );
+	return &**this;
 }
 
 Template_
 inline bool Type_::operator !() const {
-	return( !this->thisValue );
+	return !this->thisValue;
 }
 
 Template_
 inline Type_::operator Boolean() const {
-	return(
-		this->thisValue?
-		&Owner::UncomparableBoolean:
+	return (
+		this->thisValue ?
+		&Owner::UncomparableBoolean :
 		0
 	);
 }
@@ -261,29 +261,27 @@ inline void Type_::Clear() {
 
 Template_
 ThisValue * Type_::GetValue() {
-	return(
-		this->thisValue?
-		( &**this ):
+	return (
+		this->thisValue ?
+		&**this :
 		0
 	);
 }
 
 Template_
 ThisValue const * Type_::GetValue() const {
-	return(
-		this->thisValue.get()
-	);
+	return this->thisValue.get();
 }
 
 Template_
 bool Type_::IsEmpty() const {
-	return( !this->thisValue );
+	return !this->thisValue;
 }
 
 Template_
-template< typename TheValue >
+template <typename TheValue>
 inline void Type_::SetValue(
-	std::auto_ptr< TheValue > theValue
+	std::auto_ptr<TheValue> theValue
 ) {
 	this->thisValue.reset(
 		theValue.release()
@@ -292,8 +290,8 @@ inline void Type_::SetValue(
 }
 
 Template_
-inline void Type_::Swap( Owner & theOwner ) {
-	this->thisValue.swap( theOwner.thisValue );
+inline void Type_::Swap(Owner & theOwner) {
+	this->thisValue.swap(theOwner.thisValue);
 	boost::swap(
 		this->thisWasExposed,
 		theOwner.thisWasExposed
@@ -310,12 +308,12 @@ inline void Type_::UncomparableBoolean() const {}
 
 // MARK: - boost
 
-template< typename ThisValue >
+template <typename ThisValue>
 inline void boost::swap(
-	Om::Owner< ThisValue > & theFirst,
-	Om::Owner< ThisValue > & theSecond
+	Om::Owner<ThisValue> & theFirst,
+	Om::Owner<ThisValue> & theSecond
 ) {
-	theFirst.Swap( theSecond );
+	theFirst.Swap(theSecond);
 }
 
 #endif

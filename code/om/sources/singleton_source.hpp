@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#if !defined( Om_Sources_SingletonSource_ )
+#ifndef Om_Sources_SingletonSource_
 
 	#define Om_Sources_SingletonSource_ \
 	Om::Sources::SingletonSource
@@ -28,11 +28,11 @@ namespace Om {
 		\brief
 			A single item Source.
 		*/
-		template< typename ThisItem >
+		template <typename ThisItem>
 		class SingletonSource:
 		public DefaultSource<
 			ThisItem,
-			SingletonSource< ThisItem >
+			SingletonSource<ThisItem>
 		> {
 		public: // MARK: public (non-static)
 
@@ -42,11 +42,11 @@ namespace Om {
 			\param theItem
 				The single item in the Source.
 			*/
-			explicit SingletonSource( ThisItem & theItem );
+			explicit SingletonSource(ThisItem & theItem);
 
-			SingletonSource & operator =( SingletonSource );
+			SingletonSource & operator =(SingletonSource);
 
-			bool operator ==( SingletonSource const & ) const;
+			bool operator ==(SingletonSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -54,7 +54,7 @@ namespace Om {
 
 			virtual void Pop();
 
-			void Swap( SingletonSource & );
+			void Swap(SingletonSource &);
 
 		private: // MARK: private (non-static)
 
@@ -69,10 +69,10 @@ namespace Om {
 // MARK: - boost
 namespace boost {
 
-	template< typename ThisItem >
+	template <typename ThisItem>
 	void swap(
-		Om::Sources::SingletonSource< ThisItem > &,
-		Om::Sources::SingletonSource< ThisItem > &
+		Om::Sources::SingletonSource<ThisItem> &,
+		Om::Sources::SingletonSource<ThisItem> &
 	);
 
 }
