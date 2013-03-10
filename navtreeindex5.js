@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"environment_8cpp.html":[8,0,0,0,32],
+"environment_8cpp_source.html":[8,0,0,0,32],
+"environment_8hpp.html":[8,0,0,0,33],
 "environment_8hpp.html#acaa965a12886a41d479f66b360f3a18a":[8,0,0,0,33,1],
 "environment_8hpp_source.html":[8,0,0,0,33],
 "environment__operation_8cpp.html":[8,0,0,0,0,34],
@@ -54,7 +57,7 @@ var NAVTREEINDEX5 =
 "expression__operation_8cpp_source.html":[8,0,0,0,0,44],
 "expression__operation_8hpp.html":[8,0,0,0,0,45],
 "expression__operation_8hpp.html#a29df69f12abffdfeb621844ba70b3bed":[8,0,0,0,0,45,0],
-"expression__operation_8hpp.html#ace1ef610103888b362af9fd0771ad420":[8,0,0,0,0,45,1],
+"expression__operation_8hpp.html#a511812ddde449251dee70b42af1c2555":[8,0,0,0,0,45,1],
 "expression__operation_8hpp_source.html":[8,0,0,0,0,45],
 "files.html":[8,0],
 "fill__operation_8cpp.html":[8,0,0,0,0,46],
@@ -190,11 +193,11 @@ var NAVTREEINDEX5 =
 "give_8cpp.html":[8,0,0,0,42],
 "give_8cpp_source.html":[8,0,0,0,42],
 "give_8hpp.html":[8,0,0,0,43],
+"give_8hpp.html#a0e616c24284ebdbc7f2f26db8f10f1cb":[8,0,0,0,43,2],
+"give_8hpp.html#a469817d8c4e3ec1e40e18b8f6b6dc778":[8,0,0,0,43,4],
 "give_8hpp.html#a5f5a3e7f95955df14715b603872e1939":[8,0,0,0,43,0],
-"give_8hpp.html#a9ec8c3888627973793810f02f490bb8d":[8,0,0,0,43,4],
-"give_8hpp.html#aa7b1cad2b7764d60b1eba0d64e117848":[8,0,0,0,43,1],
-"give_8hpp.html#ac9210b25ec7514f592bfb5c53708a7d2":[8,0,0,0,43,2],
-"give_8hpp.html#af0d7f18089fd1bba136732d03cb834c3":[8,0,0,0,43,3],
+"give_8hpp.html#ab079f0c9807d37c66bdfc88ec5ec4374":[8,0,0,0,43,1],
+"give_8hpp.html#af076dd1e1565919852b72a43da88e568":[8,0,0,0,43,3],
 "give_8hpp_source.html":[8,0,0,0,43],
 "giveable_8cpp.html":[8,0,0,0,44],
 "giveable_8cpp_source.html":[8,0,0,0,44],
@@ -204,8 +207,8 @@ var NAVTREEINDEX5 =
 "globals.html":[8,1,0,0],
 "globals.html":[8,1,0],
 "globals_0x6f.html":[8,1,0,1],
-"globals_defs.html":[8,1,2,0],
 "globals_defs.html":[8,1,2],
+"globals_defs.html":[8,1,2,0],
 "globals_func.html":[8,1,1],
 "group__om____expression____.html":[5,1,0],
 "group__om____lexicon____.html":[5,1,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX5 =
 "group__om____operations____front__pull__operator__operation____.html":[5,0,41],
 "group__om____operations____front__pull__pair__operation____.html":[5,0,8],
 "group__om____operations____front__pull__separator__operation____.html":[5,0,47],
-"group__om____operations____front__pull__term__operation____.html":[5,0,9],
-"group__om____operations____inject__operation____.html":[5,0,32],
-"group__om____operations____lexicon__back__push__operation____.html":[5,0,34],
-"group__om____operations____lexicon__front__push__operation____.html":[5,0,1]
+"group__om____operations____front__pull__term__operation____.html":[5,0,9]
 };

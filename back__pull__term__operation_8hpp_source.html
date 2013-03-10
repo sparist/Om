@@ -58,7 +58,7 @@ $(document).ready(function(){initNavTree('back__pull__term__operation_8hpp_sourc
 </div><!--header-->
 <div class="contents">
 <a href="back__pull__term__operation_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Operations_BackPullTermOperation_ )</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operations_BackPullTermOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="back__pull__term__operation_8hpp.html#a2ea5f93077156c05d25cf479bf24c928">   17</a></span>&#160;<span class="preprocessor">    #define Om_Operations_BackPullTermOperation_ \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Operations::BackPullTermOperation</span></div>
@@ -80,9 +80,9 @@ $(document).ready(function(){initNavTree('back__pull__term__operation_8hpp_sourc
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operations_1_1_back_pull_term_operation.html#adbaecf55326de006648c0993380b0554">GetName</a>();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_back_pull_term_operation.html#ac70e1441f9fe45ed98aff245206fb6e0">Give</a>( <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp; );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_back_pull_term_operation.html#ac70e1441f9fe45ed98aff245206fb6e0">Give</a>(<a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_back_pull_term_operation.html#ae13ffb11cd3ca5aac87d5165ee1da103" title="The callback for PullOperation.">Pull</a>(</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="class_om_1_1_expression.html" title="The Expression Program implementation.">Expression</a> &amp;,</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                TheQueue &amp;</div>
@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('back__pull__term__operation_8hpp_sourc
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">namespace </span>{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt; BackPullTermOperation &gt;</a> <span class="keyword">const</span> theBackPullTermDefinition;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt;BackPullTermOperation&gt;</a> <span class="keyword">const</span> theBackPullTermDefinition;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>

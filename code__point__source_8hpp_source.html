@@ -58,7 +58,7 @@ $(document).ready(function(){initNavTree('code__point__source_8hpp_source.html',
 </div><!--header-->
 <div class="contents">
 <a href="code__point__source_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Sources_CodePointSource_ )</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Sources_CodePointSource_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="code__point__source_8hpp.html#aeec1355f67e6b339bb4d0652d7c3ca4b">   17</a></span>&#160;<span class="preprocessor">    #define Om_Sources_CodePointSource_ \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Sources::CodePointSource</span></div>
@@ -71,11 +71,11 @@ $(document).ready(function(){initNavTree('code__point__source_8hpp_source.html',
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="namespace_om_1_1_sources.html">   25</a></span>&#160;    <span class="keyword">namespace </span>Sources {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// MARK: - Om::Sources::CodePointSource</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span>        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisCodeUnitIterator = <span class="keywordtype">char</span> const * &gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ThisCodeUnitIterator = <span class="keywordtype">char</span> const *&gt;</div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="class_om_1_1_sources_1_1_code_point_source.html">   33</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a>:</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_sources_1_1_default_source.html" title="A partial implementation of Source.">DefaultSource</a>&lt;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            CodePoint const,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            CodePointSource&lt; ThisCodeUnitIterator &gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            CodePointSource&lt;ThisCodeUnitIterator&gt;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        &gt; {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
@@ -84,9 +84,9 @@ $(document).ready(function(){initNavTree('code__point__source_8hpp_source.html',
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                ThisCodeUnitIterator <span class="keyword">const</span> theInputEnd</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            );</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a> &amp; <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html#a9b04327a8860a6ada182368d978aae3a">operator =</a>( <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a> );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a> &amp; <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html#a9b04327a8860a6ada182368d978aae3a">operator =</a>(<a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html#a5011a47fab2c50dfea79457d97ecbde6">operator ==</a>( <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a> <span class="keyword">const</span> &amp; ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html#a5011a47fab2c50dfea79457d97ecbde6">operator ==</a>(<a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html#a4b68d2ce8af64f3d92f8011b4f6cc239">operator !</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('code__point__source_8hpp_source.html',
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html#a01365468e7cd980e066cf613b5bdcf82" title="Pops the current item.">Pop</a>();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html#a4acca1c78322f089073a67974373a31d">Swap</a>( <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a> &amp; );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html#a4acca1c78322f089073a67974373a31d">Swap</a>(<a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a> &amp;);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
@@ -106,9 +106,9 @@ $(document).ready(function(){initNavTree('code__point__source_8hpp_source.html',
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        };</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">// MARK: - Om::Sources::CodePointSource&lt; char const * &gt;</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"></span>        <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="class_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html">   91</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a>&lt; char const * &gt;:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">// MARK: - Om::Sources::CodePointSource&lt;char const *&gt;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"></span>        <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="class_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html">   91</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a>&lt;char const *&gt;:</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">CodePointSource</a>&lt;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a>&lt;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordtype">char</span> <span class="keyword">const</span>,</div>
@@ -137,10 +137,10 @@ $(document).ready(function(){initNavTree('code__point__source_8hpp_source.html',
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// MARK: - boost</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">namespace </span>boost {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisCodeUnitIterator &gt;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ThisCodeUnitIterator&gt;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">Om::Sources::CodePointSource&lt; ThisCodeUnitIterator &gt;</a> &amp;,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">Om::Sources::CodePointSource&lt; ThisCodeUnitIterator &gt;</a> &amp;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">Om::Sources::CodePointSource&lt;ThisCodeUnitIterator&gt;</a> &amp;,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator.">Om::Sources::CodePointSource&lt;ThisCodeUnitIterator&gt;</a> &amp;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    );</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>

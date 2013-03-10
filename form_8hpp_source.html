@@ -58,7 +58,7 @@ $(document).ready(function(){initNavTree('form_8hpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="form_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Form_ )</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Form_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="form_8hpp.html#ae33aa8607236c4b6f3aa636023360321">   17</a></span>&#160;<span class="preprocessor">    #define Om_Form_ \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Form</span></div>
@@ -74,51 +74,51 @@ $(document).ready(function(){initNavTree('form_8hpp_source.html','');});
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_form_1_1_element_range.html" title="A Form Element range.">ElementRange</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisOperand &gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ThisOperand&gt;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">class </span>OperandRange;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_om_1_1_form.html#a26f37f2bc8216789c8ab661d68ff564e">Form</a>();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form.html#af2bce9235d6da2f077644ec19076f339">BackGiveTerm</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form.html#af2bce9235d6da2f077644ec19076f339">BackGiveTerm</a>(<a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form.html#aa1331385a09763a81978d218cd065b91">BackPopTerm</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a31a3e54341dcdae6ece308e51fa004f4">BackTakeOperand</a>( TheOperand &amp; );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a31a3e54341dcdae6ece308e51fa004f4">BackTakeOperand</a>(TheOperand &amp;);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a3be289e5f7593ff397c1715ed5b1d8d3">BackTakeQuotedQueue</a>( TheQueue &amp; );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a3be289e5f7593ff397c1715ed5b1d8d3">BackTakeQuotedQueue</a>(TheQueue &amp;);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form.html#a8350ae4d1eedaafa746a10af08f87b54">FrontGiveTerm</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form.html#a8350ae4d1eedaafa746a10af08f87b54">FrontGiveTerm</a>(<a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form.html#ade1f9865ffa64bdd6dc39b838043dfb0">FrontPopTerm</a>();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a1c4000e3fb466de13e97c4906df80fa0">FrontTakeOperand</a>( TheOperand &amp; );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a1c4000e3fb466de13e97c4906df80fa0">FrontTakeOperand</a>(TheOperand &amp;);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a12caa261b16fa5a84eee6fc1132cba23">FrontTakeQuotedQueue</a>( TheQueue &amp; );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a12caa261b16fa5a84eee6fc1132cba23">FrontTakeQuotedQueue</a>(TheQueue &amp;);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="class_om_1_1_operator.html" title="The Operator implementation.">Operator</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_form.html#a856c90322cd45dd7ada3a73f65bcf847">GetOperator</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a10386fc12f1dcf97bf385e8367fb9b30">GiveElements</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a10386fc12f1dcf97bf385e8367fb9b30">GiveElements</a>(<a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a10386fc12f1dcf97bf385e8367fb9b30">GiveElements</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a10386fc12f1dcf97bf385e8367fb9b30">GiveElements</a>(<a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form.html#a47ef2bbff83d7ab2664892e847a10153">IsEmpty</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a7302dca3b6b9e8b5da14995cd0b3faca">Swap</a>( <a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Form</a> &amp; );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a7302dca3b6b9e8b5da14995cd0b3faca">Swap</a>(<a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Form</a> &amp;);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperator &gt;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a25bee38f2dd27c7671aa2e04919af352" title="Replaces the Form Operator.">TakeOperator</a>( TheOperator &amp; );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_form.html#a25bee38f2dd27c7671aa2e04919af352" title="Replaces the Form Operator.">TakeOperator</a>(TheOperator &amp;);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (static)</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="class_om_1_1_form.html#a4e9e06d6015148b64e0b813216f6791b">   99</a></span>&#160;        <span class="keyword">typedef</span> std::deque&lt; Operand &gt; <a class="code" href="class_om_1_1_form.html#a4e9e06d6015148b64e0b813216f6791b">OperandDeque</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="class_om_1_1_form.html#ac76b556b5114f6478588008b299c8e13">   99</a></span>&#160;        <span class="keyword">typedef</span> std::deque&lt;Operand&gt; <a class="code" href="class_om_1_1_form.html#ac76b556b5114f6478588008b299c8e13">OperandDeque</a>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">template</span>&lt;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">template</span> &lt;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keyword">typename</span> TheOperandIterator,</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">typename</span> TheForm</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        &gt;</div>
@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('form_8hpp_source.html','');});
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="class_om_1_1_form.html#a6568e39b1e30b7225e084ad2ec66fde5">  112</a></span>&#160;        <a class="code" href="class_om_1_1_operator.html" title="The Operator implementation.">Operator</a> <a class="code" href="class_om_1_1_form.html#a6568e39b1e30b7225e084ad2ec66fde5">thisOperator</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="class_om_1_1_form.html#a8f8b76a36e5c83bce24307065b693b55">  114</a></span>&#160;        <a class="code" href="class_om_1_1_form.html#a4e9e06d6015148b64e0b813216f6791b">OperandDeque</a> <a class="code" href="class_om_1_1_form.html#a8f8b76a36e5c83bce24307065b693b55">thisOperandDeque</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="class_om_1_1_form.html#a8f8b76a36e5c83bce24307065b693b55">  114</a></span>&#160;        <a class="code" href="class_om_1_1_form.html#ac76b556b5114f6478588008b299c8e13">OperandDeque</a> <a class="code" href="class_om_1_1_form.html#a8f8b76a36e5c83bce24307065b693b55">thisOperandDeque</a>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    };</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
@@ -143,9 +143,9 @@ $(document).ready(function(){initNavTree('form_8hpp_source.html','');});
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    &gt; {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_form_1_1_element_range.html#ab9ff4be11cf53e3e56e96df583a4c0ff">ElementRange</a>( <a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Form</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_form_1_1_element_range.html#ab9ff4be11cf53e3e56e96df583a4c0ff">ElementRange</a>(<a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Form</a> <span class="keyword">const</span> &amp;);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form_1_1_element_range.html#a6213edc6f4284f5d9a7232d709572b54">operator ==</a>( <a class="code" href="class_om_1_1_form_1_1_element_range.html" title="A Form Element range.">ElementRange</a> <span class="keyword">const</span> &amp; ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form_1_1_element_range.html#a6213edc6f4284f5d9a7232d709572b54">operator ==</a>(<a class="code" href="class_om_1_1_form_1_1_element_range.html" title="A Form Element range.">ElementRange</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_form_1_1_element_range.html#a694b13882936d5c775319a9fdae843f8">operator !</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
@@ -165,29 +165,29 @@ $(document).ready(function(){initNavTree('form_8hpp_source.html','');});
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    };</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// MARK: - Om::Form::OperandRange&lt; Operand &gt;</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="code" href="class_om_1_1_form_1_1_operand_range_3_01_operand_01_4.html">  158</a></span>&#160;    <span class="keyword">class </span>Form::OperandRange&lt; <a class="code" href="class_om_1_1_operand.html" title="The Operand implementation.">Operand</a> &gt;:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// MARK: - Om::Form::OperandRange&lt;Operand&gt;</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"></span>    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="code" href="class_om_1_1_form_1_1_operand_range_3_01_operand_01_4.html">  158</a></span>&#160;    <span class="keyword">class </span>Form::OperandRange&lt;<a class="code" href="class_om_1_1_operand.html" title="The Operand implementation.">Operand</a>&gt;:</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_om_1_1_sources_1_1_collection_front_source.html" title="A range over a collection, starting from the front.">Sources::CollectionFrontSource</a>&lt;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        Operand,</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        OperandDeque::iterator</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    &gt; {</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">explicit</span> OperandRange( <a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Form</a> &amp; );</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">explicit</span> OperandRange(<a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Form</a> &amp;);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    };</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">// MARK: - Om::Form::OperandRange&lt; Operand const &gt;</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="code" href="class_om_1_1_form_1_1_operand_range_3_01_operand_01const_01_01_4.html">  175</a></span>&#160;    <span class="keyword">class </span>Form::OperandRange&lt; <a class="code" href="class_om_1_1_operand.html" title="The Operand implementation.">Operand</a> const &gt;:</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">// MARK: - Om::Form::OperandRange&lt;Operand const&gt;</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"></span>    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="code" href="class_om_1_1_form_1_1_operand_range_3_01_operand_01const_01_01_4.html">  175</a></span>&#160;    <span class="keyword">class </span>Form::OperandRange&lt;<a class="code" href="class_om_1_1_operand.html" title="The Operand implementation.">Operand</a> const&gt;:</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_om_1_1_sources_1_1_collection_front_source.html" title="A range over a collection, starting from the front.">Sources::CollectionFrontSource</a>&lt;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        Operand const,</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        OperandDeque::const_iterator</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    &gt; {</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keyword">explicit</span> OperandRange( <a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Form</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keyword">explicit</span> OperandRange(<a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Form</a> <span class="keyword">const</span> &amp;);</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    };</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('form_8hpp_source.html','');});
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">// MARK: - boost</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">namespace </span>boost {</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Om::Form</a> &amp;,</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances.">Om::Form</a> &amp;</div>

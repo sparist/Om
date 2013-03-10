@@ -5,5 +5,5 @@ var class_om_1_1_operations_1_1_define_operation =
     [ "GiveElements", "class_om_1_1_operations_1_1_define_operation.html#ae62fee7c9e8c067b0c6fdf12785e3a5a", null ],
     [ "TakeOperand", "class_om_1_1_operations_1_1_define_operation.html#a93ef0c4173562af85043e41f5428427e", null ],
     [ "TakeQuotedQueue", "class_om_1_1_operations_1_1_define_operation.html#afa51076913625100561947eccf1c0331", null ],
-    [ "thisLexicon", "class_om_1_1_operations_1_1_define_operation.html#a6aee4407b47f5a0c817c2bcdebcb46fe", null ]
+    [ "thisLexicon", "class_om_1_1_operations_1_1_define_operation.html#a7a53352002125563fc9a0ed798b20519", null ]
 ];

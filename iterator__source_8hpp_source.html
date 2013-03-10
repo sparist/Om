@@ -58,7 +58,7 @@ $(document).ready(function(){initNavTree('iterator__source_8hpp_source.html','')
 </div><!--header-->
 <div class="contents">
 <a href="iterator__source_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Sources_IteratorSource_ )</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Sources_IteratorSource_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="iterator__source_8hpp.html#ae525ba7710f2638f07013dd877be05d7">   17</a></span>&#160;<span class="preprocessor">    #define Om_Sources_IteratorSource_ \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Sources::IteratorSource</span></div>
@@ -70,7 +70,7 @@ $(document).ready(function(){initNavTree('iterator__source_8hpp_source.html','')
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">namespace </span>Sources {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// MARK: - Om::Sources::IteratorSource</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span>        <span class="keyword">template</span>&lt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span>        <span class="keyword">template</span> &lt;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">typename</span> ThisItem,</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keyword">typename</span> ThisIterator</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        &gt;</div>
@@ -84,11 +84,11 @@ $(document).ready(function(){initNavTree('iterator__source_8hpp_source.html','')
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        &gt; {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#a5a28205febf7d76395a5f619784938c9">IteratorSource</a>( ThisIterator <span class="keyword">const</span> theIterator );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#a5a28205febf7d76395a5f619784938c9">IteratorSource</a>(ThisIterator <span class="keyword">const</span> theIterator);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a> &amp; <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#a4cc1191ae497c905f52e0d819222d717">operator =</a>( <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a> );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a> &amp; <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#a4cc1191ae497c905f52e0d819222d717">operator =</a>(<a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#a671ef5d346852b1c9d677c78dd61da52">operator ==</a>( <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a> <span class="keyword">const</span> &amp; ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#a671ef5d346852b1c9d677c78dd61da52">operator ==</a>(<a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#a8339fdabde9182c8ee287d6a9143210d">operator !</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('iterator__source_8hpp_source.html','')
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#aefabdf8f125c1f27a99e48c33b46e7c4" title="Pops the current item.">Pop</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#a367730e44754ff0e8086fb8780bfd400">Swap</a>( <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a> &amp; );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_iterator_source.html#a367730e44754ff0e8086fb8780bfd400">Swap</a>(<a class="code" href="class_om_1_1_sources_1_1_iterator_source.html" title="A Source adapter for a sentinal-terminated input iterator.">IteratorSource</a> &amp;);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('iterator__source_8hpp_source.html','')
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// MARK: - boost</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">namespace </span>boost {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">template</span>&lt;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">template</span> &lt;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">typename</span> ThisItem,</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">typename</span> ThisIterator</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    &gt;</div>

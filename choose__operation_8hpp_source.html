@@ -58,7 +58,7 @@ $(document).ready(function(){initNavTree('choose__operation_8hpp_source.html',''
 </div><!--header-->
 <div class="contents">
 <a href="choose__operation_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Operations_ChooseOperation_ )</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operations_ChooseOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="choose__operation_8hpp.html#a3df9ffde88a3c1ff1f5525e9902cdf71">   17</a></span>&#160;<span class="preprocessor">    #define Om_Operations_ChooseOperation_ \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Operations::ChooseOperation</span></div>
@@ -75,12 +75,12 @@ $(document).ready(function(){initNavTree('choose__operation_8hpp_source.html',''
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// MARK: - Om::Operations::ChooseOperation</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="class_om_1_1_operations_1_1_choose_operation.html">   35</a></span>&#160;<span class="comment"></span>        <span class="keyword">class </span><a class="code" href="class_om_1_1_operations_1_1_choose_operation.html" title="The choose operation implementation.">ChooseOperation</a>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_operation.html" title="A partial implementation of Operation.">DefaultOperation</a>&lt; ChooseOperation &gt; {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_operation.html" title="A partial implementation of Operation.">DefaultOperation</a>&lt;ChooseOperation&gt; {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operations_1_1_choose_operation.html#ae11226b71993a064dc64a8e8bc3fc92b">GetName</a>();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheChooseOperation &gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheChooseOperation&gt;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_choose_operation.html#a21cba679a1ed766cb7c02d6d13f8529d">GiveElements</a>(</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                TheChooseOperation &amp;,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>
@@ -90,13 +90,13 @@ $(document).ready(function(){initNavTree('choose__operation_8hpp_source.html',''
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="class_om_1_1_operations_1_1_choose_operation.html#a1fad739d4cbf7738cfac94d4a698ecec">ChooseOperation</a>();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_choose_operation.html#a83e5d043e46bc638801205859602141d">TakeOperand</a>(</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                TheOperand &amp;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            );</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_choose_operation.html#a4ceda82c6903b2af0d947dd22c3c561c">TakeQuotedQueue</a>(</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                TheQueue &amp;</div>
@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('choose__operation_8hpp_source.html',''
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">namespace </span>{</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt; ChooseOperation &gt;</a> <span class="keyword">const</span> theChooseDefinition;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_definition.html" title="An inserter of an Operation into the static System instance.">Definition&lt;ChooseOperation&gt;</a> <span class="keyword">const</span> theChooseDefinition;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>

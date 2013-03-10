@@ -58,9 +58,9 @@ $(document).ready(function(){initNavTree('macros_8hpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="macros_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Macros_ )</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Macros_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #if !defined( Om_Macros_Precompilation_ )</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #ifndef Om_Macros_Precompilation_</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">        #include &quot;boost/preprocessor/stringize.hpp&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
@@ -69,17 +69,17 @@ $(document).ready(function(){initNavTree('macros_8hpp_source.html','');});
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="macros_8hpp.html#a6080e94207b0a9bd38bf20c0db7f92a1">   29</a></span>&#160;<span class="preprocessor">    #define Om_Macros_ \</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    Om::Macros</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="macros_8hpp.html#ae988b20b23529c2d195738d2eff93150">   36</a></span>&#160;<span class="preprocessor">    #define Om_Macros_PrependZeroX_( theArgument ) \</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="macros_8hpp.html#ae988b20b23529c2d195738d2eff93150">   36</a></span>&#160;<span class="preprocessor">    #define Om_Macros_PrependZeroX_(theArgument) \</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">    0x ##theArgument</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="macros_8hpp.html#a00b19d2d3f218cfd3ffdbceba0581da8">   43</a></span>&#160;<span class="preprocessor">    #define Om_Macros_PrependSlashXAndStringize_( theArgument ) \</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">    BOOST_PP_STRINGIZE( \x ##theArgument )</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="macros_8hpp.html#a00b19d2d3f218cfd3ffdbceba0581da8">   43</a></span>&#160;<span class="preprocessor">    #define Om_Macros_PrependSlashXAndStringize_(theArgument) \</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">    BOOST_PP_STRINGIZE(\x ##theArgument)</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="macros_8hpp.html#a07f0bedb4308e0bf979860a01dfa673b">   50</a></span>&#160;<span class="preprocessor">    #define Om_Macros_GetNumber_( theHex ) \</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    Om_Macros_PrependZeroX_( theHex )</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="macros_8hpp.html#a07f0bedb4308e0bf979860a01dfa673b">   50</a></span>&#160;<span class="preprocessor">    #define Om_Macros_GetNumber_(theHex) \</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    Om_Macros_PrependZeroX_(theHex)</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="macros_8hpp.html#a7c235002aaff6d08f62ba4eb1d764fb0">   57</a></span>&#160;<span class="preprocessor">    #define Om_Macros_GetString_( theHex ) \</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">    Om_Macros_PrependSlashXAndStringize_( theHex )</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="macros_8hpp.html#a7c235002aaff6d08f62ba4eb1d764fb0">   57</a></span>&#160;<span class="preprocessor">    #define Om_Macros_GetString_(theHex) \</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">    Om_Macros_PrependSlashXAndStringize_(theHex)</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>

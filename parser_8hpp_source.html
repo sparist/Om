@@ -58,7 +58,7 @@ $(document).ready(function(){initNavTree('parser_8hpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="parser_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Parser_ )</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Parser_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="parser_8hpp.html#a6cafe88b69bf05c8cb9f343b410f3d08">   17</a></span>&#160;<span class="preprocessor">    #define Om_Parser_ \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Parser</span></div>
@@ -77,10 +77,10 @@ $(document).ready(function(){initNavTree('parser_8hpp_source.html','');});
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_parser.html#abd115b81236123a37f54522b8227de9b">Parser</a>(</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="class_om_1_1_source.html">Source&lt; CodePoint const &gt;</a> &amp;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="class_om_1_1_source.html">Source&lt;CodePoint const&gt;</a> &amp;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        );</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_parser.html#a02e6f4fec78475195b096b23f54190ff">operator ==</a>( <a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> <span class="keyword">const</span> &amp; ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_parser.html#a02e6f4fec78475195b096b23f54190ff">operator ==</a>(<a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespace_om.html#a61e52f05ef3e135408edb1e291c8d5cc" title="A UTF-8 code point.">CodePoint</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_parser.html#a78ace8bb1aa47a6761652bb96453779e">operator *</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
@@ -90,11 +90,11 @@ $(document).ready(function(){initNavTree('parser_8hpp_source.html','');});
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_om_1_1_parser.html#abd115b81236123a37f54522b8227de9b">Parser</a>( <a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_om_1_1_parser.html#abd115b81236123a37f54522b8227de9b">Parser</a>(<a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> <span class="keyword">const</span> &amp;);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_parser.html#ae8df7356f816a4ab64386db1f75e97a1">operator =</a>( <a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_parser.html#ae8df7356f816a4ab64386db1f75e97a1">operator =</a>(<a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> <span class="keyword">const</span> &amp;);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="class_om_1_1_parser.html#a9d6309b59b14397d5d5897bfea8a96b9">   55</a></span>&#160;        <a class="code" href="class_om_1_1_source.html">Source&lt; CodePoint const &gt;</a> &amp; <a class="code" href="class_om_1_1_parser.html#a9d6309b59b14397d5d5897bfea8a96b9">thisCodePointSource</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="class_om_1_1_parser.html#aad3629eb0eb7e15a49f2e8d9f80ce8e0">   55</a></span>&#160;        <a class="code" href="class_om_1_1_source.html">Source&lt;CodePoint const&gt;</a> &amp; <a class="code" href="class_om_1_1_parser.html#aad3629eb0eb7e15a49f2e8d9f80ce8e0">thisCodePointSource</a>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_om_1_1_parser.html#ab4ff15a5062422e0f6a8fcaee348dc13">   57</a></span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="class_om_1_1_parser.html#ab4ff15a5062422e0f6a8fcaee348dc13">thisDepth</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>

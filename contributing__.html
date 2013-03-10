@@ -81,7 +81,7 @@ Adding Operations</h2>
 <ul>
 <li>Define the operation <code>class</code> in the <code><a class="el" href="namespace_om_1_1_operations.html" title="A namespace for all Operations.">Om::Operations</a></code> namespace.</li>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
-<li>Define the static <code>Give( <a class="el" href="class_om_1_1_evaluation.html" title="The current evaluation.">Om::Evaluation</a> &amp; )</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
+<li>Define the static <code>Give(<a class="el" href="class_om_1_1_evaluation.html" title="The current evaluation.">Om::Evaluation</a> &amp;)</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
 </ul>
 <p>To define an atomic operation that consumes one or more operands:</p>
 <ul>
@@ -96,7 +96,7 @@ Adding Operations</h2>
 <p>For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <code>WhateverOperation</code> is a stand-in for the name of the operation <code>class</code>):</p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>{</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">static</span> Definition&lt; WhateverOperation &gt; <span class="keyword">const</span> theWhateverDefinition;</div>
+<div class="line">    <span class="keyword">static</span> Definition&lt;WhateverOperation&gt; <span class="keyword">const</span> theWhateverDefinition;</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="contributing__developing__adding_programs__"></a>

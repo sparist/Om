@@ -58,7 +58,7 @@ $(document).ready(function(){initNavTree('pair_8hpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="pair_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Pair_ )</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Pair_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="pair_8hpp.html#af05d5a9b71d3bda15f68aa37ce8f060d">   17</a></span>&#160;<span class="preprocessor">    #define Om_Pair_ \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Pair</span></div>
@@ -85,24 +85,24 @@ $(document).ready(function(){initNavTree('pair_8hpp_source.html','');});
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="class_om_1_1_operator.html" title="The Operator implementation.">Operator</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_pair.html#afc468123c27a3062f990f705c53c3ce6">GetOperator</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#ac1fbd6dd69965928c1df6c7ddf9e79f7">GiveElements</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#ac1fbd6dd69965928c1df6c7ddf9e79f7">GiveElements</a>(<a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#ac1fbd6dd69965928c1df6c7ddf9e79f7">GiveElements</a>( <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp; ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#ac1fbd6dd69965928c1df6c7ddf9e79f7">GiveElements</a>(<a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_pair.html#a5ccd64abdfb42af91ae6a8b5f272f93a">IsEmpty</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperand &gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#ab5c7e8d0ea26b32f3c96f0dfb750f980">TakeOperand</a>( TheOperand &amp; );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#ab5c7e8d0ea26b32f3c96f0dfb750f980">TakeOperand</a>(TheOperand &amp;);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOperator &gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#a5ee6f9840081cce60d5450ac09d83861" title="Replaces the Operator.">TakeOperator</a>( TheOperator &amp; );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#a5ee6f9840081cce60d5450ac09d83861" title="Replaces the Operator.">TakeOperator</a>(TheOperator &amp;);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheQueue &gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#a29f9b292b66b6b7fcba346fcd943d45e">TakeQuotedQueue</a>( TheQueue &amp; );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#a29f9b292b66b6b7fcba346fcd943d45e">TakeQuotedQueue</a>(TheQueue &amp;);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (static)</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThePair &gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ThePair&gt;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_pair.html#ac1fbd6dd69965928c1df6c7ddf9e79f7">GiveElements</a>(</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            ThePair &amp;,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>

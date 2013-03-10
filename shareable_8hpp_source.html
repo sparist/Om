@@ -58,12 +58,12 @@ $(document).ready(function(){initNavTree('shareable_8hpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="shareable_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined( Om_Shareable_ )</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Shareable_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="shareable_8hpp.html#a19f8aa1136a58f3d474aff904acaff79">   17</a></span>&#160;<span class="preprocessor">    #define Om_Shareable_ \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Shareable</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #if !defined( Om_Macros_Precompilation_ )</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #ifndef Om_Macros_Precompilation_</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">        #include &lt;cstddef&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
@@ -72,17 +72,17 @@ $(document).ready(function(){initNavTree('shareable_8hpp_source.html','');});
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// MARK: - Om::Shareable</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> ThisOwnerCount = <span class="keywordtype">size_t</span> &gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ThisOwnerCount = <span class="keywordtype">size_t</span>&gt;</div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="class_om_1_1_shareable.html">   36</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable</a> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOwnerCount &gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOwnerCount&gt;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">friend</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_shareable.html#a459079aa222e2fe1dea6b0adee7775a4">intrusive_ptr_add_ref</a>(</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable&lt; TheOwnerCount &gt;</a> * <span class="keyword">const</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable&lt;TheOwnerCount&gt;</a> * <span class="keyword">const</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        );</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOwnerCount &gt;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOwnerCount&gt;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">friend</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_shareable.html#a2880b9ab534ded79496b877b6632a1a5">intrusive_ptr_release</a>(</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable&lt; TheOwnerCount &gt;</a> * <span class="keyword">const</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable&lt;TheOwnerCount&gt;</a> * <span class="keyword">const</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        );</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
@@ -95,9 +95,9 @@ $(document).ready(function(){initNavTree('shareable_8hpp_source.html','');});
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="class_om_1_1_shareable.html#ac73b2d7bcd90c8ac230835cc70e6d91d">Shareable</a>();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_om_1_1_shareable.html#ac73b2d7bcd90c8ac230835cc70e6d91d">Shareable</a>( <a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_om_1_1_shareable.html#ac73b2d7bcd90c8ac230835cc70e6d91d">Shareable</a>(<a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable</a> <span class="keyword">const</span> &amp;);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable</a> &amp; <a class="code" href="class_om_1_1_shareable.html#abe679155760e79cf342a3534a421e999">operator =</a>( <a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable</a> <span class="keyword">const</span> &amp; );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable</a> &amp; <a class="code" href="class_om_1_1_shareable.html#abe679155760e79cf342a3534a421e999">operator =</a>(<a class="code" href="class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr.">Shareable</a> <span class="keyword">const</span> &amp;);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
@@ -114,14 +114,14 @@ $(document).ready(function(){initNavTree('shareable_8hpp_source.html','');});
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// MARK: - Om</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOwnerCount &gt;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOwnerCount&gt;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_om.html#af7ae26ee1aa1781e156577385c3ac2fb">intrusive_ptr_add_ref</a>(</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        Shareable&lt; TheOwnerCount &gt; * <span class="keyword">const</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        Shareable&lt;TheOwnerCount&gt; * <span class="keyword">const</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    );</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> TheOwnerCount &gt;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOwnerCount&gt;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_om.html#afcb703c4ae1a906888d3dfdc2a9063e2">intrusive_ptr_release</a>(</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        Shareable&lt; TheOwnerCount &gt; * <span class="keyword">const</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        Shareable&lt;TheOwnerCount&gt; * <span class="keyword">const</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    );</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
