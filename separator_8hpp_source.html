@@ -72,62 +72,65 @@ $(document).ready(function(){initNavTree('separator_8hpp_source.html','');});
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// MARK: - Om::Separator</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_om_1_1_separator.html">   38</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_atom.html" title="A partial implementation of Atom.">DefaultAtom</a>&lt;Separator&gt; {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_om_1_1_separator.html">   39</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_atom.html" title="A partial implementation of Atom.">DefaultAtom</a>&lt;Separator&gt; {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">GetLineSeparator</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_separator.html#af9601249b74166d3614b677d0efb8726">GetName</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">GetLineSeparator</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_separator.html#af9601249b74166d3614b677d0efb8726">GetName</a>();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_om_1_1_separator.html#a3a331a84d608333248ce8adf83c65545">Separator</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_separator.html#a3a331a84d608333248ce8adf83c65545">Separator</a>(</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_om_1_1_source.html">Source&lt;CodePoint const&gt;</a> &amp;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_separator.html#a3a331a84d608333248ce8adf83c65545">Separator</a>(<a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddac" title="A Separator symbol.">Symbols::SeparatorSymbol</a> <span class="keyword">const</span> theSeparatorSymbol);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a> &amp; <a class="code" href="class_om_1_1_separator.html#a921f3b00f395f952006024fdefac066f">operator =</a>(<a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="class_om_1_1_separator.html#a3a331a84d608333248ce8adf83c65545">Separator</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_separator.html#a3a331a84d608333248ce8adf83c65545">Separator</a>(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="class_om_1_1_source.html">Source&lt;CodePoint const&gt;</a> &amp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_separator.html#a3a331a84d608333248ce8adf83c65545">Separator</a>(<a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddac" title="A Separator symbol.">Symbols::SeparatorSymbol</a> <span class="keyword">const</span> theSeparatorSymbol);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#ab4203032d6518e4b30b13d1bb2b69e7e">ReadElements</a>(<a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> &amp;);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a> &amp; <a class="code" href="class_om_1_1_separator.html#a921f3b00f395f952006024fdefac066f">operator =</a>(<a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Separator</a>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#a8d233809cd8b90fca5085afe9fb683cc">ReadQuotedElements</a>(<a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> &amp;);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#ab4203032d6518e4b30b13d1bb2b69e7e">ReadElements</a>(<a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> &amp;);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#ae2c44e2462f57187d53c3f1a8c4cc6e2">TakeOperand</a>(TheOperand &amp;);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#acf1ed7231604ba0195d18af912a917d2">TakeOperator</a>(TheOperator &amp;);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#a0c2574f7bced9d5a60fee7335a641423">TakeQuotedQueue</a>(TheQueue &amp;);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheSeparator&gt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#a24bac2d148ef782ffb9716eba6921430">TakeSeparator</a>(TheSeparator &amp;);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#a340551d9f98a3f15977875176ad4412d">TakeSeparatorSymbol</a>(<a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddac" title="A Separator symbol.">Symbols::SeparatorSymbol</a> <span class="keyword">const</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#a8d233809cd8b90fca5085afe9fb683cc">ReadQuotedElements</a>(<a class="code" href="class_om_1_1_parser.html" title="Produces each CodePoint until the end of the Queue or the Source.">Parser</a> &amp;);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#ae2c44e2462f57187d53c3f1a8c4cc6e2">TakeOperand</a>(TheOperand &amp;);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#acf1ed7231604ba0195d18af912a917d2">TakeOperator</a>(TheOperator &amp;);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#a0c2574f7bced9d5a60fee7335a641423">TakeQuotedQueue</a>(TheQueue &amp;);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheSeparator&gt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#a24bac2d148ef782ffb9716eba6921430">TakeSeparator</a>(TheSeparator &amp;);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_separator.html#a340551d9f98a3f15977875176ad4412d">TakeSeparatorSymbol</a>(<a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddac" title="A Separator symbol.">Symbols::SeparatorSymbol</a> <span class="keyword">const</span>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    };</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// MARK: - boost</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">namespace </span>boost {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Om::Separator</a> &amp;,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Om::Separator</a> &amp;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    );</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="separator_8cpp.html" title="Om source file.">om/separator.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">namespace </span>boost {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// MARK: - boost::</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Om::Separator</a> &amp;,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="class_om_1_1_separator.html" title="The Separator implementation.">Om::Separator</a> &amp;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    );</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="separator_8cpp.html" title="Om source file.">om/separator.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

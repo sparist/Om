@@ -1,8 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"parser_8hpp.html#a6cafe88b69bf05c8cb9f343b410f3d08":[8,0,0,0,73,1],
-"parser_8hpp_source.html":[8,0,0,0,73],
-"program_8cpp.html":[8,0,0,0,74],
 "program_8cpp_source.html":[8,0,0,0,74],
 "program_8hpp.html":[8,0,0,0,75],
 "program_8hpp.html#a673922172747d8e62965951d65c96f20":[8,0,0,0,75,1],

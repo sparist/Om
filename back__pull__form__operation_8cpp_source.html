@@ -76,16 +76,16 @@ $(document).ready(function(){initNavTree('back__pull__form__operation_8cpp_sourc
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="namespace_om_1_1_operations.html#ae829bea27ab137884052844eceee29ff">BOOST_AUTO_TEST_SUITE</a>(BackPullFormOperationTest)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        BOOST_AUTO_TEST_SUITE(BackPullFormOperationTest)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(DefinitionTest) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            BOOST_AUTO_TEST_CASE(DefinitionTest) {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="stringliteral">&quot;{forms-&gt;}&quot;</span>,</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;drop find {forms-&gt;} system&quot;</span>)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                );</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(GeneralTest) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            BOOST_AUTO_TEST_CASE(GeneralTest) {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <span class="stringliteral">&quot;{4{5}{6}}{1{2}{3}}&quot;</span>,</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;forms-&gt; {1{2}{3}4{5}{6}}&quot;</span>)</div>

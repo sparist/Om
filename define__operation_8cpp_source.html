@@ -74,44 +74,44 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="namespace_om_1_1_operations.html#ae829bea27ab137884052844eceee29ff">BOOST_AUTO_TEST_SUITE</a>(DefineOperationTest)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        BOOST_AUTO_TEST_SUITE(DefineOperationTest)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(DefinitionTest) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            BOOST_AUTO_TEST_CASE(DefinitionTest) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="stringliteral">&quot;{define}&quot;</span>,</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;drop find {define} system&quot;</span>)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                );</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(BasicSubstitutionTest) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            BOOST_AUTO_TEST_CASE(BasicSubstitutionTest) {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="stringliteral">&quot;B&quot;</span>,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define {A {B}} {A}&quot;</span>)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                );</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(IdentityDefinitionTest) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            BOOST_AUTO_TEST_CASE(IdentityDefinitionTest) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <span class="stringliteral">&quot;&quot;</span>,</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define {A {}} {A}&quot;</span>)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                );</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(EmptyDefinitionTest) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            BOOST_AUTO_TEST_CASE(EmptyDefinitionTest) {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <span class="stringliteral">&quot;A&quot;</span>,</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define {A} {A}&quot;</span>)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                );</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(EmptyLexiconTest) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            BOOST_AUTO_TEST_CASE(EmptyLexiconTest) {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="stringliteral">&quot;&quot;</span>,</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define {} {}&quot;</span>)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                );</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(EmptyKeyFallThroughTest) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            BOOST_AUTO_TEST_CASE(EmptyKeyFallThroughTest) {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    <span class="stringliteral">&quot;{A}&quot;</span>,</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define {{{A}}} {B}&quot;</span>)</div>
@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="comment">// Confirms that the last definition wins.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(MultipleDefinitionTest) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            BOOST_AUTO_TEST_CASE(MultipleDefinitionTest) {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <span class="stringliteral">&quot;{C}&quot;</span>,</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define { A {{B}} A {{C}} } {A}&quot;</span>)</div>
@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="comment">// Confirms that the last definition wins.</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(MultipleEmptyKeyTest) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            BOOST_AUTO_TEST_CASE(MultipleEmptyKeyTest) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    <span class="stringliteral">&quot;{C}&quot;</span>,</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define { {{B}} {{C}} } {A}&quot;</span>)</div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="comment">// Confirms that underlying non-constant definitions are used.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(ChainedLookupTest) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            BOOST_AUTO_TEST_CASE(ChainedLookupTest) {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    (</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        <span class="stringliteral">&quot;B\n&quot;</span></div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="comment">// Confirms evaluation order in nested scopes.</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(NestedEvaluationOrderTest) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            BOOST_AUTO_TEST_CASE(NestedEvaluationOrderTest) {</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    <span class="stringliteral">&quot;{a-default}&quot;</span>,</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(</div>
@@ -194,21 +194,21 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                );</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            }</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(SimpleNestedTest) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            BOOST_AUTO_TEST_CASE(SimpleNestedTest) {</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    <span class="stringliteral">&quot;c&quot;</span>,</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define{a{define{b{c}}{b}}}{a}&quot;</span>)</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                );</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            }</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(DeletedOperatorTest) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            BOOST_AUTO_TEST_CASE(DeletedOperatorTest) {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    <span class="stringliteral">&quot;A&quot;</span>,</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define {define} {define {a{A}} {a}}&quot;</span>)</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                );</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="namespace_om_1_1_operations.html#a52fc40dae4056a9bdd0f3745928237b9">BOOST_AUTO_TEST_CASE</a>(EvaluationTest) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            BOOST_AUTO_TEST_CASE(EvaluationTest) {</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    <span class="stringliteral">&quot;{1}{3}{2}&quot;</span>,</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    <a class="code" href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">System::Get</a>().Evaluate(<span class="stringliteral">&quot;define {a{{1}c{2}} c{{3}}} {a}&quot;</span>)</div>

@@ -1,8 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"environment_8cpp.html":[8,0,0,0,32],
-"environment_8cpp_source.html":[8,0,0,0,32],
-"environment_8hpp.html":[8,0,0,0,33],
 "environment_8hpp.html#acaa965a12886a41d479f66b360f3a18a":[8,0,0,0,33,1],
 "environment_8hpp_source.html":[8,0,0,0,33],
 "environment__operation_8cpp.html":[8,0,0,0,0,34],
@@ -207,8 +204,8 @@ var NAVTREEINDEX5 =
 "globals.html":[8,1,0,0],
 "globals.html":[8,1,0],
 "globals_0x6f.html":[8,1,0,1],
-"globals_defs.html":[8,1,2],
 "globals_defs.html":[8,1,2,0],
+"globals_defs.html":[8,1,2],
 "globals_func.html":[8,1,1],
 "group__om____expression____.html":[5,1,0],
 "group__om____lexicon____.html":[5,1,1],
@@ -249,5 +246,8 @@ var NAVTREEINDEX5 =
 "group__om____operations____front__pull__operator__operation____.html":[5,0,41],
 "group__om____operations____front__pull__pair__operation____.html":[5,0,8],
 "group__om____operations____front__pull__separator__operation____.html":[5,0,47],
-"group__om____operations____front__pull__term__operation____.html":[5,0,9]
+"group__om____operations____front__pull__term__operation____.html":[5,0,9],
+"group__om____operations____inject__operation____.html":[5,0,32],
+"group__om____operations____lexicon__back__push__operation____.html":[5,0,34],
+"group__om____operations____lexicon__front__push__operation____.html":[5,0,1]
 };
