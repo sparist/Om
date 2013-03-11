@@ -22,10 +22,13 @@
 namespace Om {
 
 	//! \cond
+
 	class Operator;
+
 	//! \endcond
 
 	// MARK: - Om::Operations::DefaultOperation
+
 	/*!
 	\brief
 		A partial implementation of Operation.
@@ -33,6 +36,7 @@ namespace Om {
 	template <typename ThisImplementation>
 	class DefaultOperation:
 	public Operation {
+
 	public: // MARK: public (static)
 
 		static Operator const & GetOperator();

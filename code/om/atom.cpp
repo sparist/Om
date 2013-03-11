@@ -55,7 +55,7 @@ inline Om::Program const & Type_::operator *() const {
 
 	#undef Type_
 
-// MARK: - Om
+// MARK: - Om::
 
 inline Om::Atom * Om::new_clone(Atom const & theAtom) {
 	return Copy(theAtom).release();

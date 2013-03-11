@@ -22,12 +22,15 @@
 namespace Om {
 
 	//! \cond
+
 	class Evaluator;
 
 	class Translator;
+
 	//! \endcond
 
 	// MARK: - Om::Evaluation
+
 	/*!
 	\brief
 		The current evaluation.
@@ -37,6 +40,7 @@ namespace Om {
 	Each Element that it takes is pushed onto a stack, resulting in a LIFO-ordered application of each Element to the Evaluator.
 	*/
 	class Evaluation {
+
 	public: // MARK: public (non-static)
 
 		virtual ~Evaluation();

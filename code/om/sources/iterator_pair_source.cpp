@@ -112,7 +112,7 @@ inline void Type_::Swap(IteratorPairSource & theIteratorPairSource) {
 	#undef Type_
 	#undef Template_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <
 	typename ThisItem,

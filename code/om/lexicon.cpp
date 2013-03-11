@@ -620,7 +620,7 @@ inline void Type_::Pop() {
 
 	#undef Type_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <>
 inline void boost::swap(

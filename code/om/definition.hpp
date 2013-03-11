@@ -20,6 +20,7 @@
 namespace Om {
 
 	// MARK: - Om::Definition
+
 	/*!
 	\brief
 		An inserter of an Operation into the static System instance.
@@ -28,6 +29,7 @@ namespace Om {
 	*/
 	template <typename ThisOperation>
 	class Definition {
+
 	public: // MARK: public (non-static)
 
 		/*!

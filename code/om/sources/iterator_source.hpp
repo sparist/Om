@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::IteratorSource
+
 		/*!
 		\brief
 			A Source adapter for a sentinal-terminated input iterator.
@@ -44,6 +45,7 @@ namespace Om {
 				ThisIterator
 			>
 		> {
+
 		public: // MARK: public (non-static)
 
 			/*!
@@ -78,8 +80,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <
 		typename ThisItem,

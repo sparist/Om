@@ -25,6 +25,7 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::TranslateOperation
+
 		/*!
 		\brief
 			An Operation that applies each Translator to a Program.
@@ -32,6 +33,7 @@ namespace Om {
 		template <typename ThisImplementation>
 		class TranslateOperation:
 		public DefaultOperation<ThisImplementation> {
+
 		public: // MARK: public (static)
 
 			template <typename TheTranslateOperation>

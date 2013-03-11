@@ -22,6 +22,7 @@
 namespace Om {
 
 	// MARK: - Om::DefaultQueue
+
 	/*!
 	\brief
 		A partial implementation of Queue.
@@ -32,6 +33,7 @@ namespace Om {
 	>
 	class DefaultQueue:
 	public ThisInterface {
+
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultQueue() = 0;

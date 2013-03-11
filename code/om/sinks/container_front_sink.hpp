@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sinks {
 
 		// MARK: - Om::Sinks::ContainerFrontSink
+
 		/*!
 		\brief
 			A Sink adapter for a container; pushes items into the front.
@@ -40,6 +41,7 @@ namespace Om {
 				ThisContainer
 			>
 		> {
+
 		public: // MARK: public (non-static)
 
 			explicit ContainerFrontSink(ThisContainer &);
@@ -64,8 +66,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <
 		typename ThisItem,

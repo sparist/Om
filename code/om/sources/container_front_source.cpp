@@ -109,7 +109,7 @@ inline void Type_::Swap(ContainerFrontSource & theContainerFrontSource) {
 	#undef Type_
 	#undef Template_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <
 	typename ThisItem,

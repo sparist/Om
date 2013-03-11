@@ -83,7 +83,7 @@ inline void Type_::Swap(IteratorSink & theIteratorSink) {
 	#undef Type_
 	#undef Template_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <
 	typename ThisItem,

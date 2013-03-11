@@ -23,18 +23,22 @@
 namespace Om {
 
 	// MARK: - Om::Form
+
 	/*!
 	\brief
 		An Operator (which may be empty), followed by zero or more Operand instances.
 	*/
 	class Form {
+
 	public: // MARK: public (static)
 
 		//! \cond
+
 		class ElementRange;
 
 		template <typename ThisOperand>
 		class OperandRange;
+
 		//! \endcond
 
 	public: // MARK: public (non-static)
@@ -116,6 +120,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::Form::ElementRange
+
 	/*!
 	\brief
 		A Form Element range.
@@ -125,6 +130,7 @@ namespace Om {
 		Element const,
 		ElementRange
 	> {
+
 	public: // MARK: public (non-static)
 
 		explicit ElementRange(Form const &);
@@ -150,6 +156,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::Form::OperandRange<Operand>
+
 	/*!
 	\brief
 		Specialization on a mutable Operand.
@@ -160,6 +167,7 @@ namespace Om {
 		Operand,
 		OperandDeque::iterator
 	> {
+
 	public: // MARK: public (non-static)
 
 		explicit OperandRange(Form &);
@@ -167,6 +175,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::Form::OperandRange<Operand const>
+
 	/*!
 	\brief
 		Specialization on an immutable Operand.
@@ -177,6 +186,7 @@ namespace Om {
 		Operand const,
 		OperandDeque::const_iterator
 	> {
+
 	public: // MARK: public (non-static)
 
 		explicit OperandRange(Form const &);
@@ -185,8 +195,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <>
 	void swap(

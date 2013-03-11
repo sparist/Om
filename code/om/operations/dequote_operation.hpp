@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::DequoteOperation
+
 		/*!
 		\brief
 			The \ref om__operations__dequote_operation__ operation implementation.
 		*/
 		class DequoteOperation:
 		public DefaultOperation<DequoteOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

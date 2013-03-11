@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::ContainerFrontSource
+
 		/*!
 		\brief
 			A Source adapter for a container; pulls items from the front.
@@ -40,6 +41,7 @@ namespace Om {
 				ThisContainer
 			>
 		> {
+
 		public: // MARK: public (non-static)
 
 			explicit ContainerFrontSource(ThisContainer &);
@@ -70,8 +72,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <
 		typename ThisItem,

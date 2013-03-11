@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::DefaultSource
+
 		/*!
 		\brief
 			A partial implementation of Source.
@@ -38,6 +39,7 @@ namespace Om {
 			std::input_iterator_tag,
 			ThisItem
 		> {
+
 		public: // MARK: public (non-static)
 
 			virtual ~DefaultSource() = 0;

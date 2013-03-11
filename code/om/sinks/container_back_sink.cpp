@@ -106,7 +106,7 @@ inline void Type_::Swap(ContainerBackSink & theContainerBackSink) {
 	#undef Type_
 	#undef Template_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <
 	typename ThisItem,

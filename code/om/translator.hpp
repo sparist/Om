@@ -28,6 +28,7 @@
 namespace Om {
 
 	//! \cond
+
 	class Evaluation;
 
 	class Operator;
@@ -39,14 +40,17 @@ namespace Om {
 	class Source;
 
 	class Queue;
+
 	//! \endcond
 
 	// MARK: - Om::Translator
+
 	/*!
 	\brief
 		An Operator lookup for use by an Evaluator.
 	*/
 	class Translator {
+
 	public: // MARK: public (non-static)
 
 		/*!

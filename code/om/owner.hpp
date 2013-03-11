@@ -29,6 +29,7 @@
 namespace Om {
 
 	// MARK: - Om::Owner
+
 	/*!
 	\brief
 		A polymorphic object with value semantics.
@@ -40,6 +41,7 @@ namespace Om {
 	public Taker<
 		Owner<ThisValue>
 	> {
+
 	public: // MARK: public (static)
 
 		/*!
@@ -145,8 +147,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <typename ThisValue>
 	void swap(

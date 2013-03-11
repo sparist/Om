@@ -97,7 +97,7 @@ inline void Type_::Swap(SingletonSource & theSingletonSource) {
 	#undef Type_
 	#undef Template_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <typename ThisItem>
 inline void boost::swap(

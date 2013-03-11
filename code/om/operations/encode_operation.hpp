@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::EncodeOperation
+
 		/*!
 		\brief
 			The \ref om__operations__encode_operation__ operation implementation.
 		*/
 		class EncodeOperation:
 		public DefaultOperation<EncodeOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

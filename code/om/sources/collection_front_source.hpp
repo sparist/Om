@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::CollectionFrontSource
+
 		/*!
 		\brief
 			A range over a collection, starting from the front.
@@ -37,6 +38,7 @@ namespace Om {
 			ThisItem,
 			ThisIterator
 		> {
+
 		public: // MARK: public (non-static)
 
 			template <typename TheCollection>

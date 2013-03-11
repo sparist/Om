@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::SwapOperation
+
 		/*!
 		\brief
 			The \ref om__operations__swap_operation__ operation implementation.
 		*/
 		class SwapOperation:
 		public DefaultOperation<SwapOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

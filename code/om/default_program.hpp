@@ -25,6 +25,7 @@
 namespace Om {
 
 	// MARK: - Om::DefaultProgram
+
 	/*!
 	\brief
 		A partial implementation of Program.
@@ -42,6 +43,7 @@ namespace Om {
 		>
 	>,
 	public Taker<ThisImplementation> {
+
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultProgram() = 0;

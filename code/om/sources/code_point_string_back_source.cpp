@@ -424,7 +424,7 @@ inline void Type_::Update() {
 	#undef Type_
 	#undef Template_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <typename ThisStringIterator>
 inline void boost::swap(

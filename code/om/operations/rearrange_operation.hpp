@@ -27,11 +27,13 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::RearrangeOperation
+
 		/*!
 		\brief
 			The \ref om__operations__rearrange_operation__ operation implementation.
 		*/
 		class RearrangeOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

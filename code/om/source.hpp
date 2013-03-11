@@ -20,12 +20,14 @@
 namespace Om {
 
 	// MARK: - Om::Source
+
 	/*!
 	\brief
 		Any object that items can be pulled from.
 	*/
 	template <typename ThisItem>
 	class Source {
+
 	public: // MARK: public (static)
 
 		/*!

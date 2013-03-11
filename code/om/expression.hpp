@@ -31,19 +31,23 @@
 namespace Om {
 
 	// MARK: - Om::Expression
+
 	/*!
 	\brief
 		The \ref om__expression__ Program implementation.
 	*/
 	class Expression:
 	public DefaultProgram<Expression> {
+
 	public: // MARK: public (static)
 
 		//! \cond
+
 		class ElementRange;
 
 		template <typename ThisForm>
 		class FormRange;
+
 		//! \endcond
 
 		static char const * GetName();
@@ -152,6 +156,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::Expression::FormRange<Form>
+
 	/*!
 	\brief
 		Specialization on a mutable Form.
@@ -162,6 +167,7 @@ namespace Om {
 		Form,
 		FormDeque::iterator
 	> {
+
 	public: // MARK: public (non-static)
 
 		explicit FormRange(Expression &);
@@ -169,6 +175,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::Expression::FormRange<Form const>
+
 	/*!
 	\brief
 		Specialization on an immutable Form.
@@ -179,6 +186,7 @@ namespace Om {
 		Form const,
 		FormDeque::const_iterator
 	> {
+
 	public: // MARK: public (non-static)
 
 		explicit FormRange(Expression const &);
@@ -186,6 +194,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::Expression::ElementRange
+
 	/*!
 	\brief
 		An Expression Element range.
@@ -195,6 +204,7 @@ namespace Om {
 		Element const,
 		ElementRange
 	> {
+
 	public: // MARK: public (non-static)
 
 		explicit ElementRange(Expression const &);
@@ -230,10 +240,12 @@ namespace Om {
 		boost::optional<Form::ElementRange> thisFormElementRange;
 
 	};
+
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <>
 	void swap(

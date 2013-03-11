@@ -183,7 +183,7 @@ inline void Type_::TakeSeparatorSymbol(
 
 	#undef Type_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <>
 inline void boost::swap(

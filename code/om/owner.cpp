@@ -36,6 +36,7 @@ namespace Om {
 			class TestValue:
 			public DefaultCopyable<TestValue>,
 			public Shareable<> {
+
 			public:
 
 				explicit TestValue(int const theNumber):
@@ -306,7 +307,7 @@ inline void Type_::UncomparableBoolean() const {}
 	#undef Type_
 	#undef Template_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <typename ThisValue>
 inline void boost::swap(

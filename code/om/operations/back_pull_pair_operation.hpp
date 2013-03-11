@@ -25,17 +25,21 @@
 namespace Om {
 
 	//! \cond
+
 	class Lexicon;
+
 	//! \endcond
 
 	namespace Operations {
 
 		// MARK: - Om::Operations::BackPullPairOperation
+
 		/*!
 		\brief
 			The \ref om__operations__back_pull_pair_operation__ operation implementation.
 		*/
 		class BackPullPairOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

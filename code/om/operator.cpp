@@ -273,7 +273,7 @@ inline void Type_::BackGiveSegment(Queue & theQueue) {
 				typedef SegmentCollection::const_iterator SegmentIterator;
 
 				SegmentCollection const theSegmentCollection(
-					static_cast<boost::locale::boundary::boundary_type> (theSegment),
+					static_cast<boost::locale::boundary::boundary_type>(theSegment),
 					this->thisString.begin(),
 					this->thisString.end()
 				);
@@ -480,7 +480,7 @@ inline void Type_::TakeSeparator(TheSeparator & theSeparator) {
 
 	#undef Type_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <>
 inline void boost::swap(

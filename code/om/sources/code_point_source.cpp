@@ -175,7 +175,7 @@ CodePointSource<CodeUnitSource>(
 
 	#undef Type_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <typename ThisCodeUnitIterator>
 inline void boost::swap(

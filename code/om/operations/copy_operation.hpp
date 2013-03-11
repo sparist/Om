@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::CopyOperation
+
 		/*!
 		\brief
 			The \ref om__operations__copy_operation__ operation implementation.
 		*/
 		class CopyOperation:
 		public DefaultOperation<CopyOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

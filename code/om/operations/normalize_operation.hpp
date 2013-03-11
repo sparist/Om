@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::NormalizeOperation
+
 		/*!
 		\brief
 			The \ref om__operations__normalize_operation__ operation implementation.
 		*/
 		class NormalizeOperation:
 		public DefaultOperation<NormalizeOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

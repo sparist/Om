@@ -211,7 +211,7 @@ inline void Type_::TakeSeparator(TheSeparator &) {}
 
 	#undef Type_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <>
 inline void boost::swap(

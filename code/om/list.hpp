@@ -26,12 +26,14 @@
 namespace Om {
 
 	// MARK: - Om::List
+
 	/*!
 	\brief
 		A doubly-linked list in which nodes are unowned.
 	*/
 	template <typename ThisValue>
 	class List {
+
 	public: // MARK: public (static)
 
 		enum NodeIndex {
@@ -40,7 +42,9 @@ namespace Om {
 		};
 
 		//! \cond
+
 		class Node;
+
 		//! \endcond
 
 	public: // MARK: public (non-static)
@@ -107,6 +111,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::List::Node
+
 	/*!
 	\brief
 		A List node.

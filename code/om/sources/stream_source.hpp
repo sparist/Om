@@ -30,6 +30,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::StreamSource
+
 		/*!
 		\brief
 			A Source adapter for an input stream.
@@ -44,6 +45,7 @@ namespace Om {
 			ThisItem const,
 			StreamSource<ThisItem>
 		> {
+
 		public: // MARK: public (non-static)
 
 			StreamSource();
@@ -82,8 +84,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <typename ThisItem>
 	void swap(

@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::CodePointStringBackSource
+
 		/*!
 		\brief
 			A Source of #CodePoint strings from the back of a string.
@@ -38,6 +39,7 @@ namespace Om {
 			std::string,
 			CodePointStringBackSource<ThisStringIterator>
 		> {
+
 		public: // MARK: public (non-static)
 
 			/*!
@@ -97,8 +99,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <typename ThisStringIterator>
 	void swap(

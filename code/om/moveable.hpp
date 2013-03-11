@@ -22,6 +22,7 @@
 namespace Om {
 
 	// MARK: - Om::Moveable
+
 	/*!
 	\brief
 		An object that can be passed to #Move to be moved.

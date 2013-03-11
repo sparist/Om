@@ -22,6 +22,7 @@
 namespace Om {
 
 	// MARK: - Om::DefaultCopyable
+
 	/*!
 	\brief
 		A partial implementation of Copyable.

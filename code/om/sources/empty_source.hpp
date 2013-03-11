@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::EmptySource
+
 		/*!
 		\brief
 			An empty Source.
@@ -34,6 +35,7 @@ namespace Om {
 			ThisItem,
 			EmptySource<ThisItem>
 		> {
+
 		public: // MARK: public (static)
 
 			static EmptySource & Get();
@@ -60,8 +62,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <typename ThisItem>
 	void swap(

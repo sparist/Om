@@ -24,6 +24,7 @@
 namespace Om {
 
 	// MARK: - Om::DefaultGiveable
+
 	/*!
 	\brief
 		A partial implementation of Giveable.
@@ -40,6 +41,7 @@ namespace Om {
 			ThisInterface
 		>
 	> {
+
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultGiveable() = 0;

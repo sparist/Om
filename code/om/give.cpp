@@ -39,7 +39,7 @@ namespace Om {
 	#include "om/copy.hpp"
 	#include "om/move.hpp"
 
-// MARK: - Om
+// MARK: - Om::
 
 template <typename TheGiveable>
 inline std::auto_ptr<TheGiveable> Om::Give(TheGiveable & theGiveable) {

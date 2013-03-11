@@ -22,6 +22,7 @@
 namespace Om {
 
 	// MARK: - Om::Element
+
 	/*!
 	\brief
 		An "elemental" Program comprised of a single item (or empty).
@@ -30,6 +31,7 @@ namespace Om {
 	*/
 	class Element:
 	public Program {
+
 	public: // MARK: public (non-static)
 
 		virtual ~Element() = 0;
@@ -88,7 +90,8 @@ namespace Om {
 
 	};
 
-	// MARK: - Om
+	// MARK: - Om::
+
 	/*!
 	\return
 		An owner pointer to a new copy.

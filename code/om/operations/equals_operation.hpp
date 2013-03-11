@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::EqualsOperation
+
 		/*!
 		\brief
 			The \ref om__operations__equals_operation__ operation implementation.
 		*/
 		class EqualsOperation:
 		public DefaultOperation<EqualsOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

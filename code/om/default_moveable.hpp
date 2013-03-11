@@ -22,6 +22,7 @@
 namespace Om {
 
 	// MARK: - Om::DefaultMoveable
+
 	/*!
 	\brief
 		A partial implementation of Moveable.

@@ -34,6 +34,7 @@
 namespace Om {
 
 	// MARK: - Om::Operator
+
 	/*!
 	\brief
 		The \ref om__operator__ implementation.
@@ -42,6 +43,7 @@ namespace Om {
 	*/
 	class Operator:
 	public DefaultAtom<Operator> {
+
 	public: // MARK: public (static)
 
 		static char const * GetName();
@@ -142,8 +144,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <>
 	void swap(

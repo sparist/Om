@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::ChooseOperation
+
 		/*!
 		\brief
 			The \ref om__operations__choose_operation__ operation implementation.
 		*/
 		class ChooseOperation:
 		public DefaultOperation<ChooseOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

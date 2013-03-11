@@ -22,12 +22,14 @@
 namespace Om {
 
 	// MARK: - Om::Atom
+
 	/*!
 	\brief
 		A leaf Element defined by a string.
 	*/
 	class Atom:
 	public Element {
+
 	public: // MARK: public (non-static)
 
 		virtual Program & operator *();
@@ -40,7 +42,8 @@ namespace Om {
 
 	};
 
-	// MARK: - Om
+	// MARK: - Om::
+
 	/*!
 	\return
 		An owner pointer to a new copy.

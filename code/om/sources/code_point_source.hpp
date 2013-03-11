@@ -25,6 +25,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::CodePointSource
+
 		/*!
 		\brief
 			A #CodePoint Source that reads each code unit from the iterator.
@@ -35,6 +36,7 @@ namespace Om {
 			CodePoint const,
 			CodePointSource<ThisCodeUnitIterator>
 		> {
+
 		public: // MARK: public (non-static)
 
 			/*!
@@ -83,6 +85,7 @@ namespace Om {
 		};
 
 		// MARK: - Om::Sources::CodePointSource<char const *>
+
 		/*!
 		\brief
 			A specialization for null-terminated code unit array.
@@ -95,6 +98,7 @@ namespace Om {
 				char const *
 			>
 		> {
+
 		public: // MARK: public (non-static)
 
 			/*!
@@ -122,8 +126,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <typename ThisCodeUnitIterator>
 	void swap(

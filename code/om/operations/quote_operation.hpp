@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::QuoteOperation
+
 		/*!
 		\brief
 			The \ref om__operations__quote_operation__ operation implementation.
 		*/
 		class QuoteOperation:
 		public DefaultOperation<QuoteOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

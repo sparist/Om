@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::PairOperation
+
 		/*!
 		\brief
 			The \ref om__operations__pair_operation__ operation implementation.
 		*/
 		class PairOperation:
 		public DefaultOperation<PairOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

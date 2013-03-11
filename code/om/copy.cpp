@@ -36,7 +36,7 @@ namespace Om {
 
 #else
 
-// MARK: - Om
+// MARK: - Om::
 
 template <typename TheCopyable>
 inline std::auto_ptr<TheCopyable> Om::Copy(TheCopyable const & theCopyable) {

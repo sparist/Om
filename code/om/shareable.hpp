@@ -26,6 +26,7 @@
 namespace Om {
 
 	// MARK: - Om::Shareable
+
 	/*!
 	\brief
 		A pointee for boost::intrusive_ptr.
@@ -85,10 +86,7 @@ namespace Om {
 
 	};
 
-}
-
-// MARK: - Om
-namespace Om {
+	// MARK: - Om::
 
 	template <typename TheOwnerCount>
 	void intrusive_ptr_add_ref(

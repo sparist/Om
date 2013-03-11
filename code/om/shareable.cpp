@@ -106,7 +106,7 @@ inline void Type_::IncrementOwnerCount() {
 	#undef Type_
 	#undef Template_
 
-// MARK: - Om
+// MARK: - Om::
 
 template <typename TheOwnerCount>
 inline void Om::intrusive_ptr_add_ref(

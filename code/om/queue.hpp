@@ -26,6 +26,7 @@
 namespace Om {
 
 	//! \cond
+
 	class Operand;
 
 	class Operator;
@@ -35,9 +36,11 @@ namespace Om {
 	class Program;
 
 	class Separator;
+
 	//! \endcond
 
 	// MARK: - Om::Queue
+
 	/*!
 	\brief
 		A first-in, first-out Element processor.
@@ -45,6 +48,7 @@ namespace Om {
 	A Queue can take \ref Element "Elements" from another Queue, process them however the implementation decides, and give the resulting \ref Element "Elements" to another Queue.
 	*/
 	class Queue {
+
 	public: // MARK: public (non-static)
 
 		virtual ~Queue() = 0;

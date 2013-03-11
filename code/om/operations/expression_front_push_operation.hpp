@@ -27,11 +27,13 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::ExpressionFrontPushOperation
+
 		/*!
 		\brief
 			The \ref om__operations__expression_front_push_operation__ operation implementation.
 		*/
 		class ExpressionFrontPushOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

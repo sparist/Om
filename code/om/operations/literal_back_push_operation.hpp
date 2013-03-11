@@ -27,11 +27,13 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::LiteralBackPushOperation
+
 		/*!
 		\brief
 			The \ref om__operations__literal_back_push_operation__ operation implementation.
 		*/
 		class LiteralBackPushOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

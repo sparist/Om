@@ -27,11 +27,13 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::FrontPullCharacterOperation
+
 		/*!
 		\brief
 			The \ref om__operations__front_pull_character_operation__ operation implementation.
 		*/
 		class FrontPullCharacterOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

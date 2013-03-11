@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::CodePointStringFrontSource
+
 		/*!
 		\brief
 			A Source of #CodePoint strings from the front of a string.
@@ -38,6 +39,7 @@ namespace Om {
 			std::string,
 			CodePointStringFrontSource<ThisStringIterator>
 		> {
+
 		public: // MARK: public (non-static)
 
 			/*!
@@ -86,8 +88,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <typename ThisStringIterator>
 	void swap(

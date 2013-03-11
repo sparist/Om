@@ -33,17 +33,21 @@
 namespace Om {
 
 	// MARK: - Om::Literal
+
 	/*!
 	\brief
 		The \ref om__literal__ Program implementation.
 	*/
 	class Literal:
 	public DefaultProgram<Literal> {
+
 	public: // MARK: public (static)
 
 		//! \cond
+
 		template <typename ThisLiteral>
 		class ElementRange;
+
 		//! \endcond
 
 		static char const * GetName();
@@ -129,6 +133,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::Literal::ElementRange<Literal>
+
 	/*!
 	\brief
 		A mutable Element range.
@@ -139,6 +144,7 @@ namespace Om {
 		Element,
 		ElementDeque::iterator
 	> {
+
 	public: // MARK: public (non-static)
 
 		explicit ElementRange(Literal &);
@@ -146,6 +152,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::Literal::ElementRange<Literal const>
+
 	/*!
 	\brief
 		An immutable Element range.
@@ -156,15 +163,18 @@ namespace Om {
 		Element const,
 		ElementDeque::const_iterator
 	> {
+
 	public: // MARK: public (non-static)
 
 		explicit ElementRange(Literal const &);
 
 	};
+
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <>
 	void swap(

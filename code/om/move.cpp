@@ -36,7 +36,7 @@ namespace Om {
 
 #else
 
-// MARK: - Om
+// MARK: - Om::
 
 template <typename TheMoveable>
 inline std::auto_ptr<TheMoveable> Om::Move(TheMoveable & theMoveable) {

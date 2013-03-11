@@ -27,11 +27,13 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::LexiconFrontPushOperation
+
 		/*!
 		\brief
 			The \ref om__operations__lexicon_front_push_operation__ operation implementation.
 		*/
 		class LexiconFrontPushOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

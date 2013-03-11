@@ -23,11 +23,14 @@
 namespace Om {
 
 	//! \cond
+
 	template <typename ThisItem>
 	class Sink;
+
 	//! \endcond
 
 	// MARK: - Om::Writer
+
 	/*!
 	\brief
 		A Queue that pushes each Element to a #CodePoint Sink upon receipt.
@@ -36,6 +39,7 @@ namespace Om {
 	*/
 	class Writer:
 	public DefaultQueue<Writer> {
+
 	public: // MARK: public (non-static)
 
 		explicit Writer(

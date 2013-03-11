@@ -32,6 +32,7 @@
 namespace Om {
 
 	// MARK: - Om::Operand
+
 	/*!
 	\brief
 		The \ref om__operand__ implementation.
@@ -40,6 +41,7 @@ namespace Om {
 	*/
 	class Operand:
 	public DefaultElement<Operand> {
+
 	public: // MARK: public (static)
 
 		static char const * GetName();
@@ -126,8 +128,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <>
 	void swap(

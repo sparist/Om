@@ -23,6 +23,7 @@
 namespace Om {
 
 	// MARK: - Om::DefaultAtom
+
 	/*!
 	\brief
 		A partial implementation of Atom.
@@ -33,6 +34,7 @@ namespace Om {
 		ThisImplementation,
 		Atom
 	> {
+
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultAtom() = 0;

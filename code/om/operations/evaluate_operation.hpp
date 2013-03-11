@@ -28,12 +28,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::EvaluateOperation
+
 		/*!
 		\brief
 			The \ref om__operations__define_operation__ operation implementation.
 		*/
 		class EvaluateOperation:
 		public DefaultOperation<EvaluateOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

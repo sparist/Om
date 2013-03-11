@@ -29,12 +29,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::SubstituteOperation
+
 		/*!
 		\brief
 			The \ref om__operations__substitute_operation__ operation implementation.
 		*/
 		class SubstituteOperation:
 		public TranslateOperation<SubstituteOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

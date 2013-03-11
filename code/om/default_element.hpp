@@ -22,6 +22,7 @@
 namespace Om {
 
 	// MARK: - Om::DefaultElement
+
 	/*!
 	\brief
 		A partial implementation of Element.
@@ -35,6 +36,7 @@ namespace Om {
 		ThisImplementation,
 		ThisInterface
 	> {
+
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultElement() = 0;

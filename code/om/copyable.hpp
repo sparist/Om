@@ -22,6 +22,7 @@
 namespace Om {
 
 	// MARK: - Om::Copyable
+
 	/*!
 	\brief
 		An object that can be passed to #Copy to be copied.

@@ -20,12 +20,14 @@
 namespace Om {
 
 	// MARK: - Om::Taker
+
 	/*!
 	\brief
 		An object that can take (copy or swap) another of the same type.
 	*/
 	template <typename ThisImplementation>
 	class Taker {
+
 	public: // MARK: public (non-static)
 
 		virtual ~Taker() = 0;

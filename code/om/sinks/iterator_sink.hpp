@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sinks {
 
 		// MARK: - Om::Sinks::IteratorSink
+
 		/*!
 		\brief
 			A Sink adapter for an output iterator.
@@ -40,6 +41,7 @@ namespace Om {
 				ThisIterator
 			>
 		> {
+
 		public: // MARK: public (non-static)
 
 			explicit IteratorSink(ThisIterator);
@@ -64,8 +66,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <
 		typename ThisItem,

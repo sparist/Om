@@ -16,7 +16,7 @@
 
 	#include "om/operations/back_pull_code_point_operation.hpp"
 
-	#ifndef Om_Macros_Test_
+	#ifdef Om_Macros_Test_
 
 		#include "om/system.hpp"
 

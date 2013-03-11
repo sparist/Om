@@ -24,13 +24,16 @@
 namespace Om {
 
 	//! \cond
+
 	class Element;
 
 	template <typename ThisItem>
 	class Source;
+
 	//! \endcond
 
 	// MARK: - Om::Program
+
 	/*!
 	\brief
 		The \ref om__programs__ "Program" implementation.
@@ -43,6 +46,7 @@ namespace Om {
 	public Giveable,
 	public Queue,
 	public Shareable<> {
+
 	public: // MARK: public (non-static)
 
 		virtual ~Program() = 0;

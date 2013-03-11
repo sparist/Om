@@ -27,11 +27,13 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::FrontPullCodePointOperation
+
 		/*!
 		\brief
 			The \ref om__operations__front_pull_code_point_operation__ operation implementation.
 		*/
 		class FrontPullCodePointOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

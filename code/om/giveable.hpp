@@ -23,6 +23,7 @@
 namespace Om {
 
 	// MARK: - Om::Giveable
+
 	/*!
 	\brief
 		An object that can be copied or moved via #Give.
@@ -30,6 +31,7 @@ namespace Om {
 	class Giveable:
 	public Copyable,
 	public Moveable {
+
 	public: // MARK: public (non-static)
 
 		virtual ~Giveable() = 0;

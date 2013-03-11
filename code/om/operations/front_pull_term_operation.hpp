@@ -25,17 +25,21 @@
 namespace Om {
 
 	//! \cond
+
 	class Expression;
+
 	//! \endcond
 
 	namespace Operations {
 
 		// MARK: - Om::Operations::FrontPullTermOperation
+
 		/*!
 		\brief
 			The \ref om__operations__front_pull_term_operation__ operation implementation.
 		*/
 		class FrontPullTermOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

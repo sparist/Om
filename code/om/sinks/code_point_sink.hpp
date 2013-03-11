@@ -25,6 +25,7 @@ namespace Om {
 	namespace Sinks {
 
 		// MARK: - Om::Sinks::CodePointSink
+
 		/*!
 		\brief
 			A #CodePoint Sink that pushes each code unit to the iterator.
@@ -35,6 +36,7 @@ namespace Om {
 			CodePoint const,
 			CodePointSink<ThisCodeUnitIterator>
 		> {
+
 		public: // MARK: public (non-static)
 
 			explicit CodePointSink(ThisCodeUnitIterator);
@@ -59,8 +61,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <typename ThisCodeUnitIterator>
 	void swap(

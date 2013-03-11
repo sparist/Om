@@ -29,12 +29,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::SkipOperation
+
 		/*!
 		\brief
 			The \ref om__operations__skip_operation__ operation implementation.
 		*/
 		class SkipOperation:
 		public DefaultOperation<SkipOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

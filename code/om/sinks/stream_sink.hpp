@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sinks {
 
 		// MARK: - Om::Sinks::StreamSink
+
 		/*!
 		\brief
 			A Sink adapter for an output stream.
@@ -34,6 +35,7 @@ namespace Om {
 			ThisItem const,
 			std::ostreambuf_iterator<ThisItem>
 		> {
+
 		public: // MARK: public (non-static)
 
 			explicit StreamSink(std::ostream &);

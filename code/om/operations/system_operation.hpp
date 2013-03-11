@@ -27,11 +27,13 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::SystemOperation
+
 		/*!
 		\brief
 			The \ref om__operations__system_operation__ operation implementation.
 		*/
 		class SystemOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

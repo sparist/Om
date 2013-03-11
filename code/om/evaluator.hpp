@@ -28,14 +28,17 @@
 namespace Om {
 
 	//! \cond
+
 	class Evaluation;
 
 	class Operation;
 
 	class Translator;
+
 	//! \endcond
 
 	// MARK: - Om::Evaluator
+
 	/*!
 	\brief
 		A Queue that evaluates Program instances.
@@ -49,6 +52,7 @@ namespace Om {
 	*/
 	class Evaluator:
 	public DefaultQueue<Evaluator> {
+
 	public: // MARK: public (non-static)
 
 		/*!

@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sources {
 
 		// MARK: - Om::Sources::SingletonSource
+
 		/*!
 		\brief
 			A single item Source.
@@ -34,6 +35,7 @@ namespace Om {
 			ThisItem,
 			SingletonSource<ThisItem>
 		> {
+
 		public: // MARK: public (non-static)
 
 			SingletonSource();
@@ -66,8 +68,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <typename ThisItem>
 	void swap(

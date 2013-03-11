@@ -34,10 +34,13 @@
 namespace Om {
 
 	//! \cond
+
 	class Evaluation;
+
 	//! \endcond
 
 	// MARK: - Om::Lexicon
+
 	/*!
 	\brief
 		The \ref om__lexicon__ Program implementation.
@@ -45,10 +48,13 @@ namespace Om {
 	class Lexicon:
 	public DefaultProgram<Lexicon>,
 	public Translator {
+
 	public: // MARK: public (static)
 
 		//! \cond
+
 		class ElementRange;
+
 		//! \endcond
 
 		static char const * GetName();
@@ -160,6 +166,7 @@ namespace Om {
 	};
 
 	// MARK: - Om::Lexicon::ElementRange
+
 	/*!
 	\brief
 		A Lexicon Element range.
@@ -169,6 +176,7 @@ namespace Om {
 		Element const,
 		ElementRange
 	> {
+
 	public: // MARK: public (non-static)
 
 		ElementRange();
@@ -201,8 +209,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <>
 	void swap(

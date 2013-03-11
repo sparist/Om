@@ -23,6 +23,7 @@
 namespace Om {
 
 	// MARK: - Om::Parser
+
 	/*!
 	\brief
 		Produces each #CodePoint until the end of the Queue or the Source.
@@ -32,6 +33,7 @@ namespace Om {
 		CodePoint const,
 		Parser
 	> {
+
 	public: // MARK: public (non-static)
 
 		explicit Parser(

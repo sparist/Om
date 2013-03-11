@@ -31,12 +31,14 @@
 namespace Om {
 
 	// MARK: - Om::Null
+
 	/*!
 	\brief
 		The \ref om__null__ Program implementation.
 	*/
 	class Null:
 	public DefaultProgram<Null> {
+
 	public: // MARK: public (static)
 
 		/*!
@@ -95,8 +97,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <>
 	void swap(

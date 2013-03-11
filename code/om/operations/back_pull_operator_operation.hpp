@@ -25,17 +25,21 @@
 namespace Om {
 
 	//! \cond
+
 	class Literal;
+
 	//! \endcond
 
 	namespace Operations {
 
 		// MARK: - Om::Operations::BackPullOperatorOperation
+
 		/*!
 		\brief
 			The \ref om__operations__back_pull_operator_operation__ operation implementation.
 		*/
 		class BackPullOperatorOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

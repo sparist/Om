@@ -27,6 +27,7 @@
 namespace Om {
 
 	// MARK: - Om::Separator
+
 	/*!
 	\brief
 		The \ref om__separator__ implementation.
@@ -37,6 +38,7 @@ namespace Om {
 	*/
 	class Separator:
 	public DefaultAtom<Separator> {
+
 	public: // MARK: public (static)
 
 		/*!
@@ -85,8 +87,9 @@ namespace Om {
 
 }
 
-// MARK: - boost
 namespace boost {
+
+	// MARK: - boost::
 
 	template <>
 	void swap(

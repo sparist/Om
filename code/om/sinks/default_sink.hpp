@@ -24,6 +24,7 @@ namespace Om {
 	namespace Sinks {
 
 		// MARK: - Om::Sinks::DefaultSink
+
 		/*!
 		\brief
 			A partial Sink implementation.
@@ -38,6 +39,7 @@ namespace Om {
 			std::output_iterator_tag,
 			ThisItem
 		> {
+
 		public: // MARK: public (non-static)
 
 			virtual ~DefaultSink() = 0;

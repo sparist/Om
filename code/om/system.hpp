@@ -28,6 +28,7 @@
 namespace Om {
 
 	//! \cond
+
 	class Evaluation;
 
 	class Lexicon;
@@ -35,9 +36,11 @@ namespace Om {
 	class Operator;
 
 	class Queue;
+
 	//! \endcond
 
 	// MARK: - Om::System
+
 	/*!
 	\brief
 		Translates an Operator to an Operation.
@@ -45,6 +48,7 @@ namespace Om {
 	There is a single System instance, returned by the static Get() method.
 	*/
 	class System:
+
 	public Translator {
 
 		template <typename ThisOperation>

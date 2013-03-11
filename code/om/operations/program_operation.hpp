@@ -24,6 +24,7 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::ProgramOperation
+
 		/*!
 		\brief
 			An Operation that normalizes a Program to a specific type.
@@ -33,6 +34,7 @@ namespace Om {
 		public DefaultOperation<
 			ProgramOperation<ThisProgram>
 		> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

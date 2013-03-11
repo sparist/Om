@@ -372,7 +372,7 @@ Sources::CollectionFrontSource<
 
 	#undef Type_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <>
 inline void boost::swap(

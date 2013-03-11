@@ -25,7 +25,8 @@
 
 namespace Om {
 
-	// MARK: - Om
+	// MARK: - Om::
+
 	/*!
 	\return
 		A polymorphic copy of the object.

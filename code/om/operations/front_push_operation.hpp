@@ -24,6 +24,7 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::FrontPushOperation
+
 		/*!
 		\brief
 			An Operation that joins an Operand to the front of a Program.
@@ -39,6 +40,7 @@ namespace Om {
 				ThisImplementation
 			>
 		> {
+
 		public: // MARK: public (static)
 
 			template <typename TheFrontPushOperation>

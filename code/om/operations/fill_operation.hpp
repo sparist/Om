@@ -29,12 +29,14 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::FillOperation
+
 		/*!
 		\brief
 			The \ref om__operations__fill_operation__ operation implementation.
 		*/
 		class FillOperation:
 		public DefaultOperation<FillOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

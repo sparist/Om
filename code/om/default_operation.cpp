@@ -59,7 +59,7 @@ inline Om::Operator const & Type_::GetOperator() {
 Template_
 inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr <ThisImplementation> (new ThisImplementation)
+		std::auto_ptr<ThisImplementation>(new ThisImplementation)
 	);
 }
 

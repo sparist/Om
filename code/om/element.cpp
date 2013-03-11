@@ -93,7 +93,7 @@ inline bool Type_::Merge(Separator const &) {
 
 	#undef Type_
 
-// MARK: - Om
+// MARK: - Om::
 
 inline Om::Element * Om::new_clone(Element const & theElement) {
 	return Copy(theElement).release();

@@ -26,18 +26,22 @@
 namespace Om {
 
 	//! \cond
+
 	class Lexicon;
+
 	//! \endcond
 
 	namespace Operations {
 
 		// MARK: - Om::Operations::FindOperation
+
 		/*!
 		\brief
 			The \ref om__operations__find_operation__ operation implementation.
 		*/
 		class FindOperation:
 		public DefaultOperation<FindOperation> {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

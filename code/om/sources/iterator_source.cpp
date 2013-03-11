@@ -58,6 +58,7 @@ namespace Om {
 			}
 
 			class Item {
+
 			public:
 
 				// Note: this is intentionally non-explicit.
@@ -261,7 +262,7 @@ inline void Type_::Swap(IteratorSource & theIteratorSource) {
 	#undef Type_
 	#undef Template_
 
-// MARK: - boost
+// MARK: - boost::
 
 template <
 	typename ThisItem,

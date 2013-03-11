@@ -27,11 +27,13 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::BackPullCharacterOperation
+
 		/*!
 		\brief
 			The \ref om__operations__back_pull_character_operation__ operation implementation.
 		*/
 		class BackPullCharacterOperation {
+
 		public: // MARK: public (static)
 
 			static char const * GetName();

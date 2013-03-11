@@ -24,6 +24,7 @@ namespace Om {
 	namespace Operations {
 
 		// MARK: - Om::Operations::PullOperation
+
 		/*!
 		\brief
 			An Operation that pulls part of a Program.
@@ -39,6 +40,7 @@ namespace Om {
 				ThisImplementation
 			>
 		> {
+
 		public: // MARK: public (static)
 
 			template <typename ThePullOperation>
