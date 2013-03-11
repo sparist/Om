@@ -42,9 +42,7 @@ namespace Om {
 		};
 
 		//! \cond
-
 		class Node;
-
 		//! \endcond
 
 	public: // MARK: public (non-static)

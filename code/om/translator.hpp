@@ -28,7 +28,6 @@
 namespace Om {
 
 	//! \cond
-
 	class Evaluation;
 
 	class Operator;
@@ -40,7 +39,6 @@ namespace Om {
 	class Source;
 
 	class Queue;
-
 	//! \endcond
 
 	// MARK: - Om::Translator

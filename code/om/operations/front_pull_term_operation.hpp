@@ -25,9 +25,7 @@
 namespace Om {
 
 	//! \cond
-
 	class Expression;
-
 	//! \endcond
 
 	namespace Operations {

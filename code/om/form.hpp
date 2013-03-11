@@ -33,12 +33,10 @@ namespace Om {
 	public: // MARK: public (static)
 
 		//! \cond
-
 		class ElementRange;
 
 		template <typename ThisOperand>
 		class OperandRange;
-
 		//! \endcond
 
 	public: // MARK: public (non-static)

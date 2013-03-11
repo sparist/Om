@@ -44,10 +44,8 @@ namespace Om {
 	public: // MARK: public (static)
 
 		//! \cond
-
 		template <typename ThisLiteral>
 		class ElementRange;
-
 		//! \endcond
 
 		static char const * GetName();

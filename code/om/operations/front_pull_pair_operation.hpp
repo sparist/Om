@@ -25,9 +25,7 @@
 namespace Om {
 
 	//! \cond
-
 	class Lexicon;
-
 	//! \endcond
 
 	namespace Operations {

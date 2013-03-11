@@ -34,9 +34,7 @@
 namespace Om {
 
 	//! \cond
-
 	class Evaluation;
-
 	//! \endcond
 
 	// MARK: - Om::Lexicon
@@ -52,9 +50,7 @@ namespace Om {
 	public: // MARK: public (static)
 
 		//! \cond
-
 		class ElementRange;
-
 		//! \endcond
 
 		static char const * GetName();

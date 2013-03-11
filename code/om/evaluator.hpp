@@ -28,13 +28,11 @@
 namespace Om {
 
 	//! \cond
-
 	class Evaluation;
 
 	class Operation;
 
 	class Translator;
-
 	//! \endcond
 
 	// MARK: - Om::Evaluator

@@ -24,12 +24,10 @@
 namespace Om {
 
 	//! \cond
-
 	class Element;
 
 	template <typename ThisItem>
 	class Source;
-
 	//! \endcond
 
 	// MARK: - Om::Program

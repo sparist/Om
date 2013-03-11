@@ -25,9 +25,7 @@
 namespace Om {
 
 	//! \cond
-
 	class Literal;
-
 	//! \endcond
 
 	namespace Operations {

@@ -22,11 +22,9 @@
 namespace Om {
 
 	//! \cond
-
 	class Evaluator;
 
 	class Translator;
-
 	//! \endcond
 
 	// MARK: - Om::Evaluation

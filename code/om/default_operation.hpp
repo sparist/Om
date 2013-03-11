@@ -22,9 +22,7 @@
 namespace Om {
 
 	//! \cond
-
 	class Operator;
-
 	//! \endcond
 
 	// MARK: - Om::Operations::DefaultOperation

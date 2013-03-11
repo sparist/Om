@@ -42,12 +42,10 @@ namespace Om {
 	public: // MARK: public (static)
 
 		//! \cond
-
 		class ElementRange;
 
 		template <typename ThisForm>
 		class FormRange;
-
 		//! \endcond
 
 		static char const * GetName();

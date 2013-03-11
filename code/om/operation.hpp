@@ -22,7 +22,6 @@
 namespace Om {
 
 	//! \cond
-
 	class Evaluation;
 
 	class Operand;
@@ -30,7 +29,6 @@ namespace Om {
 	class Parser;
 
 	class Queue;
-
 	//! \endcond
 
 	// MARK: - Om::Operation

@@ -26,7 +26,6 @@
 namespace Om {
 
 	//! \cond
-
 	class Operand;
 
 	class Operator;
@@ -36,7 +35,6 @@ namespace Om {
 	class Program;
 
 	class Separator;
-
 	//! \endcond
 
 	// MARK: - Om::Queue

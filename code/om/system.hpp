@@ -28,7 +28,6 @@
 namespace Om {
 
 	//! \cond
-
 	class Evaluation;
 
 	class Lexicon;
@@ -36,7 +35,6 @@ namespace Om {
 	class Operator;
 
 	class Queue;
-
 	//! \endcond
 
 	// MARK: - Om::System
