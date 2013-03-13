@@ -4,7 +4,6 @@ var class_om_1_1_evaluator =
     [ "~Evaluator", "class_om_1_1_evaluator.html#a63d6a1938c6089eb9dac9c2b5e2d6bf2", null ],
     [ "Evaluator", "class_om_1_1_evaluator.html#aaa012b1da2caf7bdaeb1bd8e98a9e623", null ],
     [ "Evaluator", "class_om_1_1_evaluator.html#a0745c0b229145a688a033abb39a72ac2", null ],
-    [ "operator==", "class_om_1_1_evaluator.html#a01334d50f2c6c29e878cd5c941535e14", null ],
     [ "Clear", "class_om_1_1_evaluator.html#a73d9e2d78d007f177ceaa69304bb10d5", null ],
     [ "GetTranslator", "class_om_1_1_evaluator.html#a56ab617102b28b1c9c96718b767c1273", null ],
     [ "GiveElements", "class_om_1_1_evaluator.html#a9a6d997f7a853437299e75c5f5ca760c", null ],

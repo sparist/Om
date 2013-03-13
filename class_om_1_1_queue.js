@@ -1,8 +1,6 @@
 var class_om_1_1_queue =
 [
     [ "~Queue", "class_om_1_1_queue.html#acf4a8d8536a1c404eae3f8719965fba1", null ],
-    [ "operator==", "class_om_1_1_queue.html#aca37034961b5d433e9c1995082dfc577", null ],
-    [ "operator!=", "class_om_1_1_queue.html#a87bd0642dc9790390023e87561cd02ad", null ],
     [ "Clear", "class_om_1_1_queue.html#afa21d5837fff890ad2b6c14b43fd32f4", null ],
     [ "GiveElements", "class_om_1_1_queue.html#a1b246caf960d89b1671c4dcc49bd66c0", null ],
     [ "GiveElements", "class_om_1_1_queue.html#a834d852c3ca18b7057964e1bc49a07bd", null ],

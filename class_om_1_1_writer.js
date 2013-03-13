@@ -2,7 +2,6 @@ var class_om_1_1_writer =
 [
     [ "Writer", "class_om_1_1_writer.html#a31729a3fc753ea95553b0b85bf7aceb6", null ],
     [ "Writer", "class_om_1_1_writer.html#a71cc458d6d3c439a7395c5fdcce8f6cf", null ],
-    [ "operator==", "class_om_1_1_writer.html#a2ee664d8005f1f8586d5abc88428b92e", null ],
     [ "Clear", "class_om_1_1_writer.html#a4041bb3322beb8266e51bd8d0bb5cc76", null ],
     [ "GiveElements", "class_om_1_1_writer.html#a0648481c37b2f6630f020fd146138dcf", null ],
     [ "GiveElements", "class_om_1_1_writer.html#a44bc7d86afa5c19668d52b5a06084042", null ],

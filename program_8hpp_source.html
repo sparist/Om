@@ -85,25 +85,30 @@ $(document).ready(function(){initNavTree('program_8hpp_source.html','');});
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_program.html#a98c9f9d44098709dac6b88972fb82ead">~Program</a>() = 0;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">virtual</span> std::auto_ptr&lt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="class_om_1_1_source.html">Source&lt;Element const&gt;</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        &gt; <a class="code" href="class_om_1_1_program.html#af06a98c9349f70d117cab3a6ac9b0f70">GetElementRange</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">virtual</span> std::auto_ptr&lt;Program&gt; <a class="code" href="class_om_1_1_program.html#a390b3e844a63e827070d2e9ded0124d7" title="Returns a new Program populated with the contents of this.">GiveProgram</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">virtual</span> std::auto_ptr&lt;Program&gt; <a class="code" href="class_om_1_1_program.html#a390b3e844a63e827070d2e9ded0124d7" title="Returns a new Program populated with the contents of this.">GiveProgram</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> &amp; <a class="code" href="class_om_1_1_program.html#a5767ab7d162087e5a89167b01aaa6626">operator =</a>(<a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> <span class="keyword">const</span> &amp;);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="program_8cpp.html" title="Om source file.">om/program.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_program.html#a0124e8d2fadf64d4537de6e8a1afcc54">operator ==</a>(<a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProgram&gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_program.html#aaa9bd0f01f6313298f87246b69b1fd20">operator !=</a>(TheProgram <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">virtual</span> std::auto_ptr&lt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="class_om_1_1_source.html">Source&lt;Element const&gt;</a></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        &gt; <a class="code" href="class_om_1_1_program.html#af06a98c9349f70d117cab3a6ac9b0f70">GetElementRange</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">virtual</span> std::auto_ptr&lt;Program&gt; <a class="code" href="class_om_1_1_program.html#a390b3e844a63e827070d2e9ded0124d7" title="Returns a new Program populated with the contents of this.">GiveProgram</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">virtual</span> std::auto_ptr&lt;Program&gt; <a class="code" href="class_om_1_1_program.html#a390b3e844a63e827070d2e9ded0124d7" title="Returns a new Program populated with the contents of this.">GiveProgram</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> &amp; <a class="code" href="class_om_1_1_program.html#a5767ab7d162087e5a89167b01aaa6626">operator =</a>(<a class="code" href="class_om_1_1_program.html" title="The Program implementation.">Program</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    };</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="program_8cpp.html" title="Om source file.">om/program.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
