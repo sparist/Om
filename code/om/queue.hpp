@@ -57,6 +57,9 @@ namespace Om {
 		*/
 		virtual bool operator ==(Program const &) const = 0;
 
+		template <typename TheProgram>
+		bool operator !=(TheProgram const &) const;
+
 		virtual void Clear() = 0;
 
 		/*!
@@ -74,9 +77,6 @@ namespace Om {
 			\overload
 		*/
 		virtual void GiveElements(Queue &) const = 0;
-
-		template <typename TheProgram>
-		bool operator !=(TheProgram const &) const;
 
 		/*!
 		\brief
