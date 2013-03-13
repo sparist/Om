@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"environment_8hpp.html#acaa965a12886a41d479f66b360f3a18a":[8,0,0,0,33,1],
 "environment_8hpp_source.html":[8,0,0,0,33],
 "environment__operation_8cpp.html":[8,0,0,0,0,34],
 "environment__operation_8cpp_source.html":[8,0,0,0,0,34],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "group__om____operations____front__pull__term__operation____.html":[5,0,9],
 "group__om____operations____inject__operation____.html":[5,0,32],
 "group__om____operations____lexicon__back__push__operation____.html":[5,0,34],
-"group__om____operations____lexicon__front__push__operation____.html":[5,0,1],
-"group__om____operations____lexicon__operation____.html":[5,0,33]
+"group__om____operations____lexicon__front__push__operation____.html":[5,0,1]
 };

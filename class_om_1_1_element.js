@@ -2,6 +2,7 @@ var class_om_1_1_element =
 [
     [ "~Element", "class_om_1_1_element.html#a1ec979009bf37669e82a3241993d3bc7", null ],
     [ "operator==", "class_om_1_1_element.html#ab6212893353f9633c257ed2ba62a1a3f", null ],
+    [ "operator!=", "class_om_1_1_element.html#a8074c0b5ed32057d7a797b847781aaa9", null ],
     [ "operator*", "class_om_1_1_element.html#ae7cd2886a3881936a125ece4e449a317", null ],
     [ "operator*", "class_om_1_1_element.html#a941e38c3189f22d66a8623ffd94a648b", null ],
     [ "operator->", "class_om_1_1_element.html#afe04314646c65eb85c4b155905e132f3", null ],

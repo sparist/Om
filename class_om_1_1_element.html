@@ -87,6 +87,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1ec979009bf37669e82a3241993d3bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6212893353f9633c257ed2ba62a1a3f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_element.html#ab6212893353f9633c257ed2ba62a1a3f">operator==</a> (<a class="el" href="class_om_1_1_element.html">Element</a> const &amp;) const =0</td></tr>
 <tr class="separator:ab6212893353f9633c257ed2ba62a1a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8074c0b5ed32057d7a797b847781aaa9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_element.html#a8074c0b5ed32057d7a797b847781aaa9">operator!=</a> (<a class="el" href="class_om_1_1_element.html">Element</a> const &amp;) const </td></tr>
+<tr class="separator:a8074c0b5ed32057d7a797b847781aaa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7cd2886a3881936a125ece4e449a317"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_om_1_1_program.html">Program</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_element.html#ae7cd2886a3881936a125ece4e449a317">operator*</a> ()=0</td></tr>
 <tr class="separator:ae7cd2886a3881936a125ece4e449a317"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a941e38c3189f22d66a8623ffd94a648b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_om_1_1_program.html">Program</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_element.html#a941e38c3189f22d66a8623ffd94a648b">operator*</a> () const =0</td></tr>
@@ -111,9 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a98c9f9d44098709dac6b88972fb82ead inherit pub_methods_class_om_1_1_program"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0124e8d2fadf64d4537de6e8a1afcc54 inherit pub_methods_class_om_1_1_program"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_program.html#a0124e8d2fadf64d4537de6e8a1afcc54">operator==</a> (<a class="el" href="class_om_1_1_program.html">Program</a> const &amp;) const =0</td></tr>
 <tr class="separator:a0124e8d2fadf64d4537de6e8a1afcc54 inherit pub_methods_class_om_1_1_program"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa9bd0f01f6313298f87246b69b1fd20 inherit pub_methods_class_om_1_1_program"><td class="memTemplParams" colspan="2">template&lt;typename TheProgram &gt; </td></tr>
-<tr class="memitem:aaa9bd0f01f6313298f87246b69b1fd20 inherit pub_methods_class_om_1_1_program"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_om_1_1_program.html#aaa9bd0f01f6313298f87246b69b1fd20">operator!=</a> (TheProgram const &amp;) const </td></tr>
-<tr class="separator:aaa9bd0f01f6313298f87246b69b1fd20 inherit pub_methods_class_om_1_1_program"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2758f45caa6d5292d318a406bbf0b5aa inherit pub_methods_class_om_1_1_program"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_program.html#a2758f45caa6d5292d318a406bbf0b5aa">operator!=</a> (<a class="el" href="class_om_1_1_program.html">Program</a> const &amp;) const </td></tr>
+<tr class="separator:a2758f45caa6d5292d318a406bbf0b5aa inherit pub_methods_class_om_1_1_program"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af06a98c9349f70d117cab3a6ac9b0f70 inherit pub_methods_class_om_1_1_program"><td class="memItemLeft" align="right" valign="top">virtual std::auto_ptr&lt; <a class="el" href="class_om_1_1_source.html">Source</a><br class="typebreak"/>
 &lt; <a class="el" href="class_om_1_1_element.html">Element</a> const  &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_program.html#af06a98c9349f70d117cab3a6ac9b0f70">GetElementRange</a> () const =0</td></tr>
 <tr class="separator:af06a98c9349f70d117cab3a6ac9b0f70 inherit pub_methods_class_om_1_1_program"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,6 +253,22 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_om_1_1_default_element.html#a4b14f63053a74e71c1f29641267cec56">Om::DefaultElement&lt; Separator, Atom &gt;</a>, <a class="el" href="class_om_1_1_default_element.html#a4b14f63053a74e71c1f29641267cec56">Om::DefaultElement&lt; Operand &gt;</a>, <a class="el" href="class_om_1_1_default_element.html#a4b14f63053a74e71c1f29641267cec56">Om::DefaultElement&lt; ThisImplementation, Atom &gt;</a>, and <a class="el" href="class_om_1_1_default_element.html#a4b14f63053a74e71c1f29641267cec56">Om::DefaultElement&lt; Operator, Atom &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8074c0b5ed32057d7a797b847781aaa9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Om::Element::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_om_1_1_element.html">Element</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
