@@ -96,9 +96,7 @@ inline bool Type_::operator ==(Program const & theProgram) const {
 		) {
 			return (theRangeHasNext == theOtherRangeHasNext);
 		}
-		if (
-			!(**theRange == **theOtherRange)
-		) {
+		if (**theRange != **theOtherRange) {
 			return false;
 		}
 		theRange->Pop();

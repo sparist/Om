@@ -51,8 +51,7 @@ namespace Om {
 
 		virtual bool operator ==(Program const &) const = 0;
 
-		template <typename TheProgram>
-		bool operator !=(TheProgram const &) const;
+		bool operator !=(Program const &) const;
 
 		/*!
 		\return

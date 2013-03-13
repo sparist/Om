@@ -50,6 +50,10 @@ inline bool Type_::operator ==(Element const &) const {
 	throw std::logic_error("Pure virtual function called.");
 }
 
+inline bool Type_::operator !=(Element const & theElement) const {
+	return !(theElement == *this);
+}
+
 inline Om::Program & Type_::operator *() {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");

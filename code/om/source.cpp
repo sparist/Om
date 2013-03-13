@@ -63,8 +63,7 @@ inline bool Type_::operator ==(Source const &) const {
 }
 
 Template_
-template <typename TheSource>
-inline bool Type_::operator !=(TheSource const & theSource) const {
+inline bool Type_::operator !=(Source const & theSource) const {
 	return !(theSource == *this);
 }
 

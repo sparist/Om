@@ -38,6 +38,8 @@ namespace Om {
 
 		virtual bool operator ==(Element const &) const = 0;
 
+		bool operator !=(Element const &) const;
+
 		/*!
 		\return
 			The "wrapped" Program (Null if none).

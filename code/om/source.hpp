@@ -50,8 +50,7 @@ namespace Om {
 		\return
 			True when not representing equivalent pointer-style iterators.
 		*/
-		template <typename TheSource>
-		bool operator !=(TheSource const &) const;
+		bool operator !=(Source const &) const;
 
 		virtual ThisItem & operator *() const = 0;
 
