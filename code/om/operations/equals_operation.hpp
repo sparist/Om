@@ -64,6 +64,9 @@ namespace Om {
 
 		private: // MARK: private (non-static)
 
+			template <typename TheQueue>
+			bool IsMatch(TheQueue &) const;
+
 			/*!
 			\brief
 				The Operand to compare with.

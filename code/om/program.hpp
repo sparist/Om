@@ -49,6 +49,11 @@ namespace Om {
 
 		virtual ~Program() = 0;
 
+		virtual bool operator ==(Program const &) const = 0;
+
+		template <typename TheProgram>
+		bool operator !=(TheProgram const &) const;
+
 		/*!
 		\return
 			A non-null owner pointer to a new Element range.

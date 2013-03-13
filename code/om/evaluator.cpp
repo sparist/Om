@@ -72,12 +72,6 @@ thisTranslator(theTranslator),
 thisOperationVector(),
 thisGaveElementToOutput() {}
 
-inline bool Type_::operator ==(Program const & theProgram) const {
-	Expression theExpression;
-	this->GiveElements(theExpression);
-	return (theExpression == theProgram);
-}
-
 inline void Type_::Clear() {
 	this->thisOperationVector.clear();
 }

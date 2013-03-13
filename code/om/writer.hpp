@@ -44,8 +44,6 @@ namespace Om {
 			Sink<CodePoint const> &
 		);
 
-		virtual bool operator ==(Program const &) const;
-
 		virtual void Clear();
 
 		virtual void GiveElements(Queue &);

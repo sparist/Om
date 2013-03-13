@@ -47,6 +47,16 @@ namespace Om {
 
 inline Type_::~Program() {}
 
+inline bool Type_::operator ==(Program const &) const {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
+}
+
+template <typename TheProgram>
+inline bool Type_::operator !=(TheProgram const & theProgram) const {
+	return !(theProgram == *this);
+}
+
 inline std::auto_ptr<
 	Om::Source<Om::Element const>
 > Type_::GetElementRange() const {

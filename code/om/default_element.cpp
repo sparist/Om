@@ -63,9 +63,7 @@ inline bool Type_::operator ==(Element const & theElement) const {
 		typeid(theElement) == typeid(ThisImplementation)
 	) {
 		assert(
-			dynamic_cast<ThisImplementation const *>(&theElement)
-		);
-		assert(
+			dynamic_cast<ThisImplementation const *>(&theElement) &&
 			dynamic_cast<ThisImplementation const *>(this)
 		);
 		return (

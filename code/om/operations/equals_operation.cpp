@@ -141,12 +141,29 @@ inline bool Type_::TakeQuotedQueue(
 	}
 	Expression theExpression;
 	if (
-		theQueue == *this->thisOperand.GetProgram()
+		this->IsMatch(theQueue)
 	) {
 		theExpression.TakeOperand(this->thisOperand);
 	}
 	theEvaluation.TakeQuotedQueue(theExpression);
 	return true;
+}
+
+// MARK: private (non-static)
+
+template <typename TheQueue>
+inline bool Type_::IsMatch(TheQueue & theQueue) const {
+	assert(
+		this->thisOperand.GetProgram()
+	);
+	Program const & theProgram = *this->thisOperand.GetProgram();
+	Program const * const theQueueProgram = dynamic_cast<Program const *>(&theQueue);
+	if (theQueueProgram) {
+		return (theProgram == *theQueueProgram);
+	}
+	Literal theQueueLiteral;
+	theQueueLiteral.TakeElements(theQueue);
+	return (theProgram == theQueueLiteral);
 }
 
 	#undef Type_

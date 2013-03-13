@@ -72,8 +72,6 @@ namespace Om {
 			Translator const & theTranslator
 		);
 
-		virtual bool operator ==(Program const &) const;
-
 		virtual void Clear();
 
 		Translator const & GetTranslator() const;

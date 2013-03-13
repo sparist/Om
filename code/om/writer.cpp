@@ -76,10 +76,6 @@ inline Type_::Writer(
 ):
 thisCodePointSink(theCodePointSink) {}
 
-inline bool Type_::operator ==(Program const & theProgram) const {
-	return theProgram.IsEmpty();
-}
-
 inline void Type_::Clear() {}
 
 inline void Type_::GiveElements(Queue &) {}
