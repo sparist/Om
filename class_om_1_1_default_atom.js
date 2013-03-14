@@ -5,7 +5,6 @@ var class_om_1_1_default_atom =
     [ "DefaultAtom", "class_om_1_1_default_atom.html#a01a71de544c730f750e87f370ce0f8ce", null ],
     [ "DefaultAtom", "class_om_1_1_default_atom.html#aa0f09eed1143351b39f7900b596d4764", null ],
     [ "operator<", "class_om_1_1_default_atom.html#a24a987c2a16c8a773d70ca13f74281b5", null ],
-    [ "operator==", "class_om_1_1_default_atom.html#abf00bcdeda2b2b1f6bf56b6a07a2728d", null ],
     [ "Clear", "class_om_1_1_default_atom.html#aec2f4c95cb42d72a02108bbafcb4b9eb", null ],
     [ "GetElementRange", "class_om_1_1_default_atom.html#abe521ad29dc020a05f5af6071044affd", null ],
     [ "GetElementRange", "class_om_1_1_default_atom.html#a124d304193f440c09e9249c01595ffaf", null ],
@@ -15,5 +14,6 @@ var class_om_1_1_default_atom =
     [ "Merge", "class_om_1_1_default_atom.html#a4243764b07bfdc44ed81b48b8ec6178f", null ],
     [ "Swap", "class_om_1_1_default_atom.html#a42ac05b114a5122b642004aa9abc1f4d", null ],
     [ "operator=", "class_om_1_1_default_atom.html#ad6a6efa86d282f72b72f1b7b01b87252", null ],
+    [ "operator==", "class_om_1_1_default_atom.html#a7fd11ff331fe8f2f64ce60ab46169fe5", null ],
     [ "thisString", "class_om_1_1_default_atom.html#a73ef89b77210e2bd100c1e79d7eedeee", null ]
 ];

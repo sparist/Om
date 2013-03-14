@@ -106,41 +106,41 @@ $(document).ready(function(){initNavTree('default__source_8cpp_source.html','');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">inline</span> Type_::~DefaultSource() {}</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;Template_</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::operator ==(</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Source&lt;ThisItem&gt; <span class="keyword">const</span> &amp; theSource</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    assert(</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        dynamic_cast&lt;ThisImplementation const *&gt;(<span class="keyword">this</span>)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    );</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ThisImplementation <span class="keyword">const</span> * <span class="keyword">const</span> theImplementation = <span class="keyword">dynamic_cast&lt;</span>ThisImplementation <span class="keyword">const </span>*<span class="keyword">&gt;</span>(&amp;theSource);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> (</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        theImplementation &amp;&amp;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        (</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            static_cast&lt;ThisImplementation const &amp;&gt;(*<span class="keyword">this</span>) == *theImplementation</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        )</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    );</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;Template_</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">inline</span> ThisImplementation &amp; Type_::operator ++() {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    assert(</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        dynamic_cast&lt;ThisImplementation *&gt;(<span class="keyword">this</span>)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    );</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    assert(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    this-&gt;Pop();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>ThisImplementation &amp;<span class="keyword">&gt;</span>(*this);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;Template_</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">inline</span> ThisImplementation Type_::operator ++(<span class="keywordtype">int</span>) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    assert(</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        dynamic_cast&lt;ThisImplementation *&gt;(<span class="keyword">this</span>)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    );</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    ThisImplementation theSource(</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        static_cast&lt;ThisImplementation &amp;&gt;(*<span class="keyword">this</span>)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    );</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ++*<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> theSource;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">inline</span> ThisImplementation &amp; Type_::operator ++() {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    assert(</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        dynamic_cast&lt;ThisImplementation *&gt;(<span class="keyword">this</span>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    assert(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    this-&gt;Pop();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>ThisImplementation &amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;Template_</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">inline</span> ThisImplementation Type_::operator ++(<span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    assert(</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        dynamic_cast&lt;ThisImplementation *&gt;(<span class="keyword">this</span>)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ThisImplementation theSource(</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        static_cast&lt;ThisImplementation &amp;&gt;(*<span class="keyword">this</span>)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    ++*<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> theSource;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;Template_</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::Equals(</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    Source&lt;ThisItem&gt; <span class="keyword">const</span> &amp; theSource</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    assert(</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        dynamic_cast&lt;ThisImplementation const *&gt;(<span class="keyword">this</span>)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ThisImplementation <span class="keyword">const</span> * <span class="keyword">const</span> theImplementation = <span class="keyword">dynamic_cast&lt;</span>ThisImplementation <span class="keyword">const </span>*<span class="keyword">&gt;</span>(&amp;theSource);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> (</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        theImplementation &amp;&amp;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        (</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            static_cast&lt;ThisImplementation const &amp;&gt;(*<span class="keyword">this</span>) == *theImplementation</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        )</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    );</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">    #undef Type_</span></div>

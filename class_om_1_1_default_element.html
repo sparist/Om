@@ -85,8 +85,8 @@ $(document).ready(function(){initNavTree('class_om_1_1_default_element.html','')
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a43f217ec0e2e61cbeafa6c0fec723ea7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#a43f217ec0e2e61cbeafa6c0fec723ea7">~DefaultElement</a> ()=0</td></tr>
 <tr class="separator:a43f217ec0e2e61cbeafa6c0fec723ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b14f63053a74e71c1f29641267cec56"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#a4b14f63053a74e71c1f29641267cec56">operator==</a> (<a class="el" href="class_om_1_1_element.html">Element</a> const &amp;) const </td></tr>
-<tr class="separator:a4b14f63053a74e71c1f29641267cec56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b458fe693fc2760ea543a9b2bb24d81"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#a8b458fe693fc2760ea543a9b2bb24d81">Equals</a> (<a class="el" href="class_om_1_1_element.html">Element</a> const &amp;) const </td></tr>
+<tr class="separator:a8b458fe693fc2760ea543a9b2bb24d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04256abca95da7d644acd21e250c47a"><td class="memItemLeft" align="right" valign="top">virtual std::auto_ptr&lt; <a class="el" href="class_om_1_1_source.html">Source</a><br class="typebreak"/>
 &lt; <a class="el" href="class_om_1_1_element.html">Element</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#ac04256abca95da7d644acd21e250c47a">GetElementRange</a> ()</td></tr>
 <tr class="separator:ac04256abca95da7d644acd21e250c47a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,8 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="inherit_header pub_methods_class_om_1_1_default_program"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_om_1_1_default_program')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_om_1_1_default_program.html">Om::DefaultProgram&lt; ThisImplementation, ThisInterface &gt;</a></td></tr>
 <tr class="memitem:a88776c5f307478bcbfc43c2ddd5eea31 inherit pub_methods_class_om_1_1_default_program"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_program.html#a88776c5f307478bcbfc43c2ddd5eea31">~DefaultProgram</a> ()=0</td></tr>
 <tr class="separator:a88776c5f307478bcbfc43c2ddd5eea31 inherit pub_methods_class_om_1_1_default_program"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19562afa6463520e294cb1b19228b0c8 inherit pub_methods_class_om_1_1_default_program"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_program.html#a19562afa6463520e294cb1b19228b0c8">operator==</a> (<a class="el" href="class_om_1_1_program.html">Program</a> const &amp;) const </td></tr>
-<tr class="separator:a19562afa6463520e294cb1b19228b0c8 inherit pub_methods_class_om_1_1_default_program"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae694e2fbe6f64ba3cbdc40133f283e2d inherit pub_methods_class_om_1_1_default_program"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_program.html#ae694e2fbe6f64ba3cbdc40133f283e2d">Equals</a> (<a class="el" href="class_om_1_1_program.html">Program</a> const &amp;) const </td></tr>
+<tr class="separator:ae694e2fbe6f64ba3cbdc40133f283e2d inherit pub_methods_class_om_1_1_default_program"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67da7f0708a5712defbeb813136cd14e inherit pub_methods_class_om_1_1_default_program"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_program.html#a67da7f0708a5712defbeb813136cd14e">TakeElements</a> (<a class="el" href="class_om_1_1_queue.html">Queue</a> &amp;)</td></tr>
 <tr class="separator:a67da7f0708a5712defbeb813136cd14e inherit pub_methods_class_om_1_1_default_program"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a470ba04b6c25c692dadb008aa4a00014 inherit pub_methods_class_om_1_1_default_program"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_program.html#a470ba04b6c25c692dadb008aa4a00014">TakeElements</a> (<a class="el" href="class_om_1_1_queue.html">Queue</a> const &amp;)</td></tr>
@@ -182,7 +182,7 @@ template&lt;typename ThisImplementation, typename ThisInterface = Element&gt; </
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4b14f63053a74e71c1f29641267cec56"></a>
+<a class="anchor" id="a8b458fe693fc2760ea543a9b2bb24d81"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -192,7 +192,7 @@ template&lt;typename ThisImplementation, typename ThisInterface = Element&gt; </
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="class_om_1_1_default_element.html">Om::DefaultElement</a>&lt; ThisImplementation, ThisInterface &gt;::operator== </td>
+          <td class="memname">virtual bool <a class="el" href="class_om_1_1_default_element.html">Om::DefaultElement</a>&lt; ThisImplementation, ThisInterface &gt;::Equals </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_om_1_1_element.html">Element</a> const &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>

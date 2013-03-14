@@ -3,7 +3,6 @@ var class_om_1_1_sources_1_1_empty_source =
     [ "EmptySource", "class_om_1_1_sources_1_1_empty_source.html#ae2b93403f7b6e4a64a6427c14ee1a265", null ],
     [ "Get", "class_om_1_1_sources_1_1_empty_source.html#a13ebae514113ce4c4c1699f15c449297", null ],
     [ "operator=", "class_om_1_1_sources_1_1_empty_source.html#ac617d4d9fb2dc67358857c389f01582b", null ],
-    [ "operator==", "class_om_1_1_sources_1_1_empty_source.html#a2801f16b45819729d74ac4f6cba92b31", null ],
     [ "operator!", "class_om_1_1_sources_1_1_empty_source.html#aac4718fc72d3f84b717fa4dafd9151e3", null ],
     [ "operator*", "class_om_1_1_sources_1_1_empty_source.html#a54274059bd1c63e06fa2f44ea4bd10c8", null ],
     [ "Pop", "class_om_1_1_sources_1_1_empty_source.html#a48b06e771ada182f598c00fb09005d1d", null ],

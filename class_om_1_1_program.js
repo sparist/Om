@@ -1,8 +1,7 @@
 var class_om_1_1_program =
 [
     [ "~Program", "class_om_1_1_program.html#a98c9f9d44098709dac6b88972fb82ead", null ],
-    [ "operator==", "class_om_1_1_program.html#a0124e8d2fadf64d4537de6e8a1afcc54", null ],
-    [ "operator!=", "class_om_1_1_program.html#a2758f45caa6d5292d318a406bbf0b5aa", null ],
+    [ "Equals", "class_om_1_1_program.html#aea0eb3278518ed8154f05eed8f5013b3", null ],
     [ "GetElementRange", "class_om_1_1_program.html#af06a98c9349f70d117cab3a6ac9b0f70", null ],
     [ "GiveProgram", "class_om_1_1_program.html#a390b3e844a63e827070d2e9ded0124d7", null ],
     [ "GiveProgram", "class_om_1_1_program.html#a9ed68794a978f663699186157554d3af", null ],

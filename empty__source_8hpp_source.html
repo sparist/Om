@@ -88,37 +88,49 @@ $(document).ready(function(){initNavTree('empty__source_8hpp_source.html','');})
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">EmptySource</a> &amp; <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#ac617d4d9fb2dc67358857c389f01582b">operator =</a>(<a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">EmptySource</a>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#a2801f16b45819729d74ac4f6cba92b31">operator ==</a>(<a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">EmptySource</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#aac4718fc72d3f84b717fa4dafd9151e3">operator !</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#aac4718fc72d3f84b717fa4dafd9151e3">operator !</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">virtual</span> ThisItem &amp; <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#a54274059bd1c63e06fa2f44ea4bd10c8">operator *</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">virtual</span> ThisItem &amp; <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#a54274059bd1c63e06fa2f44ea4bd10c8">operator *</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#a48b06e771ada182f598c00fb09005d1d" title="Pops the current item.">Pop</a>();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#a48b06e771ada182f598c00fb09005d1d" title="Pops the current item.">Pop</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#ab328614621bc073bb66a26d2cce809b7">Swap</a>(<a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">EmptySource</a> &amp;);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sources_1_1_empty_source.html#ab328614621bc073bb66a26d2cce809b7">Swap</a>(<a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">EmptySource</a> &amp;);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        };</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// MARK: - Om::Sources::</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">namespace </span>boost {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheItem&gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_sources.html#ac047d0ad834796ca5674544dd950b634">operator ==</a>(</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">EmptySource&lt;TheItem&gt;</a> <span class="keyword">const</span> &amp;,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">EmptySource&lt;TheItem&gt;</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        );</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// MARK: - boost::</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ThisItem&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">Om::Sources::EmptySource&lt;ThisItem&gt;</a> &amp;,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">Om::Sources::EmptySource&lt;ThisItem&gt;</a> &amp;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheItem&gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_sources.html#a8e20386a127260fc5ec711899eb9bd81">operator !=</a>(</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">EmptySource&lt;TheItem&gt;</a> <span class="keyword">const</span> &amp;,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">EmptySource&lt;TheItem&gt;</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="empty__source_8cpp.html" title="Om source file.">om/sources/empty_source.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">namespace </span>boost {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// MARK: - boost::</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheItem&gt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">Om::Sources::EmptySource&lt;TheItem&gt;</a> &amp;,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="class_om_1_1_sources_1_1_empty_source.html" title="An empty Source.">Om::Sources::EmptySource&lt;TheItem&gt;</a> &amp;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    );</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="empty__source_8cpp.html" title="Om source file.">om/sources/empty_source.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

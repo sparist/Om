@@ -6,5 +6,7 @@ var expression_8hpp =
     [ "ElementRange", "class_om_1_1_expression_1_1_element_range.html", "class_om_1_1_expression_1_1_element_range" ],
     [ "Om_Expression_", "expression_8hpp.html#acc2e21baa026550b009a633bdfeb2809", null ],
     [ "Om_Expression_GetName_", "expression_8hpp.html#a63e290cdf3eeaeeb8c5f9d445fd36149", null ],
+    [ "operator==", "expression_8hpp.html#a008f2977b32c12db57a835256fe3de32", null ],
+    [ "operator!=", "expression_8hpp.html#a212bf8513eea723ded3b7ce2e6cbcfe2", null ],
     [ "swap", "expression_8hpp.html#a90b627eb1c99d9ef357f4f0361edecfa", null ]
 ];

@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('owner_8cpp_source.html','');});
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keyword">explicit</span> TestValue(<span class="keywordtype">int</span> <span class="keyword">const</span> theNumber):</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                thisNumber(theNumber) {}</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordtype">bool</span> operator ==(TestValue <span class="keyword">const</span> theTestValue)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="namespace_om.html#ac6e60b21924d18e05e4ef84f08763c2b">operator ==</a>(TestValue <span class="keyword">const</span> theTestValue)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keywordflow">return</span> (this-&gt;thisNumber == theTestValue.thisNumber);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
@@ -355,10 +355,10 @@ $(document).ready(function(){initNavTree('owner_8cpp_source.html','');});
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="comment">// MARK: - boost::</span></div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ThisValue&gt;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheValue&gt;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="class_om_1_1_owner.html" title="A polymorphic object with value semantics.">Om::Owner&lt;ThisValue&gt;</a> &amp; theFirst,</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="class_om_1_1_owner.html" title="A polymorphic object with value semantics.">Om::Owner&lt;ThisValue&gt;</a> &amp; theSecond</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="class_om_1_1_owner.html" title="A polymorphic object with value semantics.">Om::Owner&lt;TheValue&gt;</a> &amp; theFirst,</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="class_om_1_1_owner.html" title="A polymorphic object with value semantics.">Om::Owner&lt;TheValue&gt;</a> &amp; theSecond</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;) {</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    theFirst.<a class="code" href="class_om_1_1_owner.html#af38db214e07df744f30123c08133ecd3">Swap</a>(theSecond);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>

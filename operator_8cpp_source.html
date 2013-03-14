@@ -137,12 +137,12 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        BOOST_AUTO_TEST_CASE(NormalizationTest) {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment">// Test combining character reordering under NFD.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            Operator theLeftOperator(<span class="stringliteral">&quot;s\xCC\x87&quot;</span>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            Operator theRightOperator(<span class="stringliteral">&quot;\xCC\xA3&quot;</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            theLeftOperator.TakeElement(theRightOperator);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            Operator theFirst(<span class="stringliteral">&quot;s\xCC\x87&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            Operator theSecond(<span class="stringliteral">&quot;\xCC\xA3&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            theFirst.TakeElement(theSecond);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="stringliteral">&quot;s\xCC\xA3\xCC\x87&quot;</span>,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                theLeftOperator.GetString()</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                theFirst.GetString()</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            );</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>

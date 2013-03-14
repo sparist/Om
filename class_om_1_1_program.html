@@ -85,10 +85,8 @@ $(document).ready(function(){initNavTree('class_om_1_1_program.html','');});
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a98c9f9d44098709dac6b88972fb82ead"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_program.html#a98c9f9d44098709dac6b88972fb82ead">~Program</a> ()=0</td></tr>
 <tr class="separator:a98c9f9d44098709dac6b88972fb82ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0124e8d2fadf64d4537de6e8a1afcc54"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_program.html#a0124e8d2fadf64d4537de6e8a1afcc54">operator==</a> (<a class="el" href="class_om_1_1_program.html">Program</a> const &amp;) const =0</td></tr>
-<tr class="separator:a0124e8d2fadf64d4537de6e8a1afcc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2758f45caa6d5292d318a406bbf0b5aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_program.html#a2758f45caa6d5292d318a406bbf0b5aa">operator!=</a> (<a class="el" href="class_om_1_1_program.html">Program</a> const &amp;) const </td></tr>
-<tr class="separator:a2758f45caa6d5292d318a406bbf0b5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0eb3278518ed8154f05eed8f5013b3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_program.html#aea0eb3278518ed8154f05eed8f5013b3">Equals</a> (<a class="el" href="class_om_1_1_program.html">Program</a> const &amp;) const =0</td></tr>
+<tr class="separator:aea0eb3278518ed8154f05eed8f5013b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af06a98c9349f70d117cab3a6ac9b0f70"><td class="memItemLeft" align="right" valign="top">virtual std::auto_ptr&lt; <a class="el" href="class_om_1_1_source.html">Source</a><br class="typebreak"/>
 &lt; <a class="el" href="class_om_1_1_element.html">Element</a> const  &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_program.html#af06a98c9349f70d117cab3a6ac9b0f70">GetElementRange</a> () const =0</td></tr>
 <tr class="separator:af06a98c9349f70d117cab3a6ac9b0f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,7 +203,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0124e8d2fadf64d4537de6e8a1afcc54"></a>
+<a class="anchor" id="aea0eb3278518ed8154f05eed8f5013b3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -213,7 +211,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool Om::Program::operator== </td>
+          <td class="memname">virtual bool Om::Program::Equals </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_om_1_1_program.html">Program</a> const &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -227,23 +225,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_om_1_1_null.html#a0eb836946c8e1b69e66740f86ea18c40">Om::Null</a>, <a class="el" href="class_om_1_1_default_program.html#a19562afa6463520e294cb1b19228b0c8">Om::DefaultProgram&lt; Separator, Atom &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#a19562afa6463520e294cb1b19228b0c8">Om::DefaultProgram&lt; Literal &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#a19562afa6463520e294cb1b19228b0c8">Om::DefaultProgram&lt; Null &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#a19562afa6463520e294cb1b19228b0c8">Om::DefaultProgram&lt; Operand, Element &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#a19562afa6463520e294cb1b19228b0c8">Om::DefaultProgram&lt; Lexicon &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#a19562afa6463520e294cb1b19228b0c8">Om::DefaultProgram&lt; Expression &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#a19562afa6463520e294cb1b19228b0c8">Om::DefaultProgram&lt; ThisImplementation, Atom &gt;</a>, and <a class="el" href="class_om_1_1_default_program.html#a19562afa6463520e294cb1b19228b0c8">Om::DefaultProgram&lt; Operator, Atom &gt;</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2758f45caa6d5292d318a406bbf0b5aa"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Om::Program::operator!= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_om_1_1_program.html">Program</a> const &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Implemented in <a class="el" href="class_om_1_1_default_program.html#ae694e2fbe6f64ba3cbdc40133f283e2d">Om::DefaultProgram&lt; Separator, Atom &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#ae694e2fbe6f64ba3cbdc40133f283e2d">Om::DefaultProgram&lt; Literal &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#ae694e2fbe6f64ba3cbdc40133f283e2d">Om::DefaultProgram&lt; Null &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#ae694e2fbe6f64ba3cbdc40133f283e2d">Om::DefaultProgram&lt; Operand, Element &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#ae694e2fbe6f64ba3cbdc40133f283e2d">Om::DefaultProgram&lt; Lexicon &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#ae694e2fbe6f64ba3cbdc40133f283e2d">Om::DefaultProgram&lt; Expression &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#ae694e2fbe6f64ba3cbdc40133f283e2d">Om::DefaultProgram&lt; ThisImplementation, Atom &gt;</a>, <a class="el" href="class_om_1_1_default_program.html#ae694e2fbe6f64ba3cbdc40133f283e2d">Om::DefaultProgram&lt; Operator, Atom &gt;</a>, and <a class="el" href="class_om_1_1_null.html#af0de96dc79086145907822fd84f7e31d">Om::Null</a>.</p>
 
 </div>
 </div>

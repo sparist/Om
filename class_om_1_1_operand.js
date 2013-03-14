@@ -4,7 +4,6 @@ var class_om_1_1_operand =
     [ "Operand", "class_om_1_1_operand.html#adc144a2902d341bf702ec91f4aadf4ab", null ],
     [ "GetName", "class_om_1_1_operand.html#a1b1e3bb19593440e46842afdc947ed08", null ],
     [ "operator=", "class_om_1_1_operand.html#a9567eda5e9f7834bcb24fbbb9ed424d5", null ],
-    [ "operator==", "class_om_1_1_operand.html#a54c12bd0a797a69cbca7bfca616b774f", null ],
     [ "operator*", "class_om_1_1_operand.html#a7c1c140881002c4cc42b6b577e1ade26", null ],
     [ "operator*", "class_om_1_1_operand.html#a9d3a75dd8f4d70fa46e2088e231ed8f2", null ],
     [ "Clear", "class_om_1_1_operand.html#a926f712e11249522b285f12068f1b9b3", null ],
