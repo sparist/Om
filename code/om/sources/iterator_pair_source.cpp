@@ -71,11 +71,6 @@ inline Type_ & Type_::operator =(IteratorPairSource theIteratorPairSource) {
 }
 
 Template_
-inline bool Type_::operator ==(IteratorPairSource const & theSource) const {
-	return (this->thisCurrent == theSource.thisCurrent);
-}
-
-Template_
 inline bool Type_::operator !() const {
 	return (this->thisEnd == this->thisCurrent);
 }
@@ -112,23 +107,47 @@ inline void Type_::Swap(IteratorPairSource & theIteratorPairSource) {
 	#undef Type_
 	#undef Template_
 
+// MARK: - Om::Sources::
+
+	#define Template_ \
+	template < \
+		typename TheItem, \
+		typename TheIterator \
+	>
+
+	#define Type_ \
+	Om::Sources::IteratorPairSource< \
+		TheItem, \
+		TheIterator \
+	>
+
+Template_
+inline bool Om::Sources::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return (theFirst.thisCurrent == theSecond.thisCurrent);
+}
+
+Template_
+inline bool Om::Sources::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
+}
+
 // MARK: - boost::
 
-template <
-	typename ThisItem,
-	typename ThisIterator
->
+Template_
 inline void boost::swap(
-	Om::Sources::IteratorPairSource<
-		ThisItem,
-		ThisIterator
-	> & theFirst,
-	Om::Sources::IteratorPairSource<
-		ThisItem,
-		ThisIterator
-	> & theSecond
+	Type_ & theFirst,
+	Type_ & theSecond
 ) {
 	theFirst.Swap(theSecond);
 }
+
+	#undef Type_
+	#undef Template_
 
 #endif

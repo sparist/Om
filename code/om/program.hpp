@@ -49,9 +49,7 @@ namespace Om {
 
 		virtual ~Program() = 0;
 
-		virtual bool operator ==(Program const &) const = 0;
-
-		bool operator !=(Program const &) const;
+		virtual bool Equals(Program const &) const = 0;
 
 		/*!
 		\return

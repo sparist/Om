@@ -71,17 +71,17 @@ namespace boost {
 	// MARK: - boost::
 
 	template <
-		typename ThisItem,
-		typename ThisContainer
+		typename TheItem,
+		typename TheContainer
 	>
 	void swap(
 		Om::Sinks::ContainerBackSink<
-			ThisItem,
-			ThisContainer
+			TheItem,
+			TheContainer
 		> &,
 		Om::Sinks::ContainerBackSink<
-			ThisItem,
-			ThisContainer
+			TheItem,
+			TheContainer
 		> &
 	);
 

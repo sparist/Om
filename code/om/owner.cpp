@@ -309,10 +309,10 @@ inline void Type_::UncomparableBoolean() const {}
 
 // MARK: - boost::
 
-template <typename ThisValue>
+template <typename TheValue>
 inline void boost::swap(
-	Om::Owner<ThisValue> & theFirst,
-	Om::Owner<ThisValue> & theSecond
+	Om::Owner<TheValue> & theFirst,
+	Om::Owner<TheValue> & theSecond
 ) {
 	theFirst.Swap(theSecond);
 }

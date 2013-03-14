@@ -242,10 +242,6 @@ thisElement(&theForm.thisOperator) {
 	}
 }
 
-inline bool Type_::operator ==(ElementRange const & theElementRange) const {
-	return (this->thisElement == theElementRange.thisElement);
-}
-
 inline bool Type_::operator !() const {
 	return !this->thisElement;
 }
@@ -266,6 +262,22 @@ inline void Type_::Pop() {
 		0 :
 		&*this->thisOperandIterator++
 	);
+}
+
+// MARK: - Om::
+
+inline bool Om::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return (theFirst.thisElement == theSecond.thisElement);
+}
+
+inline bool Om::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
 }
 
 	#undef Type_

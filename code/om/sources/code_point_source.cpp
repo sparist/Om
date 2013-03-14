@@ -103,11 +103,6 @@ inline Type_ & Type_::operator =(CodePointSource theCodePointSource) {
 }
 
 Template_
-inline bool Type_::operator ==(CodePointSource const & theSource) const {
-	return (this->thisInputIterator == theSource.thisInputIterator);
-}
-
-Template_
 inline bool Type_::operator !() const {
 	return !this->thisCodePoint;
 }
@@ -175,14 +170,41 @@ CodePointSource<CodeUnitSource>(
 
 	#undef Type_
 
+// MARK: - Om::Sources::
+
+	#define Template_ \
+	template <typename TheCodeUnitIterator>
+
+	#define Type_ \
+	Om::Sources::CodePointSource<TheCodeUnitIterator>
+
+Template_
+inline bool Om::Sources::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return (theFirst.thisInputIterator == theSecond.thisInputIterator);
+}
+
+Template_
+inline bool Om::Sources::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
+}
+
 // MARK: - boost::
 
-template <typename ThisCodeUnitIterator>
+Template_
 inline void boost::swap(
-	Om::Sources::CodePointSource<ThisCodeUnitIterator> & theFirst,
-	Om::Sources::CodePointSource<ThisCodeUnitIterator> & theSecond
+	Type_ & theFirst,
+	Type_ & theSecond
 ) {
 	theFirst.Swap(theSecond);
 }
+
+	#undef Type_
+	#undef Template_
 
 #endif

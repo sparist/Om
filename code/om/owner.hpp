@@ -151,10 +151,10 @@ namespace boost {
 
 	// MARK: - boost::
 
-	template <typename ThisValue>
+	template <typename TheValue>
 	void swap(
-		Om::Owner<ThisValue> &,
-		Om::Owner<ThisValue> &
+		Om::Owner<TheValue> &,
+		Om::Owner<TheValue> &
 	);
 
 }

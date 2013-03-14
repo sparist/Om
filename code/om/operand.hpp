@@ -57,8 +57,6 @@ namespace Om {
 
 		Operand & operator =(Operand);
 
-		bool operator ==(Operand const &) const;
-
 		/*!
 		\return
 			A reference to the Program owned by this Operand. Do not retain this reference.
@@ -125,6 +123,18 @@ namespace Om {
 		Owner<Program> thisProgram;
 
 	};
+
+	// MARK: - Om::
+
+	bool operator ==(
+		Operand const &,
+		Operand const &
+	);
+
+	bool operator !=(
+		Operand const &,
+		Operand const &
+	);
 
 }
 

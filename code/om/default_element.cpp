@@ -58,7 +58,7 @@ Template_
 inline Type_::~DefaultElement() {}
 
 Template_
-inline bool Type_::operator ==(Element const & theElement) const {
+inline bool Type_::Equals(Element const & theElement) const {
 	if (
 		typeid(theElement) == typeid(ThisImplementation)
 	) {

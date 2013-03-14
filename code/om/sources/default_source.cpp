@@ -60,22 +60,6 @@ Template_
 inline Type_::~DefaultSource() {}
 
 Template_
-inline bool Type_::operator ==(
-	Source<ThisItem> const & theSource
-) const {
-	assert(
-		dynamic_cast<ThisImplementation const *>(this)
-	);
-	ThisImplementation const * const theImplementation = dynamic_cast<ThisImplementation const *>(&theSource);
-	return (
-		theImplementation &&
-		(
-			static_cast<ThisImplementation const &>(*this) == *theImplementation
-		)
-	);
-}
-
-Template_
 inline ThisImplementation & Type_::operator ++() {
 	assert(
 		dynamic_cast<ThisImplementation *>(this)
@@ -95,6 +79,22 @@ inline ThisImplementation Type_::operator ++(int) {
 	);
 	++*this;
 	return theSource;
+}
+
+Template_
+inline bool Type_::Equals(
+	Source<ThisItem> const & theSource
+) const {
+	assert(
+		dynamic_cast<ThisImplementation const *>(this)
+	);
+	ThisImplementation const * const theImplementation = dynamic_cast<ThisImplementation const *>(&theSource);
+	return (
+		theImplementation &&
+		(
+			static_cast<ThisImplementation const &>(*this) == *theImplementation
+		)
+	);
 }
 
 	#undef Type_

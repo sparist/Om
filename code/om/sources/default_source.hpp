@@ -45,21 +45,6 @@ namespace Om {
 			virtual ~DefaultSource() = 0;
 
 			/*!
-			\return
-				True if equal.
-			\note
-				This is only required to test equality in the context of the pointer-like STL iterator; doesn't take end into account.
-			*/
-			virtual bool operator ==(
-				Source<ThisItem> const &
-			) const;
-
-			/*!
-			\overload
-			*/
-			virtual bool operator ==(ThisImplementation const &) const = 0;
-
-			/*!
 			\brief
 				Pulls the next item from the Source.
 			\pre
@@ -76,6 +61,16 @@ namespace Om {
 				A copy of the derivation.
 			*/
 			ThisImplementation operator ++(int);
+
+			/*!
+			\return
+				True if equal.
+			\note
+				This is only required to test equality in the context of the pointer-like STL iterator; doesn't take end into account.
+			*/
+			virtual bool Equals(
+				Source<ThisItem> const &
+			) const;
 
 		private: // MARK: private (non-static)
 

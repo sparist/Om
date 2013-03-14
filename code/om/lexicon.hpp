@@ -173,13 +173,16 @@ namespace Om {
 		ElementRange
 	> {
 
+		friend bool operator ==(
+			ElementRange const &,
+			ElementRange const &
+		);
+
 	public: // MARK: public (non-static)
 
 		ElementRange();
 
 		explicit ElementRange(Lexicon const &);
-
-		bool operator ==(ElementRange const &) const;
 
 		virtual bool operator !() const;
 
@@ -202,6 +205,18 @@ namespace Om {
 		char unsigned thisOffset;
 
 	};
+
+	// MARK: - Om::
+
+	bool operator ==(
+		Lexicon::ElementRange const &,
+		Lexicon::ElementRange const &
+	);
+
+	bool operator !=(
+		Lexicon::ElementRange const &,
+		Lexicon::ElementRange const &
+	);
 
 }
 

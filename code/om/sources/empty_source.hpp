@@ -46,8 +46,6 @@ namespace Om {
 
 			EmptySource & operator =(EmptySource);
 
-			bool operator ==(EmptySource const &) const;
-
 			virtual bool operator !() const;
 
 			virtual ThisItem & operator *() const;
@@ -58,6 +56,20 @@ namespace Om {
 
 		};
 
+		// MARK: - Om::Sources::
+
+		template <typename TheItem>
+		bool operator ==(
+			EmptySource<TheItem> const &,
+			EmptySource<TheItem> const &
+		);
+
+		template <typename TheItem>
+		bool operator !=(
+			EmptySource<TheItem> const &,
+			EmptySource<TheItem> const &
+		);
+
 	}
 
 }
@@ -66,10 +78,10 @@ namespace boost {
 
 	// MARK: - boost::
 
-	template <typename ThisItem>
+	template <typename TheItem>
 	void swap(
-		Om::Sources::EmptySource<ThisItem> &,
-		Om::Sources::EmptySource<ThisItem> &
+		Om::Sources::EmptySource<TheItem> &,
+		Om::Sources::EmptySource<TheItem> &
 	);
 
 }

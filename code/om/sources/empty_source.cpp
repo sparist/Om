@@ -67,11 +67,6 @@ inline Type_ & Type_::operator =(EmptySource) {
 }
 
 Template_
-inline bool Type_::operator ==(EmptySource const &) const {
-	return true;
-}
-
-Template_
 inline bool Type_::operator !() const {
 	return true;
 }
@@ -94,14 +89,41 @@ inline void Type_::Swap(EmptySource &) {}
 	#undef Type_
 	#undef Template_
 
+// MARK: - Om::Sources::
+
+	#define Template_ \
+	template <typename TheItem>
+
+	#define Type_ \
+	Om::Sources::EmptySource<TheItem>
+
+Template_
+inline bool Om::Sources::operator ==(
+	Type_ const &,
+	Type_ const &
+) {
+	return true;
+}
+
+Template_
+inline bool Om::Sources::operator !=(
+	Type_ const &,
+	Type_ const &
+) {
+	return false;
+}
+
 // MARK: - boost::
 
-template <typename ThisItem>
+Template_
 inline void boost::swap(
-	Om::Sources::EmptySource<ThisItem> & theFirst,
-	Om::Sources::EmptySource<ThisItem> & theSecond
+	Type_ & theFirst,
+	Type_ & theSecond
 ) {
 	theFirst.Swap(theSecond);
 }
+
+	#undef Type_
+	#undef Template_
 
 #endif

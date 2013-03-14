@@ -45,15 +45,6 @@ namespace Om {
 
 inline Type_::~Element() {}
 
-inline bool Type_::operator ==(Element const &) const {
-	assert(0);
-	throw std::logic_error("Pure virtual function called.");
-}
-
-inline bool Type_::operator !=(Element const & theElement) const {
-	return !(theElement == *this);
-}
-
 inline Om::Program & Type_::operator *() {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
@@ -70,6 +61,11 @@ inline Om::Program * Type_::operator ->() {
 
 inline Om::Program const * Type_::operator ->() const {
 	return &**this;
+}
+
+inline bool Type_::Equals(Element const &) const {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 inline std::auto_ptr<

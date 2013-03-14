@@ -65,10 +65,10 @@ namespace boost {
 
 	// MARK: - boost::
 
-	template <typename ThisCodeUnitIterator>
+	template <typename TheCodeUnitIterator>
 	void swap(
-		Om::Sinks::CodePointSink<ThisCodeUnitIterator> &,
-		Om::Sinks::CodePointSink<ThisCodeUnitIterator> &
+		Om::Sinks::CodePointSink<TheCodeUnitIterator> &,
+		Om::Sinks::CodePointSink<TheCodeUnitIterator> &
 	);
 
 }

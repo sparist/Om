@@ -53,14 +53,6 @@ thisCodePointSource(theCodePointSource),
 thisDepth(),
 thisIsEncoded() {}
 
-inline bool Type_::operator ==(Parser const & theParser) const {
-	assert(
-		(this->thisCodePointSource != theParser.thisCodePointSource) ||
-		(this->thisDepth == theParser.thisDepth)
-	);
-	return (this->thisCodePointSource == theParser.thisCodePointSource);
-}
-
 inline Om::CodePoint const & Type_::operator *() const {
 	assert(
 		!this->operator !()
@@ -110,6 +102,26 @@ inline void Type_::Pop() {
 		// Fall through.
 	}
 	this->thisCodePointSource.Pop();
+}
+
+// MARK: - Om::
+
+inline bool Om::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	assert(
+		!theFirst.thisCodePointSource.Equals(theSecond.thisCodePointSource) ||
+		(theFirst.thisDepth == theSecond.thisDepth)
+	);
+	return theFirst.thisCodePointSource.Equals(theSecond.thisCodePointSource);
+}
+
+inline bool Om::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
 }
 
 	#undef Type_

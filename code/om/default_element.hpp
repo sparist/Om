@@ -41,7 +41,12 @@ namespace Om {
 
 		virtual ~DefaultElement() = 0;
 
-		virtual bool operator ==(Element const &) const;
+		using DefaultProgram<
+			ThisImplementation,
+			ThisInterface
+		>::Equals;
+
+		virtual bool Equals(Element const &) const;
 
 		virtual std::auto_ptr<
 			Source<Element>

@@ -65,11 +65,6 @@ inline Type_ & Type_::operator =(SingletonSource theSingletonSource) {
 }
 
 Template_
-inline bool Type_::operator ==(SingletonSource const & theSource) const {
-	return (this->thisItem == theSource.thisItem);
-}
-
-Template_
 inline bool Type_::operator !() const {
 	return !this->thisItem;
 }
@@ -97,14 +92,41 @@ inline void Type_::Swap(SingletonSource & theSingletonSource) {
 	#undef Type_
 	#undef Template_
 
+// MARK: - Om::Sources::
+
+	#define Template_ \
+	template <typename TheItem>
+
+	#define Type_ \
+	Om::Sources::SingletonSource<TheItem>
+
+Template_
+inline bool Om::Sources::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return (theFirst.thisItem == theSecond.thisItem);
+}
+
+Template_
+inline bool Om::Sources::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
+}
+
 // MARK: - boost::
 
-template <typename ThisItem>
+Template_
 inline void boost::swap(
-	Om::Sources::SingletonSource<ThisItem> & theFirst,
-	Om::Sources::SingletonSource<ThisItem> & theSecond
+	Type_ & theFirst,
+	Type_ & theSecond
 ) {
 	theFirst.Swap(theSecond);
 }
+
+	#undef Type_
+	#undef Template_
 
 #endif

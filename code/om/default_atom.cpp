@@ -63,11 +63,6 @@ inline bool Type_::operator <(DefaultAtom const & theAtom) {
 }
 
 Template_
-inline bool Type_::operator ==(ThisImplementation const & theAtom) const {
-	return (this->thisString == theAtom.thisString);
-}
-
-Template_
 inline void Type_::Clear() {
 	this->thisString.clear();
 }
@@ -178,6 +173,33 @@ thisString(
 		) &&
 		"The code unit must be NFD-normalized."
 	);
+}
+
+	#undef Type_
+	#undef Template_
+
+// MARK: - Om::
+
+	#define Template_ \
+	template <typename TheImplementation>
+
+	#define Type_ \
+	Om::DefaultAtom<TheImplementation>
+
+Template_
+inline bool Om::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return (theFirst.thisString == theSecond.thisString);
+}
+
+Template_
+inline bool Om::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
 }
 
 	#undef Type_

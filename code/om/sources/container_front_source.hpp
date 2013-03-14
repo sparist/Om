@@ -48,8 +48,6 @@ namespace Om {
 
 			ContainerFrontSource & operator =(ContainerFrontSource);
 
-			bool operator ==(ContainerFrontSource const &) const;
-
 			virtual bool operator !() const;
 
 			virtual ThisItem & operator *() const;
@@ -68,6 +66,38 @@ namespace Om {
 
 		};
 
+		// MARK: - Om::Sources::
+
+		template <
+			typename TheItem,
+			typename TheContainer
+		>
+		bool operator ==(
+			ContainerFrontSource<
+				TheItem,
+				TheContainer
+			> const &,
+			ContainerFrontSource<
+				TheItem,
+				TheContainer
+			> const &
+		);
+
+		template <
+			typename TheItem,
+			typename TheContainer
+		>
+		bool operator !=(
+			ContainerFrontSource<
+				TheItem,
+				TheContainer
+			> const &,
+			ContainerFrontSource<
+				TheItem,
+				TheContainer
+			> const &
+		);
+
 	}
 
 }
@@ -77,17 +107,17 @@ namespace boost {
 	// MARK: - boost::
 
 	template <
-		typename ThisItem,
-		typename ThisContainer
+		typename TheItem,
+		typename TheContainer
 	>
 	void swap(
 		Om::Sources::ContainerFrontSource<
-			ThisItem,
-			ThisContainer
+			TheItem,
+			TheContainer
 		> &,
 		Om::Sources::ContainerFrontSource<
-			ThisItem,
-			ThisContainer
+			TheItem,
+			TheContainer
 		> &
 	);
 

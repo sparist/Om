@@ -129,11 +129,14 @@ namespace Om {
 		ElementRange
 	> {
 
+		friend bool operator ==(
+			ElementRange const &,
+			ElementRange const &
+		);
+
 	public: // MARK: public (non-static)
 
 		explicit ElementRange(Form const &);
-
-		bool operator ==(ElementRange const &) const;
 
 		virtual bool operator !() const;
 
@@ -152,6 +155,18 @@ namespace Om {
 		Element const * thisElement;
 
 	};
+
+	// MARK: - Om::
+
+	bool operator ==(
+		Form::ElementRange const &,
+		Form::ElementRange const &
+	);
+
+	bool operator !=(
+		Form::ElementRange const &,
+		Form::ElementRange const &
+	);
 
 	// MARK: - Om::Form::OperandRange<Operand>
 

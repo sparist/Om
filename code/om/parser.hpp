@@ -34,13 +34,16 @@ namespace Om {
 		Parser
 	> {
 
+		friend bool operator ==(
+			Parser const &,
+			Parser const &
+		);
+
 	public: // MARK: public (non-static)
 
 		explicit Parser(
 			Source<CodePoint const> &
 		);
-
-		bool operator ==(Parser const &) const;
 
 		virtual CodePoint const & operator *() const;
 
@@ -61,6 +64,18 @@ namespace Om {
 		bool thisIsEncoded;
 
 	};
+
+	// MARK: - Om::
+
+	bool operator ==(
+		Parser const &,
+		Parser const &
+	);
+
+	bool operator !=(
+		Parser const &,
+		Parser const &
+	);
 
 }
 

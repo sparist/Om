@@ -91,12 +91,12 @@ namespace Om {
 
 		BOOST_AUTO_TEST_CASE(NormalizationTest) {
 			// Test combining character reordering under NFD.
-			Operator theLeftOperator("s\xCC\x87");
-			Operator theRightOperator("\xCC\xA3");
-			theLeftOperator.TakeElement(theRightOperator);
+			Operator theFirst("s\xCC\x87");
+			Operator theSecond("\xCC\xA3");
+			theFirst.TakeElement(theSecond);
 			BOOST_CHECK_EQUAL(
 				"s\xCC\xA3\xCC\x87",
-				theLeftOperator.GetString()
+				theFirst.GetString()
 			);
 		}
 

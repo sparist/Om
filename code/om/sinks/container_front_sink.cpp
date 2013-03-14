@@ -86,17 +86,17 @@ inline void Type_::Swap(ContainerFrontSink & theContainerFrontSink) {
 // MARK: - boost::
 
 template <
-	typename ThisItem,
-	typename ThisContainer
+	typename TheItem,
+	typename TheContainer
 >
 inline void boost::swap(
 	Om::Sinks::ContainerFrontSink<
-		ThisItem,
-		ThisContainer
+		TheItem,
+		TheContainer
 	> & theFirst,
 	Om::Sinks::ContainerFrontSink<
-		ThisItem,
-		ThisContainer
+		TheItem,
+		TheContainer
 	> & theSecond
 ) {
 	theFirst.Swap(theSecond);

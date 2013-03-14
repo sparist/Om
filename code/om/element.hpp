@@ -36,10 +36,6 @@ namespace Om {
 
 		virtual ~Element() = 0;
 
-		virtual bool operator ==(Element const &) const = 0;
-
-		bool operator !=(Element const &) const;
-
 		/*!
 		\return
 			The "wrapped" Program (Null if none).
@@ -54,6 +50,10 @@ namespace Om {
 		Program * operator ->();
 
 		Program const * operator ->() const;
+
+		using Program::Equals;
+
+		virtual bool Equals(Element const &) const = 0;
 
 		using Program::GetElementRange;
 

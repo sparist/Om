@@ -53,9 +53,9 @@ namespace Om {
 
 		Null & operator =(Null const &);
 
-		virtual bool operator ==(Program const &) const;
-
 		virtual void Clear();
+
+		virtual bool Equals(Program const &) const;
 
 		virtual std::auto_ptr<
 			Source<Element>

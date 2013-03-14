@@ -47,13 +47,9 @@ namespace Om {
 
 inline Type_::~Program() {}
 
-inline bool Type_::operator ==(Program const &) const {
+inline bool Type_::Equals(Program const &) const {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
-}
-
-inline bool Type_::operator !=(Program const & theProgram) const {
-	return !(theProgram == *this);
 }
 
 inline std::auto_ptr<

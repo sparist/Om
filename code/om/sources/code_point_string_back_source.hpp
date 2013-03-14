@@ -40,6 +40,12 @@ namespace Om {
 			CodePointStringBackSource<ThisStringIterator>
 		> {
 
+			template <typename TheStringIterator>
+			friend bool operator ==(
+				CodePointStringBackSource<TheStringIterator> const &,
+				CodePointStringBackSource<TheStringIterator> const &
+			);
+
 		public: // MARK: public (non-static)
 
 			/*!
@@ -54,8 +60,6 @@ namespace Om {
 			);
 
 			CodePointStringBackSource & operator =(CodePointStringBackSource);
-
-			bool operator ==(CodePointStringBackSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -95,6 +99,20 @@ namespace Om {
 
 		};
 
+		// MARK: - Om::Sources::
+
+		template <typename TheStringIterator>
+		bool operator ==(
+			CodePointStringBackSource<TheStringIterator> const &,
+			CodePointStringBackSource<TheStringIterator> const &
+		);
+
+		template <typename TheStringIterator>
+		bool operator !=(
+			CodePointStringBackSource<TheStringIterator> const &,
+			CodePointStringBackSource<TheStringIterator> const &
+		);
+
 	}
 
 }
@@ -103,10 +121,10 @@ namespace boost {
 
 	// MARK: - boost::
 
-	template <typename ThisStringIterator>
+	template <typename TheStringIterator>
 	void swap(
-		Om::Sources::CodePointStringBackSource<ThisStringIterator> &,
-		Om::Sources::CodePointStringBackSource<ThisStringIterator> &
+		Om::Sources::CodePointStringBackSource<TheStringIterator> &,
+		Om::Sources::CodePointStringBackSource<TheStringIterator> &
 	);
 
 }

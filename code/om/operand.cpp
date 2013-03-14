@@ -66,16 +66,6 @@ inline Type_ & Type_::operator =(Operand theOperand) {
 	return *this;
 }
 
-inline bool Type_::operator ==(Operand const & theOperand) const {
-	return (
-		this->IsEmpty() ?
-		theOperand.IsEmpty() :
-		(
-			*this->GetProgram() == *theOperand.GetProgram()
-		)
-	);
-}
-
 inline Om::Program & Type_::operator *() {
 	return (
 		this->thisProgram.IsEmpty() ?
@@ -209,16 +199,38 @@ inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
 template <typename TheSeparator>
 inline void Type_::TakeSeparator(TheSeparator &) {}
 
-	#undef Type_
+// MARK: - Om::
+
+inline bool Om::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return (
+		theFirst.IsEmpty() ?
+		theSecond.IsEmpty() :
+		theFirst.GetProgram()->Equals(
+			*theSecond.GetProgram()
+		)
+	);
+}
+
+inline bool Om::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
+}
 
 // MARK: - boost::
 
 template <>
 inline void boost::swap(
-	Om::Operand & theFirst,
-	Om::Operand & theSecond
+	Type_ & theFirst,
+	Type_ & theSecond
 ) {
 	theFirst.Swap(theSecond);
 }
+
+	#undef Type_
 
 #endif

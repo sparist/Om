@@ -36,6 +36,12 @@ namespace Om {
 			SingletonSource<ThisItem>
 		> {
 
+			template <typename TheItem>
+			friend bool operator ==(
+				SingletonSource<TheItem> const &,
+				SingletonSource<TheItem> const &
+			);
+
 		public: // MARK: public (non-static)
 
 			SingletonSource();
@@ -47,8 +53,6 @@ namespace Om {
 			explicit SingletonSource(ThisItem & theItem);
 
 			SingletonSource & operator =(SingletonSource);
-
-			bool operator ==(SingletonSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -64,6 +68,20 @@ namespace Om {
 
 		};
 
+		// MARK: - Om::Sources::
+
+		template <typename TheItem>
+		bool operator ==(
+			SingletonSource<TheItem> const &,
+			SingletonSource<TheItem> const &
+		);
+
+		template <typename TheItem>
+		bool operator !=(
+			SingletonSource<TheItem> const &,
+			SingletonSource<TheItem> const &
+		);
+
 	}
 
 }
@@ -72,10 +90,10 @@ namespace boost {
 
 	// MARK: - boost::
 
-	template <typename ThisItem>
+	template <typename TheItem>
 	void swap(
-		Om::Sources::SingletonSource<ThisItem> &,
-		Om::Sources::SingletonSource<ThisItem> &
+		Om::Sources::SingletonSource<TheItem> &,
+		Om::Sources::SingletonSource<TheItem> &
 	);
 
 }

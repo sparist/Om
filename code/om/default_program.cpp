@@ -69,7 +69,7 @@ inline Type_::~DefaultProgram() {}
 	This must be implemented in this class, vs. Program, due to Element dependency.
 */
 Template_
-inline bool Type_::operator ==(Program const & theProgram) const {
+inline bool Type_::Equals(Program const & theProgram) const {
 	std::auto_ptr<
 		Source<Element const>
 	> theRange = this->GetElementRange();
@@ -96,7 +96,9 @@ inline bool Type_::operator ==(Program const & theProgram) const {
 		) {
 			return (theRangeHasNext == theOtherRangeHasNext);
 		}
-		if (**theRange != **theOtherRange) {
+		if (
+			!(**theRange).Equals(**theOtherRange)
+		) {
 			return false;
 		}
 		theRange->Pop();

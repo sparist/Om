@@ -42,6 +42,21 @@ namespace Om {
 			>
 		> {
 
+			template <
+				typename TheItem,
+				typename TheIterator
+			>
+			friend bool operator ==(
+				IteratorPairSource<
+					TheItem,
+					TheIterator
+				> const &,
+				IteratorPairSource<
+					TheItem,
+					TheIterator
+				> const &
+			);
+
 		public: // MARK: public (non-static)
 
 			/*!
@@ -56,8 +71,6 @@ namespace Om {
 			);
 
 			IteratorPairSource & operator =(IteratorPairSource);
-
-			bool operator ==(IteratorPairSource const &) const;
 
 			virtual ThisItem & operator *() const;
 
@@ -85,6 +98,38 @@ namespace Om {
 
 		};
 
+		// MARK: - Om::Sources::
+
+		template <
+			typename TheItem,
+			typename TheIterator
+		>
+		bool operator ==(
+			IteratorPairSource<
+				TheItem,
+				TheIterator
+			> const &,
+			IteratorPairSource<
+				TheItem,
+				TheIterator
+			> const &
+		);
+
+		template <
+			typename TheItem,
+			typename TheIterator
+		>
+		bool operator !=(
+			IteratorPairSource<
+				TheItem,
+				TheIterator
+			> const &,
+			IteratorPairSource<
+				TheItem,
+				TheIterator
+			> const &
+		);
+
 	}
 
 }
@@ -94,17 +139,17 @@ namespace boost {
 	// MARK: - boost::
 
 	template <
-		typename ThisItem,
-		typename ThisIterator
+		typename TheItem,
+		typename TheIterator
 	>
 	void swap(
 		Om::Sources::IteratorPairSource<
-			ThisItem,
-			ThisIterator
+			TheItem,
+			TheIterator
 		> &,
 		Om::Sources::IteratorPairSource<
-			ThisItem,
-			ThisIterator
+			TheItem,
+			TheIterator
 		> &
 	);
 

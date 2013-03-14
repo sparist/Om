@@ -61,11 +61,11 @@ inline Type_ & Type_::operator =(Null const &) {
 	return *this;
 }
 
-inline bool Type_::operator ==(Program const & theProgram) const {
+inline void Type_::Clear() {}
+
+inline bool Type_::Equals(Program const & theProgram) const {
 	return theProgram.IsEmpty();
 }
-
-inline void Type_::Clear() {}
 
 inline std::auto_ptr<
 	Om::Source<Om::Element>

@@ -67,11 +67,6 @@ inline Type_ & Type_::operator =(StreamSource theStreamSource) {
 }
 
 Template_
-inline bool Type_::operator ==(StreamSource const & theSource) const {
-	return (this->thisStreamIterator == theSource.thisStreamIterator);
-}
-
-Template_
 inline bool Type_::operator !() const {
 	return (
 		StreamIterator() == this->thisStreamIterator
@@ -107,14 +102,41 @@ inline void Type_::Swap(StreamSource & theStreamSource) {
 	#undef Type_
 	#undef Template_
 
+// MARK: - Om::Sources::
+
+	#define Template_ \
+	template <typename TheItem>
+
+	#define Type_ \
+	Om::Sources::StreamSource<TheItem>
+
+Template_
+inline bool Om::Sources::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return (theFirst.thisStreamIterator == theSecond.thisStreamIterator);
+}
+
+Template_
+inline bool Om::Sources::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
+}
+
 // MARK: - boost::
 
-template <typename ThisItem>
+Template_
 inline void boost::swap(
-	Om::Sources::StreamSource<ThisItem> & theFirst,
-	Om::Sources::StreamSource<ThisItem> & theSecond
+	Type_ & theFirst,
+	Type_ & theSecond
 ) {
 	theFirst.Swap(theSecond);
 }
+
+	#undef Type_
+	#undef Template_
 
 #endif

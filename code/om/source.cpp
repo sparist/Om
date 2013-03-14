@@ -57,17 +57,6 @@ Template_
 inline Type_::~Source() {}
 
 Template_
-inline bool Type_::operator ==(Source const &) const {
-	assert(0);
-	throw std::logic_error("Pure virtual function called.");
-}
-
-Template_
-inline bool Type_::operator !=(Source const & theSource) const {
-	return !(theSource == *this);
-}
-
-Template_
 inline ThisItem & Type_::operator *() const {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
@@ -91,6 +80,12 @@ inline Type_::operator Boolean() const {
 		0 :
 		&Source::UncomparableBoolean
 	);
+}
+
+Template_
+inline bool Type_::Equals(Source const &) const {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 Template_

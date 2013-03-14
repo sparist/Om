@@ -543,6 +543,16 @@ inline void Type_::GivePair(
 	}
 }
 
+// MARK: - boost::
+
+template <>
+inline void boost::swap(
+	Type_ & theFirst,
+	Type_ & theSecond
+) {
+	theFirst.Swap(theSecond);
+}
+
 	#undef Type_
 
 // MARK: - Om::Lexicon::ElementRange
@@ -564,13 +574,6 @@ thisOffset(
 	this->thisNode &&
 	thisNode->GetValue().GetOperator().IsEmpty()
 ) {}
-
-inline bool Type_::operator ==(ElementRange const & theElementRange) const {
-	return (
-		(this->thisNode == theElementRange.thisNode) &&
-		(this->thisOffset == theElementRange.thisOffset)
-	);
-}
 
 inline bool Type_::operator !() const {
 	return !this->thisNode;
@@ -618,16 +621,25 @@ inline void Type_::Pop() {
 	}
 }
 
-	#undef Type_
+// MARK: - Om::
 
-// MARK: - boost::
-
-template <>
-inline void boost::swap(
-	Om::Lexicon & theFirst,
-	Om::Lexicon & theSecond
+inline bool Om::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
 ) {
-	theFirst.Swap(theSecond);
+	return (
+		(theFirst.thisNode == theSecond.thisNode) &&
+		(theFirst.thisOffset == theSecond.thisOffset)
+	);
 }
+
+inline bool Om::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
+}
+
+	#undef Type_
 
 #endif

@@ -42,13 +42,26 @@ namespace Om {
 			>
 		> {
 
+			template <
+				typename TheItem,
+				typename TheContainer
+			>
+			friend bool operator ==(
+				ContainerBackSource<
+					TheItem,
+					TheContainer
+				> const &,
+				ContainerBackSource<
+					TheItem,
+					TheContainer
+				> const &
+			);
+
 		public: // MARK: public (non-static)
 
 			explicit ContainerBackSource(ThisContainer &);
 
 			ContainerBackSource & operator =(ContainerBackSource);
-
-			bool operator ==(ContainerBackSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -68,6 +81,38 @@ namespace Om {
 
 		};
 
+		// MARK: - Om::Sources::
+
+		template <
+			typename TheItem,
+			typename TheContainer
+		>
+		bool operator ==(
+			ContainerBackSource<
+				TheItem,
+				TheContainer
+			> const &,
+			ContainerBackSource<
+				TheItem,
+				TheContainer
+			> const &
+		);
+
+		template <
+			typename TheItem,
+			typename TheContainer
+		>
+		bool operator !=(
+			ContainerBackSource<
+				TheItem,
+				TheContainer
+			> const &,
+			ContainerBackSource<
+				TheItem,
+				TheContainer
+			> const &
+		);
+
 	}
 
 }
@@ -77,17 +122,17 @@ namespace boost {
 	// MARK: - boost::
 
 	template <
-		typename ThisItem,
-		typename ThisContainer
+		typename TheItem,
+		typename TheContainer
 	>
 	void swap(
 		Om::Sources::ContainerBackSource<
-			ThisItem,
-			ThisContainer
+			TheItem,
+			TheContainer
 		> &,
 		Om::Sources::ContainerBackSource<
-			ThisItem,
-			ThisContainer
+			TheItem,
+			TheContainer
 		> &
 	);
 

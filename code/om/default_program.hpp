@@ -48,7 +48,15 @@ namespace Om {
 
 		virtual ~DefaultProgram() = 0;
 
-		virtual bool operator ==(Program const &) const;
+		using DefaultQueue<
+			ThisImplementation,
+			DefaultGiveable<
+				ThisImplementation,
+				ThisInterface
+			>
+		>::Equals;
+
+		virtual bool Equals(Program const &) const;
 
 		virtual void TakeElements(Queue &);
 

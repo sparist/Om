@@ -35,6 +35,12 @@ namespace Om {
 		Atom
 	> {
 
+		template <typename TheImplementation>
+		friend bool operator ==(
+			DefaultAtom<TheImplementation> const &,
+			DefaultAtom<TheImplementation> const &
+		);
+
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultAtom() = 0;
@@ -46,8 +52,6 @@ namespace Om {
 			True if this Atom string precedes the argument Atom string in a byte-wise ordering.
 		*/
 		bool operator <(DefaultAtom const &);
-
-		bool operator ==(ThisImplementation const &) const;
 
 		virtual void Clear();
 
@@ -120,6 +124,20 @@ namespace Om {
 		DefaultAtom & operator =(DefaultAtom const &);
 
 	};
+
+	// MARK: - Om::
+
+	template <typename TheImplementation>
+	bool operator ==(
+		DefaultAtom<TheImplementation> const &,
+		DefaultAtom<TheImplementation> const &
+	);
+
+	template <typename TheImplementation>
+	bool operator !=(
+		DefaultAtom<TheImplementation> const &,
+		DefaultAtom<TheImplementation> const &
+	);
 
 }
 

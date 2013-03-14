@@ -104,10 +104,10 @@ inline void Type_::Swap(CodePointSink & theCodePointSink) {
 
 // MARK: - boost::
 
-template <typename ThisCodeUnitIterator>
+template <typename TheCodeUnitIterator>
 inline void boost::swap(
-	Om::Sinks::CodePointSink<ThisCodeUnitIterator> & theFirst,
-	Om::Sinks::CodePointSink<ThisCodeUnitIterator> & theSecond
+	Om::Sinks::CodePointSink<TheCodeUnitIterator> & theFirst,
+	Om::Sinks::CodePointSink<TheCodeUnitIterator> & theSecond
 ) {
 	theFirst.Swap(theSecond);
 }

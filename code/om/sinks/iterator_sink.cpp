@@ -86,17 +86,17 @@ inline void Type_::Swap(IteratorSink & theIteratorSink) {
 // MARK: - boost::
 
 template <
-	typename ThisItem,
-	typename ThisIterator
+	typename TheItem,
+	typename TheIterator
 >
 inline void boost::swap(
 	Om::Sinks::IteratorSink<
-		ThisItem,
-		ThisIterator
+		TheItem,
+		TheIterator
 	> & theFirst,
 	Om::Sinks::IteratorSink<
-		ThisItem,
-		ThisIterator
+		TheItem,
+		TheIterator
 	> & theSecond
 ) {
 	theFirst.Swap(theSecond);

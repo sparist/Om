@@ -40,18 +40,6 @@ namespace Om {
 
 		virtual ~Source() = 0;
 
-		/*!
-		\return
-			True when representing equivalent pointer-style iterators.
-		*/
-		virtual bool operator ==(Source const &) const = 0;
-
-		/*!
-		\return
-			True when not representing equivalent pointer-style iterators.
-		*/
-		bool operator !=(Source const &) const;
-
 		virtual ThisItem & operator *() const = 0;
 
 		ThisItem * operator ->() const;
@@ -67,6 +55,12 @@ namespace Om {
 			Implements the "safe boolean" idiom.
 		*/
 		operator Boolean() const;
+
+		/*!
+		\return
+			True when representing equivalent pointer-style iterators.
+		*/
+		virtual bool Equals(Source const &) const = 0;
 
 		/*!
 		\brief

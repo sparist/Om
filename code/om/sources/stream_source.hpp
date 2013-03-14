@@ -46,6 +46,12 @@ namespace Om {
 			StreamSource<ThisItem>
 		> {
 
+			template <typename TheItem>
+			friend bool operator ==(
+				StreamSource<TheItem> const &,
+				StreamSource<TheItem> const &
+			);
+
 		public: // MARK: public (non-static)
 
 			StreamSource();
@@ -53,8 +59,6 @@ namespace Om {
 			explicit StreamSource(std::istream &);
 
 			StreamSource & operator =(StreamSource);
-
-			bool operator ==(StreamSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -80,6 +84,20 @@ namespace Om {
 
 		};
 
+		// MARK: - Om::Sources::
+
+		template <typename TheItem>
+		bool operator ==(
+			StreamSource<TheItem> const &,
+			StreamSource<TheItem> const &
+		);
+
+		template <typename TheItem>
+		bool operator !=(
+			StreamSource<TheItem> const &,
+			StreamSource<TheItem> const &
+		);
+
 	}
 
 }
@@ -88,10 +106,10 @@ namespace boost {
 
 	// MARK: - boost::
 
-	template <typename ThisItem>
+	template <typename TheItem>
 	void swap(
-		Om::Sources::StreamSource<ThisItem> &,
-		Om::Sources::StreamSource<ThisItem> &
+		Om::Sources::StreamSource<TheItem> &,
+		Om::Sources::StreamSource<TheItem> &
 	);
 
 }

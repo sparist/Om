@@ -67,17 +67,6 @@ inline Type_ & Type_::operator =(ContainerFrontSource theContainerFrontSource) {
 }
 
 Template_
-inline bool Type_::operator ==(ContainerFrontSource const & theSource) const {
-	return (
-		(&this->thisContainer == &theSource.thisContainer) ||
-		(
-			this->thisContainer.empty() &&
-			theSource.thisContainer.empty()
-		)
-	);
-}
-
-Template_
 inline bool Type_::operator !() const {
 	return this->thisContainer.empty();
 }
@@ -109,23 +98,53 @@ inline void Type_::Swap(ContainerFrontSource & theContainerFrontSource) {
 	#undef Type_
 	#undef Template_
 
+// MARK: - Om::Sources::
+
+	#define Template_ \
+	template < \
+		typename TheItem, \
+		typename TheContainer \
+	>
+
+	#define Type_ \
+	Om::Sources::ContainerFrontSource< \
+		TheItem, \
+		TheContainer \
+	>
+
+Template_
+inline bool Om::Sources::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return (
+		(&theFirst.thisContainer == &theSecond.thisContainer) ||
+		(
+			theFirst.thisContainer.empty() &&
+			theSecond.thisContainer.empty()
+		)
+	);
+}
+
+Template_
+inline bool Om::Sources::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !(theFirst == theSecond);
+}
+
 // MARK: - boost::
 
-template <
-	typename ThisItem,
-	typename ThisContainer
->
+Template_
 inline void boost::swap(
-	Om::Sources::ContainerFrontSource<
-		ThisItem,
-		ThisContainer
-	> & theFirst,
-	Om::Sources::ContainerFrontSource<
-		ThisItem,
-		ThisContainer
-	> & theSecond
+	Type_ & theFirst,
+	Type_ & theSecond
 ) {
 	theFirst.Swap(theSecond);
 }
+
+	#undef Type_
+	#undef Template_
 
 #endif

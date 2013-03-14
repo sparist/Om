@@ -37,6 +37,12 @@ namespace Om {
 			CodePointSource<ThisCodeUnitIterator>
 		> {
 
+			template <typename TheCodeUnitIterator>
+			friend bool operator ==(
+				CodePointSource<TheCodeUnitIterator> const &,
+				CodePointSource<TheCodeUnitIterator> const &
+			);
+
 		public: // MARK: public (non-static)
 
 			/*!
@@ -51,8 +57,6 @@ namespace Om {
 			);
 
 			CodePointSource & operator =(CodePointSource);
-
-			bool operator ==(CodePointSource const &) const;
 
 			virtual bool operator !() const;
 
@@ -122,6 +126,20 @@ namespace Om {
 
 		};
 
+		// MARK: - Om::Sources::
+
+		template <typename TheCodeUnitIterator>
+		bool operator ==(
+			CodePointSource<TheCodeUnitIterator> const &,
+			CodePointSource<TheCodeUnitIterator> const &
+		);
+
+		template <typename TheCodeUnitIterator>
+		bool operator !=(
+			CodePointSource<TheCodeUnitIterator> const &,
+			CodePointSource<TheCodeUnitIterator> const &
+		);
+
 	}
 
 }
@@ -130,10 +148,10 @@ namespace boost {
 
 	// MARK: - boost::
 
-	template <typename ThisCodeUnitIterator>
+	template <typename TheCodeUnitIterator>
 	void swap(
-		Om::Sources::CodePointSource<ThisCodeUnitIterator> &,
-		Om::Sources::CodePointSource<ThisCodeUnitIterator> &
+		Om::Sources::CodePointSource<TheCodeUnitIterator> &,
+		Om::Sources::CodePointSource<TheCodeUnitIterator> &
 	);
 
 }
