@@ -91,8 +91,8 @@ inline bool Type_::Equals(
 	ThisImplementation const * const theImplementation = dynamic_cast<ThisImplementation const *>(&theSource);
 	return (
 		theImplementation &&
-		(
-			static_cast<ThisImplementation const &>(*this) == *theImplementation
+		theImplementation->Equals(
+			static_cast<ThisImplementation const &>(*this)
 		)
 	);
 }

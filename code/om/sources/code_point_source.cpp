@@ -114,6 +114,11 @@ inline Om::CodePoint const & Type_::operator *() const {
 }
 
 Template_
+inline bool Type_::Equals(CodePointSource const & theCodePointSource) const {
+	return (this->thisInputIterator == theCodePointSource.thisInputIterator);
+}
+
+Template_
 inline void Type_::Pop() {
 	if (this->thisInputEnd == this->thisInputIterator) {
 		this->thisCodePoint = 0;
@@ -183,7 +188,7 @@ inline bool Om::Sources::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (theFirst.thisInputIterator == theSecond.thisInputIterator);
+	return theFirst.Equals(theSecond);
 }
 
 Template_
@@ -191,7 +196,7 @@ inline bool Om::Sources::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 // MARK: - boost::

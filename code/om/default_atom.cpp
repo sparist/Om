@@ -68,6 +68,18 @@ inline void Type_::Clear() {
 }
 
 Template_
+inline bool Type_::Equals(DefaultAtom const & theAtom) const {
+	return (this->thisString == theAtom.thisString);
+}
+
+Template_
+inline bool Type_::Equals(ThisImplementation const & theAtom) const {
+	return this->Equals(
+		static_cast<DefaultAtom const &>(theAtom)
+	);
+}
+
+Template_
 inline std::auto_ptr<
 	Om::Source<Om::Element>
 > Type_::GetElementRange() {
@@ -191,7 +203,7 @@ inline bool Om::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (theFirst.thisString == theSecond.thisString);
+	return theFirst.Equals(theSecond);
 }
 
 Template_
@@ -199,7 +211,7 @@ inline bool Om::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 	#undef Type_

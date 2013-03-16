@@ -39,6 +39,8 @@ namespace Om {
 	\brief
 		The \ref om__operator__ implementation.
 
+	An Atom defined by any UTF-8 string.
+
 	As a Queue, the Operator appends each taken Element verbatim.
 	*/
 	class Operator:

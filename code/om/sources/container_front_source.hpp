@@ -52,6 +52,16 @@ namespace Om {
 
 			virtual ThisItem & operator *() const;
 
+			using DefaultSource<
+				ThisItem,
+				ContainerFrontSource<
+					ThisItem,
+					ThisContainer
+				>
+			>::Equals;
+
+			bool Equals(ContainerFrontSource const &) const;
+
 			virtual void Pop();
 
 			void Swap(ContainerFrontSource &);

@@ -36,12 +36,6 @@ namespace Om {
 			SingletonSource<ThisItem>
 		> {
 
-			template <typename TheItem>
-			friend bool operator ==(
-				SingletonSource<TheItem> const &,
-				SingletonSource<TheItem> const &
-			);
-
 		public: // MARK: public (non-static)
 
 			SingletonSource();
@@ -57,6 +51,13 @@ namespace Om {
 			virtual bool operator !() const;
 
 			virtual ThisItem & operator *() const;
+
+			using DefaultSource<
+				ThisItem,
+				SingletonSource<ThisItem>
+			>::Equals;
+
+			bool Equals(SingletonSource const &) const;
 
 			virtual void Pop();
 

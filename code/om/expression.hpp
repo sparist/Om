@@ -203,11 +203,6 @@ namespace Om {
 		ElementRange
 	> {
 
-		friend bool operator ==(
-			ElementRange const &,
-			ElementRange const &
-		);
-
 	public: // MARK: public (non-static)
 
 		explicit ElementRange(Expression const &);
@@ -215,6 +210,13 @@ namespace Om {
 		virtual bool operator !() const;
 
 		virtual Element const & operator *() const;
+
+		using Sources::DefaultSource<
+			Element const,
+			ElementRange
+		>::Equals;
+
+		bool Equals(ElementRange const &) const;
 
 		void End();
 

@@ -80,6 +80,17 @@ inline ThisItem & Type_::operator *() const {
 }
 
 Template_
+inline bool Type_::Equals(ContainerBackSource const & theContainerBackSource) const {
+	return (
+		(&this->thisContainer == &theContainerBackSource.thisContainer) ||
+		(
+			this->thisContainer.empty() &&
+			theContainerBackSource.thisContainer.empty()
+		)
+	);
+}
+
+Template_
 inline void Type_::Pop() {
 	assert(
 		!this->thisContainer.empty()
@@ -117,13 +128,7 @@ inline bool Om::Sources::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (
-		(&theFirst.thisContainer == &theSecond.thisContainer) ||
-		(
-			theFirst.thisContainer.empty() &&
-			theSecond.thisContainer.empty()
-		)
-	);
+	return theFirst.Equals(theSecond);
 }
 
 Template_
@@ -131,7 +136,7 @@ inline bool Om::Sources::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 // MARK: - boost::

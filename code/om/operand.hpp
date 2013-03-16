@@ -37,7 +37,7 @@ namespace Om {
 	\brief
 		The \ref om__operand__ implementation.
 
-	Encloses a Program in Symbols::theStartOperandSymbol and Symbols::theEndOperandSymbol. The Operand owns the embedded Program.
+	A "non-atomic" Element that embeds another Program, which it owns.
 	*/
 	class Operand:
 	public DefaultElement<Operand> {
@@ -69,6 +69,10 @@ namespace Om {
 		virtual Program const & operator *() const;
 
 		virtual void Clear();
+
+		using DefaultElement<Operand>::Equals;
+
+		bool Equals(Operand const &) const;
 
 		/*!
 		\return

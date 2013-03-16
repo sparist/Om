@@ -82,6 +82,11 @@ inline ThisItem & Type_::operator *() const {
 }
 
 Template_
+inline bool Type_::Equals(IteratorPairSource const & theIteratorPairSource) const {
+	return (this->thisCurrent == theIteratorPairSource.thisCurrent);
+}
+
+Template_
 inline void Type_::End() {
 	this->thisCurrent = this->thisEnd;
 }
@@ -126,7 +131,7 @@ inline bool Om::Sources::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (theFirst.thisCurrent == theSecond.thisCurrent);
+	return theFirst.Equals(theSecond);
 }
 
 Template_
@@ -134,7 +139,7 @@ inline bool Om::Sources::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 // MARK: - boost::

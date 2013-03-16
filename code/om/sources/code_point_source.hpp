@@ -37,12 +37,6 @@ namespace Om {
 			CodePointSource<ThisCodeUnitIterator>
 		> {
 
-			template <typename TheCodeUnitIterator>
-			friend bool operator ==(
-				CodePointSource<TheCodeUnitIterator> const &,
-				CodePointSource<TheCodeUnitIterator> const &
-			);
-
 		public: // MARK: public (non-static)
 
 			/*!
@@ -61,6 +55,13 @@ namespace Om {
 			virtual bool operator !() const;
 
 			virtual CodePoint const & operator *() const;
+
+			using DefaultSource<
+				CodePoint const,
+				CodePointSource<ThisCodeUnitIterator>
+			>::Equals;
+
+			bool Equals(CodePointSource const &) const;
 
 			virtual void Pop();
 

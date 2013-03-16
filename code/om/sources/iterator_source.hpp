@@ -46,21 +46,6 @@ namespace Om {
 			>
 		> {
 
-			template <
-				typename TheItem,
-				typename TheIterator
-			>
-			friend bool operator ==(
-				IteratorSource<
-					TheItem,
-					TheIterator
-				> const &,
-				IteratorSource<
-					TheItem,
-					TheIterator
-				> const &
-			);
-
 		public: // MARK: public (non-static)
 
 			/*!
@@ -74,6 +59,16 @@ namespace Om {
 			virtual bool operator !() const;
 
 			virtual ThisItem & operator *() const;
+
+			using DefaultSource<
+				ThisItem,
+				IteratorSource<
+					ThisItem,
+					ThisIterator
+				>
+			>::Equals;
+
+			bool Equals(IteratorSource const &) const;
 
 			virtual void Pop();
 

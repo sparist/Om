@@ -71,6 +71,14 @@ inline bool Type_::operator !() const {
 	);
 }
 
+inline bool Type_::Equals(Parser const & theParser) const {
+	assert(
+		(this->thisCodePointSource != theParser.thisCodePointSource) ||
+		(this->thisDepth == theParser.thisDepth)
+	);
+	return (this->thisCodePointSource == theParser.thisCodePointSource);
+}
+
 inline void Type_::Pop() {
 	assert(this->thisCodePointSource);
 	switch (*this->thisCodePointSource) {
@@ -110,18 +118,14 @@ inline bool Om::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	assert(
-		!theFirst.thisCodePointSource.Equals(theSecond.thisCodePointSource) ||
-		(theFirst.thisDepth == theSecond.thisDepth)
-	);
-	return theFirst.thisCodePointSource.Equals(theSecond.thisCodePointSource);
+	return theFirst.Equals(theSecond);
 }
 
 inline bool Om::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 	#undef Type_

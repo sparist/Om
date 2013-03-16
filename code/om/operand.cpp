@@ -86,6 +86,16 @@ inline void Type_::Clear() {
 	this->thisProgram.Clear();
 }
 
+inline bool Type_::Equals(Operand const & theOperand) const {
+	return (
+		this->IsEmpty() ?
+		theOperand.IsEmpty() :
+		(
+			*this->GetProgram() == *theOperand.GetProgram()
+		)
+	);
+}
+
 inline Om::Program * Type_::GetProgram() {
 	return this->thisProgram.GetValue();
 }
@@ -205,20 +215,14 @@ inline bool Om::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (
-		theFirst.IsEmpty() ?
-		theSecond.IsEmpty() :
-		theFirst.GetProgram()->Equals(
-			*theSecond.GetProgram()
-		)
-	);
+	return theFirst.Equals(theSecond);
 }
 
 inline bool Om::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 // MARK: - boost::

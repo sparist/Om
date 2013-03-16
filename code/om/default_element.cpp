@@ -63,11 +63,11 @@ inline bool Type_::Equals(Element const & theElement) const {
 		typeid(theElement) == typeid(ThisImplementation)
 	) {
 		assert(
-			dynamic_cast<ThisImplementation const *>(&theElement) &&
-			dynamic_cast<ThisImplementation const *>(this)
+			dynamic_cast<ThisImplementation const *>(this) &&
+			dynamic_cast<ThisImplementation const *>(&theElement)
 		);
-		return (
-			static_cast<ThisImplementation const &>(theElement) == static_cast<ThisImplementation const &>(*this)
+		return static_cast<ThisImplementation const &>(*this).Equals(
+			static_cast<ThisImplementation const &>(theElement)
 		);
 	}
 	return (

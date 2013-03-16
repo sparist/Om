@@ -91,12 +91,26 @@ inline bool Type_::Merge(Separator const &) {
 	return false;
 }
 
-	#undef Type_
-
 // MARK: - Om::
 
-inline Om::Element * Om::new_clone(Element const & theElement) {
-	return Copy(theElement).release();
+inline bool Om::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return theFirst.Equals(theSecond);
 }
+
+inline bool Om::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !theFirst.Equals(theSecond);
+}
+
+inline Type_ * Om::new_clone(Type_ const & theCopyable) {
+	return Copy(theCopyable).release();
+}
+
+	#undef Type_
 
 #endif

@@ -102,4 +102,31 @@ inline void Type_::UncomparableBoolean() const {}
 	#undef Type_
 	#undef Template_
 
+// MARK: - Om::
+
+	#define Template_ \
+	template <typename TheItem>
+
+	#define Type_ \
+	Om::Source<TheItem>
+
+Template_
+inline bool Om::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return theFirst.Equals(theSecond);
+}
+
+Template_
+inline bool Om::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !theFirst.Equals(theSecond);
+}
+
+	#undef Type_
+	#undef Template_
+
 #endif

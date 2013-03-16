@@ -96,9 +96,7 @@ inline bool Type_::Equals(Program const & theProgram) const {
 		) {
 			return (theRangeHasNext == theOtherRangeHasNext);
 		}
-		if (
-			!(**theRange).Equals(**theOtherRange)
-		) {
+		if (**theRange != **theOtherRange) {
 			return false;
 		}
 		theRange->Pop();

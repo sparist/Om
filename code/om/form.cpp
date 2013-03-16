@@ -251,6 +251,10 @@ inline Om::Element const & Type_::operator *() const {
 	return *this->thisElement;
 }
 
+inline bool Type_::Equals(ElementRange const & theElementRange) const {
+	return (this->thisElement == theElementRange.thisElement);
+}
+
 inline void Type_::End() {
 	this->thisElement = 0;
 }
@@ -270,14 +274,14 @@ inline bool Om::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (theFirst.thisElement == theSecond.thisElement);
+	return theFirst.Equals(theSecond);
 }
 
 inline bool Om::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 	#undef Type_

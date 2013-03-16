@@ -83,6 +83,11 @@ inline ThisItem const & Type_::operator *() const {
 }
 
 Template_
+inline bool Type_::Equals(StreamSource const & theStreamSource) const {
+	return (this->thisStreamIterator == theStreamSource.thisStreamIterator);
+}
+
+Template_
 inline void Type_::Pop() {
 	assert(
 		StreamIterator() != this->thisStreamIterator
@@ -115,7 +120,7 @@ inline bool Om::Sources::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (theFirst.thisStreamIterator == theSecond.thisStreamIterator);
+	return theFirst.Equals(theSecond);
 }
 
 Template_
@@ -123,7 +128,7 @@ inline bool Om::Sources::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 // MARK: - boost::

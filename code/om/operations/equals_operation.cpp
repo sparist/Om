@@ -159,11 +159,11 @@ inline bool Type_::IsMatch(TheQueue & theQueue) const {
 	Program const & theProgram = *this->thisOperand.GetProgram();
 	Program const * const theQueueProgram = dynamic_cast<Program const *>(&theQueue);
 	if (theQueueProgram) {
-		return theQueueProgram->Equals(theProgram);
+		return (*theQueueProgram == theProgram);
 	}
 	Literal theQueueLiteral;
 	theQueueLiteral.TakeElements(theQueue);
-	return theProgram.Equals(theQueueLiteral);
+	return theQueueLiteral.Equals(theProgram);
 }
 
 	#undef Type_

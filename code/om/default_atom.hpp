@@ -35,12 +35,6 @@ namespace Om {
 		Atom
 	> {
 
-		template <typename TheImplementation>
-		friend bool operator ==(
-			DefaultAtom<TheImplementation> const &,
-			DefaultAtom<TheImplementation> const &
-		);
-
 	public: // MARK: public (non-static)
 
 		virtual ~DefaultAtom() = 0;
@@ -54,6 +48,15 @@ namespace Om {
 		bool operator <(DefaultAtom const &);
 
 		virtual void Clear();
+
+		using DefaultElement<
+			ThisImplementation,
+			Atom
+		>::Equals;
+
+		bool Equals(DefaultAtom const &) const;
+
+		bool Equals(ThisImplementation const &) const;
 
 		virtual std::auto_ptr<
 			Source<Element>

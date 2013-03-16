@@ -72,6 +72,12 @@ namespace Om {
 				Source<ThisItem> const &
 			) const;
 
+			/*!
+			\note
+				This is a non-virtual declaration that will force a link error if undefined (which could cause infinite recursion in the other form).
+			*/
+			bool Equals(ThisImplementation const &) const;
+
 		private: // MARK: private (non-static)
 
 			DefaultSource & operator =(DefaultSource const &);

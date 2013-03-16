@@ -50,6 +50,13 @@ namespace Om {
 
 			virtual ThisItem & operator *() const;
 
+			using DefaultSource<
+				ThisItem,
+				EmptySource<ThisItem>
+			>::Equals;
+
+			bool Equals(EmptySource const &) const;
+
 			virtual void Pop();
 
 			void Swap(EmptySource &);

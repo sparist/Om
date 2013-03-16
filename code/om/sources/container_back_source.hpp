@@ -42,21 +42,6 @@ namespace Om {
 			>
 		> {
 
-			template <
-				typename TheItem,
-				typename TheContainer
-			>
-			friend bool operator ==(
-				ContainerBackSource<
-					TheItem,
-					TheContainer
-				> const &,
-				ContainerBackSource<
-					TheItem,
-					TheContainer
-				> const &
-			);
-
 		public: // MARK: public (non-static)
 
 			explicit ContainerBackSource(ThisContainer &);
@@ -66,6 +51,16 @@ namespace Om {
 			virtual bool operator !() const;
 
 			virtual ThisItem & operator *() const;
+
+			using DefaultSource<
+				ThisItem,
+				ContainerBackSource<
+					ThisItem,
+					ThisContainer
+				>
+			>::Equals;
+
+			bool Equals(ContainerBackSource const &) const;
 
 			virtual void Pop();
 

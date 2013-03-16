@@ -40,12 +40,6 @@ namespace Om {
 			CodePointStringBackSource<ThisStringIterator>
 		> {
 
-			template <typename TheStringIterator>
-			friend bool operator ==(
-				CodePointStringBackSource<TheStringIterator> const &,
-				CodePointStringBackSource<TheStringIterator> const &
-			);
-
 		public: // MARK: public (non-static)
 
 			/*!
@@ -64,6 +58,13 @@ namespace Om {
 			virtual bool operator !() const;
 
 			virtual std::string & operator *() const;
+
+			using DefaultSource<
+				std::string,
+				CodePointStringBackSource<ThisStringIterator>
+			>::Equals;
+
+			bool Equals(CodePointStringBackSource const &) const;
 
 			virtual void Pop();
 

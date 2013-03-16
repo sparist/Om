@@ -67,6 +67,22 @@ inline std::auto_ptr<Om::Program> Type_::GiveProgram() const {
 	return Give(*this);
 }
 
+// MARK: - Om::
+
+inline bool Om::operator ==(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return theFirst.Equals(theSecond);
+}
+
+inline bool Om::operator !=(
+	Type_ const & theFirst,
+	Type_ const & theSecond
+) {
+	return !theFirst.Equals(theSecond);
+}
+
 	#undef Type_
 
 #endif

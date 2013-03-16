@@ -78,6 +78,20 @@ namespace Om {
 
 	};
 
+	// MARK: - Om::
+
+	template <typename TheItem>
+	bool operator ==(
+		Source<TheItem> const &,
+		Source<TheItem> const &
+	);
+
+	template <typename TheItem>
+	bool operator !=(
+		Source<TheItem> const &,
+		Source<TheItem> const &
+	);
+
 }
 
 	#include "om/source.cpp"

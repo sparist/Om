@@ -597,6 +597,13 @@ inline Om::Element const & Type_::operator *() const {
 	}
 }
 
+inline bool Type_::Equals(ElementRange const & theElementRange) const {
+	return (
+		(this->thisNode == theElementRange.thisNode) &&
+		(this->thisOffset == theElementRange.thisOffset)
+	);
+}
+
 inline void Type_::Pop() {
 	assert(
 		this->thisNode &&
@@ -627,17 +634,14 @@ inline bool Om::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (
-		(theFirst.thisNode == theSecond.thisNode) &&
-		(theFirst.thisOffset == theSecond.thisOffset)
-	);
+	return theFirst.Equals(theSecond);
 }
 
 inline bool Om::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 	#undef Type_

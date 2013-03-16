@@ -78,6 +78,11 @@ inline ThisItem & Type_::operator *() const {
 }
 
 Template_
+inline bool Type_::Equals(EmptySource const &) const {
+	return true;
+}
+
+Template_
 inline void Type_::Pop() {
 	assert(0);
 	throw std::logic_error("The source is empty.");

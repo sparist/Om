@@ -348,6 +348,11 @@ inline std::string & Type_::operator *() const {
 }
 
 Template_
+inline bool Type_::Equals(CodePointStringBackSource const & theCodePointStringBackSource) const {
+	return (this->thisCodePointIterator == theCodePointStringBackSource.thisCodePointIterator);
+}
+
+Template_
 inline void Type_::Pop() {
 	assert(this->thisCodePointEnd != this->thisCodePointIterator);
 	this->thisCodePointEnd = this->thisCodePointIterator;
@@ -432,7 +437,7 @@ inline bool Om::Sources::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (theFirst.thisCodePointIterator == theSecond.thisCodePointIterator);
+	return theFirst.Equals(theSecond);
 }
 
 Template_
@@ -440,7 +445,7 @@ inline bool Om::Sources::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 // MARK: - boost::

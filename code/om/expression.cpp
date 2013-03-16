@@ -627,6 +627,13 @@ inline Om::Element const & Type_::operator *() const {
 	);
 }
 
+inline bool Type_::Equals(ElementRange const & theElementRange) const {
+	return (
+		(this->thisFormElementRange == theElementRange.thisFormElementRange) &&
+		(this->thisFormIterator == theElementRange.thisFormIterator)
+	);
+}
+
 inline void Type_::End() {
 	this->thisFormElementRange = boost::none;
 }
@@ -655,17 +662,14 @@ inline bool Om::operator ==(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return (
-		(theFirst.thisFormElementRange == theSecond.thisFormElementRange) &&
-		(theFirst.thisFormIterator == theSecond.thisFormIterator)
-	);
+	return theFirst.Equals(theSecond);
 }
 
 inline bool Om::operator !=(
 	Type_ const & theFirst,
 	Type_ const & theSecond
 ) {
-	return !(theFirst == theSecond);
+	return !theFirst.Equals(theSecond);
 }
 
 	#undef Type_

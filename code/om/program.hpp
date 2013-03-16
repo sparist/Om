@@ -69,6 +69,18 @@ namespace Om {
 
 	};
 
+	// MARK: - Om::
+
+	bool operator ==(
+		Program const &,
+		Program const &
+	);
+
+	bool operator !=(
+		Program const &,
+		Program const &
+	);
+
 }
 
 	#include "om/program.cpp"

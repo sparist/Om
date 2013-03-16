@@ -48,6 +48,12 @@ namespace Om {
 
 		virtual bool Equals(Element const &) const;
 
+		/*!
+		\note
+			This is a non-virtual declaration that will force a link error if undefined (which could cause infinite recursion in the other form).
+		*/
+		bool Equals(ThisImplementation const &) const;
+
 		virtual std::auto_ptr<
 			Source<Element>
 		> GetElementRange();

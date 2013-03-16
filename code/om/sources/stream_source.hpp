@@ -46,12 +46,6 @@ namespace Om {
 			StreamSource<ThisItem>
 		> {
 
-			template <typename TheItem>
-			friend bool operator ==(
-				StreamSource<TheItem> const &,
-				StreamSource<TheItem> const &
-			);
-
 		public: // MARK: public (non-static)
 
 			StreamSource();
@@ -63,6 +57,13 @@ namespace Om {
 			virtual bool operator !() const;
 
 			virtual ThisItem const & operator *() const;
+
+			using DefaultSource<
+				ThisItem const,
+				StreamSource<ThisItem>
+			>::Equals;
+
+			bool Equals(StreamSource const &) const;
 
 			virtual void Pop();
 

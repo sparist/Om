@@ -25,9 +25,9 @@ namespace Om {
 
 	/*!
 	\brief
-		An "elemental" Program comprised of a single item (or empty).
+		A Program that contains a single "elemental" item (or none, when IsEmpty() returns true).
 
-	Element instances are used to represent both the Program, and the single item that the Program contains (when IsEmpty() returns false).
+	Elemental items can be atomic (Atom) or non-atomic (Operand).
 	*/
 	class Element:
 	public Program {
@@ -93,6 +93,16 @@ namespace Om {
 	};
 
 	// MARK: - Om::
+
+	bool operator ==(
+		Element const &,
+		Element const &
+	);
+
+	bool operator !=(
+		Element const &,
+		Element const &
+	);
 
 	/*!
 	\return
