@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"group__om____operations____drop__operation____.html":[5,0,19],
+"group__om____operations____encode__operation____.html":[5,0,24],
+"group__om____operations____environment__operation____.html":[5,0,25],
 "group__om____operations____equals__operation____.html":[5,0,10],
 "group__om____operations____evaluate__operation____.html":[5,0,26],
 "group__om____operations____expression__back__push__operation____.html":[5,0,28],
@@ -105,9 +108,9 @@ var NAVTREEINDEX6 =
 "literal_8cpp.html":[8,0,0,0,50],
 "literal_8cpp_source.html":[8,0,0,0,50],
 "literal_8hpp.html":[8,0,0,0,51],
-"literal_8hpp.html#a7e0c95f4e32ddafb97de27339401d949":[8,0,0,0,51,5],
-"literal_8hpp.html#ab0ee2a43f52889894041587c2f7ecd7b":[8,0,0,0,51,3],
-"literal_8hpp.html#af3f65640ff8b33e6da90990eede224ef":[8,0,0,0,51,4],
+"literal_8hpp.html#a7e0c95f4e32ddafb97de27339401d949":[8,0,0,0,51,6],
+"literal_8hpp.html#ab0ee2a43f52889894041587c2f7ecd7b":[8,0,0,0,51,4],
+"literal_8hpp.html#af3f65640ff8b33e6da90990eede224ef":[8,0,0,0,51,5],
 "literal_8hpp_source.html":[8,0,0,0,51],
 "literal__back__push__operation_8cpp.html":[8,0,0,0,0,78],
 "literal__back__push__operation_8cpp_source.html":[8,0,0,0,0,78],
@@ -144,12 +147,12 @@ var NAVTREEINDEX6 =
 "moveable_8hpp_source.html":[8,0,0,0,57],
 "namespace_om.html":[7,0,1],
 "namespace_om.html":[6,0,1],
-"namespace_om_1_1_macros.html":[7,0,1,0],
 "namespace_om_1_1_macros.html":[6,0,1,0],
+"namespace_om_1_1_macros.html":[7,0,1,0],
 "namespace_om_1_1_operations.html":[6,0,1,1],
 "namespace_om_1_1_operations.html":[7,0,1,1],
-"namespace_om_1_1_sinks.html":[6,0,1,2],
 "namespace_om_1_1_sinks.html":[7,0,1,2],
+"namespace_om_1_1_sinks.html":[6,0,1,2],
 "namespace_om_1_1_sources.html":[6,0,1,3],
 "namespace_om_1_1_sources.html":[7,0,1,3],
 "namespace_om_1_1_symbols.html":[6,0,1,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX6 =
 "operator__operation_8hpp_source.html":[8,0,0,0,0,91],
 "operator__symbol_8cpp.html":[8,0,0,0,3,2],
 "operator__symbol_8cpp_source.html":[8,0,0,0,3,2],
-"operator__symbol_8hpp.html":[8,0,0,0,3,3],
-"operator__symbol_8hpp.html#a031e293fe7dc649693376ac862453046":[8,0,0,0,3,3,2],
-"operator__symbol_8hpp.html#a187091da363cf23d6d6223ea23fd5b96":[8,0,0,0,3,3,0],
-"operator__symbol_8hpp.html#a3f987b2d59e3d485db43d5dfe38242e1":[8,0,0,0,3,3,3]
+"operator__symbol_8hpp.html":[8,0,0,0,3,3]
 };
