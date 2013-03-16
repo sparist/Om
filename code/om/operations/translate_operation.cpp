@@ -18,7 +18,7 @@
 
 	#ifdef Om_Macros_Test_
 
-		#ifdef Om_Macros_Precompilation_
+		#ifndef Om_Macros_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
