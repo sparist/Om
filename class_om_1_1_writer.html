@@ -63,7 +63,7 @@ $(document).ready(function(){initNavTree('class_om_1_1_writer.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> that pushes each <a class="el" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> to a <a class="el" href="namespace_om.html#a61e52f05ef3e135408edb1e291c8d5cc" title="A UTF-8 code point.">CodePoint</a> <a class="el" href="class_om_1_1_sink.html" title="Any object that items can be pushed to.">Sink</a> upon receipt.  
+<p>A <a class="el" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> that pushes each <a class="el" href="class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">Element</a> to a <a class="el" href="namespace_om.html#a61e52f05ef3e135408edb1e291c8d5cc" title="A UTF-8 code point.">CodePoint</a> <a class="el" href="class_om_1_1_sink.html" title="Any object that items can be pushed to.">Sink</a> upon receipt.  
  <a href="class_om_1_1_writer.html#details">More...</a></p>
 
 <p><code>#include &quot;<a class="el" href="writer_8hpp_source.html">writer.hpp</a>&quot;</code></p>
@@ -89,7 +89,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4041bb3322beb8266e51bd8d0bb5cc76"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_writer.html#a4041bb3322beb8266e51bd8d0bb5cc76">Clear</a> ()</td></tr>
 <tr class="separator:a4041bb3322beb8266e51bd8d0bb5cc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0648481c37b2f6630f020fd146138dcf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_writer.html#a0648481c37b2f6630f020fd146138dcf">GiveElements</a> (<a class="el" href="class_om_1_1_queue.html">Queue</a> &amp;)</td></tr>
-<tr class="memdesc:a0648481c37b2f6630f020fd146138dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives each contained <a class="el" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> to the argument.  <a href="#a0648481c37b2f6630f020fd146138dcf">More...</a><br/></td></tr>
+<tr class="memdesc:a0648481c37b2f6630f020fd146138dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives each contained <a class="el" href="class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">Element</a> to the argument.  <a href="#a0648481c37b2f6630f020fd146138dcf">More...</a><br/></td></tr>
 <tr class="separator:a0648481c37b2f6630f020fd146138dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44bc7d86afa5c19668d52b5a06084042"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_writer.html#a44bc7d86afa5c19668d52b5a06084042">GiveElements</a> (<a class="el" href="class_om_1_1_queue.html">Queue</a> &amp;) const </td></tr>
 <tr class="memdesc:a44bc7d86afa5c19668d52b5a06084042"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="#a44bc7d86afa5c19668d52b5a06084042">More...</a><br/></td></tr>
@@ -169,7 +169,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad6f1bceb86a7986319556f3473988517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Giving an <a class="el" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> does nothing. </p>
+<div class="textblock"><p>Giving an <a class="el" href="class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">Element</a> does nothing. </p>
 
 <p>Definition at line <a class="el" href="writer_8hpp_source.html#l00038">38</a> of file <a class="el" href="writer_8hpp_source.html">writer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -269,7 +269,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section post"><dt>Postcondition</dt><dd><code><a class="el" href="class_om_1_1_writer.html#a633ede7405a6ebb3ccd62f795bbd01d8">IsEmpty()</a> == true</code> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Giving every <a class="el" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> is more efficient than giving a subset and managing incremental state, which is never necessary. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Giving every <a class="el" href="class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">Element</a> is more efficient than giving a subset and managing incremental state, which is never necessary. </dd></dl>
 
 <p>Implements <a class="el" href="class_om_1_1_queue.html#a1b246caf960d89b1671c4dcc49bd66c0">Om::Queue</a>.</p>
 
@@ -371,7 +371,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>True if there is no <a class="el" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if there is no <a class="el" href="class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">Element</a>. </dd></dl>
 
 <p>Implements <a class="el" href="class_om_1_1_queue.html#adec424b550da06372b4b82e7eee16ef8">Om::Queue</a>.</p>
 

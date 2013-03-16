@@ -7,6 +7,7 @@ var class_om_1_1_operand =
     [ "operator*", "class_om_1_1_operand.html#a7c1c140881002c4cc42b6b577e1ade26", null ],
     [ "operator*", "class_om_1_1_operand.html#a9d3a75dd8f4d70fa46e2088e231ed8f2", null ],
     [ "Clear", "class_om_1_1_operand.html#a926f712e11249522b285f12068f1b9b3", null ],
+    [ "Equals", "class_om_1_1_operand.html#aa8921df1be8803cf640a3be34af15c4a", null ],
     [ "GetProgram", "class_om_1_1_operand.html#a1236c6aaa33bbf5639cb13e961542347", null ],
     [ "GetProgram", "class_om_1_1_operand.html#a4df5b8ba00c606d918452aab9f66db6d", null ],
     [ "IsEmpty", "class_om_1_1_operand.html#a1902ffa30b29307d4a147a92bb92798d", null ],

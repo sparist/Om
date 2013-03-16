@@ -137,15 +137,29 @@ $(document).ready(function(){initNavTree('element_8cpp_source.html','');});
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// MARK: - Om::</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Om::Element</a> * <a class="code" href="namespace_om.html#a68ad9f81b67305e5316381dcf85b8b3b">Om::new_clone</a>(Element <span class="keyword">const</span> &amp; theElement) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespace_om.html#ad4002872509181360ad512044e566556">Copy</a>(theElement).release();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// MARK: - Om::</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespace_om.html#ac6e60b21924d18e05e4ef84f08763c2b">Om::operator ==</a>(</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    Type_ <span class="keyword">const</span> &amp; theFirst,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    Type_ <span class="keyword">const</span> &amp; theSecond</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> theFirst.Equals(theSecond);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespace_om.html#adf9267d1ae1b3e5d447a3aaf7acd4834">Om::operator !=</a>(</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    Type_ <span class="keyword">const</span> &amp; theFirst,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    Type_ <span class="keyword">const</span> &amp; theSecond</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> !theFirst.Equals(theSecond);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">inline</span> Type_ * <a class="code" href="namespace_om.html#a68ad9f81b67305e5316381dcf85b8b3b">Om::new_clone</a>(Type_ <span class="keyword">const</span> &amp; theCopyable) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespace_om.html#ad4002872509181360ad512044e566556">Copy</a>(theCopyable).release();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

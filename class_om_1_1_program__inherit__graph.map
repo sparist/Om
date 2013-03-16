@@ -3,7 +3,7 @@
 <area shape="rect" id="node13" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Lexicon, Program \&gt;" alt="" coords="499,105,648,149"/>
 <area shape="rect" id="node19" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Literal, Program \&gt;" alt="" coords="499,181,648,225"/>
 <area shape="rect" id="node25" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Null, Program \&gt;" alt="" coords="499,257,648,301"/>
-<area shape="rect" id="node31" href="$class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty)." alt="" coords="524,349,623,377"/>
+<area shape="rect" id="node31" href="$class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)..." alt="" coords="524,349,623,377"/>
 <area shape="rect" id="node2" href="$class_om_1_1_giveable.html" title="An object that can be copied or moved via Give." alt="" coords="175,137,278,165"/>
 <area shape="rect" id="node3" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied." alt="" coords="7,111,113,139"/>
 <area shape="rect" id="node4" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved." alt="" coords="6,163,114,191"/>
@@ -30,7 +30,7 @@
 <area shape="rect" id="node29" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Null \&gt;" alt="" coords="1532,265,1676,309"/>
 <area shape="rect" id="node30" href="$class_om_1_1_null.html" title="The Null Program implementation." alt="" coords="1847,273,1921,301"/>
 <area shape="rect" id="node32" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operand, Element \&gt;" alt="" coords="733,341,886,385"/>
-<area shape="rect" id="node39" href="$class_om_1_1_atom.html" title="A leaf Element defined by a string." alt="" coords="769,463,850,491"/>
+<area shape="rect" id="node39" href="$class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string." alt="" coords="769,463,850,491"/>
 <area shape="rect" id="node33" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Operand, DefaultCopyable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="961,333,1151,393"/>
 <area shape="rect" id="node34" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Operand, Element \&gt;" alt="" coords="1252,341,1404,385"/>
 <area shape="rect" id="node35" href="$class_om_1_1_default_queue.html" title="Om::DefaultQueue\&lt; Operand,\l DefaultGiveable\&lt; Operand,\l Element \&gt; \&gt;" alt="" coords="1504,333,1704,393"/>

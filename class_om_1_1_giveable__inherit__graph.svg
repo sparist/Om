@@ -110,7 +110,7 @@
 </g>
 <!-- Node29 -->
 <g id="node29" class="node"><title>Node29</title>
-<g id="a_node29"><a xlink:href="class_om_1_1_element.html" target="_top" xlink:title="An &quot;elemental&quot; Program comprised of a single item (or empty).">
+<g id="a_node29"><a xlink:href="class_om_1_1_element.html" target="_top" xlink:title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">
 <polygon fill="none" stroke="black" points="370.825,-207 370.825,-227 445.175,-227 445.175,-207 370.825,-207"/>
 <text text-anchor="middle" x="408" y="-213" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Element</text>
 </a>
@@ -421,7 +421,7 @@
 </g>
 <!-- Node37 -->
 <g id="node37" class="node"><title>Node37</title>
-<g id="a_node37"><a xlink:href="class_om_1_1_atom.html" target="_top" xlink:title="A leaf Element defined by a string.">
+<g id="a_node37"><a xlink:href="class_om_1_1_atom.html" target="_top" xlink:title="An &quot;atomic&quot; Element defined by a string.">
 <polygon fill="none" stroke="black" points="554.498,-121 554.498,-141 615.502,-141 615.502,-121 554.498,-121"/>
 <text text-anchor="middle" x="585" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Atom</text>
 </a>

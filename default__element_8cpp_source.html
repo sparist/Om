@@ -109,11 +109,11 @@ $(document).ready(function(){initNavTree('default__element_8cpp_source.html','')
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">typeid</span>(theElement) == <span class="keyword">typeid</span>(ThisImplementation)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        assert(</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            dynamic_cast&lt;ThisImplementation const *&gt;(&amp;theElement) &amp;&amp;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            dynamic_cast&lt;ThisImplementation const *&gt;(<span class="keyword">this</span>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            dynamic_cast&lt;ThisImplementation const *&gt;(<span class="keyword">this</span>) &amp;&amp;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            dynamic_cast&lt;ThisImplementation const *&gt;(&amp;theElement)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        );</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> (</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            static_cast&lt;ThisImplementation const &amp;&gt;(theElement) == static_cast&lt;ThisImplementation const &amp;&gt;(*<span class="keyword">this</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>ThisImplementation <span class="keyword">const </span>&amp;<span class="keyword">&gt;</span>(*this).Equals(</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            static_cast&lt;ThisImplementation const &amp;&gt;(theElement)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        );</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> (</div>

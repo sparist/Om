@@ -62,7 +62,7 @@ $(document).ready(function(){initNavTree('class_om_1_1_default_element.html','')
 </div><!--header-->
 <div class="contents">
 
-<p>A partial implementation of <a class="el" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a>.  
+<p>A partial implementation of <a class="el" href="class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">Element</a>.  
 </p>
 
 <p><code>#include &quot;<a class="el" href="default__element_8hpp_source.html">default_element.hpp</a>&quot;</code></p>
@@ -87,6 +87,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a43f217ec0e2e61cbeafa6c0fec723ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b458fe693fc2760ea543a9b2bb24d81"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#a8b458fe693fc2760ea543a9b2bb24d81">Equals</a> (<a class="el" href="class_om_1_1_element.html">Element</a> const &amp;) const </td></tr>
 <tr class="separator:a8b458fe693fc2760ea543a9b2bb24d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f125650804885dc08434c5173fe2e76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#a8f125650804885dc08434c5173fe2e76">Equals</a> (ThisImplementation const &amp;) const </td></tr>
+<tr class="separator:a8f125650804885dc08434c5173fe2e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04256abca95da7d644acd21e250c47a"><td class="memItemLeft" align="right" valign="top">virtual std::auto_ptr&lt; <a class="el" href="class_om_1_1_source.html">Source</a><br class="typebreak"/>
 &lt; <a class="el" href="class_om_1_1_element.html">Element</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#ac04256abca95da7d644acd21e250c47a">GetElementRange</a> ()</td></tr>
 <tr class="separator:ac04256abca95da7d644acd21e250c47a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,6 +207,25 @@ template&lt;typename ThisImplementation, typename ThisInterface = Element&gt; </
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8f125650804885dc08434c5173fe2e76"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ThisImplementation, typename ThisInterface = Element&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_om_1_1_default_element.html">Om::DefaultElement</a>&lt; ThisImplementation, ThisInterface &gt;::Equals </td>
+          <td>(</td>
+          <td class="paramtype">ThisImplementation const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>This is a non-virtual declaration that will force a link error if undefined (which could cause infinite recursion in the other form). </dd></dl>
 
 </div>
 </div>

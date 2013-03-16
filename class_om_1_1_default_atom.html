@@ -58,14 +58,13 @@ $(document).ready(function(){initNavTree('class_om_1_1_default_atom.html','');})
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="class_om_1_1_default_atom-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Om::DefaultAtom&lt; ThisImplementation &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A partial implementation of <a class="el" href="class_om_1_1_atom.html" title="A leaf Element defined by a string.">Atom</a>.  
+<p>A partial implementation of <a class="el" href="class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string.">Atom</a>.  
 </p>
 
 <p><code>#include &quot;<a class="el" href="default__atom_8hpp_source.html">default_atom.hpp</a>&quot;</code></p>
@@ -89,10 +88,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c2aaa94f547baac3dd1511a3bdf7d93"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_atom.html#a9c2aaa94f547baac3dd1511a3bdf7d93">~DefaultAtom</a> ()=0</td></tr>
 <tr class="separator:a9c2aaa94f547baac3dd1511a3bdf7d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24a987c2a16c8a773d70ca13f74281b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_atom.html#a24a987c2a16c8a773d70ca13f74281b5">operator&lt;</a> (<a class="el" href="class_om_1_1_default_atom.html">DefaultAtom</a> const &amp;)</td></tr>
-<tr class="memdesc:a24a987c2a16c8a773d70ca13f74281b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares with a <a class="el" href="class_om_1_1_atom.html" title="A leaf Element defined by a string.">Atom</a>; required for use as index in containers.  <a href="#a24a987c2a16c8a773d70ca13f74281b5">More...</a><br/></td></tr>
+<tr class="memdesc:a24a987c2a16c8a773d70ca13f74281b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares with a <a class="el" href="class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string.">Atom</a>; required for use as index in containers.  <a href="#a24a987c2a16c8a773d70ca13f74281b5">More...</a><br/></td></tr>
 <tr class="separator:a24a987c2a16c8a773d70ca13f74281b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec2f4c95cb42d72a02108bbafcb4b9eb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_atom.html#aec2f4c95cb42d72a02108bbafcb4b9eb">Clear</a> ()</td></tr>
 <tr class="separator:aec2f4c95cb42d72a02108bbafcb4b9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f0065c8e4f89c56d93fb38d9a9055e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_atom.html#a5f0065c8e4f89c56d93fb38d9a9055e5">Equals</a> (<a class="el" href="class_om_1_1_default_atom.html">DefaultAtom</a> const &amp;) const </td></tr>
+<tr class="separator:a5f0065c8e4f89c56d93fb38d9a9055e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4837a7e7551735b03cbfee0ae8f7fbf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_atom.html#a4837a7e7551735b03cbfee0ae8f7fbf4">Equals</a> (ThisImplementation const &amp;) const </td></tr>
+<tr class="separator:a4837a7e7551735b03cbfee0ae8f7fbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe521ad29dc020a05f5af6071044affd"><td class="memItemLeft" align="right" valign="top">virtual std::auto_ptr&lt; <a class="el" href="class_om_1_1_source.html">Source</a><br class="typebreak"/>
 &lt; <a class="el" href="class_om_1_1_element.html">Element</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_atom.html#abe521ad29dc020a05f5af6071044affd">GetElementRange</a> ()</td></tr>
 <tr class="separator:abe521ad29dc020a05f5af6071044affd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,6 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a43f217ec0e2e61cbeafa6c0fec723ea7 inherit pub_methods_class_om_1_1_default_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b458fe693fc2760ea543a9b2bb24d81 inherit pub_methods_class_om_1_1_default_element"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#a8b458fe693fc2760ea543a9b2bb24d81">Equals</a> (<a class="el" href="class_om_1_1_element.html">Element</a> const &amp;) const</td></tr>
 <tr class="separator:a8b458fe693fc2760ea543a9b2bb24d81 inherit pub_methods_class_om_1_1_default_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f125650804885dc08434c5173fe2e76 inherit pub_methods_class_om_1_1_default_element"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#a8f125650804885dc08434c5173fe2e76">Equals</a> (ThisImplementation const &amp;) const</td></tr>
+<tr class="separator:a8f125650804885dc08434c5173fe2e76 inherit pub_methods_class_om_1_1_default_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4d4f7cd3f86f94bc59b776ebab2e3b3 inherit pub_methods_class_om_1_1_default_element"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_element.html#ad4d4f7cd3f86f94bc59b776ebab2e3b3">GiveElements</a> (<a class="el" href="class_om_1_1_queue.html">Queue</a> &amp;)</td></tr>
 <tr class="memdesc:ad4d4f7cd3f86f94bc59b776ebab2e3b3 inherit pub_methods_class_om_1_1_default_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives each contained Element to the argument.  <a href="#ad4d4f7cd3f86f94bc59b776ebab2e3b3">More...</a><br/></td></tr>
 <tr class="separator:ad4d4f7cd3f86f94bc59b776ebab2e3b3 inherit pub_methods_class_om_1_1_default_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,19 +244,13 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a73ef89b77210e2bd100c1e79d7eedeee"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_atom.html#a73ef89b77210e2bd100c1e79d7eedeee">thisString</a></td></tr>
-<tr class="memdesc:a73ef89b77210e2bd100c1e79d7eedeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The NFD-normalized string that defines the <a class="el" href="class_om_1_1_atom.html" title="A leaf Element defined by a string.">Atom</a>.  <a href="#a73ef89b77210e2bd100c1e79d7eedeee">More...</a><br/></td></tr>
+<tr class="memdesc:a73ef89b77210e2bd100c1e79d7eedeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The NFD-normalized string that defines the <a class="el" href="class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string.">Atom</a>.  <a href="#a73ef89b77210e2bd100c1e79d7eedeee">More...</a><br/></td></tr>
 <tr class="separator:a73ef89b77210e2bd100c1e79d7eedeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ad6a6efa86d282f72b72f1b7b01b87252"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_om_1_1_default_atom.html">DefaultAtom</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_atom.html#ad6a6efa86d282f72b72f1b7b01b87252">operator=</a> (<a class="el" href="class_om_1_1_default_atom.html">DefaultAtom</a> const &amp;)</td></tr>
 <tr class="separator:ad6a6efa86d282f72b72f1b7b01b87252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a7fd11ff331fe8f2f64ce60ab46169fe5"><td class="memTemplParams" colspan="2">template&lt;typename TheImplementation &gt; </td></tr>
-<tr class="memitem:a7fd11ff331fe8f2f64ce60ab46169fe5"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_atom.html#a7fd11ff331fe8f2f64ce60ab46169fe5">operator==</a> (<a class="el" href="class_om_1_1_default_atom.html">DefaultAtom</a>&lt; TheImplementation &gt; const &amp;, <a class="el" href="class_om_1_1_default_atom.html">DefaultAtom</a>&lt; TheImplementation &gt; const &amp;)</td></tr>
-<tr class="separator:a7fd11ff331fe8f2f64ce60ab46169fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename ThisImplementation&gt;<br/>
@@ -390,7 +389,7 @@ template&lt;typename ThisImplementation&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>True if this <a class="el" href="class_om_1_1_atom.html" title="A leaf Element defined by a string.">Atom</a> string precedes the argument <a class="el" href="class_om_1_1_atom.html" title="A leaf Element defined by a string.">Atom</a> string in a byte-wise ordering. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if this <a class="el" href="class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string.">Atom</a> string precedes the argument <a class="el" href="class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string.">Atom</a> string in a byte-wise ordering. </dd></dl>
 
 </div>
 </div>
@@ -421,6 +420,42 @@ template&lt;typename ThisImplementation&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a5f0065c8e4f89c56d93fb38d9a9055e5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ThisImplementation&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_om_1_1_default_atom.html">Om::DefaultAtom</a>&lt; ThisImplementation &gt;::Equals </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_om_1_1_default_atom.html">DefaultAtom</a>&lt; ThisImplementation &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4837a7e7551735b03cbfee0ae8f7fbf4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ThisImplementation&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_om_1_1_default_atom.html">Om::DefaultAtom</a>&lt; ThisImplementation &gt;::Equals </td>
+          <td>(</td>
+          <td class="paramtype">ThisImplementation const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="abe521ad29dc020a05f5af6071044affd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -443,7 +478,7 @@ template&lt;typename ThisImplementation&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> range containing only this <a class="el" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">Element</a> range containing only this <a class="el" href="class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">Element</a>. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_om_1_1_default_element.html#ac04256abca95da7d644acd21e250c47a">Om::DefaultElement&lt; ThisImplementation, Atom &gt;</a>.</p>
 
@@ -471,7 +506,7 @@ template&lt;typename ThisImplementation&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>A non-null owner pointer to a new <a class="el" href="class_om_1_1_element.html" title="An &quot;elemental&quot; Program comprised of a single item (or empty).">Element</a> range. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A non-null owner pointer to a new <a class="el" href="class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)...">Element</a> range. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_om_1_1_default_element.html#a7b42e76b5f53a9df581efae7a9e9dff9">Om::DefaultElement&lt; ThisImplementation, Atom &gt;</a>.</p>
 
@@ -491,7 +526,7 @@ template&lt;typename ThisImplementation&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>The string that defines this <a class="el" href="class_om_1_1_atom.html" title="A leaf Element defined by a string.">Atom</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The string that defines this <a class="el" href="class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string.">Atom</a>. </dd></dl>
 
 </div>
 </div>
@@ -518,7 +553,7 @@ template&lt;typename ThisImplementation&gt; </div>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>True if empty.</dd></dl>
-<p>An empty <a class="el" href="class_om_1_1_atom.html" title="A leaf Element defined by a string.">Atom</a> cannot be represented in <a class="el" href="namespace_om.html" title="The Om language implementation.">Om</a> code, but can be handy as an efficient "null" representation in implementation (e.g. the result after a move). </p>
+<p>An empty <a class="el" href="class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string.">Atom</a> cannot be represented in <a class="el" href="namespace_om.html" title="The Om language implementation.">Om</a> code, but can be handy as an efficient "null" representation in implementation (e.g. the result after a move). </p>
 
 <p>Implements <a class="el" href="class_om_1_1_queue.html#adec424b550da06372b4b82e7eee16ef8">Om::Queue</a>.</p>
 
@@ -547,7 +582,7 @@ template&lt;typename ThisImplementation&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="class_om_1_1_atom.html" title="A leaf Element defined by a string.">Atom</a> was merged. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string.">Atom</a> was merged. </dd></dl>
 
 </div>
 </div>
@@ -622,45 +657,6 @@ template&lt;typename ThisImplementation&gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a class="anchor" id="a7fd11ff331fe8f2f64ce60ab46169fe5"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ThisImplementation&gt; </div>
-<div class="memtemplate">
-template&lt;typename TheImplementation &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator== </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_om_1_1_default_atom.html">DefaultAtom</a>&lt; TheImplementation &gt; const &amp;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_om_1_1_default_atom.html">DefaultAtom</a>&lt; TheImplementation &gt; const &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a73ef89b77210e2bd100c1e79d7eedeee"></a>
 <div class="memitem">
@@ -682,7 +678,7 @@ template&lt;typename ThisImplementation&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="default__atom_8hpp_source.html#l00120">120</a> of file <a class="el" href="default__atom_8hpp_source.html">default_atom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="default__atom_8hpp_source.html#l00123">123</a> of file <a class="el" href="default__atom_8hpp_source.html">default_atom.hpp</a>.</p>
 
 </div>
 </div>
