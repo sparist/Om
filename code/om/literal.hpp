@@ -43,10 +43,12 @@ namespace Om {
 
 	public: // MARK: public (static)
 
-		//! \cond
+		/*!
+		\brief
+			A Literal Element range.
+		*/
 		template <typename ThisLiteral>
 		class ElementRange;
-		//! \endcond
 
 		static char const * GetName();
 
@@ -134,7 +136,7 @@ namespace Om {
 
 	/*!
 	\brief
-		A mutable Element range.
+		A mutable Literal Element range.
 	*/
 	template <>
 	class Literal::ElementRange<Literal>:
@@ -153,7 +155,7 @@ namespace Om {
 
 	/*!
 	\brief
-		An immutable Element range.
+		An immutable Literal Element range.
 	*/
 	template <>
 	class Literal::ElementRange<Literal const>:

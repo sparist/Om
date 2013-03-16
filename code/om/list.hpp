@@ -41,9 +41,7 @@ namespace Om {
 			theBackNodeIndex
 		};
 
-		//! \cond
 		class Node;
-		//! \endcond
 
 	public: // MARK: public (non-static)
 

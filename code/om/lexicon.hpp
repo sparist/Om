@@ -49,9 +49,7 @@ namespace Om {
 
 	public: // MARK: public (static)
 
-		//! \cond
 		class ElementRange;
-		//! \endcond
 
 		static char const * GetName();
 

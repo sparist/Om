@@ -41,12 +41,14 @@ namespace Om {
 
 	public: // MARK: public (static)
 
-		//! \cond
 		class ElementRange;
 
+		/*!
+		\brief
+			An Expression Form range.
+		*/
 		template <typename ThisForm>
 		class FormRange;
-		//! \endcond
 
 		static char const * GetName();
 
@@ -157,7 +159,7 @@ namespace Om {
 
 	/*!
 	\brief
-		Specialization on a mutable Form.
+		A mutable Expression Form range.
 	*/
 	template <>
 	class Expression::FormRange<Form>:
@@ -176,7 +178,7 @@ namespace Om {
 
 	/*!
 	\brief
-		Specialization on an immutable Form.
+		An immutable Expression Form range.
 	*/
 	template <>
 	class Expression::FormRange<Form const>:

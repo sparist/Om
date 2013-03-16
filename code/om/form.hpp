@@ -32,12 +32,14 @@ namespace Om {
 
 	public: // MARK: public (static)
 
-		//! \cond
 		class ElementRange;
 
+		/*!
+		\brief
+			A Form Operand range.
+		*/
 		template <typename ThisOperand>
 		class OperandRange;
-		//! \endcond
 
 	public: // MARK: public (non-static)
 
@@ -174,7 +176,7 @@ namespace Om {
 
 	/*!
 	\brief
-		Specialization on a mutable Operand.
+		A mutable Form Operand range.
 	*/
 	template <>
 	class Form::OperandRange<Operand>:
@@ -193,7 +195,7 @@ namespace Om {
 
 	/*!
 	\brief
-		Specialization on an immutable Operand.
+		An immutable Form Operand range.
 	*/
 	template <>
 	class Form::OperandRange<Operand const>:
