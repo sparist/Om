@@ -21,16 +21,15 @@ fi
 
 cd "$1"
 Icu=`pwd -P`
-mkdir -p build
 mkdir -p make
 cd make
-../source/runConfigureICU MacOSX --enable-static --disable-shared --prefix="$Icu/build"
-make
-make install
+../source/runConfigureICU MacOSX --enable-static --disable-shared --prefix="$Icu/build" CPPFLAGS="-DU_CHARSET_IS_UTF8=1"
+make -s
+make -s install
 cd "$Directory"
 
 cd "$2"
 Boost=`pwd -P`
 ./bootstrap.sh --with-icu="$Icu/build" --prefix="$Boost/build"
-./b2 boost.locale.icu=on boost.locale.std=off boost.locale.iconv=off -sICU_PATH="$Icu/build" --with-chrono --with-locale --with-system --with-thread --with-test link=static install --prefix="$Boost/build"
+./b2 boost.locale.icu=on boost.locale.std=off boost.locale.iconv=off define=U_CHARSET_IS_UTF8=1 -sICU_PATH="$Icu/build" --with-chrono --with-locale --with-system --with-thread --with-test link=static install --prefix="$Boost/build"
 cd "$Directory"

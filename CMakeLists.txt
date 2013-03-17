@@ -90,6 +90,7 @@ else()
 	set(OmTestCompileFlags "${OmTestCompileFlags} -Wno-unneeded-internal-declaration")
 	set(OmTestCompileFlags "${OmTestCompileFlags} -Wno-unused-variable")
 
+	add_definitions(-DU_CHARSET_IS_UTF8=1)
 	add_definitions(-DOm_Macros_Precompilation_)
 
 	find_library(BoostPrgExecMonitorReleaseLibrary boost_prg_exec_monitor "${Boost}/lib" NO_DEFAULT_PATH)
