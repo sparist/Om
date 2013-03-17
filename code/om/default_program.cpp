@@ -70,16 +70,14 @@ inline Type_::~DefaultProgram() {}
 */
 Template_
 inline bool Type_::Equals(Program const & theProgram) const {
-	std::auto_ptr<
-		Source<Element const>
-	> theRange = this->GetElementRange();
+	typedef Source<Element const> ElementSource;
+
+	std::auto_ptr<ElementSource> theRange = this->GetElementRange();
 	assert(
 		theRange.get()
 	);
 
-	std::auto_ptr<
-		Source<Element const>
-	> theOtherRange = theProgram.GetElementRange();
+	std::auto_ptr<ElementSource> theOtherRange = theProgram.GetElementRange();
 	assert(
 		theOtherRange.get()
 	);
