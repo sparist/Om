@@ -8,8 +8,8 @@ var class_om_1_1_evaluation =
     [ "TakeOperand", "class_om_1_1_evaluation.html#a7a2919706c0ee56f1cdded04e3c13914", null ],
     [ "TakeOperation", "class_om_1_1_evaluation.html#a345c0a090f0105993706810319799906", null ],
     [ "TakeOperator", "class_om_1_1_evaluation.html#abbee8e8820e9bdb2b212d30d8ef60f99", null ],
-    [ "TakeQuotedQueue", "class_om_1_1_evaluation.html#aad0a4741b8262fa1523df7543aa654b8", null ],
-    [ "TakeQueue", "class_om_1_1_evaluation.html#a78b70bd99f0752f19bc937c0b06bf61a", null ],
+    [ "TakeProducer", "class_om_1_1_evaluation.html#af2d7240da16aa1b9713fa0e7d5ddc369", null ],
+    [ "TakeQuotedProducer", "class_om_1_1_evaluation.html#aa3ecfeaa56790cef0fd5f8dc89c5437e", null ],
     [ "operator=", "class_om_1_1_evaluation.html#a7c8bf4cca25902ff616ab7bea34f3032", null ],
     [ "thisExpression", "class_om_1_1_evaluation.html#a5d2d5e3f2b91f7587f769e558bf2d1e8", null ],
     [ "thisEvaluator", "class_om_1_1_evaluation.html#a7170213f1379306d7a35b9633dd58ff1", null ]

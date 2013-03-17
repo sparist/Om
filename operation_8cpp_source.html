@@ -98,12 +98,12 @@ $(document).ready(function(){initNavTree('operation_8cpp_source.html','');});
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">inline</span> Type_::~Operation() {}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Queue &amp;) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Consumer &amp;) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    assert(0);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Pure virtual function called.&quot;</span>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Queue &amp;)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Consumer &amp;)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    assert(0);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Pure virtual function called.&quot;</span>);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('operation_8cpp_source.html','');});
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::TakeQuotedElements(</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    Evaluation &amp;,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Queue &amp;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Producer &amp;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;) {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    assert(0);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Pure virtual function called.&quot;</span>);</div>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('operation_8cpp_source.html','');});
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::TakeQuotedElements(</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    Evaluation &amp;,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    Queue <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    Producer <span class="keyword">const</span> &amp;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    assert(0);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Pure virtual function called.&quot;</span>);</div>

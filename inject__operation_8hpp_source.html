@@ -84,9 +84,9 @@ $(document).ready(function(){initNavTree('inject__operation_8hpp_source.html',''
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operations_1_1_inject_operation.html#ac31f4847538b9b469edf89d303e8d745">GetName</a>();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheInjectOperation&gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_inject_operation.html#ae7b10c1437b52412da4b90a141e15126">GiveElements</a>(</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_inject_operation.html#ac4d34fbe307e5b56ead7d6f7a92d0efe">GiveElements</a>(</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                TheInjectOperation &amp;,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="class_om_1_1_consumer.html" title="An Element taker; takes at the back.">Consumer</a> &amp;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            );</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
@@ -99,10 +99,10 @@ $(document).ready(function(){initNavTree('inject__operation_8hpp_source.html',''
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                TheOperand &amp;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            );</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_inject_operation.html#aebdbf137a0750be0eb25a27e49176cc1">TakeQuotedQueue</a>(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_inject_operation.html#a55743111edcdbc5ead5faf05c0437f96">TakeQuotedProducer</a>(</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                TheQueue &amp;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                TheProducer &amp;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            );</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>

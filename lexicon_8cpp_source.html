@@ -324,10 +324,10 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::BackGivePair(Queue &amp; theQueue) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::BackGivePair(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    this-&gt;GivePair(</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <a class="code" href="class_om_1_1_list.html#a95aa07c0b1b820ec23ddbdc0f9c45b3da4a683dc3b2281aea8b03e1db9313341e">List::theBackNodeIndex</a>,</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        theQueue</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        theConsumer</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    );</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
@@ -351,10 +351,10 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">return</span> theIterator-&gt;second-&gt;GetValue();</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::FrontGivePair(Queue &amp; theQueue) {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::FrontGivePair(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    this-&gt;GivePair(</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="class_om_1_1_list.html#a95aa07c0b1b820ec23ddbdc0f9c45b3da009c5776fa20148022bf3f6517acaae8">List::theFrontNodeIndex</a>,</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        theQueue</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        theConsumer</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    );</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
@@ -368,18 +368,18 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    );</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Queue &amp; theQueue) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    this-&gt;GiveElements(</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        this-&gt;thisList.GetNode(<a class="code" href="class_om_1_1_list.html#a95aa07c0b1b820ec23ddbdc0f9c45b3da009c5776fa20148022bf3f6517acaae8">List::theFrontNodeIndex</a>),</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        theQueue</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        theConsumer</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    );</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    this-&gt;Clear();</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Queue &amp; theQueue)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Consumer &amp; theConsumer)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    this-&gt;GiveElements(</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        this-&gt;thisList.GetNode(<a class="code" href="class_om_1_1_list.html#a95aa07c0b1b820ec23ddbdc0f9c45b3da009c5776fa20148022bf3f6517acaae8">List::theFrontNodeIndex</a>),</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        theQueue</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        theConsumer</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    );</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
@@ -421,7 +421,7 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::ReadQuotedElements(Parser &amp; theParser) {</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    Literal theLiteral;</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    theLiteral.ReadElements(theParser);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    this-&gt;TakeQuotedQueue(theLiteral);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    this-&gt;TakeQuotedProducer(theLiteral);</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Swap(Lexicon &amp; theLexicon) {</div>
@@ -445,9 +445,9 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    this-&gt;GetOperandTaker(theOperator);</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;}</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedQueue(TheQueue &amp; theQueue) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    this-&gt;GetOperandTaker().GetValue().TakeQuotedQueue(theQueue);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedProducer(TheProducer &amp; theProducer) {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    this-&gt;GetOperandTaker().GetValue().TakeQuotedProducer(theProducer);</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheSeparator&gt;</div>
@@ -477,7 +477,7 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        );</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    }</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    theEvaluation.TakeQueue(</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    theEvaluation.TakeProducer(</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        *theOperand.GetProgram()</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    );</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -488,13 +488,13 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheNode&gt;</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    TheNode * theNode,</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    Queue &amp; theQueue</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    Consumer &amp; theConsumer</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;) {</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="keywordflow">if</span> (theNode) {</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <span class="keywordflow">for</span> (</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            ;</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            ;</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            theQueue.TakeElement(</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            theConsumer.TakeElement(</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                <a class="code" href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Separator::GetLineSeparator</a>()</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            )</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        ) {</div>
@@ -502,7 +502,7 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                theNode &amp;&amp;</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                !theNode-&gt;GetValue().IsEmpty()</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            );</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            theNode-&gt;GetValue().GiveElements(theQueue);</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            theNode-&gt;GetValue().GiveElements(theConsumer);</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            theNode = theNode-&gt;GetNode(<a class="code" href="class_om_1_1_list.html#a95aa07c0b1b820ec23ddbdc0f9c45b3da4a683dc3b2281aea8b03e1db9313341e">List::theBackNodeIndex</a>);</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            <span class="keywordflow">if</span> (!theNode) {</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                <span class="keywordflow">break</span>;</div>
@@ -571,7 +571,7 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GivePair(</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <a class="code" href="class_om_1_1_list.html#a95aa07c0b1b820ec23ddbdc0f9c45b3d">List::NodeIndex</a> <span class="keyword">const</span> theNodeIndex,</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    Queue &amp; theQueue</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    Consumer &amp; theConsumer</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;) {</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">if</span> (</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        List::Node <span class="keyword">const</span> * <span class="keyword">const</span> theNode = this-&gt;thisList.UnlinkNode(theNodeIndex)</div>
@@ -585,7 +585,7 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        Map::auto_type theOldNode = this-&gt;thisMap.release(theIterator);</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        assert(theOldNode);</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        theOldNode-&gt;GetValue().GiveElements(theQueue);</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        theOldNode-&gt;GetValue().GiveElements(theConsumer);</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    }</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;}</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;</div>

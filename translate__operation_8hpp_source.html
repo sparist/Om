@@ -79,9 +79,9 @@ $(document).ready(function(){initNavTree('translate__operation_8hpp_source.html'
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheTranslateOperation&gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_translate_operation.html#afd3e59704bd9cf3a151246acf2599f29">GiveElements</a>(</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_translate_operation.html#ae86b2bf2b5293e99193c3b9ecd560981">GiveElements</a>(</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                TheTranslateOperation &amp;,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="class_om_1_1_queue.html" title="A first-in, first-out Element processor.">Queue</a> &amp;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="class_om_1_1_consumer.html" title="An Element taker; takes at the back.">Consumer</a> &amp;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            );</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
@@ -94,10 +94,10 @@ $(document).ready(function(){initNavTree('translate__operation_8hpp_source.html'
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                TheOperand &amp;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            );</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_translate_operation.html#a6378fa8cfaa407cc96457b9e613165fb">TakeQuotedQueue</a>(</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_translate_operation.html#a461a3a62036083e6e26ae5321b5cfbd2">TakeQuotedProducer</a>(</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html" title="The current evaluation.">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                TheQueue &amp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                TheProducer &amp;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            );</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">protected</span>: <span class="comment">// MARK: protected (non-static)</span></div>

@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    Parser theParser(theCodePointSource);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    theLiteral.ReadElements(theParser);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                theOperator.TakeQuotedQueue(theLiteral);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                theOperator.TakeQuotedProducer(theLiteral);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                assert(</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    theLiteral.IsEmpty()</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                );</div>
@@ -279,7 +279,7 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::BackGiveCodePoint(Queue &amp; theQueue) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::BackGiveCodePoint(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">if</span> (</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        !this-&gt;thisString.empty()</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    ) {</div>
@@ -301,12 +301,12 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                this-&gt;thisString.size() - theString.size()</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            );</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        theQueue.TakeElement(theOperator);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        theConsumer.TakeElement(theOperator);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keyword">template</span> &lt;boost::locale::boundary::boundary_type theSegment&gt;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::BackGiveSegment(Queue &amp; theQueue) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::BackGiveSegment(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">if</span> (</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        !this-&gt;thisString.empty()</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    ) {</div>
@@ -340,22 +340,22 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                this-&gt;thisString.size() - theString.size()</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            );</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        theQueue.TakeElement(theOperator);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        theConsumer.TakeElement(theOperator);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Decode(TheQueue &amp; theQueue)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheConsumer&gt;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Decode(TheConsumer &amp; theConsumer)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    Sources::CodePointSource&lt;std::string::const_iterator&gt; theCodePointSource(</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        this-&gt;thisString.begin(),</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        this-&gt;thisString.end()</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    );</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    Parser theParser(theCodePointSource);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    theQueue.ReadElements(theParser);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    theConsumer.ReadElements(theParser);</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Encode(TheQueue &amp; theQueue) {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Encode(TheProducer &amp; theProducer) {</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    this-&gt;thisString.clear();</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    Sinks::CodePointSink&lt;</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        std::back_insert_iterator&lt;std::string&gt;</div>
@@ -363,10 +363,10 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        std::back_inserter(this-&gt;thisString)</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    );</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    Writer theWriter(theCodePointSink);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    theQueue.GiveElements(theWriter);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    theProducer.GiveElements(theWriter);</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;}</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::FrontGiveCodePoint(Queue &amp; theQueue) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::FrontGiveCodePoint(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        !this-&gt;thisString.empty()</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    ) {</div>
@@ -389,12 +389,12 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                theString.size()</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            );</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        theQueue.TakeElement(theOperator);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        theConsumer.TakeElement(theOperator);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keyword">template</span> &lt;boost::locale::boundary::boundary_type theSegment&gt;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::FrontGiveSegment(Queue &amp; theQueue) {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::FrontGiveSegment(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span> (</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        !this-&gt;thisString.empty()</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    ) {</div>
@@ -426,7 +426,7 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                theString.size()</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            );</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        }</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        theQueue.TakeElement(theOperator);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        theConsumer.TakeElement(theOperator);</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    }</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;</div>
@@ -467,7 +467,7 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    assert(</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        !theOperand.IsEmpty()</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    );</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    this-&gt;TakeQuotedQueue(</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    this-&gt;TakeQuotedProducer(</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        *theOperand.GetProgram()</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    );</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;}</div>
@@ -507,10 +507,10 @@ $(document).ready(function(){initNavTree('operator_8cpp_source.html','');});
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    ).swap(this-&gt;thisString);</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;}</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedQueue(TheQueue &amp; theQueue) {</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedProducer(TheProducer &amp; theProducer) {</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    this-&gt;thisString.push_back(<a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445">Symbols::theStartOperandSymbol</a>);</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    theQueue.GiveElements(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    theProducer.GiveElements(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    this-&gt;thisString.push_back(<a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a>);</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;}</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;</div>

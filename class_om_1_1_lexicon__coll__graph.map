@@ -1,16 +1,17 @@
 <map id="Om::Lexicon" name="Om::Lexicon">
-<area shape="rect" id="node2" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Lexicon \&gt;" alt="" coords="1379,107,1522,151"/>
-<area shape="rect" id="node3" href="$class_om_1_1_default_queue.html" title="Om::DefaultQueue\&lt; Lexicon,\l DefaultGiveable\&lt; Lexicon,\l Program \&gt; \&gt;" alt="" coords="1134,66,1327,126"/>
-<area shape="rect" id="node4" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Lexicon, Program \&gt;" alt="" coords="934,74,1082,118"/>
-<area shape="rect" id="node5" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Lexicon, DefaultCopyable\l\&lt; Lexicon, Program \&gt; \&gt;" alt="" coords="697,66,882,126"/>
-<area shape="rect" id="node6" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Lexicon, Program \&gt;" alt="" coords="496,74,645,118"/>
-<area shape="rect" id="node7" href="$class_om_1_1_program.html" title="The Program implementation." alt="" coords="344,82,445,110"/>
-<area shape="rect" id="node8" href="$class_om_1_1_giveable.html" title="An object that can be copied or moved via Give." alt="" coords="178,30,281,58"/>
-<area shape="rect" id="node9" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied." alt="" coords="7,5,113,33"/>
-<area shape="rect" id="node10" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved." alt="" coords="6,57,114,85"/>
-<area shape="rect" id="node11" href="$class_om_1_1_queue.html" title="A first&#45;in, first&#45;out Element processor." alt="" coords="184,82,274,110"/>
-<area shape="rect" id="node12" href="$class_om_1_1_shareable.html" title="Om::Shareable\&lt;\&gt;" alt="" coords="166,134,293,162"/>
-<area shape="rect" id="node13" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Lexicon \&gt;" alt="" coords="1155,150,1307,178"/>
-<area shape="rect" id="node14" href="$class_om_1_1_translator.html" title="An Operator lookup for use by an Evaluator." alt="" coords="1396,175,1506,203"/>
-<area shape="rect" id="node15" href="$class_om_1_1_list.html" title="Om::List\&lt; Pair \&gt;" alt="" coords="1392,227,1509,255"/>
+<area shape="rect" id="node2" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Lexicon \&gt;" alt="" coords="1366,109,1509,153"/>
+<area shape="rect" id="node3" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Lexicon, DefaultGiveable\l\&lt; Lexicon, Program \&gt; \&gt;" alt="" coords="1133,67,1315,127"/>
+<area shape="rect" id="node4" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Lexicon, Program \&gt;" alt="" coords="934,75,1082,119"/>
+<area shape="rect" id="node5" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Lexicon, DefaultCopyable\l\&lt; Lexicon, Program \&gt; \&gt;" alt="" coords="697,67,882,127"/>
+<area shape="rect" id="node6" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Lexicon, Program \&gt;" alt="" coords="496,75,645,119"/>
+<area shape="rect" id="node7" href="$class_om_1_1_program.html" title="The Program implementation." alt="" coords="344,83,445,111"/>
+<area shape="rect" id="node8" href="$class_om_1_1_consumer.html" title="An Element taker; takes at the back." alt="" coords="173,5,285,33"/>
+<area shape="rect" id="node9" href="$class_om_1_1_giveable.html" title="An object that can be copied or moved via Give." alt="" coords="178,57,281,85"/>
+<area shape="rect" id="node10" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied." alt="" coords="7,31,113,59"/>
+<area shape="rect" id="node11" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved." alt="" coords="6,83,114,111"/>
+<area shape="rect" id="node12" href="$class_om_1_1_producer.html" title="An Element giver; gives from the front." alt="" coords="177,109,281,137"/>
+<area shape="rect" id="node13" href="$class_om_1_1_shareable.html" title="Om::Shareable\&lt;\&gt;" alt="" coords="166,161,293,189"/>
+<area shape="rect" id="node14" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Lexicon \&gt;" alt="" coords="1148,151,1300,179"/>
+<area shape="rect" id="node15" href="$class_om_1_1_translator.html" title="An Operator lookup for use by an Evaluator." alt="" coords="1382,177,1492,205"/>
+<area shape="rect" id="node16" href="$class_om_1_1_list.html" title="Om::List\&lt; Pair \&gt;" alt="" coords="1379,229,1496,257"/>
 </map>

@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">inline</span> Type_::Evaluator(</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Queue &amp; theOutput,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Consumer &amp; theOutput,</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Translator <span class="keyword">const</span> &amp; theTranslator</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;):</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;thisOutput(theOutput),</div>
@@ -126,20 +126,20 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> this-&gt;thisTranslator;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Queue &amp; theQueue) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    this-&gt;GiveElements(</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        this-&gt;thisOperationVector.begin(),</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        this-&gt;thisOperationVector.end(),</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        theQueue</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        theConsumer</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    );</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    this-&gt;Clear();</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Queue &amp; theQueue)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Consumer &amp; theConsumer)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    this-&gt;GiveElements(</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        this-&gt;thisOperationVector.begin(),</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        this-&gt;thisOperationVector.end(),</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        theQueue</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        theConsumer</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    );</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
@@ -322,25 +322,25 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedQueue(TheQueue &amp; theQueue) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedProducer(TheProducer &amp; theProducer) {</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    Evaluation theEvaluation(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    this-&gt;TakeQuotedQueue(</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    this-&gt;TakeQuotedProducer(</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        theEvaluation,</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        theQueue</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        theProducer</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    );</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    this-&gt;Evaluate(theEvaluation);</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedQueue(</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeQuotedProducer(</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    Evaluation &amp; theEvaluation,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    TheQueue &amp; theQueue</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    TheProducer &amp; theProducer</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;) {</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">if</span> (</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        this-&gt;thisOperationVector.empty()</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    ) {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        this-&gt;thisOutput.TakeQuotedElements(theQueue);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        this-&gt;thisOutput.TakeQuotedElements(theProducer);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        this-&gt;thisGaveElementToOutput = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        std::auto_ptr&lt;Operation&gt; theOperation(</div>
@@ -352,7 +352,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">if</span> (</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            !theOperation-&gt;TakeQuotedElements(</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                theEvaluation,</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                theQueue</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                theProducer</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            )</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        ) {</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            this-&gt;thisOperationVector.push_back(theOperation);</div>
@@ -369,17 +369,17 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    TheIterator theCurrent,</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    TheIterator <span class="keyword">const</span> theEnd,</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    Queue &amp; theQueue</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    Consumer &amp; theConsumer</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;) {</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span> (theEnd != theCurrent) {</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">for</span> (</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            ;</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            ;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            theQueue.TakeElement(</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            theConsumer.TakeElement(</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                <a class="code" href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Separator::GetLineSeparator</a>()</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            )</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        ) {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            theCurrent-&gt;GiveElements(theQueue);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            theCurrent-&gt;GiveElements(theConsumer);</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="keywordflow">if</span> (theEnd == ++theCurrent) {</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            }</div>

@@ -1,106 +1,110 @@
 var hierarchy =
 [
     [ "Om::List< Pair >", "class_om_1_1_list.html", null ],
-    [ "Om::Copyable", "class_om_1_1_copyable.html", [
-      [ "Om::Giveable", "class_om_1_1_giveable.html", [
-        [ "Om::Program", "class_om_1_1_program.html", [
-          [ "Om::DefaultCopyable< Expression, Program >", "class_om_1_1_default_copyable.html", [
-            [ "Om::DefaultMoveable< Expression, DefaultCopyable< Expression, Program > >", "class_om_1_1_default_moveable.html", [
-              [ "Om::DefaultGiveable< Expression, Program >", "class_om_1_1_default_giveable.html", [
-                [ "Om::DefaultQueue< Expression, DefaultGiveable< Expression, Program > >", "class_om_1_1_default_queue.html", [
-                  [ "Om::DefaultProgram< Expression >", "class_om_1_1_default_program.html", [
-                    [ "Om::Expression", "class_om_1_1_expression.html", null ]
+    [ "Om::Consumer", "class_om_1_1_consumer.html", [
+      [ "Om::DefaultConsumer< Evaluator >", "class_om_1_1_default_consumer.html", [
+        [ "Om::Evaluator", "class_om_1_1_evaluator.html", null ]
+      ] ],
+      [ "Om::DefaultConsumer< Writer >", "class_om_1_1_default_consumer.html", [
+        [ "Om::Writer", "class_om_1_1_writer.html", null ]
+      ] ],
+      [ "Om::Program", "class_om_1_1_program.html", [
+        [ "Om::DefaultCopyable< Expression, Program >", "class_om_1_1_default_copyable.html", [
+          [ "Om::DefaultMoveable< Expression, DefaultCopyable< Expression, Program > >", "class_om_1_1_default_moveable.html", [
+            [ "Om::DefaultGiveable< Expression, Program >", "class_om_1_1_default_giveable.html", [
+              [ "Om::DefaultConsumer< Expression, DefaultGiveable< Expression, Program > >", "class_om_1_1_default_consumer.html", [
+                [ "Om::DefaultProgram< Expression >", "class_om_1_1_default_program.html", [
+                  [ "Om::Expression", "class_om_1_1_expression.html", null ]
+                ] ]
+              ] ]
+            ] ]
+          ] ]
+        ] ],
+        [ "Om::DefaultCopyable< Lexicon, Program >", "class_om_1_1_default_copyable.html", [
+          [ "Om::DefaultMoveable< Lexicon, DefaultCopyable< Lexicon, Program > >", "class_om_1_1_default_moveable.html", [
+            [ "Om::DefaultGiveable< Lexicon, Program >", "class_om_1_1_default_giveable.html", [
+              [ "Om::DefaultConsumer< Lexicon, DefaultGiveable< Lexicon, Program > >", "class_om_1_1_default_consumer.html", [
+                [ "Om::DefaultProgram< Lexicon >", "class_om_1_1_default_program.html", [
+                  [ "Om::Lexicon", "class_om_1_1_lexicon.html", null ]
+                ] ]
+              ] ]
+            ] ]
+          ] ]
+        ] ],
+        [ "Om::DefaultCopyable< Literal, Program >", "class_om_1_1_default_copyable.html", [
+          [ "Om::DefaultMoveable< Literal, DefaultCopyable< Literal, Program > >", "class_om_1_1_default_moveable.html", [
+            [ "Om::DefaultGiveable< Literal, Program >", "class_om_1_1_default_giveable.html", [
+              [ "Om::DefaultConsumer< Literal, DefaultGiveable< Literal, Program > >", "class_om_1_1_default_consumer.html", [
+                [ "Om::DefaultProgram< Literal >", "class_om_1_1_default_program.html", [
+                  [ "Om::Literal", "class_om_1_1_literal.html", null ]
+                ] ]
+              ] ]
+            ] ]
+          ] ]
+        ] ],
+        [ "Om::DefaultCopyable< Null, Program >", "class_om_1_1_default_copyable.html", [
+          [ "Om::DefaultMoveable< Null, DefaultCopyable< Null, Program > >", "class_om_1_1_default_moveable.html", [
+            [ "Om::DefaultGiveable< Null, Program >", "class_om_1_1_default_giveable.html", [
+              [ "Om::DefaultConsumer< Null, DefaultGiveable< Null, Program > >", "class_om_1_1_default_consumer.html", [
+                [ "Om::DefaultProgram< Null >", "class_om_1_1_default_program.html", [
+                  [ "Om::Null", "class_om_1_1_null.html", null ]
+                ] ]
+              ] ]
+            ] ]
+          ] ]
+        ] ],
+        [ "Om::Element", "class_om_1_1_element.html", [
+          [ "Om::DefaultCopyable< Operand, Element >", "class_om_1_1_default_copyable.html", [
+            [ "Om::DefaultMoveable< Operand, DefaultCopyable< Operand, Element > >", "class_om_1_1_default_moveable.html", [
+              [ "Om::DefaultGiveable< Operand, Element >", "class_om_1_1_default_giveable.html", [
+                [ "Om::DefaultConsumer< Operand, DefaultGiveable< Operand, Element > >", "class_om_1_1_default_consumer.html", [
+                  [ "Om::DefaultProgram< Operand, Element >", "class_om_1_1_default_program.html", [
+                    [ "Om::DefaultElement< Operand >", "class_om_1_1_default_element.html", [
+                      [ "Om::Operand", "class_om_1_1_operand.html", null ]
+                    ] ]
                   ] ]
                 ] ]
               ] ]
             ] ]
           ] ],
-          [ "Om::DefaultCopyable< Lexicon, Program >", "class_om_1_1_default_copyable.html", [
-            [ "Om::DefaultMoveable< Lexicon, DefaultCopyable< Lexicon, Program > >", "class_om_1_1_default_moveable.html", [
-              [ "Om::DefaultGiveable< Lexicon, Program >", "class_om_1_1_default_giveable.html", [
-                [ "Om::DefaultQueue< Lexicon, DefaultGiveable< Lexicon, Program > >", "class_om_1_1_default_queue.html", [
-                  [ "Om::DefaultProgram< Lexicon >", "class_om_1_1_default_program.html", [
-                    [ "Om::Lexicon", "class_om_1_1_lexicon.html", null ]
-                  ] ]
-                ] ]
-              ] ]
-            ] ]
-          ] ],
-          [ "Om::DefaultCopyable< Literal, Program >", "class_om_1_1_default_copyable.html", [
-            [ "Om::DefaultMoveable< Literal, DefaultCopyable< Literal, Program > >", "class_om_1_1_default_moveable.html", [
-              [ "Om::DefaultGiveable< Literal, Program >", "class_om_1_1_default_giveable.html", [
-                [ "Om::DefaultQueue< Literal, DefaultGiveable< Literal, Program > >", "class_om_1_1_default_queue.html", [
-                  [ "Om::DefaultProgram< Literal >", "class_om_1_1_default_program.html", [
-                    [ "Om::Literal", "class_om_1_1_literal.html", null ]
-                  ] ]
-                ] ]
-              ] ]
-            ] ]
-          ] ],
-          [ "Om::DefaultCopyable< Null, Program >", "class_om_1_1_default_copyable.html", [
-            [ "Om::DefaultMoveable< Null, DefaultCopyable< Null, Program > >", "class_om_1_1_default_moveable.html", [
-              [ "Om::DefaultGiveable< Null, Program >", "class_om_1_1_default_giveable.html", [
-                [ "Om::DefaultQueue< Null, DefaultGiveable< Null, Program > >", "class_om_1_1_default_queue.html", [
-                  [ "Om::DefaultProgram< Null >", "class_om_1_1_default_program.html", [
-                    [ "Om::Null", "class_om_1_1_null.html", null ]
-                  ] ]
-                ] ]
-              ] ]
-            ] ]
-          ] ],
-          [ "Om::Element", "class_om_1_1_element.html", [
-            [ "Om::DefaultCopyable< Operand, Element >", "class_om_1_1_default_copyable.html", [
-              [ "Om::DefaultMoveable< Operand, DefaultCopyable< Operand, Element > >", "class_om_1_1_default_moveable.html", [
-                [ "Om::DefaultGiveable< Operand, Element >", "class_om_1_1_default_giveable.html", [
-                  [ "Om::DefaultQueue< Operand, DefaultGiveable< Operand, Element > >", "class_om_1_1_default_queue.html", [
-                    [ "Om::DefaultProgram< Operand, Element >", "class_om_1_1_default_program.html", [
-                      [ "Om::DefaultElement< Operand >", "class_om_1_1_default_element.html", [
-                        [ "Om::Operand", "class_om_1_1_operand.html", null ]
+          [ "Om::Atom", "class_om_1_1_atom.html", [
+            [ "Om::DefaultCopyable< Operator, Atom >", "class_om_1_1_default_copyable.html", [
+              [ "Om::DefaultMoveable< Operator, DefaultCopyable< Operator, Atom > >", "class_om_1_1_default_moveable.html", [
+                [ "Om::DefaultGiveable< Operator, Atom >", "class_om_1_1_default_giveable.html", [
+                  [ "Om::DefaultConsumer< Operator, DefaultGiveable< Operator, Atom > >", "class_om_1_1_default_consumer.html", [
+                    [ "Om::DefaultProgram< Operator, Atom >", "class_om_1_1_default_program.html", [
+                      [ "Om::DefaultElement< Operator, Atom >", "class_om_1_1_default_element.html", [
+                        [ "Om::DefaultAtom< Operator >", "class_om_1_1_default_atom.html", [
+                          [ "Om::Operator", "class_om_1_1_operator.html", null ]
+                        ] ]
                       ] ]
                     ] ]
                   ] ]
                 ] ]
               ] ]
             ] ],
-            [ "Om::Atom", "class_om_1_1_atom.html", [
-              [ "Om::DefaultCopyable< Operator, Atom >", "class_om_1_1_default_copyable.html", [
-                [ "Om::DefaultMoveable< Operator, DefaultCopyable< Operator, Atom > >", "class_om_1_1_default_moveable.html", [
-                  [ "Om::DefaultGiveable< Operator, Atom >", "class_om_1_1_default_giveable.html", [
-                    [ "Om::DefaultQueue< Operator, DefaultGiveable< Operator, Atom > >", "class_om_1_1_default_queue.html", [
-                      [ "Om::DefaultProgram< Operator, Atom >", "class_om_1_1_default_program.html", [
-                        [ "Om::DefaultElement< Operator, Atom >", "class_om_1_1_default_element.html", [
-                          [ "Om::DefaultAtom< Operator >", "class_om_1_1_default_atom.html", [
-                            [ "Om::Operator", "class_om_1_1_operator.html", null ]
-                          ] ]
+            [ "Om::DefaultCopyable< Separator, Atom >", "class_om_1_1_default_copyable.html", [
+              [ "Om::DefaultMoveable< Separator, DefaultCopyable< Separator, Atom > >", "class_om_1_1_default_moveable.html", [
+                [ "Om::DefaultGiveable< Separator, Atom >", "class_om_1_1_default_giveable.html", [
+                  [ "Om::DefaultConsumer< Separator, DefaultGiveable< Separator, Atom > >", "class_om_1_1_default_consumer.html", [
+                    [ "Om::DefaultProgram< Separator, Atom >", "class_om_1_1_default_program.html", [
+                      [ "Om::DefaultElement< Separator, Atom >", "class_om_1_1_default_element.html", [
+                        [ "Om::DefaultAtom< Separator >", "class_om_1_1_default_atom.html", [
+                          [ "Om::Separator", "class_om_1_1_separator.html", null ]
                         ] ]
                       ] ]
                     ] ]
                   ] ]
                 ] ]
-              ] ],
-              [ "Om::DefaultCopyable< Separator, Atom >", "class_om_1_1_default_copyable.html", [
-                [ "Om::DefaultMoveable< Separator, DefaultCopyable< Separator, Atom > >", "class_om_1_1_default_moveable.html", [
-                  [ "Om::DefaultGiveable< Separator, Atom >", "class_om_1_1_default_giveable.html", [
-                    [ "Om::DefaultQueue< Separator, DefaultGiveable< Separator, Atom > >", "class_om_1_1_default_queue.html", [
-                      [ "Om::DefaultProgram< Separator, Atom >", "class_om_1_1_default_program.html", [
-                        [ "Om::DefaultElement< Separator, Atom >", "class_om_1_1_default_element.html", [
-                          [ "Om::DefaultAtom< Separator >", "class_om_1_1_default_atom.html", [
-                            [ "Om::Separator", "class_om_1_1_separator.html", null ]
-                          ] ]
-                        ] ]
-                      ] ]
-                    ] ]
-                  ] ]
-                ] ]
-              ] ],
-              [ "Om::DefaultCopyable< ThisImplementation, Atom >", "class_om_1_1_default_copyable.html", [
-                [ "Om::DefaultMoveable< ThisImplementation, DefaultCopyable< ThisImplementation, Atom > >", "class_om_1_1_default_moveable.html", [
-                  [ "Om::DefaultGiveable< ThisImplementation, Atom >", "class_om_1_1_default_giveable.html", [
-                    [ "Om::DefaultQueue< ThisImplementation, DefaultGiveable< ThisImplementation, Atom > >", "class_om_1_1_default_queue.html", [
-                      [ "Om::DefaultProgram< ThisImplementation, Atom >", "class_om_1_1_default_program.html", [
-                        [ "Om::DefaultElement< ThisImplementation, Atom >", "class_om_1_1_default_element.html", [
-                          [ "Om::DefaultAtom< ThisImplementation >", "class_om_1_1_default_atom.html", null ]
-                        ] ]
+              ] ]
+            ] ],
+            [ "Om::DefaultCopyable< ThisImplementation, Atom >", "class_om_1_1_default_copyable.html", [
+              [ "Om::DefaultMoveable< ThisImplementation, DefaultCopyable< ThisImplementation, Atom > >", "class_om_1_1_default_moveable.html", [
+                [ "Om::DefaultGiveable< ThisImplementation, Atom >", "class_om_1_1_default_giveable.html", [
+                  [ "Om::DefaultConsumer< ThisImplementation, DefaultGiveable< ThisImplementation, Atom > >", "class_om_1_1_default_consumer.html", [
+                    [ "Om::DefaultProgram< ThisImplementation, Atom >", "class_om_1_1_default_program.html", [
+                      [ "Om::DefaultElement< ThisImplementation, Atom >", "class_om_1_1_default_element.html", [
+                        [ "Om::DefaultAtom< ThisImplementation >", "class_om_1_1_default_atom.html", null ]
                       ] ]
                     ] ]
                   ] ]
@@ -109,6 +113,11 @@ var hierarchy =
             ] ]
           ] ]
         ] ]
+      ] ]
+    ] ],
+    [ "Om::Copyable", "class_om_1_1_copyable.html", [
+      [ "Om::Giveable", "class_om_1_1_giveable.html", [
+        [ "Om::Program", "class_om_1_1_program.html", null ]
       ] ]
     ] ],
     [ "Om::Definition< ThisOperation >", "class_om_1_1_definition.html", null ],
@@ -223,13 +232,8 @@ var hierarchy =
     [ "Om::Operations::RearrangeOperation", "class_om_1_1_operations_1_1_rearrange_operation.html", null ],
     [ "Om::Operations::SystemOperation", "class_om_1_1_operations_1_1_system_operation.html", null ],
     [ "Om::Pair", "class_om_1_1_pair.html", null ],
-    [ "Om::Queue", "class_om_1_1_queue.html", [
-      [ "Om::DefaultQueue< Evaluator >", "class_om_1_1_default_queue.html", [
-        [ "Om::Evaluator", "class_om_1_1_evaluator.html", null ]
-      ] ],
-      [ "Om::DefaultQueue< Writer >", "class_om_1_1_default_queue.html", [
-        [ "Om::Writer", "class_om_1_1_writer.html", null ]
-      ] ],
+    [ "Om::Producer", "class_om_1_1_producer.html", [
+      [ "Om::Evaluator", "class_om_1_1_evaluator.html", null ],
       [ "Om::Program", "class_om_1_1_program.html", null ]
     ] ],
     [ "Om::Shareable< ThisOwnerCount >", "class_om_1_1_shareable.html", null ],
@@ -438,16 +442,16 @@ var hierarchy =
       [ "Om::DefaultProgram< Separator, Atom >", "class_om_1_1_default_program.html", null ]
     ] ],
     [ "ThisInterface", null, [
+      [ "Om::DefaultConsumer< ThisImplementation, ThisInterface >", "class_om_1_1_default_consumer.html", null ],
       [ "Om::DefaultCopyable< ThisImplementation, ThisInterface >", "class_om_1_1_default_copyable.html", [
         [ "Om::DefaultMoveable< ThisImplementation, DefaultCopyable< ThisImplementation, ThisInterface > >", "class_om_1_1_default_moveable.html", [
           [ "Om::DefaultGiveable< ThisImplementation, ThisInterface >", "class_om_1_1_default_giveable.html", [
-            [ "Om::DefaultQueue< ThisImplementation, DefaultGiveable< ThisImplementation, ThisInterface > >", "class_om_1_1_default_queue.html", [
+            [ "Om::DefaultConsumer< ThisImplementation, DefaultGiveable< ThisImplementation, ThisInterface > >", "class_om_1_1_default_consumer.html", [
               [ "Om::DefaultProgram< ThisImplementation, ThisInterface >", "class_om_1_1_default_program.html", null ]
             ] ]
           ] ]
         ] ]
       ] ],
-      [ "Om::DefaultMoveable< ThisImplementation, ThisInterface >", "class_om_1_1_default_moveable.html", null ],
-      [ "Om::DefaultQueue< ThisImplementation, ThisInterface >", "class_om_1_1_default_queue.html", null ]
+      [ "Om::DefaultMoveable< ThisImplementation, ThisInterface >", "class_om_1_1_default_moveable.html", null ]
     ] ]
 ];

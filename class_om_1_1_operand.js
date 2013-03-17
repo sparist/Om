@@ -15,11 +15,11 @@ var class_om_1_1_operand =
     [ "ReadQuotedElements", "class_om_1_1_operand.html#a7161d552a0fc870497d6302394c0c54d", null ],
     [ "SetProgram", "class_om_1_1_operand.html#a0d4347198bcd5d9d09c62763bcf02ad8", null ],
     [ "Swap", "class_om_1_1_operand.html#a79ba8c736e26e95db73647ece3073fd1", null ],
-    [ "TakeElements", "class_om_1_1_operand.html#afbe3e37f5fcab1d0bd87d38d932eaced", null ],
-    [ "TakeElements", "class_om_1_1_operand.html#ac55235c0ae86ad15a6bcfdcdb280f120", null ],
+    [ "TakeElements", "class_om_1_1_operand.html#a4e78f133b71f33cc7201d27483491cf8", null ],
+    [ "TakeElements", "class_om_1_1_operand.html#a5917fa988f2f541108abb4c319a98dfe", null ],
     [ "TakeOperand", "class_om_1_1_operand.html#ac4972f4e1d17dedf6427e752d31d733f", null ],
     [ "TakeOperator", "class_om_1_1_operand.html#a9c00fc0c0fd49881b472ed834f99f5ad", null ],
-    [ "TakeQuotedQueue", "class_om_1_1_operand.html#a79d88ef291e43404cf871cc05e1af35d", null ],
+    [ "TakeQuotedProducer", "class_om_1_1_operand.html#a6c284943f9f1e58ebfda5103787e4ca1", null ],
     [ "TakeSeparator", "class_om_1_1_operand.html#aa87abf528742efbe4a75efc5b7ea0cb1", null ],
     [ "thisProgram", "class_om_1_1_operand.html#a334e68977ed3fb102e9b9f681cba082e", null ]
 ];

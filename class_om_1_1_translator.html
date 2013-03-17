@@ -61,7 +61,7 @@ $(document).ready(function(){initNavTree('class_om_1_1_translator.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>An <a class="el" href="class_om_1_1_operator.html" title="The Operator implementation.">Operator</a> lookup for use by an <a class="el" href="class_om_1_1_evaluator.html" title="A Queue that evaluates Program instances.">Evaluator</a>.  
+<p>An <a class="el" href="class_om_1_1_operator.html" title="The Operator implementation.">Operator</a> lookup for use by an <a class="el" href="class_om_1_1_evaluator.html" title="A Consumer that evaluates Program instances.">Evaluator</a>.  
 </p>
 
 <p><code>#include &quot;<a class="el" href="translator_8hpp_source.html">translator.hpp</a>&quot;</code></p>
@@ -81,8 +81,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac007a79de97bff30093bde215a78c0a2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_translator.html#ac007a79de97bff30093bde215a78c0a2">Evaluate</a> (char const theCodeUnitIterator[]) const </td></tr>
 <tr class="memdesc:ac007a79de97bff30093bde215a78c0a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience overload that evaluates input from the string and returns the output string.  <a href="#ac007a79de97bff30093bde215a78c0a2">More...</a><br/></td></tr>
 <tr class="separator:ac007a79de97bff30093bde215a78c0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9ec1c697c1c5d6648c6f14fd3b337fe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_translator.html#ac9ec1c697c1c5d6648c6f14fd3b337fe">GiveElements</a> (<a class="el" href="class_om_1_1_queue.html">Queue</a> &amp;) const =0</td></tr>
-<tr class="separator:ac9ec1c697c1c5d6648c6f14fd3b337fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d82bb9a7e504e15c5b05c9686585b0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_translator.html#a5d82bb9a7e504e15c5b05c9686585b0c">GiveElements</a> (<a class="el" href="class_om_1_1_consumer.html">Consumer</a> &amp;) const =0</td></tr>
+<tr class="separator:a5d82bb9a7e504e15c5b05c9686585b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad99b2be5d0be06fdb9667b31284e301a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_translator.html#ad99b2be5d0be06fdb9667b31284e301a">IsEmpty</a> () const =0</td></tr>
 <tr class="separator:ad99b2be5d0be06fdb9667b31284e301a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4bdc54b12c138a533825e5edb4a88e5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_translator.html#ab4bdc54b12c138a533825e5edb4a88e5">Translate</a> (<a class="el" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;, <a class="el" href="class_om_1_1_operator.html">Operator</a> const &amp;) const =0</td></tr>
@@ -154,7 +154,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac9ec1c697c1c5d6648c6f14fd3b337fe"></a>
+<a class="anchor" id="a5d82bb9a7e504e15c5b05c9686585b0c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -164,7 +164,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void Om::Translator::GiveElements </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_om_1_1_queue.html">Queue</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_om_1_1_consumer.html">Consumer</a> &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
@@ -176,7 +176,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_om_1_1_lexicon.html#ae8350ff91322fc94773fe3ef145911bb">Om::Lexicon</a>, <a class="el" href="class_om_1_1_system.html#aa450e948baaa8c4b22ead0999f3b8c0b">Om::System</a>, and <a class="el" href="class_om_1_1_environment.html#ae69b845cddd958419ddb6e8bf97dba03">Om::Environment</a>.</p>
+<p>Implemented in <a class="el" href="class_om_1_1_lexicon.html#af8b5aa3a2e129ca316032a3ec5cc6f48">Om::Lexicon</a>, <a class="el" href="class_om_1_1_system.html#ac024fc6ad48fd85946a136a5b94b26af">Om::System</a>, and <a class="el" href="class_om_1_1_environment.html#a6547fb3046053303e373ae45c8c3d2d1">Om::Environment</a>.</p>
 
 </div>
 </div>
@@ -201,7 +201,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_om_1_1_system.html#ae42e474a769f108bd205e850709adae7">Om::System</a>, <a class="el" href="class_om_1_1_lexicon.html#ad981e36426ac8bf705dcef1970f065a5">Om::Lexicon</a>, and <a class="el" href="class_om_1_1_environment.html#adf12025983882b173ffd0c6298847093">Om::Environment</a>.</p>
+<p>Implemented in <a class="el" href="class_om_1_1_lexicon.html#ad981e36426ac8bf705dcef1970f065a5">Om::Lexicon</a>, <a class="el" href="class_om_1_1_system.html#ae42e474a769f108bd205e850709adae7">Om::System</a>, and <a class="el" href="class_om_1_1_environment.html#adf12025983882b173ffd0c6298847093">Om::Environment</a>.</p>
 
 </div>
 </div>

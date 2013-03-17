@@ -162,12 +162,12 @@ $(document).ready(function(){initNavTree('front__pull__pair__operation_8cpp_sour
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    );</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheConsumer&gt;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Pull(</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    Lexicon &amp; theLexicon,</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    TheQueue &amp; theQueue</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    TheConsumer &amp; theConsumer</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    theLexicon.FrontGivePair(theQueue);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    theLexicon.FrontGivePair(theConsumer);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">    #undef Type_</span></div>

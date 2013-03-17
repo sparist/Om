@@ -147,12 +147,12 @@ $(document).ready(function(){initNavTree('back__pull__element__operation_8cpp_so
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    );</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheQueue&gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheConsumer&gt;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Pull(</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    Literal &amp; theLiteral,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    TheQueue &amp; theQueue</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    TheConsumer &amp; theConsumer</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    theLiteral.BackGiveElement(theQueue);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    theLiteral.BackGiveElement(theConsumer);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">    #undef Type_</span></div>

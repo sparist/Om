@@ -10,7 +10,7 @@ var class_om_1_1_separator =
     [ "ReadQuotedElements", "class_om_1_1_separator.html#a8d233809cd8b90fca5085afe9fb683cc", null ],
     [ "TakeOperand", "class_om_1_1_separator.html#ae2c44e2462f57187d53c3f1a8c4cc6e2", null ],
     [ "TakeOperator", "class_om_1_1_separator.html#acf1ed7231604ba0195d18af912a917d2", null ],
-    [ "TakeQuotedQueue", "class_om_1_1_separator.html#a0c2574f7bced9d5a60fee7335a641423", null ],
+    [ "TakeQuotedProducer", "class_om_1_1_separator.html#a664e8576f598f5eda4b2fd0bf09cb09c", null ],
     [ "TakeSeparator", "class_om_1_1_separator.html#a24bac2d148ef782ffb9716eba6921430", null ],
     [ "TakeSeparatorSymbol", "class_om_1_1_separator.html#a340551d9f98a3f15977875176ad4412d", null ]
 ];
