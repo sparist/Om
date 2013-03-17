@@ -62,15 +62,15 @@ Template_
 template <typename TheFrontPushOperation>
 inline void Type_::GiveElements(
 	TheFrontPushOperation & theFrontPushOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 	if (
 		!theFrontPushOperation.thisProgram.IsEmpty()
 	) {
-		theQueue.TakeQuotedElements(theFrontPushOperation.thisProgram);
+		theConsumer.TakeQuotedElements(theFrontPushOperation.thisProgram);
 	}
 }
 
@@ -81,15 +81,15 @@ inline Type_::FrontPushOperation():
 thisProgram() {}
 
 Template_
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (
 		this->thisProgram.IsEmpty()
 	) {
-		this->thisProgram.TakeElements(theQueue);
+		this->thisProgram.TakeElements(theProducer);
 		if (
 			this->thisProgram.IsEmpty()
 		) {
@@ -98,8 +98,8 @@ inline bool Type_::TakeQuotedQueue(
 		}
 		return false;
 	}
-	this->thisProgram.TakeElements(theQueue);
-	theEvaluation.TakeQuotedQueue(this->thisProgram);
+	this->thisProgram.TakeElements(theProducer);
+	theEvaluation.TakeQuotedProducer(this->thisProgram);
 	return true;
 }
 
@@ -112,7 +112,7 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return this->TakeQuotedQueue(
+	return this->TakeQuotedProducer(
 		theEvaluation,
 		*theOperand.GetProgram()
 	);

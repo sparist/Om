@@ -57,7 +57,6 @@ namespace Om {
 
 #else
 
-	#include "om/null.hpp"
 	#include "om/operator.hpp"
 	#include "om/sink.hpp"
 	#include "om/sources/code_point_source.hpp"
@@ -75,24 +74,6 @@ inline Type_::Writer(
 	Sink<CodePoint const> & theCodePointSink
 ):
 thisCodePointSink(theCodePointSink) {}
-
-inline void Type_::Clear() {}
-
-inline void Type_::GiveElements(Queue &) {}
-
-inline void Type_::GiveElements(Queue &) const {}
-
-inline std::auto_ptr<Om::Program> Type_::GiveProgram() {
-	return std::auto_ptr<Program>(new Null);
-}
-
-inline std::auto_ptr<Om::Program> Type_::GiveProgram() const {
-	return std::auto_ptr<Program>(new Null);
-}
-
-inline bool Type_::IsEmpty() const {
-	return true;
-}
 
 inline void Type_::ReadElements(Parser & theParser) {
 	for (
@@ -115,7 +96,7 @@ inline void Type_::TakeOperand(TheOperand & theOperand) {
 	assert(
 		!theOperand.IsEmpty()
 	);
-	this->TakeQuotedQueue(
+	this->TakeQuotedProducer(
 		*theOperand.GetProgram()
 	);
 }
@@ -149,10 +130,10 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 	}
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
 	this->thisCodePointSink.Push(Symbols::theStartOperandSymbol);
-	theQueue.GiveElements(*this);
+	theProducer.GiveElements(*this);
 	this->thisCodePointSink.Push(Symbols::theEndOperandSymbol);
 }
 

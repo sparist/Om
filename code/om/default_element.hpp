@@ -62,9 +62,9 @@ namespace Om {
 			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements(Queue &);
+		virtual void GiveElements(Consumer &);
 
-		virtual void GiveElements(Queue &) const;
+		virtual void GiveElements(Consumer &) const;
 
 	private: // MARK: private (non-static)
 

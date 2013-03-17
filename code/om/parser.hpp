@@ -26,7 +26,7 @@ namespace Om {
 
 	/*!
 	\brief
-		Produces each #CodePoint until the end of the Queue or the Source.
+		Produces each #CodePoint until the end of the Source.
 	*/
 	class Parser:
 	public Sources::DefaultSource<

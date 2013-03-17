@@ -61,7 +61,7 @@ namespace Om {
 
 		Lexicon & operator =(Lexicon);
 
-		void BackGivePair(Queue &);
+		void BackGivePair(Consumer &);
 
 		virtual void Clear();
 
@@ -71,15 +71,15 @@ namespace Om {
 		*/
 		Pair const & Find(Operator const &) const;
 
-		void FrontGivePair(Queue &);
+		void FrontGivePair(Consumer &);
 
 		virtual std::auto_ptr<
 			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements(Queue &);
+		virtual void GiveElements(Consumer &);
 
-		virtual void GiveElements(Queue &) const;
+		virtual void GiveElements(Consumer &) const;
 
 		virtual bool IsEmpty() const;
 
@@ -95,8 +95,8 @@ namespace Om {
 		template <typename TheOperator>
 		void TakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
 		template <typename TheSeparator>
 		void TakeSeparator(TheSeparator &);
@@ -120,13 +120,13 @@ namespace Om {
 			Gives each Element in the Lexicon.
 		\param theFirstNode
 			The first Node in the Lexicon, or null if none.
-		\param theQueue
-			The Queue to give them to.
+		\param theConsumer
+			The Consumer to give them to.
 		*/
 		template <typename TheNode>
 		static void GiveElements(
 			TheNode * theFirstNode,
-			Queue & theQueue
+			Consumer & theConsumer
 		);
 
 	private: // MARK: private (non-static)
@@ -150,7 +150,7 @@ namespace Om {
 
 		void GivePair(
 			List::NodeIndex const,
-			Queue &
+			Consumer &
 		);
 
 		Map thisMap;

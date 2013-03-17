@@ -61,16 +61,16 @@ namespace Om {
 		Literal & operator =(Literal);
 
 		template <typename TheElement>
-		void BackGive(Queue &);
+		void BackGive(Consumer &);
 
-		void BackGiveElement(Queue &);
+		void BackGiveElement(Consumer &);
 
 		virtual void Clear();
 
 		template <typename TheElement>
-		void FrontGive(Queue &);
+		void FrontGive(Consumer &);
 
-		void FrontGiveElement(Queue &);
+		void FrontGiveElement(Consumer &);
 
 		std::auto_ptr<
 			Source<Element>
@@ -80,9 +80,9 @@ namespace Om {
 			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements(Queue &);
+		virtual void GiveElements(Consumer &);
 
-		virtual void GiveElements(Queue &) const;
+		virtual void GiveElements(Consumer &) const;
 
 		virtual bool IsEmpty() const;
 
@@ -98,8 +98,8 @@ namespace Om {
 		template <typename TheOperator>
 		void TakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
 		template <typename TheSeparator>
 		void TakeSeparator(TheSeparator &);
@@ -109,8 +109,8 @@ namespace Om {
 		typedef boost::ptr_deque<Element> ElementDeque;
 
 		/*!
-		\param theQueue
-			The taker.
+		\param theConsumer
+			The Consumer.
 		\param theCurrent
 			The current Element iterator.
 		\param theEnd
@@ -118,7 +118,7 @@ namespace Om {
 		*/
 		template <typename TheElementIterator>
 		static void GiveElements(
-			Queue & theQueue,
+			Consumer & theConsumer,
 			TheElementIterator theCurrent,
 			TheElementIterator const theEnd
 		);

@@ -153,7 +153,7 @@ inline void Type_::ReadElements(Parser & theParser) {
 inline void Type_::ReadQuotedElements(Parser & theParser) {
 	Literal theLiteral;
 	theLiteral.ReadElements(theParser);
-	this->TakeQuotedQueue(theLiteral);
+	this->TakeQuotedProducer(theLiteral);
 }
 
 template <typename TheProgram>
@@ -167,19 +167,19 @@ inline void Type_::Swap(Operand & theOperand) {
 	this->thisProgram.Swap(theOperand.thisProgram);
 }
 
-inline void Type_::TakeElements(Queue & theQueue) {
+inline void Type_::TakeElements(Producer & theProducer) {
 	if (
 		this->IsEmpty()
 	) {
-		DefaultElement<Operand>::TakeElements(theQueue);
+		DefaultElement<Operand>::TakeElements(theProducer);
 	}
 }
 
-inline void Type_::TakeElements(Queue const & theQueue) {
+inline void Type_::TakeElements(Producer const & theProducer) {
 	if (
 		this->IsEmpty()
 	) {
-		DefaultElement<Operand>::TakeElements(theQueue);
+		DefaultElement<Operand>::TakeElements(theProducer);
 	}
 }
 
@@ -195,13 +195,13 @@ inline void Type_::TakeOperand(TheOperand & theOperand) {
 template <typename TheOperator>
 inline void Type_::TakeOperator(TheOperator &) {}
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
 	if (
 		this->IsEmpty()
 	) {
 		this->SetProgram(
-			theQueue.GiveProgram()
+			theProducer.GiveProgram()
 		);
 	}
 }

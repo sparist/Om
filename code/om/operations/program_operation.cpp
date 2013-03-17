@@ -59,9 +59,9 @@ Template_
 template <typename TheProgramOperation>
 inline void Type_::GiveElements(
 	TheProgramOperation &,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		DefaultOperation<
 			ProgramOperation<ThisProgram>
 		>::GetOperator()
@@ -77,7 +77,7 @@ inline bool Type_::ReadQuotedElements(
 ) {
 	ThisProgram theProgram;
 	theProgram.ReadElements(theParser);
-	theEvaluation.TakeQuotedQueue(theProgram);
+	theEvaluation.TakeQuotedProducer(theProgram);
 	return true;
 }
 
@@ -90,21 +90,21 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return this->TakeQuotedQueue(
+	return this->TakeQuotedProducer(
 		theEvaluation,
 		*theOperand.GetProgram()
 	);
 }
 
 Template_
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	ThisProgram theProgram;
-	theProgram.TakeElements(theQueue);
-	theEvaluation.TakeQuotedQueue(theProgram);
+	theProgram.TakeElements(theProducer);
+	theEvaluation.TakeQuotedProducer(theProgram);
 	return true;
 }
 

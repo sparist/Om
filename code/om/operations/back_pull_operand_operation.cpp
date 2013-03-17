@@ -101,12 +101,12 @@ inline void Type_::Give(Evaluation & theEvaluation) {
 	);
 }
 
-template <typename TheQueue>
+template <typename TheConsumer>
 inline void Type_::Pull(
 	Literal & theLiteral,
-	TheQueue & theQueue
+	TheConsumer & theConsumer
 ) {
-	theLiteral.BackGive<Operand>(theQueue);
+	theLiteral.BackGive<Operand>(theConsumer);
 }
 
 	#undef Type_

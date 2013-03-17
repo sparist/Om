@@ -56,16 +56,16 @@ Template_
 template <typename TheTranslateOperation>
 inline void Type_::GiveElements(
 	TheTranslateOperation & theTranslateOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
 	assert(
 		typeid(TheTranslateOperation) == typeid(ThisImplementation)
 	);
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		ThisImplementation::GetOperator()
 	);
 	if (theTranslateOperation.thisLexicon) {
-		theQueue.TakeQuotedElements(*theTranslateOperation.thisLexicon);
+		theConsumer.TakeQuotedElements(*theTranslateOperation.thisLexicon);
 	}
 }
 
@@ -83,17 +83,17 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return this->TakeQuotedQueue(
+	return this->TakeQuotedProducer(
 		theEvaluation,
 		*theOperand.GetProgram()
 	);
 }
 
 Template_
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (this->thisLexicon) {
 		{
@@ -104,17 +104,17 @@ inline bool Type_::TakeQuotedQueue(
 			);
 			static_cast<ThisImplementation &>(*this).Translate(
 				theEvaluation.GetTranslator(),
-				theQueue,
+				theProducer,
 				theExpression
 			);
-			theEvaluation.TakeQuotedQueue(theExpression);
+			theEvaluation.TakeQuotedProducer(theExpression);
 		}
-		theEvaluation.TakeQuotedQueue(*this->thisLexicon);
+		theEvaluation.TakeQuotedProducer(*this->thisLexicon);
 		return true;
 	}
 	this->thisLexicon = boost::in_place();
 	assert(this->thisLexicon);
-	this->thisLexicon->TakeElements(theQueue);
+	this->thisLexicon->TakeElements(theProducer);
 	return false;
 }
 

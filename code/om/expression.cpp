@@ -200,22 +200,22 @@ inline Type_ & Type_::operator =(Expression theExpression) {
 	return *this;
 }
 
-inline void Type_::BackGiveForm(Queue & theQueue) {
+inline void Type_::BackGiveForm(Consumer & theConsumer) {
 	if (
 		!this->thisFormDeque.empty()
 	) {
-		this->thisFormDeque.back().GiveElements(theQueue);
+		this->thisFormDeque.back().GiveElements(theConsumer);
 		this->thisFormDeque.pop_back();
 	}
 }
 
-inline void Type_::BackGiveTerm(Queue & theQueue) {
+inline void Type_::BackGiveTerm(Consumer & theConsumer) {
 	if (
 		!this->thisFormDeque.empty()
 	) {
 		Form & theForm = this->thisFormDeque.back();
 		if (
-			theForm.BackGiveTerm(theQueue)
+			theForm.BackGiveTerm(theConsumer)
 		) {
 			assert(
 				theForm.IsEmpty()
@@ -256,31 +256,31 @@ inline void Type_::BackTakeOperator (TheOperator & theOperator) {
 	this->thisFormDeque.back().TakeOperator(theOperator);
 }
 
-template <typename TheQueue>
-inline void Type_::BackTakeQuotedQueue(TheQueue & theQueue) {
-	this->GetBackTaker().BackTakeQuotedQueue(theQueue);
+template <typename TheProducer>
+inline void Type_::BackTakeQuotedProducer(TheProducer & theProducer) {
+	this->GetBackTaker().BackTakeQuotedProducer(theProducer);
 }
 
 inline void Type_::Clear() {
 	this->thisFormDeque.clear();
 }
 
-inline void Type_::FrontGiveForm(Queue & theQueue) {
+inline void Type_::FrontGiveForm(Consumer & theConsumer) {
 	if (
 		!this->thisFormDeque.empty()
 	) {
-		this->thisFormDeque.front().GiveElements(theQueue);
+		this->thisFormDeque.front().GiveElements(theConsumer);
 		this->thisFormDeque.pop_front();
 	}
 }
 
-inline void Type_::FrontGiveTerm(Queue & theQueue) {
+inline void Type_::FrontGiveTerm(Consumer & theConsumer) {
 	if (
 		!this->thisFormDeque.empty()
 	) {
 		Form & theForm = this->thisFormDeque.front();
 		if (
-			theForm.FrontGiveTerm(theQueue)
+			theForm.FrontGiveTerm(theConsumer)
 		) {
 			assert(
 				theForm.IsEmpty()
@@ -318,9 +318,9 @@ inline void Type_::FrontTakeOperator(TheOperator & theOperator) {
 	this->GetFrontTaker().TakeOperator(theOperator);
 }
 
-template <typename TheQueue>
-inline void Type_::FrontTakeQuotedQueue(TheQueue & theQueue) {
-	this->GetFrontTaker().FrontTakeQuotedQueue(theQueue);
+template <typename TheProducer>
+inline void Type_::FrontTakeQuotedProducer(TheProducer & theProducer) {
+	this->GetFrontTaker().FrontTakeQuotedProducer(theProducer);
 }
 
 inline std::auto_ptr<
@@ -333,18 +333,18 @@ inline std::auto_ptr<
 	);
 }
 
-inline void Type_::GiveElements(Queue & theQueue) {
+inline void Type_::GiveElements(Consumer & theConsumer) {
 	this->GiveElements(
-		theQueue,
+		theConsumer,
 		this->thisFormDeque.begin(),
 		this->thisFormDeque.end()
 	);
 	this->Clear();
 }
 
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	this->GiveElements(
-		theQueue,
+		theConsumer,
 		this->thisFormDeque.begin(),
 		this->thisFormDeque.end()
 	);
@@ -384,7 +384,7 @@ inline void Type_::ReadElements(Parser & theParser) {
 inline void Type_::ReadQuotedElements(Parser & theParser) {
 	Literal theLiteral;
 	theLiteral.ReadElements(theParser);
-	this->TakeQuotedQueue(theLiteral);
+	this->TakeQuotedProducer(theLiteral);
 }
 
 inline void Type_::Swap(Expression & theExpression) {
@@ -468,27 +468,27 @@ inline void Type_::TakeElements(Expression const & theExpression) {
 	}
 }
 
-inline void Type_::TakeElements(Queue & theQueue) {
+inline void Type_::TakeElements(Producer & theProducer) {
 	if (
-		typeid(theQueue) == typeid(Expression)
+		typeid(theProducer) == typeid(Expression)
 	) {
 		this->TakeElements(
-			static_cast<Expression &>(theQueue)
+			static_cast<Expression &>(theProducer)
 		);
 	} else {
-		theQueue.GiveElements(*this);
+		theProducer.GiveElements(*this);
 	}
 }
 
-inline void Type_::TakeElements(Queue const & theQueue) {
+inline void Type_::TakeElements(Producer const & theProducer) {
 	if (
-		typeid(theQueue) == typeid(Expression const)
+		typeid(theProducer) == typeid(Expression const)
 	) {
 		this->TakeElements(
-			static_cast<Expression const &>(theQueue)
+			static_cast<Expression const &>(theProducer)
 		);
 	} else {
-		theQueue.GiveElements(*this);
+		theProducer.GiveElements(*this);
 	}
 }
 
@@ -508,9 +508,9 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 	this->BackTakeOperator(theOperator);
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
-	this->BackTakeQuotedQueue(theQueue);
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
+	this->BackTakeQuotedProducer(theProducer);
 }
 
 template <typename TheSeparator>
@@ -520,7 +520,7 @@ inline void Type_::TakeSeparator(TheSeparator &) {}
 
 template <typename TheFormIterator>
 inline void Type_::GiveElements(
-	Queue & theQueue,
+	Consumer & theConsumer,
 	TheFormIterator theCurrent,
 	TheFormIterator const theEnd
 ) {
@@ -528,14 +528,14 @@ inline void Type_::GiveElements(
 		for (
 			;
 			;
-			theQueue.TakeElement(
+			theConsumer.TakeElement(
 				Separator::GetLineSeparator()
 			)
 		) {
 			assert(
 				!theCurrent->IsEmpty()
 			);
-			theCurrent->GiveElements(theQueue);
+			theCurrent->GiveElements(theConsumer);
 			if (theEnd == ++theCurrent) {
 				return;
 			}

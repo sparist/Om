@@ -60,9 +60,9 @@ Template_
 template <typename ThePullOperation>
 inline void Type_::GiveElements(
 	ThePullOperation &,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 }
@@ -91,20 +91,20 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return this->TakeQuotedQueue(
+	return this->TakeQuotedProducer(
 		theEvaluation,
 		*theOperand.GetProgram()
 	);
 }
 
 Template_
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	ThisProgram theProgramToPullFrom;
-	theProgramToPullFrom.TakeElements(theQueue);
+	theProgramToPullFrom.TakeElements(theProducer);
 
 	ThisProgram thePulledProgram;
 	ThisImplementation::Pull(
@@ -112,8 +112,8 @@ inline bool Type_::TakeQuotedQueue(
 		thePulledProgram
 	);
 
-	theEvaluation.TakeQuotedQueue(theProgramToPullFrom);
-	theEvaluation.TakeQuotedQueue(thePulledProgram);
+	theEvaluation.TakeQuotedProducer(theProgramToPullFrom);
+	theEvaluation.TakeQuotedProducer(thePulledProgram);
 	return true;
 }
 

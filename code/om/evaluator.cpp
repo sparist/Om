@@ -64,7 +64,7 @@ inline Type_::~Evaluator() {
 }
 
 inline Type_::Evaluator(
-	Queue & theOutput,
+	Consumer & theOutput,
 	Translator const & theTranslator
 ):
 thisOutput(theOutput),
@@ -80,20 +80,20 @@ inline Om::Translator const & Type_::GetTranslator() const {
 	return this->thisTranslator;
 }
 
-inline void Type_::GiveElements(Queue & theQueue) {
+inline void Type_::GiveElements(Consumer & theConsumer) {
 	this->GiveElements(
 		this->thisOperationVector.begin(),
 		this->thisOperationVector.end(),
-		theQueue
+		theConsumer
 	);
 	this->Clear();
 }
 
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	this->GiveElements(
 		this->thisOperationVector.begin(),
 		this->thisOperationVector.end(),
-		theQueue
+		theConsumer
 	);
 }
 
@@ -276,25 +276,25 @@ inline void Type_::TakeOperator(
 	}
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
 	Evaluation theEvaluation(*this);
-	this->TakeQuotedQueue(
+	this->TakeQuotedProducer(
 		theEvaluation,
-		theQueue
+		theProducer
 	);
 	this->Evaluate(theEvaluation);
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (
 		this->thisOperationVector.empty()
 	) {
-		this->thisOutput.TakeQuotedElements(theQueue);
+		this->thisOutput.TakeQuotedElements(theProducer);
 		this->thisGaveElementToOutput = true;
 	} else {
 		std::auto_ptr<Operation> theOperation(
@@ -306,7 +306,7 @@ inline void Type_::TakeQuotedQueue(
 		if (
 			!theOperation->TakeQuotedElements(
 				theEvaluation,
-				theQueue
+				theProducer
 			)
 		) {
 			this->thisOperationVector.push_back(theOperation);
@@ -323,17 +323,17 @@ template <typename TheIterator>
 inline void Type_::GiveElements(
 	TheIterator theCurrent,
 	TheIterator const theEnd,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
 	if (theEnd != theCurrent) {
 		for (
 			;
 			;
-			theQueue.TakeElement(
+			theConsumer.TakeElement(
 				Separator::GetLineSeparator()
 			)
 		) {
-			theCurrent->GiveElements(theQueue);
+			theCurrent->GiveElements(theConsumer);
 			if (theEnd == ++theCurrent) {
 				return;
 			}

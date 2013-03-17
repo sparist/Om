@@ -87,15 +87,15 @@ inline char const * Type_::GetName() {
 template <typename TheEqualsOperation>
 inline void Type_::GiveElements(
 	TheEqualsOperation & theEqualsOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 	if (
 		!theEqualsOperation.thisOperand.IsEmpty()
 	) {
-		theQueue.TakeElement(theEqualsOperation.thisOperand);
+		theConsumer.TakeElement(theEqualsOperation.thisOperand);
 	}
 }
 
@@ -122,48 +122,48 @@ inline bool Type_::TakeOperand(
 	if (this->thisOperand == theOperand) {
 		theExpression.TakeOperand(this->thisOperand);
 	}
-	theEvaluation.TakeQuotedQueue(theExpression);
+	theEvaluation.TakeQuotedProducer(theExpression);
 	return true;
 }
 
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (
 		this->thisOperand.IsEmpty()
 	) {
 		this->thisOperand.SetProgram(
-			theQueue.GiveProgram()
+			theProducer.GiveProgram()
 		);
 		return false;
 	}
 	Expression theExpression;
 	if (
-		this->IsMatch(theQueue)
+		this->IsMatch(theProducer)
 	) {
 		theExpression.TakeOperand(this->thisOperand);
 	}
-	theEvaluation.TakeQuotedQueue(theExpression);
+	theEvaluation.TakeQuotedProducer(theExpression);
 	return true;
 }
 
 // MARK: private (non-static)
 
-template <typename TheQueue>
-inline bool Type_::IsMatch(TheQueue & theQueue) const {
+template <typename TheProducer>
+inline bool Type_::IsMatch(TheProducer & theProducer) const {
 	assert(
 		this->thisOperand.GetProgram()
 	);
 	Program const & theProgram = *this->thisOperand.GetProgram();
-	Program const * const theQueueProgram = dynamic_cast<Program const *>(&theQueue);
-	if (theQueueProgram) {
-		return (*theQueueProgram == theProgram);
+	Program const * const theProducerProgram = dynamic_cast<Program const *>(&theProducer);
+	if (theProducerProgram) {
+		return (*theProducerProgram == theProgram);
 	}
-	Literal theQueueLiteral;
-	theQueueLiteral.TakeElements(theQueue);
-	return theQueueLiteral.Equals(theProgram);
+	Literal theProducerLiteral;
+	theProducerLiteral.TakeElements(theProducer);
+	return theProducerLiteral.Equals(theProgram);
 }
 
 	#undef Type_

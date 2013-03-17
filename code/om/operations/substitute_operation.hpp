@@ -43,10 +43,10 @@ namespace Om {
 
 		public: // MARK: public (non-static)
 
-			template <typename TheQueue>
+			template <typename TheProducer>
 			void Translate(
 				Translator const &,
-				TheQueue &,
+				TheProducer &,
 				Expression &
 			) const;
 

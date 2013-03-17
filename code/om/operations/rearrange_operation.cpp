@@ -106,16 +106,16 @@ inline void Type_::Give(Evaluation & theEvaluation) {
 	theExpression.TakeOperator(
 		InjectOperation::GetOperator()
 	);
-	theExpression.TakeQuotedQueue(
+	theExpression.TakeQuotedProducer(
 		QuoteOperation::GetOperator()
 	);
 	theExpression.TakeOperator(
 		PairOperation::GetOperator()
 	);
-	theExpression.TakeQuotedQueue(
+	theExpression.TakeQuotedProducer(
 		FillOperation::GetOperator()
 	);
-	theEvaluation.TakeQuotedQueue(theExpression);
+	theEvaluation.TakeQuotedProducer(theExpression);
 }
 
 	#undef Type_

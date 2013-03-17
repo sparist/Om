@@ -46,7 +46,7 @@ namespace Om {
 inline Type_::Environment():
 thisTranslatorVector() {}
 
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	if (
 		!this->IsEmpty()
 	) {
@@ -55,7 +55,7 @@ inline void Type_::GiveElements(Queue & theQueue) const {
 		for (
 			Iterator theCurrent = this->thisTranslatorVector.begin();
 			;
-			theQueue.TakeElement(
+			theConsumer.TakeElement(
 				Separator::GetLineSeparator()
 			)
 		) {
@@ -64,7 +64,7 @@ inline void Type_::GiveElements(Queue & theQueue) const {
 			assert(
 				!theTranslator.IsEmpty()
 			);
-			theTranslator.GiveElements(theQueue);
+			theTranslator.GiveElements(theConsumer);
 			if (theEnd == ++theCurrent) {
 				return;
 			}

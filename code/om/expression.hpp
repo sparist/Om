@@ -58,9 +58,9 @@ namespace Om {
 
 		Expression & operator =(Expression);
 
-		void BackGiveForm(Queue &);
+		void BackGiveForm(Consumer &);
 
-		void BackGiveTerm(Queue &);
+		void BackGiveTerm(Consumer &);
 
 		void BackPopTerm();
 
@@ -70,14 +70,14 @@ namespace Om {
 		template <typename TheOperator>
 		void BackTakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void BackTakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void BackTakeQuotedProducer(TheProducer &);
 
 		virtual void Clear();
 
-		void FrontGiveForm(Queue &);
+		void FrontGiveForm(Consumer &);
 
-		void FrontGiveTerm(Queue &);
+		void FrontGiveTerm(Consumer &);
 
 		void FrontPopTerm();
 
@@ -87,16 +87,16 @@ namespace Om {
 		template <typename TheOperator>
 		void FrontTakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void FrontTakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void FrontTakeQuotedProducer(TheProducer &);
 
 		virtual std::auto_ptr<
 			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements(Queue &);
+		virtual void GiveElements(Consumer &);
 
-		virtual void GiveElements(Queue &) const;
+		virtual void GiveElements(Consumer &) const;
 
 		virtual bool IsEmpty() const;
 
@@ -106,13 +106,13 @@ namespace Om {
 
 		void Swap(Expression &);
 
-		virtual void TakeElements(Expression &);
+		void TakeElements(Expression &);
 
-		virtual void TakeElements(Expression const &);
+		void TakeElements(Expression const &);
 
-		virtual void TakeElements(Queue &);
+		virtual void TakeElements(Producer &);
 
-		virtual void TakeElements(Queue const &);
+		virtual void TakeElements(Producer const &);
 
 		template <typename TheOperand>
 		void TakeOperand(TheOperand &);
@@ -120,8 +120,8 @@ namespace Om {
 		template <typename TheOperator>
 		void TakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
 		template <typename TheSeparator>
 		void TakeSeparator(TheSeparator &);
@@ -131,8 +131,8 @@ namespace Om {
 		typedef std::deque<Form> FormDeque;
 
 		/*!
-		\param theQueue
-			The taker.
+		\param theConsumer
+			The Consumer.
 		\param theCurrent
 			The current Form iterator.
 		\param theEnd
@@ -140,7 +140,7 @@ namespace Om {
 		*/
 		template <typename TheFormIterator>
 		static void GiveElements(
-			Queue & theQueue,
+			Consumer & theConsumer,
 			TheFormIterator theCurrent,
 			TheFormIterator const theEnd
 		);

@@ -12,9 +12,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Queue_
+#ifndef Om_Consumer_
 
-	#include "om/queue.hpp"
+	#include "om/consumer.hpp"
 
 	#ifdef Om_Macros_Test_
 
@@ -26,7 +26,7 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE(QueueTest)
+	BOOST_AUTO_TEST_SUITE(ConsumerTest)
 
 	BOOST_AUTO_TEST_SUITE_END()
 
@@ -43,44 +43,14 @@ namespace Om {
 
 	#endif
 
-// MARK: - Om::Queue
+// MARK: - Om::Consumer
 
 	#define Type_ \
-	Om::Queue
+	Om::Consumer
 
 // MARK: public (non-static)
 
-inline Type_::~Queue() {}
-
-inline void Type_::Clear() {
-	assert(0);
-	throw std::logic_error("Pure virtual function called.");
-}
-
-inline void Type_::GiveElements(Queue &) {
-	assert(0);
-	throw std::logic_error("Pure virtual function called.");
-}
-
-inline void Type_::GiveElements(Queue &) const {
-	assert(0);
-	throw std::logic_error("Pure virtual function called.");
-}
-
-inline std::auto_ptr<Om::Program> Type_::GiveProgram() {
-	assert(0);
-	throw std::logic_error("Pure virtual function called.");
-}
-
-inline std::auto_ptr<Om::Program> Type_::GiveProgram() const {
-	assert(0);
-	throw std::logic_error("Pure virtual function called.");
-}
-
-inline bool Type_::IsEmpty() const {
-	assert(0);
-	throw std::logic_error("Pure virtual function called.");
-}
+inline Type_::~Consumer() {}
 
 inline void Type_::ReadElements(Parser &) {
 	assert(0);
@@ -122,22 +92,22 @@ inline void Type_::TakeElement(Separator const &) {
 	throw std::logic_error("Pure virtual function called.");
 }
 
-inline void Type_::TakeElements(Queue &) {
+inline void Type_::TakeElements(Producer &) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
-inline void Type_::TakeElements(Queue const &) {
+inline void Type_::TakeElements(Producer const &) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
-inline void Type_::TakeQuotedElements(Queue &) {
+inline void Type_::TakeQuotedElements(Producer &) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
-inline void Type_::TakeQuotedElements(Queue const &) {
+inline void Type_::TakeQuotedElements(Producer const &) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }

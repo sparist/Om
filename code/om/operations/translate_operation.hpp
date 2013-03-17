@@ -39,7 +39,7 @@ namespace Om {
 			template <typename TheTranslateOperation>
 			static void GiveElements(
 				TheTranslateOperation &,
-				Queue &
+				Consumer &
 			);
 
 		public: // MARK: public (non-static)
@@ -52,10 +52,10 @@ namespace Om {
 				TheOperand &
 			);
 
-			template <typename TheQueue>
-			bool TakeQuotedQueue(
+			template <typename TheProducer>
+			bool TakeQuotedProducer(
 				Evaluation &,
-				TheQueue &
+				TheProducer &
 			);
 
 		protected: // MARK: protected (non-static)

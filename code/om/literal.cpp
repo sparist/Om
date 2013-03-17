@@ -135,22 +135,22 @@ inline Type_ & Type_::operator =(Literal theLiteral) {
 }
 
 template <typename TheElement>
-inline void Type_::BackGive(Queue & theQueue) {
+inline void Type_::BackGive(Consumer & theConsumer) {
 	if (
 		!this->thisElementDeque.empty() &&
 		dynamic_cast<TheElement const *>(
 			&this->thisElementDeque.back()
 		)
 	) {
-		this->thisElementDeque.pop_back()->GiveElements(theQueue);
+		this->thisElementDeque.pop_back()->GiveElements(theConsumer);
 	}
 }
 
-inline void Type_::BackGiveElement(Queue & theQueue) {
+inline void Type_::BackGiveElement(Consumer & theConsumer) {
 	if (
 		!this->thisElementDeque.empty()
 	) {
-		this->thisElementDeque.pop_back()->GiveElements(theQueue);
+		this->thisElementDeque.pop_back()->GiveElements(theConsumer);
 	}
 }
 
@@ -159,22 +159,22 @@ inline void Type_::Clear() {
 }
 
 template <typename TheElement>
-inline void Type_::FrontGive(Queue & theQueue) {
+inline void Type_::FrontGive(Consumer & theConsumer) {
 	if (
 		!this->thisElementDeque.empty() &&
 		dynamic_cast<TheElement const *>(
 			&this->thisElementDeque.front()
 		)
 	) {
-		this->thisElementDeque.pop_front()->GiveElements(theQueue);
+		this->thisElementDeque.pop_front()->GiveElements(theConsumer);
 	}
 }
 
-inline void Type_::FrontGiveElement(Queue & theQueue) {
+inline void Type_::FrontGiveElement(Consumer & theConsumer) {
 	if (
 		!this->thisElementDeque.empty()
 	) {
-		this->thisElementDeque.pop_front()->GiveElements(theQueue);
+		this->thisElementDeque.pop_front()->GiveElements(theConsumer);
 	}
 }
 
@@ -198,18 +198,18 @@ inline std::auto_ptr<
 	);
 }
 
-inline void Type_::GiveElements(Queue & theQueue) {
+inline void Type_::GiveElements(Consumer & theConsumer) {
 	this->GiveElements(
-		theQueue,
+		theConsumer,
 		this->thisElementDeque.begin(),
 		this->thisElementDeque.end()
 	);
 	this->thisElementDeque.clear();
 }
 
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	this->GiveElements(
-		theQueue,
+		theConsumer,
 		this->thisElementDeque.begin(),
 		this->thisElementDeque.end()
 	);
@@ -273,7 +273,7 @@ inline void Type_::ReadElements(Parser & theParser) {
 inline void Type_::ReadQuotedElements(Parser & theParser) {
 	Literal theLiteral;
 	theLiteral.ReadElements(theParser);
-	this->TakeQuotedQueue(theLiteral);
+	this->TakeQuotedProducer(theLiteral);
 }
 
 inline void Type_::Swap(Literal & theLiteral) {
@@ -298,11 +298,11 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 	this->TakeAtom(theOperator);
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
 	this->thisElementDeque.push_back(
 		new Operand(
-			theQueue.GiveProgram()
+			theProducer.GiveProgram()
 		)
 	);
 }
@@ -319,7 +319,7 @@ inline void Type_::TakeSeparator(TheSeparator & theSeparator) {
 
 template <typename TheElementIterator>
 inline void Type_::GiveElements(
-	Queue & theQueue,
+	Consumer & theConsumer,
 	TheElementIterator theCurrent,
 	TheElementIterator const theEnd
 ) {
@@ -328,7 +328,7 @@ inline void Type_::GiveElements(
 		theEnd != theCurrent;
 		++theCurrent
 	) {
-		theCurrent->GiveElements(theQueue);
+		theCurrent->GiveElements(theConsumer);
 	}
 }
 

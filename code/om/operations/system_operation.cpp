@@ -61,7 +61,7 @@ inline char const * Type_::GetName() {
 }
 
 inline void Type_::Give(Evaluation & theEvaluation) {
-	theEvaluation.TakeQuotedQueue(
+	theEvaluation.TakeQuotedProducer(
 		System::Get().GetLexicon()
 	);
 }

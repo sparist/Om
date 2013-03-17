@@ -22,13 +22,15 @@
 namespace Om {
 
 	//! \cond
+	class Consumer;
+
 	class Evaluation;
 
 	class Operand;
 
 	class Parser;
 
-	class Queue;
+	class Producer;
 	//! \endcond
 
 	// MARK: - Om::Operation
@@ -49,13 +51,13 @@ namespace Om {
 		\post
 			Any calls on the Operation are undefined.
 		*/
-		virtual void GiveElements(Queue &) = 0;
+		virtual void GiveElements(Consumer &) = 0;
 
 		/*!
 		\brief
 			\overload
 		*/
-		virtual void GiveElements(Queue &) const = 0;
+		virtual void GiveElements(Consumer &) const = 0;
 
 		virtual bool ReadQuotedElements(
 			Evaluation &,
@@ -94,7 +96,7 @@ namespace Om {
 		*/
 		virtual bool TakeQuotedElements(
 			Evaluation &,
-			Queue &
+			Producer &
 		) = 0;
 
 		/*!
@@ -103,7 +105,7 @@ namespace Om {
 		*/
 		virtual bool TakeQuotedElements(
 			Evaluation &,
-			Queue const &
+			Producer const &
 		) = 0;
 
 	protected: // MARK: protected (non-static)

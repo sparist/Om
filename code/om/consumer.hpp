@@ -12,16 +12,10 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Queue_
+#ifndef Om_Consumer_
 
-	#define Om_Queue_ \
-	Om::Queue
-
-	#ifndef Om_Macros_Precompilation_
-
-		#include <memory>
-
-	#endif
+	#define Om_Consumer_ \
+	Om::Consumer
 
 namespace Om {
 
@@ -32,62 +26,20 @@ namespace Om {
 
 	class Parser;
 
-	class Program;
+	class Producer;
 
 	class Separator;
 	//! \endcond
 
-	// MARK: - Om::Queue
-
 	/*!
 	\brief
-		A first-in, first-out Element processor.
-
-	A Queue can take \ref Element "Elements" from another Queue, process them however the implementation decides, and give the resulting \ref Element "Elements" to another Queue.
-	
-	The contents of the Queue should not be assumed to reside in memory.
+		An Element taker; takes at the back.
 	*/
-	class Queue {
+	class Consumer {
 
 	public: // MARK: public (non-static)
 
-		virtual ~Queue() = 0;
-
-		virtual void Clear() = 0;
-
-		/*!
-		\brief
-			Gives each contained Element to the argument.
-		\post
-			<code>IsEmpty() == true</code>
-		\remarks
-			Giving every Element is more efficient than giving a subset and managing incremental state, which is never necessary.
-		*/
-		virtual void GiveElements(Queue &) = 0;
-
-		/*!
-		\brief
-			\overload
-		*/
-		virtual void GiveElements(Queue &) const = 0;
-
-		/*!
-		\brief
-			Returns a new Program populated with the contents of this.
-		*/
-		virtual std::auto_ptr<Program> GiveProgram() = 0;
-
-		/*!
-		\brief
-			\overload
-		*/
-		virtual std::auto_ptr<Program> GiveProgram() const = 0;
-
-		/*!
-		\return
-			True if there is no Element.
-		*/
-		virtual bool IsEmpty() const = 0;
+		virtual ~Consumer() = 0;
 
 		virtual void ReadElements(Parser &) = 0;
 
@@ -137,34 +89,34 @@ namespace Om {
 		\brief
 			Takes each Element of the argument.
 		*/
-		virtual void TakeElements(Queue &) = 0;
+		virtual void TakeElements(Producer &) = 0;
 
 		/*!
 		\brief
 			\overload
 		*/
-		virtual void TakeElements(Queue const &) = 0;
+		virtual void TakeElements(Producer const &) = 0;
 
 		/*!
 		\brief
-			Constructs and takes an Operand, which takes each Element from the argument Queue.
+			Constructs and takes an Operand, which takes each Element from the argument Producer.
 		*/
-		virtual void TakeQuotedElements(Queue &) = 0;
+		virtual void TakeQuotedElements(Producer &) = 0;
 
 		/*!
 		\brief
 			\overload
 		*/
-		virtual void TakeQuotedElements(Queue const &) = 0;
+		virtual void TakeQuotedElements(Producer const &) = 0;
 
 	private: // MARK: private (non-static)
 
-		Queue & operator =(Queue const &);
+		Consumer & operator =(Consumer const &);
 
 	};
 
 }
 
-	#include "om/queue.cpp"
+	#include "om/consumer.cpp"
 
 #endif

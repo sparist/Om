@@ -12,9 +12,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_DefaultQueue_
+#ifndef Om_DefaultConsumer_
 
-	#include "om/default_queue.hpp"
+	#include "om/default_consumer.hpp"
 
 	#ifdef Om_Macros_Test_
 
@@ -26,7 +26,7 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE(DefaultQueueTest)
+	BOOST_AUTO_TEST_SUITE(DefaultConsumerTest)
 
 	BOOST_AUTO_TEST_SUITE_END()
 
@@ -36,7 +36,9 @@ namespace Om {
 
 #else
 
-// MARK: - Om::DefaultQueue
+	#include "om/producer.hpp"
+
+// MARK: - Om::DefaultConsumer
 
 	#define Template_ \
 	template < \
@@ -45,7 +47,7 @@ namespace Om {
 	>
 
 	#define Type_ \
-	Om::DefaultQueue< \
+	Om::DefaultConsumer< \
 		ThisImplementation, \
 		ThisInterface \
 	>
@@ -53,7 +55,7 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultQueue() {}
+inline Type_::~DefaultConsumer() {}
 
 Template_
 inline void Type_::TakeElement(Operand & theOperand) {
@@ -104,29 +106,29 @@ inline void Type_::TakeElement(Separator const & theSeparator) {
 }
 
 Template_
-inline void Type_::TakeElements(Queue & theQueue) {
-	theQueue.GiveElements(*this);
+inline void Type_::TakeElements(Producer & theProducer) {
+	theProducer.GiveElements(*this);
 }
 
 Template_
-inline void Type_::TakeElements(Queue const & theQueue) {
-	theQueue.GiveElements(*this);
+inline void Type_::TakeElements(Producer const & theProducer) {
+	theProducer.GiveElements(*this);
 }
 
 Template_
-inline void Type_::TakeQuotedElements(Queue & theQueue) {
+inline void Type_::TakeQuotedElements(Producer & theProducer) {
 	assert(
 		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast<ThisImplementation &>(*this).TakeQuotedQueue(theQueue);
+	static_cast<ThisImplementation &>(*this).TakeQuotedProducer(theProducer);
 }
 
 Template_
-inline void Type_::TakeQuotedElements(Queue const & theQueue) {
+inline void Type_::TakeQuotedElements(Producer const & theProducer) {
 	assert(
 		dynamic_cast<ThisImplementation *>(this)
 	);
-	static_cast<ThisImplementation &>(*this).TakeQuotedQueue(theQueue);
+	static_cast<ThisImplementation &>(*this).TakeQuotedProducer(theProducer);
 }
 
 	#undef Type_

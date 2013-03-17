@@ -34,7 +34,7 @@ namespace Om {
 
 		Environment();
 
-		virtual void GiveElements(Queue &) const;
+		virtual void GiveElements(Consumer &) const;
 
 		virtual bool IsEmpty() const;
 

@@ -17,8 +17,8 @@
 	#define Om_DefaultProgram_ \
 	Om::DefaultProgram
 
+	#include "om/default_consumer.hpp"
 	#include "om/default_giveable.hpp"
-	#include "om/default_queue.hpp"
 	#include "om/program.hpp"
 	#include "om/taker.hpp"
 
@@ -35,7 +35,7 @@ namespace Om {
 		typename ThisInterface = Program
 	>
 	class DefaultProgram:
-	public DefaultQueue<
+	public DefaultConsumer<
 		ThisImplementation,
 		DefaultGiveable<
 			ThisImplementation,
@@ -48,7 +48,7 @@ namespace Om {
 
 		virtual ~DefaultProgram() = 0;
 
-		using DefaultQueue<
+		using DefaultConsumer<
 			ThisImplementation,
 			DefaultGiveable<
 				ThisImplementation,
@@ -58,9 +58,9 @@ namespace Om {
 
 		virtual bool Equals(Program const &) const;
 
-		virtual void TakeElements(Queue &);
+		virtual void TakeElements(Producer &);
 
-		virtual void TakeElements(Queue const &);
+		virtual void TakeElements(Producer const &);
 
 	private: // MARK: private (non-static)
 
@@ -68,9 +68,9 @@ namespace Om {
 
 		template <
 			typename TheCast,
-			typename TheQueue
+			typename TheProducer
 		>
-		void TakeQueueElements(TheQueue &);
+		void TakeProducer(TheProducer &);
 
 	};
 

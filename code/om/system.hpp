@@ -33,8 +33,6 @@ namespace Om {
 	class Lexicon;
 
 	class Operator;
-
-	class Queue;
 	//! \endcond
 
 	// MARK: - Om::System
@@ -68,7 +66,7 @@ namespace Om {
 		*/
 		Lexicon const & GetLexicon() const;
 
-		virtual void GiveElements(Queue &) const;
+		virtual void GiveElements(Consumer &) const;
 
 		/*!
 		\brief

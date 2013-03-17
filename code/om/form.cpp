@@ -47,20 +47,20 @@ inline Type_::Form():
 thisOperator(),
 thisOperandDeque() {}
 
-inline bool Type_::BackGiveTerm(Queue & theQueue) {
+inline bool Type_::BackGiveTerm(Consumer & theConsumer) {
 	if (
 		this->thisOperandDeque.empty()
 	) {
 		assert(
 			!this->thisOperator.IsEmpty()
 		);
-		this->thisOperator.GiveElements(theQueue);
+		this->thisOperator.GiveElements(theConsumer);
 		assert(
 			this->thisOperator.IsEmpty()
 		);
 		return true;
 	}
-	this->thisOperandDeque.back().GiveElements(theQueue);
+	this->thisOperandDeque.back().GiveElements(theConsumer);
 	this->thisOperandDeque.pop_back();
 	return this->IsEmpty();
 }
@@ -87,27 +87,27 @@ inline void Type_::BackTakeOperand(TheOperand & theOperand) {
 	this->thisOperandDeque.back().Take(theOperand);
 }
 
-template <typename TheQueue>
-inline void Type_::BackTakeQuotedQueue(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::BackTakeQuotedProducer(TheProducer & theProducer) {
 	this->thisOperandDeque.push_back(
 		Operand()
 	);
 	this->thisOperandDeque.back().SetProgram(
-		theQueue.GiveProgram()
+		theProducer.GiveProgram()
 	);
 }
 
-inline bool Type_::FrontGiveTerm(Queue & theQueue) {
+inline bool Type_::FrontGiveTerm(Consumer & theConsumer) {
 	if (
 		this->thisOperator.IsEmpty()
 	) {
 		assert(
 			!this->thisOperandDeque.empty()
 		);
-		this->thisOperandDeque.front().GiveElements(theQueue);
+		this->thisOperandDeque.front().GiveElements(theConsumer);
 		this->thisOperandDeque.pop_front();
 	} else {
-		this->thisOperator.GiveElements(theQueue);
+		this->thisOperator.GiveElements(theConsumer);
 		assert(
 			this->thisOperator.IsEmpty()
 		);
@@ -140,13 +140,13 @@ inline void Type_::FrontTakeOperand(TheOperand & theOperand) {
 	this->thisOperandDeque.front().Take(theOperand);
 }
 
-template <typename TheQueue>
-inline void Type_::FrontTakeQuotedQueue(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::FrontTakeQuotedProducer(TheProducer & theProducer) {
 	this->thisOperandDeque.push_front(
 		Operand()
 	);
 	this->thisOperandDeque.front().SetProgram(
-		theQueue.GiveProgram()
+		theProducer.GiveProgram()
 	);
 }
 
@@ -154,18 +154,18 @@ inline Om::Operator const & Type_::GetOperator() const {
 	return this->thisOperator;
 }
 
-inline void Type_::GiveElements(Queue & theQueue) {
+inline void Type_::GiveElements(Consumer & theConsumer) {
 	this->GiveElements<OperandDeque::iterator>(
 		*this,
-		theQueue
+		theConsumer
 	);
 	this->thisOperandDeque.clear();
 }
 
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	this->GiveElements<OperandDeque::const_iterator>(
 		*this,
-		theQueue
+		theConsumer
 	);
 }
 
@@ -197,7 +197,7 @@ template <
 >
 inline void Type_::GiveElements(
 	TheForm & theForm,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
 	assert(
 		!theForm.IsEmpty()
@@ -205,7 +205,7 @@ inline void Type_::GiveElements(
 	if (
 		!theForm.thisOperator.IsEmpty()
 	) {
-		theQueue.TakeElement(theForm.thisOperator);
+		theConsumer.TakeElement(theForm.thisOperator);
 	}
 	TheOperandIterator const theEnd = theForm.thisOperandDeque.end();
 	for (
@@ -213,7 +213,7 @@ inline void Type_::GiveElements(
 		theEnd != theCurrent;
 		++theCurrent
 	) {
-		theQueue.TakeElement(*theCurrent);
+		theConsumer.TakeElement(*theCurrent);
 	}
 }
 

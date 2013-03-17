@@ -48,10 +48,10 @@ namespace Om {
 			\brief
 				The callback for PullOperation.
 			*/
-			template <typename TheQueue>
+			template <typename TheConsumer>
 			static void Pull(
 				Literal &,
-				TheQueue &
+				TheConsumer &
 			);
 
 		};

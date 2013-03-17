@@ -78,9 +78,9 @@ inline char const * Type_::GetName() {
 template <typename TheNormalizeOperation>
 inline void Type_::GiveElements(
 	TheNormalizeOperation &,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 }
@@ -95,21 +95,21 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return this->TakeQuotedQueue(
+	return this->TakeQuotedProducer(
 		theEvaluation,
 		*theOperand.GetProgram()
 	);
 }
 
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	Operator theOperator;
-	theOperator.TakeElements(theQueue);
+	theOperator.TakeElements(theProducer);
 	theOperator.Normalize();
-	theEvaluation.TakeQuotedQueue(theOperator);
+	theEvaluation.TakeQuotedProducer(theOperator);
 	return true;
 }
 

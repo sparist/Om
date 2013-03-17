@@ -12,31 +12,31 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_DefaultQueue_
+#ifndef Om_DefaultConsumer_
 
-	#define Om_DefaultQueue_ \
-	Om::DefaultQueue
+	#define Om_DefaultConsumer_ \
+	Om::DefaultConsumer
 
-	#include "om/queue.hpp"
+	#include "om/consumer.hpp"
 
 namespace Om {
 
-	// MARK: - Om::DefaultQueue
+	// MARK: - Om::DefaultConsumer
 
 	/*!
 	\brief
-		A partial implementation of Queue.
+		A partial implementation of Consumer.
 	*/
 	template <
 		typename ThisImplementation,
-		typename ThisInterface = Queue
+		typename ThisInterface = Consumer
 	>
-	class DefaultQueue:
+	class DefaultConsumer:
 	public ThisInterface {
 
 	public: // MARK: public (non-static)
 
-		virtual ~DefaultQueue() = 0;
+		virtual ~DefaultConsumer() = 0;
 
 		virtual void TakeElement(Operand &);
 
@@ -50,22 +50,22 @@ namespace Om {
 
 		virtual void TakeElement(Separator const &);
 
-		virtual void TakeElements(Queue &);
+		virtual void TakeElements(Producer &);
 
-		virtual void TakeElements(Queue const &);
+		virtual void TakeElements(Producer const &);
 
-		virtual void TakeQuotedElements(Queue &);
+		virtual void TakeQuotedElements(Producer &);
 
-		virtual void TakeQuotedElements(Queue const &);
+		virtual void TakeQuotedElements(Producer const &);
 
 	private: // MARK: private (non-static)
 
-		DefaultQueue & operator =(DefaultQueue const &);
+		DefaultConsumer & operator =(DefaultConsumer const &);
 
 	};
 
 }
 
-	#include "om/default_queue.cpp"
+	#include "om/default_consumer.cpp"
 
 #endif

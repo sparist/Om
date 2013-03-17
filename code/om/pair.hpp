@@ -45,9 +45,9 @@ namespace Om {
 
 		Operator const & GetOperator() const;
 
-		void GiveElements(Queue &);
+		void GiveElements(Consumer &);
 
-		void GiveElements(Queue &) const;
+		void GiveElements(Consumer &) const;
 
 		bool IsEmpty() const;
 
@@ -61,15 +61,15 @@ namespace Om {
 		template <typename TheOperator>
 		void TakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
 	private: // MARK: private (static)
 
 		template <typename ThePair>
 		static void GiveElements(
 			ThePair &,
-			Queue &
+			Consumer &
 		);
 
 	private: // MARK: private (non-static)

@@ -129,17 +129,17 @@ inline char const * Type_::GetName() {
 
 // MARK: public (non-static)
 
-template <typename TheQueue>
+template <typename TheProducer>
 inline void Type_::Translate(
 	Translator const &,
-	TheQueue & theQueue,
+	TheProducer & theProducer,
 	Expression & theExpression
 ) const {
 	Evaluator theScope(
 		theExpression,
 		*this->thisLexicon
 	);
-	theQueue.GiveElements(theScope);
+	theProducer.GiveElements(theScope);
 }
 
 	#undef Type_

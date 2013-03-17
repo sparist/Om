@@ -12,9 +12,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Program_
+#ifndef Om_Producer_
 
-	#include "om/program.hpp"
+	#include "om/producer.hpp"
 
 	#ifdef Om_Macros_Test_
 
@@ -26,7 +26,7 @@
 
 namespace Om {
 
-	BOOST_AUTO_TEST_SUITE(ProgramTest)
+	BOOST_AUTO_TEST_SUITE(ProducerTest)
 
 	BOOST_AUTO_TEST_SUITE_END()
 
@@ -36,61 +36,40 @@ namespace Om {
 
 #else
 
-	#include "om/give.hpp"
+	#ifndef Om_Macros_Precompilation_
 
-// MARK: - Om::Program
+		#include <cassert>
+		#include <stdexcept>
+
+	#endif
+
+// MARK: - Om::Producer
 
 	#define Type_ \
-	Om::Program
+	Om::Producer
 
 // MARK: public (non-static)
 
-inline Type_::~Program() {}
+inline Type_::~Producer() {}
 
-inline void Type_::Clear() {
+inline void Type_::GiveElements(Consumer &) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
-inline bool Type_::Equals(Program const &) const {
-	assert(0);
-	throw std::logic_error("Pure virtual function called.");
-}
-
-inline std::auto_ptr<
-	Om::Source<Om::Element const>
-> Type_::GetElementRange() const {
+inline void Type_::GiveElements(Consumer &) const {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
 inline std::auto_ptr<Om::Program> Type_::GiveProgram() {
-	return Give(*this);
-}
-
-inline std::auto_ptr<Om::Program> Type_::GiveProgram() const {
-	return Give(*this);
-}
-
-inline bool Type_::IsEmpty() const {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
-// MARK: - Om::
-
-inline bool Om::operator ==(
-	Type_ const & theFirst,
-	Type_ const & theSecond
-) {
-	return theFirst.Equals(theSecond);
-}
-
-inline bool Om::operator !=(
-	Type_ const & theFirst,
-	Type_ const & theSecond
-) {
-	return !theFirst.Equals(theSecond);
+inline std::auto_ptr<Om::Program> Type_::GiveProgram() const {
+	assert(0);
+	throw std::logic_error("Pure virtual function called.");
 }
 
 	#undef Type_

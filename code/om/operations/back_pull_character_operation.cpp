@@ -135,12 +135,12 @@ inline void Type_::Give(Evaluation & theEvaluation) {
 	);
 }
 
-template <typename TheQueue>
+template <typename TheConsumer>
 inline void Type_::Pull(
 	Operator & theOperator,
-	TheQueue & theQueue
+	TheConsumer & theConsumer
 ) {
-	theOperator.BackGiveSegment<boost::locale::boundary::character>(theQueue);
+	theOperator.BackGiveSegment<boost::locale::boundary::character>(theConsumer);
 }
 
 	#undef Type_

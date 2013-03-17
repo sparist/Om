@@ -78,15 +78,15 @@ inline char const * Type_::GetName() {
 template <typename TheSkipOperation>
 inline void Type_::GiveElements(
 	TheSkipOperation & theSkipOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 	if (
 		!theSkipOperation.thisExpression.IsEmpty()
 	) {
-		theQueue.TakeQuotedElements(theSkipOperation.thisExpression);
+		theConsumer.TakeQuotedElements(theSkipOperation.thisExpression);
 	}
 }
 
@@ -103,25 +103,25 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return this->TakeQuotedQueue(
+	return this->TakeQuotedProducer(
 		theEvaluation,
 		*theOperand.GetProgram()
 	);
 }
 
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (
 		this->thisExpression.IsEmpty()
 	) {
-		this->thisExpression.TakeElements(theQueue);
+		this->thisExpression.TakeElements(theProducer);
 		return this->thisExpression.IsEmpty();
 	}
-	theEvaluation.TakeQueue(this->thisExpression);
-	theEvaluation.TakeQuotedQueue(theQueue);
+	theEvaluation.TakeProducer(this->thisExpression);
+	theEvaluation.TakeQuotedProducer(theProducer);
 	return true;
 }
 

@@ -106,12 +106,12 @@ inline void Type_::Give(Evaluation & theEvaluation) {
 	);
 }
 
-template <typename TheQueue>
+template <typename TheConsumer>
 inline void Type_::Pull(
 	Expression & theExpression,
-	TheQueue & theQueue
+	TheConsumer & theConsumer
 ) {
-	theExpression.BackGiveForm(theQueue);
+	theExpression.BackGiveForm(theConsumer);
 }
 
 	#undef Type_

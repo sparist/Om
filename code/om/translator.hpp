@@ -28,6 +28,8 @@
 namespace Om {
 
 	//! \cond
+	class Consumer;
+
 	class Evaluation;
 
 	class Operator;
@@ -37,8 +39,6 @@ namespace Om {
 
 	template <typename ThisItem>
 	class Source;
-
-	class Queue;
 	//! \endcond
 
 	// MARK: - Om::Translator
@@ -74,7 +74,7 @@ namespace Om {
 			char const theCodeUnitIterator[]
 		) const;
 
-		virtual void GiveElements(Queue &) const = 0;
+		virtual void GiveElements(Consumer &) const = 0;
 
 		virtual bool IsEmpty() const = 0;
 

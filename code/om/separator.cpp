@@ -162,8 +162,8 @@ inline void Type_::TakeOperand(TheOperand &) {}
 template <typename TheOperator>
 inline void Type_::TakeOperator(TheOperator &) {}
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue &) {}
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer &) {}
 
 template <typename TheSeparator>
 inline void Type_::TakeSeparator(TheSeparator & theSeparator) {

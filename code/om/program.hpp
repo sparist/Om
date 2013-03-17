@@ -17,8 +17,9 @@
 	#define Om_Program_ \
 	Om::Program
 
+	#include "om/consumer.hpp"
 	#include "om/giveable.hpp"
-	#include "om/queue.hpp"
+	#include "om/producer.hpp"
 	#include "om/shareable.hpp"
 
 namespace Om {
@@ -36,18 +37,21 @@ namespace Om {
 	\brief
 		The \ref om__programs__ "Program" implementation.
 
-	A Program is a Giveable, Shareable Queue whose entire state is represented by an Element collection.
+	A Program is a Giveable, Shareable Producer and Consumer whose entire state is represented by an Element collection.
 
 	Each concrete derivation must have a GetName() function that returns a null-terminated, NFD-normalized UTF-8 string to be used as a corresponding Operator name.
 	*/
 	class Program:
+	public Consumer,
 	public Giveable,
-	public Queue,
+	public Producer,
 	public Shareable<> {
 
 	public: // MARK: public (non-static)
 
 		virtual ~Program() = 0;
+
+		virtual void Clear() = 0;
 
 		virtual bool Equals(Program const &) const = 0;
 
@@ -62,6 +66,12 @@ namespace Om {
 		virtual std::auto_ptr<Program> GiveProgram();
 
 		virtual std::auto_ptr<Program> GiveProgram() const;
+
+		/*!
+		\return
+			True if there is no Element.
+		*/
+		virtual bool IsEmpty() const = 0;
 
 	private: // MARK: private (non-static)
 

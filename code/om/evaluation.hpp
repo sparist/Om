@@ -78,17 +78,17 @@ namespace Om {
 
 		/*!
 		\brief
-			Pushes the quoted Queue onto the front of the Expression.
+			Pushes the produced \ref Element "Elements" onto the front of the Expression, last first.
 		*/
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeProducer(TheProducer &);
 
 		/*!
 		\brief
-			Pushes the Queue onto the front of the Expression, last first.
+			Pushes the quoted Producer onto the front of the Expression.
 		*/
-		template <typename TheQueue>
-		void TakeQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
 	private: // MARK: private (non-static)
 

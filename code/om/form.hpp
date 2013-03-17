@@ -49,7 +49,7 @@ namespace Om {
 		\return
 			True if the call results in an empty Form.
 		*/
-		bool BackGiveTerm(Queue &);
+		bool BackGiveTerm(Consumer &);
 
 		/*!
 		\return
@@ -60,14 +60,14 @@ namespace Om {
 		template <typename TheOperand>
 		void BackTakeOperand(TheOperand &);
 
-		template <typename TheQueue>
-		void BackTakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void BackTakeQuotedProducer(TheProducer &);
 
 		/*!
 		\return
 			True if the call results in an empty Form.
 		*/
-		bool FrontGiveTerm(Queue &);
+		bool FrontGiveTerm(Consumer &);
 
 		/*!
 		\return
@@ -78,14 +78,14 @@ namespace Om {
 		template <typename TheOperand>
 		void FrontTakeOperand(TheOperand &);
 
-		template <typename TheQueue>
-		void FrontTakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void FrontTakeQuotedProducer(TheProducer &);
 
 		Operator const & GetOperator() const;
 
-		void GiveElements(Queue &);
+		void GiveElements(Consumer &);
 
-		void GiveElements(Queue &) const;
+		void GiveElements(Consumer &) const;
 
 		bool IsEmpty() const;
 
@@ -108,7 +108,7 @@ namespace Om {
 		>
 		static void GiveElements(
 			TheForm &,
-			Queue &
+			Consumer &
 		);
 
 	private: // MARK: private (non-static)

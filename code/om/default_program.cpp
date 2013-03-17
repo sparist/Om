@@ -105,13 +105,13 @@ inline bool Type_::Equals(Program const & theProgram) const {
 }
 
 Template_
-inline void Type_::TakeElements(Queue & theQueue) {
-	this->TakeQueueElements<ThisImplementation>(theQueue);
+inline void Type_::TakeElements(Producer & theProducer) {
+	this->TakeProducer<ThisImplementation>(theProducer);
 }
 
 Template_
-inline void Type_::TakeElements(Queue const & theQueue) {
-	this->TakeQueueElements<ThisImplementation const>(theQueue);
+inline void Type_::TakeElements(Producer const & theProducer) {
+	this->TakeProducer<ThisImplementation const>(theProducer);
 }
 
 // MARK: private (non-static)
@@ -119,9 +119,9 @@ inline void Type_::TakeElements(Queue const & theQueue) {
 Template_
 template <
 	typename TheCast,
-	typename TheQueue
+	typename TheProducer
 >
-inline void Type_::TakeQueueElements(TheQueue & theQueue) {
+inline void Type_::TakeProducer(TheProducer & theProducer) {
 	assert(
 		dynamic_cast<ThisImplementation *>(this)
 	);
@@ -130,15 +130,15 @@ inline void Type_::TakeQueueElements(TheQueue & theQueue) {
 	);
 	if (
 		(
-			typeid(TheCast) == typeid(theQueue)
+			typeid(TheCast) == typeid(theProducer)
 		) &&
 		this->IsEmpty()
 	) {
 		this->Take(
-			static_cast<TheCast &>(theQueue)
+			static_cast<TheCast &>(theProducer)
 		);
 	} else {
-		theQueue.GiveElements(*this);
+		theProducer.GiveElements(*this);
 	}
 }
 

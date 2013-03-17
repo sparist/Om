@@ -75,7 +75,7 @@ inline char const * Type_::GetName() {
 inline void Type_::Give(Evaluation & theEvaluation) {
 	Lexicon theLexicon;
 	theEvaluation.GetTranslator().GiveElements(theLexicon);
-	theEvaluation.TakeQuotedQueue(theLexicon);
+	theEvaluation.TakeQuotedProducer(theLexicon);
 }
 
 	#undef Type_

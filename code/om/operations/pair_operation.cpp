@@ -106,15 +106,15 @@ inline char const * Type_::GetName() {
 template <typename ThePairOperation>
 inline void Type_::GiveElements(
 	ThePairOperation & thePairOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 	if (
 		!thePairOperation.thisExpression.IsEmpty()
 	) {
-		theQueue.TakeQuotedElements(thePairOperation.thisExpression);
+		theConsumer.TakeQuotedElements(thePairOperation.thisExpression);
 	}
 }
 
@@ -144,19 +144,19 @@ inline bool Type_::TakeOperand(
 		return false;
 	}
 	this->thisExpression.TakeOperand(theOperand);
-	theEvaluation.TakeQuotedQueue(this->thisExpression);
+	theEvaluation.TakeQuotedProducer(this->thisExpression);
 	return true;
 }
 
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (
 		this->thisExpression.IsEmpty()
 	) {
-		this->thisExpression.TakeElements(theQueue);
+		this->thisExpression.TakeElements(theProducer);
 		if (
 			this->thisExpression.IsEmpty()
 		) {
@@ -165,8 +165,8 @@ inline bool Type_::TakeQuotedQueue(
 		}
 		return false;
 	}
-	this->thisExpression.TakeQuotedQueue(theQueue);
-	theEvaluation.TakeQuotedQueue(this->thisExpression);
+	this->thisExpression.TakeQuotedProducer(theProducer);
+	theEvaluation.TakeQuotedProducer(this->thisExpression);
 	return true;
 }
 

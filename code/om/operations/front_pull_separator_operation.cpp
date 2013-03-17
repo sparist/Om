@@ -106,12 +106,12 @@ inline void Type_::Give(Evaluation & theEvaluation) {
 	);
 }
 
-template <typename TheQueue>
+template <typename TheConsumer>
 inline void Type_::Pull(
 	Literal & theLiteral,
-	TheQueue & theQueue
+	TheConsumer & theConsumer
 ) {
-	theLiteral.FrontGive<Separator>(theQueue);
+	theLiteral.FrontGive<Separator>(theConsumer);
 }
 
 	#undef Type_

@@ -102,13 +102,13 @@ inline char const * Type_::GetName() {
 template <typename TheFillOperation>
 inline void Type_::GiveElements(
 	TheFillOperation & theFillOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 	if (theFillOperation.thisFormRange) {
-		theQueue.TakeQuotedElements(theFillOperation.thisExpression);
+		theConsumer.TakeQuotedElements(theFillOperation.thisExpression);
 	}
 }
 
@@ -126,16 +126,16 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return this->TakeQuotedQueue(
+	return this->TakeQuotedProducer(
 		theEvaluation,
 		*theOperand.GetProgram()
 	);
 }
 
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (this->thisFormRange) {
 		FormRange & theFormRange = *this->thisFormRange;
@@ -147,10 +147,10 @@ inline bool Type_::TakeQuotedQueue(
 			!Form::OperandRange<Operand const>(*theFormRange) &&
 			"The Form should have no Operands."
 		);
-		theFormRange->BackTakeQuotedQueue(theQueue);
+		theFormRange->BackTakeQuotedProducer(theProducer);
 		theFormRange.Pop();
 	} else {
-		this->thisExpression.TakeElements(theQueue);
+		this->thisExpression.TakeElements(theProducer);
 		this->thisFormRange = boost::in_place(
 			boost::ref(this->thisExpression)
 		);
@@ -169,7 +169,7 @@ inline bool Type_::TakeQuotedQueue(
 			return false;
 		}
 	}
-	theEvaluation.TakeQuotedQueue(this->thisExpression);
+	theEvaluation.TakeQuotedProducer(this->thisExpression);
 	return true;
 }
 

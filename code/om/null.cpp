@@ -87,9 +87,9 @@ inline std::auto_ptr<
 	);
 }
 
-inline void Type_::GiveElements(Queue &) {}
+inline void Type_::GiveElements(Consumer &) {}
 
-inline void Type_::GiveElements(Queue &) const {}
+inline void Type_::GiveElements(Consumer &) const {}
 
 inline bool Type_::IsEmpty() const {
 	return true;
@@ -113,9 +113,9 @@ inline void Type_::ReadQuotedElements(Parser & theParser) {
 
 inline void Type_::Swap(Null &) {}
 
-inline void Type_::TakeElements(Queue &) {}
+inline void Type_::TakeElements(Producer &) {}
 
-inline void Type_::TakeElements(Queue const &) {}
+inline void Type_::TakeElements(Producer const &) {}
 
 template <typename TheOperand>
 inline void Type_::TakeOperand(TheOperand &) {}
@@ -123,8 +123,8 @@ inline void Type_::TakeOperand(TheOperand &) {}
 template <typename TheOperator>
 inline void Type_::TakeOperator(TheOperator &) {}
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue &) {}
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer &) {}
 
 template <typename TheSeparator>
 inline void Type_::TakeSeparator(TheSeparator &) {}

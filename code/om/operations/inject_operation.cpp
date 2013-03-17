@@ -162,20 +162,20 @@ inline char const * Type_::GetName() {
 template <typename TheInjectOperation>
 inline void Type_::GiveElements(
 	TheInjectOperation & theInjectOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 	if (theInjectOperation.thisScope) {
-		theQueue.TakeQuotedElements(theInjectOperation.thisInjector);
+		theConsumer.TakeQuotedElements(theInjectOperation.thisInjector);
 		if (
 			!theInjectOperation.thisScope->IsEmpty()
 		) {
-			Expression theOutput;
-			theOutput.Take(theInjectOperation.thisOutput);
-			theInjectOperation.thisScope->GiveElements(theOutput);
-			theQueue.TakeQuotedElements(theOutput);
+			Expression theExpression;
+			theExpression.Take(theInjectOperation.thisOutput);
+			theInjectOperation.thisScope->GiveElements(theExpression);
+			theConsumer.TakeQuotedElements(theExpression);
 		}
 	}
 }
@@ -187,28 +187,28 @@ thisInjector(),
 thisOutput(),
 thisScope() {}
 
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (this->thisScope) {
 		if (
 			this->thisScope->IsEmpty()
 		) {
-			theQueue.GiveElements(*this->thisScope);
+			theProducer.GiveElements(*this->thisScope);
 		} else {
 			{
 				Expression const & theInjector = this->thisInjector;
 				theInjector.GiveElements(*this->thisScope);
 			}
-			this->thisScope->TakeQuotedQueue(theQueue);
+			this->thisScope->TakeQuotedProducer(theProducer);
 		}
 
 		if (
 			this->thisScope->IsEmpty()
 		) {
-			theEvaluation.TakeQuotedQueue(this->thisOutput);
+			theEvaluation.TakeQuotedProducer(this->thisOutput);
 			return true;
 		}
 	} else {
@@ -218,7 +218,7 @@ inline bool Type_::TakeQuotedQueue(
 				theEvaluation.GetTranslator()
 			)
 		);
-		this->thisInjector.TakeElements(theQueue);
+		this->thisInjector.TakeElements(theProducer);
 	}
 	return false;
 }
@@ -231,7 +231,7 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return this->TakeQuotedQueue(
+	return this->TakeQuotedProducer(
 		theEvaluation,
 		*theOperand.GetProgram()
 	);

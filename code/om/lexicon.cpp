@@ -278,10 +278,10 @@ inline Type_ & Type_::operator =(Lexicon theLexicon) {
 	return *this;
 }
 
-inline void Type_::BackGivePair(Queue & theQueue) {
+inline void Type_::BackGivePair(Consumer & theConsumer) {
 	this->GivePair(
 		List::theBackNodeIndex,
-		theQueue
+		theConsumer
 	);
 }
 
@@ -305,10 +305,10 @@ inline Om::Pair const & Type_::Find(Operator const & theOperator) const {
 	return theIterator->second->GetValue();
 }
 
-inline void Type_::FrontGivePair(Queue & theQueue) {
+inline void Type_::FrontGivePair(Consumer & theConsumer) {
 	this->GivePair(
 		List::theFrontNodeIndex,
-		theQueue
+		theConsumer
 	);
 }
 
@@ -322,18 +322,18 @@ inline std::auto_ptr<
 	);
 }
 
-inline void Type_::GiveElements(Queue & theQueue) {
+inline void Type_::GiveElements(Consumer & theConsumer) {
 	this->GiveElements(
 		this->thisList.GetNode(List::theFrontNodeIndex),
-		theQueue
+		theConsumer
 	);
 	this->Clear();
 }
 
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	this->GiveElements(
 		this->thisList.GetNode(List::theFrontNodeIndex),
-		theQueue
+		theConsumer
 	);
 }
 
@@ -375,7 +375,7 @@ inline void Type_::ReadElements(Parser & theParser) {
 inline void Type_::ReadQuotedElements(Parser & theParser) {
 	Literal theLiteral;
 	theLiteral.ReadElements(theParser);
-	this->TakeQuotedQueue(theLiteral);
+	this->TakeQuotedProducer(theLiteral);
 }
 
 inline void Type_::Swap(Lexicon & theLexicon) {
@@ -399,9 +399,9 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 	this->GetOperandTaker(theOperator);
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
-	this->GetOperandTaker().GetValue().TakeQuotedQueue(theQueue);
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
+	this->GetOperandTaker().GetValue().TakeQuotedProducer(theProducer);
 }
 
 template <typename TheSeparator>
@@ -431,7 +431,7 @@ inline bool Type_::Translate(
 		);
 	}
 
-	theEvaluation.TakeQueue(
+	theEvaluation.TakeProducer(
 		*theOperand.GetProgram()
 	);
 	return true;
@@ -442,13 +442,13 @@ inline bool Type_::Translate(
 template <typename TheNode>
 inline void Type_::GiveElements(
 	TheNode * theNode,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
 	if (theNode) {
 		for (
 			;
 			;
-			theQueue.TakeElement(
+			theConsumer.TakeElement(
 				Separator::GetLineSeparator()
 			)
 		) {
@@ -456,7 +456,7 @@ inline void Type_::GiveElements(
 				theNode &&
 				!theNode->GetValue().IsEmpty()
 			);
-			theNode->GetValue().GiveElements(theQueue);
+			theNode->GetValue().GiveElements(theConsumer);
 			theNode = theNode->GetNode(List::theBackNodeIndex);
 			if (!theNode) {
 				break;
@@ -525,7 +525,7 @@ inline Type_::List::Node & Type_::GetOperandTaker(TheOperator & theOperator) {
 
 inline void Type_::GivePair(
 	List::NodeIndex const theNodeIndex,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
 	if (
 		List::Node const * const theNode = this->thisList.UnlinkNode(theNodeIndex)
@@ -539,7 +539,7 @@ inline void Type_::GivePair(
 
 		Map::auto_type theOldNode = this->thisMap.release(theIterator);
 		assert(theOldNode);
-		theOldNode->GetValue().GiveElements(theQueue);
+		theOldNode->GetValue().GiveElements(theConsumer);
 	}
 }
 

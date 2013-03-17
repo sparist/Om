@@ -118,12 +118,12 @@ inline void Type_::Give(Evaluation & theEvaluation) {
 	);
 }
 
-template <typename TheQueue>
+template <typename TheConsumer>
 inline void Type_::Pull(
 	Lexicon & theLexicon,
-	TheQueue & theQueue
+	TheConsumer & theConsumer
 ) {
-	theLexicon.BackGivePair(theQueue);
+	theLexicon.BackGivePair(theConsumer);
 }
 
 	#undef Type_

@@ -144,13 +144,13 @@ inline char const * Type_::GetName() {
 template <typename TheFindOperation>
 inline void Type_::GiveElements(
 	TheFindOperation & theFindOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 	if (theFindOperation.thisOperator) {
-		theQueue.TakeQuotedElements(*theFindOperation.thisOperator);
+		theConsumer.TakeQuotedElements(*theFindOperation.thisOperator);
 	}
 }
 
@@ -167,31 +167,31 @@ inline bool Type_::TakeOperand(
 	assert(
 		!theOperand.IsEmpty()
 	);
-	return this->TakeQuotedQueue(
+	return this->TakeQuotedProducer(
 		theEvaluation,
 		*theOperand.GetProgram()
 	);
 }
 
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (this->thisOperator) {
 		Lexicon theLexicon;
-		theLexicon.TakeElements(theQueue);
+		theLexicon.TakeElements(theProducer);
 
 		Expression theExpression;
 		theLexicon.Find(*this->thisOperator).GiveElements(theExpression);
 
-		theEvaluation.TakeQuotedQueue(theExpression);
-		theEvaluation.TakeQuotedQueue(theLexicon);
+		theEvaluation.TakeQuotedProducer(theExpression);
+		theEvaluation.TakeQuotedProducer(theLexicon);
 		return true;
 	}
 	this->thisOperator = boost::in_place();
 	assert(this->thisOperator);
-	this->thisOperator->TakeElements(theQueue);
+	this->thisOperator->TakeElements(theProducer);
 	return false;
 }
 

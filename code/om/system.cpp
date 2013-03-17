@@ -70,7 +70,7 @@ inline Om::Lexicon const & Type_::GetLexicon() const {
 	return theLexicon;
 }
 
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	if (
 		!this->IsEmpty()
 	) {
@@ -78,13 +78,13 @@ inline void Type_::GiveElements(Queue & theQueue) const {
 		for (
 			Map::const_iterator theCurrent = this->thisMap.begin();
 			;
-			theQueue.TakeElement(
+			theConsumer.TakeElement(
 				Separator::GetLineSeparator()
 			)
 		) {
 			assert(theEnd != theCurrent);
 			Operator theOperator(theCurrent->first);
-			theQueue.TakeElement(theOperator);
+			theConsumer.TakeElement(theOperator);
 			if (theEnd == ++theCurrent) {
 				return;
 			}

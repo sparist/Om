@@ -65,9 +65,9 @@ namespace Om {
 			Source<Element const>
 		> GetElementRange() const;
 
-		virtual void GiveElements(Queue &);
+		virtual void GiveElements(Consumer &);
 
-		virtual void GiveElements(Queue &) const;
+		virtual void GiveElements(Consumer &) const;
 
 		virtual bool IsEmpty() const;
 
@@ -77,9 +77,9 @@ namespace Om {
 
 		virtual void Swap(Null &);
 
-		virtual void TakeElements(Queue &);
+		virtual void TakeElements(Producer &);
 
-		virtual void TakeElements(Queue const &);
+		virtual void TakeElements(Producer const &);
 
 		template <typename TheOperand>
 		void TakeOperand(TheOperand &);
@@ -87,8 +87,8 @@ namespace Om {
 		template <typename TheOperator>
 		void TakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
 		template <typename TheSeparator>
 		void TakeSeparator(TheSeparator &);

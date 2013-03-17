@@ -99,28 +99,28 @@ inline std::auto_ptr<
 }
 
 Template_
-inline void Type_::GiveElements(Queue & theQueue) {
+inline void Type_::GiveElements(Consumer & theConsumer) {
 	assert(
 		dynamic_cast<ThisImplementation *>(this)
 	);
 	if (
 		!this->IsEmpty()
 	) {
-		theQueue.TakeElement(
+		theConsumer.TakeElement(
 			static_cast<ThisImplementation &>(*this)
 		);
 	}
 }
 
 Template_
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	assert(
 		dynamic_cast<ThisImplementation const *>(this)
 	);
 	if (
 		!this->IsEmpty()
 	) {
-		theQueue.TakeElement(
+		theConsumer.TakeElement(
 			static_cast<ThisImplementation const &>(*this)
 		);
 	}

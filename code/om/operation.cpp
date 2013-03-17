@@ -52,12 +52,12 @@ namespace Om {
 
 inline Type_::~Operation() {}
 
-inline void Type_::GiveElements(Queue &) {
+inline void Type_::GiveElements(Consumer &) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
-inline void Type_::GiveElements(Queue &) const {
+inline void Type_::GiveElements(Consumer &) const {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
@@ -88,7 +88,7 @@ inline bool Type_::TakeElement(
 
 inline bool Type_::TakeQuotedElements(
 	Evaluation &,
-	Queue &
+	Producer &
 ) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
@@ -96,7 +96,7 @@ inline bool Type_::TakeQuotedElements(
 
 inline bool Type_::TakeQuotedElements(
 	Evaluation &,
-	Queue const &
+	Producer const &
 ) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");

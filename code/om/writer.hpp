@@ -18,7 +18,7 @@
 	Om::Writer
 
 	#include "om/code_point.hpp"
-	#include "om/default_queue.hpp"
+	#include "om/default_consumer.hpp"
 
 namespace Om {
 
@@ -31,30 +31,16 @@ namespace Om {
 
 	/*!
 	\brief
-		A Queue that pushes each Element to a #CodePoint Sink upon receipt.
-
-	Giving an Element does nothing.
+		A Consumer that pushes each Element to a #CodePoint Sink upon receipt.
 	*/
 	class Writer:
-	public DefaultQueue<Writer> {
+	public DefaultConsumer<Writer> {
 
 	public: // MARK: public (non-static)
 
 		explicit Writer(
 			Sink<CodePoint const> &
 		);
-
-		virtual void Clear();
-
-		virtual void GiveElements(Queue &);
-
-		virtual void GiveElements(Queue &) const;
-
-		virtual std::auto_ptr<Program> GiveProgram();
-
-		virtual std::auto_ptr<Program> GiveProgram() const;
-
-		virtual bool IsEmpty() const;
 
 		virtual void ReadElements(Parser &);
 
@@ -66,8 +52,8 @@ namespace Om {
 		template <typename TheOperator>
 		void TakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
 		template <typename TheSeparator>
 		void TakeSeparator(TheSeparator &);

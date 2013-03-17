@@ -116,15 +116,15 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 	this->thisExpression.FrontTakeOperator(theOperator);
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
-	this->thisExpression.FrontTakeQuotedQueue(theQueue);
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
+	this->thisExpression.FrontTakeQuotedProducer(theProducer);
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQueue(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::TakeProducer(TheProducer & theProducer) {
 	Expression theExpression;
-	theExpression.TakeElements(theQueue);
+	theExpression.TakeElements(theProducer);
 	theExpression.TakeElements(this->thisExpression);
 	this->thisExpression.Swap(theExpression);
 }

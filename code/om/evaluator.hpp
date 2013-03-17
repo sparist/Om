@@ -17,7 +17,8 @@
 	#define Om_Evaluator_ \
 	Om::Evaluator
 
-	#include "om/default_queue.hpp"
+	#include "om/default_consumer.hpp"
+	#include "om/producer.hpp"
 
 	#ifndef Om_Macros_Precompilation_
 
@@ -39,17 +40,18 @@ namespace Om {
 
 	/*!
 	\brief
-		A Queue that evaluates Program instances.
+		A Consumer that evaluates Program instances.
 
 	The Evaluator interprets each Element as follows:
-	-	When an Operator is taken, the Translator is queried for the corresponding Operation. If found, its implementation is given to the Evaluator for further evaluation; otherwise, the Operation vector is flushed and the Operator is given to the output Queue.
-	-	When a Operand is taken, it is given to the most current Operation in the Operation vector. If none, it is given to the output Queue.
+	-	When an Operator is taken, the Translator is queried for the corresponding Operation. If found, its implementation is given to the Evaluator for further evaluation; otherwise, the Operation vector is flushed and the Operator is given to the output Consumer.
+	-	When a Operand is taken, it is given to the most current Operation in the Operation vector. If none, it is given to the output Consumer.
 	-	When a Separator is taken, it is disregarded.
 
 	The program output by the Evaluator is an Expression. Note that if each line in the Expression was terminated by Symbols::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbols::theLineSeparatorSymbol to the final output.
 	*/
 	class Evaluator:
-	public DefaultQueue<Evaluator> {
+	public DefaultConsumer<Evaluator>,
+	public Producer {
 
 	public: // MARK: public (non-static)
 
@@ -63,12 +65,12 @@ namespace Om {
 
 		/*!
 		\param theOutput
-			The output Queue.
+			The output Consumer.
 		\param theTranslator
 			The Translator, which must remain in scope for the life of the Evaluator and is expected to not change.
 		*/
 		explicit Evaluator(
-			Queue & theOutput,
+			Consumer & theOutput,
 			Translator const & theTranslator
 		);
 
@@ -80,13 +82,13 @@ namespace Om {
 		\brief
 			Gives to the argument each Element currently contained in the Evaluator.
 		*/
-		virtual void GiveElements(Queue &);
+		virtual void GiveElements(Consumer &);
 
 		/*!
 		\brief
 			\overload
 		*/
-		virtual void GiveElements(Queue &) const;
+		virtual void GiveElements(Consumer &) const;
 
 		virtual std::auto_ptr<Program> GiveProgram();
 
@@ -132,13 +134,13 @@ namespace Om {
 			TheOperator &
 		);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(
+		template <typename TheProducer>
+		void TakeQuotedProducer(
 			Evaluation &,
-			TheQueue &
+			TheProducer &
 		);
 
 		template <typename TheSeparator>
@@ -156,7 +158,7 @@ namespace Om {
 		static void GiveElements(
 			TheIterator,
 			TheIterator const,
-			Queue &
+			Consumer &
 		);
 
 		template <typename TheEvaluator>
@@ -172,9 +174,9 @@ namespace Om {
 
 		/*!
 		\brief
-			The output Queue.
+			The output Consumer.
 		*/
-		Queue & thisOutput;
+		Consumer & thisOutput;
 
 		/*!
 		\brief
@@ -190,7 +192,7 @@ namespace Om {
 
 		/*!
 		\brief
-			True if an Element has been given to the output Queue.
+			True if an Element has been given to the output Consumer.
 		*/
 		bool thisGaveElementToOutput;
 

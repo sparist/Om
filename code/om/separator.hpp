@@ -34,7 +34,7 @@ namespace Om {
 
 	An Atom defined by a string containing only Symbols::SeparatorSymbol characters.
 
-	As a Queue, the Separator filters out all top-level Element instances except Separator.
+	As a Consumer, the Separator filters out all top-level Element instances except Separator.
 	*/
 	class Separator:
 	public DefaultAtom<Separator> {
@@ -75,8 +75,8 @@ namespace Om {
 		template <typename TheOperator>
 		void TakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
 		template <typename TheSeparator>
 		void TakeSeparator(TheSeparator &);

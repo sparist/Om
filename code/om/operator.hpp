@@ -41,7 +41,7 @@ namespace Om {
 
 	An Atom defined by any UTF-8 string.
 
-	As a Queue, the Operator appends each taken Element verbatim.
+	As a Consumer, the Operator appends each taken Element verbatim.
 	*/
 	class Operator:
 	public DefaultAtom<Operator> {
@@ -84,41 +84,41 @@ namespace Om {
 		\brief
 			Gives the last ::CodePoint as an Atom.
 		*/
-		void BackGiveCodePoint(Queue &);
+		void BackGiveCodePoint(Consumer &);
 
 		/*!
 		\brief
-			Gives the last segment of the given type to the Queue.
+			Gives the last segment of the given type to the Consumer.
 		*/
 		template <boost::locale::boundary::boundary_type theSegment>
-		void BackGiveSegment(Queue &);
+		void BackGiveSegment(Consumer &);
 
 		/*!
 		\brief
 			Decodes this Operator and gives each resulting Element to the argument.
 		*/
-		template <typename TheQueue>
-		void Decode(TheQueue &) const;
+		template <typename TheConsumer>
+		void Decode(TheConsumer &) const;
 
 		/*!
 		\brief
 			Encodes the elements and replaces the contents of this Operator with the result.
 		*/
-		template <typename TheQueue>
-		void Encode(TheQueue &);
+		template <typename TheProducer>
+		void Encode(TheProducer &);
 
 		/*!
 		\brief
 			Gives the first ::CodePoint as an Atom.
 		*/
-		void FrontGiveCodePoint(Queue &);
+		void FrontGiveCodePoint(Consumer &);
 
 		/*!
 		\brief
-			Gives the first segment of the given type to the Queue.
+			Gives the first segment of the given type to the Consumer.
 		*/
 		template <boost::locale::boundary::boundary_type theSegment>
-		void FrontGiveSegment(Queue &);
+		void FrontGiveSegment(Consumer &);
 
 		/*!
 		\brief
@@ -136,8 +136,8 @@ namespace Om {
 		template <typename TheOperator>
 		void TakeOperator(TheOperator &);
 
-		template <typename TheQueue>
-		void TakeQuotedQueue(TheQueue &);
+		template <typename TheProducer>
+		void TakeQuotedProducer(TheProducer &);
 
 		template <typename TheSeparator>
 		void TakeSeparator(TheSeparator &);

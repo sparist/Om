@@ -45,9 +45,9 @@ namespace Om {
 
 		virtual ~DefaultOperation() = 0;
 
-		virtual void GiveElements(Queue &);
+		virtual void GiveElements(Consumer &);
 
-		virtual void GiveElements(Queue &) const;
+		virtual void GiveElements(Consumer &) const;
 
 		virtual bool ReadQuotedElements(
 			Evaluation &,
@@ -76,12 +76,12 @@ namespace Om {
 
 		virtual bool TakeQuotedElements(
 			Evaluation &,
-			Queue &
+			Producer &
 		);
 
 		virtual bool TakeQuotedElements(
 			Evaluation &,
-			Queue const &
+			Producer const &
 		);
 
 	};

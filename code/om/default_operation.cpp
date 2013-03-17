@@ -69,24 +69,24 @@ Template_
 inline Type_::~DefaultOperation() {}
 
 Template_
-inline void Type_::GiveElements(Queue & theQueue) {
+inline void Type_::GiveElements(Consumer & theConsumer) {
 	assert(
 		dynamic_cast<ThisImplementation *>(this)
 	);
 	ThisImplementation::GiveElements(
 		static_cast<ThisImplementation &>(*this),
-		theQueue
+		theConsumer
 	);
 }
 
 Template_
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	assert(
 		dynamic_cast<ThisImplementation const *>(this)
 	);
 	ThisImplementation::GiveElements(
 		static_cast<ThisImplementation const &>(*this),
-		theQueue
+		theConsumer
 	);
 }
 
@@ -140,28 +140,28 @@ inline bool Type_::TakeElement(
 Template_
 inline bool Type_::TakeQuotedElements(
 	Evaluation & theEvaluation,
-	Queue & theQueue
+	Producer & theProducer
 ) {
 	assert(
 		dynamic_cast<ThisImplementation *>(this)
 	);
-	return static_cast<ThisImplementation &>(*this).TakeQuotedQueue(
+	return static_cast<ThisImplementation &>(*this).TakeQuotedProducer(
 		theEvaluation,
-		theQueue
+		theProducer
 	);
 }
 
 Template_
 inline bool Type_::TakeQuotedElements(
 	Evaluation & theEvaluation,
-	Queue const & theQueue
+	Producer const & theProducer
 ) {
 	assert(
 		dynamic_cast<ThisImplementation *>(this)
 	);
-	return static_cast<ThisImplementation &>(*this).TakeQuotedQueue(
+	return static_cast<ThisImplementation &>(*this).TakeQuotedProducer(
 		theEvaluation,
-		theQueue
+		theProducer
 	);
 }
 

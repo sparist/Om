@@ -77,15 +77,15 @@ inline char const * Type_::GetName() {
 template <typename TheChooseOperation>
 inline void Type_::GiveElements(
 	TheChooseOperation & theChooseOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 	if (0 < theChooseOperation.thisOperandCount) {
-		theQueue.TakeElement(theChooseOperation.thisEmptyCase);
+		theConsumer.TakeElement(theChooseOperation.thisEmptyCase);
 		if (1 < theChooseOperation.thisOperandCount) {
-			theQueue.TakeElement(theChooseOperation.thisNonEmptyCase);
+			theConsumer.TakeElement(theChooseOperation.thisNonEmptyCase);
 		}
 	}
 }
@@ -97,13 +97,13 @@ thisEmptyCase(),
 thisNonEmptyCase(),
 thisOperandCount() {}
 
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	Operand theOperand(
-		theQueue.GiveProgram()
+		theProducer.GiveProgram()
 	);
 	return this->TakeOperand(
 		theEvaluation,

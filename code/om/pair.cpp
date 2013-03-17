@@ -68,19 +68,19 @@ inline Om::Operator const & Type_::GetOperator() const {
 	return this->thisOperator;
 }
 
-inline void Type_::GiveElements(Queue & theQueue) {
+inline void Type_::GiveElements(Consumer & theConsumer) {
 	this->GiveElements(
 		*this,
-		theQueue
+		theConsumer
 	);
 	this->thisOperator.Clear();
 	this->thisOperand.Clear();
 }
 
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	this->GiveElements(
 		*this,
-		theQueue
+		theConsumer
 	);
 }
 
@@ -101,10 +101,10 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 	this->thisOperator.Take(theOperator);
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
 	this->thisOperand.SetProgram(
-		theQueue.GiveProgram()
+		theProducer.GiveProgram()
 	);
 }
 
@@ -113,17 +113,17 @@ inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
 template <typename ThePair>
 inline void Type_::GiveElements(
 	ThePair & thePair,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
 	if (
 		!thePair.thisOperator.IsEmpty()
 	) {
-		theQueue.TakeElement(thePair.thisOperator);
+		theConsumer.TakeElement(thePair.thisOperator);
 	}
 	if (
 		!thePair.thisOperand.IsEmpty()
 	) {
-		theQueue.TakeElement(thePair.thisOperand);
+		theConsumer.TakeElement(thePair.thisOperand);
 	}
 }
 

@@ -78,7 +78,7 @@ inline std::string Type_::Evaluate(
 	return theString;
 }
 
-inline void Type_::GiveElements(Queue & theQueue) const {
+inline void Type_::GiveElements(Consumer & theConsumer) const {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }

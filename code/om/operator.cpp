@@ -78,7 +78,7 @@ namespace Om {
 					Parser theParser(theCodePointSource);
 					theLiteral.ReadElements(theParser);
 				}
-				theOperator.TakeQuotedQueue(theLiteral);
+				theOperator.TakeQuotedProducer(theLiteral);
 				assert(
 					theLiteral.IsEmpty()
 				);
@@ -233,7 +233,7 @@ inline Type_ & Type_::operator =(Operator theOperator) {
 	return *this;
 }
 
-inline void Type_::BackGiveCodePoint(Queue & theQueue) {
+inline void Type_::BackGiveCodePoint(Consumer & theConsumer) {
 	if (
 		!this->thisString.empty()
 	) {
@@ -255,12 +255,12 @@ inline void Type_::BackGiveCodePoint(Queue & theQueue) {
 				this->thisString.size() - theString.size()
 			);
 		}
-		theQueue.TakeElement(theOperator);
+		theConsumer.TakeElement(theOperator);
 	}
 }
 
 template <boost::locale::boundary::boundary_type theSegment>
-inline void Type_::BackGiveSegment(Queue & theQueue) {
+inline void Type_::BackGiveSegment(Consumer & theConsumer) {
 	if (
 		!this->thisString.empty()
 	) {
@@ -294,22 +294,22 @@ inline void Type_::BackGiveSegment(Queue & theQueue) {
 				this->thisString.size() - theString.size()
 			);
 		}
-		theQueue.TakeElement(theOperator);
+		theConsumer.TakeElement(theOperator);
 	}
 }
 
-template <typename TheQueue>
-inline void Type_::Decode(TheQueue & theQueue) const {
+template <typename TheConsumer>
+inline void Type_::Decode(TheConsumer & theConsumer) const {
 	Sources::CodePointSource<std::string::const_iterator> theCodePointSource(
 		this->thisString.begin(),
 		this->thisString.end()
 	);
 	Parser theParser(theCodePointSource);
-	theQueue.ReadElements(theParser);
+	theConsumer.ReadElements(theParser);
 }
 
-template <typename TheQueue>
-inline void Type_::Encode(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::Encode(TheProducer & theProducer) {
 	this->thisString.clear();
 	Sinks::CodePointSink<
 		std::back_insert_iterator<std::string>
@@ -317,10 +317,10 @@ inline void Type_::Encode(TheQueue & theQueue) {
 		std::back_inserter(this->thisString)
 	);
 	Writer theWriter(theCodePointSink);
-	theQueue.GiveElements(theWriter);
+	theProducer.GiveElements(theWriter);
 }
 
-inline void Type_::FrontGiveCodePoint(Queue & theQueue) {
+inline void Type_::FrontGiveCodePoint(Consumer & theConsumer) {
 	if (
 		!this->thisString.empty()
 	) {
@@ -343,12 +343,12 @@ inline void Type_::FrontGiveCodePoint(Queue & theQueue) {
 				theString.size()
 			);
 		}
-		theQueue.TakeElement(theOperator);
+		theConsumer.TakeElement(theOperator);
 	}
 }
 
 template <boost::locale::boundary::boundary_type theSegment>
-inline void Type_::FrontGiveSegment(Queue & theQueue) {
+inline void Type_::FrontGiveSegment(Consumer & theConsumer) {
 	if (
 		!this->thisString.empty()
 	) {
@@ -380,7 +380,7 @@ inline void Type_::FrontGiveSegment(Queue & theQueue) {
 				theString.size()
 			);
 		}
-		theQueue.TakeElement(theOperator);
+		theConsumer.TakeElement(theOperator);
 	}
 }
 
@@ -421,7 +421,7 @@ inline void Type_::TakeOperand(TheOperand & theOperand) {
 	assert(
 		!theOperand.IsEmpty()
 	);
-	this->TakeQuotedQueue(
+	this->TakeQuotedProducer(
 		*theOperand.GetProgram()
 	);
 }
@@ -461,10 +461,10 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 	).swap(this->thisString);
 }
 
-template <typename TheQueue>
-inline void Type_::TakeQuotedQueue(TheQueue & theQueue) {
+template <typename TheProducer>
+inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
 	this->thisString.push_back(Symbols::theStartOperandSymbol);
-	theQueue.GiveElements(*this);
+	theProducer.GiveElements(*this);
 	this->thisString.push_back(Symbols::theEndOperandSymbol);
 }
 

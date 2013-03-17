@@ -70,15 +70,15 @@ inline char const * Type_::GetName() {
 template <typename TheSwapOperation>
 inline void Type_::GiveElements(
 	TheSwapOperation & theSwapOperation,
-	Queue & theQueue
+	Consumer & theConsumer
 ) {
-	theQueue.TakeElement(
+	theConsumer.TakeElement(
 		GetOperator()
 	);
 	if (
 		!theSwapOperation.thisOperand.IsEmpty()
 	) {
-		theQueue.TakeElement(theSwapOperation.thisOperand);
+		theConsumer.TakeElement(theSwapOperation.thisOperand);
 	}
 }
 
@@ -106,21 +106,21 @@ inline bool Type_::TakeOperand(
 	return true;
 }
 
-template <typename TheQueue>
-inline bool Type_::TakeQuotedQueue(
+template <typename TheProducer>
+inline bool Type_::TakeQuotedProducer(
 	Evaluation & theEvaluation,
-	TheQueue & theQueue
+	TheProducer & theProducer
 ) {
 	if (
 		this->thisOperand.IsEmpty()
 	) {
 		this->thisOperand.SetProgram(
-			theQueue.GiveProgram()
+			theProducer.GiveProgram()
 		);
 		return false;
 	}
 	theEvaluation.TakeOperand(this->thisOperand);
-	theEvaluation.TakeQuotedQueue(theQueue);
+	theEvaluation.TakeQuotedProducer(theProducer);
 	return true;
 }
 
