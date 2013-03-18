@@ -1,39 +1,10 @@
 var NAVTREE =
 [
   [ "Om", "index.html", [
-    [ "Language", "language__.html", "language__" ],
-    [ "Downloading", "downloading__.html", [
-      [ "Development", "downloading__.html#downloading__development__", null ],
-      [ "Release", "downloading__.html#downloading__release__", null ]
-    ] ],
-    [ "Using", "using__.html", [
-      [ "Dependencies", "using__.html#using__dependencies__", null ],
-      [ "Library", "using__.html#using__library__", null ],
-      [ "Project", "using__.html#using__project__", [
-        [ "Platforms", "using__.html#using__projects__platforms__", [
-          [ "Xcode", "using__.html#using__projects__platforms__xcode__", null ],
-          [ "Visual Studio", "using__.html#using__projects__platforms__visual_studio__", null ],
-          [ "Other", "using__.html#using__projects__platforms__other__", null ]
-        ] ],
-        [ "Targets", "using__.html#using__projects__targets__", [
-          [ "Om", "using__.html#using__projects__targets__om__", null ],
-          [ "Om.Test", "using__.html#using__projects__targets__om_test__", null ],
-          [ "Om.Documentation", "using__.html#using__projects__targets__om_documentation__", null ]
-        ] ]
-      ] ]
-    ] ],
-    [ "Contributing", "contributing__.html", [
-      [ "Developing", "contributing__.html#contributing__developing__", [
-        [ "Forking", "contributing__.html#contributing__developing__forking__", null ],
-        [ "Building", "contributing__.html#contributing__developing__building__", null ],
-        [ "Adding Operations", "contributing__.html#contributing__developing__adding_operations__", null ],
-        [ "Adding Programs", "contributing__.html#contributing__developing__adding_programs__", null ],
-        [ "Analyzing Code", "contributing__.html#contributing__developing__analyzing_code__", null ],
-        [ "Submitting Changes", "contributing__.html#contributing__developing__submitting_changes__", null ]
-      ] ],
-      [ "Reporting Issues", "contributing__.html#contributing__reporting_issues__", null ],
-      [ "Funding", "contributing__.html#contributing__funding__", null ]
-    ] ],
+    [ "Getting", "downloading__.html", "downloading__" ],
+    [ "Using", "using__.html", "using__" ],
+    [ "Learning", "language__.html", "language__" ],
+    [ "Contributing", "contributing__.html", "contributing__" ],
     [ "License", "license__.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", null, [
@@ -79,8 +50,8 @@ var NAVTREEINDEX =
 "class_om_1_1_owner.html#a3ccd8adf025591826fa8098fdfe5957b",
 "class_om_1_1_sources_1_1_stream_source.html#ac1ef9195927090deb936830a9bcc6659",
 "element_8hpp.html#a34bed4cc341f007ca2847d55b2f3899f",
-"group__om____operations____dequote__operation____.html",
-"operator__symbol_8cpp_source.html"
+"group__om____operations____define__operation____.html",
+"operator__symbol_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

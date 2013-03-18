@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: Contributing</title>
+		<title>Om: Using the Interpreter</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -49,19 +49,18 @@
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('contributing__.html','');});
+$(document).ready(function(){initNavTree('using_interpreter__.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">Contributing </div>  </div>
+<div class="title">Using the Interpreter </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>There are several ways to contribute to the Om project:</p>
+<div class="textblock"><p>The Om interpreter is an executable that:</p>
 <ul>
-<li>By <a class="el" href="developing__.html">Developing</a> new <a class="el" href="group__om____operations____.html">Operations</a> and <a class="el" href="group__om____programs____.html">Programs</a>.</li>
-<li>By <a class="el" href="reporting_issues__.html">Reporting Issues</a> via bugs, patches, or enhancement requests.</li>
-<li>By <a class="el" href="funding__.html">Funding</a> further development of the Om language. </li>
+<li>Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".</li>
+<li>Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
