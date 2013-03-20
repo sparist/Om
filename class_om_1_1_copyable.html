@@ -79,13 +79,13 @@ $(document).ready(function(){initNavTree('class_om_1_1_copyable.html','');});
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a458864660585b7e0780116ed92a28eff"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_copyable.html#a458864660585b7e0780116ed92a28eff">~Copyable</a> ()=0</td></tr>
 <tr class="separator:a458864660585b7e0780116ed92a28eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cc85c2ec51a55c9ff71706a7210aec1"><td class="memItemLeft" align="right" valign="top">virtual std::auto_ptr&lt; <a class="el" href="class_om_1_1_copyable.html">Copyable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_copyable.html#a5cc85c2ec51a55c9ff71706a7210aec1">Copy</a> () const =0</td></tr>
+<tr class="separator:a5cc85c2ec51a55c9ff71706a7210aec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aff610a4f115ccc8ccbc69c4c6afd8c2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_om_1_1_copyable.html">Copyable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_copyable.html#aff610a4f115ccc8ccbc69c4c6afd8c2a">operator=</a> (<a class="el" href="class_om_1_1_copyable.html">Copyable</a> const &amp;)</td></tr>
 <tr class="separator:aff610a4f115ccc8ccbc69c4c6afd8c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3a10a90a7e5de47404457a441be5542"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_om_1_1_copyable.html">Copyable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_copyable.html#ab3a10a90a7e5de47404457a441be5542">Copy</a> () const =0</td></tr>
-<tr class="separator:ab3a10a90a7e5de47404457a441be5542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -95,7 +95,7 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="copyable_8hpp_source.html#l00030">30</a> of file <a class="el" href="copyable_8hpp_source.html">copyable.hpp</a>.</p>
+<p>Definition at line <a class="el" href="copyable_8hpp_source.html#l00034">34</a> of file <a class="el" href="copyable_8hpp_source.html">copyable.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a458864660585b7e0780116ed92a28eff"></a>
 <div class="memitem">
@@ -121,6 +121,32 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a5cc85c2ec51a55c9ff71706a7210aec1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::auto_ptr&lt;<a class="el" href="class_om_1_1_copyable.html">Copyable</a>&gt; Om::Copyable::Copy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a copy. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Om::DefaultCopyable&lt; Separator, Atom &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Om::DefaultCopyable&lt; Lexicon, Program &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Om::DefaultCopyable&lt; Null, Program &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Om::DefaultCopyable&lt; Operand, Element &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Om::DefaultCopyable&lt; Expression, Program &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Om::DefaultCopyable&lt; Literal, Program &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Om::DefaultCopyable&lt; ThisImplementation, Atom &gt;</a>, and <a class="el" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Om::DefaultCopyable&lt; Operator, Atom &gt;</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aff610a4f115ccc8ccbc69c4c6afd8c2a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -142,32 +168,6 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab3a10a90a7e5de47404457a441be5542"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_om_1_1_copyable.html">Copyable</a>* Om::Copyable::Copy </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a copy. </dd></dl>
-
-<p>Implemented in <a class="el" href="class_om_1_1_default_copyable.html#ac04d0c3732427bce059150de43d82661">Om::DefaultCopyable&lt; Separator, Atom &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#ac04d0c3732427bce059150de43d82661">Om::DefaultCopyable&lt; Lexicon, Program &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#ac04d0c3732427bce059150de43d82661">Om::DefaultCopyable&lt; Null, Program &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#ac04d0c3732427bce059150de43d82661">Om::DefaultCopyable&lt; Operand, Element &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#ac04d0c3732427bce059150de43d82661">Om::DefaultCopyable&lt; Expression, Program &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#ac04d0c3732427bce059150de43d82661">Om::DefaultCopyable&lt; Literal, Program &gt;</a>, <a class="el" href="class_om_1_1_default_copyable.html#ac04d0c3732427bce059150de43d82661">Om::DefaultCopyable&lt; ThisImplementation, Atom &gt;</a>, and <a class="el" href="class_om_1_1_default_copyable.html#ac04d0c3732427bce059150de43d82661">Om::DefaultCopyable&lt; Operator, Atom &gt;</a>.</p>
 
 </div>
 </div>

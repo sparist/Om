@@ -86,13 +86,13 @@ $(document).ready(function(){initNavTree('class_om_1_1_default_copyable.html',''
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a400b6d388d4ccb7f0a8a0b6953ec1ec1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_copyable.html#a400b6d388d4ccb7f0a8a0b6953ec1ec1">~DefaultCopyable</a> ()=0</td></tr>
 <tr class="separator:a400b6d388d4ccb7f0a8a0b6953ec1ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd97796f8c4fb6d874d6fd7badb76a4"><td class="memItemLeft" align="right" valign="top">virtual std::auto_ptr&lt; <a class="el" href="class_om_1_1_copyable.html">Copyable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Copy</a> () const </td></tr>
+<tr class="separator:aedd97796f8c4fb6d874d6fd7badb76a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a0337c5dc482992041dc4c407da1e292b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_om_1_1_default_copyable.html">DefaultCopyable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_copyable.html#a0337c5dc482992041dc4c407da1e292b">operator=</a> (<a class="el" href="class_om_1_1_default_copyable.html">DefaultCopyable</a> const &amp;)</td></tr>
 <tr class="separator:a0337c5dc482992041dc4c407da1e292b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac04d0c3732427bce059150de43d82661"><td class="memItemLeft" align="right" valign="top">virtual ThisInterface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_copyable.html#ac04d0c3732427bce059150de43d82661">Copy</a> () const </td></tr>
-<tr class="separator:ac04d0c3732427bce059150de43d82661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -133,6 +133,32 @@ template&lt;typename ThisImplementation, typename ThisInterface = Copyable&gt; <
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aedd97796f8c4fb6d874d6fd7badb76a4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ThisImplementation, typename ThisInterface = Copyable&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::auto_ptr&lt;<a class="el" href="class_om_1_1_copyable.html">Copyable</a>&gt; <a class="el" href="class_om_1_1_default_copyable.html">Om::DefaultCopyable</a>&lt; ThisImplementation, ThisInterface &gt;::Copy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a copy. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a0337c5dc482992041dc4c407da1e292b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -156,32 +182,6 @@ template&lt;typename ThisImplementation, typename ThisInterface = Copyable&gt; <
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac04d0c3732427bce059150de43d82661"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ThisImplementation, typename ThisInterface = Copyable&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual ThisInterface* <a class="el" href="class_om_1_1_default_copyable.html">Om::DefaultCopyable</a>&lt; ThisImplementation, ThisInterface &gt;::Copy </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a copy. </dd></dl>
 
 </div>
 </div>

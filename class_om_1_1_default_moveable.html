@@ -86,13 +86,13 @@ $(document).ready(function(){initNavTree('class_om_1_1_default_moveable.html',''
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac19e0dd0162d27ef53e2b0ce6692c175"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_moveable.html#ac19e0dd0162d27ef53e2b0ce6692c175">~DefaultMoveable</a> ()=0</td></tr>
 <tr class="separator:ac19e0dd0162d27ef53e2b0ce6692c175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633d55eb5ae94486be0e83d1cf68d393"><td class="memItemLeft" align="right" valign="top">virtual std::auto_ptr&lt; <a class="el" href="class_om_1_1_moveable.html">Moveable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_moveable.html#a633d55eb5ae94486be0e83d1cf68d393">Move</a> ()</td></tr>
+<tr class="separator:a633d55eb5ae94486be0e83d1cf68d393"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a1f4740370bcc5187017a4280da1c86cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_om_1_1_default_moveable.html">DefaultMoveable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_moveable.html#a1f4740370bcc5187017a4280da1c86cb">operator=</a> (<a class="el" href="class_om_1_1_default_moveable.html">DefaultMoveable</a> const &amp;)</td></tr>
 <tr class="separator:a1f4740370bcc5187017a4280da1c86cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab79911de6838b8d72ad75aa65ce1cab9"><td class="memItemLeft" align="right" valign="top">virtual ThisInterface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_default_moveable.html#ab79911de6838b8d72ad75aa65ce1cab9">Move</a> ()</td></tr>
-<tr class="separator:ab79911de6838b8d72ad75aa65ce1cab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -133,6 +133,32 @@ template&lt;typename ThisImplementation, typename ThisInterface = Moveable&gt; <
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a633d55eb5ae94486be0e83d1cf68d393"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ThisImplementation, typename ThisInterface = Moveable&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::auto_ptr&lt;<a class="el" href="class_om_1_1_moveable.html">Moveable</a>&gt; <a class="el" href="class_om_1_1_default_moveable.html">Om::DefaultMoveable</a>&lt; ThisImplementation, ThisInterface &gt;::Move </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a moved object. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a1f4740370bcc5187017a4280da1c86cb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -156,32 +182,6 @@ template&lt;typename ThisImplementation, typename ThisInterface = Moveable&gt; <
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab79911de6838b8d72ad75aa65ce1cab9"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ThisImplementation, typename ThisInterface = Moveable&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual ThisInterface* <a class="el" href="class_om_1_1_default_moveable.html">Om::DefaultMoveable</a>&lt; ThisImplementation, ThisInterface &gt;::Move </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a moved object. </dd></dl>
 
 </div>
 </div>

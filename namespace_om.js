@@ -16,7 +16,6 @@ var namespace_om =
     [ "DefaultMoveable", "class_om_1_1_default_moveable.html", "class_om_1_1_default_moveable" ],
     [ "DefaultOperation", "class_om_1_1_default_operation.html", "class_om_1_1_default_operation" ],
     [ "DefaultProgram", "class_om_1_1_default_program.html", "class_om_1_1_default_program" ],
-    [ "Definition", "class_om_1_1_definition.html", "class_om_1_1_definition" ],
     [ "Element", "class_om_1_1_element.html", "class_om_1_1_element" ],
     [ "Environment", "class_om_1_1_environment.html", "class_om_1_1_environment" ],
     [ "Evaluation", "class_om_1_1_evaluation.html", "class_om_1_1_evaluation" ],

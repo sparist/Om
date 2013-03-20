@@ -79,13 +79,13 @@ $(document).ready(function(){initNavTree('class_om_1_1_moveable.html','');});
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2462cf0394166dc8f8ae54a7e0099a36"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_moveable.html#a2462cf0394166dc8f8ae54a7e0099a36">~Moveable</a> ()=0</td></tr>
 <tr class="separator:a2462cf0394166dc8f8ae54a7e0099a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62eaeb6d03d647000af398bc980715e2"><td class="memItemLeft" align="right" valign="top">virtual std::auto_ptr&lt; <a class="el" href="class_om_1_1_moveable.html">Moveable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_moveable.html#a62eaeb6d03d647000af398bc980715e2">Move</a> ()=0</td></tr>
+<tr class="separator:a62eaeb6d03d647000af398bc980715e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a6b133c715199e1986d88465a6e1901ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_om_1_1_moveable.html">Moveable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_moveable.html#a6b133c715199e1986d88465a6e1901ec">operator=</a> (<a class="el" href="class_om_1_1_moveable.html">Moveable</a> const &amp;)</td></tr>
 <tr class="separator:a6b133c715199e1986d88465a6e1901ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37128eab067036ca1fc828fe775dc2b4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_om_1_1_moveable.html">Moveable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_moveable.html#a37128eab067036ca1fc828fe775dc2b4">Move</a> ()=0</td></tr>
-<tr class="separator:a37128eab067036ca1fc828fe775dc2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -95,7 +95,7 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="moveable_8hpp_source.html#l00030">30</a> of file <a class="el" href="moveable_8hpp_source.html">moveable.hpp</a>.</p>
+<p>Definition at line <a class="el" href="moveable_8hpp_source.html#l00034">34</a> of file <a class="el" href="moveable_8hpp_source.html">moveable.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2462cf0394166dc8f8ae54a7e0099a36"></a>
 <div class="memitem">
@@ -121,6 +121,32 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a62eaeb6d03d647000af398bc980715e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::auto_ptr&lt;<a class="el" href="class_om_1_1_moveable.html">Moveable</a>&gt; Om::Moveable::Move </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a moved object. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_om_1_1_default_moveable.html#a633d55eb5ae94486be0e83d1cf68d393">Om::DefaultMoveable&lt; ThisImplementation, DefaultCopyable&lt; ThisImplementation, Atom &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#a633d55eb5ae94486be0e83d1cf68d393">Om::DefaultMoveable&lt; Operator, DefaultCopyable&lt; Operator, Atom &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#a633d55eb5ae94486be0e83d1cf68d393">Om::DefaultMoveable&lt; Separator, DefaultCopyable&lt; Separator, Atom &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#a633d55eb5ae94486be0e83d1cf68d393">Om::DefaultMoveable&lt; Literal, DefaultCopyable&lt; Literal, Program &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#a633d55eb5ae94486be0e83d1cf68d393">Om::DefaultMoveable&lt; Expression, DefaultCopyable&lt; Expression, Program &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#a633d55eb5ae94486be0e83d1cf68d393">Om::DefaultMoveable&lt; Null, DefaultCopyable&lt; Null, Program &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#a633d55eb5ae94486be0e83d1cf68d393">Om::DefaultMoveable&lt; Lexicon, DefaultCopyable&lt; Lexicon, Program &gt; &gt;</a>, and <a class="el" href="class_om_1_1_default_moveable.html#a633d55eb5ae94486be0e83d1cf68d393">Om::DefaultMoveable&lt; Operand, DefaultCopyable&lt; Operand, Element &gt; &gt;</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a6b133c715199e1986d88465a6e1901ec"></a>
 <div class="memitem">
 <div class="memproto">
@@ -142,32 +168,6 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a37128eab067036ca1fc828fe775dc2b4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_om_1_1_moveable.html">Moveable</a>* Om::Moveable::Move </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>An owner pointer to a moved object. </dd></dl>
-
-<p>Implemented in <a class="el" href="class_om_1_1_default_moveable.html#ab79911de6838b8d72ad75aa65ce1cab9">Om::DefaultMoveable&lt; ThisImplementation, DefaultCopyable&lt; ThisImplementation, Atom &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#ab79911de6838b8d72ad75aa65ce1cab9">Om::DefaultMoveable&lt; Operator, DefaultCopyable&lt; Operator, Atom &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#ab79911de6838b8d72ad75aa65ce1cab9">Om::DefaultMoveable&lt; Separator, DefaultCopyable&lt; Separator, Atom &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#ab79911de6838b8d72ad75aa65ce1cab9">Om::DefaultMoveable&lt; Literal, DefaultCopyable&lt; Literal, Program &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#ab79911de6838b8d72ad75aa65ce1cab9">Om::DefaultMoveable&lt; Expression, DefaultCopyable&lt; Expression, Program &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#ab79911de6838b8d72ad75aa65ce1cab9">Om::DefaultMoveable&lt; Null, DefaultCopyable&lt; Null, Program &gt; &gt;</a>, <a class="el" href="class_om_1_1_default_moveable.html#ab79911de6838b8d72ad75aa65ce1cab9">Om::DefaultMoveable&lt; Lexicon, DefaultCopyable&lt; Lexicon, Program &gt; &gt;</a>, and <a class="el" href="class_om_1_1_default_moveable.html#ab79911de6838b8d72ad75aa65ce1cab9">Om::DefaultMoveable&lt; Operand, DefaultCopyable&lt; Operand, Element &gt; &gt;</a>.</p>
 
 </div>
 </div>

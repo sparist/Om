@@ -34,9 +34,9 @@ var NAVTREE =
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
+        [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Macros", "globals_defs.html", "globals_defs" ]
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -45,13 +45,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_om_1_1_expression.html#a896c6b9847f36467987236bee36faae0",
-"class_om_1_1_operations_1_1_back_pull_pair_operation.html#a54325811824eae0f0e65f1bd26f455a1",
-"class_om_1_1_owner.html#a3ccd8adf025591826fa8098fdfe5957b",
-"class_om_1_1_sources_1_1_stream_source.html#ac1ef9195927090deb936830a9bcc6659",
-"element_8hpp.html#a34bed4cc341f007ca2847d55b2f3899f",
-"group__om____operations____define__operation____.html",
-"operator__symbol_8cpp.html"
+"class_om_1_1_expression.html#a91c8f88c7d4f9c6eb2b519c4b36b2684",
+"class_om_1_1_operations_1_1_back_pull_separator_operation.html",
+"class_om_1_1_owner.html#a47bd3b607df68b1d3bbe90f90ed1c600",
+"class_om_1_1_sources_1_1_stream_source.html#ae2653d5960f5e88db4eae07618d19175",
+"encode__operation_8cpp.html",
+"group__om____operations____front__pull__pair__operation____.html",
+"pair__operation_8hpp.html#a81cb234e7b57dc12076965423e929317"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

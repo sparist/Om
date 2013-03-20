@@ -120,7 +120,6 @@ var hierarchy =
         [ "Om::Program", "class_om_1_1_program.html", null ]
       ] ]
     ] ],
-    [ "Om::Definition< ThisOperation >", "class_om_1_1_definition.html", null ],
     [ "Om::Evaluation", "class_om_1_1_evaluation.html", null ],
     [ "Om::Expression::FormRange< ThisForm >", "class_om_1_1_expression_1_1_form_range.html", null ],
     [ "Om::Form", "class_om_1_1_form.html", null ],
@@ -281,6 +280,7 @@ var hierarchy =
       ] ],
       [ "Om::Sources::DefaultSource< ThisItem, ThisImplementation >", "class_om_1_1_sources_1_1_default_source.html", null ]
     ] ],
+    [ "Om::System::Definition< ThisOperation >", "class_om_1_1_system_1_1_definition.html", null ],
     [ "Om::Taker< ThisImplementation >", "class_om_1_1_taker.html", [
       [ "Om::DefaultProgram< ThisImplementation, Atom >", "class_om_1_1_default_program.html", null ],
       [ "Om::DefaultProgram< ThisImplementation, ThisInterface >", "class_om_1_1_default_program.html", [
