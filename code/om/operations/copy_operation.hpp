@@ -18,7 +18,7 @@
 	Om::Operations::CopyOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_CopyOperation_GetName_() \
 	"copy"
@@ -64,7 +64,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<CopyOperation> const theCopyDefinition;
+			static System::Definition<CopyOperation> const theCopyDefinition;
 
 		}
 

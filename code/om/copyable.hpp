@@ -17,7 +17,11 @@
 	#define Om_Copyable_ \
 	Om::Copyable
 
-	#include "om/copy.hpp"
+	#ifndef Om_Macros_Precompilation_
+
+		#include <memory>
+
+	#endif
 
 namespace Om {
 
@@ -36,17 +40,26 @@ namespace Om {
 
 		virtual ~Copyable() = 0;
 
-	private: // MARK: private (non-static)
-
-		Copyable & operator =(Copyable const &);
-
 		/*!
 		\return
 			An owner pointer to a copy.
 		*/
-		virtual Copyable * Copy() const = 0;
+		virtual std::auto_ptr<Copyable> Copy() const = 0;
+
+	private: // MARK: private (non-static)
+
+		Copyable & operator =(Copyable const &);
 
 	};
+
+	// MARK: - Om::
+
+	/*!
+	\return
+		A polymorphic copy of the object.
+	*/
+	template <typename TheCopyable>
+	std::auto_ptr<TheCopyable> Copy(TheCopyable const &);
 
 }
 

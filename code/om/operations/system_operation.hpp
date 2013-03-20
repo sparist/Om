@@ -17,7 +17,7 @@
 	#define Om_Operations_SystemOperation_ \
 	Om::Operations::SystemOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_SystemOperation_GetName_() \
 	"system"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<SystemOperation> const theSystemDefinition;
+			static System::Definition<SystemOperation> const theSystemDefinition;
 
 		}
 

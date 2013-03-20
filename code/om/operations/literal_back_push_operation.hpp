@@ -17,7 +17,7 @@
 	#define Om_Operations_LiteralBackPushOperation_ \
 	Om::Operations::LiteralBackPushOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_LiteralBackPushOperation_GetName_() \
 	"literal<-"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<LiteralBackPushOperation> const theLiteralBackPushDefinition;
+			static System::Definition<LiteralBackPushOperation> const theLiteralBackPushDefinition;
 
 		}
 

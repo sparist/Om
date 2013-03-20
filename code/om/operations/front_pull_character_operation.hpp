@@ -17,7 +17,7 @@
 	#define Om_Operations_FrontPullCharacterOperation_ \
 	Om::Operations::FrontPullCharacterOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_FrontPullCharacterOperation_GetName_() \
 	"<-characters"
@@ -54,7 +54,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<FrontPullCharacterOperation> const theFrontPullCharacterDefinition;
+			static System::Definition<FrontPullCharacterOperation> const theFrontPullCharacterDefinition;
 
 		}
 

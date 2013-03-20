@@ -17,8 +17,8 @@
 	#define Om_Operations_OperatorOperation_ \
 	Om::Operations::OperatorOperation
 
-	#include "om/definition.hpp"
 	#include "om/operations/program_operation.hpp"
+	#include "om/system.hpp"
 
 namespace Om {
 
@@ -32,7 +32,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<OperatorOperation> const theOperatorDefinition;
+			static System::Definition<OperatorOperation> const theOperatorDefinition;
 
 		}
 

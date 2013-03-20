@@ -18,7 +18,7 @@
 	Om::Operations::EncodeOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_EncodeOperation_GetName_() \
 	"encode"
@@ -64,7 +64,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<EncodeOperation> const theEncodeDefinition;
+			static System::Definition<EncodeOperation> const theEncodeDefinition;
 
 		}
 

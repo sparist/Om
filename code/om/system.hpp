@@ -47,10 +47,10 @@ namespace Om {
 
 	public Translator {
 
-		template <typename ThisOperation>
-		friend class Definition;
-
 	public: // MARK: public (static)
+
+		template <typename ThisOperation>
+		class Definition;
 
 		/*!
 		\return
@@ -113,6 +113,29 @@ namespace Om {
 		System const & operator =(System const &);
 
 		Map thisMap;
+
+	};
+
+	// MARK: - Om::System::Definition
+
+	/*!
+	\brief
+		An inserter of an Operation into the static System instance.
+
+	This is safe to construct before main, but the order of construction is implementation-defined; if there is more than one Operation with the same Operator, the choice of which to apply first will be implementation-defined.
+	*/
+	template <typename ThisOperation>
+	class System::Definition {
+
+	public: // MARK: public (non-static)
+
+		/*!
+		\brief
+			Inserts the Operation into the System.
+
+		If there is already an Operation mapped to the same Operator, it will be removed.
+		*/
+		Definition();
 
 	};
 

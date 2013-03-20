@@ -17,7 +17,7 @@
 	#define Om_Operations_BackPullElementOperation_ \
 	Om::Operations::BackPullElementOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_BackPullElementOperation_GetName_() \
 	"elements->"
@@ -58,7 +58,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<BackPullElementOperation> const theBackPullElementDefinition;
+			static System::Definition<BackPullElementOperation> const theBackPullElementDefinition;
 
 		}
 

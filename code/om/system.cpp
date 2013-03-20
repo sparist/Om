@@ -159,4 +159,24 @@ thisMap() {}
 
 	#undef Type_
 
+// MARK: - Om::System::Definition
+
+	#define Template_ \
+	template <typename ThisOperation>
+
+	#define Type_ \
+	Om::System::Definition<ThisOperation>
+
+// MARK: public (non-static)
+
+Template_
+inline Type_::Definition() {
+	System::Get().thisMap[
+		ThisOperation::GetName()
+	] = &ThisOperation::Give;
+}
+
+	#undef Type_
+	#undef Template_
+
 #endif

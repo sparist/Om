@@ -17,7 +17,7 @@
 	#define Om_Operations_EnvironmentOperation_ \
 	Om::Operations::EnvironmentOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_EnvironmentOperation_GetName_() \
 	"environment"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<EnvironmentOperation> const theEnvironmentDefinition;
+			static System::Definition<EnvironmentOperation> const theEnvironmentDefinition;
 
 		}
 

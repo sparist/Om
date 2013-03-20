@@ -47,4 +47,34 @@ inline Type_::~Giveable() {}
 
 	#undef Type_
 
+// MARK: - Om::
+
+template <typename TheGiveable>
+inline std::auto_ptr<TheGiveable> Om::Give(TheGiveable & theGiveable) {
+	return Move(theGiveable);
+}
+
+template <typename TheGiveable>
+inline std::auto_ptr<TheGiveable> Om::Give(
+	std::auto_ptr<TheGiveable> & theGiveable
+) {
+	return theGiveable;
+}
+
+template <typename TheGiveable>
+inline std::auto_ptr<TheGiveable> Om::Give(TheGiveable const & theGiveable) {
+	return Copy(theGiveable);
+}
+
+template <typename TheGiveable>
+inline std::auto_ptr<TheGiveable> Om::Give(
+	std::auto_ptr<TheGiveable> const & theGiveable
+) {
+	return (
+		theGiveable.get() ?
+		Give(*theGiveable) :
+		std::auto_ptr<TheGiveable>()
+	);
+}
+
 #endif

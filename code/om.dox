@@ -29,9 +29,13 @@ The <a href="http://om-language.org">Om language</a> is an experimental answer t
 
 The %Om interpreter can be downloaded as a Mac or Windows executable from the <a href="http://om-language.org">Om language</a> web site.
 
+See \ref using_interpreter__ for instructions on how to use the interpreter.
+
 \page downloading_code__ Getting the Code
 
 The %Om source code is downloadable from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>.
+
+See \ref using_code__ for instructions on how to use the code.
 
 \section downloading_code__development__ Development
 
@@ -51,6 +55,8 @@ Released versions can be obtained via archive files from the <a href="https://gi
 The %Om interpreter is an executable that:
 -	Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".
 -	Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.
+
+See \ref language__ to learn how the language works.
 
 \page using_code__ Using the Code
 
@@ -111,7 +117,7 @@ Because %Om is written in portable C++, it should be possible to build the code 
 
 \subsubsection using_code__project__targets__om__ Om
 
-The %Om target builds the %Om interpreter executable into <tt>&quot;products/projects/<em>[platform]</em>&quot;</tt>.  For instructions on using the interpreter, see \ref using_interpreter__.
+The %Om target builds the %Om interpreter executable into <tt>&quot;products/projects/<em>[platform]</em>&quot;</tt>.  See \ref using_interpreter__ for instructions on how to use the interpreter.
 
 \subsubsection using_code__project__targets__om_test__ Om.Test
 
@@ -522,7 +528,7 @@ For any operation implementation, code must be added to the operation header tha
 \code
 namespace {
 
-	static Definition<WhateverOperation> const theWhateverDefinition;
+	static System::Definition<WhateverOperation> const theWhateverDefinition;
 
 }
 \endcode

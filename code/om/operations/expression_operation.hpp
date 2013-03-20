@@ -17,9 +17,9 @@
 	#define Om_Operations_ExpressionOperation_ \
 	Om::Operations::ExpressionOperation
 
-	#include "om/definition.hpp"
 	#include "om/expression.hpp"
 	#include "om/operations/program_operation.hpp"
+	#include "om/system.hpp"
 
 namespace Om {
 
@@ -33,7 +33,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<ExpressionOperation> const theExpressionDefinition;
+			static System::Definition<ExpressionOperation> const theExpressionDefinition;
 
 		}
 

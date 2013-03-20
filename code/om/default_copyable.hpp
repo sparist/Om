@@ -41,15 +41,15 @@ namespace Om {
 
 		virtual ~DefaultCopyable() = 0;
 
-	private: // MARK: private (non-static)
-
-		DefaultCopyable & operator =(DefaultCopyable const &);
-
 		/*!
 		\return
 			An owner pointer to a copy.
 		*/
-		virtual ThisInterface * Copy() const;
+		virtual std::auto_ptr<Copyable> Copy() const;
+
+	private: // MARK: private (non-static)
+
+		DefaultCopyable & operator =(DefaultCopyable const &);
 
 	};
 

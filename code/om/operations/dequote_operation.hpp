@@ -18,7 +18,7 @@
 	Om::Operations::DequoteOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_DequoteOperation_GetName_() \
 	"dequote"
@@ -64,7 +64,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<DequoteOperation> const theDequoteDefinition;
+			static System::Definition<DequoteOperation> const theDequoteDefinition;
 
 		}
 

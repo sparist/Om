@@ -17,7 +17,7 @@
 	#define Om_Operations_RearrangeOperation_ \
 	Om::Operations::RearrangeOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_RearrangeOperation_GetName_() \
 	"rearrange"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<RearrangeOperation> const theRearrangeDefinition;
+			static System::Definition<RearrangeOperation> const theRearrangeDefinition;
 
 		}
 

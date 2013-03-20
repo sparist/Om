@@ -17,7 +17,7 @@
 	#define Om_Operations_ExpressionFrontPushOperation_ \
 	Om::Operations::ExpressionFrontPushOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_ExpressionFrontPushOperation_GetName_() \
 	"->expression"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<ExpressionFrontPushOperation> const theExpressionFrontPushDefinition;
+			static System::Definition<ExpressionFrontPushOperation> const theExpressionFrontPushDefinition;
 
 		}
 

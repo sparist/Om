@@ -17,7 +17,7 @@
 	#define Om_Operations_BackPullFormOperation_ \
 	Om::Operations::BackPullFormOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_BackPullFormOperation_GetName_() \
 	"forms->"
@@ -58,7 +58,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<BackPullFormOperation> const theBackPullFormDefinition;
+			static System::Definition<BackPullFormOperation> const theBackPullFormDefinition;
 
 		}
 

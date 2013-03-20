@@ -52,13 +52,22 @@ namespace Om {
 
 inline Type_::~Copyable() {}
 
-// MARK: private (non-static)
-
-inline Type_ * Type_::Copy() const {
+inline std::auto_ptr<Type_> Type_::Copy() const {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
 	#undef Type_
+
+// MARK: - Om::
+
+template <typename TheCopyable>
+inline std::auto_ptr<TheCopyable> Om::Copy(TheCopyable const & theCopyable) {
+	return std::auto_ptr<TheCopyable>(
+		static_cast<TheCopyable *>(
+			theCopyable.Copy().release()
+		)
+	);
+}
 
 #endif

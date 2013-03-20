@@ -55,18 +55,21 @@ namespace Om {
 Template_
 inline Type_::~DefaultMoveable() {}
 
-// MARK: private (non-static)
-
 Template_
-inline ThisInterface * Type_::Move() {
+inline std::auto_ptr<Om::Moveable> Type_::Move() {
 	assert(
 		dynamic_cast<ThisImplementation *>(this)
 	);
 	std::auto_ptr<ThisImplementation> theMoveable(new ThisImplementation);
+	assert(
+		theMoveable.get()
+	);
 	theMoveable->Swap(
 		static_cast<ThisImplementation &>(*this)
 	);
-	return theMoveable.release();
+	return std::auto_ptr<Moveable>(
+		theMoveable.release()
+	);
 }
 
 	#undef Type_

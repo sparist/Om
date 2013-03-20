@@ -17,7 +17,7 @@
 	#define Om_Operations_BackPullTermOperation_ \
 	Om::Operations::BackPullTermOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_BackPullTermOperation_GetName_() \
 	"terms->"
@@ -58,7 +58,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<BackPullTermOperation> const theBackPullTermDefinition;
+			static System::Definition<BackPullTermOperation> const theBackPullTermDefinition;
 
 		}
 

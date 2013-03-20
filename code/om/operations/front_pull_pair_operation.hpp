@@ -17,7 +17,7 @@
 	#define Om_Operations_FrontPullPairOperation_ \
 	Om::Operations::FrontPullPairOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_FrontPullPairOperation_GetName_() \
 	"<-pairs"
@@ -58,7 +58,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<FrontPullPairOperation> const theFrontPullPairDefinition;
+			static System::Definition<FrontPullPairOperation> const theFrontPullPairDefinition;
 
 		}
 

@@ -17,8 +17,8 @@
 	#define Om_Operations_SeparatorOperation_ \
 	Om::Operations::SeparatorOperation
 
-	#include "om/definition.hpp"
 	#include "om/operations/program_operation.hpp"
+	#include "om/system.hpp"
 
 namespace Om {
 
@@ -32,7 +32,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<SeparatorOperation> const theSeparatorDefinition;
+			static System::Definition<SeparatorOperation> const theSeparatorDefinition;
 
 		}
 

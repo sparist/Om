@@ -18,8 +18,8 @@
 	Om::Operations::SubstituteOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
 	#include "om/operations/translate_operation.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_SubstituteOperation_GetName_() \
 	"substitute"
@@ -54,7 +54,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<SubstituteOperation> const theSubstituteDefinition;
+			static System::Definition<SubstituteOperation> const theSubstituteDefinition;
 
 		}
 
