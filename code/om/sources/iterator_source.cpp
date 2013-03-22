@@ -237,7 +237,7 @@ inline ThisItem & Type_::operator *() const {
 Template_
 inline bool Type_::Equals(IteratorSource const & theIteratorSource) const {
 	return (
-		(this->thisIterator == theIteratorSource.thisIterator) ||
+		this->thisIterator == theIteratorSource.thisIterator ||
 		(
 			!*this->thisIterator &&
 			!*theIteratorSource.thisIterator

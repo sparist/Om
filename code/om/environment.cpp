@@ -103,9 +103,7 @@ inline void Type_::Push(Translator const & theTranslator) {
 			}
 		} else if (
 			this->IsEmpty() ||
-			(
-				this->thisTranslatorVector.back() != theTranslatorPointer
-			)
+			this->thisTranslatorVector.back() != theTranslatorPointer
 		) {
 			this->thisTranslatorVector.push_back(theTranslatorPointer);
 		}

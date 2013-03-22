@@ -106,9 +106,9 @@ DefaultAtom<Separator>(
 	static_cast<char>(theSeparatorSymbol)
 ) {
 	assert(
-		(Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol) ||
-		(Symbols::theLineSeparatorSymbol == theSeparatorSymbol) ||
-		(Symbols::theTabSeparatorSymbol == theSeparatorSymbol)
+		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol ||
+		Symbols::theLineSeparatorSymbol == theSeparatorSymbol ||
+		Symbols::theTabSeparatorSymbol == theSeparatorSymbol
 	);
 }
 

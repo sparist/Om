@@ -90,9 +90,7 @@ inline bool Type_::Equals(Operand const & theOperand) const {
 	return (
 		this->IsEmpty() ?
 		theOperand.IsEmpty() :
-		(
-			*this->GetProgram() == *theOperand.GetProgram()
-		)
+		*this->GetProgram() == *theOperand.GetProgram()
 	);
 }
 
@@ -135,7 +133,7 @@ inline void Type_::ReadElements(Parser & theParser) {
 				}
 				assert(
 					!theParser ||
-					(Symbols::theEndOperandSymbol == *theParser)
+					Symbols::theEndOperandSymbol == *theParser
 				);
 				// Fall through.
 			}

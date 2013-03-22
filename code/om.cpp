@@ -44,7 +44,7 @@ int main(
 	assert(theArgumentArray);
 
 	Om::System::Get().Initialize(
-		(1 < theArgumentCount) ?
+		1 < theArgumentCount ?
 		theArgumentArray[1] :
 		"en_US.UTF-8"
 	);

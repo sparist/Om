@@ -397,7 +397,7 @@ inline void Type_::Update() {
 				return;
 			}
 			if (
-				(this->thisStringEnd == this->thisStringIterator) ||
+				this->thisStringEnd == this->thisStringIterator ||
 				!Utf8::is_trail(theCodeUnit = *this->thisStringIterator)
 			) {
 				break;

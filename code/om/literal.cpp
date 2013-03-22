@@ -228,9 +228,7 @@ inline void Type_::ReadElements(Parser & theParser) {
 		case Symbols::theEndOperandSymbol:
 			assert(
 				!theStack.empty() &&
-				(
-					this != theStack.top()
-				)
+				this != theStack.top()
 			);
 			theStack.pop();
 			break;

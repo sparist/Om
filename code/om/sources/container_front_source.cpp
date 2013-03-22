@@ -82,7 +82,7 @@ inline ThisItem & Type_::operator *() const {
 Template_
 inline bool Type_::Equals(ContainerFrontSource const & theContainerFrontSource) const {
 	return (
-		(&this->thisContainer == &theContainerFrontSource.thisContainer) ||
+		&this->thisContainer == &theContainerFrontSource.thisContainer ||
 		(
 			this->thisContainer.empty() &&
 			theContainerFrontSource.thisContainer.empty()

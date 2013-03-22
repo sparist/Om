@@ -262,7 +262,7 @@ inline void Type_::End() {
 inline void Type_::Pop() {
 	assert(this->thisElement);
 	this->thisElement = (
-		(this->thisOperandEnd == this->thisOperandIterator) ?
+		this->thisOperandEnd == this->thisOperandIterator ?
 		0 :
 		&*this->thisOperandIterator++
 	);

@@ -127,9 +127,7 @@ inline void Type_::TakeProducer(TheProducer & theProducer) {
 		typeid(TheCast) == typeid(ThisImplementation)
 	);
 	if (
-		(
-			typeid(TheCast) == typeid(theProducer)
-		) &&
+		typeid(TheCast) == typeid(theProducer) &&
 		this->IsEmpty()
 	) {
 		this->Take(

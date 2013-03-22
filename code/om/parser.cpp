@@ -66,15 +66,15 @@ inline bool Type_::operator !() const {
 		(
 			!this->thisDepth &&
 			!this->thisIsEncoded &&
-			(Symbols::theEndOperandSymbol == *this->thisCodePointSource)
+			Symbols::theEndOperandSymbol == *this->thisCodePointSource
 		)
 	);
 }
 
 inline bool Type_::Equals(Parser const & theParser) const {
 	assert(
-		(this->thisCodePointSource != theParser.thisCodePointSource) ||
-		(this->thisDepth == theParser.thisDepth)
+		this->thisCodePointSource != theParser.thisCodePointSource ||
+		this->thisDepth == theParser.thisDepth
 	);
 	return (this->thisCodePointSource == theParser.thisCodePointSource);
 }

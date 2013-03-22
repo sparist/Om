@@ -435,12 +435,10 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 		!theOperator.IsEmpty()
 	);
 	assert(
-		(
-			boost::locale::normalize(
-				theOperator.thisString,
-				boost::locale::norm_nfd
-			) == theOperator.thisString
-		) &&
+		boost::locale::normalize(
+			theOperator.thisString,
+			boost::locale::norm_nfd
+		) == theOperator.thisString &&
 		"Operator strings must be NFC normalized."
 	);
 

@@ -629,8 +629,8 @@ inline Om::Element const & Type_::operator *() const {
 
 inline bool Type_::Equals(ElementRange const & theElementRange) const {
 	return (
-		(this->thisFormElementRange == theElementRange.thisFormElementRange) &&
-		(this->thisFormIterator == theElementRange.thisFormIterator)
+		this->thisFormElementRange == theElementRange.thisFormElementRange &&
+		this->thisFormIterator == theElementRange.thisFormIterator
 	);
 }
 
