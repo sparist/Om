@@ -76,7 +76,7 @@ inline bool Type_::Equals(Parser const & theParser) const {
 		this->thisCodePointSource != theParser.thisCodePointSource ||
 		this->thisDepth == theParser.thisDepth
 	);
-	return (this->thisCodePointSource == theParser.thisCodePointSource);
+	return this->thisCodePointSource == theParser.thisCodePointSource;
 }
 
 inline void Type_::Pop() {

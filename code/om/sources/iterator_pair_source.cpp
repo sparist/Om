@@ -72,7 +72,7 @@ inline Type_ & Type_::operator =(IteratorPairSource theIteratorPairSource) {
 
 Template_
 inline bool Type_::operator !() const {
-	return (this->thisEnd == this->thisCurrent);
+	return this->thisEnd == this->thisCurrent;
 }
 
 Template_
@@ -83,7 +83,7 @@ inline ThisItem & Type_::operator *() const {
 
 Template_
 inline bool Type_::Equals(IteratorPairSource const & theIteratorPairSource) const {
-	return (this->thisCurrent == theIteratorPairSource.thisCurrent);
+	return this->thisCurrent == theIteratorPairSource.thisCurrent;
 }
 
 Template_

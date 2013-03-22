@@ -159,7 +159,7 @@ inline bool Type_::IsMatch(TheProducer & theProducer) const {
 	Program const & theProgram = *this->thisOperand.GetProgram();
 	Program const * const theProducerProgram = dynamic_cast<Program const *>(&theProducer);
 	if (theProducerProgram) {
-		return (*theProducerProgram == theProgram);
+		return *theProducerProgram == theProgram;
 	}
 	Literal theProducerLiteral;
 	theProducerLiteral.TakeElements(theProducer);

@@ -68,9 +68,7 @@ inline Type_ & Type_::operator =(StreamSource theStreamSource) {
 
 Template_
 inline bool Type_::operator !() const {
-	return (
-		StreamIterator() == this->thisStreamIterator
-	);
+	return StreamIterator() == this->thisStreamIterator;
 }
 
 Template_
@@ -84,7 +82,7 @@ inline ThisItem const & Type_::operator *() const {
 
 Template_
 inline bool Type_::Equals(StreamSource const & theStreamSource) const {
-	return (this->thisStreamIterator == theStreamSource.thisStreamIterator);
+	return this->thisStreamIterator == theStreamSource.thisStreamIterator;
 }
 
 Template_

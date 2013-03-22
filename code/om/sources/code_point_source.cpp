@@ -115,7 +115,7 @@ inline Om::CodePoint const & Type_::operator *() const {
 
 Template_
 inline bool Type_::Equals(CodePointSource const & theCodePointSource) const {
-	return (this->thisInputIterator == theCodePointSource.thisInputIterator);
+	return this->thisInputIterator == theCodePointSource.thisInputIterator;
 }
 
 Template_

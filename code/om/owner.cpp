@@ -43,7 +43,7 @@ namespace Om {
 				thisNumber(theNumber) {}
 
 				bool operator ==(TestValue const theTestValue) const {
-					return (this->thisNumber == theTestValue.thisNumber);
+					return this->thisNumber == theTestValue.thisNumber;
 				}
 
 				int thisNumber;

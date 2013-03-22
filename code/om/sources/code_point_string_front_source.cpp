@@ -347,7 +347,7 @@ inline std::string & Type_::operator *() const {
 
 Template_
 inline bool Type_::Equals(CodePointStringFrontSource const & theCodePointStringFrontSource) const {
-	return (this->thisStringIterator == theCodePointStringFrontSource.thisStringIterator);
+	return this->thisStringIterator == theCodePointStringFrontSource.thisStringIterator;
 }
 
 Template_

@@ -59,7 +59,7 @@ inline Type_::~DefaultAtom() {}
 
 Template_
 inline bool Type_::operator <(DefaultAtom const & theAtom) {
-	return (this->thisString < theAtom.thisString);
+	return this->thisString < theAtom.thisString;
 }
 
 Template_
@@ -69,7 +69,7 @@ inline void Type_::Clear() {
 
 Template_
 inline bool Type_::Equals(DefaultAtom const & theAtom) const {
-	return (this->thisString == theAtom.thisString);
+	return this->thisString == theAtom.thisString;
 }
 
 Template_

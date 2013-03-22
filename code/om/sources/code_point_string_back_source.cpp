@@ -338,7 +338,7 @@ inline Type_ & Type_::operator =(CodePointStringBackSource theCodePointStringBac
 
 Template_
 inline bool Type_::operator !() const {
-	return (this->thisCodePointEnd == this->thisCodePointIterator);
+	return this->thisCodePointEnd == this->thisCodePointIterator;
 }
 
 Template_
@@ -349,7 +349,7 @@ inline std::string & Type_::operator *() const {
 
 Template_
 inline bool Type_::Equals(CodePointStringBackSource const & theCodePointStringBackSource) const {
-	return (this->thisCodePointIterator == theCodePointStringBackSource.thisCodePointIterator);
+	return this->thisCodePointIterator == theCodePointStringBackSource.thisCodePointIterator;
 }
 
 Template_

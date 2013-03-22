@@ -92,7 +92,7 @@ inline bool Type_::Equals(Program const & theProgram) const {
 			!theRangeHasNext ||
 			!theOtherRangeHasNext
 		) {
-			return (theRangeHasNext == theOtherRangeHasNext);
+			return theRangeHasNext == theOtherRangeHasNext;
 		}
 		if (**theRange != **theOtherRange) {
 			return false;

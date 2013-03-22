@@ -252,7 +252,7 @@ inline Om::Element const & Type_::operator *() const {
 }
 
 inline bool Type_::Equals(ElementRange const & theElementRange) const {
-	return (this->thisElement == theElementRange.thisElement);
+	return this->thisElement == theElementRange.thisElement;
 }
 
 inline void Type_::End() {
