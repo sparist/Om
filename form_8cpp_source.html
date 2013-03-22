@@ -308,7 +308,7 @@ $(document).ready(function(){initNavTree('form_8cpp_source.html','');});
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Pop() {</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    assert(this-&gt;thisElement);</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    this-&gt;thisElement = (</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        (this-&gt;thisOperandEnd == this-&gt;thisOperandIterator) ?</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        this-&gt;thisOperandEnd == this-&gt;thisOperandIterator ?</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        0 :</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        &amp;*this-&gt;thisOperandIterator++</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    );</div>
