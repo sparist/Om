@@ -18,7 +18,7 @@
 	Om::Operations::PairOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_PairOperation_GetName_() \
 	"pair"
@@ -70,7 +70,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<PairOperation> const thePairDefinition;
+			static System::Definition<PairOperation> const thePairDefinition;
 
 		}
 

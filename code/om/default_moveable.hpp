@@ -41,15 +41,15 @@ namespace Om {
 
 		virtual ~DefaultMoveable() = 0;
 
-	private: // MARK: private (non-static)
-
-		DefaultMoveable & operator =(DefaultMoveable const &);
-
 		/*!
 		\return
 			An owner pointer to a moved object.
 		*/
-		virtual ThisInterface * Move();
+		virtual std::auto_ptr<Moveable> Move();
+
+	private: // MARK: private (non-static)
+
+		DefaultMoveable & operator =(DefaultMoveable const &);
 
 	};
 

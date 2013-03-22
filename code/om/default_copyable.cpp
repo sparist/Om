@@ -55,15 +55,15 @@ namespace Om {
 Template_
 inline Type_::~DefaultCopyable() {}
 
-// MARK: private (non-static)
-
 Template_
-inline ThisInterface * Type_::Copy() const {
+inline std::auto_ptr<Om::Copyable> Type_::Copy() const {
 	assert(
 		dynamic_cast<ThisImplementation const *>(this)
 	);
-	return new ThisImplementation(
-		static_cast<ThisImplementation const &>(*this)
+	return std::auto_ptr<Copyable>(
+		new ThisImplementation(
+			static_cast<ThisImplementation const &>(*this)
+		)
 	);
 }
 

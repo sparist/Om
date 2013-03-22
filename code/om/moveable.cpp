@@ -52,13 +52,22 @@ namespace Om {
 
 inline Type_::~Moveable() {}
 
-// MARK: private (non-static)
-
-inline Type_ * Type_::Move() {
+inline std::auto_ptr<Type_> Type_::Move() {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
 	#undef Type_
+
+// MARK: - Om::
+
+template <typename TheMoveable>
+inline std::auto_ptr<TheMoveable> Om::Move(TheMoveable & theMoveable) {
+	return std::auto_ptr<TheMoveable>(
+		static_cast<TheMoveable *>(
+			theMoveable.Move().release()
+		)
+	);
+}
 
 #endif

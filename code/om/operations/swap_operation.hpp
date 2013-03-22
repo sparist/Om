@@ -18,7 +18,7 @@
 	Om::Operations::SwapOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_SwapOperation_GetName_() \
 	"swap"
@@ -74,7 +74,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<SwapOperation> const theSwapDefinition;
+			static System::Definition<SwapOperation> const theSwapDefinition;
 
 		}
 

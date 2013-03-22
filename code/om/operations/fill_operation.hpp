@@ -18,8 +18,8 @@
 	Om::Operations::FillOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
 	#include "om/expression.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_FillOperation_GetName_() \
 	"fill"
@@ -85,7 +85,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<FillOperation> const theReadDefinition;
+			static System::Definition<FillOperation> const theReadDefinition;
 
 		}
 

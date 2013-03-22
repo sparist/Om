@@ -17,7 +17,7 @@
 	#define Om_Operations_BackPullPairOperation_ \
 	Om::Operations::BackPullPairOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_BackPullPairOperation_GetName_() \
 	"pairs->"
@@ -58,7 +58,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<BackPullPairOperation> const theBackPullPairDefinition;
+			static System::Definition<BackPullPairOperation> const theBackPullPairDefinition;
 
 		}
 

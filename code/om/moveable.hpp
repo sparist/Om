@@ -17,7 +17,11 @@
 	#define Om_Moveable_ \
 	Om::Moveable
 
-	#include "om/move.hpp"
+	#ifndef Om_Macros_Precompilation_
+
+		#include <memory>
+
+	#endif
 
 namespace Om {
 
@@ -36,17 +40,26 @@ namespace Om {
 
 		virtual ~Moveable() = 0;
 
-	private: // MARK: private (non-static)
-
-		Moveable & operator =(Moveable const &);
-
 		/*!
 		\return
 			An owner pointer to a moved object.
 		*/
-		virtual Moveable * Move() = 0;
+		virtual std::auto_ptr<Moveable> Move() = 0;
+
+	private: // MARK: private (non-static)
+
+		Moveable & operator =(Moveable const &);
 
 	};
+
+	// MARK: - Om::
+
+	/*!
+	\return
+		A polymorphic move of the object.
+	*/
+	template <typename TheMoveable>
+	std::auto_ptr<TheMoveable> Move(TheMoveable &);
 
 }
 

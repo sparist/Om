@@ -17,7 +17,7 @@
 	#define Om_Operations_BackPullCharacterOperation_ \
 	Om::Operations::BackPullCharacterOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_BackPullCharacterOperation_GetName_() \
 	"characters->"
@@ -54,7 +54,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<BackPullCharacterOperation> const theBackPullCharacterDefinition;
+			static System::Definition<BackPullCharacterOperation> const theBackPullCharacterDefinition;
 
 		}
 

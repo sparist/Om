@@ -17,7 +17,7 @@
 	#define Om_Operations_FrontPullElementOperation_ \
 	Om::Operations::FrontPullElementOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_FrontPullElementOperation_GetName_() \
 	"<-elements"
@@ -58,7 +58,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<FrontPullElementOperation> const theFrontPullElementDefinition;
+			static System::Definition<FrontPullElementOperation> const theFrontPullElementDefinition;
 
 		}
 

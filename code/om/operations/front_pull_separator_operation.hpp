@@ -17,7 +17,7 @@
 	#define Om_Operations_FrontPullSeparatorOperation_ \
 	Om::Operations::FrontPullSeparatorOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_FrontPullSeparatorOperation_GetName_() \
 	"separator<-elements"
@@ -58,7 +58,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<FrontPullSeparatorOperation> const theFrontPullSeparatorDefinition;
+			static System::Definition<FrontPullSeparatorOperation> const theFrontPullSeparatorDefinition;
 
 		}
 

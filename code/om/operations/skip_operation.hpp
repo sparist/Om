@@ -18,8 +18,8 @@
 	Om::Operations::SkipOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
 	#include "om/expression.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_SkipOperation_GetName_() \
 	"skip"
@@ -74,7 +74,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<SkipOperation> const theSkipDefinition;
+			static System::Definition<SkipOperation> const theSkipDefinition;
 
 		}
 

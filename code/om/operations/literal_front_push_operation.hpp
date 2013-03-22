@@ -17,7 +17,7 @@
 	#define Om_Operations_LiteralFrontPushOperation_ \
 	Om::Operations::LiteralFrontPushOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_LiteralFrontPushOperation_GetName_() \
 	"->literal"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<LiteralFrontPushOperation> const theLiteralFrontPushDefinition;
+			static System::Definition<LiteralFrontPushOperation> const theLiteralFrontPushDefinition;
 
 		}
 

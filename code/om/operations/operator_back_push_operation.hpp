@@ -17,7 +17,7 @@
 	#define Om_Operations_OperatorBackPushOperation_ \
 	Om::Operations::OperatorBackPushOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_OperatorBackPushOperation_GetName_() \
 	"operator<-"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<OperatorBackPushOperation> const theOperatorBackPushDefinition;
+			static System::Definition<OperatorBackPushOperation> const theOperatorBackPushDefinition;
 
 		}
 

@@ -36,8 +36,6 @@ namespace Om {
 
 #else
 
-	#include "om/give.hpp"
-
 // MARK: - Om::Program
 
 	#define Type_ \

@@ -18,7 +18,7 @@
 	Om::Operations::DefineOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_DefineOperation_GetName_() \
 	"define"
@@ -70,7 +70,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<DefineOperation> const theDefineDefinition;
+			static System::Definition<DefineOperation> const theDefineDefinition;
 
 		}
 

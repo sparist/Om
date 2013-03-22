@@ -42,6 +42,50 @@ namespace Om {
 
 	};
 
+	// MARK: - Om::
+
+	/*!
+	\brief
+		Calls #Move on the object.
+	\return
+		The resulting object.
+	*/
+	template <typename TheGiveable>
+	std::auto_ptr<TheGiveable> Give(TheGiveable &);
+
+	/*!
+	\brief
+		Transfers pointer ownership.
+	\return
+		The resulting object.
+	*/
+	template <typename TheGiveable>
+	std::auto_ptr<TheGiveable> Give(
+		std::auto_ptr<TheGiveable> &
+	);
+
+	/*!
+	\brief
+		Calls #Copy on the object.
+	\return
+		The resulting object.
+	*/
+	template <typename TheGiveable>
+	std::auto_ptr<TheGiveable> Give(TheGiveable const &);
+
+	/*!
+	\brief
+		Transfers pointer ownership.
+	\return
+		The resulting object.
+
+	This is useful in situations where the argument auto_ptr is a member of a const class.
+	*/
+	template <typename TheGiveable>
+	std::auto_ptr<TheGiveable> Give(
+		std::auto_ptr<TheGiveable> const &
+	);
+
 }
 
 	#include "om/giveable.cpp"

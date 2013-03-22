@@ -18,7 +18,7 @@
 	Om::Operations::NormalizeOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_NormalizeOperation_GetName_() \
 	"normalize"
@@ -64,7 +64,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<NormalizeOperation> const theNormalizeDefinition;
+			static System::Definition<NormalizeOperation> const theNormalizeDefinition;
 
 		}
 

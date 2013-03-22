@@ -17,7 +17,7 @@
 	#define Om_Operations_DoOperation_ \
 	Om::Operations::DoOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_DoOperation_GetName_() \
 	"do"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<DoOperation> const theDoDefinition;
+			static System::Definition<DoOperation> const theDoDefinition;
 
 		}
 

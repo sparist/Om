@@ -17,7 +17,7 @@
 	#define Om_Operations_LexiconFrontPushOperation_ \
 	Om::Operations::LexiconFrontPushOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_LexiconFrontPushOperation_GetName_() \
 	"->lexicon"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<LexiconFrontPushOperation> const theLexiconFrontPushDefinition;
+			static System::Definition<LexiconFrontPushOperation> const theLexiconFrontPushDefinition;
 
 		}
 

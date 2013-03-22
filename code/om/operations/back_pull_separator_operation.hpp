@@ -17,7 +17,7 @@
 	#define Om_Operations_BackPullSeparatorOperation_ \
 	Om::Operations::BackPullSeparatorOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_BackPullSeparatorOperation_GetName_() \
 	"elements->separator"
@@ -58,7 +58,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<BackPullSeparatorOperation> const theBackPullSeparatorDefinition;
+			static System::Definition<BackPullSeparatorOperation> const theBackPullSeparatorDefinition;
 
 		}
 

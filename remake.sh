@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 if [ ! -d "products/projects/xcode" ]; then
 	echo The products/projects/xcode folder does not exist.  Please run make.sh.

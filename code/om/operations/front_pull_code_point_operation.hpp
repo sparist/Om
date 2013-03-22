@@ -17,7 +17,7 @@
 	#define Om_Operations_FrontPullCodePointOperation_ \
 	Om::Operations::FrontPullCodePointOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_FrontPullCodePointOperation_GetName_() \
 	"<-code points"
@@ -54,7 +54,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<FrontPullCodePointOperation> const theFrontPullCodePointDefinition;
+			static System::Definition<FrontPullCodePointOperation> const theFrontPullCodePointDefinition;
 
 		}
 

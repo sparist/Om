@@ -17,7 +17,7 @@
 	#define Om_Operations_LexiconBackPushOperation_ \
 	Om::Operations::LexiconBackPushOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_LexiconBackPushOperation_GetName_() \
 	"lexicon<-"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<LexiconBackPushOperation> const theLexiconBackPushDefinition;
+			static System::Definition<LexiconBackPushOperation> const theLexiconBackPushDefinition;
 
 		}
 

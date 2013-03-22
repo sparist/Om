@@ -17,7 +17,7 @@
 	#define Om_Operations_ExpressionBackPushOperation_ \
 	Om::Operations::ExpressionBackPushOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_ExpressionBackPushOperation_GetName_() \
 	"expression<-"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<ExpressionBackPushOperation> const theExpressionBackPushDefinition;
+			static System::Definition<ExpressionBackPushOperation> const theExpressionBackPushDefinition;
 
 		}
 

@@ -18,7 +18,7 @@
 	Om::Operations::ChooseOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_ChooseOperation_GetName_() \
 	"choose"
@@ -86,7 +86,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<ChooseOperation> const theChooseDefinition;
+			static System::Definition<ChooseOperation> const theChooseDefinition;
 
 		}
 

@@ -17,9 +17,9 @@
 	#define Om_Operations_LexiconOperation_ \
 	Om::Operations::LexiconOperation
 
-	#include "om/definition.hpp"
 	#include "om/lexicon.hpp"
 	#include "om/operations/program_operation.hpp"
+	#include "om/system.hpp"
 
 namespace Om {
 
@@ -33,7 +33,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<LexiconOperation> const theLexiconDefinition;
+			static System::Definition<LexiconOperation> const theLexiconDefinition;
 
 		}
 

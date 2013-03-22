@@ -17,7 +17,7 @@
 	#define Om_Operations_OperatorFrontPushOperation_ \
 	Om::Operations::OperatorFrontPushOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_OperatorFrontPushOperation_GetName_() \
 	"->operator"
@@ -44,7 +44,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<OperatorFrontPushOperation> const theOperatorFrontPushDefinition;
+			static System::Definition<OperatorFrontPushOperation> const theOperatorFrontPushDefinition;
 
 		}
 

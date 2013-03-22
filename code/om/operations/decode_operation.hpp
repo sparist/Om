@@ -18,7 +18,7 @@
 	Om::Operations::DecodeOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_DecodeOperation_GetName_() \
 	"decode"
@@ -64,7 +64,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<DecodeOperation> const theDecodeDefinition;
+			static System::Definition<DecodeOperation> const theDecodeDefinition;
 
 		}
 

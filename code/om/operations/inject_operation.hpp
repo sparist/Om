@@ -18,8 +18,8 @@
 	Om::Operations::InjectOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
 	#include "om/expression.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_InjectOperation_GetName_() \
 	"inject"
@@ -85,7 +85,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<InjectOperation> const theInjectDefinition;
+			static System::Definition<InjectOperation> const theInjectDefinition;
 
 		}
 

@@ -18,7 +18,7 @@
 	Om::Operations::EvaluateOperation
 
 	#include "om/default_operation.hpp"
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_EvaluateOperation_GetName_() \
 	"evaluate"
@@ -66,7 +66,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<EvaluateOperation> const theEvaluateDefinition;
+			static System::Definition<EvaluateOperation> const theEvaluateDefinition;
 
 		}
 

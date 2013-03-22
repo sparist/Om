@@ -17,7 +17,7 @@
 	#define Om_Operations_FrontPullFormOperation_ \
 	Om::Operations::FrontPullFormOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_FrontPullFormOperation_GetName_() \
 	"<-forms"
@@ -58,7 +58,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<FrontPullFormOperation> const theFrontPullFormDefinition;
+			static System::Definition<FrontPullFormOperation> const theFrontPullFormDefinition;
 
 		}
 

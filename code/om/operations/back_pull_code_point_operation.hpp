@@ -17,7 +17,7 @@
 	#define Om_Operations_BackPullCodePointOperation_ \
 	Om::Operations::BackPullCodePointOperation
 
-	#include "om/definition.hpp"
+	#include "om/system.hpp"
 
 	#define Om_Operations_BackPullCodePointOperation_GetName_() \
 	"code points->"
@@ -54,7 +54,7 @@ namespace Om {
 
 		namespace {
 
-			static Definition<BackPullCodePointOperation> const theBackPullCodePointDefinition;
+			static System::Definition<BackPullCodePointOperation> const theBackPullCodePointDefinition;
 
 		}
 
