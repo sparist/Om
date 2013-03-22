@@ -22,14 +22,14 @@ cd make
 mkdir debug
 cd debug
 bash ../../source/runConfigureICU --enable-debug --disable-release Cygwin/MSVC --enable-static --prefix="%IcuShortUnix%/build"
-make
-make install
+make -s
+make -s install
 cd ..
 mkdir release
 cd release
 bash ../../source/runConfigureICU Cygwin/MSVC --enable-static --prefix="%IcuShortUnix%/build"
-make
-make install
+make -s
+make -s install
 cd "%Directory%"
 
 cd %2
