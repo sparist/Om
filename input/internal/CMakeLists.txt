@@ -197,9 +197,9 @@ add_executable("Om" ${Cpp} ${Hpp} ${Dox})
 add_executable("Om.Test" ${Cpp})
 if(MSVC)
 	add_custom_target("Om.Documentation"
-		COMMAND if not exist products mkdir products
-		COMMAND if not exist products\\documentation mkdir products\\documentation
-		COMMAND if not exist products\\documentation\\doxygen mkdir products\\documentation\\doxygen
+		COMMAND if not exist ..\\..\\output mkdir ..\\..\\output
+		COMMAND if not exist ..\\..\\output\\documentation mkdir ..\\..\\output\\documentation
+		COMMAND if not exist ..\\..\\output\\documentation\\doxygen mkdir ..\\..\\output\\documentation\\doxygen
 		COMMAND (type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text") | doxygen -
 		COMMENT "Generating Documentation..."
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -207,7 +207,7 @@ if(MSVC)
 	)
 else()
 	add_custom_target("Om.Documentation"
-		COMMAND mkdir -p products/documentation/doxygen
+		COMMAND mkdir -p ../../output/documentation/doxygen
 		COMMAND doxygen doxygen/Doxyfile
 		COMMENT "Generating Documentation..."
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"

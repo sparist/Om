@@ -28,7 +28,7 @@ cd "$2"
 Boost=`pwd -P`
 cd "$Directory"
 
-mkdir -p products/projects/xcode
-cd products/projects/xcode
-cmake -G "Xcode" -D Icu:PATH="$Icu/build" -D Boost:PATH="$Boost/build" ../../..
+mkdir -p ../../output/projects/xcode
+cd ../../output/projects/xcode
+cmake -G "Xcode" -D Icu:PATH="$Icu/build" -D Boost:PATH="$Boost/build" ../../../input/internal
 cd "$Directory"

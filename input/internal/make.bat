@@ -20,13 +20,14 @@ cd %2
 set Boost=%CD%
 cd "%Directory%"
 
-mkdir products
-cd products
+cd ..\..
+mkdir output
+cd output
 mkdir projects
 cd projects
 mkdir vs
 cd vs
-cmake -G "Visual Studio 10" -D Icu:PATH="%Icu%\build" -D Boost:PATH="%Boost%\build" ..\..\..
+cmake -G "Visual Studio 10" -D Icu:PATH="%Icu%\build" -D Boost:PATH="%Boost%\build" ..\..\..\input\internal
 cd "%Directory%"
 exit /b 0
 

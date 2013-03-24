@@ -1,17 +1,17 @@
 @echo off
 setlocal
 
-if not exist products\projects\vs goto FolderDoesNotExist
+if not exist ..\..\output\projects\vs goto FolderDoesNotExist
 
 set Directory=%CD%
-cd products\projects\vs
-cmake ..\..\..
+cd ..\..\output\projects\vs
+cmake ..\..\..\input\internal
 if %ERRORLEVEL% neq	0 goto CMakeError
 cd "%Directory%"
 exit /b 0
 
 :FolderDoesNotExist
-echo The products\projects\vs folder does not exist.  Please run make.bat.
+echo The output\projects\vs folder does not exist.  Please run make.bat.
 exit /b 1
 
 :CMakeError
