@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-rm -rf "../../output/projects/xcode"
+rm -rf ../../output/projects/xcode
