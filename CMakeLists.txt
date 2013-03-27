@@ -2,14 +2,10 @@ cmake_minimum_required(VERSION 2.8.10)
 
 project(Om)
 
-# Set up arguments
-set(Boost "" CACHE PATH "The Boost library build directory path")
-set(Icu "" CACHE PATH "The ICU library build directory path")
-
-# Prevent implicit calls CMake on project modification
+# Prevent implicit CMake calls on project modification
 set(CMAKE_SUPPRESS_REGENERATION TRUE)
 
-# Set global compile flags
+# Global compile flags
 if(MSVC)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
@@ -40,14 +36,84 @@ else()
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros")
 endif()
 
-# Add global definitions
+# Global definitions
 if(MSVC)
 	add_definitions(-DU_STATIC_IMPLEMENTATION=1) # For ICU
 else()
 	add_definitions(-DU_CHARSET_IS_UTF8=1) # For ICU
 endif()
 
-# Find libraries
+# Boost path
+set(BoostDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/external/output/artifacts/boost")
+set(BoostCaption "The Boost library build directory path")
+set(Boost "${BoostDefault}" CACHE PATH "${BoostCaption}")
+if(NOT EXISTS "${Boost}")
+	set(Boost "${BoostDefault}" CACHE PATH "${BoostCaption}" FORCE)
+endif()
+
+# ICU path
+set(IcuDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/external/output/artifacts/icu4c")
+set(IcuCaption "The ICU4C library build directory path")
+set(Icu "${IcuDefault}" CACHE PATH "${IcuCaption}")
+if(NOT EXISTS "${Icu}")
+	set(Icu "${IcuDefault}" CACHE PATH "${IcuCaption}" FORCE)
+endif()
+
+# External paths
+if((NOT EXISTS "${Boost}") OR (NOT EXISTS "${Icu}"))
+	if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/icu4c")
+		file(
+			DOWNLOAD "http://download.icu-project.org/files/icu4c/51.1/icu4c-51_1-src.tgz" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/icu4c.tgz"
+			SHOW_PROGRESS
+			EXPECTED_MD5 "6eef33b229d0239d654983028c9c7053"
+		)
+		execute_process(
+			COMMAND "${CMAKE_COMMAND}" -E tar xvzf icu4c.tgz
+			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input"
+		)
+		file(RENAME "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/icu" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/icu4c")
+	endif()
+	if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost")
+		if(MSVC)
+			file(
+				DOWNLOAD "http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.zip/download" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost.zip"
+				SHOW_PROGRESS
+				EXPECTED_MD5 "c618e030fd4882e4dbacf54baf824544"
+			)
+			execute_process(
+				COMMAND "${CMAKE_COMMAND}" -E tar xvzf boost.zip
+				WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input"
+			)
+		else()
+			file(
+				DOWNLOAD "http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz/download" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost.tar.gz"
+				SHOW_PROGRESS
+				EXPECTED_MD5 "57a9e2047c0f511c4dfcf00eb5eb2fbb"
+			)
+			execute_process(
+				COMMAND "${CMAKE_COMMAND}" -E tar xvzf boost.tar.gz boost
+				WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input"
+			)
+		endif()
+		file(
+			RENAME "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost_1_53_0" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost"
+		)
+	endif()
+
+	if(MSVC)
+		execute_process(
+			COMMAND make.external.bat
+			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		)
+	else()
+		execute_process(
+			COMMAND ./make.external.sh
+			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		)
+	endif()
+endif()
+
+# Library paths
 if(MSVC)
 	find_library(BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 	find_library(BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
@@ -137,17 +203,17 @@ else()
 	set(IcuUcDebugLibrary ${IcuUcReleaseLibrary})
 endif()
 
-# Include directories
+# Include paths
 if(MSVC)
 	include_directories(SYSTEM "${Boost}/include/boost-1_53")
 else()
 	include_directories(SYSTEM "${Boost}/include")
 endif()
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/code")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code")
 
-# Populate source groups and code paths
+# Source groups and code paths
 function(om_populate_code)
-	file(GLOB_RECURSE Files "${CMAKE_CURRENT_SOURCE_DIR}/code/*.*")
+	file(GLOB_RECURSE Files "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code/*.*")
 	foreach(File ${Files})
 		get_filename_component(Directory "${File}" PATH)
 		list(APPEND Directories "${Directory}")
@@ -156,7 +222,7 @@ function(om_populate_code)
 	list(SORT Directories)
 
 	foreach(Directory ${Directories})
-		file(RELATIVE_PATH RelativeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/code" "${Directory}")
+		file(RELATIVE_PATH RelativeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code" "${Directory}")
 		string(REPLACE "/" "\\" SourceGroup "${RelativeDirectory}")
 
 		file(GLOB LocalCppFiles "${Directory}/*.cpp")
@@ -181,41 +247,41 @@ function(om_populate_code)
 endfunction()
 om_populate_code()
 
-# Populate om.internal
+# Internal header
 function(om_populate_internal)
-	set(Internal "${CMAKE_CURRENT_SOURCE_DIR}/code/om.internal")
-	file(WRITE "${Internal}" "")
+	set(InternalHeader "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code/om.internal")
+	file(WRITE "${InternalHeader}" "")
 	foreach(HeaderFile ${Hpp})
-		file(RELATIVE_PATH RelativeHeaderFile "${CMAKE_CURRENT_SOURCE_DIR}/code" "${HeaderFile}")
-		file(APPEND "${Internal}" "#include \"${RelativeHeaderFile}\"\n")
+		file(RELATIVE_PATH RelativeHeaderFile "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code" "${HeaderFile}")
+		file(APPEND "${InternalHeader}" "#include \"${RelativeHeaderFile}\"\n")
 	endforeach()
 endfunction()
 om_populate_internal()
 
-# Add targets
+# Targets
 add_executable("Om" ${Cpp} ${Hpp} ${Dox})
 add_executable("Om.Test" ${Cpp})
 if(MSVC)
 	add_custom_target("Om.Documentation"
-		COMMAND if not exist ..\\..\\output mkdir ..\\..\\output
-		COMMAND if not exist ..\\..\\output\\documentation mkdir ..\\..\\output\\documentation
-		COMMAND if not exist ..\\..\\output\\documentation\\doxygen mkdir ..\\..\\output\\documentation\\doxygen
-		COMMAND (type doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text") | doxygen -
+		COMMAND if not exist ..\\..\\..\\output mkdir ..\\..\\..\\output
+		COMMAND if not exist ..\\..\\..\\output\\documentation mkdir ..\\..\\..\\output\\documentation
+		COMMAND if not exist ..\\..\\..\\output\\documentation\\doxygen mkdir ..\\..\\..\\output\\documentation\\doxygen
+		COMMAND (type ..\\doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text") | doxygen -
 		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code"
 		VERBATIM
 	)
 else()
 	add_custom_target("Om.Documentation"
-		COMMAND mkdir -p ../../output/documentation/doxygen
-		COMMAND doxygen doxygen/Doxyfile
+		COMMAND mkdir -p ../../../output/documentation/doxygen
+		COMMAND doxygen ../doxygen/Doxyfile
 		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code"
 		VERBATIM
 	)
 endif()
 
-# Link dependencies
+# Linking
 function(om_target_link_libraries target)
 	target_link_libraries(${target}
 		debug "${BoostLocaleDebugLibrary}"
@@ -270,17 +336,17 @@ target_link_libraries("Om.Test"
 	optimized "${BoostUnitTestFrameworkReleaseLibrary}"
 )
 
-# Precompile headers
+# Precompiled headers
 if(NOT MSVC)
 	add_definitions(-DOm_Macros_Precompilation_)
 
 	set_target_properties("Om" "Om.Test" PROPERTIES
-		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/code/om.external"
+		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code/om.external"
 		XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
 	)
 endif()
 
-# Set Om.Test compile and link flags
+# Om.Test compile and link flags
 set(OmTestCompileFlags "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API")
 set(OmTestLinkFlags "")
 if(NOT MSVC)
@@ -296,7 +362,7 @@ endif()
 set_target_properties("Om.Test" PROPERTIES COMPILE_FLAGS "${OmTestCompileFlags}")
 set_target_properties("Om.Test" PROPERTIES LINK_FLAGS "${OmTestLinkFlags}")
 
-# Set up RUN_TESTS target
+# RUN_TESTS target
 enable_testing()
 add_test("Om.Test.Build" "${CMAKE_COMMAND}" --build "${CMAKE_BINARY_DIR}" --target "Om.Test")
 add_test("Om.Test.Run" "Om.Test")
