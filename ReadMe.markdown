@@ -2,7 +2,7 @@
 
 <a href="http://om-language.org">Om</a> is an experimental high-level programming language with the goal of maximal simplicity.
 
-See the <a href="http://sparist.github.com/Om">Om documentation</a> for more information.
+See the <a href="http://sparist.github.com/Om">documentation</a> for more information.
 
 Changes for each released version are listed below.
 
