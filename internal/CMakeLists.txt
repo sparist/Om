@@ -43,74 +43,20 @@ else()
 	add_definitions(-DU_CHARSET_IS_UTF8=1) # For ICU
 endif()
 
-# Boost path
-set(BoostDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/external/output/artifacts/boost")
-set(BoostCaption "The Boost library build directory path")
-set(Boost "${BoostDefault}" CACHE PATH "${BoostCaption}")
-if(NOT EXISTS "${Boost}")
-	set(Boost "${BoostDefault}" CACHE PATH "${BoostCaption}" FORCE)
-endif()
-
-# ICU path
-set(IcuDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/external/output/artifacts/icu4c")
-set(IcuCaption "The ICU4C library build directory path")
-set(Icu "${IcuDefault}" CACHE PATH "${IcuCaption}")
-if(NOT EXISTS "${Icu}")
-	set(Icu "${IcuDefault}" CACHE PATH "${IcuCaption}" FORCE)
-endif()
-
-# External paths
-if((NOT EXISTS "${Boost}") OR (NOT EXISTS "${Icu}"))
-	if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/icu4c")
-		file(
-			DOWNLOAD "http://download.icu-project.org/files/icu4c/51.1/icu4c-51_1-src.tgz" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/icu4c.tgz"
-			SHOW_PROGRESS
-			EXPECTED_MD5 "6eef33b229d0239d654983028c9c7053"
-		)
-		execute_process(
-			COMMAND "${CMAKE_COMMAND}" -E tar xvzf icu4c.tgz
-			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input"
-		)
-		file(RENAME "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/icu" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/icu4c")
-	endif()
-	if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost")
-		if(MSVC)
-			file(
-				DOWNLOAD "http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.zip/download" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost.zip"
-				SHOW_PROGRESS
-				EXPECTED_MD5 "c618e030fd4882e4dbacf54baf824544"
-			)
-			execute_process(
-				COMMAND "${CMAKE_COMMAND}" -E tar xvzf boost.zip
-				WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input"
-			)
-		else()
-			file(
-				DOWNLOAD "http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz/download" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost.tar.gz"
-				SHOW_PROGRESS
-				EXPECTED_MD5 "57a9e2047c0f511c4dfcf00eb5eb2fbb"
-			)
-			execute_process(
-				COMMAND "${CMAKE_COMMAND}" -E tar xvzf boost.tar.gz boost
-				WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input"
-			)
-		endif()
-		file(
-			RENAME "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost_1_53_0" "${CMAKE_CURRENT_SOURCE_DIR}/input/external/input/boost"
-		)
-	endif()
-
+# External
+set(External "" CACHE PATH "The external directory path")
+set(Icu "" CACHE PATH "The ICU4C library artifact directory path")
+set(Boost "" CACHE PATH "The Boost library artifact directory path")
+if((NOT EXISTS "${Icu}") OR (NOT EXISTS "${Boost}"))
 	if(MSVC)
-		execute_process(
-			COMMAND make.external.bat
-			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-		)
+		set(GenerateCommand generate.bat)
 	else()
-		execute_process(
-			COMMAND ./make.external.sh
-			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-		)
+		set(GenerateCommand ./generate.sh)
 	endif()
+	execute_process(
+		COMMAND ${GenerateCommand}
+		WORKING_DIRECTORY "${External}"
+	)
 endif()
 
 # Library paths
@@ -209,11 +155,11 @@ if(MSVC)
 else()
 	include_directories(SYSTEM "${Boost}/include")
 endif()
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/input/code")
 
 # Source groups and code paths
 function(om_populate_code)
-	file(GLOB_RECURSE Files "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code/*.*")
+	file(GLOB_RECURSE Files "${CMAKE_CURRENT_SOURCE_DIR}/input/code/*.*")
 	foreach(File ${Files})
 		get_filename_component(Directory "${File}" PATH)
 		list(APPEND Directories "${Directory}")
@@ -222,7 +168,7 @@ function(om_populate_code)
 	list(SORT Directories)
 
 	foreach(Directory ${Directories})
-		file(RELATIVE_PATH RelativeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code" "${Directory}")
+		file(RELATIVE_PATH RelativeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${Directory}")
 		string(REPLACE "/" "\\" SourceGroup "${RelativeDirectory}")
 
 		file(GLOB LocalCppFiles "${Directory}/*.cpp")
@@ -249,10 +195,10 @@ om_populate_code()
 
 # Internal header
 function(om_populate_internal)
-	set(InternalHeader "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code/om.internal")
+	set(InternalHeader "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.internal")
 	file(WRITE "${InternalHeader}" "")
 	foreach(HeaderFile ${Hpp})
-		file(RELATIVE_PATH RelativeHeaderFile "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code" "${HeaderFile}")
+		file(RELATIVE_PATH RelativeHeaderFile "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${HeaderFile}")
 		file(APPEND "${InternalHeader}" "#include \"${RelativeHeaderFile}\"\n")
 	endforeach()
 endfunction()
@@ -263,20 +209,18 @@ add_executable("Om" ${Cpp} ${Hpp} ${Dox})
 add_executable("Om.Test" ${Cpp})
 if(MSVC)
 	add_custom_target("Om.Documentation"
-		COMMAND if not exist ..\\..\\..\\output mkdir ..\\..\\..\\output
-		COMMAND if not exist ..\\..\\..\\output\\documentation mkdir ..\\..\\..\\output\\documentation
-		COMMAND if not exist ..\\..\\..\\output\\documentation\\doxygen mkdir ..\\..\\..\\output\\documentation\\doxygen
-		COMMAND (type ..\\doxygen\\Doxyfile && echo WARN_FORMAT = "$file($line): $text") | doxygen -
+		COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_SOURCE_DIR}/output/artifacts/Doxygen"
+		COMMAND (type ..\\documentation\\Doxyfile && echo WARN_FORMAT = "$file($line): $text") | doxygen -
 		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/code"
 		VERBATIM
 	)
 else()
 	add_custom_target("Om.Documentation"
-		COMMAND mkdir -p ../../../output/documentation/doxygen
-		COMMAND doxygen ../doxygen/Doxyfile
+		COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_SOURCE_DIR}/output/artifacts/Doxygen"
+		COMMAND doxygen ../documentation/Doxyfile
 		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/code"
 		VERBATIM
 	)
 endif()
@@ -322,6 +266,14 @@ function(om_target_link_libraries target)
 		debug "${IcuUcDebugLibrary}"
 		optimized "${IcuUcReleaseLibrary}"
 	)
+
+	add_custom_command(
+		TARGET ${target}
+		POST_BUILD
+		COMMAND "${CMAKE_COMMAND}" -E copy $<TARGET_FILE:${target}> "${CMAKE_CURRENT_SOURCE_DIR}/output/artifacts/${CMAKE_GENERATOR}/$<CONFIGURATION>/$<TARGET_FILE_NAME:${target}>"
+		COMMENT Generating ${target} artifacts...
+		VERBATIM
+	)
 endfunction()
 om_target_link_libraries("Om")
 om_target_link_libraries("Om.Test")
@@ -341,7 +293,7 @@ if(NOT MSVC)
 	add_definitions(-DOm_Macros_Precompilation_)
 
 	set_target_properties("Om" "Om.Test" PROPERTIES
-		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/internal/code/om.external"
+		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.external"
 		XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
 	)
 endif()

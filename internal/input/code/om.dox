@@ -92,40 +92,42 @@ Scripts are provided for generating a source project that contains targets for b
 \subsubsection using_code__project__platforms__xcode__ Xcode
 
 The following scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mountain Lion):
--	<b><tt>&quot;make.internal.sh&quot;</tt>:</b> Invokes CMake (passing any supplied arguments directly) to create the <tt>&quot;Om.xcodeproj&quot;</tt> file in <tt>&quot;output/projects/xcode&quot;</tt>. Valid absolute directories containing pre-built external artifacts may be passed via <tt>-D Icu:Path=&quot;</tt><em>[full path]</em><tt>&quot;</tt> and/or <tt>-D Boost:Path=&quot;</tt><em>[full path]</em><tt>&quot;</tt>; otherwise, external libraries are downloaded and built as necessary.
--	<b><tt>&quot;make.external.sh&quot;</tt>:</b> Builds the external library dependencies into <tt>&quot;input/external/output/artifacts&quot;</tt>. External sources must be in folders <tt>&quot;icu4c&quot;</tt> and <tt>&quot;boost&quot;</tt> inside <tt>&quot;input/external/input&quot;</tt>.
+-	<b><tt>&quot;generate.sh&quot;</tt>:</b> Creates the <tt>&quot;Om.xcodeproj&quot;</tt> file in <tt>&quot;internal/output/intermediate/Xcode&quot;</tt>, and downloads and builds any required external libraries.
+-	<b><tt>&quot;internal/generate.sh&quot;</tt>:</b> Called by <tt>&quot;generate.sh&quot;</tt> to invoke CMake, passing along its arguments. This can be used to point to external libraries elsewhere already on the computer, preventing automatic download. See <tt>&quot;generate.sh&quot;</tt> for usage.
+-	<b><tt>&quot;external/generate.sh&quot;</tt>:</b> Downloads and builds the external libraries.
 
 \subsubsection using_code__project__platforms__visual_studio__ Visual Studio
 
 The following scripts have been tested with Visual Studio 2010 Express on Windows Vista:
--	<b><tt>&quot;make.internal.bat&quot;</tt>:</b> Invokes CMake (passing any supplied arguments directly) to create the <tt>&quot;Om.sln&quot;</tt> file in <tt>&quot;output/projects/vs&quot;</tt>. Valid absolute directories containing pre-built external artifacts may be passed via <tt>-D Icu:Path=&quot;</tt><em>[full path]</em><tt>&quot;</tt> and/or <tt>-D Boost:Path=&quot;</tt><em>[full path]</em><tt>&quot;</tt>; otherwise, external libraries are downloaded and built as necessary.
--	<b><tt>&quot;make.external.bat&quot;</tt>:</b> Builds the external library dependencies into <tt>&quot;input/external/output/artifacts&quot;</tt>. External sources must be in folders <tt>&quot;icu4c&quot;</tt> and <tt>&quot;boost&quot;</tt> inside <tt>&quot;input/external/input&quot;</tt>.
+-	<b><tt>&quot;generate.bat&quot;</tt>:</b> Creates the <tt>&quot;Om.sln&quot;</tt> file in <tt>&quot;internal/output/intermediate/Visual Studio 10&quot;</tt>, and downloads and builds any required external libraries.
+-	<b><tt>&quot;internal/generate.bat&quot;</tt>:</b> Called by <tt>&quot;generate.bat&quot;</tt> to invoke CMake, passing along its arguments. This can be used to point to external libraries elsewhere already on the computer, preventing automatic download. See <tt>&quot;generate.bat&quot;</tt> for usage.
+-	<b><tt>&quot;external/generate.bat&quot;</tt>:</b> Downloads and builds the external libraries.
 
 \subsubsection using_code__project__platforms__other__ Other
 
-Because %Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <tt>&quot;CMakeLists.txt&quot;</tt> file. Please \ref developing__ "share" any enhancements to the build process and/or \ref reporting_issues__ "report" any code portability issues encountered.
+Because %Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <tt>&quot;CMakeLists.txt&quot;</tt> files. Please \ref developing__ "share" any enhancements to the build process and/or \ref reporting_issues__ "report" any code portability issues encountered.
 
 \subsection using_code__project__targets__ Targets
 
 \subsubsection using_code__project__targets__om__ Om
 
-The %Om target builds the %Om interpreter executable into <tt>&quot;output/projects/<em>[platform]</em>&quot;</tt>. See \ref using_interpreter__ for instructions on how to use the interpreter.
+The %Om target builds the %Om interpreter executable into <tt>&quot;internal/output/artifacts/<em>[platform]</em>/<em>[configuration]</em>&quot;</tt>. See \ref using_interpreter__ for instructions on how to use the interpreter.
 
 \subsubsection using_code__project__targets__om_test__ Om.Test
 
-The Om.Test target builds the Om.Test test executable, which runs all unit tests, into <tt>&quot;output/projects/<em>[platform]</em>&quot;</tt>.
+The Om.Test target builds the Om.Test test executable, which runs all unit tests, into <tt>&quot;internal/output/artifacts/<em>[platform]</em>/<em>[configuration]</em>&quot;</tt>.
 
 \subsubsection using_code__project__targets__om_documentation__ Om.Documentation
 
-The Om.Documentation target builds this documentation into the following folders in <tt>&quot;output/documentation/doxygen&quot;</tt>:
+The Om.Documentation target builds this documentation into the following folders in <tt>&quot;internal/output/artifacts/Doxygen&quot;</tt>:
 -	<b><tt>&quot;html&quot;</tt>:</b> The HTML documentation. To view in a browser, open <tt>&quot;index.html&quot;</tt>.
 -	<b><tt>&quot;xml&quot;</tt>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.
 
 \section using_code__library__ Library
 
 %Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:
--	Add the %Om <tt>&quot;input/internal/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
--	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See <tt>&quot;make.external.sh&quot;</tt> and/or <tt>&quot;make.external.bat&quot;</tt> for guidance.
+-	Add the %Om <tt>&quot;internal/input/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
+-	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See <tt>&quot;external/generate.sh&quot;</tt> and/or <tt>&quot;external/generate.bat&quot;</tt> for guidance.
 -	Call the <tt>Om::System::Initialize</tt> function prior to use (e.g. in the <tt>main</tt> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").
 -	Construct an <tt>Om::Environment</tt>, populate with any additional operator-program mappings, and call one of its <tt>Om::Environment::Evaluate</tt> functions to evaluate a program.
 
