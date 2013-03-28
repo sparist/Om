@@ -4,10 +4,11 @@ setlocal enableextensions
 call "%VS100COMNTOOLS%..\..\VC\vcvarsall.bat"
 
 set Directory=%CD%
-for %%a in ("%Directory%") do set DirectoryShort=%%~sa
-for /f "delims=" %%b in ('cygpath --unix "%DirectoryShort%"') do set DirectoryShortUnix=%%b
 
 cmake %* -P CMakeLists.txt "%Directory%"
+
+for %%a in ("%Directory%") do set DirectoryShort=%%~sa
+for /f "delims=" %%b in ('cygpath --unix "%DirectoryShort%"') do set DirectoryShortUnix=%%b
 
 if not exist output\intermediate\Icu4c mkdir output\intermediate\Icu4c
 cd output\intermediate\Icu4c
