@@ -87,25 +87,28 @@ To ensure that the correct applications are used, the command line path should b
 
 Scripts are provided for generating a source project that contains targets for building the interpreter, unit tests, and documentation.
 
+The <tt>&quot;generate&quot;</tt> script provides single-click generation of the project, including automatically downloading and building all external dependencies.
+
+For more fine-grained control, the <tt>&quot;internal&quot;</tt> and <tt>&quot;external&quot;</tt> folders each contain respective <tt>&quot;generate&quot;</tt> scripts:
+-	The internal generate script is responsible for generating the project file in <tt>&quot;internal/output/artifacts/<em>[platform]</em>&quot;</tt>. Its arguments are passed directly to CMake which does all of the work of generating the project. The following additional arguments must be specified:
+	-	<b><tt>-D Icu:Path=&quot;<em>[absolute path]</em>&quot;</tt></b> provides the absolute path of the ICU4C install directory.
+	-	<b><tt>-D Boost:Path=&quot;<em>[absolute path]</em>&quot;</tt></b> provides the absolute path of the Boost install directory.
+	-	<b><tt>-D External:Path=&quot;<em>[absolute path]</em>&quot;</tt></b> provides the absolute path to the <tt>&quot;external&quot;</tt> folder, where externals are generated automatically in the event that one of the above directories does not exist.
+-	The external generate script is responsible for generating the external dependencies into <tt>&quot;external/output/artifacts/<em>[dependency]</em>&quot;</tt>. The dependencies are downloaded and built as necessary.
+
 \subsection using_code__project__platforms__ Platforms
 
 \subsubsection using_code__project__platforms__xcode__ Xcode
 
-The following scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mountain Lion):
--	<b><tt>&quot;generate.sh&quot;</tt>:</b> Creates the <tt>&quot;Om.xcodeproj&quot;</tt> file in <tt>&quot;internal/output/intermediate/Xcode&quot;</tt>, and downloads and builds any required external libraries.
--	<b><tt>&quot;internal/generate.sh&quot;</tt>:</b> Called by <tt>&quot;generate.sh&quot;</tt> to invoke CMake, passing along its arguments. This can be used to point to external libraries elsewhere already on the computer, preventing automatic download. See <tt>&quot;generate.sh&quot;</tt> for usage.
--	<b><tt>&quot;external/generate.sh&quot;</tt>:</b> Downloads and builds the external libraries.
+Generate scripts ending in <tt>".sh"</tt> are designed for use with Xcode.  These scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mountain Lion).
 
 \subsubsection using_code__project__platforms__visual_studio__ Visual Studio
 
-The following scripts have been tested with Visual Studio 2010 Express on Windows Vista:
--	<b><tt>&quot;generate.bat&quot;</tt>:</b> Creates the <tt>&quot;Om.sln&quot;</tt> file in <tt>&quot;internal/output/intermediate/Visual Studio 10&quot;</tt>, and downloads and builds any required external libraries.
--	<b><tt>&quot;internal/generate.bat&quot;</tt>:</b> Called by <tt>&quot;generate.bat&quot;</tt> to invoke CMake, passing along its arguments. This can be used to point to external libraries elsewhere already on the computer, preventing automatic download. See <tt>&quot;generate.bat&quot;</tt> for usage.
--	<b><tt>&quot;external/generate.bat&quot;</tt>:</b> Downloads and builds the external libraries.
+Generate scripts ending in <tt>".bat"</tt> are designed for use with Visual Studio 2010.  These scripts have been tested with Visual Studio 2010 Express on Windows Vista.
 
 \subsubsection using_code__project__platforms__other__ Other
 
-Because %Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <tt>&quot;CMakeLists.txt&quot;</tt> files. Please \ref developing__ "share" any enhancements to the build process and/or \ref reporting_issues__ "report" any code portability issues encountered.
+Because %Om is implemented in a portable way, it should be possible to build the code on any mainstream platform through minor adaptation to the scripts and <tt>&quot;CMakeLists.txt&quot;</tt> files. Please \ref developing__ "share" any enhancements to the build process and/or \ref reporting_issues__ "report" any code portability issues encountered.
 
 \subsection using_code__project__targets__ Targets
 
