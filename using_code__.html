@@ -88,27 +88,28 @@ Dependencies</h1>
 <h1><a class="anchor" id="using_code__project__"></a>
 Project</h1>
 <p>Scripts are provided for generating a source project that contains targets for building the interpreter, unit tests, and documentation.</p>
+<p>The <code>"generate"</code> script provides single-click generation of the project, including automatically downloading and building all external dependencies.</p>
+<p>For more fine-grained control, the <code>"internal"</code> and <code>"external"</code> folders each contain respective <code>"generate"</code> scripts:</p>
+<ul>
+<li>The internal generate script is responsible for generating the project file in <code>"internal/output/artifacts/<em>[platform]</em>"</code>. Its arguments are passed directly to CMake which does all of the work of generating the project. The following additional arguments must be specified:<ul>
+<li><b><code>-D Icu:Path="<em>[absolute path]</em>"</code></b> provides the absolute path of the ICU4C install directory.</li>
+<li><b><code>-D Boost:Path="<em>[absolute path]</em>"</code></b> provides the absolute path of the Boost install directory.</li>
+<li><b><code>-D External:Path="<em>[absolute path]</em>"</code></b> provides the absolute path to the <code>"external"</code> folder, where externals are generated automatically in the event that one of the above directories does not exist.</li>
+</ul>
+</li>
+<li>The external generate script is responsible for generating the external dependencies into <code>"external/output/artifacts/<em>[dependency]</em>"</code>. The dependencies are downloaded and built as necessary.</li>
+</ul>
 <h2><a class="anchor" id="using_code__project__platforms__"></a>
 Platforms</h2>
 <h3><a class="anchor" id="using_code__project__platforms__xcode__"></a>
 Xcode</h3>
-<p>The following scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mountain Lion):</p>
-<ul>
-<li><b><code>"generate.sh"</code>:</b> Creates the <code>"Om.xcodeproj"</code> file in <code>"internal/output/intermediate/Xcode"</code>, and downloads and builds any required external libraries.</li>
-<li><b><code>"internal/generate.sh"</code>:</b> Called by <code>"generate.sh"</code> to invoke CMake, passing along its arguments. This can be used to point to external libraries elsewhere already on the computer, preventing automatic download. See <code>"generate.sh"</code> for usage.</li>
-<li><b><code>"external/generate.sh"</code>:</b> Downloads and builds the external libraries.</li>
-</ul>
+<p>Generate scripts ending in <code>".sh"</code> are designed for use with Xcode. These scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mountain Lion).</p>
 <h3><a class="anchor" id="using_code__project__platforms__visual_studio__"></a>
 Visual Studio</h3>
-<p>The following scripts have been tested with Visual Studio 2010 Express on Windows Vista:</p>
-<ul>
-<li><b><code>"generate.bat"</code>:</b> Creates the <code>"Om.sln"</code> file in <code>"internal/output/intermediate/Visual Studio 10"</code>, and downloads and builds any required external libraries.</li>
-<li><b><code>"internal/generate.bat"</code>:</b> Called by <code>"generate.bat"</code> to invoke CMake, passing along its arguments. This can be used to point to external libraries elsewhere already on the computer, preventing automatic download. See <code>"generate.bat"</code> for usage.</li>
-<li><b><code>"external/generate.bat"</code>:</b> Downloads and builds the external libraries.</li>
-</ul>
+<p>Generate scripts ending in <code>".bat"</code> are designed for use with Visual Studio 2010. These scripts have been tested with Visual Studio 2010 Express on Windows Vista.</p>
 <h3><a class="anchor" id="using_code__project__platforms__other__"></a>
 Other</h3>
-<p>Because Om is written in portable C++, it should be possible to build the code on any mainstream platform by adapting the scripts and <code>"CMakeLists.txt"</code> files. Please <a class="el" href="developing__.html">share</a> any enhancements to the build process and/or <a class="el" href="reporting_issues__.html">report</a> any code portability issues encountered.</p>
+<p>Because Om is implemented in a portable way, it should be possible to build the code on any mainstream platform through minor adaptation to the scripts and <code>"CMakeLists.txt"</code> files. Please <a class="el" href="developing__.html">share</a> any enhancements to the build process and/or <a class="el" href="reporting_issues__.html">report</a> any code portability issues encountered.</p>
 <h2><a class="anchor" id="using_code__project__targets__"></a>
 Targets</h2>
 <h3><a class="anchor" id="using_code__project__targets__om__"></a>
