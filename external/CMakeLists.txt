@@ -12,6 +12,7 @@ if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/input/Icu4c")
 	)
 	file(RENAME "${CMAKE_CURRENT_SOURCE_DIR}/input/icu" "${CMAKE_CURRENT_SOURCE_DIR}/input/Icu4c")
 endif()
+
 if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/input/Boost")
 	if(MSVC)
 		file(
