@@ -102,6 +102,8 @@ For more fine-grained control, the <tt>&quot;internal&quot;</tt> and <tt>&quot;e
 
 Generate scripts ending in <tt>".sh"</tt> are designed for use with Xcode.  These scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mountain Lion).
 
+<b>Note:</b> The ICU4C and Boost build scripts for Unix do not support paths containing spaces.
+
 \subsubsection using_code__project__platforms__visual_studio__ Visual Studio
 
 Generate scripts ending in <tt>".bat"</tt> are designed for use with Visual Studio 2010.  These scripts have been tested with Visual Studio 2010 Express on Windows Vista.
