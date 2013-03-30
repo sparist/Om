@@ -43,20 +43,42 @@ else()
 	add_definitions(-DU_CHARSET_IS_UTF8=1) # For ICU
 endif()
 
-# External
-set(External "" CACHE PATH "The external directory path")
-set(Icu "" CACHE PATH "The ICU4C library artifact directory path")
-set(Boost "" CACHE PATH "The Boost library artifact directory path")
-if((NOT EXISTS "${Icu}") OR (NOT EXISTS "${Boost}"))
+# Icu
+set(IcuDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Icu4c/output/artifacts")
+set(IcuCaption "The ICU4C library artifact directory path")
+set(Icu ${IcuDefault} CACHE PATH ${IcuCaption})
+if(NOT EXISTS "${Icu}")
+	set(Icu ${IcuDefault} CACHE PATH ${IcuCaption} FORCE)
 	if(MSVC)
-		set(GenerateCommand generate.bat)
+		execute_process(
+			COMMAND generate.bat
+			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Icu4c"
+		)
 	else()
-		set(GenerateCommand ./generate.sh)
+		execute_process(
+			COMMAND ./generate.sh
+			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Icu4c"
+		)
 	endif()
-	execute_process(
-		COMMAND ${GenerateCommand}
-		WORKING_DIRECTORY "${External}"
-	)
+endif()
+
+# Boost
+set(BoostDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Boost/output/artifacts")
+set(BoostCaption "The Boost library artifact directory path")
+set(Boost ${BoostDefault} CACHE PATH ${BoostCaption})
+if(NOT EXISTS "${Boost}")
+	set(Boost "${BoostDefault}" CACHE PATH ${BoostCaption} FORCE)
+	if(MSVC)
+		execute_process(
+			COMMAND generate.bat "${Icu}"
+			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Boost"
+		)
+	else()
+		execute_process(
+			COMMAND ./generate.sh "${Icu}"
+			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Boost"
+		)
+	endif()
 endif()
 
 # Library paths

@@ -1,7 +1,7 @@
 # Build products.
-external/input
-external/output
-internal/output
+input/dependencies/*/input
+input/dependencies/*/output
+output
 
 # Miscellaneous.
 .DS_Store

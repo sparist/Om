@@ -3,6 +3,9 @@ set -e
 
 Directory=`pwd -P`
 
-cd internal
-./generate.sh --no-warn-unused-cli -D External:Path="$Directory/external" -D Icu:Path="$Directory/external/output/artifacts/Icu4c" -D Boost:Path="$Directory/external/output/artifacts/Boost"
+Generator=Xcode
+
+mkdir -p "output/intermediate/${Generator}"
+cd "output/intermediate/${Generator}"
+cmake -G "${Generator}" "$@" "$Directory"
 cd "$Directory"

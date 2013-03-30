@@ -64,75 +64,80 @@ The %Om source code can be used for:
 -	Building a stand-alone interpreter from a script-generated source \ref using_code__project__ "project".
 -	Including as a C++ header-only \ref using_code__library__ "library".
 
+\section using_code__platforms__ Platforms
+
+\subsection using_code__platforms__mac__ Mac OS X
+
+The %Om code should build on any recent version of Mac OS X. Scripts ending in <tt>".sh"</tt> are provided for use on the Mac.
+
+<b>Note:</b> The ICU4C and Boost build scripts for Unix do not support paths containing spaces.
+
+\subsection using_code__platforms__windows__ Windows
+
+The %Om code should build on any recent version of Windows. Scripts ending in <tt>".bat"</tt> are provided for use on Windows.
+
+\subsection using_code__platforms__other__ Other
+
+Because %Om is implemented with portability in mind, it should be possible to build the code on any mainstream platform with minor adaptation of the scripts and <tt>&quot;CMakeLists.txt&quot;</tt> files. Please \ref developing__ "share" any enhancements to the build process and/or \ref reporting_issues__ "report" any code portability issues encountered.
+
 \section using_code__dependencies__ Dependencies
 
-The code depends on the following external libraries:
--	<a href="http://icu-project.org">ICU</a> (ICU4C 50.1.2 or greater)
--	<a href="http://boost.org">Boost</a> (1.53.0 or greater)
+\subsection using_code__dependencies__programs__ Programs
 
-To run the scripts which build the above libraries and generate the \ref using_code__project__ "project", the following programs are required:
+To run scripts which build the dependency \ref using_code__dependencies__libraries__ "libraries" and generate the \ref using_code__project__ "project", the following programs are required:
 -	<a href="http://cmake.org">CMake</a> (2.8.10 or greater)
--	<a href="http://cygwin.com">Cygwin</a> (with bash, GNU make, ar, and ranlib) <b>(Windows only)</b>
+-	Mac:
+	-	Xcode (4.6 or later)
+-	Windows:
+	-	Visual Studio (2010 or later)
+	-	<a href="http://cygwin.com">Cygwin</a> (with bash, GNU make, ar, and ranlib)
 
-To build the \ref using_code__project__targets__om_documentation__ "documentation target" in the \ref using_code__project__ "project", the following programs are required:
+To build the \ref using_code__project__targets__om_documentation__ "documentation target" in the \ref using_code__project__ "project", the following additional programs are required:
 -	<a href="http://doxygen.org">Doxygen</a> (1.8.3.1 or greater)
 -	<a href="http://graphviz.org">Graphviz</a> (2.30.1 or greater)
 
-To ensure that the correct applications are used, the command line path should be in the following order:
+To ensure that correct programs are used, programs should be listed in the command line path in the following order:
 -	Graphviz, Doxygen, and CMake
 -	Cygwin (<tt>&quot;<em>[cygwin]</em>/bin&quot;</tt>) <b>(Windows only)</b>
 -	Any other paths
 
+\subsection using_code__dependencies__libraries__ Libraries
+
+\subsubsection using_code__dependencies__libraries__icu4c ICU4C
+
+%Om depends on ICU4C (50.1.2 or greater), the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. <a href="http://download.icu-project.org/files/icu4c/51.1">ICU4C 51.1</a> can be downloaded and built into <tt>&quot;input/dependencies/Icu4c/output/artifacts&quot;</tt> by navigating to the <tt>&quot;input/dependencies/Icu4c&quot;</tt> directory and running the <tt>&quot;generate&quot;</tt> script.
+
+\subsubsection using_code__dependencies__libraries__boost Boost
+
+%Om depends on the <a href="http://boost.org">Boost</a> library (1.53.0 or greater). <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0">Boost 1.53.0</a> can be downloaded and built into <tt>&quot;input/dependencies/Boost/output/artifacts&quot;</tt> by navigating to the <tt>&quot;input/dependencies/Boost&quot;</tt> directory and running the <tt>&quot;generate&quot;</tt> script.
+
 \section using_code__project__ Project
 
-Scripts are provided for generating a source project that contains targets for building the interpreter, unit tests, and documentation.
-
-The <tt>&quot;generate&quot;</tt> script provides single-click generation of the project, including automatically downloading and building all external dependencies.
-
-For more fine-grained control, the <tt>&quot;internal&quot;</tt> and <tt>&quot;external&quot;</tt> folders each contain respective <tt>&quot;generate&quot;</tt> scripts:
--	The internal generate script is responsible for generating the project file in <tt>&quot;internal/output/artifacts/<em>[platform]</em>&quot;</tt>. Its arguments are passed directly to CMake which does all of the work of generating the project. The following additional arguments must be specified:
-	-	<b><tt>-D Icu:Path=&quot;<em>[absolute path]</em>&quot;</tt></b> provides the absolute path of the ICU4C install directory.
-	-	<b><tt>-D Boost:Path=&quot;<em>[absolute path]</em>&quot;</tt></b> provides the absolute path of the Boost install directory.
-	-	<b><tt>-D External:Path=&quot;<em>[absolute path]</em>&quot;</tt></b> provides the absolute path to the <tt>&quot;external&quot;</tt> folder, where externals are generated automatically in the event that one of the above directories does not exist.
--	The external generate script is responsible for generating the external dependencies into <tt>&quot;external/output/artifacts/<em>[dependency]</em>&quot;</tt>. The dependencies are downloaded and built as necessary.
-
-\subsection using_code__project__platforms__ Platforms
-
-\subsubsection using_code__project__platforms__xcode__ Xcode
-
-Generate scripts ending in <tt>".sh"</tt> are designed for use with Xcode.  These scripts have been tested with Xcode 4.6 on Mac OS X 10.8.2 (Mountain Lion).
-
-<b>Note:</b> The ICU4C and Boost build scripts for Unix do not support paths containing spaces.
-
-\subsubsection using_code__project__platforms__visual_studio__ Visual Studio
-
-Generate scripts ending in <tt>".bat"</tt> are designed for use with Visual Studio 2010.  These scripts have been tested with Visual Studio 2010 Express on Windows Vista.
-
-\subsubsection using_code__project__platforms__other__ Other
-
-Because %Om is implemented in a portable way, it should be possible to build the code on any mainstream platform through minor adaptation to the scripts and <tt>&quot;CMakeLists.txt&quot;</tt> files. Please \ref developing__ "share" any enhancements to the build process and/or \ref reporting_issues__ "report" any code portability issues encountered.
+A source project, containing targets for building the interpreter, tests, and documentation, can be built into <tt>&quot;output/artifacts&quot;</tt> by running the <tt>&quot;generate&quot;</tt> script in the root directory. By default, this script automatically downloads and builds all external dependency libraries, but this behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
+-	<b><tt>-D Icu:Path=&quot;<em>[absolute path]</em>&quot;</tt></b>, where <em>[absolute path]</em> is the absolute path of the \ref using_code__dependencies__libraries__icu4c "ICU4C" install directory.
+-	<b><tt>-D Boost:Path=&quot;<em>[absolute path]</em>&quot;</tt></b>, where <em>[absolute path]</em> provides the absolute path of the \ref using_code__dependencies__libraries__boost "Boost" install directory.
 
 \subsection using_code__project__targets__ Targets
 
 \subsubsection using_code__project__targets__om__ Om
 
-The %Om target builds the %Om interpreter executable into <tt>&quot;internal/output/artifacts/<em>[platform]</em>/<em>[configuration]</em>&quot;</tt>. See \ref using_interpreter__ for instructions on how to use the interpreter.
+The %Om target builds the %Om interpreter executable into <tt>&quot;output/artifacts/<em>[platform]</em>/<em>[configuration]</em>&quot;</tt>. See \ref using_interpreter__ for instructions on how to use the interpreter.
 
 \subsubsection using_code__project__targets__om_test__ Om.Test
 
-The Om.Test target builds the Om.Test test executable, which runs all unit tests, into <tt>&quot;internal/output/artifacts/<em>[platform]</em>/<em>[configuration]</em>&quot;</tt>.
+The Om.Test target builds the Om.Test test executable, which runs all unit tests, into <tt>&quot;output/artifacts/<em>[platform]</em>/<em>[configuration]</em>&quot;</tt>.
 
 \subsubsection using_code__project__targets__om_documentation__ Om.Documentation
 
-The Om.Documentation target builds this documentation into the following folders in <tt>&quot;internal/output/artifacts/Doxygen&quot;</tt>:
+The Om.Documentation target builds this documentation into the following folders in <tt>&quot;output/artifacts/Doxygen&quot;</tt>:
 -	<b><tt>&quot;html&quot;</tt>:</b> The HTML documentation. To view in a browser, open <tt>&quot;index.html&quot;</tt>.
 -	<b><tt>&quot;xml&quot;</tt>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.
 
 \section using_code__library__ Library
 
 %Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:
--	Add the %Om <tt>&quot;internal/input/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
--	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See <tt>&quot;external/generate.sh&quot;</tt> and/or <tt>&quot;external/generate.bat&quot;</tt> for guidance.
+-	Add the %Om <tt>&quot;input/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
+-	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency <tt>&quot;generate&quot;</tt> scripts for guidance.
 -	Call the <tt>Om::System::Initialize</tt> function prior to use (e.g. in the <tt>main</tt> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").
 -	Construct an <tt>Om::Environment</tt>, populate with any additional operator-program mappings, and call one of its <tt>Om::Environment::Evaluate</tt> functions to evaluate a program.
 

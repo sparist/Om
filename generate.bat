@@ -3,6 +3,9 @@ setlocal enableextensions
 
 set Directory=%CD%
 
-cd internal
-call generate.bat --no-warn-unused-cli -D External:Path="%Directory%/external" -D Icu:Path="%Directory%/external/output/artifacts/Icu4c" -D Boost:Path="%Directory%/external/output/artifacts/Boost"
+set Generator=Visual Studio 10
+
+if not exist "output\intermediate\%Generator%" mkdir "output\intermediate\%Generator%"
+cd "output\intermediate\%Generator%"
+cmake -G "%Generator%" %* "%Directory%"
 cd "%Directory%"
