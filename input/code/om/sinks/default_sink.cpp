@@ -16,28 +16,6 @@
 
 	#include "om/sinks/default_sink.hpp"
 
-	#ifdef Om_Macros_Test_
-
-		#ifndef Om_Macros_Precompilation_
-
-			#include "boost/test/unit_test.hpp"
-
-		#endif
-
-namespace Om {
-
-	namespace Sinks {
-
-		BOOST_AUTO_TEST_SUITE(DefaultSinkTest)
-
-		BOOST_AUTO_TEST_SUITE_END()
-
-	}
-
-}
-
-	#endif
-
 #else
 
 // MARK: - Om::Sinks::DefaultSink

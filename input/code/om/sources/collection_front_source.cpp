@@ -16,28 +16,6 @@
 
 	#include "om/sources/collection_front_source.hpp"
 
-	#ifdef Om_Macros_Test_
-
-		#ifndef Om_Macros_Precompilation_
-
-			#include "boost/test/unit_test.hpp"
-
-		#endif
-
-namespace Om {
-
-	namespace Sources {
-
-		BOOST_AUTO_TEST_SUITE(CollectionFrontSourceTest)
-
-		BOOST_AUTO_TEST_SUITE_END()
-
-	}
-
-}
-
-	#endif
-
 #else
 
 // MARK: - Om::Sources::CollectionFrontSource
