@@ -216,6 +216,44 @@ namespace Om {
 			);
 		}
 
+		BOOST_AUTO_TEST_CASE(TakeQuotedProducerTest) {
+
+			class Local {
+
+			public:
+
+				static void Check(Lexicon const & theLexicon) {
+					Separator const & theLineSeparator = Separator::GetLineSeparator();
+					Operand theOperand(
+						Give(theLineSeparator)
+					);
+
+					Lexicon::ElementRange theElementRange(theLexicon);
+					Lexicon::ElementRange theOtherElementRange(theLexicon);
+					BOOST_CHECK(theElementRange);
+					BOOST_CHECK(theElementRange == theOtherElementRange);
+					Element const & theElement = *theElementRange;
+					BOOST_CHECK(theOperand == theElement);
+					theElementRange.Pop();
+					theOtherElementRange.Pop();
+					BOOST_CHECK(!theElementRange);
+					BOOST_CHECK(theElementRange == theOtherElementRange);
+				}
+
+			};
+
+			Lexicon theLexicon;
+			Separator const & theLineSeparator = Separator::GetLineSeparator();
+			theLexicon.TakeQuotedProducer(theLineSeparator);
+
+			Lexicon theCopiedLexicon;
+			theCopiedLexicon = theLexicon;
+			BOOST_CHECK(theLexicon == theCopiedLexicon);
+
+			Local::Check(theLexicon);
+			Local::Check(theCopiedLexicon);
+		}
+
 	BOOST_AUTO_TEST_SUITE_END()
 
 }

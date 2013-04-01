@@ -37,6 +37,26 @@ namespace Om {
 			);
 		}
 
+		BOOST_AUTO_TEST_CASE(DereferenceTest) {
+			{
+				Operator theMutableOperator;
+				Atom & theMutableAtom = theMutableOperator;
+				Program & theMutableDereference = *theMutableAtom;
+				BOOST_CHECK(
+					typeid(theMutableDereference) == typeid(Null)
+				);
+			}
+
+			{
+				Operator const theImmutableOperator;
+				Atom const & theImmutableAtom = theImmutableOperator;
+				Program const & theImmutableDereference = *theImmutableAtom;
+				BOOST_CHECK(
+					typeid(theImmutableDereference) == typeid(Null)
+				);
+			}
+		}
+
 		BOOST_AUTO_TEST_CASE(EqualityTest) {
 			// Positive match
 			BOOST_CHECK_EQUAL(

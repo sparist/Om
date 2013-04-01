@@ -30,6 +30,26 @@ namespace Om {
 
 	BOOST_AUTO_TEST_SUITE(SeparatorTest)
 
+		BOOST_AUTO_TEST_CASE(DereferenceTest) {
+			{
+				Separator theMutableSeparator;
+				Atom & theMutableAtom = theMutableSeparator;
+				Program & theMutableDereference = *theMutableAtom;
+				BOOST_CHECK(
+					typeid(theMutableDereference) == typeid(Null)
+				);
+			}
+
+			{
+				Separator const theImmutableSeparator;
+				Atom const & theImmutableAtom = theImmutableSeparator;
+				Program const & theImmutableDereference = *theImmutableAtom;
+				BOOST_CHECK(
+					typeid(theImmutableDereference) == typeid(Null)
+				);
+			}
+		}
+
 		BOOST_AUTO_TEST_CASE(ReadTest) {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
 			std::string theResult;
