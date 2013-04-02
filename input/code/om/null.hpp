@@ -17,7 +17,8 @@
 	#define Om_Null_ \
 	Om::Null
 
-	#include "om/default_program.hpp"
+	#include "om/code_point.hpp"
+	#include "om/default_element.hpp"
 
 	#ifndef Om_Macros_Precompilation_
 
@@ -34,10 +35,10 @@ namespace Om {
 
 	/*!
 	\brief
-		The \ref om__null__ Program implementation.
+		The \ref om__null__ Element implementation.
 	*/
 	class Null:
-	public DefaultProgram<Null> {
+	public DefaultElement<Null> {
 
 	public: // MARK: public (static)
 
@@ -51,9 +52,25 @@ namespace Om {
 
 	public: // MARK: public (non-static)
 
+		Null();
+
+		/*!
+		\brief
+			Swallows the next CodePoint in the Source.
+		*/
+		explicit Null(
+			Source<CodePoint const> &
+		);
+
 		Null & operator =(Null const &);
 
+		virtual Program & operator *();
+
+		virtual Program const & operator *() const;
+
 		virtual void Clear();
+
+		virtual bool Equals(Element const &) const;
 
 		virtual bool Equals(Program const &) const;
 
@@ -70,6 +87,14 @@ namespace Om {
 		virtual void GiveElements(Consumer &) const;
 
 		virtual bool IsEmpty() const;
+
+		virtual bool Merge(Operator &);
+
+		virtual bool Merge(Operator const &);
+
+		virtual bool Merge(Separator &);
+
+		virtual bool Merge(Separator const &);
 
 		virtual void ReadElements(Parser &);
 

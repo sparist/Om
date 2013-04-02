@@ -20,6 +20,8 @@
 namespace Om {
 
 	//! \cond
+	class Null;
+
 	class Operand;
 
 	class Operator;
@@ -47,11 +49,23 @@ namespace Om {
 
 		/*!
 		\brief
+			Takes a Null Element, which is disregarded.
+		*/
+		void TakeElement(Null &);
+
+		/*!
+		\brief
+			\overload
+		*/
+		void TakeElement(Null const &);
+
+		/*!
+		\brief
 			Takes a non-empty Element, which gets copied or swapped.
 		\pre
 			The Element argument is non-empty.
 
-		It is up to the implementation to decide how to process an Element. Each Element is processed eagerly, meaning that two Operators received consecutively may be proceessed differently than the receipt of one Operator comprised of a concatenation of both.
+		It is up to the implementation to decide how to process an Element. Each Element is processed eagerly, meaning that two Operators received consecutively may be processed differently than the receipt of one Operator comprised of a concatenation of both.
 		*/
 		virtual void TakeElement(Operand &) = 0;
 

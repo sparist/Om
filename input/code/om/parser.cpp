@@ -18,8 +18,10 @@
 
 #else
 
+	#include "om/consumer.hpp"
 	#include "om/symbols/operand_symbol.hpp"
 	#include "om/symbols/operator_symbol.hpp"
+	#include "om/symbols/separator_symbol.hpp"
 
 // MARK: - Om::Parser
 
@@ -59,6 +61,46 @@ inline bool Type_::Equals(Parser const & theParser) const {
 		this->thisDepth == theParser.thisDepth
 	);
 	return this->thisCodePointSource == theParser.thisCodePointSource;
+}
+
+template<
+	typename TheOperator,
+	typename TheSeparator
+>
+inline void Type_::Parse(Consumer & theConsumer) {
+	Parser & theParser = *this;
+	while (theParser) {
+		assert(Symbols::theEndOperandSymbol != *theParser);
+		switch (*theParser) {
+		case Symbols::theStartOperandSymbol:
+			theParser.Pop();
+			{
+				// Ensure that this does not resolve to the copy constructor.
+				Source<CodePoint const> & theCodePointSource = theParser;
+
+				Parser theOperandParser(theCodePointSource);
+				theConsumer.ReadQuotedElements(theOperandParser);
+			}
+			if (!theParser) {
+				return;
+			}
+			assert(Symbols::theEndOperandSymbol == *theParser);
+			theParser.Pop();
+			continue;
+		Om_Symbols_SeparatorSymbol_GetCases_():
+			{
+				TheSeparator theSeparator(theParser);
+				theConsumer.TakeElement(theSeparator);
+			}
+			continue;
+		default:
+			{
+				TheOperator theOperator(theParser);
+				theConsumer.TakeElement(theOperator);
+			}
+			// Fall through.
+		}
+	}
 }
 
 inline void Type_::Pop() {

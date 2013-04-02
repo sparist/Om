@@ -39,11 +39,33 @@ inline char const * Type_::GetName() {
 
 // MARK: public (non-static)
 
+inline Type_::Null() {}
+
+inline Type_::Null(
+	Source<CodePoint const> & theCodePointSource
+) {
+	if (theCodePointSource) {
+		theCodePointSource.Pop();
+	}
+}
+
 inline Type_ & Type_::operator =(Null const &) {
 	return *this;
 }
 
+inline Om::Program & Type_::operator *() {
+	return *this;
+}
+
+inline Om::Program const & Type_::operator *() const {
+	return *this;
+}
+
 inline void Type_::Clear() {}
+
+inline bool Type_::Equals(Element const & theElement) const {
+	return theElement.IsEmpty();
+}
 
 inline bool Type_::Equals(Program const & theProgram) const {
 	return theProgram.IsEmpty();
@@ -74,6 +96,22 @@ inline void Type_::GiveElements(Consumer &) {}
 inline void Type_::GiveElements(Consumer &) const {}
 
 inline bool Type_::IsEmpty() const {
+	return true;
+}
+
+inline bool Type_::Merge(Operator &) {
+	return true;
+}
+
+inline bool Type_::Merge(Operator const &) {
+	return true;
+}
+
+inline bool Type_::Merge(Separator &) {
+	return true;
+}
+
+inline bool Type_::Merge(Separator const &) {
 	return true;
 }
 

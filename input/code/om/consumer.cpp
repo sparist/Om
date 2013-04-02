@@ -49,6 +49,10 @@ inline void Type_::TakeElement(Operand &) {
 	throw std::logic_error("Pure virtual function called.");
 }
 
+inline void Type_::TakeElement(Null &) {}
+
+inline void Type_::TakeElement(Null const &) {}
+
 inline void Type_::TakeElement(Operand const &) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");

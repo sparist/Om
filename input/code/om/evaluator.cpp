@@ -92,30 +92,10 @@ inline bool Type_::IsEmpty() const {
 }
 
 inline void Type_::ReadElements(Parser & theParser) {
-	while (theParser) {
-		assert(Symbols::theEndOperandSymbol != *theParser);
-		switch (*theParser) {
-		case Symbols::theStartOperandSymbol:
-			theParser.Pop();
-			{
-				// Ensure that this does not resolve to the copy constructor.
-				Source<CodePoint const> & theCodePointSource = theParser;
-
-				Parser theOperandParser(theCodePointSource);
-				this->ReadQuotedElements(theOperandParser);
-			}
-			if (!theParser) {
-				return;
-			}
-			assert(Symbols::theEndOperandSymbol == *theParser);
-			// Fall through.
-		Om_Symbols_SeparatorSymbol_GetCases_():
-			theParser.Pop();
-			continue;
-		}
-		Operator theOperator(theParser);
-		this->TakeOperator(theOperator);
-	}
+	theParser.Parse<
+		Operator,
+		Null
+	>(*this);
 }
 
 inline void Type_::ReadQuotedElements(Parser & theParser) {
