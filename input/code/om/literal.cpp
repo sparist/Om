@@ -76,7 +76,13 @@ namespace Om {
 			Literal theLiteral;
 			theLiteral.ReadElements(theParser);
 
-			Literal theCopy(theLiteral);
+			Literal theCopy;
+			theCopy = theLiteral;
+
+			theCopy.Clear();
+			BOOST_CHECK(
+				theCopy.IsEmpty()
+			);
 		}
 
 	BOOST_AUTO_TEST_SUITE_END()
