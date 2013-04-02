@@ -7,25 +7,25 @@
 <p>"Contribution" means:</p>
 
 <ol type="a">
-	
+
 	<li>in the case of the initial Contributor, the initial code and documentation distributed under this Agreement, and</li>
 
 	<li>
 
 		<p>in the case of each subsequent Contributor:</p>
-		
+
 		<ol type="i">
 			<li>changes to the Program, and</li>
 			<li>additions to the Program;</li>
 		</ol>
-		
+
 		<p>where such changes and/or additions to the Program originate from and are distributed by that particular Contributor. A Contribution 'originates' from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor's behalf. Contributions do not include additions to the Program which:</p>
-		
+
 		<ol type="i">
 			<li>are separate modules of software distributed in conjunction with the Program under their own license agreement, and</li>
 			<li>are not derivative works of the Program.</li>
 		</ol>
-	
+
 	</li>
 
 </ol>
@@ -60,17 +60,23 @@
 
 	<li>it complies with the terms and conditions of this Agreement; and</li>
 
-	<li>its license agreement:<ol type="i">
+	<li>
 
-		<li>effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;</li>
+		<p>its license agreement:</p>
 
-		<li>effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;</li>
+		<ol type="i">
 
-		<li>states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party; and</li>
+			<li>effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;</li>
 
-		<li>states that source code for the Program is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.</li>
+			<li>effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;</li>
 
-	</ol></li>
+			<li>states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party; and</li>
+
+			<li>states that source code for the Program is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.</li>
+
+		</ol>
+
+	</li>
 
 </ol>
 
