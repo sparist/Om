@@ -27,5 +27,5 @@ cmake %* -P CMakeLists.txt "%Directory%"
 
 cd input
 call .\bootstrap
-call .\b2 boost.locale.icu=on boost.locale.std=off boost.locale.iconv=off boost.locale.winapi=off boost.locale.posix=off define=U_STATIC_IMPLEMENTATION=1 -sICU_PATH="%Icu%" --build-dir="%Directory%\output\intermediate" --prefix="%Directory%\output\artifacts" --hash --with-chrono --with-locale --with-system --with-thread --with-test link=static install
+call .\b2 boost.locale.icu=on boost.locale.std=off boost.locale.iconv=off boost.locale.winapi=off boost.locale.posix=off define=U_STATIC_IMPLEMENTATION=1 -sICU_PATH="%Icu%" --build-dir="%Directory%\output\intermediate" --prefix="%Directory%\output\artifacts" --hash --with-locale --with-system --with-thread --with-test link=static install
 cd "%Directory%"

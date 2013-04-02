@@ -92,9 +92,6 @@ if(MSVC)
 	find_library(BoostUnitTestFrameworkDebugLibrary libboost_unit_test_framework-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 	find_library(BoostUnitTestFrameworkReleaseLibrary libboost_unit_test_framework-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(BoostChronoDebugLibrary libboost_chrono-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostChronoReleaseLibrary libboost_chrono-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-
 	find_library(BoostLocaleDebugLibrary libboost_locale-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 	find_library(BoostLocaleReleaseLibrary libboost_locale-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
@@ -257,9 +254,6 @@ function(om_configure_executable target)
 
 		debug "${BoostThreadDebugLibrary}"
 		optimized "${BoostThreadReleaseLibrary}"
-
-		debug "${BoostChronoDebugLibrary}"
-		optimized "${BoostChronoReleaseLibrary}"
 	)
 
 	# Link ICU
