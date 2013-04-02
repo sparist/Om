@@ -509,6 +509,10 @@ There are several ways to contribute to the %Om project:
 
 See \ref using_code__ for instructions on building the code.
 
+\section developing__adding_or_removing_files Adding or Removing Files
+
+When adding or removing files from source, run the <tt>&quot;generate&quot;</tt> script in the root directory to update the project.
+
 \section developing__adding_operations__ Adding Operations
 
 Additional native functionality can be added to %Om by implementing new operations in C++.
