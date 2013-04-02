@@ -5,6 +5,7 @@ var class_om_1_1_parser =
     [ "operator*", "class_om_1_1_parser.html#a78ace8bb1aa47a6761652bb96453779e", null ],
     [ "operator!", "class_om_1_1_parser.html#a9579cb4d9dfd26953506d22ddc3e8458", null ],
     [ "Equals", "class_om_1_1_parser.html#acce302ce3cbb1da43f8ab8f5d3ca7936", null ],
+    [ "Parse", "class_om_1_1_parser.html#ac98d68cbd394a3519950da2ddc6709c1", null ],
     [ "Pop", "class_om_1_1_parser.html#a7b9a2e434f5a49489dca80bd3e913041", null ],
     [ "operator=", "class_om_1_1_parser.html#ae8df7356f816a4ab64386db1f75e97a1", null ],
     [ "thisCodePointSource", "class_om_1_1_parser.html#aad3629eb0eb7e15a49f2e8d9f80ce8e0", null ],

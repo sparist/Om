@@ -3,6 +3,8 @@ var class_om_1_1_consumer =
     [ "~Consumer", "class_om_1_1_consumer.html#aec914c852a28fc73dec17dd6f4b347f5", null ],
     [ "ReadElements", "class_om_1_1_consumer.html#a44c017d21d3bd72b86256b57645aad61", null ],
     [ "ReadQuotedElements", "class_om_1_1_consumer.html#a82471ef8d99f94f494a7fc45c2d28d60", null ],
+    [ "TakeElement", "class_om_1_1_consumer.html#aa2f8d448d4467f4bdd13bc3b7d70d6a0", null ],
+    [ "TakeElement", "class_om_1_1_consumer.html#a707d5fdeb9f06ad0072f18854fc5e657", null ],
     [ "TakeElement", "class_om_1_1_consumer.html#adf001d19c755e43d927795f74d4989ef", null ],
     [ "TakeElement", "class_om_1_1_consumer.html#a5ae973aac5526a6a4eaeaa02d4177fca", null ],
     [ "TakeElement", "class_om_1_1_consumer.html#a2ec4563f710830c374651560f68b7ab9", null ],

@@ -42,18 +42,20 @@ var hierarchy =
             ] ]
           ] ]
         ] ],
-        [ "Om::DefaultCopyable< Null, Program >", "class_om_1_1_default_copyable.html", [
-          [ "Om::DefaultMoveable< Null, DefaultCopyable< Null, Program > >", "class_om_1_1_default_moveable.html", [
-            [ "Om::DefaultGiveable< Null, Program >", "class_om_1_1_default_giveable.html", [
-              [ "Om::DefaultConsumer< Null, DefaultGiveable< Null, Program > >", "class_om_1_1_default_consumer.html", [
-                [ "Om::DefaultProgram< Null >", "class_om_1_1_default_program.html", [
-                  [ "Om::Null", "class_om_1_1_null.html", null ]
+        [ "Om::Element", "class_om_1_1_element.html", [
+          [ "Om::DefaultCopyable< Null, Element >", "class_om_1_1_default_copyable.html", [
+            [ "Om::DefaultMoveable< Null, DefaultCopyable< Null, Element > >", "class_om_1_1_default_moveable.html", [
+              [ "Om::DefaultGiveable< Null, Element >", "class_om_1_1_default_giveable.html", [
+                [ "Om::DefaultConsumer< Null, DefaultGiveable< Null, Element > >", "class_om_1_1_default_consumer.html", [
+                  [ "Om::DefaultProgram< Null, Element >", "class_om_1_1_default_program.html", [
+                    [ "Om::DefaultElement< Null >", "class_om_1_1_default_element.html", [
+                      [ "Om::Null", "class_om_1_1_null.html", null ]
+                    ] ]
+                  ] ]
                 ] ]
               ] ]
             ] ]
-          ] ]
-        ] ],
-        [ "Om::Element", "class_om_1_1_element.html", [
+          ] ],
           [ "Om::DefaultCopyable< Operand, Element >", "class_om_1_1_default_copyable.html", [
             [ "Om::DefaultMoveable< Operand, DefaultCopyable< Operand, Element > >", "class_om_1_1_default_moveable.html", [
               [ "Om::DefaultGiveable< Operand, Element >", "class_om_1_1_default_giveable.html", [
@@ -424,7 +426,7 @@ var hierarchy =
       [ "Om::DefaultProgram< Literal >", "class_om_1_1_default_program.html", null ]
     ] ],
     [ "Om::Taker< Null >", "class_om_1_1_taker.html", [
-      [ "Om::DefaultProgram< Null >", "class_om_1_1_default_program.html", null ]
+      [ "Om::DefaultProgram< Null, Element >", "class_om_1_1_default_program.html", null ]
     ] ],
     [ "Om::Taker< Operand >", "class_om_1_1_taker.html", [
       [ "Om::DefaultProgram< Operand, Element >", "class_om_1_1_default_program.html", null ]
