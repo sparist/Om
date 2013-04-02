@@ -26,8 +26,6 @@ namespace Om {
 	/*!
 	\brief
 		A Program that contains a single "elemental" item (or none, when IsEmpty() returns true).
-
-	Elemental items can be atomic (Atom) or non-atomic (Operand).
 	*/
 	class Element:
 	public Program {
