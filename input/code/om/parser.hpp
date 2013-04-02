@@ -24,10 +24,6 @@ namespace Om {
 
 	//! \cond
 	class Consumer;
-
-	class Operator;
-
-	class Separator;
 	//! \endcond
 
 	// MARK: - Om::Parser
@@ -60,8 +56,8 @@ namespace Om {
 		bool Equals(Parser const &) const;
 
 		template<
-			typename TheOperator = Operator,
-			typename TheSeparator = Separator
+			typename TheOperator,
+			typename TheSeparator
 		>
 		void Parse(Consumer &);
 
