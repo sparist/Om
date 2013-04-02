@@ -5,7 +5,7 @@ project(Om)
 # Prevent implicit CMake calls on project modification
 set(CMAKE_SUPPRESS_REGENERATION TRUE)
 
-# Global compile flags
+# Set global compilation flags
 if(MSVC)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
@@ -36,14 +36,14 @@ else()
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros")
 endif()
 
-# Global definitions
+# Set global definitions
 if(MSVC)
 	add_definitions(-DU_STATIC_IMPLEMENTATION=1) # For ICU
 else()
 	add_definitions(-DU_CHARSET_IS_UTF8=1) # For ICU
 endif()
 
-# Icu
+# Set ICU directory path, downloading and building as necessary
 set(IcuDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Icu4c/output/artifacts")
 set(IcuCaption "The ICU4C library artifact directory path")
 set(Icu ${IcuDefault} CACHE PATH ${IcuCaption})
@@ -62,7 +62,7 @@ if(NOT EXISTS "${Icu}")
 	endif()
 endif()
 
-# Boost
+# Set Boost directory path, downloading and building as necessary
 set(BoostDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Boost/output/artifacts")
 set(BoostCaption "The Boost library artifact directory path")
 set(Boost ${BoostDefault} CACHE PATH ${BoostCaption})
@@ -81,7 +81,7 @@ if(NOT EXISTS "${Boost}")
 	endif()
 endif()
 
-# Library paths
+# Set dependency library paths
 if(MSVC)
 	find_library(BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 	find_library(BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
@@ -171,7 +171,7 @@ else()
 	set(IcuUcDebugLibrary ${IcuUcReleaseLibrary})
 endif()
 
-# Include paths
+# Configure include paths
 if(MSVC)
 	include_directories(SYSTEM "${Boost}/include/boost-1_53")
 else()
@@ -179,76 +179,75 @@ else()
 endif()
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/input/code")
 
-# Source groups and code paths
-function(om_populate_code)
-	file(GLOB_RECURSE Files "${CMAKE_CURRENT_SOURCE_DIR}/input/code/*.*")
-	foreach(File ${Files})
-		get_filename_component(Directory "${File}" PATH)
-		list(APPEND Directories "${Directory}")
-	endforeach()
-	list(REMOVE_DUPLICATES Directories)
-	list(SORT Directories)
+# Get sorted list of unique directories
+file(GLOB_RECURSE Files "${CMAKE_CURRENT_SOURCE_DIR}/input/code/*.*")
+foreach(File ${Files})
+	get_filename_component(Directory "${File}" PATH)
+	list(APPEND Directories "${Directory}")
+endforeach()
+list(REMOVE_DUPLICATES Directories)
+list(SORT Directories)
 
-	foreach(Directory ${Directories})
-		file(RELATIVE_PATH RelativeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${Directory}")
-		string(REPLACE "/" "\\" SourceGroup "${RelativeDirectory}")
+# Add each directory as a source group
+foreach(Directory ${Directories})
+	file(RELATIVE_PATH RelativeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${Directory}")
+	string(REPLACE "/" "\\" SourceGroup "${RelativeDirectory}")
 
-		file(GLOB LocalCppFiles "${Directory}/*.cpp")
-		list(SORT LocalCppFiles)
-		source_group("Source Files\\${SourceGroup}" FILES ${LocalCppFiles})
-		set(CppFiles ${CppFiles} ${LocalCppFiles})
+	file(GLOB LocalCppFiles "${Directory}/*.cpp")
+	list(SORT LocalCppFiles)
+	source_group("Source Files\\${SourceGroup}" FILES ${LocalCppFiles})
+	set(CppFiles ${CppFiles} ${LocalCppFiles})
 
-		file(GLOB LocalHppFiles "${Directory}/*.hpp")
-		list(SORT LocalHppFiles)
-		source_group("Header Files\\${SourceGroup}" FILES ${LocalHppFiles})
-		set(HppFiles ${HppFiles} ${LocalHppFiles})
+	file(GLOB LocalHppFiles "${Directory}/*.hpp")
+	list(SORT LocalHppFiles)
+	source_group("Header Files\\${SourceGroup}" FILES ${LocalHppFiles})
+	set(HppFiles ${HppFiles} ${LocalHppFiles})
 
-		file(GLOB LocalDoxFiles "${Directory}/*.dox")
-		list(SORT LocalDoxFiles)
-		source_group("Doxygen Files\\${SourceGroup}" FILES ${LocalDoxFiles})
-		set(DoxFiles ${DoxFiles} ${LocalDoxFiles})
-	endforeach()
+	file(GLOB LocalDoxFiles "${Directory}/*.dox")
+	list(SORT LocalDoxFiles)
+	source_group("Doxygen Files\\${SourceGroup}" FILES ${LocalDoxFiles})
+	set(DoxFiles ${DoxFiles} ${LocalDoxFiles})
+endforeach()
 
-	set(Cpp ${CppFiles} PARENT_SCOPE)
-	set(Hpp ${HppFiles} PARENT_SCOPE)
-	set(Dox ${DoxFiles} PARENT_SCOPE)
-endfunction()
-om_populate_code()
+# Add executable targets
+add_executable("Om" ${CppFiles} ${HppFiles})
+add_executable("Om.Test" ${CppFiles})
 
-# Internal header
-function(om_populate_internal)
-	set(InternalHeader "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.internal")
-	file(WRITE "${InternalHeader}" "")
-	foreach(HeaderFile ${Hpp})
-		file(RELATIVE_PATH RelativeHeaderFile "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${HeaderFile}")
-		file(APPEND "${InternalHeader}" "#include \"${RelativeHeaderFile}\"\n")
-	endforeach()
-endfunction()
-om_populate_internal()
-
-# Targets
-add_executable("Om" ${Cpp} ${Hpp} ${Dox})
-add_executable("Om.Test" ${Cpp})
+# Add documentation target
 if(MSVC)
-	add_custom_target("Om.Documentation"
-		COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_SOURCE_DIR}/output/artifacts/Doxygen"
-		COMMAND (type ..\\documentation\\Doxyfile && echo WARN_FORMAT = "$file($line): $text") | doxygen -
-		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/code"
-		VERBATIM
-	)
+	set(DoxygenCommand (type ..\\documentation\\Doxyfile && echo WARN_FORMAT = "$file($line): $text") | doxygen -)
 else()
-	add_custom_target("Om.Documentation"
-		COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_SOURCE_DIR}/output/artifacts/Doxygen"
-		COMMAND doxygen ../documentation/Doxyfile
-		COMMENT "Generating Documentation..."
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/code"
-		VERBATIM
+	set(DoxygenCommand doxygen ../documentation/Doxyfile)
+endif()
+add_custom_target("Om.Documentation"
+	COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_SOURCE_DIR}/output/artifacts/Doxygen"
+	COMMAND ${DoxygenCommand}
+	COMMENT "Generating Documentation..."
+	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/code"
+	SOURCES ${DoxFiles}
+)
+
+# om.internal: Populate with complete sorted list of unique headers
+set(InternalHeader "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.internal")
+file(WRITE "${InternalHeader}" "")
+foreach(HeaderFile ${HppFiles})
+	file(RELATIVE_PATH RelativeHeaderFile "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${HeaderFile}")
+	file(APPEND "${InternalHeader}" "#include \"${RelativeHeaderFile}\"\n")
+endforeach()
+
+# om.external: Configure for precompilation
+if(NOT MSVC)
+	add_definitions(-DOm_Macros_Precompilation_)
+
+	set_target_properties("Om" "Om.Test" PROPERTIES
+		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.external"
+		XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
 	)
 endif()
 
-# Linking
-function(om_target_link_libraries target)
+# Configure executable targets
+function(om_configure_executable target)
+	# Link Boost
 	target_link_libraries(${target}
 		debug "${BoostLocaleDebugLibrary}"
 		optimized "${BoostLocaleReleaseLibrary}"
@@ -263,6 +262,7 @@ function(om_target_link_libraries target)
 		optimized "${BoostChronoReleaseLibrary}"
 	)
 
+	# Link ICU
 	target_link_libraries(${target}
 		debug "${IcuDataDebugLibrary}"
 		optimized "${IcuDataReleaseLibrary}"
@@ -289,6 +289,7 @@ function(om_target_link_libraries target)
 		optimized "${IcuUcReleaseLibrary}"
 	)
 
+	# Add post-build event that copies artifacts
 	add_custom_command(
 		TARGET ${target}
 		POST_BUILD
@@ -297,8 +298,10 @@ function(om_target_link_libraries target)
 		VERBATIM
 	)
 endfunction()
-om_target_link_libraries("Om")
-om_target_link_libraries("Om.Test")
+om_configure_executable("Om")
+om_configure_executable("Om.Test")
+
+# Link additional Om.Test libraries
 target_link_libraries("Om.Test"
 	debug "${BoostPrgExecMonitorDebugLibrary}"
 	optimized "${BoostPrgExecMonitorReleaseLibrary}"
@@ -310,17 +313,7 @@ target_link_libraries("Om.Test"
 	optimized "${BoostUnitTestFrameworkReleaseLibrary}"
 )
 
-# Precompiled headers
-if(NOT MSVC)
-	add_definitions(-DOm_Macros_Precompilation_)
-
-	set_target_properties("Om" "Om.Test" PROPERTIES
-		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.external"
-		XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
-	)
-endif()
-
-# Om.Test compile and link flags
+# Configure Om.Test compile and link flags
 set(OmTestCompileFlags "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API")
 set(OmTestLinkFlags "")
 if(NOT MSVC)
@@ -336,7 +329,7 @@ endif()
 set_target_properties("Om.Test" PROPERTIES COMPILE_FLAGS "${OmTestCompileFlags}")
 set_target_properties("Om.Test" PROPERTIES LINK_FLAGS "${OmTestLinkFlags}")
 
-# RUN_TESTS target
+# Add RUN_TESTS target
 enable_testing()
 add_test("Om.Test.Build" "${CMAKE_COMMAND}" --build "${CMAKE_BINARY_DIR}" --target "Om.Test")
 add_test("Om.Test.Run" "Om.Test")
