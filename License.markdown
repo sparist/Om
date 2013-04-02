@@ -1,10 +1,10 @@
 # Eclipse Public License - Version 1.0
 
-THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (<dfn>AGREEMENT</dfn>). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
 
 ## 1. DEFINITIONS
 
-<p><dfn>Contribution</dfn> means:</p>
+<p>"Contribution" means:</p>
 
 <ol type="a">
 	
@@ -30,13 +30,13 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICE
 
 </ol>
 
-<p><dfn>Contributor</dfn> means any person or entity that distributes the Program.</p>
+<p>"Contributor" means any person or entity that distributes the Program.</p>
 
-<p><dfn>Licensed Patents</dfn> mean patent claims licensable by a Contributor which are necessarily infringed by the use or sale of its Contribution alone or when combined with the Program.</p>
+<p>"Licensed Patents" mean patent claims licensable by a Contributor which are necessarily infringed by the use or sale of its Contribution alone or when combined with the Program.</p>
 
-<p><dfn>Program</dfn> means the Contributions distributed in accordance with this Agreement.</p>
+<p>"Program" means the Contributions distributed in accordance with this Agreement.</p>
 
-<p><dfn>Recipient</dfn> means anyone who receives the Program under this Agreement, including all Contributors.</p>
+<p>"Recipient" means anyone who receives the Program under this Agreement, including all Contributors.</p>
 
 ## 2. GRANT OF RIGHTS
 
@@ -90,7 +90,7 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICE
 
 ## 4. COMMERCIAL DISTRIBUTION
 
-<p>Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor (<dfn>Commercial Contributor</dfn>) hereby agrees to defend and indemnify every other Contributor (<dfn>Indemnified Contributor</dfn>) against any losses, damages and costs (collectively <dfn>Losses</dfn>) arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must:</p>
+<p>Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor ("Commercial Contributor") hereby agrees to defend and indemnify every other Contributor ("Indemnified Contributor") against any losses, damages and costs (collectively "Losses") arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must:</p>
 
 <ol type="a">
 
