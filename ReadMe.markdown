@@ -6,6 +6,22 @@ See the <a href="http://sparist.github.com/Om">documentation</a> for more inform
 
 Changes for each released version are listed below.
 
+## 0.1.3 (In development)
+
+-	Refactored build, and file layout, with continuous integration in mind. The following can now be done with provided scripts:
+	-	Download dependencies, build, and generate the Om project.
+	-	Generate the Om project using existing dependency builds.
+	-	Download and build dependencies only.
+-	Updated ICU4C to 51.1.
+-	Removed Boost Chrono dependency.
+-	Added test coverage detection and made minor test coverage improvements.
+-	Refactored:
+	-	Improved equality operator implementations.
+	-	Replaced Queue class with Producer and Consumer classes.
+-	Improved documentation.
+-	Improved coding style.
+-	In project, moved "dox" files into Documentation target folder.
+
 ## 0.1.2
 
 ### Operations
