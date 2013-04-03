@@ -20,7 +20,7 @@ Changes for each released version are listed below.
 	-	Replaced Queue class with Producer and Consumer classes.
 -	Improved documentation.
 -	Improved coding style.
--	In project, moved "dox" files into Om.Documentation target folder.
+-	Moved "dox" files into Om.Documentation target folder of project.
 
 ## 0.1.2
 
