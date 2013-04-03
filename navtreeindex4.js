@@ -221,9 +221,10 @@ var NAVTREEINDEX4 =
 "developing__.html#developing__adding_or_removing_files":[3,0,2],
 "developing__.html#developing__adding_programs__":[3,0,4],
 "developing__.html#developing__analyzing_code__":[3,0,5],
+"developing__.html#developing__analyzing_tests__":[3,0,6],
 "developing__.html#developing__building__":[3,0,1],
 "developing__.html#developing__forking__":[3,0,0],
-"developing__.html#developing__submitting_changes__":[3,0,6],
+"developing__.html#developing__submitting_changes__":[3,0,7],
 "dir_05113c82256cb89f1dfc3ea665dbefa2.html":[8,0,0,0],
 "dir_12c6a16a9edb7528e3c06d667de293a3.html":[8,0,0,3],
 "dir_310c4e4206a95b11af3bb20553461fb2.html":[8,0,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "drop__operation_8hpp_source.html":[8,0,0,0,31],
 "element_8cpp.html":[8,0,0,28],
 "element_8cpp_source.html":[8,0,0,28],
-"element_8hpp.html":[8,0,0,29],
-"element_8hpp.html#a08d88ee673a8ccb4b369b9f787e9924c":[8,0,0,29,2]
+"element_8hpp.html":[8,0,0,29]
 };

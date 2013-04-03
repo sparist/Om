@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"element_8hpp.html#a08d88ee673a8ccb4b369b9f787e9924c":[8,0,0,29,2],
 "element_8hpp.html#a1f249e2bd19e7b30017e7926bfb66534":[8,0,0,29,3],
 "element_8hpp.html#a34bed4cc341f007ca2847d55b2f3899f":[8,0,0,29,1],
 "element_8hpp.html#a72146912b265c8d0b213c4cf775f123c":[8,0,0,29,4],
@@ -190,8 +191,8 @@ var NAVTREEINDEX5 =
 "functions__.html#functions__types__":[2,2,3],
 "functions_enum.html":[7,3,4],
 "functions_eval.html":[7,3,5],
-"functions_func.html":[7,3,1],
 "functions_func.html":[7,3,1,0],
+"functions_func.html":[7,3,1],
 "functions_func_0x63.html":[7,3,1,1],
 "functions_func_0x64.html":[7,3,1,2],
 "functions_func_0x65.html":[7,3,1,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "group__om____operations____do__operation____.html":[5,0,18],
 "group__om____operations____drop__operation____.html":[5,0,19],
 "group__om____operations____encode__operation____.html":[5,0,24],
-"group__om____operations____environment__operation____.html":[5,0,25],
-"group__om____operations____equals__operation____.html":[5,0,10]
+"group__om____operations____environment__operation____.html":[5,0,25]
 };

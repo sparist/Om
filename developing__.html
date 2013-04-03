@@ -111,6 +111,18 @@ Analyzing Code</h1>
 </blockquote>
 </li>
 </ul>
+<h1><a class="anchor" id="developing__analyzing_tests__"></a>
+Analyzing Test Coverage</h1>
+<p>The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:</p>
+<ul>
+<li>Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>. In Preferences, add <code>"*.ipp"</code> and <code>"*.hpp"</code> to the "SDK Files" list.</li>
+<li>Build and run the Om.Test target.</li>
+<li>In the CoverStory File menu, open the folder <code>"output/intermediate/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64"</code>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:<ul>
+<li>The left pane shows a list of Om source files, each accompanied by a test coverage percentage.</li>
+<li>The right pane shows the contents of the currently selected source file, with each line annotated with the number of times it was executed.</li>
+</ul>
+</li>
+</ul>
 <h1><a class="anchor" id="developing__submitting_changes__"></a>
 Submitting Changes</h1>
 <p>Changes can be submitted to Om via <a href="https://github.com/sparist/Om/pull/new/master">pull request</a>. </p>

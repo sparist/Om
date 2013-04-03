@@ -7,6 +7,7 @@ var contributing__ =
       [ "Adding Operations", "developing__.html#developing__adding_operations__", null ],
       [ "Adding Programs", "developing__.html#developing__adding_programs__", null ],
       [ "Analyzing Code", "developing__.html#developing__analyzing_code__", null ],
+      [ "Analyzing Test Coverage", "developing__.html#developing__analyzing_tests__", null ],
       [ "Submitting Changes", "developing__.html#developing__submitting_changes__", null ]
     ] ],
     [ "Reporting Issues", "reporting_issues__.html", null ],

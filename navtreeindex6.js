@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"group__om____operations____equals__operation____.html":[5,0,10],
 "group__om____operations____evaluate__operation____.html":[5,0,26],
 "group__om____operations____expression__back__push__operation____.html":[5,0,28],
 "group__om____operations____expression__front__push__operation____.html":[5,0,0],
@@ -142,12 +143,12 @@ var NAVTREEINDEX6 =
 "namespace_om_1_1_macros.html":[6,0,1,0],
 "namespace_om_1_1_operations.html":[7,0,1,1],
 "namespace_om_1_1_operations.html":[6,0,1,1],
-"namespace_om_1_1_sinks.html":[7,0,1,2],
 "namespace_om_1_1_sinks.html":[6,0,1,2],
-"namespace_om_1_1_sources.html":[6,0,1,3],
+"namespace_om_1_1_sinks.html":[7,0,1,2],
 "namespace_om_1_1_sources.html":[7,0,1,3],
-"namespace_om_1_1_symbols.html":[6,0,1,4],
+"namespace_om_1_1_sources.html":[6,0,1,3],
 "namespace_om_1_1_symbols.html":[7,0,1,4],
+"namespace_om_1_1_symbols.html":[6,0,1,4],
 "namespaceboost.html":[7,0,0],
 "namespaceboost.html":[6,0,0],
 "namespacemembers.html":[6,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "operator__symbol_8hpp.html#afc04c3500bb7afa524dfde98965fbc5c":[8,0,0,3,3,1],
 "operator__symbol_8hpp_source.html":[8,0,0,3,3],
 "owner_8cpp.html":[8,0,0,62],
-"owner_8cpp_source.html":[8,0,0,62],
-"owner_8hpp.html":[8,0,0,63]
+"owner_8cpp_source.html":[8,0,0,62]
 };
