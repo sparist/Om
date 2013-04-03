@@ -43,23 +43,24 @@ else()
 	add_definitions(-DU_CHARSET_IS_UTF8=1) # For ICU
 endif()
 
+# Set generate command for external dependencies
+if(MSVC)
+	set(GenerateCommand generate.bat)
+else()
+	set(GenerateCommand ./generate.sh)
+endif()
+
 # Set ICU directory path, downloading and building as necessary
 set(IcuDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Icu4c/output/artifacts")
 set(IcuCaption "The ICU4C library artifact directory path")
 set(Icu ${IcuDefault} CACHE PATH ${IcuCaption})
 if(NOT EXISTS "${Icu}")
+	message("ICU4C not found. Downloading and building...")
 	set(Icu ${IcuDefault} CACHE PATH ${IcuCaption} FORCE)
-	if(MSVC)
-		execute_process(
-			COMMAND generate.bat
-			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Icu4c"
-		)
-	else()
-		execute_process(
-			COMMAND ./generate.sh
-			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Icu4c"
-		)
-	endif()
+	execute_process(
+		COMMAND "${GenerateCommand}"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Icu4c"
+	)
 endif()
 
 # Set Boost directory path, downloading and building as necessary
@@ -67,18 +68,12 @@ set(BoostDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Boost/output/ar
 set(BoostCaption "The Boost library artifact directory path")
 set(Boost ${BoostDefault} CACHE PATH ${BoostCaption})
 if(NOT EXISTS "${Boost}")
+	message("Boost not found. Downloading and building...")
 	set(Boost "${BoostDefault}" CACHE PATH ${BoostCaption} FORCE)
-	if(MSVC)
-		execute_process(
-			COMMAND generate.bat "${Icu}"
-			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Boost"
-		)
-	else()
-		execute_process(
-			COMMAND ./generate.sh "${Icu}"
-			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Boost"
-		)
-	endif()
+	execute_process(
+		COMMAND "${GenerateCommand}" "${Icu}"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Boost"
+	)
 endif()
 
 # Set dependency library paths
