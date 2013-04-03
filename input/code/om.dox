@@ -556,6 +556,15 @@ Some basic free static analysis tools can be applied to the %Om code.
 -	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to %Om by entering the following at the terminal from inside the %Om directory:
 	<blockquote><tt>cloc.pl code</tt></blockquote>
 
+\section developing__analyzing_tests__ Analyzing Test Coverage
+
+The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:
+-	Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>.  In Preferences, add <tt>"*.ipp"</tt> and <tt>"*.hpp"</tt> to the "SDK Files" list.
+-	Build and run the Om.Test target.
+-	In the CoverStory File menu, open the folder <tt>&quot;output/intermediate/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;</tt>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:
+	-	The left pane shows a list of %Om source files, each accompanied by a test coverage percentage.
+	-	The right pane shows the contents of the currently selected source file, with each line annotated with the number of times it was executed.
+
 \section developing__submitting_changes__ Submitting Changes
 
 Changes can be submitted to %Om via <a href="https://github.com/sparist/Om/pull/new/master">pull request</a>.
