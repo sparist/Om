@@ -6,7 +6,7 @@ See the <a href="http://sparist.github.com/Om">documentation</a> for more inform
 
 Changes for each released version are listed below.
 
-## 0.1.3 (In development)
+## 0.1.3
 
 -	Refactored build, and file layout, with continuous integration in mind. The following can now be done with provided scripts:
 	-	Download and build dependencies, then generate the Om project.
