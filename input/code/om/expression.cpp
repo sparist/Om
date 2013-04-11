@@ -246,7 +246,7 @@ inline void Type_::BackTakeOperand(TheOperand & theOperand) {
 }
 
 template <typename TheOperator>
-inline void Type_::BackTakeOperator (TheOperator & theOperator) {
+inline void Type_::BackTakeOperator(TheOperator & theOperator) {
 	assert(
 		!theOperator.IsEmpty()
 	);
