@@ -1,12 +1,4 @@
-# Om
-
-<a href="http://om-language.org">Om</a> is an experimental high-level programming language with the goal of maximal simplicity. It is a concatenative, homoiconic, embeddable programming and algorithm notation language, implemented in C++, with minimal syntax (only three elements), prefix notation (whereby functions manipulate the remainder of the program itself), and "panmorphic" typing (allowing programming without data types).
-
-See the <a href="http://sparist.github.com/Om">documentation</a> for more information.
-
-Changes for each released version are listed below.
-
-## 0.1.3
+# 0.1.3
 
 -	Refactored build and file layout with continuous integration in mind. The following can now be done with provided scripts:
 	-	Download and build dependencies, then generate the Om project.
@@ -22,14 +14,14 @@ Changes for each released version are listed below.
 -	Improved coding style.
 -	Moved "dox" files into Om.Documentation target folder of project.
 
-## 0.1.2
+# 0.1.2
 
-### Operations
+## Operations
 
 -	Added:
 	-	`pair`
 
-### Documentation
+## Documentation
 
 -	Added more examples (#13).
 -	Improved general readability and organization.
@@ -37,19 +29,19 @@ Changes for each released version are listed below.
 -	Removed search field, which didn't work on iPad.
 -	Added XML documentation generation, which can be used for "documentation metadata" (e.g. for IDE).
 
-### Testing
+## Testing
 
 -	Switched from UnitTest++ to the Boost Unit Test library.
 -	Added CMake test that runs the unit tests.
 
-### Versions
+## Versions
 
 -	Updated Doxygen to 1.8.3.1.
 -	Updated Graphviz to 2.30.1.
 -	Updated Boost to 1.53.0, which addresses a <a href="http://www.boost.org/users/news/boost_locale_security_notice.html">security issue</a>.
 -	Updated ICU to 50.1.2.
 
-### Build
+## Build
 
 -	Split external building into separate "premake" scripts.
 -	Added better argument checks to scripts.
@@ -57,7 +49,7 @@ Changes for each released version are listed below.
 -	Reorganized products folder.
 -	Added "setlocal" to Windows scripts to prevent non-local environment modifications.
 
-### General
+## General
 
 -	Made fixes to Lexicon (#20, #21).
 -	Made om.hpp an "umbrella" header, populated automatically by CMake, which contains all Om headers (#18).
@@ -69,9 +61,9 @@ Changes for each released version are listed below.
 -	Improved Doxygen naming convention to prevent conflicts with Doxygen-generated pages.
 -	Refactored code.
 
-## 0.1.1
+# 0.1.1
 
-### Operations
+## Operations
 
 -	Added:
 	-	`system`
@@ -94,22 +86,22 @@ Changes for each released version are listed below.
 	-	`evaluate`: now evaluates in place using the current environment
 	-	`find`: now provides information about whether the operator is included, and the output is reordered for ease of use
 
-### Programs
+## Programs
 
 -	Fixed Operand program semantics so that an "empty" Operand is an empty Program.
 
-### Documentation
+## Documentation
 
 -	Made documentation content and style improvements.
 -	Removed temporary generated documentation file on Windows.
 -	Created "gh-pages" branch containing generated Doxygen for the documentation.
 -	Updated Doxygen to 1.8.3.
 
-### Testing
+## Testing
 
 -	Improved unit test coverage.
 
-### General
+## General
 
 -	Removed recursion that was not statically bounded (#2).
 -	Moved roadmap to issue tracker (#3).
@@ -119,6 +111,6 @@ Changes for each released version are listed below.
 -	Tested with Boost 1.52.0 and updated build documentation.
 -	Tested with ICU4C 50.1.1 and updated build documentation.
 
-## 0.1
+# 0.1
 
 Initial release.
