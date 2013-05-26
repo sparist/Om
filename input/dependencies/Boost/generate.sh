@@ -8,7 +8,7 @@ fi
 
 if [ $# -ne 1 ]
 then
-  echo Usage: $0 "ICU path"
+  echo Usage: $0 {ICU path}
   exit 1
 fi
 

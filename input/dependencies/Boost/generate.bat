@@ -6,7 +6,7 @@ if exist output\artifacts goto :EOF
 set argC=0
 for %%x in (%*) do Set /A argC+=1
 if not %argC% == 1 (
-	echo Usage: %0 "ICU path"
+	echo Usage: %0 {ICU path}
 	exit /b 1
 )
 
