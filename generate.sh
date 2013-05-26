@@ -12,5 +12,5 @@ Directory=`pwd -P`
 
 mkdir -p "output/intermediate/${Generator}"
 cd "output/intermediate/${Generator}"
-cmake -G "${Generator}" "$@" "$Directory"
+cmake -G "$@" "$Directory"
 cd "$Directory"
