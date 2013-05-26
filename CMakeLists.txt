@@ -228,12 +228,13 @@ foreach(HeaderFile ${HppFiles})
 endforeach()
 
 # om.external: Configure for precompilation
-if(NOT MSVC)
+if(APPLE)
 	add_definitions(-DOm_Macros_Precompilation_)
 
-	set_target_properties("Om" "Om.Test" PROPERTIES
-		XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.external"
-		XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
+	set_target_properties("Om" "Om.Test"
+		PROPERTIES
+			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.external"
+			XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
 	)
 endif()
 
