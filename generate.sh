@@ -1,9 +1,14 @@
 #!/bin/sh
 set -e
 
-Directory=`pwd -P`
+if [ $# -ne 1 ]
+then
+  echo Usage: $0 {CMake Generator}
+  exit 1
+fi
+Generator=$1
 
-Generator=Xcode
+Directory=`pwd -P`
 
 mkdir -p "output/intermediate/${Generator}"
 cd "output/intermediate/${Generator}"
