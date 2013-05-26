@@ -21,8 +21,6 @@ cd %1
 set Icu=%CD%
 cd "%Directory%"
 
-call "%VS100COMNTOOLS%..\..\VC\vcvarsall.bat"
-
 cmake %* -P CMakeLists.txt "%Directory%"
 
 cd input

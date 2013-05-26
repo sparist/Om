@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.10)
 
 if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/input")
-	if(MSVC)
+	if(WIN32)
 		set(Extension zip)
 		set(Md5 "c618e030fd4882e4dbacf54baf824544")
 	else()

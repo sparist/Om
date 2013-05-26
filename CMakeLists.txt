@@ -78,23 +78,31 @@ endif()
 
 # Set dependency library paths
 if(MSVC)
-	find_library(BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	# Determine MSVC version string used in Boost library names
+	set(MsvcVersionMinimum 1600)
+	set(MsvcVersion ${MSVC_VERSION})
+	if(${MsvcVersion} LESS ${MsvcVersionMinimum})
+		set(MsvcVersion ${MsvcVersionMinimum})
+	endif()
+	math(EXPR BoostMsvcVersion "((${MsvcVersion} - 600) / 10)") # Only works for Visual Studio 7.1 and higher
 
-	find_library(BoostTestExecMonitorDebugLibrary libboost_test_exec_monitor-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostTestExecMonitorReleaseLibrary libboost_test_exec_monitor-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(BoostUnitTestFrameworkDebugLibrary libboost_unit_test_framework-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostUnitTestFrameworkReleaseLibrary libboost_unit_test_framework-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostTestExecMonitorDebugLibrary libboost_test_exec_monitor-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostTestExecMonitorReleaseLibrary libboost_test_exec_monitor-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(BoostLocaleDebugLibrary libboost_locale-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostLocaleReleaseLibrary libboost_locale-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostUnitTestFrameworkDebugLibrary libboost_unit_test_framework-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostUnitTestFrameworkReleaseLibrary libboost_unit_test_framework-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(BoostSystemDebugLibrary libboost_system-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostSystemReleaseLibrary libboost_system-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostLocaleDebugLibrary libboost_locale-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostLocaleReleaseLibrary libboost_locale-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(BoostThreadDebugLibrary libboost_thread-vc100-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostThreadReleaseLibrary libboost_thread-vc100-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostSystemDebugLibrary libboost_system-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostSystemReleaseLibrary libboost_system-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+
+	find_library(BoostThreadDebugLibrary libboost_thread-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostThreadReleaseLibrary libboost_thread-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
 
 	find_library(IcuDataDebugLibrary sicudtd "${Icu}/lib" NO_DEFAULT_PATH)
 	find_library(IcuDataReleaseLibrary sicudt "${Icu}/lib" NO_DEFAULT_PATH)

@@ -3,8 +3,6 @@ setlocal enableextensions
 
 if exist output\artifacts goto :EOF
 
-call "%VS100COMNTOOLS%..\..\VC\vcvarsall.bat"
-
 set Directory=%CD%
 
 cmake %* -P CMakeLists.txt "%Directory%"
