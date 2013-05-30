@@ -1,8 +1,8 @@
 var class_om_1_1_lexicon =
 [
     [ "ElementRange", "class_om_1_1_lexicon_1_1_element_range.html", "class_om_1_1_lexicon_1_1_element_range" ],
-    [ "List", "class_om_1_1_lexicon.html#a3f1659783314327f3bf851419f3e3bb7", null ],
-    [ "Map", "class_om_1_1_lexicon.html#a93bdb893c407f4a190b98bf6e36503e0", null ],
+    [ "PairList", "class_om_1_1_lexicon.html#adaaf4c6e0ba6a2694d341ca59bfe6335", null ],
+    [ "Map", "class_om_1_1_lexicon.html#a83eb5d3eb2a34db5d7a57c80a13289ca", null ],
     [ "Lexicon", "class_om_1_1_lexicon.html#a4a02b42fc1eac3679f33355caab0dfa1", null ],
     [ "Lexicon", "class_om_1_1_lexicon.html#a2cf69c7e0131f59c87a399c65cc195b8", null ],
     [ "GetName", "class_om_1_1_lexicon.html#ac3ef51a20b1a2ce14739598c1093c526", null ],
@@ -24,9 +24,9 @@ var class_om_1_1_lexicon =
     [ "TakeSeparator", "class_om_1_1_lexicon.html#a30af94c5cdcc7720550605ace0420350", null ],
     [ "Translate", "class_om_1_1_lexicon.html#ac26596e4f14a14cbf3fe4daeffac0fba", null ],
     [ "GiveElements", "class_om_1_1_lexicon.html#a987886863926f90019e1ef0dbf90417d", null ],
-    [ "GetOperandTaker", "class_om_1_1_lexicon.html#a04a735cdbeece06b075bb3d572b6d34a", null ],
-    [ "GetOperandTaker", "class_om_1_1_lexicon.html#ae27fba4f3fbc8e0b8b0bfd837c369183", null ],
-    [ "GivePair", "class_om_1_1_lexicon.html#a757d075bf770aa82684be367f531b9eb", null ],
+    [ "GetOperandTaker", "class_om_1_1_lexicon.html#a0c4a06e64f4bced97345e3914aa5daf4", null ],
+    [ "GetOperandTaker", "class_om_1_1_lexicon.html#a7f72674a140bf0ab9d7194bb43b3a5f2", null ],
+    [ "GivePair", "class_om_1_1_lexicon.html#ae16680dd2de97637e10a4c2b64c7b518", null ],
     [ "thisMap", "class_om_1_1_lexicon.html#a58d7ff7894887bd497b1dc61368467a8", null ],
-    [ "thisList", "class_om_1_1_lexicon.html#a7245f37ac083ec40639538c038f091c1", null ]
+    [ "thisPairList", "class_om_1_1_lexicon.html#a561bc614e88537917dd7321b1a960d41", null ]
 ];

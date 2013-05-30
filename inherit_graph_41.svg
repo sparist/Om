@@ -10,7 +10,7 @@
 <title>Graphical Class Hierarchy</title>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<g id="a_node1"><a xlink:href="class_om_1_1_sink.html" target="_top" xlink:title="Any object that items can be pushed to.">
+<g id="a_node1"><a xlink:href="class_om_1_1_sink.html" target="_top" xlink:title="Any object that items can be pushed to. ">
 <polygon fill="none" stroke="black" points="12.7407,-1467 12.7407,-1487 125.259,-1487 125.259,-1467 12.7407,-1467"/>
 <text text-anchor="middle" x="69" y="-1473" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink&lt; ThisItem &gt;</text>
 </a>
@@ -79,7 +79,7 @@
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="class_om_1_1_sinks_1_1_default_sink.html" target="_top" xlink:title="A partial Sink implementation.">
+<g id="a_node11"><a xlink:href="class_om_1_1_sinks_1_1_default_sink.html" target="_top" xlink:title="A partial Sink implementation. ">
 <polygon fill="none" stroke="black" points="187.979,-1461 187.979,-1493 352.021,-1493 352.021,-1461 187.979,-1461"/>
 <text text-anchor="start" x="195.979" y="-1479" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sinks::DefaultSink</text>
 <text text-anchor="middle" x="270" y="-1467" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisItem, ThisImplementation &gt;</text>
@@ -93,7 +93,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="class_om_1_1_sinks_1_1_container_back_sink.html" target="_top" xlink:title="A Sink adapter for a container; pushes items into the back.">
+<g id="a_node3"><a xlink:href="class_om_1_1_sinks_1_1_container_back_sink.html" target="_top" xlink:title="A Sink adapter for a container; pushes items into the back. ">
 <polygon fill="none" stroke="black" points="408.757,-1341 408.757,-1373 567.243,-1373 567.243,-1341 408.757,-1341"/>
 <text text-anchor="start" x="416.757" y="-1359" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sinks::ContainerBack</text>
 <text text-anchor="middle" x="488" y="-1347" font-family="Helvetica,sans-Serif" font-size="10.00">Sink&lt; ThisItem, ThisContainer &gt;</text>
@@ -107,7 +107,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="class_om_1_1_sinks_1_1_container_front_sink.html" target="_top" xlink:title="A Sink adapter for a container; pushes items into the front.">
+<g id="a_node5"><a xlink:href="class_om_1_1_sinks_1_1_container_front_sink.html" target="_top" xlink:title="A Sink adapter for a container; pushes items into the front. ">
 <polygon fill="none" stroke="black" points="408.757,-1593 408.757,-1625 567.243,-1625 567.243,-1593 408.757,-1593"/>
 <text text-anchor="start" x="416.757" y="-1611" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sinks::ContainerFront</text>
 <text text-anchor="middle" x="488" y="-1599" font-family="Helvetica,sans-Serif" font-size="10.00">Sink&lt; ThisItem, ThisContainer &gt;</text>
@@ -137,7 +137,7 @@
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="class_om_1_1_sinks_1_1_stream_sink.html" target="_top" xlink:title="A Sink adapter for an output stream.">
+<g id="a_node8"><a xlink:href="class_om_1_1_sinks_1_1_stream_sink.html" target="_top" xlink:title="A Sink adapter for an output stream. ">
 <polygon fill="none" stroke="black" points="648.32,-1524 648.32,-1556 767.68,-1556 767.68,-1524 648.32,-1524"/>
 <text text-anchor="start" x="656.32" y="-1542" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sinks::StreamSink</text>
 <text text-anchor="middle" x="708" y="-1530" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisItem &gt;</text>
@@ -151,7 +151,7 @@
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="class_om_1_1_sinks_1_1_iterator_sink.html" target="_top" xlink:title="A Sink adapter for an output iterator.">
+<g id="a_node10"><a xlink:href="class_om_1_1_sinks_1_1_iterator_sink.html" target="_top" xlink:title="A Sink adapter for an output iterator. ">
 <polygon fill="none" stroke="black" points="424.324,-1404 424.324,-1436 551.676,-1436 551.676,-1404 424.324,-1404"/>
 <text text-anchor="start" x="432.324" y="-1422" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sinks::IteratorSink</text>
 <text text-anchor="middle" x="488" y="-1410" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisItem, ThisIterator &gt;</text>
@@ -165,7 +165,7 @@
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="class_om_1_1_source.html" target="_top" xlink:title="Any object that items can be pulled from.">
+<g id="a_node12"><a xlink:href="class_om_1_1_source.html" target="_top" xlink:title="Any object that items can be pulled from. ">
 <polygon fill="none" stroke="black" points="6.625,-220 6.625,-240 131.375,-240 131.375,-220 6.625,-220"/>
 <text text-anchor="middle" x="69" y="-226" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Source&lt; ThisItem &gt;</text>
 </a>
@@ -278,7 +278,7 @@
 </g>
 <!-- Node29 -->
 <g id="node29" class="node"><title>Node29</title>
-<g id="a_node29"><a xlink:href="class_om_1_1_sources_1_1_default_source.html" target="_top" xlink:title="A partial implementation of Source.">
+<g id="a_node29"><a xlink:href="class_om_1_1_sources_1_1_default_source.html" target="_top" xlink:title="A partial implementation of Source. ">
 <polygon fill="none" stroke="black" points="187.979,-63 187.979,-95 352.021,-95 352.021,-63 187.979,-63"/>
 <text text-anchor="start" x="195.979" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::DefaultSource</text>
 <text text-anchor="middle" x="270" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisItem, ThisImplementation &gt;</text>
@@ -292,7 +292,7 @@
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="class_om_1_1_sources_1_1_stream_source.html" target="_top" xlink:title="A Source adapter for an input stream.">
+<g id="a_node14"><a xlink:href="class_om_1_1_sources_1_1_stream_source.html" target="_top" xlink:title="A Source adapter for an input stream. ">
 <polygon fill="none" stroke="black" points="416.089,-372 416.089,-404 559.911,-404 559.911,-372 416.089,-372"/>
 <text text-anchor="start" x="424.089" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::StreamSource</text>
 <text text-anchor="middle" x="488" y="-378" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisItem &gt;</text>
@@ -306,7 +306,7 @@
 </g>
 <!-- Node16 -->
 <g id="node16" class="node"><title>Node16</title>
-<g id="a_node16"><a xlink:href="class_om_1_1_sources_1_1_container_back_source.html" target="_top" xlink:title="A Source adapter for a container; pulls items from the back.">
+<g id="a_node16"><a xlink:href="class_om_1_1_sources_1_1_container_back_source.html" target="_top" xlink:title="A Source adapter for a container; pulls items from the back. ">
 <polygon fill="none" stroke="black" points="402.642,-309 402.642,-341 573.358,-341 573.358,-309 402.642,-309"/>
 <text text-anchor="start" x="410.642" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::ContainerBack</text>
 <text text-anchor="middle" x="488" y="-315" font-family="Helvetica,sans-Serif" font-size="10.00">Source&lt; ThisItem, ThisContainer &gt;</text>
@@ -320,7 +320,7 @@
 </g>
 <!-- Node18 -->
 <g id="node18" class="node"><title>Node18</title>
-<g id="a_node18"><a xlink:href="class_om_1_1_sources_1_1_container_front_source.html" target="_top" xlink:title="A Source adapter for a container; pulls items from the front.">
+<g id="a_node18"><a xlink:href="class_om_1_1_sources_1_1_container_front_source.html" target="_top" xlink:title="A Source adapter for a container; pulls items from the front. ">
 <polygon fill="none" stroke="black" points="402.642,-246 402.642,-278 573.358,-278 573.358,-246 402.642,-246"/>
 <text text-anchor="start" x="410.642" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::ContainerFront</text>
 <text text-anchor="middle" x="488" y="-252" font-family="Helvetica,sans-Serif" font-size="10.00">Source&lt; ThisItem, ThisContainer &gt;</text>
@@ -334,7 +334,7 @@
 </g>
 <!-- Node20 -->
 <g id="node20" class="node"><title>Node20</title>
-<g id="a_node20"><a xlink:href="class_om_1_1_sources_1_1_empty_source.html" target="_top" xlink:title="An empty Source.">
+<g id="a_node20"><a xlink:href="class_om_1_1_sources_1_1_empty_source.html" target="_top" xlink:title="An empty Source. ">
 <polygon fill="none" stroke="black" points="418.035,-183 418.035,-215 557.965,-215 557.965,-183 418.035,-183"/>
 <text text-anchor="start" x="426.035" y="-201" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::EmptySource</text>
 <text text-anchor="middle" x="488" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisItem &gt;</text>
@@ -348,7 +348,7 @@
 </g>
 <!-- Node22 -->
 <g id="node22" class="node"><title>Node22</title>
-<g id="a_node22"><a xlink:href="class_om_1_1_sources_1_1_iterator_pair_source.html" target="_top" xlink:title="A Source adapter for a start and end input iterator pair.">
+<g id="a_node22"><a xlink:href="class_om_1_1_sources_1_1_iterator_pair_source.html" target="_top" xlink:title="A Source adapter for a start and end input iterator pair. ">
 <polygon fill="none" stroke="black" points="408.481,-120 408.481,-152 567.519,-152 567.519,-120 408.481,-120"/>
 <text text-anchor="start" x="416.481" y="-138" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::IteratorPair</text>
 <text text-anchor="middle" x="488" y="-126" font-family="Helvetica,sans-Serif" font-size="10.00">Source&lt; ThisItem, ThisIterator &gt;</text>
@@ -362,7 +362,7 @@
 </g>
 <!-- Node23 -->
 <g id="node23" class="node"><title>Node23</title>
-<g id="a_node23"><a xlink:href="class_om_1_1_sources_1_1_collection_back_source.html" target="_top" xlink:title="A range over a collection, starting from the back.">
+<g id="a_node23"><a xlink:href="class_om_1_1_sources_1_1_collection_back_source.html" target="_top" xlink:title="A range over a collection, starting from the back. ">
 <polygon fill="none" stroke="black" points="628.481,-146 628.481,-178 787.519,-178 787.519,-146 628.481,-146"/>
 <text text-anchor="start" x="636.481" y="-164" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::CollectionBack</text>
 <text text-anchor="middle" x="708" y="-152" font-family="Helvetica,sans-Serif" font-size="10.00">Source&lt; ThisItem, ThisIterator &gt;</text>
@@ -376,7 +376,7 @@
 </g>
 <!-- Node24 -->
 <g id="node24" class="node"><title>Node24</title>
-<g id="a_node24"><a xlink:href="class_om_1_1_sources_1_1_collection_front_source.html" target="_top" xlink:title="A range over a collection, starting from the front.">
+<g id="a_node24"><a xlink:href="class_om_1_1_sources_1_1_collection_front_source.html" target="_top" xlink:title="A range over a collection, starting from the front. ">
 <polygon fill="none" stroke="black" points="628.481,-95 628.481,-127 787.519,-127 787.519,-95 628.481,-95"/>
 <text text-anchor="start" x="636.481" y="-113" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::CollectionFront</text>
 <text text-anchor="middle" x="708" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">Source&lt; ThisItem, ThisIterator &gt;</text>
@@ -390,7 +390,7 @@
 </g>
 <!-- Node26 -->
 <g id="node26" class="node"><title>Node26</title>
-<g id="a_node26"><a xlink:href="class_om_1_1_sources_1_1_iterator_source.html" target="_top" xlink:title="A Source adapter for a sentinal&#45;terminated input iterator.">
+<g id="a_node26"><a xlink:href="class_om_1_1_sources_1_1_iterator_source.html" target="_top" xlink:title="A Source adapter for a sentinal&#45;terminated input iterator. ">
 <polygon fill="none" stroke="black" points="416.365,-6 416.365,-38 559.635,-38 559.635,-6 416.365,-6"/>
 <text text-anchor="start" x="424.365" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::IteratorSource</text>
 <text text-anchor="middle" x="488" y="-12" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisItem, ThisIterator &gt;</text>
@@ -404,7 +404,7 @@
 </g>
 <!-- Node28 -->
 <g id="node28" class="node"><title>Node28</title>
-<g id="a_node28"><a xlink:href="class_om_1_1_sources_1_1_singleton_source.html" target="_top" xlink:title="A single item Source.">
+<g id="a_node28"><a xlink:href="class_om_1_1_sources_1_1_singleton_source.html" target="_top" xlink:title="A single item Source. ">
 <polygon fill="none" stroke="black" points="411.355,-435 411.355,-467 564.645,-467 564.645,-435 411.355,-435"/>
 <text text-anchor="start" x="419.355" y="-453" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::SingletonSource</text>
 <text text-anchor="middle" x="488" y="-441" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisItem &gt;</text>
@@ -442,7 +442,7 @@
 </g>
 <!-- Node32 -->
 <g id="node32" class="node"><title>Node32</title>
-<g id="a_node32"><a xlink:href="class_om_1_1_sinks_1_1_code_point_sink.html" target="_top" xlink:title="A CodePoint Sink that pushes each code unit to the iterator.">
+<g id="a_node32"><a xlink:href="class_om_1_1_sinks_1_1_code_point_sink.html" target="_top" xlink:title="A CodePoint Sink that pushes each code unit to the iterator. ">
 <polygon fill="none" stroke="black" points="421.086,-1656 421.086,-1688 554.914,-1688 554.914,-1656 421.086,-1656"/>
 <text text-anchor="start" x="429.086" y="-1674" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sinks::CodePointSink</text>
 <text text-anchor="middle" x="488" y="-1662" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisCodeUnitIterator &gt;</text>
@@ -562,7 +562,7 @@
 </g>
 <!-- Node39 -->
 <g id="node39" class="node"><title>Node39</title>
-<g id="a_node39"><a xlink:href="class_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html" target="_top" xlink:title="A specialization for null&#45;terminated code unit array.">
+<g id="a_node39"><a xlink:href="class_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html" target="_top" xlink:title="A specialization for null&#45;terminated code unit array. ">
 <polygon fill="none" stroke="black" points="628.855,-1218 628.855,-1250 787.145,-1250 787.145,-1218 628.855,-1218"/>
 <text text-anchor="start" x="636.855" y="-1236" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::CodePointSource</text>
 <text text-anchor="middle" x="708" y="-1224" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; char const * &gt;</text>
@@ -576,7 +576,7 @@
 </g>
 <!-- Node41 -->
 <g id="node41" class="node"><title>Node41</title>
-<g id="a_node41"><a xlink:href="class_om_1_1_sources_1_1_code_point_source.html" target="_top" xlink:title="A CodePoint Source that reads each code unit from the iterator.">
+<g id="a_node41"><a xlink:href="class_om_1_1_sources_1_1_code_point_source.html" target="_top" xlink:title="A CodePoint Source that reads each code unit from the iterator. ">
 <polygon fill="none" stroke="black" points="408.855,-1161 408.855,-1193 567.145,-1193 567.145,-1161 408.855,-1161"/>
 <text text-anchor="start" x="416.855" y="-1179" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::CodePointSource</text>
 <text text-anchor="middle" x="488" y="-1167" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisCodeUnitIterator &gt;</text>
@@ -590,7 +590,7 @@
 </g>
 <!-- Node43 -->
 <g id="node43" class="node"><title>Node43</title>
-<g id="a_node43"><a xlink:href="class_om_1_1_parser.html" target="_top" xlink:title="Produces each CodePoint until the end of the Source.">
+<g id="a_node43"><a xlink:href="class_om_1_1_parser.html" target="_top" xlink:title="Produces each CodePoint until the end of the Source. ">
 <polygon fill="none" stroke="black" points="454.441,-1122 454.441,-1142 521.559,-1142 521.559,-1122 454.441,-1122"/>
 <text text-anchor="middle" x="488" y="-1128" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Parser</text>
 </a>
@@ -656,7 +656,7 @@
 </g>
 <!-- Node48 -->
 <g id="node48" class="node"><title>Node48</title>
-<g id="a_node48"><a xlink:href="class_om_1_1_literal_1_1_element_range_3_01_literal_01_4.html" target="_top" xlink:title="A mutable Literal Element range.">
+<g id="a_node48"><a xlink:href="class_om_1_1_literal_1_1_element_range_3_01_literal_01_4.html" target="_top" xlink:title="A mutable Literal Element range. ">
 <polygon fill="none" stroke="black" points="846.695,-885 846.695,-917 983.305,-917 983.305,-885 846.695,-885"/>
 <text text-anchor="start" x="854.695" y="-903" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Literal::ElementRange</text>
 <text text-anchor="middle" x="915" y="-891" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Literal &gt;</text>
@@ -739,7 +739,7 @@
 </g>
 <!-- Node53 -->
 <g id="node53" class="node"><title>Node53</title>
-<g id="a_node53"><a xlink:href="class_om_1_1_literal_1_1_element_range_3_01_literal_01const_01_01_4.html" target="_top" xlink:title="An immutable Literal Element range.">
+<g id="a_node53"><a xlink:href="class_om_1_1_literal_1_1_element_range_3_01_literal_01const_01_01_4.html" target="_top" xlink:title="An immutable Literal Element range. ">
 <polygon fill="none" stroke="black" points="846.695,-948 846.695,-980 983.305,-980 983.305,-948 846.695,-948"/>
 <text text-anchor="start" x="854.695" y="-966" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Literal::ElementRange</text>
 <text text-anchor="middle" x="915" y="-954" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Literal const &gt;</text>
@@ -753,7 +753,7 @@
 </g>
 <!-- Node55 -->
 <g id="node55" class="node"><title>Node55</title>
-<g id="a_node55"><a xlink:href="class_om_1_1_expression_1_1_element_range.html" target="_top" xlink:title="An Expression Element range.">
+<g id="a_node55"><a xlink:href="class_om_1_1_expression_1_1_element_range.html" target="_top" xlink:title="An Expression Element range. ">
 <polygon fill="none" stroke="black" points="408.579,-1005 408.579,-1025 567.421,-1025 567.421,-1005 408.579,-1005"/>
 <text text-anchor="middle" x="488" y="-1011" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Expression::ElementRange</text>
 </a>
@@ -766,7 +766,7 @@
 </g>
 <!-- Node56 -->
 <g id="node56" class="node"><title>Node56</title>
-<g id="a_node56"><a xlink:href="class_om_1_1_form_1_1_element_range.html" target="_top" xlink:title="A Form Element range.">
+<g id="a_node56"><a xlink:href="class_om_1_1_form_1_1_element_range.html" target="_top" xlink:title="A Form Element range. ">
 <polygon fill="none" stroke="black" points="421.648,-1083 421.648,-1103 554.352,-1103 554.352,-1083 421.648,-1083"/>
 <text text-anchor="middle" x="488" y="-1089" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Form::ElementRange</text>
 </a>
@@ -779,7 +779,7 @@
 </g>
 <!-- Node57 -->
 <g id="node57" class="node"><title>Node57</title>
-<g id="a_node57"><a xlink:href="class_om_1_1_lexicon_1_1_element_range.html" target="_top" xlink:title="A Lexicon Element range.">
+<g id="a_node57"><a xlink:href="class_om_1_1_lexicon_1_1_element_range.html" target="_top" xlink:title="A Lexicon Element range. ">
 <polygon fill="none" stroke="black" points="416.079,-1044 416.079,-1064 559.921,-1064 559.921,-1044 416.079,-1044"/>
 <text text-anchor="middle" x="488" y="-1050" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Lexicon::ElementRange</text>
 </a>
@@ -845,7 +845,7 @@
 </g>
 <!-- Node62 -->
 <g id="node62" class="node"><title>Node62</title>
-<g id="a_node62"><a xlink:href="class_om_1_1_expression_1_1_form_range_3_01_form_01_4.html" target="_top" xlink:title="A mutable Expression Form range.">
+<g id="a_node62"><a xlink:href="class_om_1_1_expression_1_1_form_range_3_01_form_01_4.html" target="_top" xlink:title="A mutable Expression Form range. ">
 <polygon fill="none" stroke="black" points="842.256,-759 842.256,-791 987.744,-791 987.744,-759 842.256,-759"/>
 <text text-anchor="start" x="850.256" y="-777" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Expression::FormRange</text>
 <text text-anchor="middle" x="915" y="-765" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Form &gt;</text>
@@ -913,7 +913,7 @@
 </g>
 <!-- Node67 -->
 <g id="node67" class="node"><title>Node67</title>
-<g id="a_node67"><a xlink:href="class_om_1_1_expression_1_1_form_range_3_01_form_01const_01_01_4.html" target="_top" xlink:title="An immutable Expression Form range.">
+<g id="a_node67"><a xlink:href="class_om_1_1_expression_1_1_form_range_3_01_form_01const_01_01_4.html" target="_top" xlink:title="An immutable Expression Form range. ">
 <polygon fill="none" stroke="black" points="842.256,-822 842.256,-854 987.744,-854 987.744,-822 842.256,-822"/>
 <text text-anchor="start" x="850.256" y="-840" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Expression::FormRange</text>
 <text text-anchor="middle" x="915" y="-828" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Form const &gt;</text>
@@ -980,7 +980,7 @@
 </g>
 <!-- Node72 -->
 <g id="node72" class="node"><title>Node72</title>
-<g id="a_node72"><a xlink:href="class_om_1_1_form_1_1_operand_range_3_01_operand_01_4.html" target="_top" xlink:title="A mutable Form Operand range.">
+<g id="a_node72"><a xlink:href="class_om_1_1_form_1_1_operand_range_3_01_operand_01_4.html" target="_top" xlink:title="A mutable Form Operand range. ">
 <polygon fill="none" stroke="black" points="847.532,-624 847.532,-656 982.468,-656 982.468,-624 847.532,-624"/>
 <text text-anchor="start" x="855.532" y="-642" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Form::OperandRange</text>
 <text text-anchor="middle" x="915" y="-630" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operand &gt;</text>
@@ -1049,7 +1049,7 @@
 </g>
 <!-- Node77 -->
 <g id="node77" class="node"><title>Node77</title>
-<g id="a_node77"><a xlink:href="class_om_1_1_form_1_1_operand_range_3_01_operand_01const_01_01_4.html" target="_top" xlink:title="An immutable Form Operand range.">
+<g id="a_node77"><a xlink:href="class_om_1_1_form_1_1_operand_range_3_01_operand_01const_01_01_4.html" target="_top" xlink:title="An immutable Form Operand range. ">
 <polygon fill="none" stroke="black" points="847.532,-693 847.532,-725 982.468,-725 982.468,-693 847.532,-693"/>
 <text text-anchor="start" x="855.532" y="-711" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Form::OperandRange</text>
 <text text-anchor="middle" x="915" y="-699" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Operand const &gt;</text>
@@ -1101,7 +1101,7 @@
 </g>
 <!-- Node80 -->
 <g id="node80" class="node"><title>Node80</title>
-<g id="a_node80"><a xlink:href="class_om_1_1_sources_1_1_code_point_string_back_source.html" target="_top" xlink:title="A Source of CodePoint strings from the back of a string.">
+<g id="a_node80"><a xlink:href="class_om_1_1_sources_1_1_code_point_string_back_source.html" target="_top" xlink:title="A Source of CodePoint strings from the back of a string. ">
 <polygon fill="none" stroke="black" points="406.165,-498 406.165,-530 569.835,-530 569.835,-498 406.165,-498"/>
 <text text-anchor="start" x="414.165" y="-516" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::CodePointString</text>
 <text text-anchor="middle" x="488" y="-504" font-family="Helvetica,sans-Serif" font-size="10.00">BackSource&lt; ThisStringIterator &gt;</text>
@@ -1115,7 +1115,7 @@
 </g>
 <!-- Node82 -->
 <g id="node82" class="node"><title>Node82</title>
-<g id="a_node82"><a xlink:href="class_om_1_1_sources_1_1_code_point_string_front_source.html" target="_top" xlink:title="A Source of CodePoint strings from the front of a string.">
+<g id="a_node82"><a xlink:href="class_om_1_1_sources_1_1_code_point_string_front_source.html" target="_top" xlink:title="A Source of CodePoint strings from the front of a string. ">
 <polygon fill="none" stroke="black" points="405.61,-561 405.61,-593 570.39,-593 570.39,-561 405.61,-561"/>
 <text text-anchor="start" x="413.61" y="-579" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sources::CodePointString</text>
 <text text-anchor="middle" x="488" y="-567" font-family="Helvetica,sans-Serif" font-size="10.00">FrontSource&lt; ThisStringIterator &gt;</text>

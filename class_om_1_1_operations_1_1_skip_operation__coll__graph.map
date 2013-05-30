@@ -1,23 +1,23 @@
 <map id="Om::Operations::SkipOperation" name="Om::Operations::SkipOperation">
 <area shape="rect" id="node2" href="$class_om_1_1_default_operation.html" title="Om::DefaultOperation\l\&lt; SkipOperation \&gt;" alt="" coords="4,1507,155,1551"/>
 <area shape="rect" id="node3" href="$class_om_1_1_operation.html" title="An Operation that has yet to consume one or more Operands, and therefore must live in memory while &quot;i..." alt="" coords="26,1414,133,1442"/>
-<area shape="rect" id="node4" href="$class_om_1_1_expression.html" title="The Expression Program implementation." alt="" coords="179,1515,295,1543"/>
+<area shape="rect" id="node4" href="$class_om_1_1_expression.html" title="The Expression Program implementation. " alt="" coords="179,1515,295,1543"/>
 <area shape="rect" id="node5" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Expression \&gt;" alt="" coords="138,686,280,730"/>
 <area shape="rect" id="node6" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Expression, DefaultGiveable\l\&lt; Expression, Program \&gt; \&gt;" alt="" coords="7,566,208,626"/>
 <area shape="rect" id="node7" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Expression, Program \&gt;" alt="" coords="198,462,367,506"/>
 <area shape="rect" id="node8" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Expression, DefaultCopyable\l\&lt; Expression, Program \&gt; \&gt;" alt="" coords="236,342,440,402"/>
 <area shape="rect" id="node9" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Expression, Program \&gt;" alt="" coords="276,246,444,290"/>
-<area shape="rect" id="node10" href="$class_om_1_1_program.html" title="The Program implementation." alt="" coords="407,166,508,194"/>
+<area shape="rect" id="node10" href="$class_om_1_1_program.html" title="The Program implementation. " alt="" coords="407,166,508,194"/>
 <area shape="rect" id="node29" href="$class_om_1_1_element.html" title="A Program that contains a single &quot;elemental&quot; item (or none, when IsEmpty() returns true)..." alt="" coords="474,254,573,282"/>
-<area shape="rect" id="node11" href="$class_om_1_1_consumer.html" title="An Element taker; takes at the back." alt="" coords="184,86,295,114"/>
-<area shape="rect" id="node12" href="$class_om_1_1_giveable.html" title="An object that can be copied or moved via Give." alt="" coords="319,86,421,114"/>
-<area shape="rect" id="node13" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied." alt="" coords="252,6,357,34"/>
-<area shape="rect" id="node14" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved." alt="" coords="382,6,489,34"/>
-<area shape="rect" id="node15" href="$class_om_1_1_producer.html" title="An Element giver; gives from the front." alt="" coords="447,86,551,114"/>
+<area shape="rect" id="node11" href="$class_om_1_1_consumer.html" title="An Element taker; takes at the back. " alt="" coords="184,86,295,114"/>
+<area shape="rect" id="node12" href="$class_om_1_1_giveable.html" title="An object that can be copied or moved via Give. " alt="" coords="319,86,421,114"/>
+<area shape="rect" id="node13" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied. " alt="" coords="252,6,357,34"/>
+<area shape="rect" id="node14" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved. " alt="" coords="382,6,489,34"/>
+<area shape="rect" id="node15" href="$class_om_1_1_producer.html" title="An Element giver; gives from the front. " alt="" coords="447,86,551,114"/>
 <area shape="rect" id="node16" href="$class_om_1_1_shareable.html" title="Om::Shareable\&lt;\&gt;" alt="" coords="575,86,701,114"/>
 <area shape="rect" id="node17" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Expression \&gt;" alt="" coords="233,582,404,610"/>
-<area shape="rect" id="node19" href="$class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances." alt="" coords="322,1321,403,1349"/>
-<area shape="rect" id="node20" href="$class_om_1_1_operator.html" title="The Operator implementation." alt="" coords="311,1227,413,1255"/>
+<area shape="rect" id="node19" href="$class_om_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances. " alt="" coords="322,1321,403,1349"/>
+<area shape="rect" id="node20" href="$class_om_1_1_operator.html" title="The Operator implementation. " alt="" coords="311,1227,413,1255"/>
 <area shape="rect" id="node21" href="$class_om_1_1_default_atom.html" title="Om::DefaultAtom\&lt; Operator \&gt;" alt="" coords="263,1121,461,1149"/>
 <area shape="rect" id="node22" href="$class_om_1_1_default_element.html" title="Om::DefaultElement\l\&lt; Operator, Atom \&gt;" alt="" coords="289,1011,431,1055"/>
 <area shape="rect" id="node23" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Operator, Atom \&gt;" alt="" coords="287,902,429,946"/>
@@ -25,12 +25,12 @@
 <area shape="rect" id="node25" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Operator, Atom \&gt;" alt="" coords="385,686,529,730"/>
 <area shape="rect" id="node26" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Operator, DefaultCopyable\l\&lt; Operator, Atom \&gt; \&gt;" alt="" coords="429,566,619,626"/>
 <area shape="rect" id="node27" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operator, Atom \&gt;" alt="" coords="450,462,597,506"/>
-<area shape="rect" id="node28" href="$class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string." alt="" coords="483,358,564,386"/>
+<area shape="rect" id="node28" href="$class_om_1_1_atom.html" title="An &quot;atomic&quot; Element defined by a string. " alt="" coords="483,358,564,386"/>
 <area shape="rect" id="node40" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operand, Element \&gt;" alt="" coords="606,350,759,394"/>
 <area shape="rect" id="node30" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Operator \&gt;" alt="" coords="458,806,616,834"/>
-<area shape="rect" id="node31" title="STL class." alt="" coords="467,1019,545,1047"/>
-<area shape="rect" id="node32" title="STL class." alt="" coords="455,902,580,946"/>
-<area shape="rect" id="node34" href="$class_om_1_1_operand.html" title="The Operand implementation." alt="" coords="666,1019,768,1047"/>
+<area shape="rect" id="node31" title="STL class. " alt="" coords="467,1019,545,1047"/>
+<area shape="rect" id="node32" title="STL class. " alt="" coords="455,902,580,946"/>
+<area shape="rect" id="node34" href="$class_om_1_1_operand.html" title="The Operand implementation. " alt="" coords="666,1019,768,1047"/>
 <area shape="rect" id="node35" href="$class_om_1_1_default_element.html" title="Om::DefaultElement\l\&lt; Operand \&gt;" alt="" coords="837,902,979,946"/>
 <area shape="rect" id="node36" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Operand, Element \&gt;" alt="" coords="832,798,984,842"/>
 <area shape="rect" id="node37" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Operand, DefaultGiveable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="815,678,1001,738"/>
