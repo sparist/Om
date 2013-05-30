@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 2.8.7)
 
 if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/input")
 	file(
-		DOWNLOAD "http://download.icu-project.org/files/icu4c/51.1/icu4c-51_1-src.tgz" "${CMAKE_CURRENT_SOURCE_DIR}/input.tgz"
+		DOWNLOAD "http://download.icu-project.org/files/icu4c/51.2/icu4c-51_2-src.tgz" "${CMAKE_CURRENT_SOURCE_DIR}/input.tgz"
 		SHOW_PROGRESS
-		EXPECTED_MD5 "6eef33b229d0239d654983028c9c7053"
+		EXPECTED_MD5 "072e501b87065f3a0ca888f1b5165709"
 	)
 
 	execute_process(
