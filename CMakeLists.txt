@@ -189,7 +189,7 @@ if(MSVC)
 else()
 	set(DoxygenCommand doxygen ../documentation/Doxyfile)
 endif()
-add_custom_target("Om.Documentation"
+add_custom_target("Om.Documentation" ALL
 	COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_SOURCE_DIR}/output/artifacts/Doxygen"
 	COMMAND ${DoxygenCommand}
 	COMMENT "Generating Documentation..."
