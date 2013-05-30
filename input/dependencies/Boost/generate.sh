@@ -28,5 +28,5 @@ cmake "$@" -P CMakeLists.txt "$Directory"
 
 cd input
 ./bootstrap.sh
-./b2 boost.locale.icu=on boost.locale.std=off boost.locale.iconv=off define=U_CHARSET_IS_UTF8=1 -sICU_PATH="$Icu" --build-dir="$Directory/output/intermediate" --prefix="$Directory/output/artifacts" --with-locale --with-system --with-thread --with-test link=static install
+./b2 boost.locale.icu=on boost.locale.std=off boost.locale.iconv=off define=U_CHARSET_IS_UTF8=1 -sICU_PATH="$Icu" --build-dir="$Directory/output/intermediate" --prefix="$Directory/output/artifacts" --with-locale --with-system --with-thread --with-test link=static linkflags=-ldl install
 cd "$Directory"

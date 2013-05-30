@@ -281,26 +281,26 @@ inline char const * Type_::GetName() {
 
 inline Type_::Lexicon():
 thisMap(),
-thisList() {}
+thisPairList() {}
 
 inline Type_::Lexicon(Lexicon const & theLexicon):
 DefaultProgram<Lexicon>(theLexicon),
 thisMap(),
-thisList() {
+thisPairList() {
 	for (
-		List::Node const * theNode = theLexicon.thisList.GetNode(List::theFrontNodeIndex);
+		PairList::Node const * theNode = theLexicon.thisPairList.GetNode(PairList::theFrontNodeIndex);
 		theNode;
-		theNode = theNode->GetNode(List::theBackNodeIndex)
+		theNode = theNode->GetNode(PairList::theBackNodeIndex)
 	) {
-		std::auto_ptr<List::Node> theNewNode(
-			new List::Node(*theNode)
+		std::auto_ptr<PairList::Node> theNewNode(
+			new PairList::Node(*theNode)
 		);
 		assert(
 			theNewNode.get()
 		);
 
-		this->thisList.LinkNode(
-			List::theBackNodeIndex,
+		this->thisPairList.LinkNode(
+			PairList::theBackNodeIndex,
 			*theNewNode
 		);
 
@@ -318,13 +318,13 @@ inline Type_ & Type_::operator =(Lexicon theLexicon) {
 
 inline void Type_::BackGivePair(Consumer & theConsumer) {
 	this->GivePair(
-		List::theBackNodeIndex,
+		PairList::theBackNodeIndex,
 		theConsumer
 	);
 }
 
 inline void Type_::Clear() {
-	this->thisList.Clear();
+	this->thisPairList.Clear();
 	this->thisMap.clear();
 }
 
@@ -345,7 +345,7 @@ inline Om::Pair const & Type_::Find(Operator const & theOperator) const {
 
 inline void Type_::FrontGivePair(Consumer & theConsumer) {
 	this->GivePair(
-		List::theFrontNodeIndex,
+		PairList::theFrontNodeIndex,
 		theConsumer
 	);
 }
@@ -362,7 +362,7 @@ inline std::auto_ptr<
 
 inline void Type_::GiveElements(Consumer & theConsumer) {
 	this->GiveElements(
-		this->thisList.GetNode(List::theFrontNodeIndex),
+		this->thisPairList.GetNode(PairList::theFrontNodeIndex),
 		theConsumer
 	);
 	this->Clear();
@@ -370,7 +370,7 @@ inline void Type_::GiveElements(Consumer & theConsumer) {
 
 inline void Type_::GiveElements(Consumer & theConsumer) const {
 	this->GiveElements(
-		this->thisList.GetNode(List::theFrontNodeIndex),
+		this->thisPairList.GetNode(PairList::theFrontNodeIndex),
 		theConsumer
 	);
 }
@@ -378,7 +378,7 @@ inline void Type_::GiveElements(Consumer & theConsumer) const {
 inline bool Type_::IsEmpty() const {
 	assert(
 		!this->thisMap.empty() ||
-		this->thisList.IsEmpty()
+		this->thisPairList.IsEmpty()
 	);
 	return this->thisMap.empty();
 }
@@ -398,7 +398,7 @@ inline void Type_::ReadQuotedElements(Parser & theParser) {
 
 inline void Type_::Swap(Lexicon & theLexicon) {
 	this->thisMap.swap(theLexicon.thisMap);
-	this->thisList.Swap(theLexicon.thisList);
+	this->thisPairList.Swap(theLexicon.thisPairList);
 }
 
 template <typename TheOperand>
@@ -475,7 +475,7 @@ inline void Type_::GiveElements(
 				!theNode->GetValue().IsEmpty()
 			);
 			theNode->GetValue().GiveElements(theConsumer);
-			theNode = theNode->GetNode(List::theBackNodeIndex);
+			theNode = theNode->GetNode(PairList::theBackNodeIndex);
 			if (!theNode) {
 				break;
 			}
@@ -485,8 +485,8 @@ inline void Type_::GiveElements(
 
 // MARK: private (non-static)
 
-inline Type_::List::Node & Type_::GetOperandTaker() {
-	List::Node * const theNode = this->thisList.GetNode(List::theBackNodeIndex);
+inline Type_::PairList::Node & Type_::GetOperandTaker() {
+	PairList::Node * const theNode = this->thisPairList.GetNode(PairList::theBackNodeIndex);
 	if (
 		!theNode ||
 		!theNode->GetValue().GetOperand().IsEmpty()
@@ -498,15 +498,15 @@ inline Type_::List::Node & Type_::GetOperandTaker() {
 }
 
 template <typename TheOperator>
-inline Type_::List::Node & Type_::GetOperandTaker(TheOperator & theOperator) {
+inline Type_::PairList::Node & Type_::GetOperandTaker(TheOperator & theOperator) {
 	std::string const & theString = theOperator.GetString();
 	typename Map::iterator const theIterator = this->thisMap.find(theString);
 	if (
 		this->thisMap.end() == theIterator
 	) {
-		List::Node * theNode;
+		PairList::Node * theNode;
 		{
-			std::auto_ptr<List::Node> theNewNode(new List::Node);
+			std::auto_ptr<PairList::Node> theNewNode(new PairList::Node);
 			theNode = theNewNode.get();
 			this->thisMap.insert(
 				theString,
@@ -520,20 +520,20 @@ inline Type_::List::Node & Type_::GetOperandTaker(TheOperator & theOperator) {
 			theNode->GetValue().GetOperand().IsEmpty()
 		);
 
-		this->thisList.LinkNode(
-			List::theBackNodeIndex,
+		this->thisPairList.LinkNode(
+			PairList::theBackNodeIndex,
 			*theNode
 		);
 
 		return *theNode;
 	}
 	{
-		List::Node & theNode = *theIterator->second;
+		PairList::Node & theNode = *theIterator->second;
 
 		theNode.GetValue().ClearOperand();
 
-		this->thisList.RelinkNode(
-			List::theBackNodeIndex,
+		this->thisPairList.RelinkNode(
+			PairList::theBackNodeIndex,
 			theNode
 		);
 
@@ -542,11 +542,11 @@ inline Type_::List::Node & Type_::GetOperandTaker(TheOperator & theOperator) {
 }
 
 inline void Type_::GivePair(
-	List::NodeIndex const theNodeIndex,
+	PairList::NodeIndex const theNodeIndex,
 	Consumer & theConsumer
 ) {
 	if (
-		List::Node const * const theNode = this->thisList.UnlinkNode(theNodeIndex)
+		PairList::Node const * const theNode = this->thisPairList.UnlinkNode(theNodeIndex)
 	) {
 		Map::iterator const theIterator = this->thisMap.find(
 			theNode->GetValue().GetOperator().GetString()
@@ -586,7 +586,7 @@ thisOffset() {}
 
 inline Type_::ElementRange(Lexicon const & theLexicon):
 thisNode(
-	theLexicon.thisList.GetNode(List::theFrontNodeIndex)
+	theLexicon.thisPairList.GetNode(PairList::theFrontNodeIndex)
 ),
 thisOffset(
 	this->thisNode &&
@@ -637,7 +637,7 @@ inline void Type_::Pop() {
 		}
 		// Fall through.
 	case 1:
-		this->thisNode = this->thisNode->GetNode(List::theBackNodeIndex);
+		this->thisNode = this->thisNode->GetNode(PairList::theBackNodeIndex);
 		this->thisOffset = 2;
 		return;
 	default:

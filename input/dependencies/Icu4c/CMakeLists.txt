@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.10)
+cmake_minimum_required(VERSION 2.8.7)
 
 if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/input")
 	file(

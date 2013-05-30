@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.10)
+cmake_minimum_required(VERSION 2.8.7)
 
 project(Om)
 
@@ -110,21 +110,6 @@ if(MSVC)
 	find_library(IcuI18nDebugLibrary sicuind "${Icu}/lib" NO_DEFAULT_PATH)
 	find_library(IcuI18nReleaseLibrary sicuin "${Icu}/lib" NO_DEFAULT_PATH)
 
-	find_library(IcuIoDebugLibrary sicuiod "${Icu}/lib" NO_DEFAULT_PATH)
-	find_library(IcuIoReleaseLibrary sicuio "${Icu}/lib" NO_DEFAULT_PATH)
-
-	find_library(IcuLeDebugLibrary siculed "${Icu}/lib" NO_DEFAULT_PATH)
-	find_library(IcuLeReleaseLibrary sicule "${Icu}/lib" NO_DEFAULT_PATH)
-
-	find_library(IcuLxDebugLibrary siculxd "${Icu}/lib" NO_DEFAULT_PATH)
-	find_library(IcuLxReleaseLibrary siculx "${Icu}/lib" NO_DEFAULT_PATH)
-
-	find_library(IcuTestDebugLibrary sicutestd "${Icu}/lib" NO_DEFAULT_PATH)
-	find_library(IcuTestReleaseLibrary sicutest "${Icu}/lib" NO_DEFAULT_PATH)
-
-	find_library(IcuTuDebugLibrary sicutud "${Icu}/lib" NO_DEFAULT_PATH)
-	find_library(IcuTuReleaseLibrary sicutu "${Icu}/lib" NO_DEFAULT_PATH)
-
 	find_library(IcuUcDebugLibrary sicuucd "${Icu}/lib" NO_DEFAULT_PATH)
 	find_library(IcuUcReleaseLibrary sicuuc "${Icu}/lib" NO_DEFAULT_PATH)
 else()
@@ -146,29 +131,14 @@ else()
 	find_library(BoostThreadReleaseLibrary boost_thread "${Boost}/lib" NO_DEFAULT_PATH)
 	set(BoostThreadDebugLibrary ${BoostThreadReleaseLibrary})
 
-	find_library(IcuDataReleaseLibrary icudata "${Icu}/lib" NO_DEFAULT_PATH)
-	set(IcuDataDebugLibrary ${IcuDataReleaseLibrary})
-
 	find_library(IcuI18nReleaseLibrary icui18n "${Icu}/lib" NO_DEFAULT_PATH)
 	set(IcuI18nDebugLibrary ${IcuI18nReleaseLibrary})
 
-	find_library(IcuIoReleaseLibrary icuio "${Icu}/lib" NO_DEFAULT_PATH)
-	set(IcuIoDebugLibrary ${IcuIoReleaseLibrary})
-
-	find_library(IcuLeReleaseLibrary icule "${Icu}/lib" NO_DEFAULT_PATH)
-	set(IcuLeDebugLibrary ${IcuLeReleaseLibrary})
-
-	find_library(IcuLxReleaseLibrary iculx "${Icu}/lib" NO_DEFAULT_PATH)
-	set(IcuLxDebugLibrary ${IcuLxReleaseLibrary})
-
-	find_library(IcuTestReleaseLibrary icutest "${Icu}/lib" NO_DEFAULT_PATH)
-	set(IcuTestDebugLibrary ${IcuTestReleaseLibrary})
-
-	find_library(IcuTuReleaseLibrary icutu "${Icu}/lib" NO_DEFAULT_PATH)
-	set(IcuTuDebugLibrary ${IcuTuReleaseLibrary})
-
 	find_library(IcuUcReleaseLibrary icuuc "${Icu}/lib" NO_DEFAULT_PATH)
 	set(IcuUcDebugLibrary ${IcuUcReleaseLibrary})
+
+	find_library(IcuDataReleaseLibrary icudata "${Icu}/lib" NO_DEFAULT_PATH)
+	set(IcuDataDebugLibrary ${IcuDataReleaseLibrary})
 endif()
 
 # Configure include paths
@@ -210,7 +180,7 @@ foreach(Directory ${Directories})
 endforeach()
 
 # Add executable targets
-add_executable("Om" ${CppFiles} ${HppFiles})
+add_executable("Om.Interpreter" ${CppFiles} ${HppFiles})
 add_executable("Om.Test" ${CppFiles})
 
 # Add documentation target
@@ -239,7 +209,7 @@ endforeach()
 if(APPLE)
 	add_definitions(-DOm_Macros_Precompilation_)
 
-	set_target_properties("Om" "Om.Test"
+	set_target_properties("Om.Interpreter" "Om.Test"
 		PROPERTIES
 			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.external"
 			XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
@@ -262,30 +232,19 @@ function(om_configure_executable target)
 
 	# Link ICU
 	target_link_libraries(${target}
-		debug "${IcuDataDebugLibrary}"
-		optimized "${IcuDataReleaseLibrary}"
-
 		debug "${IcuI18nDebugLibrary}"
 		optimized "${IcuI18nReleaseLibrary}"
 
-		debug "${IcuIoDebugLibrary}"
-		optimized "${IcuIoReleaseLibrary}"
-
-		debug "${IcuLeDebugLibrary}"
-		optimized "${IcuLeReleaseLibrary}"
-
-		debug "${IcuLxDebugLibrary}"
-		optimized "${IcuLxReleaseLibrary}"
-
-		debug "${IcuTestDebugLibrary}"
-		optimized "${IcuTestReleaseLibrary}"
-
-		debug "${IcuTuDebugLibrary}"
-		optimized "${IcuTuReleaseLibrary}"
-
 		debug "${IcuUcDebugLibrary}"
 		optimized "${IcuUcReleaseLibrary}"
+
+		debug "${IcuDataDebugLibrary}"
+		optimized "${IcuDataReleaseLibrary}"
 	)
+
+	if(UNIX AND NOT APPLE)
+		target_link_libraries(${target} pthread rt dl)
+	endif()
 
 	# Add post-build event that copies artifacts
 	add_custom_command(
@@ -296,7 +255,7 @@ function(om_configure_executable target)
 		VERBATIM
 	)
 endfunction()
-om_configure_executable("Om")
+om_configure_executable("Om.Interpreter")
 om_configure_executable("Om.Test")
 
 # Link Boost.Test libraries

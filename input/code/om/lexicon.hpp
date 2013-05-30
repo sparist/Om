@@ -108,11 +108,11 @@ namespace Om {
 
 	private: // MARK: private (static)
 
-		typedef List<Pair> List;
+		typedef List<Pair> PairList;
 
 		typedef boost::ptr_map<
 			std::string,
-			List::Node
+			PairList::Node
 		> Map;
 
 		/*!
@@ -137,7 +137,7 @@ namespace Om {
 		\return
 			If there is no last Node, or it has an Operand, appends a new one with an empty Operator and returns a reference to it. Otherwise, returns a reference to the last Node.
 		*/
-		List::Node & GetOperandTaker();
+		PairList::Node & GetOperandTaker();
 
 		/*!
 		\brief
@@ -146,16 +146,16 @@ namespace Om {
 			If there is already a Node for this Operator, relinks it to the back and returns a reference to it. Otherwise, constructs a Node with the given Operator, appends it, and returns a reference to it.
 		*/
 		template <typename TheOperator>
-		List::Node & GetOperandTaker(TheOperator &);
+		PairList::Node & GetOperandTaker(TheOperator &);
 
 		void GivePair(
-			List::NodeIndex const,
+			PairList::NodeIndex const,
 			Consumer &
 		);
 
 		Map thisMap;
 
-		List thisList;
+		PairList thisPairList;
 
 	};
 
@@ -196,7 +196,7 @@ namespace Om {
 		\brief
 			The current Node, or null if none.
 		*/
-		List::Node const * thisNode;
+		PairList::Node const * thisNode;
 
 		/*!
 		\brief
