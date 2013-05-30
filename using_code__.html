@@ -65,12 +65,12 @@ $(document).ready(function(){initNavTree('using_code__.html','');});
 <h1><a class="anchor" id="using_code__platforms__"></a>
 Platforms</h1>
 <h2><a class="anchor" id="using_code__platforms__mac__"></a>
-Mac OS X</h2>
-<p>The Om code should build on any recent version of Mac OS X. Scripts ending in <code>".sh"</code> are provided for use on the Mac.</p>
+Mac OS X and Ubuntu</h2>
+<p>Scripts ending in <code>".sh"</code> are provided for use on Mac OS X 10.8.3 and Ubuntu 12.0.4.</p>
 <p><b>Note:</b> The ICU4C and Boost build scripts for Unix do not support paths containing spaces.</p>
 <h2><a class="anchor" id="using_code__platforms__windows__"></a>
 Windows</h2>
-<p>The Om code should build on any recent version of Windows. Scripts ending in <code>".bat"</code> are provided for use on Windows.</p>
+<p>Scripts ending in <code>".bat"</code> are provided for use on Windows (Vista, 7, 8), and must be run from the Visual Studio command prompt.</p>
 <h2><a class="anchor" id="using_code__platforms__other__"></a>
 Other</h2>
 <p>Because Om is implemented with portability in mind, it should be possible to build the code on any mainstream platform with minor adaptation of the scripts and <code>"CMakeLists.txt"</code> files. Please <a class="el" href="developing__.html">share</a> any enhancements to the build process and/or <a class="el" href="reporting_issues__.html">report</a> any code portability issues encountered.</p>
@@ -80,8 +80,8 @@ Dependencies</h1>
 Programs</h2>
 <p>To run scripts which build the dependency <a class="el" href="using_code__.html#using_code__dependencies__libraries__">libraries</a> and generate the <a class="el" href="using_code__.html#using_code__project__">project</a>, the following programs are required:</p>
 <ul>
-<li><a href="http://cmake.org">CMake</a> (2.8.10 or greater)</li>
-<li>Mac:<ul>
+<li><a href="http://cmake.org">CMake</a> (2.8.7 or greater)</li>
+<li>Mac OS X:<ul>
 <li>Xcode (4.6 or later)</li>
 </ul>
 </li>
@@ -90,11 +90,15 @@ Programs</h2>
 <li><a href="http://cygwin.com">Cygwin</a> (with bash, GNU make, ar, and ranlib)</li>
 </ul>
 </li>
+<li>Ubuntu:<ul>
+<li>Build-Essential package (<code>sudo apt-get install build-essential</code>)</li>
+</ul>
+</li>
 </ul>
 <p>To build the <a class="el" href="using_code__.html#using_code__project__targets__om_documentation__">documentation target</a> in the <a class="el" href="using_code__.html#using_code__project__">project</a>, the following additional programs are required:</p>
 <ul>
-<li><a href="http://doxygen.org">Doxygen</a> (1.8.3.1 or greater)</li>
-<li><a href="http://graphviz.org">Graphviz</a> (2.30.1 or greater)</li>
+<li><a href="http://doxygen.org">Doxygen</a> (1.8.4 or greater; note that earlier versions may generate warnings)</li>
+<li><a href="http://graphviz.org">Graphviz</a> (2.26.3 or greater)</li>
 </ul>
 <p>To ensure that correct programs are used, programs should be listed in the command line path in the following order:</p>
 <ul>
@@ -106,13 +110,13 @@ Programs</h2>
 Libraries</h2>
 <h3><a class="anchor" id="using_code__dependencies__libraries__icu4c"></a>
 ICU4C</h3>
-<p>Om depends on ICU4C (50.1.3 or greater), the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. <a href="http://download.icu-project.org/files/icu4c/51.1">ICU4C 51.1</a> can be downloaded and built into <code>"input/dependencies/Icu4c/output/artifacts"</code> by navigating to the <code>"input/dependencies/Icu4c"</code> directory and running the <code>"generate"</code> script.</p>
+<p>Om depends on ICU4C (51.2 or greater), the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. <a href="http://download.icu-project.org/files/icu4c/51.2">ICU4C 51.2</a> can be downloaded and built into <code>"input/dependencies/Icu4c/output/artifacts"</code> by navigating to the <code>"input/dependencies/Icu4c"</code> directory and running the <code>"generate"</code> script.</p>
 <h3><a class="anchor" id="using_code__dependencies__libraries__boost"></a>
 Boost</h3>
 <p>Om depends on the <a href="http://boost.org">Boost</a> library (1.53.0 or greater). <a href="http://sourceforge.net/projects/boost/files/boost/1.53.0">Boost 1.53.0</a> can be downloaded and built into <code>"input/dependencies/Boost/output/artifacts"</code> by navigating to the <code>"input/dependencies/Boost"</code> directory and running the <code>"generate"</code> script.</p>
 <h1><a class="anchor" id="using_code__project__"></a>
 Project</h1>
-<p>A source project, containing targets for building the interpreter, tests, and documentation, can be built into <code>"output/artifacts"</code> by running the <code>"generate"</code> script in the root directory. By default, this script automatically downloads and builds all external dependency libraries, but this behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:</p>
+<p>A source project, containing targets for building the interpreter, tests, and documentation, can be built into <code>"output/artifacts"</code> by running the <code>"generate"</code> script, with the <a href="http://www.cmake.org/cmake/help/v2.8.11/cmake.html#section_Generators">CMake generator</a> as an argument, in the root directory. By default, this script automatically downloads and builds all external dependency libraries, but this behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:</p>
 <ul>
 <li><b><code>-D Icu:Path="<em>[absolute path]</em>"</code></b>, where <em>[absolute path]</em> is the absolute path of the <a class="el" href="using_code__.html#using_code__dependencies__libraries__icu4c">ICU4C</a> install directory.</li>
 <li><b><code>-D Boost:Path="<em>[absolute path]</em>"</code></b>, where <em>[absolute path]</em> provides the absolute path of the <a class="el" href="using_code__.html#using_code__dependencies__libraries__boost">Boost</a> install directory.</li>
@@ -120,11 +124,11 @@ Project</h1>
 <h2><a class="anchor" id="using_code__project__targets__"></a>
 Targets</h2>
 <h3><a class="anchor" id="using_code__project__targets__om__"></a>
-Om</h3>
-<p>The Om target builds the Om interpreter executable into <code>"output/artifacts/<em>[platform]</em>/<em>[configuration]</em>"</code>. See <a class="el" href="using_interpreter__.html">Using the Interpreter</a> for instructions on how to use the interpreter.</p>
+Om.Interpreter</h3>
+<p>The Om.Interpreter target builds the interpreter executable as <code>"output/artifacts/<em>[generator]</em>/<em>[configuration]</em>/Om.Interpreter"</code>. See <a class="el" href="using_interpreter__.html">Using the Interpreter</a> for instructions on how to use the interpreter.</p>
 <h3><a class="anchor" id="using_code__project__targets__om_test__"></a>
 Om.Test</h3>
-<p>The Om.Test target builds the Om.Test test executable, which runs all unit tests, into <code>"output/artifacts/<em>[platform]</em>/<em>[configuration]</em>"</code>.</p>
+<p>The Om.Test target builds the test executable, which runs all unit tests, as <code>"output/artifacts/<em>[generator]</em>/<em>[configuration]</em>/Om.Test"</code>.</p>
 <h3><a class="anchor" id="using_code__project__targets__om_documentation__"></a>
 Om.Documentation</h3>
 <p>The Om.Documentation target builds this documentation into the following folders in <code>"output/artifacts/Doxygen"</code>:</p>
