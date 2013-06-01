@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 2.8.7)
 
 project(Om)
 
-# Prevent implicit CMake calls on project modification
+# Prevent implicit CMake calls on project modification.
 set(CMAKE_SUPPRESS_REGENERATION TRUE)
 
-# Set global compilation flags
+# Set global compilation flags.
 if(MSVC)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
@@ -36,21 +36,21 @@ else()
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wvariadic-macros")
 endif()
 
-# Set global definitions
+# Set global definitions.
 if(MSVC)
 	add_definitions(-DU_STATIC_IMPLEMENTATION=1) # For ICU
 else()
 	add_definitions(-DU_CHARSET_IS_UTF8=1) # For ICU
 endif()
 
-# Set generate command for external dependencies
+# Set generate command for external dependencies.
 if(MSVC)
 	set(GenerateCommand generate.bat)
 else()
 	set(GenerateCommand ./generate.sh)
 endif()
 
-# Set ICU directory path, downloading and building as necessary
+# Set ICU directory path, downloading and building as necessary.
 set(IcuDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Icu4c/output/artifacts")
 set(IcuCaption "The ICU4C library artifact directory path")
 set(Icu ${IcuDefault} CACHE PATH ${IcuCaption})
@@ -63,7 +63,7 @@ if(NOT EXISTS "${Icu}")
 	)
 endif()
 
-# Set Boost directory path, downloading and building as necessary
+# Set Boost directory path, downloading and building as necessary.
 set(BoostDefault "${CMAKE_CURRENT_SOURCE_DIR}/input/dependencies/Boost/output/artifacts")
 set(BoostCaption "The Boost library artifact directory path")
 set(Boost ${BoostDefault} CACHE PATH ${BoostCaption})
@@ -76,42 +76,48 @@ if(NOT EXISTS "${Boost}")
 	)
 endif()
 
-# Set dependency library paths
+# Set dependency library and include paths.
 if(MSVC)
-	# Determine MSVC version string used in Boost library names
-	set(MsvcVersionMinimum 1600)
+	# Determine MSVC version string used in Boost library names.
+	# From: http://www.cmake.org/pipermail/cmake/2012-March/049464.html
+	set(MsvcVersionMinimum 1600) # Visual Studio 2010
 	set(MsvcVersion ${MSVC_VERSION})
 	if(${MsvcVersion} LESS ${MsvcVersionMinimum})
 		set(MsvcVersion ${MsvcVersionMinimum})
 	endif()
 	math(EXPR BoostMsvcVersion "((${MsvcVersion} - 600) / 10)") # Only works for Visual Studio 7.1 and higher
 
-	find_library(BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	# Set Boost version for library names.
+	set(BoostVersion 1_53)
 
-	find_library(BoostTestExecMonitorDebugLibrary libboost_test_exec_monitor-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostTestExecMonitorReleaseLibrary libboost_test_exec_monitor-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor-vc${BoostMsvcVersion}-mt-gd-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor-vc${BoostMsvcVersion}-mt-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(BoostUnitTestFrameworkDebugLibrary libboost_unit_test_framework-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostUnitTestFrameworkReleaseLibrary libboost_unit_test_framework-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostTestExecMonitorDebugLibrary libboost_test_exec_monitor-vc${BoostMsvcVersion}-mt-gd-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostTestExecMonitorReleaseLibrary libboost_test_exec_monitor-vc${BoostMsvcVersion}-mt-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(BoostLocaleDebugLibrary libboost_locale-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostLocaleReleaseLibrary libboost_locale-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostUnitTestFrameworkDebugLibrary libboost_unit_test_framework-vc${BoostMsvcVersion}-mt-gd-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostUnitTestFrameworkReleaseLibrary libboost_unit_test_framework-vc${BoostMsvcVersion}-mt-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(BoostSystemDebugLibrary libboost_system-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostSystemReleaseLibrary libboost_system-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostLocaleDebugLibrary libboost_locale-vc${BoostMsvcVersion}-mt-gd-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostLocaleReleaseLibrary libboost_locale-vc${BoostMsvcVersion}-mt-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(BoostThreadDebugLibrary libboost_thread-vc${BoostMsvcVersion}-mt-gd-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
-	find_library(BoostThreadReleaseLibrary libboost_thread-vc${BoostMsvcVersion}-mt-1_53 "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostSystemDebugLibrary libboost_system-vc${BoostMsvcVersion}-mt-gd-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostSystemReleaseLibrary libboost_system-vc${BoostMsvcVersion}-mt-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
 
-	find_library(IcuDataDebugLibrary sicudtd "${Icu}/lib" NO_DEFAULT_PATH)
-	find_library(IcuDataReleaseLibrary sicudt "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(BoostThreadDebugLibrary libboost_thread-vc${BoostMsvcVersion}-mt-gd-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
+	find_library(BoostThreadReleaseLibrary libboost_thread-vc${BoostMsvcVersion}-mt-${BoostVersion} "${Boost}/lib" NO_DEFAULT_PATH)
 
 	find_library(IcuI18nDebugLibrary sicuind "${Icu}/lib" NO_DEFAULT_PATH)
 	find_library(IcuI18nReleaseLibrary sicuin "${Icu}/lib" NO_DEFAULT_PATH)
 
 	find_library(IcuUcDebugLibrary sicuucd "${Icu}/lib" NO_DEFAULT_PATH)
 	find_library(IcuUcReleaseLibrary sicuuc "${Icu}/lib" NO_DEFAULT_PATH)
+
+	find_library(IcuDataDebugLibrary sicudtd "${Icu}/lib" NO_DEFAULT_PATH)
+	find_library(IcuDataReleaseLibrary sicudt "${Icu}/lib" NO_DEFAULT_PATH)
+
+	set(SystemIncludeDirectories "${Boost}/include/boost-${BoostVersion}")
 else()
 	find_library(BoostPrgExecMonitorReleaseLibrary boost_prg_exec_monitor "${Boost}/lib" NO_DEFAULT_PATH)
 	set(BoostPrgExecMonitorDebugLibrary ${BoostPrgExecMonitorReleaseLibrary})
@@ -139,17 +145,15 @@ else()
 
 	find_library(IcuDataReleaseLibrary icudata "${Icu}/lib" NO_DEFAULT_PATH)
 	set(IcuDataDebugLibrary ${IcuDataReleaseLibrary})
+
+	set(SystemIncludeDirectories "${Boost}/include")
 endif()
 
-# Configure include paths
-if(MSVC)
-	include_directories(SYSTEM "${Boost}/include/boost-1_53")
-else()
-	include_directories(SYSTEM "${Boost}/include")
-endif()
+# Configure include paths.
+include_directories(SYSTEM ${SystemIncludeDirectories})
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/input/code")
 
-# Get sorted list of unique directories
+# Add each directory as a source group (sorted).
 file(GLOB_RECURSE Files "${CMAKE_CURRENT_SOURCE_DIR}/input/code/*.*")
 foreach(File ${Files})
 	get_filename_component(Directory "${File}" PATH)
@@ -157,33 +161,31 @@ foreach(File ${Files})
 endforeach()
 list(REMOVE_DUPLICATES Directories)
 list(SORT Directories)
-
-# Add each directory as a source group
 foreach(Directory ${Directories})
 	file(RELATIVE_PATH RelativeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${Directory}")
 	string(REPLACE "/" "\\" SourceGroup "${RelativeDirectory}")
 
-	file(GLOB LocalCppFiles "${Directory}/*.cpp")
-	list(SORT LocalCppFiles)
-	source_group("Source Files\\${SourceGroup}" FILES ${LocalCppFiles})
-	set(CppFiles ${CppFiles} ${LocalCppFiles})
+	file(GLOB DirectoryCppFiles "${Directory}/*.cpp")
+	list(SORT DirectoryCppFiles)
+	source_group("Source Files\\${SourceGroup}" FILES ${DirectoryCppFiles})
+	set(CppFiles ${CppFiles} ${DirectoryCppFiles})
 
-	file(GLOB LocalHppFiles "${Directory}/*.hpp")
-	list(SORT LocalHppFiles)
-	source_group("Header Files\\${SourceGroup}" FILES ${LocalHppFiles})
-	set(HppFiles ${HppFiles} ${LocalHppFiles})
+	file(GLOB DirectoryHppFiles "${Directory}/*.hpp")
+	list(SORT DirectoryHppFiles)
+	source_group("Header Files\\${SourceGroup}" FILES ${DirectoryHppFiles})
+	set(HppFiles ${HppFiles} ${DirectoryHppFiles})
 
-	file(GLOB LocalDoxFiles "${Directory}/*.dox")
-	list(SORT LocalDoxFiles)
-	source_group("Doxygen Files\\${SourceGroup}" FILES ${LocalDoxFiles})
-	set(DoxFiles ${DoxFiles} ${LocalDoxFiles})
+	file(GLOB DirectoryDoxFiles "${Directory}/*.dox")
+	list(SORT DirectoryDoxFiles)
+	source_group("Doxygen Files\\${SourceGroup}" FILES ${DirectoryDoxFiles})
+	set(DoxFiles ${DoxFiles} ${DirectoryDoxFiles})
 endforeach()
 
-# Add executable targets
+# Add executable targets.
 add_executable("Om.Interpreter" ${CppFiles} ${HppFiles})
 add_executable("Om.Test" ${CppFiles})
 
-# Add documentation target
+# Add documentation target.
 if(MSVC)
 	set(DoxygenCommand (type ..\\documentation\\Doxyfile && echo WARN_FORMAT = "$file($line): $text") | doxygen -)
 else()
@@ -197,15 +199,15 @@ add_custom_target("Om.Documentation" ALL
 	SOURCES ${DoxFiles}
 )
 
-# om.internal: Populate with complete sorted list of unique headers
-set(InternalHeader "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.internal")
-file(WRITE "${InternalHeader}" "")
-foreach(HeaderFile ${HppFiles})
-	file(RELATIVE_PATH RelativeHeaderFile "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${HeaderFile}")
-	file(APPEND "${InternalHeader}" "#include \"${RelativeHeaderFile}\"\n")
+# "om.internal": Populate with complete sorted list of unique headers.
+set(Internal "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.internal")
+file(WRITE "${Internal}" "")
+foreach(HppFile ${HppFiles})
+	file(RELATIVE_PATH RelativeHppFile "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${HppFile}")
+	file(APPEND "${Internal}" "#include \"${RelativeHppFile}\"\n")
 endforeach()
 
-# om.external: Configure for precompilation
+# "om.external": Configure for precompilation.
 if(APPLE)
 	add_definitions(-DOm_Macros_Precompilation_)
 
@@ -216,10 +218,10 @@ if(APPLE)
 	)
 endif()
 
-# Configure executable targets
-function(om_configure_executable target)
-	# Link Boost
-	target_link_libraries(${target}
+# Configure executable targets.
+function(ConfigureExecutable Target)
+	# Link Boost.
+	target_link_libraries(${Target}
 		debug "${BoostLocaleDebugLibrary}"
 		optimized "${BoostLocaleReleaseLibrary}"
 
@@ -230,8 +232,8 @@ function(om_configure_executable target)
 		optimized "${BoostThreadReleaseLibrary}"
 	)
 
-	# Link ICU
-	target_link_libraries(${target}
+	# Link ICU.
+	target_link_libraries(${Target}
 		debug "${IcuI18nDebugLibrary}"
 		optimized "${IcuI18nReleaseLibrary}"
 
@@ -242,23 +244,24 @@ function(om_configure_executable target)
 		optimized "${IcuDataReleaseLibrary}"
 	)
 
+	# Link additional libraries required on Linux.
 	if(UNIX AND NOT APPLE)
-		target_link_libraries(${target} pthread rt dl)
+		target_link_libraries(${Target} pthread rt dl)
 	endif()
 
-	# Add post-build event that copies artifacts
+	# Add post-build event that copies artifacts.
 	add_custom_command(
-		TARGET ${target}
+		TARGET ${Target}
 		POST_BUILD
-		COMMAND "${CMAKE_COMMAND}" -E copy $<TARGET_FILE:${target}> "${CMAKE_CURRENT_SOURCE_DIR}/output/artifacts/${CMAKE_GENERATOR}/$<CONFIGURATION>/$<TARGET_FILE_NAME:${target}>"
-		COMMENT Generating ${target} artifacts...
+		COMMAND "${CMAKE_COMMAND}" -E copy $<TARGET_FILE:${Target}> "${CMAKE_CURRENT_SOURCE_DIR}/output/artifacts/${CMAKE_GENERATOR}/$<CONFIGURATION>/$<TARGET_FILE_NAME:${Target}>"
+		COMMENT Generating ${Target} artifacts...
 		VERBATIM
 	)
 endfunction()
-om_configure_executable("Om.Interpreter")
-om_configure_executable("Om.Test")
+ConfigureExecutable("Om.Interpreter")
+ConfigureExecutable("Om.Test")
 
-# Link Boost.Test libraries
+# Link Boost.Test libraries.
 target_link_libraries("Om.Test"
 	debug "${BoostPrgExecMonitorDebugLibrary}"
 	optimized "${BoostPrgExecMonitorReleaseLibrary}"
@@ -270,20 +273,20 @@ target_link_libraries("Om.Test"
 	optimized "${BoostUnitTestFrameworkReleaseLibrary}"
 )
 
-# Configure Om.Test
-set(OmTestCompileFlags "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API")
-set(OmTestLinkFlags "")
+# Configure Om.Test.
+set(TestCompileFlags "-DOm_Macros_Test_ -DBOOST_TEST_ALTERNATIVE_INIT_API")
+set(TestLinkFlags "")
 if(NOT MSVC)
-	# Disable warnings generated by Boost.Test
-	set(OmTestCompileFlags "${OmTestCompileFlags} -Wno-format-nonliteral")
-	set(OmTestCompileFlags "${OmTestCompileFlags} -Wno-unneeded-internal-declaration")
-	set(OmTestCompileFlags "${OmTestCompileFlags} -Wno-unused-variable")
+	# Disable warnings generated by Boost.Test.
+	set(TestCompileFlags "${TestCompileFlags} -Wno-format-nonliteral")
+	set(TestCompileFlags "${TestCompileFlags} -Wno-unneeded-internal-declaration")
+	set(TestCompileFlags "${TestCompileFlags} -Wno-unused-variable")
 
-	# Analyze test coverage
-	set(OmTestCompileFlags "${OmTestCompileFlags} -fprofile-arcs -ftest-coverage")
-	set(OmTestLinkFlags "${OmTestLinkFlags} -fprofile-arcs -ftest-coverage")
+	# Analyze test coverage.
+	set(TestCompileFlags "${TestCompileFlags} -fprofile-arcs -ftest-coverage")
+	set(TestLinkFlags "${TestLinkFlags} -fprofile-arcs -ftest-coverage")
 
-	# Add pre-build event that cleans profiler information
+	# Add pre-build event that cleans profiler information.
 	add_custom_command(
 		TARGET "Om.Test"
 		PRE_BUILD
@@ -291,10 +294,10 @@ if(NOT MSVC)
 		COMMENT Cleaning profiler information...
 	)
 endif()
-set_target_properties("Om.Test" PROPERTIES COMPILE_FLAGS "${OmTestCompileFlags}")
-set_target_properties("Om.Test" PROPERTIES LINK_FLAGS "${OmTestLinkFlags}")
+set_target_properties("Om.Test" PROPERTIES COMPILE_FLAGS "${TestCompileFlags}")
+set_target_properties("Om.Test" PROPERTIES LINK_FLAGS "${TestLinkFlags}")
 
-# Add RUN_TESTS target
+# Add RUN_TESTS target.
 enable_testing()
 add_test("Om.Test.Build" "${CMAKE_COMMAND}" --build "${CMAKE_BINARY_DIR}" --target "Om.Test")
 add_test("Om.Test.Run" "Om.Test")
