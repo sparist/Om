@@ -1,10 +1,10 @@
 #!/bin/sh
 set -e
 
-if [ $# -ne 1 ]
+if [ $# -lt 1 ]
 then
-  echo Usage: $0 {CMake Generator}
-  exit 1
+	echo Usage: $0 \"CMake Generator\" [...]
+	exit 1
 fi
 Generator=$1
 
