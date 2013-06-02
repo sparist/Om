@@ -4,7 +4,7 @@ setlocal enableextensions
 set argC=0
 for %%x in (%*) do Set /A argC+=1
 if %argC% LSS 1 (
-	echo Usage: %0 "CMake Generator" [...]
+	echo Usage: %0 "CMake generator" [Additional CMake arguments...]
 	exit /b 1
 )
 
