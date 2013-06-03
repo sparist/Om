@@ -60,13 +60,13 @@ $(document).ready(function(){initNavTree('group__om____expression____.html','');
 
 <p>A <a class="el" href="group__om____programs____.html">Program</a> optimized for evaluation.  
 <a href="#details">More...</a></p>
-<dl class="section user"><dt>Interpretation</dt><dd>An <a class="el" href="group__om____expression____.html">Expression</a> is an interpretation of a <a class="el" href="group__om____programs____.html">Program</a> as a list of non-empty forms, each containing the following:<ul>
-<li>An <a class="el" href="group__om____operator____.html">Operator</a> (or none), representing the operation.</li>
+<dl class="section user"><dt>Interpretation</dt><dd>A <a class="el" href="group__om____programs____.html">Program</a> is interpreted as an <a class="el" href="group__om____expression____.html">Expression</a> by treating it as a list of non-empty <em>forms</em>, each containing the following:<ul>
+<li>An <a class="el" href="group__om____operator____.html">Operator</a> (or none).</li>
 <li>An <a class="el" href="group__om____operand____.html">Operand</a> list (which may be empty only if there is an <a class="el" href="group__om____operator____.html">Operator</a>). </li>
 </ul>
 </dd></dl>
 <dl class="section user"><dt>Normalization</dt><dd>A <a class="el" href="group__om____programs____.html">Program</a> is normalized as an <a class="el" href="group__om____expression____.html">Expression</a> as follows:<ul>
-<li>Each <a class="el" href="group__om____separator____.html">Separator</a> is removed, and replaced by a line <a class="el" href="group__om____separator____.html">Separator</a> between each non-empty form. </li>
+<li>Each <a class="el" href="group__om____separator____.html">Separator</a> is removed, and a line <a class="el" href="group__om____separator____.html">Separator</a> is inserted between each non-empty form. </li>
 </ul>
 </dd></dl>
 <dl class="section user"><dt>Implementation</dt><dd><a class="el" href="class_om_1_1_expression.html" title="The Expression Program implementation. ">Om::Expression</a> </dd></dl>
