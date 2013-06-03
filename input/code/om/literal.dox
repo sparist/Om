@@ -4,7 +4,7 @@
 	\brief
 		A literal \ref om__programs__ "Program".
 	\par Interpretation
-		A \ref om__literal__ is a verbatim interpretation of a \ref om__programs__ "Program" as a sequence of elements, where none are disregarded.
+		A \ref om__programs__ "Program" is interpreted as a \ref om__literal__ by treating all elements as significant.
 	\par Normalization
 		No normalization is required.
 	\par Implementation

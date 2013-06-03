@@ -4,7 +4,7 @@
 	\brief
 		An atomic \ref om__programs__ "Program" element that serves to separate other elements.
 	\par Interpretation
-		A \ref om__separator__ is an interpretation of a \ref om__programs__ "Program" as one that contains only separator code points (line, tab, and space); all others are disregarded.
+		A \ref om__programs__ "Program" is interpreted as a \ref om__separator__ by treating only separator code points (line, tab, and space) as significant.
 	\par Normalization
 		A \ref om__programs__ "Program" is normalized as a \ref om__separator__ by discarding all non-separator code points.
 	\par Implementation

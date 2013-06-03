@@ -4,9 +4,9 @@
 	\brief
 		An atomic \ref om__programs__ "Program" element defined by any UTF-8 string.
 	\par Interpretation
-		An \ref om__operator__ is an interpretation of a \ref om__programs__ "Program" as a single atomic UTF-8 string element containing the encoded text of all elements, merged verbatim.
+		A \ref om__programs__ "Program" is interpreted as an \ref om__operator__ by treating it as containing as a single atomic UTF-8 string element containing the encoded text of all elements.
 	\par Normalization
-		A \ref om__programs__ "Program" is normalized as an \ref om__operator__ by encoding and merging all contents.
+		A \ref om__programs__ "Program" is normalized as an \ref om__operator__ by encoding and merging all elements.
 	\par Implementation
 		Om::Operator
 */
