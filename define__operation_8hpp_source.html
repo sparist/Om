@@ -75,54 +75,55 @@ $(document).ready(function(){initNavTree('define__operation_8hpp_source.html',''
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// MARK: - Om::Operations::DefineOperation</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_om_1_1_operations_1_1_define_operation.html">   36</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_operations_1_1_define_operation.html">DefineOperation</a>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_operation.html">DefaultOperation</a>&lt;DefineOperation&gt; {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#ac6b4abca0b92101218331b33538bc6af">GetName</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheDefineOperation&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a68d404f7432dbc0f84fc36eb3bca5930">GiveElements</a>(</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                TheDefineOperation &amp;,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a195d1ce2171d13ffe80e191534e99952">DefineOperation</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a93ef0c4173562af85043e41f5428427e">TakeOperand</a>(</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                TheOperand &amp;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a64fcccb8ecd4ebad932b49a4dda194a8">TakeQuotedProducer</a>(</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                TheProducer &amp;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            );</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_om_1_1_operations_1_1_define_operation.html#a7a53352002125563fc9a0ed798b20519">   67</a></span>&#160;            boost::optional&lt;Lexicon&gt; <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a7a53352002125563fc9a0ed798b20519">thisLexicon</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        };</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">namespace </span>{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_system_1_1_definition.html">System::Definition&lt;DefineOperation&gt;</a> <span class="keyword">const</span> theDefineDefinition;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="define__operation_8cpp.html">om/operations/define_operation.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_om_1_1_operations_1_1_define_operation.html">   36</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_operations_1_1_define_operation.html">DefineOperation</a> :</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_operation.html">DefaultOperation</a>&lt;DefineOperation&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#ac6b4abca0b92101218331b33538bc6af">GetName</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheDefineOperation&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a68d404f7432dbc0f84fc36eb3bca5930">GiveElements</a>(</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                TheDefineOperation &amp;,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a195d1ce2171d13ffe80e191534e99952">DefineOperation</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a93ef0c4173562af85043e41f5428427e">TakeOperand</a>(</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                TheOperand &amp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a64fcccb8ecd4ebad932b49a4dda194a8">TakeQuotedProducer</a>(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                TheProducer &amp;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_om_1_1_operations_1_1_define_operation.html#a7a53352002125563fc9a0ed798b20519">   68</a></span>&#160;            boost::optional&lt;Lexicon&gt; <a class="code" href="class_om_1_1_operations_1_1_define_operation.html#a7a53352002125563fc9a0ed798b20519">thisLexicon</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        };</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_system_1_1_definition.html">System::Definition&lt;DefineOperation&gt;</a> <span class="keyword">const</span> theDefineDefinition;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="define__operation_8cpp.html">om/operations/define_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="define__operation_8cpp_html"><div class="ttname"><a href="define__operation_8cpp.html">define_operation.cpp</a></div><div class="ttdoc">Om source file. </div></div>
 <div class="ttc" id="class_om_1_1_system_1_1_definition_html"><div class="ttname"><a href="class_om_1_1_system_1_1_definition.html">Om::System::Definition</a></div><div class="ttdoc">An inserter of an Operation into the static System instance. </div><div class="ttdef"><b>Definition:</b> <a href="system_8hpp_source.html#l00053">system.hpp:53</a></div></div>
 <div class="ttc" id="system_8hpp_html"><div class="ttname"><a href="system_8hpp.html">system.hpp</a></div><div class="ttdoc">Om header file. </div></div>
@@ -130,7 +131,7 @@ $(document).ready(function(){initNavTree('define__operation_8hpp_source.html',''
 <div class="ttc" id="class_om_1_1_consumer_html"><div class="ttname"><a href="class_om_1_1_consumer.html">Om::Consumer</a></div><div class="ttdoc">An Element taker; takes at the back. </div><div class="ttdef"><b>Definition:</b> <a href="consumer_8hpp_source.html#l00040">consumer.hpp:40</a></div></div>
 <div class="ttc" id="class_om_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_evaluation.html">Om::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00040">evaluation.hpp:40</a></div></div>
 <div class="ttc" id="class_om_1_1_operations_1_1_define_operation_html_ac6b4abca0b92101218331b33538bc6af"><div class="ttname"><a href="class_om_1_1_operations_1_1_define_operation.html#ac6b4abca0b92101218331b33538bc6af">Om::Operations::DefineOperation::GetName</a></div><div class="ttdeci">static char const * GetName()</div></div>
-<div class="ttc" id="class_om_1_1_operations_1_1_define_operation_html_a7a53352002125563fc9a0ed798b20519"><div class="ttname"><a href="class_om_1_1_operations_1_1_define_operation.html#a7a53352002125563fc9a0ed798b20519">Om::Operations::DefineOperation::thisLexicon</a></div><div class="ttdeci">boost::optional&lt; Lexicon &gt; thisLexicon</div><div class="ttdef"><b>Definition:</b> <a href="define__operation_8hpp_source.html#l00067">define_operation.hpp:67</a></div></div>
+<div class="ttc" id="class_om_1_1_operations_1_1_define_operation_html_a7a53352002125563fc9a0ed798b20519"><div class="ttname"><a href="class_om_1_1_operations_1_1_define_operation.html#a7a53352002125563fc9a0ed798b20519">Om::Operations::DefineOperation::thisLexicon</a></div><div class="ttdeci">boost::optional&lt; Lexicon &gt; thisLexicon</div><div class="ttdef"><b>Definition:</b> <a href="define__operation_8hpp_source.html#l00068">define_operation.hpp:68</a></div></div>
 <div class="ttc" id="class_om_1_1_operations_1_1_define_operation_html_a64fcccb8ecd4ebad932b49a4dda194a8"><div class="ttname"><a href="class_om_1_1_operations_1_1_define_operation.html#a64fcccb8ecd4ebad932b49a4dda194a8">Om::Operations::DefineOperation::TakeQuotedProducer</a></div><div class="ttdeci">bool TakeQuotedProducer(Evaluation &amp;, TheProducer &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_default_operation_html"><div class="ttname"><a href="class_om_1_1_default_operation.html">Om::DefaultOperation</a></div><div class="ttdoc">A partial implementation of Operation. </div><div class="ttdef"><b>Definition:</b> <a href="default__operation_8hpp_source.html#l00035">default_operation.hpp:35</a></div></div>
 <div class="ttc" id="class_om_1_1_operations_1_1_define_operation_html_a68d404f7432dbc0f84fc36eb3bca5930"><div class="ttname"><a href="class_om_1_1_operations_1_1_define_operation.html#a68d404f7432dbc0f84fc36eb3bca5930">Om::Operations::DefineOperation::GiveElements</a></div><div class="ttdeci">static void GiveElements(TheDefineOperation &amp;, Consumer &amp;)</div></div>

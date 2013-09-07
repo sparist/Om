@@ -228,64 +228,65 @@ $(document).ready(function(){initNavTree('inject__operation_8cpp_source.html',''
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">inline</span> Type_::InjectOperation():</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">inline</span> Type_::InjectOperation() :</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;thisInjector(),</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;thisOutput(),</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;thisScope() {}</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::TakeQuotedProducer(</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    Evaluation &amp; theEvaluation,</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    TheProducer &amp; theProducer</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;) {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">if</span> (this-&gt;thisScope) {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> (</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            this-&gt;thisScope-&gt;IsEmpty()</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        ) {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            theProducer.GiveElements(*this-&gt;thisScope);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                Expression <span class="keyword">const</span> &amp; theInjector = this-&gt;thisInjector;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                theInjector.GiveElements(*this-&gt;thisScope);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            this-&gt;thisScope-&gt;TakeQuotedProducer(theProducer);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">if</span> (</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            this-&gt;thisScope-&gt;IsEmpty()</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        ) {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            theEvaluation.TakeQuotedProducer(this-&gt;thisOutput);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        this-&gt;thisScope = boost::in_place(</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            boost::ref(this-&gt;thisOutput),</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            boost::ref(</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                theEvaluation.GetTranslator()</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            )</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        );</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        this-&gt;thisInjector.TakeElements(theProducer);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::TakeOperand(</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    Evaluation &amp; theEvaluation,</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    TheOperand &amp; theOperand</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;) {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    assert(</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        !theOperand.IsEmpty()</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    );</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> this-&gt;TakeQuotedProducer(</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        theEvaluation,</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        *theOperand.GetProgram()</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    );</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;thisScope()</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{}</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::TakeQuotedProducer(</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    Evaluation &amp; theEvaluation,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    TheProducer &amp; theProducer</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">if</span> (this-&gt;thisScope) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">if</span> (</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            this-&gt;thisScope-&gt;IsEmpty()</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        ) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            theProducer.GiveElements(*this-&gt;thisScope);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                Expression <span class="keyword">const</span> &amp; theInjector = this-&gt;thisInjector;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                theInjector.GiveElements(*this-&gt;thisScope);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            this-&gt;thisScope-&gt;TakeQuotedProducer(theProducer);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">if</span> (</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            this-&gt;thisScope-&gt;IsEmpty()</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        ) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            theEvaluation.TakeQuotedProducer(this-&gt;thisOutput);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        this-&gt;thisScope = boost::in_place(</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            boost::ref(this-&gt;thisOutput),</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            boost::ref(</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                theEvaluation.GetTranslator()</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            )</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        );</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        this-&gt;thisInjector.TakeElements(theProducer);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::TakeOperand(</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    Evaluation &amp; theEvaluation,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    TheOperand &amp; theOperand</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    assert(</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        !theOperand.IsEmpty()</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    );</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> this-&gt;TakeQuotedProducer(</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        theEvaluation,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        *theOperand.GetProgram()</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    );</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="inject__operation_8hpp_html"><div class="ttname"><a href="inject__operation_8hpp.html">inject_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="inject__operation_8hpp_html_a8eb8c5bbdb5561e086bbcb4b565e46e2"><div class="ttname"><a href="inject__operation_8hpp.html#a8eb8c5bbdb5561e086bbcb4b565e46e2">Om_Operations_InjectOperation_GetName_</a></div><div class="ttdeci">#define Om_Operations_InjectOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00024">inject_operation.hpp:24</a></div></div>
 <div class="ttc" id="class_om_1_1_system_html_a07d26350515fb1910ceba847dd735347"><div class="ttname"><a href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">Om::System::Get</a></div><div class="ttdeci">static System &amp; Get()</div></div>
