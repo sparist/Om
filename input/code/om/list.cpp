@@ -29,8 +29,9 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::List():
-thisNodeArray() {
+inline Type_::List() :
+thisNodeArray()
+{
 	this->Clear();
 }
 
@@ -155,9 +156,10 @@ inline typename Type_::Node * Type_::UnlinkNode(NodeIndex const theNodeIndex) {
 // MARK: public (non-static)
 
 Template_
-inline Type_::Node():
+inline Type_::Node() :
 thisNodeArray(),
-thisValue() {
+thisValue()
+{
 	this->thisNodeArray[theFrontNodeIndex] = 0;
 	this->thisNodeArray[theBackNodeIndex] = 0;
 }

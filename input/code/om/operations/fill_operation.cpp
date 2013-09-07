@@ -114,9 +114,10 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::FillOperation():
+inline Type_::FillOperation() :
 thisExpression(),
-thisFormRange() {}
+thisFormRange()
+{}
 
 template <typename TheOperand>
 inline bool Type_::TakeOperand(

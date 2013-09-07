@@ -125,11 +125,12 @@ namespace Om {
 	\brief
 		A Form Element range.
 	*/
-	class Form::ElementRange:
+	class Form::ElementRange :
 	public Sources::DefaultSource<
 		Element const,
 		ElementRange
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 
@@ -179,11 +180,12 @@ namespace Om {
 		A mutable Form Operand range.
 	*/
 	template <>
-	class Form::OperandRange<Operand>:
+	class Form::OperandRange<Operand> :
 	public Sources::CollectionFrontSource<
 		Operand,
 		OperandDeque::iterator
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 
@@ -198,11 +200,12 @@ namespace Om {
 		An immutable Form Operand range.
 	*/
 	template <>
-	class Form::OperandRange<Operand const>:
+	class Form::OperandRange<Operand const> :
 	public Sources::CollectionFrontSource<
 		Operand const,
 		OperandDeque::const_iterator
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 

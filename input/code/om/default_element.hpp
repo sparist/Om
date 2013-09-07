@@ -31,11 +31,12 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Element
 	>
-	class DefaultElement:
+	class DefaultElement :
 	public DefaultProgram<
 		ThisImplementation,
 		ThisInterface
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 

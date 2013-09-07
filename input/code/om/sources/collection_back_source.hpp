@@ -33,11 +33,12 @@ namespace Om {
 			typename ThisItem,
 			typename ThisIterator
 		>
-		class CollectionBackSource:
+		class CollectionBackSource :
 		public IteratorPairSource<
 			ThisItem,
 			ThisIterator
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 

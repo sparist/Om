@@ -33,8 +33,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__pair_operation__ operation implementation.
 		*/
-		class PairOperation:
-		public DefaultOperation<PairOperation> {
+		class PairOperation :
+		public DefaultOperation<PairOperation>
+		{
 
 		public: // MARK: public (static)
 

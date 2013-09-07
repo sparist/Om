@@ -25,9 +25,10 @@
 
 // MARK: public (non-static)
 
-inline Type_::Form():
+inline Type_::Form() :
 thisOperator(),
-thisOperandDeque() {}
+thisOperandDeque()
+{}
 
 inline bool Type_::BackGiveTerm(Consumer & theConsumer) {
 	if (
@@ -208,14 +209,15 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::ElementRange(Form const & theForm):
+inline Type_::ElementRange(Form const & theForm) :
 thisOperandIterator(
 	theForm.thisOperandDeque.begin()
 ),
 thisOperandEnd(
 	theForm.thisOperandDeque.end()
 ),
-thisElement(&theForm.thisOperator) {
+thisElement(&theForm.thisOperator)
+{
 	if (
 		theForm.thisOperator.IsEmpty()
 	) {
@@ -275,17 +277,19 @@ inline bool Om::operator !=(
 
 // MARK: public (non-static)
 
-inline Type_<Om::Operand>::OperandRange(Form & theForm):
+inline Type_<Om::Operand>::OperandRange(Form & theForm) :
 Sources::CollectionFrontSource<
 	Operand,
 	OperandDeque::iterator
->(theForm.thisOperandDeque) {}
+>(theForm.thisOperandDeque)
+{}
 
-inline Type_<Om::Operand const>::OperandRange(Form const & theForm):
+inline Type_<Om::Operand const>::OperandRange(Form const & theForm) :
 Sources::CollectionFrontSource<
 	Operand const,
 	OperandDeque::const_iterator
->(theForm.thisOperandDeque) {}
+>(theForm.thisOperandDeque)
+{}
 
 	#undef Type_
 

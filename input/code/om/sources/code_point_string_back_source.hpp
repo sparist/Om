@@ -34,11 +34,12 @@ namespace Om {
 			Dereferencing exposes a reference to the member string cache of the current segment. Modifying the string will not modify the source data.
 		*/
 		template <typename ThisStringIterator>
-		class CodePointStringBackSource:
+		class CodePointStringBackSource :
 		public DefaultSource<
 			std::string,
 			CodePointStringBackSource<ThisStringIterator>
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 

@@ -43,9 +43,9 @@ namespace Om {
 
 	There is a single System instance, returned by the static Get() method.
 	*/
-	class System:
-
-	public Translator {
+	class System :
+	public Translator
+	{
 
 	public: // MARK: public (static)
 

@@ -38,8 +38,9 @@ namespace Om {
 	\brief
 		The \ref om__literal__ Program implementation.
 	*/
-	class Literal:
-	public DefaultProgram<Literal> {
+	class Literal :
+	public DefaultProgram<Literal>
+	{
 
 	public: // MARK: public (static)
 
@@ -139,11 +140,12 @@ namespace Om {
 		A mutable Literal Element range.
 	*/
 	template <>
-	class Literal::ElementRange<Literal>:
+	class Literal::ElementRange<Literal> :
 	public Sources::CollectionFrontSource<
 		Element,
 		ElementDeque::iterator
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 
@@ -158,11 +160,12 @@ namespace Om {
 		An immutable Literal Element range.
 	*/
 	template <>
-	class Literal::ElementRange<Literal const>:
+	class Literal::ElementRange<Literal const> :
 	public Sources::CollectionFrontSource<
 		Element const,
 		ElementDeque::const_iterator
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 

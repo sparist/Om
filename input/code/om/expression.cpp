@@ -192,8 +192,9 @@ inline char const * Type_::GetName() {
 
 // MARK: public (non-static)
 
-inline Type_::Expression():
-thisFormDeque() {}
+inline Type_::Expression() :
+thisFormDeque()
+{}
 
 inline Type_ & Type_::operator =(Expression theExpression) {
 	this->Swap(theExpression);
@@ -557,17 +558,19 @@ inline Om::Form & Type_::GetFrontTaker() {
 
 // MARK: public (non-static)
 
-inline Type_<Om::Form>::FormRange(Expression & theExpression):
+inline Type_<Om::Form>::FormRange(Expression & theExpression) :
 Sources::CollectionFrontSource<
 	Form,
 	FormDeque::iterator
->(theExpression.thisFormDeque) {}
+>(theExpression.thisFormDeque)
+{}
 
-inline Type_<Om::Form const>::FormRange(Expression const & theExpression):
+inline Type_<Om::Form const>::FormRange(Expression const & theExpression) :
 Sources::CollectionFrontSource<
 	Form const,
 	FormDeque::const_iterator
->(theExpression.thisFormDeque) {}
+>(theExpression.thisFormDeque)
+{}
 
 	#undef Type_
 
@@ -578,14 +581,15 @@ Sources::CollectionFrontSource<
 
 // MARK: public (non-static)
 
-inline Type_::ElementRange(Expression const & theExpression):
+inline Type_::ElementRange(Expression const & theExpression) :
 thisFormIterator(
 	theExpression.thisFormDeque.begin()
 ),
 thisFormEnd(
 	theExpression.thisFormDeque.end()
 ),
-thisFormElementRange() {
+thisFormElementRange()
+{
 	if (this->thisFormEnd != this->thisFormIterator) {
 		this->thisFormElementRange = boost::in_place(
 			boost::ref(*this->thisFormIterator)

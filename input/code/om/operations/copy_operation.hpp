@@ -33,8 +33,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__copy_operation__ operation implementation.
 		*/
-		class CopyOperation:
-		public DefaultOperation<CopyOperation> {
+		class CopyOperation :
+		public DefaultOperation<CopyOperation>
+		{
 
 		public: // MARK: public (static)
 

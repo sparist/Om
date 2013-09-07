@@ -92,8 +92,9 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::SkipOperation():
-thisExpression() {}
+inline Type_::SkipOperation() :
+thisExpression()
+{}
 
 template <typename TheOperand>
 inline bool Type_::TakeOperand(

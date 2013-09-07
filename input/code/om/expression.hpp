@@ -36,8 +36,9 @@ namespace Om {
 	\brief
 		The \ref om__expression__ Program implementation.
 	*/
-	class Expression:
-	public DefaultProgram<Expression> {
+	class Expression :
+	public DefaultProgram<Expression>
+	{
 
 	public: // MARK: public (static)
 
@@ -162,11 +163,12 @@ namespace Om {
 		A mutable Expression Form range.
 	*/
 	template <>
-	class Expression::FormRange<Form>:
+	class Expression::FormRange<Form> :
 	public Sources::CollectionFrontSource<
 		Form,
 		FormDeque::iterator
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 
@@ -181,11 +183,12 @@ namespace Om {
 		An immutable Expression Form range.
 	*/
 	template <>
-	class Expression::FormRange<Form const>:
+	class Expression::FormRange<Form const> :
 	public Sources::CollectionFrontSource<
 		Form const,
 		FormDeque::const_iterator
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 
@@ -199,11 +202,12 @@ namespace Om {
 	\brief
 		An Expression Element range.
 	*/
-	class Expression::ElementRange:
+	class Expression::ElementRange :
 	public Sources::DefaultSource<
 		Element const,
 		ElementRange
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 

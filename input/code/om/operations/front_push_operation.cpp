@@ -55,8 +55,9 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 Template_
-inline Type_::FrontPushOperation():
-thisProgram() {}
+inline Type_::FrontPushOperation() :
+thisProgram()
+{}
 
 Template_
 template <typename TheProducer>

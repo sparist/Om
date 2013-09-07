@@ -31,8 +31,9 @@ namespace Om {
 			An Operation that applies each Translator to a Program.
 		*/
 		template <typename ThisImplementation>
-		class TranslateOperation:
-		public DefaultOperation<ThisImplementation> {
+		class TranslateOperation :
+		public DefaultOperation<ThisImplementation>
+		{
 
 		public: // MARK: public (static)
 

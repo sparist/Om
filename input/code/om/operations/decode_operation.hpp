@@ -33,8 +33,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__decode_operation__ operation implementation.
 		*/
-		class DecodeOperation:
-		public DefaultOperation<DecodeOperation> {
+		class DecodeOperation :
+		public DefaultOperation<DecodeOperation>
+		{
 
 		public: // MARK: public (static)
 

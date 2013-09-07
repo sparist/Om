@@ -33,12 +33,13 @@ namespace Om {
 			typename ThisItem,
 			typename ThisImplementation
 		>
-		class DefaultSink:
+		class DefaultSink :
 		public Sink<ThisItem>,
 		public std::iterator<
 			std::output_iterator_tag,
 			ThisItem
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 

@@ -29,11 +29,12 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::StreamSink(std::ostream & theStream):
+inline Type_::StreamSink(std::ostream & theStream) :
 IteratorSink<
 	ThisItem const,
 	std::ostreambuf_iterator<ThisItem>
->(theStream) {}
+>(theStream)
+{}
 
 	#undef Type_
 	#undef Template_

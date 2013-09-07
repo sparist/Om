@@ -33,8 +33,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__define_operation__ operation implementation.
 		*/
-		class EvaluateOperation:
-		public DefaultOperation<EvaluateOperation> {
+		class EvaluateOperation :
+		public DefaultOperation<EvaluateOperation>
+		{
 
 		public: // MARK: public (static)
 

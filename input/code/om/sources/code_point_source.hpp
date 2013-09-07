@@ -31,11 +31,12 @@ namespace Om {
 			A #CodePoint Source that reads each code unit from the iterator.
 		*/
 		template <typename ThisCodeUnitIterator = char const *>
-		class CodePointSource:
+		class CodePointSource :
 		public DefaultSource<
 			CodePoint const,
 			CodePointSource<ThisCodeUnitIterator>
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 
@@ -96,13 +97,14 @@ namespace Om {
 			A specialization for null-terminated code unit array.
 		*/
 		template <>
-		class CodePointSource<char const *>:
+		class CodePointSource<char const *> :
 		public CodePointSource<
 			IteratorSource<
 				char const,
 				char const *
 			>
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 

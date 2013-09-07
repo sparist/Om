@@ -33,13 +33,14 @@ namespace Om {
 			typename ThisProgram,
 			typename ThisImplementation
 		>
-		class FrontPushOperation:
+		class FrontPushOperation :
 		public DefaultOperation<
 			FrontPushOperation<
 				ThisProgram,
 				ThisImplementation
 			>
-		> {
+		>
+		{
 
 		public: // MARK: public (static)
 

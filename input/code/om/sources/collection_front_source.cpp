@@ -36,14 +36,15 @@
 
 Template_
 template <typename TheCollection>
-inline Type_::CollectionFrontSource(TheCollection & theCollection):
+inline Type_::CollectionFrontSource(TheCollection & theCollection) :
 IteratorPairSource<
 	ThisItem,
 	ThisIterator
 >(
 	theCollection.begin(),
 	theCollection.end()
-) {}
+)
+{}
 
 	#undef Type_
 	#undef Template_

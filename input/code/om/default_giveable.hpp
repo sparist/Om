@@ -33,14 +33,15 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Giveable
 	>
-	class DefaultGiveable:
+	class DefaultGiveable :
 	public DefaultMoveable<
 		ThisImplementation,
 		DefaultCopyable<
 			ThisImplementation,
 			ThisInterface
 		>
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 

@@ -30,11 +30,12 @@ namespace Om {
 			A Sink adapter for an output stream.
 		*/
 		template <typename ThisItem = char>
-		class StreamSink:
+		class StreamSink :
 		public IteratorSink<
 			ThisItem const,
 			std::ostreambuf_iterator<ThisItem>
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 

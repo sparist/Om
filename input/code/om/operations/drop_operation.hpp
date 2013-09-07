@@ -33,8 +33,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__drop_operation__ operation implementation.
 		*/
-		class DropOperation:
-		public DefaultOperation<DropOperation> {
+		class DropOperation :
+		public DefaultOperation<DropOperation>
+		{
 
 		public: // MARK: public (static)
 

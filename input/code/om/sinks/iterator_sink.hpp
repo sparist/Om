@@ -33,14 +33,15 @@ namespace Om {
 			typename ThisItem,
 			typename ThisIterator
 		>
-		class IteratorSink:
+		class IteratorSink :
 		public DefaultSink<
 			ThisItem,
 			IteratorSink<
 				ThisItem,
 				ThisIterator
 			>
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 

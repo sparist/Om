@@ -33,14 +33,15 @@ namespace Om {
 			typename ThisItem,
 			typename ThisContainer
 		>
-		class ContainerBackSource:
+		class ContainerBackSource :
 		public DefaultSource<
 			ThisItem,
 			ContainerBackSource<
 				ThisItem,
 				ThisContainer
 			>
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 

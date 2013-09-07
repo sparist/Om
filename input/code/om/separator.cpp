@@ -121,10 +121,11 @@ inline Type_::Separator(
 	}
 }
 
-inline Type_::Separator(Symbols::SeparatorSymbol const theSeparatorSymbol):
+inline Type_::Separator(Symbols::SeparatorSymbol const theSeparatorSymbol) :
 DefaultAtom<Separator>(
 	static_cast<char>(theSeparatorSymbol)
-) {
+)
+{
 	assert(
 		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol ||
 		Symbols::theLineSeparatorSymbol == theSeparatorSymbol ||

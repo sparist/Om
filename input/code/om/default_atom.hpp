@@ -29,11 +29,12 @@ namespace Om {
 		A partial implementation of Atom.
 	*/
 	template <typename ThisImplementation>
-	class DefaultAtom:
+	class DefaultAtom :
 	public DefaultElement<
 		ThisImplementation,
 		Atom
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 

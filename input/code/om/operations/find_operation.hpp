@@ -37,8 +37,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__find_operation__ operation implementation.
 		*/
-		class FindOperation:
-		public DefaultOperation<FindOperation> {
+		class FindOperation :
+		public DefaultOperation<FindOperation>
+		{
 
 		public: // MARK: public (static)
 

@@ -43,9 +43,10 @@ namespace Om {
 	\brief
 		The \ref om__lexicon__ Program implementation.
 	*/
-	class Lexicon:
+	class Lexicon :
 	public DefaultProgram<Lexicon>,
-	public Translator {
+	public Translator
+	{
 
 	public: // MARK: public (static)
 
@@ -165,11 +166,12 @@ namespace Om {
 	\brief
 		A Lexicon Element range.
 	*/
-	class Lexicon::ElementRange:
+	class Lexicon::ElementRange :
 	public Sources::DefaultSource<
 		Element const,
 		ElementRange
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 

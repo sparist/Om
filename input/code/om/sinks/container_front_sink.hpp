@@ -33,14 +33,15 @@ namespace Om {
 			typename ThisItem,
 			typename ThisContainer
 		>
-		class ContainerFrontSink:
+		class ContainerFrontSink :
 		public DefaultSink<
 			ThisItem,
 			ContainerFrontSink<
 				ThisItem,
 				ThisContainer
 			>
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 

@@ -37,14 +37,15 @@ namespace Om {
 			typename ThisItem,
 			typename ThisIterator
 		>
-		class IteratorSource:
+		class IteratorSource :
 		public DefaultSource<
 			ThisItem,
 			IteratorSource<
 				ThisItem,
 				ThisIterator
 			>
-		> {
+		>
+		{
 
 		public: // MARK: public (non-static)
 

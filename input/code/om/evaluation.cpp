@@ -34,9 +34,10 @@ inline Type_::~Evaluation() {
 	);
 }
 
-inline Type_::Evaluation(Evaluator & theEvaluator):
+inline Type_::Evaluation(Evaluator & theEvaluator) :
 thisExpression(),
-thisEvaluator(theEvaluator) {}
+thisEvaluator(theEvaluator)
+{}
 
 inline Om::Translator const & Type_::GetTranslator() const {
 	return this->thisEvaluator.GetTranslator();

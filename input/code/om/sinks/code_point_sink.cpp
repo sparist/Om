@@ -73,8 +73,9 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::CodePointSink(ThisCodeUnitIterator theCodeUnitIterator):
-thisCodeUnitIterator(theCodeUnitIterator) {}
+inline Type_::CodePointSink(ThisCodeUnitIterator theCodeUnitIterator) :
+thisCodeUnitIterator(theCodeUnitIterator)
+{}
 
 Template_
 inline Type_ & Type_::operator =(CodePointSink theCodePointSink) {

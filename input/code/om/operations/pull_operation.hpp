@@ -33,13 +33,14 @@ namespace Om {
 			typename ThisProgram,
 			typename ThisImplementation
 		>
-		class PullOperation:
+		class PullOperation :
 		public DefaultOperation<
 			PullOperation<
 				ThisProgram,
 				ThisImplementation
 			>
-		> {
+		>
+		{
 
 		public: // MARK: public (static)
 

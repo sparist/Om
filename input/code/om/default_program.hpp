@@ -34,7 +34,7 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Program
 	>
-	class DefaultProgram:
+	class DefaultProgram :
 	public DefaultConsumer<
 		ThisImplementation,
 		DefaultGiveable<
@@ -42,7 +42,8 @@ namespace Om {
 			ThisInterface
 		>
 	>,
-	public Taker<ThisImplementation> {
+	public Taker<ThisImplementation>
+	{
 
 	public: // MARK: public (non-static)
 

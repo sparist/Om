@@ -33,8 +33,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__swap_operation__ operation implementation.
 		*/
-		class SwapOperation:
-		public DefaultOperation<SwapOperation> {
+		class SwapOperation :
+		public DefaultOperation<SwapOperation>
+		{
 
 		public: // MARK: public (static)
 

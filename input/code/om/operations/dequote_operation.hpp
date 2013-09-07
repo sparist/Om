@@ -33,8 +33,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__dequote_operation__ operation implementation.
 		*/
-		class DequoteOperation:
-		public DefaultOperation<DequoteOperation> {
+		class DequoteOperation :
+		public DefaultOperation<DequoteOperation>
+		{
 
 		public: // MARK: public (static)
 

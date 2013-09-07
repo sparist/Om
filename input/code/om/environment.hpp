@@ -27,8 +27,9 @@ namespace Om {
 	\brief
 		An unowned Translator collection for which lookups are done for each Translator, in reverse order, until a match is found.
 	*/
-	class Environment:
-	public Translator {
+	class Environment :
+	public Translator
+	{
 
 	public: // MARK: public (non-static)
 

@@ -33,8 +33,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__equals_operation__ operation implementation.
 		*/
-		class EqualsOperation:
-		public DefaultOperation<EqualsOperation> {
+		class EqualsOperation :
+		public DefaultOperation<EqualsOperation>
+		{
 
 		public: // MARK: public (static)
 

@@ -322,11 +322,12 @@ Template_
 inline Type_::CodePointStringBackSource(
 	ThisStringIterator theStringStart,
 	ThisStringIterator const theStringEnd
-):
+) :
 thisStringIterator(theStringStart),
 thisCodePointIterator(theStringEnd),
 thisCodePointEnd(theStringEnd),
-thisCodePoint() {
+thisCodePoint()
+{
 	this->Update();
 }
 

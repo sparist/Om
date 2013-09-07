@@ -279,14 +279,16 @@ inline char const * Type_::GetName() {
 
 // MARK: public (non-static)
 
-inline Type_::Lexicon():
+inline Type_::Lexicon() :
 thisMap(),
-thisPairList() {}
+thisPairList()
+{}
 
-inline Type_::Lexicon(Lexicon const & theLexicon):
+inline Type_::Lexicon(Lexicon const & theLexicon) :
 DefaultProgram<Lexicon>(theLexicon),
 thisMap(),
-thisPairList() {
+thisPairList()
+{
 	for (
 		PairList::Node const * theNode = theLexicon.thisPairList.GetNode(PairList::theFrontNodeIndex);
 		theNode;
@@ -580,18 +582,20 @@ inline void boost::swap(
 
 // MARK: public (non-static)
 
-inline Type_::ElementRange():
+inline Type_::ElementRange() :
 thisNode(),
-thisOffset() {}
+thisOffset()
+{}
 
-inline Type_::ElementRange(Lexicon const & theLexicon):
+inline Type_::ElementRange(Lexicon const & theLexicon) :
 thisNode(
 	theLexicon.thisPairList.GetNode(PairList::theFrontNodeIndex)
 ),
 thisOffset(
 	this->thisNode &&
 	thisNode->GetValue().GetOperator().IsEmpty()
-) {}
+)
+{}
 
 inline bool Type_::operator !() const {
 	return !this->thisNode;

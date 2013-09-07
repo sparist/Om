@@ -35,8 +35,9 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::IteratorSink(ThisIterator theIterator):
-thisIterator(theIterator) {}
+inline Type_::IteratorSink(ThisIterator theIterator) :
+thisIterator(theIterator)
+{}
 
 Template_
 inline Type_ & Type_::operator =(IteratorSink theIteratorSink) {

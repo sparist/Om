@@ -31,8 +31,9 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Moveable
 	>
-	class DefaultMoveable:
-	public ThisInterface {
+	class DefaultMoveable :
+	public ThisInterface
+	{
 
 		template <typename TheMoveable>
 		friend std::auto_ptr<TheMoveable> Move(TheMoveable &);

@@ -32,11 +32,12 @@ namespace Om {
 	\brief
 		Produces each #CodePoint until the end of the Source.
 	*/
-	class Parser:
+	class Parser :
 	public Sources::DefaultSource<
 		CodePoint const,
 		Parser
-	> {
+	>
+	{
 
 	public: // MARK: public (non-static)
 

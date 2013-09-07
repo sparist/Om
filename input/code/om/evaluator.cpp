@@ -48,11 +48,12 @@ inline Type_::~Evaluator() {
 inline Type_::Evaluator(
 	Consumer & theOutput,
 	Translator const & theTranslator
-):
+) :
 thisOutput(theOutput),
 thisTranslator(theTranslator),
 thisOperationVector(),
-thisGaveElementToOutput() {}
+thisGaveElementToOutput()
+{}
 
 inline void Type_::Clear() {
 	this->thisOperationVector.clear();

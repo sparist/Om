@@ -32,8 +32,9 @@ namespace Om {
 		A partial implementation of Operation.
 	*/
 	template <typename ThisImplementation>
-	class DefaultOperation:
-	public Operation {
+	class DefaultOperation :
+	public Operation
+	{
 
 	public: // MARK: public (static)
 

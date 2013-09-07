@@ -35,8 +35,9 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::ContainerBackSource(ThisContainer & theContainer):
-thisContainer(theContainer) {}
+inline Type_::ContainerBackSource(ThisContainer & theContainer) :
+thisContainer(theContainer)
+{}
 
 Template_
 inline Type_ & Type_::operator =(ContainerBackSource theContainerBackSource) {

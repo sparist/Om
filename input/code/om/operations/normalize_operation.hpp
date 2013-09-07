@@ -33,8 +33,9 @@ namespace Om {
 		\brief
 			The \ref om__operations__normalize_operation__ operation implementation.
 		*/
-		class NormalizeOperation:
-		public DefaultOperation<NormalizeOperation> {
+		class NormalizeOperation :
+		public DefaultOperation<NormalizeOperation>
+		{
 
 		public: // MARK: public (static)
 

@@ -27,8 +27,9 @@ namespace Om {
 	\brief
 		A Program that contains a single "elemental" item (or none, when IsEmpty() returns true).
 	*/
-	class Element:
-	public Program {
+	class Element :
+	public Program
+	{
 
 	public: // MARK: public (non-static)
 

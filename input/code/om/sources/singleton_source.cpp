@@ -29,12 +29,14 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::SingletonSource():
-thisItem() {}
+inline Type_::SingletonSource() :
+thisItem()
+{}
 
 Template_
-inline Type_::SingletonSource(ThisItem & theItem):
-thisItem(&theItem) {}
+inline Type_::SingletonSource(ThisItem & theItem) :
+thisItem(&theItem)
+{}
 
 Template_
 inline Type_ & Type_::operator =(SingletonSource theSingletonSource) {
