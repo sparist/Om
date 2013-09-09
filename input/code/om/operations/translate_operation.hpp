@@ -17,8 +17,8 @@
 	#define Om_Operations_TranslateOperation_ \
 	Om::Operations::TranslateOperation
 
-	#include "om/default_operation.hpp"
 	#include "om/lexicon.hpp"
+	#include "om/operations/default_operation.hpp"
 
 namespace Om {
 

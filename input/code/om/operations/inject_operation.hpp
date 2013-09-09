@@ -17,8 +17,8 @@
 	#define Om_Operations_InjectOperation_ \
 	Om::Operations::InjectOperation
 
-	#include "om/default_operation.hpp"
 	#include "om/expression.hpp"
+	#include "om/operations/default_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_InjectOperation_GetName_() \

@@ -17,7 +17,7 @@
 	#define Om_Operations_SwapOperation_ \
 	Om::Operations::SwapOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_SwapOperation_GetName_() \

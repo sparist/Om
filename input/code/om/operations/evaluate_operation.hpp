@@ -17,7 +17,7 @@
 	#define Om_Operations_EvaluateOperation_ \
 	Om::Operations::EvaluateOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_EvaluateOperation_GetName_() \

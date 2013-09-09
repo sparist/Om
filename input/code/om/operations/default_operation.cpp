@@ -12,21 +12,21 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_DefaultOperation_
+#ifndef Om_Operations_DefaultOperation_
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 
 #else
 
 	#include "om/evaluator.hpp"
 
-// MARK: - Om::DefaultOperation
+// MARK: - Om::Operations::DefaultOperation
 
 	#define Template_ \
 	template <typename ThisImplementation>
 
 	#define Type_ \
-	Om::DefaultOperation<ThisImplementation>
+	Om::Operations::DefaultOperation<ThisImplementation>
 
 // MARK: public (static)
 

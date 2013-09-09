@@ -17,7 +17,7 @@
 	#define Om_Operations_ChooseOperation_ \
 	Om::Operations::ChooseOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_ChooseOperation_GetName_() \

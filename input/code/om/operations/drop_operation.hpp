@@ -17,7 +17,7 @@
 	#define Om_Operations_DropOperation_ \
 	Om::Operations::DropOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_DropOperation_GetName_() \

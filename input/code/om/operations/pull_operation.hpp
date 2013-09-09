@@ -17,7 +17,7 @@
 	#define Om_Operations_PullOperation_ \
 	Om::Operations::PullOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 
 namespace Om {
 

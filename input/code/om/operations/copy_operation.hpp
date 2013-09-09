@@ -17,7 +17,7 @@
 	#define Om_Operations_CopyOperation_ \
 	Om::Operations::CopyOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_CopyOperation_GetName_() \

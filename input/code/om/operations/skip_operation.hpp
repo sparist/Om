@@ -17,8 +17,8 @@
 	#define Om_Operations_SkipOperation_ \
 	Om::Operations::SkipOperation
 
-	#include "om/default_operation.hpp"
 	#include "om/expression.hpp"
+	#include "om/operations/default_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_SkipOperation_GetName_() \

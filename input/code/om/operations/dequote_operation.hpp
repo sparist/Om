@@ -17,7 +17,7 @@
 	#define Om_Operations_DequoteOperation_ \
 	Om::Operations::DequoteOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_DequoteOperation_GetName_() \

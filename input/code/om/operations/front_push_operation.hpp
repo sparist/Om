@@ -17,7 +17,7 @@
 	#define Om_Operations_FrontPushOperation_ \
 	Om::Operations::FrontPushOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 
 namespace Om {
 

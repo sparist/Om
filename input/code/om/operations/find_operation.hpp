@@ -17,7 +17,7 @@
 	#define Om_Operations_FindOperation_ \
 	Om::Operations::FindOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_FindOperation_GetName_() \

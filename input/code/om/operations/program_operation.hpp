@@ -17,7 +17,7 @@
 	#define Om_Operations_ProgramOperation_ \
 	Om::Operations::ProgramOperation
 
-	#include "om/default_operation.hpp"
+	#include "om/operations/default_operation.hpp"
 
 namespace Om {
 
