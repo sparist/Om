@@ -17,7 +17,7 @@
 	#define Om_Operations_DropOperation_ \
 	Om::Operations::DropOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_DropOperation_GetName_() \
@@ -34,7 +34,7 @@ namespace Om {
 			The \ref om__operations__drop_operation__ operation implementation.
 		*/
 		class DropOperation :
-		public DefaultOperation<DropOperation>
+		public DefaultIncompleteOperation<DropOperation>
 		{
 
 		public: // MARK: public (static)

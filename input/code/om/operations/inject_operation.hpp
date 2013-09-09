@@ -18,7 +18,7 @@
 	Om::Operations::InjectOperation
 
 	#include "om/expression.hpp"
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_InjectOperation_GetName_() \
@@ -35,7 +35,7 @@ namespace Om {
 			The \ref om__operations__inject_operation__ operation implementation.
 		*/
 		class InjectOperation :
-		public DefaultOperation<InjectOperation>
+		public DefaultIncompleteOperation<InjectOperation>
 		{
 
 		public: // MARK: public (static)

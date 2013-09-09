@@ -527,11 +527,11 @@ To implement a composite operation, or an atomic operation that consumes no oper
 -	Define the static <tt>Give(Om::Evaluation &amp;)</tt> method, with no return value, to give existing operations and/or elements to the evaluation.
 
 To define an atomic operation that consumes one or more operands:
--	Define the operation <tt>class</tt>, derived from <tt>Om::Operations::DefaultOperation&lt;</tt><em>operation</em><tt>&gt;</tt> (where <em>operation</em> is the name of the operation <tt>class</tt>), in the <tt>Om::Operations</tt> namespace.
+-	Define the operation <tt>class</tt>, derived from <tt>Om::Operations::DefaultIncompleteOperation&lt;</tt><em>operation</em><tt>&gt;</tt> (where <em>operation</em> is the name of the operation <tt>class</tt>), in the <tt>Om::Operations</tt> namespace.
 -	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
 -	Add the implementation, using existing operations as a guide:
 	-	Implement the functions necessary to compile.
-	-	Optionally override virtual function implementations in <tt>Om::Operations::DefaultOperation</tt>, such as <tt>Om::Operations::DefaultOperation::ReadQuotedElements</tt>, that may be more optimally implemented in the operation.
+	-	Optionally override virtual function implementations in <tt>Om::Operations::DefaultIncompleteOperation</tt>, such as <tt>Om::Operations::DefaultIncompleteOperation::ReadQuotedElements</tt>, that may be more optimally implemented in the operation.
 
 For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <tt>WhateverOperation</tt> is a stand-in for the name of the operation <tt>class</tt>):
 

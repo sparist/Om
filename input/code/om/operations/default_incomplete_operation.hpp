@@ -12,12 +12,12 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Operations_DefaultOperation_
+#ifndef Om_Operations_DefaultIncompleteOperation_
 
-	#define Om_Operations_DefaultOperation_ \
-	Om::Operations::DefaultOperation
+	#define Om_Operations_DefaultIncompleteOperation_ \
+	Om::Operations::DefaultIncompleteOperation
 
-	#include "om/operation.hpp"
+	#include "om/operations/incomplete_operation.hpp"
 
 namespace Om {
 
@@ -27,15 +27,15 @@ namespace Om {
 
 	namespace Operations {
 
-	  // MARK: - Om::Operations::DefaultOperation
+	  // MARK: - Om::Operations::DefaultIncompleteOperation
 
 	  /*!
 	  \brief
-		  A partial implementation of Operation.
+		  A partial implementation of IncompleteOperation.
 	  */
 	  template <typename ThisImplementation>
-	  class DefaultOperation :
-	  public Operation
+	  class DefaultIncompleteOperation :
+	  public IncompleteOperation
 	  {
 
 	  public: // MARK: public (static)
@@ -46,7 +46,7 @@ namespace Om {
 
 	  public: // MARK: public (non-static)
 
-		  virtual ~DefaultOperation() = 0;
+		  virtual ~DefaultIncompleteOperation() = 0;
 
 		  virtual void GiveElements(Consumer &);
 
@@ -61,7 +61,7 @@ namespace Om {
 		  \brief
 			  Takes the Operand and gives the result to the Evaluation.
 		  \return
-			  True if this call completes the Operation, in which case any further calls on the Operation are undefined.
+			  True if this call completes the \ref om__operations__ "Operation", in which case any further calls on the object are undefined.
 		  */
 		  virtual bool TakeElement(
 			  Evaluation &,
@@ -93,6 +93,6 @@ namespace Om {
 
 }
 
-	#include "om/operations/default_operation.cpp"
+	#include "om/operations/default_incomplete_operation.cpp"
 
 #endif

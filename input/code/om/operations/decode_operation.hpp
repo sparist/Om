@@ -17,7 +17,7 @@
 	#define Om_Operations_DecodeOperation_ \
 	Om::Operations::DecodeOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_DecodeOperation_GetName_() \
@@ -34,7 +34,7 @@ namespace Om {
 			The \ref om__operations__decode_operation__ operation implementation.
 		*/
 		class DecodeOperation :
-		public DefaultOperation<DecodeOperation>
+		public DefaultIncompleteOperation<DecodeOperation>
 		{
 
 		public: // MARK: public (static)

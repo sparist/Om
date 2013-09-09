@@ -17,7 +17,7 @@
 	#define Om_Operations_PullOperation_ \
 	Om::Operations::PullOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 
 namespace Om {
 
@@ -27,14 +27,14 @@ namespace Om {
 
 		/*!
 		\brief
-			An Operation that pulls part of a Program.
+			An \ref om__operations__ "Operation" that pulls part of a Program.
 		*/
 		template <
 			typename ThisProgram,
 			typename ThisImplementation
 		>
 		class PullOperation :
-		public DefaultOperation<
+		public DefaultIncompleteOperation<
 			PullOperation<
 				ThisProgram,
 				ThisImplementation

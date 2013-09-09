@@ -17,7 +17,7 @@
 	#define Om_Operations_CopyOperation_ \
 	Om::Operations::CopyOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_CopyOperation_GetName_() \
@@ -34,7 +34,7 @@ namespace Om {
 			The \ref om__operations__copy_operation__ operation implementation.
 		*/
 		class CopyOperation :
-		public DefaultOperation<CopyOperation>
+		public DefaultIncompleteOperation<CopyOperation>
 		{
 
 		public: // MARK: public (static)

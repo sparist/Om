@@ -17,7 +17,7 @@
 	#define Om_Operations_NormalizeOperation_ \
 	Om::Operations::NormalizeOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_NormalizeOperation_GetName_() \
@@ -34,7 +34,7 @@ namespace Om {
 			The \ref om__operations__normalize_operation__ operation implementation.
 		*/
 		class NormalizeOperation :
-		public DefaultOperation<NormalizeOperation>
+		public DefaultIncompleteOperation<NormalizeOperation>
 		{
 
 		public: // MARK: public (static)

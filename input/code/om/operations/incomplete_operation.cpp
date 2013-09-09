@@ -12,9 +12,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Operation_
+#ifndef Om_Operations_IncompleteOperation_
 
-	#include "om/operation.hpp"
+	#include "om/operations/incomplete_operation.hpp"
 
 #else
 
@@ -25,14 +25,14 @@
 
 	#endif
 
-// MARK: - Om::Operation
+// MARK: - Om::Operations::IncompleteOperation
 
 	#define Type_ \
-	Om::Operation
+	Om::Operations::IncompleteOperation
 
 // MARK: public (non-static)
 
-inline Type_::~Operation() {}
+inline Type_::~IncompleteOperation() {}
 
 inline void Type_::GiveElements(Consumer &) {
 	assert(0);
@@ -86,7 +86,7 @@ inline bool Type_::TakeQuotedElements(
 
 // MARK: protected (non-static)
 
-inline Type_::Operation() {}
+inline Type_::IncompleteOperation() {}
 
 	#undef Type_
 

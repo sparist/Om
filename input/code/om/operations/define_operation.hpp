@@ -17,7 +17,7 @@
 	#define Om_Operations_DefineOperation_ \
 	Om::Operations::DefineOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_DefineOperation_GetName_() \
@@ -34,7 +34,7 @@ namespace Om {
 			The \ref om__operations__define_operation__ operation implementation.
 		*/
 		class DefineOperation :
-		public DefaultOperation<DefineOperation>
+		public DefaultIncompleteOperation<DefineOperation>
 		{
 
 		public: // MARK: public (static)

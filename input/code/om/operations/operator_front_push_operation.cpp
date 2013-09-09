@@ -62,7 +62,7 @@ inline char const * Type_::GetName() {
 
 inline void Type_::Give(Evaluation & theEvaluation) {
 	theEvaluation.TakeOperation(
-		std::auto_ptr<Operation>(
+		std::auto_ptr<IncompleteOperation>(
 			new FrontPushOperation<
 				Operator,
 				OperatorFrontPushOperation

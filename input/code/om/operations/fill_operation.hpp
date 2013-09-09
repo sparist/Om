@@ -18,7 +18,7 @@
 	Om::Operations::FillOperation
 
 	#include "om/expression.hpp"
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_FillOperation_GetName_() \
@@ -35,7 +35,7 @@ namespace Om {
 			The \ref om__operations__fill_operation__ operation implementation.
 		*/
 		class FillOperation :
-		public DefaultOperation<FillOperation>
+		public DefaultIncompleteOperation<FillOperation>
 		{
 
 		public: // MARK: public (static)

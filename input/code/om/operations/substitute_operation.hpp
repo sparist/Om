@@ -17,7 +17,7 @@
 	#define Om_Operations_SubstituteOperation_ \
 	Om::Operations::SubstituteOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/operations/translate_operation.hpp"
 	#include "om/system.hpp"
 

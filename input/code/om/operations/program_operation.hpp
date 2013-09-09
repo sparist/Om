@@ -17,7 +17,7 @@
 	#define Om_Operations_ProgramOperation_ \
 	Om::Operations::ProgramOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 
 namespace Om {
 
@@ -27,11 +27,11 @@ namespace Om {
 
 		/*!
 		\brief
-			An Operation that normalizes a Program to a specific type.
+			An \ref om__operations__ "Operation" that normalizes a Program to a specific type.
 		*/
 		template <typename ThisProgram>
 		class ProgramOperation :
-		public DefaultOperation<
+		public DefaultIncompleteOperation<
 			ProgramOperation<ThisProgram>
 		>
 		{

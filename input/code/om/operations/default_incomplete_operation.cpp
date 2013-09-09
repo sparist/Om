@@ -12,21 +12,21 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Operations_DefaultOperation_
+#ifndef Om_Operations_DefaultIncompleteOperation_
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 
 #else
 
 	#include "om/evaluator.hpp"
 
-// MARK: - Om::Operations::DefaultOperation
+// MARK: - Om::Operations::DefaultIncompleteOperation
 
 	#define Template_ \
 	template <typename ThisImplementation>
 
 	#define Type_ \
-	Om::Operations::DefaultOperation<ThisImplementation>
+	Om::Operations::DefaultIncompleteOperation<ThisImplementation>
 
 // MARK: public (static)
 
@@ -48,7 +48,7 @@ inline void Type_::Give(Evaluation & theEvaluation) {
 // MARK: public (non-static)
 
 Template_
-inline Type_::~DefaultOperation() {}
+inline Type_::~DefaultIncompleteOperation() {}
 
 Template_
 inline void Type_::GiveElements(Consumer & theConsumer) {

@@ -17,7 +17,7 @@
 	#define Om_Operations_DequoteOperation_ \
 	Om::Operations::DequoteOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_DequoteOperation_GetName_() \
@@ -34,7 +34,7 @@ namespace Om {
 			The \ref om__operations__dequote_operation__ operation implementation.
 		*/
 		class DequoteOperation :
-		public DefaultOperation<DequoteOperation>
+		public DefaultIncompleteOperation<DequoteOperation>
 		{
 
 		public: // MARK: public (static)

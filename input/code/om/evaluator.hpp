@@ -31,7 +31,11 @@ namespace Om {
 	//! \cond
 	class Evaluation;
 
-	class Operation;
+	namespace Operations {
+
+		class IncompleteOperation;
+
+	}
 
 	class Translator;
 	//! \endcond
@@ -43,8 +47,8 @@ namespace Om {
 		A Consumer that evaluates Program instances.
 
 	The Evaluator interprets each Element as follows:
-	-	When an Operator is taken, the Translator is queried for the corresponding Operation. If found, its implementation is given to the Evaluator for further evaluation; otherwise, the Operation vector is flushed and the Operator is given to the output Consumer.
-	-	When a Operand is taken, it is given to the most current Operation in the Operation vector. If none, it is given to the output Consumer.
+	-	When an Operator is taken, the Translator is queried for the corresponding \ref om__operations__ "Operation". If found, its implementation is given to the Evaluator for further evaluation; otherwise, the IncompleteOperation vector is flushed and the Operator is given to the output Consumer.
+	-	When a Operand is taken, it is given to the most current IncompleteOperation in the IncompleteOperation vector. If none, it is given to the output Consumer.
 	-	When a Separator is taken, it is disregarded.
 
 	The program output by the Evaluator is an Expression. Note that if each line in the Expression was terminated by Symbols::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbols::theLineSeparatorSymbol to the final output.
@@ -151,9 +155,9 @@ namespace Om {
 
 		/*!
 		\brief
-			An Operation vector.
+			An IncompleteOperation vector.
 		*/
-		typedef boost::ptr_vector<Operation> OperationVector;
+		typedef boost::ptr_vector<Operations::IncompleteOperation> IncompleteOperationVector;
 
 		template <typename TheIterator>
 		static void GiveElements(
@@ -181,15 +185,15 @@ namespace Om {
 
 		/*!
 		\brief
-			The Translator used for resolving Operator to Operation.
+			The Translator used for resolving Operator to \ref om__operations__ "Operation".
 		*/
 		Translator const & thisTranslator;
 
 		/*!
 		\brief
-			A vector of Operation with the most current at the back.
+			A vector of IncompleteOperation with the most current at the back.
 		*/
-		OperationVector thisOperationVector;
+		IncompleteOperationVector thisIncompleteOperationVector;
 
 		/*!
 		\brief

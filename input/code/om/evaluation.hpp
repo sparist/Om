@@ -62,7 +62,7 @@ namespace Om {
 
 		/*!
 		\brief
-			Takes the Operation, and gives it to the Evaluator.
+			Takes the \ref om__operations__ "Operation", and gives it to the Evaluator.
 		*/
 		template <typename TheOperation>
 		void TakeOperation(

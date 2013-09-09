@@ -18,7 +18,7 @@
 	Om::Operations::TranslateOperation
 
 	#include "om/lexicon.hpp"
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 
 namespace Om {
 
@@ -28,11 +28,11 @@ namespace Om {
 
 		/*!
 		\brief
-			An Operation that applies each Translator to a Program.
+			An \ref om__operations__ "Operation" that applies each Translator to a Program.
 		*/
 		template <typename ThisImplementation>
 		class TranslateOperation :
-		public DefaultOperation<ThisImplementation>
+		public DefaultIncompleteOperation<ThisImplementation>
 		{
 
 		public: // MARK: public (static)

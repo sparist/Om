@@ -17,7 +17,7 @@
 	#define Om_Operations_FrontPushOperation_ \
 	Om::Operations::FrontPushOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 
 namespace Om {
 
@@ -27,14 +27,14 @@ namespace Om {
 
 		/*!
 		\brief
-			An Operation that joins an Operand to the front of a Program.
+			An \ref om__operations__ "Operation" that joins an Operand to the front of a Program.
 		*/
 		template <
 			typename ThisProgram,
 			typename ThisImplementation
 		>
 		class FrontPushOperation :
-		public DefaultOperation<
+		public DefaultIncompleteOperation<
 			FrontPushOperation<
 				ThisProgram,
 				ThisImplementation

@@ -17,7 +17,7 @@
 	#define Om_Operations_FindOperation_ \
 	Om::Operations::FindOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_FindOperation_GetName_() \
@@ -38,7 +38,7 @@ namespace Om {
 			The \ref om__operations__find_operation__ operation implementation.
 		*/
 		class FindOperation :
-		public DefaultOperation<FindOperation>
+		public DefaultIncompleteOperation<FindOperation>
 		{
 
 		public: // MARK: public (static)

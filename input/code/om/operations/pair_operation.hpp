@@ -17,7 +17,7 @@
 	#define Om_Operations_PairOperation_ \
 	Om::Operations::PairOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_PairOperation_GetName_() \
@@ -34,7 +34,7 @@ namespace Om {
 			The \ref om__operations__pair_operation__ operation implementation.
 		*/
 		class PairOperation :
-		public DefaultOperation<PairOperation>
+		public DefaultIncompleteOperation<PairOperation>
 		{
 
 		public: // MARK: public (static)

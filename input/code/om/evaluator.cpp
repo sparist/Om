@@ -19,7 +19,7 @@
 #else
 
 	#include "om/evaluation.hpp"
-	#include "om/operation.hpp"
+	#include "om/operations/incomplete_operation.hpp"
 	#include "om/operator.hpp"
 	#include "om/translator.hpp"
 
@@ -51,12 +51,12 @@ inline Type_::Evaluator(
 ) :
 thisOutput(theOutput),
 thisTranslator(theTranslator),
-thisOperationVector(),
+thisIncompleteOperationVector(),
 thisGaveElementToOutput()
 {}
 
 inline void Type_::Clear() {
-	this->thisOperationVector.clear();
+	this->thisIncompleteOperationVector.clear();
 }
 
 inline Om::Translator const & Type_::GetTranslator() const {
@@ -65,8 +65,8 @@ inline Om::Translator const & Type_::GetTranslator() const {
 
 inline void Type_::GiveElements(Consumer & theConsumer) {
 	this->GiveElements(
-		this->thisOperationVector.begin(),
-		this->thisOperationVector.end(),
+		this->thisIncompleteOperationVector.begin(),
+		this->thisIncompleteOperationVector.end(),
 		theConsumer
 	);
 	this->Clear();
@@ -74,8 +74,8 @@ inline void Type_::GiveElements(Consumer & theConsumer) {
 
 inline void Type_::GiveElements(Consumer & theConsumer) const {
 	this->GiveElements(
-		this->thisOperationVector.begin(),
-		this->thisOperationVector.end(),
+		this->thisIncompleteOperationVector.begin(),
+		this->thisIncompleteOperationVector.end(),
 		theConsumer
 	);
 }
@@ -89,7 +89,7 @@ inline std::auto_ptr<Om::Program> Type_::GiveProgram() const {
 }
 
 inline bool Type_::IsEmpty() const {
-	return this->thisOperationVector.empty();
+	return this->thisIncompleteOperationVector.empty();
 }
 
 inline void Type_::ReadElements(Parser & theParser) {
@@ -113,13 +113,13 @@ inline void Type_::ReadQuotedElements(
 	Parser & theParser
 ) {
 	if (
-		this->thisOperationVector.empty()
+		this->thisIncompleteOperationVector.empty()
 	) {
 		this->thisOutput.ReadQuotedElements(theParser);
 		this->thisGaveElementToOutput = true;
 	} else {
-		std::auto_ptr<Operation> theOperation(
-			this->thisOperationVector.pop_back().release()
+		std::auto_ptr<Operations::IncompleteOperation> theOperation(
+			this->thisIncompleteOperationVector.pop_back().release()
 		);
 		assert(
 			theOperation.get()
@@ -130,7 +130,7 @@ inline void Type_::ReadQuotedElements(
 				theParser
 			)
 		) {
-			this->thisOperationVector.push_back(theOperation);
+			this->thisIncompleteOperationVector.push_back(theOperation);
 		}
 	}
 }
@@ -157,13 +157,13 @@ inline void Type_::TakeOperand(
 		!theOperand.IsEmpty()
 	);
 	if (
-		this->thisOperationVector.empty()
+		this->thisIncompleteOperationVector.empty()
 	) {
 		this->thisOutput.TakeElement(theOperand);
 		this->thisGaveElementToOutput = true;
 	} else {
-		std::auto_ptr<Operation> theOperation(
-			this->thisOperationVector.pop_back().release()
+		std::auto_ptr<Operations::IncompleteOperation> theOperation(
+			this->thisIncompleteOperationVector.pop_back().release()
 		);
 		assert(
 			theOperation.get()
@@ -174,7 +174,7 @@ inline void Type_::TakeOperand(
 				theOperand
 			)
 		) {
-			this->thisOperationVector.push_back(theOperation);
+			this->thisIncompleteOperationVector.push_back(theOperation);
 		}
 	}
 }
@@ -183,7 +183,7 @@ template <typename TheOperation>
 inline void Type_::TakeOperation(
 	std::auto_ptr<TheOperation> theOperation
 ) {
-	this->thisOperationVector.push_back(theOperation);
+	this->thisIncompleteOperationVector.push_back(theOperation);
 }
 
 template <typename TheOperator>
@@ -255,13 +255,13 @@ inline void Type_::TakeQuotedProducer(
 	TheProducer & theProducer
 ) {
 	if (
-		this->thisOperationVector.empty()
+		this->thisIncompleteOperationVector.empty()
 	) {
 		this->thisOutput.TakeQuotedElements(theProducer);
 		this->thisGaveElementToOutput = true;
 	} else {
-		std::auto_ptr<Operation> theOperation(
-			this->thisOperationVector.pop_back().release()
+		std::auto_ptr<Operations::IncompleteOperation> theOperation(
+			this->thisIncompleteOperationVector.pop_back().release()
 		);
 		assert(
 			theOperation.get()
@@ -272,7 +272,7 @@ inline void Type_::TakeQuotedProducer(
 				theProducer
 			)
 		) {
-			this->thisOperationVector.push_back(theOperation);
+			this->thisIncompleteOperationVector.push_back(theOperation);
 		}
 	}
 }

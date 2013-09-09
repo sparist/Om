@@ -17,7 +17,7 @@
 	#define Om_Operations_ChooseOperation_ \
 	Om::Operations::ChooseOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_ChooseOperation_GetName_() \
@@ -34,7 +34,7 @@ namespace Om {
 			The \ref om__operations__choose_operation__ operation implementation.
 		*/
 		class ChooseOperation :
-		public DefaultOperation<ChooseOperation>
+		public DefaultIncompleteOperation<ChooseOperation>
 		{
 
 		public: // MARK: public (static)

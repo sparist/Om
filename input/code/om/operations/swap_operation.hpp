@@ -17,7 +17,7 @@
 	#define Om_Operations_SwapOperation_ \
 	Om::Operations::SwapOperation
 
-	#include "om/operations/default_operation.hpp"
+	#include "om/operations/default_incomplete_operation.hpp"
 	#include "om/system.hpp"
 
 	#define Om_Operations_SwapOperation_GetName_() \
@@ -34,7 +34,7 @@ namespace Om {
 			The \ref om__operations__swap_operation__ operation implementation.
 		*/
 		class SwapOperation :
-		public DefaultOperation<SwapOperation>
+		public DefaultIncompleteOperation<SwapOperation>
 		{
 
 		public: // MARK: public (static)

@@ -29,7 +29,7 @@ namespace Om {
 
 	Including the header for an operation will cause the operation to be added to the System automatically.
 
-	%Operations that consume at least one Operand must live in memory while waiting for the Operand. These operations are derived from Operation.
+	%Operations that consume at least one Operand must live in memory while waiting for the Operand. These operations are derived from Operations::IncompleteOperation.
 	*/
 	namespace Operations {}
 

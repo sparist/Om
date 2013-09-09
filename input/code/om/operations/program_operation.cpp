@@ -40,7 +40,7 @@ inline void Type_::GiveElements(
 	Consumer & theConsumer
 ) {
 	theConsumer.TakeElement(
-		DefaultOperation<
+		DefaultIncompleteOperation<
 			ProgramOperation<ThisProgram>
 		>::GetOperator()
 	);
