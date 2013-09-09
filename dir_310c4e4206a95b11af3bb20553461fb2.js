@@ -10,6 +10,8 @@ var dir_310c4e4206a95b11af3bb20553461fb2 =
     [ "default_sink.hpp", "default__sink_8hpp.html", "default__sink_8hpp" ],
     [ "iterator_sink.cpp", "iterator__sink_8cpp.html", null ],
     [ "iterator_sink.hpp", "iterator__sink_8hpp.html", "iterator__sink_8hpp" ],
+    [ "sinks.cpp", "sinks_8cpp.html", null ],
+    [ "sinks.hpp", "sinks_8hpp.html", "sinks_8hpp" ],
     [ "stream_sink.cpp", "stream__sink_8cpp.html", null ],
     [ "stream_sink.hpp", "stream__sink_8hpp.html", "stream__sink_8hpp" ]
 ];

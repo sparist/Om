@@ -26,11 +26,6 @@
 <path fill="none" stroke="midnightblue" d="M59.5488,-164.707C58.8859,-155.338 59.326,-144.526 60.869,-137.075"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="56.0933,-165.278 60.8337,-174.753 63.0367,-164.389 56.0933,-165.278"/>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge2" class="edge"><title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M72.4357,-147.078C73.1156,-156.424 72.6924,-167.25 71.1663,-174.753"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="75.8951,-146.538 71.131,-137.075 68.9539,-147.444 75.8951,-146.538"/>
-</g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="stream__sink_8hpp.html" target="_top" xlink:title="Om header file. ">
@@ -40,9 +35,14 @@
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node2&#45;&gt;Node3</title>
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M66,-106.707C66,-97.3384 66,-86.5262 66,-79.0752"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="62.5001,-106.753 66,-116.753 69.5001,-106.753 62.5001,-106.753"/>
+</g>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge5" class="edge"><title>Node2&#45;&gt;Node1</title>
+<path fill="none" stroke="midnightblue" d="M72.4357,-147.078C73.1156,-156.424 72.6924,-167.25 71.1663,-174.753"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="75.8951,-146.538 71.131,-137.075 68.9539,-147.444 75.8951,-146.538"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
@@ -53,12 +53,12 @@
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge4" class="edge"><title>Node3&#45;&gt;Node4</title>
+<g id="edge3" class="edge"><title>Node3&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M59.5488,-48.7065C58.8859,-39.3384 59.326,-28.5262 60.869,-21.0752"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="56.0933,-49.2776 60.8337,-58.7527 63.0367,-48.3895 56.0933,-49.2776"/>
 </g>
 <!-- Node4&#45;&gt;Node3 -->
-<g id="edge5" class="edge"><title>Node4&#45;&gt;Node3</title>
+<g id="edge4" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M72.4357,-31.0781C73.1156,-40.4238 72.6924,-51.2504 71.1663,-58.7527"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="75.8951,-30.5385 71.131,-21.0752 68.9539,-31.4439 75.8951,-30.5385"/>
 </g>

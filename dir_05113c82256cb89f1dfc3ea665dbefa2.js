@@ -90,6 +90,8 @@ var dir_05113c82256cb89f1dfc3ea665dbefa2 =
     [ "normalize_operation.hpp", "normalize__operation_8hpp.html", "normalize__operation_8hpp" ],
     [ "operand_operation.cpp", "operand__operation_8cpp.html", null ],
     [ "operand_operation.hpp", "operand__operation_8hpp.html", "operand__operation_8hpp" ],
+    [ "operations.cpp", "operations_8cpp.html", null ],
+    [ "operations.hpp", "operations_8hpp.html", "operations_8hpp" ],
     [ "operator_back_push_operation.cpp", "operator__back__push__operation_8cpp.html", null ],
     [ "operator_back_push_operation.hpp", "operator__back__push__operation_8hpp.html", "operator__back__push__operation_8hpp" ],
     [ "operator_front_push_operation.cpp", "operator__front__push__operation_8cpp.html", null ],
