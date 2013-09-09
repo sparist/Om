@@ -65,7 +65,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="evaluation_8hpp.html">om/evaluation.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operation_8hpp.html">om/operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="incomplete__operation_8hpp.html">om/operations/incomplete_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operator_8hpp.html">om/operator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="translator_8hpp.html">om/translator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
@@ -97,12 +97,12 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;) :</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;thisOutput(theOutput),</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;thisTranslator(theTranslator),</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;thisOperationVector(),</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;thisIncompleteOperationVector(),</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;thisGaveElementToOutput()</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Clear() {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    this-&gt;thisOperationVector.clear();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    this-&gt;thisIncompleteOperationVector.clear();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_translator.html">Om::Translator</a> <span class="keyword">const</span> &amp; Type_::GetTranslator()<span class="keyword"> const </span>{</div>
@@ -111,8 +111,8 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    this-&gt;GiveElements(</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        this-&gt;thisOperationVector.begin(),</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        this-&gt;thisOperationVector.end(),</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        this-&gt;thisIncompleteOperationVector.begin(),</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        this-&gt;thisIncompleteOperationVector.end(),</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        theConsumer</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    );</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    this-&gt;Clear();</div>
@@ -120,8 +120,8 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::GiveElements(Consumer &amp; theConsumer)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    this-&gt;GiveElements(</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        this-&gt;thisOperationVector.begin(),</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        this-&gt;thisOperationVector.end(),</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        this-&gt;thisIncompleteOperationVector.begin(),</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        this-&gt;thisIncompleteOperationVector.end(),</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        theConsumer</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    );</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> Type_::IsEmpty()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> this-&gt;thisOperationVector.empty();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> this-&gt;thisIncompleteOperationVector.empty();</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::ReadElements(Parser &amp; theParser) {</div>
@@ -159,13 +159,13 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    Parser &amp; theParser</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;) {</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        this-&gt;thisOperationVector.empty()</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        this-&gt;thisIncompleteOperationVector.empty()</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    ) {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        this-&gt;thisOutput.ReadQuotedElements(theParser);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        this-&gt;thisGaveElementToOutput = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        std::auto_ptr&lt;Operation&gt; theOperation(</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            this-&gt;thisOperationVector.pop_back().release()</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        std::auto_ptr&lt;Operations::IncompleteOperation&gt; theOperation(</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            this-&gt;thisIncompleteOperationVector.pop_back().release()</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        );</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        assert(</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            theOperation.get()</div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                theParser</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            )</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        ) {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            this-&gt;thisOperationVector.push_back(theOperation);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            this-&gt;thisIncompleteOperationVector.push_back(theOperation);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
@@ -203,13 +203,13 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        !theOperand.IsEmpty()</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    );</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span> (</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        this-&gt;thisOperationVector.empty()</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        this-&gt;thisIncompleteOperationVector.empty()</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    ) {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        this-&gt;thisOutput.TakeElement(theOperand);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        this-&gt;thisGaveElementToOutput = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::auto_ptr&lt;Operation&gt; theOperation(</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            this-&gt;thisOperationVector.pop_back().release()</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::auto_ptr&lt;Operations::IncompleteOperation&gt; theOperation(</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            this-&gt;thisIncompleteOperationVector.pop_back().release()</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        );</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        assert(</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            theOperation.get()</div>
@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                theOperand</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            )</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        ) {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            this-&gt;thisOperationVector.push_back(theOperation);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            this-&gt;thisIncompleteOperationVector.push_back(theOperation);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
@@ -229,7 +229,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeOperation(</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::auto_ptr&lt;TheOperation&gt; theOperation</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    this-&gt;thisOperationVector.push_back(theOperation);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    this-&gt;thisIncompleteOperationVector.push_back(theOperation);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
@@ -301,13 +301,13 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    TheProducer &amp; theProducer</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;) {</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span> (</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        this-&gt;thisOperationVector.empty()</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        this-&gt;thisIncompleteOperationVector.empty()</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    ) {</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        this-&gt;thisOutput.TakeQuotedElements(theProducer);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        this-&gt;thisGaveElementToOutput = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        std::auto_ptr&lt;Operation&gt; theOperation(</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            this-&gt;thisOperationVector.pop_back().release()</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        std::auto_ptr&lt;Operations::IncompleteOperation&gt; theOperation(</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            this-&gt;thisIncompleteOperationVector.pop_back().release()</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        );</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        assert(</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            theOperation.get()</div>
@@ -318,7 +318,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                theProducer</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            )</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        ) {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            this-&gt;thisOperationVector.push_back(theOperation);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            this-&gt;thisIncompleteOperationVector.push_back(theOperation);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        }</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
@@ -372,9 +372,9 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="evaluation_8hpp_html"><div class="ttname"><a href="evaluation_8hpp.html">evaluation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="operation_8hpp_html"><div class="ttname"><a href="operation_8hpp.html">operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="operator_8hpp_html"><div class="ttname"><a href="operator_8hpp.html">operator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_separator_html_aeb95370fe159ea16c2f7783a97a79b7f"><div class="ttname"><a href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Om::Separator::GetLineSeparator</a></div><div class="ttdeci">static Separator const &amp; GetLineSeparator()</div></div>
+<div class="ttc" id="incomplete__operation_8hpp_html"><div class="ttname"><a href="incomplete__operation_8hpp.html">incomplete_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="evaluator_8hpp_html"><div class="ttname"><a href="evaluator_8hpp.html">evaluator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_translator_html"><div class="ttname"><a href="class_om_1_1_translator.html">Om::Translator</a></div><div class="ttdoc">An Operator lookup for use by an Evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="translator_8hpp_source.html#l00050">translator.hpp:50</a></div></div>
 <div class="ttc" id="translator_8hpp_html"><div class="ttname"><a href="translator_8hpp.html">translator.hpp</a></div><div class="ttdoc">Om header file. </div></div>

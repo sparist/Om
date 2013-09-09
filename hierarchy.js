@@ -132,76 +132,6 @@ var hierarchy =
     [ "Om::Moveable", "class_om_1_1_moveable.html", [
       [ "Om::Giveable", "class_om_1_1_giveable.html", null ]
     ] ],
-    [ "Om::Operation", "class_om_1_1_operation.html", [
-      [ "Om::DefaultOperation< ChooseOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::ChooseOperation", "class_om_1_1_operations_1_1_choose_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< CopyOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::CopyOperation", "class_om_1_1_operations_1_1_copy_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< DecodeOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::DecodeOperation", "class_om_1_1_operations_1_1_decode_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< DefineOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::DefineOperation", "class_om_1_1_operations_1_1_define_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< DequoteOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::DequoteOperation", "class_om_1_1_operations_1_1_dequote_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< DropOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::DropOperation", "class_om_1_1_operations_1_1_drop_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< EncodeOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::EncodeOperation", "class_om_1_1_operations_1_1_encode_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< EqualsOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::EqualsOperation", "class_om_1_1_operations_1_1_equals_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< EvaluateOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::EvaluateOperation", "class_om_1_1_operations_1_1_evaluate_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< FillOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::FillOperation", "class_om_1_1_operations_1_1_fill_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< FindOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::FindOperation", "class_om_1_1_operations_1_1_find_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< FrontPushOperation< ThisProgram, ThisImplementation > >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::FrontPushOperation< ThisProgram, ThisImplementation >", "class_om_1_1_operations_1_1_front_push_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< InjectOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::InjectOperation", "class_om_1_1_operations_1_1_inject_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< NormalizeOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::NormalizeOperation", "class_om_1_1_operations_1_1_normalize_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< PairOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::PairOperation", "class_om_1_1_operations_1_1_pair_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< ProgramOperation< ThisProgram > >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::ProgramOperation< ThisProgram >", "class_om_1_1_operations_1_1_program_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< PullOperation< ThisProgram, ThisImplementation > >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::PullOperation< ThisProgram, ThisImplementation >", "class_om_1_1_operations_1_1_pull_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< QuoteOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::QuoteOperation", "class_om_1_1_operations_1_1_quote_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< SkipOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::SkipOperation", "class_om_1_1_operations_1_1_skip_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< SubstituteOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::TranslateOperation< SubstituteOperation >", "class_om_1_1_operations_1_1_translate_operation.html", [
-          [ "Om::Operations::SubstituteOperation", "class_om_1_1_operations_1_1_substitute_operation.html", null ]
-        ] ]
-      ] ],
-      [ "Om::DefaultOperation< SwapOperation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::SwapOperation", "class_om_1_1_operations_1_1_swap_operation.html", null ]
-      ] ],
-      [ "Om::DefaultOperation< ThisImplementation >", "class_om_1_1_default_operation.html", [
-        [ "Om::Operations::TranslateOperation< ThisImplementation >", "class_om_1_1_operations_1_1_translate_operation.html", null ]
-      ] ]
-    ] ],
     [ "Om::Operations::BackPullCharacterOperation", "class_om_1_1_operations_1_1_back_pull_character_operation.html", null ],
     [ "Om::Operations::BackPullCodePointOperation", "class_om_1_1_operations_1_1_back_pull_code_point_operation.html", null ],
     [ "Om::Operations::BackPullElementOperation", "class_om_1_1_operations_1_1_back_pull_element_operation.html", null ],
@@ -224,6 +154,76 @@ var hierarchy =
     [ "Om::Operations::FrontPullPairOperation", "class_om_1_1_operations_1_1_front_pull_pair_operation.html", null ],
     [ "Om::Operations::FrontPullSeparatorOperation", "class_om_1_1_operations_1_1_front_pull_separator_operation.html", null ],
     [ "Om::Operations::FrontPullTermOperation", "class_om_1_1_operations_1_1_front_pull_term_operation.html", null ],
+    [ "Om::Operations::IncompleteOperation", "class_om_1_1_operations_1_1_incomplete_operation.html", [
+      [ "Om::Operations::DefaultIncompleteOperation< ChooseOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::ChooseOperation", "class_om_1_1_operations_1_1_choose_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< CopyOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::CopyOperation", "class_om_1_1_operations_1_1_copy_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< DecodeOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::DecodeOperation", "class_om_1_1_operations_1_1_decode_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< DefineOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::DefineOperation", "class_om_1_1_operations_1_1_define_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< DequoteOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::DequoteOperation", "class_om_1_1_operations_1_1_dequote_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< DropOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::DropOperation", "class_om_1_1_operations_1_1_drop_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< EncodeOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::EncodeOperation", "class_om_1_1_operations_1_1_encode_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< EqualsOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::EqualsOperation", "class_om_1_1_operations_1_1_equals_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< EvaluateOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::EvaluateOperation", "class_om_1_1_operations_1_1_evaluate_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< FillOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::FillOperation", "class_om_1_1_operations_1_1_fill_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< FindOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::FindOperation", "class_om_1_1_operations_1_1_find_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< FrontPushOperation< ThisProgram, ThisImplementation > >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::FrontPushOperation< ThisProgram, ThisImplementation >", "class_om_1_1_operations_1_1_front_push_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< InjectOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::InjectOperation", "class_om_1_1_operations_1_1_inject_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< NormalizeOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::NormalizeOperation", "class_om_1_1_operations_1_1_normalize_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< PairOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::PairOperation", "class_om_1_1_operations_1_1_pair_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< ProgramOperation< ThisProgram > >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::ProgramOperation< ThisProgram >", "class_om_1_1_operations_1_1_program_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< PullOperation< ThisProgram, ThisImplementation > >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::PullOperation< ThisProgram, ThisImplementation >", "class_om_1_1_operations_1_1_pull_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< QuoteOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::QuoteOperation", "class_om_1_1_operations_1_1_quote_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< SkipOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::SkipOperation", "class_om_1_1_operations_1_1_skip_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< SubstituteOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::TranslateOperation< SubstituteOperation >", "class_om_1_1_operations_1_1_translate_operation.html", [
+          [ "Om::Operations::SubstituteOperation", "class_om_1_1_operations_1_1_substitute_operation.html", null ]
+        ] ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< SwapOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::SwapOperation", "class_om_1_1_operations_1_1_swap_operation.html", null ]
+      ] ],
+      [ "Om::Operations::DefaultIncompleteOperation< ThisImplementation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
+        [ "Om::Operations::TranslateOperation< ThisImplementation >", "class_om_1_1_operations_1_1_translate_operation.html", null ]
+      ] ]
+    ] ],
     [ "Om::Operations::LexiconBackPushOperation", "class_om_1_1_operations_1_1_lexicon_back_push_operation.html", null ],
     [ "Om::Operations::LexiconFrontPushOperation", "class_om_1_1_operations_1_1_lexicon_front_push_operation.html", null ],
     [ "Om::Operations::LiteralBackPushOperation", "class_om_1_1_operations_1_1_literal_back_push_operation.html", null ],
