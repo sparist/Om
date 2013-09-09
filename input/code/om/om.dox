@@ -138,7 +138,7 @@ The Om.Documentation target builds this documentation into the following folders
 \section using_code__library__ Library
 
 %Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:
--	Add the %Om <tt>&quot;input/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
+-	Add the %Om <tt>&quot;input/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om/om.hpp&quot;</tt> to include all %Om header files.
 -	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency <tt>&quot;generate&quot;</tt> scripts for guidance.
 -	Call the <tt>Om::System::Initialize</tt> function prior to use (e.g. in the <tt>main</tt> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").
 -	Construct an <tt>Om::Environment</tt>, populate with any additional operator-program mappings, and call one of its <tt>Om::Environment::Evaluate</tt> functions to evaluate a program.

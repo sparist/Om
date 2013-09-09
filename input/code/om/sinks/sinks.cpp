@@ -14,6 +14,6 @@
 
 #ifndef Om_Sinks_
 
-	#include "om/sinks.hpp"
+	#include "om/sinks/sinks.hpp"
 
 #endif

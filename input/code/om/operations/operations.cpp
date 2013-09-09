@@ -12,8 +12,8 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Sources_
+#ifndef Om_Operations_
 
-	#include "om/sources.hpp"
+	#include "om/operations/operations.hpp"
 
 #endif

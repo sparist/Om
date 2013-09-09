@@ -14,7 +14,7 @@
 
 #ifndef Om_Symbols_
 
-	#include "om/symbols.hpp"
+	#include "om/symbols/symbols.hpp"
 
 	#ifdef Om_Macros_Test_
 
