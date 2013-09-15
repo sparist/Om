@@ -27,7 +27,7 @@ namespace Om {
 
 		/*!
 		\brief
-			An \ref om__operations__ "Operation" that pulls part of a Program.
+			An \ref Operations "Operation" that pulls part of a Program.
 		*/
 		template <
 			typename ThisProgram,

@@ -61,7 +61,7 @@ namespace Om {
 		  \brief
 			  Takes the Operand and gives the result to the Evaluation.
 		  \return
-			  True if this call completes the \ref om__operations__ "Operation", in which case any further calls on the object are undefined.
+			  True if this call completes the \ref Operations "Operation", in which case any further calls on the object are undefined.
 		  */
 		  virtual bool TakeElement(
 			  Evaluation &,

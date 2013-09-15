@@ -27,7 +27,7 @@ namespace Om {
 
 		/*!
 		\brief
-			An \ref om__operations__ "Operation" that normalizes a Program to a specific type.
+			An \ref Operations "Operation" that normalizes a Program to a specific type.
 		*/
 		template <typename ThisProgram>
 		class ProgramOperation :

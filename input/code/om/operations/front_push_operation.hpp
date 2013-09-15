@@ -27,7 +27,7 @@ namespace Om {
 
 		/*!
 		\brief
-			An \ref om__operations__ "Operation" that joins an Operand to the front of a Program.
+			An \ref Operations "Operation" that joins an Operand to the front of a Program.
 		*/
 		template <
 			typename ThisProgram,

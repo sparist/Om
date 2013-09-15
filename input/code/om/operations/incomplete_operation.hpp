@@ -39,7 +39,7 @@ namespace Om {
 
 	  /*!
 	  \brief
-		  An \ref om__operations__ "Operation" that has yet to consume one or more \ref Operand "Operands", and therefore must live in memory while "incomplete".
+		  An \ref Operations "Operation" that has yet to consume one or more \ref Operand "Operands", and therefore must live in memory while "incomplete".
 	  */
 	  class IncompleteOperation {
 
@@ -70,7 +70,7 @@ namespace Om {
 		  \brief
 			  Takes an Operand.
 		  \return
-			  True if this call completes the \ref om__operations__ "Operation", in which case any further calls on the object are undefined.
+			  True if this call completes the \ref Operations "Operation", in which case any further calls on the object are undefined.
 		  \post
 			  If true was returned, any further calls on the object are undefined.
 		  */
@@ -92,7 +92,7 @@ namespace Om {
 		  \brief
 			  Constructs and takes an Operand, which takes each Element from the argument.
 		  \return
-			  True if this call completes the \ref om__operations__ "Operation", in which case any further calls on the object are undefined.
+			  True if this call completes the \ref Operations "Operation", in which case any further calls on the object are undefined.
 		  \post
 			  If true was returned, any further calls on the object are undefined.
 		  */

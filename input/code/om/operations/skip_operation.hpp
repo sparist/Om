@@ -67,7 +67,7 @@ namespace Om {
 		private: // MARK: private (non-static)
 
 			/*!
-			If an empty Expression is taken as the first Operand, the \ref om__operations__ "Operation" is complete. Therefore, the empty Expression can be used to indicate that the first Operand has not yet been received.
+			If an empty Expression is taken as the first Operand, the \ref Operations "Operation" is complete. Therefore, the empty Expression can be used to indicate that the first Operand has not yet been received.
 			*/
 			Expression thisExpression;
 

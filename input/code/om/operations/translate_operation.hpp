@@ -28,7 +28,7 @@ namespace Om {
 
 		/*!
 		\brief
-			An \ref om__operations__ "Operation" that applies each Translator to a Program.
+			An \ref Operations "Operation" that applies each Translator to a Program.
 		*/
 		template <typename ThisImplementation>
 		class TranslateOperation :

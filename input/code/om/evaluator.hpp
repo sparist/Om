@@ -47,7 +47,7 @@ namespace Om {
 		A Consumer that evaluates Program instances.
 
 	The Evaluator interprets each Element as follows:
-	-	When an Operator is taken, the Translator is queried for the corresponding \ref om__operations__ "Operation". If found, its implementation is given to the Evaluator for further evaluation; otherwise, the IncompleteOperation vector is flushed and the Operator is given to the output Consumer.
+	-	When an Operator is taken, the Translator is queried for the corresponding \ref Operations "Operation". If found, its implementation is given to the Evaluator for further evaluation; otherwise, the IncompleteOperation vector is flushed and the Operator is given to the output Consumer.
 	-	When a Operand is taken, it is given to the most current IncompleteOperation in the IncompleteOperation vector. If none, it is given to the output Consumer.
 	-	When a Separator is taken, it is disregarded.
 
@@ -185,7 +185,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The Translator used for resolving Operator to \ref om__operations__ "Operation".
+			The Translator used for resolving Operator to \ref Operations "Operation".
 		*/
 		Translator const & thisTranslator;
 
