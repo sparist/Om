@@ -81,7 +81,7 @@ namespace Om {
 			\brief
 				The number of Operands received thus far.
 			*/
-			char unsigned thisOperandCount;
+			char thisOperandCount;
 
 		};
 

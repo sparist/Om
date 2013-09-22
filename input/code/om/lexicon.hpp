@@ -204,7 +204,7 @@ namespace Om {
 		\brief
 			The Element offset in the current Node.
 		*/
-		char unsigned thisOffset;
+		char thisOffset;
 
 	};
 
