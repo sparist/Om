@@ -22,14 +22,14 @@
 
 namespace Om {
 
+	//! \cond
 	namespace Sink {
 
-		//! \cond
 		template <typename ThisItem>
 		class Sink;
-		//! \endcond
 
 	}
+	//! \endcond
 
 	// MARK: - Om::Writer
 
