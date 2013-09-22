@@ -1,0 +1,12 @@
+/*!
+\defgroup om__operations__swap_operation__ swap
+	\ingroup om__operations__
+	\brief
+		Swaps two \ref om__operand__ "Operands".
+	\par Input
+		<tt>{A}{B}</tt>
+	\par Output
+		<tt>{B}{A}</tt>
+	\par Implementation
+		Om::Operation::SwapOperation
+*/

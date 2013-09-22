@@ -60,7 +60,7 @@ namespace Om {
 			Swallows the next CodePoint in the Source.
 		*/
 		explicit Null(
-			Source<CodePoint const> &
+			Source::Source<CodePoint const> &
 		);
 
 		Null & operator =(Null const &);
@@ -76,11 +76,11 @@ namespace Om {
 		virtual bool Equals(Program const &) const;
 
 		virtual std::auto_ptr<
-			Source<Element>
+			Source::Source<Element>
 		> GetElementRange();
 
 		virtual std::auto_ptr<
-			Source<Element const>
+			Source::Source<Element const>
 		> GetElementRange() const;
 
 		virtual void GiveElements(Consumer &);

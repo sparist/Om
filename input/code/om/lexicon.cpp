@@ -147,14 +147,14 @@ namespace Om {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } 4\n\t";
 			std::string theResult;
 			{
-				Sinks::CodePointSink<
+				Sink::CodePointSink<
 					std::back_insert_iterator<std::string>
 				> theCodePointSink(
 					std::back_inserter(theResult)
 				);
 				Writer theWriter(theCodePointSink);
 
-				Sources::CodePointSource<> theCodePointSource(theCode);
+				Source::CodePointSource<> theCodePointSource(theCode);
 				Parser theParser(theCodePointSource);
 				Lexicon theLexicon;
 				theLexicon.ReadElements(theParser);
@@ -353,10 +353,10 @@ inline void Type_::FrontGivePair(Consumer & theConsumer) {
 }
 
 inline std::auto_ptr<
-	Om::Source<Om::Element const>
+	Om::Source::Source<Om::Element const>
 > Type_::GetElementRange() const {
 	return std::auto_ptr<
-		Source<Element const>
+		Source::Source<Element const>
 	>(
 		new ElementRange(*this)
 	);

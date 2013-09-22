@@ -1,0 +1,17 @@
+/*!
+\defgroup om__operations__equals_operation__ =
+	\ingroup om__operations__
+	\brief
+		Compares two \ref om__operand__ "Operands" for equality.
+	\par Examples
+		-	<tt>= {A} {A}</tt>
+			<blockquote><tt>{{A}}</tt></blockquote>
+		-	<tt>= {A} {B}</tt>
+			<blockquote><tt>{}</tt></blockquote>
+		-	<tt>= {} {A}</tt>
+			<blockquote><tt>{}</tt></blockquote>
+		-	<tt>= {} {}</tt>
+			<blockquote><tt>{{}}</tt></blockquote>
+	\par Implementation
+		Om::Operation::EqualsOperation
+*/

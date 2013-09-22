@@ -1,0 +1,12 @@
+/*!
+\defgroup om__operations__choose_operation__ choose
+	\ingroup om__operations__
+	\brief
+		If the third \ref om__operand__ is empty, it is replaced with the first \ref om__operand__; otherwise, it is replaced with the second.
+	\par Input
+		<tt>{empty case} {non-empty case} {conditional}</tt>
+	\par Output
+		If <tt>{conditional}</tt> is empty, <tt>{empty case}</tt>; otherwise, <tt>{non-empty case}</tt>.
+	\par Implementation
+		Om::Operation::ChooseOperation
+*/

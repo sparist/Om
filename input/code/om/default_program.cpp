@@ -19,7 +19,7 @@
 #else
 
 	#include "om/element.hpp"
-	#include "om/source.hpp"
+	#include "om/source/source.hpp"
 
 	#ifndef Om_Macros_Precompilation_
 
@@ -52,7 +52,7 @@ inline Type_::~DefaultProgram() {}
 */
 Template_
 inline bool Type_::Equals(Program const & theProgram) const {
-	typedef Source<Element const> ElementSource;
+	typedef Source::Source<Element const> ElementSource;
 
 	std::auto_ptr<ElementSource> theRange = this->GetElementRange();
 	assert(

@@ -54,14 +54,14 @@ namespace Om {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
 			std::string theResult;
 			{
-				Sinks::CodePointSink<
+				Sink::CodePointSink<
 					std::back_insert_iterator<std::string>
 				> theCodePointSink(
 					std::back_inserter(theResult)
 				);
 				Writer theWriter(theCodePointSink);
 
-				Sources::CodePointSource<> theCodePointSource(theCode);
+				Source::CodePointSource<> theCodePointSource(theCode);
 				Parser theParser(theCodePointSource);
 				Separator theSeparator;
 				theSeparator.ReadElements(theParser);
@@ -89,7 +89,7 @@ namespace Om {
 // MARK: public (static)
 
 inline Type_ const & Type_::GetLineSeparator() {
-	static Separator const theSeparator(Symbols::theLineSeparatorSymbol);
+	static Separator const theSeparator(Symbol::theLineSeparatorSymbol);
 	return theSeparator;
 }
 
@@ -102,7 +102,7 @@ inline char const * Type_::GetName() {
 inline Type_::Separator() {}
 
 inline Type_::Separator(
-	Source<CodePoint const> & theCodePointSource
+	Source::Source<CodePoint const> & theCodePointSource
 ) {
 	for (
 		;
@@ -112,7 +112,7 @@ inline Type_::Separator(
 		switch (*theCodePointSource) {
 		default:
 			return;
-		Om_Symbols_SeparatorSymbol_GetCases_():
+		Om_Symbol_SeparatorSymbol_GetCases_():
 			this->thisString.push_back(
 				static_cast<char>(*theCodePointSource)
 			);
@@ -121,15 +121,15 @@ inline Type_::Separator(
 	}
 }
 
-inline Type_::Separator(Symbols::SeparatorSymbol const theSeparatorSymbol) :
+inline Type_::Separator(Symbol::SeparatorSymbol const theSeparatorSymbol) :
 DefaultAtom<Separator>(
 	static_cast<char>(theSeparatorSymbol)
 )
 {
 	assert(
-		Symbols::theSpaceSeparatorSymbol == theSeparatorSymbol ||
-		Symbols::theLineSeparatorSymbol == theSeparatorSymbol ||
-		Symbols::theTabSeparatorSymbol == theSeparatorSymbol
+		Symbol::theSpaceSeparatorSymbol == theSeparatorSymbol ||
+		Symbol::theLineSeparatorSymbol == theSeparatorSymbol ||
+		Symbol::theTabSeparatorSymbol == theSeparatorSymbol
 	);
 }
 
@@ -144,13 +144,13 @@ inline void Type_::ReadElements(Parser & theParser) {
 		theParser;
 		theParser.Pop()
 	) {
-		assert(Symbols::theEndOperandSymbol != *theParser);
+		assert(Symbol::theEndOperandSymbol != *theParser);
 		switch (*theParser) {
-		case Symbols::theStartOperandSymbol:
+		case Symbol::theStartOperandSymbol:
 			theParser.Pop();
 			{
 				// Ensure that this does not resolve to the copy constructor.
-				Source<CodePoint const> & theCodePointSource = theParser;
+				Source::Source<CodePoint const> & theCodePointSource = theParser;
 
 				Parser theOperandParser(theCodePointSource);
 				this->ReadQuotedElements(theOperandParser);
@@ -158,9 +158,9 @@ inline void Type_::ReadElements(Parser & theParser) {
 			if (!theParser) {
 				return;
 			}
-			assert(Symbols::theEndOperandSymbol == *theParser);
+			assert(Symbol::theEndOperandSymbol == *theParser);
 			continue;
-		Om_Symbols_SeparatorSymbol_GetCases_():
+		Om_Symbol_SeparatorSymbol_GetCases_():
 			this->thisString.push_back(
 				static_cast<char>(*theParser)
 			);
@@ -195,7 +195,7 @@ inline void Type_::TakeSeparator(TheSeparator & theSeparator) {
 }
 
 inline void Type_::TakeSeparatorSymbol(
-	Symbols::SeparatorSymbol const theSymbol
+	Symbol::SeparatorSymbol const theSymbol
 ) {
 	this->thisString.push_back(
 		static_cast<char>(theSymbol)

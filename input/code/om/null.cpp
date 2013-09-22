@@ -19,7 +19,7 @@
 #else
 
 	#include "om/parser.hpp"
-	#include "om/sources/empty_source.hpp"
+	#include "om/source/empty_source.hpp"
 
 // MARK: - Om::Null
 
@@ -42,7 +42,7 @@ inline char const * Type_::GetName() {
 inline Type_::Null() {}
 
 inline Type_::Null(
-	Source<CodePoint const> & theCodePointSource
+	Source::Source<CodePoint const> & theCodePointSource
 ) {
 	if (theCodePointSource) {
 		theCodePointSource.Pop();
@@ -72,22 +72,22 @@ inline bool Type_::Equals(Program const & theProgram) const {
 }
 
 inline std::auto_ptr<
-	Om::Source<Om::Element>
+	Om::Source::Source<Om::Element>
 > Type_::GetElementRange() {
 	return std::auto_ptr<
-		Source<Element>
+		Source::Source<Element>
 	>(
-		new Sources::EmptySource<Element>
+		new Source::EmptySource<Element>
 	);
 }
 
 inline std::auto_ptr<
-	Om::Source<Om::Element const>
+	Om::Source::Source<Om::Element const>
 > Type_::GetElementRange() const {
 	return std::auto_ptr<
-		Source<Element const>
+		Source::Source<Element const>
 	>(
-		new Sources::EmptySource<Element const>
+		new Source::EmptySource<Element const>
 	);
 }
 

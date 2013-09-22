@@ -1,0 +1,18 @@
+/*!
+\defgroup om__operations__find_operation__ find
+	\ingroup om__operations__
+	\brief
+		Finds the \ref om__operator__, and its \ref om__operand__ mapping (if any), in a \ref om__lexicon__.
+	\par Input
+		<tt>{operator} {lexicon}</tt>
+	\par Output
+		-	If the \ref om__operator__ is found:
+			-	If an \ref om__operand__ is mapped to the \ref om__operator__ "operator":
+				<blockquote><tt>{lexicon}{operator{operand}}</tt></blockquote>
+			-	Else:
+				<blockquote><tt>{lexicon}{operator{}}</tt></blockquote>
+		-	Else:
+				<blockquote><tt>{lexicon}{}</tt></blockquote>
+	\par Implementation
+		Om::Operation::FindOperation
+*/

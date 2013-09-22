@@ -18,7 +18,7 @@
 	Om::Parser
 
 	#include "om/code_point.hpp"
-	#include "om/sources/default_source.hpp"
+	#include "om/source/default_source.hpp"
 
 namespace Om {
 
@@ -33,7 +33,7 @@ namespace Om {
 		Produces each #CodePoint until the end of the Source.
 	*/
 	class Parser :
-	public Sources::DefaultSource<
+	public Source::DefaultSource<
 		CodePoint const,
 		Parser
 	>
@@ -42,14 +42,14 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit Parser(
-			Source<CodePoint const> &
+			Source::Source<CodePoint const> &
 		);
 
 		virtual CodePoint const & operator *() const;
 
 		virtual bool operator !() const;
 
-		using Sources::DefaultSource<
+		using Om::Source::DefaultSource<
 			CodePoint const,
 			Parser
 		>::Equals;
@@ -70,7 +70,7 @@ namespace Om {
 
 		Parser const & operator =(Parser const &);
 
-		Source<CodePoint const> & thisCodePointSource;
+		Source::Source<CodePoint const> & thisCodePointSource;
 
 		size_t thisDepth;
 

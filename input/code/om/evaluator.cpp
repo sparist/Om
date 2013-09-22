@@ -19,7 +19,7 @@
 #else
 
 	#include "om/evaluation.hpp"
-	#include "om/operations/incomplete_operation.hpp"
+	#include "om/operation/incomplete_operation.hpp"
 	#include "om/operator.hpp"
 	#include "om/translator.hpp"
 
@@ -118,7 +118,7 @@ inline void Type_::ReadQuotedElements(
 		this->thisOutput.ReadQuotedElements(theParser);
 		this->thisGaveElementToOutput = true;
 	} else {
-		std::auto_ptr<Operations::IncompleteOperation> theOperation(
+		std::auto_ptr<Operation::IncompleteOperation> theOperation(
 			this->thisIncompleteOperationVector.pop_back().release()
 		);
 		assert(
@@ -162,7 +162,7 @@ inline void Type_::TakeOperand(
 		this->thisOutput.TakeElement(theOperand);
 		this->thisGaveElementToOutput = true;
 	} else {
-		std::auto_ptr<Operations::IncompleteOperation> theOperation(
+		std::auto_ptr<Operation::IncompleteOperation> theOperation(
 			this->thisIncompleteOperationVector.pop_back().release()
 		);
 		assert(
@@ -260,7 +260,7 @@ inline void Type_::TakeQuotedProducer(
 		this->thisOutput.TakeQuotedElements(theProducer);
 		this->thisGaveElementToOutput = true;
 	} else {
-		std::auto_ptr<Operations::IncompleteOperation> theOperation(
+		std::auto_ptr<Operation::IncompleteOperation> theOperation(
 			this->thisIncompleteOperationVector.pop_back().release()
 		);
 		assert(

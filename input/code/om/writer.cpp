@@ -32,14 +32,14 @@ namespace Om {
 			char const theCode[] = "\n\t {\n\t {\n\t }\n\t }\n\t";
 			std::string theResult;
 			{
-				Sinks::CodePointSink<
+				Sink::CodePointSink<
 					std::back_insert_iterator<std::string>
 				> theCodePointSink(
 					std::back_inserter(theResult)
 				);
 				Writer theWriter(theCodePointSink);
 
-				Sources::CodePointSource<> theCodePointSource(theCode);
+				Source::CodePointSource<> theCodePointSource(theCode);
 				Parser theParser(theCodePointSource);
 				theWriter.ReadElements(theParser);
 			}
@@ -58,10 +58,10 @@ namespace Om {
 #else
 
 	#include "om/operator.hpp"
-	#include "om/sink.hpp"
-	#include "om/sources/code_point_source.hpp"
-	#include "om/symbols/operator_symbol.hpp"
-	#include "om/symbols/separator_symbol.hpp"
+	#include "om/sink/sink.hpp"
+	#include "om/source/code_point_source.hpp"
+	#include "om/symbol/operator_symbol.hpp"
+	#include "om/symbol/separator_symbol.hpp"
 
 // MARK: - Om::Writer
 
@@ -71,7 +71,7 @@ namespace Om {
 // MARK: public (non-static)
 
 inline Type_::Writer(
-	Sink<CodePoint const> & theCodePointSink
+	Sink::Sink<CodePoint const> & theCodePointSink
 ) :
 thisCodePointSink(theCodePointSink)
 {}
@@ -87,9 +87,9 @@ inline void Type_::ReadElements(Parser & theParser) {
 }
 
 inline void Type_::ReadQuotedElements(Parser & theParser) {
-	this->thisCodePointSink.Push(Symbols::theStartOperandSymbol);
+	this->thisCodePointSink.Push(Symbol::theStartOperandSymbol);
 	this->ReadElements(theParser);
-	this->thisCodePointSink.Push(Symbols::theEndOperandSymbol);
+	this->thisCodePointSink.Push(Symbol::theEndOperandSymbol);
 }
 
 template <typename TheOperand>
@@ -109,7 +109,7 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 	);
 	std::string const & theString = theOperator.GetString();
 	for (
-		Sources::CodePointSource<std::string::const_iterator> theCodePointSource(
+		Source::CodePointSource<std::string::const_iterator> theCodePointSource(
 			theString.begin(),
 			theString.end()
 		);
@@ -117,12 +117,12 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 		theCodePointSource.Pop()
 	) {
 		switch (CodePoint const theCodePoint = *theCodePointSource) {
-		Om_Symbols_SeparatorSymbol_GetCases_():
+		Om_Symbol_SeparatorSymbol_GetCases_():
 			// Fall through.
-		Om_Symbols_OperandSymbol_GetCases_():
+		Om_Symbol_OperandSymbol_GetCases_():
 			// Fall through.
-		case Symbols::theEncodeOperatorSymbol:
-			this->thisCodePointSink.Push(Symbols::theEncodeOperatorSymbol);
+		case Symbol::theEncodeOperatorSymbol:
+			this->thisCodePointSink.Push(Symbol::theEncodeOperatorSymbol);
 			// Fall through.
 		default:
 			this->thisCodePointSink.Push(theCodePoint);
@@ -133,9 +133,9 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 
 template <typename TheProducer>
 inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
-	this->thisCodePointSink.Push(Symbols::theStartOperandSymbol);
+	this->thisCodePointSink.Push(Symbol::theStartOperandSymbol);
 	theProducer.GiveElements(*this);
-	this->thisCodePointSink.Push(Symbols::theEndOperandSymbol);
+	this->thisCodePointSink.Push(Symbol::theEndOperandSymbol);
 }
 
 template <typename TheSeparator>
@@ -145,7 +145,7 @@ inline void Type_::TakeSeparator(TheSeparator & theSeparator) {
 	);
 	std::string const & theString = theSeparator.GetString();
 	for (
-		Sources::CodePointSource<std::string::const_iterator> theCodePointSource(
+		Source::CodePointSource<std::string::const_iterator> theCodePointSource(
 			theString.begin(),
 			theString.end()
 		);

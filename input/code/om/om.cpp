@@ -49,16 +49,16 @@ int main(
 		"en_US.UTF-8"
 	);
 
-	typedef Om::Sources::StreamSource<> CodeUnitSource;
+	typedef Om::Source::StreamSource<> CodeUnitSource;
 	CodeUnitSource theCodeUnitSource(std::cin);
-	Om::Sources::CodePointSource<CodeUnitSource> theCodePointSource(
+	Om::Source::CodePointSource<CodeUnitSource> theCodePointSource(
 		theCodeUnitSource,
 		CodeUnitSource()
 	);
 
-	typedef Om::Sinks::StreamSink<> CodeUnitSink;
+	typedef Om::Sink::StreamSink<> CodeUnitSink;
 	CodeUnitSink theCodeUnitSink(std::cout);
-	Om::Sinks::CodePointSink<CodeUnitSink> theCodePointSink(theCodeUnitSink);
+	Om::Sink::CodePointSink<CodeUnitSink> theCodePointSink(theCodeUnitSink);
 
 	Om::System::Get().Evaluate(
 		theCodePointSource,

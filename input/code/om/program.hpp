@@ -27,8 +27,12 @@ namespace Om {
 	//! \cond
 	class Element;
 
-	template <typename ThisItem>
-	class Source;
+	namespace Source {
+
+		template <typename ThisItem>
+		class Source;
+
+	}
 	//! \endcond
 
 	// MARK: - Om::Program
@@ -61,7 +65,7 @@ namespace Om {
 			A non-null owner pointer to a new Element range.
 		*/
 		virtual std::auto_ptr<
-			Source<Element const>
+			Source::Source<Element const>
 		> GetElementRange() const = 0;
 
 		virtual std::auto_ptr<Program> GiveProgram();

@@ -1,0 +1,12 @@
+/*!
+\defgroup om__operations__copy_operation__ copy
+	\ingroup om__operations__
+	\brief
+		Copies an \ref om__operand__.
+	\par Input
+		<tt>{A}</tt>
+	\par Output
+		<tt>{A}{A}</tt>
+	\par Implementation
+		Om::Operation::CopyOperation
+*/

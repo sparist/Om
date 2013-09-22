@@ -18,7 +18,7 @@
 
 #else
 
-	#include "om/sources/empty_source.hpp"
+	#include "om/source/empty_source.hpp"
 
 	#ifndef Om_Macros_Precompilation_
 
@@ -63,15 +63,15 @@ inline bool Type_::Equals(ThisImplementation const & theAtom) const {
 
 Template_
 inline std::auto_ptr<
-	Om::Source<Om::Element>
+	Om::Source::Source<Om::Element>
 > Type_::GetElementRange() {
 	if (
 		this->IsEmpty()
 	) {
 		return std::auto_ptr<
-			Source<Element>
+			Source::Source<Element>
 		>(
-			new Sources::EmptySource<Element>
+			new Source::EmptySource<Element>
 		);
 	}
 	return this->DefaultElement<
@@ -82,15 +82,15 @@ inline std::auto_ptr<
 
 Template_
 inline std::auto_ptr<
-	Om::Source<Om::Element const>
+	Om::Source::Source<Om::Element const>
 > Type_::GetElementRange() const {
 	if (
 		this->IsEmpty()
 	) {
 		return std::auto_ptr<
-			Source<Element const>
+			Source::Source<Element const>
 		>(
-			new Sources::EmptySource<Element const>
+			new Source::EmptySource<Element const>
 		);
 	}
 	return this->DefaultElement<

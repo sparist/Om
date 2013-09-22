@@ -18,7 +18,7 @@
 
 #else
 
-	#include "om/sources/singleton_source.hpp"
+	#include "om/source/singleton_source.hpp"
 
 // MARK: - Om::DefaultElement
 
@@ -60,23 +60,23 @@ inline bool Type_::Equals(Element const & theElement) const {
 
 Template_
 inline std::auto_ptr<
-	Om::Source<Om::Element>
+	Om::Source::Source<Om::Element>
 > Type_::GetElementRange() {
 	return std::auto_ptr<
-		Source<Element>
+		Source::Source<Element>
 	>(
-		new Sources::SingletonSource<Element>(*this)
+		new Source::SingletonSource<Element>(*this)
 	);
 }
 
 Template_
 inline std::auto_ptr<
-	Om::Source<Om::Element const>
+	Om::Source::Source<Om::Element const>
 > Type_::GetElementRange() const {
 	return std::auto_ptr<
-		Source<Element const>
+		Source::Source<Element const>
 	>(
-		new Sources::SingletonSource<Element const>(*this)
+		new Source::SingletonSource<Element const>(*this)
 	);
 }
 

@@ -60,11 +60,11 @@ namespace Om {
 		bool Equals(ThisImplementation const &) const;
 
 		virtual std::auto_ptr<
-			Source<Element>
+			Source::Source<Element>
 		> GetElementRange();
 
 		virtual std::auto_ptr<
-			Source<Element const>
+			Source::Source<Element const>
 		> GetElementRange() const;
 
 		/*!

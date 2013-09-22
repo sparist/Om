@@ -1,0 +1,14 @@
+/*!
+\defgroup om__operations__literal_front_push_operation__ ->literal
+	\ingroup om__operations__
+	\brief
+		Pushes the contents of an \ref om__operand__ onto the front of a \ref om__literal__ (quoted).
+	\par Input
+		<tt>{A} {B}</tt>
+	\par Output
+		<tt>{AB}</tt>
+	\par Implementation
+		Om::Operation::LiteralFrontPushOperation
+
+	Normalization to a \ref om__literal__ only happens if an append occurs (i.e. the first \ref om__operand__ is non-empty); otherwise, it is left unchanged. However, since everything represents as a \ref om__literal__, this doesn't make an observable difference.
+*/

@@ -68,7 +68,7 @@ namespace Om {
 				theString = "{" + theString + "}";
 			}
 
-			Sources::CodePointSource<std::string::const_iterator> theCodePointSource(
+			Source::CodePointSource<std::string::const_iterator> theCodePointSource(
 				theString.begin(),
 				theString.end()
 			);
@@ -186,20 +186,20 @@ inline void Type_::FrontGiveElement(Consumer & theConsumer) {
 }
 
 inline std::auto_ptr<
-	Om::Source<Om::Element>
+	Om::Source::Source<Om::Element>
 > Type_::GetElementRange() {
 	return std::auto_ptr<
-		Source<Element>
+		Source::Source<Element>
 	>(
 		new ElementRange<Literal>(*this)
 	);
 }
 
 inline std::auto_ptr<
-	Om::Source<Om::Element const>
+	Om::Source::Source<Om::Element const>
 > Type_::GetElementRange() const {
 	return std::auto_ptr<
-		Source<Element const>
+		Source::Source<Element const>
 	>(
 		new ElementRange<Literal const>(*this)
 	);
@@ -232,14 +232,14 @@ inline void Type_::ReadElements(Parser & theParser) {
 
 	while (theParser) {
 		switch (*theParser) {
-		case Symbols::theEndOperandSymbol:
+		case Symbol::theEndOperandSymbol:
 			assert(
 				!theStack.empty() &&
 				this != theStack.top()
 			);
 			theStack.pop();
 			break;
-		case Symbols::theStartOperandSymbol:
+		case Symbol::theStartOperandSymbol:
 			{
 				std::auto_ptr<Literal> theLiteral(new Literal);
 				Literal * theLiteralPointer = theLiteral.get();
@@ -250,7 +250,7 @@ inline void Type_::ReadElements(Parser & theParser) {
 				theStack.push(theLiteralPointer);
 			}
 			break;
-		Om_Symbols_SeparatorSymbol_GetCases_():
+		Om_Symbol_SeparatorSymbol_GetCases_():
 			assert(
 				!theStack.empty() &&
 				theStack.top()
@@ -364,14 +364,14 @@ inline void Type_::TakeAtom(TheAtom & theAtom) {
 // MARK: public (non-static)
 
 inline Type_<Om::Literal>::ElementRange(Literal & theLiteral) :
-Sources::CollectionFrontSource<
+Om::Source::CollectionFrontSource<
 	Element,
 	ElementDeque::iterator
 >(theLiteral.thisElementDeque)
 {}
 
 inline Type_<Om::Literal const>::ElementRange(Literal const & theLiteral) :
-Sources::CollectionFrontSource<
+Om::Source::CollectionFrontSource<
 	Element const,
 	ElementDeque::const_iterator
 >(theLiteral.thisElementDeque)

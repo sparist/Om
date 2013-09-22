@@ -102,22 +102,22 @@ inline void Type_::ReadElements(Parser & theParser) {
 			if (!theParser) {
 				return;
 			}
-			assert(Symbols::theEndOperandSymbol != *theParser);
+			assert(Symbol::theEndOperandSymbol != *theParser);
 			switch (*theParser) {
 			default:
 				continue;
-			case Symbols::theStartOperandSymbol:
+			case Symbol::theStartOperandSymbol:
 				theParser.Pop();
 				{
 					// Ensure against copy constructor call.
-					Source<CodePoint const> & theCodePointSource = theParser;
+					Source::Source<CodePoint const> & theCodePointSource = theParser;
 
 					Parser theOperandParser(theCodePointSource);
 					this->ReadQuotedElements(theOperandParser);
 				}
 				assert(
 					!theParser ||
-					Symbols::theEndOperandSymbol == *theParser
+					Symbol::theEndOperandSymbol == *theParser
 				);
 				// Fall through.
 			}

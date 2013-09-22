@@ -1,0 +1,12 @@
+/*!
+\defgroup om__operations__evaluate_operation__ evaluate
+	\ingroup om__operations__
+	\brief
+		Evaluates an \ref om__expression__ in place, within the current environment.
+	\par Input
+		An \ref om__expression__ to evaluate.
+	\par Output
+		The evaluated \ref om__expression__.
+	\par Implementation
+		Om::Operation::EvaluateOperation
+*/

@@ -137,14 +137,14 @@ namespace Om {
 			);
 			std::string theResult;
 			{
-				Sinks::CodePointSink<
+				Sink::CodePointSink<
 					std::back_insert_iterator<std::string>
 				> theCodePointSink(
 					std::back_inserter(theResult)
 				);
 				Writer theWriter(theCodePointSink);
 
-				Sources::CodePointSource<> theCodePointSource(theCode);
+				Source::CodePointSource<> theCodePointSource(theCode);
 				Parser theParser(theCodePointSource);
 				Expression theExpression;
 				theExpression.ReadElements(theParser);
@@ -325,10 +325,10 @@ inline void Type_::FrontTakeQuotedProducer(TheProducer & theProducer) {
 }
 
 inline std::auto_ptr<
-	Om::Source<Om::Element const>
+	Om::Source::Source<Om::Element const>
 > Type_::GetElementRange() const {
 	return std::auto_ptr<
-		Source<Element const>
+		Source::Source<Element const>
 	>(
 		new ElementRange(*this)
 	);
@@ -559,14 +559,14 @@ inline Om::Form & Type_::GetFrontTaker() {
 // MARK: public (non-static)
 
 inline Type_<Om::Form>::FormRange(Expression & theExpression) :
-Sources::CollectionFrontSource<
+Om::Source::CollectionFrontSource<
 	Form,
 	FormDeque::iterator
 >(theExpression.thisFormDeque)
 {}
 
 inline Type_<Om::Form const>::FormRange(Expression const & theExpression) :
-Sources::CollectionFrontSource<
+Om::Source::CollectionFrontSource<
 	Form const,
 	FormDeque::const_iterator
 >(theExpression.thisFormDeque)

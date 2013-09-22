@@ -29,8 +29,8 @@
 // MARK: public (non-static)
 
 inline void Type_::Evaluate(
-	Source<CodePoint const> & theCodePointSource,
-	Sink<CodePoint const> & theCodePointSink
+	Source::Source<CodePoint const> & theCodePointSource,
+	Sink::Sink<CodePoint const> & theCodePointSink
 ) const {
 	Writer theWriter(theCodePointSink);
 	Parser theParser(theCodePointSource);
@@ -46,8 +46,8 @@ inline std::string Type_::Evaluate(
 	assert(theCodeUnitIterator);
 	std::string theString;
 	{
-		Sources::CodePointSource<> theCodePointSource(theCodeUnitIterator);
-		Sinks::CodePointSink<
+		Source::CodePointSource<> theCodePointSource(theCodeUnitIterator);
+		Sink::CodePointSink<
 			std::back_insert_iterator<std::string>
 		> theCodePointSink(
 			std::back_inserter(theString)

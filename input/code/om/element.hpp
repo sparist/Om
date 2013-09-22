@@ -61,7 +61,7 @@ namespace Om {
 			An Element range containing only this Element.
 		*/
 		virtual std::auto_ptr<
-			Source<Element>
+			Source::Source<Element>
 		> GetElementRange() = 0;
 
 		/*!

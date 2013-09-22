@@ -31,7 +31,7 @@ namespace Om {
 	//! \cond
 	class Evaluation;
 
-	namespace Operations {
+	namespace Operation {
 
 		class IncompleteOperation;
 
@@ -47,11 +47,11 @@ namespace Om {
 		A Consumer that evaluates Program instances.
 
 	The Evaluator interprets each Element as follows:
-	-	When an Operator is taken, the Translator is queried for the corresponding \ref Operations "Operation". If found, its implementation is given to the Evaluator for further evaluation; otherwise, the IncompleteOperation vector is flushed and the Operator is given to the output Consumer.
+	-	When an Operator is taken, the Translator is queried for the corresponding Operation. If found, its implementation is given to the Evaluator for further evaluation; otherwise, the IncompleteOperation vector is flushed and the Operator is given to the output Consumer.
 	-	When a Operand is taken, it is given to the most current IncompleteOperation in the IncompleteOperation vector. If none, it is given to the output Consumer.
 	-	When a Separator is taken, it is disregarded.
 
-	The program output by the Evaluator is an Expression. Note that if each line in the Expression was terminated by Symbols::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbols::theLineSeparatorSymbol to the final output.
+	The program output by the Evaluator is an Expression. Note that if each line in the Expression was terminated by Symbol::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbol::theLineSeparatorSymbol to the final output.
 	*/
 	class Evaluator :
 	public DefaultConsumer<Evaluator>,
@@ -157,7 +157,7 @@ namespace Om {
 		\brief
 			An IncompleteOperation vector.
 		*/
-		typedef boost::ptr_vector<Operations::IncompleteOperation> IncompleteOperationVector;
+		typedef boost::ptr_vector<Operation::IncompleteOperation> IncompleteOperationVector;
 
 		template <typename TheIterator>
 		static void GiveElements(
@@ -185,7 +185,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The Translator used for resolving Operator to \ref Operations "Operation".
+			The Translator used for resolving Operator to Operation.
 		*/
 		Translator const & thisTranslator;
 

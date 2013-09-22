@@ -278,14 +278,14 @@ inline bool Om::operator !=(
 // MARK: public (non-static)
 
 inline Type_<Om::Operand>::OperandRange(Form & theForm) :
-Sources::CollectionFrontSource<
+Om::Source::CollectionFrontSource<
 	Operand,
 	OperandDeque::iterator
 >(theForm.thisOperandDeque)
 {}
 
 inline Type_<Om::Operand const>::OperandRange(Form const & theForm) :
-Sources::CollectionFrontSource<
+Om::Source::CollectionFrontSource<
 	Operand const,
 	OperandDeque::const_iterator
 >(theForm.thisOperandDeque)

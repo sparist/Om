@@ -34,11 +34,19 @@ namespace Om {
 
 	class Operator;
 
-	template <typename ThisItem>
-	class Sink;
+	namespace Sink {
 
-	template <typename ThisItem>
-	class Source;
+		template <typename ThisItem>
+		class Sink;
+
+	}
+
+	namespace Source {
+
+		template <typename ThisItem>
+		class Source;
+
+	}
 	//! \endcond
 
 	// MARK: - Om::Translator
@@ -56,8 +64,8 @@ namespace Om {
 			Evaluates input from the #CodePoint Source and pushes it to the #CodePoint Sink.
 		*/
 		void Evaluate(
-			Source<CodePoint const> &,
-			Sink<CodePoint const> &
+			Source::Source<CodePoint const> &,
+			Sink::Sink<CodePoint const> &
 		) const;
 
 		/*!

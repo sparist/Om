@@ -19,9 +19,9 @@
 #else
 
 	#include "om/consumer.hpp"
-	#include "om/symbols/operand_symbol.hpp"
-	#include "om/symbols/operator_symbol.hpp"
-	#include "om/symbols/separator_symbol.hpp"
+	#include "om/symbol/operand_symbol.hpp"
+	#include "om/symbol/operator_symbol.hpp"
+	#include "om/symbol/separator_symbol.hpp"
 
 // MARK: - Om::Parser
 
@@ -31,7 +31,7 @@
 // MARK: public (non-static)
 
 inline Type_::Parser(
-	Source<CodePoint const> & theCodePointSource
+	Source::Source<CodePoint const> & theCodePointSource
 ) :
 thisCodePointSource(theCodePointSource),
 thisDepth(),
@@ -51,7 +51,7 @@ inline bool Type_::operator !() const {
 		(
 			!this->thisDepth &&
 			!this->thisIsEncoded &&
-			Symbols::theEndOperandSymbol == *this->thisCodePointSource
+			Symbol::theEndOperandSymbol == *this->thisCodePointSource
 		)
 	);
 }
@@ -71,13 +71,13 @@ template<
 inline void Type_::Parse(Consumer & theConsumer) {
 	Parser & theParser = *this;
 	while (theParser) {
-		assert(Symbols::theEndOperandSymbol != *theParser);
+		assert(Symbol::theEndOperandSymbol != *theParser);
 		switch (*theParser) {
-		case Symbols::theStartOperandSymbol:
+		case Symbol::theStartOperandSymbol:
 			theParser.Pop();
 			{
 				// Ensure that this does not resolve to the copy constructor.
-				Source<CodePoint const> & theCodePointSource = theParser;
+				Source::Source<CodePoint const> & theCodePointSource = theParser;
 
 				Parser theOperandParser(theCodePointSource);
 				theConsumer.ReadQuotedElements(theOperandParser);
@@ -85,10 +85,10 @@ inline void Type_::Parse(Consumer & theConsumer) {
 			if (!theParser) {
 				return;
 			}
-			assert(Symbols::theEndOperandSymbol == *theParser);
+			assert(Symbol::theEndOperandSymbol == *theParser);
 			theParser.Pop();
 			continue;
-		Om_Symbols_SeparatorSymbol_GetCases_():
+		Om_Symbol_SeparatorSymbol_GetCases_():
 			{
 				TheSeparator theSeparator(theParser);
 				theConsumer.TakeElement(theSeparator);
@@ -107,7 +107,7 @@ inline void Type_::Parse(Consumer & theConsumer) {
 inline void Type_::Pop() {
 	assert(this->thisCodePointSource);
 	switch (*this->thisCodePointSource) {
-	case Symbols::theStartOperandSymbol:
+	case Symbol::theStartOperandSymbol:
 		if (this->thisIsEncoded) {
 			this->thisIsEncoded = false;
 		} else {
@@ -119,7 +119,7 @@ inline void Type_::Pop() {
 			++this->thisDepth;
 		}
 		break;
-	case Symbols::theEndOperandSymbol:
+	case Symbol::theEndOperandSymbol:
 		if (this->thisIsEncoded) {
 			this->thisIsEncoded = false;
 		} else {
@@ -127,7 +127,7 @@ inline void Type_::Pop() {
 			--this->thisDepth;
 		}
 		break;
-	case Symbols::theEncodeOperatorSymbol:
+	case Symbol::theEncodeOperatorSymbol:
 		this->thisIsEncoded = !this->thisIsEncoded;
 		break;
 	default:

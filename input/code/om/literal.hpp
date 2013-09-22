@@ -18,7 +18,7 @@
 	Om::Literal
 
 	#include "om/default_program.hpp"
-	#include "om/sources/collection_front_source.hpp"
+	#include "om/source/collection_front_source.hpp"
 
 	#ifndef Om_Macros_Precompilation_
 
@@ -74,11 +74,11 @@ namespace Om {
 		void FrontGiveElement(Consumer &);
 
 		std::auto_ptr<
-			Source<Element>
+			Source::Source<Element>
 		> GetElementRange();
 
 		virtual std::auto_ptr<
-			Source<Element const>
+			Source::Source<Element const>
 		> GetElementRange() const;
 
 		virtual void GiveElements(Consumer &);
@@ -141,7 +141,7 @@ namespace Om {
 	*/
 	template <>
 	class Literal::ElementRange<Literal> :
-	public Sources::CollectionFrontSource<
+	public Source::CollectionFrontSource<
 		Element,
 		ElementDeque::iterator
 	>
@@ -161,7 +161,7 @@ namespace Om {
 	*/
 	template <>
 	class Literal::ElementRange<Literal const> :
-	public Sources::CollectionFrontSource<
+	public Source::CollectionFrontSource<
 		Element const,
 		ElementDeque::const_iterator
 	>

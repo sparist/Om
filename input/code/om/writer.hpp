@@ -22,10 +22,14 @@
 
 namespace Om {
 
-	//! \cond
-	template <typename ThisItem>
-	class Sink;
-	//! \endcond
+	namespace Sink {
+
+		//! \cond
+		template <typename ThisItem>
+		class Sink;
+		//! \endcond
+
+	}
 
 	// MARK: - Om::Writer
 
@@ -40,7 +44,7 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit Writer(
-			Sink<CodePoint const> &
+			Sink::Sink<CodePoint const> &
 		);
 
 		virtual void ReadElements(Parser &);
@@ -69,7 +73,7 @@ namespace Om {
 		\brief
 			The output #CodePoint Sink.
 		*/
-		Sink<CodePoint const> & thisCodePointSink;
+		Sink::Sink<CodePoint const> & thisCodePointSink;
 
 	};
 

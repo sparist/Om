@@ -18,7 +18,7 @@
 	Om::Form
 
 	#include "om/operator.hpp"
-	#include "om/sources/collection_front_source.hpp"
+	#include "om/source/collection_front_source.hpp"
 
 namespace Om {
 
@@ -126,7 +126,7 @@ namespace Om {
 		A Form Element range.
 	*/
 	class Form::ElementRange :
-	public Sources::DefaultSource<
+	public Source::DefaultSource<
 		Element const,
 		ElementRange
 	>
@@ -140,7 +140,7 @@ namespace Om {
 
 		virtual Element const & operator *() const;
 
-		using Sources::DefaultSource<
+		using Om::Source::DefaultSource<
 			Element const,
 			ElementRange
 		>::Equals;
@@ -181,7 +181,7 @@ namespace Om {
 	*/
 	template <>
 	class Form::OperandRange<Operand> :
-	public Sources::CollectionFrontSource<
+	public Source::CollectionFrontSource<
 		Operand,
 		OperandDeque::iterator
 	>
@@ -201,7 +201,7 @@ namespace Om {
 	*/
 	template <>
 	class Form::OperandRange<Operand const> :
-	public Sources::CollectionFrontSource<
+	public Source::CollectionFrontSource<
 		Operand const,
 		OperandDeque::const_iterator
 	>

@@ -1,0 +1,12 @@
+/*!
+\defgroup om__operations__front_pull_element_operation__ <-elements
+	\ingroup om__operations__
+	\brief
+		Pops the first element, quoted.
+	\par Input
+		<tt>{A B}</tt>
+	\par Output
+		<tt>{A} { B}</tt>
+	\par Implementation
+		Om::Operation::FrontPullElementOperation
+*/

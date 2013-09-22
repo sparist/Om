@@ -92,7 +92,7 @@ namespace Om {
 		void FrontTakeQuotedProducer(TheProducer &);
 
 		virtual std::auto_ptr<
-			Source<Element const>
+			Source::Source<Element const>
 		> GetElementRange() const;
 
 		virtual void GiveElements(Consumer &);
@@ -164,7 +164,7 @@ namespace Om {
 	*/
 	template <>
 	class Expression::FormRange<Form> :
-	public Sources::CollectionFrontSource<
+	public Source::CollectionFrontSource<
 		Form,
 		FormDeque::iterator
 	>
@@ -184,7 +184,7 @@ namespace Om {
 	*/
 	template <>
 	class Expression::FormRange<Form const> :
-	public Sources::CollectionFrontSource<
+	public Source::CollectionFrontSource<
 		Form const,
 		FormDeque::const_iterator
 	>
@@ -203,7 +203,7 @@ namespace Om {
 		An Expression Element range.
 	*/
 	class Expression::ElementRange :
-	public Sources::DefaultSource<
+	public Source::DefaultSource<
 		Element const,
 		ElementRange
 	>
@@ -217,7 +217,7 @@ namespace Om {
 
 		virtual Element const & operator *() const;
 
-		using Sources::DefaultSource<
+		using Om::Source::DefaultSource<
 			Element const,
 			ElementRange
 		>::Equals;

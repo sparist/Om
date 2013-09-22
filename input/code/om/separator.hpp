@@ -19,7 +19,7 @@
 	Om::Separator
 
 	#include "om/default_atom.hpp"
-	#include "om/symbols/separator_symbol.hpp"
+	#include "om/symbol/separator_symbol.hpp"
 
 	#define Om_Separator_GetName_() \
 	"separator"
@@ -32,7 +32,7 @@ namespace Om {
 	\brief
 		The \ref om__separator__ implementation.
 
-	An Atom defined by a string containing only Symbols::SeparatorSymbol characters.
+	An Atom defined by a string containing only Symbol::SeparatorSymbol characters.
 
 	As a Consumer, the Separator filters out all top-level Element instances except Separator.
 	*/
@@ -44,7 +44,7 @@ namespace Om {
 
 		/*!
 		\return
-			A Separator comprised of a single Symbols::theLineSeparatorSymbol.
+			A Separator comprised of a single Symbol::theLineSeparatorSymbol.
 		*/
 		static Separator const & GetLineSeparator();
 
@@ -55,14 +55,14 @@ namespace Om {
 		Separator();
 
 		explicit Separator(
-			Source<CodePoint const> &
+			Source::Source<CodePoint const> &
 		);
 
 		/*!
 		\param theSeparatorSymbol
-			The Symbols::SeparatorSymbol to copy directly into the Separator.
+			The Symbol::SeparatorSymbol to copy directly into the Separator.
 		*/
-		explicit Separator(Symbols::SeparatorSymbol const theSeparatorSymbol);
+		explicit Separator(Symbol::SeparatorSymbol const theSeparatorSymbol);
 
 		Separator & operator =(Separator);
 
@@ -82,7 +82,7 @@ namespace Om {
 		template <typename TheSeparator>
 		void TakeSeparator(TheSeparator &);
 
-		void TakeSeparatorSymbol(Symbols::SeparatorSymbol const);
+		void TakeSeparatorSymbol(Symbol::SeparatorSymbol const);
 
 	};
 

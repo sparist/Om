@@ -38,7 +38,7 @@ inline bool Type_::Equals(Program const &) const {
 }
 
 inline std::auto_ptr<
-	Om::Source<Om::Element const>
+	Om::Source::Source<Om::Element const>
 > Type_::GetElementRange() const {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");

@@ -19,7 +19,7 @@
 
 	#include "om/list.hpp"
 	#include "om/pair.hpp"
-	#include "om/sources/default_source.hpp"
+	#include "om/source/default_source.hpp"
 	#include "om/translator.hpp"
 
 	#ifndef Om_Macros_Precompilation_
@@ -75,7 +75,7 @@ namespace Om {
 		void FrontGivePair(Consumer &);
 
 		virtual std::auto_ptr<
-			Source<Element const>
+			Source::Source<Element const>
 		> GetElementRange() const;
 
 		virtual void GiveElements(Consumer &);
@@ -167,7 +167,7 @@ namespace Om {
 		A Lexicon Element range.
 	*/
 	class Lexicon::ElementRange :
-	public Sources::DefaultSource<
+	public Source::DefaultSource<
 		Element const,
 		ElementRange
 	>
@@ -183,7 +183,7 @@ namespace Om {
 
 		virtual Element const & operator *() const;
 
-		using Sources::DefaultSource<
+		using Om::Source::DefaultSource<
 			Element const,
 			ElementRange
 		>::Equals;

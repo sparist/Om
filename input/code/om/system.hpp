@@ -39,7 +39,7 @@ namespace Om {
 
 	/*!
 	\brief
-		Translates an Operator to an \ref Operations "Operation".
+		Translates an Operator to an Operation.
 
 	There is a single System instance, returned by the static Get() method.
 	*/
@@ -84,9 +84,9 @@ namespace Om {
 
 		/*!
 		\brief
-			If there is an \ref Operations "Operation" mapped to the Operator, its implementation is given to the Evaluation.
+			If there is an Operation mapped to the Operator, its implementation is given to the Evaluation.
 		\return
-			False if there is no \ref Operations "Operation" mapped to the Operator.
+			False if there is no Operation mapped to the Operator.
 		*/
 		virtual bool Translate(
 			Evaluation &,
@@ -97,7 +97,7 @@ namespace Om {
 
 		/*!
 		\brief
-			Maps the name to a function that gives the \ref Operations "Operation" with this name to the Evaluation.
+			Maps the name to a function that gives the Operation with this name to the Evaluation.
 		*/
 		typedef std::map<
 			std::string,
@@ -120,9 +120,9 @@ namespace Om {
 
 	/*!
 	\brief
-		An inserter of an \ref Operations "Operation" into the static System instance.
+		An inserter of an Operation into the static System instance.
 
-	This is safe to construct before main, but the order of construction is implementation-defined; if there is more than one \ref Operations "Operation" with the same Operator, the choice of which to apply first will be implementation-defined.
+	This is safe to construct before main, but the order of construction is implementation-defined; if there is more than one Operation with the same Operator, the choice of which to apply first will be implementation-defined.
 	*/
 	template <typename ThisOperation>
 	class System::Definition {
@@ -131,9 +131,9 @@ namespace Om {
 
 		/*!
 		\brief
-			Inserts the \ref Operations "Operation" into the System.
+			Inserts the Operation into the System.
 
-		If there is already an \ref Operations "Operation" mapped to the same Operator, it will be removed.
+		If there is already an Operation mapped to the same Operator, it will be removed.
 		*/
 		Definition();
 

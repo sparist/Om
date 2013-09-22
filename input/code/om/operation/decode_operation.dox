@@ -1,0 +1,14 @@
+/*!
+\defgroup om__operations__decode_operation__ decode
+	\ingroup om__operations__
+	\brief
+		Decodes encoded characters (non-recursively).
+	\par Input
+		<tt>{operator}</tt>
+	\par Output
+		<tt>{literal}</tt>
+	\par Implementation
+		Om::Operation::DecodeOperation
+
+	Decoding the output of \ref om__operations__encode_operation__ results in an \ref om__operand__ equivalent to the input of \ref om__operations__encode_operation__.
+*/

@@ -94,7 +94,7 @@ namespace Om {
 			{
 				Literal theLiteral;
 				{
-					Sources::CodePointSource<> theCodePointSource("a{b{c}}");
+					Source::CodePointSource<> theCodePointSource("a{b{c}}");
 					Parser theParser(theCodePointSource);
 					theLiteral.ReadElements(theParser);
 				}
@@ -124,14 +124,14 @@ namespace Om {
 			char const theCode[] = "0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n";
 			std::string theResult;
 			{
-				Sinks::CodePointSink<
+				Sink::CodePointSink<
 					std::back_insert_iterator<std::string>
 				> theCodePointSink(
 					std::back_inserter(theResult)
 				);
 				Writer theWriter(theCodePointSink);
 
-				Sources::CodePointSource<> theCodePointSource(theCode);
+				Source::CodePointSource<> theCodePointSource(theCode);
 				Parser theParser(theCodePointSource);
 				Operator theOperator;
 				theOperator.ReadElements(theParser);
@@ -160,10 +160,10 @@ namespace Om {
 
 	#include "om/operand.hpp"
 	#include "om/separator.hpp"
-	#include "om/sinks/code_point_sink.hpp"
-	#include "om/sources/code_point_source.hpp"
-	#include "om/sources/code_point_string_back_source.hpp"
-	#include "om/sources/code_point_string_front_source.hpp"
+	#include "om/sink/code_point_sink.hpp"
+	#include "om/source/code_point_source.hpp"
+	#include "om/source/code_point_string_back_source.hpp"
+	#include "om/source/code_point_string_front_source.hpp"
 	#include "om/writer.hpp"
 
 // MARK: - Om::Operator
@@ -198,7 +198,7 @@ inline Type_::Operator(
 }
 
 inline Type_::Operator(
-	Source<CodePoint const> & theCodePointSource
+	Source::Source<CodePoint const> & theCodePointSource
 ) {
 	std::string theString;
 	for (
@@ -207,14 +207,14 @@ inline Type_::Operator(
 		theCodePointSource.Pop()
 	) {
 		switch (*theCodePointSource) {
-		Om_Symbols_OperandSymbol_GetCases_():
+		Om_Symbol_OperandSymbol_GetCases_():
 			// Fall through.
-		Om_Symbols_SeparatorSymbol_GetCases_():
+		Om_Symbol_SeparatorSymbol_GetCases_():
 			break;
-		case Symbols::theEncodeOperatorSymbol:
+		case Symbol::theEncodeOperatorSymbol:
 			theCodePointSource.Pop();
 			if (!theCodePointSource) {
-				theString.push_back(Symbols::theEndOperandSymbol);
+				theString.push_back(Symbol::theEndOperandSymbol);
 				break;
 			}
 			// Fall through.
@@ -233,19 +233,19 @@ inline Type_::Operator(
 	).swap(this->thisString);
 }
 
-inline Type_::Operator(Symbols::OperandSymbol const theOperandSymbol) :
+inline Type_::Operator(Symbol::OperandSymbol const theOperandSymbol) :
 DefaultAtom<Operator>(
 	static_cast<char>(theOperandSymbol)
 )
 {}
 
-inline Type_::Operator(Symbols::OperatorSymbol const theOperatorSymbol) :
+inline Type_::Operator(Symbol::OperatorSymbol const theOperatorSymbol) :
 DefaultAtom<Operator>(
 	static_cast<char>(theOperatorSymbol)
 )
 {}
 
-inline Type_::Operator(Symbols::SeparatorSymbol const theSeparatorSymbol) :
+inline Type_::Operator(Symbol::SeparatorSymbol const theSeparatorSymbol) :
 DefaultAtom<Operator>(
 	static_cast<char>(theSeparatorSymbol)
 )
@@ -264,7 +264,7 @@ inline void Type_::BackGiveCodePoint(Consumer & theConsumer) {
 		{
 			std::string & theString = theOperator.thisString;
 			{
-				Sources::CodePointStringBackSource<std::string::const_iterator> theCodePointStringRange(
+				Source::CodePointStringBackSource<std::string::const_iterator> theCodePointStringRange(
 					this->thisString.begin(),
 					this->thisString.end()
 				);
@@ -323,7 +323,7 @@ inline void Type_::BackGiveSegment(Consumer & theConsumer) {
 
 template <typename TheConsumer>
 inline void Type_::Decode(TheConsumer & theConsumer) const {
-	Sources::CodePointSource<std::string::const_iterator> theCodePointSource(
+	Source::CodePointSource<std::string::const_iterator> theCodePointSource(
 		this->thisString.begin(),
 		this->thisString.end()
 	);
@@ -334,7 +334,7 @@ inline void Type_::Decode(TheConsumer & theConsumer) const {
 template <typename TheProducer>
 inline void Type_::Encode(TheProducer & theProducer) {
 	this->thisString.clear();
-	Sinks::CodePointSink<
+	Sink::CodePointSink<
 		std::back_insert_iterator<std::string>
 	> theCodePointSink(
 		std::back_inserter(this->thisString)
@@ -351,7 +351,7 @@ inline void Type_::FrontGiveCodePoint(Consumer & theConsumer) {
 		{
 			std::string & theString = theOperator.thisString;
 			{
-				Sources::CodePointStringFrontSource<std::string::const_iterator> theCodePointStringRange(
+				Source::CodePointStringFrontSource<std::string::const_iterator> theCodePointStringRange(
 					this->thisString.begin(),
 					this->thisString.end()
 				);
@@ -417,11 +417,11 @@ inline void Type_::Normalize() {
 inline void Type_::ReadElements(Parser & theParser) {
 	while (theParser) {
 		switch (*theParser) {
-		case Symbols::theEndOperandSymbol:
+		case Symbol::theEndOperandSymbol:
 			// Fall through.
-		case Symbols::theStartOperandSymbol:
+		case Symbol::theStartOperandSymbol:
 			// Fall through.
-		Om_Symbols_SeparatorSymbol_GetCases_():
+		Om_Symbol_SeparatorSymbol_GetCases_():
 			this->thisString.push_back(
 				static_cast<char>(*theParser)
 			);
@@ -434,9 +434,9 @@ inline void Type_::ReadElements(Parser & theParser) {
 }
 
 inline void Type_::ReadQuotedElements(Parser & theParser) {
-	this->thisString.push_back(Symbols::theStartOperandSymbol);
+	this->thisString.push_back(Symbol::theStartOperandSymbol);
 	this->ReadElements(theParser);
-	this->thisString.push_back(Symbols::theEndOperandSymbol);
+	this->thisString.push_back(Symbol::theEndOperandSymbol);
 }
 
 template <typename TheOperand>
@@ -484,9 +484,9 @@ inline void Type_::TakeOperator(TheOperator & theOperator) {
 
 template <typename TheProducer>
 inline void Type_::TakeQuotedProducer(TheProducer & theProducer) {
-	this->thisString.push_back(Symbols::theStartOperandSymbol);
+	this->thisString.push_back(Symbol::theStartOperandSymbol);
 	theProducer.GiveElements(*this);
-	this->thisString.push_back(Symbols::theEndOperandSymbol);
+	this->thisString.push_back(Symbol::theEndOperandSymbol);
 }
 
 template <typename TheSeparator>

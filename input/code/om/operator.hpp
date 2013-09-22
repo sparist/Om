@@ -18,9 +18,9 @@
 	Om::Operator
 
 	#include "om/default_atom.hpp"
-	#include "om/symbols/operand_symbol.hpp"
-	#include "om/symbols/operator_symbol.hpp"
-	#include "om/symbols/separator_symbol.hpp"
+	#include "om/symbol/operand_symbol.hpp"
+	#include "om/symbol/operator_symbol.hpp"
+	#include "om/symbol/separator_symbol.hpp"
 
 	#ifndef Om_Macros_Precompilation_
 
@@ -70,14 +70,14 @@ namespace Om {
 		);
 
 		explicit Operator(
-			Source<CodePoint const> &
+			Source::Source<CodePoint const> &
 		);
 
-		explicit Operator(Symbols::OperandSymbol const);
+		explicit Operator(Symbol::OperandSymbol const);
 
-		explicit Operator(Symbols::OperatorSymbol const);
+		explicit Operator(Symbol::OperatorSymbol const);
 
-		explicit Operator(Symbols::SeparatorSymbol const);
+		explicit Operator(Symbol::SeparatorSymbol const);
 
 		Operator & operator =(Operator);
 
