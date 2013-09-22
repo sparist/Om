@@ -65,9 +65,9 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="consumer_8hpp.html">om/consumer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operand__symbol_8hpp.html">om/symbols/operand_symbol.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operator__symbol_8hpp.html">om/symbols/operator_symbol.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="separator__symbol_8hpp.html">om/symbols/separator_symbol.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operand__symbol_8hpp.html">om/symbol/operand_symbol.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operator__symbol_8hpp.html">om/symbol/operator_symbol.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="separator__symbol_8hpp.html">om/symbol/separator_symbol.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// MARK: - Om::Parser</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
@@ -77,7 +77,7 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">inline</span> Type_::Parser(</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Source&lt;CodePoint const&gt; &amp; theCodePointSource</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Source::Source&lt;CodePoint const&gt; &amp; theCodePointSource</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;) :</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;thisCodePointSource(theCodePointSource),</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;thisDepth(),</div>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        (</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            !this-&gt;thisDepth &amp;&amp;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            !this-&gt;thisIsEncoded &amp;&amp;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a> == *this-&gt;thisCodePointSource</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Symbol::theEndOperandSymbol</a> == *this-&gt;thisCodePointSource</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        )</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    );</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
@@ -117,13 +117,13 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Parse(Consumer &amp; theConsumer) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Parser &amp; theParser = *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">while</span> (theParser) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        assert(<a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a> != *theParser);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        assert(<a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Symbol::theEndOperandSymbol</a> != *theParser);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">switch</span> (*theParser) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445">Symbols::theStartOperandSymbol</a>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b">Symbol::theStartOperandSymbol</a>:</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            theParser.Pop();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="comment">// Ensure that this does not resolve to the copy constructor.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                Source&lt;CodePoint const&gt; &amp; theCodePointSource = theParser;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                Source::Source&lt;CodePoint const&gt; &amp; theCodePointSource = theParser;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                Parser theOperandParser(theCodePointSource);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                theConsumer.ReadQuotedElements(theOperandParser);</div>
@@ -131,10 +131,10 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (!theParser) {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            assert(<a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a> == *theParser);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            assert(<a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Symbol::theEndOperandSymbol</a> == *theParser);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            theParser.Pop();</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a98a23b0342d1c0ded1dad44f6cf8ed7b">Om_Symbols_SeparatorSymbol_GetCases_</a>():</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a1ef3df34170c70fa4028c1d408953b63">Om_Symbol_SeparatorSymbol_GetCases_</a>():</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                TheSeparator theSeparator(theParser);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                theConsumer.TakeElement(theSeparator);</div>
@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Pop() {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    assert(this-&gt;thisCodePointSource);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">switch</span> (*this-&gt;thisCodePointSource) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445">Symbols::theStartOperandSymbol</a>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b">Symbol::theStartOperandSymbol</a>:</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (this-&gt;thisIsEncoded) {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            this-&gt;thisIsEncoded = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        } <span class="keywordflow">else</span> {</div>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            ++this-&gt;thisDepth;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a>:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Symbol::theEndOperandSymbol</a>:</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (this-&gt;thisIsEncoded) {</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            this-&gt;thisIsEncoded = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        } <span class="keywordflow">else</span> {</div>
@@ -173,7 +173,7 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            --this-&gt;thisDepth;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1a2fbc76d8801185a911b764d8daf90a68">Symbols::theEncodeOperatorSymbol</a>:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbol.html#a70234a2cded9a63fc9611b725dbc2cf1a39168ccf8fe445cae6c0dfaea5b1b255">Symbol::theEncodeOperatorSymbol</a>:</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        this-&gt;thisIsEncoded = !this-&gt;thisIsEncoded;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">default</span>:</div>
@@ -202,17 +202,17 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="namespace_om_1_1_symbol_html_a70234a2cded9a63fc9611b725dbc2cf1a39168ccf8fe445cae6c0dfaea5b1b255"><div class="ttname"><a href="namespace_om_1_1_symbol.html#a70234a2cded9a63fc9611b725dbc2cf1a39168ccf8fe445cae6c0dfaea5b1b255">Om::Symbol::theEncodeOperatorSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operator__symbol_8hpp_source.html#l00051">operator_symbol.hpp:51</a></div></div>
 <div class="ttc" id="operator__symbol_8hpp_html"><div class="ttname"><a href="operator__symbol_8hpp.html">operator_symbol.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="namespace_om_1_1_symbols_html_a3f987b2d59e3d485db43d5dfe38242e1a2fbc76d8801185a911b764d8daf90a68"><div class="ttname"><a href="namespace_om_1_1_symbols.html#a3f987b2d59e3d485db43d5dfe38242e1a2fbc76d8801185a911b764d8daf90a68">Om::Symbols::theEncodeOperatorSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operator__symbol_8hpp_source.html#l00051">operator_symbol.hpp:51</a></div></div>
-<div class="ttc" id="namespace_om_1_1_symbols_html_a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd"><div class="ttname"><a href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Om::Symbols::theEndOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00076">operand_symbol.hpp:76</a></div></div>
 <div class="ttc" id="namespace_om_html_a61e52f05ef3e135408edb1e291c8d5cc"><div class="ttname"><a href="namespace_om.html#a61e52f05ef3e135408edb1e291c8d5cc">Om::CodePoint</a></div><div class="ttdeci">boost::locale::utf::code_point CodePoint</div><div class="ttdoc">A UTF-8 code point. </div><div class="ttdef"><b>Definition:</b> <a href="code__point_8hpp_source.html#l00032">code_point.hpp:32</a></div></div>
 <div class="ttc" id="namespace_om_html_adf9267d1ae1b3e5d447a3aaf7acd4834"><div class="ttname"><a href="namespace_om.html#adf9267d1ae1b3e5d447a3aaf7acd4834">Om::operator!=</a></div><div class="ttdeci">bool operator!=(DefaultAtom&lt; TheImplementation &gt; const &amp;, DefaultAtom&lt; TheImplementation &gt; const &amp;)</div></div>
+<div class="ttc" id="namespace_om_1_1_symbol_html_a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883"><div class="ttname"><a href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Om::Symbol::theEndOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00076">operand_symbol.hpp:76</a></div></div>
 <div class="ttc" id="separator__symbol_8hpp_html"><div class="ttname"><a href="separator__symbol_8hpp.html">separator_symbol.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="separator__symbol_8hpp_html_a98a23b0342d1c0ded1dad44f6cf8ed7b"><div class="ttname"><a href="separator__symbol_8hpp.html#a98a23b0342d1c0ded1dad44f6cf8ed7b">Om_Symbols_SeparatorSymbol_GetCases_</a></div><div class="ttdeci">#define Om_Symbols_SeparatorSymbol_GetCases_()</div><div class="ttdoc">Generates switch cases for each Om::Symbols::SeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00026">separator_symbol.hpp:26</a></div></div>
 <div class="ttc" id="operand__symbol_8hpp_html"><div class="ttname"><a href="operand__symbol_8hpp.html">operand_symbol.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="parser_8hpp_html"><div class="ttname"><a href="parser_8hpp.html">parser.hpp</a></div><div class="ttdoc">Om header file. </div></div>
+<div class="ttc" id="separator__symbol_8hpp_html_a1ef3df34170c70fa4028c1d408953b63"><div class="ttname"><a href="separator__symbol_8hpp.html#a1ef3df34170c70fa4028c1d408953b63">Om_Symbol_SeparatorSymbol_GetCases_</a></div><div class="ttdeci">#define Om_Symbol_SeparatorSymbol_GetCases_()</div><div class="ttdoc">Generates switch cases for each Om::Symbol::SeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00026">separator_symbol.hpp:26</a></div></div>
+<div class="ttc" id="namespace_om_1_1_symbol_html_a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b"><div class="ttname"><a href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b">Om::Symbol::theStartOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00072">operand_symbol.hpp:72</a></div></div>
 <div class="ttc" id="consumer_8hpp_html"><div class="ttname"><a href="consumer_8hpp.html">consumer.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="namespace_om_1_1_symbols_html_a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445"><div class="ttname"><a href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445">Om::Symbols::theStartOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00072">operand_symbol.hpp:72</a></div></div>
 <div class="ttc" id="namespace_om_html_ac6e60b21924d18e05e4ef84f08763c2b"><div class="ttname"><a href="namespace_om.html#ac6e60b21924d18e05e4ef84f08763c2b">Om::operator==</a></div><div class="ttdeci">bool operator==(DefaultAtom&lt; TheImplementation &gt; const &amp;, DefaultAtom&lt; TheImplementation &gt; const &amp;)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

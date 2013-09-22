@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operations/define_operation.cpp Source File</title>
+		<title>Om: om/operation/define_operation.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -58,9 +58,9 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 </div><!--header-->
 <div class="contents">
 <a href="define__operation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operations_DefineOperation_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operation_DefineOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="define__operation_8hpp.html">om/operations/define_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="define__operation_8hpp.html">om/operation/define_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifdef Om_Macros_Test_</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
@@ -72,7 +72,7 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        BOOST_AUTO_TEST_SUITE(DefineOperationTest)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
@@ -227,15 +227,15 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="environment_8hpp.html">om/environment.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">// MARK: - Om::Operations::DefineOperation</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">// MARK: - Om::Operation::DefineOperation</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">    Om::Operations::DefineOperation</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">    Om::Operation::DefineOperation</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * Type_::GetName() {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="define__operation_8hpp.html#ad2a7009ba55d0ee290f208b6b474b04f">Om_Operations_DefineOperation_GetName_</a>();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="define__operation_8hpp.html#aa8462825bb6760d6434a2fd43693a21c">Om_Operation_DefineOperation_GetName_</a>();</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheDefineOperation&gt;</div>
@@ -306,7 +306,7 @@ $(document).ready(function(){initNavTree('define__operation_8cpp_source.html',''
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="environment_8hpp_html"><div class="ttname"><a href="environment_8hpp.html">environment.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="define__operation_8hpp_html_ad2a7009ba55d0ee290f208b6b474b04f"><div class="ttname"><a href="define__operation_8hpp.html#ad2a7009ba55d0ee290f208b6b474b04f">Om_Operations_DefineOperation_GetName_</a></div><div class="ttdeci">#define Om_Operations_DefineOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="define__operation_8hpp_source.html#l00023">define_operation.hpp:23</a></div></div>
+<div class="ttc" id="define__operation_8hpp_html_aa8462825bb6760d6434a2fd43693a21c"><div class="ttname"><a href="define__operation_8hpp.html#aa8462825bb6760d6434a2fd43693a21c">Om_Operation_DefineOperation_GetName_</a></div><div class="ttdeci">#define Om_Operation_DefineOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="define__operation_8hpp_source.html#l00023">define_operation.hpp:23</a></div></div>
 <div class="ttc" id="class_om_1_1_system_html_a07d26350515fb1910ceba847dd735347"><div class="ttname"><a href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">Om::System::Get</a></div><div class="ttdeci">static System &amp; Get()</div></div>
 <div class="ttc" id="define__operation_8hpp_html"><div class="ttname"><a href="define__operation_8hpp.html">define_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/symbols/symbols.cpp Source File</title>
+		<title>Om: om/symbol/symbols.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -58,15 +58,15 @@ $(document).ready(function(){initNavTree('symbols_8cpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="symbols_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Symbols_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Symbol_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="symbols_8hpp.html">om/symbols/symbols.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="symbols_8hpp.html">om/symbol/symbols.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifdef Om_Macros_Test_</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="operand__symbol_8hpp.html">om/symbols/operand_symbol.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="operator__symbol_8hpp.html">om/symbols/operator_symbol.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="separator__symbol_8hpp.html">om/symbols/separator_symbol.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="operand__symbol_8hpp.html">om/symbol/operand_symbol.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="operator__symbol_8hpp.html">om/symbol/operator_symbol.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="separator__symbol_8hpp.html">om/symbol/separator_symbol.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">        #ifndef Om_Macros_Precompilation_</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
@@ -76,19 +76,19 @@ $(document).ready(function(){initNavTree('symbols_8cpp_source.html','');});
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    BOOST_AUTO_TEST_SUITE(SymbolsTest)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    BOOST_AUTO_TEST_SUITE(SymbolTest)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        BOOST_AUTO_TEST_CASE(StringizationTest) {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            BOOST_CHECK_EQUAL(</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="stringliteral">&quot;{test}` \t\n&quot;</span>,</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                (</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <a class="code" href="operand__symbol_8hpp.html#a76f9b6eb04b0e1f2129cf9d9497831de">Om_Symbols_OperandSymbol_GetStartString_</a>()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <a class="code" href="operand__symbol_8hpp.html#a9453af0c49ce4a22c43e4dd4e6ec9684">Om_Symbol_OperandSymbol_GetStartString_</a>()</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <span class="stringliteral">&quot;test&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <a class="code" href="operand__symbol_8hpp.html#aafbcc1f26401248d2761d5b27a798eea">Om_Symbols_OperandSymbol_GetEndString_</a>()</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <a class="code" href="operator__symbol_8hpp.html#a031e293fe7dc649693376ac862453046">Om_Symbols_OperatorSymbol_GetEncodeString_</a>()</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <a class="code" href="separator__symbol_8hpp.html#adb5a9913555709c93aa4706bb8aed2d4">Om_Symbols_SeparatorSymbol_GetSpaceString_</a>()</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <a class="code" href="separator__symbol_8hpp.html#ad7cd51ecb33b1704a189419d044842a0">Om_Symbols_SeparatorSymbol_GetTabString_</a>()</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <a class="code" href="separator__symbol_8hpp.html#a3096649a724d05143b806669086b0f86">Om_Symbols_SeparatorSymbol_GetLineString_</a>()</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <a class="code" href="operand__symbol_8hpp.html#acdec32b6bb80fb2fbc8c65b03958e992">Om_Symbol_OperandSymbol_GetEndString_</a>()</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <a class="code" href="operator__symbol_8hpp.html#afa5add6b9c550235f0b73b474e4eae59">Om_Symbol_OperatorSymbol_GetEncodeString_</a>()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <a class="code" href="separator__symbol_8hpp.html#a1956cff516e0370fafe717246c0f48af">Om_Symbol_SeparatorSymbol_GetSpaceString_</a>()</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <a class="code" href="separator__symbol_8hpp.html#a328f8448daf00c4d8e44953fc4d53c0c">Om_Symbol_SeparatorSymbol_GetTabString_</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <a class="code" href="separator__symbol_8hpp.html#a4e44990f154910b8d1bb337c06f49a52">Om_Symbol_SeparatorSymbol_GetLineString_</a>()</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                )</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            );</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
@@ -100,16 +100,16 @@ $(document).ready(function(){initNavTree('symbols_8cpp_source.html','');});
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="operand__symbol_8hpp_html_aafbcc1f26401248d2761d5b27a798eea"><div class="ttname"><a href="operand__symbol_8hpp.html#aafbcc1f26401248d2761d5b27a798eea">Om_Symbols_OperandSymbol_GetEndString_</a></div><div class="ttdeci">#define Om_Symbols_OperandSymbol_GetEndString_()</div><div class="ttdoc">A string literal representation of Om::Symbols::theEndOperandSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00057">operand_symbol.hpp:57</a></div></div>
+<div class="ttc" id="operator__symbol_8hpp_html_afa5add6b9c550235f0b73b474e4eae59"><div class="ttname"><a href="operator__symbol_8hpp.html#afa5add6b9c550235f0b73b474e4eae59">Om_Symbol_OperatorSymbol_GetEncodeString_</a></div><div class="ttdeci">#define Om_Symbol_OperatorSymbol_GetEncodeString_()</div><div class="ttdoc">A string literal representation of Om::Symbol::theEncodeOperatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="operator__symbol_8hpp_source.html#l00033">operator_symbol.hpp:33</a></div></div>
 <div class="ttc" id="operator__symbol_8hpp_html"><div class="ttname"><a href="operator__symbol_8hpp.html">operator_symbol.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="operator__symbol_8hpp_html_a031e293fe7dc649693376ac862453046"><div class="ttname"><a href="operator__symbol_8hpp.html#a031e293fe7dc649693376ac862453046">Om_Symbols_OperatorSymbol_GetEncodeString_</a></div><div class="ttdeci">#define Om_Symbols_OperatorSymbol_GetEncodeString_()</div><div class="ttdoc">A string literal representation of Om::Symbols::theEncodeOperatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="operator__symbol_8hpp_source.html#l00033">operator_symbol.hpp:33</a></div></div>
-<div class="ttc" id="operand__symbol_8hpp_html_a76f9b6eb04b0e1f2129cf9d9497831de"><div class="ttname"><a href="operand__symbol_8hpp.html#a76f9b6eb04b0e1f2129cf9d9497831de">Om_Symbols_OperandSymbol_GetStartString_</a></div><div class="ttdeci">#define Om_Symbols_OperandSymbol_GetStartString_()</div><div class="ttdoc">A string literal representation of Om::Symbols::theStartOperandSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00048">operand_symbol.hpp:48</a></div></div>
-<div class="ttc" id="separator__symbol_8hpp_html_ad7cd51ecb33b1704a189419d044842a0"><div class="ttname"><a href="separator__symbol_8hpp.html#ad7cd51ecb33b1704a189419d044842a0">Om_Symbols_SeparatorSymbol_GetTabString_</a></div><div class="ttdeci">#define Om_Symbols_SeparatorSymbol_GetTabString_()</div><div class="ttdoc">A string literal representation of Om::Symbols::theTabSeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00074">separator_symbol.hpp:74</a></div></div>
+<div class="ttc" id="operand__symbol_8hpp_html_acdec32b6bb80fb2fbc8c65b03958e992"><div class="ttname"><a href="operand__symbol_8hpp.html#acdec32b6bb80fb2fbc8c65b03958e992">Om_Symbol_OperandSymbol_GetEndString_</a></div><div class="ttdeci">#define Om_Symbol_OperandSymbol_GetEndString_()</div><div class="ttdoc">A string literal representation of Om::Symbol::theEndOperandSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00057">operand_symbol.hpp:57</a></div></div>
 <div class="ttc" id="symbols_8hpp_html"><div class="ttname"><a href="symbols_8hpp.html">symbols.hpp</a></div><div class="ttdoc">Om header file. </div></div>
+<div class="ttc" id="separator__symbol_8hpp_html_a4e44990f154910b8d1bb337c06f49a52"><div class="ttname"><a href="separator__symbol_8hpp.html#a4e44990f154910b8d1bb337c06f49a52">Om_Symbol_SeparatorSymbol_GetLineString_</a></div><div class="ttdeci">#define Om_Symbol_SeparatorSymbol_GetLineString_()</div><div class="ttdoc">A string literal representation of Om::Symbol::theLineSeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00065">separator_symbol.hpp:65</a></div></div>
+<div class="ttc" id="separator__symbol_8hpp_html_a328f8448daf00c4d8e44953fc4d53c0c"><div class="ttname"><a href="separator__symbol_8hpp.html#a328f8448daf00c4d8e44953fc4d53c0c">Om_Symbol_SeparatorSymbol_GetTabString_</a></div><div class="ttdeci">#define Om_Symbol_SeparatorSymbol_GetTabString_()</div><div class="ttdoc">A string literal representation of Om::Symbol::theTabSeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00074">separator_symbol.hpp:74</a></div></div>
 <div class="ttc" id="separator__symbol_8hpp_html"><div class="ttname"><a href="separator__symbol_8hpp.html">separator_symbol.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="operand__symbol_8hpp_html"><div class="ttname"><a href="operand__symbol_8hpp.html">operand_symbol.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="separator__symbol_8hpp_html_adb5a9913555709c93aa4706bb8aed2d4"><div class="ttname"><a href="separator__symbol_8hpp.html#adb5a9913555709c93aa4706bb8aed2d4">Om_Symbols_SeparatorSymbol_GetSpaceString_</a></div><div class="ttdeci">#define Om_Symbols_SeparatorSymbol_GetSpaceString_()</div><div class="ttdoc">A string literal representation of Om::Symbols::theSpaceSeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00056">separator_symbol.hpp:56</a></div></div>
-<div class="ttc" id="separator__symbol_8hpp_html_a3096649a724d05143b806669086b0f86"><div class="ttname"><a href="separator__symbol_8hpp.html#a3096649a724d05143b806669086b0f86">Om_Symbols_SeparatorSymbol_GetLineString_</a></div><div class="ttdeci">#define Om_Symbols_SeparatorSymbol_GetLineString_()</div><div class="ttdoc">A string literal representation of Om::Symbols::theLineSeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00065">separator_symbol.hpp:65</a></div></div>
+<div class="ttc" id="operand__symbol_8hpp_html_a9453af0c49ce4a22c43e4dd4e6ec9684"><div class="ttname"><a href="operand__symbol_8hpp.html#a9453af0c49ce4a22c43e4dd4e6ec9684">Om_Symbol_OperandSymbol_GetStartString_</a></div><div class="ttdeci">#define Om_Symbol_OperandSymbol_GetStartString_()</div><div class="ttdoc">A string literal representation of Om::Symbol::theStartOperandSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00048">operand_symbol.hpp:48</a></div></div>
+<div class="ttc" id="separator__symbol_8hpp_html_a1956cff516e0370fafe717246c0f48af"><div class="ttname"><a href="separator__symbol_8hpp.html#a1956cff516e0370fafe717246c0f48af">Om_Symbol_SeparatorSymbol_GetSpaceString_</a></div><div class="ttdeci">#define Om_Symbol_SeparatorSymbol_GetSpaceString_()</div><div class="ttdoc">A string literal representation of Om::Symbol::theSpaceSeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00056">separator_symbol.hpp:56</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

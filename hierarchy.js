@@ -132,155 +132,155 @@ var hierarchy =
     [ "Om::Moveable", "class_om_1_1_moveable.html", [
       [ "Om::Giveable", "class_om_1_1_giveable.html", null ]
     ] ],
-    [ "Om::Operations::BackPullCharacterOperation", "class_om_1_1_operations_1_1_back_pull_character_operation.html", null ],
-    [ "Om::Operations::BackPullCodePointOperation", "class_om_1_1_operations_1_1_back_pull_code_point_operation.html", null ],
-    [ "Om::Operations::BackPullElementOperation", "class_om_1_1_operations_1_1_back_pull_element_operation.html", null ],
-    [ "Om::Operations::BackPullFormOperation", "class_om_1_1_operations_1_1_back_pull_form_operation.html", null ],
-    [ "Om::Operations::BackPullOperandOperation", "class_om_1_1_operations_1_1_back_pull_operand_operation.html", null ],
-    [ "Om::Operations::BackPullOperatorOperation", "class_om_1_1_operations_1_1_back_pull_operator_operation.html", null ],
-    [ "Om::Operations::BackPullPairOperation", "class_om_1_1_operations_1_1_back_pull_pair_operation.html", null ],
-    [ "Om::Operations::BackPullSeparatorOperation", "class_om_1_1_operations_1_1_back_pull_separator_operation.html", null ],
-    [ "Om::Operations::BackPullTermOperation", "class_om_1_1_operations_1_1_back_pull_term_operation.html", null ],
-    [ "Om::Operations::DoOperation", "class_om_1_1_operations_1_1_do_operation.html", null ],
-    [ "Om::Operations::EnvironmentOperation", "class_om_1_1_operations_1_1_environment_operation.html", null ],
-    [ "Om::Operations::ExpressionBackPushOperation", "class_om_1_1_operations_1_1_expression_back_push_operation.html", null ],
-    [ "Om::Operations::ExpressionFrontPushOperation", "class_om_1_1_operations_1_1_expression_front_push_operation.html", null ],
-    [ "Om::Operations::FrontPullCharacterOperation", "class_om_1_1_operations_1_1_front_pull_character_operation.html", null ],
-    [ "Om::Operations::FrontPullCodePointOperation", "class_om_1_1_operations_1_1_front_pull_code_point_operation.html", null ],
-    [ "Om::Operations::FrontPullElementOperation", "class_om_1_1_operations_1_1_front_pull_element_operation.html", null ],
-    [ "Om::Operations::FrontPullFormOperation", "class_om_1_1_operations_1_1_front_pull_form_operation.html", null ],
-    [ "Om::Operations::FrontPullOperandOperation", "class_om_1_1_operations_1_1_front_pull_operand_operation.html", null ],
-    [ "Om::Operations::FrontPullOperatorOperation", "class_om_1_1_operations_1_1_front_pull_operator_operation.html", null ],
-    [ "Om::Operations::FrontPullPairOperation", "class_om_1_1_operations_1_1_front_pull_pair_operation.html", null ],
-    [ "Om::Operations::FrontPullSeparatorOperation", "class_om_1_1_operations_1_1_front_pull_separator_operation.html", null ],
-    [ "Om::Operations::FrontPullTermOperation", "class_om_1_1_operations_1_1_front_pull_term_operation.html", null ],
-    [ "Om::Operations::IncompleteOperation", "class_om_1_1_operations_1_1_incomplete_operation.html", [
-      [ "Om::Operations::DefaultIncompleteOperation< ChooseOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::ChooseOperation", "class_om_1_1_operations_1_1_choose_operation.html", null ]
+    [ "Om::Operation::BackPullCharacterOperation", "class_om_1_1_operation_1_1_back_pull_character_operation.html", null ],
+    [ "Om::Operation::BackPullCodePointOperation", "class_om_1_1_operation_1_1_back_pull_code_point_operation.html", null ],
+    [ "Om::Operation::BackPullElementOperation", "class_om_1_1_operation_1_1_back_pull_element_operation.html", null ],
+    [ "Om::Operation::BackPullFormOperation", "class_om_1_1_operation_1_1_back_pull_form_operation.html", null ],
+    [ "Om::Operation::BackPullOperandOperation", "class_om_1_1_operation_1_1_back_pull_operand_operation.html", null ],
+    [ "Om::Operation::BackPullOperatorOperation", "class_om_1_1_operation_1_1_back_pull_operator_operation.html", null ],
+    [ "Om::Operation::BackPullPairOperation", "class_om_1_1_operation_1_1_back_pull_pair_operation.html", null ],
+    [ "Om::Operation::BackPullSeparatorOperation", "class_om_1_1_operation_1_1_back_pull_separator_operation.html", null ],
+    [ "Om::Operation::BackPullTermOperation", "class_om_1_1_operation_1_1_back_pull_term_operation.html", null ],
+    [ "Om::Operation::DoOperation", "class_om_1_1_operation_1_1_do_operation.html", null ],
+    [ "Om::Operation::EnvironmentOperation", "class_om_1_1_operation_1_1_environment_operation.html", null ],
+    [ "Om::Operation::ExpressionBackPushOperation", "class_om_1_1_operation_1_1_expression_back_push_operation.html", null ],
+    [ "Om::Operation::ExpressionFrontPushOperation", "class_om_1_1_operation_1_1_expression_front_push_operation.html", null ],
+    [ "Om::Operation::FrontPullCharacterOperation", "class_om_1_1_operation_1_1_front_pull_character_operation.html", null ],
+    [ "Om::Operation::FrontPullCodePointOperation", "class_om_1_1_operation_1_1_front_pull_code_point_operation.html", null ],
+    [ "Om::Operation::FrontPullElementOperation", "class_om_1_1_operation_1_1_front_pull_element_operation.html", null ],
+    [ "Om::Operation::FrontPullFormOperation", "class_om_1_1_operation_1_1_front_pull_form_operation.html", null ],
+    [ "Om::Operation::FrontPullOperandOperation", "class_om_1_1_operation_1_1_front_pull_operand_operation.html", null ],
+    [ "Om::Operation::FrontPullOperatorOperation", "class_om_1_1_operation_1_1_front_pull_operator_operation.html", null ],
+    [ "Om::Operation::FrontPullPairOperation", "class_om_1_1_operation_1_1_front_pull_pair_operation.html", null ],
+    [ "Om::Operation::FrontPullSeparatorOperation", "class_om_1_1_operation_1_1_front_pull_separator_operation.html", null ],
+    [ "Om::Operation::FrontPullTermOperation", "class_om_1_1_operation_1_1_front_pull_term_operation.html", null ],
+    [ "Om::Operation::IncompleteOperation", "class_om_1_1_operation_1_1_incomplete_operation.html", [
+      [ "Om::Operation::DefaultIncompleteOperation< ChooseOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::ChooseOperation", "class_om_1_1_operation_1_1_choose_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< CopyOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::CopyOperation", "class_om_1_1_operations_1_1_copy_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< CopyOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::CopyOperation", "class_om_1_1_operation_1_1_copy_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< DecodeOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::DecodeOperation", "class_om_1_1_operations_1_1_decode_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< DecodeOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::DecodeOperation", "class_om_1_1_operation_1_1_decode_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< DefineOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::DefineOperation", "class_om_1_1_operations_1_1_define_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< DefineOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::DefineOperation", "class_om_1_1_operation_1_1_define_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< DequoteOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::DequoteOperation", "class_om_1_1_operations_1_1_dequote_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< DequoteOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::DequoteOperation", "class_om_1_1_operation_1_1_dequote_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< DropOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::DropOperation", "class_om_1_1_operations_1_1_drop_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< DropOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::DropOperation", "class_om_1_1_operation_1_1_drop_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< EncodeOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::EncodeOperation", "class_om_1_1_operations_1_1_encode_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< EncodeOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::EncodeOperation", "class_om_1_1_operation_1_1_encode_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< EqualsOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::EqualsOperation", "class_om_1_1_operations_1_1_equals_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< EqualsOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::EqualsOperation", "class_om_1_1_operation_1_1_equals_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< EvaluateOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::EvaluateOperation", "class_om_1_1_operations_1_1_evaluate_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< EvaluateOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::EvaluateOperation", "class_om_1_1_operation_1_1_evaluate_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< FillOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::FillOperation", "class_om_1_1_operations_1_1_fill_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< FillOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::FillOperation", "class_om_1_1_operation_1_1_fill_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< FindOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::FindOperation", "class_om_1_1_operations_1_1_find_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< FindOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::FindOperation", "class_om_1_1_operation_1_1_find_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< FrontPushOperation< ThisProgram, ThisImplementation > >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::FrontPushOperation< ThisProgram, ThisImplementation >", "class_om_1_1_operations_1_1_front_push_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< FrontPushOperation< ThisProgram, ThisImplementation > >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::FrontPushOperation< ThisProgram, ThisImplementation >", "class_om_1_1_operation_1_1_front_push_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< InjectOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::InjectOperation", "class_om_1_1_operations_1_1_inject_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< InjectOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::InjectOperation", "class_om_1_1_operation_1_1_inject_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< NormalizeOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::NormalizeOperation", "class_om_1_1_operations_1_1_normalize_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< NormalizeOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::NormalizeOperation", "class_om_1_1_operation_1_1_normalize_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< PairOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::PairOperation", "class_om_1_1_operations_1_1_pair_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< PairOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::PairOperation", "class_om_1_1_operation_1_1_pair_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< ProgramOperation< ThisProgram > >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::ProgramOperation< ThisProgram >", "class_om_1_1_operations_1_1_program_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< ProgramOperation< ThisProgram > >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::ProgramOperation< ThisProgram >", "class_om_1_1_operation_1_1_program_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< PullOperation< ThisProgram, ThisImplementation > >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::PullOperation< ThisProgram, ThisImplementation >", "class_om_1_1_operations_1_1_pull_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< PullOperation< ThisProgram, ThisImplementation > >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::PullOperation< ThisProgram, ThisImplementation >", "class_om_1_1_operation_1_1_pull_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< QuoteOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::QuoteOperation", "class_om_1_1_operations_1_1_quote_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< QuoteOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::QuoteOperation", "class_om_1_1_operation_1_1_quote_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< SkipOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::SkipOperation", "class_om_1_1_operations_1_1_skip_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< SkipOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::SkipOperation", "class_om_1_1_operation_1_1_skip_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< SubstituteOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::TranslateOperation< SubstituteOperation >", "class_om_1_1_operations_1_1_translate_operation.html", [
-          [ "Om::Operations::SubstituteOperation", "class_om_1_1_operations_1_1_substitute_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< SubstituteOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::TranslateOperation< SubstituteOperation >", "class_om_1_1_operation_1_1_translate_operation.html", [
+          [ "Om::Operation::SubstituteOperation", "class_om_1_1_operation_1_1_substitute_operation.html", null ]
         ] ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< SwapOperation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::SwapOperation", "class_om_1_1_operations_1_1_swap_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< SwapOperation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::SwapOperation", "class_om_1_1_operation_1_1_swap_operation.html", null ]
       ] ],
-      [ "Om::Operations::DefaultIncompleteOperation< ThisImplementation >", "class_om_1_1_operations_1_1_default_incomplete_operation.html", [
-        [ "Om::Operations::TranslateOperation< ThisImplementation >", "class_om_1_1_operations_1_1_translate_operation.html", null ]
+      [ "Om::Operation::DefaultIncompleteOperation< ThisImplementation >", "class_om_1_1_operation_1_1_default_incomplete_operation.html", [
+        [ "Om::Operation::TranslateOperation< ThisImplementation >", "class_om_1_1_operation_1_1_translate_operation.html", null ]
       ] ]
     ] ],
-    [ "Om::Operations::LexiconBackPushOperation", "class_om_1_1_operations_1_1_lexicon_back_push_operation.html", null ],
-    [ "Om::Operations::LexiconFrontPushOperation", "class_om_1_1_operations_1_1_lexicon_front_push_operation.html", null ],
-    [ "Om::Operations::LiteralBackPushOperation", "class_om_1_1_operations_1_1_literal_back_push_operation.html", null ],
-    [ "Om::Operations::LiteralFrontPushOperation", "class_om_1_1_operations_1_1_literal_front_push_operation.html", null ],
-    [ "Om::Operations::OperatorBackPushOperation", "class_om_1_1_operations_1_1_operator_back_push_operation.html", null ],
-    [ "Om::Operations::OperatorFrontPushOperation", "class_om_1_1_operations_1_1_operator_front_push_operation.html", null ],
-    [ "Om::Operations::RearrangeOperation", "class_om_1_1_operations_1_1_rearrange_operation.html", null ],
-    [ "Om::Operations::SystemOperation", "class_om_1_1_operations_1_1_system_operation.html", null ],
+    [ "Om::Operation::LexiconBackPushOperation", "class_om_1_1_operation_1_1_lexicon_back_push_operation.html", null ],
+    [ "Om::Operation::LexiconFrontPushOperation", "class_om_1_1_operation_1_1_lexicon_front_push_operation.html", null ],
+    [ "Om::Operation::LiteralBackPushOperation", "class_om_1_1_operation_1_1_literal_back_push_operation.html", null ],
+    [ "Om::Operation::LiteralFrontPushOperation", "class_om_1_1_operation_1_1_literal_front_push_operation.html", null ],
+    [ "Om::Operation::OperatorBackPushOperation", "class_om_1_1_operation_1_1_operator_back_push_operation.html", null ],
+    [ "Om::Operation::OperatorFrontPushOperation", "class_om_1_1_operation_1_1_operator_front_push_operation.html", null ],
+    [ "Om::Operation::RearrangeOperation", "class_om_1_1_operation_1_1_rearrange_operation.html", null ],
+    [ "Om::Operation::SystemOperation", "class_om_1_1_operation_1_1_system_operation.html", null ],
     [ "Om::Pair", "class_om_1_1_pair.html", null ],
     [ "Om::Producer", "class_om_1_1_producer.html", [
       [ "Om::Evaluator", "class_om_1_1_evaluator.html", null ],
       [ "Om::Program", "class_om_1_1_program.html", null ]
     ] ],
     [ "Om::Shareable< ThisOwnerCount >", "class_om_1_1_shareable.html", null ],
-    [ "Om::Sink< ThisItem >", "class_om_1_1_sink.html", [
-      [ "Om::Sinks::DefaultSink< ThisItem, ContainerBackSink< ThisItem, ThisContainer > >", "class_om_1_1_sinks_1_1_default_sink.html", [
-        [ "Om::Sinks::ContainerBackSink< ThisItem, ThisContainer >", "class_om_1_1_sinks_1_1_container_back_sink.html", null ]
+    [ "Om::Sink::Sink< ThisItem >", "class_om_1_1_sink_1_1_sink.html", [
+      [ "Om::Sink::DefaultSink< ThisItem, ContainerBackSink< ThisItem, ThisContainer > >", "class_om_1_1_sink_1_1_default_sink.html", [
+        [ "Om::Sink::ContainerBackSink< ThisItem, ThisContainer >", "class_om_1_1_sink_1_1_container_back_sink.html", null ]
       ] ],
-      [ "Om::Sinks::DefaultSink< ThisItem, ContainerFrontSink< ThisItem, ThisContainer > >", "class_om_1_1_sinks_1_1_default_sink.html", [
-        [ "Om::Sinks::ContainerFrontSink< ThisItem, ThisContainer >", "class_om_1_1_sinks_1_1_container_front_sink.html", null ]
+      [ "Om::Sink::DefaultSink< ThisItem, ContainerFrontSink< ThisItem, ThisContainer > >", "class_om_1_1_sink_1_1_default_sink.html", [
+        [ "Om::Sink::ContainerFrontSink< ThisItem, ThisContainer >", "class_om_1_1_sink_1_1_container_front_sink.html", null ]
       ] ],
-      [ "Om::Sinks::DefaultSink< ThisItem, IteratorSink< ThisItem, std::ostreambuf_iterator< ThisItem > > >", "class_om_1_1_sinks_1_1_default_sink.html", [
-        [ "Om::Sinks::IteratorSink< ThisItem const, std::ostreambuf_iterator< ThisItem > >", "class_om_1_1_sinks_1_1_iterator_sink.html", [
-          [ "Om::Sinks::StreamSink< ThisItem >", "class_om_1_1_sinks_1_1_stream_sink.html", null ]
+      [ "Om::Sink::DefaultSink< ThisItem, IteratorSink< ThisItem, std::ostreambuf_iterator< ThisItem > > >", "class_om_1_1_sink_1_1_default_sink.html", [
+        [ "Om::Sink::IteratorSink< ThisItem const, std::ostreambuf_iterator< ThisItem > >", "class_om_1_1_sink_1_1_iterator_sink.html", [
+          [ "Om::Sink::StreamSink< ThisItem >", "class_om_1_1_sink_1_1_stream_sink.html", null ]
         ] ]
       ] ],
-      [ "Om::Sinks::DefaultSink< ThisItem, IteratorSink< ThisItem, ThisIterator > >", "class_om_1_1_sinks_1_1_default_sink.html", [
-        [ "Om::Sinks::IteratorSink< ThisItem, ThisIterator >", "class_om_1_1_sinks_1_1_iterator_sink.html", null ]
+      [ "Om::Sink::DefaultSink< ThisItem, IteratorSink< ThisItem, ThisIterator > >", "class_om_1_1_sink_1_1_default_sink.html", [
+        [ "Om::Sink::IteratorSink< ThisItem, ThisIterator >", "class_om_1_1_sink_1_1_iterator_sink.html", null ]
       ] ],
-      [ "Om::Sinks::DefaultSink< ThisItem, ThisImplementation >", "class_om_1_1_sinks_1_1_default_sink.html", null ]
+      [ "Om::Sink::DefaultSink< ThisItem, ThisImplementation >", "class_om_1_1_sink_1_1_default_sink.html", null ]
     ] ],
-    [ "Om::Source< ThisItem >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< ThisItem const, StreamSource< ThisItem > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::StreamSource< ThisItem >", "class_om_1_1_sources_1_1_stream_source.html", null ]
+    [ "Om::Source::Source< ThisItem >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< ThisItem const, StreamSource< ThisItem > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::StreamSource< ThisItem >", "class_om_1_1_source_1_1_stream_source.html", null ]
       ] ],
-      [ "Om::Sources::DefaultSource< ThisItem, ContainerBackSource< ThisItem, ThisContainer > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::ContainerBackSource< ThisItem, ThisContainer >", "class_om_1_1_sources_1_1_container_back_source.html", null ]
+      [ "Om::Source::DefaultSource< ThisItem, ContainerBackSource< ThisItem, ThisContainer > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::ContainerBackSource< ThisItem, ThisContainer >", "class_om_1_1_source_1_1_container_back_source.html", null ]
       ] ],
-      [ "Om::Sources::DefaultSource< ThisItem, ContainerFrontSource< ThisItem, ThisContainer > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::ContainerFrontSource< ThisItem, ThisContainer >", "class_om_1_1_sources_1_1_container_front_source.html", null ]
+      [ "Om::Source::DefaultSource< ThisItem, ContainerFrontSource< ThisItem, ThisContainer > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::ContainerFrontSource< ThisItem, ThisContainer >", "class_om_1_1_source_1_1_container_front_source.html", null ]
       ] ],
-      [ "Om::Sources::DefaultSource< ThisItem, EmptySource< ThisItem > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::EmptySource< ThisItem >", "class_om_1_1_sources_1_1_empty_source.html", null ]
+      [ "Om::Source::DefaultSource< ThisItem, EmptySource< ThisItem > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::EmptySource< ThisItem >", "class_om_1_1_source_1_1_empty_source.html", null ]
       ] ],
-      [ "Om::Sources::DefaultSource< ThisItem, IteratorPairSource< ThisItem, ThisIterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::IteratorPairSource< ThisItem, ThisIterator >", "class_om_1_1_sources_1_1_iterator_pair_source.html", [
-          [ "Om::Sources::CollectionBackSource< ThisItem, ThisIterator >", "class_om_1_1_sources_1_1_collection_back_source.html", null ],
-          [ "Om::Sources::CollectionFrontSource< ThisItem, ThisIterator >", "class_om_1_1_sources_1_1_collection_front_source.html", null ]
+      [ "Om::Source::DefaultSource< ThisItem, IteratorPairSource< ThisItem, ThisIterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::IteratorPairSource< ThisItem, ThisIterator >", "class_om_1_1_source_1_1_iterator_pair_source.html", [
+          [ "Om::Source::CollectionBackSource< ThisItem, ThisIterator >", "class_om_1_1_source_1_1_collection_back_source.html", null ],
+          [ "Om::Source::CollectionFrontSource< ThisItem, ThisIterator >", "class_om_1_1_source_1_1_collection_front_source.html", null ]
         ] ]
       ] ],
-      [ "Om::Sources::DefaultSource< ThisItem, IteratorSource< ThisItem, ThisIterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::IteratorSource< ThisItem, ThisIterator >", "class_om_1_1_sources_1_1_iterator_source.html", null ]
+      [ "Om::Source::DefaultSource< ThisItem, IteratorSource< ThisItem, ThisIterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::IteratorSource< ThisItem, ThisIterator >", "class_om_1_1_source_1_1_iterator_source.html", null ]
       ] ],
-      [ "Om::Sources::DefaultSource< ThisItem, SingletonSource< ThisItem > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::SingletonSource< ThisItem >", "class_om_1_1_sources_1_1_singleton_source.html", null ]
+      [ "Om::Source::DefaultSource< ThisItem, SingletonSource< ThisItem > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::SingletonSource< ThisItem >", "class_om_1_1_source_1_1_singleton_source.html", null ]
       ] ],
-      [ "Om::Sources::DefaultSource< ThisItem, ThisImplementation >", "class_om_1_1_sources_1_1_default_source.html", null ]
+      [ "Om::Source::DefaultSource< ThisItem, ThisImplementation >", "class_om_1_1_source_1_1_default_source.html", null ]
     ] ],
     [ "Om::System::Definition< ThisOperation >", "class_om_1_1_system_1_1_definition.html", null ],
     [ "Om::Taker< ThisImplementation >", "class_om_1_1_taker.html", [
@@ -297,124 +297,124 @@ var hierarchy =
     [ "Om::Shareable<>", "class_om_1_1_shareable.html", [
       [ "Om::Program", "class_om_1_1_program.html", null ]
     ] ],
-    [ "Om::Sink< CodePoint const  >", "class_om_1_1_sink.html", [
-      [ "Om::Sinks::DefaultSink< CodePoint const, CodePointSink< ThisCodeUnitIterator > >", "class_om_1_1_sinks_1_1_default_sink.html", [
-        [ "Om::Sinks::CodePointSink< ThisCodeUnitIterator >", "class_om_1_1_sinks_1_1_code_point_sink.html", null ]
+    [ "Om::Sink::Sink< CodePoint const  >", "class_om_1_1_sink_1_1_sink.html", [
+      [ "Om::Sink::DefaultSink< CodePoint const, CodePointSink< ThisCodeUnitIterator > >", "class_om_1_1_sink_1_1_default_sink.html", [
+        [ "Om::Sink::CodePointSink< ThisCodeUnitIterator >", "class_om_1_1_sink_1_1_code_point_sink.html", null ]
       ] ]
     ] ],
-    [ "Om::Source< char const  >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< char const , IteratorSource< char const , char const * > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::IteratorSource< char const, char const * >", "class_om_1_1_sources_1_1_iterator_source.html", null ]
+    [ "Om::Source::Source< char const  >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< char const , IteratorSource< char const , char const * > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::IteratorSource< char const, char const * >", "class_om_1_1_source_1_1_iterator_source.html", null ]
       ] ]
     ] ],
-    [ "Om::Source< CodePoint const  >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< CodePoint const, CodePointSource< IteratorSource< char const, char const * > > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::CodePointSource< IteratorSource< char const, char const * > >", "class_om_1_1_sources_1_1_code_point_source.html", [
-          [ "Om::Sources::CodePointSource< char const * >", "class_om_1_1_sources_1_1_code_point_source_3_01char_01const_01_5_01_4.html", null ]
+    [ "Om::Source::Source< CodePoint const  >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< CodePoint const, CodePointSource< IteratorSource< char const, char const * > > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::CodePointSource< IteratorSource< char const, char const * > >", "class_om_1_1_source_1_1_code_point_source.html", [
+          [ "Om::Source::CodePointSource< char const * >", "class_om_1_1_source_1_1_code_point_source_3_01char_01const_01_5_01_4.html", null ]
         ] ]
       ] ],
-      [ "Om::Sources::DefaultSource< CodePoint const, CodePointSource< ThisCodeUnitIterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::CodePointSource< ThisCodeUnitIterator >", "class_om_1_1_sources_1_1_code_point_source.html", null ]
+      [ "Om::Source::DefaultSource< CodePoint const, CodePointSource< ThisCodeUnitIterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::CodePointSource< ThisCodeUnitIterator >", "class_om_1_1_source_1_1_code_point_source.html", null ]
       ] ],
-      [ "Om::Sources::DefaultSource< CodePoint const, Parser >", "class_om_1_1_sources_1_1_default_source.html", [
+      [ "Om::Source::DefaultSource< CodePoint const, Parser >", "class_om_1_1_source_1_1_default_source.html", [
         [ "Om::Parser", "class_om_1_1_parser.html", null ]
       ] ]
     ] ],
-    [ "Om::Source< Element >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< Element, IteratorPairSource< Element, ElementDeque::iterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::IteratorPairSource< Element, ElementDeque::iterator >", "class_om_1_1_sources_1_1_iterator_pair_source.html", [
-          [ "Om::Sources::CollectionFrontSource< Element, ElementDeque::iterator >", "class_om_1_1_sources_1_1_collection_front_source.html", [
+    [ "Om::Source::Source< Element >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< Element, IteratorPairSource< Element, ElementDeque::iterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::IteratorPairSource< Element, ElementDeque::iterator >", "class_om_1_1_source_1_1_iterator_pair_source.html", [
+          [ "Om::Source::CollectionFrontSource< Element, ElementDeque::iterator >", "class_om_1_1_source_1_1_collection_front_source.html", [
             [ "Om::Literal::ElementRange< Literal >", "class_om_1_1_literal_1_1_element_range_3_01_literal_01_4.html", null ]
           ] ]
         ] ]
       ] ]
     ] ],
-    [ "Om::Source< Element const  >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< Element const , IteratorPairSource< Element const , ElementDeque::const_iterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::IteratorPairSource< Element const , ElementDeque::const_iterator >", "class_om_1_1_sources_1_1_iterator_pair_source.html", [
-          [ "Om::Sources::CollectionFrontSource< Element const, ElementDeque::const_iterator >", "class_om_1_1_sources_1_1_collection_front_source.html", [
+    [ "Om::Source::Source< Element const  >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< Element const , IteratorPairSource< Element const , ElementDeque::const_iterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::IteratorPairSource< Element const , ElementDeque::const_iterator >", "class_om_1_1_source_1_1_iterator_pair_source.html", [
+          [ "Om::Source::CollectionFrontSource< Element const, ElementDeque::const_iterator >", "class_om_1_1_source_1_1_collection_front_source.html", [
             [ "Om::Literal::ElementRange< Literal const  >", "class_om_1_1_literal_1_1_element_range_3_01_literal_01const_01_01_4.html", null ]
           ] ]
         ] ]
       ] ],
-      [ "Om::Sources::DefaultSource< Element const, ElementRange >", "class_om_1_1_sources_1_1_default_source.html", [
+      [ "Om::Source::DefaultSource< Element const, ElementRange >", "class_om_1_1_source_1_1_default_source.html", [
         [ "Om::Expression::ElementRange", "class_om_1_1_expression_1_1_element_range.html", null ],
         [ "Om::Form::ElementRange", "class_om_1_1_form_1_1_element_range.html", null ],
         [ "Om::Lexicon::ElementRange", "class_om_1_1_lexicon_1_1_element_range.html", null ]
       ] ]
     ] ],
-    [ "Om::Source< Form >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< Form, IteratorPairSource< Form, FormDeque::iterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::IteratorPairSource< Form, FormDeque::iterator >", "class_om_1_1_sources_1_1_iterator_pair_source.html", [
-          [ "Om::Sources::CollectionFrontSource< Form, FormDeque::iterator >", "class_om_1_1_sources_1_1_collection_front_source.html", [
+    [ "Om::Source::Source< Form >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< Form, IteratorPairSource< Form, FormDeque::iterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::IteratorPairSource< Form, FormDeque::iterator >", "class_om_1_1_source_1_1_iterator_pair_source.html", [
+          [ "Om::Source::CollectionFrontSource< Form, FormDeque::iterator >", "class_om_1_1_source_1_1_collection_front_source.html", [
             [ "Om::Expression::FormRange< Form >", "class_om_1_1_expression_1_1_form_range_3_01_form_01_4.html", null ]
           ] ]
         ] ]
       ] ]
     ] ],
-    [ "Om::Source< Form const  >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< Form const , IteratorPairSource< Form const , FormDeque::const_iterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::IteratorPairSource< Form const , FormDeque::const_iterator >", "class_om_1_1_sources_1_1_iterator_pair_source.html", [
-          [ "Om::Sources::CollectionFrontSource< Form const, FormDeque::const_iterator >", "class_om_1_1_sources_1_1_collection_front_source.html", [
+    [ "Om::Source::Source< Form const  >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< Form const , IteratorPairSource< Form const , FormDeque::const_iterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::IteratorPairSource< Form const , FormDeque::const_iterator >", "class_om_1_1_source_1_1_iterator_pair_source.html", [
+          [ "Om::Source::CollectionFrontSource< Form const, FormDeque::const_iterator >", "class_om_1_1_source_1_1_collection_front_source.html", [
             [ "Om::Expression::FormRange< Form const  >", "class_om_1_1_expression_1_1_form_range_3_01_form_01const_01_01_4.html", null ]
           ] ]
         ] ]
       ] ]
     ] ],
-    [ "Om::Source< Operand >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< Operand, IteratorPairSource< Operand, OperandDeque::iterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::IteratorPairSource< Operand, OperandDeque::iterator >", "class_om_1_1_sources_1_1_iterator_pair_source.html", [
-          [ "Om::Sources::CollectionFrontSource< Operand, OperandDeque::iterator >", "class_om_1_1_sources_1_1_collection_front_source.html", [
+    [ "Om::Source::Source< Operand >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< Operand, IteratorPairSource< Operand, OperandDeque::iterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::IteratorPairSource< Operand, OperandDeque::iterator >", "class_om_1_1_source_1_1_iterator_pair_source.html", [
+          [ "Om::Source::CollectionFrontSource< Operand, OperandDeque::iterator >", "class_om_1_1_source_1_1_collection_front_source.html", [
             [ "Om::Form::OperandRange< Operand >", "class_om_1_1_form_1_1_operand_range_3_01_operand_01_4.html", null ]
           ] ]
         ] ]
       ] ]
     ] ],
-    [ "Om::Source< Operand const  >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< Operand const , IteratorPairSource< Operand const , OperandDeque::const_iterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::IteratorPairSource< Operand const , OperandDeque::const_iterator >", "class_om_1_1_sources_1_1_iterator_pair_source.html", [
-          [ "Om::Sources::CollectionFrontSource< Operand const, OperandDeque::const_iterator >", "class_om_1_1_sources_1_1_collection_front_source.html", [
+    [ "Om::Source::Source< Operand const  >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< Operand const , IteratorPairSource< Operand const , OperandDeque::const_iterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::IteratorPairSource< Operand const , OperandDeque::const_iterator >", "class_om_1_1_source_1_1_iterator_pair_source.html", [
+          [ "Om::Source::CollectionFrontSource< Operand const, OperandDeque::const_iterator >", "class_om_1_1_source_1_1_collection_front_source.html", [
             [ "Om::Form::OperandRange< Operand const  >", "class_om_1_1_form_1_1_operand_range_3_01_operand_01const_01_01_4.html", null ]
           ] ]
         ] ]
       ] ]
     ] ],
-    [ "Om::Source< std::string >", "class_om_1_1_source.html", [
-      [ "Om::Sources::DefaultSource< std::string, CodePointStringBackSource< ThisStringIterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::CodePointStringBackSource< ThisStringIterator >", "class_om_1_1_sources_1_1_code_point_string_back_source.html", null ]
+    [ "Om::Source::Source< std::string >", "class_om_1_1_source_1_1_source.html", [
+      [ "Om::Source::DefaultSource< std::string, CodePointStringBackSource< ThisStringIterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::CodePointStringBackSource< ThisStringIterator >", "class_om_1_1_source_1_1_code_point_string_back_source.html", null ]
       ] ],
-      [ "Om::Sources::DefaultSource< std::string, CodePointStringFrontSource< ThisStringIterator > >", "class_om_1_1_sources_1_1_default_source.html", [
-        [ "Om::Sources::CodePointStringFrontSource< ThisStringIterator >", "class_om_1_1_sources_1_1_code_point_string_front_source.html", null ]
+      [ "Om::Source::DefaultSource< std::string, CodePointStringFrontSource< ThisStringIterator > >", "class_om_1_1_source_1_1_default_source.html", [
+        [ "Om::Source::CodePointStringFrontSource< ThisStringIterator >", "class_om_1_1_source_1_1_code_point_string_front_source.html", null ]
       ] ]
     ] ],
     [ "iterator", null, [
-      [ "Om::Sinks::DefaultSink< CodePoint const, CodePointSink< ThisCodeUnitIterator > >", "class_om_1_1_sinks_1_1_default_sink.html", null ],
-      [ "Om::Sinks::DefaultSink< ThisItem, ContainerBackSink< ThisItem, ThisContainer > >", "class_om_1_1_sinks_1_1_default_sink.html", null ],
-      [ "Om::Sinks::DefaultSink< ThisItem, ContainerFrontSink< ThisItem, ThisContainer > >", "class_om_1_1_sinks_1_1_default_sink.html", null ],
-      [ "Om::Sinks::DefaultSink< ThisItem, IteratorSink< ThisItem, std::ostreambuf_iterator< ThisItem > > >", "class_om_1_1_sinks_1_1_default_sink.html", null ],
-      [ "Om::Sinks::DefaultSink< ThisItem, IteratorSink< ThisItem, ThisIterator > >", "class_om_1_1_sinks_1_1_default_sink.html", null ],
-      [ "Om::Sources::DefaultSource< char const , IteratorSource< char const , char const * > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< CodePoint const, CodePointSource< IteratorSource< char const, char const * > > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< CodePoint const, CodePointSource< ThisCodeUnitIterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< CodePoint const, Parser >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< Element const , IteratorPairSource< Element const , ElementDeque::const_iterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< Element const, ElementRange >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< Element, IteratorPairSource< Element, ElementDeque::iterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< Form const , IteratorPairSource< Form const , FormDeque::const_iterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< Form, IteratorPairSource< Form, FormDeque::iterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< Operand const , IteratorPairSource< Operand const , OperandDeque::const_iterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< Operand, IteratorPairSource< Operand, OperandDeque::iterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< std::string, CodePointStringBackSource< ThisStringIterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< std::string, CodePointStringFrontSource< ThisStringIterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< ThisItem const, StreamSource< ThisItem > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< ThisItem, ContainerBackSource< ThisItem, ThisContainer > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< ThisItem, ContainerFrontSource< ThisItem, ThisContainer > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< ThisItem, EmptySource< ThisItem > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< ThisItem, IteratorPairSource< ThisItem, ThisIterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< ThisItem, IteratorSource< ThisItem, ThisIterator > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sources::DefaultSource< ThisItem, SingletonSource< ThisItem > >", "class_om_1_1_sources_1_1_default_source.html", null ],
-      [ "Om::Sinks::DefaultSink< ThisItem, ThisImplementation >", "class_om_1_1_sinks_1_1_default_sink.html", null ],
-      [ "Om::Sources::DefaultSource< ThisItem, ThisImplementation >", "class_om_1_1_sources_1_1_default_source.html", null ]
+      [ "Om::Sink::DefaultSink< CodePoint const, CodePointSink< ThisCodeUnitIterator > >", "class_om_1_1_sink_1_1_default_sink.html", null ],
+      [ "Om::Sink::DefaultSink< ThisItem, ContainerBackSink< ThisItem, ThisContainer > >", "class_om_1_1_sink_1_1_default_sink.html", null ],
+      [ "Om::Sink::DefaultSink< ThisItem, ContainerFrontSink< ThisItem, ThisContainer > >", "class_om_1_1_sink_1_1_default_sink.html", null ],
+      [ "Om::Sink::DefaultSink< ThisItem, IteratorSink< ThisItem, std::ostreambuf_iterator< ThisItem > > >", "class_om_1_1_sink_1_1_default_sink.html", null ],
+      [ "Om::Sink::DefaultSink< ThisItem, IteratorSink< ThisItem, ThisIterator > >", "class_om_1_1_sink_1_1_default_sink.html", null ],
+      [ "Om::Source::DefaultSource< char const , IteratorSource< char const , char const * > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< CodePoint const, CodePointSource< IteratorSource< char const, char const * > > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< CodePoint const, CodePointSource< ThisCodeUnitIterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< CodePoint const, Parser >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< Element const , IteratorPairSource< Element const , ElementDeque::const_iterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< Element const, ElementRange >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< Element, IteratorPairSource< Element, ElementDeque::iterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< Form const , IteratorPairSource< Form const , FormDeque::const_iterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< Form, IteratorPairSource< Form, FormDeque::iterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< Operand const , IteratorPairSource< Operand const , OperandDeque::const_iterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< Operand, IteratorPairSource< Operand, OperandDeque::iterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< std::string, CodePointStringBackSource< ThisStringIterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< std::string, CodePointStringFrontSource< ThisStringIterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< ThisItem const, StreamSource< ThisItem > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< ThisItem, ContainerBackSource< ThisItem, ThisContainer > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< ThisItem, ContainerFrontSource< ThisItem, ThisContainer > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< ThisItem, EmptySource< ThisItem > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< ThisItem, IteratorPairSource< ThisItem, ThisIterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< ThisItem, IteratorSource< ThisItem, ThisIterator > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Source::DefaultSource< ThisItem, SingletonSource< ThisItem > >", "class_om_1_1_source_1_1_default_source.html", null ],
+      [ "Om::Sink::DefaultSink< ThisItem, ThisImplementation >", "class_om_1_1_sink_1_1_default_sink.html", null ],
+      [ "Om::Source::DefaultSource< ThisItem, ThisImplementation >", "class_om_1_1_source_1_1_default_source.html", null ]
     ] ],
     [ "Om::Taker< Expression >", "class_om_1_1_taker.html", [
       [ "Om::DefaultProgram< Expression >", "class_om_1_1_default_program.html", null ]

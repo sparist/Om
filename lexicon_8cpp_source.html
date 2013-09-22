@@ -193,14 +193,14 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordtype">char</span> <span class="keyword">const</span> theCode[] = <span class="stringliteral">&quot;0\n\t {1\n\t {2\n\t } 3\n\t } 4\n\t&quot;</span>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            std::string theResult;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                Sinks::CodePointSink&lt;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                Sink::CodePointSink&lt;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    std::back_insert_iterator&lt;std::string&gt;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                &gt; theCodePointSink(</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    std::back_inserter(theResult)</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                );</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                Writer theWriter(theCodePointSink);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                Sources::CodePointSource&lt;&gt; theCodePointSource(theCode);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                Source::CodePointSource&lt;&gt; theCodePointSource(theCode);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                Parser theParser(theCodePointSource);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                Lexicon theLexicon;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                theLexicon.ReadElements(theParser);</div>
@@ -399,10 +399,10 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <a class="code" href="class_om_1_1_source.html">Om::Source&lt;Om::Element const&gt;</a></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <a class="code" href="class_om_1_1_source_1_1_source.html">Om::Source::Source&lt;Om::Element const&gt;</a></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;&gt; Type_::GetElementRange()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">return</span> std::auto_ptr&lt;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        Source&lt;Element const&gt;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        Source::Source&lt;Element const&gt;</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    &gt;(</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keyword">new</span> ElementRange(*<span class="keyword">this</span>)</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    );</div>
@@ -723,7 +723,6 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="ttc" id="namespace_om_html_adf9267d1ae1b3e5d447a3aaf7acd4834"><div class="ttname"><a href="namespace_om.html#adf9267d1ae1b3e5d447a3aaf7acd4834">Om::operator!=</a></div><div class="ttdeci">bool operator!=(DefaultAtom&lt; TheImplementation &gt; const &amp;, DefaultAtom&lt; TheImplementation &gt; const &amp;)</div></div>
 <div class="ttc" id="lexicon_8hpp_html_a014acb84e78b6f84f28169b72dd91cca"><div class="ttname"><a href="lexicon_8hpp.html#a014acb84e78b6f84f28169b72dd91cca">Om_Lexicon_GetName_</a></div><div class="ttdeci">#define Om_Lexicon_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00031">lexicon.hpp:31</a></div></div>
 <div class="ttc" id="class_om_1_1_separator_html_aeb95370fe159ea16c2f7783a97a79b7f"><div class="ttname"><a href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Om::Separator::GetLineSeparator</a></div><div class="ttdeci">static Separator const &amp; GetLineSeparator()</div></div>
-<div class="ttc" id="class_om_1_1_source_html"><div class="ttname"><a href="class_om_1_1_source.html">Om::Source</a></div><div class="ttdoc">Any object that items can be pulled from. </div><div class="ttdef"><b>Definition:</b> <a href="source_8hpp_source.html#l00029">source.hpp:29</a></div></div>
 <div class="ttc" id="class_om_1_1_system_html_a107a0bbb591d4cfda191da5e1f0858e5"><div class="ttname"><a href="class_om_1_1_system.html#a107a0bbb591d4cfda191da5e1f0858e5">Om::System::Translate</a></div><div class="ttdeci">virtual bool Translate(Evaluation &amp;, Operator const &amp;) const </div><div class="ttdoc">If there is an Operation mapped to the Operator, its implementation is given to the Evaluation...</div></div>
 <div class="ttc" id="namespaceboost_html_a90b627eb1c99d9ef357f4f0361edecfa"><div class="ttname"><a href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a></div><div class="ttdeci">void swap(Om::Expression &amp;, Om::Expression &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_pair_html_a4092db43ded562f7cfdf0af53ed2bccb"><div class="ttname"><a href="class_om_1_1_pair.html#a4092db43ded562f7cfdf0af53ed2bccb">Om::Pair::GetEmpty</a></div><div class="ttdeci">static Pair const &amp; GetEmpty()</div></div>
@@ -731,6 +730,7 @@ $(document).ready(function(){initNavTree('lexicon_8cpp_source.html','');});
 <div class="ttc" id="class_om_1_1_pair_html"><div class="ttname"><a href="class_om_1_1_pair.html">Om::Pair</a></div><div class="ttdoc">An Operator and an Operand. </div><div class="ttdef"><b>Definition:</b> <a href="pair_8hpp_source.html#l00030">pair.hpp:30</a></div></div>
 <div class="ttc" id="class_om_1_1_system_html_a07d26350515fb1910ceba847dd735347"><div class="ttname"><a href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">Om::System::Get</a></div><div class="ttdeci">static System &amp; Get()</div></div>
 <div class="ttc" id="namespace_om_html_ac6e60b21924d18e05e4ef84f08763c2b"><div class="ttname"><a href="namespace_om.html#ac6e60b21924d18e05e4ef84f08763c2b">Om::operator==</a></div><div class="ttdeci">bool operator==(DefaultAtom&lt; TheImplementation &gt; const &amp;, DefaultAtom&lt; TheImplementation &gt; const &amp;)</div></div>
+<div class="ttc" id="class_om_1_1_source_1_1_source_html"><div class="ttname"><a href="class_om_1_1_source_1_1_source.html">Om::Source::Source</a></div><div class="ttdoc">Any object that items can be pulled from. </div><div class="ttdef"><b>Definition:</b> <a href="source_8hpp_source.html#l00035">source.hpp:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

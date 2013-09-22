@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operations/back_pull_operator_operation.cpp Source File</title>
+		<title>Om: om/operation/back_pull_operator_operation.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -58,9 +58,9 @@ $(document).ready(function(){initNavTree('back__pull__operator__operation_8cpp_s
 </div><!--header-->
 <div class="contents">
 <a href="back__pull__operator__operation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operations_BackPullOperatorOperation_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operation_BackPullOperatorOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="back__pull__operator__operation_8hpp.html">om/operations/back_pull_operator_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="back__pull__operator__operation_8hpp.html">om/operation/back_pull_operator_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifdef Om_Macros_Test_</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
@@ -74,7 +74,7 @@ $(document).ready(function(){initNavTree('back__pull__operator__operation_8cpp_s
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        BOOST_AUTO_TEST_SUITE(BackPullOperatorOperationTest)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
@@ -128,17 +128,17 @@ $(document).ready(function(){initNavTree('back__pull__operator__operation_8cpp_s
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="literal_8hpp.html">om/literal.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="pull__operation_8hpp.html">om/operations/pull_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="pull__operation_8hpp.html">om/operation/pull_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// MARK: - Om::Operations::BackPullOperatorOperation</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// MARK: - Om::Operation::BackPullOperatorOperation</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    Om::Operations::BackPullOperatorOperation</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    Om::Operation::BackPullOperatorOperation</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * Type_::GetName() {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="back__pull__operator__operation_8hpp.html#a31be9b7e3720d80c24f55ae983f427a1">Om_Operations_BackPullOperatorOperation_GetName_</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="back__pull__operator__operation_8hpp.html#af08495cf6dc2b35d4f5ede674eb73dc1">Om_Operation_BackPullOperatorOperation_GetName_</a>();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_om.html#ab079f0c9807d37c66bdfc88ec5ec4374">Type_::Give</a>(Evaluation &amp; theEvaluation) {</div>
@@ -166,9 +166,9 @@ $(document).ready(function(){initNavTree('back__pull__operator__operation_8cpp_s
 <div class="ttc" id="pull__operation_8hpp_html"><div class="ttname"><a href="pull__operation_8hpp.html">pull_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="literal_8hpp_html"><div class="ttname"><a href="literal_8hpp.html">literal.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="back__pull__operator__operation_8hpp_html"><div class="ttname"><a href="back__pull__operator__operation_8hpp.html">back_pull_operator_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="back__pull__operator__operation_8hpp_html_a31be9b7e3720d80c24f55ae983f427a1"><div class="ttname"><a href="back__pull__operator__operation_8hpp.html#a31be9b7e3720d80c24f55ae983f427a1">Om_Operations_BackPullOperatorOperation_GetName_</a></div><div class="ttdeci">#define Om_Operations_BackPullOperatorOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="back__pull__operator__operation_8hpp_source.html#l00022">back_pull_operator_operation.hpp:22</a></div></div>
 <div class="ttc" id="namespace_om_html_ab079f0c9807d37c66bdfc88ec5ec4374"><div class="ttname"><a href="namespace_om.html#ab079f0c9807d37c66bdfc88ec5ec4374">Om::Give</a></div><div class="ttdeci">std::auto_ptr&lt; TheGiveable &gt; Give(TheGiveable &amp;)</div><div class="ttdoc">Calls Move on the object. </div></div>
 <div class="ttc" id="system_8hpp_html"><div class="ttname"><a href="system_8hpp.html">system.hpp</a></div><div class="ttdoc">Om header file. </div></div>
+<div class="ttc" id="back__pull__operator__operation_8hpp_html_af08495cf6dc2b35d4f5ede674eb73dc1"><div class="ttname"><a href="back__pull__operator__operation_8hpp.html#af08495cf6dc2b35d4f5ede674eb73dc1">Om_Operation_BackPullOperatorOperation_GetName_</a></div><div class="ttdeci">#define Om_Operation_BackPullOperatorOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="back__pull__operator__operation_8hpp_source.html#l00022">back_pull_operator_operation.hpp:22</a></div></div>
 <div class="ttc" id="class_om_1_1_system_html_a07d26350515fb1910ceba847dd735347"><div class="ttname"><a href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">Om::System::Get</a></div><div class="ttdeci">static System &amp; Get()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

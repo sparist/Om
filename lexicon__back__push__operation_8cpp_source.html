@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operations/lexicon_back_push_operation.cpp Source File</title>
+		<title>Om: om/operation/lexicon_back_push_operation.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -58,9 +58,9 @@ $(document).ready(function(){initNavTree('lexicon__back__push__operation_8cpp_so
 </div><!--header-->
 <div class="contents">
 <a href="lexicon__back__push__operation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operations_LexiconBackPushOperation_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operation_LexiconBackPushOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="lexicon__back__push__operation_8hpp.html">om/operations/lexicon_back_push_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="lexicon__back__push__operation_8hpp.html">om/operation/lexicon_back_push_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifdef Om_Macros_Test_</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
@@ -72,7 +72,7 @@ $(document).ready(function(){initNavTree('lexicon__back__push__operation_8cpp_so
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        BOOST_AUTO_TEST_SUITE(LexiconBackPushOperationTest)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
@@ -93,18 +93,18 @@ $(document).ready(function(){initNavTree('lexicon__back__push__operation_8cpp_so
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="lexicon__front__push__operation_8hpp.html">om/operations/lexicon_front_push_operation.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="swap__operation_8hpp.html">om/operations/swap_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="lexicon__front__push__operation_8hpp.html">om/operation/lexicon_front_push_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="swap__operation_8hpp.html">om/operation/swap_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// MARK: - Om::Operations::LexiconBackPushOperation</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// MARK: - Om::Operation::LexiconBackPushOperation</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">    Om::Operations::LexiconBackPushOperation</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">    Om::Operation::LexiconBackPushOperation</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * Type_::GetName() {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="lexicon__back__push__operation_8hpp.html#adb19c96f1cc88095a0cd8f3d719753a0">Om_Operations_LexiconBackPushOperation_GetName_</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="lexicon__back__push__operation_8hpp.html#ae17676c7bccf9ec6e5b9698a2bafcec5">Om_Operation_LexiconBackPushOperation_GetName_</a>();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_om.html#ab079f0c9807d37c66bdfc88ec5ec4374">Type_::Give</a>(Evaluation &amp; theEvaluation) {</div>
@@ -116,8 +116,8 @@ $(document).ready(function(){initNavTree('lexicon__back__push__operation_8cpp_so
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="namespace_om_html_ab079f0c9807d37c66bdfc88ec5ec4374"><div class="ttname"><a href="namespace_om.html#ab079f0c9807d37c66bdfc88ec5ec4374">Om::Give</a></div><div class="ttdeci">std::auto_ptr&lt; TheGiveable &gt; Give(TheGiveable &amp;)</div><div class="ttdoc">Calls Move on the object. </div></div>
-<div class="ttc" id="lexicon__back__push__operation_8hpp_html_adb19c96f1cc88095a0cd8f3d719753a0"><div class="ttname"><a href="lexicon__back__push__operation_8hpp.html#adb19c96f1cc88095a0cd8f3d719753a0">Om_Operations_LexiconBackPushOperation_GetName_</a></div><div class="ttdeci">#define Om_Operations_LexiconBackPushOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="lexicon__back__push__operation_8hpp_source.html#l00022">lexicon_back_push_operation.hpp:22</a></div></div>
 <div class="ttc" id="lexicon__front__push__operation_8hpp_html"><div class="ttname"><a href="lexicon__front__push__operation_8hpp.html">lexicon_front_push_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
+<div class="ttc" id="lexicon__back__push__operation_8hpp_html_ae17676c7bccf9ec6e5b9698a2bafcec5"><div class="ttname"><a href="lexicon__back__push__operation_8hpp.html#ae17676c7bccf9ec6e5b9698a2bafcec5">Om_Operation_LexiconBackPushOperation_GetName_</a></div><div class="ttdeci">#define Om_Operation_LexiconBackPushOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="lexicon__back__push__operation_8hpp_source.html#l00022">lexicon_back_push_operation.hpp:22</a></div></div>
 <div class="ttc" id="swap__operation_8hpp_html"><div class="ttname"><a href="swap__operation_8hpp.html">swap_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_system_html_a07d26350515fb1910ceba847dd735347"><div class="ttname"><a href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">Om::System::Get</a></div><div class="ttdeci">static System &amp; Get()</div></div>
 <div class="ttc" id="lexicon__back__push__operation_8hpp_html"><div class="ttname"><a href="lexicon__back__push__operation_8hpp.html">lexicon_back_push_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>

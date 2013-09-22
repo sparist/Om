@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/sources/code_point_string_front_source.cpp Source File</title>
+		<title>Om: om/source/code_point_string_front_source.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -58,9 +58,9 @@ $(document).ready(function(){initNavTree('code__point__string__front__source_8cp
 </div><!--header-->
 <div class="contents">
 <a href="code__point__string__front__source_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Sources_CodePointStringFrontSource_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Source_CodePointStringFrontSource_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="code__point__string__front__source_8hpp.html">om/sources/code_point_string_front_source.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="code__point__string__front__source_8hpp.html">om/source/code_point_string_front_source.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifdef Om_Macros_Test_</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
@@ -72,7 +72,7 @@ $(document).ready(function(){initNavTree('code__point__string__front__source_8cp
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Sources {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Source {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        BOOST_AUTO_TEST_SUITE(CodePointStringFrontSourceTest)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
@@ -354,13 +354,13 @@ $(document).ready(function(){initNavTree('code__point__string__front__source_8cp
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="utf8_8hpp.html">om/utf8.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment">// MARK: - Om::Sources::CodePointStringFrontSource</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment">// MARK: - Om::Source::CodePointStringFrontSource</span></div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">    #define Template_ \</span></div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">    template &lt;typename ThisStringIterator&gt;</span></div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">    Om::Sources::CodePointStringFrontSource&lt;ThisStringIterator&gt;</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">    Om::Source::CodePointStringFrontSource&lt;ThisStringIterator&gt;</span></div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
@@ -373,7 +373,7 @@ $(document).ready(function(){initNavTree('code__point__string__front__source_8cp
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;thisStringEnd(theStringEnd),</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;thisCodePoint()</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;{</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    this-&gt;<a class="code" href="class_om_1_1_sources_1_1_code_point_string_back_source.html#ab3e1065b8311c0ca56842a2000354684">Update</a>();</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    this-&gt;<a class="code" href="class_om_1_1_source_1_1_code_point_string_back_source.html#af71acba598e9767ab16cd0325fda8f39">Update</a>();</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;Template_</div>
@@ -459,16 +459,16 @@ $(document).ready(function(){initNavTree('code__point__string__front__source_8cp
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #undef Template_</span></div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="comment">// MARK: - Om::Sources::</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="comment">// MARK: - Om::Source::</span></div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor">    #define Template_ \</span></div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="preprocessor">    template &lt;typename TheStringIterator&gt;</span></div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="preprocessor">    Om::Sources::CodePointStringFrontSource&lt;TheStringIterator&gt;</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="preprocessor">    Om::Source::CodePointStringFrontSource&lt;TheStringIterator&gt;</span></div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;Template_</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_sources.html#ac047d0ad834796ca5674544dd950b634">Om::Sources::operator ==</a>(</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_source.html#a89da9c4fd6b9a5fd8a417694f169ebee">Om::Source::operator ==</a>(</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    Type_ <span class="keyword">const</span> &amp; theFirst,</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    Type_ <span class="keyword">const</span> &amp; theSecond</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;) {</div>
@@ -476,7 +476,7 @@ $(document).ready(function(){initNavTree('code__point__string__front__source_8cp
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;Template_</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_sources.html#a8e20386a127260fc5ec711899eb9bd81">Om::Sources::operator !=</a>(</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_source.html#aaccbeb0c44862483a5709c49f090b638">Om::Source::operator !=</a>(</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    Type_ <span class="keyword">const</span> &amp; theFirst,</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    Type_ <span class="keyword">const</span> &amp; theSecond</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;) {</div>
@@ -497,10 +497,10 @@ $(document).ready(function(){initNavTree('code__point__string__front__source_8cp
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #undef Template_</span></div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_om_1_1_sources_1_1_code_point_string_back_source_html_ab3e1065b8311c0ca56842a2000354684"><div class="ttname"><a href="class_om_1_1_sources_1_1_code_point_string_back_source.html#ab3e1065b8311c0ca56842a2000354684">Om::Sources::CodePointStringBackSource::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Populates the CodePoint string with each code unit of the next CodePoint. </div></div>
+<div class="ttc" id="namespace_om_1_1_source_html_aaccbeb0c44862483a5709c49f090b638"><div class="ttname"><a href="namespace_om_1_1_source.html#aaccbeb0c44862483a5709c49f090b638">Om::Source::operator!=</a></div><div class="ttdeci">bool operator!=(CodePointSource&lt; TheCodeUnitIterator &gt; const &amp;, CodePointSource&lt; TheCodeUnitIterator &gt; const &amp;)</div></div>
+<div class="ttc" id="class_om_1_1_source_1_1_code_point_string_back_source_html_af71acba598e9767ab16cd0325fda8f39"><div class="ttname"><a href="class_om_1_1_source_1_1_code_point_string_back_source.html#af71acba598e9767ab16cd0325fda8f39">Om::Source::CodePointStringBackSource::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Populates the CodePoint string with each code unit of the next CodePoint. </div></div>
 <div class="ttc" id="namespaceboost_html_a90b627eb1c99d9ef357f4f0361edecfa"><div class="ttname"><a href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a></div><div class="ttdeci">void swap(Om::Expression &amp;, Om::Expression &amp;)</div></div>
-<div class="ttc" id="namespace_om_1_1_sources_html_a8e20386a127260fc5ec711899eb9bd81"><div class="ttname"><a href="namespace_om_1_1_sources.html#a8e20386a127260fc5ec711899eb9bd81">Om::Sources::operator!=</a></div><div class="ttdeci">bool operator!=(CodePointSource&lt; TheCodeUnitIterator &gt; const &amp;, CodePointSource&lt; TheCodeUnitIterator &gt; const &amp;)</div></div>
-<div class="ttc" id="namespace_om_1_1_sources_html_ac047d0ad834796ca5674544dd950b634"><div class="ttname"><a href="namespace_om_1_1_sources.html#ac047d0ad834796ca5674544dd950b634">Om::Sources::operator==</a></div><div class="ttdeci">bool operator==(CodePointSource&lt; TheCodeUnitIterator &gt; const &amp;, CodePointSource&lt; TheCodeUnitIterator &gt; const &amp;)</div></div>
+<div class="ttc" id="namespace_om_1_1_source_html_a89da9c4fd6b9a5fd8a417694f169ebee"><div class="ttname"><a href="namespace_om_1_1_source.html#a89da9c4fd6b9a5fd8a417694f169ebee">Om::Source::operator==</a></div><div class="ttdeci">bool operator==(CodePointSource&lt; TheCodeUnitIterator &gt; const &amp;, CodePointSource&lt; TheCodeUnitIterator &gt; const &amp;)</div></div>
 <div class="ttc" id="utf8_8hpp_html"><div class="ttname"><a href="utf8_8hpp.html">utf8.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="code__point__string__front__source_8hpp_html"><div class="ttname"><a href="code__point__string__front__source_8hpp.html">code_point_string_front_source.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 </div><!-- fragment --></div><!-- contents -->

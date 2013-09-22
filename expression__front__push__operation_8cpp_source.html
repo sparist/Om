@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operations/expression_front_push_operation.cpp Source File</title>
+		<title>Om: om/operation/expression_front_push_operation.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -58,9 +58,9 @@ $(document).ready(function(){initNavTree('expression__front__push__operation_8cp
 </div><!--header-->
 <div class="contents">
 <a href="expression__front__push__operation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operations_ExpressionFrontPushOperation_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operation_ExpressionFrontPushOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="expression__front__push__operation_8hpp.html">om/operations/expression_front_push_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="expression__front__push__operation_8hpp.html">om/operation/expression_front_push_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifdef Om_Macros_Test_</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
@@ -72,7 +72,7 @@ $(document).ready(function(){initNavTree('expression__front__push__operation_8cp
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        BOOST_AUTO_TEST_SUITE(ExpressionFrontPushOperationTest)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
@@ -153,17 +153,17 @@ $(document).ready(function(){initNavTree('expression__front__push__operation_8cp
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="expression_8hpp.html">om/expression.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="front__push__operation_8hpp.html">om/operations/front_push_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="front__push__operation_8hpp.html">om/operation/front_push_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// MARK: - Om::Operations::ExpressionFrontPushOperation</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// MARK: - Om::Operation::ExpressionFrontPushOperation</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">    Om::Operations::ExpressionFrontPushOperation</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">    Om::Operation::ExpressionFrontPushOperation</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * Type_::GetName() {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="expression__front__push__operation_8hpp.html#a7f5c6e588d60c6fb8ba544498c315576">Om_Operations_ExpressionFrontPushOperation_GetName_</a>();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="expression__front__push__operation_8hpp.html#a31a7df755aff4ff1f04d0d129695d902">Om_Operation_ExpressionFrontPushOperation_GetName_</a>();</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_om.html#ab079f0c9807d37c66bdfc88ec5ec4374">Type_::Give</a>(Evaluation &amp; theEvaluation) {</div>
@@ -182,8 +182,8 @@ $(document).ready(function(){initNavTree('expression__front__push__operation_8cp
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="front__push__operation_8hpp_html"><div class="ttname"><a href="front__push__operation_8hpp.html">front_push_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="namespace_om_html_ab079f0c9807d37c66bdfc88ec5ec4374"><div class="ttname"><a href="namespace_om.html#ab079f0c9807d37c66bdfc88ec5ec4374">Om::Give</a></div><div class="ttdeci">std::auto_ptr&lt; TheGiveable &gt; Give(TheGiveable &amp;)</div><div class="ttdoc">Calls Move on the object. </div></div>
+<div class="ttc" id="expression__front__push__operation_8hpp_html_a31a7df755aff4ff1f04d0d129695d902"><div class="ttname"><a href="expression__front__push__operation_8hpp.html#a31a7df755aff4ff1f04d0d129695d902">Om_Operation_ExpressionFrontPushOperation_GetName_</a></div><div class="ttdeci">#define Om_Operation_ExpressionFrontPushOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="expression__front__push__operation_8hpp_source.html#l00022">expression_front_push_operation.hpp:22</a></div></div>
 <div class="ttc" id="expression_8hpp_html"><div class="ttname"><a href="expression_8hpp.html">expression.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="expression__front__push__operation_8hpp_html_a7f5c6e588d60c6fb8ba544498c315576"><div class="ttname"><a href="expression__front__push__operation_8hpp.html#a7f5c6e588d60c6fb8ba544498c315576">Om_Operations_ExpressionFrontPushOperation_GetName_</a></div><div class="ttdeci">#define Om_Operations_ExpressionFrontPushOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="expression__front__push__operation_8hpp_source.html#l00022">expression_front_push_operation.hpp:22</a></div></div>
 <div class="ttc" id="expression__front__push__operation_8hpp_html"><div class="ttname"><a href="expression__front__push__operation_8hpp.html">expression_front_push_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_system_html_a07d26350515fb1910ceba847dd735347"><div class="ttname"><a href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">Om::System::Get</a></div><div class="ttdeci">static System &amp; Get()</div></div>
 </div><!-- fragment --></div><!-- contents -->

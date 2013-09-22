@@ -100,14 +100,14 @@ $(document).ready(function(){initNavTree('separator_8cpp_source.html','');});
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordtype">char</span> <span class="keyword">const</span> theCode[] = <span class="stringliteral">&quot;0\n\t {1\n\t {2\n\t } 3\n\t } {4\n\t} 5\n&quot;</span>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            std::string theResult;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                Sinks::CodePointSink&lt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                Sink::CodePointSink&lt;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    std::back_insert_iterator&lt;std::string&gt;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                &gt; theCodePointSink(</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    std::back_inserter(theResult)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                );</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                Writer theWriter(theCodePointSink);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                Sources::CodePointSource&lt;&gt; theCodePointSource(theCode);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                Source::CodePointSource&lt;&gt; theCodePointSource(theCode);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                Parser theParser(theCodePointSource);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                Separator theSeparator;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                theSeparator.ReadElements(theParser);</div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('separator_8cpp_source.html','');});
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">inline</span> Type_ <span class="keyword">const</span> &amp; Type_::GetLineSeparator() {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> Separator <span class="keyword">const</span> theSeparator(<a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddaca47b9521f11181eae002d9d3db2df303b">Symbols::theLineSeparatorSymbol</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> Separator <span class="keyword">const</span> theSeparator(<a class="code" href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3fa30e594befc3806418bb898c3afc59b8d">Symbol::theLineSeparatorSymbol</a>);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> theSeparator;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
@@ -148,7 +148,7 @@ $(document).ready(function(){initNavTree('separator_8cpp_source.html','');});
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">inline</span> Type_::Separator() {}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">inline</span> Type_::Separator(</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    Source&lt;CodePoint const&gt; &amp; theCodePointSource</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    Source::Source&lt;CodePoint const&gt; &amp; theCodePointSource</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;) {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">for</span> (</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        ;</div>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('separator_8cpp_source.html','');});
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">switch</span> (*theCodePointSource) {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a98a23b0342d1c0ded1dad44f6cf8ed7b">Om_Symbols_SeparatorSymbol_GetCases_</a>():</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a1ef3df34170c70fa4028c1d408953b63">Om_Symbol_SeparatorSymbol_GetCases_</a>():</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            this-&gt;thisString.push_back(</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                static_cast&lt;char&gt;(*theCodePointSource)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            );</div>
@@ -167,15 +167,15 @@ $(document).ready(function(){initNavTree('separator_8cpp_source.html','');});
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">inline</span> Type_::Separator(<a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddac">Symbols::SeparatorSymbol</a> <span class="keyword">const</span> theSeparatorSymbol) :</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">inline</span> Type_::Separator(<a class="code" href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3f">Symbol::SeparatorSymbol</a> <span class="keyword">const</span> theSeparatorSymbol) :</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;DefaultAtom&lt;Separator&gt;(</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    static_cast&lt;char&gt;(theSeparatorSymbol)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;)</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    assert(</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddacae0ccf68d9718245a71bf84d93a60122c">Symbols::theSpaceSeparatorSymbol</a> == theSeparatorSymbol ||</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddaca47b9521f11181eae002d9d3db2df303b">Symbols::theLineSeparatorSymbol</a> == theSeparatorSymbol ||</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddacae6b35c2f8a192db71a20f681e7bc667e">Symbols::theTabSeparatorSymbol</a> == theSeparatorSymbol</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3faf2a16c30ceabb2e1a9237391417b9e07">Symbol::theSpaceSeparatorSymbol</a> == theSeparatorSymbol ||</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3fa30e594befc3806418bb898c3afc59b8d">Symbol::theLineSeparatorSymbol</a> == theSeparatorSymbol ||</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3faff6f9a8e050aa601df8f3188e71b4775">Symbol::theTabSeparatorSymbol</a> == theSeparatorSymbol</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    );</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
@@ -190,13 +190,13 @@ $(document).ready(function(){initNavTree('separator_8cpp_source.html','');});
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        theParser;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        theParser.Pop()</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    ) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        assert(<a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a> != *theParser);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        assert(<a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Symbol::theEndOperandSymbol</a> != *theParser);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">switch</span> (*theParser) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445">Symbols::theStartOperandSymbol</a>:</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b">Symbol::theStartOperandSymbol</a>:</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            theParser.Pop();</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            {</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="comment">// Ensure that this does not resolve to the copy constructor.</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                Source&lt;CodePoint const&gt; &amp; theCodePointSource = theParser;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                Source::Source&lt;CodePoint const&gt; &amp; theCodePointSource = theParser;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                Parser theOperandParser(theCodePointSource);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                this-&gt;ReadQuotedElements(theOperandParser);</div>
@@ -204,9 +204,9 @@ $(document).ready(function(){initNavTree('separator_8cpp_source.html','');});
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">if</span> (!theParser) {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            assert(<a class="code" href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Symbols::theEndOperandSymbol</a> == *theParser);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            assert(<a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Symbol::theEndOperandSymbol</a> == *theParser);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a98a23b0342d1c0ded1dad44f6cf8ed7b">Om_Symbols_SeparatorSymbol_GetCases_</a>():</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a1ef3df34170c70fa4028c1d408953b63">Om_Symbol_SeparatorSymbol_GetCases_</a>():</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            this-&gt;thisString.push_back(</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                static_cast&lt;char&gt;(*theParser)</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            );</div>
@@ -241,7 +241,7 @@ $(document).ready(function(){initNavTree('separator_8cpp_source.html','');});
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::TakeSeparatorSymbol(</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddac">Symbols::SeparatorSymbol</a> <span class="keyword">const</span> theSymbol</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3f">Symbol::SeparatorSymbol</a> <span class="keyword">const</span> theSymbol</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;) {</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    this-&gt;thisString.push_back(</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        static_cast&lt;char&gt;(theSymbol)</div>
@@ -262,18 +262,18 @@ $(document).ready(function(){initNavTree('separator_8cpp_source.html','');});
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="separator_8hpp_html_a33ca0583e5b833adbce43df24902983f"><div class="ttname"><a href="separator_8hpp.html#a33ca0583e5b833adbce43df24902983f">Om_Separator_GetName_</a></div><div class="ttdeci">#define Om_Separator_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="separator_8hpp_source.html#l00024">separator.hpp:24</a></div></div>
-<div class="ttc" id="namespace_om_1_1_symbols_html_a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd"><div class="ttname"><a href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230eab75957ce8392153d83f200c6a2eb48bd">Om::Symbols::theEndOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00076">operand_symbol.hpp:76</a></div></div>
-<div class="ttc" id="namespace_om_1_1_symbols_html_a6dc2b05dcc41c3cda3ae8429fc1fddaca47b9521f11181eae002d9d3db2df303b"><div class="ttname"><a href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddaca47b9521f11181eae002d9d3db2df303b">Om::Symbols::theLineSeparatorSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00093">separator_symbol.hpp:93</a></div></div>
 <div class="ttc" id="class_om_1_1_default_atom_html_a42ac05b114a5122b642004aa9abc1f4d"><div class="ttname"><a href="class_om_1_1_default_atom.html#a42ac05b114a5122b642004aa9abc1f4d">Om::DefaultAtom::Swap</a></div><div class="ttdeci">void Swap(ThisImplementation &amp;)</div></div>
-<div class="ttc" id="separator__symbol_8hpp_html_a98a23b0342d1c0ded1dad44f6cf8ed7b"><div class="ttname"><a href="separator__symbol_8hpp.html#a98a23b0342d1c0ded1dad44f6cf8ed7b">Om_Symbols_SeparatorSymbol_GetCases_</a></div><div class="ttdeci">#define Om_Symbols_SeparatorSymbol_GetCases_()</div><div class="ttdoc">Generates switch cases for each Om::Symbols::SeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00026">separator_symbol.hpp:26</a></div></div>
+<div class="ttc" id="namespace_om_1_1_symbol_html_ab0224d22f14f9de045c1ed9157076a3f"><div class="ttname"><a href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3f">Om::Symbol::SeparatorSymbol</a></div><div class="ttdeci">SeparatorSymbol</div><div class="ttdoc">A Separator symbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00087">separator_symbol.hpp:87</a></div></div>
+<div class="ttc" id="namespace_om_1_1_symbol_html_a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883"><div class="ttname"><a href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Om::Symbol::theEndOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00076">operand_symbol.hpp:76</a></div></div>
+<div class="ttc" id="namespace_om_1_1_symbol_html_ab0224d22f14f9de045c1ed9157076a3faff6f9a8e050aa601df8f3188e71b4775"><div class="ttname"><a href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3faff6f9a8e050aa601df8f3188e71b4775">Om::Symbol::theTabSeparatorSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00097">separator_symbol.hpp:97</a></div></div>
 <div class="ttc" id="separator_8hpp_html"><div class="ttname"><a href="separator_8hpp.html">separator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="namespace_om_1_1_symbols_html_a6dc2b05dcc41c3cda3ae8429fc1fddac"><div class="ttname"><a href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddac">Om::Symbols::SeparatorSymbol</a></div><div class="ttdeci">SeparatorSymbol</div><div class="ttdoc">A Separator symbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00087">separator_symbol.hpp:87</a></div></div>
 <div class="ttc" id="namespaceboost_html_a90b627eb1c99d9ef357f4f0361edecfa"><div class="ttname"><a href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a></div><div class="ttdeci">void swap(Om::Expression &amp;, Om::Expression &amp;)</div></div>
-<div class="ttc" id="namespace_om_1_1_symbols_html_a6dc2b05dcc41c3cda3ae8429fc1fddacae0ccf68d9718245a71bf84d93a60122c"><div class="ttname"><a href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddacae0ccf68d9718245a71bf84d93a60122c">Om::Symbols::theSpaceSeparatorSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00089">separator_symbol.hpp:89</a></div></div>
+<div class="ttc" id="namespace_om_1_1_symbol_html_ab0224d22f14f9de045c1ed9157076a3fa30e594befc3806418bb898c3afc59b8d"><div class="ttname"><a href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3fa30e594befc3806418bb898c3afc59b8d">Om::Symbol::theLineSeparatorSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00093">separator_symbol.hpp:93</a></div></div>
+<div class="ttc" id="separator__symbol_8hpp_html_a1ef3df34170c70fa4028c1d408953b63"><div class="ttname"><a href="separator__symbol_8hpp.html#a1ef3df34170c70fa4028c1d408953b63">Om_Symbol_SeparatorSymbol_GetCases_</a></div><div class="ttdeci">#define Om_Symbol_SeparatorSymbol_GetCases_()</div><div class="ttdoc">Generates switch cases for each Om::Symbol::SeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00026">separator_symbol.hpp:26</a></div></div>
+<div class="ttc" id="namespace_om_1_1_symbol_html_a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b"><div class="ttname"><a href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b">Om::Symbol::theStartOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00072">operand_symbol.hpp:72</a></div></div>
 <div class="ttc" id="writer_8hpp_html"><div class="ttname"><a href="writer_8hpp.html">writer.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="namespace_om_1_1_symbols_html_a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445"><div class="ttname"><a href="namespace_om_1_1_symbols.html#a3068b411c9829e6953b788e44a3e230ea08e15d94b27cda6bee3d862cbfe79445">Om::Symbols::theStartOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00072">operand_symbol.hpp:72</a></div></div>
 <div class="ttc" id="class_om_1_1_separator_html"><div class="ttname"><a href="class_om_1_1_separator.html">Om::Separator</a></div><div class="ttdoc">The Separator implementation. </div><div class="ttdef"><b>Definition:</b> <a href="separator_8hpp_source.html#l00039">separator.hpp:39</a></div></div>
-<div class="ttc" id="namespace_om_1_1_symbols_html_a6dc2b05dcc41c3cda3ae8429fc1fddacae6b35c2f8a192db71a20f681e7bc667e"><div class="ttname"><a href="namespace_om_1_1_symbols.html#a6dc2b05dcc41c3cda3ae8429fc1fddacae6b35c2f8a192db71a20f681e7bc667e">Om::Symbols::theTabSeparatorSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00097">separator_symbol.hpp:97</a></div></div>
+<div class="ttc" id="namespace_om_1_1_symbol_html_ab0224d22f14f9de045c1ed9157076a3faf2a16c30ceabb2e1a9237391417b9e07"><div class="ttname"><a href="namespace_om_1_1_symbol.html#ab0224d22f14f9de045c1ed9157076a3faf2a16c30ceabb2e1a9237391417b9e07">Om::Symbol::theSpaceSeparatorSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00089">separator_symbol.hpp:89</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

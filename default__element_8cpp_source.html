@@ -64,7 +64,7 @@ $(document).ready(function(){initNavTree('default__element_8cpp_source.html','')
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="singleton__source_8hpp.html">om/sources/singleton_source.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="singleton__source_8hpp.html">om/source/singleton_source.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// MARK: - Om::DefaultElement</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
@@ -106,23 +106,23 @@ $(document).ready(function(){initNavTree('default__element_8cpp_source.html','')
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;Template_</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_om_1_1_source.html">Om::Source&lt;Om::Element&gt;</a></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_om_1_1_source_1_1_source.html">Om::Source::Source&lt;Om::Element&gt;</a></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;&gt; Type_::GetElementRange() {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> std::auto_ptr&lt;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Source&lt;Element&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Source::Source&lt;Element&gt;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    &gt;(</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">new</span> Sources::SingletonSource&lt;Element&gt;(*this)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">new</span> Source::SingletonSource&lt;Element&gt;(*this)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    );</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;Template_</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_om_1_1_source.html">Om::Source&lt;Om::Element const&gt;</a></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_om_1_1_source_1_1_source.html">Om::Source::Source&lt;Om::Element const&gt;</a></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;&gt; Type_::GetElementRange()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> std::auto_ptr&lt;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        Source&lt;Element const&gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        Source::Source&lt;Element const&gt;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    &gt;(</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">new</span> Sources::SingletonSource&lt;Element const&gt;(*this)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">new</span> Source::SingletonSource&lt;Element const&gt;(*this)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    );</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
@@ -158,9 +158,9 @@ $(document).ready(function(){initNavTree('default__element_8cpp_source.html','')
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #undef Template_</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_om_1_1_source_html"><div class="ttname"><a href="class_om_1_1_source.html">Om::Source</a></div><div class="ttdoc">Any object that items can be pulled from. </div><div class="ttdef"><b>Definition:</b> <a href="source_8hpp_source.html#l00029">source.hpp:29</a></div></div>
 <div class="ttc" id="singleton__source_8hpp_html"><div class="ttname"><a href="singleton__source_8hpp.html">singleton_source.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="default__element_8hpp_html"><div class="ttname"><a href="default__element_8hpp.html">default_element.hpp</a></div><div class="ttdoc">Om header file. </div></div>
+<div class="ttc" id="class_om_1_1_source_1_1_source_html"><div class="ttname"><a href="class_om_1_1_source_1_1_source.html">Om::Source::Source</a></div><div class="ttdoc">Any object that items can be pulled from. </div><div class="ttdef"><b>Definition:</b> <a href="source_8hpp_source.html#l00035">source.hpp:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

@@ -65,7 +65,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="evaluation_8hpp.html">om/evaluation.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="incomplete__operation_8hpp.html">om/operations/incomplete_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="incomplete__operation_8hpp.html">om/operation/incomplete_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operator_8hpp.html">om/operator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="translator_8hpp.html">om/translator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
@@ -164,7 +164,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        this-&gt;thisOutput.ReadQuotedElements(theParser);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        this-&gt;thisGaveElementToOutput = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        std::auto_ptr&lt;Operations::IncompleteOperation&gt; theOperation(</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        std::auto_ptr&lt;Operation::IncompleteOperation&gt; theOperation(</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            this-&gt;thisIncompleteOperationVector.pop_back().release()</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        );</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        assert(</div>
@@ -208,7 +208,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        this-&gt;thisOutput.TakeElement(theOperand);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        this-&gt;thisGaveElementToOutput = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::auto_ptr&lt;Operations::IncompleteOperation&gt; theOperation(</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::auto_ptr&lt;Operation::IncompleteOperation&gt; theOperation(</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            this-&gt;thisIncompleteOperationVector.pop_back().release()</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        );</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        assert(</div>
@@ -306,7 +306,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        this-&gt;thisOutput.TakeQuotedElements(theProducer);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        this-&gt;thisGaveElementToOutput = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        std::auto_ptr&lt;Operations::IncompleteOperation&gt; theOperation(</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        std::auto_ptr&lt;Operation::IncompleteOperation&gt; theOperation(</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            this-&gt;thisIncompleteOperationVector.pop_back().release()</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        );</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        assert(</div>
@@ -376,7 +376,7 @@ $(document).ready(function(){initNavTree('evaluator_8cpp_source.html','');});
 <div class="ttc" id="class_om_1_1_separator_html_aeb95370fe159ea16c2f7783a97a79b7f"><div class="ttname"><a href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Om::Separator::GetLineSeparator</a></div><div class="ttdeci">static Separator const &amp; GetLineSeparator()</div></div>
 <div class="ttc" id="incomplete__operation_8hpp_html"><div class="ttname"><a href="incomplete__operation_8hpp.html">incomplete_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="evaluator_8hpp_html"><div class="ttname"><a href="evaluator_8hpp.html">evaluator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_translator_html"><div class="ttname"><a href="class_om_1_1_translator.html">Om::Translator</a></div><div class="ttdoc">An Operator lookup for use by an Evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="translator_8hpp_source.html#l00050">translator.hpp:50</a></div></div>
+<div class="ttc" id="class_om_1_1_translator_html"><div class="ttname"><a href="class_om_1_1_translator.html">Om::Translator</a></div><div class="ttdoc">An Operator lookup for use by an Evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="translator_8hpp_source.html#l00058">translator.hpp:58</a></div></div>
 <div class="ttc" id="translator_8hpp_html"><div class="ttname"><a href="translator_8hpp.html">translator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

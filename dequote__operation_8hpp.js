@@ -1,6 +1,6 @@
 var dequote__operation_8hpp =
 [
-    [ "DequoteOperation", "class_om_1_1_operations_1_1_dequote_operation.html", "class_om_1_1_operations_1_1_dequote_operation" ],
-    [ "Om_Operations_DequoteOperation_", "dequote__operation_8hpp.html#aebb499c644823146078a4385fcb8fddc", null ],
-    [ "Om_Operations_DequoteOperation_GetName_", "dequote__operation_8hpp.html#a70f6cf3482d40cf511b7832f28cf2a7a", null ]
+    [ "DequoteOperation", "class_om_1_1_operation_1_1_dequote_operation.html", "class_om_1_1_operation_1_1_dequote_operation" ],
+    [ "Om_Operation_DequoteOperation_", "dequote__operation_8hpp.html#a7bf3719e9bc827d787ff3b0f02479b85", null ],
+    [ "Om_Operation_DequoteOperation_GetName_", "dequote__operation_8hpp.html#ad96cd2c091a07f09e75bc684ca416030", null ]
 ];

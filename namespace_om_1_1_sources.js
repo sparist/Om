@@ -13,5 +13,6 @@ var namespace_om_1_1_sources =
     [ "IteratorPairSource", "class_om_1_1_sources_1_1_iterator_pair_source.html", "class_om_1_1_sources_1_1_iterator_pair_source" ],
     [ "IteratorSource", "class_om_1_1_sources_1_1_iterator_source.html", "class_om_1_1_sources_1_1_iterator_source" ],
     [ "SingletonSource", "class_om_1_1_sources_1_1_singleton_source.html", "class_om_1_1_sources_1_1_singleton_source" ],
+    [ "Source", "class_om_1_1_sources_1_1_source.html", "class_om_1_1_sources_1_1_source" ],
     [ "StreamSource", "class_om_1_1_sources_1_1_stream_source.html", "class_om_1_1_sources_1_1_stream_source" ]
 ];

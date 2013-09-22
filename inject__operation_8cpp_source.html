@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operations/inject_operation.cpp Source File</title>
+		<title>Om: om/operation/inject_operation.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -58,9 +58,9 @@ $(document).ready(function(){initNavTree('inject__operation_8cpp_source.html',''
 </div><!--header-->
 <div class="contents">
 <a href="inject__operation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operations_InjectOperation_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operation_InjectOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="inject__operation_8hpp.html">om/operations/inject_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="inject__operation_8hpp.html">om/operation/inject_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifdef Om_Macros_Test_</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
@@ -72,7 +72,7 @@ $(document).ready(function(){initNavTree('inject__operation_8cpp_source.html',''
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        BOOST_AUTO_TEST_SUITE(InjectOperationTest)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
@@ -194,15 +194,15 @@ $(document).ready(function(){initNavTree('inject__operation_8cpp_source.html',''
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">// MARK: - Om::Operations::InjectOperation</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">// MARK: - Om::Operation::InjectOperation</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">    Om::Operations::InjectOperation</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">    Om::Operation::InjectOperation</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * Type_::GetName() {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="inject__operation_8hpp.html#a8eb8c5bbdb5561e086bbcb4b565e46e2">Om_Operations_InjectOperation_GetName_</a>();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="inject__operation_8hpp.html#a09d79ede657403c66c2ff80329f2a701">Om_Operation_InjectOperation_GetName_</a>();</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheInjectOperation&gt;</div>
@@ -287,8 +287,8 @@ $(document).ready(function(){initNavTree('inject__operation_8cpp_source.html',''
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="inject__operation_8hpp_html_a09d79ede657403c66c2ff80329f2a701"><div class="ttname"><a href="inject__operation_8hpp.html#a09d79ede657403c66c2ff80329f2a701">Om_Operation_InjectOperation_GetName_</a></div><div class="ttdeci">#define Om_Operation_InjectOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00024">inject_operation.hpp:24</a></div></div>
 <div class="ttc" id="inject__operation_8hpp_html"><div class="ttname"><a href="inject__operation_8hpp.html">inject_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="inject__operation_8hpp_html_a8eb8c5bbdb5561e086bbcb4b565e46e2"><div class="ttname"><a href="inject__operation_8hpp.html#a8eb8c5bbdb5561e086bbcb4b565e46e2">Om_Operations_InjectOperation_GetName_</a></div><div class="ttdeci">#define Om_Operations_InjectOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00024">inject_operation.hpp:24</a></div></div>
 <div class="ttc" id="class_om_1_1_system_html_a07d26350515fb1910ceba847dd735347"><div class="ttname"><a href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">Om::System::Get</a></div><div class="ttdeci">static System &amp; Get()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

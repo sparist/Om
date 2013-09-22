@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operations/pair_operation.cpp Source File</title>
+		<title>Om: om/operation/pair_operation.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -58,9 +58,9 @@ $(document).ready(function(){initNavTree('pair__operation_8cpp_source.html','');
 </div><!--header-->
 <div class="contents">
 <a href="pair__operation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operations_PairOperation_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operation_PairOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="pair__operation_8hpp.html">om/operations/pair_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="pair__operation_8hpp.html">om/operation/pair_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifdef Om_Macros_Test_</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
@@ -72,7 +72,7 @@ $(document).ready(function(){initNavTree('pair__operation_8cpp_source.html','');
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operations {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        BOOST_AUTO_TEST_SUITE(PairOperationTest)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
@@ -136,17 +136,17 @@ $(document).ready(function(){initNavTree('pair__operation_8cpp_source.html','');
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="quote__operation_8hpp.html">om/operations/quote_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="quote__operation_8hpp.html">om/operation/quote_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// MARK: - Om::Operations::PairOperation</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// MARK: - Om::Operation::PairOperation</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">    Om::Operations::PairOperation</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">    Om::Operation::PairOperation</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * Type_::GetName() {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="pair__operation_8hpp.html#a81cb234e7b57dc12076965423e929317">Om_Operations_PairOperation_GetName_</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="pair__operation_8hpp.html#a3acb8978e6eabaa079a782bf0bc4eee8">Om_Operation_PairOperation_GetName_</a>();</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ThePairOperation&gt;</div>
@@ -223,7 +223,7 @@ $(document).ready(function(){initNavTree('pair__operation_8cpp_source.html','');
 <div class="ttc" id="namespace_om_html_ab079f0c9807d37c66bdfc88ec5ec4374"><div class="ttname"><a href="namespace_om.html#ab079f0c9807d37c66bdfc88ec5ec4374">Om::Give</a></div><div class="ttdeci">std::auto_ptr&lt; TheGiveable &gt; Give(TheGiveable &amp;)</div><div class="ttdoc">Calls Move on the object. </div></div>
 <div class="ttc" id="pair__operation_8hpp_html"><div class="ttname"><a href="pair__operation_8hpp.html">pair_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="quote__operation_8hpp_html"><div class="ttname"><a href="quote__operation_8hpp.html">quote_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="pair__operation_8hpp_html_a81cb234e7b57dc12076965423e929317"><div class="ttname"><a href="pair__operation_8hpp.html#a81cb234e7b57dc12076965423e929317">Om_Operations_PairOperation_GetName_</a></div><div class="ttdeci">#define Om_Operations_PairOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="pair__operation_8hpp_source.html#l00023">pair_operation.hpp:23</a></div></div>
+<div class="ttc" id="pair__operation_8hpp_html_a3acb8978e6eabaa079a782bf0bc4eee8"><div class="ttname"><a href="pair__operation_8hpp.html#a3acb8978e6eabaa079a782bf0bc4eee8">Om_Operation_PairOperation_GetName_</a></div><div class="ttdeci">#define Om_Operation_PairOperation_GetName_()</div><div class="ttdef"><b>Definition:</b> <a href="pair__operation_8hpp_source.html#l00023">pair_operation.hpp:23</a></div></div>
 <div class="ttc" id="class_om_1_1_system_html_a07d26350515fb1910ceba847dd735347"><div class="ttname"><a href="class_om_1_1_system.html#a07d26350515fb1910ceba847dd735347">Om::System::Get</a></div><div class="ttdeci">static System &amp; Get()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

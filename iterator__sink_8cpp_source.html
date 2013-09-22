@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/sinks/iterator_sink.cpp Source File</title>
+		<title>Om: om/sink/iterator_sink.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -58,13 +58,13 @@ $(document).ready(function(){initNavTree('iterator__sink_8cpp_source.html','');}
 </div><!--header-->
 <div class="contents">
 <a href="iterator__sink_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Sinks_IteratorSink_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Sink_IteratorSink_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="iterator__sink_8hpp.html">om/sinks/iterator_sink.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="iterator__sink_8hpp.html">om/sink/iterator_sink.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// MARK: - Om::Sinks::IteratorSink</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// MARK: - Om::Sink::IteratorSink</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #define Template_ \</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    template &lt; \</span></div>
@@ -73,7 +73,7 @@ $(document).ready(function(){initNavTree('iterator__sink_8cpp_source.html','');}
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">    &gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    Om::Sinks::IteratorSink&lt; \</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    Om::Sink::IteratorSink&lt; \</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">        ThisItem, \</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">        ThisIterator \</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">    &gt;</span></div>
@@ -115,11 +115,11 @@ $(document).ready(function(){initNavTree('iterator__sink_8cpp_source.html','');}
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">typename</span> TheIterator</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;&gt;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_om_1_1_sinks_1_1_iterator_sink.html">Om::Sinks::IteratorSink</a>&lt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">Om::Sink::IteratorSink</a>&lt;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        TheItem,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        TheIterator</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    &gt; &amp; theFirst,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_om_1_1_sinks_1_1_iterator_sink.html">Om::Sinks::IteratorSink</a>&lt;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">Om::Sink::IteratorSink</a>&lt;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        TheItem,</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        TheIterator</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    &gt; &amp; theSecond</div>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('iterator__sink_8cpp_source.html','');}
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_om_1_1_sinks_1_1_iterator_sink_html"><div class="ttname"><a href="class_om_1_1_sinks_1_1_iterator_sink.html">Om::Sinks::IteratorSink</a></div><div class="ttdoc">A Sink adapter for an output iterator. </div><div class="ttdef"><b>Definition:</b> <a href="iterator__sink_8hpp_source.html#l00036">iterator_sink.hpp:36</a></div></div>
+<div class="ttc" id="class_om_1_1_sink_1_1_iterator_sink_html"><div class="ttname"><a href="class_om_1_1_sink_1_1_iterator_sink.html">Om::Sink::IteratorSink</a></div><div class="ttdoc">A Sink adapter for an output iterator. </div><div class="ttdef"><b>Definition:</b> <a href="iterator__sink_8hpp_source.html#l00036">iterator_sink.hpp:36</a></div></div>
 <div class="ttc" id="namespaceboost_html_a90b627eb1c99d9ef357f4f0361edecfa"><div class="ttname"><a href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a></div><div class="ttdeci">void swap(Om::Expression &amp;, Om::Expression &amp;)</div></div>
 <div class="ttc" id="iterator__sink_8hpp_html"><div class="ttname"><a href="iterator__sink_8hpp.html">iterator_sink.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 </div><!-- fragment --></div><!-- contents -->
