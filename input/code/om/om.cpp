@@ -16,7 +16,7 @@
 
 	#include "om.hpp"
 
-	#ifdef Om_Macros_Test_
+	#ifdef Om_Macro_Test_
 
 		#include "boost/test/included/unit_test.hpp"
 

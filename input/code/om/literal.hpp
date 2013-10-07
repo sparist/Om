@@ -20,7 +20,7 @@
 	#include "om/default_program.hpp"
 	#include "om/source/collection_front_source.hpp"
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/ptr_container/ptr_deque.hpp"
 		#include "boost/swap.hpp"

@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Macros_
+#ifndef Om_Macro_
 
 	#include "om/macros.hpp"
 

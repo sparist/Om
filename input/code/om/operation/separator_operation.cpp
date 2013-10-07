@@ -16,9 +16,9 @@
 
 	#include "om/operation/separator_operation.hpp"
 
-	#ifdef Om_Macros_Test_
+	#ifdef Om_Macro_Test_
 
-		#ifndef Om_Macros_Precompilation_
+		#ifndef Om_Macro_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 

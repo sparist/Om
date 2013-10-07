@@ -20,7 +20,7 @@
 	#include "om/default_element.hpp"
 	#include "om/owner.hpp"
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/swap.hpp"
 

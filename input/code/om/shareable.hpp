@@ -17,7 +17,7 @@
 	#define Om_Shareable_ \
 	Om::Shareable
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include <cstddef>
 

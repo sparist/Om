@@ -20,7 +20,7 @@
 	#include "om/default_consumer.hpp"
 	#include "om/producer.hpp"
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/ptr_container/ptr_vector.hpp"
 

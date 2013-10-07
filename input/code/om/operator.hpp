@@ -22,7 +22,7 @@
 	#include "om/symbol/operator_symbol.hpp"
 	#include "om/symbol/separator_symbol.hpp"
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/locale/boundary.hpp"
 

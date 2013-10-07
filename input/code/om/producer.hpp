@@ -17,7 +17,7 @@
 	#define Om_Producer_ \
 	Om::Producer
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include <memory>
 

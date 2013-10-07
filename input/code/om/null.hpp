@@ -20,7 +20,7 @@
 	#include "om/code_point.hpp"
 	#include "om/default_element.hpp"
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/swap.hpp"
 

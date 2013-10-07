@@ -17,7 +17,7 @@
 	#define Om_CodePoint_ \
 	Om::CodePoint
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/locale/utf.hpp"
 

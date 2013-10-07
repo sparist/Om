@@ -21,7 +21,7 @@
 	#include "om/element.hpp"
 	#include "om/source/source.hpp"
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include <typeinfo>
 

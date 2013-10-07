@@ -46,7 +46,7 @@
 		A string literal representation of Om::Symbol::theStartOperandSymbol.
 	*/
 	#define Om_Symbol_OperandSymbol_GetStartString_() \
-	Om_Macros_GetString_( \
+	Om_Macro_GetString_( \
 		Om_Symbol_OperandSymbol_GetStartHex_() \
 	)
 
@@ -55,7 +55,7 @@
 		A string literal representation of Om::Symbol::theEndOperandSymbol.
 	*/
 	#define Om_Symbol_OperandSymbol_GetEndString_() \
-	Om_Macros_GetString_( \
+	Om_Macro_GetString_( \
 		Om_Symbol_OperandSymbol_GetEndHex_() \
 	)
 
@@ -69,11 +69,11 @@ namespace Om {
 		*/
 		enum OperandSymbol {
 
-			theStartOperandSymbol = Om_Macros_GetNumber_(
+			theStartOperandSymbol = Om_Macro_GetNumber_(
 				Om_Symbol_OperandSymbol_GetStartHex_()
 			),
 
-			theEndOperandSymbol = Om_Macros_GetNumber_(
+			theEndOperandSymbol = Om_Macro_GetNumber_(
 				Om_Symbol_OperandSymbol_GetEndHex_()
 			)
 

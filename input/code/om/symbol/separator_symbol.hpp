@@ -54,7 +54,7 @@
 		A string literal representation of Om::Symbol::theSpaceSeparatorSymbol.
 	*/
 	#define Om_Symbol_SeparatorSymbol_GetSpaceString_() \
-	Om_Macros_GetString_( \
+	Om_Macro_GetString_( \
 		Om_Symbol_SeparatorSymbol_GetSpaceHex_() \
 	)
 
@@ -63,7 +63,7 @@
 		A string literal representation of Om::Symbol::theLineSeparatorSymbol.
 	*/
 	#define Om_Symbol_SeparatorSymbol_GetLineString_() \
-	Om_Macros_GetString_( \
+	Om_Macro_GetString_( \
 		Om_Symbol_SeparatorSymbol_GetLineHex_() \
 	)
 
@@ -72,7 +72,7 @@
 		A string literal representation of Om::Symbol::theTabSeparatorSymbol.
 	*/
 	#define Om_Symbol_SeparatorSymbol_GetTabString_() \
-	Om_Macros_GetString_( \
+	Om_Macro_GetString_( \
 		Om_Symbol_SeparatorSymbol_GetTabHex_() \
 	)
 
@@ -86,15 +86,15 @@ namespace Om {
 		*/
 		enum SeparatorSymbol {
 
-			theSpaceSeparatorSymbol = Om_Macros_GetNumber_(
+			theSpaceSeparatorSymbol = Om_Macro_GetNumber_(
 				Om_Symbol_SeparatorSymbol_GetSpaceHex_()
 			),
 
-			theLineSeparatorSymbol = Om_Macros_GetNumber_(
+			theLineSeparatorSymbol = Om_Macro_GetNumber_(
 				Om_Symbol_SeparatorSymbol_GetLineHex_()
 			),
 
-			theTabSeparatorSymbol = Om_Macros_GetNumber_(
+			theTabSeparatorSymbol = Om_Macro_GetNumber_(
 				Om_Symbol_SeparatorSymbol_GetTabHex_()
 			)
 

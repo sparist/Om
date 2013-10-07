@@ -16,9 +16,9 @@
 
 	#include "om/source/code_point_string_front_source.hpp"
 
-	#ifdef Om_Macros_Test_
+	#ifdef Om_Macro_Test_
 
-		#ifndef Om_Macros_Precompilation_
+		#ifndef Om_Macro_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 

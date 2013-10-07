@@ -16,11 +16,11 @@
 
 	#include "om/operation/encode_operation.hpp"
 
-	#ifdef Om_Macros_Test_
+	#ifdef Om_Macro_Test_
 
 		#include "om/system.hpp"
 
-		#ifndef Om_Macros_Precompilation_
+		#ifndef Om_Macro_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 

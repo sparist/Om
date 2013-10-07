@@ -18,7 +18,7 @@
 
 #else
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include <stdexcept>
 		#include "boost/checked_delete.hpp"

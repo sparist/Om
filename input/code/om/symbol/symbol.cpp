@@ -16,13 +16,13 @@
 
 	#include "om/symbol/symbol.hpp"
 
-	#ifdef Om_Macros_Test_
+	#ifdef Om_Macro_Test_
 
 		#include "om/symbol/operand_symbol.hpp"
 		#include "om/symbol/operator_symbol.hpp"
 		#include "om/symbol/separator_symbol.hpp"
 
-		#ifndef Om_Macros_Precompilation_
+		#ifndef Om_Macro_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 

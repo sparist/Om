@@ -22,7 +22,7 @@
 	#include "om/source/default_source.hpp"
 	#include "om/translator.hpp"
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/ptr_container/ptr_map.hpp"
 

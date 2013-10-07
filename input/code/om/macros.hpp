@@ -12,9 +12,9 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Macros_
+#ifndef Om_Macro_
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/preprocessor/stringize.hpp"
 
@@ -26,36 +26,36 @@
 
 	All global preprocessor definitions (excluding include guards) should use this namespace to avoid clashes, regardless of where they are physically defined.
 	*/
-	#define Om_Macros_ \
-	Om::Macros
+	#define Om_Macro_ \
+	Om::Macro
 
 	/*!
 	\brief
 		Prepends <code>0x</code>.
 	*/
-	#define Om_Macros_PrependZeroX_(theArgument) \
+	#define Om_Macro_PrependZeroX_(theArgument) \
 	0x ##theArgument
 
 	/*!
 	\brief
 		Prepends <code>\\x</code> and converts the result to a string literal.
 	*/
-	#define Om_Macros_PrependSlashXAndStringize_(theArgument) \
+	#define Om_Macro_PrependSlashXAndStringize_(theArgument) \
 	BOOST_PP_STRINGIZE(\x ##theArgument)
 
 	/*!
 	\brief
 		Converts a bare hexadecimal to a numeric literal.
 	*/
-	#define Om_Macros_GetNumber_(theHex) \
-	Om_Macros_PrependZeroX_(theHex)
+	#define Om_Macro_GetNumber_(theHex) \
+	Om_Macro_PrependZeroX_(theHex)
 
 	/*!
 	\brief
 		Converts a bare hexadecimal to a string literal.
 	*/
-	#define Om_Macros_GetString_(theHex) \
-	Om_Macros_PrependSlashXAndStringize_(theHex)
+	#define Om_Macro_GetString_(theHex) \
+	Om_Macro_PrependSlashXAndStringize_(theHex)
 
 namespace Om {
 
@@ -63,7 +63,7 @@ namespace Om {
 	\brief
 		A namespace for all code used to implement global macros.
 	*/
-	namespace Macros {}
+	namespace Macro {}
 
 }
 

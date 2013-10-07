@@ -17,7 +17,7 @@
 	#define Om_List_ \
 	Om::List
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/array.hpp"
 

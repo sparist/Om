@@ -21,7 +21,7 @@
 	#include "om/lexicon.hpp"
 	#include "om/operator.hpp"
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/locale/generator.hpp"
 		#include "boost/locale/info.hpp"

@@ -16,12 +16,12 @@
 
 	#include "om/owner.hpp"
 
-	#ifdef Om_Macros_Test_
+	#ifdef Om_Macro_Test_
 
 		#include "om/default_copyable.hpp"
 		#include "om/shareable.hpp"
 
-		#ifndef Om_Macros_Precompilation_
+		#ifndef Om_Macro_Precompilation_
 
 			#include "boost/test/unit_test.hpp"
 
@@ -160,7 +160,7 @@ namespace Om {
 
 #else
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/swap.hpp"
 

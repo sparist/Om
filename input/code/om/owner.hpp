@@ -19,7 +19,7 @@
 
 	#include "om/taker.hpp"
 
-	#ifndef Om_Macros_Precompilation_
+	#ifndef Om_Macro_Precompilation_
 
 		#include <memory>
 		#include "boost/intrusive_ptr.hpp"
