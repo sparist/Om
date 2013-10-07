@@ -12,7 +12,10 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Sink_Sink_
+#ifndef Om_Sink_
+
+	#define Om_Sink_ \
+	Om::Sink
 
 	#define Om_Sink_Sink_ \
 	Om::Sink::Sink

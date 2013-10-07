@@ -17,7 +17,7 @@
 	#define Om_Symbol_SeparatorSymbol_ \
 	Om::Symbol::SeparatorSymbol
 
-	#include "om/macro.hpp"
+	#include "om/macro/macro.hpp"
 
 	/*!
 	\brief

@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Source_Source_
+#ifndef Om_Source_
 
 	#include "om/source/source.hpp"
 

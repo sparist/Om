@@ -17,7 +17,7 @@
 	#define Om_Symbol_OperatorSymbol_ \
 	Om::Symbol::OperatorSymbol
 
-	#include "om/macro.hpp"
+	#include "om/macro/macro.hpp"
 
 	/*!
 	\brief
