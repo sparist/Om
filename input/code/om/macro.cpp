@@ -14,6 +14,6 @@
 
 #ifndef Om_Macro_
 
-	#include "om/macros.hpp"
+	#include "om/macro.hpp"
 
 #endif
