@@ -1,6 +1,6 @@
 var namespace_om =
 [
-    [ "Macros", "namespace_om_1_1_macros.html", null ],
+    [ "Macro", "namespace_om_1_1_macro.html", null ],
     [ "Operation", "namespace_om_1_1_operation.html", "namespace_om_1_1_operation" ],
     [ "Sink", "namespace_om_1_1_sink.html", "namespace_om_1_1_sink" ],
     [ "Source", "namespace_om_1_1_source.html", "namespace_om_1_1_source" ],

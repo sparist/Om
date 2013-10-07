@@ -1,5 +1,6 @@
 var dir_52de3a61b6586455d49c12d9f1bfddf4 =
 [
+    [ "macro", "dir_b9c77782c3978cc00313310007ff1194.html", "dir_b9c77782c3978cc00313310007ff1194" ],
     [ "operation", "dir_c1bd2cf3c0421cfb7d8c78872dba1c9d.html", "dir_c1bd2cf3c0421cfb7d8c78872dba1c9d" ],
     [ "sink", "dir_439d743695d3885bc62142dd6279e2eb.html", "dir_439d743695d3885bc62142dd6279e2eb" ],
     [ "source", "dir_3da05fc2f9e811d796eaf7697d32c812.html", "dir_3da05fc2f9e811d796eaf7697d32c812" ],
@@ -46,8 +47,6 @@ var dir_52de3a61b6586455d49c12d9f1bfddf4 =
     [ "list.hpp", "list_8hpp.html", "list_8hpp" ],
     [ "literal.cpp", "literal_8cpp.html", null ],
     [ "literal.hpp", "literal_8hpp.html", "literal_8hpp" ],
-    [ "macros.cpp", "macros_8cpp.html", null ],
-    [ "macros.hpp", "macros_8hpp.html", "macros_8hpp" ],
     [ "moveable.cpp", "moveable_8cpp.html", null ],
     [ "moveable.hpp", "moveable_8hpp.html", "moveable_8hpp" ],
     [ "null.cpp", "null_8cpp.html", null ],
