@@ -10,57 +10,57 @@
 <title>om/sink/iterator_sink.hpp</title>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="144.419,-117 144.419,-137 271.581,-137 271.581,-117 144.419,-117"/>
-<text text-anchor="middle" x="208" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">om/sink/iterator_sink.hpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="-0.581055,-117 -0.581055,-137 126.581,-137 126.581,-117 -0.581055,-117"/>
+<text text-anchor="middle" x="63" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">om/sink/iterator_sink.hpp</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="stream__sink_8hpp.html" target="_top" xlink:title="Om header file. ">
+<g id="a_node2"><a xlink:href="iterator__sink_8cpp.html" target="_top" xlink:title="Om source file. ">
 <polygon fill="none" stroke="black" points="-0.300293,-59 -0.300293,-79 126.3,-79 126.3,-59 -0.300293,-59"/>
-<text text-anchor="middle" x="63" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">om/sink/stream_sink.hpp</text>
+<text text-anchor="middle" x="63" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">om/sink/iterator_sink.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M174.971,-113.244C148.027,-102.838 110.62,-88.3912 86.6094,-79.1181"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="173.791,-116.54 184.381,-116.878 176.313,-110.01 173.791,-116.54"/>
-</g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="iterator__sink_8cpp.html" target="_top" xlink:title="Om source file. ">
-<polygon fill="none" stroke="black" points="144.7,-59 144.7,-79 271.3,-79 271.3,-59 144.7,-59"/>
-<text text-anchor="middle" x="208" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">om/sink/iterator_sink.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node4 -->
-<g id="edge4" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M201.549,-106.707C200.886,-97.3384 201.326,-86.5262 202.869,-79.0752"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="198.093,-107.278 202.834,-116.753 205.037,-106.389 198.093,-107.278"/>
+<path fill="none" stroke="midnightblue" d="M56.5488,-106.707C55.8859,-97.3384 56.326,-86.5262 57.869,-79.0752"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="53.0933,-107.278 57.8337,-116.753 60.0367,-106.389 53.0933,-107.278"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="stream__sink_8cpp.html" target="_top" xlink:title="Om source file. ">
-<polygon fill="none" stroke="black" points="-0.0195312,-1 -0.0195312,-21 126.02,-21 126.02,-1 -0.0195312,-1"/>
-<text text-anchor="middle" x="63" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">om/sink/stream_sink.cpp</text>
+<g id="a_node3"><a xlink:href="stream__sink_8hpp.html" target="_top" xlink:title="Om header file. ">
+<polygon fill="none" stroke="black" points="144.7,-59 144.7,-79 271.3,-79 271.3,-59 144.7,-59"/>
+<text text-anchor="middle" x="208" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">om/sink/stream_sink.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge"><title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M56.5488,-48.7065C55.8859,-39.3384 56.326,-28.5262 57.869,-21.0752"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="53.0933,-49.2776 57.8337,-58.7527 60.0367,-48.3895 53.0933,-49.2776"/>
+<!-- Node1&#45;&gt;Node3 -->
+<g id="edge3" class="edge"><title>Node1&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M96.0287,-113.244C122.973,-102.838 160.38,-88.3912 184.391,-79.1181"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="94.687,-110.01 86.6195,-116.878 97.2089,-116.54 94.687,-110.01"/>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge3" class="edge"><title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M69.4357,-31.0781C70.1156,-40.4238 69.6924,-51.2504 68.1663,-58.7527"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="72.8951,-30.5385 68.131,-21.0752 65.9539,-31.4439 72.8951,-30.5385"/>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node1</title>
+<path fill="none" stroke="midnightblue" d="M69.4357,-89.0781C70.1156,-98.4238 69.6924,-109.25 68.1663,-116.753"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="72.8951,-88.5385 68.131,-79.0752 65.9539,-89.4439 72.8951,-88.5385"/>
 </g>
-<!-- Node4&#45;&gt;Node1 -->
-<g id="edge5" class="edge"><title>Node4&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M214.436,-89.0781C215.116,-98.4238 214.692,-109.25 213.166,-116.753"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="217.895,-88.5385 213.131,-79.0752 210.954,-89.4439 217.895,-88.5385"/>
+<!-- Node4 -->
+<g id="node4" class="node"><title>Node4</title>
+<g id="a_node4"><a xlink:href="stream__sink_8cpp.html" target="_top" xlink:title="Om source file. ">
+<polygon fill="none" stroke="black" points="144.98,-1 144.98,-21 271.02,-21 271.02,-1 144.98,-1"/>
+<text text-anchor="middle" x="208" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">om/sink/stream_sink.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge4" class="edge"><title>Node3&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M201.549,-48.7065C200.886,-39.3384 201.326,-28.5262 202.869,-21.0752"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="198.093,-49.2776 202.834,-58.7527 205.037,-48.3895 198.093,-49.2776"/>
+</g>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge5" class="edge"><title>Node4&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M214.436,-31.0781C215.116,-40.4238 214.692,-51.2504 213.166,-58.7527"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="217.895,-30.5385 213.131,-21.0752 210.954,-31.4439 217.895,-30.5385"/>
 </g>
 </g>
 </svg>

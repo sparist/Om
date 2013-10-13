@@ -74,13 +74,13 @@ Adding Operations</h1>
 <p>There are two ways to implement an operation: as a composite operation, or an atomic operation.</p>
 <p>To implement a composite operation, or an atomic operation that consumes no operands:</p>
 <ul>
-<li>Define the operation <code>class</code> in the <code><a class="el" href="namespace_om_1_1_operation.html" title="A namespace for all Operations. ">Om::Operation</a></code> namespace.</li>
+<li>Define the operation <code>class</code> in the <code><a class="el" href="namespace_om_1_1_operation.html" title="A namespace for all Operation implementations. ">Om::Operation</a></code> namespace.</li>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
 <li>Define the static <code>Give(<a class="el" href="class_om_1_1_evaluation.html" title="The current evaluation. ">Om::Evaluation</a> &amp;)</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
 </ul>
 <p>To define an atomic operation that consumes one or more operands:</p>
 <ul>
-<li>Define the operation <code>class</code>, derived from <code><a class="el" href="class_om_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation. ">Om::Operation::DefaultIncompleteOperation</a>&lt;</code><em>operation</em><code>&gt;</code> (where <em>operation</em> is the name of the operation <code>class</code>), in the <code><a class="el" href="namespace_om_1_1_operation.html" title="A namespace for all Operations. ">Om::Operation</a></code> namespace.</li>
+<li>Define the operation <code>class</code>, derived from <code><a class="el" href="class_om_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation. ">Om::Operation::DefaultIncompleteOperation</a>&lt;</code><em>operation</em><code>&gt;</code> (where <em>operation</em> is the name of the operation <code>class</code>), in the <code><a class="el" href="namespace_om_1_1_operation.html" title="A namespace for all Operation implementations. ">Om::Operation</a></code> namespace.</li>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
 <li>Add the implementation, using existing operations as a guide:<ul>
 <li>Implement the functions necessary to compile.</li>

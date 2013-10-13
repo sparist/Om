@@ -24,8 +24,8 @@ var dir_3da05fc2f9e811d796eaf7697d32c812 =
     [ "iterator_source.hpp", "iterator__source_8hpp.html", "iterator__source_8hpp" ],
     [ "singleton_source.cpp", "singleton__source_8cpp.html", null ],
     [ "singleton_source.hpp", "singleton__source_8hpp.html", "singleton__source_8hpp" ],
-    [ "source.cpp", "source_8cpp.html", null ],
-    [ "source.hpp", "source_8hpp.html", "source_8hpp" ],
+    [ "source.cpp", "source_2source_8cpp.html", null ],
+    [ "source.hpp", "source_2source_8hpp.html", "source_2source_8hpp" ],
     [ "stream_source.cpp", "stream__source_8cpp.html", null ],
     [ "stream_source.hpp", "stream__source_8hpp.html", "stream__source_8hpp" ]
 ];

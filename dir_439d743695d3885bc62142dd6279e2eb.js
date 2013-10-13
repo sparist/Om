@@ -10,8 +10,8 @@ var dir_439d743695d3885bc62142dd6279e2eb =
     [ "default_sink.hpp", "default__sink_8hpp.html", "default__sink_8hpp" ],
     [ "iterator_sink.cpp", "iterator__sink_8cpp.html", null ],
     [ "iterator_sink.hpp", "iterator__sink_8hpp.html", "iterator__sink_8hpp" ],
-    [ "sink.cpp", "sink_8cpp.html", null ],
-    [ "sink.hpp", "sink_8hpp.html", "sink_8hpp" ],
+    [ "sink.cpp", "sink_2sink_8cpp.html", null ],
+    [ "sink.hpp", "sink_2sink_8hpp.html", "sink_2sink_8hpp" ],
     [ "stream_sink.cpp", "stream__sink_8cpp.html", null ],
     [ "stream_sink.hpp", "stream__sink_8hpp.html", "stream__sink_8hpp" ]
 ];

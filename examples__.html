@@ -78,7 +78,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 </blockquote>
 </li>
 </ul>
-<p>Operands can be dropped and copied via the <a class="el" href="group__om____operations____drop__operation____.html">drop</a> and <a class="el" href="group__om____operations____copy__operation____.html">copy</a> operations:</p>
+<p>Operands can be dropped and copied via the <a class="el" href="group__om____operation____drop__operation____.html">drop</a> and <a class="el" href="group__om____operation____copy__operation____.html">copy</a> operations:</p>
 <ul>
 <li><code>drop {A}{B}{C}</code> <blockquote class="doxtable">
 <p><code>{B}{C}</code></p>
@@ -97,14 +97,14 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 </blockquote>
 </li>
 </ul>
-<p>The <a class="el" href="group__om____operations____drop__operation____.html">drop</a> operation can therefore be used for comments:</p>
+<p>The <a class="el" href="group__om____operation____drop__operation____.html">drop</a> operation can therefore be used for comments:</p>
 <ul>
 <li><code>drop {This is a comment.} {This is not a comment.}</code> <blockquote class="doxtable">
 <p><code>{This is not a comment.}</code></p>
 </blockquote>
 </li>
 </ul>
-<p>The <a class="el" href="group__om____operations____choose__operation____.html">choose</a> operation selects one of two operands, depending on whether a third is empty:</p>
+<p>The <a class="el" href="group__om____operation____choose__operation____.html">choose</a> operation selects one of two operands, depending on whether a third is empty:</p>
 <ul>
 <li><code>choose {It was empty.}{It was non-empty.}{I am not empty.}</code> <blockquote class="doxtable">
 <p><code>{It was non-empty.}</code></p>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 </blockquote>
 </li>
 </ul>
-<p>The <a class="el" href="group__om____operations____quote__operation____.html">quote</a> and <a class="el" href="group__om____operations____dequote__operation____.html">dequote</a> operations add and remove a layer of operand braces, respectively:</p>
+<p>The <a class="el" href="group__om____operation____quote__operation____.html">quote</a> and <a class="el" href="group__om____operation____dequote__operation____.html">dequote</a> operations add and remove a layer of operand braces, respectively:</p>
 <ul>
 <li><code>quote {B}</code> <blockquote class="doxtable">
 <p><code>{{B}}</code></p>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 </blockquote>
 </li>
 </ul>
-<p>A new operator definition can be provided with the <a class="el" href="group__om____operations____define__operation____.html">define</a> operation, where the first operand is treated as containing a <a class="el" href="group__om____lexicon____.html">Lexicon</a> with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:</p>
+<p>A new operator definition can be provided with the <a class="el" href="group__om____operation____define__operation____.html">define</a> operation, where the first operand is treated as containing a <a class="el" href="group__om____lexicon____.html">Lexicon</a> with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:</p>
 <ul>
 <li><code>define { double-quote {quote quote} } { double-quote {A} }</code> <blockquote class="doxtable">
 <p><code>{{{A}}}</code></p>
@@ -193,7 +193,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 </blockquote>
 </li>
 </ul>
-<p>Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the <a class="el" href="group__om____operations____normalize__operation____.html">normalize</a> operation:</p>
+<p>Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the <a class="el" href="group__om____operation____normalize__operation____.html">normalize</a> operation:</p>
 <ul>
 <li><code>normalize {2⁵}</code> <blockquote class="doxtable">
 <p><code>{25}</code></p>
@@ -298,7 +298,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
  </code></li>
 <li><code><em>{23}</em></code></li>
 </ul>
-<p>The <a class="el" href="group__om____operations____rearrange__operation____.html">rearrange</a> operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call: </p>
+<p>The <a class="el" href="group__om____operation____rearrange__operation____.html">rearrange</a> operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call: </p>
 <pre class="fragment">define
 {
 	Fold&lt;- {
@@ -347,7 +347,7 @@ $(document).ready(function(){initNavTree('examples__.html','');});
 </ul>
 <p>A few things should be noted about the above example:</p>
 <ul>
-<li>The <a class="el" href="group__om____operations____.html">Operations</a> list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.</li>
+<li>The <a class="el" href="group__om____operation____.html">Operation</a> list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.</li>
 <li>When reading Om code, it can be difficult to mentally group operations with the operands they consume (contrasted with Scheme, in which they are grouped at design time with parentheses). However, it should be possible for an Om integrated development environment to generate a graphical indication of these groupings dynamically. </li>
 </ul>
 </div></div><!-- contents -->
