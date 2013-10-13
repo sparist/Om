@@ -1,12 +1,12 @@
 /*!
 \defgroup om__operator__ Operator
-	\ingroup om__programs__
+	\ingroup om__program__
 	\brief
-		An atomic \ref om__programs__ "Program" element defined by any UTF-8 string.
+		An atomic \ref om__program__ element defined by any UTF-8 string.
 	\par Interpretation
-		A \ref om__programs__ "Program" is interpreted as an \ref om__operator__ by treating it as containing as a single atomic UTF-8 string element containing the encoded text of all elements.
+		A \ref om__program__ is interpreted as an \ref om__operator__ by treating it as containing as a single atomic UTF-8 string element containing the encoded text of all elements.
 	\par Normalization
-		A \ref om__programs__ "Program" is normalized as an \ref om__operator__ by encoding and merging all elements.
+		A \ref om__program__ is normalized as an \ref om__operator__ by encoding and merging all elements.
 	\par Implementation
 		Om::Operator
 */

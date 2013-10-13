@@ -138,7 +138,7 @@ The Om.Documentation target builds this documentation into the following folders
 \section using_code__library__ Library
 
 %Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:
--	Add the %Om <tt>&quot;input/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om/om.hpp&quot;</tt> to include all %Om header files.
+-	Add the %Om <tt>&quot;input/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
 -	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency <tt>&quot;generate&quot;</tt> scripts for guidance.
 -	Call the <tt>Om::System::Initialize</tt> function prior to use (e.g. in the <tt>main</tt> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").
 -	Construct an <tt>Om::Environment</tt>, populate with any additional operator-program mappings, and call one of its <tt>Om::Environment::Evaluate</tt> functions to evaluate a program.
@@ -244,7 +244,7 @@ Any programs may be concatenated together; however, note that concatenating prog
 
 \section functions__operations__ Operations
 
-All operation implementations provided are documented in the \ref om__operations__ module.
+All operation implementations provided are documented in the \ref om__operation__ module.
 
 \page data__ Data
 
@@ -266,7 +266,7 @@ Operations in a program can be ordered by the programmer to increase performance
 
 \section data__programs__ Programs
 
-All program implementations provided are documented in the \ref om__programs__ module.
+All program implementations provided are documented in the \ref om__program__ module.
 
 \page examples__ Examples
 
@@ -282,7 +282,7 @@ Note that separators are significant inside operands:
 -	<tt>{Hello, &nbsp;&nbsp;world!}</tt>
 	<blockquote><tt>{Hello, &nbsp;&nbsp;world!}</tt></blockquote>
 
-Operands can be dropped and copied via the \ref om__operations__drop_operation__ and \ref om__operations__copy_operation__ operations:
+Operands can be dropped and copied via the \ref om__operation__drop_operation__ and \ref om__operation__copy_operation__ operations:
 -	<tt>drop {A}{B}{C}</tt>
 	<blockquote><tt>{B}{C}</tt></blockquote>
 -	<tt>copy {A}{B}{C}</tt>
@@ -292,11 +292,11 @@ Operands can be dropped and copied via the \ref om__operations__drop_operation__
 -	<tt>copy copy {A}</tt>
 	<blockquote><tt>{A}{A}{A}</tt></blockquote>
 
-The \ref om__operations__drop_operation__ operation can therefore be used for comments:
+The \ref om__operation__drop_operation__ operation can therefore be used for comments:
 -	<tt>drop {This is a comment.} {This is not a comment.}</tt>
 	<blockquote><tt>{This is not a comment.}</tt></blockquote>
 
-The \ref om__operations__choose_operation__ operation selects one of two operands, depending on whether a third is empty:
+The \ref om__operation__choose_operation__ operation selects one of two operands, depending on whether a third is empty:
 -	<tt>choose {It was empty.}{It was non-empty.}{I am not empty.}</tt>
 	<blockquote><tt>{It was non-empty.}</tt></blockquote>
 -	<tt>choose {It was empty.}{It was non-empty.}{}</tt>
@@ -308,7 +308,7 @@ An operation without sufficient operands evaluates to itself and whatever operan
 -	<tt>choose {It was empty.}{It was non-empty.}</tt>
 	<blockquote><tt>choose{It was empty.}{It was non-empty.}</tt></blockquote>
 
-The \ref om__operations__quote_operation__ and \ref om__operations__dequote_operation__ operations add and remove a layer of operand braces, respectively:
+The \ref om__operation__quote_operation__ and \ref om__operation__dequote_operation__ operations add and remove a layer of operand braces, respectively:
 -	<tt>quote {B}</tt>
 	<blockquote><tt>{{B}}</tt></blockquote>
 -	<tt>dequote {{B}}</tt>
@@ -326,7 +326,7 @@ Operands can be popped from and pushed into:
 -	<tt>&lt;-terms {some terms}</tt>
 	<blockquote><tt>{some}{terms}</tt></blockquote>
 
-A new operator definition can be provided with the \ref om__operations__define_operation__ operation, where the first operand is treated as containing a \ref om__lexicon__ with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:
+A new operator definition can be provided with the \ref om__operation__define_operation__ operation, where the first operand is treated as containing a \ref om__lexicon__ with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:
 -	<tt>define { double-quote {quote quote} } { double-quote {A} }</tt>
 	<blockquote><tt>{{{A}}}</tt></blockquote>
 
@@ -344,7 +344,7 @@ Unicode is fully supported:
 -	<tt>&lt;-terms {한글 韓}</tt>
 	<blockquote><tt>{한글}{韓}</tt></blockquote>
 
-Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the \ref om__operations__normalize_operation__ operation:
+Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the \ref om__operation__normalize_operation__ operation:
 -	<tt>normalize {2⁵}</tt>
 	<blockquote><tt>{25}</tt></blockquote>
 
@@ -442,7 +442,7 @@ Each step of an evaluation can be represented as a program. The following is the
 	</tt>
 -	<tt><em>{23}</em></tt>
 
-The \ref om__operations__rearrange_operation__ operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call:
+The \ref om__operation__rearrange_operation__ operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call:
 \verbatim
 define
 {
@@ -487,13 +487,13 @@ The example works as follows:
 -	If the <tt>Remainder</tt> is empty, the <tt>Result</tt> is output. Otherwise, <tt>Function</tt>, <tt>Result</tt>, and <tt>Remainder</tt> are passed to a recursive <tt>Fold&lt;-</tt> call.
 
 A few things should be noted about the above example:
--	The \ref om__operations__ list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.
+-	The \ref om__operation__ list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.
 -	When reading %Om code, it can be difficult to mentally group operations with the operands they consume (contrasted with Scheme, in which they are grouped at design time with parentheses). However, it should be possible for an %Om integrated development environment to generate a graphical indication of these groupings dynamically.
 
 \page contributing__ Contributing
 
 There are several ways to contribute to the %Om project:
--	By \subpage developing__ new \ref om__operations__ and \ref om__programs__.
+-	By \subpage developing__ new \ref om__operation__ and \ref om__program__ classes.
 -	By \subpage reporting_issues__ via bugs, patches, or enhancement requests.
 -	By \subpage funding__ further development of the %Om language.
 

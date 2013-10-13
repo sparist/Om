@@ -1,18 +1,18 @@
 /*!
-\defgroup om__operations__rearrange_operation__ rearrange
-	\ingroup om__operations__
+\defgroup om__operation__rearrange_operation__ rearrange
+	\ingroup om__operation__
 	\brief
 		Rearranges \ref om__operand__ "Operands".
 	\par Input
 		<blockquote><tt>{new arrangement} {current arrangement} ...</tt></blockquote>
 		where remaining \ref om__operand__ "Operands" are pulled and mapped to \ref om__operator__ "Operators" in:
 		<blockquote><tt>{current arrangement}</tt></blockquote>
-		to construct a scope that is used to evaluate, then \ref om__operations__dequote_operation__ "dequote":
+		to construct a scope that is used to evaluate, then \ref om__operation__dequote_operation__ "dequote":
 		<blockquote><tt>{new arrangement}</tt></blockquote>
 	\par Output
-		The \ref om__operations__dequote_operation__ "dequoted" evaluation of:
+		The \ref om__operation__dequote_operation__ "dequoted" evaluation of:
 		<blockquote><tt>{new arrangement}</tt></blockquote>
-		using the scope constructed by \ref om__operations__fill_operation__ "filling" into:
+		using the scope constructed by \ref om__operation__fill_operation__ "filling" into:
 		<blockquote><tt>{current arrangement}</tt></blockquote>
 	\par Examples
 		-	<tt>rearrange{C B A}{A B C}{1}{2}{3}</tt>

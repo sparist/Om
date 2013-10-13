@@ -30,7 +30,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__expression_front_push_operation__ operation implementation.
+			The \ref om__operation__expression_front_push_operation__ operation implementation.
 		*/
 		class ExpressionFrontPushOperation {
 

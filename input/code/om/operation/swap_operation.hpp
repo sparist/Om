@@ -31,7 +31,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__swap_operation__ operation implementation.
+			The \ref om__operation__swap_operation__ operation implementation.
 		*/
 		class SwapOperation :
 		public DefaultIncompleteOperation<SwapOperation>

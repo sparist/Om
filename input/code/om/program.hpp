@@ -39,7 +39,7 @@ namespace Om {
 
 	/*!
 	\brief
-		The \ref om__programs__ "Program" implementation.
+		The \ref om__program__ implementation.
 
 	A Program is a Giveable, Shareable Producer and Consumer whose entire state is represented by an Element collection.
 

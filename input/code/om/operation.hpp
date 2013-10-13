@@ -21,7 +21,7 @@ namespace Om {
 
 	/*!
 	\brief
-		A namespace for all \ref om__operations__.
+		A namespace for all \ref om__operation__ implementations.
 
 	Each operation implementation requires the following:
 	-	A <tt>static char const * GetName()</tt> function that returns a null-terminated, NFD-normalized UTF-8 string to be used as a corresponding Operator name.

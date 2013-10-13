@@ -32,7 +32,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__skip_operation__ operation implementation.
+			The \ref om__operation__skip_operation__ operation implementation.
 		*/
 		class SkipOperation :
 		public DefaultIncompleteOperation<SkipOperation>

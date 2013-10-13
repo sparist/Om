@@ -1,7 +1,7 @@
 /*!
-\defgroup om__programs__ Programs
+\defgroup om__program__ Program
 	\brief
-		Data types that each share a common list interface containing 0 or more elements.
+		A data type that presents as a list containing 0 or more elements.
 	\par Implementation
-		\ref om__programs__ are concrete implementations of Om::Program.
+		Each \ref om__program__ is a concrete implementation of Om::Program.
 */

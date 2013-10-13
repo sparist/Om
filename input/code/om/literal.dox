@@ -1,10 +1,10 @@
 /*!
 \defgroup om__literal__ Literal
-	\ingroup om__programs__
+	\ingroup om__program__
 	\brief
-		A literal \ref om__programs__ "Program".
+		A literal \ref om__program__.
 	\par Interpretation
-		A \ref om__programs__ "Program" is interpreted as a \ref om__literal__ by treating all elements as significant.
+		A \ref om__program__ is interpreted as a \ref om__literal__ by treating all elements as significant.
 	\par Normalization
 		No normalization is required.
 	\par Implementation

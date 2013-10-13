@@ -31,7 +31,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__quote_operation__ operation implementation.
+			The \ref om__operation__quote_operation__ operation implementation.
 		*/
 		class QuoteOperation :
 		public DefaultIncompleteOperation<QuoteOperation>

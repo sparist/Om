@@ -12,20 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Sink_
-
-	#define Om_Sink_ \
-	Om::Sink
+#ifndef Om_Sink_Sink_
 
 	#define Om_Sink_Sink_ \
 	Om::Sink::Sink
 
 namespace Om {
 
-	/*!
-	\brief
-		A namespace for all sinks.
-	*/
 	namespace Sink {
 
 		// MARK: - Om::Sink::Sink

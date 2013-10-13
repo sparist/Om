@@ -30,7 +30,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__lexicon_back_push_operation__ operation implementation.
+			The \ref om__operation__lexicon_back_push_operation__ operation implementation.
 		*/
 		class LexiconBackPushOperation {
 

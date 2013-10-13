@@ -31,7 +31,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__define_operation__ operation implementation.
+			The \ref om__operation__define_operation__ operation implementation.
 		*/
 		class EvaluateOperation :
 		public DefaultIncompleteOperation<EvaluateOperation>

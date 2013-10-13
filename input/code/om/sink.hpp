@@ -12,32 +12,18 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Operation_LexiconOperation_
+#ifndef Om_Sink_
 
-	#define Om_Operation_LexiconOperation_ \
-	Om::Operation::LexiconOperation
-
-	#include "om/lexicon.hpp"
-	#include "om/operation/program_operation.hpp"
-	#include "om/system.hpp"
+	#define Om_Sink_ \
+	Om::Sink
 
 namespace Om {
 
-	namespace Operation {
-
-		/*!
-		\brief
-			The \ref om__operation__lexicon_operation__ operation implementation.
-		*/
-		typedef ProgramOperation<Lexicon> LexiconOperation;
-
-		namespace {
-
-			static System::Definition<LexiconOperation> const theLexiconDefinition;
-
-		}
-
-	}
+	/*!
+	\brief
+		A namespace for all sinks.
+	*/
+	namespace Sink {}
 
 }
 

@@ -31,7 +31,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__choose_operation__ operation implementation.
+			The \ref om__operation__choose_operation__ operation implementation.
 		*/
 		class ChooseOperation :
 		public DefaultIncompleteOperation<ChooseOperation>

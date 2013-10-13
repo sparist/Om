@@ -34,7 +34,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__back_pull_operand_operation__ operation implementation.
+			The \ref om__operation__back_pull_operand_operation__ operation implementation.
 		*/
 		class BackPullOperandOperation {
 

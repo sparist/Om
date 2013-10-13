@@ -31,7 +31,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__equals_operation__ operation implementation.
+			The \ref om__operation__equals_operation__ operation implementation.
 		*/
 		class EqualsOperation :
 		public DefaultIncompleteOperation<EqualsOperation>

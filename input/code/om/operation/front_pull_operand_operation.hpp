@@ -34,7 +34,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__front_pull_operand_operation__ operation implementation.
+			The \ref om__operation__front_pull_operand_operation__ operation implementation.
 		*/
 		class FrontPullOperandOperation {
 

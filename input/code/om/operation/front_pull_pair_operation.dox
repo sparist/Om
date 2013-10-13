@@ -1,6 +1,6 @@
 /*!
-\defgroup om__operations__front_pull_pair_operation__ <-pairs
-	\ingroup om__operations__
+\defgroup om__operation__front_pull_pair_operation__ <-pairs
+	\ingroup om__operation__
 	\brief
 		Pops the first pair (a non-empty list of zero or one \ref om__operator__ "Operator(s)", followed by zero or one \ref om__operand__ "Operand(s)"), quoted.
 	\par Implementation

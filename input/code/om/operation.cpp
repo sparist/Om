@@ -14,6 +14,6 @@
 
 #ifndef Om_Operation_
 
-	#include "om/operation/operation.hpp"
+	#include "om/operation.hpp"
 
 #endif

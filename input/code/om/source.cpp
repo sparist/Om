@@ -12,8 +12,8 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Macro_
+#ifndef Om_Source_
 
-	#include "om/macro/macro.hpp"
+	#include "om/source.hpp"
 
 #endif

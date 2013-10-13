@@ -1,12 +1,12 @@
 /*!
 \defgroup om__operand__ Operand
-	\ingroup om__programs__
+	\ingroup om__program__
 	\brief
-		A \ref om__programs__ "Program" element that wraps a \ref om__programs__ "Program".
+		A \ref om__program__ element that wraps a \ref om__program__.
 	\par Interpretation
-		A \ref om__programs__ "Program" is interpreted as an \ref om__operand__ by treating only the first operand (a \ref om__programs__ "Program" enclosed by braces) as significant.
+		A \ref om__program__ is interpreted as an \ref om__operand__ by treating only the first operand (a \ref om__program__ enclosed by braces) as significant.
 	\par Normalization
-		A \ref om__programs__ "Program" is normalized as an \ref om__operand__ by discarding all elements other than the first operand element.
+		A \ref om__program__ is normalized as an \ref om__operand__ by discarding all elements other than the first operand element.
 	\par Implementation
 		Om::Operand
 */

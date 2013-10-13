@@ -1,12 +1,12 @@
 /*!
-\defgroup om__operations__inject_operation__ inject
-	\ingroup om__operations__
+\defgroup om__operation__inject_operation__ inject
+	\ingroup om__operation__
 	\brief
-		Inserts a \ref om__programs__ "Program" before each \ref om__operand__ of another.
+		Inserts a \ref om__program__ before each \ref om__operand__ of another.
 	\par Input
 		<tt>{injector}{program}</tt>
 	\par Output
-		Dequotes <tt>{program}</tt>, injects the dequoted <tt>{injector}</tt> between the \ref om__programs__ "Program" and each of its \ref om__operand__ "Operands", then \ref om__operations__quote_operation__ "quotes" the result.
+		Dequotes <tt>{program}</tt>, injects the dequoted <tt>{injector}</tt> between the \ref om__program__ and each of its \ref om__operand__ "Operands", then \ref om__operation__quote_operation__ "quotes" the result.
 	\par Examples
 		-	<tt>inject{quote}{copy}{A}</tt>
 			<blockquote><tt>{{{A}}{{A}}}</tt></blockquote>

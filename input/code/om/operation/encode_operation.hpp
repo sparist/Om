@@ -31,7 +31,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__encode_operation__ operation implementation.
+			The \ref om__operation__encode_operation__ operation implementation.
 		*/
 		class EncodeOperation :
 		public DefaultIncompleteOperation<EncodeOperation>

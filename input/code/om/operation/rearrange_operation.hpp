@@ -30,7 +30,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__rearrange_operation__ operation implementation.
+			The \ref om__operation__rearrange_operation__ operation implementation.
 		*/
 		class RearrangeOperation {
 

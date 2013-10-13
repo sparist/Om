@@ -30,7 +30,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__system_operation__ operation implementation.
+			The \ref om__operation__system_operation__ operation implementation.
 		*/
 		class SystemOperation {
 

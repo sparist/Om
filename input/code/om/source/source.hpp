@@ -12,20 +12,13 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Source_
-
-	#define Om_Source_ \
-	Om::Source
+#ifndef Om_Source_Source_
 
 	#define Om_Source_Source_ \
 	Om::Source::Source
 
 namespace Om {
 
-	/*!
-	\brief
-		A namespace for all sources.
-	*/
 	namespace Source {
 
 		// MARK: - Om::Source::Source

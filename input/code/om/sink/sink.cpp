@@ -12,7 +12,7 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Sink_
+#ifndef Om_Sink_Sink_
 
 	#include "om/sink/sink.hpp"
 

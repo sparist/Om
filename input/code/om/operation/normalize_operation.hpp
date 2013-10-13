@@ -31,7 +31,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__normalize_operation__ operation implementation.
+			The \ref om__operation__normalize_operation__ operation implementation.
 		*/
 		class NormalizeOperation :
 		public DefaultIncompleteOperation<NormalizeOperation>

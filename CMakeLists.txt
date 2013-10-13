@@ -200,7 +200,7 @@ add_custom_target("Om.Documentation" ALL
 )
 
 # "om.internal": Populate with complete sorted list of unique headers.
-set(Internal "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om/om.internal")
+set(Internal "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.internal")
 file(WRITE "${Internal}" "")
 foreach(HppFile ${HppFiles})
 	file(RELATIVE_PATH RelativeHppFile "${CMAKE_CURRENT_SOURCE_DIR}/input/code" "${HppFile}")
@@ -213,7 +213,7 @@ if(APPLE)
 
 	set_target_properties("Om.Interpreter" "Om.Test"
 		PROPERTIES
-			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om/om.external"
+			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/input/code/om.external"
 			XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
 	)
 endif()

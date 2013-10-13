@@ -32,7 +32,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__substitute_operation__ operation implementation.
+			The \ref om__operation__substitute_operation__ operation implementation.
 		*/
 		class SubstituteOperation :
 		public TranslateOperation<SubstituteOperation>

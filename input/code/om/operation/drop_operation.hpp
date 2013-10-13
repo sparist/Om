@@ -31,7 +31,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__drop_operation__ operation implementation.
+			The \ref om__operation__drop_operation__ operation implementation.
 		*/
 		class DropOperation :
 		public DefaultIncompleteOperation<DropOperation>

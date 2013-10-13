@@ -30,7 +30,7 @@ namespace Om {
 
 		/*!
 		\brief
-			The \ref om__operations__back_pull_code_point_operation__ operation implementation.
+			The \ref om__operation__back_pull_code_point_operation__ operation implementation.
 		*/
 		class BackPullCodePointOperation {
 
