@@ -561,7 +561,7 @@ Some basic free static analysis tools can be applied to the %Om code.
 \section developing__analyzing_tests__ Analyzing Test Coverage
 
 The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:
--	Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>.  In Preferences, add <tt>"*.ipp"</tt> and <tt>"*.hpp"</tt> to the "SDK Files" list.
+-	Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>. In Preferences, add <tt>"*.ipp"</tt> and <tt>"*.hpp"</tt> to the "SDK Files" list.
 -	Build and run the Om.Test target.
 -	In the CoverStory File menu, open the folder <tt>&quot;output/intermediate/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;</tt>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:
 	-	The left pane shows a list of %Om source files, each accompanied by a test coverage percentage.

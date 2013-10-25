@@ -27,67 +27,67 @@ namespace Om {
 
 	namespace Operation {
 
-	  // MARK: - Om::Operation::DefaultIncompleteOperation
+		// MARK: - Om::Operation::DefaultIncompleteOperation
 
-	  /*!
-	  \brief
-		  A partial implementation of IncompleteOperation.
-	  */
-	  template <typename ThisImplementation>
-	  class DefaultIncompleteOperation :
-	  public IncompleteOperation
-	  {
+		/*!
+		\brief
+			A partial implementation of IncompleteOperation.
+		*/
+		template <typename ThisImplementation>
+		class DefaultIncompleteOperation :
+		public IncompleteOperation
+		{
 
-	  public: // MARK: public (static)
+		public: // MARK: public (static)
 
-		  static Operator const & GetOperator();
+			static Operator const & GetOperator();
 
-		  static void Give(Evaluation &);
+			static void Give(Evaluation &);
 
-	  public: // MARK: public (non-static)
+		public: // MARK: public (non-static)
 
-		  virtual ~DefaultIncompleteOperation() = 0;
+			virtual ~DefaultIncompleteOperation() = 0;
 
-		  virtual void GiveElements(Consumer &);
+			virtual void GiveElements(Consumer &);
 
-		  virtual void GiveElements(Consumer &) const;
+			virtual void GiveElements(Consumer &) const;
 
-		  virtual bool ReadQuotedElements(
-			  Evaluation &,
-			  Parser &
-		  );
+			virtual bool ReadQuotedElements(
+				Evaluation &,
+				Parser &
+			);
 
-		  /*!
-		  \brief
-			  Takes the Operand and gives the result to the Evaluation.
-		  \return
-			  True if this call completes the Operation, in which case any further calls on the object are undefined.
-		  */
-		  virtual bool TakeElement(
-			  Evaluation &,
-			  Operand &
-		  );
+			/*!
+			\brief
+				Takes the Operand and gives the result to the Evaluation.
+			\return
+				True if this call completes the Operation, in which case any further calls on the object are undefined.
+			*/
+			virtual bool TakeElement(
+				Evaluation &,
+				Operand &
+			);
 
-		  /*!
-		  \brief
-			  \overload
-		  */
-		  virtual bool TakeElement(
-			  Evaluation &,
-			  Operand const &
-		  );
+			/*!
+			\brief
+				\overload
+			*/
+			virtual bool TakeElement(
+				Evaluation &,
+				Operand const &
+			);
 
-		  virtual bool TakeQuotedElements(
-			  Evaluation &,
-			  Producer &
-		  );
+			virtual bool TakeQuotedElements(
+				Evaluation &,
+				Producer &
+			);
 
-		  virtual bool TakeQuotedElements(
-			  Evaluation &,
-			  Producer const &
-		  );
+			virtual bool TakeQuotedElements(
+				Evaluation &,
+				Producer const &
+			);
 
-	  };
+		};
 
 	}
 
