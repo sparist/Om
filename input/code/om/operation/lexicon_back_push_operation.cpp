@@ -32,8 +32,8 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{lexicon<-}",
-					System::Get().Evaluate("drop find {lexicon<-} system")
+					"{[lexicon]<-}",
+					System::Get().Evaluate("drop find {[lexicon]<-} system")
 				);
 			}
 

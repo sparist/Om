@@ -20,7 +20,7 @@
 	#include "om/system.hpp"
 
 	#define Om_Operation_FrontPullPairOperation_GetName_() \
-	"<-pairs"
+	"<-[pairs]"
 
 namespace Om {
 

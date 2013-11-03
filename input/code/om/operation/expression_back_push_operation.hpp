@@ -20,7 +20,7 @@
 	#include "om/system.hpp"
 
 	#define Om_Operation_ExpressionBackPushOperation_GetName_() \
-	"expression<-"
+	"[expression]<-"
 
 namespace Om {
 

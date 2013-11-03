@@ -20,7 +20,7 @@
 	#include "om/system.hpp"
 
 	#define Om_Operation_BackPullSeparatorOperation_GetName_() \
-	"elements->separator"
+	"[elements|separator]->"
 
 namespace Om {
 

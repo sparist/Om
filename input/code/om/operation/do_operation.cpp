@@ -42,7 +42,7 @@ namespace Om {
 			BOOST_AUTO_TEST_CASE(SimpleTest) {
 				BOOST_CHECK_EQUAL(
 					"{a}{bc}",
-					System::Get().Evaluate("do {<-code points} {abc}")
+					System::Get().Evaluate("do {<-[code points]} {abc}")
 				);
 			}
 

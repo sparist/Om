@@ -32,8 +32,8 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{literal<-}",
-					System::Get().Evaluate("drop find {literal<-} system")
+					"{[literal]<-}",
+					System::Get().Evaluate("drop find {[literal]<-} system")
 				);
 			}
 

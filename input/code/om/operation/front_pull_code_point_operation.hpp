@@ -20,7 +20,7 @@
 	#include "om/system.hpp"
 
 	#define Om_Operation_FrontPullCodePointOperation_GetName_() \
-	"<-code points"
+	"<-[code points]"
 
 namespace Om {
 

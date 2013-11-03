@@ -20,7 +20,7 @@
 	#include "om/system.hpp"
 
 	#define Om_Operation_BackPullTermOperation_GetName_() \
-	"terms->"
+	"[terms]->"
 
 namespace Om {
 

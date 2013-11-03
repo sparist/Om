@@ -34,40 +34,40 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{elements->operator}",
-					System::Get().Evaluate("drop find {elements->operator} system")
+					"{[elements|operator]->}",
+					System::Get().Evaluate("drop find {[elements|operator]->} system")
 				);
 			}
 
 			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{3}{1{2}}",
-					System::Get().Evaluate("elements->operator {1{2}3}")
+					System::Get().Evaluate("[elements|operator]-> {1{2}3}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{1{2}}",
-					System::Get().Evaluate("elements->operator {1{2}}")
+					System::Get().Evaluate("[elements|operator]-> {1{2}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{2}{1 }",
-					System::Get().Evaluate("elements->operator {1 2}")
+					System::Get().Evaluate("[elements|operator]-> {1 2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate("elements->operator {}")
+					System::Get().Evaluate("[elements|operator]-> {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate("elements->operator {only}")
+					System::Get().Evaluate("[elements|operator]-> {only}")
 				);
 
 				BOOST_CHECK_EQUAL(
-					"elements->operator",
-					System::Get().Evaluate("elements->operator")
+					"[elements|operator]->",
+					System::Get().Evaluate("[elements|operator]->")
 				);
 			}
 

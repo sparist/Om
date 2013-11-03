@@ -32,40 +32,40 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{<-forms}",
-					System::Get().Evaluate("drop find {<-forms} system")
+					"{<-[forms]}",
+					System::Get().Evaluate("drop find {<-[forms]} system")
 				);
 			}
 
 			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{1{2}{3}}{4{5}{6}}",
-					System::Get().Evaluate("<-forms {1{2}{3}4{5}{6}}")
+					System::Get().Evaluate("<-[forms] {1{2}{3}4{5}{6}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{1}{2}",
-					System::Get().Evaluate("<-forms {1 2}")
+					System::Get().Evaluate("<-[forms] {1 2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate("<-forms {}")
+					System::Get().Evaluate("<-[forms] {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate("<-forms {only}")
+					System::Get().Evaluate("<-[forms] {only}")
 				);
 
 				BOOST_CHECK_EQUAL(
-					"<-forms",
-					System::Get().Evaluate("<-forms")
+					"<-[forms]",
+					System::Get().Evaluate("<-[forms]")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{a{b}{c}}{}",
-					System::Get().Evaluate("<-forms{a{b}{c}}")
+					System::Get().Evaluate("<-[forms]{a{b}{c}}")
 				);
 			}
 

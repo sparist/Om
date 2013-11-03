@@ -1,8 +1,8 @@
 /*!
-\defgroup om__operation__back_pull_operand_operation__ elements->operand
+\defgroup om__operation__back_pull_operand_operation__ [elements|operand]->
 	\ingroup om__operation__
 	\brief
-		Casts to \ref om__literal__ and pops the last \ref om__operand__ (if any), quoted.
+		Pops the last \ref om__operand__ (if any), quoted.
 	\par Input
 		<tt>{A {B}}</tt>
 	\par Output

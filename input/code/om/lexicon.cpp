@@ -42,7 +42,7 @@ namespace Om {
 					"{b\n"
 					"a}"
 				),
-				System::Get().Evaluate("->lexicon{b} lexicon{a}")
+				System::Get().Evaluate("->[lexicon]{b} lexicon{a}")
 			);
 		}
 
@@ -55,7 +55,7 @@ namespace Om {
 			BOOST_CHECK_EQUAL(
 				"{b\n"
 				"a}{a}",
-				System::Get().Evaluate("->lexicon{b} copy lexicon{a}")
+				System::Get().Evaluate("->[lexicon]{b} copy lexicon{a}")
 			);
 
 			BOOST_CHECK_EQUAL(
@@ -63,7 +63,7 @@ namespace Om {
 					"{b\n"
 					"a}{a}"
 				),
-				System::Get().Evaluate("->lexicon{b}copy{a}")
+				System::Get().Evaluate("->[lexicon]{b}copy{a}")
 			);
 
 			BOOST_CHECK_EQUAL(
@@ -71,7 +71,7 @@ namespace Om {
 					"{b\n"
 					"a}{a}"
 				),
-				System::Get().Evaluate("->lexicon{b}copy lexicon{a}")
+				System::Get().Evaluate("->[lexicon]{b}copy lexicon{a}")
 			);
 
 			BOOST_CHECK_EQUAL(
@@ -79,7 +79,7 @@ namespace Om {
 					"{a\n"
 					"b}{a}"
 				),
-				System::Get().Evaluate("lexicon<-{b}copy lexicon{a}")
+				System::Get().Evaluate("[lexicon]<-{b}copy lexicon{a}")
 			);
 
 			BOOST_CHECK_EQUAL(
@@ -91,7 +91,7 @@ namespace Om {
 					"b{B}}"
 				),
 				System::Get().Evaluate(
-					"lexicon<- {{C}} lexicon<- {c} "
+					"[lexicon]<- {{C}} [lexicon]<- {c} "
 					"copy lexicon {a {A} b {B}}"
 				)
 			);
@@ -204,7 +204,7 @@ namespace Om {
 					"{{2}\n"
 					"A{3}}"
 				),
-				System::Get().Evaluate("->lexicon{ A{1}{2} }{ A{3} }")
+				System::Get().Evaluate("->[lexicon]{ A{1}{2} }{ A{3} }")
 			);
 
 			BOOST_CHECK_EQUAL(
@@ -212,7 +212,7 @@ namespace Om {
 					"{{3}\n"
 					"A{1}}"
 				),
-				System::Get().Evaluate("lexicon<-{ A{1} }{ A{2}{3} }")
+				System::Get().Evaluate("[lexicon]<-{ A{1} }{ A{2}{3} }")
 			);
 		}
 

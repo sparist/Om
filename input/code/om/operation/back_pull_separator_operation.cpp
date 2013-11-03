@@ -34,40 +34,40 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{elements->separator}",
-					System::Get().Evaluate("drop find {elements->separator} system")
+					"{[elements|separator]->}",
+					System::Get().Evaluate("drop find {[elements|separator]->} system")
 				);
 			}
 
 			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{ }{1{2}}",
-					System::Get().Evaluate("elements->separator {1{2} }")
+					System::Get().Evaluate("[elements|separator]-> {1{2} }")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{1{2}}",
-					System::Get().Evaluate("elements->separator {1{2}}")
+					System::Get().Evaluate("[elements|separator]-> {1{2}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{1 2}",
-					System::Get().Evaluate("elements->separator {1 2}")
+					System::Get().Evaluate("[elements|separator]-> {1 2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate("elements->separator {}")
+					System::Get().Evaluate("[elements|separator]-> {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{ }{}",
-					System::Get().Evaluate("elements->separator { }")
+					System::Get().Evaluate("[elements|separator]-> { }")
 				);
 
 				BOOST_CHECK_EQUAL(
-					"elements->separator",
-					System::Get().Evaluate("elements->separator")
+					"[elements|separator]->",
+					System::Get().Evaluate("[elements|separator]->")
 				);
 			}
 

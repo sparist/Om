@@ -32,20 +32,20 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{<-characters}",
-					System::Get().Evaluate("drop find {<-characters} system")
+					"{<-[characters]}",
+					System::Get().Evaluate("drop find {<-[characters]} system")
 				);
 			}
 
 			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{1}{`{2`}three}",
-					System::Get().Evaluate("<-characters {1{2}three}")
+					System::Get().Evaluate("<-[characters] {1{2}three}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{` }{}",
-					System::Get().Evaluate("<-characters {` }")
+					System::Get().Evaluate("<-[characters] {` }")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -56,7 +56,7 @@ namespace Om {
 						"}{a}"
 					),
 					System::Get().Evaluate(
-						"<-characters {"
+						"<-[characters] {"
 						"\xC7\xBE"
 						"a}"
 					)
@@ -64,17 +64,17 @@ namespace Om {
 
 				BOOST_CHECK_EQUAL(
 					"{` }{}",
-					System::Get().Evaluate("<-characters { }")
+					System::Get().Evaluate("<-[characters] { }")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate("<-characters {}")
+					System::Get().Evaluate("<-[characters] {}")
 				);
 
 				BOOST_CHECK_EQUAL(
-					"<-characters",
-					System::Get().Evaluate("<-characters")
+					"<-[characters]",
+					System::Get().Evaluate("<-[characters]")
 				);
 			}
 
@@ -89,7 +89,7 @@ namespace Om {
 						"}"
 					),
 					System::Get().Evaluate(
-						"<-characters"
+						"<-[characters]"
 						"{"
 						"\xE1\x84\x80"
 						"\xE1\x85\xA1"

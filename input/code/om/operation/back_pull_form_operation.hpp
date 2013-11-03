@@ -20,7 +20,7 @@
 	#include "om/system.hpp"
 
 	#define Om_Operation_BackPullFormOperation_GetName_() \
-	"forms->"
+	"[forms]->"
 
 namespace Om {
 

@@ -32,25 +32,25 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{->lexicon}",
-					System::Get().Evaluate("drop find {->lexicon} system")
+					"{->[lexicon]}",
+					System::Get().Evaluate("drop find {->[lexicon]} system")
 				);
 			}
 
 			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{a{B}}",
-					System::Get().Evaluate("->lexicon {a{A}} {a{B}}")
+					System::Get().Evaluate("->[lexicon] {a{A}} {a{B}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{a{B}}",
-					System::Get().Evaluate("->lexicon {a} {a{B}}")
+					System::Get().Evaluate("->[lexicon] {a} {a{B}}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{a}",
-					System::Get().Evaluate("->lexicon {a{A}} {a}")
+					System::Get().Evaluate("->[lexicon] {a{A}} {a}")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -60,7 +60,7 @@ namespace Om {
 						"b{C}"
 						"}"
 					),
-					System::Get().Evaluate("->lexicon {a{A}} {a{B} a b{C}}")
+					System::Get().Evaluate("->[lexicon] {a{A}} {a{B} a b{C}}")
 				);
 			}
 

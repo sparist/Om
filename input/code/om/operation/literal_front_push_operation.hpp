@@ -20,7 +20,7 @@
 	#include "om/system.hpp"
 
 	#define Om_Operation_LiteralFrontPushOperation_GetName_() \
-	"->literal"
+	"->[literal]"
 
 namespace Om {
 

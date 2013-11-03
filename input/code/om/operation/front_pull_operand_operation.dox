@@ -1,8 +1,8 @@
 /*!
-\defgroup om__operation__front_pull_operand_operation__ operand<-elements
+\defgroup om__operation__front_pull_operand_operation__ <-[operand|elements]
 	\ingroup om__operation__
 	\brief
-		Casts to \ref om__literal__ and pops the first \ref om__operand__ (if any), quoted.
+		Pops the first \ref om__operand__ (if any), quoted.
 	\par Input
 		<tt>{{A} B}</tt>
 	\par Output

@@ -319,11 +319,11 @@ The \ref om__operation__quote_operation__ and \ref om__operation__dequote_operat
 	<blockquote><tt>{A}{A}</tt></blockquote>
 
 Operands can be popped from and pushed into:
--	<tt>&lt;-characters {ABC}</tt>
+-	<tt>&lt;-[characters] {ABC}</tt>
 	<blockquote><tt>{A}{BC}</tt></blockquote>
--	<tt>-&gt;literal {A}{BC}</tt>
+-	<tt>-&gt;[literal] {A}{BC}</tt>
 	<blockquote><tt>{ABC}</tt></blockquote>
--	<tt>&lt;-terms {some terms}</tt>
+-	<tt>&lt;-[terms] {some terms}</tt>
 	<blockquote><tt>{some}{terms}</tt></blockquote>
 
 A new operator definition can be provided with the \ref om__operation__define_operation__ operation, where the first operand is treated as containing a \ref om__lexicon__ with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:
@@ -333,15 +333,15 @@ A new operator definition can be provided with the \ref om__operation__define_op
 Any string can be used as an operator, with separators and operand braces escaped with a backquote:
 -	<tt>define { double` quote {quote quote} } { double` quote {A} }</tt>
 	<blockquote><tt>{{{A}}}</tt></blockquote>
--	<tt>&lt;-terms { double` quote operator }</tt>
+-	<tt>&lt;-[terms] { double` quote operator }</tt>
 	<blockquote><tt>{double` quote}{operator}</tt></blockquote>
 
 Unicode is fully supported:
--	<tt>&lt;-characters {한글}</tt>
+-	<tt>&lt;-[characters] {한글}</tt>
 	<blockquote><tt>{한}{글}</tt></blockquote>
--	<tt>&lt;-code` points {한글}</tt>
+-	<tt>&lt;-[code` points] {한글}</tt>
 	<blockquote><tt>{ᄒ}{ᅡᆫ글}</tt></blockquote>
--	<tt>&lt;-terms {한글 韓}</tt>
+-	<tt>&lt;-[terms] {한글 韓}</tt>
 	<blockquote><tt>{한글}{韓}</tt></blockquote>
 
 Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the \ref om__operation__normalize_operation__ operation:
@@ -350,94 +350,94 @@ Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</
 
 Recursion is very efficient in %Om, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ minutes {1:23} }<br/>
 	</tt>
 	<blockquote><tt>{23}</tt></blockquote>
 
 Each step of an evaluation can be represented as a program. The following is the above program broken down into evaluation steps, where the code that is about to be replaced is <b>bold</b>, and the latest replacement is <em>italicized</em>:
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ <b>minutes</b> {1:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
-	{ <em>dequote choose {minutes} {} = {:} &lt;-characters</em> {1:23} }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+	{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {1:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
-	{ dequote choose {minutes} {} = {:} <b>&lt;-characters {1:23}</b> }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+	{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {1:23}</b> }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote choose {minutes} {} = {:} <em>{1} {:23}</em> }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote choose {minutes} {} <b>= {:} {1}</b> {:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote choose {minutes} {} <em>{}</em> {:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote <b>choose {minutes} {} {}</b> {:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote <em>{minutes}</em> {:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ <b>dequote {minutes}</b> {:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ <em>minutes</em> {:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ <b>minutes</b> {:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
-	{ <em>dequote choose {minutes} {} = {:} &lt;-characters</em> {:23} }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+	{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {:23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
-	{ dequote choose {minutes} {} = {:} <b>&lt;-characters {:23}</b> }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+	{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {:23}</b> }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote choose {minutes} {} = {:} <em>{:} {23}</em> }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote choose {minutes} {} <b>= {:} {:}</b> {23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote choose {minutes} {} <em>{{:}}</em> {23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote <b>choose {minutes} {} {{:}}</b> {23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ dequote <em>{}</em> {23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ <b>dequote {}</b> {23} }<br/>
 	</tt>
 -	<tt>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ {23} }<br/>
 	</tt>
 -	<tt><b>define<br/>
-	{ minutes { dequote choose {minutes} {} = {:} &lt;-characters } }<br/>
+	{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
 	{ {23} }</b><br/>
 	</tt>
 -	<tt><em>{23}</em></tt>
@@ -446,7 +446,7 @@ The \ref om__operation__rearrange_operation__ operation provides operand name bi
 \verbatim
 define
 {
-	Fold<- {
+	[Fold]<- {
 		rearrange
 		{
 			rearrange
@@ -454,24 +454,24 @@ define
 				dequote
 				choose
 				quote Result
-				pair pair pair {Fold<-} Function Result Remainder
+				pair pair pair {[Fold]<-} Function Result Remainder
 				Remainder
 			}
 			{Result Remainder}
-			dequote Function Base <-terms Source
+			dequote Function Base <-[terms] Source
 		}
 		{Function Base Source}
 	}
 }
 {
-	Fold<- {literal<-} {} {1 2 3}
+	[Fold]<- {[literal]<-} {} {1 2 3}
 }
 \endverbatim
 
 The result is <tt>{321}</tt>.
 
 The example works as follows:
--	<tt>Fold&lt;-</tt> takes three operands:
+-	<tt>[Fold]&lt;-</tt> takes three operands:
 	-	<tt>Function</tt>
 	-	<tt>Base</tt>
 	-	<tt>Source</tt>
@@ -484,7 +484,7 @@ The example works as follows:
 -	The first two operands output by the <tt>Function</tt> are:
 	-	<tt>Result</tt>
 	-	<tt>Remainder</tt>
--	If the <tt>Remainder</tt> is empty, the <tt>Result</tt> is output. Otherwise, <tt>Function</tt>, <tt>Result</tt>, and <tt>Remainder</tt> are passed to a recursive <tt>Fold&lt;-</tt> call.
+-	If the <tt>Remainder</tt> is empty, the <tt>Result</tt> is output. Otherwise, <tt>Function</tt>, <tt>Result</tt>, and <tt>Remainder</tt> are passed to a recursive <tt>[Fold]&lt;-</tt> call.
 
 A few things should be noted about the above example:
 -	The \ref om__operation__ list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.

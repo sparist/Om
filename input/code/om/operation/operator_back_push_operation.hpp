@@ -20,7 +20,7 @@
 	#include "om/system.hpp"
 
 	#define Om_Operation_OperatorBackPushOperation_GetName_() \
-	"operator<-"
+	"[operator]<-"
 
 namespace Om {
 

@@ -34,20 +34,20 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{code` points->}",
-					System::Get().Evaluate("drop find {code` points->} system")
+					"{[code` points]->}",
+					System::Get().Evaluate("drop find {[code` points]->} system")
 				);
 			}
 
 			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{e}{1`{2`}thre}",
-					System::Get().Evaluate("code` points-> {1{2}three}")
+					System::Get().Evaluate("[code` points]-> {1{2}three}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{` }{}",
-					System::Get().Evaluate("code` points-> {` }")
+					System::Get().Evaluate("[code` points]-> {` }")
 				);
 
 				BOOST_CHECK_EQUAL(
@@ -59,7 +59,7 @@ namespace Om {
 						"}"
 					),
 					System::Get().Evaluate(
-						"code` points-> {a"
+						"[code` points]-> {a"
 						"\xC7\xBE"
 						"}"
 					)
@@ -67,17 +67,17 @@ namespace Om {
 
 				BOOST_CHECK_EQUAL(
 					"{` }{}",
-					System::Get().Evaluate("code` points-> { }")
+					System::Get().Evaluate("[code` points]-> { }")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate("code` points-> {}")
+					System::Get().Evaluate("[code` points]-> {}")
 				);
 
 				BOOST_CHECK_EQUAL(
-					"code` points->",
-					System::Get().Evaluate("code` points->")
+					"[code` points]->",
+					System::Get().Evaluate("[code` points]->")
 				);
 			}
 
@@ -92,7 +92,7 @@ namespace Om {
 						"}"
 					),
 					System::Get().Evaluate(
-						"code` points->"
+						"[code` points]->"
 						"{"
 						"\xE1\x86\xAB"
 						"\xE1\x84\x80"

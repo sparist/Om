@@ -46,7 +46,7 @@ namespace Om {
 						"choose"
 						" {fail}"
 						" {pass}"
-						" = define {a{A}} {environment} lexicon<- {a{A}} system"
+						" = define {a{A}} {environment} [lexicon]<- {a{A}} system"
 					)
 				);
 			}

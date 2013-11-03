@@ -32,40 +32,40 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{->literal}",
-					System::Get().Evaluate("drop find {->literal} system")
+					"{->[literal]}",
+					System::Get().Evaluate("drop find {->[literal]} system")
 				);
 			}
 
 			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{1{2}34{5}6}",
-					System::Get().Evaluate("->literal {1{2}3}{4{5}6}")
+					System::Get().Evaluate("->[literal] {1{2}3}{4{5}6}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{1{2}{5}6}",
-					System::Get().Evaluate("->literal {1{2}}{{5}6}")
+					System::Get().Evaluate("->[literal] {1{2}}{{5}6}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{5}6}",
-					System::Get().Evaluate("->literal {}{{5}6}")
+					System::Get().Evaluate("->[literal] {}{{5}6}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{5}6}",
-					System::Get().Evaluate("->literal {{5}6}{}")
+					System::Get().Evaluate("->[literal] {{5}6}{}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{2}3}",
-					System::Get().Evaluate("->literal quote{2}{3}")
+					System::Get().Evaluate("->[literal] quote{2}{3}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{2{3}}",
-					System::Get().Evaluate("->literal{2}quote{3}")
+					System::Get().Evaluate("->[literal]{2}quote{3}")
 				);
 			}
 

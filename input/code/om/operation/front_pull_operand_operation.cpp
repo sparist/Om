@@ -34,35 +34,35 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{operand<-elements}",
-					System::Get().Evaluate("drop find {operand<-elements} system")
+					"{<-[operand|elements]}",
+					System::Get().Evaluate("drop find {<-[operand|elements]} system")
 				);
 			}
 
 			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{}{1{2}3}",
-					System::Get().Evaluate("operand<-elements {1{2}3}")
+					System::Get().Evaluate("<-[operand|elements] {1{2}3}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{1}}{2}",
-					System::Get().Evaluate("operand<-elements {{1}2}")
+					System::Get().Evaluate("<-[operand|elements] {{1}2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate("operand<-elements {}")
+					System::Get().Evaluate("<-[operand|elements] {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{{only}}{}",
-					System::Get().Evaluate("operand<-elements {{only}}")
+					System::Get().Evaluate("<-[operand|elements] {{only}}")
 				);
 
 				BOOST_CHECK_EQUAL(
-					"operand<-elements",
-					System::Get().Evaluate("operand<-elements")
+					"<-[operand|elements]",
+					System::Get().Evaluate("<-[operand|elements]")
 				);
 			}
 

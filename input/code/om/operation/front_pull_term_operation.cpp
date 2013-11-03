@@ -32,8 +32,8 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{<-terms}",
-					System::Get().Evaluate("drop find {<-terms} system")
+					"{<-[terms]}",
+					System::Get().Evaluate("drop find {<-[terms]} system")
 				);
 			}
 
@@ -45,27 +45,27 @@ namespace Om {
 						"3"
 						"}"
 					),
-					System::Get().Evaluate("<-terms {1{2}3}")
+					System::Get().Evaluate("<-[terms] {1{2}3}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{1}{2}",
-					System::Get().Evaluate("<-terms {1 2}")
+					System::Get().Evaluate("<-[terms] {1 2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate("<-terms {}")
+					System::Get().Evaluate("<-[terms] {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate("<-terms {only}")
+					System::Get().Evaluate("<-[terms] {only}")
 				);
 
 				BOOST_CHECK_EQUAL(
-					"<-terms",
-					System::Get().Evaluate("<-terms")
+					"<-[terms]",
+					System::Get().Evaluate("<-[terms]")
 				);
 			}
 
