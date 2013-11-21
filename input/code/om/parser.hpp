@@ -42,7 +42,7 @@ namespace Om {
 	public: // MARK: public (non-static)
 
 		explicit Parser(
-			Source::Source<CodePoint const> &
+			Om::Source::Source<CodePoint const> &
 		);
 
 		virtual CodePoint const & operator *() const;
@@ -70,7 +70,7 @@ namespace Om {
 
 		Parser const & operator =(Parser const &);
 
-		Source::Source<CodePoint const> & thisCodePointSource;
+		Om::Source::Source<CodePoint const> & thisCodePointSource;
 
 		size_t thisDepth;
 

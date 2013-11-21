@@ -31,7 +31,7 @@
 // MARK: public (non-static)
 
 inline Type_::Parser(
-	Source::Source<CodePoint const> & theCodePointSource
+	Om::Source::Source<CodePoint const> & theCodePointSource
 ) :
 thisCodePointSource(theCodePointSource),
 thisDepth(),
@@ -77,7 +77,7 @@ inline void Type_::Parse(Consumer & theConsumer) {
 			theParser.Pop();
 			{
 				// Ensure that this does not resolve to the copy constructor.
-				Source::Source<CodePoint const> & theCodePointSource = theParser;
+				Om::Source::Source<CodePoint const> & theCodePointSource = theParser;
 
 				Parser theOperandParser(theCodePointSource);
 				theConsumer.ReadQuotedElements(theOperandParser);
