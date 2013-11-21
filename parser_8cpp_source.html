@@ -77,7 +77,7 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">inline</span> Type_::Parser(</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Source::Source&lt;CodePoint const&gt; &amp; theCodePointSource</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_om_1_1_source_1_1_source.html">Om::Source::Source&lt;CodePoint const&gt;</a> &amp; theCodePointSource</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;) :</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;thisCodePointSource(theCodePointSource),</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;thisDepth(),</div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            theParser.Pop();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="comment">// Ensure that this does not resolve to the copy constructor.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                Source::Source&lt;CodePoint const&gt; &amp; theCodePointSource = theParser;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="class_om_1_1_source_1_1_source.html">Om::Source::Source&lt;CodePoint const&gt;</a> &amp; theCodePointSource = theParser;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                Parser theOperandParser(theCodePointSource);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                theConsumer.ReadQuotedElements(theOperandParser);</div>
@@ -214,6 +214,7 @@ $(document).ready(function(){initNavTree('parser_8cpp_source.html','');});
 <div class="ttc" id="namespace_om_1_1_symbol_html_a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b"><div class="ttname"><a href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b">Om::Symbol::theStartOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00072">operand_symbol.hpp:72</a></div></div>
 <div class="ttc" id="consumer_8hpp_html"><div class="ttname"><a href="consumer_8hpp.html">consumer.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="namespace_om_html_ac6e60b21924d18e05e4ef84f08763c2b"><div class="ttname"><a href="namespace_om.html#ac6e60b21924d18e05e4ef84f08763c2b">Om::operator==</a></div><div class="ttdeci">bool operator==(DefaultAtom&lt; TheImplementation &gt; const &amp;, DefaultAtom&lt; TheImplementation &gt; const &amp;)</div></div>
+<div class="ttc" id="class_om_1_1_source_1_1_source_html"><div class="ttname"><a href="class_om_1_1_source_1_1_source.html">Om::Source::Source&lt; CodePoint const  &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

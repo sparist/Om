@@ -2,11 +2,6 @@ var using__ =
 [
     [ "Using the Interpreter", "using_interpreter__.html", null ],
     [ "Using the Code", "using_code__.html", [
-      [ "Platforms", "using_code__.html#using_code__platforms__", [
-        [ "Mac OS X and Ubuntu", "using_code__.html#using_code__platforms__mac__", null ],
-        [ "Windows", "using_code__.html#using_code__platforms__windows__", null ],
-        [ "Other", "using_code__.html#using_code__platforms__other__", null ]
-      ] ],
       [ "Dependencies", "using_code__.html#using_code__dependencies__", [
         [ "Programs", "using_code__.html#using_code__dependencies__programs__", null ],
         [ "Libraries", "using_code__.html#using_code__dependencies__libraries__", [
