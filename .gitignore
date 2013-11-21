@@ -1,17 +1,6 @@
 # Build products.
-input/dependencies/*/input
-input/dependencies/*/output
+dependencies/*/output
 output
 
 # Miscellaneous.
 .DS_Store
-
-# User-specific XCode 3 and 4 files
-*.mode1
-*.mode1v3
-*.mode2v3
-*.perspective
-*.perspectivev3
-*.pbxuser
-*.xcworkspace
-xcuserdata
