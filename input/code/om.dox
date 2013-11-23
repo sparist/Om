@@ -1,24 +1,20 @@
 /*!
 \mainpage %Om
 
-	The <a href="http://om-language.org">Om language</a> is an experimental answer to the question:
-
-	<em>What is the simplest high-level programming language possible?</em>
-
-	%Om is:
-	-	A <a href="http://concatenative.org">concatenative</a>, <a href="http://en.wikipedia.org/wiki/Homoiconicity">homoiconic</a> <b>programming and algorithm notation language</b> with:
-		-	\ref language__syntax__ "Minimal syntax" containing only three elements.
-		-	\ref language__functions__ "Prefix notation" in which functions manipulate the remainder of the program itself.
-		-	\ref language__data__ "Panmorphic typing" that allows programming without data types.
-	-	A <b>data transfer format</b> that is trivial to parse.
-	-	A <b>C++ scripting library</b> that can be:
-		-	\ref using__including__ "Embedded" into any C++ or Objective-C++ program.
-		-	\ref contributing__developing__ "Extended" with new data types or operations through class derivation.
-	-	<b>Unicode-correct</b>: any <a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order marker) defines a valid %Om program.
+	<a href="http://om-language.org">Om</a> is:
+	-	a novel, maximally-simple <a href="http://concatenative.org">concatenative</a>, <a href="http://en.wikipedia.org/wiki/Homoiconicity">homoiconic</a> <b>programming and algorithm notation language</b> with:
+		-	\ref language__syntax__ "minimal syntax", comprised of only three elements.
+		-	\ref language__functions__ "prefix notation", in which functions manipulate the remainder of the program itself.
+		-	\ref language__data__ "panmorphic typing", allowing programming without data types.
+	-	a trivial-to-parse <b>data transfer format</b>.
+	-	<b>unicode-correct</b>: any <a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order marker) defines a valid %Om program.
+	-	implemented as a <b>C++ library</b> and:
+		-	\ref using__including__ "embeddable" into any C++ or Objective-C++ program.
+		-	\ref contributing__developing__ "extensible" with new data types or operations.
 
 	%Om is <b><em>not</em></b>:
-	-	<b>Complete</b>. Although the intent is to develop %Om into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic number and file operations) and optimizations before it can be considered useful for any real-world purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.
-	-	<b>Stationary</b>. %Om will likely undergo significant changes on its way to version 1.0.
+	-	<b>complete</b>. Although the intent is to develop %Om into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic number and file operations) and optimizations before it can be considered useful for any real-world purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.
+	-	<b>stationary</b>. %Om will likely undergo significant changes on its way to version 1.0.
 
 \page language__ Language
 
