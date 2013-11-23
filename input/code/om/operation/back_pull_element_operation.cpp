@@ -34,35 +34,35 @@ namespace Om {
 
 			BOOST_AUTO_TEST_CASE(DefinitionTest) {
 				BOOST_CHECK_EQUAL(
-					"{[elements]->}",
-					System::Get().Evaluate("drop find {[elements]->} system")
+					"{[...]->}",
+					System::Get().Evaluate("drop find {[...]->} system")
 				);
 			}
 
 			BOOST_AUTO_TEST_CASE(GeneralTest) {
 				BOOST_CHECK_EQUAL(
 					"{3}{1{2}}",
-					System::Get().Evaluate("[elements]-> {1{2}3}")
+					System::Get().Evaluate("[...]-> {1{2}3}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{2}{1 }",
-					System::Get().Evaluate("[elements]-> {1 2}")
+					System::Get().Evaluate("[...]-> {1 2}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{}{}",
-					System::Get().Evaluate("[elements]-> {}")
+					System::Get().Evaluate("[...]-> {}")
 				);
 
 				BOOST_CHECK_EQUAL(
 					"{only}{}",
-					System::Get().Evaluate("[elements]-> {only}")
+					System::Get().Evaluate("[...]-> {only}")
 				);
 
 				BOOST_CHECK_EQUAL(
-					"[elements]->",
-					System::Get().Evaluate("[elements]->")
+					"[...]->",
+					System::Get().Evaluate("[...]->")
 				);
 			}
 

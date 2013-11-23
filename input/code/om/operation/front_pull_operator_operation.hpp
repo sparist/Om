@@ -20,7 +20,7 @@
 	#include "om/system.hpp"
 
 	#define Om_Operation_FrontPullOperatorOperation_GetName_() \
-	"<-[operator|elements]"
+	"<-[operator...]"
 
 namespace Om {
 
