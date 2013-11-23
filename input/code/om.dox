@@ -7,121 +7,440 @@
 
 	%Om is:
 	-	A <a href="http://concatenative.org">concatenative</a>, <a href="http://en.wikipedia.org/wiki/Homoiconicity">homoiconic</a> <b>programming and algorithm notation language</b> with:
-		-	\ref syntax__ "Minimal syntax" containing only three elements.
-		-	\ref functions__ "Prefix notation" in which functions manipulate the remainder of the program itself.
-		-	\ref data__ "Panmorphic typing" that allows programming without data types.
+		-	\ref language__syntax__ "Minimal syntax" containing only three elements.
+		-	\ref language__functions__ "Prefix notation" in which functions manipulate the remainder of the program itself.
+		-	\ref language__data__ "Panmorphic typing" that allows programming without data types.
 	-	A <b>data transfer format</b> that is trivial to parse.
 	-	A <b>C++ scripting library</b> that can be:
-		-	\ref using_code__library__ "Embedded" into any C++ or Objective-C++ program.
-		-	\ref developing__ "Extended" with new data types or operations through class derivation.
+		-	\ref using__including__ "Embedded" into any C++ or Objective-C++ program.
+		-	\ref contributing__developing__ "Extended" with new data types or operations through class derivation.
 	-	<b>Unicode-correct</b>: any <a href="http://www.utf8everywhere.org">UTF-8</a> text (without byte-order marker) defines a valid %Om program.
 
 	%Om is <b><em>not</em></b>:
 	-	<b>Complete</b>. Although the intent is to develop %Om into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic number and file operations) and optimizations before it can be considered useful for any real-world purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.
 	-	<b>Stationary</b>. %Om will likely undergo significant changes on its way to version 1.0.
 
-\page downloading__ Getting
+\page language__ Language
 
-	-	\subpage downloading_interpreter__
-	-	\subpage downloading_code__
+	\section language__syntax__ Syntax
 
-\page downloading_interpreter__ Getting the Interpreter
+		An %Om program is a combination of three elements&mdash;operator, separator, and operand&mdash;as follows:
 
-	The %Om interpreter can be downloaded as a Mac or Windows executable from the <a href="http://om-language.org">Om language</a> web site.
+		\image html "program.png"
 
-	See \ref using_interpreter__ for instructions on how to use the interpreter.
+		\subsection language__syntax__operator__ Operator
 
-\page downloading_code__ Getting the Code
+			An operator has the following syntax:
 
-	The %Om source code is downloadable from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>.
+			\image html "operator.png"
 
-	See \ref using_code__ for instructions on how to use the code.
+			Backquotes (<tt>`</tt>) in operators are disregarded if the code point following is not a backquote, operand brace, or separator code point.
 
-	\section downloading_code__development__ Development
+		\subsection language__syntax__separator__ Separator
 
-		The development version (to which this documentation applies) can be obtained via <a href="https://github.com/sparist/Om">Git check out</a> or <a href="https://github.com/sparist/Om/archive/master.zip">archive file</a>.
+			A separator has the following syntax:
 
-	\section downloading_code__release__ Release
+			\image html "separator.png"
 
-		Released versions can be obtained via archive files from the <a href="https://github.com/sparist/Om/tags">GitHub tags page</a>.
+		\subsection language__syntax__operand__ Operand
+
+			An operand has the following syntax:
+
+			\image html "operand.png"
+
+	\section language__functions__ Functions
+
+		Each %Om program evaluates to a function.
+
+		\subsection language__functions__prefix__ Prefix Notation
+
+			%Om uses <a href="http://en.wikipedia.org/wiki/Polish_notation">prefix notation</a>: functions read their inputs from the right. Prefix notation has the following advantages over postfix notation typical of concatenative languages:
+			-	Stack underflows are impossible.
+			-	Prefix notation more closely models function composition. Instead of storing a data stack in memory, the %Om evaluator stores a composed partial function.
+			-	The evaluator can read, parse and evaluate the input stream in a single pass, sending results to the output stream as soon as they are evaluated. This cannot be done with a postfix, stack-based language because any data on the stack must remain there as it may be needed by a function later.
+			-	Functions can be optimized to only read into memory the data that is required; stack-based postfix languages have no knowledge of the function to apply until the data is already in memory, on the stack.
+			-	Incoming data, such as events, become simple to handle at a language level: a program might evaluate to a function that acts as a state machine that processes any additional data appended to the program and transitions to a new state, ready to process new data.
+			-	An integrated development environment can provide hints to the user about the data that is expected by a function.
+
+		\subsection language__functions__input_and_output__ Input and Output
+
+			A function takes the remainder of the program as input and returns a program as output, pulling elements from the front of the input program and pushing elements to the back of the output program.
+
+		\subsection language__functions__terms__ Terms
+
+			Only <em>terms</em> (operators and operands) are significant to functions; separators are discarded from input, and are inserted between output terms in a "normalized" form (for consistent formatting and proper operator separation). Therefore, only input and output terms are relevant in describing a function.
+
+		\subsection language__functions__types__ Types
+
+			There are three fundamental types of functions:
+			-	<b>Identity:</b> A function that pushes all input terms onto the output program.
+			-	<b>Constant:</b> A function that pushes a term defined by the function, followed by all input terms, onto the output program.
+			-	<b>Operation:</b> A function that is named by an operator and defines a computation. An operation processes input operands as data for the computation, and pushes any terms generated by the computation onto the output program, until one of two things happens:
+				-	If the computation is completed, the rest of the input terms are pushed onto the output program.
+				-	If the computation cannot be completed (due to insufficient operands), the operator that names the operation is pushed onto the output program, followed by all remaining input terms.
+
+		\subsection language__functions__programs__ Programs
+
+			Programs are evaluated as functions in the following ways.
+
+			\subsubsection language__functions__programs__empty__ Empty Program
+
+				The empty program evaluates to the identity function.
+
+			\subsubsection language__functions__programs__single__ Single-Element Programs
+
+				Programs that contain only a single element evaluate to functions as follows:
+				-	<b>Separator:</b> Evaluates to the identity function.
+				-	<b>Operand:</b> Evaluates to a constant function that pushes the operand, followed by all input terms, onto the output program.
+				-	<b>Operator:</b> Evaluates to the operation defined for the operator in the environment. If none, evaluates to a constant function that pushes the operator, followed by all input terms, onto the output program.
+
+			\subsubsection language__functions__programs__multiple__ Multiple-Element Programs
+
+				Programs that contain multiple elements can be considered a concatenation of sub-programs that each contain one of the elements. %Om is a <a href="http://concatenative.org">concatenative</a> language: the concatenated program evaluates to the composition of the functions that each sub-program evaluates to.
+
+				For example, program "A B" is the concatenation of programs "A", " ", and "B". The separator evaluates to the identity operation and can be disregarded. The programs "A" and "B" evaluate to functions which will be denoted as <tt>A</tt> and <tt>B</tt>, respectively. The input and output are handled by the composed function as follows:
+				-	Function <tt>B</tt> receives the input, and its output becomes the input for function <tt>A</tt>.
+				-	Function <tt>A</tt> receives the input, and its output becomes that of the composed function.
+
+				Any programs may be concatenated together; however, note that concatenating programs "A" and "B" without an intervening separator would result in a program containing a single operator "AB", which is unrelated to operators "A" or "B".
+
+		\subsection language__functions__operations__ Operations
+
+			All operation implementations provided are documented in the \ref om__operation__ module.
+
+	\section language__data__ Data
+
+		There are no traditional data types in %Om: every data value is represented by an operand.
+
+		\subsection language__data__panmorphism__ Panmorphism
+
+			%Om uses a unique <em>panmorphic</em> type system, from Ancient Greek πᾶν (pan, "all") and μορφή (morphē, “form”), in which all data values are exposed exclusively through a common immutable interface.
+
+			In the case of %Om, every data value is entirely represented in the language as an operand. Any operation will accept any operand as a valid input and interrogate its data solely through its contained program (a sequence of operator, separator, and/or operand). The operation is then free to process the data however is appropriate, and any operand that it produces as output can then be interrogated and processed by the next operation in the same way.
+
+		\subsection language__data__implementation__ Implementation
+
+			Although any operand can be treated as containing a literal array of operand, operator and/or separator elements, the implementation of operands takes advantage of some optimizations:
+			-	Each operand in memory actually contains one of several possible program implementations, each optimized for a specific set of operations. For example, some operations treat separators as insignificant; operands produced by these operations could contain a program implementation that stores only terms (operators and/or operands) and presents a "normalized" separator (such as a line separator) between each term.
+			-	Operations can interrogate an input operand for its program implementation type; if it is the optimal implementation type for the operation, the operation can manipulate the operand directly to produce the same result more efficiently.
+
+			Operations in a program can be ordered by the programmer to increase performance by minimizing conversions between program implementations, but it is not necessary for obtaining a correct computation. Where relevant, an operation will document the program implementation types of its inputs and outputs to allow for this optional level of optimization.
+
+		\subsection language__data__programs__ Programs
+
+			All program implementations provided are documented in the \ref om__program__ module.
+
+	\section language__examples__ Examples
+
+		The following program contains a single operand containing an operator &quot;<tt>Hello,</tt>&quot;, a separator &quot;<tt> </tt>&quot;, and another operator &quot;<tt>world!</tt>&quot;:
+		-	<tt>{Hello, world!}</tt>
+			<blockquote><tt>{Hello, world!}</tt></blockquote>
+
+		The following program contains a single operand containing an operator &quot;<tt>Hello,</tt>&quot;, a separator &quot;<tt> </tt>&quot;, and an operand &quot;<tt>{universe!}</tt>&quot; which in turn contains a single operator &quot;<tt>universe!</tt>&quot;:
+		-	<tt>{Hello, {universe!}}</tt>
+			<blockquote><tt>{Hello, {universe!}}</tt></blockquote>
+
+		Note that separators are significant inside operands:
+		-	<tt>{Hello, &nbsp;&nbsp;world!}</tt>
+			<blockquote><tt>{Hello, &nbsp;&nbsp;world!}</tt></blockquote>
+
+		Operands can be dropped and copied via the \ref om__operation__drop_operation__ and \ref om__operation__copy_operation__ operations:
+		-	<tt>drop {A}{B}{C}</tt>
+			<blockquote><tt>{B}{C}</tt></blockquote>
+		-	<tt>copy {A}{B}{C}</tt>
+			<blockquote><tt>{A}{A}{B}{C}</tt></blockquote>
+		-	<tt>drop copy {A}</tt>
+			<blockquote><tt>{A}</tt></blockquote>
+		-	<tt>copy copy {A}</tt>
+			<blockquote><tt>{A}{A}{A}</tt></blockquote>
+
+		The \ref om__operation__drop_operation__ operation can therefore be used for comments:
+		-	<tt>drop {This is a comment.} {This is not a comment.}</tt>
+			<blockquote><tt>{This is not a comment.}</tt></blockquote>
+
+		The \ref om__operation__choose_operation__ operation selects one of two operands, depending on whether a third is empty:
+		-	<tt>choose {It was empty.}{It was non-empty.}{I am not empty.}</tt>
+			<blockquote><tt>{It was non-empty.}</tt></blockquote>
+		-	<tt>choose {It was empty.}{It was non-empty.}{}</tt>
+			<blockquote><tt>{It was empty.}</tt></blockquote>
+
+		An operation without sufficient operands evaluates to itself and whatever operands are provided:
+		-	<tt>drop</tt>
+			<blockquote><tt>drop</tt></blockquote>
+		-	<tt>choose {It was empty.}{It was non-empty.}</tt>
+			<blockquote><tt>choose{It was empty.}{It was non-empty.}</tt></blockquote>
+
+		The \ref om__operation__quote_operation__ and \ref om__operation__dequote_operation__ operations add and remove a layer of operand braces, respectively:
+		-	<tt>quote {B}</tt>
+			<blockquote><tt>{{B}}</tt></blockquote>
+		-	<tt>dequote {{B}}</tt>
+			<blockquote><tt>{B}</tt></blockquote>
+		-	<tt>dequote {copy}</tt>
+			<blockquote><tt>copy</tt></blockquote>
+		-	<tt>dequote {copy} {A}</tt>
+			<blockquote><tt>{A}{A}</tt></blockquote>
+
+		Operands can be popped from and pushed into:
+		-	<tt>&lt;-[characters] {ABC}</tt>
+			<blockquote><tt>{A}{BC}</tt></blockquote>
+		-	<tt>-&gt;[literal] {A}{BC}</tt>
+			<blockquote><tt>{ABC}</tt></blockquote>
+		-	<tt>&lt;-[terms] {some terms}</tt>
+			<blockquote><tt>{some}{terms}</tt></blockquote>
+
+		A new operator definition can be provided with the \ref om__operation__define_operation__ operation, where the first operand is treated as containing a \ref om__lexicon__ with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:
+		-	<tt>define { double-quote {quote quote} } { double-quote {A} }</tt>
+			<blockquote><tt>{{{A}}}</tt></blockquote>
+
+		Any string can be used as an operator, with separators and operand braces escaped with a backquote:
+		-	<tt>define { double` quote {quote quote} } { double` quote {A} }</tt>
+			<blockquote><tt>{{{A}}}</tt></blockquote>
+		-	<tt>&lt;-[terms] { double` quote operator }</tt>
+			<blockquote><tt>{double` quote}{operator}</tt></blockquote>
+
+		Unicode is fully supported:
+		-	<tt>&lt;-[characters] {한글}</tt>
+			<blockquote><tt>{한}{글}</tt></blockquote>
+		-	<tt>&lt;-[code` points] {한글}</tt>
+			<blockquote><tt>{ᄒ}{ᅡᆫ글}</tt></blockquote>
+		-	<tt>&lt;-[terms] {한글 韓}</tt>
+			<blockquote><tt>{한글}{韓}</tt></blockquote>
+
+		Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the \ref om__operation__normalize_operation__ operation:
+		-	<tt>normalize {2⁵}</tt>
+			<blockquote><tt>{25}</tt></blockquote>
+
+		Recursion is very efficient in %Om, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ minutes {1:23} }<br/>
+			</tt>
+			<blockquote><tt>{23}</tt></blockquote>
+
+		Each step of an evaluation can be represented as a program. The following is the above program broken down into evaluation steps, where the code that is about to be replaced is <b>bold</b>, and the latest replacement is <em>italicized</em>:
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ <b>minutes</b> {1:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {1:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {1:23}</b> }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote choose {minutes} {} = {:} <em>{1} {:23}</em> }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote choose {minutes} {} <b>= {:} {1}</b> {:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote choose {minutes} {} <em>{}</em> {:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote <b>choose {minutes} {} {}</b> {:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote <em>{minutes}</em> {:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ <b>dequote {minutes}</b> {:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ <em>minutes</em> {:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ <b>minutes</b> {:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {:23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {:23}</b> }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote choose {minutes} {} = {:} <em>{:} {23}</em> }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote choose {minutes} {} <b>= {:} {:}</b> {23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote choose {minutes} {} <em>{{:}}</em> {23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote <b>choose {minutes} {} {{:}}</b> {23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ dequote <em>{}</em> {23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ <b>dequote {}</b> {23} }<br/>
+			</tt>
+		-	<tt>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ {23} }<br/>
+			</tt>
+		-	<tt><b>define<br/>
+			{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+			{ {23} }</b><br/>
+			</tt>
+		-	<tt><em>{23}</em></tt>
+
+		The \ref om__operation__rearrange_operation__ operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call:
+		\verbatim
+		define
+		{
+			[Fold]<- {
+				rearrange
+				{
+					rearrange
+					{
+						dequote
+						choose
+						quote Result
+						pair pair pair {[Fold]<-} Function Result Remainder
+						Remainder
+					}
+					{Result Remainder}
+					dequote Function Base <-[terms] Source
+				}
+				{Function Base Source}
+			}
+		}
+		{
+			[Fold]<- {[literal]<-} {} {1 2 3}
+		}
+		\endverbatim
+
+		The result is <tt>{321}</tt>.
+
+		The example works as follows:
+		-	<tt>[Fold]&lt;-</tt> takes three operands:
+			-	<tt>Function</tt>
+			-	<tt>Base</tt>
+			-	<tt>Source</tt>
+		-	The first term is popped from the <tt>Source</tt>.
+		-	The <tt>Function</tt> is applied to:
+			-	the <tt>Base</tt>
+			-	the popped first term of the <tt>Source</tt>
+			-	the remainder of the <tt>Source</tt>
+			-	the remainder of the input program
+		-	The first two operands output by the <tt>Function</tt> are:
+			-	<tt>Result</tt>
+			-	<tt>Remainder</tt>
+		-	If the <tt>Remainder</tt> is empty, the <tt>Result</tt> is output. Otherwise, <tt>Function</tt>, <tt>Result</tt>, and <tt>Remainder</tt> are passed to a recursive <tt>[Fold]&lt;-</tt> call.
+
+		A few things should be noted about the above example:
+		-	The \ref om__operation__ list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.
+		-	When reading %Om code, it can be difficult to mentally group operations with the operands they consume (contrasted with Scheme, in which they are grouped at design time with parentheses). However, it should be possible for an %Om integrated development environment to generate a graphical indication of these groupings dynamically.
+
+	\section language__references__ References
+
+		The following additional reading may help explain some of the concepts that contributed to %Om:
+		-	<a href="http://evincarofautumn.blogspot.ca/2012/02/why-concatenative-programming-matters.html">Why Concatenative Programming Matters</a>
+		-	The Concatenative <a href="http://concatenative.org">wiki</a>, <a href="http://tech.groups.yahoo.com/group/concatenative">mailing list</a>, and <a href="http://en.wikipedia.org/wiki/Concatenative_programming_language">Wikipedia entry</a>
+		-	A <a href="http://www.kevinalbrecht.com/code/joy-mirror">mirror</a> of Manfred von Thun's original pages on the groundbreaking Joy Programming Language (<a href="http://en.wikipedia.org/wiki/Joy_(programming_language)">Wikipedia entry</a>), the father of all concatenative languages
+
+\page license__ License
+
+	This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
+
+	For more information about this license, please see the <a href="http://www.eclipse.org/legal/eplfaq.php">Eclipse Public License FAQ</a>.
 
 \page using__ Using
 
-	-	\subpage using_interpreter__
-	-	\subpage using_code__
-
-\page using_interpreter__ Using the Interpreter
-
-	The %Om interpreter is an executable (Om.Interpreter) that:
-	-	Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".
-	-	Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.
-
-	See \ref language__ to learn how the language works.
-
-\page using_code__ Using the Code
-
 	The %Om source code can be used for:
-	-	Building a stand-alone interpreter from a script-generated source \ref using_code__project__ "project".
-	-	Including as a C++ header-only \ref using_code__library__ "library".
+	-	\ref using__building__ a stand-alone interpreter from a script-generated build project.
+	-	\ref using__including__ as a C++ header-only library.
 
-	\section using_code__dependencies__ Dependencies
+	\section using__downloading__ Downloading
 
-		\subsection using_code__dependencies__programs__ Programs
+		The %Om source code is downloadable from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>:
+		-	The <b>Development</b> version (to which this documentation applies) can be obtained via <a href="https://github.com/sparist/Om">Git clone</a> or <a href="https://github.com/sparist/Om/archive/master.zip">archive file</a>.
+		-	<b>Released</b> versions can be obtained via archive files from the <a href="https://github.com/sparist/Om/tags">GitHub tags page</a>.
 
-		To run scripts which build the dependency \ref using_code__dependencies__libraries__ "libraries" and generate the \ref using_code__project__ "project", the following programs are required:
-		-	<a href="http://cmake.org">CMake</a>
-		-	Mac OS X:
-			-	Xcode
-		-	Windows:
-			-	Visual Studio
-			-	<a href="http://cygwin.com">Cygwin</a> (with bash, GNU make, ar, and ranlib)
-		-	Ubuntu:
-			-	Build-Essential package (<tt>sudo apt-get install build-essential</tt>)
+	\section using__dependencies__ Dependencies
 
-		To build the \ref using_code__project__targets__om_documentation__ "documentation target" in the \ref using_code__project__ "project", the following additional programs are required:
-		-	<a href="http://doxygen.org">Doxygen</a>
-		-	<a href="http://graphviz.org">Graphviz</a>
+		\subsection using__dependencies__programs__ Programs
 
-		To ensure that correct programs are used, programs should be listed in the command line path in the following order:
-		-	Graphviz, Doxygen, and CMake
-		-	Cygwin (<tt>&quot;<em>[cygwin]</em>/bin&quot;</tt>) <b>(Windows only)</b>
-		-	Any other paths
+			To run scripts which build the dependency \ref using__dependencies__libraries__ "libraries" and generate the build project, the following programs are required:
+			-	<a href="http://cmake.org">CMake</a>
+			-	Mac OS X:
+				-	Xcode
+			-	Windows:
+				-	Visual Studio
+				-	<a href="http://cygwin.com">Cygwin</a> (with bash, GNU make, ar, and ranlib)
+			-	Ubuntu:
+				-	Build-Essential package (<tt>sudo apt-get install build-essential</tt>)
 
-		\subsection using_code__dependencies__libraries__ Libraries
+			To build the \ref using__building__targets__documentation__ "documentation target" in the build project, the following additional programs are required:
+			-	<a href="http://doxygen.org">Doxygen</a>
+			-	<a href="http://graphviz.org">Graphviz</a>
 
-			\subsubsection using_code__dependencies__libraries__icu4c ICU4C
+			To ensure that correct programs are used, programs should be listed in the command line path in the following order:
+			-	Graphviz, Doxygen, and CMake
+			-	Cygwin (<tt>&quot;<em>[cygwin]</em>/bin&quot;</tt>) <b>(Windows only)</b>
+			-	Any other paths
+	 
+			Note that on Mac OS X, the path variable must be <a href="http://www.dowdandassociates.com/blog/content/howto-set-an-environment-variable-in-mac-os-x-slash-etc-slash-launchd-dot-conf/">added to <tt>&quot;etc/launchd.conf&quot;</tt></a> in order to be visible to applications.
+
+		\subsection using__dependencies__libraries__ Libraries
+
+			\subsubsection using__dependencies__libraries__icu4c ICU4C
 
 				%Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by executing the CMake script <tt>&quot;dependencies/Icu4c/input/build.cmake&quot;</tt> from the directory as follows:
 				<blockquote><tt>cmake -D Platform=<em>[output subfolder name]</em> -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -P build.cmake</tt></blockquote>
 
-			\subsubsection using_code__dependencies__libraries__boost Boost
+			\subsubsection using__dependencies__libraries__boost Boost
 
 				%Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by executing the CMake script <tt>&quot;dependencies/Boost/input/build.cmake&quot;</tt> from the directory as follows:
-				<blockquote><tt>cmake -D Platform=<em>[output subfolder name]</em> -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -D Icu=<em>[\ref using_code__dependencies__libraries__icu4c "ICU4C" install directory]</em> -P build.cmake</tt></blockquote>
+				<blockquote><tt>cmake -D Platform=<em>[output subfolder name]</em> -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -D Icu=<em>[\ref using__dependencies__libraries__icu4c "ICU4C" install directory]</em> -P build.cmake</tt></blockquote>
 
-	\section using_code__project__ Project
+	\section using__building__ Building
 
-		A source project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;output/projects/<em>[generator]</em>&quot;</tt> by running <tt>&quot;generate.sh&quot;</tt> (on Unix-based platforms) or <tt>&quot;generate.bat&quot;</tt> (on Windows), from the <tt>&quot;input&quot;</tt> directory, with the desired project subfolder name an argument. By default, this script automatically downloads and builds all external dependency libraries, but this behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
-		-	<b><tt>-D Icu:Path=&quot;<em>[absolute path]</em>&quot;</tt></b>, where <em>[absolute path]</em> is the absolute path of the \ref using_code__dependencies__libraries__icu4c "ICU4C" install directory.
-		-	<b><tt>-D Boost:Path=&quot;<em>[absolute path]</em>&quot;</tt></b>, where <em>[absolute path]</em> provides the absolute path of the \ref using_code__dependencies__libraries__boost "Boost" install directory.
+		A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;output/projects/<em>[generator]</em>&quot;</tt> by running <tt>&quot;generate.sh&quot;</tt> (on Unix-based platforms) or <tt>&quot;generate.bat&quot;</tt> (on Windows), from the <tt>&quot;input&quot;</tt> directory, with the desired project subfolder name an argument. By default, this script automatically downloads and builds all external dependency libraries, but this behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
+		-	<b><tt>-D Icu:Path=&quot;<em>[absolute path]</em>&quot;</tt></b>, where <em>[absolute path]</em> is the absolute path of the \ref using__dependencies__libraries__icu4c "ICU4C" install directory.
+		-	<b><tt>-D Boost:Path=&quot;<em>[absolute path]</em>&quot;</tt></b>, where <em>[absolute path]</em> provides the absolute path of the \ref using__dependencies__libraries__boost "Boost" install directory.
 
-		\subsection using_code__project__targets__ Targets
+		\subsection using__building__targets__ Targets
 
-			\subsubsection using_code__project__targets__om__ Om.Interpreter
+			\subsubsection using__building__targets__interpreter__ Om.Interpreter
 
-				The Om.Interpreter target builds the interpreter executable as <tt>&quot;output/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;</tt>. See \ref using_interpreter__ for instructions on how to use the interpreter.
+				The Om.Interpreter target builds the interpreter executable as <tt>&quot;output/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;</tt>.  The interpreter:
+					-	Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".
+					-	Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.
 
-			\subsubsection using_code__project__targets__om_test__ Om.Test
+				See \ref language__ to learn how the language works.
+
+			\subsubsection using__building__targets__test__ Om.Test
 
 				The Om.Test target builds the test executable, which runs all unit tests, as <tt>&quot;output/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test&quot;</tt>.
 
-			\subsubsection using_code__project__targets__om_documentation__ Om.Documentation
+			\subsubsection using__building__targets__documentation__ Om.Documentation
 
 				The Om.Documentation target builds this documentation into the following folders in <tt>&quot;output/documentation&quot;</tt>:
-				-	<b><tt>&quot;html&quot;</tt>:</b> The HTML documentation. To view in a browser, open <tt>&quot;index.html&quot;</tt>.
+				-	<b><tt>&quot;html&quot;</tt>:</b> This HTML documentation. To view in a browser, open <tt>&quot;index.html&quot;</tt>.
 				-	<b><tt>&quot;xml&quot;</tt>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.
 
-	\section using_code__library__ Library
+	\section using__including__ Including
 
 		%Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:
 		-	Add the %Om <tt>&quot;input/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
@@ -131,445 +450,94 @@
 
 		For more in-depth usage of the library, see the Om code documentation.
 
-\page language__ Learning
-
-	The following pages describe the %Om language.
-
-	-	\subpage background__
-	-	\subpage syntax__
-	-	\subpage functions__
-	-	\subpage data__
-	-	\subpage examples__
-
-\page background__ Background
-
-	The following reading may help explain some of the concepts that contributed to %Om:
-	-	<a href="http://evincarofautumn.blogspot.ca/2012/02/why-concatenative-programming-matters.html">Why Concatenative Programming Matters</a>
-	-	The Concatenative <a href="http://concatenative.org">wiki</a>, <a href="http://tech.groups.yahoo.com/group/concatenative">mailing list</a>, and <a href="http://en.wikipedia.org/wiki/Concatenative_programming_language">Wikipedia entry</a>
-	-	A <a href="http://www.kevinalbrecht.com/code/joy-mirror">mirror</a> of Manfred von Thun's original pages on the groundbreaking Joy Programming Language (<a href="http://en.wikipedia.org/wiki/Joy_(programming_language)">Wikipedia entry</a>), the father of all concatenative languages
-
-\page syntax__ Syntax
-
-	An %Om program is a combination of three elements&mdash;operator, separator, and operand&mdash;as follows:
-
-	\image html "program.png"
-
-	\section syntax__operator__ Operator
-
-		An operator has the following syntax:
-
-		\image html "operator.png"
-
-		Backquotes (<tt>`</tt>) in operators are disregarded if the code point following is not a backquote, operand brace, or separator code point.
-
-	\section syntax__separator__ Separator
-
-		A separator has the following syntax:
-
-		\image html "separator.png"
-
-	\section syntax__operand__ Operand
-
-		An operand has the following syntax:
-
-		\image html "operand.png"
-
-\page functions__ Functions
-
-	Each %Om program evaluates to a function.
-
-	\section functions__prefix__ Prefix Notation
-
-		%Om uses <a href="http://en.wikipedia.org/wiki/Polish_notation">prefix notation</a>: functions read their inputs from the right. Prefix notation has the following advantages over postfix notation typical of concatenative languages:
-		-	Stack underflows are impossible.
-		-	Prefix notation more closely models function composition. Instead of storing a data stack in memory, the %Om evaluator stores a composed partial function.
-		-	The evaluator can read, parse and evaluate the input stream in a single pass, sending results to the output stream as soon as they are evaluated. This cannot be done with a postfix, stack-based language because any data on the stack must remain there as it may be needed by a function later.
-		-	Functions can be optimized to only read into memory the data that is required; stack-based postfix languages have no knowledge of the function to apply until the data is already in memory, on the stack.
-		-	Incoming data, such as events, become simple to handle at a language level: a program might evaluate to a function that acts as a state machine that processes any additional data appended to the program and transitions to a new state, ready to process new data.
-		-	An integrated development environment can provide hints to the user about the data that is expected by a function.
-
-	\section functions__input_and_output__ Input and Output
-
-		A function takes the remainder of the program as input and returns a program as output, pulling elements from the front of the input program and pushing elements to the back of the output program.
-
-	\section functions__terms__ Terms
-
-		Only <em>terms</em> (operators and operands) are significant to functions; separators are discarded from input, and are inserted between output terms in a "normalized" form (for consistent formatting and proper operator separation). Therefore, only input and output terms are relevant in describing a function.
-
-	\section functions__types__ Types
-
-		There are three fundamental types of functions:
-		-	<b>Identity:</b> A function that pushes all input terms onto the output program.
-		-	<b>Constant:</b> A function that pushes a term defined by the function, followed by all input terms, onto the output program.
-		-	<b>Operation:</b> A function that is named by an operator and defines a computation. An operation processes input operands as data for the computation, and pushes any terms generated by the computation onto the output program, until one of two things happens:
-			-	If the computation is completed, the rest of the input terms are pushed onto the output program.
-			-	If the computation cannot be completed (due to insufficient operands), the operator that names the operation is pushed onto the output program, followed by all remaining input terms.
-
-	\section functions__evaluation__ Evaluation
-
-		\subsection functions__programs__empty__ Empty Program
-
-			The empty program evaluates to the identity function.
-
-		\subsection functions__programs__single__ Single-Element Programs
-
-			Programs that contain only a single element evaluate to functions as follows:
-			-	<b>Separator:</b> Evaluates to the identity function.
-			-	<b>Operand:</b> Evaluates to a constant function that pushes the operand, followed by all input terms, onto the output program.
-			-	<b>Operator:</b> Evaluates to the operation defined for the operator in the environment. If none, evaluates to a constant function that pushes the operator, followed by all input terms, onto the output program.
-
-		\subsection functions__programs__multiple__ Multiple-Element Programs
-
-			Programs that contain multiple elements can be considered a concatenation of sub-programs that each contain one of the elements. %Om is a <a href="http://concatenative.org">concatenative</a> language: the concatenated program evaluates to the composition of the functions that each sub-program evaluates to.
-
-			For example, program "A B" is the concatenation of programs "A", " ", and "B". The separator evaluates to the identity operation and can be disregarded. The programs "A" and "B" evaluate to functions which will be denoted as <tt>A</tt> and <tt>B</tt>, respectively. The input and output are handled by the composed function as follows:
-			-	Function <tt>B</tt> receives the input, and its output becomes the input for function <tt>A</tt>.
-			-	Function <tt>A</tt> receives the input, and its output becomes that of the composed function.
-
-			Any programs may be concatenated together; however, note that concatenating programs "A" and "B" without an intervening separator would result in a program containing a single operator "AB", which is unrelated to operators "A" or "B".
-
-	\section functions__operations__ Operations
-
-		All operation implementations provided are documented in the \ref om__operation__ module.
-
-\page data__ Data
-
-	There are no traditional data types in %Om: every data value is represented by an operand.
-
-	\section data__panmorphism__ Panmorphism
-
-		%Om uses a unique <em>panmorphic</em> type system, from Ancient Greek πᾶν (pan, "all") and μορφή (morphē, “form”), in which all data values are exposed exclusively through a common immutable interface.
-
-		In the case of %Om, every data value is entirely represented in the language as an operand. Any operation will accept any operand as a valid input and interrogate its data solely through its contained program (a sequence of operator, separator, and/or operand). The operation is then free to process the data however is appropriate, and any operand that it produces as output can then be interrogated and processed by the next operation in the same way.
-
-	\section data__implementation__ Implementation
-
-		Although any operand can be treated as containing a literal array of operand, operator and/or separator elements, the implementation of operands takes advantage of some optimizations:
-		-	Each operand in memory actually contains one of several possible program implementations, each optimized for a specific set of operations. For example, some operations treat separators as insignificant; operands produced by these operations could contain a program implementation that stores only terms (operators and/or operands) and presents a "normalized" separator (such as a line separator) between each term.
-		-	Operations can interrogate an input operand for its program implementation type; if it is the optimal implementation type for the operation, the operation can manipulate the operand directly to produce the same result more efficiently.
-
-		Operations in a program can be ordered by the programmer to increase performance by minimizing conversions between program implementations, but it is not necessary for obtaining a correct computation. Where relevant, an operation will document the program implementation types of its inputs and outputs to allow for this optional level of optimization.
-
-	\section data__programs__ Programs
-
-		All program implementations provided are documented in the \ref om__program__ module.
-
-\page examples__ Examples
-
-	The following program contains a single operand containing an operator &quot;<tt>Hello,</tt>&quot;, a separator &quot;<tt> </tt>&quot;, and another operator &quot;<tt>world!</tt>&quot;:
-	-	<tt>{Hello, world!}</tt>
-		<blockquote><tt>{Hello, world!}</tt></blockquote>
-
-	The following program contains a single operand containing an operator &quot;<tt>Hello,</tt>&quot;, a separator &quot;<tt> </tt>&quot;, and an operand &quot;<tt>{universe!}</tt>&quot; which in turn contains a single operator &quot;<tt>universe!</tt>&quot;:
-	-	<tt>{Hello, {universe!}}</tt>
-		<blockquote><tt>{Hello, {universe!}}</tt></blockquote>
-
-	Note that separators are significant inside operands:
-	-	<tt>{Hello, &nbsp;&nbsp;world!}</tt>
-		<blockquote><tt>{Hello, &nbsp;&nbsp;world!}</tt></blockquote>
-
-	Operands can be dropped and copied via the \ref om__operation__drop_operation__ and \ref om__operation__copy_operation__ operations:
-	-	<tt>drop {A}{B}{C}</tt>
-		<blockquote><tt>{B}{C}</tt></blockquote>
-	-	<tt>copy {A}{B}{C}</tt>
-		<blockquote><tt>{A}{A}{B}{C}</tt></blockquote>
-	-	<tt>drop copy {A}</tt>
-		<blockquote><tt>{A}</tt></blockquote>
-	-	<tt>copy copy {A}</tt>
-		<blockquote><tt>{A}{A}{A}</tt></blockquote>
-
-	The \ref om__operation__drop_operation__ operation can therefore be used for comments:
-	-	<tt>drop {This is a comment.} {This is not a comment.}</tt>
-		<blockquote><tt>{This is not a comment.}</tt></blockquote>
-
-	The \ref om__operation__choose_operation__ operation selects one of two operands, depending on whether a third is empty:
-	-	<tt>choose {It was empty.}{It was non-empty.}{I am not empty.}</tt>
-		<blockquote><tt>{It was non-empty.}</tt></blockquote>
-	-	<tt>choose {It was empty.}{It was non-empty.}{}</tt>
-		<blockquote><tt>{It was empty.}</tt></blockquote>
-
-	An operation without sufficient operands evaluates to itself and whatever operands are provided:
-	-	<tt>drop</tt>
-		<blockquote><tt>drop</tt></blockquote>
-	-	<tt>choose {It was empty.}{It was non-empty.}</tt>
-		<blockquote><tt>choose{It was empty.}{It was non-empty.}</tt></blockquote>
-
-	The \ref om__operation__quote_operation__ and \ref om__operation__dequote_operation__ operations add and remove a layer of operand braces, respectively:
-	-	<tt>quote {B}</tt>
-		<blockquote><tt>{{B}}</tt></blockquote>
-	-	<tt>dequote {{B}}</tt>
-		<blockquote><tt>{B}</tt></blockquote>
-	-	<tt>dequote {copy}</tt>
-		<blockquote><tt>copy</tt></blockquote>
-	-	<tt>dequote {copy} {A}</tt>
-		<blockquote><tt>{A}{A}</tt></blockquote>
-
-	Operands can be popped from and pushed into:
-	-	<tt>&lt;-[characters] {ABC}</tt>
-		<blockquote><tt>{A}{BC}</tt></blockquote>
-	-	<tt>-&gt;[literal] {A}{BC}</tt>
-		<blockquote><tt>{ABC}</tt></blockquote>
-	-	<tt>&lt;-[terms] {some terms}</tt>
-		<blockquote><tt>{some}{terms}</tt></blockquote>
-
-	A new operator definition can be provided with the \ref om__operation__define_operation__ operation, where the first operand is treated as containing a \ref om__lexicon__ with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:
-	-	<tt>define { double-quote {quote quote} } { double-quote {A} }</tt>
-		<blockquote><tt>{{{A}}}</tt></blockquote>
-
-	Any string can be used as an operator, with separators and operand braces escaped with a backquote:
-	-	<tt>define { double` quote {quote quote} } { double` quote {A} }</tt>
-		<blockquote><tt>{{{A}}}</tt></blockquote>
-	-	<tt>&lt;-[terms] { double` quote operator }</tt>
-		<blockquote><tt>{double` quote}{operator}</tt></blockquote>
-
-	Unicode is fully supported:
-	-	<tt>&lt;-[characters] {한글}</tt>
-		<blockquote><tt>{한}{글}</tt></blockquote>
-	-	<tt>&lt;-[code` points] {한글}</tt>
-		<blockquote><tt>{ᄒ}{ᅡᆫ글}</tt></blockquote>
-	-	<tt>&lt;-[terms] {한글 韓}</tt>
-		<blockquote><tt>{한글}{韓}</tt></blockquote>
-
-	Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the \ref om__operation__normalize_operation__ operation:
-	-	<tt>normalize {2⁵}</tt>
-		<blockquote><tt>{25}</tt></blockquote>
-
-	Recursion is very efficient in %Om, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ minutes {1:23} }<br/>
-		</tt>
-		<blockquote><tt>{23}</tt></blockquote>
-
-	Each step of an evaluation can be represented as a program. The following is the above program broken down into evaluation steps, where the code that is about to be replaced is <b>bold</b>, and the latest replacement is <em>italicized</em>:
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ <b>minutes</b> {1:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {1:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {1:23}</b> }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote choose {minutes} {} = {:} <em>{1} {:23}</em> }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote choose {minutes} {} <b>= {:} {1}</b> {:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote choose {minutes} {} <em>{}</em> {:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote <b>choose {minutes} {} {}</b> {:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote <em>{minutes}</em> {:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ <b>dequote {minutes}</b> {:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ <em>minutes</em> {:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ <b>minutes</b> {:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {:23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {:23}</b> }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote choose {minutes} {} = {:} <em>{:} {23}</em> }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote choose {minutes} {} <b>= {:} {:}</b> {23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote choose {minutes} {} <em>{{:}}</em> {23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote <b>choose {minutes} {} {{:}}</b> {23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ dequote <em>{}</em> {23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ <b>dequote {}</b> {23} }<br/>
-		</tt>
-	-	<tt>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ {23} }<br/>
-		</tt>
-	-	<tt><b>define<br/>
-		{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-		{ {23} }</b><br/>
-		</tt>
-	-	<tt><em>{23}</em></tt>
-
-	The \ref om__operation__rearrange_operation__ operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call:
-	\verbatim
-	define
-	{
-		[Fold]<- {
-			rearrange
-			{
-				rearrange
-				{
-					dequote
-					choose
-					quote Result
-					pair pair pair {[Fold]<-} Function Result Remainder
-					Remainder
-				}
-				{Result Remainder}
-				dequote Function Base <-[terms] Source
-			}
-			{Function Base Source}
-		}
-	}
-	{
-		[Fold]<- {[literal]<-} {} {1 2 3}
-	}
-	\endverbatim
-
-	The result is <tt>{321}</tt>.
-
-	The example works as follows:
-	-	<tt>[Fold]&lt;-</tt> takes three operands:
-		-	<tt>Function</tt>
-		-	<tt>Base</tt>
-		-	<tt>Source</tt>
-	-	The first term is popped from the <tt>Source</tt>.
-	-	The <tt>Function</tt> is applied to:
-		-	the <tt>Base</tt>
-		-	the popped first term of the <tt>Source</tt>
-		-	the remainder of the <tt>Source</tt>
-		-	the remainder of the input program
-	-	The first two operands output by the <tt>Function</tt> are:
-		-	<tt>Result</tt>
-		-	<tt>Remainder</tt>
-	-	If the <tt>Remainder</tt> is empty, the <tt>Result</tt> is output. Otherwise, <tt>Function</tt>, <tt>Result</tt>, and <tt>Remainder</tt> are passed to a recursive <tt>[Fold]&lt;-</tt> call.
-
-	A few things should be noted about the above example:
-	-	The \ref om__operation__ list is very short at the moment; as it expands, higher-level constructs should allow for simplification of algorithms such as this one.
-	-	When reading %Om code, it can be difficult to mentally group operations with the operands they consume (contrasted with Scheme, in which they are grouped at design time with parentheses). However, it should be possible for an %Om integrated development environment to generate a graphical indication of these groupings dynamically.
-
 \page contributing__ Contributing
 
 	There are several ways to contribute to the %Om project:
-	-	By \subpage developing__ new \ref om__operation__ and \ref om__program__ classes.
-	-	By \subpage reporting_issues__ via bugs, patches, or enhancement requests.
-	-	By \subpage funding__ further development of the %Om language.
+	-	By \ref contributing__developing__ new \ref om__operation__ and \ref om__program__ classes.
+	-	By \ref contributing__reporting_issues__ via bugs, patches, or enhancement requests.
+	-	By \ref contributing__funding__ further development of the %Om language.
 
-\page developing__ Developing
+	\section contributing__developing__ Developing
 
-	%Om is written in modern, portable C++ that adheres to the <a href="http://sparist.github.com/cpp_coding_standard.html">Sparist C++ Coding Standard</a>.
+		%Om is written in modern, portable C++ that adheres to the <a href="http://sparist.github.com/cpp_coding_standard.html">Sparist C++ Coding Standard</a>.
 
-	<b>Note:</b> Because this is an early-stage project, there are not yet any compatibility guarantees between versions.
+		<b>Note:</b> Because this is an early-stage project, there are not yet any compatibility guarantees between versions.
 
-	\section developing__forking__ Forking
+		\subsection contributing__developing__forking__ Forking
 
-		%Om code can be <a href="https://github.com/sparist/Om/fork">forked</a> from the <a href="https://github.com/sparist/Om">%Om GitHub repository</a>.
+			%Om code can be <a href="https://github.com/sparist/Om/fork">forked</a> from the <a href="https://github.com/sparist/Om">%Om GitHub repository</a>.
 
-	\section developing__building__ Building
+		\subsection contributing__developing__building__ Building
 
-		See \ref using_code__ for instructions on building the code.
+			See the \ref using__ page for instructions on building the code.
 
-	\section developing__adding_or_removing_files Adding or Removing Files
+		\subsection contributing__developing__adding_or_removing_files Adding or Removing Files
 
-		When adding or removing files from source, run the <tt>&quot;generate&quot;</tt> script in the root directory to update the project.
+			When adding or removing files from source, run the <tt>&quot;generate&quot;</tt> script in the root directory to update the project.
 
-	\section developing__adding_operations__ Adding Operations
+		\subsection contributing__developing__adding_operations__ Adding Operations
 
-		Additional native functionality can be added to %Om by implementing new operations in C++.
+			Additional native functionality can be added to %Om by implementing new operations in C++.
 
-		There are two ways to implement an operation: as a composite operation, or an atomic operation.
+			There are two ways to implement an operation: as a composite operation, or an atomic operation.
 
-		To implement a composite operation, or an atomic operation that consumes no operands:
-		-	Define the operation <tt>class</tt> in the <tt>Om::Operation</tt> namespace.
-		-	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
-		-	Define the static <tt>Give(Om::Evaluation &amp;)</tt> method, with no return value, to give existing operations and/or elements to the evaluation.
+			To implement a composite operation, or an atomic operation that consumes no operands:
+			-	Define the operation <tt>class</tt> in the <tt>Om::Operation</tt> namespace.
+			-	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
+			-	Define the static <tt>Give(Om::Evaluation &amp;)</tt> method, with no return value, to give existing operations and/or elements to the evaluation.
 
-		To define an atomic operation that consumes one or more operands:
-		-	Define the operation <tt>class</tt>, derived from <tt>Om::Operation::DefaultIncompleteOperation&lt;</tt><em>operation</em><tt>&gt;</tt> (where <em>operation</em> is the name of the operation <tt>class</tt>), in the <tt>Om::Operation</tt> namespace.
-		-	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
-		-	Add the implementation, using existing operations as a guide:
-			-	Implement the functions necessary to compile.
-			-	Optionally override virtual function implementations in <tt>Om::Operation::DefaultIncompleteOperation</tt>, such as <tt>Om::Operation::DefaultIncompleteOperation::ReadQuotedElements</tt>, that may be more optimally implemented in the operation.
+			To define an atomic operation that consumes one or more operands:
+			-	Define the operation <tt>class</tt>, derived from <tt>Om::Operation::DefaultIncompleteOperation&lt;</tt><em>operation</em><tt>&gt;</tt> (where <em>operation</em> is the name of the operation <tt>class</tt>), in the <tt>Om::Operation</tt> namespace.
+			-	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
+			-	Add the implementation, using existing operations as a guide:
+				-	Implement the functions necessary to compile.
+				-	Optionally override virtual function implementations in <tt>Om::Operation::DefaultIncompleteOperation</tt>, such as <tt>Om::Operation::DefaultIncompleteOperation::ReadQuotedElements</tt>, that may be more optimally implemented in the operation.
 
-		For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <tt>WhateverOperation</tt> is a stand-in for the name of the operation <tt>class</tt>):
+			For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <tt>WhateverOperation</tt> is a stand-in for the name of the operation <tt>class</tt>):
 
-		\code
-		namespace {
+			\code
+			namespace {
 
-			static System::Definition<WhateverOperation> const theWhateverDefinition;
+				static System::Definition<WhateverOperation> const theWhateverDefinition;
 
-		}
-		\endcode
+			}
+			\endcode
 
-	\section developing__adding_programs__ Adding Programs
+		\subsection contributing__developing__adding_programs__ Adding Programs
 
-		New data types can be added to %Om by extending <tt>Om::Program</tt> and defining the functions necessary to instantiate the class. Use existing programs as a guide.
+			New data types can be added to %Om by extending <tt>Om::Program</tt> and defining the functions necessary to instantiate the class. Use existing programs as a guide.
 
-		Program types should be defined in the <tt>Om</tt> namespace.
+			Program types should be defined in the <tt>Om</tt> namespace.
 
-	\section developing__analyzing_code__ Analyzing Code
+		\subsection contributing__developing__analyzing_code__ Analyzing Code
 
-		Some basic free static analysis tools can be applied to the %Om code.
+			Some basic free static analysis tools can be applied to the %Om code.
 
-		-	<a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to %Om by entering the following at the terminal from inside the %Om directory:
-			<blockquote><tt>python </tt><em>[path]</em><tt>/hfcca.py -p -v input/code</tt></blockquote>
-		-	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to %Om by entering the following at the terminal from inside the %Om directory:
-			<blockquote><em>[path]</em><tt>/cloc.pl input/code</tt></blockquote>
+			-	<a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to %Om by entering the following at the terminal from inside the %Om directory:
+				<blockquote><tt>python </tt><em>[path]</em><tt>/hfcca.py -p -v input/code</tt></blockquote>
+			-	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to %Om by entering the following at the terminal from inside the %Om directory:
+				<blockquote><em>[path]</em><tt>/cloc.pl input/code</tt></blockquote>
 
-	\section developing__analyzing_tests__ Analyzing Test Coverage
+		\subsection contributing__developing__analyzing_tests__ Analyzing Test Coverage
 
-		The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:
-		-	Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>. In Preferences, add <tt>"*.ipp"</tt> and <tt>"*.hpp"</tt> to the "SDK Files" list.
-		-	Build and run the Om.Test target.
-		-	In the CoverStory File menu, open the folder <tt>&quot;output/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;</tt>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:
-			-	The left pane shows a list of %Om source files, each accompanied by a test coverage percentage.
-			-	The right pane shows the contents of the currently selected source file, with each line annotated with the number of times it was executed.
+			The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:
+			-	Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>. In Preferences, add <tt>"*.ipp"</tt> and <tt>"*.hpp"</tt> to the "SDK Files" list.
+			-	Build and run the Om.Test target.
+			-	In the CoverStory File menu, open the folder <tt>&quot;output/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;</tt>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:
+				-	The left pane shows a list of %Om source files, each accompanied by a test coverage percentage.
+				-	The right pane shows the contents of the currently selected source file, with each line annotated with the number of times it was executed.
 
-	\section developing__submitting_changes__ Submitting Changes
+		\subsection contributing__developing__submitting_changes__ Submitting Changes
 
-		Changes can be submitted to %Om via <a href="https://github.com/sparist/Om/pull/new/master">pull request</a>.
+			Changes can be submitted to %Om via <a href="https://github.com/sparist/Om/pull/new/master">pull request</a>.
 
-\page reporting_issues__ Reporting Issues
+	\section contributing__reporting_issues__ Reporting Issues
 
-	Issues are reported and tracked with the <a href="https://github.com/sparist/Om/issues">Om GitHub issue tracker</a>.
+		Issues are reported and tracked with the <a href="https://github.com/sparist/Om/issues">Om GitHub issue tracker</a>.
 
-	Before reporting an issue, please search existing issues first to ensure that it is not a duplicate.
+		Before reporting an issue, please search existing issues first to ensure that it is not a duplicate.
 
-\page funding__ Funding
+	\section contributing__funding__ Funding
 
-	The %Om language is currently a spare-time project of <a href="http://sparist.com">one person</a>. If you would like to speed the development of the %Om language in either a general or domain-specific direction, please contact me at <a href="mailto:information@sparist.com?subject=Om%20Funding">information@sparist.com</a>.
-
-\page license__ License
-
-	This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
-
-	For more information about this license, please see the <a href="http://www.eclipse.org/legal/eplfaq.php">Eclipse Public License FAQ</a>.
+		The %Om language is currently a spare-time project of <a href="http://sparist.com">one person</a>. If you would like to speed the development of the %Om language in either a general or domain-specific direction, please contact me at <a href="mailto:information@sparist.com?subject=Om%20Funding">information@sparist.com</a>.
 */
