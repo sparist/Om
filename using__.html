@@ -57,10 +57,102 @@ $(document).ready(function(){initNavTree('using__.html','');});
 <div class="title">Using </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><ul>
-<li><a class="el" href="using_interpreter__.html">Using the Interpreter</a></li>
-<li><a class="el" href="using_code__.html">Using the Code</a> </li>
+<div class="textblock"><p>The Om source code can be used for:</p>
+<ul>
+<li><a class="el" href="using__.html#using__building__">Building</a> a stand-alone interpreter from a script-generated build project.</li>
+<li><a class="el" href="using__.html#using__including__">Including</a> as a C++ header-only library.</li>
 </ul>
+<h1><a class="anchor" id="using__downloading__"></a>
+Downloading</h1>
+<p>The Om source code is downloadable from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>:</p>
+<ul>
+<li>The <b>Development</b> version (to which this documentation applies) can be obtained via <a href="https://github.com/sparist/Om">Git clone</a> or <a href="https://github.com/sparist/Om/archive/master.zip">archive file</a>.</li>
+<li><b>Released</b> versions can be obtained via archive files from the <a href="https://github.com/sparist/Om/tags">GitHub tags page</a>.</li>
+</ul>
+<h1><a class="anchor" id="using__dependencies__"></a>
+Dependencies</h1>
+<h2><a class="anchor" id="using__dependencies__programs__"></a>
+Programs</h2>
+<p>To run scripts which build the dependency <a class="el" href="using__.html#using__dependencies__libraries__">libraries</a> and generate the build project, the following programs are required:</p>
+<ul>
+<li><a href="http://cmake.org">CMake</a></li>
+<li>Mac OS X:<ul>
+<li>Xcode</li>
+</ul>
+</li>
+<li>Windows:<ul>
+<li>Visual Studio</li>
+<li><a href="http://cygwin.com">Cygwin</a> (with bash, GNU make, ar, and ranlib)</li>
+</ul>
+</li>
+<li>Ubuntu:<ul>
+<li>Build-Essential package (<code>sudo apt-get install build-essential</code>)</li>
+</ul>
+</li>
+</ul>
+<p>To build the <a class="el" href="using__.html#using__building__targets__documentation__">documentation target</a> in the build project, the following additional programs are required:</p>
+<ul>
+<li><a href="http://doxygen.org">Doxygen</a></li>
+<li><a href="http://graphviz.org">Graphviz</a></li>
+</ul>
+<p>To ensure that correct programs are used, programs should be listed in the command line path in the following order:</p>
+<ul>
+<li>Graphviz, Doxygen, and CMake</li>
+<li>Cygwin (<code>"<em>[cygwin]</em>/bin"</code>) <b>(Windows only)</b></li>
+<li>Any other paths</li>
+</ul>
+<p>Note that on Mac OS X, the path variable must be <a href="http://www.dowdandassociates.com/blog/content/howto-set-an-environment-variable-in-mac-os-x-slash-etc-slash-launchd-dot-conf/">added to <code>"etc/launchd.conf"</code></a> in order to be visible to applications.</p>
+<h2><a class="anchor" id="using__dependencies__libraries__"></a>
+Libraries</h2>
+<h3><a class="anchor" id="using__dependencies__libraries__icu4c"></a>
+ICU4C</h3>
+<p>Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by executing the CMake script <code>"dependencies/Icu4c/input/build.cmake"</code> from the directory as follows: </p>
+<blockquote class="doxtable">
+<p><code>cmake -D Platform=<em>[output subfolder name]</em> -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -P build.cmake</code></p>
+</blockquote>
+<h3><a class="anchor" id="using__dependencies__libraries__boost"></a>
+Boost</h3>
+<p>Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by executing the CMake script <code>"dependencies/Boost/input/build.cmake"</code> from the directory as follows: </p>
+<blockquote class="doxtable">
+<p><code>cmake -D Platform=<em>[output subfolder name]</em> -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -D Icu=<em>[<a class="el" href="using__.html#using__dependencies__libraries__icu4c">ICU4C</a> install directory]</em> -P build.cmake</code></p>
+</blockquote>
+<h1><a class="anchor" id="using__building__"></a>
+Building</h1>
+<p>A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <code>"output/projects/<em>[generator]</em>"</code> by running <code>"generate.sh"</code> (on Unix-based platforms) or <code>"generate.bat"</code> (on Windows), from the <code>"input"</code> directory, with the desired project subfolder name an argument. By default, this script automatically downloads and builds all external dependency libraries, but this behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:</p>
+<ul>
+<li><b><code>-D Icu:Path="<em>[absolute path]</em>"</code></b>, where <em>[absolute path]</em> is the absolute path of the <a class="el" href="using__.html#using__dependencies__libraries__icu4c">ICU4C</a> install directory.</li>
+<li><b><code>-D Boost:Path="<em>[absolute path]</em>"</code></b>, where <em>[absolute path]</em> provides the absolute path of the <a class="el" href="using__.html#using__dependencies__libraries__boost">Boost</a> install directory.</li>
+</ul>
+<h2><a class="anchor" id="using__building__targets__"></a>
+Targets</h2>
+<h3><a class="anchor" id="using__building__targets__interpreter__"></a>
+Om.Interpreter</h3>
+<p>The Om.Interpreter target builds the interpreter executable as <code>"output/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter"</code>. The interpreter:</p>
+<ul>
+<li>Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".</li>
+<li>Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.</li>
+</ul>
+<p>See <a class="el" href="language__.html">Language</a> to learn how the language works.</p>
+<h3><a class="anchor" id="using__building__targets__test__"></a>
+Om.Test</h3>
+<p>The Om.Test target builds the test executable, which runs all unit tests, as <code>"output/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test"</code>.</p>
+<h3><a class="anchor" id="using__building__targets__documentation__"></a>
+Om.Documentation</h3>
+<p>The Om.Documentation target builds this documentation into the following folders in <code>"output/documentation"</code>:</p>
+<ul>
+<li><b><code>"html"</code>:</b> This HTML documentation. To view in a browser, open <code>"index.html"</code>.</li>
+<li><b><code>"xml"</code>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.</li>
+</ul>
+<h1><a class="anchor" id="using__including__"></a>
+Including</h1>
+<p>Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:</p>
+<ul>
+<li>Add the Om <code>"input/code"</code> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <code>"<a class="el" href="om_8hpp.html" title="Om &quot;umbrella&quot; header file. ">om.hpp</a>"</code> to include all Om header files.</li>
+<li>Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency <code>"build"</code> scripts for guidance.</li>
+<li>Call the <code><a class="el" href="class_om_1_1_system.html#a03f046dac47073768dbdc97d8e211bda" title="Initializes the System. ">Om::System::Initialize</a></code> function prior to use (e.g. in the <code>main</code> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").</li>
+<li>Construct an <code><a class="el" href="class_om_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">Om::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code><a class="el" href="class_om_1_1_translator.html#a8bc320a8fa37fa732a8941e497014407" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink. ">Om::Environment::Evaluate</a></code> functions to evaluate a program.</li>
+</ul>
+<p>For more in-depth usage of the library, see the <a class="el" href="namespace_om.html" title="The Om language implementation. ">Om</a> code documentation. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->

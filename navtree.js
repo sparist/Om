@@ -1,11 +1,65 @@
 var NAVTREE =
 [
   [ "Om", "index.html", [
-    [ "Getting", "downloading__.html", "downloading__" ],
-    [ "Using", "using__.html", "using__" ],
-    [ "Learning", "language__.html", "language__" ],
-    [ "Contributing", "contributing__.html", "contributing__" ],
+    [ "Language", "language__.html", [
+      [ "Syntax", "language__.html#language__syntax__", [
+        [ "Operator", "language__.html#language__syntax__operator__", null ],
+        [ "Separator", "language__.html#language__syntax__separator__", null ],
+        [ "Operand", "language__.html#language__syntax__operand__", null ]
+      ] ],
+      [ "Functions", "language__.html#language__functions__", [
+        [ "Prefix Notation", "language__.html#language__functions__prefix__", null ],
+        [ "Input and Output", "language__.html#language__functions__input_and_output__", null ],
+        [ "Terms", "language__.html#language__functions__terms__", null ],
+        [ "Types", "language__.html#language__functions__types__", null ],
+        [ "Programs", "language__.html#language__functions__programs__", [
+          [ "Empty Program", "language__.html#language__functions__programs__empty__", null ],
+          [ "Single-Element Programs", "language__.html#language__functions__programs__single__", null ],
+          [ "Multiple-Element Programs", "language__.html#language__functions__programs__multiple__", null ]
+        ] ],
+        [ "Operations", "language__.html#language__functions__operations__", null ]
+      ] ],
+      [ "Data", "language__.html#language__data__", [
+        [ "Panmorphism", "language__.html#language__data__panmorphism__", null ],
+        [ "Implementation", "language__.html#language__data__implementation__", null ],
+        [ "Programs", "language__.html#language__data__programs__", null ]
+      ] ],
+      [ "Examples", "language__.html#language__examples__", null ],
+      [ "References", "language__.html#language__references__", null ]
+    ] ],
     [ "License", "license__.html", null ],
+    [ "Using", "using__.html", [
+      [ "Downloading", "using__.html#using__downloading__", null ],
+      [ "Dependencies", "using__.html#using__dependencies__", [
+        [ "Programs", "using__.html#using__dependencies__programs__", null ],
+        [ "Libraries", "using__.html#using__dependencies__libraries__", [
+          [ "ICU4C", "using__.html#using__dependencies__libraries__icu4c", null ],
+          [ "Boost", "using__.html#using__dependencies__libraries__boost", null ]
+        ] ]
+      ] ],
+      [ "Building", "using__.html#using__building__", [
+        [ "Targets", "using__.html#using__building__targets__", [
+          [ "Om.Interpreter", "using__.html#using__building__targets__interpreter__", null ],
+          [ "Om.Test", "using__.html#using__building__targets__test__", null ],
+          [ "Om.Documentation", "using__.html#using__building__targets__documentation__", null ]
+        ] ]
+      ] ],
+      [ "Including", "using__.html#using__including__", null ]
+    ] ],
+    [ "Contributing", "contributing__.html", [
+      [ "Developing", "contributing__.html#contributing__developing__", [
+        [ "Forking", "contributing__.html#contributing__developing__forking__", null ],
+        [ "Building", "contributing__.html#contributing__developing__building__", null ],
+        [ "Adding or Removing Files", "contributing__.html#contributing__developing__adding_or_removing_files", null ],
+        [ "Adding Operations", "contributing__.html#contributing__developing__adding_operations__", null ],
+        [ "Adding Programs", "contributing__.html#contributing__developing__adding_programs__", null ],
+        [ "Analyzing Code", "contributing__.html#contributing__developing__analyzing_code__", null ],
+        [ "Analyzing Test Coverage", "contributing__.html#contributing__developing__analyzing_tests__", null ],
+        [ "Submitting Changes", "contributing__.html#contributing__developing__submitting_changes__", null ]
+      ] ],
+      [ "Reporting Issues", "contributing__.html#contributing__reporting_issues__", null ],
+      [ "Funding", "contributing__.html#contributing__funding__", null ]
+    ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
@@ -45,12 +99,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_om_1_1_expression.html#ad3e11702300b8da86c369bda9f3b6d90",
-"class_om_1_1_operation_1_1_choose_operation.html#a84b143fdb2f89c934146420ee450d89d",
-"class_om_1_1_operator.html#ac0045f653de39e40ef6e77d1959e6cf4",
-"class_om_1_1_source_1_1_source.html#ad9336280040bdc1fb787840a421769d6",
-"element_8hpp.html#a08d88ee673a8ccb4b369b9f787e9924c",
-"group__om____operation____equals__operation____.html",
+"class_om_1_1_expression.html#ad6f711aef376453e23adb330cb7eec37",
+"class_om_1_1_operation_1_1_choose_operation.html#a8b1b517f784becc7eb6600fbd09a7752",
+"class_om_1_1_operator.html#ad50c2e7969f09aabd06ab87349412b8f",
+"class_om_1_1_source_1_1_stream_source.html",
+"empty__source_8hpp.html#a58c15d24afab10e80aac757d38906057",
+"group__om____operation____literal__back__push__operation____.html",
 "owner_8hpp.html"
 ];
 

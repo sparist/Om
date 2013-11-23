@@ -59,10 +59,88 @@ $(document).ready(function(){initNavTree('contributing__.html','');});
 <div class="contents">
 <div class="textblock"><p>There are several ways to contribute to the Om project:</p>
 <ul>
-<li>By <a class="el" href="developing__.html">Developing</a> new <a class="el" href="group__om____operation____.html">Operation</a> and <a class="el" href="group__om____program____.html">Program</a> classes.</li>
-<li>By <a class="el" href="reporting_issues__.html">Reporting Issues</a> via bugs, patches, or enhancement requests.</li>
-<li>By <a class="el" href="funding__.html">Funding</a> further development of the Om language. </li>
+<li>By <a class="el" href="contributing__.html#contributing__developing__">Developing</a> new <a class="el" href="group__om____operation____.html">Operation</a> and <a class="el" href="group__om____program____.html">Program</a> classes.</li>
+<li>By <a class="el" href="contributing__.html#contributing__reporting_issues__">Reporting Issues</a> via bugs, patches, or enhancement requests.</li>
+<li>By <a class="el" href="contributing__.html#contributing__funding__">Funding</a> further development of the Om language.</li>
 </ul>
+<h1><a class="anchor" id="contributing__developing__"></a>
+Developing</h1>
+<p>Om is written in modern, portable C++ that adheres to the <a href="http://sparist.github.com/cpp_coding_standard.html">Sparist C++ Coding Standard</a>.</p>
+<p><b>Note:</b> Because this is an early-stage project, there are not yet any compatibility guarantees between versions.</p>
+<h2><a class="anchor" id="contributing__developing__forking__"></a>
+Forking</h2>
+<p>Om code can be <a href="https://github.com/sparist/Om/fork">forked</a> from the <a href="https://github.com/sparist/Om">Om GitHub repository</a>.</p>
+<h2><a class="anchor" id="contributing__developing__building__"></a>
+Building</h2>
+<p>See the <a class="el" href="using__.html">Using</a> page for instructions on building the code.</p>
+<h2><a class="anchor" id="contributing__developing__adding_or_removing_files"></a>
+Adding or Removing Files</h2>
+<p>When adding or removing files from source, run the <code>"generate"</code> script in the root directory to update the project.</p>
+<h2><a class="anchor" id="contributing__developing__adding_operations__"></a>
+Adding Operations</h2>
+<p>Additional native functionality can be added to Om by implementing new operations in C++.</p>
+<p>There are two ways to implement an operation: as a composite operation, or an atomic operation.</p>
+<p>To implement a composite operation, or an atomic operation that consumes no operands:</p>
+<ul>
+<li>Define the operation <code>class</code> in the <code><a class="el" href="namespace_om_1_1_operation.html" title="A namespace for all Operation implementations. ">Om::Operation</a></code> namespace.</li>
+<li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
+<li>Define the static <code>Give(<a class="el" href="class_om_1_1_evaluation.html" title="The current evaluation. ">Om::Evaluation</a> &amp;)</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
+</ul>
+<p>To define an atomic operation that consumes one or more operands:</p>
+<ul>
+<li>Define the operation <code>class</code>, derived from <code><a class="el" href="class_om_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation. ">Om::Operation::DefaultIncompleteOperation</a>&lt;</code><em>operation</em><code>&gt;</code> (where <em>operation</em> is the name of the operation <code>class</code>), in the <code><a class="el" href="namespace_om_1_1_operation.html" title="A namespace for all Operation implementations. ">Om::Operation</a></code> namespace.</li>
+<li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
+<li>Add the implementation, using existing operations as a guide:<ul>
+<li>Implement the functions necessary to compile.</li>
+<li>Optionally override virtual function implementations in <code><a class="el" href="class_om_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation. ">Om::Operation::DefaultIncompleteOperation</a></code>, such as <code><a class="el" href="class_om_1_1_operation_1_1_default_incomplete_operation.html#a0f81ab72fbca3ee248eea5547e3d70a9">Om::Operation::DefaultIncompleteOperation::ReadQuotedElements</a></code>, that may be more optimally implemented in the operation.</li>
+</ul>
+</li>
+</ul>
+<p>For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <code>WhateverOperation</code> is a stand-in for the name of the operation <code>class</code>):</p>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span>{</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">static</span> System::Definition&lt;WhateverOperation&gt; <span class="keyword">const</span> theWhateverDefinition;</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="contributing__developing__adding_programs__"></a>
+Adding Programs</h2>
+<p>New data types can be added to Om by extending <code><a class="el" href="class_om_1_1_program.html" title="The Program implementation. ">Om::Program</a></code> and defining the functions necessary to instantiate the class. Use existing programs as a guide.</p>
+<p>Program types should be defined in the <code><a class="el" href="namespace_om.html" title="The Om language implementation. ">Om</a></code> namespace.</p>
+<h2><a class="anchor" id="contributing__developing__analyzing_code__"></a>
+Analyzing Code</h2>
+<p>Some basic free static analysis tools can be applied to the Om code.</p>
+<ul>
+<li><a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to Om by entering the following at the terminal from inside the Om directory: <blockquote class="doxtable">
+<p><code>python </code><em>[path]</em><code>/hfcca.py -p -v input/code</code></p>
+</blockquote>
+</li>
+<li><a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to Om by entering the following at the terminal from inside the Om directory: <blockquote class="doxtable">
+<p><em>[path]</em><code>/cloc.pl input/code</code></p>
+</blockquote>
+</li>
+</ul>
+<h2><a class="anchor" id="contributing__developing__analyzing_tests__"></a>
+Analyzing Test Coverage</h2>
+<p>The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:</p>
+<ul>
+<li>Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>. In Preferences, add <code>"*.ipp"</code> and <code>"*.hpp"</code> to the "SDK Files" list.</li>
+<li>Build and run the Om.Test target.</li>
+<li>In the CoverStory File menu, open the folder <code>"output/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64"</code>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:<ul>
+<li>The left pane shows a list of Om source files, each accompanied by a test coverage percentage.</li>
+<li>The right pane shows the contents of the currently selected source file, with each line annotated with the number of times it was executed.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="contributing__developing__submitting_changes__"></a>
+Submitting Changes</h2>
+<p>Changes can be submitted to Om via <a href="https://github.com/sparist/Om/pull/new/master">pull request</a>.</p>
+<h1><a class="anchor" id="contributing__reporting_issues__"></a>
+Reporting Issues</h1>
+<p>Issues are reported and tracked with the <a href="https://github.com/sparist/Om/issues">Om GitHub issue tracker</a>.</p>
+<p>Before reporting an issue, please search existing issues first to ensure that it is not a duplicate.</p>
+<h1><a class="anchor" id="contributing__funding__"></a>
+Funding</h1>
+<p>The Om language is currently a spare-time project of <a href="http://sparist.com">one person</a>. If you would like to speed the development of the Om language in either a general or domain-specific direction, please contact me at <a href="#" onclick="location.href='mai'+'lto:'+'inf'+'or'+'mat'+'io'+'n@s'+'pa'+'ris'+'t.'+'com'+'?s'+'ubj'+'ec'+'t=O'+'m%'+'20F'+'un'+'din'+'g'; return false;">information@sparist.com</a>. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 		<!-- start footer part -->
