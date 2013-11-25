@@ -392,28 +392,28 @@ Examples</h1>
 <li><code><em>{23}</em></code></li>
 </ul>
 <p>The <a class="el" href="group__om____operation____rearrange__operation____.html">rearrange</a> operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call: </p>
-<pre class="fragment">		define
+<pre class="fragment">define
+{
+	[Fold]&lt;- {
+		rearrange
 		{
-			[Fold]&lt;- {
-				rearrange
-				{
-					rearrange
-					{
-						dequote
-						choose
-						quote Result
-						pair pair pair {[Fold]&lt;-} Function Result Remainder
-						Remainder
-					}
-					{Result Remainder}
-					dequote Function Base &lt;-[terms] Source
-				}
-				{Function Base Source}
+			rearrange
+			{
+				dequote
+				choose
+				quote Result
+				pair pair pair {[Fold]&lt;-} Function Result Remainder
+				Remainder
 			}
+			{Result Remainder}
+			dequote Function Base &lt;-[terms] Source
 		}
-		{
-			[Fold]&lt;- {[literal]&lt;-} {} {1 2 3}
-		}</pre><p>The result is <code>{321}</code>.</p>
+		{Function Base Source}
+	}
+}
+{
+	[Fold]&lt;- {[literal]&lt;-} {} {1 2 3}
+}</pre><p>The result is <code>{321}</code>.</p>
 <p>The example works as follows:</p>
 <ul>
 <li><code>[Fold]&lt;-</code> takes three operands:<ul>
