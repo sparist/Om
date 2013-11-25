@@ -9,14 +9,7 @@ var NAVTREE =
       ] ],
       [ "Functions", "language__.html#language__functions__", [
         [ "Prefix Notation", "language__.html#language__functions__prefix__", null ],
-        [ "Input and Output", "language__.html#language__functions__input_and_output__", null ],
-        [ "Terms", "language__.html#language__functions__terms__", null ],
-        [ "Types", "language__.html#language__functions__types__", null ],
-        [ "Programs", "language__.html#language__functions__programs__", [
-          [ "Empty Program", "language__.html#language__functions__programs__empty__", null ],
-          [ "Single-Element Programs", "language__.html#language__functions__programs__single__", null ],
-          [ "Multiple-Element Programs", "language__.html#language__functions__programs__multiple__", null ]
-        ] ],
+        [ "Evaluation", "language__.html#language__functions__evaluation__", null ],
         [ "Operations", "language__.html#language__functions__operations__", null ]
       ] ],
       [ "Data", "language__.html#language__data__", [
@@ -105,7 +98,7 @@ var NAVTREEINDEX =
 "class_om_1_1_source_1_1_stream_source.html",
 "empty__source_8hpp.html#a58c15d24afab10e80aac757d38906057",
 "group__om____operation____literal__back__push__operation____.html",
-"owner_8hpp.html"
+"pair_8cpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
