@@ -25,7 +25,7 @@ namespace Om {
 
 	/*!
 	\brief
-		An "atomic" Element defined by a string.
+		An atomic Element defined by a string.
 	*/
 	class Atom :
 	public Element {

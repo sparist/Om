@@ -25,7 +25,7 @@ namespace Om {
 
 	/*!
 	\brief
-		A Program that contains a single "elemental" item (or none, when IsEmpty() returns true).
+		A Program that contains a single elemental item (or none, when IsEmpty() returns true).
 	*/
 	class Element :
 	public Program {
