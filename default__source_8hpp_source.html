@@ -80,36 +80,35 @@ $(document).ready(function(){initNavTree('default__source_8hpp_source.html','');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">public</span> std::iterator&lt;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::input_iterator_tag,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            ThisItem</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        &gt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html#a40a9412fab97b6f4ff2b2c548b359e64">~DefaultSource</a>() = 0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            ThisImplementation &amp; <a class="code" href="class_om_1_1_source_1_1_default_source.html#a96d9e19937c43a68b4dfa6012563fad7">operator ++</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            ThisImplementation <a class="code" href="class_om_1_1_source_1_1_default_source.html#a96d9e19937c43a68b4dfa6012563fad7">operator ++</a>(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html#afb26aea54fa30f6ead87f92d409340e1">Equals</a>(</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="code" href="class_om_1_1_source_1_1_source.html">Source&lt;ThisItem&gt;</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html#afb26aea54fa30f6ead87f92d409340e1">Equals</a>(ThisImplementation <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="class_om_1_1_source_1_1_default_source.html">DefaultSource</a> &amp; <a class="code" href="class_om_1_1_source_1_1_default_source.html#adeb591596fcbb90162da6c64c48757a7">operator =</a>(<a class="code" href="class_om_1_1_source_1_1_default_source.html">DefaultSource</a> <span class="keyword">const</span> &amp;);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        };</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__source_8cpp.html">om/source/default_source.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        &gt; {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html#a40a9412fab97b6f4ff2b2c548b359e64">~DefaultSource</a>() = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            ThisImplementation &amp; <a class="code" href="class_om_1_1_source_1_1_default_source.html#a96d9e19937c43a68b4dfa6012563fad7">operator ++</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            ThisImplementation <a class="code" href="class_om_1_1_source_1_1_default_source.html#a96d9e19937c43a68b4dfa6012563fad7">operator ++</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html#afb26aea54fa30f6ead87f92d409340e1">Equals</a>(</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <a class="code" href="class_om_1_1_source_1_1_source.html">Source&lt;ThisItem&gt;</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html#afb26aea54fa30f6ead87f92d409340e1">Equals</a>(ThisImplementation <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="class_om_1_1_source_1_1_default_source.html">DefaultSource</a> &amp; <a class="code" href="class_om_1_1_source_1_1_default_source.html#adeb591596fcbb90162da6c64c48757a7">operator =</a>(<a class="code" href="class_om_1_1_source_1_1_default_source.html">DefaultSource</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        };</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__source_8cpp.html">om/source/default_source.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_om_1_1_source_1_1_default_source_html"><div class="ttname"><a href="class_om_1_1_source_1_1_default_source.html">Om::Source::DefaultSource</a></div><div class="ttdoc">A partial implementation of Source. </div><div class="ttdef"><b>Definition:</b> <a href="default__source_8hpp_source.html#l00036">default_source.hpp:36</a></div></div>
 <div class="ttc" id="class_om_1_1_source_1_1_default_source_html_a40a9412fab97b6f4ff2b2c548b359e64"><div class="ttname"><a href="class_om_1_1_source_1_1_default_source.html#a40a9412fab97b6f4ff2b2c548b359e64">Om::Source::DefaultSource::~DefaultSource</a></div><div class="ttdeci">virtual ~DefaultSource()=0</div></div>
 <div class="ttc" id="class_om_1_1_source_1_1_default_source_html_a96d9e19937c43a68b4dfa6012563fad7"><div class="ttname"><a href="class_om_1_1_source_1_1_default_source.html#a96d9e19937c43a68b4dfa6012563fad7">Om::Source::DefaultSource::operator++</a></div><div class="ttdeci">ThisImplementation &amp; operator++()</div><div class="ttdoc">Pulls the next item from the Source. </div></div>

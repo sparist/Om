@@ -70,51 +70,50 @@ $(document).ready(function(){initNavTree('environment_8hpp_source.html','');});
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// MARK: - Om::Environment</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_om_1_1_environment.html">   30</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_om_1_1_environment.html">Environment</a> :</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_om_1_1_translator.html">Translator</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="class_om_1_1_environment.html#a2e1ebea27ab843bb1a3bdd193c7ffac8">Environment</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_environment.html#a6547fb3046053303e373ae45c8c3d2d1">GiveElements</a>(<a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_environment.html#adf12025983882b173ffd0c6298847093">IsEmpty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_environment.html#a1294fd5188fe1b5201f7348b53f76a67">Push</a>(<a class="code" href="class_om_1_1_translator.html">Translator</a> <span class="keyword">const</span> &amp;);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_environment.html#ae0145930d5b1b8d3d43db2736048aaca">Translate</a>(</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="class_om_1_1_operator.html">Operator</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (static)</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_om_1_1_environment.html#ab8c2443d3a6a6e6f811ab00f0cd576e0">   63</a></span>&#160;        <span class="keyword">typedef</span> std::vector&lt;Translator const *&gt; <a class="code" href="class_om_1_1_environment.html#ab8c2443d3a6a6e6f811ab00f0cd576e0">TranslatorVector</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_om_1_1_environment.html#aa53d320ce809e0cde56176117f663c23">   67</a></span>&#160;        <a class="code" href="class_om_1_1_environment.html#ab8c2443d3a6a6e6f811ab00f0cd576e0">TranslatorVector</a> <a class="code" href="class_om_1_1_environment.html#aa53d320ce809e0cde56176117f663c23">thisTranslatorVector</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    };</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="environment_8cpp.html">om/environment.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_om_1_1_translator.html">Translator</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_om_1_1_environment.html#a2e1ebea27ab843bb1a3bdd193c7ffac8">Environment</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_environment.html#a6547fb3046053303e373ae45c8c3d2d1">GiveElements</a>(<a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_environment.html#adf12025983882b173ffd0c6298847093">IsEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_environment.html#a1294fd5188fe1b5201f7348b53f76a67">Push</a>(<a class="code" href="class_om_1_1_translator.html">Translator</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_environment.html#ae0145930d5b1b8d3d43db2736048aaca">Translate</a>(</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="class_om_1_1_operator.html">Operator</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (static)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_om_1_1_environment.html#ab8c2443d3a6a6e6f811ab00f0cd576e0">   62</a></span>&#160;        <span class="keyword">typedef</span> std::vector&lt;Translator const *&gt; <a class="code" href="class_om_1_1_environment.html#ab8c2443d3a6a6e6f811ab00f0cd576e0">TranslatorVector</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_om_1_1_environment.html#aa53d320ce809e0cde56176117f663c23">   66</a></span>&#160;        <a class="code" href="class_om_1_1_environment.html#ab8c2443d3a6a6e6f811ab00f0cd576e0">TranslatorVector</a> <a class="code" href="class_om_1_1_environment.html#aa53d320ce809e0cde56176117f663c23">thisTranslatorVector</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="environment_8cpp.html">om/environment.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="environment_8cpp_html"><div class="ttname"><a href="environment_8cpp.html">environment.cpp</a></div><div class="ttdoc">Om source file. </div></div>
 <div class="ttc" id="class_om_1_1_operator_html"><div class="ttname"><a href="class_om_1_1_operator.html">Om::Operator</a></div><div class="ttdoc">The Operator implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operator_8hpp_source.html#l00046">operator.hpp:46</a></div></div>
 <div class="ttc" id="class_om_1_1_consumer_html"><div class="ttname"><a href="class_om_1_1_consumer.html">Om::Consumer</a></div><div class="ttdoc">An Element taker; takes at the back. </div><div class="ttdef"><b>Definition:</b> <a href="consumer_8hpp_source.html#l00040">consumer.hpp:40</a></div></div>
 <div class="ttc" id="class_om_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_evaluation.html">Om::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00040">evaluation.hpp:40</a></div></div>
 <div class="ttc" id="class_om_1_1_environment_html_a2e1ebea27ab843bb1a3bdd193c7ffac8"><div class="ttname"><a href="class_om_1_1_environment.html#a2e1ebea27ab843bb1a3bdd193c7ffac8">Om::Environment::Environment</a></div><div class="ttdeci">Environment()</div></div>
-<div class="ttc" id="class_om_1_1_environment_html_aa53d320ce809e0cde56176117f663c23"><div class="ttname"><a href="class_om_1_1_environment.html#aa53d320ce809e0cde56176117f663c23">Om::Environment::thisTranslatorVector</a></div><div class="ttdeci">TranslatorVector thisTranslatorVector</div><div class="ttdef"><b>Definition:</b> <a href="environment_8hpp_source.html#l00067">environment.hpp:67</a></div></div>
+<div class="ttc" id="class_om_1_1_environment_html_aa53d320ce809e0cde56176117f663c23"><div class="ttname"><a href="class_om_1_1_environment.html#aa53d320ce809e0cde56176117f663c23">Om::Environment::thisTranslatorVector</a></div><div class="ttdeci">TranslatorVector thisTranslatorVector</div><div class="ttdef"><b>Definition:</b> <a href="environment_8hpp_source.html#l00066">environment.hpp:66</a></div></div>
 <div class="ttc" id="class_om_1_1_environment_html_adf12025983882b173ffd0c6298847093"><div class="ttname"><a href="class_om_1_1_environment.html#adf12025983882b173ffd0c6298847093">Om::Environment::IsEmpty</a></div><div class="ttdeci">virtual bool IsEmpty() const </div></div>
 <div class="ttc" id="class_om_1_1_translator_html"><div class="ttname"><a href="class_om_1_1_translator.html">Om::Translator</a></div><div class="ttdoc">An Operator lookup for use by an Evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="translator_8hpp_source.html#l00058">translator.hpp:58</a></div></div>
 <div class="ttc" id="class_om_1_1_environment_html"><div class="ttname"><a href="class_om_1_1_environment.html">Om::Environment</a></div><div class="ttdoc">An unowned Translator collection for which lookups are done for each Translator, in reverse order...</div><div class="ttdef"><b>Definition:</b> <a href="environment_8hpp_source.html#l00030">environment.hpp:30</a></div></div>
 <div class="ttc" id="translator_8hpp_html"><div class="ttname"><a href="translator_8hpp.html">translator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_environment_html_ae0145930d5b1b8d3d43db2736048aaca"><div class="ttname"><a href="class_om_1_1_environment.html#ae0145930d5b1b8d3d43db2736048aaca">Om::Environment::Translate</a></div><div class="ttdeci">virtual bool Translate(Evaluation &amp;, Operator const &amp;) const </div><div class="ttdoc">Translates the Operator to an object that is then given to the Evaluation. </div></div>
-<div class="ttc" id="class_om_1_1_environment_html_ab8c2443d3a6a6e6f811ab00f0cd576e0"><div class="ttname"><a href="class_om_1_1_environment.html#ab8c2443d3a6a6e6f811ab00f0cd576e0">Om::Environment::TranslatorVector</a></div><div class="ttdeci">std::vector&lt; Translator const * &gt; TranslatorVector</div><div class="ttdoc">A vector of non-owner Translator pointers. </div><div class="ttdef"><b>Definition:</b> <a href="environment_8hpp_source.html#l00063">environment.hpp:63</a></div></div>
+<div class="ttc" id="class_om_1_1_environment_html_ab8c2443d3a6a6e6f811ab00f0cd576e0"><div class="ttname"><a href="class_om_1_1_environment.html#ab8c2443d3a6a6e6f811ab00f0cd576e0">Om::Environment::TranslatorVector</a></div><div class="ttdeci">std::vector&lt; Translator const * &gt; TranslatorVector</div><div class="ttdoc">A vector of non-owner Translator pointers. </div><div class="ttdef"><b>Definition:</b> <a href="environment_8hpp_source.html#l00062">environment.hpp:62</a></div></div>
 <div class="ttc" id="class_om_1_1_environment_html_a1294fd5188fe1b5201f7348b53f76a67"><div class="ttname"><a href="class_om_1_1_environment.html#a1294fd5188fe1b5201f7348b53f76a67">Om::Environment::Push</a></div><div class="ttdeci">void Push(Translator const &amp;)</div><div class="ttdoc">Pushes an unowned Translator reference. </div></div>
 <div class="ttc" id="class_om_1_1_environment_html_a6547fb3046053303e373ae45c8c3d2d1"><div class="ttname"><a href="class_om_1_1_environment.html#a6547fb3046053303e373ae45c8c3d2d1">Om::Environment::GiveElements</a></div><div class="ttdeci">virtual void GiveElements(Consumer &amp;) const </div></div>
 </div><!-- fragment --></div><!-- contents -->

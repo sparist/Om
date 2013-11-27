@@ -75,47 +75,46 @@ $(document).ready(function(){initNavTree('program__operation_8hpp_source.html','
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_program_operation.html">   33</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_operation_1_1_program_operation.html">ProgramOperation</a> :</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_operation_1_1_default_incomplete_operation.html">DefaultIncompleteOperation</a>&lt;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            ProgramOperation&lt;ThisProgram&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        &gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#ac4f9644996eed2a9b6e4342fd2fbf6cd">GetName</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProgramOperation&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#a8c5518466e047f78e2d7e0fe160aa68c">GiveElements</a>(</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                TheProgramOperation &amp;,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#a0d53f778deba1208564c354d273278f5">ReadQuotedElements</a>(</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="class_om_1_1_parser.html">Parser</a> &amp;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#a1570a2c14e18a68ef777ef1c0165395a">TakeOperand</a>(</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                TheOperand &amp;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            );</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#a2e226b4b67ccfd09bf2a9458ad0fe457">TakeQuotedProducer</a>(</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                TheProducer &amp;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            );</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        };</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="program__operation_8cpp.html">om/operation/program_operation.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        &gt; {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#ac4f9644996eed2a9b6e4342fd2fbf6cd">GetName</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProgramOperation&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#a8c5518466e047f78e2d7e0fe160aa68c">GiveElements</a>(</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                TheProgramOperation &amp;,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#a0d53f778deba1208564c354d273278f5">ReadQuotedElements</a>(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="class_om_1_1_parser.html">Parser</a> &amp;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#a1570a2c14e18a68ef777ef1c0165395a">TakeOperand</a>(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                TheOperand &amp;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_program_operation.html#a2e226b4b67ccfd09bf2a9458ad0fe457">TakeQuotedProducer</a>(</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                TheProducer &amp;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        };</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="program__operation_8cpp.html">om/operation/program_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_om_1_1_operation_1_1_program_operation_html_a1570a2c14e18a68ef777ef1c0165395a"><div class="ttname"><a href="class_om_1_1_operation_1_1_program_operation.html#a1570a2c14e18a68ef777ef1c0165395a">Om::Operation::ProgramOperation::TakeOperand</a></div><div class="ttdeci">bool TakeOperand(Evaluation &amp;, TheOperand &amp;)</div></div>
 <div class="ttc" id="default__incomplete__operation_8hpp_html"><div class="ttname"><a href="default__incomplete__operation_8hpp.html">default_incomplete_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_consumer_html"><div class="ttname"><a href="class_om_1_1_consumer.html">Om::Consumer</a></div><div class="ttdoc">An Element taker; takes at the back. </div><div class="ttdef"><b>Definition:</b> <a href="consumer_8hpp_source.html#l00040">consumer.hpp:40</a></div></div>

@@ -82,54 +82,53 @@ $(document).ready(function(){initNavTree('iterator__sink_8hpp_source.html','');}
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                ThisItem,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                ThisIterator</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            &gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        &gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#ad7564dbebf4aa4d8682c011f955ab5db">IteratorSink</a>(ThisIterator);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">IteratorSink</a> &amp; <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#a2e07d23f99ac0b03532b19198f27323e">operator =</a>(<a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">IteratorSink</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#ae938444c756360224c4f9888a0b9d9ec">Push</a>(ThisItem &amp;);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#ab51e6b752b4be7517bdfe341a8136a96">Swap</a>(<a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">IteratorSink</a> &amp;);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_om_1_1_sink_1_1_iterator_sink.html#a319a27d6acce70e9d3a18ce1e71a3326">   62</a></span>&#160;            ThisIterator <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#a319a27d6acce70e9d3a18ce1e71a3326">thisIterator</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">namespace </span>boost {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// MARK: - boost::</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">template</span> &lt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">typename</span> TheItem,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">typename</span> TheIterator</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    &gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">Om::Sink::IteratorSink</a>&lt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            TheItem,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            TheIterator</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        &gt; &amp;,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">Om::Sink::IteratorSink</a>&lt;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            TheItem,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            TheIterator</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        &gt; &amp;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    );</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="iterator__sink_8cpp.html">om/sink/iterator_sink.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_om_1_1_sink_1_1_iterator_sink_html_a319a27d6acce70e9d3a18ce1e71a3326"><div class="ttname"><a href="class_om_1_1_sink_1_1_iterator_sink.html#a319a27d6acce70e9d3a18ce1e71a3326">Om::Sink::IteratorSink::thisIterator</a></div><div class="ttdeci">ThisIterator thisIterator</div><div class="ttdoc">The output iterator. </div><div class="ttdef"><b>Definition:</b> <a href="iterator__sink_8hpp_source.html#l00062">iterator_sink.hpp:62</a></div></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        &gt; {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#ad7564dbebf4aa4d8682c011f955ab5db">IteratorSink</a>(ThisIterator);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">IteratorSink</a> &amp; <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#a2e07d23f99ac0b03532b19198f27323e">operator =</a>(<a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">IteratorSink</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#ae938444c756360224c4f9888a0b9d9ec">Push</a>(ThisItem &amp;);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#ab51e6b752b4be7517bdfe341a8136a96">Swap</a>(<a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">IteratorSink</a> &amp;);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_om_1_1_sink_1_1_iterator_sink.html#a319a27d6acce70e9d3a18ce1e71a3326">   61</a></span>&#160;            ThisIterator <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html#a319a27d6acce70e9d3a18ce1e71a3326">thisIterator</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        };</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">namespace </span>boost {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// MARK: - boost::</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">template</span> &lt;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">typename</span> TheItem,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">typename</span> TheIterator</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    &gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">swap</a>(</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">Om::Sink::IteratorSink</a>&lt;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            TheItem,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            TheIterator</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        &gt; &amp;,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="class_om_1_1_sink_1_1_iterator_sink.html">Om::Sink::IteratorSink</a>&lt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            TheItem,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            TheIterator</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        &gt; &amp;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    );</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="iterator__sink_8cpp.html">om/sink/iterator_sink.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_om_1_1_sink_1_1_iterator_sink_html_a319a27d6acce70e9d3a18ce1e71a3326"><div class="ttname"><a href="class_om_1_1_sink_1_1_iterator_sink.html#a319a27d6acce70e9d3a18ce1e71a3326">Om::Sink::IteratorSink::thisIterator</a></div><div class="ttdeci">ThisIterator thisIterator</div><div class="ttdoc">The output iterator. </div><div class="ttdef"><b>Definition:</b> <a href="iterator__sink_8hpp_source.html#l00061">iterator_sink.hpp:61</a></div></div>
 <div class="ttc" id="class_om_1_1_sink_1_1_iterator_sink_html_ab51e6b752b4be7517bdfe341a8136a96"><div class="ttname"><a href="class_om_1_1_sink_1_1_iterator_sink.html#ab51e6b752b4be7517bdfe341a8136a96">Om::Sink::IteratorSink::Swap</a></div><div class="ttdeci">void Swap(IteratorSink &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_sink_1_1_iterator_sink_html"><div class="ttname"><a href="class_om_1_1_sink_1_1_iterator_sink.html">Om::Sink::IteratorSink</a></div><div class="ttdoc">A Sink adapter for an output iterator. </div><div class="ttdef"><b>Definition:</b> <a href="iterator__sink_8hpp_source.html#l00036">iterator_sink.hpp:36</a></div></div>
 <div class="ttc" id="default__sink_8hpp_html"><div class="ttname"><a href="default__sink_8hpp.html">default_sink.hpp</a></div><div class="ttdoc">Om header file. </div></div>

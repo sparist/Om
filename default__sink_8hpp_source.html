@@ -80,30 +80,29 @@ $(document).ready(function(){initNavTree('default__sink_8hpp_source.html','');})
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">public</span> std::iterator&lt;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::output_iterator_tag,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            ThisItem</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        &gt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_sink_1_1_default_sink.html#a0281562020589f041fba3e7f7e00670c">~DefaultSink</a>() = 0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            ThisImplementation &amp; <a class="code" href="class_om_1_1_sink_1_1_default_sink.html#a87c05c24ec01bc58c5ee5956f1237328">operator ++</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            ThisImplementation <a class="code" href="class_om_1_1_sink_1_1_default_sink.html#a87c05c24ec01bc58c5ee5956f1237328">operator ++</a>(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="class_om_1_1_sink_1_1_default_sink.html">DefaultSink</a> &amp; <a class="code" href="class_om_1_1_sink_1_1_default_sink.html#ad4870a183da654752a9ad342f1f91af7">operator =</a>(<a class="code" href="class_om_1_1_sink_1_1_default_sink.html">DefaultSink</a> <span class="keyword">const</span> &amp;);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        };</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__sink_8cpp.html">om/sink/default_sink.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        &gt; {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_sink_1_1_default_sink.html#a0281562020589f041fba3e7f7e00670c">~DefaultSink</a>() = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            ThisImplementation &amp; <a class="code" href="class_om_1_1_sink_1_1_default_sink.html#a87c05c24ec01bc58c5ee5956f1237328">operator ++</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            ThisImplementation <a class="code" href="class_om_1_1_sink_1_1_default_sink.html#a87c05c24ec01bc58c5ee5956f1237328">operator ++</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="class_om_1_1_sink_1_1_default_sink.html">DefaultSink</a> &amp; <a class="code" href="class_om_1_1_sink_1_1_default_sink.html#ad4870a183da654752a9ad342f1f91af7">operator =</a>(<a class="code" href="class_om_1_1_sink_1_1_default_sink.html">DefaultSink</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__sink_8cpp.html">om/sink/default_sink.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="default__sink_8cpp_html"><div class="ttname"><a href="default__sink_8cpp.html">default_sink.cpp</a></div><div class="ttdoc">Om source file. </div></div>
 <div class="ttc" id="class_om_1_1_sink_1_1_default_sink_html_ad4870a183da654752a9ad342f1f91af7"><div class="ttname"><a href="class_om_1_1_sink_1_1_default_sink.html#ad4870a183da654752a9ad342f1f91af7">Om::Sink::DefaultSink::operator=</a></div><div class="ttdeci">DefaultSink &amp; operator=(DefaultSink const &amp;)</div></div>
 <div class="ttc" id="sink_2sink_8hpp_html"><div class="ttname"><a href="sink_2sink_8hpp.html">sink.hpp</a></div><div class="ttdoc">Om header file. </div></div>
