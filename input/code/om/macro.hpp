@@ -22,7 +22,7 @@
 
 	/*!
 	\brief
-		Defines a "namespace" for all global macros, aside from include guards.
+		Defines a namespace for all global macros, aside from include guards.
 
 	All global preprocessor definitions (excluding include guards) should use this namespace to avoid clashes, regardless of where they are physically defined.
 	*/

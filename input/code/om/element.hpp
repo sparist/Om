@@ -36,7 +36,7 @@ namespace Om {
 
 		/*!
 		\return
-			The "wrapped" Program (Null if none).
+			The wrapped Program (Null if none).
 		*/
 		virtual Program & operator *() = 0;
 

@@ -39,7 +39,7 @@ namespace Om {
 
 		/*!
 		\brief
-			An Operation that has yet to consume one or more \ref Operand "Operands", and therefore must live in memory while "incomplete".
+			An Operation that has yet to consume one or more \ref Operand "Operands" and must live in memory until complete.
 		*/
 		class IncompleteOperation {
 

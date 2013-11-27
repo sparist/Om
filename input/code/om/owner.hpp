@@ -34,7 +34,7 @@ namespace Om {
 	\brief
 		A polymorphic object with value semantics.
 
-	This class can be considered a "fat pointer" that holds the pointee, such that copying the pointer also copies the pointee (lazily).
+	This class can be considered a smart pointer with deep copy semantics, such that copying the pointer also copies the pointee (lazily).
 	*/
 	template <typename ThisValue>
 	class Owner :
@@ -92,7 +92,7 @@ namespace Om {
 
 		/*!
 		\brief
-			Implements the "safe boolean" idiom.
+			Implements the Safe Boolean idiom.
 		*/
 		operator Boolean() const;
 

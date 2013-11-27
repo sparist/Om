@@ -19,7 +19,7 @@
 	-	The \ref om__operator__ not found:
 		-	The default (empty \ref om__operator__ mapping), if any, is used.
 	-	The \ref om__operator__ is found, but has no mapping:
-		-	The \ref om__operator__ is considered "undefined" and no further checking is done.
+		-	The \ref om__operator__ is considered undefined, and no further checking is done.
 	-	The \ref om__operator__ is found, and has an \ref om__operand__ mapping:
 		-	The \ref om__operator__ is replaced with the \ref om__operand__ \ref om__program__.
 */

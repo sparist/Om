@@ -76,7 +76,7 @@ namespace Om {
 		\return
 			True if empty.
 
-		An empty Atom cannot be represented in Om code, but can be handy as an efficient "null" representation in implementation (e.g. the result after a move).
+		An empty Atom cannot be represented in Om code, but can be handy as an efficient null representation in implementation (e.g. the result after a move).
 		*/
 		virtual bool IsEmpty() const;
 

@@ -1,7 +1,7 @@
 /*!
 \file
 	\brief
-		<a href="http://om-language.org">Om</a> "umbrella" header file.
+		<a href="http://om-language.org">Om</a> umbrella header file.
 	\version
 		0.1.3
 	\date

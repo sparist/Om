@@ -37,7 +37,7 @@ namespace Om {
 	\brief
 		The \ref om__operand__ implementation.
 
-	A "non-atomic" Element that embeds another Program, which it owns.
+	A non-atomic Element that embeds another Program, which it owns.
 	*/
 	class Operand :
 	public DefaultElement<Operand> {

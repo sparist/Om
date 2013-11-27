@@ -34,7 +34,7 @@ namespace Om {
 
 			/*!
 			\brief
-				The implementation of the "safe boolean" idiom.
+				The implementation of the Safe Boolean idiom.
 			*/
 			typedef void (Source::* Boolean)() const;
 
@@ -54,7 +54,7 @@ namespace Om {
 
 			/*!
 			\brief
-				Implements the "safe boolean" idiom.
+				Implements the Safe Boolean idiom.
 			*/
 			operator Boolean() const;
 
