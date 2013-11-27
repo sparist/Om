@@ -38,8 +38,7 @@ namespace Om {
 		public std::iterator<
 			std::input_iterator_tag,
 			ThisItem
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

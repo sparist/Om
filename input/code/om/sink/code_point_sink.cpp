@@ -74,8 +74,7 @@ namespace Om {
 
 Template_
 inline Type_::CodePointSink(ThisCodeUnitIterator theCodeUnitIterator) :
-thisCodeUnitIterator(theCodeUnitIterator)
-{}
+thisCodeUnitIterator(theCodeUnitIterator) {}
 
 Template_
 inline Type_ & Type_::operator =(CodePointSink theCodePointSink) {

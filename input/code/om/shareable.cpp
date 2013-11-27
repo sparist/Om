@@ -53,13 +53,11 @@ inline ThisOwnerCount Type_::GetOwnerCount() const {
 
 Template_
 inline Type_::Shareable() :
-thisOwnerCount()
-{}
+thisOwnerCount() {}
 
 Template_
 inline Type_::Shareable(Shareable const &) :
-thisOwnerCount()
-{}
+thisOwnerCount() {}
 
 Template_
 inline Type_ & Type_::operator =(Shareable const &) {

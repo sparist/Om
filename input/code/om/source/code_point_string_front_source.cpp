@@ -325,8 +325,7 @@ inline Type_::CodePointStringFrontSource(
 ) :
 thisStringIterator(theStringStart),
 thisStringEnd(theStringEnd),
-thisCodePoint()
-{
+thisCodePoint() {
 	this->Update();
 }
 

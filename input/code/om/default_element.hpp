@@ -35,8 +35,7 @@ namespace Om {
 	public DefaultProgram<
 		ThisImplementation,
 		ThisInterface
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 

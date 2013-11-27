@@ -35,8 +35,7 @@ namespace Om {
 			The \ref om__operation__inject_operation__ operation implementation.
 		*/
 		class InjectOperation :
-		public DefaultIncompleteOperation<InjectOperation>
-		{
+		public DefaultIncompleteOperation<InjectOperation> {
 
 		public: // MARK: public (static)
 

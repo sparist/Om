@@ -34,8 +34,7 @@ namespace Om {
 		public IteratorSink<
 			ThisItem const,
 			std::ostreambuf_iterator<ThisItem>
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

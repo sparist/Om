@@ -42,8 +42,7 @@ namespace Om {
 			ThisInterface
 		>
 	>,
-	public Taker<ThisImplementation>
-	{
+	public Taker<ThisImplementation> {
 
 	public: // MARK: public (non-static)
 

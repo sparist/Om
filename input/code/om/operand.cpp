@@ -35,15 +35,13 @@ inline char const * Type_::GetName() {
 // MARK: public (non-static)
 
 inline Type_::Operand() :
-thisProgram()
-{}
+thisProgram() {}
 
 template <typename TheProgram>
 inline Type_::Operand(
 	std::auto_ptr<TheProgram> theProgram
 ) :
-thisProgram(theProgram)
-{}
+thisProgram(theProgram) {}
 
 inline Type_ & Type_::operator =(Operand theOperand) {
 	this->Swap(theOperand);

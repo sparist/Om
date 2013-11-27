@@ -39,8 +39,7 @@ namespace Om {
 		The \ref om__literal__ Program implementation.
 	*/
 	class Literal :
-	public DefaultProgram<Literal>
-	{
+	public DefaultProgram<Literal> {
 
 	public: // MARK: public (static)
 
@@ -144,8 +143,7 @@ namespace Om {
 	public Source::CollectionFrontSource<
 		Element,
 		ElementDeque::iterator
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 
@@ -164,8 +162,7 @@ namespace Om {
 	public Source::CollectionFrontSource<
 		Element const,
 		ElementDeque::const_iterator
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 

@@ -38,8 +38,7 @@ namespace Om {
 		public DefaultSource<
 			std::string,
 			CodePointStringFrontSource<ThisStringIterator>
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

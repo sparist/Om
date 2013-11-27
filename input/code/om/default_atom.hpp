@@ -33,8 +33,7 @@ namespace Om {
 	public DefaultElement<
 		ThisImplementation,
 		Atom
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 

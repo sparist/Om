@@ -39,8 +39,7 @@ namespace Om {
 				ThisProgram,
 				ThisImplementation
 			>
-		>
-		{
+		> {
 
 		public: // MARK: public (static)
 

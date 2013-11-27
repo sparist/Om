@@ -37,8 +37,7 @@ namespace Om {
 		public IteratorPairSource<
 			ThisItem,
 			ThisIterator
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

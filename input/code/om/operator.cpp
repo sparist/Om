@@ -236,20 +236,17 @@ inline Type_::Operator(
 inline Type_::Operator(Symbol::OperandSymbol const theOperandSymbol) :
 DefaultAtom<Operator>(
 	static_cast<char>(theOperandSymbol)
-)
-{}
+) {}
 
 inline Type_::Operator(Symbol::OperatorSymbol const theOperatorSymbol) :
 DefaultAtom<Operator>(
 	static_cast<char>(theOperatorSymbol)
-)
-{}
+) {}
 
 inline Type_::Operator(Symbol::SeparatorSymbol const theSeparatorSymbol) :
 DefaultAtom<Operator>(
 	static_cast<char>(theSeparatorSymbol)
-)
-{}
+) {}
 
 inline Type_ & Type_::operator =(Operator theOperator) {
 	this->Swap(theOperator);

@@ -34,8 +34,7 @@ namespace Om {
 		public DefaultSource<
 			ThisItem,
 			SingletonSource<ThisItem>
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

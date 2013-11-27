@@ -36,8 +36,7 @@ namespace Om {
 	public Source::DefaultSource<
 		CodePoint const,
 		Parser
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 

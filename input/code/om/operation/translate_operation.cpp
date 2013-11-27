@@ -100,8 +100,7 @@ inline bool Type_::TakeQuotedProducer(
 
 Template_
 inline Type_::TranslateOperation() :
-thisLexicon()
-{}
+thisLexicon() {}
 
 	#undef Type_
 	#undef Template_

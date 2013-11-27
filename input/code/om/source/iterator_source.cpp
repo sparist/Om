@@ -61,8 +61,7 @@ namespace Om {
 
 				// Note: this is intentionally non-explicit.
 				Item(char const theCodeUnit) :
-				thisCodeUnit(theCodeUnit)
-				{}
+				thisCodeUnit(theCodeUnit) {}
 
 				bool operator !() const {
 					return !this->thisCodeUnit;
@@ -214,8 +213,7 @@ namespace Om {
 
 Template_
 inline Type_::IteratorSource(ThisIterator const theIterator) :
-thisIterator(theIterator)
-{}
+thisIterator(theIterator) {}
 
 Template_
 inline Type_ & Type_::operator =(IteratorSource theIteratorSource) {

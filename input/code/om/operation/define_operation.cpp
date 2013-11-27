@@ -208,8 +208,7 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 inline Type_::DefineOperation() :
-thisLexicon()
-{}
+thisLexicon() {}
 
 template <typename TheOperand>
 inline bool Type_::TakeOperand(

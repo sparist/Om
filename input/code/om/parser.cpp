@@ -35,8 +35,7 @@ inline Type_::Parser(
 ) :
 thisCodePointSource(theCodePointSource),
 thisDepth(),
-thisIsEncoded()
-{}
+thisIsEncoded() {}
 
 inline Om::CodePoint const & Type_::operator *() const {
 	assert(

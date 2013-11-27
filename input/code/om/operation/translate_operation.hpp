@@ -32,8 +32,7 @@ namespace Om {
 		*/
 		template <typename ThisImplementation>
 		class TranslateOperation :
-		public DefaultIncompleteOperation<ThisImplementation>
-		{
+		public DefaultIncompleteOperation<ThisImplementation> {
 
 		public: // MARK: public (static)
 

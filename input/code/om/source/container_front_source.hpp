@@ -40,8 +40,7 @@ namespace Om {
 				ThisItem,
 				ThisContainer
 			>
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

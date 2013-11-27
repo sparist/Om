@@ -35,8 +35,7 @@ namespace Om {
 			The \ref om__operation__skip_operation__ operation implementation.
 		*/
 		class SkipOperation :
-		public DefaultIncompleteOperation<SkipOperation>
-		{
+		public DefaultIncompleteOperation<SkipOperation> {
 
 		public: // MARK: public (static)
 

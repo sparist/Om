@@ -44,8 +44,7 @@ namespace Om {
 	As a Consumer, the Operator appends each taken Element verbatim.
 	*/
 	class Operator :
-	public DefaultAtom<Operator>
-	{
+	public DefaultAtom<Operator> {
 
 	public: // MARK: public (static)
 

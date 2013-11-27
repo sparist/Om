@@ -30,8 +30,7 @@
 
 Template_
 inline Type_::List() :
-thisNodeArray()
-{
+thisNodeArray() {
 	this->Clear();
 }
 
@@ -158,8 +157,7 @@ inline typename Type_::Node * Type_::UnlinkNode(NodeIndex const theNodeIndex) {
 Template_
 inline Type_::Node() :
 thisNodeArray(),
-thisValue()
-{
+thisValue() {
 	this->thisNodeArray[theFrontNodeIndex] = 0;
 	this->thisNodeArray[theBackNodeIndex] = 0;
 }

@@ -30,13 +30,11 @@
 
 Template_
 inline Type_::SingletonSource() :
-thisItem()
-{}
+thisItem() {}
 
 Template_
 inline Type_::SingletonSource(ThisItem & theItem) :
-thisItem(&theItem)
-{}
+thisItem(&theItem) {}
 
 Template_
 inline Type_ & Type_::operator =(SingletonSource theSingletonSource) {

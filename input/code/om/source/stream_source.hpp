@@ -44,8 +44,7 @@ namespace Om {
 		public DefaultSource<
 			ThisItem const,
 			StreamSource<ThisItem>
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

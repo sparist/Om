@@ -95,8 +95,7 @@ inline void Type_::GiveElements(
 inline Type_::ChooseOperation() :
 thisEmptyCase(),
 thisNonEmptyCase(),
-thisOperandCount()
-{}
+thisOperandCount() {}
 
 template <typename TheProducer>
 inline bool Type_::TakeQuotedProducer(

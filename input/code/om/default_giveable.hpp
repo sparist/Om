@@ -40,8 +40,7 @@ namespace Om {
 			ThisImplementation,
 			ThisInterface
 		>
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 

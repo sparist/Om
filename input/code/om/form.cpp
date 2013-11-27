@@ -27,8 +27,7 @@
 
 inline Type_::Form() :
 thisOperator(),
-thisOperandDeque()
-{}
+thisOperandDeque() {}
 
 inline bool Type_::BackGiveTerm(Consumer & theConsumer) {
 	if (
@@ -216,8 +215,7 @@ thisOperandIterator(
 thisOperandEnd(
 	theForm.thisOperandDeque.end()
 ),
-thisElement(&theForm.thisOperator)
-{
+thisElement(&theForm.thisOperator) {
 	if (
 		theForm.thisOperator.IsEmpty()
 	) {
@@ -281,15 +279,13 @@ inline Type_<Om::Operand>::OperandRange(Form & theForm) :
 Om::Source::CollectionFrontSource<
 	Operand,
 	OperandDeque::iterator
->(theForm.thisOperandDeque)
-{}
+>(theForm.thisOperandDeque) {}
 
 inline Type_<Om::Operand const>::OperandRange(Form const & theForm) :
 Om::Source::CollectionFrontSource<
 	Operand const,
 	OperandDeque::const_iterator
->(theForm.thisOperandDeque)
-{}
+>(theForm.thisOperandDeque) {}
 
 	#undef Type_
 

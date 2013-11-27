@@ -40,8 +40,7 @@ namespace Om {
 	class Owner :
 	public Taker<
 		Owner<ThisValue>
-	>
-	{
+	> {
 
 	public: // MARK: public (static)
 

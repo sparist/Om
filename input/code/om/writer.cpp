@@ -73,8 +73,7 @@ namespace Om {
 inline Type_::Writer(
 	Sink::Sink<CodePoint const> & theCodePointSink
 ) :
-thisCodePointSink(theCodePointSink)
-{}
+thisCodePointSink(theCodePointSink) {}
 
 inline void Type_::ReadElements(Parser & theParser) {
 	for (

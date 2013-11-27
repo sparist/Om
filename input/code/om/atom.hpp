@@ -28,8 +28,7 @@ namespace Om {
 		An "atomic" Element defined by a string.
 	*/
 	class Atom :
-	public Element
-	{
+	public Element {
 
 	public: // MARK: public (non-static)
 

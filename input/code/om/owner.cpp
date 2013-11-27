@@ -35,14 +35,12 @@ namespace Om {
 
 			class TestValue :
 			public DefaultCopyable<TestValue>,
-			public Shareable<>
-			{
+			public Shareable<> {
 
 			public:
 
 				explicit TestValue(int const theNumber) :
-				thisNumber(theNumber)
-				{}
+				thisNumber(theNumber) {}
 
 				bool operator ==(TestValue const theTestValue) const {
 					return this->thisNumber == theTestValue.thisNumber;
@@ -179,14 +177,12 @@ namespace Om {
 Template_
 inline Type_::Owner() :
 thisValue(),
-thisWasExposed()
-{}
+thisWasExposed() {}
 
 Template_
 inline Type_::Owner(Owner const & theOwner) :
 thisValue(),
-thisWasExposed()
-{
+thisWasExposed() {
 	if (theOwner.thisWasExposed) {
 		assert(theOwner.thisValue);
 		this->thisValue.reset(
@@ -205,8 +201,7 @@ inline Type_::Owner(
 thisValue(
 	theValue.release()
 ),
-thisWasExposed()
-{}
+thisWasExposed() {}
 
 Template_
 inline Type_ & Type_::operator =(Owner theOwner) {

@@ -82,8 +82,7 @@ namespace Om {
 
 Template_
 inline Type_::ContainerBackSink(ThisContainer & theContainer) :
-thisContainer(theContainer)
-{}
+thisContainer(theContainer) {}
 
 Template_
 inline Type_ & Type_::operator =(ContainerBackSink theContainerBackSink) {

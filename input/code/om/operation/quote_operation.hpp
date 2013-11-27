@@ -34,8 +34,7 @@ namespace Om {
 			The \ref om__operation__quote_operation__ operation implementation.
 		*/
 		class QuoteOperation :
-		public DefaultIncompleteOperation<QuoteOperation>
-		{
+		public DefaultIncompleteOperation<QuoteOperation> {
 
 		public: // MARK: public (static)
 

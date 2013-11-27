@@ -137,8 +137,7 @@ inline bool Type_::Translate(
 // MARK: private (non-static)
 
 inline Type_::System() :
-thisMap()
-{}
+thisMap() {}
 
 	#undef Type_
 

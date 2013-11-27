@@ -33,8 +33,7 @@ inline Type_::StreamSink(std::ostream & theStream) :
 IteratorSink<
 	ThisItem const,
 	std::ostreambuf_iterator<ThisItem>
->(theStream)
-{}
+>(theStream) {}
 
 	#undef Type_
 	#undef Template_

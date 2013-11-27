@@ -55,8 +55,7 @@ namespace Om {
 	*/
 	class Evaluator :
 	public DefaultConsumer<Evaluator>,
-	public Producer
-	{
+	public Producer {
 
 	public: // MARK: public (non-static)
 

@@ -130,15 +130,13 @@ inline void Type_::Swap(ThisImplementation & theAtom) {
 
 Template_
 inline Type_::DefaultAtom() :
-thisString()
-{}
+thisString() {}
 
 Template_
 inline Type_::DefaultAtom(
 	char const theCodeUnitIterator[]
 ) :
-thisString(theCodeUnitIterator)
-{
+thisString(theCodeUnitIterator) {
 	assert(
 		theCodeUnitIterator &&
 		"The argument cannot be null."
@@ -157,8 +155,7 @@ inline Type_::DefaultAtom(char const theCodeUnit) :
 thisString(
 	1,
 	theCodeUnit
-)
-{
+) {
 	assert(
 		boost::locale::normalize(
 			this->thisString,

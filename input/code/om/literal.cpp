@@ -133,8 +133,7 @@ inline Type_::~Literal() {
 }
 
 inline Type_::Literal() :
-thisElementDeque()
-{}
+thisElementDeque() {}
 
 inline Type_ & Type_::operator =(Literal theLiteral) {
 	this->Swap(theLiteral);
@@ -367,15 +366,13 @@ inline Type_<Om::Literal>::ElementRange(Literal & theLiteral) :
 Om::Source::CollectionFrontSource<
 	Element,
 	ElementDeque::iterator
->(theLiteral.thisElementDeque)
-{}
+>(theLiteral.thisElementDeque) {}
 
 inline Type_<Om::Literal const>::ElementRange(Literal const & theLiteral) :
 Om::Source::CollectionFrontSource<
 	Element const,
 	ElementDeque::const_iterator
->(theLiteral.thisElementDeque)
-{}
+>(theLiteral.thisElementDeque) {}
 
 	#undef Type_
 

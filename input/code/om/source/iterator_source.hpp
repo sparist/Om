@@ -44,8 +44,7 @@ namespace Om {
 				ThisItem,
 				ThisIterator
 			>
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

@@ -129,8 +129,7 @@ namespace Om {
 	public Source::DefaultSource<
 		Element const,
 		ElementRange
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 
@@ -184,8 +183,7 @@ namespace Om {
 	public Source::CollectionFrontSource<
 		Operand,
 		OperandDeque::iterator
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 
@@ -204,8 +202,7 @@ namespace Om {
 	public Source::CollectionFrontSource<
 		Operand const,
 		OperandDeque::const_iterator
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 

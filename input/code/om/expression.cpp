@@ -193,8 +193,7 @@ inline char const * Type_::GetName() {
 // MARK: public (non-static)
 
 inline Type_::Expression() :
-thisFormDeque()
-{}
+thisFormDeque() {}
 
 inline Type_ & Type_::operator =(Expression theExpression) {
 	this->Swap(theExpression);
@@ -562,15 +561,13 @@ inline Type_<Om::Form>::FormRange(Expression & theExpression) :
 Om::Source::CollectionFrontSource<
 	Form,
 	FormDeque::iterator
->(theExpression.thisFormDeque)
-{}
+>(theExpression.thisFormDeque) {}
 
 inline Type_<Om::Form const>::FormRange(Expression const & theExpression) :
 Om::Source::CollectionFrontSource<
 	Form const,
 	FormDeque::const_iterator
->(theExpression.thisFormDeque)
-{}
+>(theExpression.thisFormDeque) {}
 
 	#undef Type_
 
@@ -588,8 +585,7 @@ thisFormIterator(
 thisFormEnd(
 	theExpression.thisFormDeque.end()
 ),
-thisFormElementRange()
-{
+thisFormElementRange() {
 	if (this->thisFormEnd != this->thisFormIterator) {
 		this->thisFormElementRange = boost::in_place(
 			boost::ref(*this->thisFormIterator)

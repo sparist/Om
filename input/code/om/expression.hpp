@@ -37,8 +37,7 @@ namespace Om {
 		The \ref om__expression__ Program implementation.
 	*/
 	class Expression :
-	public DefaultProgram<Expression>
-	{
+	public DefaultProgram<Expression> {
 
 	public: // MARK: public (static)
 
@@ -167,8 +166,7 @@ namespace Om {
 	public Source::CollectionFrontSource<
 		Form,
 		FormDeque::iterator
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 
@@ -187,8 +185,7 @@ namespace Om {
 	public Source::CollectionFrontSource<
 		Form const,
 		FormDeque::const_iterator
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 
@@ -206,8 +203,7 @@ namespace Om {
 	public Source::DefaultSource<
 		Element const,
 		ElementRange
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 

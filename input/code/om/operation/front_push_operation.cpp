@@ -56,8 +56,7 @@ inline void Type_::GiveElements(
 
 Template_
 inline Type_::FrontPushOperation() :
-thisProgram()
-{}
+thisProgram() {}
 
 Template_
 template <typename TheProducer>

@@ -36,8 +36,7 @@
 
 Template_
 inline Type_::ContainerFrontSource(ThisContainer & theContainer) :
-thisContainer(theContainer)
-{}
+thisContainer(theContainer) {}
 
 Template_
 inline Type_ & Type_::operator =(ContainerFrontSource theContainerFrontSource) {

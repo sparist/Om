@@ -34,8 +34,7 @@ namespace Om {
 			The \ref om__operation__choose_operation__ operation implementation.
 		*/
 		class ChooseOperation :
-		public DefaultIncompleteOperation<ChooseOperation>
-		{
+		public DefaultIncompleteOperation<ChooseOperation> {
 
 		public: // MARK: public (static)
 

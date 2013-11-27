@@ -31,14 +31,12 @@
 Template_
 inline Type_::StreamSource() :
 thisStreamIterator(),
-thisItem()
-{}
+thisItem() {}
 
 Template_
 inline Type_::StreamSource(std::istream & theStream) :
 thisStreamIterator(theStream),
-thisItem()
-{}
+thisItem() {}
 
 Template_
 inline Type_ & Type_::operator =(StreamSource theStreamSource) {

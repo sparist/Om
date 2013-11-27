@@ -185,8 +185,7 @@ inline void Type_::GiveElements(
 inline Type_::InjectOperation() :
 thisInjector(),
 thisOutput(),
-thisScope()
-{}
+thisScope() {}
 
 template <typename TheProducer>
 inline bool Type_::TakeQuotedProducer(

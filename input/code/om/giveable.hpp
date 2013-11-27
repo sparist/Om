@@ -30,8 +30,7 @@ namespace Om {
 	*/
 	class Giveable :
 	public Copyable,
-	public Moveable
-	{
+	public Moveable {
 
 	public: // MARK: public (non-static)
 

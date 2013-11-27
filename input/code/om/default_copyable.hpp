@@ -32,8 +32,7 @@ namespace Om {
 		typename ThisInterface = Copyable
 	>
 	class DefaultCopyable :
-	public ThisInterface
-	{
+	public ThisInterface {
 
 		template <typename TheCopyable>
 		friend std::auto_ptr<TheCopyable> Copy(TheCopyable const &);

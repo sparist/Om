@@ -52,8 +52,7 @@ inline Type_::Evaluator(
 thisOutput(theOutput),
 thisTranslator(theTranslator),
 thisIncompleteOperationVector(),
-thisGaveElementToOutput()
-{}
+thisGaveElementToOutput() {}
 
 inline void Type_::Clear() {
 	this->thisIncompleteOperationVector.clear();

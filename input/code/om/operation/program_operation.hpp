@@ -33,8 +33,7 @@ namespace Om {
 		class ProgramOperation :
 		public DefaultIncompleteOperation<
 			ProgramOperation<ThisProgram>
-		>
-		{
+		> {
 
 		public: // MARK: public (static)
 

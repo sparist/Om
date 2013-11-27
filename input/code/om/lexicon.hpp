@@ -45,8 +45,7 @@ namespace Om {
 	*/
 	class Lexicon :
 	public DefaultProgram<Lexicon>,
-	public Translator
-	{
+	public Translator {
 
 	public: // MARK: public (static)
 
@@ -170,8 +169,7 @@ namespace Om {
 	public Source::DefaultSource<
 		Element const,
 		ElementRange
-	>
-	{
+	> {
 
 	public: // MARK: public (non-static)
 

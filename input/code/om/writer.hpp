@@ -38,8 +38,7 @@ namespace Om {
 		A Consumer that pushes each Element to a #CodePoint Sink upon receipt.
 	*/
 	class Writer :
-	public DefaultConsumer<Writer>
-	{
+	public DefaultConsumer<Writer> {
 
 	public: // MARK: public (non-static)
 

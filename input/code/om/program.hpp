@@ -49,8 +49,7 @@ namespace Om {
 	public Consumer,
 	public Giveable,
 	public Producer,
-	public Shareable<>
-	{
+	public Shareable<> {
 
 	public: // MARK: public (non-static)
 

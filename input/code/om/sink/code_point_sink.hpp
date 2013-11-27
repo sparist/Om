@@ -35,8 +35,7 @@ namespace Om {
 		public DefaultSink<
 			CodePoint const,
 			CodePointSink<ThisCodeUnitIterator>
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

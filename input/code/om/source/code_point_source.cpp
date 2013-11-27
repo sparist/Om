@@ -92,8 +92,7 @@ inline Type_::CodePointSource(
 ) :
 thisInputIterator(theInputStart),
 thisInputEnd(theInputEnd),
-thisCodePoint()
-{
+thisCodePoint() {
 	this->Pop();
 }
 
@@ -172,8 +171,7 @@ inline Type_::CodePointSource(
 CodePointSource<CodeUnitSource>(
 	CodeUnitSource(theCodeUnitIterator),
 	CodeUnitSource("")
-)
-{}
+) {}
 
 	#undef Type_
 

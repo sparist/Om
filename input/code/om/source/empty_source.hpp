@@ -34,8 +34,7 @@ namespace Om {
 		public DefaultSource<
 			ThisItem,
 			EmptySource<ThisItem>
-		>
-		{
+		> {
 
 		public: // MARK: public (static)
 

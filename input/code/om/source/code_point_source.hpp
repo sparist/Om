@@ -35,8 +35,7 @@ namespace Om {
 		public DefaultSource<
 			CodePoint const,
 			CodePointSource<ThisCodeUnitIterator>
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 
@@ -103,8 +102,7 @@ namespace Om {
 				char const,
 				char const *
 			>
-		>
-		{
+		> {
 
 		public: // MARK: public (non-static)
 

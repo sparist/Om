@@ -85,8 +85,7 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 inline Type_::SwapOperation() :
-thisOperand()
-{}
+thisOperand() {}
 
 template <typename TheOperand>
 inline bool Type_::TakeOperand(
