@@ -390,20 +390,20 @@ define
 				%Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by executing the CMake script <tt>&quot;dependencies/Icu4c/build.cmake&quot;</tt> from the directory as follows:
 				<blockquote><tt>cmake -D Name=&quot;<em>[build name]</em>&quot; -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -P &quot;<em>[%Om source directory path]</em>/dependencies/Icu4c/build.cmake&quot;</tt></blockquote>
 
-				The resulting installation will found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
+				The resulting installation will be found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
 
 			\subsubsection using__dependencies__libraries__boost Boost
 
 				%Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by executing the CMake script <tt>&quot;dependencies/Boost/build.cmake&quot;</tt> from the directory as follows:
 				<blockquote><tt>cmake -D Name=&quot;<em>[build name]</em>&quot; -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -D Icu=<em>[\ref using__dependencies__libraries__icu4c install directory path]</em> -P &quot;<em>[%Om source directory path]</em>/dependencies/Boost/build.cmake&quot;</tt></blockquote>
 
-				The resulting installation will found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
+				The resulting installation will be found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
 
 	\section using__building__ Building
 
-		A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;<em>[%Om build directory path]</em>/projects/<em>[project]</em>&quot;</tt> by running the appropriate <tt>&quot;generate&quot;</tt> script (<tt>&quot;generate.sh&quot;</tt> on Unix-based platforms, or <tt>&quot;generate.bat&quot;</tt> on Windows) from the desired %Om build directory. Arguments include the desired project name (required), followed by any desired CMake arguments.
+		A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot;</tt> by running the appropriate <tt>&quot;generate&quot;</tt> script (<tt>&quot;generate.sh&quot;</tt> on Unix-based platforms, or <tt>&quot;generate.bat&quot;</tt> on Windows) from the desired builds directory. Arguments include the desired project name (required), followed by any desired CMake arguments.
 
-		By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <tt>&quot;<em>[dependency build directory path]</em>/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</tt>, where <em>[dependency build directory path]</em> is a folder, named for the dependency, in the parent directory of the %Om build directory. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
+		By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <tt>&quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</tt>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
 		-	<b><tt>-D IcuInstall:Path=&quot;<em>[absolute \ref using__dependencies__libraries__icu4c install directory path]</em>&quot;</tt></b>
 		-	<b><tt>-D BoostInstall:Path=&quot;<em>[absolute \ref using__dependencies__libraries__boost install directory path]</em>&quot;</tt></b>
 

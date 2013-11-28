@@ -28,19 +28,19 @@ elseif(UNIX)
 	add_definitions(-DU_CHARSET_IS_UTF8=1) # For ICU4C
 endif()
 
-# Set main directories.
-set(Build "${CMAKE_BINARY_DIR}/../..")
-set(Builds "${Build}/..")
-
 # Set name for build folders, based on OS and compiler.
 if(CMAKE_CL_64)
 	set(PlatformBits -64)
 endif()
 set(Platform "${CMAKE_SYSTEM}-${CMAKE_CXX_COMPILER_ID}-${CMAKE_CXX_COMPILER_VERSION}${PlatformBits}")
 
+# Set main directories.
+set(Builds "${CMAKE_BINARY_DIR}" CACHE PATH "The builds path")
+set(Build "${Builds}/Om" CACHE PATH "The Om build path")
+
 # Set up ICU4C.
 # Note that ICU4C does not support spaces in the path.
-get_filename_component(Icu4cBuildDefault "${Builds}/Icu4c" REALPATH)
+set(Icu4cBuildDefault "${Builds}/Icu4c")
 set(Icu4cBuildCaption "The ICU4C build path")
 set(Icu4cBuild "${Icu4cBuildDefault}" CACHE PATH "${Icu4cBuildCaption}")
 set(Icu4cMajorVersion 52)
@@ -94,7 +94,7 @@ else()
 endif()
 
 # Set up Boost.
-get_filename_component(BoostBuildDefault "${Builds}/Boost" REALPATH)
+set(BoostBuildDefault "${Builds}/Boost")
 set(BoostBuildCaption "The Boost build path")
 set(BoostBuild "${BoostBuildDefault}" CACHE PATH "${BoostBuildCaption}")
 set(BoostMajorVersion 1)

@@ -7,7 +7,8 @@ then
 	exit 1
 fi
 
-Build=`pwd -P`
+Builds=`pwd -P`
+Build="$Builds/Om"
 
 cd `dirname "$0"`
 Source=`pwd -P`
@@ -15,6 +16,6 @@ Source=`pwd -P`
 Project="$Build/projects/$1"
 mkdir -p "$Project"
 cd "$Project"
-cmake --no-warn-unused-cli -D Project="$@" "$Source"
+cmake --no-warn-unused-cli -D Builds="$Builds" -D Build="$Build" -D Project="$@" "$Source"
 
 cd "$Builds"

@@ -8,14 +8,15 @@ if %argC% lss 1 (
 	exit /b 1
 )
 
-set Build=%CD%
+set Builds=%CD%
+set Build=%Builds%\Om
 
 set Source=%~dp0
 if %Source:~-1%==\ set Source=%Source:~0,-1%
 
-set Project=%Build%/projects/%~1
+set Project=%Build%\projects\%~1
 if not exist "%Project%" mkdir "%Project%"
 cd "%Project%"
-cmake --no-warn-unused-cli -D Project=%* "%Source%"
+cmake --no-warn-unused-cli -D Builds="%Builds%" -D Build="%Build%" -D Project=%* "%Source%"
 
 cd "%Builds%"
