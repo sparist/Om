@@ -12,32 +12,38 @@
 		Jason Erb - Initial API, implementation, and documentation.
 */
 
-#ifndef Om_Source_CodePointStringBackSource_
+#ifndef Om_Source_CodePointStringFrontSource_
 
-	#define Om_Source_CodePointStringBackSource_ \
-	Om::Source::CodePointStringBackSource
+	#define Om_Source_CodePointStringFrontSource_ \
+	Om::Source::CodePointStringFrontSource
 
 	#include "om/source/default_source.hpp"
+
+	#ifndef Om_Macro_Precompilation_
+
+		#include <string>
+
+	#endif
 
 namespace Om {
 
 	namespace Source {
 
-		// MARK: - Om::Source::CodePointStringBackSource
+		// MARK: - Om::Source::CodePointStringFrontSource
 
 		/*!
 		\brief
-			A Source of #CodePoint strings from the back of a string.
+			A Source of #CodePoint strings from the front of a string.
 		\note
 			Const methods are not thread-safe due to a non-mutexed mutable member.
 		\note
-			Dereferencing exposes a reference to the member string cache of the current segment. Modifying the string will not modify the source data.
+			Dereferencing exposes a non-const reference to the member string cache of the current segment, allowing swap as an optimization. Modifying the string will not modify the source data.
 		*/
 		template <typename ThisStringIterator>
-		class CodePointStringBackSource :
+		class CodePointStringFrontSource :
 		public DefaultSource<
 			std::string,
-			CodePointStringBackSource<ThisStringIterator>
+			CodePointStringFrontSource<ThisStringIterator>
 		> {
 
 		public: // MARK: public (non-static)
@@ -48,12 +54,12 @@ namespace Om {
 			\param theStringEnd
 				The string end.
 			*/
-			CodePointStringBackSource(
+			CodePointStringFrontSource(
 				ThisStringIterator theStringStart,
 				ThisStringIterator const theStringEnd
 			);
 
-			CodePointStringBackSource & operator =(CodePointStringBackSource);
+			CodePointStringFrontSource & operator =(CodePointStringFrontSource);
 
 			virtual bool operator !() const;
 
@@ -61,14 +67,14 @@ namespace Om {
 
 			using DefaultSource<
 				std::string,
-				CodePointStringBackSource<ThisStringIterator>
+				CodePointStringFrontSource<ThisStringIterator>
 			>::Equals;
 
-			bool Equals(CodePointStringBackSource const &) const;
+			bool Equals(CodePointStringFrontSource const &) const;
 
 			virtual void Pop();
 
-			void Swap(CodePointStringBackSource &);
+			void Swap(CodePointStringFrontSource &);
 
 		private: // MARK: private (non-static)
 
@@ -80,21 +86,10 @@ namespace Om {
 
 			ThisStringIterator thisStringIterator;
 
-			/*!
-			\brief
-				The current #CodePoint string iterator.
-			*/
-			ThisStringIterator thisCodePointIterator;
+			ThisStringIterator thisStringEnd;
 
 			/*!
-			\brief
-				The current #CodePoint string end.
-			*/
-			ThisStringIterator thisCodePointEnd;
-
-			/*!
-			\brief
-				The current #CodePoint string.
+				The current #CodePoint string; empty if invalid.
 			*/
 			mutable std::string thisCodePoint;
 
@@ -104,14 +99,14 @@ namespace Om {
 
 		template <typename TheStringIterator>
 		bool operator ==(
-			CodePointStringBackSource<TheStringIterator> const &,
-			CodePointStringBackSource<TheStringIterator> const &
+			CodePointStringFrontSource<TheStringIterator> const &,
+			CodePointStringFrontSource<TheStringIterator> const &
 		);
 
 		template <typename TheStringIterator>
 		bool operator !=(
-			CodePointStringBackSource<TheStringIterator> const &,
-			CodePointStringBackSource<TheStringIterator> const &
+			CodePointStringFrontSource<TheStringIterator> const &,
+			CodePointStringFrontSource<TheStringIterator> const &
 		);
 
 	}
@@ -124,12 +119,12 @@ namespace boost {
 
 	template <typename TheStringIterator>
 	void swap(
-		Om::Source::CodePointStringBackSource<TheStringIterator> &,
-		Om::Source::CodePointStringBackSource<TheStringIterator> &
+		Om::Source::CodePointStringFrontSource<TheStringIterator> &,
+		Om::Source::CodePointStringFrontSource<TheStringIterator> &
 	);
 
 }
 
-	#include "om/source/code_point_string_back_source.cpp"
+	#include "om/source/code_point_string_front_source.cpp"
 
 #endif

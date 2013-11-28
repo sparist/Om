@@ -387,25 +387,31 @@ define
 
 			\subsubsection using__dependencies__libraries__icu4c ICU4C
 
-				%Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by executing the CMake script <tt>&quot;dependencies/Icu4c/input/build.cmake&quot;</tt> from the directory as follows:
-				<blockquote><tt>cmake -D Platform=<em>[output subfolder name]</em> -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -P build.cmake</tt></blockquote>
+				%Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by executing the CMake script <tt>&quot;dependencies/Icu4c/build.cmake&quot;</tt> from the directory as follows:
+				<blockquote><tt>cmake -D Name=&quot;<em>[build name]</em>&quot; -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -P &quot;<em>[%Om source directory path]</em>/dependencies/Icu4c/build.cmake&quot;</tt></blockquote>
+
+				The resulting installation will found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
 
 			\subsubsection using__dependencies__libraries__boost Boost
 
-				%Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by executing the CMake script <tt>&quot;dependencies/Boost/input/build.cmake&quot;</tt> from the directory as follows:
-				<blockquote><tt>cmake -D Platform=<em>[output subfolder name]</em> -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -D Icu=<em>[\ref using__dependencies__libraries__icu4c "ICU4C" install directory]</em> -P build.cmake</tt></blockquote>
+				%Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by executing the CMake script <tt>&quot;dependencies/Boost/build.cmake&quot;</tt> from the directory as follows:
+				<blockquote><tt>cmake -D Name=&quot;<em>[build name]</em>&quot; -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -D Icu=<em>[\ref using__dependencies__libraries__icu4c install directory path]</em> -P &quot;<em>[%Om source directory path]</em>/dependencies/Boost/build.cmake&quot;</tt></blockquote>
+
+				The resulting installation will found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
 
 	\section using__building__ Building
 
-		A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;output/projects/<em>[generator]</em>&quot;</tt> by running <tt>&quot;generate.sh&quot;</tt> (on Unix-based platforms) or <tt>&quot;generate.bat&quot;</tt> (on Windows), from the <tt>&quot;input&quot;</tt> directory, with the desired project subfolder name an argument. By default, this script automatically downloads and builds all external dependency libraries, but this behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
-		-	<b><tt>-D Icu:Path=&quot;<em>[absolute path]</em>&quot;</tt></b>, where <em>[absolute path]</em> is the absolute path of the \ref using__dependencies__libraries__icu4c "ICU4C" install directory.
-		-	<b><tt>-D Boost:Path=&quot;<em>[absolute path]</em>&quot;</tt></b>, where <em>[absolute path]</em> provides the absolute path of the \ref using__dependencies__libraries__boost "Boost" install directory.
+		A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;<em>[%Om build directory path]</em>/projects/<em>[project]</em>&quot;</tt> by running the appropriate <tt>&quot;generate&quot;</tt> script (<tt>&quot;generate.sh&quot;</tt> on Unix-based platforms, or <tt>&quot;generate.bat&quot;</tt> on Windows) from the desired %Om build directory. Arguments include the desired project name (required), followed by any desired CMake arguments.
+
+		By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <tt>&quot;<em>[dependency build directory path]</em>/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</tt>, where <em>[dependency build directory path]</em> is a folder, named for the dependency, in the parent directory of the %Om build directory. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
+		-	<b><tt>-D IcuInstall:Path=&quot;<em>[absolute \ref using__dependencies__libraries__icu4c install directory path]</em>&quot;</tt></b>
+		-	<b><tt>-D BoostInstall:Path=&quot;<em>[absolute \ref using__dependencies__libraries__boost install directory path]</em>&quot;</tt></b>
 
 		\subsection using__building__targets__ Targets
 
 			\subsubsection using__building__targets__interpreter__ Om.Interpreter
 
-				The Om.Interpreter target builds the interpreter executable as <tt>&quot;output/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;</tt>.  The interpreter:
+				The Om.Interpreter target builds the interpreter executable as <tt>&quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;</tt>.  The interpreter:
 					-	Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".
 					-	Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.
 
@@ -413,19 +419,19 @@ define
 
 			\subsubsection using__building__targets__test__ Om.Test
 
-				The Om.Test target builds the test executable, which runs all unit tests, as <tt>&quot;output/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test&quot;</tt>.
+				The Om.Test target builds the test executable, which runs all unit tests, as <tt>&quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test&quot;</tt>.
 
 			\subsubsection using__building__targets__documentation__ Om.Documentation
 
-				The Om.Documentation target builds this documentation into the following folders in <tt>&quot;output/documentation&quot;</tt>:
+				The Om.Documentation target builds this documentation into the following folders in <tt>&quot;<em>[%Om build directory path]</em>/documentation&quot;</tt>:
 				-	<b><tt>&quot;html&quot;</tt>:</b> This HTML documentation. To view in a browser, open <tt>&quot;index.html&quot;</tt>.
 				-	<b><tt>&quot;xml&quot;</tt>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.
 
 	\section using__including__ Including
 
 		%Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:
-		-	Add the %Om <tt>&quot;input/code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
-		-	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency <tt>&quot;build&quot;</tt> scripts for guidance.
+		-	Add the %Om <tt>&quot;code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
+		-	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency <tt>&quot;build.cmake&quot;</tt> scripts for guidance.
 		-	Call the <tt>Om::System::Initialize</tt> function prior to use (e.g. in the <tt>main</tt> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").
 		-	Construct an <tt>Om::Environment</tt>, populate with any additional operator-program mappings, and call one of its <tt>Om::Environment::Evaluate</tt> functions to evaluate a program.
 
@@ -454,7 +460,7 @@ define
 
 		\subsection contributing__developing__adding_or_removing_files Adding or Removing Files
 
-			When adding or removing files from source, run the <tt>&quot;generate&quot;</tt> script in the root directory to update the project.
+			When adding or removing files from source, re-run the <tt>&quot;generate&quot;</tt> script from the build directory to update the project.
 
 		\subsection contributing__developing__adding_operations__ Adding Operations
 
@@ -495,16 +501,16 @@ define
 			Some basic free static analysis tools can be applied to the %Om code.
 
 			-	<a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to %Om by entering the following at the terminal from inside the %Om directory:
-				<blockquote><tt>python </tt><em>[path]</em><tt>/hfcca.py -p -v input/code</tt></blockquote>
+				<blockquote><tt>python </tt><em>[path]</em><tt>/hfcca.py -p -v code</tt></blockquote>
 			-	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to %Om by entering the following at the terminal from inside the %Om directory:
-				<blockquote><em>[path]</em><tt>/cloc.pl input/code</tt></blockquote>
+				<blockquote><em>[path]</em><tt>/cloc.pl code</tt></blockquote>
 
 		\subsection contributing__developing__analyzing_tests__ Analyzing Test Coverage
 
 			The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:
 			-	Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>. In Preferences, add <tt>"*.ipp"</tt> and <tt>"*.hpp"</tt> to the "SDK Files" list.
 			-	Build and run the Om.Test target.
-			-	In the CoverStory File menu, open the folder <tt>&quot;output/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;</tt>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:
+			-	In the CoverStory File menu, open the folder <tt>&quot;<em>[%Om build directory path]</em>/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;</tt>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:
 				-	The left pane shows a list of %Om source files, each accompanied by a test coverage percentage.
 				-	The right pane shows the contents of the currently selected source file, with each line annotated with the number of times it was executed.
 

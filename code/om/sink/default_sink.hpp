@@ -19,6 +19,12 @@
 
 	#include "om/sink/sink.hpp"
 
+	#ifndef Om_Macro_Precompilation_
+
+		#include <iterator>
+
+	#endif
+
 namespace Om {
 
 	namespace Sink {

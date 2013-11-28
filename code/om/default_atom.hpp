@@ -20,6 +20,12 @@
 	#include "om/atom.hpp"
 	#include "om/default_element.hpp"
 
+	#ifndef Om_Macro_Precompilation_
+
+		#include <string>
+
+	#endif
+
 namespace Om {
 
 	// MARK: - Om::DefaultAtom

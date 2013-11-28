@@ -19,6 +19,12 @@
 
 	#include "om/source/source.hpp"
 
+	#ifndef Om_Macro_Precompilation_
+
+		#include <iterator>
+
+	#endif
+
 namespace Om {
 
 	namespace Source {

@@ -1,17 +1,16 @@
 cmake_minimum_required(VERSION 2.8.7)
 
 # Arguments:
-# -D Platform=[Platform]
+# -D Name=[Name]
 # -D MajorVersion=[Major Version]
 # -D MinorVersion=[Minor Version]
 # -D Extension=[Download Extension]
 # -D Md5=[Download MD5]
 
-set(Name icu)
+set(Download icu)
 
-set(Output "./${Md5}")
 file(
-	DOWNLOAD "http://download.icu-project.org/files/icu4c/${MajorVersion}.${MinorVersion}/icu4c-${MajorVersion}_${MinorVersion}-src.${Extension}" "${Output}/download/${Name}.${Extension}"
+	DOWNLOAD "http://download.icu-project.org/files/icu4c/${MajorVersion}.${MinorVersion}/icu4c-${MajorVersion}_${MinorVersion}-src.${Extension}" "${Md5}/download/${Download}.${Extension}"
 	STATUS DownloadStatus
 	SHOW_PROGRESS
 	EXPECTED_MD5 ${Md5}
@@ -21,10 +20,10 @@ if(NOT ${Status} EQUAL 0)
 	list(GET DownloadStatus 1 Error)
 	message(FATAL_ERROR "ICU4C could not be downloaded: ${Error} (${Status})")
 endif()
-get_filename_component(Output ${Output} REALPATH)
+get_filename_component(Output ${Md5} REALPATH)
 
 execute_process(
-	COMMAND "${CMAKE_COMMAND}" -E tar xvzf "${Name}.${Extension}"
+	COMMAND "${CMAKE_COMMAND}" -E tar xvzf "${Download}.${Extension}"
 	WORKING_DIRECTORY "${Output}/download"
 	RESULT_VARIABLE Status
 )
@@ -33,14 +32,14 @@ if(NOT ${Status} EQUAL 0)
 endif()
 
 execute_process(
-	COMMAND "${CMAKE_COMMAND}" -E make_directory "build/${Platform}/make"
+	COMMAND "${CMAKE_COMMAND}" -E make_directory "build/${Name}/make"
 	WORKING_DIRECTORY "${Output}"
 	RESULT_VARIABLE Status
 )
 if(NOT ${Status} EQUAL 0)
-	message(FATAL_ERROR "The directory \"${Output}/build/${Platform}/make\" could not be created: ${Status}")
+	message(FATAL_ERROR "The directory \"${Output}/build/${Name}/make\" could not be created: ${Status}")
 endif()
-get_filename_component(Build "${Output}/build/${Platform}" REALPATH)
+get_filename_component(Build "${Output}/build/${Name}" REALPATH)
 
 function(CreateConfigurationDirectory Configuration)
 	execute_process(

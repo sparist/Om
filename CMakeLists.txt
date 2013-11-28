@@ -29,9 +29,8 @@ elseif(UNIX)
 endif()
 
 # Set main directories.
-get_filename_component(Input "${CMAKE_CURRENT_SOURCE_DIR}" REALPATH)
-set(Output "${CMAKE_CURRENT_SOURCE_DIR}/../output")
-set(Dependencies "${CMAKE_CURRENT_SOURCE_DIR}/../dependencies" CACHE PATH "The dependencies path")
+set(Build "${CMAKE_BINARY_DIR}/../..")
+set(Builds "${Build}/..")
 
 # Set name for build folders, based on OS and compiler.
 if(CMAKE_CL_64)
@@ -41,30 +40,31 @@ set(Platform "${CMAKE_SYSTEM}-${CMAKE_CXX_COMPILER_ID}-${CMAKE_CXX_COMPILER_VERS
 
 # Set up ICU4C.
 # Note that ICU4C does not support spaces in the path.
-get_filename_component(Icu4cDefault "${Dependencies}/Icu4c" REALPATH)
-set(Icu4cCaption "The ICU4C module path")
-set(Icu4c "${Icu4cDefault}" CACHE PATH "${Icu4cCaption}")
+get_filename_component(Icu4cBuildDefault "${Builds}/Icu4c" REALPATH)
+set(Icu4cBuildCaption "The ICU4C build path")
+set(Icu4cBuild "${Icu4cBuildDefault}" CACHE PATH "${Icu4cBuildCaption}")
 set(Icu4cMajorVersion 52)
 set(Icu4cMinorVersion 1)
 set(Icu4cExtension tgz)
 set(Icu4cMd5 9e96ed4c1d99c0d14ac03c140f9f346c)
-set(Icu4cInstallDefault "${Icu4c}/output/${Icu4cMd5}/build/${Platform}/install")
+set(Icu4cInstallDefault "${Icu4cBuild}/${Icu4cMd5}/build/${Platform}/install")
 set(Icu4cInstallCaption "The ICU4C install path")
 set(Icu4cInstall "${Icu4cInstallDefault}" CACHE PATH "${Icu4cInstallCaption}")
 if(NOT EXISTS "${Icu4cInstall}")
-	message(STATUS "Looking for ICU4C module in \"${Icu4cDefault}\"...")
-	set(Icu4c "${Icu4cDefault}" CACHE PATH "${Icu4cCaption}" FORCE)
+	set(Icu4cBuild "${Icu4cBuildDefault}" CACHE PATH "${Icu4cBuildCaption}" FORCE)
+
 	execute_process(
-		COMMAND "${CMAKE_COMMAND}" -E make_directory "output"
-		WORKING_DIRECTORY "${Icu4c}"
+		COMMAND "${CMAKE_COMMAND}" -E make_directory "${Icu4cBuild}"
+		WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
 		RESULT_VARIABLE Status
 	)
 	if(NOT ${Status} EQUAL 0)
-		message(FATAL_ERROR "The directory \"${Icu4c}/output\" could not be created: ${Status}")
+		message(FATAL_ERROR "The directory \"${Icu4cBuild}\" could not be created: ${Status}")
 	endif()
+
 	execute_process(
-		COMMAND "${CMAKE_COMMAND}" -D Platform=${Platform} -D MajorVersion=${Icu4cMajorVersion} -D MinorVersion=${Icu4cMinorVersion} -D Extension=${Icu4cExtension} -D Md5=${Icu4cMd5} -P ../input/build.cmake
-		WORKING_DIRECTORY "${Icu4c}/output"
+		COMMAND "${CMAKE_COMMAND}" -D Name=${Platform} -D MajorVersion=${Icu4cMajorVersion} -D MinorVersion=${Icu4cMinorVersion} -D Extension=${Icu4cExtension} -D Md5=${Icu4cMd5} -P "${CMAKE_SOURCE_DIR}/dependencies/Icu4c/build.cmake"
+		WORKING_DIRECTORY "${Icu4cBuild}"
 		RESULT_VARIABLE Status
 	)
 	if(NOT ${Status} EQUAL 0)
@@ -94,9 +94,9 @@ else()
 endif()
 
 # Set up Boost.
-get_filename_component(BoostDefault "${Dependencies}/Boost" REALPATH)
-set(BoostCaption "The Boost module path")
-set(Boost "${BoostDefault}" CACHE PATH "${BoostCaption}")
+get_filename_component(BoostBuildDefault "${Builds}/Boost" REALPATH)
+set(BoostBuildCaption "The Boost build path")
+set(BoostBuild "${BoostBuildDefault}" CACHE PATH "${BoostBuildCaption}")
 set(BoostMajorVersion 1)
 set(BoostMinorVersion 55)
 if(WIN32)
@@ -106,23 +106,24 @@ else()
 	set(BoostExtension tar.gz)
 	set(BoostMd5 93780777cfbf999a600f62883bd54b17)
 endif()
-set(BoostInstallDefault "${Boost}/output/${BoostMd5}/build/${Platform}/install")
+set(BoostInstallDefault "${BoostBuild}/${BoostMd5}/build/${Platform}/install")
 set(BoostInstallCaption "The Boost install path")
 set(BoostInstall "${BoostInstallDefault}" CACHE PATH "${BoostInstallCaption}")
 if(NOT EXISTS "${BoostInstall}")
-	message(STATUS "Looking for Boost module in \"${BoostDefault}\"...")
-	set(Boost "${BoostDefault}" CACHE PATH "${BoostCaption}" FORCE)
+	set(BoostBuild "${BoostBuildDefault}" CACHE PATH "${BoostBuildCaption}" FORCE)
+
 	execute_process(
-		COMMAND "${CMAKE_COMMAND}" -E make_directory "output"
-		WORKING_DIRECTORY "${Boost}"
+		COMMAND "${CMAKE_COMMAND}" -E make_directory "${BoostBuild}"
+		WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
 		RESULT_VARIABLE Status
 	)
 	if(NOT ${Status} EQUAL 0)
-		message(FATAL_ERROR "The directory \"${Boost}/output\" could not be created: ${Status}")
+		message(FATAL_ERROR "The directory \"${BoostBuild}\" could not be created: ${Status}")
 	endif()
+
 	execute_process(
-		COMMAND "${CMAKE_COMMAND}" -D Platform=${Platform} -D MajorVersion=${BoostMajorVersion} -D MinorVersion=${BoostMinorVersion} -D Extension=${BoostExtension} -D Md5=${BoostMd5} -D Icu4c=${Icu4cInstall} -P ../input/build.cmake
-		WORKING_DIRECTORY "${Boost}/output"
+		COMMAND "${CMAKE_COMMAND}" -D Name=${Platform} -D MajorVersion=${BoostMajorVersion} -D MinorVersion=${BoostMinorVersion} -D Extension=${BoostExtension} -D Md5=${BoostMd5} -D Icu4c=${Icu4cInstall} -P "${CMAKE_SOURCE_DIR}/dependencies/Boost/build.cmake"
+		WORKING_DIRECTORY "${BoostBuild}"
 		RESULT_VARIABLE Status
 	)
 	if(NOT ${Status} EQUAL 0)
@@ -188,10 +189,10 @@ endif()
 
 # Configure include paths.
 include_directories(SYSTEM ${SystemIncludeDirectories})
-include_directories("${Input}/code")
+include_directories("${CMAKE_SOURCE_DIR}/code")
 
 # Add each directory as a source group (sorted).
-file(GLOB_RECURSE Files "${Input}/code/*.*")
+file(GLOB_RECURSE Files "${CMAKE_SOURCE_DIR}/code/*.*")
 foreach(File ${Files})
 	get_filename_component(Directory "${File}" PATH)
 	list(APPEND Directories "${Directory}")
@@ -199,7 +200,7 @@ endforeach()
 list(REMOVE_DUPLICATES Directories)
 list(SORT Directories)
 foreach(Directory ${Directories})
-	file(RELATIVE_PATH RelativeDirectory "${Input}/code" "${Directory}")
+	file(RELATIVE_PATH RelativeDirectory "${CMAKE_SOURCE_DIR}/code" "${Directory}")
 	string(REPLACE "/" "\\" SourceGroup "${RelativeDirectory}")
 
 	file(GLOB DirectoryCppFiles "${Directory}/*.cpp")
@@ -224,24 +225,24 @@ add_executable("Om.Test" ${CppFiles})
 
 # Add documentation target.
 if(WIN32)
-	set(DoxygenCommand ( type ..\\documentation\\Doxyfile && echo OUTPUT_DIRECTORY = "${Output}/documentation" && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -)
+	set(DoxygenCommand ( type ..\\documentation\\Doxyfile && echo OUTPUT_DIRECTORY = "${Build}/documentation" && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -)
 else()
-	set(DoxygenCommand eval "( cat ../documentation/Doxyfile && echo OUTPUT_DIRECTORY = \\\"${Output}/documentation\\\" ) | doxygen -")
+	set(DoxygenCommand eval "( cat ../documentation/Doxyfile && echo OUTPUT_DIRECTORY = \\\"${Build}/documentation\\\" ) | doxygen -")
 endif()
 add_custom_target("Om.Documentation" ALL
-	COMMAND "${CMAKE_COMMAND}" -E make_directory "${Output}/documentation"
+	COMMAND "${CMAKE_COMMAND}" -E make_directory "${Build}/documentation"
 	COMMAND ${DoxygenCommand}
-	WORKING_DIRECTORY "${Input}/code"
+	WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/code"
 	COMMENT "Generating documentation..."
 	VERBATIM
 	SOURCES ${DoxFiles}
 )
 
 # "om.internal": Populate with complete sorted list of unique headers.
-set(Internal "${Input}/code/om.internal")
+set(Internal "${CMAKE_SOURCE_DIR}/code/om.internal")
 file(WRITE "${Internal}" "")
 foreach(HppFile ${HppFiles})
-	file(RELATIVE_PATH RelativeHppFile "${Input}/code" "${HppFile}")
+	file(RELATIVE_PATH RelativeHppFile "${CMAKE_SOURCE_DIR}/code" "${HppFile}")
 	file(APPEND "${Internal}" "#include \"${RelativeHppFile}\"\n")
 endforeach()
 
@@ -251,7 +252,7 @@ if("${CMAKE_GENERATOR}" STREQUAL Xcode)
 
 	set_target_properties("Om.Interpreter" "Om.Test"
 		PROPERTIES
-			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${Input}/code/om.external"
+			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_SOURCE_DIR}/code/om.external"
 			XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
 	)
 endif()
@@ -291,7 +292,7 @@ function(ConfigureExecutable Target)
 	add_custom_command(
 		TARGET ${Target}
 		POST_BUILD
-		COMMAND "${CMAKE_COMMAND}" -E copy $<TARGET_FILE:${Target}> "${Output}/executables/${Platform}/$<CONFIGURATION>/$<TARGET_FILE_NAME:${Target}>"
+		COMMAND "${CMAKE_COMMAND}" -E copy $<TARGET_FILE:${Target}> "${Build}/executables/${Platform}/$<CONFIGURATION>/$<TARGET_FILE_NAME:${Target}>"
 		COMMENT "Generating ${Target} executables..."
 		VERBATIM
 	)
