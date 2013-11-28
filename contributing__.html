@@ -75,7 +75,7 @@ Building</h2>
 <p>See the <a class="el" href="using__.html">Using</a> page for instructions on building the code.</p>
 <h2><a class="anchor" id="contributing__developing__adding_or_removing_files"></a>
 Adding or Removing Files</h2>
-<p>When adding or removing files from source, run the <code>"generate"</code> script in the root directory to update the project.</p>
+<p>When adding or removing files from source, re-run the <code>"generate"</code> script from the build directory to update the project.</p>
 <h2><a class="anchor" id="contributing__developing__adding_operations__"></a>
 Adding Operations</h2>
 <p>Additional native functionality can be added to Om by implementing new operations in C++.</p>
@@ -111,11 +111,11 @@ Analyzing Code</h2>
 <p>Some basic free static analysis tools can be applied to the Om code.</p>
 <ul>
 <li><a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to Om by entering the following at the terminal from inside the Om directory: <blockquote class="doxtable">
-<p><code>python </code><em>[path]</em><code>/hfcca.py -p -v input/code</code></p>
+<p><code>python </code><em>[path]</em><code>/hfcca.py -p -v code</code></p>
 </blockquote>
 </li>
 <li><a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to Om by entering the following at the terminal from inside the Om directory: <blockquote class="doxtable">
-<p><em>[path]</em><code>/cloc.pl input/code</code></p>
+<p><em>[path]</em><code>/cloc.pl code</code></p>
 </blockquote>
 </li>
 </ul>
@@ -125,7 +125,7 @@ Analyzing Test Coverage</h2>
 <ul>
 <li>Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>. In Preferences, add <code>"*.ipp"</code> and <code>"*.hpp"</code> to the "SDK Files" list.</li>
 <li>Build and run the Om.Test target.</li>
-<li>In the CoverStory File menu, open the folder <code>"output/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64"</code>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:<ul>
+<li>In the CoverStory File menu, open the folder <code>"<em>[Om build directory path]</em>/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64"</code>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:<ul>
 <li>The left pane shows a list of Om source files, each accompanied by a test coverage percentage.</li>
 <li>The right pane shows the contents of the currently selected source file, with each line annotated with the number of times it was executed.</li>
 </ul>
