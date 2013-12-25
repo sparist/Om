@@ -76,21 +76,17 @@ set(Icu4cInstall "${Icu4cInstall}" CACHE PATH "${Icu4cInstallCaption}" FORCE)
 if(WIN32)
 	find_library(Icu4cI18nDebugLibrary sicuind "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
 	find_library(Icu4cI18nReleaseLibrary sicuin "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-
 	find_library(Icu4cUcDebugLibrary sicuucd "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
 	find_library(Icu4cUcReleaseLibrary sicuuc "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-
 	find_library(Icu4cDataDebugLibrary sicudtd "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
 	find_library(Icu4cDataReleaseLibrary sicudt "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
 else()
+	find_library(Icu4cI18nDebugLibrary icui18n "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
 	find_library(Icu4cI18nReleaseLibrary icui18n "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	set(Icu4cI18nDebugLibrary ${Icu4cI18nReleaseLibrary})
-
+	find_library(Icu4cUcDebugLibrary icuuc "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
 	find_library(Icu4cUcReleaseLibrary icuuc "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	set(Icu4cUcDebugLibrary ${Icu4cUcReleaseLibrary})
-
+	find_library(Icu4cDataDebugLibrary icudata "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
 	find_library(Icu4cDataReleaseLibrary icudata "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	set(Icu4cDataDebugLibrary ${Icu4cDataReleaseLibrary})
 endif()
 
 # Set up Boost.
@@ -132,6 +128,10 @@ if(NOT EXISTS "${BoostInstall}")
 endif()
 get_filename_component(BoostInstall "${BoostInstall}" REALPATH)
 set(BoostInstall "${BoostInstall}" CACHE PATH "${BoostInstallCaption}" FORCE)
+set(BoostPrefix)
+set(BoostDebugSuffix)
+set(BoostReleaseSuffix)
+set(SystemIncludeDirectories "${BoostInstall}/include")
 if(WIN32)
 	# Determine MSVC version string used in Boost library names.
 	# From: http://www.cmake.org/pipermail/cmake/2012-March/049464.html
@@ -143,49 +143,23 @@ if(WIN32)
 	math(EXPR BoostMsvcVersion "((${MsvcVersion} - 600) / 10)") # Only works for Visual Studio 7.1 and higher
 
 	set(BoostSuffix -${BoostMajorVersion}_${BoostMinorVersion})
+	set(BoostPrefix lib)
 	set(BoostDebugSuffix -vc${BoostMsvcVersion}-mt-gd${BoostSuffix})
 	set(BoostReleaseSuffix -vc${BoostMsvcVersion}-mt${BoostSuffix})
-
-	find_library(BoostPrgExecMonitorDebugLibrary libboost_prg_exec_monitor${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	find_library(BoostPrgExecMonitorReleaseLibrary libboost_prg_exec_monitor${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-
-	find_library(BoostTestExecMonitorDebugLibrary libboost_test_exec_monitor${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	find_library(BoostTestExecMonitorReleaseLibrary libboost_test_exec_monitor${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-
-	find_library(BoostUnitTestFrameworkDebugLibrary libboost_unit_test_framework${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	find_library(BoostUnitTestFrameworkReleaseLibrary libboost_unit_test_framework${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-
-	find_library(BoostLocaleDebugLibrary libboost_locale${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	find_library(BoostLocaleReleaseLibrary libboost_locale${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-
-	find_library(BoostSystemDebugLibrary libboost_system${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	find_library(BoostSystemReleaseLibrary libboost_system${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-
-	find_library(BoostThreadDebugLibrary libboost_thread${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	find_library(BoostThreadReleaseLibrary libboost_thread${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-
 	set(SystemIncludeDirectories "${BoostInstall}/include/boost${BoostSuffix}")
-else()
-	find_library(BoostPrgExecMonitorReleaseLibrary boost_prg_exec_monitor "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	set(BoostPrgExecMonitorDebugLibrary ${BoostPrgExecMonitorReleaseLibrary})
-
-	find_library(BoostTestExecMonitorReleaseLibrary boost_test_exec_monitor "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	set(BoostTestExecMonitorDebugLibrary ${BoostTestExecMonitorReleaseLibrary})
-
-	find_library(BoostUnitTestFrameworkReleaseLibrary boost_unit_test_framework "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	set(BoostUnitTestFrameworkDebugLibrary ${BoostUnitTestFrameworkReleaseLibrary})
-
-	find_library(BoostLocaleReleaseLibrary boost_locale "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	set(BoostLocaleDebugLibrary ${BoostLocaleReleaseLibrary})
-
-	find_library(BoostSystemReleaseLibrary boost_system "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	set(BoostSystemDebugLibrary ${BoostSystemReleaseLibrary})
-
-	find_library(BoostThreadReleaseLibrary boost_thread "${BoostInstall}/lib" NO_DEFAULT_PATH)
-	set(BoostThreadDebugLibrary ${BoostThreadReleaseLibrary})
-
-	set(SystemIncludeDirectories "${BoostInstall}/include")
 endif()
+find_library(BoostPrgExecMonitorDebugLibrary ${BoostPrefix}boost_prg_exec_monitor${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostPrgExecMonitorReleaseLibrary ${BoostPrefix}boost_prg_exec_monitor${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostTestExecMonitorDebugLibrary ${BoostPrefix}boost_test_exec_monitor${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostTestExecMonitorReleaseLibrary ${BoostPrefix}boost_test_exec_monitor${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostUnitTestFrameworkDebugLibrary ${BoostPrefix}boost_unit_test_framework${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostUnitTestFrameworkReleaseLibrary ${BoostPrefix}boost_unit_test_framework${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostLocaleDebugLibrary ${BoostPrefix}boost_locale${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostLocaleReleaseLibrary ${BoostPrefix}boost_locale${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostSystemDebugLibrary ${BoostPrefix}boost_system${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostSystemReleaseLibrary ${BoostPrefix}boost_system${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostThreadDebugLibrary ${BoostPrefix}boost_thread${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+find_library(BoostThreadReleaseLibrary ${BoostPrefix}boost_thread${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
 
 # Configure include paths.
 include_directories(SYSTEM ${SystemIncludeDirectories})
@@ -203,15 +177,15 @@ foreach(Directory ${Directories})
 	file(RELATIVE_PATH RelativeDirectory "${CMAKE_SOURCE_DIR}/code" "${Directory}")
 	string(REPLACE "/" "\\" SourceGroup "${RelativeDirectory}")
 
-	file(GLOB DirectoryCppFiles "${Directory}/*.cpp")
-	list(SORT DirectoryCppFiles)
-	source_group("Source Files\\${SourceGroup}" FILES ${DirectoryCppFiles})
-	set(CppFiles ${CppFiles} ${DirectoryCppFiles})
-
 	file(GLOB DirectoryHppFiles "${Directory}/*.hpp")
 	list(SORT DirectoryHppFiles)
 	source_group("Header Files\\${SourceGroup}" FILES ${DirectoryHppFiles})
 	set(HppFiles ${HppFiles} ${DirectoryHppFiles})
+
+	file(GLOB DirectoryCppFiles "${Directory}/*.cpp")
+	list(SORT DirectoryCppFiles)
+	source_group("Source Files\\${SourceGroup}" FILES ${DirectoryCppFiles})
+	set(CppFiles ${CppFiles} ${DirectoryCppFiles})
 
 	file(GLOB DirectoryDoxFiles "${Directory}/*.dox")
 	list(SORT DirectoryDoxFiles)
@@ -220,7 +194,7 @@ foreach(Directory ${Directories})
 endforeach()
 
 # Add executable targets.
-add_executable("Om.Interpreter" ${CppFiles} ${HppFiles})
+add_executable("Om.Interpreter" ${HppFiles} ${CppFiles})
 add_executable("Om.Test" ${CppFiles})
 
 # Add documentation target.
@@ -235,7 +209,7 @@ add_custom_target("Om.Documentation" ALL
 	WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/code"
 	COMMENT "Generating documentation..."
 	VERBATIM
-	SOURCES ${DoxFiles}
+	SOURCES ${DoxFiles} ${HppFiles} ${CppFiles}
 )
 
 # "om.internal": Populate with complete sorted list of unique headers.
@@ -261,26 +235,16 @@ endif()
 function(ConfigureExecutable Target)
 	# Link Boost.
 	target_link_libraries(${Target}
-		debug "${BoostLocaleDebugLibrary}"
-		optimized "${BoostLocaleReleaseLibrary}"
-
-		debug "${BoostSystemDebugLibrary}"
-		optimized "${BoostSystemReleaseLibrary}"
-
-		debug "${BoostThreadDebugLibrary}"
-		optimized "${BoostThreadReleaseLibrary}"
+		debug "${BoostLocaleDebugLibrary}" optimized "${BoostLocaleReleaseLibrary}"
+		debug "${BoostSystemDebugLibrary}" optimized "${BoostSystemReleaseLibrary}"
+		debug "${BoostThreadDebugLibrary}" optimized "${BoostThreadReleaseLibrary}"
 	)
 
 	# Link ICU4C.
 	target_link_libraries(${Target}
-		debug "${Icu4cI18nDebugLibrary}"
-		optimized "${Icu4cI18nReleaseLibrary}"
-
-		debug "${Icu4cUcDebugLibrary}"
-		optimized "${Icu4cUcReleaseLibrary}"
-
-		debug "${Icu4cDataDebugLibrary}"
-		optimized "${Icu4cDataReleaseLibrary}"
+		debug "${Icu4cI18nDebugLibrary}" optimized "${Icu4cI18nReleaseLibrary}"
+		debug "${Icu4cUcDebugLibrary}" optimized "${Icu4cUcReleaseLibrary}"
+		debug "${Icu4cDataDebugLibrary}" optimized "${Icu4cDataReleaseLibrary}"
 	)
 
 	# Link additional libraries required on Linux.
@@ -302,14 +266,9 @@ ConfigureExecutable("Om.Test")
 
 # Link Boost.Test libraries.
 target_link_libraries("Om.Test"
-	debug "${BoostPrgExecMonitorDebugLibrary}"
-	optimized "${BoostPrgExecMonitorReleaseLibrary}"
-
-	debug "${BoostTestExecMonitorDebugLibrary}"
-	optimized "${BoostTestExecMonitorReleaseLibrary}"
-
-	debug "${BoostUnitTestFrameworkDebugLibrary}"
-	optimized "${BoostUnitTestFrameworkReleaseLibrary}"
+	debug "${BoostPrgExecMonitorDebugLibrary}" optimized "${BoostPrgExecMonitorReleaseLibrary}"
+	debug "${BoostTestExecMonitorDebugLibrary}" optimized "${BoostTestExecMonitorReleaseLibrary}"
+	debug "${BoostUnitTestFrameworkDebugLibrary}" optimized "${BoostUnitTestFrameworkReleaseLibrary}"
 )
 
 # Configure Om.Test.
