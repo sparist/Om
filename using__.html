@@ -106,16 +106,16 @@ Programs</h2>
 Libraries</h2>
 <h3><a class="anchor" id="using__dependencies__libraries__icu4c"></a>
 ICU4C</h3>
-<p>Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by executing the CMake script <code>"dependencies/Icu4c/build.cmake"</code> from the directory as follows: </p>
+<p>Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by including <code>"dependencies/Icu4c/build.cmake"</code> in a CMake script and calling <code>BuildIcu4c</code> as follows: </p>
 <blockquote class="doxtable">
-<p><code>cmake -D Name="<em>[build name]</em>" -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -P "<em>[Om source directory path]</em>/dependencies/Icu4c/build.cmake"</code></p>
+<p><code>BuildIcu4c("<em>[directory path]</em>" "<em>[build name]</em>" <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5 hash]</em>)</code></p>
 </blockquote>
 <p>The resulting installation will be found in the <code>"<em>[MD5]</em>/build/<em>[build name]</em>/install"</code> subdirectory.</p>
 <h3><a class="anchor" id="using__dependencies__libraries__boost"></a>
 Boost</h3>
-<p>Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by executing the CMake script <code>"dependencies/Boost/build.cmake"</code> from the directory as follows: </p>
+<p>Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by including <code>"dependencies/Boost/build.cmake"</code> in a CMake script and calling <code>BuildBoost</code> as follows: </p>
 <blockquote class="doxtable">
-<p><code>cmake -D Name="<em>[build name]</em>" -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -D Icu=<em>[<a class="el" href="using__.html#using__dependencies__libraries__icu4c">ICU4C</a> install directory path]</em> -P "<em>[Om source directory path]</em>/dependencies/Boost/build.cmake"</code></p>
+<p><code>BuildBoost("<em>[directory path]</em>" "<em>[build name]</em>" <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5 hash]</em> <em>[<a class="el" href="using__.html#using__dependencies__libraries__icu4c">ICU4C</a> install directory path]</em>)</code></p>
 </blockquote>
 <p>The resulting installation will be found in the <code>"<em>[MD5]</em>/build/<em>[build name]</em>/install"</code> subdirectory.</p>
 <h1><a class="anchor" id="using__building__"></a>
