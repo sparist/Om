@@ -387,15 +387,15 @@ define
 
 			\subsubsection using__dependencies__libraries__icu4c ICU4C
 
-				%Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by executing the CMake script <tt>&quot;dependencies/Icu4c/build.cmake&quot;</tt> from the directory as follows:
-				<blockquote><tt>cmake -D Name=&quot;<em>[build name]</em>&quot; -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -P &quot;<em>[%Om source directory path]</em>/dependencies/Icu4c/build.cmake&quot;</tt></blockquote>
+				%Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by including <tt>&quot;dependencies/Icu4c/build.cmake&quot;</tt> in a CMake script and calling <tt>BuildIcu4c</tt> as follows:
+				<blockquote><tt>BuildIcu4c(&quot;<em>[directory path]</em>&quot; &quot;<em>[build name]</em>&quot; <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5 hash]</em>)</tt></blockquote>
 
 				The resulting installation will be found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
 
 			\subsubsection using__dependencies__libraries__boost Boost
 
-				%Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by executing the CMake script <tt>&quot;dependencies/Boost/build.cmake&quot;</tt> from the directory as follows:
-				<blockquote><tt>cmake -D Name=&quot;<em>[build name]</em>&quot; -D MajorVersion=<em>[major version]</em> -D MinorVersion=<em>[minor version]</em> -D Extension=<em>[download extension]</em> -D Md5=<em>[download MD5 hash]</em> -D Icu=<em>[\ref using__dependencies__libraries__icu4c install directory path]</em> -P &quot;<em>[%Om source directory path]</em>/dependencies/Boost/build.cmake&quot;</tt></blockquote>
+				%Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by including <tt>&quot;dependencies/Boost/build.cmake&quot;</tt> in a CMake script and calling <tt>BuildBoost</tt> as follows:
+				<blockquote><tt>BuildBoost(&quot;<em>[directory path]</em>&quot; &quot;<em>[build name]</em>&quot; <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5 hash]</em> <em>[\ref using__dependencies__libraries__icu4c install directory path]</em>)</tt></blockquote>
 
 				The resulting installation will be found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
 
