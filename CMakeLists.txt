@@ -35,118 +35,28 @@ endif()
 set(Platform "${CMAKE_SYSTEM}-${CMAKE_CXX_COMPILER_ID}-${CMAKE_CXX_COMPILER_VERSION}${PlatformBits}")
 
 # Set main directories.
-set(Builds "${CMAKE_BINARY_DIR}" CACHE PATH "The builds path")
-set(Build "${Builds}/Om" CACHE PATH "The Om build path")
+set(BuildsDirectory "${CMAKE_BINARY_DIR}" CACHE PATH "The builds directory path")
+set(BuildDirectory "${BuildsDirectory}/Om" CACHE PATH "The Om build directory path")
 
 # Set up ICU4C.
-# Note that ICU4C does not support spaces in the path.
-set(Icu4cBuildDefault "${Builds}/Icu4c")
-set(Icu4cBuildCaption "The ICU4C build path")
-set(Icu4cBuild "${Icu4cBuildDefault}" CACHE PATH "${Icu4cBuildCaption}")
-set(Icu4cMajorVersion 52)
-set(Icu4cMinorVersion 1)
-set(Icu4cExtension tgz)
-set(Icu4cMd5 9e96ed4c1d99c0d14ac03c140f9f346c)
-set(Icu4cInstallDefault "${Icu4cBuild}/${Icu4cMd5}/build/${Platform}/install")
-set(Icu4cInstallCaption "The ICU4C install path")
-set(Icu4cInstall "${Icu4cInstallDefault}" CACHE PATH "${Icu4cInstallCaption}")
-if(NOT EXISTS "${Icu4cInstall}")
-	set(Icu4cBuild "${Icu4cBuildDefault}" CACHE PATH "${Icu4cBuildCaption}" FORCE)
-
-	execute_process(
-		COMMAND "${CMAKE_COMMAND}" -E make_directory "${Icu4cBuild}"
-		WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
-		RESULT_VARIABLE Status
-	)
-	if(NOT ${Status} EQUAL 0)
-		message(FATAL_ERROR "The directory \"${Icu4cBuild}\" could not be created: ${Status}")
-	endif()
-
-	include("${CMAKE_SOURCE_DIR}/dependencies/Icu4c/build.cmake")
-	BuildIcu4c("${Icu4cBuild}" ${Platform} ${Icu4cMajorVersion} ${Icu4cMinorVersion} ${Icu4cExtension} ${Icu4cMd5})
-
-	get_filename_component(Icu4cInstall "${Icu4cInstallDefault}" REALPATH)
-	set(Icu4cInstall "${Icu4cInstall}" CACHE PATH "${Icu4cInstallCaption}" FORCE)
-endif()
-if(WIN32)
-	find_library(Icu4cI18nDebugLibrary sicuind "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cI18nReleaseLibrary sicuin "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cUcDebugLibrary sicuucd "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cUcReleaseLibrary sicuuc "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cDataDebugLibrary sicudtd "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cDataReleaseLibrary sicudt "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-else()
-	find_library(Icu4cI18nDebugLibrary icui18n "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cI18nReleaseLibrary icui18n "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cUcDebugLibrary icuuc "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cUcReleaseLibrary icuuc "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cDataDebugLibrary icudata "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-	find_library(Icu4cDataReleaseLibrary icudata "${Icu4cInstall}/lib" NO_DEFAULT_PATH)
-endif()
+include("${CMAKE_SOURCE_DIR}/dependencies/Icu4c/build.cmake")
+SetUpIcu4c("${BuildsDirectory}" "${Platform}"
+	Icu4cI18nDebugLibrary Icu4cI18nReleaseLibrary
+	Icu4cUcDebugLibrary Icu4cUcReleaseLibrary
+	Icu4cDataDebugLibrary Icu4cDataReleaseLibrary
+)
 
 # Set up Boost.
-set(BoostBuildDefault "${Builds}/Boost")
-set(BoostBuildCaption "The Boost build path")
-set(BoostBuild "${BoostBuildDefault}" CACHE PATH "${BoostBuildCaption}")
-set(BoostMajorVersion 1)
-set(BoostMinorVersion 55)
-if(WIN32)
-	set(BoostExtension zip)
-	set(BoostMd5 8aca361a4713a1f491b0a5e33fee0f1f)
-else()
-	set(BoostExtension tar.gz)
-	set(BoostMd5 93780777cfbf999a600f62883bd54b17)
-endif()
-set(BoostInstallDefault "${BoostBuild}/${BoostMd5}/build/${Platform}/install")
-set(BoostInstallCaption "The Boost install path")
-set(BoostInstall "${BoostInstallDefault}" CACHE PATH "${BoostInstallCaption}")
-if(NOT EXISTS "${BoostInstall}")
-	set(BoostBuild "${BoostBuildDefault}" CACHE PATH "${BoostBuildCaption}" FORCE)
-
-	execute_process(
-		COMMAND "${CMAKE_COMMAND}" -E make_directory "${BoostBuild}"
-		WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
-		RESULT_VARIABLE Status
-	)
-	if(NOT ${Status} EQUAL 0)
-		message(FATAL_ERROR "The directory \"${BoostBuild}\" could not be created: ${Status}")
-	endif()
-
-	include("${CMAKE_SOURCE_DIR}/dependencies/Boost/build.cmake")
-	BuildBoost("${BoostBuild}" ${Platform} ${BoostMajorVersion} ${BoostMinorVersion} ${BoostExtension} ${BoostMd5} "${Icu4cInstall}")
-
-	get_filename_component(BoostInstall "${BoostInstallDefault}" REALPATH)
-	set(BoostInstall "${BoostInstall}" CACHE PATH "${BoostInstallCaption}" FORCE)
-endif()
-set(SystemIncludeDirectories "${BoostInstall}/include")
-if(WIN32)
-	# Determine MSVC version string used in Boost library names.
-	# From: http://www.cmake.org/pipermail/cmake/2012-March/049464.html
-	set(MsvcVersionMinimum 1600) # Visual Studio 2010
-	set(MsvcVersion ${MSVC_VERSION})
-	if(${MsvcVersion} LESS ${MsvcVersionMinimum})
-		set(MsvcVersion ${MsvcVersionMinimum})
-	endif()
-	math(EXPR BoostMsvcVersion "((${MsvcVersion} - 600) / 10)") # Only works for Visual Studio 7.1 and higher
-
-	set(BoostSuffix -${BoostMajorVersion}_${BoostMinorVersion})
-	set(BoostPrefix lib)
-	set(BoostDebugSuffix -vc${BoostMsvcVersion}-mt-gd${BoostSuffix})
-	set(BoostReleaseSuffix -vc${BoostMsvcVersion}-mt${BoostSuffix})
-	set(SystemIncludeDirectories "${BoostInstall}/include/boost${BoostSuffix}")
-endif()
-find_library(BoostPrgExecMonitorDebugLibrary ${BoostPrefix}boost_prg_exec_monitor${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostPrgExecMonitorReleaseLibrary ${BoostPrefix}boost_prg_exec_monitor${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostTestExecMonitorDebugLibrary ${BoostPrefix}boost_test_exec_monitor${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostTestExecMonitorReleaseLibrary ${BoostPrefix}boost_test_exec_monitor${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostUnitTestFrameworkDebugLibrary ${BoostPrefix}boost_unit_test_framework${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostUnitTestFrameworkReleaseLibrary ${BoostPrefix}boost_unit_test_framework${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostLocaleDebugLibrary ${BoostPrefix}boost_locale${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostLocaleReleaseLibrary ${BoostPrefix}boost_locale${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostSystemDebugLibrary ${BoostPrefix}boost_system${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostSystemReleaseLibrary ${BoostPrefix}boost_system${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostThreadDebugLibrary ${BoostPrefix}boost_thread${BoostDebugSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
-find_library(BoostThreadReleaseLibrary ${BoostPrefix}boost_thread${BoostReleaseSuffix} "${BoostInstall}/lib" NO_DEFAULT_PATH)
+include("${CMAKE_SOURCE_DIR}/dependencies/Boost/build.cmake")
+SetUpBoost("${BuildsDirectory}" "${Platform}" "${Icu4cInstallDirectory}"
+	SystemIncludeDirectories
+	BoostPrgExecMonitorDebugLibrary BoostPrgExecMonitorReleaseLibrary
+	BoostTestExecMonitorDebugLibrary BoostTestExecMonitorReleaseLibrary
+	BoostUnitTestFrameworkDebugLibrary BoostUnitTestFrameworkReleaseLibrary
+	BoostLocaleDebugLibrary BoostLocaleReleaseLibrary
+	BoostSystemDebugLibrary BoostSystemReleaseLibrary 
+	BoostThreadDebugLibrary BoostThreadReleaseLibrary
+)
 
 # Configure include paths.
 include_directories(SYSTEM ${SystemIncludeDirectories})
@@ -186,14 +96,13 @@ add_executable("Om.Test" ${CppFiles})
 
 # Add documentation target.
 if(WIN32)
-	set(DoxygenCommand ( type ..\\documentation\\Doxyfile && echo OUTPUT_DIRECTORY = "${Build}/documentation" && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -)
+	set(DoxygenCommand ( type ..\\documentation\\Doxyfile && echo OUTPUT_DIRECTORY = "${BuildDirectory}/documentation" && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -)
 else()
-	set(DoxygenCommand eval "( cat ../documentation/Doxyfile && echo OUTPUT_DIRECTORY = \\\"${Build}/documentation\\\" ) | doxygen -")
+	set(DoxygenCommand eval "( cat ../documentation/Doxyfile && echo OUTPUT_DIRECTORY = \\\"${BuildDirectory}/documentation\\\" ) | doxygen -")
 endif()
-add_custom_target(
-	"Om.Documentation"
+add_custom_target("Om.Documentation"
 	ALL
-	COMMAND "${CMAKE_COMMAND}" -E make_directory "${Build}/documentation"
+	COMMAND "${CMAKE_COMMAND}" -E make_directory "${BuildDirectory}/documentation"
 	COMMAND ${DoxygenCommand}
 	WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/code"
 	COMMENT "Generating documentation..."
@@ -213,8 +122,7 @@ endforeach()
 if("${CMAKE_GENERATOR}" STREQUAL Xcode)
 	add_definitions(-DOm_Macro_Precompilation_)
 
-	set_target_properties(
-		"Om.Interpreter" "Om.Test"
+	set_target_properties("Om.Interpreter" "Om.Test"
 		PROPERTIES
 			XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${CMAKE_SOURCE_DIR}/code/om.external"
 			XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES"
@@ -224,16 +132,14 @@ endif()
 # Configure executable targets.
 function(ConfigureExecutable Target)
 	# Link Boost.
-	target_link_libraries(
-		${Target}
+	target_link_libraries(${Target}
 		debug "${BoostLocaleDebugLibrary}" optimized "${BoostLocaleReleaseLibrary}"
 		debug "${BoostSystemDebugLibrary}" optimized "${BoostSystemReleaseLibrary}"
 		debug "${BoostThreadDebugLibrary}" optimized "${BoostThreadReleaseLibrary}"
 	)
 
 	# Link ICU4C.
-	target_link_libraries(
-		${Target}
+	target_link_libraries(${Target}
 		debug "${Icu4cI18nDebugLibrary}" optimized "${Icu4cI18nReleaseLibrary}"
 		debug "${Icu4cUcDebugLibrary}" optimized "${Icu4cUcReleaseLibrary}"
 		debug "${Icu4cDataDebugLibrary}" optimized "${Icu4cDataReleaseLibrary}"
@@ -248,7 +154,7 @@ function(ConfigureExecutable Target)
 	add_custom_command(
 		TARGET ${Target}
 		POST_BUILD
-		COMMAND "${CMAKE_COMMAND}" -E copy $<TARGET_FILE:${Target}> "${Build}/executables/${Platform}/$<CONFIGURATION>/$<TARGET_FILE_NAME:${Target}>"
+		COMMAND "${CMAKE_COMMAND}" -E copy $<TARGET_FILE:${Target}> "${BuildDirectory}/executables/${Platform}/$<CONFIGURATION>/$<TARGET_FILE_NAME:${Target}>"
 		COMMENT "Generating ${Target} executables..."
 		VERBATIM
 	)
@@ -257,8 +163,7 @@ ConfigureExecutable("Om.Interpreter")
 ConfigureExecutable("Om.Test")
 
 # Link Boost.Test libraries.
-target_link_libraries(
-	"Om.Test"
+target_link_libraries("Om.Test"
 	debug "${BoostPrgExecMonitorDebugLibrary}" optimized "${BoostPrgExecMonitorReleaseLibrary}"
 	debug "${BoostTestExecMonitorDebugLibrary}" optimized "${BoostTestExecMonitorReleaseLibrary}"
 	debug "${BoostUnitTestFrameworkDebugLibrary}" optimized "${BoostUnitTestFrameworkReleaseLibrary}"

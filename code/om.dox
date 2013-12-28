@@ -404,8 +404,8 @@ define
 		A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot;</tt> by running the appropriate <tt>&quot;generate&quot;</tt> script (<tt>&quot;generate.sh&quot;</tt> on Unix-based platforms, or <tt>&quot;generate.bat&quot;</tt> on Windows) from the desired builds directory. Arguments include the desired project name (required), followed by any desired CMake arguments.
 
 		By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <tt>&quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</tt>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
-		-	<b><tt>-D IcuInstall:Path=&quot;<em>[absolute \ref using__dependencies__libraries__icu4c install directory path]</em>&quot;</tt></b>
-		-	<b><tt>-D BoostInstall:Path=&quot;<em>[absolute \ref using__dependencies__libraries__boost install directory path]</em>&quot;</tt></b>
+		-	<b><tt>-D Icu4cInstallDirectory:Path=&quot;<em>[absolute \ref using__dependencies__libraries__icu4c install directory path]</em>&quot;</tt></b>
+		-	<b><tt>-D BoostInstallDirectory:Path=&quot;<em>[absolute \ref using__dependencies__libraries__boost install directory path]</em>&quot;</tt></b>
 
 		\subsection using__building__targets__ Targets
 

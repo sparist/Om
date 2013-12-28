@@ -7,15 +7,15 @@ then
 	exit 1
 fi
 
-Builds=`pwd -P`
-Build="$Builds/Om"
+BuildsDirectory=`pwd -P`
+BuildDirectory="$BuildsDirectory/Om"
 
 cd `dirname "$0"`
-Source=`pwd -P`
+SourceDirectory=`pwd -P`
 
-Project="$Build/projects/$1"
-mkdir -p "$Project"
-cd "$Project"
-cmake --no-warn-unused-cli -D Builds="$Builds" -D Build="$Build" -D Project="$@" "$Source"
+ProjectDirectory="$BuildDirectory/projects/$1"
+mkdir -p "$ProjectDirectory"
+cd "$ProjectDirectory"
+cmake --no-warn-unused-cli -D BuildsDirectory="$BuildsDirectory" -D BuildDirectory="$BuildDirectory" -D ProjectDirectory="$@" "$SourceDirectory"
 
-cd "$Builds"
+cd "$BuildsDirectory"
