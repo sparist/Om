@@ -110,12 +110,20 @@ add_custom_target("Om.Documentation"
 	SOURCES ${DoxFiles} ${HppFiles} ${CppFiles}
 )
 
+# For writing, use Windows line endings to allow for platform consistency
+# (since "\n" is interpreted as the native line ending).
+if(WIN32)
+	set(LineEnding \n)
+else()
+	set(LineEnding \r\n)
+endif()
+
 # "om.internal": Populate with complete sorted list of unique headers.
 set(Internal "${CMAKE_SOURCE_DIR}/code/om.internal")
 file(WRITE "${Internal}" "")
 foreach(HppFile ${HppFiles})
 	file(RELATIVE_PATH RelativeHppFile "${CMAKE_SOURCE_DIR}/code" "${HppFile}")
-	file(APPEND "${Internal}" "#include \"${RelativeHppFile}\"\n")
+	file(APPEND "${Internal}" "#include \"${RelativeHppFile}\"${LineEnding}")
 endforeach()
 
 # "om.external": Configure for precompilation.
