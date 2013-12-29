@@ -498,8 +498,7 @@ define
 
 		\subsection contributing__developing__analyzing_code__ Analyzing Code
 
-			Some basic free static analysis tools can be applied to the %Om code.
-
+			Some basic free static analysis tools can be applied to the %Om code:
 			-	<a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to %Om by entering the following at the terminal from inside the %Om directory:
 				<blockquote><tt>python </tt><em>[path]</em><tt>/hfcca.py -p -v code</tt></blockquote>
 			-	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to %Om by entering the following at the terminal from inside the %Om directory:
