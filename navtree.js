@@ -25,17 +25,12 @@ var NAVTREE =
       [ "Downloading", "using__.html#using__downloading__", null ],
       [ "Dependencies", "using__.html#using__dependencies__", [
         [ "Programs", "using__.html#using__dependencies__programs__", null ],
-        [ "Libraries", "using__.html#using__dependencies__libraries__", [
-          [ "ICU4C", "using__.html#using__dependencies__libraries__icu4c", null ],
-          [ "Boost", "using__.html#using__dependencies__libraries__boost", null ]
-        ] ]
+        [ "Libraries", "using__.html#using__dependencies__libraries__", null ]
       ] ],
       [ "Building", "using__.html#using__building__", [
-        [ "Targets", "using__.html#using__building__targets__", [
-          [ "Om.Interpreter", "using__.html#using__building__targets__interpreter__", null ],
-          [ "Om.Test", "using__.html#using__building__targets__test__", null ],
-          [ "Om.Documentation", "using__.html#using__building__targets__documentation__", null ]
-        ] ]
+        [ "Interpreter", "using__.html#using__building__interpreter__", null ],
+        [ "Test", "using__.html#using__building__test__", null ],
+        [ "Documentation", "using__.html#using__building__documentation__", null ]
       ] ],
       [ "Including", "using__.html#using__including__", null ]
     ] ],

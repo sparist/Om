@@ -73,7 +73,7 @@ Downloading</h1>
 Dependencies</h1>
 <h2><a class="anchor" id="using__dependencies__programs__"></a>
 Programs</h2>
-<p>To run scripts which build the dependency <a class="el" href="using__.html#using__dependencies__libraries__">libraries</a> and generate the build project, the following programs are required:</p>
+<p>To run scripts which build the dependency <a class="el" href="using__.html#using__dependencies__libraries__">Libraries</a> and generate the build project, the following programs are required:</p>
 <ul>
 <li><a href="http://cmake.org">CMake</a></li>
 <li>Mac OS X:<ul>
@@ -90,7 +90,7 @@ Programs</h2>
 </ul>
 </li>
 </ul>
-<p>To build the <a class="el" href="using__.html#using__building__targets__documentation__">documentation target</a> in the build project, the following additional programs are required:</p>
+<p>To build the <a class="el" href="using__.html#using__building__documentation__">Documentation</a> in the build project, the following additional programs are required:</p>
 <ul>
 <li><a href="http://doxygen.org">Doxygen</a></li>
 <li><a href="http://graphviz.org">Graphviz</a></li>
@@ -104,44 +104,39 @@ Programs</h2>
 <p>Note that on Mac OS X, the path variable must be <a href="http://www.dowdandassociates.com/blog/content/howto-set-an-environment-variable-in-mac-os-x-slash-etc-slash-launchd-dot-conf/">added to <code>"etc/launchd.conf"</code></a> in order to be visible to applications.</p>
 <h2><a class="anchor" id="using__dependencies__libraries__"></a>
 Libraries</h2>
-<h3><a class="anchor" id="using__dependencies__libraries__icu4c"></a>
-ICU4C</h3>
-<p>Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by including <code>"dependencies/Icu4c/build.cmake"</code> in a CMake script and calling <code>BuildIcu4c</code> as follows: </p>
-<blockquote class="doxtable">
-<p><code>BuildIcu4c("<em>[directory path]</em>" "<em>[build name]</em>" <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5 hash]</em>)</code></p>
+<p>The following libraries are required to build the Om code:</p>
+<ul>
+<li>ICU4C (the C++ implementation of the <a href="http://icu-project.org">ICU</a> library), which can be downloaded and built in <code>"<em>[directory path]</em>/<em>[download MD5]</em>/build/<em>[build name]</em>/install"</code> by including <code>"dependencies/Icu4c/build.cmake"</code> in a CMake script and calling <code>BuildIcu4c</code> as follows: <blockquote class="doxtable">
+<p><code>BuildIcu4c("<em>[directory path]</em>" "<em>[build name]</em>" <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5]</em>)</code></p>
 </blockquote>
-<p>The resulting installation will be found in the <code>"<em>[MD5]</em>/build/<em>[build name]</em>/install"</code> subdirectory.</p>
-<h3><a class="anchor" id="using__dependencies__libraries__boost"></a>
-Boost</h3>
-<p>Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by including <code>"dependencies/Boost/build.cmake"</code> in a CMake script and calling <code>BuildBoost</code> as follows: </p>
-<blockquote class="doxtable">
-<p><code>BuildBoost("<em>[directory path]</em>" "<em>[build name]</em>" <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5 hash]</em> <em>[<a class="el" href="using__.html#using__dependencies__libraries__icu4c">ICU4C</a> install directory path]</em>)</code></p>
+</li>
+<li><a href="http://boost.org">Boost</a>, which can be downloaded and built in <code>"<em>[directory path]</em>/<em>[download MD5]</em>/build/<em>[build name]</em>/install"</code> by including <code>"dependencies/Boost/build.cmake"</code> in a CMake script and calling <code>BuildBoost</code> as follows: <blockquote class="doxtable">
+<p><code>BuildBoost("<em>[directory path]</em>" "<em>[build name]</em>" <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5]</em> <em>[ICU4C install directory path]</em>)</code></p>
 </blockquote>
-<p>The resulting installation will be found in the <code>"<em>[MD5]</em>/build/<em>[build name]</em>/install"</code> subdirectory.</p>
+</li>
+</ul>
 <h1><a class="anchor" id="using__building__"></a>
 Building</h1>
 <p>A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <code>"<em>[builds directory path]</em>/Om/projects/<em>[project]</em>"</code> by running the appropriate <code>"generate"</code> script (<code>"generate.sh"</code> on Unix-based platforms, or <code>"generate.bat"</code> on Windows) from the desired builds directory. Arguments include the desired project name (required), followed by any desired CMake arguments.</p>
-<p>By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <code>"<em>[builds directory path]</em>/<em>[dependency name]</em>/<em>[MD5]</em>/build/<em>[platform]</em>/install"</code>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:</p>
+<p>By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <code>"<em>[builds directory path]</em>/<em>[dependency name]</em>/<em>[MD5]</em>/build/<em>[platform]</em>/install"</code>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script (see <a class="el" href="using__.html#using__dependencies__libraries__">Libraries</a> for instructions on building these separately):</p>
 <ul>
-<li><b><code>-D Icu4cInstallDirectory:Path="<em>[absolute <a class="el" href="using__.html#using__dependencies__libraries__icu4c">ICU4C</a> install directory path]</em>"</code></b></li>
-<li><b><code>-D BoostInstallDirectory:Path="<em>[absolute <a class="el" href="using__.html#using__dependencies__libraries__boost">Boost</a> install directory path]</em>"</code></b></li>
+<li><b><code>-D Icu4cInstallDirectory:Path="<em>[absolute ICU4C install directory path]</em>"</code></b></li>
+<li><b><code>-D BoostInstallDirectory:Path="<em>[absolute Boost install directory path]</em>"</code></b></li>
 </ul>
-<h2><a class="anchor" id="using__building__targets__"></a>
-Targets</h2>
-<h3><a class="anchor" id="using__building__targets__interpreter__"></a>
-Om.Interpreter</h3>
-<p>The Om.Interpreter target builds the interpreter executable as <code>"<em>[Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter"</code>. The interpreter:</p>
+<h2><a class="anchor" id="using__building__interpreter__"></a>
+Interpreter</h2>
+<p>The <b>Om.Interpreter</b> target builds the interpreter executable as <code>"<em>[Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter"</code>. The interpreter:</p>
 <ul>
 <li>Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".</li>
 <li>Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.</li>
 </ul>
-<p>See <a class="el" href="language__.html">Language</a> to learn how the language works.</p>
-<h3><a class="anchor" id="using__building__targets__test__"></a>
-Om.Test</h3>
-<p>The Om.Test target builds the test executable, which runs all unit tests, as <code>"<em>[Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test"</code>.</p>
-<h3><a class="anchor" id="using__building__targets__documentation__"></a>
-Om.Documentation</h3>
-<p>The Om.Documentation target builds this documentation into the following folders in <code>"<em>[Om build directory path]</em>/documentation"</code>:</p>
+<p>See <a class="el" href="language__.html">Language</a> to learn how the Om language works.</p>
+<h2><a class="anchor" id="using__building__test__"></a>
+Test</h2>
+<p>The <b>Om.Test</b> target builds the test executable, which runs all unit tests, as <code>"<em>[Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test"</code>.</p>
+<h2><a class="anchor" id="using__building__documentation__"></a>
+Documentation</h2>
+<p>The <b>Om.Documentation</b> target builds this documentation into the following folders in <code>"<em>[Om build directory path]</em>/documentation"</code>:</p>
 <ul>
 <li><b><code>"html"</code>:</b> This HTML documentation. To view in a browser, open <code>"index.html"</code>.</li>
 <li><b><code>"xml"</code>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.</li>
