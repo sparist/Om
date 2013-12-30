@@ -16,6 +16,8 @@
 	-	<b>complete</b>. Although the intent is to develop %Om into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic number and file operations) and optimizations before it can be considered useful for any real-world purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.
 	-	<b>stationary</b>. %Om will likely undergo significant changes on its way to version 1.0.
 
+	See \ref language__ to learn how the %Om language works.
+
 \page language__ Language
 
 	\section language__syntax__ Syntax
@@ -362,7 +364,7 @@ define
 
 		\subsection using__dependencies__programs__ Programs
 
-			To run scripts which build the dependency \ref using__dependencies__libraries__ "libraries" and generate the build project, the following programs are required:
+			To run scripts which build the dependency \ref using__dependencies__libraries__ and generate the build project, the following programs are required:
 			-	<a href="http://cmake.org">CMake</a>
 			-	Mac OS X:
 				-	Xcode
@@ -372,7 +374,7 @@ define
 			-	Ubuntu:
 				-	Build-Essential package (<tt>sudo apt-get install build-essential</tt>)
 
-			To build the \ref using__building__targets__documentation__ "documentation target" in the build project, the following additional programs are required:
+			To build the \ref using__building__documentation__ in the build project, the following additional programs are required:
 			-	<a href="http://doxygen.org">Doxygen</a>
 			-	<a href="http://graphviz.org">Graphviz</a>
 
@@ -385,47 +387,38 @@ define
 
 		\subsection using__dependencies__libraries__ Libraries
 
-			\subsubsection using__dependencies__libraries__icu4c ICU4C
+			The following libraries are required to build the %Om code:
 
-				%Om depends on ICU4C, the C++ implementation of the <a href="http://icu-project.org">ICU</a> library. ICU4C can be downloaded and built in a directory by including <tt>&quot;dependencies/Icu4c/build.cmake&quot;</tt> in a CMake script and calling <tt>BuildIcu4c</tt> as follows:
-				<blockquote><tt>BuildIcu4c(&quot;<em>[directory path]</em>&quot; &quot;<em>[build name]</em>&quot; <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5 hash]</em>)</tt></blockquote>
-
-				The resulting installation will be found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
-
-			\subsubsection using__dependencies__libraries__boost Boost
-
-				%Om depends on the <a href="http://boost.org">Boost</a> library. Boost can be downloaded and built into a directory by including <tt>&quot;dependencies/Boost/build.cmake&quot;</tt> in a CMake script and calling <tt>BuildBoost</tt> as follows:
-				<blockquote><tt>BuildBoost(&quot;<em>[directory path]</em>&quot; &quot;<em>[build name]</em>&quot; <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5 hash]</em> <em>[\ref using__dependencies__libraries__icu4c install directory path]</em>)</tt></blockquote>
-
-				The resulting installation will be found in the <tt>&quot;<em>[MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> subdirectory.
+			-	ICU4C (the C++ implementation of the <a href="http://icu-project.org">ICU</a> library), which can be downloaded and built in <tt>&quot;<em>[directory path]</em>/<em>[download MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> by including <tt>&quot;dependencies/Icu4c/build.cmake&quot;</tt> in a CMake script and calling <tt>BuildIcu4c</tt> as follows:
+				<blockquote><tt>BuildIcu4c(&quot;<em>[directory path]</em>&quot; &quot;<em>[build name]</em>&quot; <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5]</em>)</tt></blockquote>
+			-	<a href="http://boost.org">Boost</a>, which can be downloaded and built in <tt>&quot;<em>[directory path]</em>/<em>[download MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> by including <tt>&quot;dependencies/Boost/build.cmake&quot;</tt> in a CMake script and calling <tt>BuildBoost</tt> as follows:
+				<blockquote><tt>BuildBoost(&quot;<em>[directory path]</em>&quot; &quot;<em>[build name]</em>&quot; <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5]</em> <em>[ICU4C install directory path]</em>)</tt></blockquote>
 
 	\section using__building__ Building
 
 		A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot;</tt> by running the appropriate <tt>&quot;generate&quot;</tt> script (<tt>&quot;generate.sh&quot;</tt> on Unix-based platforms, or <tt>&quot;generate.bat&quot;</tt> on Windows) from the desired builds directory. Arguments include the desired project name (required), followed by any desired CMake arguments.
 
-		By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <tt>&quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</tt>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
-		-	<b><tt>-D Icu4cInstallDirectory:Path=&quot;<em>[absolute \ref using__dependencies__libraries__icu4c install directory path]</em>&quot;</tt></b>
-		-	<b><tt>-D BoostInstallDirectory:Path=&quot;<em>[absolute \ref using__dependencies__libraries__boost install directory path]</em>&quot;</tt></b>
+		By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <tt>&quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</tt>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script (see \ref using__dependencies__libraries__ for instructions on building these separately):
+		-	<b><tt>-D Icu4cInstallDirectory:Path=&quot;<em>[absolute ICU4C install directory path]</em>&quot;</tt></b>
+		-	<b><tt>-D BoostInstallDirectory:Path=&quot;<em>[absolute Boost install directory path]</em>&quot;</tt></b>
 
-		\subsection using__building__targets__ Targets
+		\subsection using__building__interpreter__ Interpreter
 
-			\subsubsection using__building__targets__interpreter__ Om.Interpreter
+			The <b>Om.Interpreter</b> target builds the interpreter executable as <tt>&quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;</tt>. The interpreter:
+				-	Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".
+				-	Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.
 
-				The Om.Interpreter target builds the interpreter executable as <tt>&quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;</tt>.  The interpreter:
-					-	Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".
-					-	Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.
+			See \ref language__ to learn how the %Om language works.
 
-				See \ref language__ to learn how the language works.
+		\subsection using__building__test__ Test
 
-			\subsubsection using__building__targets__test__ Om.Test
+			The <b>Om.Test</b> target builds the test executable, which runs all unit tests, as <tt>&quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test&quot;</tt>.
 
-				The Om.Test target builds the test executable, which runs all unit tests, as <tt>&quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test&quot;</tt>.
+		\subsection using__building__documentation__ Documentation
 
-			\subsubsection using__building__targets__documentation__ Om.Documentation
-
-				The Om.Documentation target builds this documentation into the following folders in <tt>&quot;<em>[%Om build directory path]</em>/documentation&quot;</tt>:
-				-	<b><tt>&quot;html&quot;</tt>:</b> This HTML documentation. To view in a browser, open <tt>&quot;index.html&quot;</tt>.
-				-	<b><tt>&quot;xml&quot;</tt>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.
+			The <b>Om.Documentation</b> target builds this documentation into the following folders in <tt>&quot;<em>[%Om build directory path]</em>/documentation&quot;</tt>:
+			-	<b><tt>&quot;html&quot;</tt>:</b> This HTML documentation. To view in a browser, open <tt>&quot;index.html&quot;</tt>.
+			-	<b><tt>&quot;xml&quot;</tt>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.
 
 	\section using__including__ Including
 
