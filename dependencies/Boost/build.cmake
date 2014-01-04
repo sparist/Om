@@ -16,7 +16,7 @@ function(BuildBoost Directory Name MajorVersion MinorVersion Extension Md5 Icu4c
 	endif()
 	get_filename_component(OutputDirectory "${Directory}/${Md5}" REALPATH)
 
-	message(STATUS "Unpacking Boost...")
+	message(STATUS "Unpacking Boost")
 	execute_process(
 		COMMAND "${CMAKE_COMMAND}" -E tar xvzf "${Download}.${Extension}"
 		WORKING_DIRECTORY "${OutputDirectory}/download"
@@ -26,7 +26,7 @@ function(BuildBoost Directory Name MajorVersion MinorVersion Extension Md5 Icu4c
 		message(FATAL_ERROR "Boost could not be unpacked: ${Status}")
 	endif()
 
-	message(STATUS "Configuring Boost...")
+	message(STATUS "Configuring Boost")
 	set(BootstrapCommand ./bootstrap.sh)
 	if(WIN32)
 		set(BootstrapCommand bootstrap.bat)
@@ -40,7 +40,7 @@ function(BuildBoost Directory Name MajorVersion MinorVersion Extension Md5 Icu4c
 		message(FATAL_ERROR "Boost could not be configured: ${Status}")
 	endif()
 
-	message(STATUS "Building Boost...")
+	message(STATUS "Building Boost")
 	set(BuildDirectory "${OutputDirectory}/build/${Name}")
 	set(BuildCommand ./b2)
 	set(DefineOption define=U_CHARSET_IS_UTF8=1)

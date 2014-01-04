@@ -16,7 +16,7 @@ function(BuildIcu4c Directory Name MajorVersion MinorVersion Extension Md5)
 	endif()
 	get_filename_component(OutputDirectory "${Directory}/${Md5}" REALPATH)
 
-	message(STATUS "Unpacking ICU4C...")
+	message(STATUS "Unpacking ICU4C")
 	execute_process(
 		COMMAND "${CMAKE_COMMAND}" -E tar xvzf "${Download}.${Extension}"
 		WORKING_DIRECTORY "${OutputDirectory}/download"
@@ -79,7 +79,7 @@ function(BuildIcu4c Directory Name MajorVersion MinorVersion Extension Md5)
 			set(CppFlagsOption CPPFLAGS=-DU_CHARSET_IS_UTF8=1)
 		endif()
 
-		message(STATUS "Configuring ICU4C (${Configuration})...")
+		message(STATUS "Configuring ICU4C (${Configuration})")
 		execute_process(
 			COMMAND bash ../../../../download/icu/source/runConfigureICU ${EnableDebugOption} ${DisableReleaseOption} ${System} --enable-static ${DisableSharedOption} --prefix=${PrefixOption} ${CppFlagsOption}
 			WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
@@ -89,7 +89,7 @@ function(BuildIcu4c Directory Name MajorVersion MinorVersion Extension Md5)
 			message(FATAL_ERROR "ICU4C (${Configuration}) could not be configured: ${Status}")
 		endif()
 
-		message(STATUS "Building ICU4C (${Configuration})...")
+		message(STATUS "Building ICU4C (${Configuration})")
 		execute_process(
 			COMMAND make -s
 			COMMAND make -s install

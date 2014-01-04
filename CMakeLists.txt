@@ -105,7 +105,7 @@ add_custom_target("Om.Documentation"
 	COMMAND "${CMAKE_COMMAND}" -E make_directory "${BuildDirectory}/documentation"
 	COMMAND ${DoxygenCommand}
 	WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/code"
-	COMMENT "Generating documentation..."
+	COMMENT "Generating documentation"
 	VERBATIM
 	SOURCES ${DoxFiles} ${HppFiles} ${CppFiles}
 )
@@ -163,7 +163,7 @@ function(ConfigureExecutable Target)
 		TARGET ${Target}
 		POST_BUILD
 		COMMAND "${CMAKE_COMMAND}" -E copy $<TARGET_FILE:${Target}> "${BuildDirectory}/executables/${Platform}/$<CONFIGURATION>/$<TARGET_FILE_NAME:${Target}>"
-		COMMENT "Generating ${Target} executables..."
+		COMMENT "Generating ${Target} executables"
 		VERBATIM
 	)
 endfunction()
@@ -192,7 +192,7 @@ if(NOT WIN32)
 		TARGET "Om.Test"
 		PRE_BUILD
 		COMMAND rm -f "\${OBJECT_FILE_DIR_normal}/\${CURRENT_ARCH}/*.gcda"
-		COMMENT "Cleaning profiler information..."
+		COMMENT "Cleaning profiler information"
 	)
 endif()
 set_target_properties("Om.Test" PROPERTIES COMPILE_FLAGS "${TestCompileFlags}")
