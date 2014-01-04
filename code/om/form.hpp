@@ -125,7 +125,7 @@ namespace Om {
 	\brief
 		A Form Element range.
 	*/
-	class Form::ElementRange :
+	class Form::ElementRange:
 	public Source::DefaultSource<
 		Element const,
 		ElementRange
@@ -179,7 +179,7 @@ namespace Om {
 		A mutable Form Operand range.
 	*/
 	template <>
-	class Form::OperandRange<Operand> :
+	class Form::OperandRange<Operand>:
 	public Source::CollectionFrontSource<
 		Operand,
 		OperandDeque::iterator
@@ -198,7 +198,7 @@ namespace Om {
 		An immutable Form Operand range.
 	*/
 	template <>
-	class Form::OperandRange<Operand const> :
+	class Form::OperandRange<Operand const>:
 	public Source::CollectionFrontSource<
 		Operand const,
 		OperandDeque::const_iterator

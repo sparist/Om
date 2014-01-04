@@ -35,7 +35,7 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::ContainerBackSource(ThisContainer & theContainer) :
+inline Type_::ContainerBackSource(ThisContainer & theContainer):
 thisContainer(theContainer) {}
 
 Template_

@@ -45,7 +45,7 @@ namespace Om {
 
 	Each concrete derivation must have a GetName() function that returns a null-terminated, NFD-normalized UTF-8 string to be used as a corresponding Operator name.
 	*/
-	class Program :
+	class Program:
 	public Consumer,
 	public Giveable,
 	public Producer,

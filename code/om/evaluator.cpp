@@ -48,7 +48,7 @@ inline Type_::~Evaluator() {
 inline Type_::Evaluator(
 	Consumer & theOutput,
 	Translator const & theTranslator
-) :
+):
 thisOutput(theOutput),
 thisTranslator(theTranslator),
 thisIncompleteOperationVector(),

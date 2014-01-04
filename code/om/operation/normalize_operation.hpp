@@ -33,7 +33,7 @@ namespace Om {
 		\brief
 			The \ref om__operation__normalize_operation__ operation implementation.
 		*/
-		class NormalizeOperation :
+		class NormalizeOperation:
 		public DefaultIncompleteOperation<NormalizeOperation> {
 
 		public: // MARK: public (static)

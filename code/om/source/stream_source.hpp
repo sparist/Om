@@ -40,7 +40,7 @@ namespace Om {
 			Dereferencing exposes a reference to a cache of the current item. Modifying the item will not modify the source data.
 		*/
 		template <typename ThisItem = char>
-		class StreamSource :
+		class StreamSource:
 		public DefaultSource<
 			ThisItem const,
 			StreamSource<ThisItem>

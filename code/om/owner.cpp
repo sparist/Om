@@ -33,13 +33,13 @@ namespace Om {
 
 		namespace {
 
-			class TestValue :
+			class TestValue:
 			public DefaultCopyable<TestValue>,
 			public Shareable<> {
 
 			public:
 
-				explicit TestValue(int const theNumber) :
+				explicit TestValue(int const theNumber):
 				thisNumber(theNumber) {}
 
 				bool operator ==(TestValue const theTestValue) const {
@@ -175,12 +175,12 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::Owner() :
+inline Type_::Owner():
 thisValue(),
 thisWasExposed() {}
 
 Template_
-inline Type_::Owner(Owner const & theOwner) :
+inline Type_::Owner(Owner const & theOwner):
 thisValue(),
 thisWasExposed() {
 	if (theOwner.thisWasExposed) {
@@ -197,7 +197,7 @@ Template_
 template <typename TheValue>
 inline Type_::Owner(
 	std::auto_ptr<TheValue> theValue
-) :
+):
 thisValue(
 	theValue.release()
 ),

@@ -35,7 +35,7 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::ContainerFrontSink(ThisContainer & theContainer) :
+inline Type_::ContainerFrontSink(ThisContainer & theContainer):
 thisContainer(theContainer) {}
 
 Template_

@@ -33,7 +33,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisIterator
 		>
-		class IteratorSink :
+		class IteratorSink:
 		public DefaultSink<
 			ThisItem,
 			IteratorSink<

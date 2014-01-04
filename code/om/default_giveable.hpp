@@ -33,7 +33,7 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Giveable
 	>
-	class DefaultGiveable :
+	class DefaultGiveable:
 	public DefaultMoveable<
 		ThisImplementation,
 		DefaultCopyable<

@@ -33,7 +33,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisIterator
 		>
-		class CollectionFrontSource :
+		class CollectionFrontSource:
 		public IteratorPairSource<
 			ThisItem,
 			ThisIterator

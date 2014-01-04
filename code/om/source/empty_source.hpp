@@ -30,7 +30,7 @@ namespace Om {
 			An empty Source.
 		*/
 		template <typename ThisItem>
-		class EmptySource :
+		class EmptySource:
 		public DefaultSource<
 			ThisItem,
 			EmptySource<ThisItem>

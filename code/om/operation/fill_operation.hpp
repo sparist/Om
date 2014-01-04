@@ -34,7 +34,7 @@ namespace Om {
 		\brief
 			The \ref om__operation__fill_operation__ operation implementation.
 		*/
-		class FillOperation :
+		class FillOperation:
 		public DefaultIncompleteOperation<FillOperation> {
 
 		public: // MARK: public (static)

@@ -34,13 +34,13 @@ inline char const * Type_::GetName() {
 
 // MARK: public (non-static)
 
-inline Type_::Operand() :
+inline Type_::Operand():
 thisProgram() {}
 
 template <typename TheProgram>
 inline Type_::Operand(
 	std::auto_ptr<TheProgram> theProgram
-) :
+):
 thisProgram(theProgram) {}
 
 inline Type_ & Type_::operator =(Operand theOperand) {

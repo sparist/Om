@@ -34,7 +34,7 @@ namespace Om {
 		\brief
 			The \ref om__operation__substitute_operation__ operation implementation.
 		*/
-		class SubstituteOperation :
+		class SubstituteOperation:
 		public TranslateOperation<SubstituteOperation> {
 
 		public: // MARK: public (static)

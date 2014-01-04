@@ -31,7 +31,7 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Moveable
 	>
-	class DefaultMoveable :
+	class DefaultMoveable:
 	public ThisInterface {
 
 		template <typename TheMoveable>

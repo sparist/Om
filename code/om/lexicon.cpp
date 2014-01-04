@@ -279,11 +279,11 @@ inline char const * Type_::GetName() {
 
 // MARK: public (non-static)
 
-inline Type_::Lexicon() :
+inline Type_::Lexicon():
 thisMap(),
 thisPairList() {}
 
-inline Type_::Lexicon(Lexicon const & theLexicon) :
+inline Type_::Lexicon(Lexicon const & theLexicon):
 DefaultProgram<Lexicon>(theLexicon),
 thisMap(),
 thisPairList() {
@@ -580,11 +580,11 @@ inline void boost::swap(
 
 // MARK: public (non-static)
 
-inline Type_::ElementRange() :
+inline Type_::ElementRange():
 thisNode(),
 thisOffset() {}
 
-inline Type_::ElementRange(Lexicon const & theLexicon) :
+inline Type_::ElementRange(Lexicon const & theLexicon):
 thisNode(
 	theLexicon.thisPairList.GetNode(PairList::theFrontNodeIndex)
 ),

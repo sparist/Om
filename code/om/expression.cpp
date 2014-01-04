@@ -192,7 +192,7 @@ inline char const * Type_::GetName() {
 
 // MARK: public (non-static)
 
-inline Type_::Expression() :
+inline Type_::Expression():
 thisFormDeque() {}
 
 inline Type_ & Type_::operator =(Expression theExpression) {
@@ -557,13 +557,13 @@ inline Om::Form & Type_::GetFrontTaker() {
 
 // MARK: public (non-static)
 
-inline Type_<Om::Form>::FormRange(Expression & theExpression) :
+inline Type_<Om::Form>::FormRange(Expression & theExpression):
 Om::Source::CollectionFrontSource<
 	Form,
 	FormDeque::iterator
 >(theExpression.thisFormDeque) {}
 
-inline Type_<Om::Form const>::FormRange(Expression const & theExpression) :
+inline Type_<Om::Form const>::FormRange(Expression const & theExpression):
 Om::Source::CollectionFrontSource<
 	Form const,
 	FormDeque::const_iterator
@@ -578,7 +578,7 @@ Om::Source::CollectionFrontSource<
 
 // MARK: public (non-static)
 
-inline Type_::ElementRange(Expression const & theExpression) :
+inline Type_::ElementRange(Expression const & theExpression):
 thisFormIterator(
 	theExpression.thisFormDeque.begin()
 ),

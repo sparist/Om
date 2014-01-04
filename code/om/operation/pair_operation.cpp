@@ -120,7 +120,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::PairOperation() :
+inline Type_::PairOperation():
 thisExpression() {}
 
 template <typename TheOperand>

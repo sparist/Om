@@ -29,12 +29,12 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::StreamSource() :
+inline Type_::StreamSource():
 thisStreamIterator(),
 thisItem() {}
 
 Template_
-inline Type_::StreamSource(std::istream & theStream) :
+inline Type_::StreamSource(std::istream & theStream):
 thisStreamIterator(theStream),
 thisItem() {}
 

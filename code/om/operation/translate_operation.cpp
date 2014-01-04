@@ -99,7 +99,7 @@ inline bool Type_::TakeQuotedProducer(
 // MARK: protected (non-static)
 
 Template_
-inline Type_::TranslateOperation() :
+inline Type_::TranslateOperation():
 thisLexicon() {}
 
 	#undef Type_

@@ -35,7 +35,7 @@
 // MARK: public (non-static)
 
 Template_
-inline Type_::ContainerFrontSource(ThisContainer & theContainer) :
+inline Type_::ContainerFrontSource(ThisContainer & theContainer):
 thisContainer(theContainer) {}
 
 Template_

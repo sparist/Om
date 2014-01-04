@@ -31,7 +31,7 @@ namespace Om {
 			A #CodePoint Sink that pushes each code unit to the iterator.
 		*/
 		template <typename ThisCodeUnitIterator>
-		class CodePointSink :
+		class CodePointSink:
 		public DefaultSink<
 			CodePoint const,
 			CodePointSink<ThisCodeUnitIterator>

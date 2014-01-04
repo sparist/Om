@@ -30,7 +30,7 @@ namespace Om {
 			A single item Source.
 		*/
 		template <typename ThisItem>
-		class SingletonSource :
+		class SingletonSource:
 		public DefaultSource<
 			ThisItem,
 			SingletonSource<ThisItem>

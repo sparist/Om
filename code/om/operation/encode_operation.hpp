@@ -33,7 +33,7 @@ namespace Om {
 		\brief
 			The \ref om__operation__encode_operation__ operation implementation.
 		*/
-		class EncodeOperation :
+		class EncodeOperation:
 		public DefaultIncompleteOperation<EncodeOperation> {
 
 		public: // MARK: public (static)

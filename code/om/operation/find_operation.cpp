@@ -156,7 +156,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::FindOperation() :
+inline Type_::FindOperation():
 thisOperator() {}
 
 template <typename TheOperand>

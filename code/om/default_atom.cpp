@@ -129,13 +129,13 @@ inline void Type_::Swap(ThisImplementation & theAtom) {
 // MARK: protected (non-static)
 
 Template_
-inline Type_::DefaultAtom() :
+inline Type_::DefaultAtom():
 thisString() {}
 
 Template_
 inline Type_::DefaultAtom(
 	char const theCodeUnitIterator[]
-) :
+):
 thisString(theCodeUnitIterator) {
 	assert(
 		theCodeUnitIterator &&
@@ -151,7 +151,7 @@ thisString(theCodeUnitIterator) {
 }
 
 Template_
-inline Type_::DefaultAtom(char const theCodeUnit) :
+inline Type_::DefaultAtom(char const theCodeUnit):
 thisString(
 	1,
 	theCodeUnit

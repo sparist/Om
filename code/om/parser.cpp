@@ -32,7 +32,7 @@
 
 inline Type_::Parser(
 	Om::Source::Source<CodePoint const> & theCodePointSource
-) :
+):
 thisCodePointSource(theCodePointSource),
 thisDepth(),
 thisIsEncoded() {}

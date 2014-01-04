@@ -92,7 +92,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::ChooseOperation() :
+inline Type_::ChooseOperation():
 thisEmptyCase(),
 thisNonEmptyCase(),
 thisOperandCount() {}

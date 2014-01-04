@@ -31,7 +31,7 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Copyable
 	>
-	class DefaultCopyable :
+	class DefaultCopyable:
 	public ThisInterface {
 
 		template <typename TheCopyable>

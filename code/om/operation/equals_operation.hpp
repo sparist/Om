@@ -33,7 +33,7 @@ namespace Om {
 		\brief
 			The \ref om__operation__equals_operation__ operation implementation.
 		*/
-		class EqualsOperation :
+		class EqualsOperation:
 		public DefaultIncompleteOperation<EqualsOperation> {
 
 		public: // MARK: public (static)

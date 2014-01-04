@@ -34,7 +34,7 @@ inline Om::Pair const & Type_::GetEmpty() {
 
 inline Type_::~Pair() {}
 
-inline Type_::Pair() :
+inline Type_::Pair():
 thisOperator(),
 thisOperand() {}
 

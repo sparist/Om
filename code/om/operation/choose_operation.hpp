@@ -33,7 +33,7 @@ namespace Om {
 		\brief
 			The \ref om__operation__choose_operation__ operation implementation.
 		*/
-		class ChooseOperation :
+		class ChooseOperation:
 		public DefaultIncompleteOperation<ChooseOperation> {
 
 		public: // MARK: public (static)

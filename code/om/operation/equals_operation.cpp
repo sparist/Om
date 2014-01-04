@@ -101,7 +101,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::EqualsOperation() :
+inline Type_::EqualsOperation():
 thisOperand() {}
 
 template <typename TheOperand>

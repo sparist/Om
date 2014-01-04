@@ -33,7 +33,7 @@ namespace Om {
 			typename ThisProgram,
 			typename ThisImplementation
 		>
-		class PullOperation :
+		class PullOperation:
 		public DefaultIncompleteOperation<
 			PullOperation<
 				ThisProgram,

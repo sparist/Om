@@ -33,7 +33,7 @@ namespace Om {
 		\brief
 			The \ref om__operation__define_operation__ operation implementation.
 		*/
-		class DefineOperation :
+		class DefineOperation:
 		public DefaultIncompleteOperation<DefineOperation> {
 
 		public: // MARK: public (static)

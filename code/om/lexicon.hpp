@@ -43,7 +43,7 @@ namespace Om {
 	\brief
 		The \ref om__lexicon__ Program implementation.
 	*/
-	class Lexicon :
+	class Lexicon:
 	public DefaultProgram<Lexicon>,
 	public Translator {
 
@@ -165,7 +165,7 @@ namespace Om {
 	\brief
 		A Lexicon Element range.
 	*/
-	class Lexicon::ElementRange :
+	class Lexicon::ElementRange:
 	public Source::DefaultSource<
 		Element const,
 		ElementRange

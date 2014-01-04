@@ -121,7 +121,7 @@ inline Type_::Separator(
 	}
 }
 
-inline Type_::Separator(Symbol::SeparatorSymbol const theSeparatorSymbol) :
+inline Type_::Separator(Symbol::SeparatorSymbol const theSeparatorSymbol):
 DefaultAtom<Separator>(
 	static_cast<char>(theSeparatorSymbol)
 ) {

@@ -33,7 +33,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisContainer
 		>
-		class ContainerBackSink :
+		class ContainerBackSink:
 		public DefaultSink<
 			ThisItem,
 			ContainerBackSink<

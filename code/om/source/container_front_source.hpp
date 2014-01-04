@@ -33,7 +33,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisContainer
 		>
-		class ContainerFrontSource :
+		class ContainerFrontSource:
 		public DefaultSource<
 			ThisItem,
 			ContainerFrontSource<

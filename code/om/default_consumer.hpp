@@ -31,7 +31,7 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Consumer
 	>
-	class DefaultConsumer :
+	class DefaultConsumer:
 	public ThisInterface {
 
 	public: // MARK: public (non-static)

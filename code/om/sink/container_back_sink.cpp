@@ -81,7 +81,7 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::ContainerBackSink(ThisContainer & theContainer) :
+inline Type_::ContainerBackSink(ThisContainer & theContainer):
 thisContainer(theContainer) {}
 
 Template_

@@ -34,7 +34,7 @@ namespace Om {
 		typename ThisImplementation,
 		typename ThisInterface = Program
 	>
-	class DefaultProgram :
+	class DefaultProgram:
 	public DefaultConsumer<
 		ThisImplementation,
 		DefaultGiveable<

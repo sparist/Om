@@ -37,7 +37,7 @@ namespace Om {
 	This class can be considered a smart pointer with deep copy semantics, such that copying the pointer also copies the pointee (lazily).
 	*/
 	template <typename ThisValue>
-	class Owner :
+	class Owner:
 	public Taker<
 		Owner<ThisValue>
 	> {

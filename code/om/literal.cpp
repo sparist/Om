@@ -132,7 +132,7 @@ inline Type_::~Literal() {
 	} catch (...) {}
 }
 
-inline Type_::Literal() :
+inline Type_::Literal():
 thisElementDeque() {}
 
 inline Type_ & Type_::operator =(Literal theLiteral) {
@@ -362,13 +362,13 @@ inline void Type_::TakeAtom(TheAtom & theAtom) {
 
 // MARK: public (non-static)
 
-inline Type_<Om::Literal>::ElementRange(Literal & theLiteral) :
+inline Type_<Om::Literal>::ElementRange(Literal & theLiteral):
 Om::Source::CollectionFrontSource<
 	Element,
 	ElementDeque::iterator
 >(theLiteral.thisElementDeque) {}
 
-inline Type_<Om::Literal const>::ElementRange(Literal const & theLiteral) :
+inline Type_<Om::Literal const>::ElementRange(Literal const & theLiteral):
 Om::Source::CollectionFrontSource<
 	Element const,
 	ElementDeque::const_iterator

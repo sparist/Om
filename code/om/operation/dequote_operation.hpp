@@ -33,7 +33,7 @@ namespace Om {
 		\brief
 			The \ref om__operation__dequote_operation__ operation implementation.
 		*/
-		class DequoteOperation :
+		class DequoteOperation:
 		public DefaultIncompleteOperation<DequoteOperation> {
 
 		public: // MARK: public (static)

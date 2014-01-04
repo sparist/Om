@@ -34,7 +34,7 @@ inline Type_::~Evaluation() {
 	);
 }
 
-inline Type_::Evaluation(Evaluator & theEvaluator) :
+inline Type_::Evaluation(Evaluator & theEvaluator):
 thisExpression(),
 thisEvaluator(theEvaluator) {}
 

@@ -53,7 +53,7 @@ namespace Om {
 
 	The program output by the Evaluator is an Expression. Note that if each line in the Expression was terminated by Symbol::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbol::theLineSeparatorSymbol to the final output.
 	*/
-	class Evaluator :
+	class Evaluator:
 	public DefaultConsumer<Evaluator>,
 	public Producer {
 

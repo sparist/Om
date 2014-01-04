@@ -60,7 +60,7 @@ namespace Om {
 			public:
 
 				// Note: this is intentionally non-explicit.
-				Item(char const theCodeUnit) :
+				Item(char const theCodeUnit):
 				thisCodeUnit(theCodeUnit) {}
 
 				bool operator !() const {
@@ -212,7 +212,7 @@ namespace Om {
 // MARK: public (non-static)
 
 Template_
-inline Type_::IteratorSource(ThisIterator const theIterator) :
+inline Type_::IteratorSource(ThisIterator const theIterator):
 thisIterator(theIterator) {}
 
 Template_

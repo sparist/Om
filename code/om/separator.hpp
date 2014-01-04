@@ -36,7 +36,7 @@ namespace Om {
 
 	As a Consumer, the Separator filters out all top-level Element instances except Separator.
 	*/
-	class Separator :
+	class Separator:
 	public DefaultAtom<Separator> {
 
 	public: // MARK: public (static)

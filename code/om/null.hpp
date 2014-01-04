@@ -37,7 +37,7 @@ namespace Om {
 	\brief
 		The \ref om__null__ Element implementation.
 	*/
-	class Null :
+	class Null:
 	public DefaultElement<Null> {
 
 	public: // MARK: public (static)

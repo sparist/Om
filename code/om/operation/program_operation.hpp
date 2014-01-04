@@ -30,7 +30,7 @@ namespace Om {
 			An Operation that normalizes a Program to a specific type.
 		*/
 		template <typename ThisProgram>
-		class ProgramOperation :
+		class ProgramOperation:
 		public DefaultIncompleteOperation<
 			ProgramOperation<ThisProgram>
 		> {

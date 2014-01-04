@@ -89,7 +89,7 @@ Template_
 inline Type_::CodePointSource(
 	ThisCodeUnitIterator theInputStart,
 	ThisCodeUnitIterator const theInputEnd
-) :
+):
 thisInputIterator(theInputStart),
 thisInputEnd(theInputEnd),
 thisCodePoint() {
@@ -167,7 +167,7 @@ inline void Type_::Swap(CodePointSource & theCodePointSource) {
 
 inline Type_::CodePointSource(
 	char const theCodeUnitIterator[]
-) :
+):
 CodePointSource<CodeUnitSource>(
 	CodeUnitSource(theCodeUnitIterator),
 	CodeUnitSource("")

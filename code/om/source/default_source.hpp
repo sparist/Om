@@ -39,7 +39,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisImplementation
 		>
-		class DefaultSource :
+		class DefaultSource:
 		public Source<ThisItem>,
 		public std::iterator<
 			std::input_iterator_tag,

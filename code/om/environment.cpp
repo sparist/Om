@@ -25,7 +25,7 @@
 
 // MARK: public (non-static)
 
-inline Type_::Environment() :
+inline Type_::Environment():
 thisTranslatorVector() {}
 
 inline void Type_::GiveElements(Consumer & theConsumer) const {

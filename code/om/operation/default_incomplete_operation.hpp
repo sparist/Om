@@ -34,7 +34,7 @@ namespace Om {
 			A partial implementation of IncompleteOperation.
 		*/
 		template <typename ThisImplementation>
-		class DefaultIncompleteOperation :
+		class DefaultIncompleteOperation:
 		public IncompleteOperation {
 
 		public: // MARK: public (static)

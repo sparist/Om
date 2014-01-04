@@ -33,7 +33,7 @@ namespace Om {
 		\brief
 			The \ref om__operation__swap_operation__ operation implementation.
 		*/
-		class SwapOperation :
+		class SwapOperation:
 		public DefaultIncompleteOperation<SwapOperation> {
 
 		public: // MARK: public (static)

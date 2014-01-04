@@ -37,7 +37,7 @@ namespace Om {
 			typename ThisItem,
 			typename ThisIterator
 		>
-		class IteratorSource :
+		class IteratorSource:
 		public DefaultSource<
 			ThisItem,
 			IteratorSource<

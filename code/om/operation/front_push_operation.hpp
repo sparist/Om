@@ -33,7 +33,7 @@ namespace Om {
 			typename ThisProgram,
 			typename ThisImplementation
 		>
-		class FrontPushOperation :
+		class FrontPushOperation:
 		public DefaultIncompleteOperation<
 			FrontPushOperation<
 				ThisProgram,

@@ -25,7 +25,7 @@
 
 // MARK: public (non-static)
 
-inline Type_::Form() :
+inline Type_::Form():
 thisOperator(),
 thisOperandDeque() {}
 
@@ -208,7 +208,7 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline Type_::ElementRange(Form const & theForm) :
+inline Type_::ElementRange(Form const & theForm):
 thisOperandIterator(
 	theForm.thisOperandDeque.begin()
 ),
@@ -275,13 +275,13 @@ inline bool Om::operator !=(
 
 // MARK: public (non-static)
 
-inline Type_<Om::Operand>::OperandRange(Form & theForm) :
+inline Type_<Om::Operand>::OperandRange(Form & theForm):
 Om::Source::CollectionFrontSource<
 	Operand,
 	OperandDeque::iterator
 >(theForm.thisOperandDeque) {}
 
-inline Type_<Om::Operand const>::OperandRange(Form const & theForm) :
+inline Type_<Om::Operand const>::OperandRange(Form const & theForm):
 Om::Source::CollectionFrontSource<
 	Operand const,
 	OperandDeque::const_iterator

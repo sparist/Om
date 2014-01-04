@@ -31,7 +31,7 @@ namespace Om {
 			An Operation that applies each Translator to a Program.
 		*/
 		template <typename ThisImplementation>
-		class TranslateOperation :
+		class TranslateOperation:
 		public DefaultIncompleteOperation<ThisImplementation> {
 
 		public: // MARK: public (static)
