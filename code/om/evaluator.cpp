@@ -213,16 +213,12 @@ inline void Type_::TakeOperator(
 			Operator()
 		)
 	) {
-		// Flush everything up to, and including, the operator.
-		// At the very least, the operator will be flushed.
 		if (this->thisGaveElementToOutput) {
 			this->thisOutput.TakeElement(
 				Separator::GetLineSeparator()
 			);
 		}
 
-		// Flush the evaluation.
-		// Starts with Operator; leading Operands would have been sent.
 		if (
 			!this->IsEmpty()
 		) {
@@ -232,7 +228,6 @@ inline void Type_::TakeOperator(
 			);
 		}
 
-		// Flush the operator.
 		this->thisOutput.TakeElement(theOperator);
 		this->thisGaveElementToOutput = true;
 	}
