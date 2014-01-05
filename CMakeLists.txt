@@ -83,11 +83,6 @@ foreach(Directory ${Directories})
 	list(SORT DirectoryCppFiles)
 	source_group("Source Files\\${SourceGroup}" FILES ${DirectoryCppFiles})
 	set(CppFiles ${CppFiles} ${DirectoryCppFiles})
-
-	file(GLOB DirectoryDoxFiles "${Directory}/*.dox")
-	list(SORT DirectoryDoxFiles)
-	source_group("Doxygen Files\\${SourceGroup}" FILES ${DirectoryDoxFiles})
-	set(DoxFiles ${DoxFiles} ${DirectoryDoxFiles})
 endforeach()
 
 # Add executable targets.
@@ -107,7 +102,7 @@ add_custom_target("Om.Documentation"
 	WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/code"
 	COMMENT "Generating documentation"
 	VERBATIM
-	SOURCES ${DoxFiles} ${HppFiles} ${CppFiles}
+	SOURCES ${HppFiles} ${CppFiles}
 )
 
 # For writing, use Windows line endings to allow for platform consistency

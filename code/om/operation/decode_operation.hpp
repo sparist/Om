@@ -10,6 +10,19 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operation__decode_operation__ decode
+	\ingroup om__operation__
+	\brief
+		Decodes encoded characters (non-recursively).
+	\par Input
+		<tt>{operator}</tt>
+	\par Output
+		<tt>{literal}</tt>
+	\par Implementation
+		Om::Operation::DecodeOperation
+
+	Decoding the output of \ref om__operation__encode_operation__ results in an \ref om__operand__ equivalent to the input of \ref om__operation__encode_operation__.
 */
 
 #ifndef Om_Operation_DecodeOperation_

@@ -10,6 +10,12 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operation__ Operation
+	\brief
+		A function that processes 0 or more \ref om__operand__ "Operands" as data for computation.
+	\par Implementation
+		Each \ref om__operation__ is a concrete type in the Om::Operation namespace.
 */
 
 #ifndef Om_Operation_

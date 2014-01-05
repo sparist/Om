@@ -10,6 +10,17 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operation__do_operation__ do
+	\ingroup om__operation__
+	\brief
+		Converts an \ref om__operand__ to a quoted \ref om__operator__, then \ref om__operation__dequote_operation__ "dequotes".
+	\par Input
+		<tt>{hello, world!}</tt>
+	\par Output
+		<tt>hello,` world!</tt>
+	\par Implementation
+		Om::Operation::DoOperation
 */
 
 #ifndef Om_Operation_DoOperation_

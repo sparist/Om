@@ -1,8 +1,0 @@
-/*!
-\defgroup om__operation__back_pull_form_operation__ [forms]->
-	\ingroup om__operation__
-	\brief
-		Pops the last form (a non-empty list of zero or one \ref om__operator__ "Operator(s)", followed by zero or more \ref om__operand__ "Operands"), quoted.
-	\par Implementation
-		Om::Operation::BackPullFormOperation
-*/

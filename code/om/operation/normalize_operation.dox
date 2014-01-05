@@ -1,8 +1,0 @@
-/*!
-\defgroup om__operation__normalize_operation__ normalize
-	\ingroup om__operation__
-	\brief
-		Performs a Unicode compatibility normalization (<a href="http://unicode.org/reports/tr15/">NFKD</a>) on the contents of the \ref om__operand__.
-	\par Implementation
-		Om::Operation::NormalizeOperation
-*/

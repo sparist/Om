@@ -10,6 +10,17 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operation__choose_operation__ choose
+	\ingroup om__operation__
+	\brief
+		If the third \ref om__operand__ is empty, it is replaced with the first \ref om__operand__; otherwise, it is replaced with the second.
+	\par Input
+		<tt>{empty case} {non-empty case} {conditional}</tt>
+	\par Output
+		If <tt>{conditional}</tt> is empty, <tt>{empty case}</tt>; otherwise, <tt>{non-empty case}</tt>.
+	\par Implementation
+		Om::Operation::ChooseOperation
 */
 
 #ifndef Om_Operation_ChooseOperation_

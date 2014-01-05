@@ -10,6 +10,17 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__null__ Null
+	\ingroup om__program__
+	\brief
+		The null \ref om__program__.
+	\par Interpretation
+		A \ref om__program__ is interpreted as \ref om__null__ by treating all elements as insignificant.
+	\par Normalization
+		A \ref om__program__ is normalized as \ref om__null__ by discarding all elements.
+	\par Implementation
+		Om::Null
 */
 
 #ifndef Om_Null_

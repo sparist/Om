@@ -10,6 +10,23 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__lexicon__ Lexicon
+	\ingroup om__program__
+	\brief
+		A \ref om__program__ optimized for fast mapping of \ref om__operator__ to \ref om__operand__.
+	\par Interpretation
+		A \ref om__program__ is interpreted as a \ref om__lexicon__ by treating it as a sequence of \ref om__operator__/\ref om__operand__ pairs that map \ref om__operator__ "Operators" to \ref om__operand__ "Operands" as follows:
+		-	An \ref om__operand__ following an \ref om__operator__ indicates a mapping from the \ref om__operator__ to the \ref om__operand__.
+		-	An \ref om__operator__ without an \ref om__operand__ indicates that the \ref om__operation__system_operation__ definition is to be used.
+		-	An \ref om__operand__ without an \ref om__operator__ defines the mapping for the empty \ref om__operator__. When the \ref om__lexicon__ is used in an \ref om__operation__environment_operation__, this is treated as the default mapping, applied when looking up an \ref om__operator__ that is not explicitly included in the \ref om__operation__environment_operation__.
+		-	The last mapping wins; all others are insignificant.
+	\par Normalization
+		A \ref om__program__ is normalized as a \ref om__lexicon__ as follows:
+		-	Each \ref om__separator__ is removed, and a line \ref om__separator__ is inserted between each \ref om__operator__/\ref om__operand__ pair.
+		-	In the case of duplicate mappings for an \ref om__operator__, earlier mappings are disregarded and removed from the normalized form.
+	\par Implementation
+		Om::Lexicon
 */
 
 #ifndef Om_Lexicon_

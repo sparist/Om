@@ -10,6 +10,17 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operation__skip_operation__ skip
+	\ingroup om__operation__
+	\brief
+		Skips over an \ref om__operand__ and \ref om__operation__dequote_operation__ "dequotes".
+	\par Input
+		<tt>{expression} {A}</tt>
+	\par Output
+		<tt>{A} expression</tt>
+	\par Implementation
+		Om::Operation::SkipOperation
 */
 
 #ifndef Om_Operation_SkipOperation_

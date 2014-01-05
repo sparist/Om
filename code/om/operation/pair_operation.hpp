@@ -10,6 +10,17 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operation__pair_operation__ pair
+	\ingroup om__operation__
+	\brief
+		Normalizes the first \ref om__operand__ as containing an \ref om__expression__, then appends the second \ref om__operand__ to the \ref om__expression__.
+	\par Input
+		<tt>{A} {B}</tt>
+	\par Output
+		<tt>{A{B}}</tt>
+	\par Implementation
+		Om::Operation::PairOperation
 */
 
 #ifndef Om_Operation_PairOperation_

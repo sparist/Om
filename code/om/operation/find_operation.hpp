@@ -10,6 +10,23 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operation__find_operation__ find
+	\ingroup om__operation__
+	\brief
+		Finds the \ref om__operator__, and its \ref om__operand__ mapping (if any), in a \ref om__lexicon__.
+	\par Input
+		<tt>{operator} {lexicon}</tt>
+	\par Output
+		-	If the \ref om__operator__ is found:
+			-	If an \ref om__operand__ is mapped to the \ref om__operator__ "Operator":
+				<blockquote><tt>{lexicon}{operator{operand}}</tt></blockquote>
+			-	Else:
+				<blockquote><tt>{lexicon}{operator{}}</tt></blockquote>
+		-	Else:
+				<blockquote><tt>{lexicon}{}</tt></blockquote>
+	\par Implementation
+		Om::Operation::FindOperation
 */
 
 #ifndef Om_Operation_FindOperation_

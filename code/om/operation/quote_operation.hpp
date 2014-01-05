@@ -10,6 +10,17 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operation__quote_operation__ quote
+	\ingroup om__operation__
+	\brief
+		Encloses an \ref om__operand__ in braces.
+	\par Input
+		<tt>{A}</tt>
+	\par Output
+		<tt>{{A}}</tt>
+	\par Implementation
+		Om::Operation::QuoteOperation
 */
 
 #ifndef Om_Operation_QuoteOperation_

@@ -10,6 +10,17 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operator__ Operator
+	\ingroup om__program__
+	\brief
+		An atomic \ref om__program__ element defined by any UTF-8 string.
+	\par Interpretation
+		A \ref om__program__ is interpreted as an \ref om__operator__ by treating it as containing as a single atomic UTF-8 string element containing the encoded text of all elements.
+	\par Normalization
+		A \ref om__program__ is normalized as an \ref om__operator__ by encoding and merging all elements.
+	\par Implementation
+		Om::Operator
 */
 
 #ifndef Om_Operator_

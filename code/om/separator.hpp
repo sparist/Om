@@ -11,6 +11,17 @@
 		All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__separator__ Separator
+	\ingroup om__program__
+	\brief
+		An atomic \ref om__program__ element that serves to separate other elements.
+	\par Interpretation
+		A \ref om__program__ is interpreted as a \ref om__separator__ by treating only separator code points (line, tab, and space) as significant.
+	\par Normalization
+		A \ref om__program__ is normalized as a \ref om__separator__ by discarding all non-separator code points.
+	\par Implementation
+		Om::Separator
 */
 
 #ifndef Om_Separator_

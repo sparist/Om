@@ -10,6 +10,20 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__expression__ Expression
+	\ingroup om__program__
+	\brief
+		A \ref om__program__ optimized for evaluation.
+	\par Interpretation
+		A \ref om__program__ is interpreted as an \ref om__expression__ by treating it as a list of non-empty <em>forms</em>, each containing the following:
+		-	An \ref om__operator__ (or none).
+		-	An \ref om__operand__ list (which may be empty only if there is an \ref om__operator__).
+	\par Normalization
+		A \ref om__program__ is normalized as an \ref om__expression__ as follows:
+		-	Each \ref om__separator__ is removed, and a line \ref om__separator__ is inserted between each non-empty form.
+	\par Implementation
+		Om::Expression
 */
 
 #ifndef Om_Expression_

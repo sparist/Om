@@ -10,6 +10,17 @@
 		Copyright (c) <a href="http://sparist.com">Sparist</a>. All rights reserved. This program and the accompanying materials are made available under the terms of the <a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License, Version 1.0</a>, which accompanies this distribution.
 	\authors
 		Jason Erb - Initial API, implementation, and documentation.
+
+\defgroup om__operand__ Operand
+	\ingroup om__program__
+	\brief
+		A \ref om__program__ element that wraps a \ref om__program__.
+	\par Interpretation
+		A \ref om__program__ is interpreted as an \ref om__operand__ by treating only the first operand (a \ref om__program__ enclosed by braces) as significant.
+	\par Normalization
+		A \ref om__program__ is normalized as an \ref om__operand__ by discarding all elements other than the first operand element.
+	\par Implementation
+		Om::Operand
 */
 
 #ifndef Om_Operand_
