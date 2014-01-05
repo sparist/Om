@@ -132,7 +132,7 @@ namespace Om {
 		\brief
 			Inserts the Operation into the System.
 
-		If there is already an Operation mapped to the same Operator, it will be removed.
+		If there is already an Operation mapped to the same Operator, it will be overwritten.
 		*/
 		Definition();
 
