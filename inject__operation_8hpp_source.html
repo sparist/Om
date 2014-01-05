@@ -58,76 +58,76 @@ $(document).ready(function(){initNavTree('inject__operation_8hpp_source.html',''
 </div><!--header-->
 <div class="contents">
 <a href="inject__operation_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operation_InjectOperation_</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="inject__operation_8hpp.html#a2c4261383a8aaedac0bc5b39a7701ef4">   17</a></span>&#160;<span class="preprocessor">    #define Om_Operation_InjectOperation_ \</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Operation::InjectOperation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="expression_8hpp.html">om/expression.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__incomplete__operation_8hpp.html">om/operation/default_incomplete_operation.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="system_8hpp.html">om/system.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="inject__operation_8hpp.html#a09d79ede657403c66c2ff80329f2a701">   24</a></span>&#160;<span class="preprocessor">    #define Om_Operation_InjectOperation_GetName_() \</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">    &quot;inject&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>Om {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// MARK: - Om::Operation::InjectOperation</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_inject_operation.html">   37</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_operation_1_1_inject_operation.html">InjectOperation</a>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_operation_1_1_default_incomplete_operation.html">DefaultIncompleteOperation</a>&lt;InjectOperation&gt; {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#aaba745e8d22b94c796e16fba8e77bb67">GetName</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheInjectOperation&gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#abdc6fc6b6aa26960da09896f9e6585d0">GiveElements</a>(</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                TheInjectOperation &amp;,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            );</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#a87cf8b6a4c1d9f9f16fcdc31188edd9e">InjectOperation</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifndef Om_Operation_InjectOperation_</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="inject__operation_8hpp.html#a2c4261383a8aaedac0bc5b39a7701ef4">   31</a></span>&#160;<span class="preprocessor">    #define Om_Operation_InjectOperation_ \</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    Om::Operation::InjectOperation</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="expression_8hpp.html">om/expression.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__incomplete__operation_8hpp.html">om/operation/default_incomplete_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="system_8hpp.html">om/system.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="inject__operation_8hpp.html#a09d79ede657403c66c2ff80329f2a701">   38</a></span>&#160;<span class="preprocessor">    #define Om_Operation_InjectOperation_GetName_() \</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">    &quot;inject&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>Om {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// MARK: - Om::Operation::InjectOperation</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_inject_operation.html">   51</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_operation_1_1_inject_operation.html">InjectOperation</a>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_operation_1_1_default_incomplete_operation.html">DefaultIncompleteOperation</a>&lt;InjectOperation&gt; {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#ad0edd3f30abd95e4c76f32eaae80d2a4">TakeOperand</a>(</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                TheOperand &amp;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            );</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#add2e1e62616cd6c30514d55cbacf707a">TakeQuotedProducer</a>(</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                TheProducer &amp;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#aaba745e8d22b94c796e16fba8e77bb67">GetName</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheInjectOperation&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#abdc6fc6b6aa26960da09896f9e6585d0">GiveElements</a>(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                TheInjectOperation &amp;,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#a87cf8b6a4c1d9f9f16fcdc31188edd9e">InjectOperation</a>();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_inject_operation.html#a7e2cd50a25459b347210bdeac4924c69">   68</a></span>&#160;            <a class="code" href="class_om_1_1_expression.html">Expression</a> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#a7e2cd50a25459b347210bdeac4924c69">thisInjector</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_inject_operation.html#ab05fc4a32afb97372aa00fd680251201">   74</a></span>&#160;            <a class="code" href="class_om_1_1_expression.html">Expression</a> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#ab05fc4a32afb97372aa00fd680251201">thisOutput</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_inject_operation.html#ace5687357764659ef09f6ec9e939bfac">   82</a></span>&#160;            boost::optional&lt;Evaluator&gt; <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#ace5687357764659ef09f6ec9e939bfac">thisScope</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#ad0edd3f30abd95e4c76f32eaae80d2a4">TakeOperand</a>(</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                TheOperand &amp;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#add2e1e62616cd6c30514d55cbacf707a">TakeQuotedProducer</a>(</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                TheProducer &amp;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_inject_operation.html#a7e2cd50a25459b347210bdeac4924c69">   82</a></span>&#160;            <a class="code" href="class_om_1_1_expression.html">Expression</a> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#a7e2cd50a25459b347210bdeac4924c69">thisInjector</a>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        };</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">namespace </span>{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_system_1_1_definition.html">System::Definition&lt;InjectOperation&gt;</a> <span class="keyword">const</span> theInjectDefinition;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_inject_operation.html#ab05fc4a32afb97372aa00fd680251201">   88</a></span>&#160;            <a class="code" href="class_om_1_1_expression.html">Expression</a> <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#ab05fc4a32afb97372aa00fd680251201">thisOutput</a>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="inject__operation_8cpp.html">om/operation/inject_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_inject_operation.html#ace5687357764659ef09f6ec9e939bfac">   96</a></span>&#160;            boost::optional&lt;Evaluator&gt; <a class="code" href="class_om_1_1_operation_1_1_inject_operation.html#ace5687357764659ef09f6ec9e939bfac">thisScope</a>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        };</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keyword">static</span> <a class="code" href="class_om_1_1_system_1_1_definition.html">System::Definition&lt;InjectOperation&gt;</a> <span class="keyword">const</span> theInjectDefinition;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="inject__operation_8cpp.html">om/operation/inject_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_aaba745e8d22b94c796e16fba8e77bb67"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#aaba745e8d22b94c796e16fba8e77bb67">Om::Operation::InjectOperation::GetName</a></div><div class="ttdeci">static char const * GetName()</div></div>
 <div class="ttc" id="class_om_1_1_system_1_1_definition_html"><div class="ttname"><a href="class_om_1_1_system_1_1_definition.html">Om::System::Definition</a></div><div class="ttdoc">An inserter of an Operation into the static System instance. </div><div class="ttdef"><b>Definition:</b> <a href="system_8hpp_source.html#l00052">system.hpp:52</a></div></div>
 <div class="ttc" id="system_8hpp_html"><div class="ttname"><a href="system_8hpp.html">system.hpp</a></div><div class="ttdoc">Om header file. </div></div>
@@ -136,14 +136,14 @@ $(document).ready(function(){initNavTree('inject__operation_8hpp_source.html',''
 <div class="ttc" id="class_om_1_1_consumer_html"><div class="ttname"><a href="class_om_1_1_consumer.html">Om::Consumer</a></div><div class="ttdoc">An Element taker; takes at the back. </div><div class="ttdef"><b>Definition:</b> <a href="consumer_8hpp_source.html#l00040">consumer.hpp:40</a></div></div>
 <div class="ttc" id="class_om_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_evaluation.html">Om::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00040">evaluation.hpp:40</a></div></div>
 <div class="ttc" id="inject__operation_8cpp_html"><div class="ttname"><a href="inject__operation_8cpp.html">inject_operation.cpp</a></div><div class="ttdoc">Om source file. </div></div>
-<div class="ttc" id="class_om_1_1_expression_html"><div class="ttname"><a href="class_om_1_1_expression.html">Om::Expression</a></div><div class="ttdoc">The Expression Program implementation. </div><div class="ttdef"><b>Definition:</b> <a href="expression_8hpp_source.html#l00039">expression.hpp:39</a></div></div>
+<div class="ttc" id="class_om_1_1_expression_html"><div class="ttname"><a href="class_om_1_1_expression.html">Om::Expression</a></div><div class="ttdoc">The Expression Program implementation. </div><div class="ttdef"><b>Definition:</b> <a href="expression_8hpp_source.html#l00053">expression.hpp:53</a></div></div>
 <div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_abdc6fc6b6aa26960da09896f9e6585d0"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#abdc6fc6b6aa26960da09896f9e6585d0">Om::Operation::InjectOperation::GiveElements</a></div><div class="ttdeci">static void GiveElements(TheInjectOperation &amp;, Consumer &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_ad0edd3f30abd95e4c76f32eaae80d2a4"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#ad0edd3f30abd95e4c76f32eaae80d2a4">Om::Operation::InjectOperation::TakeOperand</a></div><div class="ttdeci">bool TakeOperand(Evaluation &amp;, TheOperand &amp;)</div></div>
 <div class="ttc" id="expression_8hpp_html"><div class="ttname"><a href="expression_8hpp.html">expression.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_ace5687357764659ef09f6ec9e939bfac"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#ace5687357764659ef09f6ec9e939bfac">Om::Operation::InjectOperation::thisScope</a></div><div class="ttdeci">boost::optional&lt; Evaluator &gt; thisScope</div><div class="ttdoc">The local Evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00082">inject_operation.hpp:82</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_a7e2cd50a25459b347210bdeac4924c69"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#a7e2cd50a25459b347210bdeac4924c69">Om::Operation::InjectOperation::thisInjector</a></div><div class="ttdeci">Expression thisInjector</div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00068">inject_operation.hpp:68</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_ab05fc4a32afb97372aa00fd680251201"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#ab05fc4a32afb97372aa00fd680251201">Om::Operation::InjectOperation::thisOutput</a></div><div class="ttdeci">Expression thisOutput</div><div class="ttdoc">The argument to be used as Output. </div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00074">inject_operation.hpp:74</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html">Om::Operation::InjectOperation</a></div><div class="ttdoc">The inject operation implementation. </div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00037">inject_operation.hpp:37</a></div></div>
+<div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_ace5687357764659ef09f6ec9e939bfac"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#ace5687357764659ef09f6ec9e939bfac">Om::Operation::InjectOperation::thisScope</a></div><div class="ttdeci">boost::optional&lt; Evaluator &gt; thisScope</div><div class="ttdoc">The local Evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00096">inject_operation.hpp:96</a></div></div>
+<div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_a7e2cd50a25459b347210bdeac4924c69"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#a7e2cd50a25459b347210bdeac4924c69">Om::Operation::InjectOperation::thisInjector</a></div><div class="ttdeci">Expression thisInjector</div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00082">inject_operation.hpp:82</a></div></div>
+<div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_ab05fc4a32afb97372aa00fd680251201"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#ab05fc4a32afb97372aa00fd680251201">Om::Operation::InjectOperation::thisOutput</a></div><div class="ttdeci">Expression thisOutput</div><div class="ttdoc">The argument to be used as Output. </div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00088">inject_operation.hpp:88</a></div></div>
+<div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html">Om::Operation::InjectOperation</a></div><div class="ttdoc">The inject operation implementation. </div><div class="ttdef"><b>Definition:</b> <a href="inject__operation_8hpp_source.html#l00051">inject_operation.hpp:51</a></div></div>
 <div class="ttc" id="class_om_1_1_operation_1_1_default_incomplete_operation_html"><div class="ttname"><a href="class_om_1_1_operation_1_1_default_incomplete_operation.html">Om::Operation::DefaultIncompleteOperation</a></div><div class="ttdoc">A partial implementation of IncompleteOperation. </div><div class="ttdef"><b>Definition:</b> <a href="default__incomplete__operation_8hpp_source.html#l00037">default_incomplete_operation.hpp:37</a></div></div>
 <div class="ttc" id="class_om_1_1_operation_1_1_inject_operation_html_add2e1e62616cd6c30514d55cbacf707a"><div class="ttname"><a href="class_om_1_1_operation_1_1_inject_operation.html#add2e1e62616cd6c30514d55cbacf707a">Om::Operation::InjectOperation::TakeQuotedProducer</a></div><div class="ttdeci">bool TakeQuotedProducer(Evaluation &amp;, TheProducer &amp;)</div></div>
 </div><!-- fragment --></div><!-- contents -->
