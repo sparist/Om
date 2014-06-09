@@ -72,9 +72,9 @@ namespace Om {
 				theString.begin(),
 				theString.end()
 			);
-			Parser theParser(theCodePointSource);
+			Reader theReader(theCodePointSource);
 			Literal theLiteral;
-			theLiteral.ReadElements(theParser);
+			theLiteral.ParseElements(theReader);
 
 			Literal theCopy;
 			theCopy = theLiteral;
@@ -225,12 +225,12 @@ inline bool Type_::IsEmpty() const {
 	return this->thisElementDeque.empty();
 }
 
-inline void Type_::ReadElements(Parser & theParser) {
+inline void Type_::ParseElements(Reader & theReader) {
 	std::stack<Literal *> theStack;
 	theStack.push(this);
 
-	while (theParser) {
-		switch (*theParser) {
+	while (theReader) {
+		switch (*theReader) {
 		case Symbol::theEndOperandSymbol:
 			assert(
 				!theStack.empty() &&
@@ -255,7 +255,7 @@ inline void Type_::ReadElements(Parser & theParser) {
 				theStack.top()
 			);
 			{
-				Separator theSeparator(theParser);
+				Separator theSeparator(theReader);
 				theStack.top()->TakeSeparator(theSeparator);
 			}
 			continue;
@@ -265,18 +265,18 @@ inline void Type_::ReadElements(Parser & theParser) {
 				theStack.top()
 			);
 			{
-				Operator theOperator(theParser);
+				Operator theOperator(theReader);
 				theStack.top()->TakeOperator(theOperator);
 			}
 			continue;
 		}
-		theParser.Pop();
+		theReader.Pop();
 	}
 }
 
-inline void Type_::ReadQuotedElements(Parser & theParser) {
+inline void Type_::ParseQuotedElements(Reader & theReader) {
 	Literal theLiteral;
-	theLiteral.ReadElements(theParser);
+	theLiteral.ParseElements(theReader);
 	this->TakeQuotedProducer(theLiteral);
 }
 

@@ -79,12 +79,12 @@ inline void Type_::GiveElements(
 
 // MARK: public (non-static)
 
-inline bool Type_::ReadQuotedElements(
+inline bool Type_::ParseQuotedElements(
 	Evaluation &,
-	Parser & theParser
+	Reader & theReader
 ) {
-	while (theParser) {
-		theParser.Pop();
+	while (theReader) {
+		theReader.Pop();
 	}
 	return true;
 }

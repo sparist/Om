@@ -26,9 +26,9 @@ namespace Om {
 
 	class Operator;
 
-	class Parser;
-
 	class Producer;
+
+	class Reader;
 
 	class Separator;
 	//! \endcond
@@ -43,9 +43,15 @@ namespace Om {
 
 		virtual ~Consumer() = 0;
 
-		virtual void ReadElements(Parser &) = 0;
+		template<
+			typename TheOperator,
+			typename TheSeparator
+		>
+		void Parse(Reader &);
 
-		virtual void ReadQuotedElements(Parser &) = 0;
+		virtual void ParseElements(Reader &) = 0;
+
+		virtual void ParseQuotedElements(Reader &) = 0;
 
 		/*!
 		\brief

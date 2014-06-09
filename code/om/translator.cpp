@@ -33,11 +33,11 @@ inline void Type_::Evaluate(
 	Sink::Sink<CodePoint const> & theCodePointSink
 ) const {
 	Writer theWriter(theCodePointSink);
-	Parser theParser(theCodePointSource);
+	Reader theReader(theCodePointSource);
 	Evaluator(
 		theWriter,
 		*this
-	).ReadElements(theParser);
+	).ParseElements(theReader);
 }
 
 inline std::string Type_::Evaluate(

@@ -88,34 +88,34 @@ inline bool Type_::IsEmpty() const {
 	return !this->thisProgram;
 }
 
-inline void Type_::ReadElements(Parser & theParser) {
+inline void Type_::ParseElements(Reader & theReader) {
 	if (
 		this->IsEmpty()
 	) {
 		for (
 			;
 			;
-			theParser.Pop()
+			theReader.Pop()
 		) {
-			if (!theParser) {
+			if (!theReader) {
 				return;
 			}
-			assert(Symbol::theEndOperandSymbol != *theParser);
-			switch (*theParser) {
+			assert(Symbol::theEndOperandSymbol != *theReader);
+			switch (*theReader) {
 			default:
 				continue;
 			case Symbol::theStartOperandSymbol:
-				theParser.Pop();
+				theReader.Pop();
 				{
 					// Ensure against copy constructor call.
-					Source::Source<CodePoint const> & theCodePointSource = theParser;
+					Source::Source<CodePoint const> & theCodePointSource = theReader;
 
-					Parser theOperandParser(theCodePointSource);
-					this->ReadQuotedElements(theOperandParser);
+					Reader theOperandReader(theCodePointSource);
+					this->ParseQuotedElements(theOperandReader);
 				}
 				assert(
-					!theParser ||
-					Symbol::theEndOperandSymbol == *theParser
+					!theReader ||
+					Symbol::theEndOperandSymbol == *theReader
 				);
 				// Fall through.
 			}
@@ -125,14 +125,14 @@ inline void Type_::ReadElements(Parser & theParser) {
 
 	for (
 		;
-		theParser;
-		theParser.Pop()
+		theReader;
+		theReader.Pop()
 	) {}
 }
 
-inline void Type_::ReadQuotedElements(Parser & theParser) {
+inline void Type_::ParseQuotedElements(Reader & theReader) {
 	Literal theLiteral;
-	theLiteral.ReadElements(theParser);
+	theLiteral.ParseElements(theReader);
 	this->TakeQuotedProducer(theLiteral);
 }
 

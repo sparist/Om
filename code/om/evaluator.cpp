@@ -91,30 +91,30 @@ inline bool Type_::IsEmpty() const {
 	return this->thisIncompleteOperationVector.empty();
 }
 
-inline void Type_::ReadElements(Parser & theParser) {
-	theParser.Parse<
+inline void Type_::ParseElements(Reader & theReader) {
+	this->Parse<
 		Operator,
 		Null
-	>(*this);
+	>(theReader);
 }
 
-inline void Type_::ReadQuotedElements(Parser & theParser) {
+inline void Type_::ParseQuotedElements(Reader & theReader) {
 	Evaluation theEvaluation(*this);
-	this->ReadQuotedElements(
+	this->ParseQuotedElements(
 		theEvaluation,
-		theParser
+		theReader
 	);
 	this->Evaluate(theEvaluation);
 }
 
-inline void Type_::ReadQuotedElements(
+inline void Type_::ParseQuotedElements(
 	Evaluation & theEvaluation,
-	Parser & theParser
+	Reader & theReader
 ) {
 	if (
 		this->thisIncompleteOperationVector.empty()
 	) {
-		this->thisOutput.ReadQuotedElements(theParser);
+		this->thisOutput.ParseQuotedElements(theReader);
 		this->thisGaveElementToOutput = true;
 	} else {
 		std::auto_ptr<Operation::IncompleteOperation> theOperation(
@@ -124,9 +124,9 @@ inline void Type_::ReadQuotedElements(
 			theOperation.get()
 		);
 		if (
-			!theOperation->ReadQuotedElements(
+			!theOperation->ParseQuotedElements(
 				theEvaluation,
-				theParser
+				theReader
 			)
 		) {
 			this->thisIncompleteOperationVector.push_back(theOperation);

@@ -107,9 +107,9 @@ namespace Om {
 
 		virtual bool Merge(Separator const &);
 
-		virtual void ReadElements(Parser &);
+		virtual void ParseElements(Reader &);
 
-		virtual void ReadQuotedElements(Parser &);
+		virtual void ParseQuotedElements(Reader &);
 
 		virtual void Swap(Null &);
 

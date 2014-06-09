@@ -18,7 +18,7 @@
 
 #else
 
-	#include "om/parser.hpp"
+	#include "om/reader.hpp"
 	#include "om/source/empty_source.hpp"
 
 // MARK: - Om::Null
@@ -115,19 +115,19 @@ inline bool Type_::Merge(Separator const &) {
 	return true;
 }
 
-inline void Type_::ReadElements(Parser & theParser) {
+inline void Type_::ParseElements(Reader & theReader) {
 	for (
 		;
-		theParser;
-		theParser.Pop()
+		theReader;
+		theReader.Pop()
 	) {}
 }
 
-inline void Type_::ReadQuotedElements(Parser & theParser) {
+inline void Type_::ParseQuotedElements(Reader & theReader) {
 	for (
 		;
-		theParser;
-		theParser.Pop()
+		theReader;
+		theReader.Pop()
 	) {}
 }
 

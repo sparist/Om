@@ -155,9 +155,9 @@ namespace Om {
 				Writer theWriter(theCodePointSink);
 
 				Source::CodePointSource<> theCodePointSource(theCode);
-				Parser theParser(theCodePointSource);
+				Reader theReader(theCodePointSource);
 				Lexicon theLexicon;
-				theLexicon.ReadElements(theParser);
+				theLexicon.ParseElements(theReader);
 				theLexicon.GiveElements(theWriter);
 			}
 			BOOST_CHECK_EQUAL(
@@ -383,16 +383,16 @@ inline bool Type_::IsEmpty() const {
 	return this->thisMap.empty();
 }
 
-inline void Type_::ReadElements(Parser & theParser) {
-	theParser.Parse<
+inline void Type_::ParseElements(Reader & theReader) {
+	this->Parse<
 		Operator,
 		Null
-	>(*this);
+	>(theReader);
 }
 
-inline void Type_::ReadQuotedElements(Parser & theParser) {
+inline void Type_::ParseQuotedElements(Reader & theReader) {
 	Literal theLiteral;
-	theLiteral.ReadElements(theParser);
+	theLiteral.ParseElements(theReader);
 	this->TakeQuotedProducer(theLiteral);
 }
 

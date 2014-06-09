@@ -12,25 +12,24 @@
 		Jason Erb
 */
 
-#ifndef Om_Parser_
+#ifndef Om_Reader_
 
-	#include "om/parser.hpp"
+	#include "om/reader.hpp"
 
 #else
 
-	#include "om/consumer.hpp"
 	#include "om/symbol/operand_symbol.hpp"
 	#include "om/symbol/operator_symbol.hpp"
 	#include "om/symbol/separator_symbol.hpp"
 
-// MARK: - Om::Parser
+// MARK: - Om::Reader
 
 	#define Type_ \
-	Om::Parser
+	Om::Reader
 
 // MARK: public (non-static)
 
-inline Type_::Parser(
+inline Type_::Reader(
 	Om::Source::Source<CodePoint const> & theCodePointSource
 ):
 thisCodePointSource(theCodePointSource),
@@ -55,52 +54,12 @@ inline bool Type_::operator !() const {
 	);
 }
 
-inline bool Type_::Equals(Parser const & theParser) const {
+inline bool Type_::Equals(Reader const & theReader) const {
 	assert(
-		this->thisCodePointSource != theParser.thisCodePointSource ||
-		this->thisDepth == theParser.thisDepth
+		this->thisCodePointSource != theReader.thisCodePointSource ||
+		this->thisDepth == theReader.thisDepth
 	);
-	return this->thisCodePointSource == theParser.thisCodePointSource;
-}
-
-template<
-	typename TheOperator,
-	typename TheSeparator
->
-inline void Type_::Parse(Consumer & theConsumer) {
-	Parser & theParser = *this;
-	while (theParser) {
-		assert(Symbol::theEndOperandSymbol != *theParser);
-		switch (*theParser) {
-		case Symbol::theStartOperandSymbol:
-			theParser.Pop();
-			{
-				// Ensure that this does not resolve to the copy constructor.
-				Om::Source::Source<CodePoint const> & theCodePointSource = theParser;
-
-				Parser theOperandParser(theCodePointSource);
-				theConsumer.ReadQuotedElements(theOperandParser);
-			}
-			if (!theParser) {
-				return;
-			}
-			assert(Symbol::theEndOperandSymbol == *theParser);
-			theParser.Pop();
-			continue;
-		Om_Symbol_SeparatorSymbol_GetCases_():
-			{
-				TheSeparator theSeparator(theParser);
-				theConsumer.TakeElement(theSeparator);
-			}
-			continue;
-		default:
-			{
-				TheOperator theOperator(theParser);
-				theConsumer.TakeElement(theOperator);
-			}
-			// Fall through.
-		}
-	}
+	return this->thisCodePointSource == theReader.thisCodePointSource;
 }
 
 inline void Type_::Pop() {

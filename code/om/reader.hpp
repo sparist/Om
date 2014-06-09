@@ -12,35 +12,31 @@
 		Jason Erb
 */
 
-#ifndef Om_Parser_
+#ifndef Om_Reader_
 
-	#define Om_Parser_ \
-	Om::Parser
+	#define Om_Reader_ \
+	Om::Reader
 
 	#include "om/code_point.hpp"
 	#include "om/source/default_source.hpp"
 
 namespace Om {
 
-	//! \cond
-	class Consumer;
-	//! \endcond
-
-	// MARK: - Om::Parser
+	// MARK: - Om::Reader
 
 	/*!
 	\brief
 		Produces each #CodePoint until the end of the Source.
 	*/
-	class Parser:
+	class Reader:
 	public Source::DefaultSource<
 		CodePoint const,
-		Parser
+		Reader
 	> {
 
 	public: // MARK: public (non-static)
 
-		explicit Parser(
+		explicit Reader(
 			Om::Source::Source<CodePoint const> &
 		);
 
@@ -50,24 +46,18 @@ namespace Om {
 
 		using Om::Source::DefaultSource<
 			CodePoint const,
-			Parser
+			Reader
 		>::Equals;
 
-		bool Equals(Parser const &) const;
-
-		template<
-			typename TheOperator,
-			typename TheSeparator
-		>
-		void Parse(Consumer &);
+		bool Equals(Reader const &) const;
 
 		virtual void Pop();
 
 	private: // MARK: private (non-static)
 
-		Parser(Parser const &);
+		Reader(Reader const &);
 
-		Parser const & operator =(Parser const &);
+		Reader const & operator =(Reader const &);
 
 		Om::Source::Source<CodePoint const> & thisCodePointSource;
 
@@ -80,17 +70,17 @@ namespace Om {
 	// MARK: - Om::
 
 	bool operator ==(
-		Parser const &,
-		Parser const &
+		Reader const &,
+		Reader const &
 	);
 
 	bool operator !=(
-		Parser const &,
-		Parser const &
+		Reader const &,
+		Reader const &
 	);
 
 }
 
-	#include "om/parser.cpp"
+	#include "om/reader.cpp"
 
 #endif

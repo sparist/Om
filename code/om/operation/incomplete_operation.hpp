@@ -28,9 +28,9 @@ namespace Om {
 
 	class Operand;
 
-	class Parser;
-
 	class Producer;
+
+	class Reader;
 	//! \endcond
 
 	namespace Operation {
@@ -61,9 +61,9 @@ namespace Om {
 			*/
 			virtual void GiveElements(Consumer &) const = 0;
 
-			virtual bool ReadQuotedElements(
+			virtual bool ParseQuotedElements(
 				Evaluation &,
-				Parser &
+				Reader &
 			) = 0;
 
 			/*!

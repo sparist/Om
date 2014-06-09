@@ -103,7 +103,7 @@ namespace Om {
 
 		namespace {
 
-			static System::Definition<FillOperation> const theReadDefinition;
+			static System::Definition<FillOperation> const theFillDefinition;
 
 		}
 

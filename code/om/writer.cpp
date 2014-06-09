@@ -40,8 +40,8 @@ namespace Om {
 				Writer theWriter(theCodePointSink);
 
 				Source::CodePointSource<> theCodePointSource(theCode);
-				Parser theParser(theCodePointSource);
-				theWriter.ReadElements(theParser);
+				Reader theReader(theCodePointSource);
+				theWriter.ParseElements(theReader);
 			}
 			BOOST_CHECK_EQUAL(
 				"\n\t {\n\t {\n\t }\n\t }\n\t",
@@ -75,19 +75,19 @@ inline Type_::Writer(
 ):
 thisCodePointSink(theCodePointSink) {}
 
-inline void Type_::ReadElements(Parser & theParser) {
+inline void Type_::ParseElements(Reader & theReader) {
 	for (
 		;
-		theParser;
-		theParser.Pop()
+		theReader;
+		theReader.Pop()
 	) {
-		this->thisCodePointSink.Push(*theParser);
+		this->thisCodePointSink.Push(*theReader);
 	}
 }
 
-inline void Type_::ReadQuotedElements(Parser & theParser) {
+inline void Type_::ParseQuotedElements(Reader & theReader) {
 	this->thisCodePointSink.Push(Symbol::theStartOperandSymbol);
-	this->ReadElements(theParser);
+	this->ParseElements(theReader);
 	this->thisCodePointSink.Push(Symbol::theEndOperandSymbol);
 }
 

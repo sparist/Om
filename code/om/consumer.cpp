@@ -18,6 +18,8 @@
 
 #else
 
+	#include "om/reader.hpp"
+
 	#ifndef Om_Macro_Precompilation_
 
 		#include <cassert>
@@ -34,12 +36,51 @@
 
 inline Type_::~Consumer() {}
 
-inline void Type_::ReadElements(Parser &) {
+template<
+	typename TheOperator,
+	typename TheSeparator
+>
+inline void Type_::Parse(Reader & theReader) {
+	while (theReader) {
+		assert(Symbol::theEndOperandSymbol != *theReader);
+		switch (*theReader) {
+		case Symbol::theStartOperandSymbol:
+			theReader.Pop();
+			{
+				// Ensure that this does not resolve to the copy constructor.
+				Om::Source::Source<CodePoint const> & theCodePointSource = theReader;
+
+				Reader theOperandReader(theCodePointSource);
+				this->ParseQuotedElements(theOperandReader);
+			}
+			if (!theReader) {
+				return;
+			}
+			assert(Symbol::theEndOperandSymbol == *theReader);
+			theReader.Pop();
+			continue;
+		Om_Symbol_SeparatorSymbol_GetCases_():
+			{
+				TheSeparator theSeparator(theReader);
+				this->TakeElement(theSeparator);
+			}
+			continue;
+		default:
+			{
+				TheOperator theOperator(theReader);
+				this->TakeElement(theOperator);
+			}
+			// Fall through.
+		}
+	}
+}
+
+inline void Type_::ParseElements(Reader &) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }
 
-inline void Type_::ReadQuotedElements(Parser &) {
+inline void Type_::ParseQuotedElements(Reader &) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");
 }

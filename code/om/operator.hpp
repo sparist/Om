@@ -137,9 +137,9 @@ namespace Om {
 		*/
 		void Normalize();
 
-		virtual void ReadElements(Parser &);
+		virtual void ParseElements(Reader &);
 
-		virtual void ReadQuotedElements(Parser &);
+		virtual void ParseQuotedElements(Reader &);
 
 		template <typename TheOperand>
 		void TakeOperand(TheOperand &);

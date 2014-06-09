@@ -51,9 +51,9 @@ namespace Om {
 
 			virtual void GiveElements(Consumer &) const;
 
-			virtual bool ReadQuotedElements(
+			virtual bool ParseQuotedElements(
 				Evaluation &,
-				Parser &
+				Reader &
 			);
 
 			/*!

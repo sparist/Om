@@ -44,9 +44,9 @@ inline void Type_::GiveElements(Consumer &) const {
 	throw std::logic_error("Pure virtual function called.");
 }
 
-inline bool Type_::ReadQuotedElements(
+inline bool Type_::ParseQuotedElements(
 	Evaluation &,
-	Parser &
+	Reader &
 ) {
 	assert(0);
 	throw std::logic_error("Pure virtual function called.");

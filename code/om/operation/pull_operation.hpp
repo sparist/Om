@@ -51,9 +51,9 @@ namespace Om {
 
 		public: // MARK: public (non-static)
 
-			virtual bool ReadQuotedElements(
+			virtual bool ParseQuotedElements(
 				Evaluation &,
-				Parser &
+				Reader &
 			);
 
 			template <typename TheOperand>

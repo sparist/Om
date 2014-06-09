@@ -62,9 +62,9 @@ namespace Om {
 				Writer theWriter(theCodePointSink);
 
 				Source::CodePointSource<> theCodePointSource(theCode);
-				Parser theParser(theCodePointSource);
+				Reader theReader(theCodePointSource);
 				Separator theSeparator;
-				theSeparator.ReadElements(theParser);
+				theSeparator.ParseElements(theReader);
 				theSeparator.GiveElements(theWriter);
 			}
 			BOOST_CHECK_EQUAL(
@@ -137,42 +137,42 @@ inline Type_ & Type_::operator =(Separator theSeparator) {
 	return *this;
 }
 
-inline void Type_::ReadElements(Parser & theParser) {
+inline void Type_::ParseElements(Reader & theReader) {
 	for (
 		;
-		theParser;
-		theParser.Pop()
+		theReader;
+		theReader.Pop()
 	) {
-		assert(Symbol::theEndOperandSymbol != *theParser);
-		switch (*theParser) {
+		assert(Symbol::theEndOperandSymbol != *theReader);
+		switch (*theReader) {
 		case Symbol::theStartOperandSymbol:
-			theParser.Pop();
+			theReader.Pop();
 			{
 				// Ensure that this does not resolve to the copy constructor.
-				Source::Source<CodePoint const> & theCodePointSource = theParser;
+				Source::Source<CodePoint const> & theCodePointSource = theReader;
 
-				Parser theOperandParser(theCodePointSource);
-				this->ReadQuotedElements(theOperandParser);
+				Reader theOperandReader(theCodePointSource);
+				this->ParseQuotedElements(theOperandReader);
 			}
-			if (!theParser) {
+			if (!theReader) {
 				return;
 			}
-			assert(Symbol::theEndOperandSymbol == *theParser);
+			assert(Symbol::theEndOperandSymbol == *theReader);
 			continue;
 		Om_Symbol_SeparatorSymbol_GetCases_():
 			this->thisString.push_back(
-				static_cast<char>(*theParser)
+				static_cast<char>(*theReader)
 			);
 			// Fall through.
 		}
 	}
 }
 
-inline void Type_::ReadQuotedElements(Parser & theParser) {
+inline void Type_::ParseQuotedElements(Reader & theReader) {
 	for (
 		;
-		theParser;
-		theParser.Pop()
+		theReader;
+		theReader.Pop()
 	) {}
 }
 

@@ -73,12 +73,12 @@ inline void Type_::GiveElements(Consumer & theConsumer) const {
 }
 
 Template_
-inline bool Type_::ReadQuotedElements(
+inline bool Type_::ParseQuotedElements(
 	Evaluation & theEvaluation,
-	Parser & theParser
+	Reader & theReader
 ) {
 	Literal theLiteral;
-	theLiteral.ReadElements(theParser);
+	theLiteral.ParseElements(theReader);
 	return this->TakeQuotedElements(
 		theEvaluation,
 		theLiteral

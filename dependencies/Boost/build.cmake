@@ -40,7 +40,7 @@ function(BuildBoost Directory Name MajorVersion MinorVersion Extension Md5 Icu4c
 		message(FATAL_ERROR "Boost could not be configured: ${Status}")
 	endif()
 
-	message(STATUS "Building Boost")
+	message(STATUS "Building and Installing Boost")
 	set(BuildDirectory "${OutputDirectory}/build/${Name}")
 	set(BuildCommand ./b2)
 	set(DefineOption define=U_CHARSET_IS_UTF8=1)
@@ -62,7 +62,7 @@ function(BuildBoost Directory Name MajorVersion MinorVersion Extension Md5 Icu4c
 		RESULT_VARIABLE Status
 	)
 	if(NOT ${Status} EQUAL 0)
-		message(FATAL_ERROR "Boost could not be built: ${Status}")
+		message(FATAL_ERROR "Boost could not be built and/or installed: ${Status}")
 	endif()
 endfunction()
 
@@ -76,13 +76,14 @@ function(SetUpBoost BuildsDirectory Platform Icu4cInstallDirectory
 	ThreadDebugLibraryVariable ThreadReleaseLibraryVariable
 )
 	set(MajorVersion 1)
-	set(MinorVersion 55)
 	if(WIN32)
+		set(MinorVersion 55)
 		set(Extension zip)
 		set(Md5 8aca361a4713a1f491b0a5e33fee0f1f)
 	else()
+		set(MinorVersion 54)
 		set(Extension tar.gz)
-		set(Md5 93780777cfbf999a600f62883bd54b17)
+		set(Md5 efbfbff5a85a9330951f243d0a46e4b9)
 	endif()
 
 	set(BuildDirectoryDefault "${BuildsDirectory}/Boost")

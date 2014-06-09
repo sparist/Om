@@ -48,12 +48,12 @@ inline void Type_::GiveElements(
 // MARK: public (non-static)
 
 Template_
-inline bool Type_::ReadQuotedElements(
+inline bool Type_::ParseQuotedElements(
 	Evaluation & theEvaluation,
-	Parser & theParser
+	Reader & theReader
 ) {
 	ThisProgram theProgram;
-	theProgram.ReadElements(theParser);
+	theProgram.ParseElements(theReader);
 	return this->TakeQuotedElements(
 		theEvaluation,
 		theProgram

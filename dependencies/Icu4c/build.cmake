@@ -92,12 +92,21 @@ function(BuildIcu4c Directory Name MajorVersion MinorVersion Extension Md5)
 		message(STATUS "Building ICU4C (${Configuration})")
 		execute_process(
 			COMMAND make -s
-			COMMAND make -s install
 			WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
 			RESULT_VARIABLE Status
 		)
 		if(NOT ${Status} EQUAL 0)
 			message(FATAL_ERROR "ICU4C (${Configuration}) could not be built: ${Status}")
+		endif()
+
+		message(STATUS "Installing ICU4C (${Configuration})")
+		execute_process(
+			COMMAND make -s install
+			WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
+			RESULT_VARIABLE Status
+		)
+		if(NOT ${Status} EQUAL 0)
+			message(FATAL_ERROR "ICU4C (${Configuration}) could not be installed: ${Status}")
 		endif()
 	endfunction()
 
@@ -113,10 +122,10 @@ function(SetUpIcu4c BuildsDirectory Platform
 	UcDebugLibraryVariable UcReleaseLibraryVariable
 	DataDebugLibraryVariable DataReleaseLibraryVariable
 )
-	set(MajorVersion 52)
+	set(MajorVersion 53)
 	set(MinorVersion 1)
 	set(Extension tgz)
-	set(Md5 9e96ed4c1d99c0d14ac03c140f9f346c)
+	set(Md5 b73baa6fbdfef197608d1f69300919b9)
 
 	set(BuildDirectoryDefault "${BuildsDirectory}/Icu4c")
 	set(BuildDirectoryCaption "The ICU4C build path")

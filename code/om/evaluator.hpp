@@ -100,13 +100,13 @@ namespace Om {
 
 		virtual bool IsEmpty() const;
 
-		virtual void ReadElements(Parser &);
+		virtual void ParseElements(Reader &);
 
-		virtual void ReadQuotedElements(Parser &);
+		virtual void ParseQuotedElements(Reader &);
 
-		void ReadQuotedElements(
+		void ParseQuotedElements(
 			Evaluation &,
-			Parser &
+			Reader &
 		);
 
 		template <typename TheOperand>

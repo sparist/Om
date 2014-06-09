@@ -95,8 +95,8 @@ namespace Om {
 				Literal theLiteral;
 				{
 					Source::CodePointSource<> theCodePointSource("a{b{c}}");
-					Parser theParser(theCodePointSource);
-					theLiteral.ReadElements(theParser);
+					Reader theReader(theCodePointSource);
+					theLiteral.ParseElements(theReader);
 				}
 				theOperator.TakeQuotedProducer(theLiteral);
 				assert(
@@ -132,9 +132,9 @@ namespace Om {
 				Writer theWriter(theCodePointSink);
 
 				Source::CodePointSource<> theCodePointSource(theCode);
-				Parser theParser(theCodePointSource);
+				Reader theReader(theCodePointSource);
 				Operator theOperator;
-				theOperator.ReadElements(theParser);
+				theOperator.ParseElements(theReader);
 				theOperator.GiveElements(theWriter);
 			}
 			BOOST_CHECK_EQUAL(
@@ -324,8 +324,8 @@ inline void Type_::Decode(TheConsumer & theConsumer) const {
 		this->thisString.begin(),
 		this->thisString.end()
 	);
-	Parser theParser(theCodePointSource);
-	theConsumer.ReadElements(theParser);
+	Reader theReader(theCodePointSource);
+	theConsumer.ParseElements(theReader);
 }
 
 template <typename TheProducer>
@@ -411,28 +411,28 @@ inline void Type_::Normalize() {
 	).swap(this->thisString);
 }
 
-inline void Type_::ReadElements(Parser & theParser) {
-	while (theParser) {
-		switch (*theParser) {
+inline void Type_::ParseElements(Reader & theReader) {
+	while (theReader) {
+		switch (*theReader) {
 		case Symbol::theEndOperandSymbol:
 			// Fall through.
 		case Symbol::theStartOperandSymbol:
 			// Fall through.
 		Om_Symbol_SeparatorSymbol_GetCases_():
 			this->thisString.push_back(
-				static_cast<char>(*theParser)
+				static_cast<char>(*theReader)
 			);
-			theParser.Pop();
+			theReader.Pop();
 			continue;
 		}
-		Operator theOperator(theParser);
+		Operator theOperator(theReader);
 		this->TakeOperator(theOperator);
 	}
 }
 
-inline void Type_::ReadQuotedElements(Parser & theParser) {
+inline void Type_::ParseQuotedElements(Reader & theReader) {
 	this->thisString.push_back(Symbol::theStartOperandSymbol);
-	this->ReadElements(theParser);
+	this->ParseElements(theReader);
 	this->thisString.push_back(Symbol::theEndOperandSymbol);
 }
 
