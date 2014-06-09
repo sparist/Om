@@ -1,17 +1,9 @@
 <map id="Om::Operand" name="Om::Operand">
-<area shape="rect" id="node2" href="$class_om_1_1_default_element.html" title="Om::DefaultElement\l\&lt; Operand \&gt;" alt="" coords="1709,110,1851,154"/>
-<area shape="rect" id="node3" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Operand, Element \&gt;" alt="" coords="1509,110,1662,154"/>
-<area shape="rect" id="node4" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Operand, DefaultGiveable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="1275,67,1461,127"/>
-<area shape="rect" id="node5" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Operand, Element \&gt;" alt="" coords="1074,75,1227,119"/>
-<area shape="rect" id="node6" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Operand, DefaultCopyable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="835,67,1026,127"/>
-<area shape="rect" id="node7" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operand, Element \&gt;" alt="" coords="634,75,787,119"/>
-<area shape="rect" id="node8" href="$class_om_1_1_element.html" title="A Program that contains a single elemental item (or none, when IsEmpty() returns true). " alt="" coords="488,83,587,111"/>
-<area shape="rect" id="node9" href="$class_om_1_1_program.html" title="The Program implementation. " alt="" coords="339,83,440,111"/>
-<area shape="rect" id="node10" href="$class_om_1_1_consumer.html" title="An Element taker; takes at the back. " alt="" coords="171,5,283,33"/>
-<area shape="rect" id="node11" href="$class_om_1_1_giveable.html" title="An object that can be copied or moved via Give. " alt="" coords="175,57,278,85"/>
-<area shape="rect" id="node12" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied. " alt="" coords="7,31,113,59"/>
-<area shape="rect" id="node13" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved. " alt="" coords="6,83,114,111"/>
-<area shape="rect" id="node14" href="$class_om_1_1_producer.html" title="An Element giver; gives from the front. " alt="" coords="175,109,279,137"/>
-<area shape="rect" id="node15" href="$class_om_1_1_shareable.html" title="Om::Shareable\&lt;\&gt;" alt="" coords="163,161,290,189"/>
-<area shape="rect" id="node16" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Operand \&gt;" alt="" coords="1289,151,1447,179"/>
+<area shape="rect" id="node2" href="$class_om_1_1_default_element.html" title="Om::DefaultElement\l\&lt; Operand \&gt;" alt="" coords="1320,47,1461,91"/>
+<area shape="rect" id="node3" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Operand, ThisInterface \&gt;" alt="" coords="1091,47,1272,91"/>
+<area shape="rect" id="node4" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Operand, DefaultGiveable\l\&lt; Operand, ThisInterface \&gt; \&gt;" alt="" coords="851,5,1043,65"/>
+<area shape="rect" id="node5" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Operand, ThisInterface \&gt;" alt="" coords="622,13,802,57"/>
+<area shape="rect" id="node6" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Operand, DefaultCopyable\l\&lt; Operand, ThisInterface \&gt; \&gt;" alt="" coords="381,5,573,65"/>
+<area shape="rect" id="node7" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operand, ThisInterface \&gt;" alt="" coords="152,13,333,57"/>
+<area shape="rect" id="node9" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Operand \&gt;" alt="" coords="868,89,1026,117"/>
 </map>

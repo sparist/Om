@@ -1,10 +1,8 @@
 var namespace_om =
 [
-    [ "Macro", "namespace_om_1_1_macro.html", null ],
     [ "Operation", "namespace_om_1_1_operation.html", "namespace_om_1_1_operation" ],
     [ "Sink", "namespace_om_1_1_sink.html", "namespace_om_1_1_sink" ],
     [ "Source", "namespace_om_1_1_source.html", "namespace_om_1_1_source" ],
-    [ "Symbol", "namespace_om_1_1_symbol.html", null ],
     [ "Atom", "class_om_1_1_atom.html", "class_om_1_1_atom" ],
     [ "Consumer", "class_om_1_1_consumer.html", "class_om_1_1_consumer" ],
     [ "Copyable", "class_om_1_1_copyable.html", "class_om_1_1_copyable" ],
@@ -31,9 +29,9 @@ var namespace_om =
     [ "Operator", "class_om_1_1_operator.html", "class_om_1_1_operator" ],
     [ "Owner", "class_om_1_1_owner.html", "class_om_1_1_owner" ],
     [ "Pair", "class_om_1_1_pair.html", "class_om_1_1_pair" ],
-    [ "Parser", "class_om_1_1_parser.html", "class_om_1_1_parser" ],
     [ "Producer", "class_om_1_1_producer.html", "class_om_1_1_producer" ],
     [ "Program", "class_om_1_1_program.html", "class_om_1_1_program" ],
+    [ "Reader", "class_om_1_1_reader.html", "class_om_1_1_reader" ],
     [ "Separator", "class_om_1_1_separator.html", "class_om_1_1_separator" ],
     [ "Shareable", "class_om_1_1_shareable.html", "class_om_1_1_shareable" ],
     [ "System", "class_om_1_1_system.html", "class_om_1_1_system" ],

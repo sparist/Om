@@ -5,7 +5,7 @@ var class_om_1_1_operation_1_1_incomplete_operation =
     [ "IncompleteOperation", "class_om_1_1_operation_1_1_incomplete_operation.html#abc56c3f829879eaa3a697d283332fb07", null ],
     [ "GiveElements", "class_om_1_1_operation_1_1_incomplete_operation.html#aa053a9eaf45a6e11a7458dc1f80c65bb", null ],
     [ "GiveElements", "class_om_1_1_operation_1_1_incomplete_operation.html#a40853c808bde125ca3809da29ecacab8", null ],
-    [ "ReadQuotedElements", "class_om_1_1_operation_1_1_incomplete_operation.html#a9586dfd6dae16f8d6df2e738ba0f9e0e", null ],
+    [ "ParseQuotedElements", "class_om_1_1_operation_1_1_incomplete_operation.html#a6bf7bb93972aff1319a128e8d4242993", null ],
     [ "TakeElement", "class_om_1_1_operation_1_1_incomplete_operation.html#a128a5c0467a6fa3d03bb75854208847a", null ],
     [ "TakeElement", "class_om_1_1_operation_1_1_incomplete_operation.html#afda9e4e36cda63dd60eefbda61c77c80", null ],
     [ "TakeQuotedElements", "class_om_1_1_operation_1_1_incomplete_operation.html#afa0dfbdd97a0e26b84acbb823405acc2", null ],
