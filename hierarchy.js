@@ -2,8 +2,73 @@ var hierarchy =
 [
     [ "Om::List< Pair >", "class_om_1_1_list.html", null ],
     [ "Om::Consumer", "class_om_1_1_consumer.html", [
+      [ "Om::DefaultConsumer< Evaluator, Consumer >", "class_om_1_1_default_consumer.html", [
+        [ "Om::Evaluator", "class_om_1_1_evaluator.html", null ]
+      ] ],
+      [ "Om::DefaultConsumer< Writer, Consumer >", "class_om_1_1_default_consumer.html", [
+        [ "Om::Writer", "class_om_1_1_writer.html", null ]
+      ] ],
       [ "Om::Program", "class_om_1_1_program.html", [
+        [ "Om::DefaultCopyable< Expression, Program >", "class_om_1_1_default_copyable.html", [
+          [ "Om::DefaultMoveable< Expression, DefaultCopyable< Expression, Program > >", "class_om_1_1_default_moveable.html", [
+            [ "Om::DefaultGiveable< Expression, Program >", "class_om_1_1_default_giveable.html", [
+              [ "Om::DefaultConsumer< Expression, DefaultGiveable< Expression, Program > >", "class_om_1_1_default_consumer.html", [
+                [ "Om::DefaultProgram< Expression, Program >", "class_om_1_1_default_program.html", [
+                  [ "Om::Expression", "class_om_1_1_expression.html", null ]
+                ] ]
+              ] ]
+            ] ]
+          ] ]
+        ] ],
+        [ "Om::DefaultCopyable< Lexicon, Program >", "class_om_1_1_default_copyable.html", [
+          [ "Om::DefaultMoveable< Lexicon, DefaultCopyable< Lexicon, Program > >", "class_om_1_1_default_moveable.html", [
+            [ "Om::DefaultGiveable< Lexicon, Program >", "class_om_1_1_default_giveable.html", [
+              [ "Om::DefaultConsumer< Lexicon, DefaultGiveable< Lexicon, Program > >", "class_om_1_1_default_consumer.html", [
+                [ "Om::DefaultProgram< Lexicon, Program >", "class_om_1_1_default_program.html", [
+                  [ "Om::Lexicon", "class_om_1_1_lexicon.html", null ]
+                ] ]
+              ] ]
+            ] ]
+          ] ]
+        ] ],
+        [ "Om::DefaultCopyable< Literal, Program >", "class_om_1_1_default_copyable.html", [
+          [ "Om::DefaultMoveable< Literal, DefaultCopyable< Literal, Program > >", "class_om_1_1_default_moveable.html", [
+            [ "Om::DefaultGiveable< Literal, Program >", "class_om_1_1_default_giveable.html", [
+              [ "Om::DefaultConsumer< Literal, DefaultGiveable< Literal, Program > >", "class_om_1_1_default_consumer.html", [
+                [ "Om::DefaultProgram< Literal, Program >", "class_om_1_1_default_program.html", [
+                  [ "Om::Literal", "class_om_1_1_literal.html", null ]
+                ] ]
+              ] ]
+            ] ]
+          ] ]
+        ] ],
         [ "Om::Element", "class_om_1_1_element.html", [
+          [ "Om::DefaultCopyable< Null, Element >", "class_om_1_1_default_copyable.html", [
+            [ "Om::DefaultMoveable< Null, DefaultCopyable< Null, Element > >", "class_om_1_1_default_moveable.html", [
+              [ "Om::DefaultGiveable< Null, Element >", "class_om_1_1_default_giveable.html", [
+                [ "Om::DefaultConsumer< Null, DefaultGiveable< Null, Element > >", "class_om_1_1_default_consumer.html", [
+                  [ "Om::DefaultProgram< Null, Element >", "class_om_1_1_default_program.html", [
+                    [ "Om::DefaultElement< Null, Element >", "class_om_1_1_default_element.html", [
+                      [ "Om::Null", "class_om_1_1_null.html", null ]
+                    ] ]
+                  ] ]
+                ] ]
+              ] ]
+            ] ]
+          ] ],
+          [ "Om::DefaultCopyable< Operand, Element >", "class_om_1_1_default_copyable.html", [
+            [ "Om::DefaultMoveable< Operand, DefaultCopyable< Operand, Element > >", "class_om_1_1_default_moveable.html", [
+              [ "Om::DefaultGiveable< Operand, Element >", "class_om_1_1_default_giveable.html", [
+                [ "Om::DefaultConsumer< Operand, DefaultGiveable< Operand, Element > >", "class_om_1_1_default_consumer.html", [
+                  [ "Om::DefaultProgram< Operand, Element >", "class_om_1_1_default_program.html", [
+                    [ "Om::DefaultElement< Operand, Element >", "class_om_1_1_default_element.html", [
+                      [ "Om::Operand", "class_om_1_1_operand.html", null ]
+                    ] ]
+                  ] ]
+                ] ]
+              ] ]
+            ] ]
+          ] ],
           [ "Om::Atom", "class_om_1_1_atom.html", [
             [ "Om::DefaultCopyable< Operator, Atom >", "class_om_1_1_default_copyable.html", [
               [ "Om::DefaultMoveable< Operator, DefaultCopyable< Operator, Atom > >", "class_om_1_1_default_moveable.html", [
@@ -352,33 +417,19 @@ var hierarchy =
       [ "Om::Source::DefaultSource< ThisItem, ThisImplementation >", "class_om_1_1_source_1_1_default_source.html", null ]
     ] ],
     [ "Om::Taker< Expression >", "class_om_1_1_taker.html", [
-      [ "Om::DefaultProgram< Expression >", "class_om_1_1_default_program.html", [
-        [ "Om::Expression", "class_om_1_1_expression.html", null ]
-      ] ]
+      [ "Om::DefaultProgram< Expression, Program >", "class_om_1_1_default_program.html", null ]
     ] ],
     [ "Om::Taker< Lexicon >", "class_om_1_1_taker.html", [
-      [ "Om::DefaultProgram< Lexicon >", "class_om_1_1_default_program.html", [
-        [ "Om::Lexicon", "class_om_1_1_lexicon.html", null ]
-      ] ]
+      [ "Om::DefaultProgram< Lexicon, Program >", "class_om_1_1_default_program.html", null ]
     ] ],
     [ "Om::Taker< Literal >", "class_om_1_1_taker.html", [
-      [ "Om::DefaultProgram< Literal >", "class_om_1_1_default_program.html", [
-        [ "Om::Literal", "class_om_1_1_literal.html", null ]
-      ] ]
+      [ "Om::DefaultProgram< Literal, Program >", "class_om_1_1_default_program.html", null ]
     ] ],
     [ "Om::Taker< Null >", "class_om_1_1_taker.html", [
-      [ "Om::DefaultProgram< Null, ThisInterface >", "class_om_1_1_default_program.html", [
-        [ "Om::DefaultElement< Null >", "class_om_1_1_default_element.html", [
-          [ "Om::Null", "class_om_1_1_null.html", null ]
-        ] ]
-      ] ]
+      [ "Om::DefaultProgram< Null, Element >", "class_om_1_1_default_program.html", null ]
     ] ],
     [ "Om::Taker< Operand >", "class_om_1_1_taker.html", [
-      [ "Om::DefaultProgram< Operand, ThisInterface >", "class_om_1_1_default_program.html", [
-        [ "Om::DefaultElement< Operand >", "class_om_1_1_default_element.html", [
-          [ "Om::Operand", "class_om_1_1_operand.html", null ]
-        ] ]
-      ] ]
+      [ "Om::DefaultProgram< Operand, Element >", "class_om_1_1_default_program.html", null ]
     ] ],
     [ "Om::Taker< Operator >", "class_om_1_1_taker.html", [
       [ "Om::DefaultProgram< Operator, Atom >", "class_om_1_1_default_program.html", null ]
@@ -393,57 +444,6 @@ var hierarchy =
       [ "Om::DefaultProgram< Separator, Atom >", "class_om_1_1_default_program.html", null ]
     ] ],
     [ "ThisInterface", null, [
-      [ "Om::DefaultConsumer< Evaluator >", "class_om_1_1_default_consumer.html", [
-        [ "Om::Evaluator", "class_om_1_1_evaluator.html", null ]
-      ] ],
-      [ "Om::DefaultConsumer< Writer >", "class_om_1_1_default_consumer.html", [
-        [ "Om::Writer", "class_om_1_1_writer.html", null ]
-      ] ],
-      [ "Om::DefaultCopyable< Expression, ThisInterface >", "class_om_1_1_default_copyable.html", [
-        [ "Om::DefaultMoveable< Expression, DefaultCopyable< Expression, ThisInterface > >", "class_om_1_1_default_moveable.html", [
-          [ "Om::DefaultGiveable< Expression, ThisInterface >", "class_om_1_1_default_giveable.html", [
-            [ "Om::DefaultConsumer< Expression, DefaultGiveable< Expression, ThisInterface > >", "class_om_1_1_default_consumer.html", [
-              [ "Om::DefaultProgram< Expression >", "class_om_1_1_default_program.html", null ]
-            ] ]
-          ] ]
-        ] ]
-      ] ],
-      [ "Om::DefaultCopyable< Lexicon, ThisInterface >", "class_om_1_1_default_copyable.html", [
-        [ "Om::DefaultMoveable< Lexicon, DefaultCopyable< Lexicon, ThisInterface > >", "class_om_1_1_default_moveable.html", [
-          [ "Om::DefaultGiveable< Lexicon, ThisInterface >", "class_om_1_1_default_giveable.html", [
-            [ "Om::DefaultConsumer< Lexicon, DefaultGiveable< Lexicon, ThisInterface > >", "class_om_1_1_default_consumer.html", [
-              [ "Om::DefaultProgram< Lexicon >", "class_om_1_1_default_program.html", null ]
-            ] ]
-          ] ]
-        ] ]
-      ] ],
-      [ "Om::DefaultCopyable< Literal, ThisInterface >", "class_om_1_1_default_copyable.html", [
-        [ "Om::DefaultMoveable< Literal, DefaultCopyable< Literal, ThisInterface > >", "class_om_1_1_default_moveable.html", [
-          [ "Om::DefaultGiveable< Literal, ThisInterface >", "class_om_1_1_default_giveable.html", [
-            [ "Om::DefaultConsumer< Literal, DefaultGiveable< Literal, ThisInterface > >", "class_om_1_1_default_consumer.html", [
-              [ "Om::DefaultProgram< Literal >", "class_om_1_1_default_program.html", null ]
-            ] ]
-          ] ]
-        ] ]
-      ] ],
-      [ "Om::DefaultCopyable< Null, ThisInterface >", "class_om_1_1_default_copyable.html", [
-        [ "Om::DefaultMoveable< Null, DefaultCopyable< Null, ThisInterface > >", "class_om_1_1_default_moveable.html", [
-          [ "Om::DefaultGiveable< Null, ThisInterface >", "class_om_1_1_default_giveable.html", [
-            [ "Om::DefaultConsumer< Null, DefaultGiveable< Null, ThisInterface > >", "class_om_1_1_default_consumer.html", [
-              [ "Om::DefaultProgram< Null, ThisInterface >", "class_om_1_1_default_program.html", null ]
-            ] ]
-          ] ]
-        ] ]
-      ] ],
-      [ "Om::DefaultCopyable< Operand, ThisInterface >", "class_om_1_1_default_copyable.html", [
-        [ "Om::DefaultMoveable< Operand, DefaultCopyable< Operand, ThisInterface > >", "class_om_1_1_default_moveable.html", [
-          [ "Om::DefaultGiveable< Operand, ThisInterface >", "class_om_1_1_default_giveable.html", [
-            [ "Om::DefaultConsumer< Operand, DefaultGiveable< Operand, ThisInterface > >", "class_om_1_1_default_consumer.html", [
-              [ "Om::DefaultProgram< Operand, ThisInterface >", "class_om_1_1_default_program.html", null ]
-            ] ]
-          ] ]
-        ] ]
-      ] ],
       [ "Om::DefaultConsumer< ThisImplementation, ThisInterface >", "class_om_1_1_default_consumer.html", null ],
       [ "Om::DefaultCopyable< ThisImplementation, ThisInterface >", "class_om_1_1_default_copyable.html", [
         [ "Om::DefaultMoveable< ThisImplementation, DefaultCopyable< ThisImplementation, ThisInterface > >", "class_om_1_1_default_moveable.html", [
