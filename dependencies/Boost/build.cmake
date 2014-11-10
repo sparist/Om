@@ -72,18 +72,17 @@ function(SetUpBoost BuildsDirectory Platform Icu4cInstallDirectory
 	TestExecMonitorDebugLibraryVariable TestExecMonitorReleaseLibraryVariable
 	UnitTestFrameworkDebugLibraryVariable UnitTestFrameworkReleaseLibraryVariable
 	LocaleDebugLibraryVariable LocaleReleaseLibraryVariable
-	SystemDebugLibraryVariable SystemReleaseLibraryVariable 
+	SystemDebugLibraryVariable SystemReleaseLibraryVariable
 	ThreadDebugLibraryVariable ThreadReleaseLibraryVariable
 )
 	set(MajorVersion 1)
+	set(MinorVersion 57)
 	if(WIN32)
-		set(MinorVersion 55)
 		set(Extension zip)
-		set(Md5 8aca361a4713a1f491b0a5e33fee0f1f)
+		set(Md5 5e040e578e3f0ba879da04a1e0cd55ff)
 	else()
-		set(MinorVersion 54)
 		set(Extension tar.gz)
-		set(Md5 efbfbff5a85a9330951f243d0a46e4b9)
+		set(Md5 25f9a8ac28beeb5ab84aa98510305299)
 	endif()
 
 	set(BuildDirectoryDefault "${BuildsDirectory}/Boost")
