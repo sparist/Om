@@ -122,10 +122,10 @@ function(SetUpIcu4c BuildsDirectory Platform
 	UcDebugLibraryVariable UcReleaseLibraryVariable
 	DataDebugLibraryVariable DataReleaseLibraryVariable
 )
-	set(MajorVersion 53)
+	set(MajorVersion 54)
 	set(MinorVersion 1)
 	set(Extension tgz)
-	set(Md5 b73baa6fbdfef197608d1f69300919b9)
+	set(Md5 e844caed8f2ca24c088505b0d6271bc0)
 
 	set(BuildDirectoryDefault "${BuildsDirectory}/Icu4c")
 	set(BuildDirectoryCaption "The ICU4C build path")
