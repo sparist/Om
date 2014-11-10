@@ -55,7 +55,7 @@
 
 		\subsection language__functions__prefix__ Prefix Notation
 			Unlike other concatenative languages, %Om uses <a href="http://en.wikipedia.org/wiki/Polish_notation">prefix notation</a>. A function takes the remainder of the program as input and returns a program as output (which gets passed as input to the leftward function).
-	
+
 			Prefix notation has the following advantages over postfix notation:
 			-	Stack underflows are impossible.
 			-	Prefix notation more closely models function composition. Instead of storing a data stack in memory, the %Om evaluator stores a composed partial function.
@@ -371,8 +371,6 @@ define
 			-	Graphviz, Doxygen, and CMake
 			-	Cygwin (<tt>&quot;<em>[cygwin]</em>/bin&quot;</tt>) <b>(Windows only)</b>
 			-	Any other paths
-	 
-			Note that on Mac OS X, the path variable must be <a href="http://www.dowdandassociates.com/blog/content/howto-set-an-environment-variable-in-mac-os-x-slash-etc-slash-launchd-dot-conf/">added to <tt>&quot;etc/launchd.conf&quot;</tt></a> in order to be visible to applications.
 
 		\subsection using__dependencies__libraries__ Libraries
 			The following libraries are required to build the %Om code:

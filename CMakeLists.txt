@@ -54,7 +54,7 @@ SetUpBoost("${BuildsDirectory}" "${Platform}" "${Icu4cInstallDirectory}"
 	BoostTestExecMonitorDebugLibrary BoostTestExecMonitorReleaseLibrary
 	BoostUnitTestFrameworkDebugLibrary BoostUnitTestFrameworkReleaseLibrary
 	BoostLocaleDebugLibrary BoostLocaleReleaseLibrary
-	BoostSystemDebugLibrary BoostSystemReleaseLibrary 
+	BoostSystemDebugLibrary BoostSystemReleaseLibrary
 	BoostThreadDebugLibrary BoostThreadReleaseLibrary
 )
 
@@ -93,7 +93,7 @@ add_executable("Om.Test" ${CppFiles})
 if(WIN32)
 	set(DoxygenCommand ( type ..\\documentation\\Doxyfile && echo OUTPUT_DIRECTORY = "${BuildDirectory}/documentation" && echo WARN_FORMAT = "$file($line): $text" ) | doxygen -)
 else()
-	set(DoxygenCommand eval "( cat ../documentation/Doxyfile && echo OUTPUT_DIRECTORY = \\\"${BuildDirectory}/documentation\\\" ) | doxygen -")
+	set(DoxygenCommand PATH=$ENV{PATH} eval "( cat ../documentation/Doxyfile && echo OUTPUT_DIRECTORY = \\\"${BuildDirectory}/documentation\\\" ) | doxygen -")
 endif()
 add_custom_target("Om.Documentation"
 	ALL
