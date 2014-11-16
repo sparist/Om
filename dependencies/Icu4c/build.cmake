@@ -1,10 +1,13 @@
 cmake_minimum_required(VERSION 2.8.7)
 
-function(BuildIcu4c Directory Name MajorVersion MinorVersion Extension Md5)
-	set(Download icu)
+function(GetIcu4c Directory Name MajorVersion MinorVersion Extension Md5
+	DownloadDirectoryVariable DownloadNameVariable
+)
+	set(DownloadName icu)
+	set(${DownloadNameVariable} ${DownloadName} PARENT_SCOPE)
 
 	file(
-		DOWNLOAD "http://download.icu-project.org/files/icu4c/${MajorVersion}.${MinorVersion}/icu4c-${MajorVersion}_${MinorVersion}-src.${Extension}" "${Directory}/${Md5}/download/${Download}.${Extension}"
+		DOWNLOAD "http://download.icu-project.org/files/icu4c/${MajorVersion}.${MinorVersion}/icu4c-${MajorVersion}_${MinorVersion}-src.${Extension}" "${Directory}/downloads/${Md5}/download/${DownloadName}.${Extension}"
 		STATUS DownloadStatus
 		SHOW_PROGRESS
 		EXPECTED_MD5 ${Md5}
@@ -14,106 +17,117 @@ function(BuildIcu4c Directory Name MajorVersion MinorVersion Extension Md5)
 		list(GET DownloadStatus 1 Error)
 		message(FATAL_ERROR "ICU4C could not be downloaded: ${Error} (${Status})")
 	endif()
-	get_filename_component(OutputDirectory "${Directory}/${Md5}" REALPATH)
+	get_filename_component(DownloadDirectory "${Directory}/downloads/${Md5}" REALPATH)
+	set(${DownloadDirectoryVariable} ${DownloadDirectory} PARENT_SCOPE)
 
-	message(STATUS "Unpacking ICU4C")
-	execute_process(
-		COMMAND "${CMAKE_COMMAND}" -E tar xvzf "${Download}.${Extension}"
-		WORKING_DIRECTORY "${OutputDirectory}/download"
-		RESULT_VARIABLE Status
-	)
-	if(NOT ${Status} EQUAL 0)
-		message(FATAL_ERROR "ICU4C could not be unpacked: ${Status}")
-	endif()
-
-	execute_process(
-		COMMAND "${CMAKE_COMMAND}" -E make_directory "build/${Name}/make"
-		WORKING_DIRECTORY "${OutputDirectory}"
-		RESULT_VARIABLE Status
-	)
-	if(NOT ${Status} EQUAL 0)
-		message(FATAL_ERROR "The directory \"${OutputDirectory}/build/${Name}/make\" could not be created: ${Status}")
-	endif()
-	get_filename_component(BuildDirectory "${OutputDirectory}/build/${Name}" REALPATH)
-
-	function(BuildIcu4cConfiguration BuildDirectory Configuration)
+	if(NOT EXISTS "${DownloadDirectory}/download/complete")
+		message(STATUS "Unpacking ICU4C")
 		execute_process(
-			COMMAND "${CMAKE_COMMAND}" -E make_directory "${Configuration}"
-			WORKING_DIRECTORY "${BuildDirectory}/make"
+			COMMAND "${CMAKE_COMMAND}" -E tar xvzf "${DownloadName}.${Extension}"
+			WORKING_DIRECTORY "${DownloadDirectory}/download"
 			RESULT_VARIABLE Status
 		)
 		if(NOT ${Status} EQUAL 0)
-			message(FATAL_ERROR "The directory \"${BuildDirectory}/make/${Configuration}\" could not be created: ${Status}")
+			message(FATAL_ERROR "ICU4C could not be unpacked: ${Status}")
 		endif()
 
-		set(EnableDebugOption)
-		set(DisableReleaseOption)
-		if("${Configuration}" STREQUAL "Debug")
-			set(EnableDebugOption --enable-debug)
-			set(DisableReleaseOption --disable-release)
-		endif()
+		file(WRITE "${DownloadDirectory}/download/complete" "")
+	endif()
+endfunction()
 
-		set(DisableSharedOption --disable-shared)
-		set(PrefixOption "${InstallDirectoryDefault}")
-		set(CppFlagsOption)
-		if(WIN32)
-			set(System Cygwin/MSVC)
+function(BuildIcu4c Name DownloadDirectory DownloadName)
+	execute_process(
+		COMMAND "${CMAKE_COMMAND}" -E make_directory "build/${Name}/make"
+		WORKING_DIRECTORY "${DownloadDirectory}"
+		RESULT_VARIABLE Status
+	)
+	if(NOT ${Status} EQUAL 0)
+		message(FATAL_ERROR "The directory \"${DownloadDirectory}/build/${Name}/make\" could not be created: ${Status}")
+	endif()
+	get_filename_component(BuildDirectory "${DownloadDirectory}/build/${Name}" REALPATH)
 
+	if(NOT EXISTS "${BuildDirectory}/complete")
+		function(BuildIcu4cConfiguration BuildDirectory Configuration)
 			execute_process(
-				COMMAND cygpath --unix "${PrefixOption}"
-				OUTPUT_VARIABLE PrefixOption
+				COMMAND "${CMAKE_COMMAND}" -E make_directory "${Configuration}"
+				WORKING_DIRECTORY "${BuildDirectory}/make"
 				RESULT_VARIABLE Status
 			)
 			if(NOT ${Status} EQUAL 0)
-				message(FATAL_ERROR "The ICU4C install directory path could not be converted to Unix format: ${Status}")
+				message(FATAL_ERROR "The directory \"${BuildDirectory}/make/${Configuration}\" could not be created: ${Status}")
 			endif()
 
-			# On Windows, the shared libraries must be built for Boost ICU detection to succeed.
-			set(DisableSharedOption)
-		else()
-			if(APPLE)
-				set(System MacOSX)
+			set(EnableDebugOption)
+			set(DisableReleaseOption)
+			if("${Configuration}" STREQUAL "Debug")
+				set(EnableDebugOption --enable-debug)
+				set(DisableReleaseOption --disable-release)
+			endif()
+
+			set(DisableSharedOption --disable-shared)
+			set(PrefixOption "${InstallDirectoryDefault}")
+			set(CppFlagsOption)
+			if(WIN32)
+				set(System Cygwin/MSVC)
+
+				execute_process(
+					COMMAND cygpath --unix "${PrefixOption}"
+					OUTPUT_VARIABLE PrefixOption
+					RESULT_VARIABLE Status
+				)
+				if(NOT ${Status} EQUAL 0)
+					message(FATAL_ERROR "The ICU4C install directory path could not be converted to Unix format: ${Status}")
+				endif()
+
+				# On Windows, the shared libraries must be built for Boost ICU detection to succeed.
+				set(DisableSharedOption)
 			else()
-				set(System Linux)
+				if(APPLE)
+					set(System MacOSX)
+				else()
+					set(System Linux)
+				endif()
+				set(CppFlagsOption CPPFLAGS=-DU_CHARSET_IS_UTF8=1)
 			endif()
-			set(CppFlagsOption CPPFLAGS=-DU_CHARSET_IS_UTF8=1)
-		endif()
 
-		message(STATUS "Configuring ICU4C (${Configuration})")
-		execute_process(
-			COMMAND bash ../../../../download/icu/source/runConfigureICU ${EnableDebugOption} ${DisableReleaseOption} ${System} --enable-static ${DisableSharedOption} --prefix=${PrefixOption} ${CppFlagsOption}
-			WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
-			RESULT_VARIABLE Status
-		)
-		if(NOT ${Status} EQUAL 0)
-			message(FATAL_ERROR "ICU4C (${Configuration}) could not be configured: ${Status}")
-		endif()
+			message(STATUS "Configuring ICU4C (${Configuration})")
+			execute_process(
+				COMMAND bash ../../../../download/${DownloadName}/source/runConfigureICU ${EnableDebugOption} ${DisableReleaseOption} ${System} --enable-static ${DisableSharedOption} --prefix=${PrefixOption} ${CppFlagsOption}
+				WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
+				RESULT_VARIABLE Status
+			)
+			if(NOT ${Status} EQUAL 0)
+				message(FATAL_ERROR "ICU4C (${Configuration}) could not be configured: ${Status}")
+			endif()
 
-		message(STATUS "Building ICU4C (${Configuration})")
-		execute_process(
-			COMMAND make -s
-			WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
-			RESULT_VARIABLE Status
-		)
-		if(NOT ${Status} EQUAL 0)
-			message(FATAL_ERROR "ICU4C (${Configuration}) could not be built: ${Status}")
-		endif()
+			message(STATUS "Building ICU4C (${Configuration})")
+			execute_process(
+				COMMAND make -s
+				WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
+				RESULT_VARIABLE Status
+			)
+			if(NOT ${Status} EQUAL 0)
+				message(FATAL_ERROR "ICU4C (${Configuration}) could not be built: ${Status}")
+			endif()
 
-		message(STATUS "Installing ICU4C (${Configuration})")
-		execute_process(
-			COMMAND make -s install
-			WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
-			RESULT_VARIABLE Status
-		)
-		if(NOT ${Status} EQUAL 0)
-			message(FATAL_ERROR "ICU4C (${Configuration}) could not be installed: ${Status}")
-		endif()
-	endfunction()
+			message(STATUS "Installing ICU4C (${Configuration})")
+			execute_process(
+				COMMAND make -s install
+				WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
+				RESULT_VARIABLE Status
+			)
+			if(NOT ${Status} EQUAL 0)
+				message(FATAL_ERROR "ICU4C (${Configuration}) could not be installed: ${Status}")
+			endif()
+		endfunction()
 
-	if(WIN32)
-		BuildIcu4cConfiguration(${BuildDirectory} Debug)
+		if(WIN32)
+			BuildIcu4cConfiguration(${BuildDirectory} Debug)
+		endif()
+		BuildIcu4cConfiguration(${BuildDirectory} Release)
+
+		file(WRITE "${BuildDirectory}/complete" "")
 	endif()
-	BuildIcu4cConfiguration(${BuildDirectory} Release)
 endfunction()
 
 # Note that ICU4C does not support spaces in the path.
@@ -131,7 +145,7 @@ function(SetUpIcu4c BuildsDirectory Platform
 	set(BuildDirectoryCaption "The ICU4C build path")
 	set(Icu4cBuildDirectory "${BuildDirectoryDefault}" CACHE PATH "${BuildDirectoryCaption}")
 
-	set(InstallDirectoryDefault "${Icu4cBuildDirectory}/${Md5}/build/${Platform}/install")
+	set(InstallDirectoryDefault "${Icu4cBuildDirectory}/downloads/${Md5}/build/${Platform}/install")
 	set(InstallDirectoryCaption "The ICU4C install path")
 	set(Icu4cInstallDirectory "${InstallDirectoryDefault}" CACHE PATH "${InstallDirectoryCaption}")
 
@@ -146,12 +160,13 @@ function(SetUpIcu4c BuildsDirectory Platform
 		if(NOT ${Status} EQUAL 0)
 			message(FATAL_ERROR "The directory \"${Icu4cBuildDirectory}\" could not be created: ${Status}")
 		endif()
-
-		BuildIcu4c("${Icu4cBuildDirectory}" "${Platform}" ${MajorVersion} ${MinorVersion} ${Extension} ${Md5})
-
-		get_filename_component(InstallDirectory "${InstallDirectoryDefault}" REALPATH)
-		set(Icu4cInstallDirectory "${InstallDirectory}" CACHE PATH "${InstallDirectoryCaption}" FORCE)
 	endif()
+
+	GetIcu4c("${Icu4cBuildDirectory}" "${Platform}" "${MajorVersion}" "${MinorVersion}" "${Extension}" "${Md5}" DownloadDirectory DownloadName)
+	BuildIcu4c("${Platform}" "${DownloadDirectory}" "${DownloadName}")
+
+	get_filename_component(InstallDirectory "${InstallDirectoryDefault}" REALPATH)
+	set(Icu4cInstallDirectory "${InstallDirectory}" CACHE PATH "${InstallDirectoryCaption}" FORCE)
 
 	if(WIN32)
 		find_library(I18nDebugLibrary sicuind "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
