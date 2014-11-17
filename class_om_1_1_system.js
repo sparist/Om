@@ -1,6 +1,6 @@
 var class_om_1_1_system =
 [
-    [ "Definition", "class_om_1_1_system_1_1_definition.html", "class_om_1_1_system_1_1_definition" ],
+    [ "Definition", "singleton_om_1_1_system_1_1_definition.html", "singleton_om_1_1_system_1_1_definition" ],
     [ "Map", "class_om_1_1_system.html#aef7c5ecfb266f8e4c2b23cb7bb7ba426", null ],
     [ "System", "class_om_1_1_system.html#ad4a30a1f43df54e98137c7761b29f343", null ],
     [ "System", "class_om_1_1_system.html#af13f2728ce6ccfdca51ed94bf24069bd", null ],

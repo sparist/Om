@@ -1,7 +1,7 @@
 var expression_8hpp =
 [
     [ "Expression", "class_om_1_1_expression.html", "class_om_1_1_expression" ],
-    [ "FormRange", "class_om_1_1_expression_1_1_form_range.html", null ],
+    [ "FormRange", "singleton_om_1_1_expression_1_1_form_range.html", null ],
     [ "FormRange< Form >", "class_om_1_1_expression_1_1_form_range_3_01_form_01_4.html", "class_om_1_1_expression_1_1_form_range_3_01_form_01_4" ],
     [ "FormRange< Form const  >", "class_om_1_1_expression_1_1_form_range_3_01_form_01const_01_01_4.html", "class_om_1_1_expression_1_1_form_range_3_01_form_01const_01_01_4" ],
     [ "ElementRange", "class_om_1_1_expression_1_1_element_range.html", "class_om_1_1_expression_1_1_element_range" ],

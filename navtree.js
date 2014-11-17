@@ -48,6 +48,7 @@ var NAVTREE =
       [ "Reporting Issues", "contributing__.html#contributing__reporting_issues__", null ],
       [ "Funding", "contributing__.html#contributing__funding__", null ]
     ] ],
+    [ "Todo List", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
@@ -88,12 +89,12 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "class_om_1_1_expression.html#ad3e11702300b8da86c369bda9f3b6d90",
-"class_om_1_1_operation_1_1_choose_operation.html#a84b143fdb2f89c934146420ee450d89d",
-"class_om_1_1_operator.html#ad50c2e7969f09aabd06ab87349412b8f",
-"class_om_1_1_source_1_1_stream_source.html",
-"empty__source_8hpp.html#a58c15d24afab10e80aac757d38906057",
-"group__om____operation____literal__back__push__operation____.html",
-"pair_8hpp_source.html"
+"class_om_1_1_operation_1_1_choose_operation.html#aa92eca722b2716c53b1c890417f1c4b0",
+"class_om_1_1_operator.html#af970f7c3da522aa0dcc3667d6e8b745b",
+"class_om_1_1_source_1_1_stream_source.html#a23708eacf7135af1bf995af364dc06f7",
+"encode__operation_8cpp.html",
+"group__om____operation____operator__front__push__operation____.html",
+"pair__operation_8hpp.html#a90a43346579b3fd12da634c6c10353bd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

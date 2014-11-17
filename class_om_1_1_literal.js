@@ -1,6 +1,6 @@
 var class_om_1_1_literal =
 [
-    [ "ElementRange", "class_om_1_1_literal_1_1_element_range.html", null ],
+    [ "ElementRange", "singleton_om_1_1_literal_1_1_element_range.html", null ],
     [ "ElementRange< Literal >", "class_om_1_1_literal_1_1_element_range_3_01_literal_01_4.html", "class_om_1_1_literal_1_1_element_range_3_01_literal_01_4" ],
     [ "ElementRange< Literal const  >", "class_om_1_1_literal_1_1_element_range_3_01_literal_01const_01_01_4.html", "class_om_1_1_literal_1_1_element_range_3_01_literal_01const_01_01_4" ],
     [ "ElementDeque", "class_om_1_1_literal.html#a15f9361225d633ddf5ef7edd98cf8f5f", null ],

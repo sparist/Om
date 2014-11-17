@@ -123,12 +123,12 @@ var hierarchy =
       ] ]
     ] ],
     [ "Om::Evaluation", "class_om_1_1_evaluation.html", null ],
-    [ "Om::Expression::FormRange< ThisForm >", "class_om_1_1_expression_1_1_form_range.html", null ],
+    [ "Om::Expression::FormRange< ThisForm >", "singleton_om_1_1_expression_1_1_form_range.html", null ],
     [ "Om::Form", "class_om_1_1_form.html", null ],
-    [ "Om::Form::OperandRange< ThisOperand >", "class_om_1_1_form_1_1_operand_range.html", null ],
+    [ "Om::Form::OperandRange< ThisOperand >", "singleton_om_1_1_form_1_1_operand_range.html", null ],
     [ "Om::List< ThisValue >", "class_om_1_1_list.html", null ],
     [ "Om::List< ThisValue >::Node", "class_om_1_1_list_1_1_node.html", null ],
-    [ "Om::Literal::ElementRange< ThisLiteral >", "class_om_1_1_literal_1_1_element_range.html", null ],
+    [ "Om::Literal::ElementRange< ThisLiteral >", "singleton_om_1_1_literal_1_1_element_range.html", null ],
     [ "Om::Moveable", "class_om_1_1_moveable.html", [
       [ "Om::Giveable", "class_om_1_1_giveable.html", null ]
     ] ],
@@ -282,7 +282,7 @@ var hierarchy =
       ] ],
       [ "Om::Source::DefaultSource< ThisItem, ThisImplementation >", "class_om_1_1_source_1_1_default_source.html", null ]
     ] ],
-    [ "Om::System::Definition< ThisOperation >", "class_om_1_1_system_1_1_definition.html", null ],
+    [ "Om::System::Definition< ThisOperation >", "singleton_om_1_1_system_1_1_definition.html", null ],
     [ "Om::Taker< ThisImplementation >", "class_om_1_1_taker.html", [
       [ "Om::DefaultProgram< ThisImplementation, Atom >", "class_om_1_1_default_program.html", null ],
       [ "Om::DefaultProgram< ThisImplementation, ThisInterface >", "class_om_1_1_default_program.html", [
