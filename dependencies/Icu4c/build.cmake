@@ -35,7 +35,9 @@ function(GetIcu4c Directory Name MajorVersion MinorVersion Extension Md5
 	endif()
 endfunction()
 
-function(BuildIcu4c Name DownloadDirectory DownloadName)
+function(BuildIcu4c Name DownloadDirectory DownloadName
+	InstallDirectoryVariable
+)
 	execute_process(
 		COMMAND "${CMAKE_COMMAND}" -E make_directory "build/${Name}/make"
 		WORKING_DIRECTORY "${DownloadDirectory}"
@@ -47,7 +49,7 @@ function(BuildIcu4c Name DownloadDirectory DownloadName)
 	get_filename_component(BuildDirectory "${DownloadDirectory}/build/${Name}" REALPATH)
 
 	if(NOT EXISTS "${BuildDirectory}/complete")
-		function(BuildIcu4cConfiguration BuildDirectory Configuration)
+		function(BuildIcu4cConfiguration Configuration)
 			execute_process(
 				COMMAND "${CMAKE_COMMAND}" -E make_directory "${Configuration}"
 				WORKING_DIRECTORY "${BuildDirectory}/make"
@@ -65,7 +67,7 @@ function(BuildIcu4c Name DownloadDirectory DownloadName)
 			endif()
 
 			set(DisableSharedOption --disable-shared)
-			set(PrefixOption "${InstallDirectoryDefault}")
+			set(PrefixOption "${BuildDirectory}/install")
 			set(CppFlagsOption)
 			if(WIN32)
 				set(System Cygwin/MSVC)
@@ -122,16 +124,20 @@ function(BuildIcu4c Name DownloadDirectory DownloadName)
 		endfunction()
 
 		if(WIN32)
-			BuildIcu4cConfiguration(${BuildDirectory} Debug)
+			BuildIcu4cConfiguration(Debug)
 		endif()
-		BuildIcu4cConfiguration(${BuildDirectory} Release)
+		BuildIcu4cConfiguration(Release)
 
 		file(WRITE "${BuildDirectory}/complete" "")
 	endif()
+
+	get_filename_component(InstallDirectory "${BuildDirectory}/install" REALPATH)
+	set(${InstallDirectoryVariable} ${InstallDirectory} PARENT_SCOPE)
 endfunction()
 
 # Note that ICU4C does not support spaces in the path.
 function(SetUpIcu4c BuildsDirectory Platform
+	InstallDirectoryVariable
 	I18nDebugLibraryVariable I18nReleaseLibraryVariable
 	UcDebugLibraryVariable UcReleaseLibraryVariable
 	DataDebugLibraryVariable DataReleaseLibraryVariable
@@ -141,16 +147,11 @@ function(SetUpIcu4c BuildsDirectory Platform
 	set(Extension tgz)
 	set(Md5 e844caed8f2ca24c088505b0d6271bc0)
 
-	set(BuildDirectoryDefault "${BuildsDirectory}/Icu4c")
-	set(BuildDirectoryCaption "The ICU4C build path")
-	set(Icu4cBuildDirectory "${BuildDirectoryDefault}" CACHE PATH "${BuildDirectoryCaption}")
-
-	set(InstallDirectoryDefault "${Icu4cBuildDirectory}/downloads/${Md5}/build/${Platform}/install")
-	set(InstallDirectoryCaption "The ICU4C install path")
-	set(Icu4cInstallDirectory "${InstallDirectoryDefault}" CACHE PATH "${InstallDirectoryCaption}")
-
-	if(NOT EXISTS "${Icu4cInstallDirectory}")
-		set(Icu4cBuildDirectory "${BuildDirectoryDefault}" CACHE PATH "${BuildDirectoryCaption}" FORCE)
+	set(InstallDirectory "${Icu4cInstallDirectory}")
+	if(NOT EXISTS "${InstallDirectory}")
+		set(BuildDirectoryDefault "${BuildsDirectory}/Icu4c")
+		set(BuildDirectoryCaption "The ICU4C build path")
+		set(Icu4cBuildDirectory "${BuildDirectoryDefault}" CACHE PATH "${BuildDirectoryCaption}")
 
 		execute_process(
 			COMMAND "${CMAKE_COMMAND}" -E make_directory "${Icu4cBuildDirectory}"
@@ -160,28 +161,26 @@ function(SetUpIcu4c BuildsDirectory Platform
 		if(NOT ${Status} EQUAL 0)
 			message(FATAL_ERROR "The directory \"${Icu4cBuildDirectory}\" could not be created: ${Status}")
 		endif()
+
+		GetIcu4c("${Icu4cBuildDirectory}" "${Platform}" "${MajorVersion}" "${MinorVersion}" "${Extension}" "${Md5}" DownloadDirectory DownloadName)
+		BuildIcu4c("${Platform}" "${DownloadDirectory}" "${DownloadName}" InstallDirectory)
 	endif()
-
-	GetIcu4c("${Icu4cBuildDirectory}" "${Platform}" "${MajorVersion}" "${MinorVersion}" "${Extension}" "${Md5}" DownloadDirectory DownloadName)
-	BuildIcu4c("${Platform}" "${DownloadDirectory}" "${DownloadName}")
-
-	get_filename_component(InstallDirectory "${InstallDirectoryDefault}" REALPATH)
-	set(Icu4cInstallDirectory "${InstallDirectory}" CACHE PATH "${InstallDirectoryCaption}" FORCE)
+	set(${InstallDirectoryVariable} "${InstallDirectory}" PARENT_SCOPE)
 
 	if(WIN32)
-		find_library(I18nDebugLibrary sicuind "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(I18nReleaseLibrary sicuin "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(UcDebugLibrary sicuucd "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(UcReleaseLibrary sicuuc "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(DataDebugLibrary sicudtd "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(DataReleaseLibrary sicudt "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(I18nDebugLibrary sicuind "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(I18nReleaseLibrary sicuin "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(UcDebugLibrary sicuucd "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(UcReleaseLibrary sicuuc "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(DataDebugLibrary sicudtd "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(DataReleaseLibrary sicudt "${InstallDirectory}/lib" NO_DEFAULT_PATH)
 	else()
-		find_library(I18nDebugLibrary icui18n "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(I18nReleaseLibrary icui18n "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(UcDebugLibrary icuuc "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(UcReleaseLibrary icuuc "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(DataDebugLibrary icudata "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
-		find_library(DataReleaseLibrary icudata "${Icu4cInstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(I18nDebugLibrary icui18n "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(I18nReleaseLibrary icui18n "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(UcDebugLibrary icuuc "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(UcReleaseLibrary icuuc "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(DataDebugLibrary icudata "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+		find_library(DataReleaseLibrary icudata "${InstallDirectory}/lib" NO_DEFAULT_PATH)
 	endif()
 
 	set(${I18nDebugLibraryVariable} "${I18nDebugLibrary}" PARENT_SCOPE)

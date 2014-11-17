@@ -35,7 +35,9 @@ function(GetBoost Directory Name MajorVersion MinorVersion Extension Md5
 	endif()
 endfunction()
 
-function(BuildBoost Name DownloadDirectory DownloadName Icu4cInstallDirectory)
+function(BuildBoost Name DownloadDirectory DownloadName Icu4cInstallDirectory
+	InstallDirectoryVariable
+)
 	set(BuildDirectory "${DownloadDirectory}/build/${Name}")
 
 	if(NOT EXISTS "${BuildDirectory}/complete")
@@ -79,6 +81,9 @@ function(BuildBoost Name DownloadDirectory DownloadName Icu4cInstallDirectory)
 
 		file(WRITE "${BuildDirectory}/complete" "")
 	endif()
+
+	get_filename_component(InstallDirectory "${BuildDirectory}/install" REALPATH)
+	set(${InstallDirectoryVariable} ${InstallDirectory} PARENT_SCOPE)
 endfunction()
 
 function(SetUpBoost BuildsDirectory Platform Icu4cInstallDirectory
@@ -100,16 +105,11 @@ function(SetUpBoost BuildsDirectory Platform Icu4cInstallDirectory
 		set(Md5 25f9a8ac28beeb5ab84aa98510305299)
 	endif()
 
-	set(BuildDirectoryDefault "${BuildsDirectory}/Boost")
-	set(BuildDirectoryCaption "The Boost build path")
-	set(BoostBuildDirectory "${BuildDirectoryDefault}" CACHE PATH "${BuildDirectoryCaption}")
-
-	set(InstallDirectoryDefault "${BoostBuildDirectory}/downloads/${Md5}/build/${Platform}/install")
-	set(InstallDirectoryCaption "The Boost install path")
-	set(BoostInstallDirectory "${InstallDirectoryDefault}" CACHE PATH "${InstallDirectoryCaption}")
-
-	if(NOT EXISTS "${BoostInstallDirectory}")
-		set(BoostBuildDirectory "${BuildDirectoryDefault}" CACHE PATH "${BuildDirectoryCaption}" FORCE)
+	set(InstallDirectory "${BoostInstallDirectory}")
+	if(NOT EXISTS "${InstallDirectory}")
+		set(BuildDirectoryDefault "${BuildsDirectory}/Boost")
+		set(BuildDirectoryCaption "The Boost build path")
+		set(BoostBuildDirectory "${BuildDirectoryDefault}" CACHE PATH "${BuildDirectoryCaption}")
 
 		execute_process(
 			COMMAND "${CMAKE_COMMAND}" -E make_directory "${BoostBuildDirectory}"
@@ -119,13 +119,10 @@ function(SetUpBoost BuildsDirectory Platform Icu4cInstallDirectory
 		if(NOT ${Status} EQUAL 0)
 			message(FATAL_ERROR "The directory \"${BoostBuildDirectory}\" could not be created: ${Status}")
 		endif()
+
+		GetBoost("${BoostBuildDirectory}" "${Platform}" "${MajorVersion}" "${MinorVersion}" "${Extension}" "${Md5}" DownloadDirectory DownloadName)
+		BuildBoost("${Platform}" "${DownloadDirectory}" "${DownloadName}" "${Icu4cInstallDirectory}" InstallDirectory)
 	endif()
-
-	GetBoost("${BoostBuildDirectory}" "${Platform}" "${MajorVersion}" "${MinorVersion}" "${Extension}" "${Md5}" DownloadDirectory DownloadName)
-	BuildBoost("${Platform}" "${DownloadDirectory}" "${DownloadName}" "${Icu4cInstallDirectory}")
-
-	get_filename_component(BoostInstallDirectory "${InstallDirectoryDefault}" REALPATH)
-	set(BoostInstallDirectory "${BoostInstallDirectory}" CACHE PATH "${InstallDirectoryCaption}" FORCE)
 
 	if(WIN32)
 		# Determine MSVC version string used in Boost library names.
@@ -142,23 +139,23 @@ function(SetUpBoost BuildsDirectory Platform Icu4cInstallDirectory
 		set(DebugSuffix -vc${MsvcVersion}-mt-gd${Suffix})
 		set(ReleaseSuffix -vc${MsvcVersion}-mt${Suffix})
 
-		set(${IncludeDirectoryVariable} "${BoostInstallDirectory}/include/boost${Suffix}" PARENT_SCOPE)
+		set(${IncludeDirectoryVariable} "${InstallDirectory}/include/boost${Suffix}" PARENT_SCOPE)
 	else()
-		set(${IncludeDirectoryVariable} "${BoostInstallDirectory}/include" PARENT_SCOPE)
+		set(${IncludeDirectoryVariable} "${InstallDirectory}/include" PARENT_SCOPE)
 	endif()
 
-	find_library(PrgExecMonitorDebugLibrary ${Prefix}boost_prg_exec_monitor${DebugSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(PrgExecMonitorReleaseLibrary ${Prefix}boost_prg_exec_monitor${ReleaseSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(TestExecMonitorDebugLibrary ${Prefix}boost_test_exec_monitor${DebugSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(TestExecMonitorReleaseLibrary ${Prefix}boost_test_exec_monitor${ReleaseSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(UnitTestFrameworkDebugLibrary ${Prefix}boost_unit_test_framework${DebugSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(UnitTestFrameworkReleaseLibrary ${Prefix}boost_unit_test_framework${ReleaseSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(LocaleDebugLibrary ${Prefix}boost_locale${DebugSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(LocaleReleaseLibrary ${Prefix}boost_locale${ReleaseSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(SystemDebugLibrary ${Prefix}boost_system${DebugSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(SystemReleaseLibrary ${Prefix}boost_system${ReleaseSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(ThreadDebugLibrary ${Prefix}boost_thread${DebugSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
-	find_library(ThreadReleaseLibrary ${Prefix}boost_thread${ReleaseSuffix} "${BoostInstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(PrgExecMonitorDebugLibrary ${Prefix}boost_prg_exec_monitor${DebugSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(PrgExecMonitorReleaseLibrary ${Prefix}boost_prg_exec_monitor${ReleaseSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(TestExecMonitorDebugLibrary ${Prefix}boost_test_exec_monitor${DebugSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(TestExecMonitorReleaseLibrary ${Prefix}boost_test_exec_monitor${ReleaseSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(UnitTestFrameworkDebugLibrary ${Prefix}boost_unit_test_framework${DebugSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(UnitTestFrameworkReleaseLibrary ${Prefix}boost_unit_test_framework${ReleaseSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(LocaleDebugLibrary ${Prefix}boost_locale${DebugSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(LocaleReleaseLibrary ${Prefix}boost_locale${ReleaseSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(SystemDebugLibrary ${Prefix}boost_system${DebugSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(SystemReleaseLibrary ${Prefix}boost_system${ReleaseSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(ThreadDebugLibrary ${Prefix}boost_thread${DebugSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
+	find_library(ThreadReleaseLibrary ${Prefix}boost_thread${ReleaseSuffix} "${InstallDirectory}/lib" NO_DEFAULT_PATH)
 
 	set(${PrgExecMonitorDebugLibraryVariable} "${PrgExecMonitorDebugLibrary}" PARENT_SCOPE)
 	set(${PrgExecMonitorReleaseLibraryVariable} "${PrgExecMonitorReleaseLibrary}" PARENT_SCOPE)

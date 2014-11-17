@@ -41,6 +41,7 @@ set(BuildDirectory "${BuildsDirectory}/Om" CACHE PATH "The Om build directory pa
 # Set up ICU4C.
 include("${CMAKE_SOURCE_DIR}/dependencies/Icu4c/build.cmake")
 SetUpIcu4c("${BuildsDirectory}" "${Platform}"
+	Icu4cInstallDirectory
 	Icu4cI18nDebugLibrary Icu4cI18nReleaseLibrary
 	Icu4cUcDebugLibrary Icu4cUcReleaseLibrary
 	Icu4cDataDebugLibrary Icu4cDataReleaseLibrary
