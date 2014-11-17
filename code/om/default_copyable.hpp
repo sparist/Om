@@ -26,10 +26,12 @@ namespace Om {
 	/*!
 	\brief
 		A partial implementation of Copyable.
+	\todo
+		Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
 	*/
 	template <
 		typename ThisImplementation,
-		typename ThisInterface = Copyable
+		typename ThisInterface
 	>
 	class DefaultCopyable:
 	public ThisInterface {

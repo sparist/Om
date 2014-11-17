@@ -47,11 +47,16 @@ namespace Om {
 	/*!
 	\brief
 		The \ref om__operand__ implementation.
+	\todo
+		Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
 
 	A non-atomic Element that embeds another Program, which it owns.
 	*/
 	class Operand:
-	public DefaultElement<Operand> {
+	public DefaultElement<
+		Operand,
+		Element
+	> {
 
 	public: // MARK: public (static)
 
@@ -81,7 +86,11 @@ namespace Om {
 
 		virtual void Clear();
 
-		using DefaultElement<Operand>::Equals;
+		/*!
+		\todo
+			Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
+		*/
+		using DefaultElement<Operand, Element>::Equals;
 
 		bool Equals(Operand const &) const;
 

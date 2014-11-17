@@ -59,9 +59,14 @@ namespace Om {
 	/*!
 	\brief
 		The \ref om__lexicon__ Program implementation.
+	\todo
+		Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
 	*/
 	class Lexicon:
-	public DefaultProgram<Lexicon>,
+	public DefaultProgram<
+		Lexicon,
+		Program
+	>,
 	public Translator {
 
 	public: // MARK: public (static)

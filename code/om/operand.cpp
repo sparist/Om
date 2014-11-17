@@ -147,19 +147,27 @@ inline void Type_::Swap(Operand & theOperand) {
 	this->thisProgram.Swap(theOperand.thisProgram);
 }
 
+/*!
+\todo
+	Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
+*/
 inline void Type_::TakeElements(Producer & theProducer) {
 	if (
 		this->IsEmpty()
 	) {
-		DefaultElement<Operand>::TakeElements(theProducer);
+		DefaultElement<Operand, Element>::TakeElements(theProducer);
 	}
 }
 
+/*!
+\todo
+	Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
+*/
 inline void Type_::TakeElements(Producer const & theProducer) {
 	if (
 		this->IsEmpty()
 	) {
-		DefaultElement<Operand>::TakeElements(theProducer);
+		DefaultElement<Operand, Element>::TakeElements(theProducer);
 	}
 }
 
