@@ -374,15 +374,17 @@ define
 
 		\subsection using__dependencies__libraries__ Libraries
 			The following libraries are required to build the %Om code:
-			-	ICU4C (the C++ implementation of the <a href="http://icu-project.org">ICU</a> library), which can be downloaded and built in <tt>&quot;<em>[directory path]</em>/<em>[download MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> by including <tt>&quot;dependencies/Icu4c/build.cmake&quot;</tt> in a CMake script and calling <tt>BuildIcu4c</tt> as follows:
-				<blockquote><tt>BuildIcu4c(&quot;<em>[directory path]</em>&quot; &quot;<em>[build name]</em>&quot; <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5]</em>)</tt></blockquote>
-			-	<a href="http://boost.org">Boost</a>, which can be downloaded and built in <tt>&quot;<em>[directory path]</em>/<em>[download MD5]</em>/build/<em>[build name]</em>/install&quot;</tt> by including <tt>&quot;dependencies/Boost/build.cmake&quot;</tt> in a CMake script and calling <tt>BuildBoost</tt> as follows:
-				<blockquote><tt>BuildBoost(&quot;<em>[directory path]</em>&quot; &quot;<em>[build name]</em>&quot; <em>[major version]</em> <em>[minor version]</em> <em>[download extension]</em> <em>[download MD5]</em> <em>[ICU4C install directory path]</em>)</tt></blockquote>
+			-	ICU4C (the C++ implementation of the <a href="http://icu-project.org">ICU</a> library)
+			-	<a href="http://boost.org">Boost</a>
 
 	\section using__building__ Building
-		A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot;</tt> by running the appropriate <tt>&quot;generate&quot;</tt> script (<tt>&quot;generate.sh&quot;</tt> on Unix-based platforms, or <tt>&quot;generate.bat&quot;</tt> on Windows) from the desired builds directory. Arguments include the desired project name (required), followed by any desired CMake arguments.
+		A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot;</tt> by running the appropriate <tt>&quot;generate&quot;</tt> script from the desired builds directory:
+		- <tt>&quot;generate.sh&quot;</tt> (Unix-based platforms)
+		- <tt>&quot;generate.bat&quot;</tt> (Windows)
 
-		By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <tt>&quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</tt>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script (see \ref using__dependencies__libraries__ for instructions on building these separately):
+		Arguments include the desired project name (required), followed by any desired CMake arguments.
+
+		By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <tt>&quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/downloads/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</tt>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
 		-	<b><tt>-D Icu4cInstallDirectory:Path=&quot;<em>[absolute ICU4C install directory path]</em>&quot;</tt></b>
 		-	<b><tt>-D BoostInstallDirectory:Path=&quot;<em>[absolute Boost install directory path]</em>&quot;</tt></b>
 
