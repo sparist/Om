@@ -21,24 +21,21 @@ else()
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wcast-align -Wcast-qual -Wdisabled-optimization -Wempty-body -Werror -Wfloat-equal -Wformat=2 -Winit-self -Winline -Winvalid-pch -Wmissing-field-initializers -Wmissing-format-attribute -Woverlength-strings -Wpacked -Wpointer-arith -Wredundant-decls -Wvariadic-macros")
 endif()
 
-# Set global definitions.
-if(WIN32)
-	add_definitions(-DU_STATIC_IMPLEMENTATION=1) # For ICU4C
-elseif(UNIX)
-	add_definitions(-DU_CHARSET_IS_UTF8=1) # For ICU4C
-endif()
-
 # Set name for build folders, based on OS and compiler.
 if(CMAKE_CL_64)
 	set(PlatformBits -64)
 endif()
 set(Platform "${CMAKE_SYSTEM}-${CMAKE_CXX_COMPILER_ID}-${CMAKE_CXX_COMPILER_VERSION}${PlatformBits}")
 
-# Set main directories.
+# Set builds directory.
 set(BuildsDirectory "${CMAKE_BINARY_DIR}" CACHE PATH "The builds directory path")
-set(BuildDirectory "${BuildsDirectory}/Om" CACHE PATH "The Om build directory path")
 
 # Set up ICU4C.
+if(WIN32)
+	add_definitions(-DU_STATIC_IMPLEMENTATION=1)
+elseif(UNIX)
+	add_definitions(-DU_CHARSET_IS_UTF8=1)
+endif()
 include("${CMAKE_SOURCE_DIR}/dependencies/Icu4c/build.cmake")
 SetUpIcu4c("${BuildsDirectory}" "${Platform}"
 	Icu4cInstallDirectory
@@ -58,6 +55,9 @@ SetUpBoost("${BuildsDirectory}" "${Platform}" "${Icu4cInstallDirectory}"
 	BoostSystemDebugLibrary BoostSystemReleaseLibrary
 	BoostThreadDebugLibrary BoostThreadReleaseLibrary
 )
+
+# Set Om build directory.
+set(BuildDirectory "${BuildsDirectory}/Om" CACHE PATH "The Om build directory path")
 
 # Configure include paths.
 include_directories(SYSTEM ${SystemIncludeDirectories})
