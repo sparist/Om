@@ -494,7 +494,7 @@ define
 		Thanks to all of the people who contributed to:
 		-	The libraries and tools that the %Om implementation makes use of
 		-	The technologies and ideas that %Om builds on
-		-	%Om itself, in the form of bug reports, feedback, and encouragement.
+		-	%Om itself, in the form of bug reports, feedback, and encouragement
 
 */
 
