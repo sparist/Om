@@ -38,14 +38,9 @@ namespace Om {
 		/*!
 		\brief
 			A Consumer that pushes each Element to a #CodePoint Sink upon receipt.
-		\todo
-			Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
 		*/
 		class Writer:
-		public DefaultConsumer<
-			Writer,
-			Consumer
-		> {
+		public DefaultConsumer<Writer> {
 
 		public: // MARK: public (non-static)
 

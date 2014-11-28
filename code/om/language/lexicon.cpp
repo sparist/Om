@@ -287,15 +287,8 @@ inline Type_::Lexicon():
 thisMap(),
 thisPairList() {}
 
-/*!
-\todo
-	Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
-*/
 inline Type_::Lexicon(Lexicon const & theLexicon):
-DefaultProgram<
-	Lexicon,
-	Program
->(theLexicon),
+DefaultProgram<Lexicon>(theLexicon),
 thisMap(),
 thisPairList() {
 	for (

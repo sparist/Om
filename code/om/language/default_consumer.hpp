@@ -28,12 +28,10 @@ namespace Om {
 		/*!
 		\brief
 			A partial implementation of Consumer.
-		\todo
-			Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
 		*/
 		template <
 			typename ThisImplementation,
-			typename ThisInterface
+			typename ThisInterface = Consumer
 		>
 		class DefaultConsumer:
 		public ThisInterface {

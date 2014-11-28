@@ -50,14 +50,9 @@ namespace Om {
 		/*!
 		\brief
 			The \ref om__literal__ Program implementation.
-		\todo
-			Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
 		*/
 		class Literal:
-		public DefaultProgram<
-			Literal,
-			Program
-		> {
+		public DefaultProgram<Literal> {
 
 		public: // MARK: public (static)
 

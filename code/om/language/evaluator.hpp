@@ -47,8 +47,6 @@ namespace Om {
 		/*!
 		\brief
 			A Consumer that evaluates Program instances.
-		\todo
-			Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
 
 		The Evaluator interprets each Element as follows:
 		-	When an Operator is taken, the Translator is queried for the corresponding Operation. If found, its implementation is given to the Evaluator for further evaluation; otherwise, the IncompleteOperation vector is flushed and the Operator is given to the output Consumer.
@@ -58,10 +56,7 @@ namespace Om {
 		The program output by the Evaluator is an Expression. Note that if each line in the Expression was terminated by Symbol::theLineSeparatorSymbol, more than one Evaluator could not be connected in sequence without each contributing Symbol::theLineSeparatorSymbol to the final output.
 		*/
 		class Evaluator:
-		public DefaultConsumer<
-			Evaluator,
-			Consumer
-		>,
+		public DefaultConsumer<Evaluator>,
 		public Producer {
 
 		public: // MARK: public (non-static)

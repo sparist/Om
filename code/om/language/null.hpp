@@ -49,14 +49,9 @@ namespace Om {
 		/*!
 		\brief
 			The \ref om__null__ Element implementation.
-		\todo
-			Restore default ThisInterface argument when <a href="https://bugzilla.gnome.org/show_bug.cgi?id=739863">Doxygen bug 739863</a> is fixed.
 		*/
 		class Null:
-		public DefaultElement<
-			Null,
-			Element
-		> {
+		public DefaultElement<Null> {
 
 		public: // MARK: public (static)
 
