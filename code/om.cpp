@@ -1,7 +1,7 @@
 /*!
 \file
 	\brief
-		<a href="http://om-language.org">Om</a> source file.
+		<a href="http://github.com/sparist/Om">Om</a> source file.
 	\version
 		0.1.3
 	\date
@@ -22,7 +22,7 @@
 
 bool init_unit_test() {
 	boost::debug::detect_memory_leaks(false);
-	Om::System::Get().Initialize("en_US.UTF-8");
+	Om::Language::System::Get().Initialize("en_US.UTF-8");
 	return true;
 }
 
@@ -43,7 +43,7 @@ int main(
 	assert(0 < theArgumentCount);
 	assert(theArgumentArray);
 
-	Om::System::Get().Initialize(
+	Om::Language::System::Get().Initialize(
 		1 < theArgumentCount ?
 		theArgumentArray[1] :
 		"en_US.UTF-8"
@@ -60,7 +60,7 @@ int main(
 	CodeUnitSink theCodeUnitSink(std::cout);
 	Om::Sink::CodePointSink<CodeUnitSink> theCodePointSink(theCodeUnitSink);
 
-	Om::System::Get().Evaluate(
+	Om::Language::System::Get().Evaluate(
 		theCodePointSource,
 		theCodePointSink
 	);

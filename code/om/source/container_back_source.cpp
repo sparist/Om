@@ -1,7 +1,7 @@
 /*!
 \file
 	\brief
-		<a href="http://om-language.org">Om</a> source file.
+		<a href="http://github.com/sparist/Om">Om</a> source file.
 	\version
 		0.1.3
 	\date

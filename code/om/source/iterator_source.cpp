@@ -1,7 +1,7 @@
 /*!
 \file
 	\brief
-		<a href="http://om-language.org">Om</a> source file.
+		<a href="http://github.com/sparist/Om">Om</a> source file.
 	\version
 		0.1.3
 	\date
@@ -36,7 +36,7 @@ namespace Om {
 				char const theCodeUnitIterator[],
 				std::string & theSinkString
 			) {
-				typedef Source::IteratorSource<
+				typedef Om::Source::IteratorSource<
 					char const,
 					char const *
 				> IteratorSource;
@@ -75,7 +75,7 @@ namespace Om {
 
 		BOOST_AUTO_TEST_CASE(GeneralTest) {
 			typedef Item * Iterator;
-			typedef Source::IteratorSource<
+			typedef Om::Source::IteratorSource<
 				Item,
 				Iterator
 			> IteratorSource;
