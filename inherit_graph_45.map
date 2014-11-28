@@ -1,18 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Null, Element \&gt;" alt="" coords="127,31,276,70"/>
-<area shape="rect" id="node9" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operand, Element \&gt;" alt="" coords="125,98,278,137"/>
-<area shape="rect" id="node3" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Null, DefaultCopyable\l\&lt; Null, Element \&gt; \&gt;" alt="" coords="340,21,502,73"/>
-<area shape="rect" id="node4" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Null, Element \&gt;" alt="" coords="569,15,714,54"/>
-<area shape="rect" id="node5" href="$class_om_1_1_language_1_1_default_consumer.html" title="Om::Language::DefaultConsumer\l\&lt; Null, DefaultGiveable\&lt;\l Null, Element \&gt; \&gt;" alt="" coords="766,5,986,57"/>
-<area shape="rect" id="node6" href="$class_om_1_1_language_1_1_default_program.html" title="Om::Language::DefaultProgram\l\&lt; Null, Element \&gt;" alt="" coords="1035,43,1245,82"/>
-<area shape="rect" id="node7" href="$class_om_1_1_language_1_1_default_element.html" title="Om::Language::DefaultElement\l\&lt; Null, Element \&gt;" alt="" coords="1293,43,1501,82"/>
-<area shape="rect" id="node8" href="$class_om_1_1_language_1_1_null.html" title="The Null Element implementation. " alt="" coords="1565,50,1705,75"/>
-<area shape="rect" id="node10" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Operand, DefaultCopyable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="326,99,517,151"/>
-<area shape="rect" id="node11" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Operand, Element \&gt;" alt="" coords="565,113,718,151"/>
-<area shape="rect" id="node12" href="$class_om_1_1_language_1_1_default_consumer.html" title="Om::Language::DefaultConsumer\l\&lt; Operand, DefaultGiveable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="766,130,986,182"/>
-<area shape="rect" id="node13" href="$class_om_1_1_language_1_1_default_program.html" title="Om::Language::DefaultProgram\l\&lt; Operand, Element \&gt;" alt="" coords="1035,167,1245,206"/>
-<area shape="rect" id="node14" href="$class_om_1_1_language_1_1_default_element.html" title="Om::Language::DefaultElement\l\&lt; Operand, Element \&gt;" alt="" coords="1293,167,1501,206"/>
-<area shape="rect" id="node15" href="$class_om_1_1_language_1_1_operand.html" title="The Operand implementation. " alt="" coords="1550,174,1719,199"/>
-<area shape="rect" id="node16" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Null \&gt;" alt="" coords="812,81,940,106"/>
-<area shape="rect" id="node17" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Operand \&gt;" alt="" coords="797,206,955,231"/>
+<area shape="rect" id="node1" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Owner\&lt; ThisValue \&gt; \&gt;" alt="" coords="6,5,232,30"/>
+<area shape="rect" id="node2" href="$class_om_1_1_owner.html" title="A polymorphic object with value semantics. " alt="" coords="280,5,451,30"/>
 </map>

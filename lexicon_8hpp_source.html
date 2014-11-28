@@ -31,7 +31,6 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -82,193 +81,190 @@
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// MARK: - Om::Language::Lexicon</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html">   67</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_language_1_1_default_program.html">DefaultProgram</a>&lt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            Lexicon,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Program</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        &gt;,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_language_1_1_translator.html">Translator</a> {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">ElementRange</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_lexicon.html#abb96eba1b31e6fa897efabc637f07a19">GetName</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon.html#acd55b357b478953100175f879eb95be3">Lexicon</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon.html#acd55b357b478953100175f879eb95be3">Lexicon</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a> <span class="keyword">const</span> &amp;);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a> &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a1b00529cd4ca3fd3a54fe043202896da">operator =</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ad6d928073d8bc61eed8ccf51e46d7276">BackGivePair</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ac8e31b083b3c84885f48efc9aeee3b5d">Clear</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_pair.html">Pair</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a24a66b06f116c854d6161c4f4d609b5e">Find</a>(<a class="code" href="class_om_1_1_language_1_1_operator.html">Operator</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ab5d9a452bd62507fda258affd975ea5a">FrontGivePair</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keyword">virtual</span> std::auto_ptr&lt;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <a class="code" href="class_om_1_1_source_1_1_source.html">Om::Source::Source&lt;Element const&gt;</a></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            &gt; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ab2d4b179dc03c0033c473cca87495578">GetElementRange</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a01d7a7d4200b86b81791d8300ccf11d2">GiveElements</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a01d7a7d4200b86b81791d8300ccf11d2">GiveElements</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a326171f74c91405edc35b3438d36866a">IsEmpty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a8ad1faf149a8d30b97d2494bd0382c80">ParseElements</a>(<a class="code" href="class_om_1_1_language_1_1_reader.html">Reader</a> &amp;);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#aba19425a466c4892edb0bd6b13794f48">ParseQuotedElements</a>(<a class="code" href="class_om_1_1_language_1_1_reader.html">Reader</a> &amp;);</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html">   65</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_language_1_1_default_program.html">DefaultProgram</a>&lt;Lexicon&gt;,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_language_1_1_translator.html">Translator</a> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">ElementRange</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_lexicon.html#abb96eba1b31e6fa897efabc637f07a19">GetName</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon.html#acd55b357b478953100175f879eb95be3">Lexicon</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon.html#acd55b357b478953100175f879eb95be3">Lexicon</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a> &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a1b00529cd4ca3fd3a54fe043202896da">operator =</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ad6d928073d8bc61eed8ccf51e46d7276">BackGivePair</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ac8e31b083b3c84885f48efc9aeee3b5d">Clear</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_pair.html">Pair</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a24a66b06f116c854d6161c4f4d609b5e">Find</a>(<a class="code" href="class_om_1_1_language_1_1_operator.html">Operator</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ab5d9a452bd62507fda258affd975ea5a">FrontGivePair</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">virtual</span> std::auto_ptr&lt;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <a class="code" href="class_om_1_1_source_1_1_source.html">Om::Source::Source&lt;Element const&gt;</a></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            &gt; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ab2d4b179dc03c0033c473cca87495578">GetElementRange</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a01d7a7d4200b86b81791d8300ccf11d2">GiveElements</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a01d7a7d4200b86b81791d8300ccf11d2">GiveElements</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a326171f74c91405edc35b3438d36866a">IsEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a8ad1faf149a8d30b97d2494bd0382c80">ParseElements</a>(<a class="code" href="class_om_1_1_language_1_1_reader.html">Reader</a> &amp;);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#aba19425a466c4892edb0bd6b13794f48">ParseQuotedElements</a>(<a class="code" href="class_om_1_1_language_1_1_reader.html">Reader</a> &amp;);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a311bec1880e5fcff459a1bd09c9688cb">Swap</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a> &amp;);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a815eb531e8f685da9e28ec2a37dc3ba9">TakeOperand</a>(TheOperand &amp;);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a311bec1880e5fcff459a1bd09c9688cb">Swap</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a> &amp;);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a815eb531e8f685da9e28ec2a37dc3ba9">TakeOperand</a>(TheOperand &amp;);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a3fe46b0839a74c4a77256b453eed6e95">TakeOperator</a>(TheOperator &amp;);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a9d91a37c17c83ab631087c412617b909">TakeQuotedProducer</a>(TheProducer &amp;);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheSeparator&gt;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ae17247abb2dd904e3d0dc79d6b671493">TakeSeparator</a>(TheSeparator &amp;);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a3fe46b0839a74c4a77256b453eed6e95">TakeOperator</a>(TheOperator &amp;);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a9d91a37c17c83ab631087c412617b909">TakeQuotedProducer</a>(TheProducer &amp;);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheSeparator&gt;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ae17247abb2dd904e3d0dc79d6b671493">TakeSeparator</a>(TheSeparator &amp;);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a90dbee6c4f96afde36d75bfdcdc43e71">Translate</a>(</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_operator.html">Operator</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            ) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a90dbee6c4f96afde36d75bfdcdc43e71">Translate</a>(</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_operator.html">Operator</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (static)</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html#af472e8b174ced07707ac128eea3da32b">  135</a></span>&#160;            <span class="keyword">typedef</span> <a class="code" href="class_om_1_1_list.html">List&lt;Pair&gt;</a> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#af472e8b174ced07707ac128eea3da32b">PairList</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (static)</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html#af472e8b174ced07707ac128eea3da32b">  130</a></span>&#160;            <span class="keyword">typedef</span> <a class="code" href="class_om_1_1_list.html">List&lt;Pair&gt;</a> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#af472e8b174ced07707ac128eea3da32b">PairList</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keyword">typedef</span> boost::ptr_map&lt;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                std::string,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                PairList::Node</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html#a8928b6823c0c87b190ff7f9dfee5674c">  135</a></span>&#160;            &gt; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a8928b6823c0c87b190ff7f9dfee5674c">Map</a>;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keyword">typedef</span> boost::ptr_map&lt;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                std::string,</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                PairList::Node</div>
-<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html#a8928b6823c0c87b190ff7f9dfee5674c">  140</a></span>&#160;            &gt; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a8928b6823c0c87b190ff7f9dfee5674c">Map</a>;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheNode&gt;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a01d7a7d4200b86b81791d8300ccf11d2">GiveElements</a>(</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                TheNode * theFirstNode,</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp; theConsumer</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            );</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            PairList::Node &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ad965d3568a955bd96f57282376599757">GetOperandTaker</a>();</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            PairList::Node &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ad965d3568a955bd96f57282376599757">GetOperandTaker</a>(TheOperator &amp;);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheNode&gt;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a01d7a7d4200b86b81791d8300ccf11d2">GiveElements</a>(</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                TheNode * theFirstNode,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp; theConsumer</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            );</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            PairList::Node &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ad965d3568a955bd96f57282376599757">GetOperandTaker</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            PairList::Node &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ad965d3568a955bd96f57282376599757">GetOperandTaker</a>(TheOperator &amp;);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ab153b7479dbdb2a3203005bd2c66709a">GivePair</a>(</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <a class="code" href="class_om_1_1_list.html#a95aa07c0b1b820ec23ddbdc0f9c45b3d">PairList::NodeIndex</a> <span class="keyword">const</span>,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            );</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ab153b7479dbdb2a3203005bd2c66709a">GivePair</a>(</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <a class="code" href="class_om_1_1_list.html#a95aa07c0b1b820ec23ddbdc0f9c45b3d">PairList::NodeIndex</a> <span class="keyword">const</span>,</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            );</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html#a8d1293b1d2bca65762a16d33baafcaf6">  180</a></span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a8928b6823c0c87b190ff7f9dfee5674c">Map</a> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a8d1293b1d2bca65762a16d33baafcaf6">thisMap</a>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html#ae737d6aec7495873c37e36fd651e425e">  182</a></span>&#160;            PairList <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ae737d6aec7495873c37e36fd651e425e">thisPairList</a>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        };</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment">// MARK: - Om::Language::Lexicon::ElementRange</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">  192</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Lexicon::ElementRange</a>:</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html">Om::Source::DefaultSource</a>&lt;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            Element const,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            ElementRange</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        &gt; {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#ac6e60598e4c46416abc30e407dccb707">ElementRange</a>();</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#ac6e60598e4c46416abc30e407dccb707">ElementRange</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a> <span class="keyword">const</span> &amp;);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#ab0ebe62076fa7d1b7833719ff0a33fce">operator !</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_language_1_1_element.html">Element</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#abc17ecb07ddbf097170f143485978e50">operator *</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html#a8d1293b1d2bca65762a16d33baafcaf6">  175</a></span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a8928b6823c0c87b190ff7f9dfee5674c">Map</a> <a class="code" href="class_om_1_1_language_1_1_lexicon.html#a8d1293b1d2bca65762a16d33baafcaf6">thisMap</a>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon.html#ae737d6aec7495873c37e36fd651e425e">  177</a></span>&#160;            PairList <a class="code" href="class_om_1_1_language_1_1_lexicon.html#ae737d6aec7495873c37e36fd651e425e">thisPairList</a>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        };</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">// MARK: - Om::Language::Lexicon::ElementRange</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">  187</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Lexicon::ElementRange</a>:</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html">Om::Source::DefaultSource</a>&lt;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            Element const,</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            ElementRange</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        &gt; {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#ac6e60598e4c46416abc30e407dccb707">ElementRange</a>();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#ac6e60598e4c46416abc30e407dccb707">ElementRange</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon.html">Lexicon</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#ab0ebe62076fa7d1b7833719ff0a33fce">operator !</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_language_1_1_element.html">Element</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#abc17ecb07ddbf097170f143485978e50">operator *</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keyword">using</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html">Om::Source::DefaultSource</a>&lt;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_element.html">Element</a> <span class="keyword">const</span>,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">ElementRange</a></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            &gt;<a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a649ca3d6b83d8c28b5ebe628f1648ad6">::Equals</a>;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keyword">using</span> <a class="code" href="class_om_1_1_source_1_1_default_source.html">Om::Source::DefaultSource</a>&lt;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_element.html">Element</a> <span class="keyword">const</span>,</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">ElementRange</a></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            &gt;<a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a649ca3d6b83d8c28b5ebe628f1648ad6">::Equals</a>;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a649ca3d6b83d8c28b5ebe628f1648ad6">Equals</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">ElementRange</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a1ca21d4f48251ff1e41b1cd41c948279">Pop</a>();</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
-<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a8358330a9505f42fc41592a1cf5a4a6e">  223</a></span>&#160;            PairList::Node <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a8358330a9505f42fc41592a1cf5a4a6e">thisNode</a>;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
-<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a36bf56d598112104f109a0386d551178">  229</a></span>&#160;            <span class="keywordtype">char</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a36bf56d598112104f109a0386d551178">thisOffset</a>;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        };</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="comment">// MARK: - Om::Language::</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a649ca3d6b83d8c28b5ebe628f1648ad6">Equals</a>(<a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">ElementRange</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a1ca21d4f48251ff1e41b1cd41c948279">Pop</a>();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a8358330a9505f42fc41592a1cf5a4a6e">  218</a></span>&#160;            PairList::Node <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a8358330a9505f42fc41592a1cf5a4a6e">thisNode</a>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a36bf56d598112104f109a0386d551178">  224</a></span>&#160;            <span class="keywordtype">char</span> <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a36bf56d598112104f109a0386d551178">thisOffset</a>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        };</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="comment">// MARK: - Om::Language::</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_language.html#ad72b6cdba5c41a18a953d13077b86d76">operator ==</a>(</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Lexicon::ElementRange</a> <span class="keyword">const</span> &amp;,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Lexicon::ElementRange</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        );</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_language.html#ad72b6cdba5c41a18a953d13077b86d76">operator ==</a>(</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_language.html#a23795841bc18d640b2f57abe85905faf">operator !=</a>(</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Lexicon::ElementRange</a> <span class="keyword">const</span> &amp;,</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Lexicon::ElementRange</a> <span class="keyword">const</span> &amp;</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        );</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_language.html#a23795841bc18d640b2f57abe85905faf">operator !=</a>(</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Lexicon::ElementRange</a> <span class="keyword">const</span> &amp;,</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Lexicon::ElementRange</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        );</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// MARK: - boost::</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a03ce84b81b38bd696b479b0ea91b6825">swap</a>(</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="class_om_1_1_language_1_1_lexicon.html">Om::Language::Lexicon</a> &amp;,</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <a class="code" href="class_om_1_1_language_1_1_lexicon.html">Om::Language::Lexicon</a> &amp;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    );</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="lexicon_8cpp.html">om/language/lexicon.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;}</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">// MARK: - boost::</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a03ce84b81b38bd696b479b0ea91b6825">swap</a>(</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <a class="code" href="class_om_1_1_language_1_1_lexicon.html">Om::Language::Lexicon</a> &amp;,</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <a class="code" href="class_om_1_1_language_1_1_lexicon.html">Om::Language::Lexicon</a> &amp;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    );</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="lexicon_8cpp.html">om/language/lexicon.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_abb96eba1b31e6fa897efabc637f07a19"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#abb96eba1b31e6fa897efabc637f07a19">Om::Language::Lexicon::GetName</a></div><div class="ttdeci">static char const * GetName()</div></div>
 <div class="ttc" id="class_om_1_1_source_1_1_default_source_html"><div class="ttname"><a href="class_om_1_1_source_1_1_default_source.html">Om::Source::DefaultSource</a></div><div class="ttdoc">A partial implementation of Source. </div><div class="ttdef"><b>Definition:</b> <a href="default__source_8hpp_source.html#l00042">default_source.hpp:42</a></div></div>
 <div class="ttc" id="namespace_om_1_1_language_html_a23795841bc18d640b2f57abe85905faf"><div class="ttname"><a href="namespace_om_1_1_language.html#a23795841bc18d640b2f57abe85905faf">Om::Language::operator!=</a></div><div class="ttdeci">bool operator!=(DefaultAtom&lt; TheImplementation &gt; const &amp;, DefaultAtom&lt; TheImplementation &gt; const &amp;)</div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a8d1293b1d2bca65762a16d33baafcaf6"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a8d1293b1d2bca65762a16d33baafcaf6">Om::Language::Lexicon::thisMap</a></div><div class="ttdeci">Map thisMap</div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00180">lexicon.hpp:180</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a8d1293b1d2bca65762a16d33baafcaf6"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a8d1293b1d2bca65762a16d33baafcaf6">Om::Language::Lexicon::thisMap</a></div><div class="ttdeci">Map thisMap</div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00175">lexicon.hpp:175</a></div></div>
 <div class="ttc" id="list_8hpp_html"><div class="ttname"><a href="list_8hpp.html">list.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html_a1ca21d4f48251ff1e41b1cd41c948279"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a1ca21d4f48251ff1e41b1cd41c948279">Om::Language::Lexicon::ElementRange::Pop</a></div><div class="ttdeci">virtual void Pop()</div><div class="ttdoc">Pops the current item. </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_ad965d3568a955bd96f57282376599757"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#ad965d3568a955bd96f57282376599757">Om::Language::Lexicon::GetOperandTaker</a></div><div class="ttdeci">PairList::Node &amp; GetOperandTaker()</div><div class="ttdoc">Ensures that there is a last Node with an empty Operand, and with any Operator, and returns a referen...</div></div>
-<div class="ttc" id="namespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="expression_8hpp_source.html#l00286">expression.hpp:286</a></div></div>
+<div class="ttc" id="namespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="expression_8hpp_source.html#l00281">expression.hpp:281</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_pair_html"><div class="ttname"><a href="class_om_1_1_language_1_1_pair.html">Om::Language::Pair</a></div><div class="ttdoc">An Operator and an Operand. </div><div class="ttdef"><b>Definition:</b> <a href="pair_8hpp_source.html#l00032">pair.hpp:32</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a90dbee6c4f96afde36d75bfdcdc43e71"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a90dbee6c4f96afde36d75bfdcdc43e71">Om::Language::Lexicon::Translate</a></div><div class="ttdeci">virtual bool Translate(Evaluation &amp;, Operator const &amp;) const </div><div class="ttdoc">Translates the Operator to an object that is then given to the Evaluation. </div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html_a36bf56d598112104f109a0386d551178"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a36bf56d598112104f109a0386d551178">Om::Language::Lexicon::ElementRange::thisOffset</a></div><div class="ttdeci">char thisOffset</div><div class="ttdoc">The Element offset in the current Node. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00229">lexicon.hpp:229</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html_a36bf56d598112104f109a0386d551178"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a36bf56d598112104f109a0386d551178">Om::Language::Lexicon::ElementRange::thisOffset</a></div><div class="ttdeci">char thisOffset</div><div class="ttdoc">The Element offset in the current Node. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00224">lexicon.hpp:224</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_ab2d4b179dc03c0033c473cca87495578"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#ab2d4b179dc03c0033c473cca87495578">Om::Language::Lexicon::GetElementRange</a></div><div class="ttdeci">virtual std::auto_ptr&lt; Om::Source::Source&lt; Element const  &gt; &gt; GetElementRange() const </div></div>
 <div class="ttc" id="lexicon_8cpp_html"><div class="ttname"><a href="lexicon_8cpp.html">lexicon.cpp</a></div><div class="ttdoc">Om source file. </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_ac8e31b083b3c84885f48efc9aeee3b5d"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#ac8e31b083b3c84885f48efc9aeee3b5d">Om::Language::Lexicon::Clear</a></div><div class="ttdeci">virtual void Clear()</div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_default_program_html"><div class="ttname"><a href="class_om_1_1_language_1_1_default_program.html">Om::Language::DefaultProgram</a></div><div class="ttdoc">A partial implementation of Program. </div><div class="ttdef"><b>Definition:</b> <a href="default__program_8hpp_source.html#l00041">default_program.hpp:41</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_default_program_html"><div class="ttname"><a href="class_om_1_1_language_1_1_default_program.html">Om::Language::DefaultProgram</a></div><div class="ttdoc">A partial implementation of Program. </div><div class="ttdef"><b>Definition:</b> <a href="default__program_8hpp_source.html#l00039">default_program.hpp:39</a></div></div>
 <div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om library. </div><div class="ttdef"><b>Definition:</b> <a href="code__point_8hpp_source.html#l00026">code_point.hpp:26</a></div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_af472e8b174ced07707ac128eea3da32b"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#af472e8b174ced07707ac128eea3da32b">Om::Language::Lexicon::PairList</a></div><div class="ttdeci">List&lt; Pair &gt; PairList</div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00135">lexicon.hpp:135</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_af472e8b174ced07707ac128eea3da32b"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#af472e8b174ced07707ac128eea3da32b">Om::Language::Lexicon::PairList</a></div><div class="ttdeci">List&lt; Pair &gt; PairList</div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00130">lexicon.hpp:130</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html_ac6e60598e4c46416abc30e407dccb707"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#ac6e60598e4c46416abc30e407dccb707">Om::Language::Lexicon::ElementRange::ElementRange</a></div><div class="ttdeci">ElementRange()</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_ab153b7479dbdb2a3203005bd2c66709a"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#ab153b7479dbdb2a3203005bd2c66709a">Om::Language::Lexicon::GivePair</a></div><div class="ttdeci">void GivePair(PairList::NodeIndex const, Consumer &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a311bec1880e5fcff459a1bd09c9688cb"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a311bec1880e5fcff459a1bd09c9688cb">Om::Language::Lexicon::Swap</a></div><div class="ttdeci">void Swap(Lexicon &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a01d7a7d4200b86b81791d8300ccf11d2"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a01d7a7d4200b86b81791d8300ccf11d2">Om::Language::Lexicon::GiveElements</a></div><div class="ttdeci">virtual void GiveElements(Consumer &amp;)</div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_ae737d6aec7495873c37e36fd651e425e"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#ae737d6aec7495873c37e36fd651e425e">Om::Language::Lexicon::thisPairList</a></div><div class="ttdeci">PairList thisPairList</div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00182">lexicon.hpp:182</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_ae737d6aec7495873c37e36fd651e425e"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#ae737d6aec7495873c37e36fd651e425e">Om::Language::Lexicon::thisPairList</a></div><div class="ttdeci">PairList thisPairList</div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00177">lexicon.hpp:177</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html_a649ca3d6b83d8c28b5ebe628f1648ad6"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a649ca3d6b83d8c28b5ebe628f1648ad6">Om::Language::Lexicon::ElementRange::Equals</a></div><div class="ttdeci">bool Equals(ElementRange const &amp;) const </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_ad6d928073d8bc61eed8ccf51e46d7276"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#ad6d928073d8bc61eed8ccf51e46d7276">Om::Language::Lexicon::BackGivePair</a></div><div class="ttdeci">void BackGivePair(Consumer &amp;)</div></div>
 <div class="ttc" id="default__source_8hpp_html"><div class="ttname"><a href="default__source_8hpp.html">default_source.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Om::Language::Lexicon::ElementRange</a></div><div class="ttdoc">A Lexicon Element range. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00192">lexicon.hpp:192</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html">Om::Language::Lexicon::ElementRange</a></div><div class="ttdoc">A Lexicon Element range. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00187">lexicon.hpp:187</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html_ab0ebe62076fa7d1b7833719ff0a33fce"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#ab0ebe62076fa7d1b7833719ff0a33fce">Om::Language::Lexicon::ElementRange::operator!</a></div><div class="ttdeci">virtual bool operator!() const </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html_abc17ecb07ddbf097170f143485978e50"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#abc17ecb07ddbf097170f143485978e50">Om::Language::Lexicon::ElementRange::operator*</a></div><div class="ttdeci">virtual Element const &amp; operator*() const </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_consumer_html"><div class="ttname"><a href="class_om_1_1_language_1_1_consumer.html">Om::Language::Consumer</a></div><div class="ttdoc">An Element taker; takes at the back. </div><div class="ttdef"><b>Definition:</b> <a href="consumer_8hpp_source.html#l00042">consumer.hpp:42</a></div></div>
@@ -280,7 +276,7 @@
 <div class="ttc" id="class_om_1_1_language_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_language_1_1_evaluation.html">Om::Language::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00042">evaluation.hpp:42</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a24a66b06f116c854d6161c4f4d609b5e"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a24a66b06f116c854d6161c4f4d609b5e">Om::Language::Lexicon::Find</a></div><div class="ttdeci">Pair const &amp; Find(Operator const &amp;) const </div></div>
 <div class="ttc" id="namespaceboost_html_a03ce84b81b38bd696b479b0ea91b6825"><div class="ttname"><a href="namespaceboost.html#a03ce84b81b38bd696b479b0ea91b6825">boost::swap</a></div><div class="ttdeci">void swap(Om::Language::Expression &amp;, Om::Language::Expression &amp;)</div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html_a8358330a9505f42fc41592a1cf5a4a6e"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a8358330a9505f42fc41592a1cf5a4a6e">Om::Language::Lexicon::ElementRange::thisNode</a></div><div class="ttdeci">PairList::Node const * thisNode</div><div class="ttdoc">The current Node, or null if none. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00223">lexicon.hpp:223</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_lexicon_1_1_element_range_html_a8358330a9505f42fc41592a1cf5a4a6e"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon_1_1_element_range.html#a8358330a9505f42fc41592a1cf5a4a6e">Om::Language::Lexicon::ElementRange::thisNode</a></div><div class="ttdeci">PairList::Node const * thisNode</div><div class="ttdoc">The current Node, or null if none. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00218">lexicon.hpp:218</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_element_html"><div class="ttname"><a href="class_om_1_1_language_1_1_element.html">Om::Language::Element</a></div><div class="ttdoc">A Program that contains a single elemental item (or none, when IsEmpty() returns true). </div><div class="ttdef"><b>Definition:</b> <a href="element_8hpp_source.html#l00032">element.hpp:32</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_acd55b357b478953100175f879eb95be3"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#acd55b357b478953100175f879eb95be3">Om::Language::Lexicon::Lexicon</a></div><div class="ttdeci">Lexicon()</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a9d91a37c17c83ab631087c412617b909"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a9d91a37c17c83ab631087c412617b909">Om::Language::Lexicon::TakeQuotedProducer</a></div><div class="ttdeci">void TakeQuotedProducer(TheProducer &amp;)</div></div>
@@ -288,11 +284,11 @@
 <div class="ttc" id="namespace_om_1_1_language_html_ad72b6cdba5c41a18a953d13077b86d76"><div class="ttname"><a href="namespace_om_1_1_language.html#ad72b6cdba5c41a18a953d13077b86d76">Om::Language::operator==</a></div><div class="ttdeci">bool operator==(DefaultAtom&lt; TheImplementation &gt; const &amp;, DefaultAtom&lt; TheImplementation &gt; const &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_ab5d9a452bd62507fda258affd975ea5a"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#ab5d9a452bd62507fda258affd975ea5a">Om::Language::Lexicon::FrontGivePair</a></div><div class="ttdeci">void FrontGivePair(Consumer &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a1b00529cd4ca3fd3a54fe043202896da"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a1b00529cd4ca3fd3a54fe043202896da">Om::Language::Lexicon::operator=</a></div><div class="ttdeci">Lexicon &amp; operator=(Lexicon)</div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html">Om::Language::Lexicon</a></div><div class="ttdoc">The Lexicon Program implementation. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00067">lexicon.hpp:67</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html">Om::Language::Lexicon</a></div><div class="ttdoc">The Lexicon Program implementation. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00065">lexicon.hpp:65</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a326171f74c91405edc35b3438d36866a"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a326171f74c91405edc35b3438d36866a">Om::Language::Lexicon::IsEmpty</a></div><div class="ttdeci">virtual bool IsEmpty() const </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_aba19425a466c4892edb0bd6b13794f48"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#aba19425a466c4892edb0bd6b13794f48">Om::Language::Lexicon::ParseQuotedElements</a></div><div class="ttdeci">virtual void ParseQuotedElements(Reader &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_list_html"><div class="ttname"><a href="class_om_1_1_list.html">Om::List&lt; Pair &gt;</a></div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a8928b6823c0c87b190ff7f9dfee5674c"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a8928b6823c0c87b190ff7f9dfee5674c">Om::Language::Lexicon::Map</a></div><div class="ttdeci">boost::ptr_map&lt; std::string, PairList::Node &gt; Map</div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00140">lexicon.hpp:140</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_lexicon_html_a8928b6823c0c87b190ff7f9dfee5674c"><div class="ttname"><a href="class_om_1_1_language_1_1_lexicon.html#a8928b6823c0c87b190ff7f9dfee5674c">Om::Language::Lexicon::Map</a></div><div class="ttdeci">boost::ptr_map&lt; std::string, PairList::Node &gt; Map</div><div class="ttdef"><b>Definition:</b> <a href="lexicon_8hpp_source.html#l00135">lexicon.hpp:135</a></div></div>
 <div class="ttc" id="translator_8hpp_html"><div class="ttname"><a href="translator_8hpp.html">translator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_translator_html"><div class="ttname"><a href="class_om_1_1_language_1_1_translator.html">Om::Language::Translator</a></div><div class="ttdoc">An Operator lookup for use by an Evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="translator_8hpp_source.html#l00062">translator.hpp:62</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operator_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operator.html">Om::Language::Operator</a></div><div class="ttdoc">The Operator implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operator_8hpp_source.html#l00059">operator.hpp:59</a></div></div>

@@ -15,10 +15,10 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_default_consumer.html" target="_top" xlink:title="Om::Language::DefaultConsumer\l\&lt; Writer, Consumer \&gt;">
+<g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_default_consumer.html" target="_top" xlink:title="Om::Language::DefaultConsumer\l\&lt; Writer \&gt;">
 <polygon fill="none" stroke="black" points="-0.763184,-57 -0.763184,-85 164.763,-85 164.763,-57 -0.763184,-57"/>
 <text text-anchor="start" x="7.23682" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::DefaultConsumer</text>
-<text text-anchor="middle" x="82" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Writer, Consumer &gt;</text>
+<text text-anchor="middle" x="82" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Writer &gt;</text>
 </a>
 </g>
 </g>
@@ -29,11 +29,8 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="class_om_1_1_language_1_1_consumer.html" target="_top" xlink:title="An Element taker; takes at the back. ">
-<polygon fill="none" stroke="black" points="15.0791,-123 15.0791,-141 148.921,-141 148.921,-123 15.0791,-123"/>
-<text text-anchor="middle" x="82" y="-129" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Consumer</text>
-</a>
-</g>
+<polygon fill="none" stroke="#bfbfbf" points="45.0986,-123 45.0986,-141 118.901,-141 118.901,-123 45.0986,-123"/>
+<text text-anchor="middle" x="82" y="-129" font-family="Helvetica,sans-Serif" font-size="10.00">ThisInterface</text>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>

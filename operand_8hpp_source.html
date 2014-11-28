@@ -31,7 +31,6 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -78,110 +77,107 @@
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// MARK: - Om::Language::Operand</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_operand.html">   57</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_language_1_1_default_element.html">DefaultElement</a>&lt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Operand,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            Element</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        &gt; {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_operand.html#a438f86293aff23b43ee63f78583939b6">GetName</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html#aed438b05dda01fd8c535cb5342f560ac">Operand</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_operand.html">   55</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_language_1_1_default_element.html">DefaultElement</a>&lt;Operand&gt; {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_operand.html#a438f86293aff23b43ee63f78583939b6">GetName</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html#aed438b05dda01fd8c535cb5342f560ac">Operand</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProgram&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#aed438b05dda01fd8c535cb5342f560ac">Operand</a>(</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                std::auto_ptr&lt;TheProgram&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            );</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProgram&gt;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#aed438b05dda01fd8c535cb5342f560ac">Operand</a>(</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                std::auto_ptr&lt;TheProgram&gt;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            );</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> &amp; <a class="code" href="class_om_1_1_language_1_1_operand.html#a3892633c7b0417704f3f83f593b796a5">operator =</a>(<a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_language_1_1_program.html">Program</a> &amp; <a class="code" href="class_om_1_1_language_1_1_operand.html#a76b1bdc33d600c95e15de58d2828b064">operator *</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> &amp; <a class="code" href="class_om_1_1_language_1_1_operand.html#a3892633c7b0417704f3f83f593b796a5">operator =</a>(<a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_language_1_1_program.html">Program</a> &amp; <a class="code" href="class_om_1_1_language_1_1_operand.html#a76b1bdc33d600c95e15de58d2828b064">operator *</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_language_1_1_program.html">Program</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_language_1_1_operand.html#a76b1bdc33d600c95e15de58d2828b064">operator *</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_language_1_1_program.html">Program</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_language_1_1_operand.html#a76b1bdc33d600c95e15de58d2828b064">operator *</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a0187e465e734d9714829987f649cefc8">Clear</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">using</span> <a class="code" href="class_om_1_1_language_1_1_default_element.html">DefaultElement&lt;Operand, Element&gt;::Equals</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a862834607d13fd105b4f3bdb496a4b9f">Equals</a>(<a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_program.html">Program</a> * <a class="code" href="class_om_1_1_language_1_1_operand.html#a4b23d01c76ddb840d67aff10656ccaeb">GetProgram</a>();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_program.html">Program</a> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_operand.html#a4b23d01c76ddb840d67aff10656ccaeb">GetProgram</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a9a23c2de29f69318c9cb07e8324ad604">IsEmpty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a9849d81179653adcafe1cc697ddd0894">ParseElements</a>(<a class="code" href="class_om_1_1_language_1_1_reader.html">Reader</a> &amp;);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#ab86f54e91b5516746ca903dee7d16cbf">ParseQuotedElements</a>(<a class="code" href="class_om_1_1_language_1_1_reader.html">Reader</a> &amp;);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a0187e465e734d9714829987f649cefc8">Clear</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keyword">using</span> <a class="code" href="class_om_1_1_language_1_1_default_element.html">DefaultElement&lt;Operand&gt;::Equals</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a862834607d13fd105b4f3bdb496a4b9f">Equals</a>(<a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_program.html">Program</a> * <a class="code" href="class_om_1_1_language_1_1_operand.html#a4b23d01c76ddb840d67aff10656ccaeb">GetProgram</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_program.html">Program</a> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_operand.html#a4b23d01c76ddb840d67aff10656ccaeb">GetProgram</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a9a23c2de29f69318c9cb07e8324ad604">IsEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a9849d81179653adcafe1cc697ddd0894">ParseElements</a>(<a class="code" href="class_om_1_1_language_1_1_reader.html">Reader</a> &amp;);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#ab86f54e91b5516746ca903dee7d16cbf">ParseQuotedElements</a>(<a class="code" href="class_om_1_1_language_1_1_reader.html">Reader</a> &amp;);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProgram&gt;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a1f5434e442603df0c8c2fcdd0fcd25ac">SetProgram</a>(</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                std::auto_ptr&lt;TheProgram&gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            );</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProgram&gt;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a1f5434e442603df0c8c2fcdd0fcd25ac">SetProgram</a>(</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                std::auto_ptr&lt;TheProgram&gt;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            );</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#aa0ab1d4a9f09de1da75508c8d469c285">Swap</a>(<a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> &amp;);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a45e821b43a768044a588ccb7f5a2621a">TakeElements</a>(<a class="code" href="class_om_1_1_language_1_1_producer.html">Producer</a> &amp;);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a45e821b43a768044a588ccb7f5a2621a">TakeElements</a>(<a class="code" href="class_om_1_1_language_1_1_producer.html">Producer</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a9cc30c33dfae30a11a5fe665c50e7de7">TakeOperand</a>(TheOperand &amp;);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#aa0ab1d4a9f09de1da75508c8d469c285">Swap</a>(<a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> &amp;);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a45e821b43a768044a588ccb7f5a2621a">TakeElements</a>(<a class="code" href="class_om_1_1_language_1_1_producer.html">Producer</a> &amp;);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a45e821b43a768044a588ccb7f5a2621a">TakeElements</a>(<a class="code" href="class_om_1_1_language_1_1_producer.html">Producer</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a3762660bad1e2bcfa8183743b1377c23">TakeOperator</a>(TheOperator &amp;);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a6051bbdd48af59efe05fef18045e3975">TakeQuotedProducer</a>(TheProducer &amp;);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a9cc30c33dfae30a11a5fe665c50e7de7">TakeOperand</a>(TheOperand &amp;);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheSeparator&gt;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a5611a3fa52dbc0e489881feceaa2aff8">TakeSeparator</a>(TheSeparator &amp;);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperator&gt;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a3762660bad1e2bcfa8183743b1377c23">TakeOperator</a>(TheOperator &amp;);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a6051bbdd48af59efe05fef18045e3975">TakeQuotedProducer</a>(TheProducer &amp;);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_operand.html#a6fe4761156db4ddc8c44a2e2fa7480da">  140</a></span>&#160;            <a class="code" href="class_om_1_1_owner.html">Owner&lt;Program&gt;</a> <a class="code" href="class_om_1_1_language_1_1_operand.html#a6fe4761156db4ddc8c44a2e2fa7480da">thisProgram</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        };</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheSeparator&gt;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operand.html#a5611a3fa52dbc0e489881feceaa2aff8">TakeSeparator</a>(TheSeparator &amp;);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_operand.html#a6fe4761156db4ddc8c44a2e2fa7480da">  149</a></span>&#160;            <a class="code" href="class_om_1_1_owner.html">Owner&lt;Program&gt;</a> <a class="code" href="class_om_1_1_language_1_1_operand.html#a6fe4761156db4ddc8c44a2e2fa7480da">thisProgram</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="comment">// MARK: - Om::Language::</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_language.html#ad72b6cdba5c41a18a953d13077b86d76">operator ==</a>(</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        );</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        };</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">// MARK: - Om::Language::</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_language.html#ad72b6cdba5c41a18a953d13077b86d76">operator ==</a>(</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;,</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        );</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_language.html#a23795841bc18d640b2f57abe85905faf">operator !=</a>(</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        );</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespace_om_1_1_language.html#a23795841bc18d640b2f57abe85905faf">operator !=</a>(</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;,</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        );</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// MARK: - boost::</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a03ce84b81b38bd696b479b0ea91b6825">swap</a>(</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="class_om_1_1_language_1_1_operand.html">Om::Language::Operand</a> &amp;,</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="class_om_1_1_language_1_1_operand.html">Om::Language::Operand</a> &amp;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    );</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operand_8cpp.html">om/language/operand.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// MARK: - boost::</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a03ce84b81b38bd696b479b0ea91b6825">swap</a>(</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="class_om_1_1_language_1_1_operand.html">Om::Language::Operand</a> &amp;,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="class_om_1_1_language_1_1_operand.html">Om::Language::Operand</a> &amp;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    );</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operand_8cpp.html">om/language/operand.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="namespace_om_1_1_language_html_a23795841bc18d640b2f57abe85905faf"><div class="ttname"><a href="namespace_om_1_1_language.html#a23795841bc18d640b2f57abe85905faf">Om::Language::operator!=</a></div><div class="ttdeci">bool operator!=(DefaultAtom&lt; TheImplementation &gt; const &amp;, DefaultAtom&lt; TheImplementation &gt; const &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_a1f5434e442603df0c8c2fcdd0fcd25ac"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a1f5434e442603df0c8c2fcdd0fcd25ac">Om::Language::Operand::SetProgram</a></div><div class="ttdeci">void SetProgram(std::auto_ptr&lt; TheProgram &gt;)</div><div class="ttdoc">Replaces the Program owned by this Operand with the argument. </div></div>
-<div class="ttc" id="namespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="expression_8hpp_source.html#l00286">expression.hpp:286</a></div></div>
+<div class="ttc" id="namespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="expression_8hpp_source.html#l00281">expression.hpp:281</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_a5611a3fa52dbc0e489881feceaa2aff8"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a5611a3fa52dbc0e489881feceaa2aff8">Om::Language::Operand::TakeSeparator</a></div><div class="ttdeci">void TakeSeparator(TheSeparator &amp;)</div></div>
 <div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om library. </div><div class="ttdef"><b>Definition:</b> <a href="code__point_8hpp_source.html#l00026">code_point.hpp:26</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_aa0ab1d4a9f09de1da75508c8d469c285"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#aa0ab1d4a9f09de1da75508c8d469c285">Om::Language::Operand::Swap</a></div><div class="ttdeci">void Swap(Operand &amp;)</div></div>
@@ -189,15 +185,15 @@
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_ab86f54e91b5516746ca903dee7d16cbf"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#ab86f54e91b5516746ca903dee7d16cbf">Om::Language::Operand::ParseQuotedElements</a></div><div class="ttdeci">virtual void ParseQuotedElements(Reader &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_a3892633c7b0417704f3f83f593b796a5"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a3892633c7b0417704f3f83f593b796a5">Om::Language::Operand::operator=</a></div><div class="ttdeci">Operand &amp; operator=(Operand)</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_program_html"><div class="ttname"><a href="class_om_1_1_language_1_1_program.html">Om::Language::Program</a></div><div class="ttdoc">The Program implementation. </div><div class="ttdef"><b>Definition:</b> <a href="program_8hpp_source.html#l00058">program.hpp:58</a></div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_default_element_html"><div class="ttname"><a href="class_om_1_1_language_1_1_default_element.html">Om::Language::DefaultElement</a></div><div class="ttdoc">A partial implementation of Element. </div><div class="ttdef"><b>Definition:</b> <a href="default__element_8hpp_source.html#l00038">default_element.hpp:38</a></div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_operand_html_a6fe4761156db4ddc8c44a2e2fa7480da"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a6fe4761156db4ddc8c44a2e2fa7480da">Om::Language::Operand::thisProgram</a></div><div class="ttdeci">Owner&lt; Program &gt; thisProgram</div><div class="ttdef"><b>Definition:</b> <a href="operand_8hpp_source.html#l00149">operand.hpp:149</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_default_element_html"><div class="ttname"><a href="class_om_1_1_language_1_1_default_element.html">Om::Language::DefaultElement</a></div><div class="ttdoc">A partial implementation of Element. </div><div class="ttdef"><b>Definition:</b> <a href="default__element_8hpp_source.html#l00036">default_element.hpp:36</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operand_html_a6fe4761156db4ddc8c44a2e2fa7480da"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a6fe4761156db4ddc8c44a2e2fa7480da">Om::Language::Operand::thisProgram</a></div><div class="ttdeci">Owner&lt; Program &gt; thisProgram</div><div class="ttdef"><b>Definition:</b> <a href="operand_8hpp_source.html#l00140">operand.hpp:140</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_a9849d81179653adcafe1cc697ddd0894"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a9849d81179653adcafe1cc697ddd0894">Om::Language::Operand::ParseElements</a></div><div class="ttdeci">virtual void ParseElements(Reader &amp;)</div></div>
 <div class="ttc" id="default__element_8hpp_html"><div class="ttname"><a href="default__element_8hpp.html">default_element.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_reader_html"><div class="ttname"><a href="class_om_1_1_language_1_1_reader.html">Om::Language::Reader</a></div><div class="ttdoc">Produces each CodePoint until the end of the Source. </div><div class="ttdef"><b>Definition:</b> <a href="reader_8hpp_source.html#l00033">reader.hpp:33</a></div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_a0187e465e734d9714829987f649cefc8"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a0187e465e734d9714829987f649cefc8">Om::Language::Operand::Clear</a></div><div class="ttdeci">virtual void Clear()</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_a9a23c2de29f69318c9cb07e8324ad604"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a9a23c2de29f69318c9cb07e8324ad604">Om::Language::Operand::IsEmpty</a></div><div class="ttdeci">virtual bool IsEmpty() const </div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_a6051bbdd48af59efe05fef18045e3975"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a6051bbdd48af59efe05fef18045e3975">Om::Language::Operand::TakeQuotedProducer</a></div><div class="ttdeci">void TakeQuotedProducer(TheProducer &amp;)</div></div>
-<div class="ttc" id="class_om_1_1_language_1_1_operand_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html">Om::Language::Operand</a></div><div class="ttdoc">The Operand implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operand_8hpp_source.html#l00057">operand.hpp:57</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operand_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html">Om::Language::Operand</a></div><div class="ttdoc">The Operand implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operand_8hpp_source.html#l00055">operand.hpp:55</a></div></div>
 <div class="ttc" id="namespaceboost_html_a03ce84b81b38bd696b479b0ea91b6825"><div class="ttname"><a href="namespaceboost.html#a03ce84b81b38bd696b479b0ea91b6825">boost::swap</a></div><div class="ttdeci">void swap(Om::Language::Expression &amp;, Om::Language::Expression &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_a9cc30c33dfae30a11a5fe665c50e7de7"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#a9cc30c33dfae30a11a5fe665c50e7de7">Om::Language::Operand::TakeOperand</a></div><div class="ttdeci">void TakeOperand(TheOperand &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_language_1_1_operand_html_aed438b05dda01fd8c535cb5342f560ac"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html#aed438b05dda01fd8c535cb5342f560ac">Om::Language::Operand::Operand</a></div><div class="ttdeci">Operand()</div></div>

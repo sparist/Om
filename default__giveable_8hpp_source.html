@@ -31,7 +31,6 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -68,43 +67,43 @@
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// MARK: - Om::DefaultGiveable</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">template</span> &lt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">typename</span> ThisImplementation,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">typename</span> ThisInterface</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    &gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_om_1_1_default_giveable.html">   38</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_om_1_1_default_giveable.html">DefaultGiveable</a>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_moveable.html">DefaultMoveable</a>&lt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        ThisImplementation,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        DefaultCopyable&lt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            ThisImplementation,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            ThisInterface</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        &gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    &gt; {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">template</span> &lt;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">typename</span> ThisImplementation,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">typename</span> ThisInterface = Giveable</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    &gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_om_1_1_default_giveable.html">   36</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_om_1_1_default_giveable.html">DefaultGiveable</a>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_om_1_1_default_moveable.html">DefaultMoveable</a>&lt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ThisImplementation,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        DefaultCopyable&lt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            ThisImplementation,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            ThisInterface</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        &gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    &gt; {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_default_giveable.html#addd3ad441dd910913e016b99ae808bfa">~DefaultGiveable</a>() = 0;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_default_giveable.html#addd3ad441dd910913e016b99ae808bfa">~DefaultGiveable</a>() = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_om_1_1_default_giveable.html">DefaultGiveable</a> &amp; <a class="code" href="class_om_1_1_default_giveable.html#a59c98345886d5e6a2f2729ca274cd994">operator =</a>(<a class="code" href="class_om_1_1_default_giveable.html">DefaultGiveable</a> <span class="keyword">const</span> &amp;);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="class_om_1_1_default_giveable.html">DefaultGiveable</a> &amp; <a class="code" href="class_om_1_1_default_giveable.html#a59c98345886d5e6a2f2729ca274cd994">operator =</a>(<a class="code" href="class_om_1_1_default_giveable.html">DefaultGiveable</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    };</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__giveable_8cpp.html">om/default_giveable.cpp</a>&quot;</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__giveable_8cpp.html">om/default_giveable.cpp</a>&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_om_1_1_default_giveable_html_a59c98345886d5e6a2f2729ca274cd994"><div class="ttname"><a href="class_om_1_1_default_giveable.html#a59c98345886d5e6a2f2729ca274cd994">Om::DefaultGiveable::operator=</a></div><div class="ttdeci">DefaultGiveable &amp; operator=(DefaultGiveable const &amp;)</div></div>
-<div class="ttc" id="class_om_1_1_default_giveable_html"><div class="ttname"><a href="class_om_1_1_default_giveable.html">Om::DefaultGiveable</a></div><div class="ttdoc">A partial implementation of Giveable. </div><div class="ttdef"><b>Definition:</b> <a href="default__giveable_8hpp_source.html#l00038">default_giveable.hpp:38</a></div></div>
+<div class="ttc" id="class_om_1_1_default_giveable_html"><div class="ttname"><a href="class_om_1_1_default_giveable.html">Om::DefaultGiveable</a></div><div class="ttdoc">A partial implementation of Giveable. </div><div class="ttdef"><b>Definition:</b> <a href="default__giveable_8hpp_source.html#l00036">default_giveable.hpp:36</a></div></div>
 <div class="ttc" id="default__copyable_8hpp_html"><div class="ttname"><a href="default__copyable_8hpp.html">default_copyable.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om library. </div><div class="ttdef"><b>Definition:</b> <a href="code__point_8hpp_source.html#l00026">code_point.hpp:26</a></div></div>
 <div class="ttc" id="default__giveable_8cpp_html"><div class="ttname"><a href="default__giveable_8cpp.html">default_giveable.cpp</a></div><div class="ttdoc">Om source file. </div></div>
 <div class="ttc" id="class_om_1_1_default_giveable_html_addd3ad441dd910913e016b99ae808bfa"><div class="ttname"><a href="class_om_1_1_default_giveable.html#addd3ad441dd910913e016b99ae808bfa">Om::DefaultGiveable::~DefaultGiveable</a></div><div class="ttdeci">virtual ~DefaultGiveable()=0</div></div>
 <div class="ttc" id="default__moveable_8hpp_html"><div class="ttname"><a href="default__moveable_8hpp.html">default_moveable.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="giveable_8hpp_html"><div class="ttname"><a href="giveable_8hpp.html">giveable.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_default_moveable_html"><div class="ttname"><a href="class_om_1_1_default_moveable.html">Om::DefaultMoveable</a></div><div class="ttdoc">A partial implementation of Moveable. </div><div class="ttdef"><b>Definition:</b> <a href="default__moveable_8hpp_source.html#l00036">default_moveable.hpp:36</a></div></div>
+<div class="ttc" id="class_om_1_1_default_moveable_html"><div class="ttname"><a href="class_om_1_1_default_moveable.html">Om::DefaultMoveable</a></div><div class="ttdoc">A partial implementation of Moveable. </div><div class="ttdef"><b>Definition:</b> <a href="default__moveable_8hpp_source.html#l00034">default_moveable.hpp:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 	</body>
