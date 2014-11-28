@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/environment.hpp File Reference</title>
+		<title>Om: om/language/environment.hpp File Reference</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_e74603bf5b8acba3b260f5ba2f9e876e.html">language</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -59,10 +59,10 @@
 </div><!--header-->
 <div class="contents">
 
-<p><a href="http://om-language.org">Om</a> header file.  
+<p><a href="http://github.com/sparist/Om">Om</a> header file.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="translator_8hpp_source.html">om/translator.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="environment_8cpp_source.html">om/environment.cpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="translator_8hpp_source.html">om/language/translator.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="environment_8cpp_source.html">om/language/environment.cpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for environment.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -82,20 +82,23 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_environment.html">Om::Environment</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unowned <a class="el" href="class_om_1_1_translator.html" title="An Operator lookup for use by an Evaluator. ">Translator</a> collection for which lookups are done for each <a class="el" href="class_om_1_1_translator.html" title="An Operator lookup for use by an Evaluator. ">Translator</a>, in reverse order, until a match is found.  <a href="class_om_1_1_environment.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_om_1_1_language_1_1_environment.html">Om::Language::Environment</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unowned <a class="el" href="class_om_1_1_language_1_1_translator.html" title="An Operator lookup for use by an Evaluator. ">Translator</a> collection for which lookups are done for each <a class="el" href="class_om_1_1_language_1_1_translator.html" title="An Operator lookup for use by an Evaluator. ">Translator</a>, in reverse order, until a match is found.  <a href="class_om_1_1_language_1_1_environment.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespace_om"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_om.html">Om</a></td></tr>
-<tr class="memdesc:namespace_om"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespace_om.html" title="The Om language implementation. ">Om</a> language implementation. <br /></td></tr>
+<tr class="memdesc:namespace_om"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespace_om.html" title="The Om library. ">Om</a> library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_om_1_1_language"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_om_1_1_language.html">Om::Language</a></td></tr>
+<tr class="memdesc:namespace_om_1_1_language"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespace_om.html" title="The Om library. ">Om</a> language implementation. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:acaa965a12886a41d479f66b360f3a18a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="environment_8hpp.html#acaa965a12886a41d479f66b360f3a18a">Om_Environment_</a></td></tr>
-<tr class="separator:acaa965a12886a41d479f66b360f3a18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c4836fe8311a1e554e339bd194e150"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="environment_8hpp.html#ab6c4836fe8311a1e554e339bd194e150">Om_Language_Environment_</a></td></tr>
+<tr class="separator:ab6c4836fe8311a1e554e339bd194e150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section version"><dt>Version</dt><dd>0.1.3 </dd></dl>
@@ -105,12 +108,12 @@ Macros</h2></td></tr>
 
 <p>Definition in file <a class="el" href="environment_8hpp_source.html">environment.hpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="acaa965a12886a41d479f66b360f3a18a"></a>
+<a class="anchor" id="ab6c4836fe8311a1e554e339bd194e150"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define Om_Environment_</td>
+          <td class="memname">#define Om_Language_Environment_</td>
         </tr>
       </table>
 </div><div class="memdoc">

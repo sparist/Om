@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operation/dequote_operation.hpp Source File</title>
+		<title>Om: om/language/operation/dequote_operation.hpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_c1bd2cf3c0421cfb7d8c78872dba1c9d.html">operation</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_e74603bf5b8acba3b260f5ba2f9e876e.html">language</a></li><li class="navelem"><a class="el" href="dir_62a2b1770be3a9a4169ff2f0ee79268c.html">operation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -55,78 +55,82 @@
 </div><!--header-->
 <div class="contents">
 <a href="dequote__operation_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef Om_Operation_DequoteOperation_</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef Om_Language_Operation_DequoteOperation_</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="dequote__operation_8hpp.html#a7bf3719e9bc827d787ff3b0f02479b85">   28</a></span>&#160;<span class="preprocessor">    #define Om_Operation_DequoteOperation_ \</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    Om::Operation::DequoteOperation</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="dequote__operation_8hpp.html#a9fedd8c7aebe4ab382f6de9796c6025d">   28</a></span>&#160;<span class="preprocessor">    #define Om_Language_Operation_DequoteOperation_ \</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    Om::Language::Operation::DequoteOperation</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__incomplete__operation_8hpp.html">om/operation/default_incomplete_operation.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="system_8hpp.html">om/system.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__incomplete__operation_8hpp.html">om/language/operation/default_incomplete_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="system_8hpp.html">om/language/system.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="dequote__operation_8hpp.html#ad96cd2c091a07f09e75bc684ca416030">   34</a></span>&#160;<span class="preprocessor">    #define Om_Operation_DequoteOperation_GetName_() \</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="dequote__operation_8hpp.html#a38963cac16d6fb01436f3d39c1d089d1">   34</a></span>&#160;<span class="preprocessor">    #define Om_Language_Operation_DequoteOperation_GetName_() \</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">    &quot;dequote&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_om.html">Om</a> {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">namespace </span>Language {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// MARK: - Om::Operation::DequoteOperation</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">namespace </span>Operation {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_dequote_operation.html">   47</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_operation_1_1_dequote_operation.html">DequoteOperation</a>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_om_1_1_operation_1_1_default_incomplete_operation.html">DefaultIncompleteOperation</a>&lt;DequoteOperation&gt; {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// MARK: - Om::Language::Operation::DequoteOperation</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html">   49</a></span>&#160;            <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html">DequoteOperation</a>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">public</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_default_incomplete_operation.html">DefaultIncompleteOperation</a>&lt;DequoteOperation&gt; {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operation_1_1_dequote_operation.html#a56fa9d4bf63dfb84adab027e86b707c2">GetName</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheDequoteOperation&gt;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation_1_1_dequote_operation.html#a882de3764cd65ed99c255478856aee5c">GiveElements</a>(</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                TheDequoteOperation &amp;,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            );</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html#a53451057241c2cc911569c1aa365bf43">GetName</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheDequoteOperation&gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html#a68261baf869c503d24b01cad1266d4d0">GiveElements</a>(</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    TheDequoteOperation &amp;,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                );</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_dequote_operation.html#ad0b05d0091350159a7409fdcd4e64423">TakeOperand</a>(</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                TheOperand &amp;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            );</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_dequote_operation.html#abe74c72d47e2ef1cdd5598801201cdc6">TakeQuotedProducer</a>(</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                TheProducer &amp;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            );</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        };</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheOperand&gt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html#a328de3a419becc39ec8f2dc302db8c1b">TakeOperand</a>(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    TheOperand &amp;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheProducer&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html#ad619c053edd15dd1591aecd33ac36e6a">TakeQuotedProducer</a>(</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    TheProducer &amp;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                );</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            };</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keyword">static</span> <a class="code" href="singleton_om_1_1_system_1_1_definition.html">System::Definition&lt;DequoteOperation&gt;</a> <span class="keyword">const</span> theDequoteDefinition;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keyword">namespace </span>{</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keyword">static</span> <a class="code" href="singleton_om_1_1_language_1_1_system_1_1_definition.html">System::Definition&lt;DequoteOperation&gt;</a> <span class="keyword">const</span> theDequoteDefinition;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="dequote__operation_8cpp.html">om/operation/dequote_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="dequote__operation_8cpp.html">om/language/operation/dequote_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_dequote_operation_html_a68261baf869c503d24b01cad1266d4d0"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html#a68261baf869c503d24b01cad1266d4d0">Om::Language::Operation::DequoteOperation::GiveElements</a></div><div class="ttdeci">static void GiveElements(TheDequoteOperation &amp;, Consumer &amp;)</div></div>
 <div class="ttc" id="dequote__operation_8cpp_html"><div class="ttname"><a href="dequote__operation_8cpp.html">dequote_operation.cpp</a></div><div class="ttdoc">Om source file. </div></div>
-<div class="ttc" id="singleton_om_1_1_system_1_1_definition_html"><div class="ttname"><a href="singleton_om_1_1_system_1_1_definition.html">Om::System::Definition</a></div><div class="ttdoc">An inserter of an Operation into the static System instance. </div><div class="ttdef"><b>Definition:</b> <a href="system_8hpp_source.html#l00052">system.hpp:52</a></div></div>
-<div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om language implementation. </div><div class="ttdef"><b>Definition:</b> <a href="atom_8hpp_source.html#l00022">atom.hpp:22</a></div></div>
+<div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om library. </div><div class="ttdef"><b>Definition:</b> <a href="code__point_8hpp_source.html#l00026">code_point.hpp:26</a></div></div>
 <div class="ttc" id="system_8hpp_html"><div class="ttname"><a href="system_8hpp.html">system.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_dequote_operation_html_a882de3764cd65ed99c255478856aee5c"><div class="ttname"><a href="class_om_1_1_operation_1_1_dequote_operation.html#a882de3764cd65ed99c255478856aee5c">Om::Operation::DequoteOperation::GiveElements</a></div><div class="ttdeci">static void GiveElements(TheDequoteOperation &amp;, Consumer &amp;)</div></div>
 <div class="ttc" id="default__incomplete__operation_8hpp_html"><div class="ttname"><a href="default__incomplete__operation_8hpp.html">default_incomplete_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_consumer_html"><div class="ttname"><a href="class_om_1_1_consumer.html">Om::Consumer</a></div><div class="ttdoc">An Element taker; takes at the back. </div><div class="ttdef"><b>Definition:</b> <a href="consumer_8hpp_source.html#l00040">consumer.hpp:40</a></div></div>
-<div class="ttc" id="class_om_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_evaluation.html">Om::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00040">evaluation.hpp:40</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_dequote_operation_html_abe74c72d47e2ef1cdd5598801201cdc6"><div class="ttname"><a href="class_om_1_1_operation_1_1_dequote_operation.html#abe74c72d47e2ef1cdd5598801201cdc6">Om::Operation::DequoteOperation::TakeQuotedProducer</a></div><div class="ttdeci">bool TakeQuotedProducer(Evaluation &amp;, TheProducer &amp;)</div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_dequote_operation_html_a56fa9d4bf63dfb84adab027e86b707c2"><div class="ttname"><a href="class_om_1_1_operation_1_1_dequote_operation.html#a56fa9d4bf63dfb84adab027e86b707c2">Om::Operation::DequoteOperation::GetName</a></div><div class="ttdeci">static char const * GetName()</div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_dequote_operation_html"><div class="ttname"><a href="class_om_1_1_operation_1_1_dequote_operation.html">Om::Operation::DequoteOperation</a></div><div class="ttdoc">The dequote operation implementation. </div><div class="ttdef"><b>Definition:</b> <a href="dequote__operation_8hpp_source.html#l00047">dequote_operation.hpp:47</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_default_incomplete_operation_html"><div class="ttname"><a href="class_om_1_1_operation_1_1_default_incomplete_operation.html">Om::Operation::DefaultIncompleteOperation</a></div><div class="ttdoc">A partial implementation of IncompleteOperation. </div><div class="ttdef"><b>Definition:</b> <a href="default__incomplete__operation_8hpp_source.html#l00037">default_incomplete_operation.hpp:37</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_dequote_operation_html_ad0b05d0091350159a7409fdcd4e64423"><div class="ttname"><a href="class_om_1_1_operation_1_1_dequote_operation.html#ad0b05d0091350159a7409fdcd4e64423">Om::Operation::DequoteOperation::TakeOperand</a></div><div class="ttdeci">bool TakeOperand(Evaluation &amp;, TheOperand &amp;)</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_dequote_operation_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html">Om::Language::Operation::DequoteOperation</a></div><div class="ttdoc">The dequote operation implementation. </div><div class="ttdef"><b>Definition:</b> <a href="dequote__operation_8hpp_source.html#l00049">dequote_operation.hpp:49</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_dequote_operation_html_ad619c053edd15dd1591aecd33ac36e6a"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html#ad619c053edd15dd1591aecd33ac36e6a">Om::Language::Operation::DequoteOperation::TakeQuotedProducer</a></div><div class="ttdeci">bool TakeQuotedProducer(Evaluation &amp;, TheProducer &amp;)</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_consumer_html"><div class="ttname"><a href="class_om_1_1_language_1_1_consumer.html">Om::Language::Consumer</a></div><div class="ttdoc">An Element taker; takes at the back. </div><div class="ttdef"><b>Definition:</b> <a href="consumer_8hpp_source.html#l00042">consumer.hpp:42</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_language_1_1_evaluation.html">Om::Language::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00042">evaluation.hpp:42</a></div></div>
+<div class="ttc" id="singleton_om_1_1_language_1_1_system_1_1_definition_html"><div class="ttname"><a href="singleton_om_1_1_language_1_1_system_1_1_definition.html">Om::Language::System::Definition</a></div><div class="ttdoc">An inserter of an Operation into the static System instance. </div><div class="ttdef"><b>Definition:</b> <a href="system_8hpp_source.html#l00054">system.hpp:54</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_default_incomplete_operation_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_default_incomplete_operation.html">Om::Language::Operation::DefaultIncompleteOperation</a></div><div class="ttdoc">A partial implementation of IncompleteOperation. </div><div class="ttdef"><b>Definition:</b> <a href="default__incomplete__operation_8hpp_source.html#l00039">default_incomplete_operation.hpp:39</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_dequote_operation_html_a53451057241c2cc911569c1aa365bf43"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html#a53451057241c2cc911569c1aa365bf43">Om::Language::Operation::DequoteOperation::GetName</a></div><div class="ttdeci">static char const * GetName()</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_dequote_operation_html_a328de3a419becc39ec8f2dc302db8c1b"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_dequote_operation.html#a328de3a419becc39ec8f2dc302db8c1b">Om::Language::Operation::DequoteOperation::TakeOperand</a></div><div class="ttdeci">bool TakeOperand(Evaluation &amp;, TheOperand &amp;)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 	</body>

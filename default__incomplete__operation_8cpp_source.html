@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operation/default_incomplete_operation.cpp Source File</title>
+		<title>Om: om/language/operation/default_incomplete_operation.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_c1bd2cf3c0421cfb7d8c78872dba1c9d.html">operation</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_e74603bf5b8acba3b260f5ba2f9e876e.html">language</a></li><li class="navelem"><a class="el" href="dir_62a2b1770be3a9a4169ff2f0ee79268c.html">operation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -55,26 +55,26 @@
 </div><!--header-->
 <div class="contents">
 <a href="default__incomplete__operation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operation_DefaultIncompleteOperation_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Language_Operation_DefaultIncompleteOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__incomplete__operation_8hpp.html">om/operation/default_incomplete_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="default__incomplete__operation_8hpp.html">om/language/operation/default_incomplete_operation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="evaluator_8hpp.html">om/evaluator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="evaluator_8hpp.html">om/language/evaluator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// MARK: - Om::Operation::DefaultIncompleteOperation</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// MARK: - Om::Language::Operation::DefaultIncompleteOperation</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">    #define Template_ \</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">    template &lt;typename ThisImplementation&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    Om::Operation::DefaultIncompleteOperation&lt;ThisImplementation&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    Om::Language::Operation::DefaultIncompleteOperation&lt;ThisImplementation&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;Template_</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_operator.html">Om::Operator</a> <span class="keyword">const</span> &amp; Type_::GetOperator() {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_language_1_1_operator.html">Om::Language::Operator</a> <span class="keyword">const</span> &amp; Type_::GetOperator() {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> Operator <span class="keyword">const</span> theOperator(</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        ThisImplementation::GetName()</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    );</div>
@@ -195,9 +195,9 @@
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="namespace_om_html_ab079f0c9807d37c66bdfc88ec5ec4374"><div class="ttname"><a href="namespace_om.html#ab079f0c9807d37c66bdfc88ec5ec4374">Om::Give</a></div><div class="ttdeci">std::auto_ptr&lt; TheGiveable &gt; Give(TheGiveable &amp;)</div><div class="ttdoc">Calls Move on the object. </div></div>
-<div class="ttc" id="class_om_1_1_operator_html"><div class="ttname"><a href="class_om_1_1_operator.html">Om::Operator</a></div><div class="ttdoc">The Operator implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operator_8hpp_source.html#l00057">operator.hpp:57</a></div></div>
 <div class="ttc" id="default__incomplete__operation_8hpp_html"><div class="ttname"><a href="default__incomplete__operation_8hpp.html">default_incomplete_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="evaluator_8hpp_html"><div class="ttname"><a href="evaluator_8hpp.html">evaluator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operator_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operator.html">Om::Language::Operator</a></div><div class="ttdoc">The Operator implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operator_8hpp_source.html#l00059">operator.hpp:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 	</body>

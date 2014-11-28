@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/environment.cpp Source File</title>
+		<title>Om: om/language/environment.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_e74603bf5b8acba3b260f5ba2f9e876e.html">language</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -55,16 +55,16 @@
 </div><!--header-->
 <div class="contents">
 <a href="environment_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Environment_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Language_Environment_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="environment_8hpp.html">om/environment.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="environment_8hpp.html">om/language/environment.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// MARK: - Om::Environment</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// MARK: - Om::Language::Environment</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    Om::Environment</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    Om::Language::Environment</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
@@ -81,7 +81,7 @@
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            Iterator theCurrent = this-&gt;thisTranslatorVector.begin();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            ;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            theConsumer.TakeElement(</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Separator::GetLineSeparator</a>()</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_separator.html#a4a9ff3a51d14ebdd27fe0bac4bce484a">Separator::GetLineSeparator</a>()</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            )</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            assert(*theCurrent);</div>
@@ -170,7 +170,7 @@
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="environment_8hpp_html"><div class="ttname"><a href="environment_8hpp.html">environment.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_separator_html_aeb95370fe159ea16c2f7783a97a79b7f"><div class="ttname"><a href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Om::Separator::GetLineSeparator</a></div><div class="ttdeci">static Separator const &amp; GetLineSeparator()</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_separator_html_a4a9ff3a51d14ebdd27fe0bac4bce484a"><div class="ttname"><a href="class_om_1_1_language_1_1_separator.html#a4a9ff3a51d14ebdd27fe0bac4bce484a">Om::Language::Separator::GetLineSeparator</a></div><div class="ttdeci">static Separator const &amp; GetLineSeparator()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 	</body>

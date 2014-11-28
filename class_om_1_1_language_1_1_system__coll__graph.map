@@ -1,0 +1,37 @@
+<map id="Om::Language::System" name="Om::Language::System">
+<area shape="rect" id="node2" href="$class_om_1_1_language_1_1_translator.html" title="An Operator lookup for use by an Evaluator. " alt="" coords="5,1002,181,1027"/>
+<area shape="rect" id="node39" href="$class_om_1_1_language_1_1_evaluator.html" title="A Consumer that evaluates Program instances. " alt="" coords="347,1097,519,1122"/>
+<area shape="rect" id="node4" href="$class_om_1_1_language_1_1_evaluation.html" title="The current evaluation. " alt="" coords="481,1185,660,1210"/>
+<area shape="rect" id="node5" href="$class_om_1_1_language_1_1_expression.html" title="The Expression Program implementation. " alt="" coords="777,1097,959,1122"/>
+<area shape="rect" id="node6" href="$class_om_1_1_language_1_1_default_program.html" title="Om::Language::DefaultProgram\l\&lt; Expression, Program \&gt;" alt="" coords="763,995,972,1034"/>
+<area shape="rect" id="node7" href="$class_om_1_1_language_1_1_default_consumer.html" title="Om::Language::DefaultConsumer\l\&lt; Expression, DefaultGiveable\l\&lt; Expression, Program \&gt; \&gt;" alt="" coords="380,881,600,933"/>
+<area shape="rect" id="node8" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Expression, Program \&gt;" alt="" coords="381,779,549,818"/>
+<area shape="rect" id="node9" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Expression, DefaultCopyable\l\&lt; Expression, Program \&gt; \&gt;" alt="" coords="356,665,560,717"/>
+<area shape="rect" id="node10" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Expression, Program \&gt;" alt="" coords="362,563,531,602"/>
+<area shape="rect" id="node12" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Expression \&gt;" alt="" coords="782,894,953,919"/>
+<area shape="rect" id="node14" href="$class_om_1_1_language_1_1_form.html" title="An Operator (which may be empty), followed by zero or more Operand instances. " alt="" coords="993,894,1140,919"/>
+<area shape="rect" id="node16" href="$class_om_1_1_language_1_1_operand.html" title="The Operand implementation. " alt="" coords="797,678,965,703"/>
+<area shape="rect" id="node17" href="$class_om_1_1_language_1_1_default_element.html" title="Om::Language::DefaultElement\l\&lt; Operand, Element \&gt;" alt="" coords="555,563,763,602"/>
+<area shape="rect" id="node18" href="$class_om_1_1_language_1_1_default_program.html" title="Om::Language::DefaultProgram\l\&lt; Operand, Element \&gt;" alt="" coords="554,473,763,511"/>
+<area shape="rect" id="node19" href="$class_om_1_1_language_1_1_default_consumer.html" title="Om::Language::DefaultConsumer\l\&lt; Operand, DefaultGiveable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="391,369,611,421"/>
+<area shape="rect" id="node20" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Operand, Element \&gt;" alt="" coords="425,278,577,317"/>
+<area shape="rect" id="node21" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Operand, DefaultCopyable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="406,174,596,226"/>
+<area shape="rect" id="node22" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operand, Element \&gt;" alt="" coords="425,83,577,122"/>
+<area shape="rect" id="node24" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Operand \&gt;" alt="" coords="636,382,793,407"/>
+<area shape="rect" id="node25" href="$class_om_1_1_owner.html" title="Om::Owner\&lt; Om::Language\l::Program \&gt;" alt="" coords="787,563,975,602"/>
+<area shape="rect" id="node26" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Owner\&lt; Om\l::Language::Program \&gt; \&gt;" alt="" coords="797,473,965,511"/>
+<area shape="rect" id="node27" href="$class_om_1_1_language_1_1_operator.html" title="The Operator implementation. " alt="" coords="999,786,1168,811"/>
+<area shape="rect" id="node28" href="$class_om_1_1_language_1_1_default_atom.html" title="Om::Language::DefaultAtom\l\&lt; Operator \&gt;" alt="" coords="1009,671,1199,710"/>
+<area shape="rect" id="node29" href="$class_om_1_1_language_1_1_default_element.html" title="Om::Language::DefaultElement\l\&lt; Operator, Atom \&gt;" alt="" coords="1000,563,1208,602"/>
+<area shape="rect" id="node30" href="$class_om_1_1_language_1_1_default_program.html" title="Om::Language::DefaultProgram\l\&lt; Operator, Atom \&gt;" alt="" coords="992,473,1201,511"/>
+<area shape="rect" id="node31" href="$class_om_1_1_language_1_1_default_consumer.html" title="Om::Language::DefaultConsumer\l\&lt; Operator, DefaultGiveable\l\&lt; Operator, Atom \&gt; \&gt;" alt="" coords="874,369,1093,421"/>
+<area shape="rect" id="node32" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Operator, Atom \&gt;" alt="" coords="911,278,1056,317"/>
+<area shape="rect" id="node33" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Operator, DefaultCopyable\l\&lt; Operator, Atom \&gt; \&gt;" alt="" coords="889,174,1079,226"/>
+<area shape="rect" id="node34" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operator, Atom \&gt;" alt="" coords="910,83,1057,122"/>
+<area shape="rect" id="node36" href="$class_om_1_1_taker.html" title="Om::Taker\&lt; Operator \&gt;" alt="" coords="1118,382,1276,407"/>
+<area shape="rect" id="node37" title="STL class. " alt="" coords="1232,570,1311,595"/>
+<area shape="rect" id="node38" title="STL class. " alt="" coords="1227,473,1352,511"/>
+<area shape="rect" id="node40" href="$class_om_1_1_language_1_1_default_consumer.html" title="Om::Language::DefaultConsumer\l\&lt; Evaluator, Consumer \&gt;" alt="" coords="323,995,543,1034"/>
+<area shape="rect" id="node41" href="$class_om_1_1_language_1_1_consumer.html" title="An Element taker; takes at the back. " alt="" coords="167,894,344,919"/>
+<area shape="rect" id="node42" href="$class_om_1_1_language_1_1_producer.html" title="An Element giver; gives from the front. " alt="" coords="568,1002,739,1027"/>
+</map>

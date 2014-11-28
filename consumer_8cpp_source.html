@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/consumer.cpp Source File</title>
+		<title>Om: om/language/consumer.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_e74603bf5b8acba3b260f5ba2f9e876e.html">language</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -55,13 +55,13 @@
 </div><!--header-->
 <div class="contents">
 <a href="consumer_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Consumer_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Language_Consumer_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="consumer_8hpp.html">om/consumer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="consumer_8hpp.html">om/language/consumer.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="reader_8hpp.html">om/reader.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="reader_8hpp.html">om/language/reader.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #ifndef Om_Macro_Precompilation_</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
@@ -70,10 +70,10 @@
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// MARK: - Om::Consumer</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// MARK: - Om::Language::Consumer</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">    Om::Consumer</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">    Om::Language::Consumer</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
@@ -85,9 +85,9 @@
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;&gt;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Parse(Reader &amp; theReader) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">while</span> (theReader) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        assert(<a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Symbol::theEndOperandSymbol</a> != *theReader);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        assert(<a class="code" href="namespace_om_1_1_language_1_1_symbol.html#a83c749bb6163b51ab2ed6a80bd5d12c5a08cb584dce6d551abd3fbf60f93e9a89">Symbol::theEndOperandSymbol</a> != *theReader);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">switch</span> (*theReader) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b">Symbol::theStartOperandSymbol</a>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespace_om_1_1_language_1_1_symbol.html#a83c749bb6163b51ab2ed6a80bd5d12c5a7144aaec94c448a9f80531ae64b6b38b">Symbol::theStartOperandSymbol</a>:</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            theReader.Pop();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="comment">// Ensure that this does not resolve to the copy constructor.</span></div>
@@ -99,10 +99,10 @@
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (!theReader) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            assert(<a class="code" href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Symbol::theEndOperandSymbol</a> == *theReader);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            assert(<a class="code" href="namespace_om_1_1_language_1_1_symbol.html#a83c749bb6163b51ab2ed6a80bd5d12c5a08cb584dce6d551abd3fbf60f93e9a89">Symbol::theEndOperandSymbol</a> == *theReader);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            theReader.Pop();</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a1ef3df34170c70fa4028c1d408953b63">Om_Symbol_SeparatorSymbol_GetCases_</a>():</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="separator__symbol_8hpp.html#a95cf9523597d5fd8e04780dcd00c8401">Om_Language_Symbol_SeparatorSymbol_GetCases_</a>():</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                TheSeparator theSeparator(theReader);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                this-&gt;TakeElement(theSeparator);</div>
@@ -185,10 +185,10 @@
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="namespace_om_1_1_symbol_html_a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883"><div class="ttname"><a href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7a97e5dbb936e6bdd9c52606d2657b2883">Om::Symbol::theEndOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00076">operand_symbol.hpp:76</a></div></div>
-<div class="ttc" id="separator__symbol_8hpp_html_a1ef3df34170c70fa4028c1d408953b63"><div class="ttname"><a href="separator__symbol_8hpp.html#a1ef3df34170c70fa4028c1d408953b63">Om_Symbol_SeparatorSymbol_GetCases_</a></div><div class="ttdeci">#define Om_Symbol_SeparatorSymbol_GetCases_()</div><div class="ttdoc">Generates switch cases for each Om::Symbol::SeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00026">separator_symbol.hpp:26</a></div></div>
+<div class="ttc" id="namespace_om_1_1_language_1_1_symbol_html_a83c749bb6163b51ab2ed6a80bd5d12c5a7144aaec94c448a9f80531ae64b6b38b"><div class="ttname"><a href="namespace_om_1_1_language_1_1_symbol.html#a83c749bb6163b51ab2ed6a80bd5d12c5a7144aaec94c448a9f80531ae64b6b38b">Om::Language::Symbol::theStartOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00074">operand_symbol.hpp:74</a></div></div>
+<div class="ttc" id="namespace_om_1_1_language_1_1_symbol_html_a83c749bb6163b51ab2ed6a80bd5d12c5a08cb584dce6d551abd3fbf60f93e9a89"><div class="ttname"><a href="namespace_om_1_1_language_1_1_symbol.html#a83c749bb6163b51ab2ed6a80bd5d12c5a08cb584dce6d551abd3fbf60f93e9a89">Om::Language::Symbol::theEndOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00078">operand_symbol.hpp:78</a></div></div>
+<div class="ttc" id="separator__symbol_8hpp_html_a95cf9523597d5fd8e04780dcd00c8401"><div class="ttname"><a href="separator__symbol_8hpp.html#a95cf9523597d5fd8e04780dcd00c8401">Om_Language_Symbol_SeparatorSymbol_GetCases_</a></div><div class="ttdeci">#define Om_Language_Symbol_SeparatorSymbol_GetCases_()</div><div class="ttdoc">Generates switch cases for each Om::Language::Symbol::SeparatorSymbol. </div><div class="ttdef"><b>Definition:</b> <a href="separator__symbol_8hpp_source.html#l00026">separator_symbol.hpp:26</a></div></div>
 <div class="ttc" id="reader_8hpp_html"><div class="ttname"><a href="reader_8hpp.html">reader.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="namespace_om_1_1_symbol_html_a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b"><div class="ttname"><a href="namespace_om_1_1_symbol.html#a19ac83265e86d8259bcde05d3c46c3b7ac9ce8334ed2dde4f1d2829af983fcd1b">Om::Symbol::theStartOperandSymbol</a></div><div class="ttdef"><b>Definition:</b> <a href="operand__symbol_8hpp_source.html#l00072">operand_symbol.hpp:72</a></div></div>
 <div class="ttc" id="consumer_8hpp_html"><div class="ttname"><a href="consumer_8hpp.html">consumer.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="class_om_1_1_source_1_1_source_html"><div class="ttname"><a href="class_om_1_1_source_1_1_source.html">Om::Source::Source&lt; CodePoint const  &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

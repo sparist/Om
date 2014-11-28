@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operation/incomplete_operation.hpp Source File</title>
+		<title>Om: om/language/operation/incomplete_operation.hpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_c1bd2cf3c0421cfb7d8c78872dba1c9d.html">operation</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_e74603bf5b8acba3b260f5ba2f9e876e.html">language</a></li><li class="navelem"><a class="el" href="dir_62a2b1770be3a9a4169ff2f0ee79268c.html">operation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -55,99 +55,103 @@
 </div><!--header-->
 <div class="contents">
 <a href="incomplete__operation_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Operation_IncompleteOperation_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Language_Operation_IncompleteOperation_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="incomplete__operation_8hpp.html#ad0e28cd442c57e3424d284d592aa08e6">   17</a></span>&#160;<span class="preprocessor">    #define Om_Operation_IncompleteOperation_ \</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Operation::IncompleteOperation</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="incomplete__operation_8hpp.html#a30f385b8065db2d5bddfc70d7bbeeb54">   17</a></span>&#160;<span class="preprocessor">    #define Om_Language_Operation_IncompleteOperation_ \</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    Om::Language::Operation::IncompleteOperation</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="code__point_8hpp.html">om/code_point.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_om.html">Om</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">class </span>Consumer;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">class </span>Evaluation;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">namespace </span>Language {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">class </span>Consumer;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">class </span>Operand;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">class </span>Evaluation;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">class </span>Producer;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">class </span>Operand;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">class </span>Reader;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">class </span>Producer;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">class </span>Reader;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">// MARK: - Om::Operation::IncompleteOperation</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">namespace </span>Operation {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_incomplete_operation.html">   44</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html">IncompleteOperation</a> {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">// MARK: - Om::Language::Operation::IncompleteOperation</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html">   46</a></span>&#160;            <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html">IncompleteOperation</a> {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#aae617834231676894adca347656f2dd1">~IncompleteOperation</a>() = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">public</span>: <span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#aa053a9eaf45a6e11a7458dc1f80c65bb">GiveElements</a>(<a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;) = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#aa053a9eaf45a6e11a7458dc1f80c65bb">GiveElements</a>(<a class="code" href="class_om_1_1_consumer.html">Consumer</a> &amp;) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#a6bf7bb93972aff1319a128e8d4242993">ParseQuotedElements</a>(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="class_om_1_1_reader.html">Reader</a> &amp;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            ) = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#a128a5c0467a6fa3d03bb75854208847a">TakeElement</a>(</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <a class="code" href="class_om_1_1_operand.html">Operand</a> &amp;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            ) = 0;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#a128a5c0467a6fa3d03bb75854208847a">TakeElement</a>(</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="class_om_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            ) = 0;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#afa0dfbdd97a0e26b84acbb823405acc2">TakeQuotedElements</a>(</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <a class="code" href="class_om_1_1_producer.html">Producer</a> &amp;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            ) = 0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#afa0dfbdd97a0e26b84acbb823405acc2">TakeQuotedElements</a>(</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <a class="code" href="class_om_1_1_producer.html">Producer</a> <span class="keyword">const</span> &amp;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            ) = 0;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keyword">protected</span>: <span class="comment">// MARK: protected (non-static)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keyword">virtual</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a92bc6a07722a8736f03c2ad153908f06">~IncompleteOperation</a>() = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#aef0405271d9c8f81ee865cc751e090dc">GiveElements</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;) = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#aef0405271d9c8f81ee865cc751e090dc">GiveElements</a>(<a class="code" href="class_om_1_1_language_1_1_consumer.html">Consumer</a> &amp;) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a8a6415c7e969465681cb4c292fa86d81">ParseQuotedElements</a>(</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_reader.html">Reader</a> &amp;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                ) = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a7de90096d71642388f9bf203b6dfdb23">TakeElement</a>(</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> &amp;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                ) = 0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a7de90096d71642388f9bf203b6dfdb23">TakeElement</a>(</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_operand.html">Operand</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                ) = 0;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a3d76ac73af01fd41b624c05e5975695d">TakeQuotedElements</a>(</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_producer.html">Producer</a> &amp;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                ) = 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a3d76ac73af01fd41b624c05e5975695d">TakeQuotedElements</a>(</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <a class="code" href="class_om_1_1_language_1_1_producer.html">Producer</a> <span class="keyword">const</span> &amp;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                ) = 0;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#ac90fe39c224f9574eee04c46c0589555">IncompleteOperation</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keyword">protected</span>: <span class="comment">// MARK: protected (non-static)</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#ae84b4011f459f275aad7d355f19a4db5">IncompleteOperation</a>();</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#ac90fe39c224f9574eee04c46c0589555">IncompleteOperation</a>(<a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html">IncompleteOperation</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keyword">private</span>: <span class="comment">// MARK: private (non-static)</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html">IncompleteOperation</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html#a89d389c52b8f7a8f63cadc4bf4a62e25">operator =</a>(<a class="code" href="class_om_1_1_operation_1_1_incomplete_operation.html">IncompleteOperation</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#ae84b4011f459f275aad7d355f19a4db5">IncompleteOperation</a>(<a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html">IncompleteOperation</a> <span class="keyword">const</span> &amp;);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        };</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html">IncompleteOperation</a> <span class="keyword">const</span> &amp; <a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a1cdb74e8e442c7cc2b8f6f09a15c7ee7">operator =</a>(<a class="code" href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html">IncompleteOperation</a> <span class="keyword">const</span> &amp;);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            };</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="incomplete__operation_8cpp.html">om/operation/incomplete_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_incomplete_operation_html_afa0dfbdd97a0e26b84acbb823405acc2"><div class="ttname"><a href="class_om_1_1_operation_1_1_incomplete_operation.html#afa0dfbdd97a0e26b84acbb823405acc2">Om::Operation::IncompleteOperation::TakeQuotedElements</a></div><div class="ttdeci">virtual bool TakeQuotedElements(Evaluation &amp;, Producer &amp;)=0</div><div class="ttdoc">Constructs and takes an Operand, which takes each Element from the argument. </div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_incomplete_operation_html_aae617834231676894adca347656f2dd1"><div class="ttname"><a href="class_om_1_1_operation_1_1_incomplete_operation.html#aae617834231676894adca347656f2dd1">Om::Operation::IncompleteOperation::~IncompleteOperation</a></div><div class="ttdeci">virtual ~IncompleteOperation()=0</div></div>
-<div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om language implementation. </div><div class="ttdef"><b>Definition:</b> <a href="atom_8hpp_source.html#l00022">atom.hpp:22</a></div></div>
-<div class="ttc" id="class_om_1_1_reader_html"><div class="ttname"><a href="class_om_1_1_reader.html">Om::Reader</a></div><div class="ttdoc">Produces each CodePoint until the end of the Source. </div><div class="ttdef"><b>Definition:</b> <a href="reader_8hpp_source.html#l00031">reader.hpp:31</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_incomplete_operation_html_a89d389c52b8f7a8f63cadc4bf4a62e25"><div class="ttname"><a href="class_om_1_1_operation_1_1_incomplete_operation.html#a89d389c52b8f7a8f63cadc4bf4a62e25">Om::Operation::IncompleteOperation::operator=</a></div><div class="ttdeci">IncompleteOperation const &amp; operator=(IncompleteOperation const &amp;)</div></div>
-<div class="ttc" id="class_om_1_1_consumer_html"><div class="ttname"><a href="class_om_1_1_consumer.html">Om::Consumer</a></div><div class="ttdoc">An Element taker; takes at the back. </div><div class="ttdef"><b>Definition:</b> <a href="consumer_8hpp_source.html#l00040">consumer.hpp:40</a></div></div>
-<div class="ttc" id="class_om_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_evaluation.html">Om::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00040">evaluation.hpp:40</a></div></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="incomplete__operation_8cpp.html">om/language/operation/incomplete_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om library. </div><div class="ttdef"><b>Definition:</b> <a href="code__point_8hpp_source.html#l00026">code_point.hpp:26</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_incomplete_operation_html_a7de90096d71642388f9bf203b6dfdb23"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a7de90096d71642388f9bf203b6dfdb23">Om::Language::Operation::IncompleteOperation::TakeElement</a></div><div class="ttdeci">virtual bool TakeElement(Evaluation &amp;, Operand &amp;)=0</div><div class="ttdoc">Takes an Operand. </div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_incomplete_operation_html_a92bc6a07722a8736f03c2ad153908f06"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a92bc6a07722a8736f03c2ad153908f06">Om::Language::Operation::IncompleteOperation::~IncompleteOperation</a></div><div class="ttdeci">virtual ~IncompleteOperation()=0</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_consumer_html"><div class="ttname"><a href="class_om_1_1_language_1_1_consumer.html">Om::Language::Consumer</a></div><div class="ttdoc">An Element taker; takes at the back. </div><div class="ttdef"><b>Definition:</b> <a href="consumer_8hpp_source.html#l00042">consumer.hpp:42</a></div></div>
 <div class="ttc" id="incomplete__operation_8cpp_html"><div class="ttname"><a href="incomplete__operation_8cpp.html">incomplete_operation.cpp</a></div><div class="ttdoc">Om source file. </div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_incomplete_operation_html_a6bf7bb93972aff1319a128e8d4242993"><div class="ttname"><a href="class_om_1_1_operation_1_1_incomplete_operation.html#a6bf7bb93972aff1319a128e8d4242993">Om::Operation::IncompleteOperation::ParseQuotedElements</a></div><div class="ttdeci">virtual bool ParseQuotedElements(Evaluation &amp;, Reader &amp;)=0</div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_incomplete_operation_html_a128a5c0467a6fa3d03bb75854208847a"><div class="ttname"><a href="class_om_1_1_operation_1_1_incomplete_operation.html#a128a5c0467a6fa3d03bb75854208847a">Om::Operation::IncompleteOperation::TakeElement</a></div><div class="ttdeci">virtual bool TakeElement(Evaluation &amp;, Operand &amp;)=0</div><div class="ttdoc">Takes an Operand. </div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_incomplete_operation_html_ac90fe39c224f9574eee04c46c0589555"><div class="ttname"><a href="class_om_1_1_operation_1_1_incomplete_operation.html#ac90fe39c224f9574eee04c46c0589555">Om::Operation::IncompleteOperation::IncompleteOperation</a></div><div class="ttdeci">IncompleteOperation()</div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_incomplete_operation_html_aa053a9eaf45a6e11a7458dc1f80c65bb"><div class="ttname"><a href="class_om_1_1_operation_1_1_incomplete_operation.html#aa053a9eaf45a6e11a7458dc1f80c65bb">Om::Operation::IncompleteOperation::GiveElements</a></div><div class="ttdeci">virtual void GiveElements(Consumer &amp;)=0</div><div class="ttdoc">Gives the contents. </div></div>
-<div class="ttc" id="class_om_1_1_operand_html"><div class="ttname"><a href="class_om_1_1_operand.html">Om::Operand</a></div><div class="ttdoc">The Operand implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operand_8hpp_source.html#l00055">operand.hpp:55</a></div></div>
-<div class="ttc" id="class_om_1_1_producer_html"><div class="ttname"><a href="class_om_1_1_producer.html">Om::Producer</a></div><div class="ttdoc">An Element giver; gives from the front. </div><div class="ttdef"><b>Definition:</b> <a href="producer_8hpp_source.html#l00038">producer.hpp:38</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_incomplete_operation_html"><div class="ttname"><a href="class_om_1_1_operation_1_1_incomplete_operation.html">Om::Operation::IncompleteOperation</a></div><div class="ttdoc">An Operation that has yet to consume one or more Operands and must live in memory until complete...</div><div class="ttdef"><b>Definition:</b> <a href="incomplete__operation_8hpp_source.html#l00044">incomplete_operation.hpp:44</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_reader_html"><div class="ttname"><a href="class_om_1_1_language_1_1_reader.html">Om::Language::Reader</a></div><div class="ttdoc">Produces each CodePoint until the end of the Source. </div><div class="ttdef"><b>Definition:</b> <a href="reader_8hpp_source.html#l00033">reader.hpp:33</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_incomplete_operation_html_a8a6415c7e969465681cb4c292fa86d81"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a8a6415c7e969465681cb4c292fa86d81">Om::Language::Operation::IncompleteOperation::ParseQuotedElements</a></div><div class="ttdeci">virtual bool ParseQuotedElements(Evaluation &amp;, Reader &amp;)=0</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_language_1_1_evaluation.html">Om::Language::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00042">evaluation.hpp:42</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_incomplete_operation_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html">Om::Language::Operation::IncompleteOperation</a></div><div class="ttdoc">An Operation that has yet to consume one or more Operands and must live in memory until complete...</div><div class="ttdef"><b>Definition:</b> <a href="incomplete__operation_8hpp_source.html#l00046">incomplete_operation.hpp:46</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operand_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html">Om::Language::Operand</a></div><div class="ttdoc">The Operand implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operand_8hpp_source.html#l00057">operand.hpp:57</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_incomplete_operation_html_ae84b4011f459f275aad7d355f19a4db5"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#ae84b4011f459f275aad7d355f19a4db5">Om::Language::Operation::IncompleteOperation::IncompleteOperation</a></div><div class="ttdeci">IncompleteOperation()</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_incomplete_operation_html_a1cdb74e8e442c7cc2b8f6f09a15c7ee7"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a1cdb74e8e442c7cc2b8f6f09a15c7ee7">Om::Language::Operation::IncompleteOperation::operator=</a></div><div class="ttdeci">IncompleteOperation const &amp; operator=(IncompleteOperation const &amp;)</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_incomplete_operation_html_aef0405271d9c8f81ee865cc751e090dc"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#aef0405271d9c8f81ee865cc751e090dc">Om::Language::Operation::IncompleteOperation::GiveElements</a></div><div class="ttdeci">virtual void GiveElements(Consumer &amp;)=0</div><div class="ttdoc">Gives the contents. </div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_incomplete_operation_html_a3d76ac73af01fd41b624c05e5975695d"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html#a3d76ac73af01fd41b624c05e5975695d">Om::Language::Operation::IncompleteOperation::TakeQuotedElements</a></div><div class="ttdeci">virtual bool TakeQuotedElements(Evaluation &amp;, Producer &amp;)=0</div><div class="ttdoc">Constructs and takes an Operand, which takes each Element from the argument. </div></div>
 <div class="ttc" id="code__point_8hpp_html"><div class="ttname"><a href="code__point_8hpp.html">code_point.hpp</a></div><div class="ttdoc">Om header file. </div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_producer_html"><div class="ttname"><a href="class_om_1_1_language_1_1_producer.html">Om::Language::Producer</a></div><div class="ttdoc">An Element giver; gives from the front. </div><div class="ttdef"><b>Definition:</b> <a href="producer_8hpp_source.html#l00040">producer.hpp:40</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 	</body>

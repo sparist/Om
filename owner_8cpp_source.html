@@ -88,7 +88,7 @@
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keyword">explicit</span> TestValue(<span class="keywordtype">int</span> <span class="keyword">const</span> theNumber):</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                thisNumber(theNumber) {}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="namespace_om.html#ac6e60b21924d18e05e4ef84f08763c2b">operator ==</a>(TestValue <span class="keyword">const</span> theTestValue)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="namespace_om.html#a7861bb0b2d585f5a3b697a7ab5d6b3c0">operator ==</a>(TestValue <span class="keyword">const</span> theTestValue)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="keywordflow">return</span> this-&gt;thisNumber == theTestValue.thisNumber;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
@@ -232,7 +232,7 @@
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span> (theOwner.thisWasExposed) {</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        assert(theOwner.thisValue);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        this-&gt;thisValue.reset(</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <a class="code" href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Copy</a>(*theOwner.thisValue).release()</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <a class="code" href="namespace_om.html#ad4002872509181360ad512044e566556">Copy</a>(*theOwner.thisValue).release()</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        );</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        this-&gt;thisValue = theOwner.thisValue;</div>
@@ -339,7 +339,7 @@
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;Template_</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> Type_::Swap(Owner &amp; theOwner) {</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    this-&gt;thisValue.swap(theOwner.thisValue);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="namespaceboost.html#a03ce84b81b38bd696b479b0ea91b6825">boost::swap</a>(</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        this-&gt;thisWasExposed,</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        theOwner.thisWasExposed</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    );</div>
@@ -356,7 +356,7 @@
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment">// MARK: - boost::</span></div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheValue&gt;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a>(</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceboost.html#a03ce84b81b38bd696b479b0ea91b6825">boost::swap</a>(</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <a class="code" href="class_om_1_1_owner.html">Om::Owner&lt;TheValue&gt;</a> &amp; theFirst,</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="class_om_1_1_owner.html">Om::Owner&lt;TheValue&gt;</a> &amp; theSecond</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;) {</div>
@@ -365,15 +365,14 @@
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="default__copyable_8hpp_html"><div class="ttname"><a href="default__copyable_8hpp.html">default_copyable.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om language implementation. </div><div class="ttdef"><b>Definition:</b> <a href="atom_8hpp_source.html#l00022">atom.hpp:22</a></div></div>
+<div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om library. </div><div class="ttdef"><b>Definition:</b> <a href="code__point_8hpp_source.html#l00026">code_point.hpp:26</a></div></div>
 <div class="ttc" id="class_om_1_1_owner_html_aed83db886ea04a8a66548b045224a341"><div class="ttname"><a href="class_om_1_1_owner.html#aed83db886ea04a8a66548b045224a341">Om::Owner::UncomparableBoolean</a></div><div class="ttdeci">void UncomparableBoolean() const </div></div>
 <div class="ttc" id="shareable_8hpp_html"><div class="ttname"><a href="shareable_8hpp.html">shareable.hpp</a></div><div class="ttdoc">Om header file. </div></div>
+<div class="ttc" id="namespace_om_html_a7861bb0b2d585f5a3b697a7ab5d6b3c0"><div class="ttname"><a href="namespace_om.html#a7861bb0b2d585f5a3b697a7ab5d6b3c0">Om::operator==</a></div><div class="ttdeci">bool operator==(Source::Source&lt; TheItem &gt; const &amp;, Source::Source&lt; TheItem &gt; const &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_owner_html_af38db214e07df744f30123c08133ecd3"><div class="ttname"><a href="class_om_1_1_owner.html#af38db214e07df744f30123c08133ecd3">Om::Owner::Swap</a></div><div class="ttdeci">void Swap(Owner &amp;)</div></div>
-<div class="ttc" id="namespaceboost_html_a90b627eb1c99d9ef357f4f0361edecfa"><div class="ttname"><a href="namespaceboost.html#a90b627eb1c99d9ef357f4f0361edecfa">boost::swap</a></div><div class="ttdeci">void swap(Om::Expression &amp;, Om::Expression &amp;)</div></div>
+<div class="ttc" id="namespaceboost_html_a03ce84b81b38bd696b479b0ea91b6825"><div class="ttname"><a href="namespaceboost.html#a03ce84b81b38bd696b479b0ea91b6825">boost::swap</a></div><div class="ttdeci">void swap(Om::Language::Expression &amp;, Om::Language::Expression &amp;)</div></div>
 <div class="ttc" id="namespace_om_html_ad4002872509181360ad512044e566556"><div class="ttname"><a href="namespace_om.html#ad4002872509181360ad512044e566556">Om::Copy</a></div><div class="ttdeci">std::auto_ptr&lt; TheCopyable &gt; Copy(TheCopyable const &amp;)</div></div>
 <div class="ttc" id="owner_8hpp_html"><div class="ttname"><a href="owner_8hpp.html">owner.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_default_copyable_html_aedd97796f8c4fb6d874d6fd7badb76a4"><div class="ttname"><a href="class_om_1_1_default_copyable.html#aedd97796f8c4fb6d874d6fd7badb76a4">Om::DefaultCopyable&lt; Operator, Atom &gt;::Copy</a></div><div class="ttdeci">virtual std::auto_ptr&lt; Copyable &gt; Copy() const</div></div>
-<div class="ttc" id="namespace_om_html_ac6e60b21924d18e05e4ef84f08763c2b"><div class="ttname"><a href="namespace_om.html#ac6e60b21924d18e05e4ef84f08763c2b">Om::operator==</a></div><div class="ttdeci">bool operator==(DefaultAtom&lt; TheImplementation &gt; const &amp;, DefaultAtom&lt; TheImplementation &gt; const &amp;)</div></div>
 <div class="ttc" id="class_om_1_1_owner_html"><div class="ttname"><a href="class_om_1_1_owner.html">Om::Owner</a></div><div class="ttdoc">A polymorphic object with value semantics. </div><div class="ttdef"><b>Definition:</b> <a href="owner_8hpp_source.html#l00040">owner.hpp:40</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->

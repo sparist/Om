@@ -1,62 +1,7 @@
 <map id="Om::Giveable" name="Om::Giveable">
-<area shape="rect" id="node4" href="$class_om_1_1_program.html" title="The Program implementation. " alt="" coords="315,137,416,162"/>
-<area shape="rect" id="node2" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied. " alt="" coords="7,111,113,137"/>
-<area shape="rect" id="node3" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved. " alt="" coords="6,161,114,186"/>
-<area shape="rect" id="node5" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Expression, Program \&gt;" alt="" coords="465,19,634,58"/>
-<area shape="rect" id="node11" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Lexicon, Program \&gt;" alt="" coords="475,91,624,130"/>
-<area shape="rect" id="node17" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Literal, Program \&gt;" alt="" coords="475,161,624,199"/>
-<area shape="rect" id="node23" href="$class_om_1_1_element.html" title="A Program that contains a single elemental item (or none, when IsEmpty() returns true). " alt="" coords="500,275,599,301"/>
-<area shape="rect" id="node6" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Expression, DefaultCopyable\l\&lt; Expression, Program \&gt; \&gt;" alt="" coords="683,5,888,57"/>
-<area shape="rect" id="node7" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Expression, Program \&gt;" alt="" coords="948,11,1116,50"/>
-<area shape="rect" id="node8" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Expression, DefaultGiveable\l\&lt; Expression, Program \&gt; \&gt;" alt="" coords="1203,5,1405,57"/>
-<area shape="rect" id="node9" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Expression, Program \&gt;" alt="" coords="1489,11,1658,50"/>
-<area shape="rect" id="node10" href="$class_om_1_1_expression.html" title="The Expression Program implementation. " alt="" coords="1782,18,1898,43"/>
-<area shape="rect" id="node12" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Lexicon, DefaultCopyable\l\&lt; Lexicon, Program \&gt; \&gt;" alt="" coords="693,81,878,133"/>
-<area shape="rect" id="node13" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Lexicon, Program \&gt;" alt="" coords="958,87,1106,126"/>
-<area shape="rect" id="node14" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Lexicon, DefaultGiveable\l\&lt; Lexicon, Program \&gt; \&gt;" alt="" coords="1213,81,1395,133"/>
-<area shape="rect" id="node15" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Lexicon, Program \&gt;" alt="" coords="1499,87,1648,126"/>
-<area shape="rect" id="node16" href="$class_om_1_1_lexicon.html" title="The Lexicon Program implementation. " alt="" coords="1792,94,1888,119"/>
-<area shape="rect" id="node18" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Literal, DefaultCopyable\l\&lt; Literal, Program \&gt; \&gt;" alt="" coords="698,157,873,209"/>
-<area shape="rect" id="node19" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Literal, Program \&gt;" alt="" coords="959,163,1105,202"/>
-<area shape="rect" id="node20" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Literal, DefaultGiveable\l\&lt; Literal, Program \&gt; \&gt;" alt="" coords="1218,157,1390,209"/>
-<area shape="rect" id="node21" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Literal, Program \&gt;" alt="" coords="1502,163,1645,202"/>
-<area shape="rect" id="node22" href="$class_om_1_1_literal.html" title="The Literal Program implementation. " alt="" coords="1797,170,1883,195"/>
-<area shape="rect" id="node24" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Null, Element \&gt;" alt="" coords="711,239,860,278"/>
-<area shape="rect" id="node31" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operand, Element \&gt;" alt="" coords="709,306,862,345"/>
-<area shape="rect" id="node38" href="$class_om_1_1_atom.html" title="An atomic Element defined by a string. " alt="" coords="745,417,826,442"/>
-<area shape="rect" id="node25" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Null, DefaultCopyable\l\&lt; Null, Element \&gt; \&gt;" alt="" coords="951,226,1113,278"/>
-<area shape="rect" id="node26" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Null, Element \&gt;" alt="" coords="1231,233,1377,271"/>
-<area shape="rect" id="node27" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Null, DefaultGiveable\l\&lt; Null, Element \&gt; \&gt;" alt="" coords="1494,226,1652,278"/>
-<area shape="rect" id="node28" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Null, Element \&gt;" alt="" coords="1768,233,1912,271"/>
-<area shape="rect" id="node29" href="$class_om_1_1_default_element.html" title="Om::DefaultElement\l\&lt; Null, Element \&gt;" alt="" coords="2019,233,2160,271"/>
-<area shape="rect" id="node30" href="$class_om_1_1_null.html" title="The Null Element implementation. " alt="" coords="2253,239,2326,265"/>
-<area shape="rect" id="node32" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Operand, DefaultCopyable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="937,302,1127,354"/>
-<area shape="rect" id="node33" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Operand, Element \&gt;" alt="" coords="1228,309,1380,347"/>
-<area shape="rect" id="node34" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Operand, DefaultGiveable\l\&lt; Operand, Element \&gt; \&gt;" alt="" coords="1480,302,1667,354"/>
-<area shape="rect" id="node35" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Operand, Element \&gt;" alt="" coords="1764,309,1916,347"/>
-<area shape="rect" id="node36" href="$class_om_1_1_default_element.html" title="Om::DefaultElement\l\&lt; Operand, Element \&gt;" alt="" coords="2013,309,2166,347"/>
-<area shape="rect" id="node37" href="$class_om_1_1_operand.html" title="The Operand implementation. " alt="" coords="2238,315,2340,341"/>
-<area shape="rect" id="node39" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Operator, Atom \&gt;" alt="" coords="958,381,1106,419"/>
-<area shape="rect" id="node47" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; Separator, Atom \&gt;" alt="" coords="958,447,1106,486"/>
-<area shape="rect" id="node55" href="$class_om_1_1_default_copyable.html" title="Om::DefaultCopyable\l\&lt; ThisImplementation,\l Atom \&gt;" alt="" coords="956,521,1108,573"/>
-<area shape="rect" id="node40" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Operator, DefaultCopyable\l\&lt; Operator, Atom \&gt; \&gt;" alt="" coords="1209,371,1399,423"/>
-<area shape="rect" id="node41" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Operator, Atom \&gt;" alt="" coords="1501,378,1646,417"/>
-<area shape="rect" id="node42" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Operator, DefaultGiveable\l\&lt; Operator, Atom \&gt; \&gt;" alt="" coords="1747,371,1933,423"/>
-<area shape="rect" id="node43" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Operator, Atom \&gt;" alt="" coords="2018,378,2161,417"/>
-<area shape="rect" id="node44" href="$class_om_1_1_default_element.html" title="Om::DefaultElement\l\&lt; Operator, Atom \&gt;" alt="" coords="2219,378,2360,417"/>
-<area shape="rect" id="node45" href="$class_om_1_1_default_atom.html" title="Om::DefaultAtom\&lt; Operator \&gt;" alt="" coords="2446,385,2645,410"/>
-<area shape="rect" id="node46" href="$class_om_1_1_operator.html" title="The Operator implementation. " alt="" coords="2729,385,2831,410"/>
-<area shape="rect" id="node48" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; Separator, DefaultCopyable\l\&lt; Separator, Atom \&gt; \&gt;" alt="" coords="1206,447,1402,499"/>
-<area shape="rect" id="node49" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; Separator, Atom \&gt;" alt="" coords="1501,454,1646,493"/>
-<area shape="rect" id="node50" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; Separator, DefaultGiveable\l\&lt; Separator, Atom \&gt; \&gt;" alt="" coords="1744,447,1936,499"/>
-<area shape="rect" id="node51" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; Separator, Atom \&gt;" alt="" coords="2018,454,2161,493"/>
-<area shape="rect" id="node52" href="$class_om_1_1_default_element.html" title="Om::DefaultElement\l\&lt; Separator, Atom \&gt;" alt="" coords="2219,454,2360,493"/>
-<area shape="rect" id="node53" href="$class_om_1_1_default_atom.html" title="Om::DefaultAtom\&lt; Separator \&gt;" alt="" coords="2443,461,2648,486"/>
-<area shape="rect" id="node54" href="$class_om_1_1_separator.html" title="The Separator implementation. " alt="" coords="2726,461,2834,486"/>
-<area shape="rect" id="node56" href="$class_om_1_1_default_moveable.html" title="Om::DefaultMoveable\l\&lt; ThisImplementation,\l DefaultCopyable\&lt; ThisImplementation,\l Atom \&gt; \&gt;" alt="" coords="1177,523,1431,589"/>
-<area shape="rect" id="node57" href="$class_om_1_1_default_giveable.html" title="Om::DefaultGiveable\l\&lt; ThisImplementation,\l Atom \&gt;" alt="" coords="1497,530,1650,582"/>
-<area shape="rect" id="node58" href="$class_om_1_1_default_consumer.html" title="Om::DefaultConsumer\l\&lt; ThisImplementation,\l DefaultGiveable\&lt; ThisImplementation,\l Atom \&gt; \&gt;" alt="" coords="1714,523,1966,589"/>
-<area shape="rect" id="node59" href="$class_om_1_1_default_program.html" title="Om::DefaultProgram\l\&lt; ThisImplementation,\l Atom \&gt;" alt="" coords="2013,530,2166,582"/>
-<area shape="rect" id="node60" href="$class_om_1_1_default_element.html" title="Om::DefaultElement\l\&lt; ThisImplementation,\l Atom \&gt;" alt="" coords="2213,530,2366,582"/>
-<area shape="rect" id="node61" href="$class_om_1_1_default_atom.html" title="A partial implementation of Atom. " alt="" coords="2414,543,2677,569"/>
+<area shape="rect" id="node4" href="$class_om_1_1_language_1_1_program.html" title="The Program implementation. " alt="" coords="39,155,207,181"/>
+<area shape="rect" id="node2" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied. " alt="" coords="4,6,109,31"/>
+<area shape="rect" id="node3" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved. " alt="" coords="134,6,241,31"/>
+<area shape="rect" id="node5" href="$class_om_1_1_language_1_1_element.html" title="A Program that contains a single elemental item (or none, when IsEmpty() returns true). " alt="" coords="40,230,205,255"/>
+<area shape="rect" id="node6" href="$class_om_1_1_language_1_1_atom.html" title="An atomic Element defined by a string. " alt="" coords="49,305,196,330"/>
 </map>

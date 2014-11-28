@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/operation/lexicon_front_push_operation.hpp Source File</title>
+		<title>Om: om/language/operation/lexicon_front_push_operation.hpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_c1bd2cf3c0421cfb7d8c78872dba1c9d.html">operation</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_e74603bf5b8acba3b260f5ba2f9e876e.html">language</a></li><li class="navelem"><a class="el" href="dir_62a2b1770be3a9a4169ff2f0ee79268c.html">operation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -55,52 +55,56 @@
 </div><!--header-->
 <div class="contents">
 <a href="lexicon__front__push__operation_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef Om_Operation_LexiconFrontPushOperation_</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef Om_Language_Operation_LexiconFrontPushOperation_</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="lexicon__front__push__operation_8hpp.html#a557745ed48b989bdf4bb1d8bd7aa16db">   29</a></span>&#160;<span class="preprocessor">    #define Om_Operation_LexiconFrontPushOperation_ \</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    Om::Operation::LexiconFrontPushOperation</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="lexicon__front__push__operation_8hpp.html#ad758c956936806c57fea77a5d41c7606">   29</a></span>&#160;<span class="preprocessor">    #define Om_Language_Operation_LexiconFrontPushOperation_ \</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    Om::Language::Operation::LexiconFrontPushOperation</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="system_8hpp.html">om/system.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="system_8hpp.html">om/language/system.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="lexicon__front__push__operation_8hpp.html#a30308ddd71b19af74df09eb59a818a9e">   34</a></span>&#160;<span class="preprocessor">    #define Om_Operation_LexiconFrontPushOperation_GetName_() \</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="lexicon__front__push__operation_8hpp.html#a12d6046507f2b6d8f272b41e669514dd">   34</a></span>&#160;<span class="preprocessor">    #define Om_Language_Operation_LexiconFrontPushOperation_GetName_() \</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">    &quot;-&gt;[lexicon]&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_om.html">Om</a> {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">namespace </span>Operation {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">namespace </span>Language {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// MARK: - Om::Operation::LexiconFrontPushOperation</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">namespace </span>Operation {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_om_1_1_operation_1_1_lexicon_front_push_operation.html">   47</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_om_1_1_operation_1_1_lexicon_front_push_operation.html">LexiconFrontPushOperation</a> {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// MARK: - Om::Language::Operation::LexiconFrontPushOperation</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation.html">   49</a></span>&#160;            <span class="keyword">class </span><a class="code" href="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation.html">LexiconFrontPushOperation</a> {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_operation_1_1_lexicon_front_push_operation.html#ae6a95c690164a02c1617d55643174c89">GetName</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">public</span>: <span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_operation_1_1_lexicon_front_push_operation.html#aba2b1a9b3cf2a9441bc00ca938385936">Give</a>(<a class="code" href="class_om_1_1_evaluation.html">Evaluation</a> &amp;);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">char</span> <span class="keyword">const</span> * <a class="code" href="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation.html#abd5f119f14138341aabf6a913d04dbae">GetName</a>();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        };</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation.html#a772faff7b04abc443d92e01f1e65d8d8">Give</a>(<a class="code" href="class_om_1_1_language_1_1_evaluation.html">Evaluation</a> &amp;);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            };</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">static</span> <a class="code" href="singleton_om_1_1_system_1_1_definition.html">System::Definition&lt;LexiconFrontPushOperation&gt;</a> <span class="keyword">const</span> theLexiconFrontPushDefinition;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">namespace </span>{</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keyword">static</span> <a class="code" href="singleton_om_1_1_language_1_1_system_1_1_definition.html">System::Definition&lt;LexiconFrontPushOperation&gt;</a> <span class="keyword">const</span> theLexiconFrontPushDefinition;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="lexicon__front__push__operation_8cpp.html">om/operation/lexicon_front_push_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_lexicon_front_push_operation_html_ae6a95c690164a02c1617d55643174c89"><div class="ttname"><a href="class_om_1_1_operation_1_1_lexicon_front_push_operation.html#ae6a95c690164a02c1617d55643174c89">Om::Operation::LexiconFrontPushOperation::GetName</a></div><div class="ttdeci">static char const * GetName()</div></div>
-<div class="ttc" id="singleton_om_1_1_system_1_1_definition_html"><div class="ttname"><a href="singleton_om_1_1_system_1_1_definition.html">Om::System::Definition</a></div><div class="ttdoc">An inserter of an Operation into the static System instance. </div><div class="ttdef"><b>Definition:</b> <a href="system_8hpp_source.html#l00052">system.hpp:52</a></div></div>
-<div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om language implementation. </div><div class="ttdef"><b>Definition:</b> <a href="atom_8hpp_source.html#l00022">atom.hpp:22</a></div></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="lexicon__front__push__operation_8cpp.html">om/language/operation/lexicon_front_push_operation.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="namespace_om_html"><div class="ttname"><a href="namespace_om.html">Om</a></div><div class="ttdoc">The Om library. </div><div class="ttdef"><b>Definition:</b> <a href="code__point_8hpp_source.html#l00026">code_point.hpp:26</a></div></div>
 <div class="ttc" id="system_8hpp_html"><div class="ttname"><a href="system_8hpp.html">system.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_evaluation.html">Om::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00040">evaluation.hpp:40</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_lexicon_front_push_operation_html"><div class="ttname"><a href="class_om_1_1_operation_1_1_lexicon_front_push_operation.html">Om::Operation::LexiconFrontPushOperation</a></div><div class="ttdoc">The ->[lexicon] operation implementation. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon__front__push__operation_8hpp_source.html#l00047">lexicon_front_push_operation.hpp:47</a></div></div>
-<div class="ttc" id="class_om_1_1_operation_1_1_lexicon_front_push_operation_html_aba2b1a9b3cf2a9441bc00ca938385936"><div class="ttname"><a href="class_om_1_1_operation_1_1_lexicon_front_push_operation.html#aba2b1a9b3cf2a9441bc00ca938385936">Om::Operation::LexiconFrontPushOperation::Give</a></div><div class="ttdeci">static void Give(Evaluation &amp;)</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation.html">Om::Language::Operation::LexiconFrontPushOperation</a></div><div class="ttdoc">The ->[lexicon] operation implementation. </div><div class="ttdef"><b>Definition:</b> <a href="lexicon__front__push__operation_8hpp_source.html#l00049">lexicon_front_push_operation.hpp:49</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation_html_a772faff7b04abc443d92e01f1e65d8d8"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation.html#a772faff7b04abc443d92e01f1e65d8d8">Om::Language::Operation::LexiconFrontPushOperation::Give</a></div><div class="ttdeci">static void Give(Evaluation &amp;)</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation_html_abd5f119f14138341aabf6a913d04dbae"><div class="ttname"><a href="class_om_1_1_language_1_1_operation_1_1_lexicon_front_push_operation.html#abd5f119f14138341aabf6a913d04dbae">Om::Language::Operation::LexiconFrontPushOperation::GetName</a></div><div class="ttdeci">static char const * GetName()</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_evaluation_html"><div class="ttname"><a href="class_om_1_1_language_1_1_evaluation.html">Om::Language::Evaluation</a></div><div class="ttdoc">The current evaluation. </div><div class="ttdef"><b>Definition:</b> <a href="evaluation_8hpp_source.html#l00042">evaluation.hpp:42</a></div></div>
+<div class="ttc" id="singleton_om_1_1_language_1_1_system_1_1_definition_html"><div class="ttname"><a href="singleton_om_1_1_language_1_1_system_1_1_definition.html">Om::Language::System::Definition</a></div><div class="ttdoc">An inserter of an Operation into the static System instance. </div><div class="ttdef"><b>Definition:</b> <a href="system_8hpp_source.html#l00054">system.hpp:54</a></div></div>
 <div class="ttc" id="lexicon__front__push__operation_8cpp_html"><div class="ttname"><a href="lexicon__front__push__operation_8cpp.html">lexicon_front_push_operation.cpp</a></div><div class="ttdoc">Om source file. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->

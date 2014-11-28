@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/evaluator.cpp Source File</title>
+		<title>Om: om/language/evaluator.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_e74603bf5b8acba3b260f5ba2f9e876e.html">language</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -55,21 +55,21 @@
 </div><!--header-->
 <div class="contents">
 <a href="evaluator_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Evaluator_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Language_Evaluator_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="evaluator_8hpp.html">om/evaluator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="evaluator_8hpp.html">om/language/evaluator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="evaluation_8hpp.html">om/evaluation.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="incomplete__operation_8hpp.html">om/operation/incomplete_operation.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operator_8hpp.html">om/operator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="translator_8hpp.html">om/translator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="evaluation_8hpp.html">om/language/evaluation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="incomplete__operation_8hpp.html">om/language/operation/incomplete_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="operator_8hpp.html">om/language/operator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="translator_8hpp.html">om/language/translator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// MARK: - Om::Evaluator</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// MARK: - Om::Language::Evaluator</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    Om::Evaluator</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    Om::Language::Evaluator</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// MARK: public (non-static)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
@@ -101,7 +101,7 @@
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    this-&gt;thisIncompleteOperationVector.clear();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_translator.html">Om::Translator</a> <span class="keyword">const</span> &amp; Type_::GetTranslator()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_language_1_1_translator.html">Om::Language::Translator</a> <span class="keyword">const</span> &amp; Type_::GetTranslator()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> this-&gt;thisTranslator;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
@@ -122,11 +122,11 @@
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    );</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt;Om::Program&gt; Type_::GiveProgram() {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt;Om::Language::Program&gt; Type_::GiveProgram() {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> this-&gt;GiveProgram(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt;Om::Program&gt; Type_::GiveProgram()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt;Om::Language::Program&gt; Type_::GiveProgram()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> this-&gt;GiveProgram(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
@@ -258,7 +258,7 @@
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    ) {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">if</span> (this-&gt;thisGaveElementToOutput) {</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            this-&gt;thisOutput.TakeElement(</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <a class="code" href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Separator::GetLineSeparator</a>()</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_separator.html#a4a9ff3a51d14ebdd27fe0bac4bce484a">Separator::GetLineSeparator</a>()</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            );</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
@@ -267,7 +267,7 @@
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        ) {</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            this-&gt;GiveElements(this-&gt;thisOutput);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            this-&gt;thisOutput.TakeElement(</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                <a class="code" href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Separator::GetLineSeparator</a>()</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_separator.html#a4a9ff3a51d14ebdd27fe0bac4bce484a">Separator::GetLineSeparator</a>()</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            );</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
@@ -330,7 +330,7 @@
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            ;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            ;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            theConsumer.TakeElement(</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <a class="code" href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Separator::GetLineSeparator</a>()</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <a class="code" href="class_om_1_1_language_1_1_separator.html#a4a9ff3a51d14ebdd27fe0bac4bce484a">Separator::GetLineSeparator</a>()</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            )</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        ) {</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            theCurrent-&gt;GiveElements(theConsumer);</div>
@@ -342,7 +342,7 @@
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TheEvaluator&gt;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt;Om::Program&gt; Type_::GiveProgram(TheEvaluator &amp; theEvaluator) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keyword">inline</span> std::auto_ptr&lt;Om::Language::Program&gt; Type_::GiveProgram(TheEvaluator &amp; theEvaluator) {</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    std::auto_ptr&lt;Program&gt; theExpression(<span class="keyword">new</span> Expression);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    assert(</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        theExpression.get()</div>
@@ -364,11 +364,11 @@
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="evaluation_8hpp_html"><div class="ttname"><a href="evaluation_8hpp.html">evaluation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="operator_8hpp_html"><div class="ttname"><a href="operator_8hpp.html">operator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_separator_html_aeb95370fe159ea16c2f7783a97a79b7f"><div class="ttname"><a href="class_om_1_1_separator.html#aeb95370fe159ea16c2f7783a97a79b7f">Om::Separator::GetLineSeparator</a></div><div class="ttdeci">static Separator const &amp; GetLineSeparator()</div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_separator_html_a4a9ff3a51d14ebdd27fe0bac4bce484a"><div class="ttname"><a href="class_om_1_1_language_1_1_separator.html#a4a9ff3a51d14ebdd27fe0bac4bce484a">Om::Language::Separator::GetLineSeparator</a></div><div class="ttdeci">static Separator const &amp; GetLineSeparator()</div></div>
 <div class="ttc" id="incomplete__operation_8hpp_html"><div class="ttname"><a href="incomplete__operation_8hpp.html">incomplete_operation.hpp</a></div><div class="ttdoc">Om header file. </div></div>
 <div class="ttc" id="evaluator_8hpp_html"><div class="ttname"><a href="evaluator_8hpp.html">evaluator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_translator_html"><div class="ttname"><a href="class_om_1_1_translator.html">Om::Translator</a></div><div class="ttdoc">An Operator lookup for use by an Evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="translator_8hpp_source.html#l00058">translator.hpp:58</a></div></div>
 <div class="ttc" id="translator_8hpp_html"><div class="ttname"><a href="translator_8hpp.html">translator.hpp</a></div><div class="ttdoc">Om header file. </div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_translator_html"><div class="ttname"><a href="class_om_1_1_language_1_1_translator.html">Om::Language::Translator</a></div><div class="ttdoc">An Operator lookup for use by an Evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="translator_8hpp_source.html#l00062">translator.hpp:62</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 	</body>

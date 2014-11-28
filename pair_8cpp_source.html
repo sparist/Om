@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>Om: om/pair.cpp Source File</title>
+		<title>Om: om/language/pair.cpp Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_52de3a61b6586455d49c12d9f1bfddf4.html">om</a></li><li class="navelem"><a class="el" href="dir_e74603bf5b8acba3b260f5ba2f9e876e.html">language</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -55,20 +55,20 @@
 </div><!--header-->
 <div class="contents">
 <a href="pair_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Pair_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Om_Language_Pair_</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="pair_8hpp.html">om/pair.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="pair_8hpp.html">om/language/pair.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// MARK: - Om::Pair</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// MARK: - Om::Language::Pair</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #define Type_ \</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    Om::Pair</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    Om::Language::Pair</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// MARK: public (static)</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_pair.html">Om::Pair</a> <span class="keyword">const</span> &amp; Type_::GetEmpty() {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_language_1_1_pair.html">Om::Language::Pair</a> <span class="keyword">const</span> &amp; Type_::GetEmpty() {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">static</span> Pair thePair;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> thePair;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
@@ -85,11 +85,11 @@
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    this-&gt;thisOperand.Clear();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_operand.html">Om::Operand</a> <span class="keyword">const</span> &amp; Type_::GetOperand()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_language_1_1_operand.html">Om::Language::Operand</a> <span class="keyword">const</span> &amp; Type_::GetOperand()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> this-&gt;thisOperand;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_operator.html">Om::Operator</a> <span class="keyword">const</span> &amp; Type_::GetOperator()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_om_1_1_language_1_1_operator.html">Om::Language::Operator</a> <span class="keyword">const</span> &amp; Type_::GetOperator()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> this-&gt;thisOperator;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
@@ -155,10 +155,10 @@
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">    #undef Type_</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_om_1_1_operator_html"><div class="ttname"><a href="class_om_1_1_operator.html">Om::Operator</a></div><div class="ttdoc">The Operator implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operator_8hpp_source.html#l00057">operator.hpp:57</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_pair_html"><div class="ttname"><a href="class_om_1_1_language_1_1_pair.html">Om::Language::Pair</a></div><div class="ttdoc">An Operator and an Operand. </div><div class="ttdef"><b>Definition:</b> <a href="pair_8hpp_source.html#l00032">pair.hpp:32</a></div></div>
 <div class="ttc" id="pair_8hpp_html"><div class="ttname"><a href="pair_8hpp.html">pair.hpp</a></div><div class="ttdoc">Om header file. </div></div>
-<div class="ttc" id="class_om_1_1_operand_html"><div class="ttname"><a href="class_om_1_1_operand.html">Om::Operand</a></div><div class="ttdoc">The Operand implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operand_8hpp_source.html#l00055">operand.hpp:55</a></div></div>
-<div class="ttc" id="class_om_1_1_pair_html"><div class="ttname"><a href="class_om_1_1_pair.html">Om::Pair</a></div><div class="ttdoc">An Operator and an Operand. </div><div class="ttdef"><b>Definition:</b> <a href="pair_8hpp_source.html#l00030">pair.hpp:30</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operand_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operand.html">Om::Language::Operand</a></div><div class="ttdoc">The Operand implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operand_8hpp_source.html#l00057">operand.hpp:57</a></div></div>
+<div class="ttc" id="class_om_1_1_language_1_1_operator_html"><div class="ttname"><a href="class_om_1_1_language_1_1_operator.html">Om::Language::Operator</a></div><div class="ttdoc">The Operator implementation. </div><div class="ttdef"><b>Definition:</b> <a href="operator_8hpp_source.html#l00059">operator.hpp:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 		<!-- start footer part -->
 	</body>

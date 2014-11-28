@@ -97,7 +97,7 @@
 </div>
 <div class="textblock"><h1><a class="anchor" id="introduction__"></a>
 Introduction</h1>
-<p><a href="http://om-language.org">Om</a> is:</p><ul>
+<p>The <a href="http://om-language.org">Om language</a> is:</p><ul>
 <li>a novel, maximally-simple <a href="http://concatenative.org">concatenative</a>, <a href="http://en.wikipedia.org/wiki/Homoiconicity">homoiconic</a> <b>programming and algorithm notation language</b> with:<ul>
 <li><a class="el" href="index.html#language__syntax__">minimal syntax</a>, comprised of only three elements.</li>
 <li><a class="el" href="index.html#language__functions__">prefix notation</a>, in which functions manipulate the remainder of the program itself.</li>
@@ -112,8 +112,8 @@ Introduction</h1>
 </ul>
 </li>
 </ul>
-<p>Om is <b><em>not</em></b>:</p><ul>
-<li><b>complete</b>. Although the intent is to develop Om into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic number and file operations) and optimizations before it can be considered useful for any real-world purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.</li>
+<p>The Om language is <b><em>not</em></b>:</p><ul>
+<li><b>complete</b>. Although the intent is to develop it into a full-featured language, the software is currently at a very early "proof of concept" stage, requiring the addition of many operations (such as basic number and file operations) and optimizations before it can be considered useful for any real-world purpose. It has been made available in order to demonstrate the underlying concepts and welcome others to get involved in early development.</li>
 <li><b>stationary</b>. Om will likely undergo significant changes on its way to version 1.0.</li>
 </ul>
 <h1><a class="anchor" id="license__"></a>
@@ -198,10 +198,10 @@ Including</h2>
 <p>Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:</p><ul>
 <li>Add the Om <code>&quot;code&quot;</code> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <code>&quot;<a class="el" href="om_8hpp.html" title="Om umbrella header file. ">om.hpp</a>&quot;</code> to include all Om header files.</li>
 <li>Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency <code>&quot;build.cmake&quot;</code> scripts for guidance.</li>
-<li>Call the <code><a class="el" href="class_om_1_1_system.html#a03f046dac47073768dbdc97d8e211bda" title="Initializes the System. ">Om::System::Initialize</a></code> function prior to use (e.g. in the <code>main</code> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").</li>
-<li>Construct an <code><a class="el" href="class_om_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">Om::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code><a class="el" href="class_om_1_1_translator.html#a8bc320a8fa37fa732a8941e497014407" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink. ">Om::Environment::Evaluate</a></code> functions to evaluate a program.</li>
+<li>Call the <code><a class="el" href="class_om_1_1_language_1_1_system.html#a6bfe8ebaa1fb6aa40dbfe0027bba70ae" title="Initializes the System. ">Om::Language::System::Initialize</a></code> function prior to use (e.g. in the <code>main</code> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").</li>
+<li>Construct an <code><a class="el" href="class_om_1_1_language_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order...">Om::Language::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code><a class="el" href="class_om_1_1_language_1_1_translator.html#ac7852c3bbb81385bab77626398bfb73c" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink. ">Om::Language::Environment::Evaluate</a></code> functions to evaluate a program.</li>
 </ul>
-<p>For more in-depth usage of the library, see the <a class="el" href="namespace_om.html" title="The Om language implementation. ">Om</a> code documentation.</p>
+<p>For more in-depth usage of the library, see the <a class="el" href="namespace_om.html" title="The Om library. ">Om</a> code documentation.</p>
 <h1><a class="anchor" id="language__"></a>
 Language</h1>
 <h2><a class="anchor" id="language__syntax__"></a>
@@ -227,10 +227,10 @@ Operand</h3>
 </div>
 <h2><a class="anchor" id="language__functions__"></a>
 Functions</h2>
-<p>Om is a <a href="http://concatenative.org">concatenative</a> language, whereby each Om program evaluates to a function (that takes a program as input, and returns a program as output) and the concatenation of two programs (with an intervening separator, as necessary) evaluates to the composition of the corresponding functions.</p>
+<p>The Om language is <a href="http://concatenative.org">concatenative</a>, meaning that each Om program evaluates to a function (that takes a program as input, and returns a program as output) and the concatenation of two programs (with an intervening separator, as necessary) evaluates to the composition of the corresponding functions.</p>
 <h3><a class="anchor" id="language__functions__prefix__"></a>
 Prefix Notation</h3>
-<p>Unlike other concatenative languages, Om uses <a href="http://en.wikipedia.org/wiki/Polish_notation">prefix notation</a>. A function takes the remainder of the program as input and returns a program as output (which gets passed as input to the leftward function).</p>
+<p>Unlike other concatenative languages, the Om language uses <a href="http://en.wikipedia.org/wiki/Polish_notation">prefix notation</a>. A function takes the remainder of the program as input and returns a program as output (which gets passed as input to the leftward function).</p>
 <p>Prefix notation has the following advantages over postfix notation:</p><ul>
 <li>Stack underflows are impossible.</li>
 <li>Prefix notation more closely models function composition. Instead of storing a data stack in memory, the Om evaluator stores a composed partial function.</li>
@@ -271,11 +271,11 @@ Operations</h3>
 <p>All operation implementations provided are documented in the <a class="el" href="group__om____operation____.html">Operation</a> module.</p>
 <h2><a class="anchor" id="language__data__"></a>
 Data</h2>
-<p>There are no traditional data types in Om: every data value is represented by an operand.</p>
+<p>There are no traditional data types in the Om language: every data value is represented by an operand.</p>
 <h3><a class="anchor" id="language__data__panmorphism__"></a>
 Panmorphism</h3>
-<p>Om uses a unique <em>panmorphic</em> type system, from Ancient Greek πᾶν (pan, "all") and μορφή (morphē, “form”), in which all data values are exposed exclusively through a common immutable interface.</p>
-<p>In the case of Om, every data value is entirely represented in the language as an operand. Any operation will accept any operand as a valid input and interrogate its data solely through its contained program (a sequence of operator, separator, and/or operand). The operation is then free to process the data however is appropriate, and any operand that it produces as output can then be interrogated and processed by the next operation in the same way.</p>
+<p>The Om language uses a unique <em>panmorphic</em> type system, from Ancient Greek πᾶν (pan, "all") and μορφή (morphē, “form”), in which all data values are exposed exclusively through a common immutable interface.</p>
+<p>In the case of the Om language, every data value is entirely represented in the language as an operand. Any operation will accept any operand as a valid input and interrogate its data solely through its contained program (a sequence of operator, separator, and/or operand). The operation is then free to process the data however is appropriate, and any operand that it produces as output can then be interrogated and processed by the next operation in the same way.</p>
 <h3><a class="anchor" id="language__data__implementation__"></a>
 Implementation</h3>
 <p>Although any operand can be treated as containing a literal array of operand, operator and/or separator elements, the implementation of operands takes advantage of some optimizations:</p><ul>
@@ -418,7 +418,7 @@ Examples</h2>
 </blockquote>
 </li>
 </ul>
-<p>Recursion is very efficient in Om, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:</p><ul>
+<p>Recursion is very efficient in the Om language, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:</p><ul>
 <li><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { minutes {1:23} }<br />
@@ -585,32 +585,32 @@ Adding or Removing Files</h3>
 <p>When adding or removing files from source, re-run the <code>&quot;generate&quot;</code> script from the build directory to update the project.</p>
 <h3><a class="anchor" id="contributing__developing__adding_operations__"></a>
 Adding Operations</h3>
-<p>Additional native functionality can be added to Om by implementing new operations in C++.</p>
+<p>Additional native functionality can be added to the Om language by implementing new operations in C++.</p>
 <p>There are two ways to implement an operation: as a composite operation, or an atomic operation.</p>
 <p>To implement a composite operation, or an atomic operation that consumes no operands:</p><ul>
-<li>Define the operation <code>class</code> in the <code><a class="el" href="namespace_om_1_1_operation.html" title="A namespace for all Operation implementations. ">Om::Operation</a></code> namespace.</li>
+<li>Define the operation <code>class</code> in the <code><a class="el" href="namespace_om_1_1_language_1_1_operation.html" title="A namespace for all Operation implementations. ">Om::Language::Operation</a></code> namespace.</li>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
-<li>Define the static <code>Give(<a class="el" href="class_om_1_1_evaluation.html" title="The current evaluation. ">Om::Evaluation</a> &amp;)</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
+<li>Define the static <code>Give(<a class="el" href="class_om_1_1_language_1_1_evaluation.html" title="The current evaluation. ">Om::Language::Evaluation</a> &amp;)</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
 </ul>
 <p>To define an atomic operation that consumes one or more operands:</p><ul>
-<li>Define the operation <code>class</code>, derived from <code><a class="el" href="class_om_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation. ">Om::Operation::DefaultIncompleteOperation</a>&lt;</code><em>operation</em><code>&gt;</code> (where <em>operation</em> is the name of the operation <code>class</code>), in the <code><a class="el" href="namespace_om_1_1_operation.html" title="A namespace for all Operation implementations. ">Om::Operation</a></code> namespace.</li>
+<li>Define the operation <code>class</code>, derived from <code><a class="el" href="class_om_1_1_language_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation. ">Om::Language::Operation::DefaultIncompleteOperation</a>&lt;</code><em>operation</em><code>&gt;</code> (where <em>operation</em> is the name of the operation <code>class</code>), in the <code><a class="el" href="namespace_om_1_1_language_1_1_operation.html" title="A namespace for all Operation implementations. ">Om::Language::Operation</a></code> namespace.</li>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
 <li>Add the implementation, using existing operations as a guide:<ul>
 <li>Implement the functions necessary to compile.</li>
-<li>Optionally override virtual function implementations in <code><a class="el" href="class_om_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation. ">Om::Operation::DefaultIncompleteOperation</a></code>, such as <code>Om::Operation::DefaultIncompleteOperation::ReadQuotedElements</code>, that may be more optimally implemented in the operation.</li>
+<li>Optionally override virtual function implementations in <code><a class="el" href="class_om_1_1_language_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation. ">Om::Language::Operation::DefaultIncompleteOperation</a></code>, such as <code>Om::Language::Operation::DefaultIncompleteOperation::ReadQuotedElements</code>, that may be more optimally implemented in the operation.</li>
 </ul>
 </li>
 </ul>
 <p>For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <code>WhateverOperation</code> is a stand-in for the name of the operation <code>class</code>):</p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>{</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">static</span> System::Definition&lt;WhateverOperation&gt; <span class="keyword">const</span> theWhateverDefinition;</div>
+<div class="line">    <span class="keyword">static</span> <a class="code" href="singleton_om_1_1_language_1_1_system_1_1_definition.html">Om::Language::System::Definition&lt;WhateverOperation&gt;</a> <span class="keyword">const</span> theWhateverDefinition;</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment --><h3><a class="anchor" id="contributing__developing__adding_programs__"></a>
 Adding Programs</h3>
-<p>New data types can be added to Om by extending <code><a class="el" href="class_om_1_1_program.html" title="The Program implementation. ">Om::Program</a></code> and defining the functions necessary to instantiate the class. Use existing programs as a guide.</p>
-<p>Program types should be defined in the <code><a class="el" href="namespace_om.html" title="The Om language implementation. ">Om</a></code> namespace.</p>
+<p>New data types can be added to the Om language by extending <code><a class="el" href="class_om_1_1_language_1_1_program.html" title="The Program implementation. ">Om::Language::Program</a></code> and defining the functions necessary to instantiate the class. Use existing programs as a guide.</p>
+<p>Program types should be defined in the <code><a class="el" href="namespace_om_1_1_language.html" title="The Om language implementation. ">Om::Language</a></code> namespace.</p>
 <h3><a class="anchor" id="contributing__developing__analyzing_code__"></a>
 Analyzing Code</h3>
 <p>Some basic free static analysis tools can be applied to the Om code:</p><ul>
@@ -646,7 +646,7 @@ Funding</h2>
 <p>The Om language is currently a spare-time project of <a href="http://sparist.com">one person</a>. If you would like to speed the development of the Om language in either a general or domain-specific direction, please contact me at <a href="#" onclick="location.href='mai'+'lto:'+'inf'+'or'+'mat'+'io'+'n@s'+'pa'+'ris'+'t.'+'com'+'?s'+'ubj'+'ec'+'t=O'+'m%'+'20F'+'un'+'din'+'g'; return false;">information@sparist.com</a>.</p>
 <h1><a class="anchor" id="language__references__"></a>
 References and Thanks</h1>
-<p>The following additional reading may help explain some of the concepts that contributed to Om:</p><ul>
+<p>The following additional reading may help explain some of the concepts that contributed to the Om language:</p><ul>
 <li><a href="http://evincarofautumn.blogspot.ca/2012/02/why-concatenative-programming-matters.html">Why Concatenative Programming Matters</a></li>
 <li>The Concatenative <a href="http://concatenative.org">wiki</a>, <a href="http://tech.groups.yahoo.com/group/concatenative">mailing list</a>, and <a href="http://en.wikipedia.org/wiki/Concatenative_programming_language">Wikipedia entry</a></li>
 <li>A <a href="http://www.kevinalbrecht.com/code/joy-mirror">mirror</a> of Manfred von Thun's original pages on the groundbreaking Joy Programming Language (<a href="http://en.wikipedia.org/wiki/Joy_(programming_language)">Wikipedia entry</a>), the father of all concatenative languages</li>
