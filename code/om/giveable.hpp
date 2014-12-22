@@ -55,6 +55,15 @@ namespace Om {
 
 	/*!
 	\brief
+		Calls #Copy on the object.
+	\return
+		The resulting object.
+	*/
+	template <typename TheGiveable>
+	std::auto_ptr<TheGiveable> Give(TheGiveable const &);
+
+	/*!
+	\brief
 		Transfers pointer ownership.
 	\return
 		The resulting object.
@@ -63,15 +72,6 @@ namespace Om {
 	std::auto_ptr<TheGiveable> Give(
 		std::auto_ptr<TheGiveable> &
 	);
-
-	/*!
-	\brief
-		Calls #Copy on the object.
-	\return
-		The resulting object.
-	*/
-	template <typename TheGiveable>
-	std::auto_ptr<TheGiveable> Give(TheGiveable const &);
 
 	/*!
 	\brief

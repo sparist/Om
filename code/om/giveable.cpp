@@ -37,15 +37,15 @@ inline std::auto_ptr<TheGiveable> Om::Give(TheGiveable & theGiveable) {
 }
 
 template <typename TheGiveable>
+inline std::auto_ptr<TheGiveable> Om::Give(TheGiveable const & theGiveable) {
+	return Copy(theGiveable);
+}
+
+template <typename TheGiveable>
 inline std::auto_ptr<TheGiveable> Om::Give(
 	std::auto_ptr<TheGiveable> & theGiveable
 ) {
 	return theGiveable;
-}
-
-template <typename TheGiveable>
-inline std::auto_ptr<TheGiveable> Om::Give(TheGiveable const & theGiveable) {
-	return Copy(theGiveable);
 }
 
 template <typename TheGiveable>
