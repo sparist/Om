@@ -8,37 +8,37 @@
  viewBox="0.00 0.00 185.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>Om::Giveable</title>
-<!-- Node6 -->
-<g id="node1" class="node"><title>Node6</title>
+<!-- Node61 -->
+<g id="node1" class="node"><title>Node61</title>
 <g id="a_node1"><a xlink:title="An object that can be copied or moved via Give.">
 <polygon fill="#bfbfbf" stroke="black" points="49.4336,-1 49.4336,-19 126.566,-19 126.566,-1 49.4336,-1"/>
 <text text-anchor="middle" x="88" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Giveable</text>
 </a>
 </g>
 </g>
-<!-- Node7 -->
-<g id="node2" class="node"><title>Node7</title>
+<!-- Node62 -->
+<g id="node2" class="node"><title>Node62</title>
 <g id="a_node2"><a xlink:href="class_om_1_1_copyable.html" target="_top" xlink:title="An object that can be passed to Copy to be copied.">
 <polygon fill="none" stroke="black" points="-0.958008,-57 -0.958008,-75 78.958,-75 78.958,-57 -0.958008,-57"/>
 <text text-anchor="middle" x="39" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Copyable</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node6 -->
-<g id="edge1" class="edge"><title>Node7&#45;&gt;Node6</title>
+<!-- Node62&#45;&gt;Node61 -->
+<g id="edge1" class="edge"><title>Node62&#45;&gt;Node61</title>
 <path fill="none" stroke="midnightblue" d="M53.4945,-49.0265C62.3858,-39.2278 73.4001,-27.0897 80.558,-19.2014"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="50.7842,-46.8049 46.6562,-56.5625 55.9682,-51.5088 50.7842,-46.8049"/>
 </g>
-<!-- Node8 -->
-<g id="node3" class="node"><title>Node8</title>
+<!-- Node63 -->
+<g id="node3" class="node"><title>Node63</title>
 <g id="a_node3"><a xlink:href="class_om_1_1_moveable.html" target="_top" xlink:title="An object that can be passed to Move to be moved.">
 <polygon fill="none" stroke="black" points="96.4878,-57 96.4878,-75 177.512,-75 177.512,-57 96.4878,-57"/>
 <text text-anchor="middle" x="137" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Moveable</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node6 -->
-<g id="edge2" class="edge"><title>Node8&#45;&gt;Node6</title>
+<!-- Node63&#45;&gt;Node61 -->
+<g id="edge2" class="edge"><title>Node63&#45;&gt;Node61</title>
 <path fill="none" stroke="midnightblue" d="M122.506,-49.0265C113.614,-39.2278 102.6,-27.0897 95.442,-19.2014"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="120.032,-51.5088 129.344,-56.5625 125.216,-46.8049 120.032,-51.5088"/>
 </g>
