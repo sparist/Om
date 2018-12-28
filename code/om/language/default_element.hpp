@@ -28,10 +28,12 @@ namespace Om {
 		/*!
 		\brief
 			A partial implementation of Element.
+		\internal
+			The fully-specified Element namespace is required to work around a Doxygen bug that has difficulty inferring inheritance otherwise.
 		*/
 		template <
 			typename ThisImplementation,
-			typename ThisInterface = Element
+			typename ThisInterface = Om::Language::Element
 		>
 		class DefaultElement:
 		public DefaultProgram<

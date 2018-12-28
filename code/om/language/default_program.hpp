@@ -31,10 +31,12 @@ namespace Om {
 		/*!
 		\brief
 			A partial implementation of Program.
+		\internal
+			The fully-specified Program namespace is required to work around a Doxygen bug that has difficulty inferring inheritance otherwise.
 		*/
 		template <
 			typename ThisImplementation,
-			typename ThisInterface = Program
+			typename ThisInterface = Om::Language::Program
 		>
 		class DefaultProgram:
 		public DefaultConsumer<

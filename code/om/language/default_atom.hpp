@@ -35,12 +35,14 @@ namespace Om {
 		/*!
 		\brief
 			A partial implementation of Atom.
+		\internal
+			The fully-specified Atom namespace is required to work around a Doxygen bug that has difficulty inferring inheritance otherwise.
 		*/
 		template <typename ThisImplementation>
 		class DefaultAtom:
 		public DefaultElement<
 			ThisImplementation,
-			Atom
+			Om::Language::Atom
 		> {
 
 		public: // MARK: public (non-static)
