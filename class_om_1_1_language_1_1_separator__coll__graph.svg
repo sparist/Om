@@ -8,56 +8,59 @@
  viewBox="0.00 0.00 1520.00 111.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 107)">
 <title>Om::Language::Separator</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node10 -->
+<g id="node1" class="node"><title>Node10</title>
+<g id="a_node1"><a xlink:title="The Separator implementation.">
 <polygon fill="#bfbfbf" stroke="black" points="1380.19,-29 1380.19,-47 1511.81,-47 1511.81,-29 1380.19,-29"/>
 <text text-anchor="middle" x="1446" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Separator</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_default_atom.html" target="_top" xlink:title="Om::Language::DefaultAtom\l\&lt; Separator \&gt;">
+</g>
+<!-- Node11 -->
+<g id="node2" class="node"><title>Node11</title>
+<g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_default_atom.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="1198.63,-24 1198.63,-52 1341.37,-52 1341.37,-24 1198.63,-24"/>
 <text text-anchor="start" x="1206.63" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::DefaultAtom</text>
 <text text-anchor="middle" x="1270" y="-30" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node11&#45;&gt;Node10 -->
+<g id="edge1" class="edge"><title>Node11&#45;&gt;Node10</title>
 <path fill="none" stroke="midnightblue" d="M1351.74,-38C1361.21,-38 1370.78,-38 1380,-38"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1351.52,-34.5001 1341.52,-38 1351.52,-41.5001 1351.52,-34.5001"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="class_om_1_1_language_1_1_default_element.html" target="_top" xlink:title="Om::Language::DefaultElement\l\&lt; Separator, Atom \&gt;">
+<!-- Node12 -->
+<g id="node3" class="node"><title>Node12</title>
+<g id="a_node3"><a xlink:href="class_om_1_1_language_1_1_default_element.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="961.958,-44 961.958,-72 1118.04,-72 1118.04,-44 961.958,-44"/>
 <text text-anchor="start" x="969.958" y="-60" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::DefaultElement</text>
 <text text-anchor="middle" x="1040" y="-50" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, Atom &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node12&#45;&gt;Node11 -->
+<g id="edge2" class="edge"><title>Node12&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M1128.36,-50.3367C1151.53,-48.3043 1176.26,-46.1354 1198.41,-44.192"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1127.85,-46.8684 1118.19,-51.2289 1128.46,-53.8416 1127.85,-46.8684"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="class_om_1_1_language_1_1_default_program.html" target="_top" xlink:title="Om::Language::DefaultProgram\l\&lt; Separator, Atom \&gt;">
+<!-- Node13 -->
+<g id="node4" class="node"><title>Node13</title>
+<g id="a_node4"><a xlink:href="class_om_1_1_language_1_1_default_program.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="766.128,-47 766.128,-75 923.872,-75 923.872,-47 766.128,-47"/>
 <text text-anchor="start" x="774.128" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::DefaultProgram</text>
 <text text-anchor="middle" x="845" y="-53" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, Atom &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node13&#45;&gt;Node12 -->
+<g id="edge3" class="edge"><title>Node13&#45;&gt;Node12</title>
 <path fill="none" stroke="midnightblue" d="M934.235,-59.6285C943.403,-59.486 952.672,-59.3419 961.706,-59.2015"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="933.889,-56.1333 923.944,-59.7884 933.997,-63.1325 933.889,-56.1333"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="class_om_1_1_language_1_1_default_consumer.html" target="_top" xlink:title="Om::Language::DefaultConsumer\l\&lt; Separator, DefaultGiveable\l\&lt; Separator, Atom \&gt; \&gt;">
+<!-- Node14 -->
+<g id="node5" class="node"><title>Node14</title>
+<g id="a_node5"><a xlink:href="class_om_1_1_language_1_1_default_consumer.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="562.237,-65 562.237,-103 727.763,-103 727.763,-65 562.237,-65"/>
 <text text-anchor="start" x="570.237" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::DefaultConsumer</text>
 <text text-anchor="start" x="570.237" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, DefaultGiveable</text>
@@ -65,28 +68,28 @@
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node4 -->
-<g id="edge4" class="edge"><title>Node5&#45;&gt;Node4</title>
+<!-- Node14&#45;&gt;Node13 -->
+<g id="edge4" class="edge"><title>Node14&#45;&gt;Node13</title>
 <path fill="none" stroke="midnightblue" d="M738.031,-73.3095C747.354,-72.2266 756.76,-71.134 765.915,-70.0705"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="737.493,-69.8484 727.963,-74.479 738.301,-76.8017 737.493,-69.8484"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title="Om::DefaultGiveable\l\&lt; Separator, Atom \&gt;">
+<!-- Node15 -->
+<g id="node6" class="node"><title>Node15</title>
+<g id="a_node6"><a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="414.591,-70 414.591,-98 523.409,-98 523.409,-70 414.591,-70"/>
 <text text-anchor="start" x="422.591" y="-86" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="middle" x="469" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, Atom &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node5 -->
-<g id="edge5" class="edge"><title>Node6&#45;&gt;Node5</title>
+<!-- Node15&#45;&gt;Node14 -->
+<g id="edge5" class="edge"><title>Node15&#45;&gt;Node14</title>
 <path fill="none" stroke="midnightblue" d="M533.825,-84C543.021,-84 552.59,-84 562.077,-84"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="533.626,-80.5001 523.626,-84 533.625,-87.5001 533.626,-80.5001"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; Separator, DefaultCopyable\l\&lt; Separator, Atom \&gt; \&gt;">
+<!-- Node16 -->
+<g id="node7" class="node"><title>Node16</title>
+<g id="a_node7"><a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="228.26,-65 228.26,-103 375.74,-103 375.74,-65 228.26,-65"/>
 <text text-anchor="start" x="236.26" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="236.26" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, DefaultCopyable</text>
@@ -94,73 +97,76 @@
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node6 -->
-<g id="edge6" class="edge"><title>Node7&#45;&gt;Node6</title>
+<!-- Node16&#45;&gt;Node15 -->
+<g id="edge6" class="edge"><title>Node16&#45;&gt;Node15</title>
 <path fill="none" stroke="midnightblue" d="M385.909,-84C395.579,-84 405.242,-84 414.365,-84"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="385.852,-80.5001 375.852,-84 385.852,-87.5001 385.852,-80.5001"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="Om::DefaultCopyable\l\&lt; Separator, Atom \&gt;">
+<!-- Node17 -->
+<g id="node8" class="node"><title>Node17</title>
+<g id="a_node8"><a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="78.1997,-70 78.1997,-98 189.8,-98 189.8,-70 78.1997,-70"/>
 <text text-anchor="start" x="86.1997" y="-86" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="middle" x="134" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Separator, Atom &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node7 -->
-<g id="edge7" class="edge"><title>Node8&#45;&gt;Node7</title>
+<!-- Node17&#45;&gt;Node16 -->
+<g id="edge7" class="edge"><title>Node17&#45;&gt;Node16</title>
 <path fill="none" stroke="midnightblue" d="M200.069,-84C209.291,-84 218.824,-84 228.181,-84"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="199.815,-80.5001 189.815,-84 199.815,-87.5001 199.815,-80.5001"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node"><title>Node9</title>
+<!-- Node18 -->
+<g id="node9" class="node"><title>Node18</title>
+<g id="a_node9"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0.330078,-75 0.330078,-93 39.6699,-93 39.6699,-75 0.330078,-75"/>
 <text text-anchor="middle" x="20" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">Atom</text>
+</a>
 </g>
-<!-- Node9&#45;&gt;Node8 -->
-<g id="edge8" class="edge"><title>Node9&#45;&gt;Node8</title>
+</g>
+<!-- Node18&#45;&gt;Node17 -->
+<g id="edge8" class="edge"><title>Node18&#45;&gt;Node17</title>
 <path fill="none" stroke="midnightblue" d="M49.9473,-84C58.5418,-84 68.2554,-84 77.9318,-84"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="49.7463,-80.5001 39.7463,-84 49.7462,-87.5001 49.7463,-80.5001"/>
 </g>
-<!-- Node10 -->
-<g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title="Om::Taker\&lt; Separator \&gt;">
+<!-- Node19 -->
+<g id="node10" class="node"><title>Node19</title>
+<g id="a_node10"><a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="583.365,-28 583.365,-46 706.635,-46 706.635,-28 583.365,-28"/>
 <text text-anchor="middle" x="645" y="-34" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; Separator &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node4 -->
-<g id="edge9" class="edge"><title>Node10&#45;&gt;Node4</title>
+<!-- Node19&#45;&gt;Node13 -->
+<g id="edge9" class="edge"><title>Node19&#45;&gt;Node13</title>
 <path fill="none" stroke="midnightblue" d="M716.99,-45.6049C732.827,-47.5244 749.705,-49.5703 765.814,-51.5229"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="717.101,-42.0927 706.752,-44.3639 716.258,-49.0419 717.101,-42.0927"/>
 </g>
-<!-- Node11 -->
-<g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:title="STL class. ">
+<!-- Node20 -->
+<g id="node11" class="node"><title>Node20</title>
+<g id="a_node11"><a xlink:title="STL class.">
 <polygon fill="none" stroke="#bfbfbf" points="1010.33,-6 1010.33,-24 1069.67,-24 1069.67,-6 1010.33,-6"/>
 <text text-anchor="middle" x="1040" y="-12" font-family="Helvetica,sans-Serif" font-size="10.00">std::string</text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node2 -->
-<g id="edge10" class="edge"><title>Node11&#45;&gt;Node2</title>
+<!-- Node20&#45;&gt;Node11 -->
+<g id="edge10" class="edge"><title>Node20&#45;&gt;Node11</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M1079.86,-18.9196C1112.26,-22.1884 1159.27,-26.9305 1198.31,-30.8694"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="1080.18,-15.4344 1069.88,-17.913 1079.47,-22.3991 1080.18,-15.4344"/>
 <text text-anchor="middle" x="1158" y="-31" font-family="Helvetica,sans-Serif" font-size="10.00"> thisString</text>
 </g>
-<!-- Node12 -->
-<g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:title="STL class. ">
+<!-- Node21 -->
+<g id="node12" class="node"><title>Node21</title>
+<g id="a_node12"><a xlink:title="STL class.">
 <polygon fill="none" stroke="#bfbfbf" points="797.952,-0 797.952,-28 892.048,-28 892.048,-0 797.952,-0"/>
 <text text-anchor="start" x="805.952" y="-16" font-family="Helvetica,sans-Serif" font-size="10.00">std::basic_string&lt;</text>
 <text text-anchor="middle" x="845" y="-6" font-family="Helvetica,sans-Serif" font-size="10.00"> char &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node12&#45;&gt;Node11 -->
-<g id="edge11" class="edge"><title>Node12&#45;&gt;Node11</title>
+<!-- Node21&#45;&gt;Node20 -->
+<g id="edge11" class="edge"><title>Node21&#45;&gt;Node20</title>
 <path fill="none" stroke="midnightblue" d="M902.419,-14.2923C937.774,-14.4755 981.858,-14.7039 1010.21,-14.8509"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="902.246,-10.7915 892.228,-14.2395 902.21,-17.7914 902.246,-10.7915"/>
 </g>

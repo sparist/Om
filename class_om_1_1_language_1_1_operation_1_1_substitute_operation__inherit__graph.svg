@@ -8,15 +8,18 @@
  viewBox="0.00 0.00 154.00 256.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 252)">
 <title>Om::Language::Operation::SubstituteOperation</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
+<g id="a_node1"><a xlink:title="The substitute operation implementation.">
 <polygon fill="#bfbfbf" stroke="black" points="7.18506,-1 7.18506,-29 138.815,-29 138.815,-1 7.18506,-1"/>
 <text text-anchor="start" x="15.1851" y="-17" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Operation</text>
 <text text-anchor="middle" x="73" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::SubstituteOperation</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_operation_1_1_translate_operation.html" target="_top" xlink:title="Om::Language::Operation\l::TranslateOperation\&lt;\l SubstituteOperation \&gt;">
+</g>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
+<g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_operation_1_1_translate_operation.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="7.18506,-67 7.18506,-105 138.815,-105 138.815,-67 7.18506,-67"/>
 <text text-anchor="start" x="15.1851" y="-93" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Operation</text>
 <text text-anchor="start" x="15.1851" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">::TranslateOperation&lt;</text>
@@ -24,14 +27,14 @@
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M73,-56.587C73,-47.0981 73,-36.9748 73,-29.2121"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="69.5001,-56.871 73,-66.8711 76.5001,-56.8711 69.5001,-56.871"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="class_om_1_1_language_1_1_operation_1_1_default_incomplete_operation.html" target="_top" xlink:title="Om::Language::Operation\l::DefaultIncompleteOperation\l\&lt; SubstituteOperation \&gt;">
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
+<g id="a_node3"><a xlink:href="class_om_1_1_language_1_1_operation_1_1_default_incomplete_operation.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="-0.0366211,-143 -0.0366211,-181 146.037,-181 146.037,-143 -0.0366211,-143"/>
 <text text-anchor="start" x="7.96338" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Operation</text>
 <text text-anchor="start" x="7.96338" y="-159" font-family="Helvetica,sans-Serif" font-size="10.00">::DefaultIncompleteOperation</text>
@@ -39,22 +42,22 @@
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M73,-132.702C73,-123.431 73,-113.387 73,-105.082"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="69.5001,-132.708 73,-142.708 76.5001,-132.708 69.5001,-132.708"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html" target="_top" xlink:title="An Operation that has yet to consume one or more Operands and must live in memory until complete...">
+<!-- Node3 -->
+<g id="node4" class="node"><title>Node3</title>
+<g id="a_node4"><a xlink:href="class_om_1_1_language_1_1_operation_1_1_incomplete_operation.html" target="_top" xlink:title="An Operation that has yet to consume one or more Operands and must live in memory until complete.">
 <polygon fill="none" stroke="black" points="7.18506,-219 7.18506,-247 138.815,-247 138.815,-219 7.18506,-219"/>
 <text text-anchor="start" x="15.1851" y="-235" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Operation</text>
 <text text-anchor="middle" x="73" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">::IncompleteOperation</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node3&#45;&gt;Node2 -->
+<g id="edge3" class="edge"><title>Node3&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M73,-208.541C73,-199.616 73,-189.588 73,-181.219"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="69.5001,-208.696 73,-218.696 76.5001,-208.696 69.5001,-208.696"/>
 </g>

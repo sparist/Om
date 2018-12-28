@@ -8,15 +8,18 @@
  viewBox="0.00 0.00 524.00 93.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 89)">
 <title>Om::Source::CodePointSource&lt; ThisCodeUnitIterator &gt;</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
+<g id="a_node1"><a xlink:title="A CodePoint Source that reads each code unit from the iterator.">
 <polygon fill="#bfbfbf" stroke="black" points="362.355,-31 362.355,-59 515.645,-59 515.645,-31 362.355,-31"/>
 <text text-anchor="start" x="370.355" y="-47" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Source::CodePointSource</text>
 <text text-anchor="middle" x="439" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisCodeUnitIterator &gt;</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="class_om_1_1_source_1_1_default_source.html" target="_top" xlink:title="Om::Source::DefaultSource\l\&lt; CodePoint const, CodePointSource\l\&lt; ThisCodeUnitIterator \&gt; \&gt;">
+</g>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
+<g id="a_node2"><a xlink:href="class_om_1_1_source_1_1_default_source.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="144.031,-26 144.031,-64 325.969,-64 325.969,-26 144.031,-26"/>
 <text text-anchor="start" x="152.031" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Source::DefaultSource</text>
 <text text-anchor="start" x="152.031" y="-42" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; CodePoint const, CodePointSource</text>
@@ -24,34 +27,37 @@
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M336.314,-45C345.055,-45 353.804,-45 362.297,-45"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="336.071,-41.5001 326.071,-45 336.071,-48.5001 336.071,-41.5001"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="class_om_1_1_source_1_1_source.html" target="_top" xlink:title="Om::Source::Source\l\&lt; CodePoint const &#160;\&gt;">
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
+<g id="a_node3"><a xlink:href="class_om_1_1_source_1_1_source.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="0.692383,-57 0.692383,-85 107.308,-85 107.308,-57 0.692383,-57"/>
 <text text-anchor="start" x="8.69238" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Source::Source</text>
 <text text-anchor="middle" x="54" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; CodePoint const &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M117.792,-61.8794C126.193,-60.6591 134.94,-59.3886 143.697,-58.1166"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="117.131,-58.4386 107.738,-63.3398 118.137,-65.3659 117.131,-58.4386"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node3 -->
+<g id="node4" class="node"><title>Node3</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="2.9165,-0 2.9165,-38 105.083,-38 105.083,-0 2.9165,-0"/>
 <text text-anchor="start" x="10.9165" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">std::iterator&lt; std</text>
 <text text-anchor="start" x="10.9165" y="-16" font-family="Helvetica,sans-Serif" font-size="10.00">::input_iterator_tag,</text>
 <text text-anchor="middle" x="54" y="-6" font-family="Helvetica,sans-Serif" font-size="10.00"> CodePoint const &gt;</text>
+</a>
 </g>
-<!-- Node4&#45;&gt;Node2 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node2</title>
+</g>
+<!-- Node3&#45;&gt;Node1 -->
+<g id="edge3" class="edge"><title>Node3&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M115.505,-27.7884C124.704,-29.1246 134.361,-30.5273 144.026,-31.9311"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="115.737,-24.2855 105.338,-26.3116 114.731,-31.2128 115.737,-24.2855"/>
 </g>

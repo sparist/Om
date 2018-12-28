@@ -8,21 +8,24 @@
  viewBox="0.00 0.00 150.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>Om::Language::Environment</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
+<g id="a_node1"><a xlink:title="An unowned Translator collection for which lookups are done for each Translator, in reverse order,...">
 <polygon fill="#bfbfbf" stroke="black" points="-0.925781,-1 -0.925781,-19 142.926,-19 142.926,-1 -0.925781,-1"/>
 <text text-anchor="middle" x="71" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Environment</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_translator.html" target="_top" xlink:title="An Operator lookup for use by an Evaluator. ">
+</g>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
+<g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_translator.html" target="_top" xlink:title="An Operator lookup for use by an Evaluator.">
 <polygon fill="none" stroke="black" points="4.81885,-57 4.81885,-75 137.181,-75 137.181,-57 4.81885,-57"/>
 <text text-anchor="middle" x="71" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Translator</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M71,-46.3288C71,-37.0774 71,-26.3798 71,-19.2014"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="67.5001,-46.5625 71,-56.5625 74.5001,-46.5625 67.5001,-46.5625"/>
 </g>

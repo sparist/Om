@@ -8,87 +8,99 @@
  viewBox="0.00 0.00 385.00 140.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 136)">
 <title>om/owner.hpp</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
+<g id="a_node1"><a xlink:title="Om header file.">
 <polygon fill="#bfbfbf" stroke="black" points="179.589,-113 179.589,-131 258.411,-131 258.411,-113 179.589,-113"/>
 <text text-anchor="middle" x="219" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">om/owner.hpp</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="taker_8hpp.html" target="_top" xlink:title="Om header file. ">
+</g>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
+<g id="a_node2"><a xlink:href="taker_8hpp.html" target="_top" xlink:title="Om header file.">
 <polygon fill="none" stroke="black" points="-0.908691,-57 -0.908691,-75 72.9087,-75 72.9087,-57 -0.908691,-57"/>
 <text text-anchor="middle" x="36" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">om/taker.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
+<!-- Node0&#45;&gt;Node1 -->
+<g id="edge1" class="edge"><title>Node0&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M191.603,-112.916C160.113,-103.623 108.265,-88.3241 73.1568,-77.9643"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="73.8667,-74.5246 63.285,-75.0513 71.8855,-81.2384 73.8667,-74.5246"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node3 -->
+<g id="node4" class="node"><title>Node3</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="90.9434,-57 90.9434,-75 143.057,-75 143.057,-57 90.9434,-57"/>
 <text text-anchor="middle" x="117" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">memory</text>
+</a>
 </g>
-<!-- Node1&#45;&gt;Node4 -->
-<g id="edge4" class="edge"><title>Node1&#45;&gt;Node4</title>
+</g>
+<!-- Node0&#45;&gt;Node3 -->
+<g id="edge4" class="edge"><title>Node0&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M203.508,-112.799C187.013,-104.065 160.677,-90.1234 141.393,-79.9137"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="142.779,-76.6874 132.303,-75.1017 139.503,-82.8739 142.779,-76.6874"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node4 -->
+<g id="node5" class="node"><title>Node4</title>
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="160.688,-57 160.688,-75 277.312,-75 277.312,-57 160.688,-57"/>
 <text text-anchor="middle" x="219" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">boost/intrusive_ptr.hpp</text>
+</a>
 </g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge5" class="edge"><title>Node1&#45;&gt;Node5</title>
+</g>
+<!-- Node0&#45;&gt;Node4 -->
+<g id="edge5" class="edge"><title>Node0&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M219,-112.562C219,-105.308 219,-94.5884 219,-85.3691"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="222.5,-85.2014 219,-75.2014 215.5,-85.2015 222.5,-85.2014"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="owner_8cpp.html" target="_top" xlink:title="Om source file. ">
+<!-- Node5 -->
+<g id="node6" class="node"><title>Node5</title>
+<g id="a_node6"><a xlink:href="owner_8cpp.html" target="_top" xlink:title="Om source file.">
 <polygon fill="none" stroke="black" points="294.87,-57 294.87,-75 373.13,-75 373.13,-57 294.87,-57"/>
 <text text-anchor="middle" x="334" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">om/owner.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node6 -->
-<g id="edge6" class="edge"><title>Node1&#45;&gt;Node6</title>
+<!-- Node0&#45;&gt;Node5 -->
+<g id="edge6" class="edge"><title>Node0&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M231.457,-112.799C248.518,-103.826 279.093,-89.3555 302.532,-79.0831"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="303.965,-82.277 311.76,-75.1017 301.192,-75.8498 303.965,-82.277"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="taker_8cpp.html" target="_top" xlink:title="Om source file. ">
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
+<g id="a_node3"><a xlink:href="taker_8cpp.html" target="_top" xlink:title="Om source file.">
 <polygon fill="none" stroke="black" points="-0.62793,-1 -0.62793,-19 72.6279,-19 72.6279,-1 -0.62793,-1"/>
 <text text-anchor="middle" x="36" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">om/taker.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge"><title>Node2&#45;&gt;Node3</title>
+<!-- Node1&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node1&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M30.9375,-56.5625C29.3254,-49.308 28.8683,-38.5884 29.5664,-29.3691"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="33.0695,-29.5903 30.9906,-19.2014 26.1371,-28.6192 33.0695,-29.5903"/>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge3" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge3" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M41.0094,-19.2014C42.6646,-26.4586 43.1393,-37.3129 42.4335,-46.6333"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="38.9632,-46.1777 41.0625,-56.5625 45.8974,-47.1352 38.9632,-46.1777"/>
 </g>
-<!-- Node6&#45;&gt;Node1 -->
-<g id="edge8" class="edge"><title>Node6&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node0 -->
+<g id="edge8" class="edge"><title>Node5&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M321.661,-75.1396C304.618,-84.1098 273.943,-98.6293 250.447,-108.926"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="248.995,-105.741 241.199,-112.916 251.768,-112.168 248.995,-105.741"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node"><title>Node7</title>
+<!-- Node6 -->
+<g id="node7" class="node"><title>Node6</title>
+<g id="a_node7"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="290.976,-1 290.976,-19 377.024,-19 377.024,-1 290.976,-1"/>
 <text text-anchor="middle" x="334" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">boost/swap.hpp</text>
+</a>
 </g>
-<!-- Node6&#45;&gt;Node7 -->
-<g id="edge7" class="edge"><title>Node6&#45;&gt;Node7</title>
+</g>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge7" class="edge"><title>Node5&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M334,-56.5625C334,-49.308 334,-38.5884 334,-29.3691"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="337.5,-29.2014 334,-19.2014 330.5,-29.2015 337.5,-29.2014"/>
 </g>

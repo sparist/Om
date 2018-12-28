@@ -8,16 +8,19 @@
  viewBox="0.00 0.00 610.00 56.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 52)">
 <title>Om::DefaultGiveable&lt; ThisImplementation, ThisInterface &gt;</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node7 -->
+<g id="node1" class="node"><title>Node7</title>
+<g id="a_node1"><a xlink:title="A partial implementation of Giveable.">
 <polygon fill="#bfbfbf" stroke="black" points="487.759,-5 487.759,-43 602.241,-43 602.241,-5 487.759,-5"/>
 <text text-anchor="start" x="495.759" y="-31" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
 <text text-anchor="start" x="495.759" y="-21" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
 <text text-anchor="middle" x="545" y="-11" font-family="Helvetica,sans-Serif" font-size="10.00"> ThisInterface &gt;</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title="Om::DefaultMoveable\l\&lt; ThisImplementation,\l DefaultCopyable\&lt; ThisImplementation,\l ThisInterface \&gt; \&gt;">
+</g>
+<!-- Node8 -->
+<g id="node2" class="node"><title>Node8</title>
+<g id="a_node2"><a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="260.402,-0 260.402,-48 451.598,-48 451.598,-0 260.402,-0"/>
 <text text-anchor="start" x="268.402" y="-36" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
 <text text-anchor="start" x="268.402" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -26,14 +29,14 @@
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node8&#45;&gt;Node7 -->
+<g id="edge1" class="edge"><title>Node8&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M462.142,-24C470.854,-24 479.43,-24 487.559,-24"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="461.87,-20.5001 451.87,-24 461.87,-27.5001 461.87,-20.5001"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="A partial implementation of Copyable. ">
+<!-- Node9 -->
+<g id="node3" class="node"><title>Node9</title>
+<g id="a_node3"><a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title="A partial implementation of Copyable.">
 <polygon fill="none" stroke="black" points="109.759,-5 109.759,-43 224.241,-43 224.241,-5 109.759,-5"/>
 <text text-anchor="start" x="117.759" y="-31" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
 <text text-anchor="start" x="117.759" y="-21" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisImplementation,</text>
@@ -41,18 +44,21 @@
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node9&#45;&gt;Node8 -->
+<g id="edge2" class="edge"><title>Node9&#45;&gt;Node8</title>
 <path fill="none" stroke="midnightblue" d="M234.445,-24C242.86,-24 251.595,-24 260.343,-24"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="234.36,-20.5001 224.36,-24 234.36,-27.5001 234.36,-20.5001"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node10 -->
+<g id="node4" class="node"><title>Node10</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0.0986328,-15 0.0986328,-33 73.9014,-33 73.9014,-15 0.0986328,-15"/>
 <text text-anchor="middle" x="37" y="-21" font-family="Helvetica,sans-Serif" font-size="10.00">ThisInterface</text>
+</a>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
+</g>
+<!-- Node10&#45;&gt;Node9 -->
+<g id="edge3" class="edge"><title>Node10&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M84.1974,-24C92.47,-24 101.174,-24 109.693,-24"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="83.9958,-20.5001 73.9958,-24 83.9957,-27.5001 83.9958,-20.5001"/>
 </g>

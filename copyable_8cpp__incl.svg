@@ -8,36 +8,42 @@
  viewBox="0.00 0.00 100.00 140.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 136)">
 <title>om/copyable.cpp</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
+<g id="a_node1"><a xlink:title="Om source file.">
 <polygon fill="#bfbfbf" stroke="black" points="0.199707,-113 0.199707,-131 91.8003,-131 91.8003,-113 0.199707,-113"/>
 <text text-anchor="middle" x="46" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">om/copyable.cpp</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="copyable_8hpp.html" target="_top" xlink:title="Om header file. ">
+</g>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
+<g id="a_node2"><a xlink:href="copyable_8hpp.html" target="_top" xlink:title="Om header file.">
 <polygon fill="none" stroke="black" points="-0.0810547,-57 -0.0810547,-75 92.0811,-75 92.0811,-57 -0.0810547,-57"/>
 <text text-anchor="middle" x="46" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">om/copyable.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
+<!-- Node0&#45;&gt;Node1 -->
+<g id="edge1" class="edge"><title>Node0&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M40.9375,-112.562C39.3254,-105.308 38.8683,-94.5884 39.5664,-85.3691"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="43.0695,-85.5903 40.9906,-75.2014 36.1371,-84.6192 43.0695,-85.5903"/>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge3" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge3" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M51.0094,-75.2014C52.6646,-82.4586 53.1393,-93.3129 52.4335,-102.633"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="48.9632,-102.178 51.0625,-112.562 55.8974,-103.135 48.9632,-102.178"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="19.9434,-1 19.9434,-19 72.0566,-19 72.0566,-1 19.9434,-1"/>
 <text text-anchor="middle" x="46" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">memory</text>
+</a>
 </g>
-<!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge"><title>Node2&#45;&gt;Node3</title>
+</g>
+<!-- Node1&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node1&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M46,-56.5625C46,-49.308 46,-38.5884 46,-29.3691"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="49.5001,-29.2014 46,-19.2014 42.5001,-29.2015 49.5001,-29.2014"/>
 </g>

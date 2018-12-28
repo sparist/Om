@@ -8,15 +8,18 @@
  viewBox="0.00 0.00 596.00 104.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>Om::Sink::CodePointSink&lt; ThisCodeUnitIterator &gt;</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node4 -->
+<g id="node1" class="node"><title>Node4</title>
+<g id="a_node1"><a xlink:title="A CodePoint Sink that pushes each code unit to the iterator.">
 <polygon fill="#bfbfbf" stroke="black" points="458.586,-13 458.586,-41 587.414,-41 587.414,-13 458.586,-13"/>
 <text text-anchor="start" x="466.586" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink::CodePointSink</text>
 <text text-anchor="middle" x="523" y="-19" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; ThisCodeUnitIterator &gt;</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="class_om_1_1_sink_1_1_default_sink.html" target="_top" xlink:title="Om::Sink::DefaultSink\l\&lt; CodePoint const, CodePoint\lSink\&lt; ThisCodeUnitIterator \&gt; \&gt;">
+</g>
+<!-- Node5 -->
+<g id="node2" class="node"><title>Node5</title>
+<g id="a_node2"><a xlink:href="class_om_1_1_sink_1_1_default_sink.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="176.304,-37 176.304,-75 329.696,-75 329.696,-37 176.304,-37"/>
 <text text-anchor="start" x="184.304" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink::DefaultSink</text>
 <text text-anchor="start" x="184.304" y="-53" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; CodePoint const, CodePoint</text>
@@ -24,44 +27,50 @@
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge1" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M339.871,-46.708C378.309,-42.5487 422.84,-37.73 458.247,-33.8986"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="339.289,-43.2505 329.723,-47.806 340.042,-50.2098 339.289,-43.2505"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="class_om_1_1_sink_1_1_sink.html" target="_top" xlink:title="Om::Sink::Sink\&lt; CodePoint\l const &#160;\&gt;">
+<!-- Node6 -->
+<g id="node3" class="node"><title>Node6</title>
+<g id="a_node3"><a xlink:href="class_om_1_1_sink_1_1_sink.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="0.277344,-68 0.277344,-96 137.723,-96 137.723,-68 0.277344,-68"/>
 <text text-anchor="start" x="8.27734" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink::Sink&lt; CodePoint</text>
 <text text-anchor="middle" x="69" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00"> const &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge2" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M147.87,-70.8757C157.265,-69.5335 166.851,-68.1641 176.216,-66.8263"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="147.175,-67.4394 137.77,-72.3186 148.165,-74.3691 147.175,-67.4394"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node7 -->
+<g id="node4" class="node"><title>Node7</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="14.8574,-11 14.8574,-49 123.143,-49 123.143,-11 14.8574,-11"/>
 <text text-anchor="start" x="22.8574" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">std::iterator&lt; std</text>
 <text text-anchor="start" x="22.8574" y="-27" font-family="Helvetica,sans-Serif" font-size="10.00">::output_iterator_tag,</text>
 <text text-anchor="middle" x="69" y="-17" font-family="Helvetica,sans-Serif" font-size="10.00"> CodePoint const &gt;</text>
+</a>
 </g>
-<!-- Node4&#45;&gt;Node2 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node2</title>
+</g>
+<!-- Node7&#45;&gt;Node5 -->
+<g id="edge3" class="edge"><title>Node7&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M133.875,-39.1249C147.542,-41.0774 162.107,-43.1582 176.175,-45.1678"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="134.016,-35.6097 123.622,-37.6602 133.026,-42.5394 134.016,-35.6097"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node8 -->
+<g id="node5" class="node"><title>Node8</title>
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="198.87,-0 198.87,-18 307.13,-18 307.13,-0 198.87,-0"/>
 <text text-anchor="middle" x="253" y="-6" font-family="Helvetica,sans-Serif" font-size="10.00">ThisCodeUnitIterator</text>
+</a>
 </g>
-<!-- Node5&#45;&gt;Node1 -->
-<g id="edge4" class="edge"><title>Node5&#45;&gt;Node1</title>
+</g>
+<!-- Node8&#45;&gt;Node4 -->
+<g id="edge4" class="edge"><title>Node8&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M317.663,-12.9712C353.589,-15.2464 399.306,-18.1985 440,-21 445.981,-21.4117 452.207,-21.8499 458.436,-22.2947"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="317.526,-9.45565 307.325,-12.3181 317.084,-16.4417 317.526,-9.45565"/>
 <text text-anchor="middle" x="394" y="-23" font-family="Helvetica,sans-Serif" font-size="10.00"> thisCodeUnitIterator</text>

@@ -1,157 +1,158 @@
 <map id="om/language/element.hpp" name="om/language/element.hpp">
-<area shape="rect" id="node2" href="$atom_8hpp.html" title="Om header file. " alt="" coords="905,87,1063,113"/>
-<area shape="rect" id="node150" href="$default__program_8cpp.html" title="Om source file. " alt="" coords="714,81,856,119"/>
-<area shape="rect" id="node156" href="$element_8cpp.html" title="Om source file. " alt="" coords="1087,87,1261,113"/>
-<area shape="rect" id="node3" href="$atom_8cpp.html" title="Om source file. " alt="" coords="931,175,1087,201"/>
-<area shape="rect" id="node4" href="$default__atom_8hpp.html" title="Om header file. " alt="" coords="822,345,964,383"/>
-<area shape="rect" id="node5" href="$default__atom_8cpp.html" title="Om source file. " alt="" coords="822,433,964,471"/>
-<area shape="rect" id="node6" href="$operator_8hpp.html" title="Om header file. " alt="" coords="989,439,1165,465"/>
-<area shape="rect" id="node148" href="$separator_8hpp.html" title="Om header file. " alt="" coords="1189,439,1372,465"/>
-<area shape="rect" id="node7" href="$writer_8cpp.html" title="Om source file. " alt="" coords="1184,521,1343,546"/>
-<area shape="rect" id="node13" href="$evaluator_8cpp.html" title="Om source file. " alt="" coords="895,819,1076,845"/>
-<area shape="rect" id="node75" href="$system_8cpp.html" title="Om source file. " alt="" coords="650,1158,819,1183"/>
-<area shape="rect" id="node137" href="$operator_8cpp.html" title="Om source file. " alt="" coords="409,819,585,845"/>
-<area shape="rect" id="node138" href="$literal_8cpp.html" title="Om source file. " alt="" coords="1002,521,1160,546"/>
-<area shape="rect" id="node144" href="$form_8hpp.html" title="Om header file. " alt="" coords="823,521,977,546"/>
-<area shape="rect" id="node146" href="$pair_8hpp.html" title="Om header file. " alt="" coords="547,521,696,546"/>
-<area shape="rect" id="node8" href="$writer_8hpp.html" title="Om header file. " alt="" coords="1184,595,1343,621"/>
-<area shape="rect" id="node9" href="$translator_8cpp.html" title="Om source file. " alt="" coords="1161,670,1343,695"/>
-<area shape="rect" id="node10" href="$translator_8hpp.html" title="Om header file. " alt="" coords="1161,745,1343,770"/>
-<area shape="rect" id="node11" href="$environment_8hpp.html" title="Om header file. " alt="" coords="1202,819,1403,845"/>
-<area shape="rect" id="node73" href="$lexicon_8hpp.html" title="Om header file. " alt="" coords="649,1063,817,1089"/>
-<area shape="rect" id="node76" href="$system_8hpp.html" title="Om header file. " alt="" coords="5556,1063,5725,1089"/>
-<area shape="rect" id="node12" href="$environment_8cpp.html" title="Om source file. " alt="" coords="1202,894,1403,919"/>
-<area shape="rect" id="node14" href="$evaluator_8hpp.html" title="Om header file. " alt="" coords="894,894,1076,919"/>
-<area shape="rect" id="node15" href="$evaluation_8cpp.html" title="Om source file. " alt="" coords="137,1063,324,1089"/>
-<area shape="rect" id="node17" href="$default__incomplete__operation_8cpp.html" title="Om source file. " alt="" coords="1630,969,1855,1007"/>
-<area shape="rect" id="node16" href="$evaluation_8hpp.html" title="Om header file. " alt="" coords="4,1158,192,1183"/>
-<area shape="rect" id="node18" href="$default__incomplete__operation_8hpp.html" title="Om header file. " alt="" coords="2950,1057,3175,1095"/>
-<area shape="rect" id="node19" href="$choose__operation_8hpp.html" title="Om header file. " alt="" coords="2708,1151,2865,1190"/>
-<area shape="rect" id="node21" href="$copy__operation_8hpp.html" title="Om header file. " alt="" coords="3812,1151,3969,1190"/>
-<area shape="rect" id="node23" href="$decode__operation_8hpp.html" title="Om header file. " alt="" coords="3993,1151,4151,1190"/>
-<area shape="rect" id="node25" href="$define__operation_8hpp.html" title="Om header file. " alt="" coords="4724,1151,4881,1190"/>
-<area shape="rect" id="node27" href="$dequote__operation_8hpp.html" title="Om header file. " alt="" coords="4175,1151,4336,1190"/>
-<area shape="rect" id="node29" href="$drop__operation_8hpp.html" title="Om header file. " alt="" coords="4361,1151,4519,1190"/>
-<area shape="rect" id="node31" href="$encode__operation_8hpp.html" title="Om header file. " alt="" coords="4542,1151,4700,1190"/>
-<area shape="rect" id="node33" href="$equals__operation_8hpp.html" title="Om header file. " alt="" coords="4905,1151,5063,1190"/>
-<area shape="rect" id="node35" href="$evaluate__operation_8hpp.html" title="Om header file. " alt="" coords="5087,1151,5251,1190"/>
-<area shape="rect" id="node37" href="$program__operation_8hpp.html" title="Om header file. " alt="" coords="2138,1151,2301,1190"/>
-<area shape="rect" id="node49" href="$fill__operation_8hpp.html" title="Om header file. " alt="" coords="1378,1151,1536,1190"/>
-<area shape="rect" id="node51" href="$find__operation_8hpp.html" title="Om header file. " alt="" coords="2889,1151,3047,1190"/>
-<area shape="rect" id="node53" href="$front__push__operation_8hpp.html" title="Om header file. " alt="" coords="945,1151,1121,1190"/>
-<area shape="rect" id="node55" href="$inject__operation_8hpp.html" title="Om header file. " alt="" coords="1741,1151,1899,1190"/>
-<area shape="rect" id="node57" href="$normalize__operation_8hpp.html" title="Om header file. " alt="" coords="3071,1151,3243,1190"/>
-<area shape="rect" id="node59" href="$pair__operation_8hpp.html" title="Om header file. " alt="" coords="3268,1151,3425,1190"/>
-<area shape="rect" id="node61" href="$pull__operation_8hpp.html" title="Om header file. " alt="" coords="1146,1151,1304,1190"/>
-<area shape="rect" id="node63" href="$quote__operation_8hpp.html" title="Om header file. " alt="" coords="3449,1151,3607,1190"/>
-<area shape="rect" id="node65" href="$skip__operation_8hpp.html" title="Om header file. " alt="" coords="1560,1151,1717,1190"/>
-<area shape="rect" id="node67" href="$substitute__operation_8hpp.html" title="Om header file. " alt="" coords="452,1253,623,1291"/>
-<area shape="rect" id="node69" href="$translate__operation_8hpp.html" title="Om header file. " alt="" coords="460,1151,624,1190"/>
-<area shape="rect" id="node71" href="$swap__operation_8hpp.html" title="Om header file. " alt="" coords="3630,1151,3788,1190"/>
-<area shape="rect" id="node20" href="$choose__operation_8cpp.html" title="Om source file. " alt="" coords="2710,1253,2868,1291"/>
-<area shape="rect" id="node22" href="$copy__operation_8cpp.html" title="Om source file. " alt="" coords="3812,1253,3969,1291"/>
-<area shape="rect" id="node24" href="$decode__operation_8cpp.html" title="Om source file. " alt="" coords="3993,1253,4151,1291"/>
-<area shape="rect" id="node26" href="$define__operation_8cpp.html" title="Om source file. " alt="" coords="4724,1253,4881,1291"/>
-<area shape="rect" id="node28" href="$dequote__operation_8cpp.html" title="Om source file. " alt="" coords="4175,1253,4336,1291"/>
-<area shape="rect" id="node30" href="$drop__operation_8cpp.html" title="Om source file. " alt="" coords="4361,1253,4519,1291"/>
-<area shape="rect" id="node32" href="$encode__operation_8cpp.html" title="Om source file. " alt="" coords="4542,1253,4700,1291"/>
-<area shape="rect" id="node34" href="$equals__operation_8cpp.html" title="Om source file. " alt="" coords="4905,1253,5063,1291"/>
-<area shape="rect" id="node36" href="$evaluate__operation_8cpp.html" title="Om source file. " alt="" coords="5088,1253,5251,1291"/>
-<area shape="rect" id="node38" href="$expression__operation_8hpp.html" title="Om header file. " alt="" coords="1753,1253,1931,1291"/>
-<area shape="rect" id="node40" href="$lexicon__operation_8hpp.html" title="Om header file. " alt="" coords="1572,1253,1729,1291"/>
-<area shape="rect" id="node42" href="$operand__operation_8hpp.html" title="Om header file. " alt="" coords="2143,1253,2305,1291"/>
-<area shape="rect" id="node44" href="$operator__operation_8hpp.html" title="Om header file. " alt="" coords="2329,1253,2492,1291"/>
-<area shape="rect" id="node46" href="$program__operation_8cpp.html" title="Om source file. " alt="" coords="1956,1253,2119,1291"/>
-<area shape="rect" id="node47" href="$separator__operation_8hpp.html" title="Om header file. " alt="" coords="2516,1253,2685,1291"/>
-<area shape="rect" id="node39" href="$expression__operation_8cpp.html" title="Om source file. " alt="" coords="1754,1347,1931,1386"/>
-<area shape="rect" id="node41" href="$lexicon__operation_8cpp.html" title="Om source file. " alt="" coords="1572,1347,1729,1386"/>
-<area shape="rect" id="node43" href="$operand__operation_8cpp.html" title="Om source file. " alt="" coords="2143,1347,2304,1386"/>
-<area shape="rect" id="node45" href="$operator__operation_8cpp.html" title="Om source file. " alt="" coords="2329,1347,2492,1386"/>
-<area shape="rect" id="node48" href="$separator__operation_8cpp.html" title="Om source file. " alt="" coords="2517,1347,2685,1386"/>
-<area shape="rect" id="node50" href="$fill__operation_8cpp.html" title="Om source file. " alt="" coords="1028,1253,1185,1291"/>
-<area shape="rect" id="node52" href="$find__operation_8cpp.html" title="Om source file. " alt="" coords="2892,1253,3049,1291"/>
-<area shape="rect" id="node54" href="$front__push__operation_8cpp.html" title="Om source file. " alt="" coords="647,1253,823,1291"/>
-<area shape="rect" id="node56" href="$inject__operation_8cpp.html" title="Om source file. " alt="" coords="1390,1253,1548,1291"/>
-<area shape="rect" id="node58" href="$normalize__operation_8cpp.html" title="Om source file. " alt="" coords="3073,1253,3244,1291"/>
-<area shape="rect" id="node60" href="$pair__operation_8cpp.html" title="Om source file. " alt="" coords="3268,1253,3425,1291"/>
-<area shape="rect" id="node62" href="$pull__operation_8cpp.html" title="Om source file. " alt="" coords="846,1253,1004,1291"/>
-<area shape="rect" id="node64" href="$quote__operation_8cpp.html" title="Om source file. " alt="" coords="3449,1253,3607,1291"/>
-<area shape="rect" id="node66" href="$skip__operation_8cpp.html" title="Om source file. " alt="" coords="1209,1253,1367,1291"/>
-<area shape="rect" id="node68" href="$substitute__operation_8cpp.html" title="Om source file. " alt="" coords="452,1347,621,1386"/>
-<area shape="rect" id="node70" href="$translate__operation_8cpp.html" title="Om source file. " alt="" coords="263,1253,427,1291"/>
-<area shape="rect" id="node72" href="$swap__operation_8cpp.html" title="Om source file. " alt="" coords="3630,1253,3788,1291"/>
-<area shape="rect" id="node74" href="$lexicon_8cpp.html" title="Om source file. " alt="" coords="217,1158,385,1183"/>
-<area shape="rect" id="node77" href="$back__pull__character__operation_8hpp.html" title="Om header file. " alt="" coords="5653,1145,5811,1197"/>
-<area shape="rect" id="node79" href="$back__pull__code__point__operation_8hpp.html" title="Om header file. " alt="" coords="5834,1145,5992,1197"/>
-<area shape="rect" id="node81" href="$back__pull__element__operation_8hpp.html" title="Om header file. " alt="" coords="6017,1151,6241,1190"/>
-<area shape="rect" id="node83" href="$back__pull__form__operation_8hpp.html" title="Om header file. " alt="" coords="6266,1151,6469,1190"/>
-<area shape="rect" id="node85" href="$back__pull__operand__operation_8hpp.html" title="Om header file. " alt="" coords="6495,1151,6721,1190"/>
-<area shape="rect" id="node87" href="$back__pull__operator__operation_8hpp.html" title="Om header file. " alt="" coords="6745,1151,6972,1190"/>
-<area shape="rect" id="node89" href="$back__pull__pair__operation_8hpp.html" title="Om header file. " alt="" coords="6996,1151,7195,1190"/>
-<area shape="rect" id="node91" href="$back__pull__separator__operation_8hpp.html" title="Om header file. " alt="" coords="7220,1145,7377,1197"/>
-<area shape="rect" id="node93" href="$back__pull__term__operation_8hpp.html" title="Om header file. " alt="" coords="7402,1151,7605,1190"/>
-<area shape="rect" id="node95" href="$do__operation_8hpp.html" title="Om header file. " alt="" coords="7630,1151,7788,1190"/>
-<area shape="rect" id="node97" href="$environment__operation_8hpp.html" title="Om header file. " alt="" coords="7812,1151,7999,1190"/>
-<area shape="rect" id="node99" href="$expression__back__push__operation_8hpp.html" title="Om header file. " alt="" coords="8023,1145,8184,1197"/>
-<area shape="rect" id="node101" href="$expression__front__push__operation_8hpp.html" title="Om header file. " alt="" coords="8209,1145,8368,1197"/>
-<area shape="rect" id="node103" href="$front__pull__character__operation_8hpp.html" title="Om header file. " alt="" coords="8393,1145,8551,1197"/>
-<area shape="rect" id="node105" href="$front__pull__code__point__operation_8hpp.html" title="Om header file. " alt="" coords="8574,1145,8732,1197"/>
-<area shape="rect" id="node107" href="$front__pull__element__operation_8hpp.html" title="Om header file. " alt="" coords="8756,1151,8979,1190"/>
-<area shape="rect" id="node109" href="$front__pull__form__operation_8hpp.html" title="Om header file. " alt="" coords="9004,1151,9207,1190"/>
-<area shape="rect" id="node111" href="$front__pull__operand__operation_8hpp.html" title="Om header file. " alt="" coords="9231,1151,9456,1190"/>
-<area shape="rect" id="node113" href="$front__pull__operator__operation_8hpp.html" title="Om header file. " alt="" coords="9481,1145,9639,1197"/>
-<area shape="rect" id="node115" href="$front__pull__pair__operation_8hpp.html" title="Om header file. " alt="" coords="9663,1151,9861,1190"/>
-<area shape="rect" id="node117" href="$front__pull__separator__operation_8hpp.html" title="Om header file. " alt="" coords="9886,1145,10044,1197"/>
-<area shape="rect" id="node119" href="$front__pull__term__operation_8hpp.html" title="Om header file. " alt="" coords="10068,1151,10271,1190"/>
-<area shape="rect" id="node121" href="$lexicon__back__push__operation_8hpp.html" title="Om header file. " alt="" coords="10294,1151,10521,1190"/>
-<area shape="rect" id="node123" href="$lexicon__front__push__operation_8hpp.html" title="Om header file. " alt="" coords="10546,1151,10771,1190"/>
-<area shape="rect" id="node125" href="$literal__back__push__operation_8hpp.html" title="Om header file. " alt="" coords="10795,1151,11012,1190"/>
-<area shape="rect" id="node127" href="$literal__front__push__operation_8hpp.html" title="Om header file. " alt="" coords="11037,1151,11253,1190"/>
-<area shape="rect" id="node129" href="$operator__back__push__operation_8hpp.html" title="Om header file. " alt="" coords="11277,1151,11512,1190"/>
-<area shape="rect" id="node131" href="$operator__front__push__operation_8hpp.html" title="Om header file. " alt="" coords="11536,1145,11693,1197"/>
-<area shape="rect" id="node133" href="$rearrange__operation_8hpp.html" title="Om header file. " alt="" coords="5275,1151,5447,1190"/>
-<area shape="rect" id="node135" href="$system__operation_8hpp.html" title="Om header file. " alt="" coords="5472,1151,5629,1190"/>
-<area shape="rect" id="node78" href="$back__pull__character__operation_8cpp.html" title="Om source file. " alt="" coords="5653,1246,5811,1298"/>
-<area shape="rect" id="node80" href="$back__pull__code__point__operation_8cpp.html" title="Om source file. " alt="" coords="5834,1246,5992,1298"/>
-<area shape="rect" id="node82" href="$back__pull__element__operation_8cpp.html" title="Om source file. " alt="" coords="6017,1253,6241,1291"/>
-<area shape="rect" id="node84" href="$back__pull__form__operation_8cpp.html" title="Om source file. " alt="" coords="6266,1253,6469,1291"/>
-<area shape="rect" id="node86" href="$back__pull__operand__operation_8cpp.html" title="Om source file. " alt="" coords="6495,1253,6720,1291"/>
-<area shape="rect" id="node88" href="$back__pull__operator__operation_8cpp.html" title="Om source file. " alt="" coords="6745,1253,6971,1291"/>
-<area shape="rect" id="node90" href="$back__pull__pair__operation_8cpp.html" title="Om source file. " alt="" coords="6996,1253,7195,1291"/>
-<area shape="rect" id="node92" href="$back__pull__separator__operation_8cpp.html" title="Om source file. " alt="" coords="7220,1246,7377,1298"/>
-<area shape="rect" id="node94" href="$back__pull__term__operation_8cpp.html" title="Om source file. " alt="" coords="7402,1253,7605,1291"/>
-<area shape="rect" id="node96" href="$do__operation_8cpp.html" title="Om source file. " alt="" coords="7630,1253,7788,1291"/>
-<area shape="rect" id="node98" href="$environment__operation_8cpp.html" title="Om source file. " alt="" coords="7812,1253,7997,1291"/>
-<area shape="rect" id="node100" href="$expression__back__push__operation_8cpp.html" title="Om source file. " alt="" coords="8023,1246,8184,1298"/>
-<area shape="rect" id="node102" href="$expression__front__push__operation_8cpp.html" title="Om source file. " alt="" coords="8209,1246,8368,1298"/>
-<area shape="rect" id="node104" href="$front__pull__character__operation_8cpp.html" title="Om source file. " alt="" coords="8393,1246,8551,1298"/>
-<area shape="rect" id="node106" href="$front__pull__code__point__operation_8cpp.html" title="Om source file. " alt="" coords="8574,1246,8732,1298"/>
-<area shape="rect" id="node108" href="$front__pull__element__operation_8cpp.html" title="Om source file. " alt="" coords="8757,1253,8979,1291"/>
-<area shape="rect" id="node110" href="$front__pull__form__operation_8cpp.html" title="Om source file. " alt="" coords="9004,1253,9205,1291"/>
-<area shape="rect" id="node112" href="$front__pull__operand__operation_8cpp.html" title="Om source file. " alt="" coords="9232,1253,9456,1291"/>
-<area shape="rect" id="node114" href="$front__pull__operator__operation_8cpp.html" title="Om source file. " alt="" coords="9481,1246,9639,1298"/>
-<area shape="rect" id="node116" href="$front__pull__pair__operation_8cpp.html" title="Om source file. " alt="" coords="9664,1253,9861,1291"/>
-<area shape="rect" id="node118" href="$front__pull__separator__operation_8cpp.html" title="Om source file. " alt="" coords="9886,1246,10044,1298"/>
-<area shape="rect" id="node120" href="$front__pull__term__operation_8cpp.html" title="Om source file. " alt="" coords="10068,1253,10269,1291"/>
-<area shape="rect" id="node122" href="$lexicon__back__push__operation_8cpp.html" title="Om source file. " alt="" coords="10295,1253,10520,1291"/>
-<area shape="rect" id="node124" href="$lexicon__front__push__operation_8cpp.html" title="Om source file. " alt="" coords="10546,1253,10771,1291"/>
-<area shape="rect" id="node126" href="$literal__back__push__operation_8cpp.html" title="Om source file. " alt="" coords="10795,1253,11012,1291"/>
-<area shape="rect" id="node128" href="$literal__front__push__operation_8cpp.html" title="Om source file. " alt="" coords="11038,1253,11252,1291"/>
-<area shape="rect" id="node130" href="$operator__back__push__operation_8cpp.html" title="Om source file. " alt="" coords="11277,1253,11512,1291"/>
-<area shape="rect" id="node132" href="$operator__front__push__operation_8cpp.html" title="Om source file. " alt="" coords="11536,1246,11693,1298"/>
-<area shape="rect" id="node134" href="$rearrange__operation_8cpp.html" title="Om source file. " alt="" coords="5276,1253,5447,1291"/>
-<area shape="rect" id="node136" href="$system__operation_8cpp.html" title="Om source file. " alt="" coords="5472,1253,5629,1291"/>
-<area shape="rect" id="node139" href="$literal_8hpp.html" title="Om header file. " alt="" coords="1000,595,1159,621"/>
-<area shape="rect" id="node140" href="$operand_8cpp.html" title="Om source file. " alt="" coords="272,670,448,695"/>
-<area shape="rect" id="node142" href="$expression_8cpp.html" title="Om source file. " alt="" coords="1263,975,1453,1001"/>
-<area shape="rect" id="node141" href="$operand_8hpp.html" title="Om header file. " alt="" coords="271,745,448,770"/>
-<area shape="rect" id="node143" href="$expression_8hpp.html" title="Om header file. " alt="" coords="1361,1063,1553,1089"/>
-<area shape="rect" id="node145" href="$form_8cpp.html" title="Om source file. " alt="" coords="822,595,975,621"/>
-<area shape="rect" id="node147" href="$pair_8cpp.html" title="Om source file. " alt="" coords="547,595,695,621"/>
-<area shape="rect" id="node149" href="$separator_8cpp.html" title="Om source file. " alt="" coords="1631,521,1813,546"/>
-<area shape="rect" id="node151" href="$default__program_8hpp.html" title="Om header file. " alt="" coords="714,169,856,207"/>
-<area shape="rect" id="node152" href="$default__element_8hpp.html" title="Om header file. " alt="" coords="542,257,684,295"/>
-<area shape="rect" id="node153" href="$default__element_8cpp.html" title="Om source file. " alt="" coords="542,345,684,383"/>
-<area shape="rect" id="node154" href="$null_8hpp.html" title="Om header file. " alt="" coords="304,351,452,377"/>
-<area shape="rect" id="node155" href="$null_8cpp.html" title="Om source file. " alt="" coords="249,439,396,465"/>
+<area shape="rect" id="node1" title="Om header file." alt="" coords="991,6,1165,31"/>
+<area shape="rect" id="node2" href="$atom_8hpp.html" title="Om header file." alt="" coords="905,87,1063,113"/>
+<area shape="rect" id="node150" href="$default__program_8cpp.html" title="Om source file." alt="" coords="714,81,856,119"/>
+<area shape="rect" id="node156" href="$element_8cpp.html" title="Om source file." alt="" coords="1087,87,1261,113"/>
+<area shape="rect" id="node3" href="$atom_8cpp.html" title="Om source file." alt="" coords="931,175,1087,201"/>
+<area shape="rect" id="node4" href="$default__atom_8hpp.html" title="Om header file." alt="" coords="822,345,964,383"/>
+<area shape="rect" id="node5" href="$default__atom_8cpp.html" title="Om source file." alt="" coords="822,433,964,471"/>
+<area shape="rect" id="node6" href="$operator_8hpp.html" title="Om header file." alt="" coords="989,439,1165,465"/>
+<area shape="rect" id="node148" href="$separator_8hpp.html" title="Om header file." alt="" coords="1189,439,1372,465"/>
+<area shape="rect" id="node7" href="$writer_8cpp.html" title="Om source file." alt="" coords="1184,521,1343,546"/>
+<area shape="rect" id="node13" href="$evaluator_8cpp.html" title="Om source file." alt="" coords="895,819,1076,845"/>
+<area shape="rect" id="node75" href="$system_8cpp.html" title="Om source file." alt="" coords="650,1158,819,1183"/>
+<area shape="rect" id="node137" href="$operator_8cpp.html" title="Om source file." alt="" coords="409,819,585,845"/>
+<area shape="rect" id="node138" href="$literal_8cpp.html" title="Om source file." alt="" coords="1002,521,1160,546"/>
+<area shape="rect" id="node144" href="$form_8hpp.html" title="Om header file." alt="" coords="823,521,977,546"/>
+<area shape="rect" id="node146" href="$pair_8hpp.html" title="Om header file." alt="" coords="547,521,696,546"/>
+<area shape="rect" id="node8" href="$writer_8hpp.html" title="Om header file." alt="" coords="1184,595,1343,621"/>
+<area shape="rect" id="node9" href="$translator_8cpp.html" title="Om source file." alt="" coords="1161,670,1343,695"/>
+<area shape="rect" id="node10" href="$translator_8hpp.html" title="Om header file." alt="" coords="1161,745,1343,770"/>
+<area shape="rect" id="node11" href="$environment_8hpp.html" title="Om header file." alt="" coords="1202,819,1403,845"/>
+<area shape="rect" id="node73" href="$lexicon_8hpp.html" title="Om header file." alt="" coords="649,1063,817,1089"/>
+<area shape="rect" id="node76" href="$system_8hpp.html" title="Om header file." alt="" coords="5556,1063,5725,1089"/>
+<area shape="rect" id="node12" href="$environment_8cpp.html" title="Om source file." alt="" coords="1202,894,1403,919"/>
+<area shape="rect" id="node14" href="$evaluator_8hpp.html" title="Om header file." alt="" coords="894,894,1076,919"/>
+<area shape="rect" id="node15" href="$evaluation_8cpp.html" title="Om source file." alt="" coords="137,1063,324,1089"/>
+<area shape="rect" id="node17" href="$default__incomplete__operation_8cpp.html" title="Om source file." alt="" coords="1630,969,1855,1007"/>
+<area shape="rect" id="node16" href="$evaluation_8hpp.html" title="Om header file." alt="" coords="4,1158,192,1183"/>
+<area shape="rect" id="node18" href="$default__incomplete__operation_8hpp.html" title="Om header file." alt="" coords="2950,1057,3175,1095"/>
+<area shape="rect" id="node19" href="$choose__operation_8hpp.html" title="Om header file." alt="" coords="2708,1151,2865,1190"/>
+<area shape="rect" id="node21" href="$copy__operation_8hpp.html" title="Om header file." alt="" coords="3812,1151,3969,1190"/>
+<area shape="rect" id="node23" href="$decode__operation_8hpp.html" title="Om header file." alt="" coords="3993,1151,4151,1190"/>
+<area shape="rect" id="node25" href="$define__operation_8hpp.html" title="Om header file." alt="" coords="4724,1151,4881,1190"/>
+<area shape="rect" id="node27" href="$dequote__operation_8hpp.html" title="Om header file." alt="" coords="4175,1151,4336,1190"/>
+<area shape="rect" id="node29" href="$drop__operation_8hpp.html" title="Om header file." alt="" coords="4361,1151,4519,1190"/>
+<area shape="rect" id="node31" href="$encode__operation_8hpp.html" title="Om header file." alt="" coords="4542,1151,4700,1190"/>
+<area shape="rect" id="node33" href="$equals__operation_8hpp.html" title="Om header file." alt="" coords="4905,1151,5063,1190"/>
+<area shape="rect" id="node35" href="$evaluate__operation_8hpp.html" title="Om header file." alt="" coords="5087,1151,5251,1190"/>
+<area shape="rect" id="node37" href="$program__operation_8hpp.html" title="Om header file." alt="" coords="2138,1151,2301,1190"/>
+<area shape="rect" id="node49" href="$fill__operation_8hpp.html" title="Om header file." alt="" coords="1378,1151,1536,1190"/>
+<area shape="rect" id="node51" href="$find__operation_8hpp.html" title="Om header file." alt="" coords="2889,1151,3047,1190"/>
+<area shape="rect" id="node53" href="$front__push__operation_8hpp.html" title="Om header file." alt="" coords="945,1151,1121,1190"/>
+<area shape="rect" id="node55" href="$inject__operation_8hpp.html" title="Om header file." alt="" coords="1741,1151,1899,1190"/>
+<area shape="rect" id="node57" href="$normalize__operation_8hpp.html" title="Om header file." alt="" coords="3071,1151,3243,1190"/>
+<area shape="rect" id="node59" href="$pair__operation_8hpp.html" title="Om header file." alt="" coords="3268,1151,3425,1190"/>
+<area shape="rect" id="node61" href="$pull__operation_8hpp.html" title="Om header file." alt="" coords="1146,1151,1304,1190"/>
+<area shape="rect" id="node63" href="$quote__operation_8hpp.html" title="Om header file." alt="" coords="3449,1151,3607,1190"/>
+<area shape="rect" id="node65" href="$skip__operation_8hpp.html" title="Om header file." alt="" coords="1560,1151,1717,1190"/>
+<area shape="rect" id="node67" href="$substitute__operation_8hpp.html" title="Om header file." alt="" coords="452,1253,623,1291"/>
+<area shape="rect" id="node69" href="$translate__operation_8hpp.html" title="Om header file." alt="" coords="460,1151,624,1190"/>
+<area shape="rect" id="node71" href="$swap__operation_8hpp.html" title="Om header file." alt="" coords="3630,1151,3788,1190"/>
+<area shape="rect" id="node20" href="$choose__operation_8cpp.html" title="Om source file." alt="" coords="2710,1253,2868,1291"/>
+<area shape="rect" id="node22" href="$copy__operation_8cpp.html" title="Om source file." alt="" coords="3812,1253,3969,1291"/>
+<area shape="rect" id="node24" href="$decode__operation_8cpp.html" title="Om source file." alt="" coords="3993,1253,4151,1291"/>
+<area shape="rect" id="node26" href="$define__operation_8cpp.html" title="Om source file." alt="" coords="4724,1253,4881,1291"/>
+<area shape="rect" id="node28" href="$dequote__operation_8cpp.html" title="Om source file." alt="" coords="4175,1253,4336,1291"/>
+<area shape="rect" id="node30" href="$drop__operation_8cpp.html" title="Om source file." alt="" coords="4361,1253,4519,1291"/>
+<area shape="rect" id="node32" href="$encode__operation_8cpp.html" title="Om source file." alt="" coords="4542,1253,4700,1291"/>
+<area shape="rect" id="node34" href="$equals__operation_8cpp.html" title="Om source file." alt="" coords="4905,1253,5063,1291"/>
+<area shape="rect" id="node36" href="$evaluate__operation_8cpp.html" title="Om source file." alt="" coords="5088,1253,5251,1291"/>
+<area shape="rect" id="node38" href="$expression__operation_8hpp.html" title="Om header file." alt="" coords="1753,1253,1931,1291"/>
+<area shape="rect" id="node40" href="$lexicon__operation_8hpp.html" title="Om header file." alt="" coords="1572,1253,1729,1291"/>
+<area shape="rect" id="node42" href="$operand__operation_8hpp.html" title="Om header file." alt="" coords="2143,1253,2305,1291"/>
+<area shape="rect" id="node44" href="$operator__operation_8hpp.html" title="Om header file." alt="" coords="2329,1253,2492,1291"/>
+<area shape="rect" id="node46" href="$program__operation_8cpp.html" title="Om source file." alt="" coords="1956,1253,2119,1291"/>
+<area shape="rect" id="node47" href="$separator__operation_8hpp.html" title="Om header file." alt="" coords="2516,1253,2685,1291"/>
+<area shape="rect" id="node39" href="$expression__operation_8cpp.html" title="Om source file." alt="" coords="1754,1347,1931,1386"/>
+<area shape="rect" id="node41" href="$lexicon__operation_8cpp.html" title="Om source file." alt="" coords="1572,1347,1729,1386"/>
+<area shape="rect" id="node43" href="$operand__operation_8cpp.html" title="Om source file." alt="" coords="2143,1347,2304,1386"/>
+<area shape="rect" id="node45" href="$operator__operation_8cpp.html" title="Om source file." alt="" coords="2329,1347,2492,1386"/>
+<area shape="rect" id="node48" href="$separator__operation_8cpp.html" title="Om source file." alt="" coords="2517,1347,2685,1386"/>
+<area shape="rect" id="node50" href="$fill__operation_8cpp.html" title="Om source file." alt="" coords="1028,1253,1185,1291"/>
+<area shape="rect" id="node52" href="$find__operation_8cpp.html" title="Om source file." alt="" coords="2892,1253,3049,1291"/>
+<area shape="rect" id="node54" href="$front__push__operation_8cpp.html" title="Om source file." alt="" coords="647,1253,823,1291"/>
+<area shape="rect" id="node56" href="$inject__operation_8cpp.html" title="Om source file." alt="" coords="1390,1253,1548,1291"/>
+<area shape="rect" id="node58" href="$normalize__operation_8cpp.html" title="Om source file." alt="" coords="3073,1253,3244,1291"/>
+<area shape="rect" id="node60" href="$pair__operation_8cpp.html" title="Om source file." alt="" coords="3268,1253,3425,1291"/>
+<area shape="rect" id="node62" href="$pull__operation_8cpp.html" title="Om source file." alt="" coords="846,1253,1004,1291"/>
+<area shape="rect" id="node64" href="$quote__operation_8cpp.html" title="Om source file." alt="" coords="3449,1253,3607,1291"/>
+<area shape="rect" id="node66" href="$skip__operation_8cpp.html" title="Om source file." alt="" coords="1209,1253,1367,1291"/>
+<area shape="rect" id="node68" href="$substitute__operation_8cpp.html" title="Om source file." alt="" coords="452,1347,621,1386"/>
+<area shape="rect" id="node70" href="$translate__operation_8cpp.html" title="Om source file." alt="" coords="263,1253,427,1291"/>
+<area shape="rect" id="node72" href="$swap__operation_8cpp.html" title="Om source file." alt="" coords="3630,1253,3788,1291"/>
+<area shape="rect" id="node74" href="$lexicon_8cpp.html" title="Om source file." alt="" coords="217,1158,385,1183"/>
+<area shape="rect" id="node77" href="$back__pull__character__operation_8hpp.html" title="Om header file." alt="" coords="5653,1145,5811,1197"/>
+<area shape="rect" id="node79" href="$back__pull__code__point__operation_8hpp.html" title="Om header file." alt="" coords="5834,1145,5992,1197"/>
+<area shape="rect" id="node81" href="$back__pull__element__operation_8hpp.html" title="Om header file." alt="" coords="6017,1151,6241,1190"/>
+<area shape="rect" id="node83" href="$back__pull__form__operation_8hpp.html" title="Om header file." alt="" coords="6266,1151,6469,1190"/>
+<area shape="rect" id="node85" href="$back__pull__operand__operation_8hpp.html" title="Om header file." alt="" coords="6495,1151,6721,1190"/>
+<area shape="rect" id="node87" href="$back__pull__operator__operation_8hpp.html" title="Om header file." alt="" coords="6745,1151,6972,1190"/>
+<area shape="rect" id="node89" href="$back__pull__pair__operation_8hpp.html" title="Om header file." alt="" coords="6996,1151,7195,1190"/>
+<area shape="rect" id="node91" href="$back__pull__separator__operation_8hpp.html" title="Om header file." alt="" coords="7220,1145,7377,1197"/>
+<area shape="rect" id="node93" href="$back__pull__term__operation_8hpp.html" title="Om header file." alt="" coords="7402,1151,7605,1190"/>
+<area shape="rect" id="node95" href="$do__operation_8hpp.html" title="Om header file." alt="" coords="7630,1151,7788,1190"/>
+<area shape="rect" id="node97" href="$environment__operation_8hpp.html" title="Om header file." alt="" coords="7812,1151,7999,1190"/>
+<area shape="rect" id="node99" href="$expression__back__push__operation_8hpp.html" title="Om header file." alt="" coords="8023,1145,8184,1197"/>
+<area shape="rect" id="node101" href="$expression__front__push__operation_8hpp.html" title="Om header file." alt="" coords="8209,1145,8368,1197"/>
+<area shape="rect" id="node103" href="$front__pull__character__operation_8hpp.html" title="Om header file." alt="" coords="8393,1145,8551,1197"/>
+<area shape="rect" id="node105" href="$front__pull__code__point__operation_8hpp.html" title="Om header file." alt="" coords="8574,1145,8732,1197"/>
+<area shape="rect" id="node107" href="$front__pull__element__operation_8hpp.html" title="Om header file." alt="" coords="8756,1151,8979,1190"/>
+<area shape="rect" id="node109" href="$front__pull__form__operation_8hpp.html" title="Om header file." alt="" coords="9004,1151,9207,1190"/>
+<area shape="rect" id="node111" href="$front__pull__operand__operation_8hpp.html" title="Om header file." alt="" coords="9231,1151,9456,1190"/>
+<area shape="rect" id="node113" href="$front__pull__operator__operation_8hpp.html" title="Om header file." alt="" coords="9481,1145,9639,1197"/>
+<area shape="rect" id="node115" href="$front__pull__pair__operation_8hpp.html" title="Om header file." alt="" coords="9663,1151,9861,1190"/>
+<area shape="rect" id="node117" href="$front__pull__separator__operation_8hpp.html" title="Om header file." alt="" coords="9886,1145,10044,1197"/>
+<area shape="rect" id="node119" href="$front__pull__term__operation_8hpp.html" title="Om header file." alt="" coords="10068,1151,10271,1190"/>
+<area shape="rect" id="node121" href="$lexicon__back__push__operation_8hpp.html" title="Om header file." alt="" coords="10294,1151,10521,1190"/>
+<area shape="rect" id="node123" href="$lexicon__front__push__operation_8hpp.html" title="Om header file." alt="" coords="10546,1151,10771,1190"/>
+<area shape="rect" id="node125" href="$literal__back__push__operation_8hpp.html" title="Om header file." alt="" coords="10795,1151,11012,1190"/>
+<area shape="rect" id="node127" href="$literal__front__push__operation_8hpp.html" title="Om header file." alt="" coords="11037,1151,11253,1190"/>
+<area shape="rect" id="node129" href="$operator__back__push__operation_8hpp.html" title="Om header file." alt="" coords="11277,1151,11512,1190"/>
+<area shape="rect" id="node131" href="$operator__front__push__operation_8hpp.html" title="Om header file." alt="" coords="11536,1145,11693,1197"/>
+<area shape="rect" id="node133" href="$rearrange__operation_8hpp.html" title="Om header file." alt="" coords="5275,1151,5447,1190"/>
+<area shape="rect" id="node135" href="$system__operation_8hpp.html" title="Om header file." alt="" coords="5472,1151,5629,1190"/>
+<area shape="rect" id="node78" href="$back__pull__character__operation_8cpp.html" title="Om source file." alt="" coords="5653,1246,5811,1298"/>
+<area shape="rect" id="node80" href="$back__pull__code__point__operation_8cpp.html" title="Om source file." alt="" coords="5834,1246,5992,1298"/>
+<area shape="rect" id="node82" href="$back__pull__element__operation_8cpp.html" title="Om source file." alt="" coords="6017,1253,6241,1291"/>
+<area shape="rect" id="node84" href="$back__pull__form__operation_8cpp.html" title="Om source file." alt="" coords="6266,1253,6469,1291"/>
+<area shape="rect" id="node86" href="$back__pull__operand__operation_8cpp.html" title="Om source file." alt="" coords="6495,1253,6720,1291"/>
+<area shape="rect" id="node88" href="$back__pull__operator__operation_8cpp.html" title="Om source file." alt="" coords="6745,1253,6971,1291"/>
+<area shape="rect" id="node90" href="$back__pull__pair__operation_8cpp.html" title="Om source file." alt="" coords="6996,1253,7195,1291"/>
+<area shape="rect" id="node92" href="$back__pull__separator__operation_8cpp.html" title="Om source file." alt="" coords="7220,1246,7377,1298"/>
+<area shape="rect" id="node94" href="$back__pull__term__operation_8cpp.html" title="Om source file." alt="" coords="7402,1253,7605,1291"/>
+<area shape="rect" id="node96" href="$do__operation_8cpp.html" title="Om source file." alt="" coords="7630,1253,7788,1291"/>
+<area shape="rect" id="node98" href="$environment__operation_8cpp.html" title="Om source file." alt="" coords="7812,1253,7997,1291"/>
+<area shape="rect" id="node100" href="$expression__back__push__operation_8cpp.html" title="Om source file." alt="" coords="8023,1246,8184,1298"/>
+<area shape="rect" id="node102" href="$expression__front__push__operation_8cpp.html" title="Om source file." alt="" coords="8209,1246,8368,1298"/>
+<area shape="rect" id="node104" href="$front__pull__character__operation_8cpp.html" title="Om source file." alt="" coords="8393,1246,8551,1298"/>
+<area shape="rect" id="node106" href="$front__pull__code__point__operation_8cpp.html" title="Om source file." alt="" coords="8574,1246,8732,1298"/>
+<area shape="rect" id="node108" href="$front__pull__element__operation_8cpp.html" title="Om source file." alt="" coords="8757,1253,8979,1291"/>
+<area shape="rect" id="node110" href="$front__pull__form__operation_8cpp.html" title="Om source file." alt="" coords="9004,1253,9205,1291"/>
+<area shape="rect" id="node112" href="$front__pull__operand__operation_8cpp.html" title="Om source file." alt="" coords="9232,1253,9456,1291"/>
+<area shape="rect" id="node114" href="$front__pull__operator__operation_8cpp.html" title="Om source file." alt="" coords="9481,1246,9639,1298"/>
+<area shape="rect" id="node116" href="$front__pull__pair__operation_8cpp.html" title="Om source file." alt="" coords="9664,1253,9861,1291"/>
+<area shape="rect" id="node118" href="$front__pull__separator__operation_8cpp.html" title="Om source file." alt="" coords="9886,1246,10044,1298"/>
+<area shape="rect" id="node120" href="$front__pull__term__operation_8cpp.html" title="Om source file." alt="" coords="10068,1253,10269,1291"/>
+<area shape="rect" id="node122" href="$lexicon__back__push__operation_8cpp.html" title="Om source file." alt="" coords="10295,1253,10520,1291"/>
+<area shape="rect" id="node124" href="$lexicon__front__push__operation_8cpp.html" title="Om source file." alt="" coords="10546,1253,10771,1291"/>
+<area shape="rect" id="node126" href="$literal__back__push__operation_8cpp.html" title="Om source file." alt="" coords="10795,1253,11012,1291"/>
+<area shape="rect" id="node128" href="$literal__front__push__operation_8cpp.html" title="Om source file." alt="" coords="11038,1253,11252,1291"/>
+<area shape="rect" id="node130" href="$operator__back__push__operation_8cpp.html" title="Om source file." alt="" coords="11277,1253,11512,1291"/>
+<area shape="rect" id="node132" href="$operator__front__push__operation_8cpp.html" title="Om source file." alt="" coords="11536,1246,11693,1298"/>
+<area shape="rect" id="node134" href="$rearrange__operation_8cpp.html" title="Om source file." alt="" coords="5276,1253,5447,1291"/>
+<area shape="rect" id="node136" href="$system__operation_8cpp.html" title="Om source file." alt="" coords="5472,1253,5629,1291"/>
+<area shape="rect" id="node139" href="$literal_8hpp.html" title="Om header file." alt="" coords="1000,595,1159,621"/>
+<area shape="rect" id="node140" href="$operand_8cpp.html" title="Om source file." alt="" coords="272,670,448,695"/>
+<area shape="rect" id="node142" href="$expression_8cpp.html" title="Om source file." alt="" coords="1263,975,1453,1001"/>
+<area shape="rect" id="node141" href="$operand_8hpp.html" title="Om header file." alt="" coords="271,745,448,770"/>
+<area shape="rect" id="node143" href="$expression_8hpp.html" title="Om header file." alt="" coords="1361,1063,1553,1089"/>
+<area shape="rect" id="node145" href="$form_8cpp.html" title="Om source file." alt="" coords="822,595,975,621"/>
+<area shape="rect" id="node147" href="$pair_8cpp.html" title="Om source file." alt="" coords="547,595,695,621"/>
+<area shape="rect" id="node149" href="$separator_8cpp.html" title="Om source file." alt="" coords="1631,521,1813,546"/>
+<area shape="rect" id="node151" href="$default__program_8hpp.html" title="Om header file." alt="" coords="714,169,856,207"/>
+<area shape="rect" id="node152" href="$default__element_8hpp.html" title="Om header file." alt="" coords="542,257,684,295"/>
+<area shape="rect" id="node153" href="$default__element_8cpp.html" title="Om source file." alt="" coords="542,345,684,383"/>
+<area shape="rect" id="node154" href="$null_8hpp.html" title="Om header file." alt="" coords="304,351,452,377"/>
+<area shape="rect" id="node155" href="$null_8cpp.html" title="Om source file." alt="" coords="249,439,396,465"/>
 </map>

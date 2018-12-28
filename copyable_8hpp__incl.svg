@@ -8,36 +8,42 @@
  viewBox="0.00 0.00 170.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>om/copyable.hpp</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
+<g id="a_node1"><a xlink:title="Om header file.">
 <polygon fill="#bfbfbf" stroke="black" points="69.9189,-57 69.9189,-75 162.081,-75 162.081,-57 69.9189,-57"/>
 <text text-anchor="middle" x="116" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">om/copyable.hpp</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+</g>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="-0.0566406,-1 -0.0566406,-19 52.0566,-19 52.0566,-1 -0.0566406,-1"/>
 <text text-anchor="middle" x="26" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">memory</text>
+</a>
 </g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
+</g>
+<!-- Node0&#45;&gt;Node1 -->
+<g id="edge1" class="edge"><title>Node0&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M102.331,-56.7986C87.9751,-48.1851 65.1739,-34.5043 48.2256,-24.3354"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="49.8785,-21.2455 39.5028,-19.1017 46.277,-27.2479 49.8785,-21.2455"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="copyable_8cpp.html" target="_top" xlink:title="Om source file. ">
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
+<g id="a_node3"><a xlink:href="copyable_8cpp.html" target="_top" xlink:title="Om source file.">
 <polygon fill="none" stroke="black" points="70.1997,-1 70.1997,-19 161.8,-19 161.8,-1 70.1997,-1"/>
 <text text-anchor="middle" x="116" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">om/copyable.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
+<!-- Node0&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node0&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M110.938,-56.5625C109.325,-49.308 108.868,-38.5884 109.566,-29.3691"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="113.069,-29.5903 110.991,-19.2014 106.137,-28.6192 113.069,-29.5903"/>
 </g>
-<!-- Node3&#45;&gt;Node1 -->
-<g id="edge3" class="edge"><title>Node3&#45;&gt;Node1</title>
+<!-- Node2&#45;&gt;Node0 -->
+<g id="edge3" class="edge"><title>Node2&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M121.009,-19.2014C122.665,-26.4586 123.139,-37.3129 122.433,-46.6333"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="118.963,-46.1777 121.062,-56.5625 125.897,-47.1352 118.963,-46.1777"/>
 </g>

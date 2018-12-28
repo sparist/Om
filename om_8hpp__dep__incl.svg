@@ -8,21 +8,24 @@
  viewBox="0.00 0.00 56.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>om.hpp</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node2 -->
+<g id="node1" class="node"><title>Node2</title>
+<g id="a_node1"><a xlink:title="Om umbrella header file.">
 <polygon fill="#bfbfbf" stroke="black" points="-0.677246,-57 -0.677246,-75 48.6772,-75 48.6772,-57 -0.677246,-57"/>
 <text text-anchor="middle" x="24" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">om.hpp</text>
+</a>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="om_8cpp.html" target="_top" xlink:title="Om source file. ">
+</g>
+<!-- Node3 -->
+<g id="node2" class="node"><title>Node3</title>
+<g id="a_node2"><a xlink:href="om_8cpp.html" target="_top" xlink:title="Om source file.">
 <polygon fill="none" stroke="black" points="-0.396484,-1 -0.396484,-19 48.3965,-19 48.3965,-1 -0.396484,-1"/>
 <text text-anchor="middle" x="24" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">om.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
+<!-- Node2&#45;&gt;Node3 -->
+<g id="edge1" class="edge"><title>Node2&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M24,-46.3288C24,-37.0774 24,-26.3798 24,-19.2014"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="20.5001,-46.5625 24,-56.5625 27.5001,-46.5625 20.5001,-46.5625"/>
 </g>
