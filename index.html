@@ -593,7 +593,7 @@ Adding Operations</h3>
 <li>Define the static <code>Give(<a class="el" href="class_om_1_1_language_1_1_evaluation.html" title="The current evaluation.">Om::Language::Evaluation</a> &amp;)</code> method, with no return value, to give existing operations and/or elements to the evaluation.</li>
 </ul>
 <p>To define an atomic operation that consumes one or more operands:</p><ul>
-<li>Define the operation <code>class</code>, derived from <code><a class="el" href="class_om_1_1_language_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation.">Om::Language::Operation::DefaultIncompleteOperation</a>&lt;</code><em>operation</em><code>&gt;</code> (where <em>operation</em> is the name of the operation <code>class</code>), in the <code><a class="el" href="namespace_om_1_1_language_1_1_operation.html" title="A namespace for all Operation implementations.">Om::Language::Operation</a></code> namespace.</li>
+<li>Define the operation <code>class</code>, derived from <code><a class="el" href="class_om_1_1_language_1_1_operation_1_1_default_incomplete_operation.html" title="A partial implementation of IncompleteOperation.">Om::Language::Operation::DefaultIncompleteOperation</a>&lt;<em>operation</em>&gt;</code> (where <code><em>operation</em></code> is the name of the operation <code>class</code>), in the <code><a class="el" href="namespace_om_1_1_language_1_1_operation.html" title="A namespace for all Operation implementations.">Om::Language::Operation</a></code> namespace.</li>
 <li>Define the static <code>GetName()</code> method, which returns a <code>static char const *</code> containing the name.</li>
 <li>Add the implementation, using existing operations as a guide:<ul>
 <li>Implement the functions necessary to compile.</li>
@@ -610,11 +610,11 @@ Adding Programs</h3>
 Analyzing Code</h3>
 <p>Some basic free static analysis tools can be applied to the Om code:</p><ul>
 <li><a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to Om by entering the following at the terminal from inside the Om directory: <blockquote class="doxtable">
-<p><code>python </code><em>[path]</em><code>/hfcca.py -p -v code</code></p>
+<p><code>python <em>[path]</em>/hfcca.py -p -v code</code></p>
 </blockquote>
 </li>
 <li><a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to Om by entering the following at the terminal from inside the Om directory: <blockquote class="doxtable">
-<p><em>[path]</em><code>/cloc.pl code</code></p>
+<p><code><em>[path]</em>/cloc.pl code</code></p>
 </blockquote>
 </li>
 </ul>
