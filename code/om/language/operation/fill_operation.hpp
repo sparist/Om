@@ -20,10 +20,16 @@
 	\par Output
 		<tt>{expression}</tt>
 	\par Examples
-		-	<tt>fill {A B{2} C} {1} {3}</tt>
-			<blockquote><tt>{A{1}<br/>
-			B{2}<br/>
-			C{3}}</tt></blockquote>
+		<table>
+			<tr>
+				<td><tt><b>fill {A B{2} C} {1} {3}</b></tt></td>
+			</tr>
+			<tr>
+				<td><tt><em>{A{1}<br/>
+				B{2}<br/>
+				C{3}}</em></tt></td>
+			</tr>
+		</table>
 	\par Implementation
 		Om::Language::Operation::FillOperation
 

@@ -20,10 +20,14 @@
 	\par Output
 		<tt>{lexicon} {evaluation}</tt>
 	\par Examples
-		-	<tt>substitute{A{1}}{A}</tt>
-			<blockquote><tt>{A{1}}{1}</tt></blockquote>
-		-	<tt>substitute{A{1}}{do{A}}</tt>
-			<blockquote><tt>{A{1}}{do{A}}</tt></blockquote>
+		<table>
+			<tr><td><tt><b>substitute {A{1}} {A}</b></tt></td></tr>
+			<tr><td><tt><em>{A{1}}{1}</em></tt></td></tr>
+		</table>
+		<table>
+			<tr><td><tt><b>substitute {A{1}} {do{A}}</b></tt></td></tr>
+			<tr><td><tt><em>{A{1}}{do{A}}</em></tt></td></tr>
+		</table>
 	\par Implementation
 		Om::Language::Operation::SubstituteOperation
 

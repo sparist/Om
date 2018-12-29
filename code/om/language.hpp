@@ -186,176 +186,280 @@
 
 		\subsection language__examples__ Examples
 			The following program contains a single operand containing an operator &quot;<tt>Hello,</tt>&quot;, a separator &quot;<tt> </tt>&quot;, and another operator &quot;<tt>world!</tt>&quot;:
-			-	<tt>{Hello, world!}</tt>
-				<blockquote><tt>{Hello, world!}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>{Hello, world!}</b></tt></td></tr>
+				<tr><td><tt><em>{Hello, world!}</em></tt></td></tr>
+			</table>
 
 			The following program contains a single operand containing an operator &quot;<tt>Hello,</tt>&quot;, a separator &quot;<tt> </tt>&quot;, and an operand &quot;<tt>{universe!}</tt>&quot; which in turn contains a single operator &quot;<tt>universe!</tt>&quot;:
-			-	<tt>{Hello, {universe!}}</tt>
-				<blockquote><tt>{Hello, {universe!}}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>{Hello, {universe!}}</b></tt></td></tr>
+				<tr><td><tt><em>{Hello, {universe!}}</em></tt></td></tr>
+			</table>
 
 			Note that separators are significant inside operands:
-			-	<tt>{Hello, &nbsp;&nbsp;world!}</tt>
-				<blockquote><tt>{Hello, &nbsp;&nbsp;world!}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>{Hello, &nbsp;&nbsp;world!}</b></tt></td></tr>
+				<tr><td><tt><em>{Hello, &nbsp;&nbsp;world!}</em></tt></td></tr>
+			</table>
 
 			Operands can be dropped and copied via the \ref om__operation__drop_operation__ and \ref om__operation__copy_operation__ operations:
-			-	<tt>drop {A}{B}{C}</tt>
-				<blockquote><tt>{B}{C}</tt></blockquote>
-			-	<tt>copy {A}{B}{C}</tt>
-				<blockquote><tt>{A}{A}{B}{C}</tt></blockquote>
-			-	<tt>drop copy {A}</tt>
-				<blockquote><tt>{A}</tt></blockquote>
-			-	<tt>copy copy {A}</tt>
-				<blockquote><tt>{A}{A}{A}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>drop {A}{B}{C}</b></tt></td></tr>
+				<tr><td><tt><em>{B}{C}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>copy {A}{B}{C}</b></tt></td></tr>
+				<tr><td><tt><em>{A}{A}{B}{C}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>drop copy {A}</b></tt></td></tr>
+				<tr><td><tt><em>{A}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>copy copy {A}</b></tt></td></tr>
+				<tr><td><tt><em>{A}{A}{A}</em></tt></td></tr>
+			</table>
 
 			The \ref om__operation__drop_operation__ operation can therefore be used for comments:
-			-	<tt>drop {This is a comment.} {This is not a comment.}</tt>
-				<blockquote><tt>{This is not a comment.}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>drop {This is a comment.} {This is not a comment.}</b></tt></td></tr>
+				<tr><td><tt><em>{This is not a comment.}</em></tt></td></tr>
+			</table>
 
 			The \ref om__operation__choose_operation__ operation selects one of two operands, depending on whether a third is empty:
-			-	<tt>choose {It was empty.}{It was non-empty.}{I am not empty.}</tt>
-				<blockquote><tt>{It was non-empty.}</tt></blockquote>
-			-	<tt>choose {It was empty.}{It was non-empty.}{}</tt>
-				<blockquote><tt>{It was empty.}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>choose {It was empty.}{It was non-empty.}{I am not empty.}</b></tt></td></tr>
+				<tr><td><tt><em>{It was non-empty.}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>choose {It was empty.}{It was non-empty.}{}</b></tt></td></tr>
+				<tr><td><tt><em>{It was empty.}</em></tt></td></tr>
+			</table>
 
 			An operation without sufficient operands evaluates to itself and whatever operands are provided:
-			-	<tt>drop</tt>
-				<blockquote><tt>drop</tt></blockquote>
-			-	<tt>choose {It was empty.}{It was non-empty.}</tt>
-				<blockquote><tt>choose{It was empty.}{It was non-empty.}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>drop</b></tt></td></tr>
+				<tr><td><tt><em>drop</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>choose {It was empty.}{It was non-empty.}</b></tt></td></tr>
+				<tr><td><tt><em>choose{It was empty.}{It was non-empty.}</em></tt></td></tr>
+			</table>
 
 			The \ref om__operation__quote_operation__ and \ref om__operation__dequote_operation__ operations add and remove a layer of operand braces, respectively:
-			-	<tt>quote {B}</tt>
-				<blockquote><tt>{{B}}</tt></blockquote>
-			-	<tt>dequote {{B}}</tt>
-				<blockquote><tt>{B}</tt></blockquote>
-			-	<tt>dequote {copy}</tt>
-				<blockquote><tt>copy</tt></blockquote>
-			-	<tt>dequote {copy} {A}</tt>
-				<blockquote><tt>{A}{A}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>quote {B}</b></tt></td></tr>
+				<tr><td><tt><em>{{B}}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>dequote {{B}}</b></tt></td></tr>
+				<tr><td><tt><em>{B}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>dequote {copy}</b></tt></td></tr>
+				<tr><td><tt><em>copy</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>dequote {copy} {A}</b></tt></td></tr>
+				<tr><td><tt><em>{A}{A}</em></tt></td></tr>
+			</table>
 
 			Operands can be popped from and pushed into:
-			-	<tt>&lt;-[characters] {ABC}</tt>
-				<blockquote><tt>{A}{BC}</tt></blockquote>
-			-	<tt>-&gt;[literal] {A}{BC}</tt>
-				<blockquote><tt>{ABC}</tt></blockquote>
-			-	<tt>&lt;-[terms] {some terms}</tt>
-				<blockquote><tt>{some}{terms}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>&lt;-[characters] {ABC}</b></tt></td></tr>
+				<tr><td><tt><em>{A}{BC}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>-&gt;[literal] {A}{BC}</b></tt></td></tr>
+				<tr><td><tt><em>{ABC}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>&lt;-[terms] {some terms}</b></tt></td></tr>
+				<tr><td><tt><em>{some}{terms}</em></tt></td></tr>
+			</table>
 
 			A new operator definition can be provided with the \ref om__operation__define_operation__ operation, where the first operand is treated as containing a \ref om__lexicon__ with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:
-			-	<tt>define { double-quote {quote quote} } { double-quote {A} }</tt>
-				<blockquote><tt>{{{A}}}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>define { double-quote {quote quote} } { double-quote {A} }</b></tt></td></tr>
+				<tr><td><tt><em>{{{A}}}</em></tt></td></tr>
+			</table>
 
 			Any string can be used as an operator, with separators and operand braces escaped with a backquote:
-			-	<tt>define { double` quote {quote quote} } { double` quote {A} }</tt>
-				<blockquote><tt>{{{A}}}</tt></blockquote>
-			-	<tt>&lt;-[terms] { double` quote operator }</tt>
-				<blockquote><tt>{double` quote}{operator}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>define { double` quote {quote quote} } { double` quote {A} }</b></tt></td></tr>
+				<tr><td><tt><em>{{{A}}}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>&lt;-[terms] { double` quote operator }</b></tt></td></tr>
+				<tr><td><tt><em>{double` quote}{operator}</em></tt></td></tr>
+			</table>
 
 			Unicode is fully supported:
-			-	<tt>&lt;-[characters] {한글}</tt>
-				<blockquote><tt>{한}{글}</tt></blockquote>
-			-	<tt>&lt;-[code` points] {한글}</tt>
-				<blockquote><tt>{ᄒ}{ᅡᆫ글}</tt></blockquote>
-			-	<tt>&lt;-[terms] {한글 韓}</tt>
-				<blockquote><tt>{한글}{韓}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>&lt;-[characters] {한글}</b></tt></td></tr>
+				<tr><td><tt><em>{한}{글}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>&lt;-[code` points] {한글}</b></tt></td></tr>
+				<tr><td><tt><em>{ᄒ}{ᅡᆫ글}</em></tt></td></tr>
+			</table>
+			<table>
+				<tr><td><tt><b>&lt;-[terms] {한글 韓}</b></tt></td></tr>
+				<tr><td><tt><em>{한글}{韓}</em></tt></td></tr>
+			</table>
 
 			Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the \ref om__operation__normalize_operation__ operation:
-			-	<tt>normalize {2⁵}</tt>
-				<blockquote><tt>{25}</tt></blockquote>
+			<table>
+				<tr><td><tt><b>normalize {2⁵}</b></tt></td></tr>
+				<tr><td><tt><em>{25}</em></tt></td></tr>
+			</table>
 
 			Recursion is very efficient in the %Om language, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ minutes {1:23} }<br/>
-				</tt>
-				<blockquote><tt>{23}</tt></blockquote>
+			<table>
+				<tr>
+					<td><tt><b>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ minutes {1:23} }<br/>
+					</b></tt></td>
+				</tr>
+				<tr>
+					<td><tt><em>{23}</em></tt></td>
+				</tr>
+			</table>
 
-			Each step of an evaluation can be represented as a program. The following is the above program broken down into evaluation steps, where the code that is about to be replaced is <b>bold</b>, and the latest replacement is <em>italicized</em>:
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ <b>minutes</b> {1:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {1:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {1:23}</b> }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote choose {minutes} {} = {:} <em>{1} {:23}</em> }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote choose {minutes} {} <b>= {:} {1}</b> {:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote choose {minutes} {} <em>{}</em> {:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote <b>choose {minutes} {} {}</b> {:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote <em>{minutes}</em> {:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ <b>dequote {minutes}</b> {:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ <em>minutes</em> {:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ <b>minutes</b> {:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {:23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {:23}</b> }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote choose {minutes} {} = {:} <em>{:} {23}</em> }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote choose {minutes} {} <b>= {:} {:}</b> {23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote choose {minutes} {} <em>{{:}}</em> {23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote <b>choose {minutes} {} {{:}}</b> {23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ dequote <em>{}</em> {23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ <b>dequote {}</b> {23} }<br/>
-				</tt>
-			-	<tt>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ {23} }<br/>
-				</tt>
-			-	<tt><b>define<br/>
-				{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
-				{ {23} }</b><br/>
-				</tt>
-			-	<tt><em>{23}</em></tt>
+			An important feature of %Om is that each step of an evaluation can be represented as a program. The following is the above program broken down into evaluation steps, where the code that is about to be replaced is <b>bold</b>, and the latest replacement is <em>italicized</em>:
+			<table>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ <b>minutes</b> {1:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {1:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {1:23}</b> }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote choose {minutes} {} = {:} <em>{1} {:23}</em> }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote choose {minutes} {} <b>= {:} {1}</b> {:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote choose {minutes} {} <em>{}</em> {:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote <b>choose {minutes} {} {}</b> {:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote <em>{minutes}</em> {:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ <b>dequote {minutes}</b> {:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ <em>minutes</em> {:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ <b>minutes</b> {:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {:23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote choose {minutes} {} = {:} <b>&lt;-[characters] {:23}</b> }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote choose {minutes} {} = {:} <em>{:} {23}</em> }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote choose {minutes} {} <b>= {:} {:}</b> {23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote choose {minutes} {} <em>{{:}}</em> {23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote <b>choose {minutes} {} {{:}}</b> {23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ dequote <em>{}</em> {23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ <b>dequote {}</b> {23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ {23} }<br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt><b>define<br/>
+					{ minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br/>
+					{ {23} }</b><br/>
+					</tt></td>
+				</tr>
+				<tr>
+					<td><tt><em>{23}</em></tt></td>
+				</tr>
+			</table>
 
 			The \ref om__operation__rearrange_operation__ operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call:
 			\code{.unparsed}

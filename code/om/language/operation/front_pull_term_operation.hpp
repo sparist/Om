@@ -20,16 +20,26 @@
 	\par Output
 		<tt>{A}{B}</tt>
 	\par Examples
-		-	<tt><-[terms] {A B}</tt>
-			<blockquote><tt>{A}{B}</tt></blockquote>
-		-	<tt><-[terms] {{A} B}</tt>
-			<blockquote><tt>{{A}}{B}</tt></blockquote>
-		-	<tt><-[terms] {A B }</tt>
-			<blockquote><tt>{A}{B}</tt></blockquote>
-		-	<tt><-[terms] {A {B} C}</tt>
-			<blockquote><tt>{A}{{B}<br/>C}</tt></blockquote>
-		-	<tt><-[terms] {}</tt>
-			<blockquote><tt>{}{}</tt></blockquote>
+		<table>
+			<tr><td><tt><b><-[terms] {A B}</b></tt></td></tr>
+			<tr><td><tt><em>{A}{B}</em></tt></td></tr>
+		</table>
+		<table>
+			<tr><td><tt><b><-[terms] {{A} B}</b></tt></td></tr>
+			<tr><td><tt><em>{{A}}{B}</em></tt></td></tr>
+		</table>
+		<table>
+			<tr><td><tt><b><-[terms] {A B }</b></tt></td></tr>
+			<tr><td><tt><em>{A}{B}</em></tt></td></tr>
+		</table>
+		<table>
+			<tr><td><tt><b><-[terms] {A {B} C}</b></tt></td></tr>
+			<tr><td><tt><em>{A}{{B}<br/>C}</em></tt></td></tr>
+		</table>
+		<table>
+			<tr><td><tt><b><-[terms] {}</b></tt></td></tr>
+			<tr><td><tt><em>{}{}</em></tt></td></tr>
+		</table>
 	\par Implementation
 		Om::Language::Operation::FrontPullTermOperation
 */

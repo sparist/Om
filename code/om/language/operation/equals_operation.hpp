@@ -16,14 +16,22 @@
 	\brief
 		Compares two \ref om__operand__ "Operands" for equality.
 	\par Examples
-		-	<tt>= {A} {A}</tt>
-			<blockquote><tt>{{A}}</tt></blockquote>
-		-	<tt>= {A} {B}</tt>
-			<blockquote><tt>{}</tt></blockquote>
-		-	<tt>= {} {A}</tt>
-			<blockquote><tt>{}</tt></blockquote>
-		-	<tt>= {} {}</tt>
-			<blockquote><tt>{{}}</tt></blockquote>
+		<table>
+			<tr><td><tt><b>= {A} {A}</b></tt></td></tr>
+			<tr><td><tt><em>{{A}}</em></tt></td></tr>
+		</table>
+		<table>
+			<tr><td><tt><b>= {A} {B}</b></tt></td></tr>
+			<tr><td><tt><em>{}</em></tt></td></tr>
+		</table>
+		<table>
+			<tr><td><tt><b>= {} {A}</b></tt></td></tr>
+			<tr><td><tt><em>{}</em></tt></td></tr>
+		</table>
+		<table>
+			<tr><td><tt><b>= {} {}</b></tt></td></tr>
+			<tr><td><tt><em>{{}}</em></tt></td></tr>
+		</table>
 	\par Implementation
 		Om::Language::Operation::EqualsOperation
 */

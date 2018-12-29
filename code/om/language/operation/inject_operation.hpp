@@ -20,8 +20,10 @@
 	\par Output
 		Dequotes <tt>{program}</tt>, injects the dequoted <tt>{injector}</tt> between the \ref om__program__ and each of its \ref om__operand__ "Operands", then \ref om__operation__quote_operation__ "quotes" the result.
 	\par Examples
-		-	<tt>inject{quote}{copy}{A}</tt>
-			<blockquote><tt>{{{A}}{{A}}}</tt></blockquote>
+		<table>
+			<tr><td><tt><b>inject {quote} {copy} {A}</b></tt></td></tr>
+			<tr><td><tt><em>{{{A}}{{A}}}</em></tt></td></tr>
+		</table>
 	\par Implementation
 		Om::Language::Operation::InjectOperation
 */

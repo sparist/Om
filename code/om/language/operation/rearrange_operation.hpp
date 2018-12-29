@@ -27,8 +27,10 @@
 		using the scope constructed by \ref om__operation__fill_operation__ "filling" into:
 		<blockquote><tt>{current arrangement}</tt></blockquote>
 	\par Examples
-		-	<tt>rearrange{C B A}{A B C}{1}{2}{3}</tt>
-			<blockquote><tt>{3}{2}{1}</tt></blockquote>
+		<table>
+			<tr><td><tt><b>rearrange {C B A} {A B C} {1} {2} {3}</b></tt></td></tr>
+			<tr><td><tt><em>{3}{2}{1}</em></tt></td></tr>
+		</table>
 	\par Implementation
 		Om::Language::Operation::RearrangeOperation
 */
