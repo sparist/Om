@@ -64,7 +64,7 @@
 
 				To ensure that correct programs are used, programs should be listed in the command line path in the following order:
 				-	Graphviz, Doxygen, and CMake
-				-	Cygwin (<tt>&quot;<em>[cygwin]</em>/bin&quot;</tt>) <b>(Windows only)</b>
+				-	Cygwin (&quot;<em>[cygwin]</em>/bin&quot;) <b>(Windows only)</b>
 				-	Any other paths
 
 			\subsubsection using__dependencies__libraries__ Libraries
@@ -73,33 +73,33 @@
 				-	<a href="http://boost.org">Boost</a>
 
 		\subsection using__building__ Building
-			A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <tt>&quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot;</tt> by running the appropriate <tt>&quot;generate&quot;</tt> script from the desired builds directory:
-			- <tt>&quot;generate.sh&quot;</tt> (Unix-based platforms)
-			- <tt>&quot;generate.bat&quot;</tt> (Windows)
+			A build project, containing targets for building the interpreter, tests, and documentation, can be generated into &quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot; by running the appropriate "generate" script from the desired builds directory:
+			- "generate.sh" (Unix-based platforms)
+			- "generate.bat" (Windows)
 
 			Arguments include the desired project name (required), followed by any desired CMake arguments.
 
-			By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <tt>&quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/downloads/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</tt>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
-			-	<b><tt>-D Icu4cInstallDirectory:Path=&quot;<em>[absolute ICU4C install directory path]</em>&quot;</tt></b>
-			-	<b><tt>-D BoostInstallDirectory:Path=&quot;<em>[absolute Boost install directory path]</em>&quot;</tt></b>
+			By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into &quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/downloads/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:
+			-	<tt>-D Icu4cInstallDirectory:Path=&quot;<em>[absolute ICU4C install directory path]</em>&quot;</tt>
+			-	<tt>-D BoostInstallDirectory:Path=&quot;<em>[absolute Boost install directory path]</em>&quot;</tt>
 
 			\subsubsection using__building__interpreter__ Interpreter
-				The <b>Om.Interpreter</b> target builds the interpreter executable as <tt>&quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;</tt>. The interpreter:
+				The <b>Om.Interpreter</b> target builds the interpreter executable as &quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;. The interpreter:
 					-	Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".
 					-	Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.
 
 			\subsubsection using__building__test__ Test
-				The <b>Om.Test</b> target builds the test executable, which runs all unit tests, as <tt>&quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test&quot;</tt>. These tests are also run when building the <tt>RUN_TESTS</tt> target (which is included when building the <tt>ALL_BUILD</tt> target).
+				The <b>Om.Test</b> target builds the test executable, which runs all unit tests, as &quot;<em>[%Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test&quot;. These tests are also run when building the <tt>RUN_TESTS</tt> target (which is included when building the <tt>ALL_BUILD</tt> target).
 
 			\subsubsection using__building__documentation__ Documentation
-				The <b>Om.Documentation</b> target builds this documentation into the following folders in <tt>&quot;<em>[%Om build directory path]</em>/documentation&quot;</tt>:
-				-	<b><tt>&quot;html&quot;</tt>:</b> This HTML documentation. To view in a browser, open <tt>&quot;index.html&quot;</tt>.
-				-	<b><tt>&quot;xml&quot;</tt>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.
+				The <b>Om.Documentation</b> target builds this documentation into the following folders in &quot;<em>[%Om build directory path]</em>/documentation&quot;:
+				-	<b>&quot;html&quot;:</b> This HTML documentation. To view in a browser, open "index.html".
+				-	<b>&quot;xml&quot;:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.
 
 		\subsection using__including__ Including
 			%Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:
-			-	Add the %Om <tt>&quot;code&quot;</tt> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <tt>&quot;om.hpp&quot;</tt> to include all %Om header files.
-			-	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency <tt>&quot;build.cmake&quot;</tt> scripts for guidance.
+			-	Add the %Om "code" directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include "om.hpp" to include all %Om header files.
+			-	Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency "build.cmake" scripts for guidance.
 			-	Call the <tt>Om::Language::System::Initialize</tt> function prior to use (e.g. in the <tt>main</tt> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").
 			-	Construct an <tt>Om::Language::Environment</tt>, populate with any additional operator-program mappings, and call one of its <tt>Om::Language::Environment::Evaluate</tt> functions to evaluate a program.
 
@@ -527,7 +527,7 @@
 				See the \ref using__ section for instructions on building the code.
 
 			\subsubsection contributing__developing__adding_or_removing_files Adding or Removing Files
-				When adding or removing files from source, re-run the <tt>&quot;generate&quot;</tt> script from the build directory to update the project.
+				When adding or removing files from source, re-run the "generate" script from the build directory to update the project.
 
 			\subsubsection contributing__developing__adding_operations__ Adding Operations
 				Additional native functionality can be added to the %Om language by implementing new operations in C++.
@@ -571,7 +571,7 @@
 				The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:
 				-	Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>. In Preferences, add <tt>"*.ipp"</tt> and <tt>"*.hpp"</tt> to the "SDK Files" list.
 				-	Build and run the Om.Test target.
-				-	In the CoverStory File menu, open the folder <tt>&quot;<em>[%Om build directory path]</em>/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;</tt>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:
+				-	In the CoverStory File menu, open the folder &quot;<em>[%Om build directory path]</em>/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:
 					-	The left pane shows a list of %Om source files, each accompanied by a test coverage percentage.
 					-	The right pane shows the contents of the currently selected source file, with each line annotated with the number of times it was executed.
 
