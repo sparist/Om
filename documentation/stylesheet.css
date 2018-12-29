@@ -43,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 	-o-transition: text-shadow 0.5s linear;
 	transition: text-shadow 0.5s linear;
 	margin-right: 15px;
+	margin-top: 25px;
 }
 
 h1.glow, h2.glow, h3.glow, h4.glow, h5.glow, h6.glow {
@@ -125,15 +126,11 @@ div.navtab {
 a {
 	color: #26384A;
 	font-weight: normal;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .contents a:visited {
 	color: #31475E;
-}
-
-a:hover {
-	text-decoration: underline;
 }
 
 a.qindex {
@@ -1279,28 +1276,28 @@ dl.section dd {
 
 #projectname
 {
-	font: 300% Tahoma, Arial,sans-serif;
+	font: 600% Roboto, sans-serif;
 	margin: 0px;
 	padding: 2px 0px;
 }
     
 #projectbrief
 {
-	font: 120% Tahoma, Arial,sans-serif;
+	font: 120% Roboto, sans-serif;
 	margin: 0px;
 	padding: 0px;
 }
 
 #projectnumber
 {
-	font: 50% Tahoma, Arial,sans-serif;
+	font: 50% Roboto, sans-serif;
 	margin: 0px;
 	padding: 0px;
 }
 
 #titlearea
 {
-	padding: 0px;
+	padding: 4px;
 	margin: 0px;
 	width: 100%;
 	border-bottom: 1px solid #3C5772;
@@ -1376,7 +1373,7 @@ div.toc {
 
 div.toc li {
         background: url("bdwn.png") no-repeat scroll 0 5px transparent;
-        font: 10px/1.2 Verdana,DejaVu Sans,Geneva,sans-serif;
+        font: 12px/1.2 Roboto, sans-serif;
         margin-top: 5px;
         padding-left: 10px;
         padding-top: 2px;
@@ -1389,7 +1386,7 @@ div.toc li {
 }
 
 div.toc h3 {
-        font: bold 12px/1.2 Arial,FreeSans,sans-serif;
+        font: bold 12px/1.2 Roboto, sans-serif;
 	color: #31475E;
         border-bottom: 0 none;
         margin: 0;
