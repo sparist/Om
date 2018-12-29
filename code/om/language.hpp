@@ -358,30 +358,30 @@
 			-	<tt><em>{23}</em></tt>
 
 			The \ref om__operation__rearrange_operation__ operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call:
-\verbatim
-define
-{
-	[Fold]<- {
-		rearrange
-		{
-			rearrange
+			\code{.unparsed}
+			define
 			{
-				dequote
-				choose
-				quote Result
-				pair pair pair {[Fold]<-} Function Result Remainder
-				Remainder
+				[Fold]<- {
+					rearrange
+					{
+						rearrange
+						{
+							dequote
+							choose
+							quote Result
+							pair pair pair {[Fold]<-} Function Result Remainder
+							Remainder
+						}
+						{Result Remainder}
+						dequote Function Base <-[terms] Source
+					}
+					{Function Base Source}
+				}
 			}
-			{Result Remainder}
-			dequote Function Base <-[terms] Source
-		}
-		{Function Base Source}
-	}
-}
-{
-	[Fold]<- {[literal]<-} {} {1 2 3}
-}
-\endverbatim
+			{
+				[Fold]<- {[literal]<-} {} {1 2 3}
+			}
+			\endcode
 
 			The result is <tt>{321}</tt>.
 
