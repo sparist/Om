@@ -514,29 +514,7 @@ Examples</h2>
  </code></li>
 <li><code><em>{23}</em></code></li>
 </ul>
-<p>The <a class="el" href="group__om____operation____rearrange__operation____.html">rearrange</a> operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call: </p><pre class="fragment">define
-{
-	[Fold]&lt;- {
-		rearrange
-		{
-			rearrange
-			{
-				dequote
-				choose
-				quote Result
-				pair pair pair {[Fold]&lt;-} Function Result Remainder
-				Remainder
-			}
-			{Result Remainder}
-			dequote Function Base &lt;-[terms] Source
-		}
-		{Function Base Source}
-	}
-}
-{
-	[Fold]&lt;- {[literal]&lt;-} {} {1 2 3}
-}
-</pre><p>The result is <code>{321}</code>.</p>
+<p>The <a class="el" href="group__om____operation____rearrange__operation____.html">rearrange</a> operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call: </p><div class="fragment"><div class="line">define</div><div class="line">{</div><div class="line">    [Fold]&lt;- {</div><div class="line">        rearrange</div><div class="line">        {</div><div class="line">            rearrange</div><div class="line">            {</div><div class="line">                dequote</div><div class="line">                choose</div><div class="line">                quote Result</div><div class="line">                pair pair pair {[Fold]&lt;-} Function Result Remainder</div><div class="line">                Remainder</div><div class="line">            }</div><div class="line">            {Result Remainder}</div><div class="line">            dequote Function Base &lt;-[terms] Source</div><div class="line">        }</div><div class="line">        {Function Base Source}</div><div class="line">    }</div><div class="line">}</div><div class="line">{</div><div class="line">    [Fold]&lt;- {[literal]&lt;-} {} {1 2 3}</div><div class="line">}</div></div><!-- fragment --><p>The result is <code>{321}</code>.</p>
 <p>The example works as follows:</p><ul>
 <li><code>[Fold]&lt;-</code> takes three operands:<ul>
 <li><code>Function</code></li>
