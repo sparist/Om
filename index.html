@@ -158,7 +158,7 @@ Programs</h3>
 </ul>
 <p>To ensure that correct programs are used, programs should be listed in the command line path in the following order:</p><ul>
 <li>Graphviz, Doxygen, and CMake</li>
-<li>Cygwin (<code>&quot;<em>[cygwin]</em>/bin&quot;</code>) <b>(Windows only)</b></li>
+<li>Cygwin (&quot;<em>[cygwin]</em>/bin&quot;) <b>(Windows only)</b></li>
 <li>Any other paths</li>
 </ul>
 <h3><a class="anchor" id="using__dependencies__libraries__"></a>
@@ -169,35 +169,35 @@ Libraries</h3>
 </ul>
 <h2><a class="anchor" id="using__building__"></a>
 Building</h2>
-<p>A build project, containing targets for building the interpreter, tests, and documentation, can be generated into <code>&quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot;</code> by running the appropriate <code>&quot;generate&quot;</code> script from the desired builds directory:</p><ul>
-<li><code>&quot;generate.sh&quot;</code> (Unix-based platforms)</li>
-<li><code>&quot;generate.bat&quot;</code> (Windows)</li>
+<p>A build project, containing targets for building the interpreter, tests, and documentation, can be generated into &quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot; by running the appropriate "generate" script from the desired builds directory:</p><ul>
+<li>"generate.sh" (Unix-based platforms)</li>
+<li>"generate.bat" (Windows)</li>
 </ul>
 <p>Arguments include the desired project name (required), followed by any desired CMake arguments.</p>
-<p>By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into <code>&quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/downloads/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;</code>. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:</p><ul>
-<li><b><code>-D Icu4cInstallDirectory:Path=&quot;<em>[absolute ICU4C install directory path]</em>&quot;</code></b></li>
-<li><b><code>-D BoostInstallDirectory:Path=&quot;<em>[absolute Boost install directory path]</em>&quot;</code></b></li>
+<p>By default, this script automatically installs all external dependency libraries (downloading and building as necessary) into &quot;<em>[builds directory path]</em>/<em>[dependency name]</em>/downloads/<em>[MD5]</em>/build/<em>[platform]</em>/install&quot;. This behaviour can be overridden by passing paths of pre-installed dependency libraries to the script:</p><ul>
+<li><code>-D Icu4cInstallDirectory:Path=&quot;<em>[absolute ICU4C install directory path]</em>&quot;</code></li>
+<li><code>-D BoostInstallDirectory:Path=&quot;<em>[absolute Boost install directory path]</em>&quot;</code></li>
 </ul>
 <h3><a class="anchor" id="using__building__interpreter__"></a>
 Interpreter</h3>
-<p>The <b>Om.Interpreter</b> target builds the interpreter executable as <code>&quot;<em>[Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;</code>. The interpreter:</p><ul>
+<p>The <b>Om.Interpreter</b> target builds the interpreter executable as &quot;<em>[Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Interpreter&quot;. The interpreter:</p><ul>
 <li>Accepts an optional command-line argument that specifies the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a>. The default value is "en_US.UTF-8".</li>
 <li>Reads input from the standard input stream, ending at the first unbalanced end brace, and writes output to the standard output stream as it is computed.</li>
 </ul>
 <h3><a class="anchor" id="using__building__test__"></a>
 Test</h3>
-<p>The <b>Om.Test</b> target builds the test executable, which runs all unit tests, as <code>&quot;<em>[Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test&quot;</code>. These tests are also run when building the <code>RUN_TESTS</code> target (which is included when building the <code>ALL_BUILD</code> target).</p>
+<p>The <b>Om.Test</b> target builds the test executable, which runs all unit tests, as &quot;<em>[Om build directory path]</em>/executables/<em>[platform]</em>/<em>[configuration]</em>/Om.Test&quot;. These tests are also run when building the <code>RUN_TESTS</code> target (which is included when building the <code>ALL_BUILD</code> target).</p>
 <h3><a class="anchor" id="using__building__documentation__"></a>
 Documentation</h3>
-<p>The <b>Om.Documentation</b> target builds this documentation into the following folders in <code>&quot;<em>[Om build directory path]</em>/documentation&quot;</code>:</p><ul>
-<li><b><code>&quot;html&quot;</code>:</b> This HTML documentation. To view in a browser, open <code>&quot;index.html&quot;</code>.</li>
-<li><b><code>&quot;xml&quot;</code>:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.</li>
+<p>The <b>Om.Documentation</b> target builds this documentation into the following folders in &quot;<em>[Om build directory path]</em>/documentation&quot;:</p><ul>
+<li><b>&quot;html&quot;:</b> This HTML documentation. To view in a browser, open "index.html".</li>
+<li><b>&quot;xml&quot;:</b> The XML documentation, which can be read by an integrated development environment to show context-sensitive documentation.</li>
 </ul>
 <h2><a class="anchor" id="using__including__"></a>
 Including</h2>
 <p>Om is a header-only C++ library that can be incorporated into any C++ or Objective-C++ project as follows:</p><ul>
-<li>Add the Om <code>&quot;code&quot;</code> directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include <code>&quot;<a class="el" href="om_8hpp.html" title="Om umbrella header file.">om.hpp</a>&quot;</code> to include all Om header files.</li>
-<li>Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency <code>&quot;build.cmake&quot;</code> scripts for guidance.</li>
+<li>Add the Om "code" directory to the include path and include the desired files. Inclusion of any operation header files will automatically add the corresponding operation to the global system. Include "om.hpp" to include all Om header files.</li>
+<li>Configure the project to link to the code dependencies as necessary, built with the correct configuration for the project. See the dependency "build.cmake" scripts for guidance.</li>
 <li>Call the <code><a class="el" href="class_om_1_1_language_1_1_system.html#a6bfe8ebaa1fb6aa40dbfe0027bba70ae" title="Initializes the System.">Om::Language::System::Initialize</a></code> function prior to use (e.g. in the <code>main</code> function), passing in the desired UTF-8 <a href="http://userguide.icu-project.org/locale">locale string</a> (e.g. "en_US.UTF-8").</li>
 <li>Construct an <code><a class="el" href="class_om_1_1_language_1_1_environment.html" title="An unowned Translator collection for which lookups are done for each Translator, in reverse order,...">Om::Language::Environment</a></code>, populate with any additional operator-program mappings, and call one of its <code><a class="el" href="class_om_1_1_language_1_1_translator.html#aefa20854946fcb17e26969c3d9fad450" title="Evaluates input from the CodePoint Source and pushes it to the CodePoint Sink.">Om::Language::Environment::Evaluate</a></code> functions to evaluate a program.</li>
 </ul>
@@ -608,7 +608,7 @@ Building</h3>
 <p>See the <a class="el" href="index.html#using__">Using</a> section for instructions on building the code.</p>
 <h3><a class="anchor" id="contributing__developing__adding_or_removing_files"></a>
 Adding or Removing Files</h3>
-<p>When adding or removing files from source, re-run the <code>&quot;generate&quot;</code> script from the build directory to update the project.</p>
+<p>When adding or removing files from source, re-run the "generate" script from the build directory to update the project.</p>
 <h3><a class="anchor" id="contributing__developing__adding_operations__"></a>
 Adding Operations</h3>
 <p>Additional native functionality can be added to the Om language by implementing new operations in C++.</p>
@@ -646,7 +646,7 @@ Analyzing Test Coverage</h3>
 <p>The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:</p><ul>
 <li>Download and install <a href="http://code.google.com/p/coverstory/">CoverStory</a>. In Preferences, add <code>"*.ipp"</code> and <code>"*.hpp"</code> to the "SDK Files" list.</li>
 <li>Build and run the Om.Test target.</li>
-<li>In the CoverStory File menu, open the folder <code>&quot;<em>[Om build directory path]</em>/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;</code>, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:<ul>
+<li>In the CoverStory File menu, open the folder &quot;<em>[Om build directory path]</em>/projects/Xcode/Om.build/<em>[configuration]</em>/Om.Test.build/Objects-normal/x86_64&quot;, where <em>[configuration]</em> is the build configuration (e.g. "Debug", "Release"). The main CoverStory window should be populated as follows:<ul>
 <li>The left pane shows a list of Om source files, each accompanied by a test coverage percentage.</li>
 <li>The right pane shows the contents of the currently selected source file, with each line annotated with the number of times it was executed.</li>
 </ul>
