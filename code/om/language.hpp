@@ -109,21 +109,21 @@
 
 		\subsection language__syntax__ Syntax
 			An %Om program is a combination of three elements&mdash;operator, separator, and operand&mdash;as follows:
-			\image html "program.png"
+			\image html "program.png" width=100%
 
 			\subsubsection language__syntax__operator__ Operator
 				An operator has the following syntax:
-				\image html "operator.png"
+				\image html "operator.png" width=100%
 
 				Backquotes (<tt>`</tt>) in operators are disregarded if the code point following is not a backquote, operand brace, or separator code point.
 
 			\subsubsection language__syntax__separator__ Separator
 				A separator has the following syntax:
-				\image html "separator.png"
+				\image html "separator.png" width=100%
 
 			\subsubsection language__syntax__operand__ Operand
 				An operand has the following syntax:
-				\image html "operand.png"
+				\image html "operand.png" width=100%
 
 		\subsection language__functions__ Functions
 			The %Om language is <a href="http://concatenative.org">concatenative</a>, meaning that each %Om program evaluates to a function (that takes a program as input, and returns a program as output) and the concatenation of two programs (with an intervening separator, as necessary) evaluates to the composition of the corresponding functions.
