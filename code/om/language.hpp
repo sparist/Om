@@ -542,9 +542,8 @@
 				To define an atomic operation that consumes one or more operands:
 				-	Define the operation <tt>class</tt>, derived from <tt>Om::Language::Operation::DefaultIncompleteOperation&lt;<em>operation</em>&gt;</tt> (where <tt><em>operation</em></tt> is the name of the operation <tt>class</tt>), in the <tt>Om::Language::Operation</tt> namespace.
 				-	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
-				-	Add the implementation, using existing operations as a guide:
-					-	Implement the functions necessary to compile.
-					-	Optionally override virtual function implementations in <tt>Om::Language::Operation::DefaultIncompleteOperation</tt>, such as <tt>Om::Language::Operation::DefaultIncompleteOperation::ReadQuotedElements</tt>, that may be more optimally implemented in the operation.
+				-	Implement the functions necessary to compile.
+				-	Optionally override virtual function implementations in <tt>Om::Language::Operation::DefaultIncompleteOperation</tt>, such as <tt>Om::Language::Operation::DefaultIncompleteOperation::ReadQuotedElements</tt>, that may be more optimally implemented in the operation.
 
 				For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <tt>WhateverOperation</tt> is a stand-in for the name of the operation <tt>class</tt>):
 
