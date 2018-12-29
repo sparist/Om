@@ -49,12 +49,12 @@ $(function() {
 <a href="#details">More...</a></p>
 <dl class="section user"><dt>Input</dt><dd><code>{injector}{program}</code> </dd></dl>
 <dl class="section user"><dt>Output</dt><dd>Dequotes <code>{program}</code>, injects the dequoted <code>{injector}</code> between the <a class="el" href="group__om____program____.html">Program</a> and each of its <a class="el" href="group__om____operand____.html">Operands</a>, then <a class="el" href="group__om____operation____quote__operation____.html">quotes</a> the result. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><ul>
-<li><code>inject{quote}{copy}{A}</code> <blockquote class="doxtable">
-<p><code>{{{A}}{{A}}}</code></p>
-</blockquote>
-</li>
-</ul>
+<dl class="section user"><dt>Examples</dt><dd><table class="doxtable">
+<tr>
+<td><code><b>inject {quote} {copy} {A}</b></code> </td></tr>
+<tr>
+<td><code><em>{{{A}}{{A}}}</em></code> </td></tr>
+</table>
 </dd></dl>
 <dl class="section user"><dt>Implementation</dt><dd><a class="el" href="class_om_1_1_language_1_1_operation_1_1_inject_operation.html" title="The inject operation implementation.">Om::Language::Operation::InjectOperation</a> </dd></dl>
 </div><!-- contents -->

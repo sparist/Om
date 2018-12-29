@@ -288,232 +288,280 @@ Programs</h3>
 <p>All program implementations provided are documented in the <a class="el" href="group__om____program____.html">Program</a> module.</p>
 <h2><a class="anchor" id="language__examples__"></a>
 Examples</h2>
-<p>The following program contains a single operand containing an operator &quot;<code>Hello,</code>&quot;, a separator &quot;<code> </code>&quot;, and another operator &quot;<code>world!</code>&quot;:</p><ul>
-<li><code>{Hello, world!}</code> <blockquote class="doxtable">
-<p><code>{Hello, world!}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>The following program contains a single operand containing an operator &quot;<code>Hello,</code>&quot;, a separator &quot;<code> </code>&quot;, and an operand &quot;<code>{universe!}</code>&quot; which in turn contains a single operator &quot;<code>universe!</code>&quot;:</p><ul>
-<li><code>{Hello, {universe!}}</code> <blockquote class="doxtable">
-<p><code>{Hello, {universe!}}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>Note that separators are significant inside operands:</p><ul>
-<li><code>{Hello, &#160;&#160;world!}</code> <blockquote class="doxtable">
-<p><code>{Hello, &#160;&#160;world!}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>Operands can be dropped and copied via the <a class="el" href="group__om____operation____drop__operation____.html">drop</a> and <a class="el" href="group__om____operation____copy__operation____.html">copy</a> operations:</p><ul>
-<li><code>drop {A}{B}{C}</code> <blockquote class="doxtable">
-<p><code>{B}{C}</code></p>
-</blockquote>
-</li>
-<li><code>copy {A}{B}{C}</code> <blockquote class="doxtable">
-<p><code>{A}{A}{B}{C}</code></p>
-</blockquote>
-</li>
-<li><code>drop copy {A}</code> <blockquote class="doxtable">
-<p><code>{A}</code></p>
-</blockquote>
-</li>
-<li><code>copy copy {A}</code> <blockquote class="doxtable">
-<p><code>{A}{A}{A}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>The <a class="el" href="group__om____operation____drop__operation____.html">drop</a> operation can therefore be used for comments:</p><ul>
-<li><code>drop {This is a comment.} {This is not a comment.}</code> <blockquote class="doxtable">
-<p><code>{This is not a comment.}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>The <a class="el" href="group__om____operation____choose__operation____.html">choose</a> operation selects one of two operands, depending on whether a third is empty:</p><ul>
-<li><code>choose {It was empty.}{It was non-empty.}{I am not empty.}</code> <blockquote class="doxtable">
-<p><code>{It was non-empty.}</code></p>
-</blockquote>
-</li>
-<li><code>choose {It was empty.}{It was non-empty.}{}</code> <blockquote class="doxtable">
-<p><code>{It was empty.}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>An operation without sufficient operands evaluates to itself and whatever operands are provided:</p><ul>
-<li><code>drop</code> <blockquote class="doxtable">
-<p><code>drop</code></p>
-</blockquote>
-</li>
-<li><code>choose {It was empty.}{It was non-empty.}</code> <blockquote class="doxtable">
-<p><code>choose{It was empty.}{It was non-empty.}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>The <a class="el" href="group__om____operation____quote__operation____.html">quote</a> and <a class="el" href="group__om____operation____dequote__operation____.html">dequote</a> operations add and remove a layer of operand braces, respectively:</p><ul>
-<li><code>quote {B}</code> <blockquote class="doxtable">
-<p><code>{{B}}</code></p>
-</blockquote>
-</li>
-<li><code>dequote {{B}}</code> <blockquote class="doxtable">
-<p><code>{B}</code></p>
-</blockquote>
-</li>
-<li><code>dequote {copy}</code> <blockquote class="doxtable">
-<p><code>copy</code></p>
-</blockquote>
-</li>
-<li><code>dequote {copy} {A}</code> <blockquote class="doxtable">
-<p><code>{A}{A}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>Operands can be popped from and pushed into:</p><ul>
-<li><code>&lt;-[characters] {ABC}</code> <blockquote class="doxtable">
-<p><code>{A}{BC}</code></p>
-</blockquote>
-</li>
-<li><code>-&gt;[literal] {A}{BC}</code> <blockquote class="doxtable">
-<p><code>{ABC}</code></p>
-</blockquote>
-</li>
-<li><code>&lt;-[terms] {some terms}</code> <blockquote class="doxtable">
-<p><code>{some}{terms}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>A new operator definition can be provided with the <a class="el" href="group__om____operation____define__operation____.html">define</a> operation, where the first operand is treated as containing a <a class="el" href="group__om____lexicon____.html">Lexicon</a> with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator:</p><ul>
-<li><code>define { double-quote {quote quote} } { double-quote {A} }</code> <blockquote class="doxtable">
-<p><code>{{{A}}}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>Any string can be used as an operator, with separators and operand braces escaped with a backquote:</p><ul>
-<li><code>define { double` quote {quote quote} } { double` quote {A} }</code> <blockquote class="doxtable">
-<p><code>{{{A}}}</code></p>
-</blockquote>
-</li>
-<li><code>&lt;-[terms] { double` quote operator }</code> <blockquote class="doxtable">
-<p><code>{double` quote}{operator}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>Unicode is fully supported:</p><ul>
-<li><code>&lt;-[characters] {한글}</code> <blockquote class="doxtable">
-<p><code>{한}{글}</code></p>
-</blockquote>
-</li>
-<li><code>&lt;-[code` points] {한글}</code> <blockquote class="doxtable">
-<p><code>{ᄒ}{ᅡᆫ글}</code></p>
-</blockquote>
-</li>
-<li><code>&lt;-[terms] {한글 韓}</code> <blockquote class="doxtable">
-<p><code>{한글}{韓}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the <a class="el" href="group__om____operation____normalize__operation____.html">normalize</a> operation:</p><ul>
-<li><code>normalize {2⁵}</code> <blockquote class="doxtable">
-<p><code>{25}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>Recursion is very efficient in the Om language, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string:</p><ul>
-<li><code>define<br />
+<p>The following program contains a single operand containing an operator &quot;<code>Hello,</code>&quot;, a separator &quot;<code> </code>&quot;, and another operator &quot;<code>world!</code>&quot;: </p><table class="doxtable">
+<tr>
+<td><code><b>{Hello, world!}</b></code> </td></tr>
+<tr>
+<td><code><em>{Hello, world!}</em></code> </td></tr>
+</table>
+<p>The following program contains a single operand containing an operator &quot;<code>Hello,</code>&quot;, a separator &quot;<code> </code>&quot;, and an operand &quot;<code>{universe!}</code>&quot; which in turn contains a single operator &quot;<code>universe!</code>&quot;: </p><table class="doxtable">
+<tr>
+<td><code><b>{Hello, {universe!}}</b></code> </td></tr>
+<tr>
+<td><code><em>{Hello, {universe!}}</em></code> </td></tr>
+</table>
+<p>Note that separators are significant inside operands: </p><table class="doxtable">
+<tr>
+<td><code><b>{Hello, &#160;&#160;world!}</b></code> </td></tr>
+<tr>
+<td><code><em>{Hello, &#160;&#160;world!}</em></code> </td></tr>
+</table>
+<p>Operands can be dropped and copied via the <a class="el" href="group__om____operation____drop__operation____.html">drop</a> and <a class="el" href="group__om____operation____copy__operation____.html">copy</a> operations: </p><table class="doxtable">
+<tr>
+<td><code><b>drop {A}{B}{C}</b></code> </td></tr>
+<tr>
+<td><code><em>{B}{C}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>copy {A}{B}{C}</b></code> </td></tr>
+<tr>
+<td><code><em>{A}{A}{B}{C}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>drop copy {A}</b></code> </td></tr>
+<tr>
+<td><code><em>{A}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>copy copy {A}</b></code> </td></tr>
+<tr>
+<td><code><em>{A}{A}{A}</em></code> </td></tr>
+</table>
+<p>The <a class="el" href="group__om____operation____drop__operation____.html">drop</a> operation can therefore be used for comments: </p><table class="doxtable">
+<tr>
+<td><code><b>drop {This is a comment.} {This is not a comment.}</b></code> </td></tr>
+<tr>
+<td><code><em>{This is not a comment.}</em></code> </td></tr>
+</table>
+<p>The <a class="el" href="group__om____operation____choose__operation____.html">choose</a> operation selects one of two operands, depending on whether a third is empty: </p><table class="doxtable">
+<tr>
+<td><code><b>choose {It was empty.}{It was non-empty.}{I am not empty.}</b></code> </td></tr>
+<tr>
+<td><code><em>{It was non-empty.}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>choose {It was empty.}{It was non-empty.}{}</b></code> </td></tr>
+<tr>
+<td><code><em>{It was empty.}</em></code> </td></tr>
+</table>
+<p>An operation without sufficient operands evaluates to itself and whatever operands are provided: </p><table class="doxtable">
+<tr>
+<td><code><b>drop</b></code> </td></tr>
+<tr>
+<td><code><em>drop</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>choose {It was empty.}{It was non-empty.}</b></code> </td></tr>
+<tr>
+<td><code><em>choose{It was empty.}{It was non-empty.}</em></code> </td></tr>
+</table>
+<p>The <a class="el" href="group__om____operation____quote__operation____.html">quote</a> and <a class="el" href="group__om____operation____dequote__operation____.html">dequote</a> operations add and remove a layer of operand braces, respectively: </p><table class="doxtable">
+<tr>
+<td><code><b>quote {B}</b></code> </td></tr>
+<tr>
+<td><code><em>{{B}}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>dequote {{B}}</b></code> </td></tr>
+<tr>
+<td><code><em>{B}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>dequote {copy}</b></code> </td></tr>
+<tr>
+<td><code><em>copy</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>dequote {copy} {A}</b></code> </td></tr>
+<tr>
+<td><code><em>{A}{A}</em></code> </td></tr>
+</table>
+<p>Operands can be popped from and pushed into: </p><table class="doxtable">
+<tr>
+<td><code><b>&lt;-[characters] {ABC}</b></code> </td></tr>
+<tr>
+<td><code><em>{A}{BC}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>-&gt;[literal] {A}{BC}</b></code> </td></tr>
+<tr>
+<td><code><em>{ABC}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>&lt;-[terms] {some terms}</b></code> </td></tr>
+<tr>
+<td><code><em>{some}{terms}</em></code> </td></tr>
+</table>
+<p>A new operator definition can be provided with the <a class="el" href="group__om____operation____define__operation____.html">define</a> operation, where the first operand is treated as containing a <a class="el" href="group__om____lexicon____.html">Lexicon</a> with operator-to-operand mappings, and the second operand contains the program to evaluate using the defined operator: </p><table class="doxtable">
+<tr>
+<td><code><b>define { double-quote {quote quote} } { double-quote {A} }</b></code> </td></tr>
+<tr>
+<td><code><em>{{{A}}}</em></code> </td></tr>
+</table>
+<p>Any string can be used as an operator, with separators and operand braces escaped with a backquote: </p><table class="doxtable">
+<tr>
+<td><code><b>define { double` quote {quote quote} } { double` quote {A} }</b></code> </td></tr>
+<tr>
+<td><code><em>{{{A}}}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>&lt;-[terms] { double` quote operator }</b></code> </td></tr>
+<tr>
+<td><code><em>{double` quote}{operator}</em></code> </td></tr>
+</table>
+<p>Unicode is fully supported: </p><table class="doxtable">
+<tr>
+<td><code><b>&lt;-[characters] {한글}</b></code> </td></tr>
+<tr>
+<td><code><em>{한}{글}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>&lt;-[code` points] {한글}</b></code> </td></tr>
+<tr>
+<td><code><em>{ᄒ}{ᅡᆫ글}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>&lt;-[terms] {한글 韓}</b></code> </td></tr>
+<tr>
+<td><code><em>{한글}{韓}</em></code> </td></tr>
+</table>
+<p>Strings are automatically <a href="http://unicode.org/reports/tr15">normalized</a> to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFD</a>, but can be explicitly normalized to <a href="http://unicode.org/reports/tr15/#Norm_Forms">NFKD</a> using the <a class="el" href="group__om____operation____normalize__operation____.html">normalize</a> operation: </p><table class="doxtable">
+<tr>
+<td><code><b>normalize {2⁵}</b></code> </td></tr>
+<tr>
+<td><code><em>{25}</em></code> </td></tr>
+</table>
+<p>Recursion is very efficient in the Om language, due to (a) the "eager" evaluation model enabled by prefix concatenative syntax (i.e. data is consumed immediately rather than being left on a stack), and (b) the non-recursive evaluation implementation in the evaluator that minimizes memory overhead of recursive calls and prevents stack overflow. The following example uses recursion to give the minutes in a colon-delimited 24-hour time string: </p><table class="doxtable">
+<tr>
+<td><code><b>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { minutes {1:23} }<br />
- </code> <blockquote class="doxtable">
-<p><code>{23}</code></p>
-</blockquote>
-</li>
-</ul>
-<p>Each step of an evaluation can be represented as a program. The following is the above program broken down into evaluation steps, where the code that is about to be replaced is <b>bold</b>, and the latest replacement is <em>italicized</em>:</p><ul>
-<li><code>define<br />
+ </b></code>  </td></tr>
+<tr>
+<td><code><em>{23}</em></code>  </td></tr>
+</table>
+<p>An important feature of Om is that each step of an evaluation can be represented as a program. The following is the above program broken down into evaluation steps, where the code that is about to be replaced is <b>bold</b>, and the latest replacement is <em>italicized</em>: </p><table class="doxtable">
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { <b>minutes</b> {1:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {1:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote choose {minutes} {} = {:} <b>&lt;-[characters] {1:23}</b> }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote choose {minutes} {} = {:} <em>{1} {:23}</em> }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote choose {minutes} {} <b>= {:} {1}</b> {:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote choose {minutes} {} <em>{}</em> {:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote <b>choose {minutes} {} {}</b> {:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote <em>{minutes}</em> {:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { <b>dequote {minutes}</b> {:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { <em>minutes</em> {:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { <b>minutes</b> {:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { <em>dequote choose {minutes} {} = {:} &lt;-[characters]</em> {:23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote choose {minutes} {} = {:} <b>&lt;-[characters] {:23}</b> }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote choose {minutes} {} = {:} <em>{:} {23}</em> }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote choose {minutes} {} <b>= {:} {:}</b> {23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote choose {minutes} {} <em>{{:}}</em> {23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote <b>choose {minutes} {} {{:}}</b> {23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { dequote <em>{}</em> {23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { <b>dequote {}</b> {23} }<br />
- </code></li>
-<li><code>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { {23} }<br />
- </code></li>
-<li><code><b>define<br />
+ </code>  </td></tr>
+<tr>
+<td><code><b>define<br />
  { minutes { dequote choose {minutes} {} = {:} &lt;-[characters] } }<br />
  { {23} }</b><br />
- </code></li>
-<li><code><em>{23}</em></code></li>
-</ul>
+ </code>  </td></tr>
+<tr>
+<td><code><em>{23}</em></code>  </td></tr>
+</table>
 <p>The <a class="el" href="group__om____operation____rearrange__operation____.html">rearrange</a> operation provides operand name binding, allowing for a more applicative style. The following example is a simplistic implementation of a left <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a>, along with an example call: </p><div class="fragment"><div class="line">define</div><div class="line">{</div><div class="line">    [Fold]&lt;- {</div><div class="line">        rearrange</div><div class="line">        {</div><div class="line">            rearrange</div><div class="line">            {</div><div class="line">                dequote</div><div class="line">                choose</div><div class="line">                quote Result</div><div class="line">                pair pair pair {[Fold]&lt;-} Function Result Remainder</div><div class="line">                Remainder</div><div class="line">            }</div><div class="line">            {Result Remainder}</div><div class="line">            dequote Function Base &lt;-[terms] Source</div><div class="line">        }</div><div class="line">        {Function Base Source}</div><div class="line">    }</div><div class="line">}</div><div class="line">{</div><div class="line">    [Fold]&lt;- {[literal]&lt;-} {} {1 2 3}</div><div class="line">}</div></div><!-- fragment --><p>The result is <code>{321}</code>.</p>
 <p>The example works as follows:</p><ul>
 <li><code>[Fold]&lt;-</code> takes three operands:<ul>

@@ -49,16 +49,18 @@ $(function() {
 <a href="#details">More...</a></p>
 <dl class="section user"><dt>Input</dt><dd><code>{lexicon} {expression}</code> </dd></dl>
 <dl class="section user"><dt>Output</dt><dd><code>{lexicon} {evaluation}</code> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><ul>
-<li><code>substitute{A{1}}{A}</code> <blockquote class="doxtable">
-<p><code>{A{1}}{1}</code></p>
-</blockquote>
-</li>
-<li><code>substitute{A{1}}{do{A}}</code> <blockquote class="doxtable">
-<p><code>{A{1}}{do{A}}</code></p>
-</blockquote>
-</li>
-</ul>
+<dl class="section user"><dt>Examples</dt><dd><table class="doxtable">
+<tr>
+<td><code><b>substitute {A{1}} {A}</b></code> </td></tr>
+<tr>
+<td><code><em>{A{1}}{1}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>substitute {A{1}} {do{A}}</b></code> </td></tr>
+<tr>
+<td><code><em>{A{1}}{do{A}}</em></code> </td></tr>
+</table>
 </dd></dl>
 <dl class="section user"><dt>Implementation</dt><dd><a class="el" href="class_om_1_1_language_1_1_operation_1_1_substitute_operation.html" title="The substitute operation implementation.">Om::Language::Operation::SubstituteOperation</a></dd></dl>
 <p>Looking up an <a class="el" href="group__om____operator____.html">Operator</a> in the <a class="el" href="group__om____lexicon____.html">Lexicon</a> has the following possible outcomes:</p><ul>

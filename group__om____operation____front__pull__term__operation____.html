@@ -49,29 +49,37 @@ $(function() {
 <a href="#details">More...</a></p>
 <dl class="section user"><dt>Input</dt><dd><code>{A B}</code> </dd></dl>
 <dl class="section user"><dt>Output</dt><dd><code>{A}{B}</code> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><ul>
-<li><code>&lt;-[terms] {A B}</code> <blockquote class="doxtable">
-<p><code>{A}{B}</code></p>
-</blockquote>
-</li>
-<li><code>&lt;-[terms] {{A} B}</code> <blockquote class="doxtable">
-<p><code>{{A}}{B}</code></p>
-</blockquote>
-</li>
-<li><code>&lt;-[terms] {A B }</code> <blockquote class="doxtable">
-<p><code>{A}{B}</code></p>
-</blockquote>
-</li>
-<li><code>&lt;-[terms] {A {B} C}</code> <blockquote class="doxtable">
-<p><code>{A}{{B}<br />
-C}</code></p>
-</blockquote>
-</li>
-<li><code>&lt;-[terms] {}</code> <blockquote class="doxtable">
-<p><code>{}{}</code></p>
-</blockquote>
-</li>
-</ul>
+<dl class="section user"><dt>Examples</dt><dd><table class="doxtable">
+<tr>
+<td><code><b>&lt;-[terms] {A B}</b></code> </td></tr>
+<tr>
+<td><code><em>{A}{B}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>&lt;-[terms] {{A} B}</b></code> </td></tr>
+<tr>
+<td><code><em>{{A}}{B}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>&lt;-[terms] {A B }</b></code> </td></tr>
+<tr>
+<td><code><em>{A}{B}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>&lt;-[terms] {A {B} C}</b></code> </td></tr>
+<tr>
+<td><code><em>{A}{{B}<br />
+C}</em></code> </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<td><code><b>&lt;-[terms] {}</b></code> </td></tr>
+<tr>
+<td><code><em>{}{}</em></code> </td></tr>
+</table>
 </dd></dl>
 <dl class="section user"><dt>Implementation</dt><dd><a class="el" href="class_om_1_1_language_1_1_operation_1_1_front_pull_term_operation.html" title="The &lt;-[terms] operation implementation.">Om::Language::Operation::FrontPullTermOperation</a> </dd></dl>
 </div><!-- contents -->
