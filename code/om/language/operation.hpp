@@ -33,7 +33,7 @@ namespace Om {
 
 		Each operation implementation requires the following:
 		-	A <tt>static char const * GetName()</tt> function that returns a null-terminated, NFD-normalized UTF-8 string to be used as a corresponding Operator name.
-		-	A <tt>static void Give(</tt><em>Evaluation</em><tt>)</tt> function, which gives the implementation of the operation to the Evaluation.
+		-	A <tt>static void Give(<em>Evaluation</em>)</tt> function, which gives the implementation of the operation to the Evaluation.
 
 		Including the header for an operation will cause the operation to be added to the System automatically.
 

@@ -436,7 +436,7 @@ define
 				-	Define the static <tt>Give(Om::Language::Evaluation &amp;)</tt> method, with no return value, to give existing operations and/or elements to the evaluation.
 
 				To define an atomic operation that consumes one or more operands:
-				-	Define the operation <tt>class</tt>, derived from <tt>Om::Language::Operation::DefaultIncompleteOperation&lt;</tt><em>operation</em><tt>&gt;</tt> (where <em>operation</em> is the name of the operation <tt>class</tt>), in the <tt>Om::Language::Operation</tt> namespace.
+				-	Define the operation <tt>class</tt>, derived from <tt>Om::Language::Operation::DefaultIncompleteOperation&lt;<em>operation</em>&gt;</tt> (where <tt><em>operation</em></tt> is the name of the operation <tt>class</tt>), in the <tt>Om::Language::Operation</tt> namespace.
 				-	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
 				-	Add the implementation, using existing operations as a guide:
 					-	Implement the functions necessary to compile.
@@ -460,9 +460,9 @@ define
 			\subsubsection contributing__developing__analyzing_code__ Analyzing Code
 				Some basic free static analysis tools can be applied to the %Om code:
 				-	<a href="https://github.com/terryyin/hfcca"><b>HFCCA</b></a> is a Python script that measures cyclomatic complexity and counts the number of lines of code in C++ source files, not including comments or tests. If Python is installed and in the path, HFCCA can be applied to %Om by entering the following at the terminal from inside the %Om directory:
-					<blockquote><tt>python </tt><em>[path]</em><tt>/hfcca.py -p -v code</tt></blockquote>
+					<blockquote><tt>python <em>[path]</em>/hfcca.py -p -v code</tt></blockquote>
 				-	<a href="http://cloc.sourceforge.net"><b>CLOC</b></a> is a stand-alone Perl script that determines total line counts. If Perl is installed, CLOC can be applied to %Om by entering the following at the terminal from inside the %Om directory:
-					<blockquote><em>[path]</em><tt>/cloc.pl code</tt></blockquote>
+					<blockquote><tt><em>[path]</em>/cloc.pl code</tt></blockquote>
 
 			\subsubsection contributing__developing__analyzing_tests__ Analyzing Test Coverage
 				The Om.Test target of the Xcode project generates test coverage data that can be viewed as follows:
