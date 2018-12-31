@@ -6,8 +6,12 @@ a {
 	text-decoration: underline;
 }
 
-ul {
+div.contents {
 	overflow: auto
+}
+
+ul {
+	overflow: visible
 }
 
 #projectname {
