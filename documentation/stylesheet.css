@@ -10,8 +10,8 @@ div.contents {
 	overflow: auto
 }
 
-div.contents ul {
-	overflow: visible
+div.contents ul, div.contents p {
+	word-wrap: break-word;
 }
 
 #projectname {
@@ -32,4 +32,8 @@ div.toc li {
 
 div.toc h3 {
 	font: bold 12px/1.2 Roboto, sans-serif;
+}
+
+code {
+	display: inline;
 }

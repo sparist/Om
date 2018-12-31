@@ -13,8 +13,6 @@
 
 \mainpage Main Page
 
-	\tableofcontents
-
 	\section introduction__ Introduction
 		The <a href="http://om-language.org">Om language</a> is:
 		-	a novel, maximally-simple <a href="http://concatenative.org">concatenative</a>, <a href="http://en.wikipedia.org/wiki/Homoiconicity">homoiconic</a> <b>programming and algorithm notation language</b> with:
@@ -540,10 +538,10 @@
 				-	Define the static <tt>Give(Om::Language::Evaluation &amp;)</tt> method, with no return value, to give existing operations and/or elements to the evaluation.
 
 				To define an atomic operation that consumes one or more operands:
-				-	Define the operation <tt>class</tt>, derived from <tt>Om::Language::Operation::DefaultIncompleteOperation&lt;<em>operation</em>&gt;</tt> (where <tt><em>operation</em></tt> is the name of the operation <tt>class</tt>), in the <tt>Om::Language::Operation</tt> namespace.
+				-	Define the operation <tt>class</tt>, derived from <tt>Om::Language::Operation::DefaultIncompleteOperation</tt> (which has the operation <tt>class</tt> as its template argument), in the <tt>Om::Language::Operation</tt> namespace.
 				-	Define the static <tt>GetName()</tt> method, which returns a <tt>static char const *</tt> containing the name.
 				-	Implement the functions necessary to compile.
-				-	Optionally override virtual function implementations in <tt>Om::Language::Operation::DefaultIncompleteOperation</tt>, such as <tt>Om::Language::Operation::DefaultIncompleteOperation::ReadQuotedElements</tt>, that may be more optimally implemented in the operation.
+				-	Optionally override virtual function implementations in <tt>Om::Language::Operation::DefaultIncompleteOperation</tt> that may be more optimally implemented in the operation.
 
 				For any operation implementation, code must be added to the operation header that inserts the operation into the system when the header is included, as follows (where <tt>WhateverOperation</tt> is a stand-in for the name of the operation <tt>class</tt>):
 
