@@ -10,7 +10,7 @@ div.contents {
 	overflow: auto
 }
 
-div.contents ul {
+div.contents ul, div.contents p {
 	word-wrap: break-word;
 }
 
