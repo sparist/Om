@@ -11,7 +11,7 @@ div.contents {
 }
 
 div.contents ul {
-	overflow: visible
+	word-wrap: break-word;
 }
 
 #projectname {
@@ -35,5 +35,5 @@ div.toc h3 {
 }
 
 code {
-  display: inline;
+	display: inline;
 }
