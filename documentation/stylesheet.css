@@ -1,58 +1,35 @@
 h1, h2, h3, h4, h5, h6 {
-	-webkit-transition: text-shadow 0.5s linear;
-	-moz-transition: text-shadow 0.5s linear;
-	-ms-transition: text-shadow 0.5s linear;
-	-o-transition: text-shadow 0.5s linear;
-	transition: text-shadow 0.5s linear;
-	margin-right: 15px;
 	margin-top: 25px;
 }
 
 a {
-	color: #26384A;
-	font-weight: normal;
 	text-decoration: underline;
 }
 
-a:hover {
+div.contents {
+	overflow: auto
+}
+
+div.contents ul {
+	overflow: visible
 }
 
 #projectname {
 	font: 600% Roboto, sans-serif;
-	margin: 0px;
-	padding: 2px 0px;
 }
 
 #projectbrief {
 	font: 120% Roboto, sans-serif;
-	margin: 0px;
-	padding: 0px;
 }
 
 #projectnumber {
 	font: 50% Roboto, sans-serif;
-	margin: 0px;
-	padding: 0px;
-}
-
-#titlearea {
-	padding: 4px;
-	margin: 0px;
-	width: 100%;
-	border-bottom: 1px solid #3C5772;
 }
 
 div.toc li {
-	background: url("bdwn.png") no-repeat scroll 0 5px transparent;
 	font: 12px/1.2 Roboto, sans-serif;
-	margin-top: 5px;
-	padding-left: 10px;
-	padding-top: 2px;
 }
 
 div.toc h3 {
 	font: bold 12px/1.2 Roboto, sans-serif;
-	color: #31475E;
-	border-bottom: 0 none;
-	margin: 0;
 }
