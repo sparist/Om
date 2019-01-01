@@ -1,39 +1,70 @@
+/* Override tabs.css */
+.sm-dox {
+	background-image: inherit;
+}
+.sm-dox a,
+.sm-dox a:focus,
+.sm-dox a:active,
+.sm-dox a:hover,
+.sm-dox a.highlighted {
+	background-image: inherit;
+	background-repeat: inherit;
+}
+.sm-dox a:hover {
+	color: inherit;
+	text-shadow: inherit;
+	text-decoration: underline;
+}
+.sm-dox ul a:hover {
+	background-image: inherit;
+	background-repeat: inherit;
+	color: inherit;
+	text-shadow: inherit;
+	text-decoration: underline;
+}
+.sm-dox.sm-vertical a.disabled {
+	background-image: inherit;
+}
+.sm-dox li {
+	border-top: 1px solid #3C5772;
+}
+
+/* Override doxygen.css */
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 25px;
 }
-
 a {
 	text-decoration: underline;
 }
-
 div.contents {
 	overflow: auto
 }
-
 div.contents ul, div.contents p {
 	word-wrap: break-word;
 }
-
-#projectname {
-	font: 600% Roboto, sans-serif;
-}
-
-#projectbrief {
-	font: 120% Roboto, sans-serif;
-}
-
-#projectnumber {
-	font: 50% Roboto, sans-serif;
-}
-
 div.toc li {
 	font: 12px/1.2 Roboto, sans-serif;
 }
-
 div.toc h3 {
 	font: bold 12px/1.2 Roboto, sans-serif;
 }
-
+div.header {
+	background-image: none;
+	border-top: 1px solid #AABED2;
+	border-bottom: 1px solid #AABED2;
+}
+#projectname {
+	font: 600% Roboto, sans-serif;
+}
+#projectbrief {
+	font: 120% Roboto, sans-serif;
+}
+#projectnumber {
+	font: 50% Roboto, sans-serif;
+}
+#titlearea {
+	border-bottom: 0px;
+}
 code {
 	display: inline;
 }
