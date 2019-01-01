@@ -1,4 +1,8 @@
-/* Override tabs.css */
+/*
+Override tabs.css
+*/
+
+/* Remove background images from top tabs, which look bad in landscape mode on phone. */
 .sm-dox {
 	background-image: inherit;
 }
@@ -22,35 +26,43 @@
 	text-shadow: inherit;
 	text-decoration: underline;
 }
-.sm-dox li {
-	border-top: 1px dotted #3C5772;
-}
 .sm-dox.sm-vertical a.disabled {
 	background-image: inherit;
 }
 
-/* Override doxygen.css */
-h1, h2, h3, h4, h5, h6 {
-	margin-top: 25px;
+/* Add a top border to the top-level menu items only. */
+.sm-dox li {
+	border-top: 1px solid #AABED2;
 }
-a {
-	text-decoration: underline;
+.sm-dox li ul li {
+	border-top: none;
 }
-ul, p, div.title {
-	overflow: visible;
+
+/* Add a bottom border to the tabs. This matches the bottom page header border. */
+.sm-dox {
+	border-bottom: 1px solid #AABED2;
 }
+
+/*
+Override doxygen.css
+*/
+
+/* Clean up heading borders and backgrounds. */
+#titlearea {
+	border-bottom: none;
+}
+div.header {
+	background-image: inherit;
+	display: inline-block;
+	min-width: 100%;
+}
+
+/* Use consistent fonts. */
 div.toc li {
 	font: 12px/1.2 Roboto, sans-serif;
 }
 div.toc h3 {
 	font: bold 12px/1.2 Roboto, sans-serif;
-}
-div.header {
-	background-image: none;
-	border-top: 1px solid #AABED2;
-	border-bottom: 1px solid #AABED2;
-	display: inline-block;
-	min-width: 100%;
 }
 #projectname {
 	font: 600% Roboto, sans-serif;
@@ -61,9 +73,18 @@ div.header {
 #projectnumber {
 	font: 50% Roboto, sans-serif;
 }
-#titlearea {
-	border-bottom: 0px;
+
+/* Underline links; they are too hard to see otherwise. */
+a {
+	text-decoration: underline;
 }
+
+/* Prevent text from being truncated. */
+ul, p, div.title {
+	overflow: visible;
+}
+
+/* Prevent <tt> rendering issues on phone. */
 code {
 	display: inline;
 }
