@@ -36,11 +36,8 @@ h1, h2, h3, h4, h5, h6 {
 a {
 	text-decoration: underline;
 }
-div.contents {
-	overflow: auto
-}
-div.contents ul, div.contents p {
-	word-wrap: break-word;
+ul, p, div.title {
+	overflow: visible;
 }
 div.toc li {
 	font: 12px/1.2 Roboto, sans-serif;
@@ -52,6 +49,7 @@ div.header {
 	background-image: none;
 	border-top: 1px solid #AABED2;
 	border-bottom: 1px solid #AABED2;
+	display: inline-block;
 }
 #projectname {
 	font: 600% Roboto, sans-serif;
