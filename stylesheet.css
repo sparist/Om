@@ -22,11 +22,11 @@
 	text-shadow: inherit;
 	text-decoration: underline;
 }
+.sm-dox li {
+	border-top: 1px dotted #3C5772;
+}
 .sm-dox.sm-vertical a.disabled {
 	background-image: inherit;
-}
-.sm-dox li {
-	border-top: 1px solid #3C5772;
 }
 
 /* Override doxygen.css */
