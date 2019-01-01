@@ -50,6 +50,7 @@ div.header {
 	border-top: 1px solid #AABED2;
 	border-bottom: 1px solid #AABED2;
 	display: inline-block;
+	min-width: 100%;
 }
 #projectname {
 	font: 600% Roboto, sans-serif;
