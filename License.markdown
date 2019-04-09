@@ -8,25 +8,25 @@
 
 <ol type="a">
 
-	<li>in the case of the initial Contributor, the initial code and documentation distributed under this Agreement, and</li>
+<li>in the case of the initial Contributor, the initial code and documentation distributed under this Agreement, and</li>
 
-	<li>
+<li>
 
-		<p>in the case of each subsequent Contributor:</p>
+<p>in the case of each subsequent Contributor:</p>
 
-		<ol type="i">
-			<li>changes to the Program, and</li>
-			<li>additions to the Program;</li>
-		</ol>
+<ol type="i">
+<li>changes to the Program, and</li>
+<li>additions to the Program;</li>
+</ol>
 
-		<p>where such changes and/or additions to the Program originate from and are distributed by that particular Contributor. A Contribution 'originates' from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor's behalf. Contributions do not include additions to the Program which:</p>
+<p>where such changes and/or additions to the Program originate from and are distributed by that particular Contributor. A Contribution 'originates' from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor's behalf. Contributions do not include additions to the Program which:</p>
 
-		<ol type="i">
-			<li>are separate modules of software distributed in conjunction with the Program under their own license agreement, and</li>
-			<li>are not derivative works of the Program.</li>
-		</ol>
+<ol type="i">
+<li>are separate modules of software distributed in conjunction with the Program under their own license agreement, and</li>
+<li>are not derivative works of the Program.</li>
+</ol>
 
-	</li>
+</li>
 
 </ol>
 
@@ -42,13 +42,13 @@
 
 <ol type="a">
 
-	<li>Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.</li>
+<li>Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.</li>
 
-	<li>Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.</li>
+<li>Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.</li>
 
-	<li>Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.</li>
+<li>Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.</li>
 
-	<li>Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.</li>
+<li>Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.</li>
 
 </ol>
 
@@ -58,25 +58,25 @@
 
 <ol type="a">
 
-	<li>it complies with the terms and conditions of this Agreement; and</li>
+<li>it complies with the terms and conditions of this Agreement; and</li>
 
-	<li>
+<li>
 
-		<p>its license agreement:</p>
+<p>its license agreement:</p>
 
-		<ol type="i">
+<ol type="i">
 
-			<li>effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;</li>
+<li>effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;</li>
 
-			<li>effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;</li>
+<li>effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;</li>
 
-			<li>states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party; and</li>
+<li>states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party; and</li>
 
-			<li>states that source code for the Program is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.</li>
+<li>states that source code for the Program is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.</li>
 
-		</ol>
+</ol>
 
-	</li>
+</li>
 
 </ol>
 
@@ -84,9 +84,9 @@
 
 <ol type="a">
 
-	<li>it must be made available under this Agreement; and</li>
+<li>it must be made available under this Agreement; and</li>
 
-	<li>a copy of this Agreement must be included with each copy of the Program.</li>
+<li>a copy of this Agreement must be included with each copy of the Program.</li>
 
 </ol>
 
@@ -100,9 +100,9 @@
 
 <ol type="a">
 
-	<li>promptly notify the Commercial Contributor in writing of such claim, and</li>
+<li>promptly notify the Commercial Contributor in writing of such claim, and</li>
 
-	<li>allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.</li>
+<li>allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.</li>
 
 </ol>
 
