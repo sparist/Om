@@ -8,16 +8,16 @@
  viewBox="0.00 0.00 327.00 162.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 158)">
 <title>Om::Language::Writer</title>
-<!-- Node3 -->
-<g id="node1" class="node"><title>Node3</title>
+<!-- Node1 -->
+<g id="node1" class="node"><title>Node1</title>
 <g id="a_node1"><a xlink:title="A Consumer that pushes each Element to a CodePoint Sink upon receipt.">
 <polygon fill="#bfbfbf" stroke="black" points="150.901,-1 150.901,-19 265.099,-19 265.099,-1 150.901,-1"/>
 <text text-anchor="middle" x="208" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Writer</text>
 </a>
 </g>
 </g>
-<!-- Node4 -->
-<g id="node2" class="node"><title>Node4</title>
+<!-- Node2 -->
+<g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_default_consumer.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="-0.763184,-67 -0.763184,-95 164.763,-95 164.763,-67 -0.763184,-67"/>
 <text text-anchor="start" x="7.23682" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::DefaultConsumer</text>
@@ -25,26 +25,26 @@
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge1" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M114.9,-61.9832C140.227,-48.1141 174.036,-29.5991 193.164,-19.1245"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="113.086,-58.9862 105.996,-66.8592 116.448,-65.1259 113.086,-58.9862"/>
 </g>
-<!-- Node5 -->
-<g id="node3" class="node"><title>Node5</title>
+<!-- Node3 -->
+<g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="class_om_1_1_language_1_1_consumer.html" target="_top" xlink:title="An Element taker; takes at the back.">
 <polygon fill="none" stroke="black" points="15.0791,-135 15.0791,-153 148.921,-153 148.921,-135 15.0791,-135"/>
 <text text-anchor="middle" x="82" y="-141" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Consumer</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node4 -->
-<g id="edge2" class="edge"><title>Node5&#45;&gt;Node4</title>
+<!-- Node3&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M82,-124.466C82,-115.028 82,-103.773 82,-95.222"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="78.5001,-124.773 82,-134.773 85.5001,-124.773 78.5001,-124.773"/>
 </g>
-<!-- Node6 -->
-<g id="node4" class="node"><title>Node6</title>
+<!-- Node4 -->
+<g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="class_om_1_1_sink_1_1_sink.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="182.277,-67 182.277,-95 319.723,-95 319.723,-67 182.277,-67"/>
 <text text-anchor="start" x="190.277" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink::Sink&lt; CodePoint</text>
@@ -52,8 +52,8 @@
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node6&#45;&gt;Node3</title>
+<!-- Node4&#45;&gt;Node1 -->
+<g id="edge3" class="edge"><title>Node4&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M237.334,-58.0702C229.048,-44.7752 218.965,-28.5952 213.038,-19.0841"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="234.45,-60.0603 242.709,-66.6961 240.391,-56.3581 234.45,-60.0603"/>
 <text text-anchor="middle" x="272.246" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00"> thisCodePointSink</text>

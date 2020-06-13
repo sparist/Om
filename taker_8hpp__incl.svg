@@ -8,29 +8,29 @@
  viewBox="0.00 0.00 80.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>om/taker.hpp</title>
-<!-- Node0 -->
-<g id="node1" class="node"><title>Node0</title>
+<!-- Node1 -->
+<g id="node1" class="node"><title>Node1</title>
 <g id="a_node1"><a xlink:title="Om header file.">
 <polygon fill="#bfbfbf" stroke="black" points="-0.908691,-57 -0.908691,-75 72.9087,-75 72.9087,-57 -0.908691,-57"/>
 <text text-anchor="middle" x="36" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">om/taker.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1 -->
-<g id="node2" class="node"><title>Node1</title>
+<!-- Node2 -->
+<g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="taker_8cpp.html" target="_top" xlink:title="Om source file.">
 <polygon fill="none" stroke="black" points="-0.62793,-1 -0.62793,-19 72.6279,-19 72.6279,-1 -0.62793,-1"/>
 <text text-anchor="middle" x="36" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">om/taker.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node0&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node0&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node2 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M30.9375,-56.5625C29.3254,-49.308 28.8683,-38.5884 29.5664,-29.3691"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="33.0695,-29.5903 30.9906,-19.2014 26.1371,-28.6192 33.0695,-29.5903"/>
 </g>
-<!-- Node1&#45;&gt;Node0 -->
-<g id="edge2" class="edge"><title>Node1&#45;&gt;Node0</title>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M41.0094,-19.2014C42.6646,-26.4586 43.1393,-37.3129 42.4335,-46.6333"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="38.9632,-46.1777 41.0625,-56.5625 45.8974,-47.1352 38.9632,-46.1777"/>
 </g>

@@ -8,16 +8,16 @@
  viewBox="0.00 0.00 530.00 207.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 203)">
 <title>Om::Sink::Sink&lt; ThisItem &gt;</title>
-<!-- Node0 -->
-<g id="node1" class="node"><title>Node0</title>
+<!-- Node1 -->
+<g id="node1" class="node"><title>Node1</title>
 <g id="a_node1"><a xlink:title="Any object that items can be pushed to.">
 <polygon fill="#bfbfbf" stroke="black" points="0.23584,-85 0.23584,-103 137.764,-103 137.764,-85 0.23584,-85"/>
 <text text-anchor="middle" x="69" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink::Sink&lt; ThisItem &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node1 -->
-<g id="node2" class="node"><title>Node1</title>
+<!-- Node2 -->
+<g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="class_om_1_1_sink_1_1_default_sink.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="174.309,-161 174.309,-199 327.691,-199 327.691,-161 174.309,-161"/>
 <text text-anchor="start" x="182.309" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultSink&lt; ThisItem,</text>
@@ -26,13 +26,13 @@
 </a>
 </g>
 </g>
-<!-- Node0&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node0&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node2 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M93.9373,-108.344C114.711,-120.494 145.799,-137.966 174,-151 181.435,-154.436 189.402,-157.804 197.279,-160.958"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="95.5574,-105.237 85.1657,-103.172 92.0016,-111.266 95.5574,-105.237"/>
 </g>
-<!-- Node3 -->
-<g id="node4" class="node"><title>Node3</title>
+<!-- Node4 -->
+<g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="class_om_1_1_sink_1_1_default_sink.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="180.095,-104 180.095,-142 321.905,-142 321.905,-104 180.095,-104"/>
 <text text-anchor="start" x="188.095" y="-130" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultSink&lt; ThisItem,</text>
@@ -41,13 +41,13 @@
 </a>
 </g>
 </g>
-<!-- Node0&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node0&#45;&gt;Node3</title>
+<!-- Node1&#45;&gt;Node4 -->
+<g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M136.14,-104.656C150.349,-106.945 165.414,-109.372 179.773,-111.686"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="136.396,-101.152 125.966,-103.017 135.282,-108.063 136.396,-101.152"/>
 </g>
-<!-- Node5 -->
-<g id="node6" class="node"><title>Node5</title>
+<!-- Node6 -->
+<g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="class_om_1_1_sink_1_1_default_sink.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="191.264,-47 191.264,-85 310.736,-85 310.736,-47 191.264,-47"/>
 <text text-anchor="start" x="199.264" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultSink&lt; ThisItem,</text>
@@ -56,13 +56,13 @@
 </a>
 </g>
 </g>
-<!-- Node0&#45;&gt;Node5 -->
-<g id="edge5" class="edge"><title>Node0&#45;&gt;Node5</title>
+<!-- Node1&#45;&gt;Node6 -->
+<g id="edge5" class="edge"><title>Node1&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M138.088,-83.4085C155.585,-80.6868 174.259,-77.782 191.238,-75.1407"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="137.287,-79.9909 127.944,-84.9865 138.363,-86.9078 137.287,-79.9909"/>
 </g>
-<!-- Node7 -->
-<g id="node8" class="node"><title>Node7</title>
+<!-- Node8 -->
+<g id="node8" class="node"><title>Node8</title>
 <g id="a_node8"><a xlink:href="class_om_1_1_sink_1_1_default_sink.html" target="_top" xlink:title="A partial Sink implementation.">
 <polygon fill="none" stroke="black" points="194.094,-0 194.094,-28 307.906,-28 307.906,-0 194.094,-0"/>
 <text text-anchor="start" x="202.094" y="-16" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink::DefaultSink</text>
@@ -70,13 +70,13 @@
 </a>
 </g>
 </g>
-<!-- Node0&#45;&gt;Node7 -->
-<g id="edge7" class="edge"><title>Node0&#45;&gt;Node7</title>
+<!-- Node1&#45;&gt;Node8 -->
+<g id="edge7" class="edge"><title>Node1&#45;&gt;Node8</title>
 <path fill="none" stroke="midnightblue" d="M93.4301,-79.733C114.108,-67.5468 145.335,-50.1163 174,-38 182.539,-34.3906 191.814,-31.0266 200.855,-28.0268"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="91.5169,-76.7988 84.7188,-84.9251 95.1008,-82.8118 91.5169,-76.7988"/>
 </g>
-<!-- Node2 -->
-<g id="node3" class="node"><title>Node2</title>
+<!-- Node3 -->
+<g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="class_om_1_1_sink_1_1_container_back_sink.html" target="_top" xlink:title="A Sink adapter for a container; pushes items into the back.">
 <polygon fill="none" stroke="black" points="369.141,-166 369.141,-194 516.859,-194 516.859,-166 369.141,-166"/>
 <text text-anchor="start" x="377.141" y="-182" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink::ContainerBackSink</text>
@@ -84,13 +84,13 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node1&#45;&gt;Node2</title>
+<!-- Node2&#45;&gt;Node3 -->
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M338.151,-180C348.454,-180 358.898,-180 368.991,-180"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="337.912,-176.5 327.912,-180 337.912,-183.5 337.912,-176.5"/>
 </g>
-<!-- Node4 -->
-<g id="node5" class="node"><title>Node4</title>
+<!-- Node5 -->
+<g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="class_om_1_1_sink_1_1_container_front_sink.html" target="_top" xlink:title="A Sink adapter for a container; pushes items into the front.">
 <polygon fill="none" stroke="black" points="363.757,-109 363.757,-137 522.243,-137 522.243,-109 363.757,-109"/>
 <text text-anchor="start" x="371.757" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink::ContainerFront</text>
@@ -98,13 +98,13 @@
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge4" class="edge"><title>Node3&#45;&gt;Node4</title>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge4" class="edge"><title>Node4&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M332.216,-123C342.591,-123 353.208,-123 363.554,-123"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="331.94,-119.5 321.94,-123 331.94,-126.5 331.94,-119.5"/>
 </g>
-<!-- Node6 -->
-<g id="node7" class="node"><title>Node6</title>
+<!-- Node7 -->
+<g id="node7" class="node"><title>Node7</title>
 <g id="a_node7"><a xlink:href="class_om_1_1_sink_1_1_iterator_sink.html" target="_top" xlink:title="A Sink adapter for an output iterator.">
 <polygon fill="none" stroke="black" points="379.324,-52 379.324,-80 506.676,-80 506.676,-52 379.324,-52"/>
 <text text-anchor="start" x="387.324" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Sink::IteratorSink</text>
@@ -112,8 +112,8 @@
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge6" class="edge"><title>Node5&#45;&gt;Node6</title>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge6" class="edge"><title>Node6&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M320.914,-66C339.953,-66 360.507,-66 379.18,-66"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="320.816,-62.5001 310.816,-66 320.816,-69.5001 320.816,-62.5001"/>
 </g>

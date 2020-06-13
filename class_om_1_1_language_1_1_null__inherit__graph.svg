@@ -8,16 +8,16 @@
  viewBox="0.00 0.00 1830.00 137.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 133)">
 <title>Om::Language::Null</title>
-<!-- Node0 -->
-<g id="node1" class="node"><title>Node0</title>
+<!-- Node1 -->
+<g id="node1" class="node"><title>Node1</title>
 <g id="a_node1"><a xlink:title="The Null Element implementation.">
 <polygon fill="#bfbfbf" stroke="black" points="1716.53,-31 1716.53,-49 1821.47,-49 1821.47,-31 1716.53,-31"/>
 <text text-anchor="middle" x="1769" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Null</text>
 </a>
 </g>
 </g>
-<!-- Node1 -->
-<g id="node2" class="node"><title>Node1</title>
+<!-- Node2 -->
+<g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="class_om_1_1_language_1_1_default_element.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="1523.96,-26 1523.96,-54 1680.04,-54 1680.04,-26 1523.96,-26"/>
 <text text-anchor="start" x="1531.96" y="-42" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::DefaultElement</text>
@@ -25,13 +25,13 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node0 -->
-<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M1690.24,-40C1699.14,-40 1707.97,-40 1716.31,-40"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1690.19,-36.5001 1680.19,-40 1690.19,-43.5001 1690.19,-36.5001"/>
 </g>
-<!-- Node2 -->
-<g id="node3" class="node"><title>Node2</title>
+<!-- Node3 -->
+<g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="class_om_1_1_language_1_1_default_program.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="1323.79,-26 1323.79,-54 1488.21,-54 1488.21,-26 1323.79,-26"/>
 <text text-anchor="start" x="1331.79" y="-42" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::DefaultProgram</text>
@@ -39,13 +39,13 @@
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge2" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node3&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M1498.65,-40C1507.07,-40 1515.54,-40 1523.81,-40"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1498.43,-36.5001 1488.43,-40 1498.43,-43.5001 1498.43,-36.5001"/>
 </g>
-<!-- Node3 -->
-<g id="node4" class="node"><title>Node3</title>
+<!-- Node4 -->
+<g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="class_om_1_1_language_1_1_default_consumer.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="1120.4,-45 1120.4,-83 1287.6,-83 1287.6,-45 1120.4,-45"/>
 <text text-anchor="start" x="1128.4" y="-71" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::DefaultConsumer</text>
@@ -54,13 +54,13 @@
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge3" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M1297.83,-52.8606C1306.42,-51.8297 1315.08,-50.7902 1323.56,-49.7729"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1297.3,-49.3984 1287.79,-54.065 1298.14,-56.3486 1297.3,-49.3984"/>
 </g>
-<!-- Node4 -->
-<g id="node5" class="node"><title>Node4</title>
+<!-- Node5 -->
+<g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="class_om_1_1_default_giveable.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="970.221,-45 970.221,-83 1083.78,-83 1083.78,-45 970.221,-45"/>
 <text text-anchor="start" x="978.221" y="-71" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultGiveable</text>
@@ -69,13 +69,13 @@
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge4" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge4" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M1094.11,-64C1102.65,-64 1111.48,-64 1120.25,-64"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1093.85,-60.5001 1083.85,-64 1093.85,-67.5001 1093.85,-60.5001"/>
 </g>
-<!-- Node5 -->
-<g id="node6" class="node"><title>Node5</title>
+<!-- Node6 -->
+<g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="class_om_1_1_default_moveable.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="760.482,-45 760.482,-83 933.518,-83 933.518,-45 760.482,-45"/>
 <text text-anchor="start" x="768.482" y="-71" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultMoveable</text>
@@ -84,13 +84,13 @@
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node4 -->
-<g id="edge5" class="edge"><title>Node5&#45;&gt;Node4</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge5" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M943.766,-64C952.744,-64 961.629,-64 970.053,-64"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="943.611,-60.5001 933.611,-64 943.611,-67.5001 943.611,-60.5001"/>
 </g>
-<!-- Node6 -->
-<g id="node7" class="node"><title>Node6</title>
+<!-- Node7 -->
+<g id="node7" class="node"><title>Node7</title>
 <g id="a_node7"><a xlink:href="class_om_1_1_default_copyable.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="610.221,-45 610.221,-83 723.779,-83 723.779,-45 610.221,-45"/>
 <text text-anchor="start" x="618.221" y="-71" font-family="Helvetica,sans-Serif" font-size="10.00">Om::DefaultCopyable</text>
@@ -99,125 +99,125 @@
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node5 -->
-<g id="edge6" class="edge"><title>Node6&#45;&gt;Node5</title>
+<!-- Node7&#45;&gt;Node6 -->
+<g id="edge6" class="edge"><title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M734.109,-64C742.676,-64 751.548,-64 760.375,-64"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="733.832,-60.5001 723.832,-64 733.832,-67.5001 733.832,-60.5001"/>
 </g>
-<!-- Node7 -->
-<g id="node8" class="node"><title>Node7</title>
+<!-- Node8 -->
+<g id="node8" class="node"><title>Node8</title>
 <g id="a_node8"><a xlink:href="class_om_1_1_language_1_1_element.html" target="_top" xlink:title="A Program that contains a single elemental item (or none, when IsEmpty() returns true).">
 <polygon fill="none" stroke="black" points="449.801,-55 449.801,-73 574.199,-73 574.199,-55 449.801,-55"/>
 <text text-anchor="middle" x="512" y="-61" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Element</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node6 -->
-<g id="edge7" class="edge"><title>Node7&#45;&gt;Node6</title>
+<!-- Node8&#45;&gt;Node7 -->
+<g id="edge7" class="edge"><title>Node8&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M584.403,-64C593.023,-64 601.73,-64 610.084,-64"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="584.349,-60.5001 574.349,-64 584.349,-67.5001 584.349,-60.5001"/>
 </g>
-<!-- Node8 -->
-<g id="node9" class="node"><title>Node8</title>
+<!-- Node9 -->
+<g id="node9" class="node"><title>Node9</title>
 <g id="a_node9"><a xlink:href="class_om_1_1_language_1_1_program.html" target="_top" xlink:title="The Program implementation.">
 <polygon fill="none" stroke="black" points="287.971,-55 287.971,-73 414.029,-73 414.029,-55 287.971,-55"/>
 <text text-anchor="middle" x="351" y="-61" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Program</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node7 -->
-<g id="edge8" class="edge"><title>Node8&#45;&gt;Node7</title>
+<!-- Node9&#45;&gt;Node8 -->
+<g id="edge8" class="edge"><title>Node9&#45;&gt;Node8</title>
 <path fill="none" stroke="midnightblue" d="M424.521,-64C432.894,-64 441.371,-64 449.577,-64"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="424.385,-60.5001 414.385,-64 424.385,-67.5001 424.385,-60.5001"/>
 </g>
-<!-- Node9 -->
-<g id="node10" class="node"><title>Node9</title>
+<!-- Node10 -->
+<g id="node10" class="node"><title>Node10</title>
 <g id="a_node10"><a xlink:href="class_om_1_1_language_1_1_consumer.html" target="_top" xlink:title="An Element taker; takes at the back.">
 <polygon fill="none" stroke="black" points="118.079,-111 118.079,-129 251.921,-129 251.921,-111 118.079,-111"/>
 <text text-anchor="middle" x="185" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Consumer</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node8 -->
-<g id="edge9" class="edge"><title>Node9&#45;&gt;Node8</title>
+<!-- Node10&#45;&gt;Node9 -->
+<g id="edge9" class="edge"><title>Node10&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M229.231,-108.097C236.851,-105.845 244.683,-103.43 252,-101 278.234,-92.2873 307.864,-80.877 327.609,-73.0441"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="228.026,-104.802 219.398,-110.951 229.978,-111.525 228.026,-104.802"/>
 </g>
-<!-- Node10 -->
-<g id="node11" class="node"><title>Node10</title>
+<!-- Node11 -->
+<g id="node11" class="node"><title>Node11</title>
 <g id="a_node11"><a xlink:href="class_om_1_1_giveable.html" target="_top" xlink:title="An object that can be copied or moved via Give.">
 <polygon fill="none" stroke="black" points="146.434,-74 146.434,-92 223.566,-92 223.566,-74 146.434,-74"/>
 <text text-anchor="middle" x="185" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Giveable</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node8 -->
-<g id="edge10" class="edge"><title>Node10&#45;&gt;Node8</title>
+<!-- Node11&#45;&gt;Node9 -->
+<g id="edge10" class="edge"><title>Node11&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M233.796,-77.4626C250.674,-75.5073 269.907,-73.279 287.802,-71.2058"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="233.156,-74.0133 223.625,-78.641 233.961,-80.9668 233.156,-74.0133"/>
 </g>
-<!-- Node11 -->
-<g id="node12" class="node"><title>Node11</title>
+<!-- Node12 -->
+<g id="node12" class="node"><title>Node12</title>
 <g id="a_node12"><a xlink:href="class_om_1_1_copyable.html" target="_top" xlink:title="An object that can be passed to Copy to be copied.">
 <polygon fill="none" stroke="black" points="1.04199,-92 1.04199,-110 80.958,-110 80.958,-92 1.04199,-92"/>
 <text text-anchor="middle" x="41" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Copyable</text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node10 -->
-<g id="edge11" class="edge"><title>Node11&#45;&gt;Node10</title>
+<!-- Node12&#45;&gt;Node11 -->
+<g id="edge11" class="edge"><title>Node12&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M91.2614,-94.7556C109.349,-92.4628 129.52,-89.906 146.418,-87.7639"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="90.6585,-91.3039 81.178,-96.0338 91.5388,-98.2484 90.6585,-91.3039"/>
 </g>
-<!-- Node12 -->
-<g id="node13" class="node"><title>Node12</title>
+<!-- Node13 -->
+<g id="node13" class="node"><title>Node13</title>
 <g id="a_node13"><a xlink:href="class_om_1_1_moveable.html" target="_top" xlink:title="An object that can be passed to Move to be moved.">
 <polygon fill="none" stroke="black" points="0.487793,-55 0.487793,-73 81.5122,-73 81.5122,-55 0.487793,-55"/>
 <text text-anchor="middle" x="41" y="-61" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Moveable</text>
 </a>
 </g>
 </g>
-<!-- Node12&#45;&gt;Node10 -->
-<g id="edge12" class="edge"><title>Node12&#45;&gt;Node10</title>
+<!-- Node13&#45;&gt;Node11 -->
+<g id="edge12" class="edge"><title>Node13&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M91.5456,-70.6293C109.455,-73.0257 129.375,-75.691 146.124,-77.9321"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="91.9308,-67.1498 81.5549,-69.2926 91.0024,-74.0879 91.9308,-67.1498"/>
 </g>
-<!-- Node13 -->
-<g id="node14" class="node"><title>Node13</title>
+<!-- Node14 -->
+<g id="node14" class="node"><title>Node14</title>
 <g id="a_node14"><a xlink:href="class_om_1_1_language_1_1_producer.html" target="_top" xlink:title="An Element giver; gives from the front.">
 <polygon fill="none" stroke="black" points="120.855,-37 120.855,-55 249.145,-55 249.145,-37 120.855,-37"/>
 <text text-anchor="middle" x="185" y="-43" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Language::Producer</text>
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node8 -->
-<g id="edge13" class="edge"><title>Node13&#45;&gt;Node8</title>
+<!-- Node14&#45;&gt;Node9 -->
+<g id="edge13" class="edge"><title>Node14&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M259.57,-54.0747C269.012,-55.1111 278.606,-56.164 287.842,-57.1777"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="259.729,-50.5713 249.407,-52.9593 258.965,-57.5295 259.729,-50.5713"/>
 </g>
-<!-- Node14 -->
-<g id="node15" class="node"><title>Node14</title>
+<!-- Node15 -->
+<g id="node15" class="node"><title>Node15</title>
 <g id="a_node15"><a xlink:href="class_om_1_1_shareable.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="137.532,-0 137.532,-18 232.468,-18 232.468,-0 137.532,-0"/>
 <text text-anchor="middle" x="185" y="-6" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Shareable&lt;&gt;</text>
 </a>
 </g>
 </g>
-<!-- Node14&#45;&gt;Node8 -->
-<g id="edge14" class="edge"><title>Node14&#45;&gt;Node8</title>
+<!-- Node15&#45;&gt;Node9 -->
+<g id="edge14" class="edge"><title>Node15&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M231.452,-20.7871C238.367,-22.756 245.396,-24.8582 252,-27 278.295,-35.5282 307.913,-46.9731 327.639,-54.8646"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="232.035,-17.3166 221.463,-18.0085 230.159,-24.0605 232.035,-17.3166"/>
 </g>
-<!-- Node15 -->
-<g id="node16" class="node"><title>Node15</title>
+<!-- Node16 -->
+<g id="node16" class="node"><title>Node16</title>
 <g id="a_node16"><a xlink:href="class_om_1_1_taker.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="1155.71,-8 1155.71,-26 1252.29,-26 1252.29,-8 1155.71,-8"/>
 <text text-anchor="middle" x="1204" y="-14" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Taker&lt; Null &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node15&#45;&gt;Node2 -->
-<g id="edge15" class="edge"><title>Node15&#45;&gt;Node2</title>
+<!-- Node16&#45;&gt;Node3 -->
+<g id="edge15" class="edge"><title>Node16&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M1262.4,-23.6009C1281.44,-25.791 1303.02,-28.2726 1323.53,-30.6305"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1262.73,-20.1162 1252.4,-22.4507 1261.93,-27.0703 1262.73,-20.1162"/>
 </g>

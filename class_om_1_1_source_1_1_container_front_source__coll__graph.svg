@@ -8,8 +8,8 @@
  viewBox="0.00 0.00 528.00 93.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 89)">
 <title>Om::Source::ContainerFrontSource&lt; ThisItem, ThisContainer &gt;</title>
-<!-- Node4 -->
-<g id="node1" class="node"><title>Node4</title>
+<!-- Node1 -->
+<g id="node1" class="node"><title>Node1</title>
 <g id="a_node1"><a xlink:title="A Source adapter for a container; pulls items from the front.">
 <polygon fill="#bfbfbf" stroke="black" points="348.642,-31 348.642,-59 519.358,-59 519.358,-31 348.642,-31"/>
 <text text-anchor="start" x="356.642" y="-47" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Source::ContainerFront</text>
@@ -17,8 +17,8 @@
 </a>
 </g>
 </g>
-<!-- Node5 -->
-<g id="node2" class="node"><title>Node5</title>
+<!-- Node2 -->
+<g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="class_om_1_1_source_1_1_default_source.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="144.639,-26 144.639,-64 311.361,-64 311.361,-26 144.639,-26"/>
 <text text-anchor="start" x="152.639" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Source::DefaultSource</text>
@@ -27,13 +27,13 @@
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node4 -->
-<g id="edge1" class="edge"><title>Node5&#45;&gt;Node4</title>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M321.437,-45C330.389,-45 339.44,-45 348.311,-45"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="321.387,-41.5001 311.387,-45 321.387,-48.5001 321.387,-41.5001"/>
 </g>
-<!-- Node6 -->
-<g id="node3" class="node"><title>Node6</title>
+<!-- Node3 -->
+<g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="class_om_1_1_source_1_1_source.html" target="_top" xlink:title="Any object that items can be pulled from.">
 <polygon fill="none" stroke="black" points="0.70459,-57 0.70459,-85 107.295,-85 107.295,-57 0.70459,-57"/>
 <text text-anchor="start" x="8.70459" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">Om::Source::Source</text>
@@ -41,13 +41,13 @@
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node5 -->
-<g id="edge2" class="edge"><title>Node6&#45;&gt;Node5</title>
+<!-- Node3&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M117.583,-61.5397C126.294,-60.223 135.352,-58.8537 144.361,-57.4919"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="116.905,-58.1025 107.54,-63.0579 117.951,-65.0238 116.905,-58.1025"/>
 </g>
-<!-- Node7 -->
-<g id="node4" class="node"><title>Node7</title>
+<!-- Node4 -->
+<g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="2.9165,-0 2.9165,-38 105.083,-38 105.083,-0 2.9165,-0"/>
 <text text-anchor="start" x="10.9165" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">std::iterator&lt; std</text>
@@ -56,8 +56,8 @@
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node5 -->
-<g id="edge3" class="edge"><title>Node7&#45;&gt;Node5</title>
+<!-- Node4&#45;&gt;Node2 -->
+<g id="edge3" class="edge"><title>Node4&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M115.237,-28.1056C124.663,-29.5304 134.543,-31.024 144.365,-32.5087"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="115.623,-24.6242 105.212,-26.5902 114.576,-31.5456 115.623,-24.6242"/>
 </g>
