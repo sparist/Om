@@ -25,7 +25,7 @@ endif()
 if(CMAKE_CL_64)
 	set(PlatformBits -64)
 endif()
-set(Platform "${CMAKE_SYSTEM}-${CMAKE_CXX_COMPILER_ID}-${CMAKE_CXX_COMPILER_VERSION}${PlatformBits}")
+set(Platform "${CMAKE_SYSTEM_NAME}-${CMAKE_CXX_COMPILER_ID}${PlatformBits}")
 
 # Set builds directory.
 set(BuildsDirectory "${CMAKE_BINARY_DIR}" CACHE PATH "The builds directory path")
