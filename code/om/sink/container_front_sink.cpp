@@ -55,7 +55,6 @@ inline void Type_::Swap(ContainerFrontSink & theContainerFrontSink) {
 		this->thisContainer,
 		theContainerFrontSink.thisContainer
 	);
-	return *this;
 }
 
 	#undef Type_

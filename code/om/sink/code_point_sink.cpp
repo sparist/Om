@@ -96,7 +96,6 @@ inline void Type_::Swap(CodePointSink & theCodePointSink) {
 		this->thisCodeUnitIterator,
 		theCodePointSink.thisCodeUnitIterator
 	);
-	return *this;
 }
 
 	#undef Type_
