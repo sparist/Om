@@ -134,6 +134,12 @@ namespace Om {
 
 	#include "om/language/lexicon.hpp"
 
+	#ifndef Om_Macro_Precompilation_
+
+		#include "boost/utility/in_place_factory.hpp"
+
+	#endif
+
 // MARK: - Om::Language::Operation::FindOperation
 
 	#define Type_ \

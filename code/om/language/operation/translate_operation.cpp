@@ -20,6 +20,12 @@
 
 	#include "om/language/expression.hpp"
 
+	#ifndef Om_Macro_Precompilation_
+
+		#include "boost/utility/in_place_factory.hpp"
+
+	#endif
+
 // MARK: - Om::Language::Operation::TranslateOperation
 
 	#define Template_ \

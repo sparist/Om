@@ -180,6 +180,7 @@ namespace Om {
 	#ifndef Om_Macro_Precompilation_
 
 		#include "boost/ref.hpp"
+		#include "boost/utility/in_place_factory.hpp"
 
 	#endif
 

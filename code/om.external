@@ -21,6 +21,7 @@
 #include "boost/ref.hpp"
 #include "boost/scoped_ptr.hpp"
 #include "boost/swap.hpp"
+#include "boost/utility/in_place_factory.hpp"
 
 #ifdef Om_Macro_Test_
 

@@ -308,6 +308,12 @@ namespace Om {
 
 	#include "om/utf8.hpp"
 
+	#ifndef Om_Macro_Precompilation_
+
+		#include "boost/swap.hpp"
+
+	#endif
+
 // MARK: - Om::Source::CodePointStringBackSource
 
 	#define Template_ \

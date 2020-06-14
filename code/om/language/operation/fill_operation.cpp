@@ -92,6 +92,12 @@ namespace Om {
 
 #else
 
+	#ifndef Om_Macro_Precompilation_
+
+		#include "boost/utility/in_place_factory.hpp"
+
+	#endif
+
 // MARK: - Om::Language::Operation::FillOperation
 
 	#define Type_ \

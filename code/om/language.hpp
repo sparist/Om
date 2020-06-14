@@ -73,7 +73,7 @@
 		\subsection using__building__ Building
 			A build project, containing targets for building the interpreter, tests, and documentation, can be generated into &quot;<em>[builds directory path]</em>/Om/projects/<em>[project]</em>&quot; by running the appropriate "generate" script from the desired builds directory:
 			- "generate.sh" (Unix-based platforms)
-			- "generate.bat" (Windows)
+			- "generate.bat" (Windows, to be run from the Visual Studio command line)
 
 			Arguments include the desired project name (required), followed by any desired CMake arguments.
 

@@ -1,23 +1,25 @@
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 3.0)
 
-function(GetBoost Directory Name MajorVersion MinorVersion Extension Md5
+function(GetBoost Directory Name MajorVersion MinorVersion Extension Sha256
 	DownloadDirectoryVariable DownloadNameVariable
 )
 	set(DownloadName "boost_${MajorVersion}_${MinorVersion}_0")
 	set(${DownloadNameVariable} ${DownloadName} PARENT_SCOPE)
 
+	string(SUBSTRING "${Sha256}" 0 7 DownloadDirectoryName)
+
 	file(
-		DOWNLOAD "http://sourceforge.net/projects/boost/files/boost/${MajorVersion}.${MinorVersion}.0/${DownloadName}.${Extension}/download" "${Directory}/downloads/${Md5}/download/${DownloadName}.${Extension}"
+		DOWNLOAD "http://sourceforge.net/projects/boost/files/boost/${MajorVersion}.${MinorVersion}.0/${DownloadName}.${Extension}/download" "${Directory}/downloads/${DownloadDirectoryName}/download/${DownloadName}.${Extension}"
 		STATUS DownloadStatus
 		SHOW_PROGRESS
-		EXPECTED_MD5 ${Md5}
+		EXPECTED_HASH SHA256=${Sha256}
 	)
 	list(GET DownloadStatus 0 Status)
 	if(NOT ${Status} EQUAL 0)
 		list(GET DownloadStatus 1 Error)
 		message(FATAL_ERROR "Boost could not be downloaded: ${Error} (${Status})")
 	endif()
-	get_filename_component(DownloadDirectory "${Directory}/downloads/${Md5}" REALPATH)
+	get_filename_component(DownloadDirectory "${Directory}/downloads/${DownloadDirectoryName}" REALPATH)
 	set(${DownloadDirectoryVariable} ${DownloadDirectory} PARENT_SCOPE)
 
 	if(NOT EXISTS "${DownloadDirectory}/download/complete")
@@ -96,13 +98,13 @@ function(SetUpBoost BuildsDirectory Platform Icu4cInstallDirectory
 	ThreadDebugLibraryVariable ThreadReleaseLibraryVariable
 )
 	set(MajorVersion 1)
-	set(MinorVersion 57)
+	set(MinorVersion 73)
 	if(WIN32)
 		set(Extension zip)
-		set(Md5 5e040e578e3f0ba879da04a1e0cd55ff)
+		set(Sha256 0909a79524f857ef54570ceef8f397cc0629202532cc997785479c7c08bbc2a4)
 	else()
 		set(Extension tar.gz)
-		set(Md5 25f9a8ac28beeb5ab84aa98510305299)
+		set(Sha256 9995e192e68528793755692917f9eb6422f3052a53c5e13ba278a228af6c7acf)
 	endif()
 
 	set(InstallDirectory "${BoostInstallDirectory}")
@@ -120,24 +122,19 @@ function(SetUpBoost BuildsDirectory Platform Icu4cInstallDirectory
 			message(FATAL_ERROR "The directory \"${BoostBuildDirectory}\" could not be created: ${Status}")
 		endif()
 
-		GetBoost("${BoostBuildDirectory}" "${Platform}" "${MajorVersion}" "${MinorVersion}" "${Extension}" "${Md5}" DownloadDirectory DownloadName)
+		GetBoost("${BoostBuildDirectory}" "${Platform}" "${MajorVersion}" "${MinorVersion}" "${Extension}" "${Sha256}" DownloadDirectory DownloadName)
 		BuildBoost("${Platform}" "${DownloadDirectory}" "${DownloadName}" "${Icu4cInstallDirectory}" InstallDirectory)
 	endif()
 
 	if(WIN32)
-		# Determine MSVC version string used in Boost library names.
-		# From: http://www.cmake.org/pipermail/cmake/2012-March/049464.html
-		set(MsvcVersionMinimum 1600) # Visual Studio 2010
-		set(MsvcVersion ${MSVC_VERSION})
-		if(${MsvcVersion} LESS ${MsvcVersionMinimum})
-			set(MsvcVersion ${MsvcVersionMinimum})
-		endif()
-		math(EXPR MsvcVersion "((${MsvcVersion} - 600) / 10)") # Only works for Visual Studio 7.1 and higher
-
+		set(MsvcVersion "${MSVC_TOOLSET_VERSION}")
 		set(Suffix -${MajorVersion}_${MinorVersion})
 		set(Prefix lib)
-		set(DebugSuffix -vc${MsvcVersion}-mt-gd${Suffix})
-		set(ReleaseSuffix -vc${MsvcVersion}-mt${Suffix})
+		if(CMAKE_CL_64)
+			set(Architecture x64)
+		endif()
+		set(DebugSuffix -vc${MsvcVersion}-mt-gd-${Architecture}${Suffix})
+		set(ReleaseSuffix -vc${MsvcVersion}-mt-${Architecture}${Suffix})
 
 		set(${IncludeDirectoryVariable} "${InstallDirectory}/include/boost${Suffix}" PARENT_SCOPE)
 	else()

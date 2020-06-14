@@ -1,23 +1,26 @@
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 3.0)
 
-function(GetIcu4c Directory Name MajorVersion MinorVersion Extension Md5
+function(GetIcu4c Directory Name MajorVersion MinorVersion Extension Sha512
 	DownloadDirectoryVariable DownloadNameVariable
 )
 	set(DownloadName icu)
 	set(${DownloadNameVariable} ${DownloadName} PARENT_SCOPE)
 
+	string(SUBSTRING "${Sha512}" 0 7 DownloadDirectoryName)
+
+	message("Downloading https://github.com/unicode-org/icu/releases/download/release-${MajorVersion}-${MinorVersion}/icu4c-${MajorVersion}_${MinorVersion}-src.${Extension}...")
 	file(
-		DOWNLOAD "http://download.icu-project.org/files/icu4c/${MajorVersion}.${MinorVersion}/icu4c-${MajorVersion}_${MinorVersion}-src.${Extension}" "${Directory}/downloads/${Md5}/download/${DownloadName}.${Extension}"
+		DOWNLOAD "https://github.com/unicode-org/icu/releases/download/release-${MajorVersion}-${MinorVersion}/icu4c-${MajorVersion}_${MinorVersion}-src.${Extension}" "${Directory}/downloads/${DownloadDirectoryName}/download/${DownloadName}.${Extension}"
 		STATUS DownloadStatus
 		SHOW_PROGRESS
-		EXPECTED_MD5 ${Md5}
+		EXPECTED_HASH SHA512=${Sha512}
 	)
 	list(GET DownloadStatus 0 Status)
 	if(NOT ${Status} EQUAL 0)
 		list(GET DownloadStatus 1 Error)
 		message(FATAL_ERROR "ICU4C could not be downloaded: ${Error} (${Status})")
 	endif()
-	get_filename_component(DownloadDirectory "${Directory}/downloads/${Md5}" REALPATH)
+	get_filename_component(DownloadDirectory "${Directory}/downloads/${DownloadDirectoryName}" REALPATH)
 	set(${DownloadDirectoryVariable} ${DownloadDirectory} PARENT_SCOPE)
 
 	if(NOT EXISTS "${DownloadDirectory}/download/complete")
@@ -68,6 +71,7 @@ function(BuildIcu4c Name DownloadDirectory DownloadName
 
 			set(DisableSharedOption --disable-shared)
 			set(PrefixOption "${BuildDirectory}/install")
+			set(CFlagsOption)
 			set(CppFlagsOption)
 			if(WIN32)
 				set(System Cygwin/MSVC)
@@ -84,17 +88,25 @@ function(BuildIcu4c Name DownloadDirectory DownloadName
 				# On Windows, the shared libraries must be built for Boost ICU detection to succeed.
 				set(DisableSharedOption)
 			else()
+				set(CppFlagsOption "-DU_CHARSET_IS_UTF8=1")
 				if(APPLE)
 					set(System MacOSX)
 				else()
 					set(System Linux)
+					set(CFlagsOption -fPIC)
+					set(CppFlagsOption "${CppFlagsOption} -fPIC")
 				endif()
-				set(CppFlagsOption CPPFLAGS=-DU_CHARSET_IS_UTF8=1)
 			endif()
 
 			message(STATUS "Configuring ICU4C (${Configuration})")
+			set(ENV{CFLAGS} "${CFlagsOption}")
+			set(ENV{CPPFLAGS} "${CppFlagsOption}")
+			find_program(BashExecutable bash)
+			if(NOT BashExecutable)
+				message(FATAL_ERROR "Bash could not be found.")
+			endif()
 			execute_process(
-				COMMAND bash ../../../../download/${DownloadName}/source/runConfigureICU ${EnableDebugOption} ${DisableReleaseOption} ${System} --enable-static ${DisableSharedOption} --prefix=${PrefixOption} ${CppFlagsOption}
+				COMMAND "${BashExecutable}" ../../../../download/${DownloadName}/source/runConfigureICU ${EnableDebugOption} ${DisableReleaseOption} ${System} --enable-static ${DisableSharedOption} --prefix=${PrefixOption}
 				WORKING_DIRECTORY "${BuildDirectory}/make/${Configuration}"
 				RESULT_VARIABLE Status
 			)
@@ -142,10 +154,10 @@ function(SetUpIcu4c BuildsDirectory Platform
 	UcDebugLibraryVariable UcReleaseLibraryVariable
 	DataDebugLibraryVariable DataReleaseLibraryVariable
 )
-	set(MajorVersion 54)
-	set(MinorVersion 1)
+	set(MajorVersion 56)
+	set(MinorVersion 2)
 	set(Extension tgz)
-	set(Md5 e844caed8f2ca24c088505b0d6271bc0)
+	set(Sha512 c94dc3c1e1da794d83b1962596c742d26d80d9f79f794dd8c14ca6dee88553ce13be4d283c54abb22329b1e78d784820af76ae1d85ab6961f5df770b2d416894)
 
 	set(InstallDirectory "${Icu4cInstallDirectory}")
 	if(NOT EXISTS "${InstallDirectory}")
@@ -162,7 +174,7 @@ function(SetUpIcu4c BuildsDirectory Platform
 			message(FATAL_ERROR "The directory \"${Icu4cBuildDirectory}\" could not be created: ${Status}")
 		endif()
 
-		GetIcu4c("${Icu4cBuildDirectory}" "${Platform}" "${MajorVersion}" "${MinorVersion}" "${Extension}" "${Md5}" DownloadDirectory DownloadName)
+		GetIcu4c("${Icu4cBuildDirectory}" "${Platform}" "${MajorVersion}" "${MinorVersion}" "${Extension}" "${Sha512}" DownloadDirectory DownloadName)
 		BuildIcu4c("${Platform}" "${DownloadDirectory}" "${DownloadName}" InstallDirectory)
 	endif()
 	set(${InstallDirectoryVariable} "${InstallDirectory}" PARENT_SCOPE)
