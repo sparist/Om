@@ -17,5 +17,3 @@ ProjectDirectory="$BuildDirectory/projects/$1"
 mkdir -p "$ProjectDirectory"
 cd "$ProjectDirectory"
 cmake --no-warn-unused-cli -D BuildsDirectory="$BuildsDirectory" -D BuildDirectory="$BuildDirectory" -D ProjectDirectory="$@" "$SourceDirectory"
-
-cd "$BuildsDirectory"
