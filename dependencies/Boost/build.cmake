@@ -131,10 +131,10 @@ function(SetUpBoost BuildsDirectory Platform Icu4cInstallDirectory
 		set(Suffix -${MajorVersion}_${MinorVersion})
 		set(Prefix lib)
 		if(CMAKE_CL_64)
-			set(Architecture x64)
+			set(Architecture -x64)
 		endif()
-		set(DebugSuffix -vc${MsvcVersion}-mt-gd-${Architecture}${Suffix})
-		set(ReleaseSuffix -vc${MsvcVersion}-mt-${Architecture}${Suffix})
+		set(DebugSuffix -vc${MsvcVersion}-mt-gd${Architecture}${Suffix})
+		set(ReleaseSuffix -vc${MsvcVersion}-mt${Architecture}${Suffix})
 
 		set(${IncludeDirectoryVariable} "${InstallDirectory}/include/boost${Suffix}" PARENT_SCOPE)
 	else()
