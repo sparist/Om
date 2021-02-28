@@ -514,7 +514,7 @@
 		-	By \ref contributing__funding__ further development of the %Om language.
 
 		\subsection contributing__developing__ Developing
-			%Om is written in modern, portable C++ that adheres to the <a href="http://sparist.github.com/cpp_coding_standard.html">Sparist C++ Coding Standard</a>.
+			%Om is written in modern, portable C++ that adheres to the <a href="http://sparist.github.io/cpp_coding_standard.html">Sparist C++ Coding Standard</a>.
 
 			<b>Note:</b> Because this is an early-stage project, there are not yet any compatibility guarantees between versions.
 
