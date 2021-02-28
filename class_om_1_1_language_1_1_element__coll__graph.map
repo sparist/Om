@@ -1,10 +1,10 @@
 <map id="Om::Language::Element" name="Om::Language::Element">
-<area shape="rect" id="node1" title="A Program that contains a single elemental item (or none, when IsEmpty() returns true)." alt="" coords="254,230,420,255"/>
-<area shape="rect" id="node2" href="$class_om_1_1_language_1_1_program.html" title="The Program implementation." alt="" coords="253,155,421,181"/>
-<area shape="rect" id="node3" href="$class_om_1_1_language_1_1_consumer.html" title="An Element taker; takes at the back." alt="" coords="4,81,181,106"/>
-<area shape="rect" id="node4" href="$class_om_1_1_giveable.html" title="An object that can be copied or moved via Give." alt="" coords="206,81,308,106"/>
-<area shape="rect" id="node5" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied." alt="" coords="139,6,244,31"/>
-<area shape="rect" id="node6" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved." alt="" coords="269,6,376,31"/>
-<area shape="rect" id="node7" href="$class_om_1_1_language_1_1_producer.html" title="An Element giver; gives from the front." alt="" coords="333,81,504,106"/>
-<area shape="rect" id="node8" href="$class_om_1_1_shareable.html" title=" " alt="" coords="529,81,655,106"/>
+<area shape="rect" id="node1" title="A Program that contains a single elemental item (or none, when IsEmpty() returns true)." alt="" coords="613,79,779,105"/>
+<area shape="rect" id="node2" href="$class_om_1_1_language_1_1_program.html" title="The Program implementation." alt="" coords="397,79,565,105"/>
+<area shape="rect" id="node3" href="$class_om_1_1_language_1_1_consumer.html" title="An Element taker; takes at the back." alt="" coords="167,5,345,30"/>
+<area shape="rect" id="node4" href="$class_om_1_1_giveable.html" title="An object that can be copied or moved via Give." alt="" coords="205,54,307,79"/>
+<area shape="rect" id="node5" href="$class_om_1_1_copyable.html" title="An object that can be passed to Copy to be copied." alt="" coords="7,30,113,55"/>
+<area shape="rect" id="node6" href="$class_om_1_1_moveable.html" title="An object that can be passed to Move to be moved." alt="" coords="6,79,114,105"/>
+<area shape="rect" id="node7" href="$class_om_1_1_language_1_1_producer.html" title="An Element giver; gives from the front." alt="" coords="170,103,342,129"/>
+<area shape="rect" id="node8" href="$class_om_1_1_shareable.html" title="A pointee for boost::intrusive_ptr." alt="" coords="163,153,349,191"/>
 </map>
