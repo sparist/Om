@@ -83,7 +83,7 @@ namespace Om {
 
 			/*!
 			\brief
-				The current #CodePoint.
+				The current #Om::CodePoint.
 			*/
 			CodePoint thisCodePoint;
 
