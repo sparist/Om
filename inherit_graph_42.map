@@ -1,61 +1,86 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_om_1_1_sink_1_1_sink.html" title="Any object that items can be pushed to." alt="" coords="6,133,189,158"/>
-<area shape="rect" id="node2" href="$class_om_1_1_sink_1_1_default_sink.html" title=" " alt="" coords="268,154,449,206"/>
-<area shape="rect" id="node4" href="$class_om_1_1_sink_1_1_default_sink.html" title=" " alt="" coords="256,230,462,282"/>
-<area shape="rect" id="node6" href="$class_om_1_1_sink_1_1_default_sink.html" title=" " alt="" coords="256,15,461,67"/>
-<area shape="rect" id="node8" href="$class_om_1_1_sink_1_1_default_sink.html" title="A partial Sink implementation." alt="" coords="249,91,468,130"/>
-<area shape="rect" id="node3" href="$class_om_1_1_sink_1_1_iterator_sink.html" title="A Sink adapter for an output iterator." alt="" coords="558,161,728,199"/>
-<area shape="rect" id="node5" href="$class_om_1_1_sink_1_1_container_front_sink.html" title="A Sink adapter for a container; pushes items into the front." alt="" coords="537,233,748,271"/>
-<area shape="rect" id="node7" href="$class_om_1_1_sink_1_1_container_back_sink.html" title="A Sink adapter for a container; pushes items into the back." alt="" coords="544,22,741,61"/>
-<area shape="rect" id="node9" href="$class_om_1_1_sink_1_1_iterator_sink.html" title=" " alt="" coords="546,85,739,137"/>
-<area shape="rect" id="node10" href="$class_om_1_1_sink_1_1_stream_sink.html" title="A Sink adapter for an output stream." alt="" coords="860,5,1012,43"/>
-<area shape="rect" id="node11" href="$class_om_1_1_source_1_1_source.html" title="Any object that items can be pulled from." alt="" coords="26,679,168,718"/>
-<area shape="rect" id="node12" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="265,1039,452,1091"/>
-<area shape="rect" id="node14" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="259,306,458,358"/>
-<area shape="rect" id="node30" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="243,382,474,434"/>
-<area shape="rect" id="node32" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="244,458,474,510"/>
-<area shape="rect" id="node34" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="266,534,451,586"/>
-<area shape="rect" id="node36" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="246,610,471,649"/>
-<area shape="rect" id="node40" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="248,673,469,725"/>
-<area shape="rect" id="node42" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="248,749,470,801"/>
-<area shape="rect" id="node44" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="264,825,453,877"/>
-<area shape="rect" id="node46" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="266,901,451,953"/>
-<area shape="rect" id="node48" href="$class_om_1_1_source_1_1_default_source.html" title="A partial implementation of Source." alt="" coords="249,977,468,1015"/>
-<area shape="rect" id="node13" href="$class_om_1_1_source_1_1_stream_source.html" title="A Source adapter for an input stream." alt="" coords="550,1061,735,1099"/>
-<area shape="rect" id="node15" href="$class_om_1_1_source_1_1_iterator_pair_source.html" title="A Source adapter for a start and end input iterator pair." alt="" coords="537,295,749,334"/>
-<area shape="rect" id="node16" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="826,421,1046,473"/>
-<area shape="rect" id="node18" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="805,497,1067,549"/>
-<area shape="rect" id="node20" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="808,573,1064,625"/>
-<area shape="rect" id="node22" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="823,67,1049,119"/>
-<area shape="rect" id="node24" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="841,143,1031,195"/>
-<area shape="rect" id="node26" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="826,219,1046,271"/>
-<area shape="rect" id="node28" href="$class_om_1_1_source_1_1_collection_back_source.html" title="A range over a collection, starting from the back." alt="" coords="830,295,1042,334"/>
-<area shape="rect" id="node29" href="$class_om_1_1_source_1_1_collection_front_source.html" title="A range over a collection, starting from the front." alt="" coords="830,358,1042,397"/>
-<area shape="rect" id="node17" href="$class_om_1_1_language_1_1_expression_1_1_form_range_3_01_form_01const_01_4.html" title="An immutable Expression Form range." alt="" coords="1118,427,1306,466"/>
-<area shape="rect" id="node19" href="$class_om_1_1_language_1_1_form_1_1_operand_range_3_01_operand_01const_01_4.html" title="An immutable Form Operand range." alt="" coords="1120,497,1304,549"/>
-<area shape="rect" id="node21" href="$class_om_1_1_language_1_1_literal_1_1_element_range_3_01_literal_01const_01_4.html" title="An immutable Literal Element range." alt="" coords="1130,573,1294,625"/>
-<area shape="rect" id="node23" href="$class_om_1_1_language_1_1_form_1_1_operand_range_3_01_operand_01_4.html" title="A mutable Form Operand range." alt="" coords="1115,74,1309,113"/>
-<area shape="rect" id="node25" href="$class_om_1_1_language_1_1_expression_1_1_form_range_3_01_form_01_4.html" title="A mutable Expression Form range." alt="" coords="1121,150,1303,189"/>
-<area shape="rect" id="node27" href="$class_om_1_1_language_1_1_literal_1_1_element_range_3_01_literal_01_4.html" title="A mutable Literal Element range." alt="" coords="1124,226,1300,265"/>
-<area shape="rect" id="node31" href="$class_om_1_1_source_1_1_code_point_string_front_source.html" title="A Source of CodePoint strings from the front of a string." alt="" coords="533,358,753,397"/>
-<area shape="rect" id="node33" href="$class_om_1_1_source_1_1_code_point_string_back_source.html" title="A Source of CodePoint strings from the back of a string." alt="" coords="534,421,752,459"/>
-<area shape="rect" id="node35" href="$class_om_1_1_source_1_1_iterator_source.html" title="A Source adapter for a sentinal&#45;terminated input iterator." alt="" coords="550,483,735,522"/>
-<area shape="rect" id="node37" href="$class_om_1_1_language_1_1_expression_1_1_element_range.html" title="An Expression Element range." alt="" coords="551,671,734,710"/>
-<area shape="rect" id="node38" href="$class_om_1_1_language_1_1_form_1_1_element_range.html" title="A Form Element range." alt="" coords="569,546,717,585"/>
-<area shape="rect" id="node39" href="$class_om_1_1_language_1_1_lexicon_1_1_element_range.html" title="A Lexicon Element range." alt="" coords="561,609,724,647"/>
-<area shape="rect" id="node41" href="$class_om_1_1_source_1_1_container_back_source.html" title="A Source adapter for a container; pulls items from the back." alt="" coords="529,734,756,773"/>
-<area shape="rect" id="node43" href="$class_om_1_1_source_1_1_container_front_source.html" title="A Source adapter for a container; pulls items from the front." alt="" coords="529,797,756,835"/>
-<area shape="rect" id="node45" href="$class_om_1_1_source_1_1_singleton_source.html" title="A single item Source." alt="" coords="544,859,742,898"/>
-<area shape="rect" id="node47" href="$class_om_1_1_source_1_1_empty_source.html" title="An empty Source." alt="" coords="553,922,733,961"/>
-<area shape="rect" id="node49" href="$class_om_1_1_source_1_1_code_point_source.html" title=" " alt="" coords="540,985,745,1037"/>
-<area shape="rect" id="node50" href="$class_om_1_1_source_1_1_code_point_source_3_01char_01const_01_5_01_4.html" title="A specialization for null&#45;terminated code unit array." alt="" coords="834,991,1038,1030"/>
-<area shape="rect" id="node51" href="$class_om_1_1_sink_1_1_sink.html" title=" " alt="" coords="6,1122,189,1161"/>
-<area shape="rect" id="node52" href="$class_om_1_1_sink_1_1_default_sink.html" title=" " alt="" coords="256,1115,461,1167"/>
-<area shape="rect" id="node53" href="$class_om_1_1_sink_1_1_code_point_sink.html" title="A CodePoint Sink that pushes each code unit to the iterator." alt="" coords="557,1123,729,1162"/>
-<area shape="rect" id="node54" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1233,168,1271"/>
-<area shape="rect" id="node55" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="237,1191,480,1243"/>
-<area shape="rect" id="node57" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="262,1267,455,1306"/>
-<area shape="rect" id="node56" href="$class_om_1_1_source_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator." alt="" coords="540,1198,745,1237"/>
-<area shape="rect" id="node58" href="$class_om_1_1_language_1_1_reader.html" title="Produces each CodePoint until the end of the Source." alt="" coords="562,1274,723,1299"/>
-<area shape="rect" id="node59" title=" " alt="" coords="53,623,141,649"/>
+<area shape="rect" id="node1" href="$class_om_1_1_sink_1_1_sink.html" title="Any object that items can be pushed to." alt="" coords="6,129,189,154"/>
+<area shape="rect" id="node2" href="$class_om_1_1_sink_1_1_default_sink.html" title=" " alt="" coords="263,81,468,133"/>
+<area shape="rect" id="node4" href="$class_om_1_1_sink_1_1_default_sink.html" title=" " alt="" coords="262,219,468,271"/>
+<area shape="rect" id="node6" href="$class_om_1_1_sink_1_1_default_sink.html" title=" " alt="" coords="275,5,456,57"/>
+<area shape="rect" id="node8" href="$class_om_1_1_sink_1_1_default_sink.html" title="A partial Sink implementation." alt="" coords="256,157,475,195"/>
+<area shape="rect" id="node3" href="$class_om_1_1_sink_1_1_container_back_sink.html" title="A Sink adapter for a container; pushes items into the back." alt="" coords="558,87,754,126"/>
+<area shape="rect" id="node5" href="$class_om_1_1_sink_1_1_container_front_sink.html" title="A Sink adapter for a container; pushes items into the front." alt="" coords="550,226,762,265"/>
+<area shape="rect" id="node7" href="$class_om_1_1_sink_1_1_iterator_sink.html" title="A Sink adapter for an output iterator." alt="" coords="571,11,741,50"/>
+<area shape="rect" id="node9" href="$class_om_1_1_source_1_1_source.html" title="Any object that items can be pulled from." alt="" coords="26,517,168,555"/>
+<area shape="rect" id="node10" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="255,662,476,714"/>
+<area shape="rect" id="node12" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="254,738,476,790"/>
+<area shape="rect" id="node14" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="273,295,458,347"/>
+<area shape="rect" id="node16" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="266,371,465,423"/>
+<area shape="rect" id="node20" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="273,510,458,562"/>
+<area shape="rect" id="node22" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="271,586,460,638"/>
+<area shape="rect" id="node24" href="$class_om_1_1_source_1_1_default_source.html" title="A partial implementation of Source." alt="" coords="256,447,475,486"/>
+<area shape="rect" id="node11" href="$class_om_1_1_source_1_1_container_back_source.html" title="A Source adapter for a container; pulls items from the back." alt="" coords="542,669,770,707"/>
+<area shape="rect" id="node13" href="$class_om_1_1_source_1_1_container_front_source.html" title="A Source adapter for a container; pulls items from the front." alt="" coords="542,745,770,783"/>
+<area shape="rect" id="node15" href="$class_om_1_1_source_1_1_empty_source.html" title="An empty Source." alt="" coords="566,302,746,341"/>
+<area shape="rect" id="node17" href="$class_om_1_1_source_1_1_iterator_pair_source.html" title="A Source adapter for a start and end input iterator pair." alt="" coords="550,378,762,417"/>
+<area shape="rect" id="node18" href="$class_om_1_1_source_1_1_collection_back_source.html" title="A range over a collection, starting from the back." alt="" coords="843,347,1055,386"/>
+<area shape="rect" id="node19" href="$class_om_1_1_source_1_1_collection_front_source.html" title="A range over a collection, starting from the front." alt="" coords="843,410,1055,449"/>
+<area shape="rect" id="node21" href="$class_om_1_1_source_1_1_iterator_source.html" title="A Source adapter for a sentinal&#45;terminated input iterator." alt="" coords="564,517,748,555"/>
+<area shape="rect" id="node23" href="$class_om_1_1_source_1_1_singleton_source.html" title="A single item Source." alt="" coords="557,593,755,631"/>
+<area shape="rect" id="node25" href="$class_om_1_1_sink_1_1_sink.html" title=" " alt="" coords="24,827,171,866"/>
+<area shape="rect" id="node26" href="$class_om_1_1_sink_1_1_default_sink.html" title=" " alt="" coords="269,814,462,879"/>
+<area shape="rect" id="node27" href="$class_om_1_1_sink_1_1_iterator_sink.html" title=" " alt="" coords="559,821,753,873"/>
+<area shape="rect" id="node28" href="$class_om_1_1_sink_1_1_stream_sink.html" title="A Sink adapter for an output stream." alt="" coords="873,827,1026,866"/>
+<area shape="rect" id="node29" href="$class_om_1_1_sink_1_1_sink.html" title=" " alt="" coords="6,910,189,949"/>
+<area shape="rect" id="node30" href="$class_om_1_1_sink_1_1_default_sink.html" title=" " alt="" coords="263,903,468,955"/>
+<area shape="rect" id="node31" href="$class_om_1_1_sink_1_1_code_point_sink.html" title="A CodePoint Sink that pushes each code unit to the iterator." alt="" coords="570,910,742,949"/>
+<area shape="rect" id="node32" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1053,168,1091"/>
+<area shape="rect" id="node33" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="268,1055,463,1107"/>
+<area shape="rect" id="node35" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="272,979,459,1031"/>
+<area shape="rect" id="node34" href="$class_om_1_1_source_1_1_iterator_source.html" title=" " alt="" coords="564,1059,748,1098"/>
+<area shape="rect" id="node36" href="$class_om_1_1_source_1_1_stream_source.html" title="A Source adapter for an input stream." alt="" coords="563,986,749,1025"/>
+<area shape="rect" id="node37" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1221,168,1259"/>
+<area shape="rect" id="node38" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="244,1131,487,1183"/>
+<area shape="rect" id="node40" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="244,1207,487,1273"/>
+<area shape="rect" id="node43" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="269,1297,462,1335"/>
+<area shape="rect" id="node39" href="$class_om_1_1_source_1_1_code_point_source.html" title="A CodePoint Source that reads each code unit from the iterator." alt="" coords="554,1122,758,1161"/>
+<area shape="rect" id="node41" href="$class_om_1_1_source_1_1_code_point_source.html" title=" " alt="" coords="554,1185,758,1237"/>
+<area shape="rect" id="node42" href="$class_om_1_1_source_1_1_code_point_source_3_01char_01const_01_5_01_4.html" title="A specialization for null&#45;terminated code unit array." alt="" coords="847,1191,1052,1230"/>
+<area shape="rect" id="node44" href="$class_om_1_1_language_1_1_reader.html" title="Produces each CodePoint until the end of the Source." alt="" coords="576,1261,736,1286"/>
+<area shape="rect" id="node45" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1366,168,1405"/>
+<area shape="rect" id="node46" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="241,1359,490,1411"/>
+<area shape="rect" id="node47" href="$class_om_1_1_source_1_1_iterator_pair_source.html" title=" " alt="" coords="546,1310,766,1362"/>
+<area shape="rect" id="node48" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="840,1310,1059,1362"/>
+<area shape="rect" id="node49" href="$class_om_1_1_language_1_1_literal_1_1_element_range_3_01_literal_01_4.html" title="A mutable Literal Element range." alt="" coords="1137,1317,1313,1355"/>
+<area shape="rect" id="node50" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1486,168,1525"/>
+<area shape="rect" id="node51" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="253,1525,478,1563"/>
+<area shape="rect" id="node55" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="249,1435,482,1501"/>
+<area shape="rect" id="node52" href="$class_om_1_1_language_1_1_expression_1_1_element_range.html" title="An Expression Element range." alt="" coords="565,1525,747,1563"/>
+<area shape="rect" id="node53" href="$class_om_1_1_language_1_1_form_1_1_element_range.html" title="A Form Element range." alt="" coords="582,1587,730,1626"/>
+<area shape="rect" id="node54" href="$class_om_1_1_language_1_1_lexicon_1_1_element_range.html" title="A Lexicon Element range." alt="" coords="575,1462,737,1501"/>
+<area shape="rect" id="node56" href="$class_om_1_1_source_1_1_iterator_pair_source.html" title=" " alt="" coords="550,1386,762,1438"/>
+<area shape="rect" id="node57" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="822,1386,1077,1438"/>
+<area shape="rect" id="node58" href="$class_om_1_1_language_1_1_literal_1_1_element_range_3_01_literal_01const_01_4.html" title="An immutable Literal Element range." alt="" coords="1143,1386,1308,1438"/>
+<area shape="rect" id="node59" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1594,168,1633"/>
+<area shape="rect" id="node60" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="259,1587,472,1639"/>
+<area shape="rect" id="node61" href="$class_om_1_1_source_1_1_iterator_pair_source.html" title=" " alt="" coords="564,1650,748,1702"/>
+<area shape="rect" id="node62" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="855,1650,1044,1702"/>
+<area shape="rect" id="node63" href="$class_om_1_1_language_1_1_expression_1_1_form_range_3_01_form_01_4.html" title="A mutable Expression Form range." alt="" coords="1134,1657,1317,1695"/>
+<area shape="rect" id="node64" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1678,168,1717"/>
+<area shape="rect" id="node65" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="257,1665,474,1730"/>
+<area shape="rect" id="node66" href="$class_om_1_1_source_1_1_iterator_pair_source.html" title=" " alt="" coords="546,1726,766,1778"/>
+<area shape="rect" id="node67" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="840,1726,1059,1778"/>
+<area shape="rect" id="node68" href="$class_om_1_1_language_1_1_expression_1_1_form_range_3_01_form_01const_01_4.html" title="An immutable Expression Form range." alt="" coords="1131,1733,1320,1771"/>
+<area shape="rect" id="node69" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1762,168,1801"/>
+<area shape="rect" id="node70" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="238,1755,493,1807"/>
+<area shape="rect" id="node71" href="$class_om_1_1_source_1_1_iterator_pair_source.html" title=" " alt="" coords="543,1802,769,1854"/>
+<area shape="rect" id="node72" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="837,1802,1062,1854"/>
+<area shape="rect" id="node73" href="$class_om_1_1_language_1_1_form_1_1_operand_range_3_01_operand_01_4.html" title="A mutable Form Operand range." alt="" coords="1128,1809,1323,1847"/>
+<area shape="rect" id="node74" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1849,168,1887"/>
+<area shape="rect" id="node75" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="247,1835,483,1901"/>
+<area shape="rect" id="node76" href="$class_om_1_1_source_1_1_iterator_pair_source.html" title=" " alt="" coords="548,1878,764,1930"/>
+<area shape="rect" id="node77" href="$class_om_1_1_source_1_1_collection_front_source.html" title=" " alt="" coords="819,1878,1080,1930"/>
+<area shape="rect" id="node78" href="$class_om_1_1_language_1_1_form_1_1_operand_range_3_01_operand_01const_01_4.html" title="An immutable Form Operand range." alt="" coords="1134,1878,1317,1930"/>
+<area shape="rect" id="node79" href="$class_om_1_1_source_1_1_source.html" title=" " alt="" coords="26,1977,168,2015"/>
+<area shape="rect" id="node80" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="250,2009,480,2061"/>
+<area shape="rect" id="node82" href="$class_om_1_1_source_1_1_default_source.html" title=" " alt="" coords="250,1933,481,1985"/>
+<area shape="rect" id="node81" href="$class_om_1_1_source_1_1_code_point_string_back_source.html" title="A Source of CodePoint strings from the back of a string." alt="" coords="547,2017,765,2055"/>
+<area shape="rect" id="node83" href="$class_om_1_1_source_1_1_code_point_string_front_source.html" title="A Source of CodePoint strings from the front of a string." alt="" coords="546,1954,766,1993"/>
+<area shape="rect" id="node84" title=" " alt="" coords="66,993,129,1018"/>
 </map>
